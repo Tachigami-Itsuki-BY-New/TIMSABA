@@ -24,7 +24,6 @@ if mods[arig_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {compression_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30
