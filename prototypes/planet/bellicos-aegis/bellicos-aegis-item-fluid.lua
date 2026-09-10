@@ -1,4 +1,6 @@
 if mods[bellicos_aegis_mods] then
+    local graphics_beryllium = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/"
+
     -- BERYLLIUM ITEM
     beryllium_processed = "beryllium-processed"
     beryllium_pellet = "beryllium-pellet"
