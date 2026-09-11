@@ -206,6 +206,7 @@ platinum_ore_mods = "platinum-ore"
 platinum_plate_mods = "platinum-plate"
 chalcopyrite_ore = "chalcopyrite-ore"
 electrochemical_science_pack = "electrochemical-science-pack"
+platinum_thruster = "platinum-thruster"
 
 -- SECRETAS / FROZETA
 secretas_frozeta_mods = "secretas"
@@ -457,7 +458,7 @@ burner_assembling_machine = "burner-" .. assembling_machine
 quality_assembler = "quality-assembler"
 
 -- BELLICOS AEGIS
-bellicos_aegis_mods = "bellicos-and-aegis"
+aegis_bellicos_mods = "bellicos-and-aegis"
 bellicos_orbit = "bellicos-orbit"
 helium = "helium"
 beryllium_ore = "beryllium_ore"

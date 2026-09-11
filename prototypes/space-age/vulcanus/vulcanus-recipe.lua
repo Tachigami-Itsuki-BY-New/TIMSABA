@@ -773,7 +773,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_vulcanus_tungsten,
         icons = TWO_I(tungsten_ore_bob, tungsten_powder),
         order = a,
-        ingredients = {{type = item, name = tungsten_ore_bob, amount = 4}},
+        ingredients = {{type = item, name = tungsten_ore_bob, amount = 1}},
         results = {{type = item, name = tungsten_powder, amount = 1}},
         main_product = tungsten_powder,
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}

@@ -685,6 +685,8 @@ if mods[lignumis_mods] then
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
 
     tech_iron_processing = "iron-processing"
+    data_technology[tech_iron_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"
+    data_technology[tech_iron_processing].icon_size = 64
     data_technology[tech_iron_processing].effects =
     {
         {type = unlock_recipe, recipe = iron_plate},
@@ -776,6 +778,8 @@ if mods[lignumis_mods] then
 
     data_technology[tech_worker_robots_speed .. "-5"].prerequisites = {tech_worker_robots_speed .. "-4", utility_science_pack}
 
+    table.insert(data_technology[tech_powellite_processing_1].effects, {type = unlock_recipe, recipe = powellite_ore .. _sortiong_stone})
+    table.insert(data_technology[tech_molybdenite_processing_1].effects, {type = unlock_recipe, recipe = molybdenite_ore .. _sortiong_stone})
     table.insert(data_technology[tech_wolframite_processing_1].effects, {type = unlock_recipe, recipe = wolframite_ore .. _sortiong_stone})
     table.insert(data_technology[tech_brannerite_processing_1].effects, {type = unlock_recipe, recipe = brannerite_ore .. _sortiong_stone})
     table.insert(data_technology[tech_antimonite_processing_1].effects, {type = unlock_recipe, recipe = antimonite_ore .. _sortiong_stone})

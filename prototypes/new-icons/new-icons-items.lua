@@ -50,6 +50,7 @@ data_item[titanium_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting
 data_item[gold_cable].icon = "__reskins-library__/graphics/icons/shared/items/gilded-copper-cable.png"
 data_item[gold_cable].icon_size = 64
 
+data_item[platinum_plate].icons = nil
 data_item[platinum_plate].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-platinum.png"
 data_item[platinum_plate].icon_size = 64
 
@@ -59,6 +60,8 @@ data_item[platinum_cable].icon_size = 64
 data_item[bronze_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-bronze-alloy.png"
 
 data_item[brass_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-brass-alloy.png"
+
+data_item[gunmetal_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-gunmetal-alloy.png"
 
 data_item[invar_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-invar-alloy.png"
 
@@ -192,9 +195,6 @@ if mods[bobmodules] then
     -- AGRICULTURAL
     local graphics_agricultural_module = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural"
 
-    data_module[agricultural_module_1].icon = graphics_agricultural_module .. "-1.png"
-    data_module[agricultural_module_2].icon = graphics_agricultural_module .. "-2.png"
-    data_module[agricultural_module_3].icon = graphics_agricultural_module .. "-3.png"
     data_module[agricultural_module_4].icon = graphics_agricultural_module .. "-4.png"
     data_module[agricultural_module_5].icon = graphics_agricultural_module .. "-5.png"
 end
@@ -321,8 +321,8 @@ if mods[lignumis_mods] then
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(4, gold_storage_tank, item)
 end
 
--- BELLICOS AEGIS
-if mods[bellicos_aegis_mods] then
+-- AEGIS BELLICOS
+if mods[aegis_bellicos_mods] then
     data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
 end
 

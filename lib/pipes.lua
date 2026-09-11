@@ -283,154 +283,152 @@ function Public.TIMSABA_pipepictures(pipe_type)
         ending_left_disabled_visualization = make_disabled_visualization(8),
     }
 
-    if feature_flags["freezing"] and mods["space-age"] then
-        pipepictures.corner_down_left_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-down-left.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.corner_down_right_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-down-right.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.corner_up_left_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-up-left.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.corner_up_right_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-up-right.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.cross_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-cross.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.ending_down_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-down.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.ending_left_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-left.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.ending_right_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-right.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.ending_up_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-up.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.straight_horizontal_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-horizontal.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.straight_horizontal_window_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-horizontal-window.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.straight_vertical_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.straight_vertical_single_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical-single.png",
-            width = 160,
-            height = 160,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.straight_vertical_window_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical-window.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.t_down_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-down.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.t_left_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-left.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.t_right_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-right.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-        pipepictures.t_up_frozen =
-        {
-            filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-up.png",
-            width = 128,
-            height = 128,
-            priority = extra_high,
-            scale = 0.5
-        }
-    end
+    pipepictures.corner_down_left_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-down-left.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.corner_down_right_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-down-right.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.corner_up_left_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-up-left.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.corner_up_right_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-corner-up-right.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.cross_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-cross.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.ending_down_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-down.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.ending_left_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-left.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.ending_right_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-right.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.ending_up_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-ending-up.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.straight_horizontal_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-horizontal.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.straight_horizontal_window_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-horizontal-window.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.straight_vertical_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.straight_vertical_single_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical-single.png",
+        width = 160,
+        height = 160,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.straight_vertical_window_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-straight-vertical-window.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.t_down_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-down.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.t_left_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-left.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.t_right_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-right.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
+    pipepictures.t_up_frozen =
+    {
+        filename = "__space-age__/graphics/entity/frozen/pipe/pipe-t-up.png",
+        width = 128,
+        height = 128,
+        priority = extra_high,
+        scale = 0.5
+    }
 
-  return pipepictures
+    return pipepictures
 end
 
 function Public.TIMSABA_pipetogroundpictures(pipe_type)

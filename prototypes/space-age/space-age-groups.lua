@@ -27,3 +27,8 @@ TIMSABA.functions.create_subgroups(ig_space,
     {name = is_space_environment_11, order = f_j},
     {name = is_space_processing_2,  order = i_a}
 })
+
+require("prototypes.space-age.vulcanus.vulcanus-groups")
+require("prototypes.space-age.gleba.gleba-groups")
+require("prototypes.space-age.fulgora.fulgora-groups")
+require("prototypes.space-age.aquilo.aquilo-groups")

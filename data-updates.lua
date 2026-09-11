@@ -71,7 +71,7 @@ require("prototypes-update.planet.lignumis.lignumis-override")
 require("prototypes-update.planet.lignumis.lignumis-update-icon-building")
 
 -- OTHER STAR SYSTEMS
-require("prototypes-update.planet.bellicos-aegis.bellicos-aegis-override")
+require("prototypes-update.planet.aegis-bellicos.aegis-bellicos-override")
 
 -- FINAL CIRCLE PLANETS
 require("prototypes-update.planet.shattered.shattered-override")

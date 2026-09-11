@@ -289,7 +289,7 @@ TIMSABA.functions.create_recipes
         name = copper_chloride_I,
         category = angels_blast_smelting_4,
         subgroup = is_copper_chemistry,
-        icons = TWO_D_I(copper_ingot, copper_chloride_II_solution_angels, copper_chloride_I, steam),
+        icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
         order = e,
         energy_required = 8, -- Cu(s) + CuCl₂(aq) --> 2CuCl(s) + H₂O(g)
         ingredients =
@@ -308,13 +308,13 @@ TIMSABA.functions.create_recipes
         name = copper_chloride_I_alt,
         category = angels_chemical_smelting_4,
         subgroup = is_copper_chemistry,
-        icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_dioxide_angels, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
+        icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
         order = e_a,
-        energy_required = 8, -- 2CuCl₂(aq) + SO₂(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
+        energy_required = 8, -- 2CuCl₂(aq) + SO₃(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
         ingredients =
         {
             {type = fluid, name = copper_chloride_II_solution_angels, amount = 480},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 240},
+            {type = fluid, name = sulfur_trioxide_gas, amount = 240},
             {type = fluid, name = water_purified_angels, amount = 480}
         },
         results =

@@ -1,0 +1,39 @@
+if mods[hyarion_mods] then
+    local graphics_hyarion = "__TIMSABA__/graphics/icons/hyarion/"
+
+    hyarion_air = "hyarion-air"
+    TIMSABA.functions.create_fluids
+    ({
+        {
+            name = hyarion_air,
+            subgroup = is_hyarion_air,
+            icon = graphics_hyarion .. hyarion_air .. ".png",
+            order = a,
+            base_color = {r = 168 / 255, g = 168 / 255, b = 168 / 255},
+            flow_color = {r = 217 / 255, g = 217 / 255, b = 217 / 255}
+        }
+    })
+    TIMSABA.barreling.add_gas(hyarion_air)
+
+    selenium_powder = "selenium-powder"
+    bismuth_oxyselenide = "bismuth-oxyselenide"
+    TIMSABA.functions.create_items
+    ({
+        -- SELENIUM
+        {
+            localised_description = show_formula and {chemical_formula, "Se"} or nil,
+            name = selenium_powder,
+            subgroup = is_selenium,
+            icon = graphics_hyarion .. selenium_powder .. ".png",
+            order = b
+        },
+        -- SPACE
+        {
+            localised_description = show_formula and {chemical_formula, "Bi[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]2[/font]Se"} or nil,
+            name = bismuth_oxyselenide,
+            subgroup = is_space_environment_8,
+            icon = graphics_hyarion .. bismuth_oxyselenide .. ".png",
+            order = h
+        }
+    })
+end

@@ -63,7 +63,8 @@ if mods[corrundum_mods] then
 		sulfuric_acid .. _productivity .. _infinite,
 		"recrystalization",
 		"space-steam-production",
-		"petrol-dehydrogenation-and-combustion-maraxsis"
+		"petrol-dehydrogenation-and-combustion-maraxsis",
+		"sulfate-processing-2"
 	}
 	if mods[maraxsis_mods] then
 		table.insert(delete_prototypes, "petrol-dehydrogenation-and-combustion")
