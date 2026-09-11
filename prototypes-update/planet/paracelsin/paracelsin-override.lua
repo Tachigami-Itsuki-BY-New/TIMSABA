@@ -95,6 +95,7 @@ if mods[paracelsin_mods] then
     data_item[sphalerite_ore].subgroup = is_sphalerite
     data_item[sphalerite_ore].order = a
     data_item[sphalerite_ore].stack_size = 200
+    data_resource[sphalerite_ore].factoriopedia_description = ""
     data_resource[sphalerite_ore].subgroup = is_sphalerite
     data_resource[sphalerite_ore].order = a
     data_resource[sphalerite_ore].minable.mining_time = 4
@@ -103,6 +104,7 @@ if mods[paracelsin_mods] then
     data_item[tetrahedrite_ore].subgroup = is_tetrahedrite
     data_item[tetrahedrite_ore].order = a
     data_item[tetrahedrite_ore].stack_size = 200
+    data_resource[tetrahedrite_ore].factoriopedia_description = ""
     data_resource[tetrahedrite_ore].subgroup = is_tetrahedrite
     data_resource[tetrahedrite_ore].order = a
     data_resource[tetrahedrite_ore].minable.mining_time = 4
@@ -401,6 +403,8 @@ if mods[paracelsin_mods] then
     end
     table.insert(data_technology[planet_discovery_paracelsin].effects, {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air})
 
+    table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = zinc_plate_bob})
+
     data_technology["nitric-acid-handling"].effects =
     {
         {type = unlock_recipe, recipe = nitrogen_nitric_acid},
@@ -413,8 +417,6 @@ if mods[paracelsin_mods] then
     data_technology[tech_zinc_extraction].prerequisites = {tech_sphalerite_processing_1, tech_tetrahedrite_processing_1}
     data_technology[tech_zinc_extraction].effects =
     {
-        {type = unlock_recipe, recipe = zinc_powder_paracelsin},
-        {type = unlock_recipe, recipe = zinc_plate_mods},
         {type = unlock_recipe, recipe = zinc_cable},
         {type = unlock_recipe, recipe = zinc_rivets}
     }
@@ -432,6 +434,9 @@ if mods[paracelsin_mods] then
         {type = unlock_recipe, recipe = mechanical_plant},
         {type = unlock_recipe, recipe = electric_coil}
     }
+
+    data_technology[vaterite_processing].icon = data_item[vaterite].icon
+    data_technology[vaterite_processing].icon_size = 64
 
     table.insert(data_technology[galvanization_science_pack].prerequisites, vaterite_processing)
 

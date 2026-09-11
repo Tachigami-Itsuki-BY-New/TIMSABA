@@ -8,8 +8,10 @@ data_autoplace_control[ore_stiratite].order = data_planet[planet_nauvis].order .
 data_autoplace_control[ore_crotinnium].order = data_planet[planet_nauvis].order .. a_d
 data_autoplace_control[ore_rubyte].order = data_planet[planet_nauvis].order .. a_e
 data_autoplace_control[ore_bobmonium].order = data_planet[planet_nauvis].order .. a_f
-data_autoplace_control[molybdenite_ore].order =  data_planet[planet_nauvis].order .. a_g
-data_autoplace_control[powellite_ore].order =  data_planet[planet_nauvis].order .. a_h
+
+
+data_autoplace_control[powellite_ore].order =  data_planet[planet_nauvis].order .. a_i
+data_autoplace_control[molybdenite_ore].order =  data_planet[planet_nauvis].order .. a_j
 
 
 

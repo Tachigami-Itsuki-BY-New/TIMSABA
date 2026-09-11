@@ -170,3 +170,8 @@ data:extend
         upgrade = true
     }
 })
+
+require("prototypes.space-age.vulcanus.vulcanus-technology")
+require("prototypes.space-age.gleba.gleba-technology")
+require("prototypes.space-age.fulgora.fulgora-technology")
+require("prototypes.space-age.aquilo.aquilo-technology")

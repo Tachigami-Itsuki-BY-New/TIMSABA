@@ -64,7 +64,7 @@ if mods[muluna_mods] then
     end
 end
 
-if mods[bellicos_aegis_mods] and mods[vesta_mods] then
+if mods[aegis_bellicos_mods] and mods[vesta_mods] then
     if data_fluid[helium_vesta] then
         local replace_prototypes = {[helium] = helium_vesta}
         TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)

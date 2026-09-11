@@ -147,7 +147,6 @@ data_technology[tech_heat_shield].prerequisites = {tech_ceramics, tech_powder_me
 table.insert(data_technology[tech_heat_shield].unit.ingredients, {production_science_pack, 1})
 
 -- VULCANUS
-data_recipe[tungsten_carbide].results[1].amount = 1
 data_recipe[tungsten_plate].hidden = false
 data_recipe[tungsten_plate].hidden_in_factoriopedia = false
 

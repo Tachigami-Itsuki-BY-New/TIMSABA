@@ -95,22 +95,20 @@ data:extend
     }
 })
 
-if feature_flags["freezing"] then
-    data_pipe[molybdenum_rhenium_pipe].heating_energy = 1 .. kW
-    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].heating_energy = 350 .. kW
-    if mods["space-age"] then
-        local function frozenpatch()
-            local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
-            return result
-        end
-        data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].frozen_patch = frozenpatch()
-        local function frozenpatch2()
-            local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
-            return result
-        end
-        data_pipe[molybdenum_rhenium_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
-        data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
+data_pipe[molybdenum_rhenium_pipe].heating_energy = 1 .. kW
+data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].heating_energy = 350 .. kW
+if mods["space-age"] then
+    local function frozenpatch()
+        local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
+        return result
     end
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].frozen_patch = frozenpatch()
+    local function frozenpatch2()
+        local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
+        return result
+    end
+    data_pipe[molybdenum_rhenium_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
 end
 
 if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value then

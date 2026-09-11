@@ -1262,22 +1262,6 @@ if mods[muluna_mods] then
     }
     data_technology[tech_oxygen].effects = {{type = unlock_recipe, recipe = muluna_oxygen_from_oxidizer}}
 
-    data_technology["muluna-aluminum-processing"].icons =
-    {
-        {
-            icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-aluminium.png",
-            icon_size = data_item[aluminium_plate_bob].icon_size,
-            shift = {16,-16},
-            scale = 1
-        },
-        {
-            icon = "__TIMSABA__/graphics/icons/muluna/aluminium-cable.png",
-            icon_size = data_item[copper_cable].icon_size,
-            shift = {-16,16},
-            scale = 1
-        }
-    }
-
     local tech_greenhouses = "muluna-greenhouses"
     data_technology[tech_greenhouses].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
     if not mods[lignumis_mods] then
@@ -1311,7 +1295,18 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
 
+    data_technology["muluna-alumina-processing"].icons[2] =
+    {
+        icon = data_item[aluminium_oxide].icon,
+        icon_size = 32,
+        scale = 1.5,
+        shift = {45, 45}
+    }
+
     local tech_aluminium_processing = "muluna-aluminum-processing"
+    data_technology[tech_aluminium_processing].icons = nil
+    data_technology[tech_aluminium_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-aluminium.png"
+    data_technology[tech_aluminium_processing].icon_size = 64
     if settings.startup[setting_flow_control_new].value then
         data_technology[tech_aluminium_processing].effects =
         {
@@ -1336,7 +1331,11 @@ if mods[muluna_mods] then
     end
 
     local tech_silicon_processing = "muluna-silicon-processing"
-    data_technology[tech_silicon_processing].prerequisites = {"muluna-aluminum-processing", tech_anorthite_processing}
+    if mods[moshine_mods] then
+        data_technology[tech_silicon_processing].icon = "__Moshine__/graphics/icons/silicon-cell.png"
+        data_technology[tech_silicon_processing].icon_size = 64
+    end
+    data_technology[tech_silicon_processing].prerequisites = {tech_aluminium_processing, tech_anorthite_processing}
     data_technology[tech_silicon_processing].effects =
     {
         {type = unlock_recipe, recipe = advanced_anorthite_crushing_1},
@@ -1354,7 +1353,6 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = silicon_solar_panel_large_3},
         {type = unlock_recipe, recipe = silicon_solar_panel_large_4}
     }
-
     data_technology[tech_silicon_processing].unit.ingredients =
     {
         {automation_science_pack, 1},

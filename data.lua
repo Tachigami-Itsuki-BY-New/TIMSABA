@@ -17,10 +17,6 @@ require("prototypes.base.base-groups")
 require("prototypes.bobs.bobs-groups")
 require("prototypes.angels.angels-groups")
 require("prototypes.space-age.space-age-groups")
-require("prototypes.space-age.vulcanus.vulcanus-groups")
-require("prototypes.space-age.gleba.gleba-groups")
-require("prototypes.space-age.fulgora.fulgora-groups")
-require("prototypes.space-age.aquilo.aquilo-groups")
 
 require("prototypes.bobs.bobs-name-building")
 require("prototypes.angels.angels-name-building")
@@ -39,31 +35,32 @@ require("prototypes.new-icons.new-icons-technology")
 
 require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
-require("prototypes.angels.angels-metallurgy-smelting-item-fluid")
-require("prototypes.angels.angels-metallurgy-casting-item-fluid")
--- angels-water-treatment-item-fluid
-require("prototypes.angels.angels-petrochem-refining-item-fluid")
-require("prototypes.angels.angels-bioprocessing-item-fluid")
 
 require("compatibility.angels-mods.angelspetrochem")
 
-require("prototypes.TIMSABA.chemistry.magnesium")
+require("prototypes.TIMSABA.metallurgy.magnesium")
+require("prototypes.TIMSABA.metallurgy.uranium")
+require("prototypes.TIMSABA.metallurgy.thorium")
 require("prototypes.TIMSABA.chemistry.boron")
 require("prototypes.TIMSABA.chemistry.potassium")
 require("prototypes.TIMSABA.chemistry.phosphorus")
-require("prototypes.TIMSABA.chemistry.molybdenum")
-require("prototypes.TIMSABA.chemistry.rhenium")
-require("prototypes.TIMSABA.chemistry.molybdenum-rhenium")
+require("prototypes.TIMSABA.metallurgy.molybdenum")
+require("prototypes.TIMSABA.metallurgy.rhenium")
+require("prototypes.TIMSABA.metallurgy.molybdenum-rhenium")
 require("prototypes.TIMSABA.chemistry.selenium")
-require("prototypes.TIMSABA.chemistry.molybdenite")
-require("prototypes.TIMSABA.chemistry.powellite")
-require("prototypes.TIMSABA.chemistry.niobium")
-require("prototypes.TIMSABA.chemistry.holmium")
-require("prototypes.TIMSABA.chemistry.antimony")
+require("prototypes.TIMSABA.metallurgy.niobium")
+require("prototypes.TIMSABA.metallurgy.holmium")
+require("prototypes.TIMSABA.metallurgy.antimony")
+require("prototypes.TIMSABA.metallurgy.germanium")
 require("prototypes.TIMSABA.chemistry.arsenic")
-require("prototypes.TIMSABA.chemistry.germanium")
-require("prototypes.TIMSABA.chemistry.gallium")
-require("prototypes.TIMSABA.chemistry.vanadium")
+require("prototypes.TIMSABA.metallurgy.gallium")
+require("prototypes.TIMSABA.metallurgy.vanadium")
+
+require("prototypes.TIMSABA.resource.powellite")
+require("prototypes.TIMSABA.resource.molybdenite")
+require("prototypes.TIMSABA.resource.senaite")
+require("prototypes.TIMSABA.resource.franckeite")
+require("prototypes.TIMSABA.resource.angels")
 
 require("prototypes.TIMSABA.remnants")
 require("prototypes.TIMSABA.pipe")
@@ -76,147 +73,32 @@ require("prototypes.mods.flow-control-new.flow-control-base")
 require("prototypes.mods.flow-control-new.flow-control-bobs")
 require("prototypes.mods.flow-control-new.flow-control-TIMSABA")
 
-require("prototypes.space-age.vulcanus.vulcanus-item-fluid")
-require("prototypes.space-age.vulcanus.vulcanus-wolframite")
-require("prototypes.space-age.vulcanus.vulcanus-loader")
-require("prototypes.space-age.gleba.gleba-item-fluid")
-require("prototypes.space-age.fulgora.fulgora-item-fluid")
-require("prototypes.space-age.fulgora.fulgora-brannerite")
-require("prototypes.space-age.aquilo.aquilo-item-fluid")
-require("prototypes.space-age.aquilo.aquilo-antimonite")
-require("prototypes.space-age.aquilo.aquilo-germanite")
-require("prototypes.space-age.aquilo.aquilo-asteroid")
+require("prototypes.space-age.space-age-item-fluid")
+require("prototypes.space-age.space-age-resource")
+require("prototypes.space-age.space-age-entities")
 
 require("prototypes.base.base-recipe")
 require("prototypes.bobs.bobs-building")
 require("prototypes.bobs.bobs-recipe")
-require("prototypes.angels.angels-resource-refining-recipe")
-require("prototypes.angels.angels-metallurgy-smelting-recipe")
-require("prototypes.angels.angels-metallurgy-casting-recipe")
--- angels-water-treatment-recipe
-require("prototypes.angels.angels-petrochem-refining-recipe")
-require("prototypes.angels.angels-bioprocessing-recipe")
+require("prototypes.angels.angels-recipe")
 require("prototypes.angels.angels-building")
-
 require("prototypes.space-age.space-age-recipe")
-require("prototypes.space-age.vulcanus.vulcanus-recipe")
-require("prototypes.space-age.gleba.gleba-recipe")
-require("prototypes.space-age.fulgora.fulgora-recipe")
-require("prototypes.space-age.aquilo.aquilo-recipe")
 
-require("prototypes.TIMSABA.chemistry.technology")
--- base-technology
+require("prototypes.TIMSABA.technology")
+-- base
 require("prototypes.bobs.bobs-technology")
 require("prototypes.angels.angels-technology")
 require("prototypes.bobs-angels-technology")
 require("prototypes.space-age.space-age-technology")
-require("prototypes.space-age.vulcanus.vulcanus-technology")
-require("prototypes.space-age.gleba.gleba-technology")
-require("prototypes.space-age.fulgora.fulgora-technology")
-require("prototypes.space-age.aquilo.aquilo-technology")
 
 require("prototypes.TIMSABA.new-modules")
 
--- FIRST CIRCLE PLANETS
--- nauvis
--- vulcanus
--- gleba
--- fulgora
-
--- SECOND CIRCLE PLANETS
-require("prototypes.planet.moshine.moshine-groups")
-require("prototypes.planet.moshine.moshine-item-fluid")
-require("prototypes.planet.moshine.moshine-monazite")
-require("prototypes.planet.moshine.moshine-recipe")
-require("prototypes.planet.moshine.moshine-technology")
-
-require("prototypes.planet.arig.arig-groups")
-require("prototypes.planet.arig.arig-item-fluid")
-require("prototypes.planet.arig.arig-recipe")
-require("prototypes.planet.arig.arig-technology")
-
-require("prototypes.planet.hyarion.hyarion-groups")
-require("prototypes.planet.hyarion.hyarion-item-fluid")
-require("prototypes.planet.hyarion.hyarion-recipe")
-require("prototypes.planet.hyarion.hyarion-technology")
-
-require("prototypes.planet.tellus.tellus-groups")
-require("prototypes.planet.tellus.tellus-item-fluid")
-require("prototypes.planet.tellus.tellus-recipe")
-require("prototypes.planet.tellus.tellus-colored-prototypes")
-
-require("prototypes.planet.corrundum.corrundum-groups")
-require("prototypes.planet.corrundum.corrundum-item-fluid")
-require("prototypes.planet.corrundum.corrundum-chalcopyrite")
-require("prototypes.planet.corrundum.corrundum-recipe")
-require("prototypes.planet.corrundum.corrundum-technology")
-
-require("prototypes.planet.castra.castra-groups")
-require("prototypes.planet.castra.castra-item-fluid")
-require("prototypes.planet.castra.castra-millerite")
-require("prototypes.planet.castra.castra-recipe")
-require("prototypes.planet.castra.castra-technology")
-
-require("prototypes.planet.shchierbin.shchierbin-groups")
-require("prototypes.planet.shchierbin.shchierbin-item-fluid")
-require("prototypes.planet.shchierbin.shchierbin-recipe")
-require("prototypes.planet.shchierbin.shchierbin-technology")
-
-require("prototypes.planet.muria.muria-groups")
-require("prototypes.planet.muria.muria-item-fluid")
-require("prototypes.planet.muria.muria-recipe")
-
-require("prototypes.planet.pelagos.pelagos-groups")
-
-require("prototypes.planet.apia-carnova.apia-carnova-groups")
-require("prototypes.planet.apia-carnova.apia-carnova-recipe")
-
--- THIRD CIRCLE PLANETS
--- aquilo
-require("prototypes.planet.paracelsin.paracelsin-groups")
-require("prototypes.planet.paracelsin.paracelsin-sphalerite")
-require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
-require("prototypes.planet.paracelsin.paracelsin-recipe")
-require("prototypes.planet.paracelsin.paracelsin-technology")
-
-require("prototypes.planet.maraxsis.maraxsis-groups")
-require("prototypes.planet.maraxsis.maraxsis-recipe")
-
--- FOURTH CIRCLE PLANETS
-require("prototypes.planet.vesta.vesta-groups")
-require("prototypes.planet.vesta.vesta-item-fluid")
-require("prototypes.planet.vesta.vesta-recipe")
-require("prototypes.planet.vesta.vesta-technology")
-
--- MOONS
-require("prototypes.planet.muluna.muluna-groups")
-require("prototypes.planet.muluna.muluna-item-fluid")
-require("prototypes.planet.muluna.muluna-recipe")
-require("prototypes.planet.muluna.muluna-building")
-
-require("prototypes.planet.panglia.panglia-groups")
-require("prototypes.planet.panglia.panglia-recipe")
-
-require("prototypes.planet.frozeta.frozeta-groups")
-require("prototypes.planet.frozeta.frozeta-recipe")
-
-require("prototypes.planet.terrapalus.terrapalus-groups")
-require("prototypes.planet.terrapalus.terrapalus-recipe")
-
-require("prototypes.planet.lignumis.lignumis-groups")
-require("prototypes.planet.lignumis.lignumis-recipe")
-require("prototypes.planet.lignumis.lignumis-building")
-
--- OTHER STAR SYSTEMS
-require("prototypes.planet.bellicos-aegis.bellicos-aegis-groups")
-require("prototypes.planet.bellicos-aegis.bellicos-aegis-item-fluid")
-require("prototypes.planet.bellicos-aegis.bellicos-aegis-recipe")
-require("prototypes.planet.bellicos-aegis.bellicos-aegis-technology")
-
--- FINAL CIRCLE PLANET
-require("prototypes.planet.shattered.shattered-groups")
-require("prototypes.planet.shattered.shattered-recipe")
-require("prototypes.planet.shattered.shattered-technology")
+require("prototypes.planet.planet-groups")
+require("prototypes.planet.planet-item-fluid")
+require("prototypes.planet.planet-resource")
+require("prototypes.planet.planet-recipe")
+require("prototypes.planet.planet-building")
+require("prototypes.planet.planet-technology")
 
 -- ???
 --require("prototypes.planet.rubia.rubia-groups")

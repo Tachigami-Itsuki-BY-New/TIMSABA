@@ -1,4 +1,3 @@
--- ШАГ 1: Обрабатывает технологии, округляет время и стоимость
 local base_costs = {}
 
 for _, tech in pairs(data_technology) do
@@ -197,7 +196,7 @@ if mods[lignumis_mods] then
 end
 
 -- BELLICOS AEGIS
-if mods[bellicos_aegis_mods] then
+if mods[aegis_bellicos_mods] then
     TIMSABA.functions.auto_added_science_pack(lightweight_science_pack, lightweight_science_pack)
     TIMSABA.functions.auto_added_science_pack(pulsar_science_pack, pulsar_science_pack)
 end

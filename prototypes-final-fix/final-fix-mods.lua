@@ -1,10 +1,8 @@
--- LOGISTICS
+-- BASE
 data_recipe[T1_transport_belt].enabled = false
 
--- ADVANCED LOGISTICS
 data_lamp[small_lamp].next_upgrade = nil
 
--- COMBAT
 if mods[bobwarfare] then
     data_recipe["bob-gun-cotton"].ingredients =
     {
@@ -13,6 +11,22 @@ if mods[bobwarfare] then
         {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
 end
+
+-- BOBS FIX
+if mods[bobwarfare] then
+    data_fluid[nitroglycerin_bob].subgroup = is_explosives
+    data_fluid[nitroglycerin_bob].order = d
+    data_recipe[nitroglycerin_bob].subgroup = is_explosives
+    data_recipe[nitroglycerin_bob].order = d
+    data_recipe[nitroglycerin_bob].ingredients =
+    {
+        {type = fluid, name = glycerol_angels, amount = 30},
+        {type = fluid, name = nitric_acid_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
+    }
+end
+
+data_recipe[lithium_perchlorate_bob].category = angels_liquifying
 
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
@@ -67,6 +81,12 @@ data_recipe[tin_cable].hidden = false
 data_recipe[tin_cable].hidden_in_factoriopedia = false
 data_fluid[manganese_molten_angels].hidden = false
 data_fluid[manganese_molten_angels].hidden_in_factoriopedia = false
+data_recipe[nickel_plate_bob].category = smelting
+data_recipe[nickel_plate_bob].hidden = false
+data_recipe[nickel_plate_bob].hidden_in_factoriopedia = false
+data_recipe[zinc_plate_bob].category = smelting
+data_recipe[zinc_plate_bob].hidden = false
+data_recipe[zinc_plate_bob].hidden_in_factoriopedia = false
 data_item[gold_cable].hidden = false
 data_item[gold_cable].hidden_in_factoriopedia = false
 data_recipe[gold_cable].hidden = false
@@ -79,22 +99,6 @@ data_recipe[solder_molten_angels].hidden = false
 data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 
 data_item[nuclear_fuel].fuel_category = transport_fuel
-
--- BOBS FIX
-if mods[bobwarfare] then
-    data_fluid[nitroglycerin_bob].subgroup = is_explosives
-    data_fluid[nitroglycerin_bob].order = d
-    data_recipe[nitroglycerin_bob].subgroup = is_explosives
-    data_recipe[nitroglycerin_bob].order = d
-    data_recipe[nitroglycerin_bob].ingredients =
-    {
-        {type = fluid, name = glycerol_angels, amount = 30},
-        {type = fluid, name = nitric_acid_angels, amount = 30},
-        {type = fluid, name = sulfuric_acid_angels, amount = 30}
-    }
-end
-
-data_recipe[lithium_perchlorate_bob].category = angels_liquifying
 
 -- SPACE AGE
 data_armor[mech_armor].resistances =
@@ -551,14 +555,14 @@ if mods[hyarion_mods] then
     bobmods.lib.recipe.update_recycling_recipe({lamp_post})
 
     -- SPACE
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, planet_hyarion)
     else
         data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, beryllium_plate_hyarion)
     end
     data_recipe[rocket_part_hyarion].order = b_h
     data_recipe[rocket_part_hyarion].energy_required = 4
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_recipe[rocket_part_hyarion].ingredients =
         {
             {type = item, name = low_density_structure, amount = 4},
@@ -850,6 +854,8 @@ if mods[lignumis_mods] then
 
     data_technology[tech_tree_seeding].unit.ingredients = {{wood_science_pack, 1}}
 
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = lead_plate_bob})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = tin_plate_bob})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = steam_science_pack .. "-" .. steam})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = wood_liquefaction .. "-" .. steam})
 
@@ -898,7 +904,7 @@ if mods[lignumis_mods] then
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
 end
 
-if mods[bellicos_aegis_mods] then
+if mods[aegis_bellicos_mods] then
     data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, vulcanus_transport_belt}
 
     if mods[arig_mods] then
@@ -923,7 +929,7 @@ if mods[bellicos_aegis_mods] then
     }
 end
 
-if mods[bellicos_aegis_mods] and mods[muluna_mods] then
+if mods[aegis_bellicos_mods] and mods[muluna_mods] then
     data_technology[tech_asteroid_productivity].effects =
     {
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
@@ -952,7 +958,7 @@ if mods[bellicos_aegis_mods] and mods[muluna_mods] then
         {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
     }
-elseif mods[bellicos_aegis_mods] and not mods[muluna_mods] then
+elseif mods[aegis_bellicos_mods] and not mods[muluna_mods] then
     data_technology[tech_asteroid_productivity].effects =
     {
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},

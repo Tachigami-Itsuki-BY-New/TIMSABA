@@ -300,7 +300,8 @@ if mods[hyarion_mods] then
     data_item[beryllium_plate_hyarion].order = f
     data_item[beryllium_plate_hyarion].stack_size = 200
     data_recipe[beryllium_plate_hyarion].subgroup = is_hyarion_recipe_other
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
+        data_recipe[beryllium_plate_hyarion].localised_name = {"item-name." .. beryllium_plate}
         data_recipe[beryllium_plate_hyarion].icons = FOUR_D_I(beryl, nil, nil, nil, beryllium_plate, aluminium_oxide, raw_quartz_arig, oxygen_angels)
     else
         data_recipe[beryllium_plate_hyarion].icons = FOUR_D_I(beryl, nil, nil, nil, beryllium_plate_hyarion, aluminium_oxide, raw_quartz_arig, oxygen_angels)
@@ -870,6 +871,10 @@ if mods[hyarion_mods] then
 
     local tech_beryllium_processing = "planetaris-beryllium-processing"
     rocket_part_hyarion = "planetaris-hyarion-rocket-part"
+    if mods[aegis_bellicos_mods] then
+        data_technology[tech_beryllium_processing].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
+        data_technology[tech_beryllium_processing].icon_size = 64
+    end
     table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = carbon_nanotube_hyarion})
     table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = rocket_part_hyarion})
     data_technology[tech_beryllium_processing].unit.ingredients =
