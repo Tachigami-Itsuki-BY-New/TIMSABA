@@ -56,9 +56,6 @@ if mods[bobmodules] then
     -- AGRICULTURAL
     local graphics_agricultural_module_tech = "__TIMSABA__/graphics/icons/bobs/modules/technology/agricultural/agricultural"
 
-    data_technology[agricultural_module_1].icon = graphics_agricultural_module_tech .. "-1.png"
-    data_technology[agricultural_module_2].icon = graphics_agricultural_module_tech .. "-2.png"
-    data_technology[agricultural_module_3].icon = graphics_agricultural_module_tech .. "-3.png"
     data_technology[agricultural_module_4].icon = graphics_agricultural_module_tech .. "-4.png"
     data_technology[agricultural_module_5].icon = graphics_agricultural_module_tech .. "-5.png"
 end

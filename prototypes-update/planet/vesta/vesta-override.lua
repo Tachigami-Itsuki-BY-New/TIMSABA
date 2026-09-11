@@ -490,7 +490,7 @@ if mods[vesta_mods] then
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
     table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_full_asteroid_processing)
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         table.insert(data_technology[planet_discovery_vesta].prerequisites, pulsar_science_pack)
     end
     data_technology[planet_discovery_vesta].effects =
@@ -589,11 +589,23 @@ if mods[vesta_mods] then
     add_recipe_for_ore_to_plate(titanium_plate_bob .. _burning)
     add_recipe_for_ore_to_plate(gold_plate_bob .. _burning)
     add_recipe_for_ore_to_plate(platinum_plate .. _burning)
+    add_recipe_for_ore_to_plate(bronze_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(brass_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(gunmetal_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(invar_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(cobalt_steel_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(nitinol_plate_bob .. _burning)
     add_recipe_for_ore_to_plate(holmium_plate .. _burning)
     add_recipe_for_ore_to_plate(antimony_plate .. _burning)
     add_recipe_for_ore_to_plate(germanium_plate .. _burning)
     if mods[shchierbin_mods] then
         add_recipe_for_ore_to_plate(vanadium_plate .. _burning)
+        add_recipe_for_ore_to_plate(vanadium_steel_plate .. _burning)
+        add_recipe_for_ore_to_plate(titanium_aluminium_vanadium_plate .. _burning)
+    end
+    if mods[aegis_bellicos_mods] then
+        add_recipe_for_ore_to_plate(beryllium_plate .. _burning)
+        add_recipe_for_ore_to_plate(beryllium_bronze_plate .. _burning)
     end
     data_technology[tech_ore_to_plate].unit.ingredients =
     {

@@ -330,3 +330,8 @@ TIMSABA.functions.create_recipes
         main_product = lithium_bob
     }
 })
+
+require("prototypes.space-age.vulcanus.vulcanus-recipe")
+require("prototypes.space-age.gleba.gleba-recipe")
+require("prototypes.space-age.fulgora.fulgora-recipe")
+require("prototypes.space-age.aquilo.aquilo-recipe")

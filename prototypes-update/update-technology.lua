@@ -279,19 +279,31 @@ replace_prerequisites(tech_strand_casting_4, tech_tungsten_processing, tech_tung
 replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
 
 -- INTERMEDIATE PRODUCTS
+data_technology[tech_bronze_processing].icons = nil
+data_technology[tech_bronze_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-bronze-alloy.png"
+data_technology[tech_bronze_processing].icon_size = 64
 if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _straight})
     table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _elbow})
     table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _junction})
 end
 
+data_technology[tech_steel_processing].icons = nil
+data_technology[tech_steel_processing].icon = "__base__/graphics/icons/steel-plate.png"
+data_technology[tech_steel_processing].icon_size = 64
 if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _straight})
     table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _elbow})
     table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _junction})
 end
 
+data_technology[tech_silicon_processing].icons = nil
+data_technology[tech_silicon_processing].icon = "__reskins-library__/graphics/icons/shared/items/silicon-wafer.png"
+data_technology[tech_silicon_processing].icon_size = 64
+
 plastic_angels = "angels-solid-plastic"
+data_technology[tech_plastic_processing].icon = "__base__/graphics/icons/plastic-bar.png"
+data_technology[tech_plastic_processing].icon_size = 64
 data_technology[tech_plastic_processing].effects =
 {
     {type = unlock_recipe, recipe = plastic_angels},
@@ -304,6 +316,8 @@ if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_plastic_processing].effects, {type = unlock_recipe, recipe = plastic_pipe .. _junction})
 end
 
+data_technology[tech_brass_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-brass-alloy.png"
+data_technology[tech_brass_processing].icon_size = 64
 data_technology[tech_brass_processing].prerequisites = {tech_brass_smelting_1, lubricant}
 data_technology[tech_brass_processing].effects =
 {
@@ -319,6 +333,13 @@ if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_brass_processing].effects, {type = unlock_recipe, recipe = brass_pipe .. _junction})
 end
 
+data_technology[tech_cobalt_processing].icons = nil
+data_technology[tech_cobalt_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-cobalt-steel-alloy.png"
+data_technology[tech_cobalt_processing].icon_size = 64
+
+data_technology[tech_ceramics].icons = nil
+data_technology[tech_ceramics].icon = "__reskins-bobs__/graphics/icons/plates/powders/bob-silicon-nitride.png"
+data_technology[tech_ceramics].icon_size = 64
 data_technology[tech_ceramics].prerequisites = {chemical_science_pack, lubricant}
 data_technology[tech_ceramics].effects =
 {
@@ -341,6 +362,9 @@ data_technology[tech_ceramics].unit.ingredients =
     {chemical_science_pack, 1}
 }
 
+data_technology[tech_titanium_processing].icons = nil
+data_technology[tech_titanium_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-titanium.png"
+data_technology[tech_titanium_processing].icon_size = 64
 data_technology[tech_titanium_processing].effects =
 {
     {type = unlock_recipe, recipe = titanium_gear_wheel},
@@ -355,6 +379,9 @@ if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_titanium_processing].effects, {type = unlock_recipe, recipe = titanium_pipe .. _junction})
 end
 
+data_technology[tech_tungsten_processing].icons = nil
+data_technology[tech_tungsten_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-tungsten.png"
+data_technology[tech_tungsten_processing].icon_size = 64
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
 data_technology[tech_tungsten_processing].effects =
 {
@@ -371,6 +398,12 @@ if settings.startup[setting_flow_control_new].value then
 end
 table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_carbide_plate_2})
 
+data_technology[tech_tungsten_alloy_processing].icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-copper-tungsten-alloy.png"
+data_technology[tech_tungsten_alloy_processing].icon_size = 64
+
+data_technology[tech_nitinol_processing].icons = nil
+data_technology[tech_nitinol_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-nitinol-alloy.png"
+data_technology[tech_nitinol_processing].icon_size = 64
 data_technology[tech_nitinol_processing].effects =
 {
     {type = unlock_recipe, recipe = nitinol_gear_wheel},
@@ -1161,6 +1194,7 @@ data_technology[tech_platinum_smelting_3].effects =
 
 -- LITHIUM
 algae_brown_lithium_chloride = "angels-algae-brown-burning"
+data_technology[tech_lithium_processing].icons = TIMSABA.functions.create_gas_tech_icon("LiLiLi")
 data_technology[tech_lithium_processing].effects =
 {
     {type = unlock_recipe, recipe = lithium_chloride_angels},
@@ -1516,6 +1550,7 @@ data_technology[tech_nitrogen_processing_4].effects =
 sodium_sulfate_solution_electrolysis = "angels-solid-sodium-sulfate-separation"
 sodium_chloride_solution_electrolysis = "angels-solid-salt-separation"
 sodium_hypochlorite_decomposition = "angels-solid-sodium-hypochlorite-decomposition"
+data_technology[tech_sodium_processing_1].icons = TIMSABA.functions.create_gas_tech_icon("NaNaNa")
 data_technology[tech_sodium_processing_1].effects =
 {
     {type = unlock_recipe, recipe = sodium_sulfate_solution_electrolysis},
@@ -1531,6 +1566,7 @@ data_technology[tech_sodium_processing_1].effects =
 
 sodium_hydroxide_solution_reverse = "angels-liquid-aqueous-sodium-hydroxide-reverse"
 sodium_carbonate_solution_electrolysis = "angels-solid-sodium-carbonate-electrolysis"
+data_technology[tech_sodium_processing_2].icons = TIMSABA.functions.create_gas_tech_icon("NaNaNa")
 data_technology[tech_sodium_processing_2].effects =
 {
     {type = unlock_recipe, recipe = sodium_angels},

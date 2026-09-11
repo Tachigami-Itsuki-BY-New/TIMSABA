@@ -1,4 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.7
+Date: 11.09.2026
+  Features:
+    - [Lignumis] Added new recipes:
+        1. Powellite Ore Sorting.
+        2. Molybdenite Ore Sorting.
+    - [Castra] Added new recipe:
+        1. Nickel Powder (from Nickel Ore).
+        2. Nickel Plate (from Nickel Powder).
+        3. Nickel Plate (from Crushed Millerite).
+    - [Paracelsin] Added new recipe: Zinc Plate (from Crushed Sphalerite).
+    - [Vesta] Added new "Hydrogen-Oxygen Combustion" recipes.
+    - [Mods] Added new technologies.
+
+  Bugfixes:
+    - [All] Minor bugs fixed.
+
+  Balancing:
+    - [Mods] Made minor balance adjustments.
+
+  Graphics:
+    - [All] Updated some icons.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.6
 Date: 10.09.2026
   Bugfixes:

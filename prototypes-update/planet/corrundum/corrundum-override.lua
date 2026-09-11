@@ -483,27 +483,6 @@ if mods[corrundum_mods] then
     data_lab[pressure_lab].module_slots = 4
     data_lab[pressure_lab].energy_usage = 480 .. kW
 
-    local platinum_thruster = "platinum-thruster"
-    data_item[platinum_thruster].subgroup = is_corrundum_building
-    data_item[platinum_thruster].order = f
-    data_item[platinum_thruster].stack_size = 8
-    data_item[platinum_thruster].weight = 125000
-    data_recipe[platinum_thruster].subgroup = is_corrundum_building
-    data_recipe[platinum_thruster].order = f
-    data_recipe[platinum_thruster].energy_required = 8
-    data_recipe[platinum_thruster].ingredients =
-    {
-        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
-        {type = item, name = niobium_iron_bearing, amount = 8},
-        {type = item, name = heat_shielding_tile, amount = 16},
-        {type = item, name = advanced_processing_unit, amount = 8},
-        {type = item, name = platinum_plate, amount = 8}
-    }
-    data_thruster[platinum_thruster].subgroup = is_corrundum_building
-    data_thruster[platinum_thruster].order = f
-    data_thruster[platinum_thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.5, effectivity = 0.2}
-    data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
-
     -- WAR
     local blue_rocket = "blue-rocket"
     data_ammo[blue_rocket].subgroup = is_corrundum_war
@@ -534,7 +513,6 @@ if mods[corrundum_mods] then
         red_steam_engine,
         catalytic_chemical_plant,
         pressure_lab,
-        platinum_thruster,
         sulfur_poison_capsule
     })
 
@@ -556,25 +534,48 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology["rocket-fuel-catalysis-productivity-infinite"].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1}
-    }
+    data_technology[catalytic_chemical_plant].prerequisites = {planet_discovery_corrundum}
 
-    data_technology["platinum-processing"].effects =
+    data_technology[electrochemical_science_pack].prerequisites = {catalytic_chemical_plant}
+
+    tech_platinum_processing = "platinum-processing"
+    data_technology[tech_platinum_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-platinum.png"
+    data_technology[tech_platinum_processing].icon_size = 64
+    data_technology[tech_platinum_processing].prerequisites = {electrochemical_science_pack}
+    data_technology[tech_platinum_processing].effects =
     {
         {type = unlock_recipe, recipe = platinum_powder_corrundum},
         {type = unlock_recipe, recipe = platinum_plate_mods}
     }
+    data_technology[tech_platinum_processing].research_trigger = nil
+    data_technology[tech_platinum_processing].unit =
+    {
+        count = 4000,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1}
+        },
+        time = 30
+    }
 
-    data_technology["sulfate-processing-2"].effects = {}
+    local tech_sulfur_redox1 = "sulfur-redox1"
+    data_technology[tech_sulfur_redox1].prerequisites = {electrochemical_science_pack}
 
+    local tech_sulfur_redox2 = "sulfur-redox2"
+    data_technology[tech_sulfur_redox2].prerequisites = {tech_sulfur_redox1}
+
+    local tech_sulfate_processing_1 = "sulfate-processing-1"
+    data_technology[tech_sulfate_processing_1].prerequisites = {tech_sulfur_redox2}
+
+    data_technology[calcium_sulfate_mods].prerequisites = {tech_sulfate_processing_1}
     data_technology[calcium_sulfate_mods].effects = {{type = unlock_recipe, recipe = calcium_sulfate_mods}}
     data_technology[calcium_sulfate_mods].unit.ingredients =
     {
@@ -587,7 +588,9 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology["asphalt-and-concrete"].unit.ingredients =
+    local tech_asphalt_and_concrete = "asphalt-and-" .. concrete
+    data_technology[tech_asphalt_and_concrete].prerequisites = {calcium_sulfate_mods}
+    data_technology[tech_asphalt_and_concrete].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -598,6 +601,7 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
+    data_technology[calcium_sulfate_mods.. "-" .. nutrients].prerequisites = {calcium_sulfate_mods}
     data_technology[calcium_sulfate_mods.. "-" .. nutrients].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -610,6 +614,7 @@ if mods[corrundum_mods] then
         {agricultural_science_pack, 1}
     }
 
+    data_technology[pressure_lab].prerequisites = {tech_sulfate_processing_1, tech_platinum_processing}
     data_technology[pressure_lab].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -621,6 +626,7 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
+    data_technology[sulfonated_plastic].prerequisites = {tech_sulfate_processing_1}
     data_technology[sulfonated_plastic].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -675,6 +681,18 @@ if mods[corrundum_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1}
     }
+
+    data_technology["rocket-fuel-catalysis-productivity-infinite"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
     if mods[hyarion_mods] then
         table.insert(data_technology[tech_selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
     end

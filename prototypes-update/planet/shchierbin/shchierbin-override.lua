@@ -275,6 +275,8 @@ if mods[shchierbin_mods] then
         {agricultural_science_pack, 1}
     }
 
+    data_technology["calcium-processing"].icons = TIMSABA.functions.create_gas_tech_icon("CaCaCa")
+
     local tech_natural_gas_processing = "natural-gas-processing"
     data_technology[tech_natural_gas_processing].icon = nil
     data_technology[tech_natural_gas_processing].icons = data_technology[tech_basic_chemistry_1].icons
@@ -289,7 +291,9 @@ if mods[shchierbin_mods] then
 
     data_technology[vanadium_science_pack].prerequisites = {tech_natural_gas_processing, tech_chlorine_processing, tech_vanadium_smelting_1}
 
-    data_technology[vanadium_steel_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/technology/vanadium-steel-processing.png"
+    data_technology[vanadium_steel_plate].icon = "__shchierbin__/graphics/item/vanadium-steel-plate.png"
+    --data_technology[vanadium_steel_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/technology/vanadium-steel-processing.png"
+    data_technology[vanadium_steel_plate].icon_size = 64
     table.insert(data_technology[vanadium_steel_plate].prerequisites, tech_vulcanus_metallurgic)
     data_technology[vanadium_steel_plate].effects =
     {

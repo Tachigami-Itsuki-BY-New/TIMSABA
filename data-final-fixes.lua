@@ -42,7 +42,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.terrapalus")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.lignumis")
 
 -- OTHER STAR SYSTEMS
-require("prototypes-final-fix.duplicate-items-and-fluids.planet.bellicos-aegis")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.aegis-bellicos")
 
 -- FINAL CIRCLE PLANETS
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.shattered")

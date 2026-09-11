@@ -187,8 +187,6 @@ if mods[secretas_frozeta_mods] then
     {
         {type = unlock_recipe, recipe = steam_recycler},
         {type = unlock_recipe, recipe = spaceship_scrap_recycling},
-        {type = unlock_recipe, recipe = gold_powder_frozeta},
-        {type = unlock_recipe, recipe = gold_plate_mods},
         {type = unlock_recipe, recipe = solid_fuel_liquefaction},
         {type = unlock_recipe, recipe = golden_biter_egg}
     }

@@ -633,7 +633,7 @@ if mods[lignumis_mods] then
 end
 
 -- BELLICOS AEGIS
-if mods[bellicos_aegis_mods] then
+if mods[aegis_bellicos_mods] then
     if not data_fluid[helium_vesta] then
         data_fluid[helium].icon = graphics_vesta .. helium_vesta .. ".png"
         data_fluid[helium].base_color = TIMSABA.functions.fluid_color("HeHeHe")
