@@ -430,7 +430,7 @@ if mods[arig_mods] then
 
     data_item[hyper_transport_belt_arig].stack_size = 200
     data_recipe[hyper_transport_belt_arig].energy_required = 0.5
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_recipe[hyper_transport_belt_arig].ingredients =
         {
             {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
@@ -454,7 +454,7 @@ if mods[arig_mods] then
     data_item[hyper_underground_belt_arig].stack_size = 32
     data_item[hyper_underground_belt_arig].weight = 31250
     data_recipe[hyper_underground_belt_arig].energy_required = 1
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_recipe[hyper_underground_belt_arig].ingredients =
         {
             {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
@@ -481,7 +481,7 @@ if mods[arig_mods] then
     data_item[hyper_splitter_arig].stack_size = 16
     data_item[hyper_splitter_arig].weight = 62500
     data_recipe[hyper_splitter_arig].energy_required = 1
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_recipe[hyper_splitter_arig].ingredients =
         {
             {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
@@ -891,6 +891,8 @@ if mods[arig_mods] then
         {metallurgic_science_pack, 1}
     }
 
+    data_technology[silica_arig .. _processing].icon = data_item[silica_arig].icon
+    data_technology[silica_arig .. _processing].icon_size = 64
     data_technology[silica_arig .. _processing].unit.ingredients =
     {
         {automation_science_pack, 1},

@@ -426,6 +426,7 @@ function TIMSABA.functions.create_items(list)
                 weight = items.weight or 5000,
 
                 place_result = items.place_result,
+                place_as_tile = items.place_as_tile,
 
                 drop_sound = items.drop_sound,
                 inventory_move_sound = items.inventory_move_sound,
@@ -1066,7 +1067,7 @@ function TIMSABA.functions.create_resource(resource_parameters, autoplace_parame
     return
     {
         localised_description = {"entity-description." .. resource_parameters.name},
-        factoriopedia_description = resource_parameters.factoriopedia_description,
+        factoriopedia_description = resource_parameters.factoriopedia_description or "",
         type = resource,
         name = resource_parameters.name,
         subgroup = resource_parameters.subgroup,

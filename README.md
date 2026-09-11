@@ -28,6 +28,7 @@ TIMSABA.functions.create_items
         weight = items.weight or 5000,
 
         place_result = items.place_result,
+        place_as_tile = items.place_as_tile,
 
         drop_sound = items.drop_sound,
         inventory_move_sound = items.inventory_move_sound,

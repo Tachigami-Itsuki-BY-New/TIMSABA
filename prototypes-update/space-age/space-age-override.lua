@@ -195,49 +195,6 @@ data_asteroid_collector[asteroid_collector].passive_energy_usage = 250 .. J
 data_asteroid_collector[asteroid_collector].arm_energy_usage = 500 .. J
 data_asteroid_collector[asteroid_collector].arm_slow_energy_usage = 750 .. J
 
-data_item[crusher].order = e
-data_item[crusher].stack_size = 32
-data_item[crusher].weight = 31250
-data_recipe[crusher].order = e
-data_recipe[crusher].energy_required = 8
-data_recipe[crusher].ingredients =
-{
-    {type = item, name = electric_engine_unit, amount = 8},
-    {type = item, name = low_density_structure, amount = 16},
-    {type = item, name = molybdenum_rhenium_plate, amount = 8}
-}
-data_assembling[crusher].order = e
-data_assembling[crusher].energy_usage = 465 .. kW
-data_assembling[crusher].energy_source.drain = drain .. kW
-
-local thruster = "thruster"
-data_item[thruster].order = g
-data_item[thruster].stack_size = 8
-data_item[thruster].weight = 125000
-data_recipe[thruster].order = g
-data_recipe[thruster].energy_required = 8
-data_recipe[thruster].ingredients =
-{
-    {type = item, name = molybdenum_gear_wheel, amount = 4},
-    {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = heat_shielding_tile, amount = 16},
-    {type = item, name = rhenium_bearing, amount = 8},
-    {type = item, name = molybdenum_rhenium_pipe, amount = 8}
-}
-data_thruster[thruster].order = g
-data_thruster[thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.125, effectivity = 1}
-data_thruster[thruster].max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.51}
-
-bobmods.lib.recipe.update_recycling_recipe
-({
-    rocket_silo,
-    cargo_landing_pad,
-    space_platform_foundation,
-    cargo_bay,
-    asteroid_collector,
-    thruster,
-})
-
 if mods[panglia_mods] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
@@ -271,6 +228,76 @@ if mods[panglia_mods] then
     data_asteroid_collector[asteroid_collector_2].arm_energy_usage = 1000 .. J
     data_asteroid_collector[asteroid_collector_2].arm_slow_energy_usage = 1500 .. J
 
+    bobmods.lib.recipe.update_recycling_recipe({asteroid_collector_2})
+end
+
+data_item[crusher].order = f
+data_item[crusher].stack_size = 32
+data_item[crusher].weight = 31250
+data_recipe[crusher].order = f
+data_recipe[crusher].energy_required = 8
+data_recipe[crusher].ingredients =
+{
+    {type = item, name = electric_engine_unit, amount = 8},
+    {type = item, name = low_density_structure, amount = 16},
+    {type = item, name = molybdenum_rhenium_plate, amount = 8}
+}
+data_assembling[crusher].order = f
+data_assembling[crusher].energy_usage = 465 .. kW
+data_assembling[crusher].energy_source.drain = drain .. kW
+
+local thruster = "thruster"
+data_item[thruster].order = g
+data_item[thruster].stack_size = 8
+data_item[thruster].weight = 125000
+data_recipe[thruster].order = g
+data_recipe[thruster].energy_required = 8
+data_recipe[thruster].ingredients =
+{
+    {type = item, name = molybdenum_gear_wheel, amount = 4},
+    {type = item, name = advanced_processing_unit, amount = 8},
+    {type = item, name = heat_shielding_tile, amount = 16},
+    {type = item, name = rhenium_bearing, amount = 8},
+    {type = item, name = molybdenum_rhenium_pipe, amount = 8}
+}
+data_thruster[thruster].order = g
+data_thruster[thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.125, effectivity = 1}
+data_thruster[thruster].max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.51}
+
+if mods[corrundum_mods] then
+    data_item[platinum_thruster].subgroup = space_platform
+    data_item[platinum_thruster].order = h
+    data_item[platinum_thruster].stack_size = 8
+    data_item[platinum_thruster].weight = 125000
+    data_recipe[platinum_thruster].subgroup = space_platform
+    data_recipe[platinum_thruster].order = h
+    data_recipe[platinum_thruster].energy_required = 8
+    data_recipe[platinum_thruster].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
+        {type = item, name = niobium_iron_bearing, amount = 8},
+        {type = item, name = heat_shielding_tile, amount = 16},
+        {type = item, name = advanced_processing_unit, amount = 8},
+        {type = item, name = platinum_plate, amount = 8},
+        {type = item, name = thruster, amount = 1}
+    }
+    data_thruster[platinum_thruster].subgroup = space_platform
+    data_thruster[platinum_thruster].order = h
+    data_thruster[platinum_thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.5, effectivity = 0.2}
+    data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
+end
+
+bobmods.lib.recipe.update_recycling_recipe
+({
+    rocket_silo,
+    cargo_landing_pad,
+    space_platform_foundation,
+    cargo_bay,
+    asteroid_collector,
+    thruster,
+})
+
+if mods[panglia_mods] then
     local spaceship_wall = "snouz_wall_hull"
     data_item[spaceship_wall].subgroup = is_space_platform_mods
     data_item[spaceship_wall].order = a
@@ -287,11 +314,7 @@ if mods[panglia_mods] then
     data_wall[spaceship_wall].subgroup = is_space_platform_mods
     data_wall[spaceship_wall].order = a
 
-    bobmods.lib.recipe.update_recycling_recipe
-    ({
-        asteroid_collector_2,
-        spaceship_wall
-    })
+    bobmods.lib.recipe.update_recycling_recipe({spaceship_wall})
 
     data_technology[spaceship_wall].unit.ingredients =
     {
@@ -674,7 +697,7 @@ if mods[secretas_frozeta_mods] then
     data_recipe[auric_asteroid_crushing].results = {{type = item, name = gold_ore_bob, amount = 16}}
 end
 
-if mods[bellicos_aegis_mods] then
+if mods[aegis_bellicos_mods] then
     local beryllium_asteroid_chunk = "metallic_dense-asteroid-chunk"
     beryllium_asteroid_crushing = "metallic_dense-asteroid-crushing"
     local beryllium_asteroids =

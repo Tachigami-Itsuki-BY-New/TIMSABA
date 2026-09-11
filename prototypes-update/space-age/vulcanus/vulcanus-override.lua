@@ -1,3 +1,18 @@
+-- WOLFRAMITE
+local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
+data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
+data_item[wolframite_ore].localised_description = {"item-description.wolframite-ore"}
+data_item[wolframite_ore].subgroup = is_vulcanus_wolframite
+data_item[wolframite_ore].order = a
+data_item[wolframite_ore].stack_size = 200
+data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
+data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
+data_resource[wolframite_ore].factoriopedia_description = ""
+data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
+data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
+data_resource[wolframite_ore].order = a
+data_resource[wolframite_ore].minable.mining_time = 4
+
 -- LAVA
 data_fluid[lava].subgroup = is_lava
 data_fluid[lava].order = a
@@ -209,32 +224,18 @@ data_recipe[carbon].results =
 }
 data_recipe[carbon].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
-local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
--- WOLFRAMITE
-data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
-data_item[wolframite_ore].localised_description = {"item-description.wolframite-ore"}
-data_item[wolframite_ore].subgroup = is_vulcanus_wolframite
-data_item[wolframite_ore].order = a
-data_item[wolframite_ore].stack_size = 200
-data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
-data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
-data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
-data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
-data_resource[wolframite_ore].order = a
-data_resource[wolframite_ore].minable.mining_time = 4
-
 -- TUNGSTEN
 data_recipe[tungsten_carbide].category = sintering_6
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_carbide].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
 data_recipe[tungsten_carbide].order = b
-data_recipe[tungsten_carbide].energy_required = 4
+data_recipe[tungsten_carbide].energy_required = 1
 data_recipe[tungsten_carbide].ingredients =
 {
-    {type = item, name = tungsten_powder, amount = 16},
-    {type = item, name = carbon_angels, amount = 16}
+    {type = item, name = tungsten_powder, amount = 1},
+    {type = item, name = carbon_angels, amount = 1}
 }
-data_recipe[tungsten_carbide].results[1].amount = 16
+data_recipe[tungsten_carbide].results[1].amount = 1
 data_recipe[tungsten_carbide].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[tungsten_plate].localised_name = data_item[tungsten_plate_bob].localised_name
@@ -242,9 +243,9 @@ data_recipe[tungsten_plate].category = sintering_6
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = c
-data_recipe[tungsten_plate].energy_required = 4
-data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 16}}
-data_recipe[tungsten_plate].results[1].amount = 16
+data_recipe[tungsten_plate].energy_required = 1
+data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 1}}
+data_recipe[tungsten_plate].results[1].amount = 1
 data_recipe[tungsten_plate].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_tool[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
@@ -352,7 +353,7 @@ if mods[loaders_modernized_integrations] then
 end
 
 if mods[arig_mods] then
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
         data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
         data_splitter[vulcanus_splitter].next_upgrade = space_splitter
@@ -365,7 +366,7 @@ if mods[arig_mods] then
         data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
     end
 else
-    if mods[bellicos_aegis_mods] then
+    if mods[aegis_bellicos_mods] then
         data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
         data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
         data_splitter[vulcanus_splitter].next_upgrade = space_splitter
@@ -452,6 +453,8 @@ data_technology[planet_discovery_vulcanus].unit.ingredients =
     {space_science_pack, 1}
 }
 
+data_technology[tungsten_carbide].icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-tungsten-carbide.png"
+data_technology[tungsten_carbide].icon_size = 64
 data_technology[tungsten_carbide].prerequisites = {tech_wolframite_processing_1, tech_powder_metallurgy_6}
 data_technology[tungsten_carbide].effects =
 {
@@ -581,6 +584,10 @@ data_technology[foundry].research_trigger =
 if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[big_mining_drill].prerequisites = {foundry, tech_drills_6}
 end
+
+local tech_tungsten_steel = "tungsten-steel"
+data_technology[tech_tungsten_steel].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-tungsten.png"
+data_technology[tech_tungsten_steel].icon_size = 64
 
 data_technology[metallurgic_science_pack].research_trigger =
 {

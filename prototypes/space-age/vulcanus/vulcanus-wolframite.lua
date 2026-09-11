@@ -1,4 +1,4 @@
-local graphics_vulcanus = "__TIMSABA__/graphics/icons/space-age/vulcanus/"
+local graphics_vulcanus = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite/"
 
 -- Wolframite ore / W + Fe + Mn + Mg + Nb + Re
 wolframite_crushed = "wolframite-crushed"

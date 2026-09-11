@@ -12,7 +12,9 @@ is_ore_sorting_T4 = "angels-ore-sorting-t4"
 is_ore_sorting_advanced_1 = "angels-ore-sorting-advanced"
 is_ore_sorting_advanced_2 = "is-ore-sorting-advanced-2"
 is_ore_sorting_advanced_3 = "is-ore-sorting-advanced-3"
+is_iron_item = "is-iron-item"
 is_iron_fluid = "is-iron-fluid"
+is_copper_item = "is-copper-item"
 is_copper_fluid = "is-copper-fluid"
 is_ore_crusher = "is-ore-crusher"
 is_ore_crusher_angels = "angels-ore-crusher"
@@ -28,8 +30,10 @@ TIMSABA.functions.create_subgroups("angels-resource-refining",
 {
     {name = is_ore_sorting_advanced_2, order = c_f},
     {name = is_ore_sorting_advanced_3, order = c_g},
+    {name = is_iron_item,              order = h},
     {name = is_iron_fluid,             order = h_a},
-    {name = is_copper_fluid,           order = h_b},
+    {name = is_copper_item,            order = i},
+    {name = is_copper_fluid,           order = i_a},
     {name = is_ore_crusher,            order = z},
     {name = is_filtration_unit,        order = z_i},
     {name = is_crystallizer,           order = z_j}

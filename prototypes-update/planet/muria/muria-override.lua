@@ -525,11 +525,18 @@ if mods[muria_mods] then
 
     table.insert(data_technology["lichen-cultivation"].effects, {type = unlock_recipe, recipe = artificial_lichen_colony})
 
-    data_technology["lead-processing"].effects =
+    local tech_lead_processing = "lead-processing"
+    data_technology[tech_lead_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
+    data_technology[tech_lead_processing].icon_size = 64
+    data_technology[tech_lead_processing].effects =
     {
         {type = unlock_recipe, recipe = lead_powder_muria},
         {type = unlock_recipe, recipe = lead_plate_muria}
     }
+
+    local tech_advanced_lead_processing = "advanced-lead-processing"
+    data_technology[tech_advanced_lead_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
+    data_technology[tech_advanced_lead_processing].icon_size = 64
 
     data_technology[muriatic_science_pack].research_trigger =
     {
