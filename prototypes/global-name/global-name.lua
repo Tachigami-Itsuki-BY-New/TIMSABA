@@ -377,6 +377,8 @@ rocket_part =  "rocket-part"
 -- OTHERS
 _recycling = "-recycling"
 _barrel_recycling = "-barrel-recycling"
+_flaring = "-flaring"
+_incineration = "-incineration"
 _technology = "-technology"
 _smelting = "-smelting"
 _processing = "-processing"

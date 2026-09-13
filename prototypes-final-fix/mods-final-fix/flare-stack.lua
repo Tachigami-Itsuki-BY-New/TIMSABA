@@ -63,15 +63,7 @@ if mods["Flare Stack"] then
 
     if settings.startup["flare-stack-disable-incinerators"].value == false then
         local is_flare_stack = "is-flare-stack"
-        data:extend
-        ({
-            {
-                type = item_subgroup,
-                name = is_flare_stack,
-                group = "production",
-                order = z
-            }
-        })
+        TIMSABA.functions.create_subgroups(ig_production, {{name = is_flare_stack, order = z}})
 
         local incinerator = "incinerator"
         data_item[incinerator].subgroup = is_flare_stack

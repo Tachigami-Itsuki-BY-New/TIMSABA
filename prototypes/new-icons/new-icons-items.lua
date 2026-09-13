@@ -300,9 +300,9 @@ if mods[shchierbin_mods] then
 end
 
 -- VESTA
-if settings.startup[setting_vesta_legacy_recipes].value then
-    --data_item[iridium_plate_mods].icon = ""
-end
+--[[if settings.startup[setting_vesta_legacy_recipes].value then
+    data_item[iridium_plate_mods].icon = ""
+end]]
 
 -- PELAGOS
 if mods[pelagos_mods] then
