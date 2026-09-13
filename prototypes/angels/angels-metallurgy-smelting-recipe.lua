@@ -287,7 +287,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I,
-        category = angels_blast_smelting_4,
+        category = angels_chemical_smelting_4,
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
         order = e,
@@ -306,7 +306,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I_alt,
-        category = angels_chemical_smelting_4,
+        category = angels_advanced_chemistry,
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
         order = e_a,
