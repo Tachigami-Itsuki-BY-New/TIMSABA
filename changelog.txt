@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.8
+Date: 13.09.2026
+  Bugfixes:
+    - [Mods] Fixed bugs related to the Flare Stack mod.
+    - [All] Minor bugs fixed.
+
+  Locale:
+    - [All] Fixed bugs in the English localization.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.7
 Date: 11.09.2026
   Features:

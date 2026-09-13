@@ -626,6 +626,85 @@ function TIMSABA.functions.create_burner_buildings(list)
     end
 end
 
+local resource_autoplace = require("resource-autoplace")
+local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
+function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
+    return
+    {
+        localised_description = {"entity-description." .. resource_parameters.name},
+        factoriopedia_description = resource_parameters.factoriopedia_description or "",
+        type = resource,
+        name = resource_parameters.name,
+        subgroup = resource_parameters.subgroup,
+        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        order = resource_parameters.order,
+        category = resource_parameters.category,
+        minable = resource_parameters.minable or
+        {
+            mining_particle = resource_parameters.name .. _particle,
+            mining_time = 1,
+            result = resource_parameters.name
+        },
+        flags = {"placeable-neutral"},
+        tree_removal_probability = 0.8,
+        tree_removal_max_distance = 32 * 32,
+        walking_sound = base_tile_sounds.walking.ore,
+        collision_mask = resource_parameters.collision_mask,
+        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
+        autoplace = autoplace_parameters.probability_expression ~= nil and
+        {
+            order = resource_parameters.order,
+            probability_expression = autoplace_parameters.probability_expression,
+            richness_expression = autoplace_parameters.richness_expression
+        }
+            or resource_autoplace.resource_autoplace_settings
+        {
+            name = resource_parameters.name,
+            order = resource_parameters.order,
+            autoplace_control_name = resource_parameters.name,
+            base_density = autoplace_parameters.base_density,
+            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
+            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
+            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
+            candidate_spot_count = autoplace_parameters.candidate_spot_count,
+            tile_restriction = autoplace_parameters.tile_restriction
+        },
+        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+        stages =
+        {
+            sheet =
+            {
+                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+                priority = extra_high,
+                size = 128,
+                frame_count = 8,
+                variation_count = 8,
+                scale = 0.5
+            }
+        },
+        map_color = resource_parameters.map_color,
+        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
+        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
+    }
+end
+
+function TIMSABA.functions.create_autoplace_control(name)
+    data:extend
+    ({
+        {
+            localised_name = {"", "[entity=" .. name .. "] ", {"entity-name." .. name}},
+            type = autoplace_control,
+            name = name,
+            order = name,
+            category = resource,
+            richness = true,
+            can_be_disabled = true
+        }
+    })
+end
+
 -- REPLACE PROTOTYPES
 function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Ingredients and Results(main_product)
@@ -802,33 +881,26 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
             end
         end
     end
-    -- Projectiles and Streams (Фикс для Renai Transportation и боеприпасов)
+    -- Projectiles and Streams
     local projectile_types = {"stream", "projectile"}
     for _, proto_type in ipairs(projectile_types) do
         for _, proj in pairs(data.raw[proto_type] or {}) do
-            -- Проверяем триггеры и действия снаряда
             if proj.action then
-                -- Функция для рекурсивного поиска и замены/удаления сломанных ссылок в action
                 local function check_action_effects(effects)
                     if not effects then return end
                     for i = #effects, 1, -1 do
                         local effect = effects[i]
 
-                        -- Если снаряд создает сущность (например, мину при приземлении)
                         if effect.action_delivery then
-                            -- Рекурсивно идем вглубь структуры доставки
                             if effect.action_delivery.target_effects then
                                 check_action_effects(effect.action_delivery.target_effects)
                             end
                         end
 
-                        -- Проверка спавна сущности (то, на чем упал Renai Transportation)
                         if effect.type == "create-entity" or effect.type == "spawn-entity" then
                             local replace = replacements[effect.entity_name]
                             if replace then
                                 if replace == "nil" or replace == nil then
-                                    -- Если мина полностью удалена TIMSABA, вырезаем этот эффект, 
-                                    -- чтобы снаряд не пытался спавнить воздух
                                     table.remove(effects, i)
                                 else
                                     effect.entity_name = replace
@@ -838,11 +910,9 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
                     end
                 end
 
-                -- Запускаем проверку для эффектов внутри экшена снаряда
                 if proj.action.action_delivery then
                     check_action_effects(proj.action.action_delivery.target_effects)
                 elseif type(proj.action) == "table" then
-                    -- Если это массив экшенов
                     for _, act in ipairs(proj.action) do
                         if act.action_delivery then
                             check_action_effects(act.action_delivery.target_effects)
@@ -851,13 +921,10 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
                 end
             end
 
-            -- Проверка свойства "spawn_entity" (иногда используется напрямую в stream)
             if proj.spawn_entity then
                 local replace = replacements[proj.spawn_entity]
                 if replace then
                     if replace == "nil" or replace == nil then
-                        -- Если оригинальной сущности нет, этот стрим становится бесполезным.
-                        -- Чтобы не ломать assignID, подменяем на безопасную пустышку или удаляем
                         proj.spawn_entity = nil
                     else
                         proj.spawn_entity = replace
@@ -895,6 +962,8 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_item[RTThrower_ .. name .. _Item] then data_item[RTThrower_ .. name .. _Item] = nil end
         if data_recipe[name .. _recycling] then data_recipe[name .. _recycling] = nil end
         if data_recipe[name .. _barrel_recycling] then data_recipe[name .. _barrel_recycling] = nil end
+        if data_recipe[name .. _flaring] then data_recipe[name .. _flaring] = nil end
+        if data_recipe[name .. _incineration] then data_recipe[name .. _incineration] = nil end
         if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
         if data_recipe[item_ .. name .. _barrel_panglia_crushing] then data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil end
         if data_recipe[ammo_ .. name .. _panglia_crushing] then data_recipe[ammo_ .. name .. _panglia_crushing] = nil end
@@ -1059,83 +1128,4 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
             end
         end
     end
-end
-
-local resource_autoplace = require("resource-autoplace")
-local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
-function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
-    return
-    {
-        localised_description = {"entity-description." .. resource_parameters.name},
-        factoriopedia_description = resource_parameters.factoriopedia_description or "",
-        type = resource,
-        name = resource_parameters.name,
-        subgroup = resource_parameters.subgroup,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-        order = resource_parameters.order,
-        category = resource_parameters.category,
-        minable = resource_parameters.minable or
-        {
-            mining_particle = resource_parameters.name .. _particle,
-            mining_time = 1,
-            result = resource_parameters.name
-        },
-        flags = {"placeable-neutral"},
-        tree_removal_probability = 0.8,
-        tree_removal_max_distance = 32 * 32,
-        walking_sound = base_tile_sounds.walking.ore,
-        collision_mask = resource_parameters.collision_mask,
-        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
-        autoplace = autoplace_parameters.probability_expression ~= nil and
-        {
-            order = resource_parameters.order,
-            probability_expression = autoplace_parameters.probability_expression,
-            richness_expression = autoplace_parameters.richness_expression
-        }
-            or resource_autoplace.resource_autoplace_settings
-        {
-            name = resource_parameters.name,
-            order = resource_parameters.order,
-            autoplace_control_name = resource_parameters.name,
-            base_density = autoplace_parameters.base_density,
-            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
-            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
-            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
-            candidate_spot_count = autoplace_parameters.candidate_spot_count,
-            tile_restriction = autoplace_parameters.tile_restriction
-        },
-        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
-        stages =
-        {
-            sheet =
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-                priority = extra_high,
-                size = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5
-            }
-        },
-        map_color = resource_parameters.map_color,
-        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
-        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
-    }
-end
-
-function TIMSABA.functions.create_autoplace_control(name)
-    data:extend
-    ({
-        {
-            localised_name = {"", "[entity=" .. name .. "] ", {"entity-name." .. name}},
-            type = autoplace_control,
-            name = name,
-            order = name,
-            category = resource,
-            richness = true,
-            can_be_disabled = true
-        }
-    })
 end
