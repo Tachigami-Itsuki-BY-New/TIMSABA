@@ -8,7 +8,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = crushed_stone_sorting_1,
-        category = angels_ore_sorting_1,
+        categories = {angels_ore_sorting_1},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_1),
         order = f_a,
@@ -17,16 +17,16 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
         {
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
         },
         main_product = calcium
     },
     {
         name = crushed_stone_sorting_2,
-        category = angels_ore_sorting_3,
+        categories = {angels_ore_sorting_3},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_2),
         order = f_b,
@@ -35,18 +35,18 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
         {
-            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
         },
         main_product = sodium_angels
     },
     {
         name = crushed_stone_sorting_3,
-        category = angels_ore_sorting_4,
+        categories = {angels_ore_sorting_4},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_3),
         order = f_c,
@@ -55,19 +55,19 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
         {
-            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = potassium, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
-            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = potassium, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
         },
         main_product = sodium_angels
     },
     {
         name = stone,
-        category = angels_ore_sorting_1,
+        categories = {angels_ore_sorting_1},
         subgroup = is_processing_crafting,
         icons = TWO_I(slag_angels, stone),
         order = d,
@@ -79,7 +79,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_ore_recipe,
-        category = angels_ore_sorting_2,
+        categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_ferrous, crushed_rubyte, manganese_ore_angels),
         order = a_e,
@@ -96,7 +96,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chromium_ore_recipe,
-        category = angels_ore_sorting_4,
+        categories = {angels_ore_sorting_4},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_rubyte, chromium_ore_angels),
         order = a_g,
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_ore_recipe,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, powellite_purified, molybdenum_ore),
         order = a_j,

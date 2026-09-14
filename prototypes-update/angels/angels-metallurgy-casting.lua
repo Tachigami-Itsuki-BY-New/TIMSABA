@@ -9,7 +9,7 @@ data_recipe[iron_molten_angels].energy_required = 8
 data_recipe[iron_molten_angels].ingredients[1].amount = 16
 data_recipe[iron_molten_angels].results[1].amount = 240
 
-data_recipe[iron_molten_2].category = angels_induction_smelting_2
+data_recipe[iron_molten_2].categories = {angels_induction_smelting_2}
 data_recipe[iron_molten_2].icons = TWO_I(iron_ingot, iron_molten_angels, number_2)
 data_recipe[iron_molten_2].order = a_a
 data_recipe[iron_molten_2].energy_required = 8
@@ -279,7 +279,7 @@ data_recipe[lead_roll_2].results[2].amount = 60
 data_item[lead_plate_bob].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_plate_bob].order = c
 data_recipe[lead_plate_bob].localised_name = data_item[lead_plate_bob].localised_name
-data_recipe[lead_plate_bob].category = smelting
+data_recipe[lead_plate_bob].categories = {smelting}
 data_recipe[lead_plate_bob].subgroup = "angels-lead-casting"
 data_recipe[lead_plate_bob].icons = TWO_I(crushed_rubyte, lead_plate_bob)
 data_recipe[lead_plate_bob].order = c
@@ -351,7 +351,7 @@ data_recipe[tin_roll_2].results[2].amount = 60
 data_item[tin_plate_bob].localised_description = show_formula and {chemical_formula, "Sn"} or nil
 data_item[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].localised_name = data_item[tin_plate_bob].localised_name
-data_recipe[tin_plate_bob].category = smelting
+data_recipe[tin_plate_bob].categories = {smelting}
 data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
 data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
@@ -484,7 +484,7 @@ data_recipe[silicon_mono_2].ingredients[2].amount = 4
 data_recipe[silicon_mono_2].ingredients[3].amount = 4
 data_recipe[silicon_mono_2].results[1].amount = 8
 data_recipe[silicon_mono_2].results[2].amount = 4
-data_recipe[silicon_mono_2].results[2].probability = 0.5
+data_recipe[silicon_mono_2].results[2].independent_probability = 0.5
 
 data_item[silicon_wafer].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_wafer].stack_size = 200
@@ -1220,22 +1220,12 @@ data_recipe[clay_brick_raw].order = a
 
 data_item[clay_brick].subgroup = is_bricks_casting
 data_item[clay_brick].order = b
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[clay_brick].additional_categories = {angels_sintering_1, metallurgy}
-else
-    data_recipe[clay_brick].additional_categories = {angels_sintering_4, metallurgy}
-end
 data_recipe[clay_brick].subgroup = is_bricks_casting
 data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
 data_recipe[clay_brick].order = b
 
 data_item[stone_brick].subgroup = is_bricks_casting
 data_item[stone_brick].order = c
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_brick].additional_categories = {angels_sintering_1, metallurgy}
-else
-    data_recipe[stone_brick].additional_categories = {angels_sintering_4, metallurgy}
-end
 data_recipe[stone_brick].subgroup = is_bricks_casting
 data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
 data_recipe[stone_brick].order = c
@@ -1262,7 +1252,7 @@ data_item_subgroup["angels-solder-casting"].order = x
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
 data_recipe[solder_molten_angels].localised_name = data_fluid[solder_molten_angels].localised_name
-data_recipe[solder_molten_angels].category = angels_induction_smelting_1
+data_recipe[solder_molten_angels].categories = {angels_induction_smelting_1}
 data_recipe[solder_molten_angels].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_1)
 data_recipe[solder_molten_angels].order = a
 data_recipe[solder_molten_angels].energy_required = 8
@@ -1274,7 +1264,7 @@ data_recipe[solder_molten_angels].ingredients =
 data_recipe[solder_molten_angels].results = {{type = fluid, name = solder_molten_angels, amount = 240}}
 data_recipe[solder_molten_angels].main_product = solder_molten_angels
 
-data_recipe[solder_molten_2].category = angels_induction_smelting_2
+data_recipe[solder_molten_2].categories = {angels_induction_smelting_2}
 data_recipe[solder_molten_2].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_2)
 data_recipe[solder_molten_2].order = a_a
 data_recipe[solder_molten_2].energy_required = 8
@@ -1286,7 +1276,7 @@ data_recipe[solder_molten_2].ingredients =
 }
 data_recipe[solder_molten_2].results[1].amount = 480
 
-data_recipe[solder_molten_3].category = angels_induction_smelting_3
+data_recipe[solder_molten_3].categories = {angels_induction_smelting_3}
 data_recipe[solder_molten_3].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_3)
 data_recipe[solder_molten_3].order = a_b
 data_recipe[solder_molten_3].energy_required = 8

@@ -60,7 +60,7 @@ TIMSABA.functions.create_recipes
     -- CRUSHED
     {
         name = brannerite_crushed,
-        category = angels_ore_refining_T1,
+        categories = {angels_ore_refining_T1},
         subgroup = is_brannerite,
         icons = THREE_R_I(brannerite_ore, brannerite_crushed, stone_crushed_angels),
         order = b,
@@ -76,7 +76,7 @@ TIMSABA.functions.create_recipes
     -- CHUNKS
     {
         name = brannerite_chunks,
-        category = angels_ore_refining_T2,
+        categories = {angels_ore_refining_T2},
         subgroup = is_brannerite,
         icons = THREE_D_I(brannerite_crushed, nil, water_purified_angels, brannerite_chunks, slag_angels, water_greenyellow_waste),
         order = c,
@@ -89,7 +89,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = brannerite_chunks, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, probability = 0.5},
+            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
             {type = fluid, name = water_greenyellow_waste, amount = 60}
         },
         main_product = brannerite_chunks
@@ -97,7 +97,7 @@ TIMSABA.functions.create_recipes
     -- CRYSTALS
     {
         name = brannerite_crystals,
-        category = angels_ore_refining_T3,
+        categories = {angels_ore_refining_T3},
         subgroup = is_brannerite,
         icons = THREE_I(brannerite_chunks, hydrofluoric_acid_angels, brannerite_crystals),
         order = d,
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
     -- PURIFIED
     {
         name = brannerite_purified,
-        category = angels_ore_refining_T4,
+        categories = {angels_ore_refining_T4},
         subgroup = is_brannerite,
         icons = TWO_I(brannerite_crystals, brannerite_purified),
         order = e,
@@ -125,7 +125,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = brannerite_crushed_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crushed),
         order = f,
@@ -142,7 +142,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = brannerite_chunks_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_chunks),
         order = g,
@@ -161,7 +161,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = brannerite_crystals_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crystals),
         order = h,
@@ -181,7 +181,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = brannerite_purified_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_purified),
         order = i,
@@ -202,7 +202,7 @@ TIMSABA.functions.create_recipes
     -- SYNTHESIS
     {
         name = holmium_ore_recipe,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, brannerite_purified, powellite_purified, holmium_ore),
         order = a_m,

@@ -240,18 +240,6 @@ end
 
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
--- MODS
-if mods[clowns_nuclear] then
-    local delete_prototypes =
-    {
-        "thermonuclear-bomb",
-        "plutonium-atomic-bomb",
-        "artillery-shell-nuclear",
-        "artillery-shell-thermonuclear"
-    }
-    TIMSABA.functions.delete_prototypes(delete_prototypes)
-end
-
 -- GLOBAL
 local sub = string.sub
 local find = string.find

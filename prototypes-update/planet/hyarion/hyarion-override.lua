@@ -224,7 +224,7 @@ if mods[hyarion_mods] then
         data_recipe[unstable_crystal_manipulation].results =
         {
             {type = item, name = unstable_bacteria, amount = 4},
-            {type = item, name = unstable_crystallizer, amount = 1, probability = 0.03125}
+            {type = item, name = unstable_crystallizer, amount = 1, independent_probability = 0.03125}
         }
     end
 
@@ -354,8 +354,8 @@ if mods[hyarion_mods] then
         {type = fluid, name = aluminium_molten_angels, amount = 15}
     }
 
-    data_tool[polishing_science_pack].subgroup = is_hyarion_recipe_other
-    data_tool[polishing_science_pack].order = i
+    data_item[polishing_science_pack].subgroup = is_hyarion_recipe_other
+    data_item[polishing_science_pack].order = i
     data_recipe[polishing_science_pack].subgroup = is_hyarion_recipe_other
     data_recipe[polishing_science_pack].order = i
     data_recipe[polishing_science_pack].energy_required = 8
@@ -367,8 +367,8 @@ if mods[hyarion_mods] then
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
-    data_tool[refraction_science_pack].subgroup = is_hyarion_recipe_other
-    data_tool[refraction_science_pack].order = j
+    data_item[refraction_science_pack].subgroup = is_hyarion_recipe_other
+    data_item[refraction_science_pack].order = j
     data_recipe[refraction_science_pack].subgroup = is_hyarion_recipe_other
     data_recipe[refraction_science_pack].order = j
     data_recipe[refraction_science_pack].energy_required = 8

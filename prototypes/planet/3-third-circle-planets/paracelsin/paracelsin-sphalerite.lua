@@ -49,7 +49,7 @@ if mods[paracelsin_mods] then
         -- CRUSHED
         {
             name = sphalerite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_sphalerite,
             icons = THREE_R_I(sphalerite_ore, sphalerite_crushed, stone_crushed_angels),
             order = b,
@@ -65,7 +65,7 @@ if mods[paracelsin_mods] then
         -- CHUNKS
         {
             name = sphalerite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_sphalerite,
             icons = THREE_D_I(sphalerite_crushed, nil, water_purified_angels, sphalerite_chunks, sulfur, water_red_waste),
             order = c,
@@ -78,7 +78,7 @@ if mods[paracelsin_mods] then
             results =
             {
                 {type = item, name = sphalerite_chunks, amount = 4},
-                {type = item, name = sulfur, amount = 1, probability = 0.5},
+                {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_red_waste, amount = 60}
             },
             main_product = sphalerite_chunks
@@ -86,7 +86,7 @@ if mods[paracelsin_mods] then
         -- CRYSTALS
         {
             name = sphalerite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_sphalerite,
             icons = THREE_I(sphalerite_chunks, nitric_acid_angels, sphalerite_crystals),
             order = d,
@@ -102,7 +102,7 @@ if mods[paracelsin_mods] then
         -- PURIFIED
         {
             name = sphalerite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_sphalerite,
             icons = TWO_I(sphalerite_crystals, sphalerite_purified),
             order = e,
@@ -114,7 +114,7 @@ if mods[paracelsin_mods] then
         -- SORTING
         {
             name = sphalerite_crushed_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_crushed),
             order = f,
@@ -131,7 +131,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = sphalerite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_chunks),
             order = g,
@@ -150,7 +150,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = sphalerite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_crystals),
             order = h,
@@ -170,7 +170,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = sphalerite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_purified),
             order = i,
@@ -191,7 +191,7 @@ if mods[paracelsin_mods] then
         -- SYNTHESIS
         {
             name = germanium_ore_recipe,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, germanite_purified, sphalerite_purified, germanium_ore),
             order = a_p,

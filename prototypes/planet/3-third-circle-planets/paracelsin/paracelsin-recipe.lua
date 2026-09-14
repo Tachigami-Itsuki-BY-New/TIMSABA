@@ -6,7 +6,7 @@ if mods[paracelsin_mods] then
         {
             localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_from_paracelsin_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_paracelsin_air,
             icons = BUILDING_R_I(nitrogen_angels, planet_paracelsin),
             order = a,
@@ -25,7 +25,7 @@ if mods[paracelsin_mods] then
         {
             localised_name = {"item-name." .. zinc_powder},
             name = zinc_powder_paracelsin,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_vaterite_zinc,
             icons = TWO_I(zinc_ore_bob, zinc_powder),
             order = b,
@@ -36,7 +36,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = galvanized_steel_plate,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_vaterite_zinc,
             icons = THREE_I(steel_plate, zinc_molten_angels, galvanized_steel_plate),
             order = f,

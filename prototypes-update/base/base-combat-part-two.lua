@@ -660,7 +660,7 @@ if mods[bobvehicleequipment] then
             data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
             data_item[EQUIPMENT.name].stack_size = 16
             data_item[EQUIPMENT.name].weight = 62500
-            data_recipe[EQUIPMENT.name].category = crafting_fluid
+            data_recipe[EQUIPMENT.name].categories = {crafting_fluid}
             data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
             data_recipe[EQUIPMENT.name].energy_required = 8
             data_active_defense_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
@@ -1204,7 +1204,7 @@ local plasma_turrets =
 for _, BUILD in pairs(plasma_turrets) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].subgroup = is_turret_5
-        data_recipe[BUILD.name].category = crafting_fluid
+        data_recipe[BUILD.name].categories = {crafting_fluid}
         data_recipe[BUILD.name].subgroup = is_turret_5
         data_electric_turret[BUILD.name].subgroup = is_turret_5
         data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ

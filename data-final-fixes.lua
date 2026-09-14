@@ -56,7 +56,6 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.ribbonia")
 -- cubium
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")
 
-require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 
 require("prototypes-final-fix.mods-final-fix.flare-stack")

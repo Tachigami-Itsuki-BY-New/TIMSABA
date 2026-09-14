@@ -6,7 +6,7 @@ if mods[corrundum_mods] then
     ({
         {
             name = corrundum_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_corrundum_air,
             order = a,
             energy_required = 8,
@@ -17,7 +17,7 @@ if mods[corrundum_mods] then
         },
         {
             name = corrundum_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_corrundum_air,
             icons = FOUR_R_I(corrundum_air, nitrogen_angels, oxygen_angels, carbon_dioxide_angels),
             order = a_a,
@@ -33,7 +33,7 @@ if mods[corrundum_mods] then
         },
         {
             name = corrundum_air_separation_2,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_corrundum_air,
             icons = FOUR_R_I(corrundum_air, condensates_angels, hydrogen_sulfide_angels, sulfur_dioxide_angels),
             order = a_a,
@@ -56,7 +56,7 @@ if mods[corrundum_mods] then
         {
             localised_name = {"item-name." .. platinum_powder},
             name = platinum_powder_corrundum,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_corrundum_platinum,
             icons = TWO_I(platinum_ore_angels, platinum_powder),
             order = b,

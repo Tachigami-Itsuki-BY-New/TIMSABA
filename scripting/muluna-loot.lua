@@ -17,7 +17,7 @@ if script.active_mods["planet-muluna"] then
             {name = "steel-plate", min = 128, max = 256},
             {name = "bob-basic-circuit-board", min = 32, max = 64},
             {name = "bob-glass", min = 128, max = 256},
-            {name = "tree-seed", min = 32, max = 64},
+            {name = "angels-tree-seed", min = 32, max = 64},
             {name = "wood", min = 128, max = 256}
         }
 

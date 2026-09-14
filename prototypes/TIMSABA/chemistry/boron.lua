@@ -57,7 +57,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = borax_recipe,
-        category = angels_ore_sorting_3,
+        categories = {angels_ore_sorting_3},
         subgroup = is_ore_sorting_advanced_2,
         icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_jivolite, borax),
         order = a_g,
@@ -75,7 +75,7 @@ TIMSABA.functions.create_recipes
     -- SMELTING
     {
         name = boric_acid_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_boron_fluid,
         icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid_solution, sodium_sulfate_solution),
         order = a,
@@ -94,7 +94,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = boric_acid_from_hydrochloric_acid,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_boron_fluid,
         icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid_solution, sodium_chloride_solution, water_purified_angels),
         order = a_a,
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = boric_acid_from_diborane_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_boron_fluid,
         icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid_solution, hydrogen_angels),
         order = a_b,

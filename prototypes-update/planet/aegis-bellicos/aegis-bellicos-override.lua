@@ -9,7 +9,7 @@ if mods[aegis_bellicos_mods] then
     data_item[beryllium_plate].localised_description = show_formula and {chemical_formula, "Be"} or nil
     data_item[beryllium_plate].subgroup = is_beryllium_casting
     data_item[beryllium_plate].order = b
-    data_recipe[beryllium_plate].category = angels_casting_4
+    data_recipe[beryllium_plate].categories = {angels_casting_4}
     data_recipe[beryllium_plate].subgroup = is_beryllium_casting
     data_recipe[beryllium_plate].icons = TWO_I(beryllium_molten, beryllium_plate)
     data_recipe[beryllium_plate].order = b
@@ -19,8 +19,8 @@ if mods[aegis_bellicos_mods] then
     data_recipe[beryllium_plate].main_product = beryllium_plate
 
     -- RECIPE
-    data_tool[lightweight_science_pack].subgroup = is_bellicos_recipe
-    data_tool[lightweight_science_pack].order = a
+    data_item[lightweight_science_pack].subgroup = is_bellicos_recipe
+    data_item[lightweight_science_pack].order = a
     data_recipe[lightweight_science_pack].subgroup = is_bellicos_recipe
     data_recipe[lightweight_science_pack].order = a
     data_recipe[lightweight_science_pack].energy_required = 8
@@ -48,7 +48,7 @@ if mods[aegis_bellicos_mods] then
 
     local tritium_gas_bellicos = "tritium-extraction-bellicos"
     data_recipe[tritium_gas_bellicos].localised_name = {"fluid-name." .. tritium_gas}
-    data_recipe[tritium_gas_bellicos].category = centrifuging_4
+    data_recipe[tritium_gas_bellicos].categories = {centrifuging_4}
     data_recipe[tritium_gas_bellicos].subgroup = is_bellicos_recipe
     data_recipe[tritium_gas_bellicos].icons = THREE_R_IS(radioactive_ice, ice, tritium_gas)
     data_recipe[tritium_gas_bellicos].order = c_a
@@ -62,8 +62,8 @@ if mods[aegis_bellicos_mods] then
         {type = fluid, name = tritium_gas, amount = 120}
     }
 
-    data_tool[pulsar_science_pack].subgroup = is_bellicos_recipe
-    data_tool[pulsar_science_pack].order = d
+    data_item[pulsar_science_pack].subgroup = is_bellicos_recipe
+    data_item[pulsar_science_pack].order = d
     data_recipe[pulsar_science_pack].subgroup = is_bellicos_recipe
     data_recipe[pulsar_science_pack].order = d
     data_recipe[pulsar_science_pack].energy_required = 8

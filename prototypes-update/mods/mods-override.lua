@@ -27,7 +27,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = calcite, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
-    data_recipe[sulfuric_bacteria_filtering].results[1].probability = 0.03125
+    data_recipe[sulfuric_bacteria_filtering].results[1].independent_probability = 0.03125
 
     data_recipe[sulfuric_bacteria_cultivation].subgroup = is_vulcanus_sulfuric
     data_recipe[sulfuric_bacteria_cultivation].icons = STONKS_I(stonks_png, sulfuric_bacteria)
@@ -46,12 +46,12 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_recipe[sulfuric_bacteria_melting].ingredients[3].amount = 60
     data_recipe[sulfuric_bacteria_melting].results =
     {
-        {type = item, name = sulfuric_bacteria, amount = 1, probability = 0.5},
-        {type = item, name = wolframite_ore, amount = 1, probability = 0.25},
-        {type = item, name = coal, amount = 1, probability = 0.125},
-        {type = item, name = carbon_angels, amount = 1, probability = 0.0625},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 1, probability = 0.03125},
-        {type = item, name = stone, amount = 1, probability = 0.5}
+        {type = item, name = sulfuric_bacteria, amount = 1, independent_probability = 0.5},
+        {type = item, name = wolframite_ore, amount = 1, independent_probability = 0.25},
+        {type = item, name = coal, amount = 1, independent_probability = 0.125},
+        {type = item, name = carbon_angels, amount = 1, independent_probability = 0.0625},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 1, independent_probability = 0.03125},
+        {type = item, name = stone, amount = 1, independent_probability = 0.5}
     }
 end
 
@@ -63,7 +63,7 @@ if mods[moshine_mods] or mods[muluna_mods] then
     data_recipe[silicon_cell_mods].icons = TWO_I(silicon_boule_mods, silicon_cell_mods)
     data_recipe[silicon_cell_mods].ingredients = {{type = item, name = silicon_boule_mods, amount = 4}}
 
-    data_recipe[silicon_carbide_mods].category = angels_chemical_smelting_4
+    data_recipe[silicon_carbide_mods].categories = {angels_chemical_smelting_4}
     data_recipe[silicon_carbide_mods].icons = THREE_I(silicon_boule_mods, carbon_angels, silicon_carbide_bob)
     data_recipe[silicon_carbide_mods].ingredients =
     {
@@ -106,15 +106,6 @@ elseif mods[moshine_mods] then -- MOSHINE
 
     data_recipe[silicon_carbide_mods].subgroup = is_moshine_recipe
     data_recipe[silicon_carbide_mods].order = i
-end
-
-if mods[clowns_nuclear] then
-    data_technology[atomic_rocket].effects =
-    {
-        {type = unlock_recipe, recipe = atomic_rocket},
-        {type = unlock_recipe, recipe = "angels-atomic-bomb"},
-        {type = unlock_recipe, recipe = "angels-atomic-bomb-2"}
-    }
 end
 
 if mods[telogistics_mods] then

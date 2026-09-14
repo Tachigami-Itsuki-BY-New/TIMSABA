@@ -160,7 +160,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = antimony_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_antimony,
         icons = TWO_I(antimony_ore, antimony_processed),
         order = b,
@@ -171,7 +171,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_antimony,
         icons = TWO_I(antimony_processed, antimony_pellet),
         order = c,
@@ -182,7 +182,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_ingot,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_antimony,
         icons = THREE_I(antimony_ore, carbon_angels, antimony_ingot),
         order = d,
@@ -197,7 +197,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_ingot_2,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_antimony,
         icons = TWO_D_I(antimony_oxide_III, carbon, antimony_ingot, carbon_dioxide_angels),
         order = d_a,
@@ -216,7 +216,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_ingot_3,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony,
         icons = THREE_D_I(hexachloroantimonic_acid, nil, zinc_ingot, antimony_ingot, zinc_chloride, hydrochloric_acid_angels),
         order = d_b,
@@ -236,7 +236,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_powder,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_antimony,
         icons = TWO_I(antimony_ingot, antimony_powder),
         order = e,
@@ -248,7 +248,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = antimony_chloride_III,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_ore, chlorine_angels, antimony_chloride_III),
         order = a,
@@ -263,7 +263,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_chloride_V_liquid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_chloride_III, chlorine_angels, antimony_chloride_V_liquid),
         order = b,
@@ -278,7 +278,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_chloride_V_liquid_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_processed, chlorine_angels, antimony_chloride_V_liquid),
         order = b_a,
@@ -293,7 +293,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_chloride_V_liquid_3,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_pellet, chlorine_angels, antimony_chloride_V_liquid),
         order = b_b,
@@ -308,7 +308,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = TWO_D_I(antimony_chloride_V_liquid, water_purified_angels, antimony_acid, hydrogen_chloride_angels),
         order = c,
@@ -327,7 +327,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_oxide_III,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_R_I(antimony_acid, antimony_oxide_III, steam),
         order = d,
@@ -342,7 +342,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexachloroantimonic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_chloride_V_liquid, hydrochloric_acid_angels, hexachloroantimonic_acid),
         order = e,
@@ -358,7 +358,7 @@ TIMSABA.functions.create_recipes
     -- CASTING
     {
         name = antimony_molten,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_antimony_casting,
         icons = TWO_I(antimony_ingot, antimony_molten),
         order = a,
@@ -370,7 +370,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimony_plate,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_antimony_casting,
         icons = TWO_I(antimony_molten, antimony_plate),
         order = b,

@@ -39,7 +39,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = arsenic_powder,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_arsenic,
         icons = TWO_I(arsenic, arsenic_powder),
         order = b,

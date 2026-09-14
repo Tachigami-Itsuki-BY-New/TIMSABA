@@ -61,7 +61,7 @@ if mods[moshine_mods] then
         -- CRUSHED
         {
             name = monazite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_monazite,
             icons = THREE_R_I(monazite_ore, monazite_crushed, stone_crushed_angels),
             order = b,
@@ -77,7 +77,7 @@ if mods[moshine_mods] then
         -- CHUNKS
         {
             name = monazite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_monazite,
             icons = THREE_D_I(monazite_crushed, nil, water_purified_angels, monazite_chunks, calcium_phosphate, water_orange_waste),
             order = c,
@@ -90,7 +90,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = monazite_chunks, amount = 4},
-                {type = item, name = calcium_phosphate, amount = 1, probability = 0.5},
+                {type = item, name = calcium_phosphate, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_orange_waste, amount = 60}
             },
             main_product = monazite_chunks
@@ -98,7 +98,7 @@ if mods[moshine_mods] then
         -- CRYSTALS
         {
             name = monazite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_monazite,
             icons = THREE_I(monazite_chunks, orthophosphoric_acid, monazite_crystals),
             order = d,
@@ -114,7 +114,7 @@ if mods[moshine_mods] then
         -- PURIFIED
         {
             name = monazite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_monazite,
             icons = TWO_I(monazite_crystals, monazite_purified),
             order = e,
@@ -126,7 +126,7 @@ if mods[moshine_mods] then
         -- SORTING
         {
             name = monazite_crushed_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_crushed),
             order = f,
@@ -143,7 +143,7 @@ if mods[moshine_mods] then
         },
         {
             name = monazite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_chunks),
             order = g,
@@ -162,7 +162,7 @@ if mods[moshine_mods] then
         },
         {
             name = monazite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_crystals),
             order = h,
@@ -182,7 +182,7 @@ if mods[moshine_mods] then
         },
         {
             name = monazite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_purified),
             order = i,

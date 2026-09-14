@@ -5,7 +5,7 @@ data_item[algae_green].spoil_ticks = 3 * hour
 data_item[algae_green].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_green)
 TIMSABA.void.freezing_organics(algae_green)
-data_recipe[algae_green].category = angels_bio_processing_1
+data_recipe[algae_green].categories = {angels_bio_processing_1}
 data_recipe[algae_green].icons = THREE_R_I(water, algae_green, algae_brown)
 data_recipe[algae_green].order = a
 data_recipe[algae_green].energy_required = 32
@@ -17,7 +17,7 @@ data_recipe[algae_green].results =
 }
 data_recipe[algae_green].main_product = algae_green
 
-data_recipe[algae_green_simple].category = angels_bio_processing_2
+data_recipe[algae_green_simple].categories = {angels_bio_processing_2}
 data_recipe[algae_green_simple].icons = THREE_I(water_mineralized_angels, carbon_dioxide_angels, algae_green)
 data_recipe[algae_green_simple].order = a_a
 data_recipe[algae_green_simple].energy_required = 32
@@ -65,21 +65,21 @@ data_recipe[algae_brown].energy_required = 32
 data_recipe[algae_brown].ingredients[1].amount = 120
 data_recipe[algae_brown].results[1].amount = 16
 
-data_recipe[algae_brown_sodium_carbonate].category = angels_blast_smelting_1
+data_recipe[algae_brown_sodium_carbonate].categories = {angels_blast_smelting_1}
 data_recipe[algae_brown_sodium_carbonate].icons = THREE_I(algae_brown, carbon_dioxide_angels, sodium_carbonate_angels)
 data_recipe[algae_brown_sodium_carbonate].energy_required = 8
 data_recipe[algae_brown_sodium_carbonate].ingredients[1].amount = 16
 data_recipe[algae_brown_sodium_carbonate].ingredients[2].name = carbon_dioxide_angels
 data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 60
 
-data_recipe[algae_brown_lithium_chloride].category = angels_blast_smelting_3
+data_recipe[algae_brown_lithium_chloride].categories = {angels_blast_smelting_3}
 data_recipe[algae_brown_lithium_chloride].icons = TWO_I(algae_brown, lithium_chloride_angels)
 data_recipe[algae_brown_lithium_chloride].energy_required = 8
 data_recipe[algae_brown_lithium_chloride].ingredients[1].amount = 16
 
 local alginic_acid = "angels-solid-alginic-acid"
 data_item[alginic_acid].localised_description = show_formula and {chemical_formula, "(C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]8[/font]O[font=default-tiny-bold]6[/font])[font=default-tiny-bold]n[/font]"} or nil
-data_recipe[alginic_acid].category = angels_liquifying
+data_recipe[alginic_acid].categories = {angels_liquifying}
 data_recipe[alginic_acid].icons = TWO_I(algae_brown, alginic_acid)
 data_recipe[alginic_acid].energy_required = 8
 data_recipe[alginic_acid].ingredients[1].amount = 8
@@ -187,7 +187,7 @@ data_recipe[wood_1].icons = TWO_I(tree_angels, wood, number_1)
 data_recipe[wood_1].results =
 {
     {type = item, name = wood, amount = 8},
-    {type = item, name = saw, amount = 1, probability = 0.5}
+    {type = item, name = saw, amount = 1, independent_probability = 0.5}
 }
 
 local wood_2 = "angels-wood-sawing-2"
@@ -195,7 +195,7 @@ data_recipe[wood_2].icons = TWO_I(tree_angels, wood, number_2)
 data_recipe[wood_2].results =
 {
     {type = item, name = wood, amount = 16},
-    {type = item, name = saw_crystal_tipped, amount = 1, probability = 0.5}
+    {type = item, name = saw_crystal_tipped, amount = 1, independent_probability = 0.5}
 }
 
 local wood_3 = "angels-wood-sawing-3"
@@ -203,7 +203,7 @@ data_recipe[wood_3].icons = TWO_I(tree_angels, wood, number_3)
 data_recipe[wood_3].results =
 {
     {type = item, name = wood, amount = 32},
-    {type = item, name = saw_crystal_full, amount = 1, probability = 0.5}
+    {type = item, name = saw_crystal_full, amount = 1, independent_probability = 0.5}
 }
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
@@ -257,24 +257,22 @@ data_recipe[carbon_from_charcoal].ingredients[2].amount = 30
 -- SEED and TREE
 local is_bio_arboretum = "angels-bio-arboretum"
 
-data_item[tree_seed].subgroup = is_bio_arboretum
-data_item[tree_seed].order = a
-data_item[tree_seed].stack_size = 200
-data_item[tree_seed].fuel_value = 225 .. kJ
-data_item[tree_seed].fuel_category = base_fuel
-
-local tree_seed_1 = "angels-tree-seed"
-data_recipe[tree_seed_1].icons = THREE_D_I(tree_angels, nil, water, tree_seed, number_1)
-data_recipe[tree_seed_1].order = a_a
-data_recipe[tree_seed_1].energy_required = 16
-data_recipe[tree_seed_1].ingredients[1].name = tree_angels
-data_recipe[tree_seed_1].ingredients[1].amount = 2
-data_recipe[tree_seed_1].ingredients[2].amount = 60
+data_item[tree_seed_angels].subgroup = is_bio_arboretum
+data_item[tree_seed_angels].order = a
+data_item[tree_seed_angels].stack_size = 200
+data_item[tree_seed_angels].fuel_value = 225 .. kJ
+data_item[tree_seed_angels].fuel_category = base_fuel
+data_recipe[tree_seed_angels].icons = THREE_D_I(tree_angels, nil, water, tree_seed, number_1)
+data_recipe[tree_seed_angels].order = a
+data_recipe[tree_seed_angels].energy_required = 16
+data_recipe[tree_seed_angels].ingredients[1].name = tree_angels
+data_recipe[tree_seed_angels].ingredients[1].amount = 2
+data_recipe[tree_seed_angels].ingredients[2].amount = 60
 
 local tree_seed_2 = "angels-tree-seed-2"
-data_recipe[tree_seed_2].localised_name = data_recipe[tree_seed_1].localised_name
+data_recipe[tree_seed_2].localised_name = data_recipe[tree_seed_angels].localised_name
 data_recipe[tree_seed_2].icons = THREE_D_I(tree_angels, fertilizer_angels, water, tree_seed, nil, nil, number_2)
-data_recipe[tree_seed_2].order = a_b
+data_recipe[tree_seed_2].order = a_a
 data_recipe[tree_seed_2].energy_required = 16
 data_recipe[tree_seed_2].ingredients[1].name = tree_angels
 data_recipe[tree_seed_2].ingredients[1].amount = 2
@@ -282,9 +280,9 @@ data_recipe[tree_seed_2].ingredients[3].amount = 60
 data_recipe[tree_seed_2].results[1].amount = 8
 
 local tree_seed_3 = "angels-tree-seed-3"
-data_recipe[tree_seed_3].localised_name = data_recipe[tree_seed_1].localised_name
+data_recipe[tree_seed_3].localised_name = data_recipe[tree_seed_angels].localised_name
 data_recipe[tree_seed_3].icons = FOUR_D_I(tree_angels, fertilizer_angels, water, carbon_dioxide_angels, tree_seed, nil, nil, nil, number_3)
-data_recipe[tree_seed_3].order = a_c
+data_recipe[tree_seed_3].order = a_b
 data_recipe[tree_seed_3].energy_required = 16
 data_recipe[tree_seed_3].ingredients[1].name = tree_angels
 data_recipe[tree_seed_3].ingredients[1].amount = 2
@@ -652,7 +650,7 @@ data_recipe[paper].icons = TWO_I(cellulose_pulp, paper, number_1)
 data_recipe[paper].results[1].amount = 2
 
 local paper_2 = "angels-solid-paper-2"
-data_recipe[paper_2].category = chemistry
+data_recipe[paper_2].categories = {chemistry}
 data_recipe[paper_2].icons = THREE_D_I(cellulose_pulp, sodium_hydroxide_solution_angels, chlorine_angels, paper, nil, sodium_hypochlorite_solution, number_2)
 data_recipe[paper_2].ingredients[2].type = fluid
 data_recipe[paper_2].ingredients[2].name = sodium_hydroxide_solution_angels

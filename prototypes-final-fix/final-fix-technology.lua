@@ -176,7 +176,7 @@ end
 
 -- MURIA
 if mods[muria_mods] then
-    TIMSABA.functions.auto_added_science_pack(muriatic_science_pack, muriatic_science_pack)
+    TIMSABA.functions.auto_added_science_pack(acidworking_science_pack, acidworking_science_pack)
 end
 
 -- PELAGOS

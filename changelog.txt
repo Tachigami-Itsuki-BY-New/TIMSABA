@@ -1,4 +1,75 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0 Uranium and Thorium
+Date: ??.??.2026
+  Features:
+    - [All] Added new mineable resources:
+        Nauvis:
+          1. Senaite Ore.
+          2. Franckeite Ore.
+          3. Fluorite.
+          4. Borax.
+          5. Fluorapatite.
+          6. Carnallite.
+        Vulcanus: Samarskite Ore.
+    - [All] Added new resources:
+        Fulgora: Rheniite Ore.
+        Moshine: Aeschynite Ore.
+        Frozeta: Gallite Ore.
+    - [All] Added new items and fluids:
+        Uranium Branch:
+          1. Processed uranium.
+          2. Uranium pellet.
+          3. Uranium(IV) oxide.
+          4. Uranium(IV) fluoride.
+          5. Uranium(VI) fluoride gas.
+          6. Uranyl sulfate solution.
+          7. Ammonium diuranate.
+          8. Uranium(VI) oxide.
+        Thorium Branch:
+          1. Processed thorium.
+          2. Thorium pellet.
+          3. Thorium(IV) oxide.
+          4. Thorium(IV) nitrate solution.
+          5. Thorium(IV) hydroxide.
+          6. Thorium(IV) fluoride.
+        Others:
+          1. Plumbium.
+          2. Stannium.
+          3. Purified catalyst.
+    - [All] Added new recipes and technologies.
+
+  Changes:
+    - [All] Moved from the Metallurgy Smelting Item-Group to the Petrochem Refining Item-Group the Lithium, Boron, Potassium, and Phosphorus branches.
+    - [All] Moved from the Intermediate Product Item-Group to the Item-Group Metallurgy Smelting Item-Group the Uranium and Thorium branches.
+
+  Balancing:
+    - [All] Replaced ingredients in the Thorium Ore recipe:
+        1. Ferrous Crystals → Purified Crotinnium.
+        2. Cupric Crystals → Purified Bobmonium.
+    - [All] Replaced ingredients in the Chromium Ore recipe:
+        1. Ferrous Crystals → Purified Saphirite.
+        2. Rubyte Crystals → Purified Senaite.
+    - [All] Replaced ingredients in the Tungsten Ore recipe:
+        1. Purified Saphirite → Purified Jivolite.
+        2. Purified Stiratite → Purified Rubyte.
+    - [All] Replaced ingredients in the Platinum Ore recipe:
+        1. Cupric Crystals → Purified Crotinnium.
+        2. Purified Bobmonium → Purified Franckeite.
+    - [All] Replaced an ingredient in the T4 Ore recipes (Molybdenum Ore - Arsenic): Hybrid Catalyst → Purified Catalyst.
+    - [All] Removed the Plutonium-239 from the Thorium Ore.
+
+  Modding:
+    - [Mods] Removed "MadClown01's Nuclear Extension" mod from the optional dependencies.
+    - [Mods] Removed "MadClown01's AngelBob Nuclear Extension", "MadClown01's Extended AngelBob Minerals", and "MadClown01's Processing" mods from the incompatible.
+
+  Locale:
+    - [All] Renamed "Ferrous" to "Ferrium".
+    - [All] Renamed "Cipric" to "Cuprium".
+    - [Rus] Removed the Russian localization. You can find the file for it on my Discord server.
+
+  Other:
+    - [All] Initial release: Release version for Factorio 2.1.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.8
 Date: 13.09.2026
   Bugfixes:

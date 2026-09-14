@@ -117,7 +117,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = fluorapatite_recipe,
-        category = angels_ore_sorting_4,
+        categories = {angels_ore_sorting_4},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, fluorapatite),
         order = a_e,
@@ -135,7 +135,7 @@ TIMSABA.functions.create_recipes
     -- SMELTING
     {
         name = white_phosphorus_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = FOUR_THREE_R_I(fluorapatite, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
         order = a,
@@ -157,7 +157,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = white_phosphorus,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = TWO_I(white_phosphorus_gas, white_phosphorus),
         order = b,
@@ -176,7 +176,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_chloride_III_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = THREE_I(white_phosphorus, chlorine_angels, phosphorus_chloride_III_liquid),
         order = b,
@@ -191,7 +191,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_chloride_V,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_chloride_III_liquid, chlorine_angels, phosphorus_chloride_V),
         order = c,
@@ -206,7 +206,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_fluoride_V_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = TWO_D_I(phosphorus_chloride_V, hydrogen_fluoride_angels, phosphorus_fluoride_V_gas, hydrogen_chloride_angels),
         order = c,
@@ -225,7 +225,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexafluorophosphoric_acid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_fluoride_V_gas, hydrofluoric_acid_angels, hexafluorophosphoric_acid),
         order = d,
@@ -241,7 +241,7 @@ TIMSABA.functions.create_recipes
     -- SILICON
     {
         name = metasilicic_acid,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_silicon_chemistry,
         icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
         order = j,
@@ -261,7 +261,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_metasilicic_acid,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_silicon_chemistry,
         icons = THREE_R_I(metasilicic_acid, silicon_oxide_IV, steam),
         order = a_c,

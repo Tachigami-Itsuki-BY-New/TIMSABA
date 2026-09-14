@@ -188,9 +188,9 @@ if mods[panglia_mods] then
     data_recipe[universe_precursor_volcanic_result].energy_required = 32
     data_recipe[universe_precursor_volcanic_result].results =
     {
-        {type = item, name = igneous_rock, amount_min = 0, amount_max = 256, probability = 0.5},
-        {type = item, name = uranium_238, amount_min = 0, amount_max = 32, probability = 0.5},
-        {type = item, name = solid_fuel, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = igneous_rock, amount_min = 0, amount_max = 256, independent_probability = 0.5},
+        {type = item, name = uranium_238, amount_min = 0, amount_max = 32, independent_probability = 0.5},
+        {type = item, name = solid_fuel, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     -- UNIVERSE
@@ -230,16 +230,16 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_nauvis].energy_required = 32
     data_recipe[cosmic_incubator_recipe_nauvis].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = molybdenite_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = powellite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = molybdenite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = powellite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_vulcanus = "cosmic_incubator_recipe_vulcanus"
@@ -250,16 +250,16 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_vulcanus].energy_required = 32
     data_recipe[cosmic_incubator_recipe_vulcanus].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = calcite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = calcite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_gleba = "cosmic_incubator_recipe_gleba"
@@ -270,14 +270,14 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_gleba].energy_required = 32
     data_recipe[cosmic_incubator_recipe_gleba].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_fulgora = "cosmic_incubator_recipe_fulgora"
@@ -288,15 +288,15 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_fulgora].energy_required = 32
     data_recipe[cosmic_incubator_recipe_fulgora].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = brannerite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = brannerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_aquilo = "cosmic_incubator_recipe_aquilo"
@@ -307,16 +307,16 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_aquilo].energy_required = 32
     data_recipe[cosmic_incubator_recipe_aquilo].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = antimonite_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = germanite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = antimonite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = germanite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_moshine = "cosmic_incubator_recipe_moshine"
@@ -327,17 +327,17 @@ if mods[panglia_mods] then
     data_recipe[cosmic_incubator_recipe_moshine].energy_required = 32
     data_recipe[cosmic_incubator_recipe_moshine].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = monazite_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = barite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = biotite_mica, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = monazite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = barite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = biotite_mica, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     if mods[arig_mods] then
@@ -349,14 +349,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_arig].energy_required = 32
         data_recipe[cosmic_incubator_recipe_arig].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -369,17 +369,17 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_hyarion].energy_required = 32
         data_recipe[cosmic_incubator_recipe_hyarion].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = metallic_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = raw_quartz_arig, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = metallic_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = raw_quartz_arig, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -392,14 +392,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_tellus].energy_required = 32
         data_recipe[cosmic_incubator_recipe_tellus].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -412,17 +412,17 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_paracelsin].energy_required = 32
         data_recipe[cosmic_incubator_recipe_paracelsin].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = vaterite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = sphalerite_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = tetrahedrite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = vaterite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = sphalerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = tetrahedrite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -435,18 +435,18 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_corrundum].energy_required = 32
         data_recipe[cosmic_incubator_recipe_corrundum].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = calcite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = chalcopyrite_ore, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = platinum_ore_angels, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = sulfur, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = calcite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = chalcopyrite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = platinum_ore_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = sulfur, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -459,16 +459,16 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_castra].energy_required = 32
         data_recipe[cosmic_incubator_recipe_castra].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = gunpowder, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = millerite_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = gunpowder, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = millerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -481,16 +481,16 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_shchierbin].energy_required = 32
         data_recipe[cosmic_incubator_recipe_shchierbin].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = vanadium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = vanadium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -503,14 +503,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_maraxsis].energy_required = 32
         data_recipe[cosmic_incubator_recipe_maraxsis].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
 
         local cosmic_incubator_recipe_maraxsis_trench = "cosmic_incubator_recipe_maraxsis-trench"
@@ -521,14 +521,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_maraxsis_trench].energy_required = 32
         data_recipe[cosmic_incubator_recipe_maraxsis_trench].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -541,15 +541,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_vesta].energy_required = 32
         data_recipe[cosmic_incubator_recipe_vesta].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = iridium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = iridium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -568,15 +568,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_muria].energy_required = 32
         data_recipe[cosmic_incubator_recipe_muria].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = lead_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = lead_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -589,14 +589,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_pelagos].energy_required = 32
         data_recipe[cosmic_incubator_recipe_pelagos].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -609,14 +609,14 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_apia].energy_required = 32
         data_recipe[cosmic_incubator_recipe_apia].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
 
         local cosmic_incubator_recipe_carnova = "cosmic_incubator_recipe_carnova"
@@ -627,15 +627,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_carnova].energy_required = 32
         data_recipe[cosmic_incubator_recipe_carnova].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = bones, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = bones, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -649,15 +649,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_muluna].energy_required = 32
         data_recipe[cosmic_incubator_recipe_muluna].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = lunar_regolith, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = lunar_regolith, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -668,16 +668,16 @@ if mods[panglia_mods] then
     data_recipe[universe_precursor_2_result].energy_required = 32
     data_recipe[universe_precursor_2_result].results =
     {
-        {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = panglite, amount_min = 0, amount_max = 64, probability = 0.5},
-        {type = item, name = branbalite, amount_min = 0, amount_max = 64, probability = 0.5}
+        {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = panglite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = branbalite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     if mods[secretas_frozeta_mods] then
@@ -689,15 +689,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_frozeta].energy_required = 32
         data_recipe[cosmic_incubator_recipe_frozeta].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -710,15 +710,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_terrapalus].energy_required = 32
         data_recipe[cosmic_incubator_recipe_terrapalus].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = palusium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = palusium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -731,15 +731,15 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_lignumis].energy_required = 32
         data_recipe[cosmic_incubator_recipe_lignumis].results =
         {
-            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = coal, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 

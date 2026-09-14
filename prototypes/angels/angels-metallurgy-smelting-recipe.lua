@@ -9,7 +9,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name.iron-hydroxide-II"},
         name = iron_hydroxide_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_processed, water_purified_angels, oxygen_angels, iron_hydroxide_II),
         order = a,
@@ -25,7 +25,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_sulfate_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = TWO_D_I(iron_pellet, sulfuric_acid_angels, iron_sulfate_II, hydrogen_angels),
         order = b,
@@ -44,7 +44,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = THREE_I(iron_sulfate_II, water_purified_angels, iron_sulfate_II_solution),
         order = c,
@@ -59,7 +59,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_iron_chemistry,
         icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, ammonia_angels),
         order = d,
@@ -82,7 +82,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_hydroxide_III,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_hydroxide_II, water_purified_angels, oxygen_angels, iron_hydroxide_III),
         order = e,
@@ -98,7 +98,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_oxide_III,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_iron_chemistry,
         icons = THREE_R_I(iron_hydroxide_III, iron_oxide_III, steam),
         order = f,
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_oxide_III_from_iron_sulfate_II,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_sulfate_II, nil, nil, iron_oxide_III, sulfur_dioxide_angels, sulfur_trioxide_gas),
         order = f_a,
@@ -129,7 +129,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_hydroxide_II_from_iron_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_iron_chemistry,
         icons = TWO_D_I(iron_sulfate_II_solution, lime_angels, iron_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
@@ -149,7 +149,7 @@ TIMSABA.functions.create_recipes
     -- STEEL
     {
         name = steel_ingot_2,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_steel,
         icons = THREE_D_I(iron_hydroxide_II, carbon_angels, oxygen_angels, steel_ingot, steam, carbon_monoxide_angels),
         order = a_a,
@@ -170,7 +170,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = steel_ingot_3,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_steel,
         icons = THREE_D_I(iron_oxide_III, carbon_angels, oxygen_angels, steel_ingot, nil, carbon_dioxide_angels),
         order = a_b,
@@ -198,7 +198,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = copper_hydroxide_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_processed, water_purified_angels, oxygen_angels, copper_hydroxide_II),
         order = a,
@@ -214,7 +214,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_hydroxide_II_from_copper_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_sulfate_II_solution, lime_angels, copper_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
@@ -233,7 +233,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_hydroxide_II_from_copper_nitrate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_nitrate_II_solution, nil, sodium_hydroxide_angels, copper_hydroxide_II, sodium_nitrate_angels, water_purified_angels),
         order = a_b,
@@ -253,7 +253,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_sulfate_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_pellet, sulfuric_acid_angels, copper_sulfate_II, hydrogen_angels),
         order = b,
@@ -272,7 +272,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_copper_chemistry,
         icons = THREE_I(copper_sulfate_II, water_purified_angels, copper_sulfate_II_solution),
         order = c,
@@ -287,7 +287,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
         order = e,
@@ -306,7 +306,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I_alt,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
         order = e_a,
@@ -327,7 +327,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_dichlorocuprate_I_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = THREE_I(ammonium_chloride_solution_angels, copper_chloride_I, ammonium_dichlorocuprate_I_solution),
         order = f,
@@ -342,7 +342,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_nitrate_II_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
         order = h,
@@ -367,7 +367,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = hexafluorosilicate_lead_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_lead_chemistry,
         icons = THREE_I(lead_pellet, hexafluorosilicic_acid, hexafluorosilicate_lead_II_solution),
         order = c,
@@ -386,7 +386,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lead_oxide_IV,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_lead_chemistry,
         icons = THREE_I(lead_oxide_II, oxygen_angels, lead_oxide_IV),
         order = e,
@@ -401,7 +401,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lead_sponge,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_lead_chemistry,
         icons = THREE_R_I(lead_oxide_II, lead_sponge, oxygen_angels),
         order = f,
@@ -421,7 +421,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = tin_chloride_IV,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_tin_chemistry,
         icons = THREE_I(tin_processed, chlorine_angels, tin_chloride_IV),
         order = a,
@@ -436,7 +436,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexafluorosilicate_tin_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_tin_chemistry,
         icons = THREE_I(tin_pellet, hexafluorosilicic_acid, hexafluorosilicate_tin_II_solution),
         order = c,
@@ -455,7 +455,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tin_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_tin_chemistry,
         icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, silicon_chloride_IV_gas, tin_cathode, hydrogen_fluoride_angels),
         order = d,
@@ -484,7 +484,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = manganese_oxide_IV,
-        category = angels_blast_smelting_1,
+        categories = {angels_blast_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_ore_angels, oxygen_angels, manganese_oxide_IV),
         order = a,
@@ -499,7 +499,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = TWO_D_I(manganese_processed, sulfuric_acid_angels, manganese_sulfate_II, hydrogen_angels),
         order = b,
@@ -518,7 +518,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II_solution,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_sulfate_II, water_purified_angels, manganese_sulfate_II_solution),
         order = c,
@@ -533,7 +533,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II_solution_from_manganese_oxide_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_oxide_II, sulfuric_acid_angels, manganese_sulfate_II_solution),
         order = d_a,
@@ -548,7 +548,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_permanganate,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_manganese_chemistry,
         icons = FOUR_THREE_I(manganese_oxide_II, potassium_hydroxide_solution, oxygen_angels, chlorine_angels, potassium_permanganate, potassium_chloride_solution, water_purified_angels),
         order = f,
@@ -579,7 +579,7 @@ TIMSABA.functions.create_recipes
 ({
      {
         name = silicon_oxide_IV,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = THREE_I(silicon_ore_bob, oxygen_angels, silicon_oxide_IV),
         order = a,
@@ -594,7 +594,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_silicon_chloride_IV_gas,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_chloride_IV_gas, water_purified_angels, silicon_oxide_IV, hydrogen_chloride_angels),
         order = a_a,
@@ -613,7 +613,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_silicon_fluoride_IV_gas,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_fluoride_IV_gas, lime_angels, silicon_oxide_IV, fluorite_angels),
         order = a_b,
@@ -632,7 +632,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silane_gas_from_magnesium_silicide_ingot,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_silicon_chemistry,
         icons = THREE_D_I(magnesium_silicide_ingot, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
         order = d_a,
@@ -652,7 +652,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexafluorosilicic_acid_from_silicon_fluoride_IV_gas,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = THREE_I(silicon_fluoride_IV_gas, hydrofluoric_acid_angels, hexafluorosilicic_acid),
         order = h_a,
@@ -672,7 +672,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = nickel_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_nickel_chemistry,
         icons = THREE_I(nickel_sulfate_II, water_purified_angels, nickel_sulfate_II_solution),
         order = b,
@@ -687,7 +687,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tetracarbonyl_nickel,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_nickel_chemistry,
         icons = THREE_I(nickel_pellet, carbon_monoxide_angels, tetracarbonyl_nickel),
         order = c,
@@ -710,7 +710,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = aluminium_chloride,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_aluminium_chemistry,
         icons = THREE_I(aluminium_ore_bob, chlorine_angels, aluminium_chloride),
         order = a,
@@ -725,7 +725,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aluminium_chloride_2,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_aluminium_chemistry,
         icons = THREE_R_I(aluminium_chloride_solution, aluminium_chloride, steam),
         order = a_a,
@@ -740,7 +740,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aluminium_chloride_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_aluminium_chemistry,
         icons = THREE_D_I(aluminium_processed, hydrogen_chloride_angels, water_purified_angels, aluminium_chloride_solution, nil, hydrogen_angels),
         order = b,
@@ -760,7 +760,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aluminium_chloride_solution_from_aluminium_hydroxide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_aluminium_chemistry,
         icons = TWO_D_I(aluminium_hydroxide, hydrochloric_acid_angels, aluminium_chloride_solution, water_purified_angels),
         order = b_a,
@@ -779,7 +779,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aluminium_chloride_solution_ether,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_aluminium_chemistry_ether,
         icons = THREE_I(aluminium_chloride, diethyl_ether, aluminium_chloride_solution_ether),
         order = a,
@@ -794,7 +794,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_aluminium_hydride_solution_ether,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_aluminium_chemistry_ether,
         icons = TWO_D_I(lithium_hydride, aluminium_chloride_solution_ether, lithium_aluminium_hydride_solution_ether, lithium_chloride_angels),
         order = b,
@@ -813,7 +813,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_tetraethoxy_aluminate_solution_ether,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_aluminium_chemistry_ether,
         icons = THREE_I(acetaldehyde, lithium_aluminium_hydride_solution_ether, lithium_tetraethoxy_aluminate_solution_ether),
         order = c,
@@ -829,7 +829,7 @@ TIMSABA.functions.create_recipes
     {
         type = recipe,
         name = lithium_tetraethoxy_aluminate_solution_ether_reprocess,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_aluminium_chemistry_ether,
         icons = FOUR_THREE_R_I(lithium_tetraethoxy_aluminate_solution_ether, nil, water_purified_angels, ethanol_angels, lithium_hydroxide, aluminium_hydroxide, diethyl_ether),
         order = c_a,
@@ -855,7 +855,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = zinc_chloride,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_ore_bob, chlorine_angels, zinc_chloride),
         order = a,
@@ -870,7 +870,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = zinc_chloride_solution,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_chloride, water_purified_angels, zinc_chloride_solution),
         order = b,
@@ -885,7 +885,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = zinc_gas,
-        category = angels_blast_smelting_1,
+        categories = {angels_blast_smelting_1},
         subgroup = is_zinc_chemistry,
         icons = TWO_D_I(zinc_oxide, silicon_powder, zinc_gas, silicon_oxide_IV),
         order = d,
@@ -904,7 +904,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = zinc_sulfate_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_oxide, sulfuric_acid_angels, zinc_sulfate_solution),
         order = e,
@@ -924,7 +924,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_dicyanoargentate_I_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_silver_chemistry,
         icons = THREE_I(sodium_dicyanoargentate_I, water_purified_angels, sodium_dicyanoargentate_I_solution),
         order = c,
@@ -944,7 +944,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = titanium_iodide_IV_gas,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_titanium_chemistry,
         icons = THREE_I(titanium_pellet, iodine_gas, titanium_iodide_IV_gas),
         order = c,
@@ -959,7 +959,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = titanium_oxide_IV,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_titanium_chemistry,
         icons = TWO_D_I(titanium_chloride_IV, oxygen_angels, titanium_oxide_IV, chlorine_angels),
         order = d,
@@ -983,7 +983,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_dicyanoaurate_I_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_gold_chemistry,
         icons = THREE_I(sodium_dicyanoaurate_I, water_purified_angels, sodium_dicyanoaurate_I_solution),
         order = c,
@@ -1003,7 +1003,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = cobalt_chloride_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_cobalt_chemistry,
         icons = THREE_D_I(cobalt_pellet, hydrogen_chloride_angels, water_purified_angels, cobalt_chloride_II_solution, nil, hydrogen_angels),
         order = b,
@@ -1028,7 +1028,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = chromium_oxide_VI,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_chromium_chemistry,
         icons = THREE_I(chromium_ore_angels, oxygen_angels, chromium_oxide_VI),
         order = a,
@@ -1043,7 +1043,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chromic_acid,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_chromium_chemistry,
         icons = THREE_I(chromium_oxide_VI, water_purified_angels, chromic_acid),
         order = b,
@@ -1058,7 +1058,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chromium_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_chromium_chemistry,
         icons = FOUR_R_I(chromic_acid, sulfur_trioxide_gas, chromium_cathode, hydrogen_peroxide),
         order = c,
@@ -1080,7 +1080,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chromium_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(chromium_processed, sulfuric_acid_angels, water_purified_angels, chromium_sulfate_II_solution, nil, hydrogen_angels),
         order = d,
@@ -1100,7 +1100,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_chromate_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(chromium_oxide_III, potassium_hypochlorite_solution, potassium_hydroxide_solution, potassium_chromate_solution, potassium_chloride_solution, water_purified_angels),
         order = f,
@@ -1121,7 +1121,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_dichromate_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(potassium_chromate_solution, nil, sulfuric_acid_angels, potassium_dichromate_solution, potassium_sulfate_solution, water_purified_angels),
         order = g,
@@ -1146,7 +1146,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = copper_tungsten_powder,
-        category = angels_powder_mixing_3,
+        categories = {angels_powder_mixing_3},
         subgroup = is_tungsten,
         icons = THREE_I(tungsten_powder, copper_powder, copper_tungsten_powder),
         order = f,
@@ -1162,7 +1162,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = peroxo_tungstic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_tungsten_chemistry,
         icons = TWO_D_I(tungsten_pellet, hydrogen_peroxide, peroxo_tungstic_acid, water_purified_angels),
         order = d,
@@ -1181,7 +1181,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tungstic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_tungsten_chemistry,
         icons = THREE_D_I(peroxo_tungstic_acid, nil, nil, tungstic_acid, oxygen_angels, steam),
         order = e,
@@ -1204,7 +1204,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = platinum_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_platinum,
         icons = TWO_I(platinum_ore_angels, platinum_processed),
         order = b,
@@ -1215,7 +1215,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_platinum,
         icons = TWO_I(platinum_processed, platinum_pellet),
         order = c,
@@ -1226,7 +1226,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_ingot,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_platinum,
         icons = TWO_D_I(platinum_fluoride_IV, hydrogen_angels, platinum_ingot, hydrogen_fluoride_angels),
         order = d,
@@ -1245,7 +1245,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_ingot_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum,
         icons = FOUR_THREE_R_I(ammonium_hexachloroplatinate_IV, nil, formic_acid, platinum_ingot, ammonium_chloride, carbon_dioxide_angels, hydrogen_chloride_angels),
         order = d_a,
@@ -1266,7 +1266,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_ingot_3,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_platinum,
         icons = FOUR_THREE_R_I(sodium_hexahydroxoplatinate_IV_solution, nil, hydrazine_angels, platinum_ingot, nitrogen_angels, sodium_hydroxide_solution_angels, water_purified_angels),
         order = d_b,
@@ -1288,7 +1288,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = platinum_chloride_II,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_platinum_chemistry,
         icons = THREE_I(platinum_ore_angels, chlorine_angels, platinum_chloride_II),
         order = a,
@@ -1303,7 +1303,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_fluoride_IV,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(platinum_chloride_II, nil, hydrogen_fluoride_angels, platinum_fluoride_IV, platinum_ingot, hydrogen_chloride_angels),
         order = b,
@@ -1323,7 +1323,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexachloroplatinic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(platinum_processed, chlorine_angels, hydrochloric_acid_angels, hexachloroplatinic_acid),
         order = c,
@@ -1339,7 +1339,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_hexachloroplatinate_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(hexachloroplatinic_acid, nil, ammonium_chloride_solution_angels, ammonium_hexachloroplatinate_IV, hydrochloric_acid_angels, water_purified_angels),
         order = d,
@@ -1359,7 +1359,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_hexachloroplatinate_IV_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(platinum_pellet, chlorine_angels, sodium_chloride_solution, sodium_hexachloroplatinate_IV_solution),
         order = e,
@@ -1375,7 +1375,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_hydroxide_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = TWO_D_I(sodium_hexachloroplatinate_IV_solution, sodium_hydroxide_solution_angels, platinum_hydroxide_IV, sodium_chloride_solution),
         order = f,
@@ -1394,7 +1394,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_hexahydroxoplatinate_IV_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_I(platinum_hydroxide_IV, sodium_hydroxide_solution_angels, sodium_hexahydroxoplatinate_IV_solution),
         order = g,
@@ -1415,7 +1415,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = lithium_chloride_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_alloys,
         icons = THREE_I(lithium_chloride_angels, water_purified_angels, lithium_chloride_solution),
         order = b,
@@ -1430,7 +1430,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_chloride_solution_from_lithium_hydroxide,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_alloys,
         icons = TWO_D_I(lithium_hydroxide, hydrochloric_acid_angels, lithium_chloride_solution, water_purified_angels),
         order = b_a,
@@ -1449,7 +1449,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_perchlorate_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_alloys,
         icons = TWO_D_I(sodium_perchlorate_solution, lithium_chloride_solution, lithium_perchlorate_solution, sodium_chloride_solution),
         order = c,
@@ -1468,7 +1468,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_hydride,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_alloys,
         icons = THREE_I(lithium_bob, hydrogen_angels, lithium_hydride),
         order = g,
@@ -1483,7 +1483,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_hydroxide,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_alloys,
         icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
         order = h,
@@ -1504,7 +1504,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_fluoride,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_alloys,
         icons = TWO_D_I(lithium_hydroxide, hydrofluoric_acid_angels, lithium_fluoride, water_purified_angels),
         order = j,
@@ -1523,7 +1523,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_hexafluorophosphate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_alloys,
         icons = THREE_I(lithium_fluoride, phosphorus_fluoride_V_gas, lithium_hexafluorophosphate),
         order = k,
@@ -1543,7 +1543,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_hexafluorophosphate_solution_carbonate,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_alloys,
         icons = THREE_I(lithium_hexafluorophosphate, ethylene_carbonate, lithium_hexafluorophosphate_solution_carbonate),
         order = l,

@@ -29,7 +29,7 @@ if mods[tellus_mods] then
     data_recipe[chloroplast_processing].results =
     {
         {type = item, name = chloroplast_mash, amount = 2},
-        {type = item, name = chloroplast_seed, amount = 1, probability = 0.03125}
+        {type = item, name = chloroplast_seed, amount = 1, independent_probability = 0.03125}
     }
 
     data_recipe[chloroplast_lubricant].subgroup = is_chloroplast
@@ -114,7 +114,7 @@ if mods[tellus_mods] then
     data_recipe[chlorophyll_mashing].results =
     {
         {type = fluid, name = chlorophyll, amount = 30},
-        {type = item, name = chloroplast_seed, amount = 1, probability = 0.03125}
+        {type = item, name = chloroplast_seed, amount = 1, independent_probability = 0.03125}
     }
 
     -- MAGNESIUM
@@ -214,7 +214,7 @@ if mods[tellus_mods] then
     data_recipe[mycelia_processing].results =
     {
         {type = item, name = mycelia, amount = 2},
-        {type = item, name = mycelia_seed, amount = 1, probability = 0.03125}
+        {type = item, name = mycelia_seed, amount = 1, independent_probability = 0.03125}
     }
 
     data_item[mycelia_composite].subgroup = is_mycelia
@@ -307,7 +307,7 @@ if mods[tellus_mods] then
     {
         {type = item, name = carbolyte_bacteria, amount = 1},
         {type = item, name = stone, amount = 2},
-        {type = item, name = carbolyte_pod, amount = 1, probability = 0.03125}
+        {type = item, name = carbolyte_pod, amount = 1, independent_probability = 0.03125}
     }
 
     local carbolyte_separation = "planetaris-carbolyte-separation"
@@ -318,7 +318,7 @@ if mods[tellus_mods] then
     {
         {type = item, name = carbolyte_bacteria, amount = 1},
         {type = item, name = stone, amount = 2},
-        {type = item, name = carbolyte_pod, amount = 1, probability = 0.03125}
+        {type = item, name = carbolyte_pod, amount = 1, independent_probability = 0.03125}
     }
 
     data_item[volcanic_soil].subgroup = is_carbolyte
@@ -373,7 +373,7 @@ if mods[tellus_mods] then
     data_recipe[holmiumnite_electrolysis].results =
     {
         {type = item, name = holmium_bacteria, amount = 1},
-        {type = item, name = holmiumnite_pod, amount = 1, probability = 0.03125}
+        {type = item, name = holmiumnite_pod, amount = 1, independent_probability = 0.03125}
     }
 
     local holmium_bacteria_recipe = "planetaris-holmium-bacteria"
@@ -592,8 +592,8 @@ if mods[tellus_mods] then
         {type = item, name = magnesium_bacteria, amount = 4},
     }
 
-    data_tool[bioengineering_science_pack].subgroup = is_tellus_recipe
-    data_tool[bioengineering_science_pack].order = h
+    data_item[bioengineering_science_pack].subgroup = is_tellus_recipe
+    data_item[bioengineering_science_pack].order = h
     TIMSABA.void.freezing_organics(bioengineering_science_pack)
     data_recipe[bioengineering_science_pack].subgroup = is_tellus_recipe
     data_recipe[bioengineering_science_pack].order = h
@@ -605,8 +605,8 @@ if mods[tellus_mods] then
         {type = fluid, name = nutrients, amount = 15}
     }
 
-    data_tool[pathological_science_pack].subgroup = is_tellus_recipe
-    data_tool[pathological_science_pack].order = i
+    data_item[pathological_science_pack].subgroup = is_tellus_recipe
+    data_item[pathological_science_pack].order = i
     TIMSABA.void.freezing_organics(pathological_science_pack)
     data_recipe[pathological_science_pack].subgroup = is_tellus_recipe
     data_recipe[pathological_science_pack].order = i
@@ -848,7 +848,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].stack_size = 200
             data_item[prototypes.name].fuel_category = base_fuel
             data_item[prototypes.name].fuel_value = 1800 .. kJ
-            data_recipe[prototypes.name].category = centrifuging_4
+            data_recipe[prototypes.name].categories = {centrifuging_4}
             data_recipe[prototypes.name].subgroup = is_dyes
             data_recipe[prototypes.name].order = prototypes.order
             if data_item[prototypes.artifact] then
@@ -911,7 +911,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_pipe
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_pipe
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -945,7 +945,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 32
             data_item[prototypes.name].weight = 31250
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_pipe_to_ground
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -984,7 +984,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_stone_brick
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_stone_brick
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -1033,7 +1033,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_concrete
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_concrete
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -1071,7 +1071,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_hazard_concrete
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_hazard_concrete
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -1118,7 +1118,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_reinforced_concrete
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_reinforced_concrete
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =
@@ -1217,7 +1217,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].subgroup = is_tellus_stone_wall
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
-            data_recipe[prototypes.name].category = crafting
+            data_recipe[prototypes.name].categories = {crafting}
             data_recipe[prototypes.name].subgroup = is_tellus_stone_wall
             data_recipe[prototypes.name].order = prototypes.order
             data_recipe[prototypes.name].ingredients =

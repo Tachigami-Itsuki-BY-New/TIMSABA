@@ -375,8 +375,7 @@ for _, BUILD in pairs(entities) do
         if BUILD.type_2 == data_item and data_item[BUILD.name] then
             data_item[BUILD.name].stack_size = BUILD.stack
             data_item[BUILD.name].weight = BUILD.weight
-            data_recipe[BUILD.name].category = crafting
-            data_recipe[BUILD.name].additional_categories = {electromagnetics}
+            data_recipe[BUILD.name].categories = {crafting, electromagnetics}
         end
     end
 end
@@ -809,20 +808,16 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
-data_recipe[stone_pipe].category = smelting_filtering
-data_recipe[stone_pipe].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy}
-end
-data_recipe[plastic_pipe].category = crafting_fluid
+data_recipe[stone_pipe].categories = {smelting_filtering}
+data_recipe[plastic_pipe].categories = {crafting_fluid}
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
 if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe].category = angels_sintering_2
+    data_recipe[ceramic_pipe].categories = {angels_sintering_2}
 end
-data_recipe[tungsten_pipe].category = angels_sintering_4
+data_recipe[tungsten_pipe].categories = {angels_sintering_4}
 data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
-data_recipe[copper_tungsten_pipe].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe].categories = {angels_sintering_4}
 data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 
 data_item_subgroup[is_pipe_to_ground].order = e_a
@@ -880,24 +875,20 @@ pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,     
 pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,      nitinol_plate_bob, 40)
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
 
-data_recipe[stone_pipe_to_ground].category = smelting_filtering
-data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy}
-end
+data_recipe[stone_pipe_to_ground].categories = {smelting_filtering}
 
-data_recipe[plastic_pipe_to_ground].category = crafting_fluid
+data_recipe[plastic_pipe_to_ground].categories = {crafting_fluid}
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
 
 if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
+    data_recipe[ceramic_pipe_to_ground].categories = {angels_sintering_2}
 end
 
-data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
+data_recipe[tungsten_pipe_to_ground].categories = {angels_sintering_4}
 
-data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe_to_ground].categories = {angels_sintering_4}
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

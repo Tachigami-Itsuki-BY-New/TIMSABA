@@ -303,7 +303,7 @@ data:extend
         name = tech_magnesium_smelting_3,
         icon = graphics_magnesium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_magnesium_smelting_2, tech_sulfur_processing_1, tech_ore_processing_2},
+        prerequisites = {tech_magnesium_smelting_2, tech_sulfur_processing, tech_ore_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = magnesium_pellet},

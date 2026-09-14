@@ -6,7 +6,7 @@ if mods[moshine_mods] then
     ({
         {
             name = moshine_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_moshine_air,
             order = a,
             energy_required = 8,
@@ -17,7 +17,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, nitrogen_angels, carbon_dioxide_angels, steam),
             order = a_a,
@@ -33,7 +33,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation_2,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, hydrogen_sulfide_angels, hydrogen_fluoride_angels, sulfur_dioxide_angels),
             order = a_a,
@@ -60,7 +60,7 @@ if mods[moshine_mods] then
         local recipe_data =
         {
             name = info.name,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_moshine_recipe,
             icons = TWO_I(lava, info.results),
             order = info.order,
@@ -87,7 +87,7 @@ if mods[moshine_mods] then
     ({
         {
             name = neodymium_processed,
-            category = angels_processed_pressing_4,
+            categories = {angels_processed_pressing_4},
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_ore, neodymium_processed),
             order = b,
@@ -98,7 +98,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_pellet,
-            category = angels_pellet_pressing_4,
+            categories = {angels_pellet_pressing_4},
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_processed, neodymium_pellet),
             order = c,
@@ -109,7 +109,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_ingot,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
             icons = TWO_D_I(neodymium_chloride_III, calcium, neodymium_ingot, calcium_chloride_angels),
             order = d,
@@ -128,7 +128,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_ingot_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
             icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, lime_angels, salt_angels),
             order = d_a,
@@ -150,7 +150,7 @@ if mods[moshine_mods] then
         -- CHEMISTRY
         {
             name = neodymium_chloride_III,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_I(neodymium_ore, chlorine_angels, neodymium_chloride_III),
             order = a,
@@ -165,7 +165,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_hydroxide_III,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = TWO_D_I(neodymium_processed, water_purified_angels, neodymium_hydroxide_III, hydrogen_angels),
             order = b,
@@ -184,7 +184,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_oxide_III,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_R_I(neodymium_hydroxide_III, neodymium_oxide_III, steam),
             order = c,
@@ -199,7 +199,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_oxide_III_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_I(neodymium_pellet, oxygen_angels, neodymium_oxide_III),
             order = c_a,
@@ -215,7 +215,7 @@ if mods[moshine_mods] then
         -- CASTING
         {
             name = neodymium_iron_boron_molten,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_neodymium_casting,
             icons = THREE_D_I(neodymium_ingot, iron_ingot, boron, neodymium_iron_boron_molten),
             order = a,
@@ -237,7 +237,7 @@ if mods[moshine_mods] then
     ({
         {
             name = lead_ingot_4,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_lead,
             icons = THREE_D_I(lead_sulfate_II, nil, coal, lead_ingot, sulfur_dioxide_angels, carbon_dioxide_angels),
             order = d_e,
@@ -263,7 +263,7 @@ if mods[moshine_mods] then
     ({
         {
             name = water_orange_waste_purification,
-            category = angels_water_treatment,
+            categories = {angels_water_treatment},
             subgroup = is_water_cleaning,
             icons = FOUR_R_I(water_orange_waste, water_mineralized_angels, calcium_phosphate, water_purified_angels),
             order = e,
@@ -286,7 +286,7 @@ if mods[moshine_mods] then
         -- BORON
         {
             name = boron_oxide_III,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_boron,
             icons = THREE_R_I(boric_acid_solution, boron_oxide_III, steam),
             order = b,
@@ -301,7 +301,7 @@ if mods[moshine_mods] then
         },
         {
             name = boron,
-            category = smelting_filtering,
+            categories = {smelting_filtering},
             subgroup = is_boron,
             icons = TWO_D_I(boron_oxide_III, magnesium_powder, boron, magnesium_oxide),
             order = c,
@@ -321,7 +321,7 @@ if mods[moshine_mods] then
         -- PHOSPHORUS
         {
             name = orthophosphoric_acid,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
             order = e,
@@ -341,7 +341,7 @@ if mods[moshine_mods] then
         },
         {
             name = orthophosphoric_acid_from_phosphate_ore,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
             order = e_a,
@@ -368,7 +368,7 @@ if mods[moshine_mods] then
     ({
         {
             name = barite_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_barium,
             icons = RECYCLING_I(recycling_png, barite),
             order = a_a,
@@ -390,7 +390,7 @@ if mods[moshine_mods] then
     ({
         {
             name = biotite_mica_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_biotite_mica,
             icons = RECYCLING_I(recycling_png, biotite_mica),
             order = a_a,
@@ -426,7 +426,7 @@ if mods[moshine_mods] then
     ({
         {
             name = advanced_full_metallic_asteroid_crushing_9,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, neodymium_ore),
             order = h_i,
@@ -437,7 +437,7 @@ if mods[moshine_mods] then
         },
         {
             name = advanced_full_metallic_asteroid_crushing_10,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, cerium_ore),
             order = h_j,
@@ -448,7 +448,7 @@ if mods[moshine_mods] then
         },
         {
             name = promethium_asteroid_crushing_1,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_6,
             icons = TWO_I(promethium_asteroid_chunk, promethium_ore),
             order = e_a,

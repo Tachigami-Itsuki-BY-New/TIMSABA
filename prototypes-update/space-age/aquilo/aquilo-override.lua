@@ -65,8 +65,7 @@ data_recipe[ice_platform].energy_required = 32
 data_recipe[ice_platform].ingredients[1].amount = 480
 data_recipe[ice_platform].ingredients[2].amount = 64
 
-data_recipe[lithium].category = angels_advanced_chemistry
-data_recipe[lithium].additional_categories = {cryogenics}
+data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
 data_recipe[lithium].icons = BUILDING_R_I(lithium_chloride_angels, planet_aquilo)
 data_recipe[lithium].order = d
@@ -95,8 +94,8 @@ data_recipe[lithium_plate].order = e
 data_recipe[lithium_plate].energy_required = 8
 data_recipe[lithium_plate].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
-data_tool[cryogenic_science_pack].subgroup = is_aquilo_recipe
-data_tool[cryogenic_science_pack].order = f
+data_item[cryogenic_science_pack].subgroup = is_aquilo_recipe
+data_item[cryogenic_science_pack].order = f
 data_recipe[cryogenic_science_pack].subgroup = is_aquilo_recipe
 data_recipe[cryogenic_science_pack].order = f
 data_recipe[cryogenic_science_pack].energy_required = 16

@@ -43,7 +43,7 @@ local function generate_self_recycling_recipe(info)
                 localised_name = {"recipe-name.recycling", get_item_localised_name(info.name)},
                 type = recipe,
                 name = info.name .. _recycling,
-                category = "recycling",
+                category = recycling,
                 subgroup = data_item[info.name].subgroup,
                 icon = data_item[info.name].icon,
                 order = data_item[info.name].order,
@@ -176,6 +176,7 @@ end
 
 if mods[shchierbin_mods] then
     table.insert(recycling_items, vanadium_oxide_V)
+    table.insert(recycling_items, vanadium_steel_plate)
 end
 
 if mods[apia_carnova_mods] then
@@ -183,6 +184,6 @@ if mods[apia_carnova_mods] then
 end
 
 for _, name in ipairs(recycling_items) do
-    data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
+    data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, independent_probability = 0.25}}
     data_recipe[name .. _recycling].main_product = ""
 end

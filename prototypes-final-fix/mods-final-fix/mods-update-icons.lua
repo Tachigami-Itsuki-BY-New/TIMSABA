@@ -102,7 +102,7 @@ if mods[loaders_modernized_integrations] then
                     scale = 0.5,
                     width = 192,
                     y = 192,
-                    blend_mode = "additive"
+                    blend_mode = additive
                 },
                 {
                     filename = "__reskins-compatibility__/graphics/entity/miniloader/miniloader/miniloader-structure-shadow.png",
@@ -144,7 +144,7 @@ if mods[loaders_modernized_integrations] then
                     scale = 0.5,
                     width = 192,
                     y = 0,
-                    blend_mode = "additive"
+                    blend_mode = additive
                 },
                 {
                     filename = "__reskins-compatibility__/graphics/entity/miniloader/miniloader/miniloader-structure-shadow.png",
@@ -183,7 +183,7 @@ if mods[loaders_modernized_integrations] then
                     scale = 0.5,
                     width = 192,
                     y = 192,
-                    blend_mode = "additive"
+                    blend_mode = additive
                 },
                 {
                     filename = "__reskins-compatibility__/graphics/entity/miniloader/miniloader/miniloader-structure-shadow.png",

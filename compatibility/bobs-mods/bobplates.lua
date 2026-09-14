@@ -40,7 +40,7 @@ TIMSABA.functions.create_recipes
     -- BEARING BALL
     {
         name = ceramic_bearing_ball,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_bearing_ball,
         order = d,
         auto_recycle = true,
@@ -54,7 +54,7 @@ TIMSABA.functions.create_recipes
     -- BEARING
     {
         name = ceramic_bearing,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bearing,
         order = d,
         auto_recycle = true,
@@ -73,7 +73,7 @@ TIMSABA.functions.create_recipes
     -- CASTING
     {
         name = tungsten_carbide_plate_2,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_tungsten_casting,
         order = b_a,
         allow_productivity = true,
@@ -88,7 +88,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_bob,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_alloys,
         order = f,
         energy_required = 8,

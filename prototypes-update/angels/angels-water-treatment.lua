@@ -249,7 +249,7 @@ data_fluid[coolant].localised_description = show_formula and {chemical_formula, 
 data_fluid[coolant].subgroup = is_coolant
 data_fluid[coolant].order = a
 TIMSABA.barreling.add_dangerous_fluid(coolant)
-data_recipe[coolant].category = angels_advanced_chemistry
+data_recipe[coolant].categories = {angels_advanced_chemistry}
 data_recipe[coolant].subgroup = is_coolant
 data_recipe[coolant].icons = THREE_I(water_purified_angels, ethylene_oxide, coolant)
 data_recipe[coolant].order = a

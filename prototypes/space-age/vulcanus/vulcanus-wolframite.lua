@@ -47,7 +47,7 @@ TIMSABA.functions.create_recipes
     -- CRUSHED
     {
         name = wolframite_crushed,
-        category = angels_ore_refining_T1,
+        categories = {angels_ore_refining_T1},
         subgroup = is_vulcanus_wolframite,
         icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels),
         order = b,
@@ -63,7 +63,7 @@ TIMSABA.functions.create_recipes
     -- CHUNKS
     {
         name = wolframite_chunks,
-        category = angels_ore_refining_T2,
+        categories = {angels_ore_refining_T2},
         subgroup = is_vulcanus_wolframite,
         icons = THREE_D_I(wolframite_crushed, nil, water_purified_angels, wolframite_chunks, calcium_silicate, water_yellow_waste),
         order = c,
@@ -76,7 +76,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = wolframite_chunks, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, probability = 0.5},
+            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
             {type = fluid, name = water_yellow_waste, amount = 60}
         },
         main_product = wolframite_chunks
@@ -84,7 +84,7 @@ TIMSABA.functions.create_recipes
     -- CRYSTALS
     {
         name = wolframite_crystals,
-        category = angels_ore_refining_T3,
+        categories = {angels_ore_refining_T3},
         subgroup = is_vulcanus_wolframite,
         icons = THREE_I(wolframite_chunks, sulfuric_acid_angels, wolframite_crystals),
         order = d,
@@ -100,7 +100,7 @@ TIMSABA.functions.create_recipes
     -- PURIFIED
     {
         name = wolframite_purified,
-        category = angels_ore_refining_T4,
+        categories = {angels_ore_refining_T4},
         subgroup = is_vulcanus_wolframite,
         icons = TWO_I(wolframite_crystals, wolframite_purified),
         order = e,
@@ -112,7 +112,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = wolframite_crushed_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_crushed),
         order = f,
@@ -129,7 +129,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = wolframite_chunks_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_chunks),
         order = g,
@@ -148,7 +148,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = wolframite_crystals_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_crystals),
         order = h,
@@ -168,7 +168,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = wolframite_purified_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_purified),
         order = i,
@@ -189,7 +189,7 @@ TIMSABA.functions.create_recipes
     -- SYNTHESIS
     {
         name = rhenium_ore_recipe,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, wolframite_purified, rhenium_ore),
         order = a_k,

@@ -167,7 +167,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = galium_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_gallium,
         icons = TWO_I(galium_ore, galium_processed),
         order = b,
@@ -182,7 +182,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_gallium,
         icons = TWO_I(galium_processed, galium_pellet),
         order = c,
@@ -197,7 +197,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_ingot,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium,
         icons = TWO_D_I(galium_liquid, nitrogen_liquid, galium_ingot, nitrogen_angels),
         order = d,
@@ -216,7 +216,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_powder,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_gallium,
         icons = TWO_I(galium_ingot, galium_powder),
         order = e,
@@ -232,7 +232,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = galium_hydroxide_III,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = TWO_D_I(galium_ore, water_purified_angels, galium_hydroxide_III, hydrogen_angels),
         order = a,
@@ -251,7 +251,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_hydroxide_III_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = FOUR_THREE_R_I(lithium_gallium_hydride_solution_ether, nil, water_purified_angels, galium_hydroxide_III, lithium_hydroxide, hydrogen_angels, diethyl_ether),
         order = a_a,
@@ -272,7 +272,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_oxide_III,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = THREE_R_I(galium_hydroxide_III, galium_oxide_III, steam),
         order = b,
@@ -287,7 +287,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_tetrahydroxogallate_III_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = THREE_D_I(galium_oxide_III, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution),
         order = c,
@@ -303,7 +303,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_tetrahydroxogallate_III_2_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = THREE_D_I(galium_pellet, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution, nil, hydrogen_angels),
         order = c_a,
@@ -323,7 +323,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_liquid,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_gallium_chemistry,
         icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, galium_liquid, sodium_hydroxide_angels), -- or FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, galium_liquid, sodium_hydroxide_solution_angels),
         order = d,
@@ -345,7 +345,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_chloride_III,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = TWO_D_I(galium_processed, hydrogen_chloride_angels, galium_chloride_III, hydrogen_angels),
         order = e,
@@ -364,7 +364,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_chloride_III_solution_ether,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = THREE_I(galium_chloride_III, diethyl_ether, galium_chloride_III_solution_ether),
         order = f,
@@ -379,7 +379,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_gallium_hydride_solution_ether,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = TWO_D_I(galium_chloride_III_solution_ether, lithium_hydride, lithium_gallium_hydride_solution_ether, salt_angels),
         order = g,
@@ -398,7 +398,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_arsenide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = THREE_I(galium_powder, arsenic_powder, galium_arsenide),
         order = h,
@@ -413,7 +413,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = galium_nitride,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
         icons = TWO_D_I(galium_powder, ammonia_angels, galium_nitride, hydrogen_angels),
         order = i,

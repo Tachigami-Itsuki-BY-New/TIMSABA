@@ -49,7 +49,7 @@ if mods[corrundum_mods] then
         -- CRUSHED
         {
             name = chalcopyrite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_chalcopyrite,
             icons = THREE_R_I(chalcopyrite_ore, chalcopyrite_crushed, stone_crushed_angels),
             order = b,
@@ -65,7 +65,7 @@ if mods[corrundum_mods] then
         -- CHUNKS
         {
             name = chalcopyrite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_chalcopyrite,
             icons = THREE_D_I(chalcopyrite_crushed, nil, water_purified_angels, chalcopyrite_chunks, sulfur, water_yellow_waste),
             order = c,
@@ -78,7 +78,7 @@ if mods[corrundum_mods] then
             results =
             {
                 {type = item, name = chalcopyrite_chunks, amount = 4},
-                {type = item, name = sulfur, amount = 1, probability = 0.5},
+                {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_yellow_waste, amount = 60}
             },
             main_product = chalcopyrite_chunks
@@ -86,7 +86,7 @@ if mods[corrundum_mods] then
         -- CRYSTALS
         {
             name = chalcopyrite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_chalcopyrite,
             icons = THREE_I(chalcopyrite_chunks, sulfuric_acid_angels, chalcopyrite_crystals),
             order = d,
@@ -102,7 +102,7 @@ if mods[corrundum_mods] then
         -- PURIFIED
         {
             name = chalcopyrite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_chalcopyrite,
             icons = TWO_I(chalcopyrite_crystals, chalcopyrite_purified),
             order = e,
@@ -114,7 +114,7 @@ if mods[corrundum_mods] then
         -- SORTING
         {
             name = chalcopyrite_crushed_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_crushed),
             order = f,
@@ -131,7 +131,7 @@ if mods[corrundum_mods] then
         },
         {
             name = chalcopyrite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_chunks),
             order = g,
@@ -150,7 +150,7 @@ if mods[corrundum_mods] then
         },
         {
             name = chalcopyrite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_crystals),
             order = h,
@@ -170,7 +170,7 @@ if mods[corrundum_mods] then
         },
         {
             name = chalcopyrite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_purified),
             order = i,
@@ -191,7 +191,7 @@ if mods[corrundum_mods] then
         -- SYNTHESIS
         {
             name = selenium_recipe,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, chalcopyrite_purified, selenium),
             order = b,

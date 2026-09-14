@@ -24,7 +24,7 @@ data:extend
         research_trigger =
         {
             type = mine_entity,
-            entity = "big-volcanic-rock"
+            entities = {"big-volcanic-rock"}
         }
     },
     {

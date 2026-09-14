@@ -73,63 +73,63 @@ data_recipe[promethium_science_pack].results[1].amount = 8
 
 if mods[bobtech] and mods[bobenemies] then
     local alien_science_pack_orange = "bob-alien-science-pack-orange"
-    data_tool[alien_science_pack_orange].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_orange].order = a
+    data_item[alien_science_pack_orange].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_orange].order = a
     data_recipe[alien_science_pack_orange].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_orange].order = a
     data_recipe[alien_science_pack_orange].energy_required = 8
     data_recipe[alien_science_pack_orange].results[1].amount = 8
 
     local alien_science_pack_blue = "bob-alien-science-pack-blue"
-    data_tool[alien_science_pack_blue].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_blue].order = b
+    data_item[alien_science_pack_blue].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_blue].order = b
     data_recipe[alien_science_pack_blue].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_blue].order = b
     data_recipe[alien_science_pack_blue].energy_required = 8
     data_recipe[alien_science_pack_blue].results[1].amount = 8
 
     local alien_science_pack_yellow = "bob-alien-science-pack-yellow"
-    data_tool[alien_science_pack_yellow].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_yellow].order = c
+    data_item[alien_science_pack_yellow].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_yellow].order = c
     data_recipe[alien_science_pack_yellow].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_yellow].order = c
     data_recipe[alien_science_pack_yellow].energy_required = 8
     data_recipe[alien_science_pack_yellow].results[1].amount = 8
 
     local alien_science_pack_purple = "bob-alien-science-pack-purple"
-    data_tool[alien_science_pack_purple].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_purple].order = d
+    data_item[alien_science_pack_purple].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_purple].order = d
     data_recipe[alien_science_pack_purple].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_purple].order = d
     data_recipe[alien_science_pack_purple].energy_required = 8
     data_recipe[alien_science_pack_purple].results[1].amount = 8
 
     local alien_science_pack_green = "bob-alien-science-pack-green"
-    data_tool[alien_science_pack_green].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_green].order = e
+    data_item[alien_science_pack_green].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_green].order = e
     data_recipe[alien_science_pack_green].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_green].order = e
     data_recipe[alien_science_pack_green].energy_required = 8
     data_recipe[alien_science_pack_green].results[1].amount = 8
 
     local alien_science_pack_red = "bob-alien-science-pack-red"
-    data_tool[alien_science_pack_red].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack_red].order = f
+    data_item[alien_science_pack_red].subgroup = is_alien_science_pack
+    data_item[alien_science_pack_red].order = f
     data_recipe[alien_science_pack_red].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack_red].order = f
     data_recipe[alien_science_pack_red].energy_required = 8
     data_recipe[alien_science_pack_red].results[1].amount = 8
 
     local alien_science_pack = "bob-alien-science-pack"
-    data_tool[alien_science_pack].subgroup = is_alien_science_pack
-    data_tool[alien_science_pack].order = g
+    data_item[alien_science_pack].subgroup = is_alien_science_pack
+    data_item[alien_science_pack].order = g
     data_recipe[alien_science_pack].subgroup = is_alien_science_pack
     data_recipe[alien_science_pack].order = g
     data_recipe[alien_science_pack].energy_required = 8
     data_recipe[alien_science_pack].results[1].amount = 8
 
-    data_tool[gold_science_pack_bob].subgroup = is_alien_science_pack
-    data_tool[gold_science_pack_bob].order = h
+    data_item[gold_science_pack_bob].subgroup = is_alien_science_pack
+    data_item[gold_science_pack_bob].order = h
     data_recipe[gold_science_pack_bob].subgroup = is_alien_science_pack
     data_recipe[gold_science_pack_bob].order = h
     data_recipe[gold_science_pack_bob].energy_required = 32
@@ -173,7 +173,7 @@ data_item[titanium_gear_wheel].localised_description = show_formula and {chemica
 data_recipe[titanium_gear_wheel].icons = TWO_I(titanium_plate_bob, titanium_gear_wheel)
 
 data_item[tungsten_gear_wheel].localised_description = show_formula and {chemical_formula, "W"} or nil
-data_recipe[tungsten_gear_wheel].category = angels_sintering_4
+data_recipe[tungsten_gear_wheel].categories = {angels_sintering_4}
 data_recipe[tungsten_gear_wheel].icons = TWO_I(tungsten_powder, tungsten_gear_wheel)
 data_recipe[tungsten_gear_wheel].ingredients[1].name = tungsten_powder
 
@@ -205,7 +205,7 @@ data_item[steel_bearing_ball].localised_description = show_formula and {chemical
 data_recipe[steel_bearing_ball].icons = TWO_I(steel_plate, steel_bearing_ball)
 
 data_item[ceramic_bearing_ball].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing_ball].category = angels_sintering_2 end
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing_ball].categories = {angels_sintering_2} end
 data_recipe[ceramic_bearing_ball].icons = TWO_I(silicon_nitride_bob, ceramic_bearing_ball)
 
 data_item[cobalt_steel_bearing_ball].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
@@ -244,8 +244,8 @@ data_recipe[steel_bearing].icons = B_F_L(nil, steel_bearing_ball, steel_plate, s
 data_recipe[steel_bearing].ingredients[1].amount = 2
 
 data_item[ceramic_bearing].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-data_recipe[ceramic_bearing].category = crafting
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing].category = angels_sintering_2 end
+data_recipe[ceramic_bearing].categories = {crafting}
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing].categories = {angels_sintering_2} end
 data_recipe[ceramic_bearing].icons = B_F_L(nil, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)
 data_recipe[ceramic_bearing].ingredients =
 {
@@ -263,7 +263,7 @@ data_item[nitinol_bearing].localised_description = show_formula and {chemical_fo
 data_recipe[nitinol_bearing].icons = B_F_L(lubricant, nitinol_bearing_ball, nitinol_plate_bob, nitinol_bearing)
 
 local function bearing_recipe(name, bearing_ball, plate)
-    data_recipe[name].category = crafting_fluid
+    data_recipe[name].categories = {crafting_fluid}
     data_recipe[name].ingredients =
     {
         {type = item, name = bearing_ball, amount = 16},
@@ -407,8 +407,7 @@ data_recipe[phenolic_board].ingredients =
 }
 
 data_recipe[glass_fiber_board].localised_name = {"item-name.angels-glass-fiber-board"}
-data_recipe[glass_fiber_board].category = advanced_crafting
-data_recipe[glass_fiber_board].additional_categories = {electronics_fluid}
+data_recipe[glass_fiber_board].categories = {advanced_crafting, electronics_fluid}
 data_recipe[glass_fiber_board].subgroup = is_boards
 data_recipe[glass_fiber_board].icons = THREE_I(glass_coil_fiber, liquid_resin_angels, glass_fiber_board)
 data_recipe[glass_fiber_board].order = c
@@ -565,9 +564,9 @@ data_recipe[uranium_processing].energy_required = 8
 data_recipe[uranium_processing].ingredients[1].amount = 8
 data_recipe[uranium_processing].results =
 {
-    {type = item, name = uranium_234, amount = 2, probability = 0.0055},
-    {type = item, name = uranium_235, amount = 2, probability = 0.007},
-    {type = item, name = uranium_238, amount = 2, probability = 0.9875}
+    {type = item, name = uranium_234, amount = 2, independent_probability = 0.0055},
+    {type = item, name = uranium_235, amount = 2, independent_probability = 0.007},
+    {type = item, name = uranium_238, amount = 2, independent_probability = 0.9875}
 }
 
 local plutonium_synthesis = "angels-plutonium-synthesis"
@@ -655,7 +654,7 @@ data_recipe[thorium_processing].ingredients[1].amount = 4
 data_recipe[thorium_processing].results =
 {
     {type = item, name = thorium_232_bob, amount = 4},
-    {type = item, name = plutonium_239_bob, amount = 1, probability = 0.125}
+    {type = item, name = plutonium_239_bob, amount = 1, independent_probability = 0.125}
 }
 
 data_recipe[plutonium_breeding].subgroup = is_nuclear_recipe
@@ -677,192 +676,6 @@ data_recipe[plutonium_breeding].results =
     {type = item, name = plutonium_239_bob, amount = 16},
     {type = item, name = uranium_238, amount = 32}
 }
-
-if mods[clowns_nuclear] then
-    -- URANIUM ITEM
-    data_item[uranium_238].localised_name = {"item-name.uranium-238"}
-    data_item[uranium_238].subgroup = is_uranium_235_item
-    data_item[uranium_238].order = a
-
-    local uranium_235_20 = "20pc-uranium"
-    data_item[uranium_235_20].localised_name = {"item-name.uranium-235-20"}
-    data_item[uranium_235_20].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_20].subgroup = is_uranium_235_item
-    data_item[uranium_235_20].icons = nil
-    data_item[uranium_235_20].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-20.png"
-    data_item[uranium_235_20].order = b
-    data_item[uranium_235_20].stack_size = 200
-
-    local uranium_235_35 = "35pc-uranium"
-    data_item[uranium_235_35].localised_name = {"item-name.uranium-235-35"}
-    data_item[uranium_235_35].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_35].subgroup = is_uranium_235_item
-    data_item[uranium_235_35].icons = nil
-    data_item[uranium_235_35].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-35.png"
-    data_item[uranium_235_35].order = c
-    data_item[uranium_235_35].stack_size = 200
-
-    local uranium_235_45 = "45pc-uranium"
-    data_item[uranium_235_45].localised_name = {"item-name.uranium-235-45"}
-    data_item[uranium_235_45].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_45].subgroup = is_uranium_235_item
-    data_item[uranium_235_45].icons = nil
-    data_item[uranium_235_45].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-45.png"
-    data_item[uranium_235_45].order = d
-    data_item[uranium_235_45].stack_size = 200
-
-    local uranium_235_55 = "55pc-uranium"
-    data_item[uranium_235_55].localised_name = {"item-name.uranium-235-55"}
-    data_item[uranium_235_55].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_55].subgroup = is_uranium_235_item
-    data_item[uranium_235_55].icons = nil
-    data_item[uranium_235_55].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-55.png"
-    data_item[uranium_235_55].order = e
-    data_item[uranium_235_55].stack_size = 200
-
-    local uranium_235_65 = "65pc-uranium"
-    data_item[uranium_235_65].localised_name = {"item-name.uranium-235-65"}
-    data_item[uranium_235_65].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_65].subgroup = is_uranium_235_item
-    data_item[uranium_235_65].icons = nil
-    data_item[uranium_235_65].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-65.png"
-    data_item[uranium_235_65].order = f
-    data_item[uranium_235_65].stack_size = 200
-
-    local uranium_235_70 = "70pc-uranium"
-    data_item[uranium_235_70].localised_name = {"item-name.uranium-235-70"}
-    data_item[uranium_235_70].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_70].subgroup = is_uranium_235_item
-    data_item[uranium_235_70].icons = nil
-    data_item[uranium_235_70].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-70.png"
-    data_item[uranium_235_70].order = g
-    data_item[uranium_235_70].stack_size = 200
-
-    local uranium_235_75 = "75pc-uranium"
-    data_item[uranium_235_75].localised_name = {"item-name.uranium-235-75"}
-    data_item[uranium_235_75].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-    data_item[uranium_235_75].subgroup = is_uranium_235_item
-    data_item[uranium_235_75].icons = nil
-    data_item[uranium_235_75].icon = "__TIMSABA__/graphics/icons/uranium-235/uranium-235-75.png"
-    data_item[uranium_235_75].order = h
-    data_item[uranium_235_75].stack_size = 200
-
-    data_item[uranium_235].localised_name = {"item-name.uranium-235"}
-    data_item[uranium_235].subgroup = is_uranium_235_item
-    data_item[uranium_235].order = i
-
-    -- URANIUM RECIPE
-    local depleted_uranium_reprocessing = "depleted-uranium-reprocessing"
-    data_recipe[depleted_uranium_reprocessing].subgroup = is_uranium_235_recipe
-    data_recipe[depleted_uranium_reprocessing].icons = TWO_I(uranium_238, uranium_ore)
-    data_recipe[depleted_uranium_reprocessing].order = a
-    data_recipe[depleted_uranium_reprocessing].energy_required = 4
-    data_recipe[depleted_uranium_reprocessing].ingredients[1].amount = 4
-    data_recipe[depleted_uranium_reprocessing].results[1].amount = 8
-
-    local centrifuging_20 = "clowns-centrifuging-20pc-ore"
-    data_recipe[centrifuging_20].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_20].icons = TWO_I(uranium_ore, uranium_235_20)
-    data_recipe[centrifuging_20].order = b
-    data_recipe[centrifuging_20].energy_required = 8
-    data_recipe[centrifuging_20].ingredients[1].amount = 64
-    data_recipe[centrifuging_20].results =
-    {
-        {type = item, name = uranium_235_20, amount = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_35 = "clowns-centrifuging-35pc"
-    data_recipe[centrifuging_35].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_35].icons = TWO_I(uranium_235_20, uranium_235_35)
-    data_recipe[centrifuging_35].order = c
-    data_recipe[centrifuging_35].energy_required = 8
-    data_recipe[centrifuging_35].ingredients[1].amount = 4
-    data_recipe[centrifuging_35].results =
-    {
-        {type = item, name = uranium_235_20, amount = 2},
-        {type = item, name = uranium_235_35, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_45 = "clowns-centrifuging-45pc"
-    data_recipe[centrifuging_45].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_45].icons = TWO_I(uranium_235_35, uranium_235_45)
-    data_recipe[centrifuging_45].order = d
-    data_recipe[centrifuging_45].energy_required = 8
-    data_recipe[centrifuging_45].ingredients[1].amount = 4
-    data_recipe[centrifuging_45].results =
-    {
-        {type = item, name = uranium_235_35, amount = 2},
-        {type = item, name = uranium_235_45, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_55 = "clowns-centrifuging-55pc"
-    data_recipe[centrifuging_55].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_55].icons = TWO_I(uranium_235_45, uranium_235_55)
-    data_recipe[centrifuging_55].order = e
-    data_recipe[centrifuging_55].energy_required = 8
-    data_recipe[centrifuging_55].ingredients[1].amount = 4
-    data_recipe[centrifuging_55].results =
-    {
-        {type = item, name = uranium_235_45, amount = 2},
-        {type = item, name = uranium_235_55, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_65 = "clowns-centrifuging-65pc"
-    data_recipe[centrifuging_65].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_65].icons = TWO_I(uranium_235_55, uranium_235_65)
-    data_recipe[centrifuging_65].order = f
-    data_recipe[centrifuging_65].energy_required = 8
-    data_recipe[centrifuging_65].ingredients[1].amount = 4
-    data_recipe[centrifuging_65].results =
-    {
-        {type = item, name = uranium_235_55, amount = 2},
-        {type = item, name = uranium_235_65, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_70 = "clowns-centrifuging-70pc"
-    data_recipe[centrifuging_70].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_70].icons = TWO_I(uranium_235_65, uranium_235_70)
-    data_recipe[centrifuging_70].order = g
-    data_recipe[centrifuging_70].energy_required = 8
-    data_recipe[centrifuging_70].ingredients[1].amount = 4
-    data_recipe[centrifuging_70].results =
-    {
-        {type = item, name = uranium_235_65, amount = 2},
-        {type = item, name = uranium_235_70, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_75 = "clowns-centrifuging-75pc"
-    data_recipe[centrifuging_75].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_75].icons = TWO_I(uranium_235_70, uranium_235_75)
-    data_recipe[centrifuging_75].order = h
-    data_recipe[centrifuging_75].energy_required = 8
-    data_recipe[centrifuging_75].ingredients[1].amount = 4
-    data_recipe[centrifuging_75].results =
-    {
-        {type = item, name = uranium_235_70, amount = 2},
-        {type = item, name = uranium_235_75, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-
-    local centrifuging_80 = "clowns-centrifuging-80pc"
-    data_recipe[centrifuging_80].subgroup = is_uranium_235_recipe
-    data_recipe[centrifuging_80].icons = TWO_I(uranium_235_75, uranium_235)
-    data_recipe[centrifuging_80].order = i
-    data_recipe[centrifuging_80].energy_required = 8
-    data_recipe[centrifuging_80].ingredients[1].amount = 4
-    data_recipe[centrifuging_80].results =
-    {
-        {type = item, name = uranium_235_75, amount = 2},
-        {type = item, name = uranium_235, amount_min = 0, amount_max = 2},
-        {type = item, name = uranium_238, amount = 2}
-    }
-end
 
 data_item[uranium_234_fuel_cell].subgroup = is_uranium_cell
 data_item[uranium_234_fuel_cell].order = a
@@ -899,30 +712,12 @@ data_recipe[uranium_235_fuel_cell].ingredients =
 data_recipe[uranium_235_fuel_cell].results[1].amount = 16
 data_recipe[uranium_235_fuel_cell].allow_productivity = true
 
-if mods[clowns_nuclear] then
-    local alt_uranium_235_fuel_cell = "mixed-oxide"
-    data_recipe[alt_uranium_235_fuel_cell].localised_name = {"recipe-name.uranium-plutonium-mixed-fuel-cell"}
-    data_recipe[alt_uranium_235_fuel_cell].category = angels_centrifuging_2
-    data_recipe[alt_uranium_235_fuel_cell].subgroup = is_uranium_cell
-    data_recipe[alt_uranium_235_fuel_cell].icons = R_P_I(uranium_235_fuel_cell, nil, nil, number_2)
-    data_recipe[alt_uranium_235_fuel_cell].order = b_a
-    data_recipe[alt_uranium_235_fuel_cell].energy_required = 64
-    data_recipe[alt_uranium_235_fuel_cell].ingredients =
-    {
-        {type = item, name = plutonium_239_bob, amount = 2},
-        {type = item, name = uranium_238, amount = 2},
-        {type = item, name = lead_plate_bob, amount = 2}
-    }
-    data_recipe[alt_uranium_235_fuel_cell].allow_productivity = true
-end
-
 local depleted_uranium_fuel_cell = "depleted-uranium-fuel-cell"
 data_item[depleted_uranium_fuel_cell].subgroup = is_uranium_cell
 data_item[depleted_uranium_fuel_cell].order = c
 
 local nuclear_fuel_cell_reprocessing = "nuclear-fuel-reprocessing"
-data_recipe[nuclear_fuel_cell_reprocessing].category = angels_advanced_chemistry
-data_recipe[nuclear_fuel_cell_reprocessing].additional_categories = {cryogenics}
+data_recipe[nuclear_fuel_cell_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[nuclear_fuel_cell_reprocessing].subgroup = is_uranium_cell
 data_recipe[nuclear_fuel_cell_reprocessing].icons = TWO_I(depleted_uranium_fuel_cell, uranium_238)
 data_recipe[nuclear_fuel_cell_reprocessing].order = c_a
@@ -931,8 +726,7 @@ data_recipe[nuclear_fuel_cell_reprocessing].ingredients[1].amount = 4
 data_recipe[nuclear_fuel_cell_reprocessing].results = {{type = item, name = uranium_238, amount = 4}}
 
 local advanced_nuclear_fuel_cell_reprocessing = "angels-advanced-uranium-reprocessing"
-data_recipe[advanced_nuclear_fuel_cell_reprocessing].category = angels_advanced_chemistry
-data_recipe[advanced_nuclear_fuel_cell_reprocessing].additional_categories = {cryogenics}
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].subgroup = is_uranium_cell
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].icons = THREE_D_I(depleted_uranium_fuel_cell, nil, hydrofluoric_acid_angels, uranium_238, neptunium_240, water_greenyellow_waste)
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].order = c_b
@@ -941,7 +735,7 @@ data_recipe[advanced_nuclear_fuel_cell_reprocessing].ingredients[1].amount = 4
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].results =
 {
     {type = item, name = uranium_238, amount = 4},
-    {type = item, name = neptunium_240, amount = 1, probability = 0.5},
+    {type = item, name = neptunium_240, amount = 1, independent_probability = 0.5},
     {type = fluid, name = water_greenyellow_waste, amount = 60}
 }
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].allow_productivity = true
@@ -978,21 +772,19 @@ if mods[shattered_mods] then
 else
     data_recipe[mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, nil, americium_241_angels, curium_245_angels, uranium_238)
 end
-data_recipe[mixed_oxide_reprocessing].category = angels_advanced_chemistry
-data_recipe[mixed_oxide_reprocessing].additional_categories = {cryogenics}
+data_recipe[mixed_oxide_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[mixed_oxide_reprocessing].order = b_a
 data_recipe[mixed_oxide_reprocessing].energy_required = 64
 data_recipe[mixed_oxide_reprocessing].ingredients[1].amount = 4
 data_recipe[mixed_oxide_reprocessing].results =
 {
     {type = item, name = americium_241_angels, amount = 2},
-    {type = item, name = curium_245_angels, amount = 1, probability = 0.05},
+    {type = item, name = curium_245_angels, amount = 1, independent_probability = 0.05},
     {type = item, name = uranium_238, amount = 4}
 }
 data_recipe[mixed_oxide_reprocessing].allow_productivity = true
 
-data_recipe[advanced_mixed_oxide_reprocessing].category = angels_advanced_chemistry
-data_recipe[advanced_mixed_oxide_reprocessing].additional_categories = {cryogenics}
+data_recipe[advanced_mixed_oxide_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[advanced_mixed_oxide_reprocessing].subgroup = is_mixed_oxide_cell
 if mods[shattered_mods] then
     data_recipe[advanced_mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, hydrofluoric_acid_angels, plutonium_239_shattered, curium_245_shattered, water_greenyellow_waste)
@@ -1005,7 +797,7 @@ data_recipe[advanced_mixed_oxide_reprocessing].ingredients[1].amount = 8
 data_recipe[advanced_mixed_oxide_reprocessing].results =
 {
     {type = item, name = plutonium_239_bob, amount = 2},
-    {type = item, name = curium_245_angels, amount = 4, probability = 0.5},
+    {type = item, name = curium_245_angels, amount = 4, independent_probability = 0.5},
     {type = fluid, name = water_greenyellow_waste, amount = 60}
 }
 data_recipe[advanced_mixed_oxide_reprocessing].allow_productivity = true
@@ -1036,8 +828,7 @@ data_item[depleted_thorium_fuel_cell].drop_sound = data_item[uranium_235_fuel_ce
 data_item[depleted_thorium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[depleted_thorium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 
-data_recipe[thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
-data_recipe[thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
+data_recipe[thorium_fuel_cell_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[thorium_fuel_cell_reprocessing].subgroup = is_thorium_cell
 if mods[shattered_mods] then
     data_recipe[thorium_fuel_cell_reprocessing].icons = FOUR_D_I(depleted_thorium_fuel_cell, nil, nil, nil, neptunium_240, thorium_shattered, uranium_234, curium_245_shattered)
@@ -1051,13 +842,12 @@ data_recipe[thorium_fuel_cell_reprocessing].results =
 {
     {type = item, name = neptunium_240, amount = 1},
     {type = item, name = thorium_232_bob, amount = 4},
-    {type = item, name = uranium_234, amount = 1, probability = 0.25},
-    {type = item, name = curium_245_angels, amount = 1, probability = 0.25}
+    {type = item, name = uranium_234, amount = 1, independent_probability = 0.25},
+    {type = item, name = curium_245_angels, amount = 1, independent_probability = 0.25}
 }
 data_recipe[thorium_fuel_cell_reprocessing].allow_productivity = true
 
-data_recipe[advanced_thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
-data_recipe[advanced_thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
+data_recipe[advanced_thorium_fuel_cell_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[advanced_thorium_fuel_cell_reprocessing].subgroup = is_thorium_cell
 data_recipe[advanced_thorium_fuel_cell_reprocessing].icons = FOUR_THREE_R_I(depleted_thorium_fuel_cell, nil, hydrofluoric_acid_angels, neptunium_240, uranium_234, muon_fusion_catalyst, water_greenyellow_waste)
 data_recipe[advanced_thorium_fuel_cell_reprocessing].order = b_b
@@ -1066,8 +856,8 @@ data_recipe[advanced_thorium_fuel_cell_reprocessing].ingredients[1].amount = 4
 data_recipe[advanced_thorium_fuel_cell_reprocessing].results =
 {
     {type = item, name = neptunium_240, amount = 2},
-    {type = item, name = uranium_234, amount = 2, probability = 0.25},
-    {type = item, name = muon_fusion_catalyst, amount = 1, probability = 0.25},
+    {type = item, name = uranium_234, amount = 2, independent_probability = 0.25},
+    {type = item, name = muon_fusion_catalyst, amount = 1, independent_probability = 0.25},
     {type = fluid, name = water_greenyellow_waste, amount = 60}
 }
 data_recipe[advanced_thorium_fuel_cell_reprocessing].allow_productivity = true
@@ -1096,8 +886,7 @@ data_item[depleted_deuterium_fuel_cell].drop_sound = data_item[uranium_235_fuel_
 data_item[depleted_deuterium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[depleted_deuterium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 
-data_recipe[deuterium_fuel_cell_reprocessing].category = angels_advanced_chemistry
-data_recipe[deuterium_fuel_cell_reprocessing].additional_categories = {cryogenics}
+data_recipe[deuterium_fuel_cell_reprocessing].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[deuterium_fuel_cell_reprocessing].subgroup = is_deuterium_cell
 data_recipe[deuterium_fuel_cell_reprocessing].icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, muon_fusion_catalyst, deuterium_angels)
 data_recipe[deuterium_fuel_cell_reprocessing].order = b_a

@@ -22,7 +22,7 @@ if mods[shchierbin_mods] then
     data_item[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
     data_item[vanadium_oxide_V].order = a
     data_item[vanadium_oxide_V].stack_size = 200
-    data_recipe[vanadium_oxide_V].category = angels_blast_smelting_4
+    data_recipe[vanadium_oxide_V].categories = {angels_blast_smelting_4}
     data_recipe[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
     data_recipe[vanadium_oxide_V].icons = THREE_I(vanadium_ore, oxygen_angels, vanadium_oxide_V)
     data_recipe[vanadium_oxide_V].order = a
@@ -40,7 +40,7 @@ if mods[shchierbin_mods] then
     data_item[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
     data_item[vanadium_plate].order = b
     data_item[vanadium_plate].stack_size = 200
-    data_recipe[vanadium_plate].category = angels_casting_4
+    data_recipe[vanadium_plate].categories = {angels_casting_4}
     data_recipe[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
     data_recipe[vanadium_plate].icons = TWO_I(vanadium_molten, vanadium_plate)
     data_recipe[vanadium_plate].order = b
@@ -63,7 +63,7 @@ if mods[shchierbin_mods] then
 
     -- RECIPE
     data_recipe[slaked_lime_mods].localised_name = {"item-name." .. calcium_hydroxide}
-    data_recipe[slaked_lime_mods].category = angels_liquifying
+    data_recipe[slaked_lime_mods].categories = {angels_liquifying}
     data_recipe[slaked_lime_mods].subgroup = is_shchierbin_recipe
     data_recipe[slaked_lime_mods].icons = THREE_I(lime_angels, water_purified_angels, calcium_hydroxide)
     data_recipe[slaked_lime_mods].order = a
@@ -77,7 +77,7 @@ if mods[shchierbin_mods] then
     data_recipe[slaked_lime_mods].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
     data_recipe[calcium_mods].localised_name = {"item-name." .. calcium}
-    data_recipe[calcium_mods].category = angels_liquifying
+    data_recipe[calcium_mods].categories = {angels_liquifying}
     data_recipe[calcium_mods].subgroup = is_shchierbin_recipe
     data_recipe[calcium_mods].icons = THREE_R_I(calcium_hydroxide, calcium, hydrogen_peroxide)
     data_recipe[calcium_mods].order = b
@@ -181,8 +181,8 @@ if mods[shchierbin_mods] then
     data_recipe[plastic_vinylchloride].ingredients[1].amount = 60
     data_recipe[plastic_vinylchloride].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
-    data_tool[vanadium_science_pack].subgroup = is_shchierbin_recipe
-    data_tool[vanadium_science_pack].order = h
+    data_item[vanadium_science_pack].subgroup = is_shchierbin_recipe
+    data_item[vanadium_science_pack].order = h
     data_recipe[vanadium_science_pack].subgroup = is_shchierbin_recipe
     data_recipe[vanadium_science_pack].order = h
     data_recipe[vanadium_science_pack].energy_required = 8

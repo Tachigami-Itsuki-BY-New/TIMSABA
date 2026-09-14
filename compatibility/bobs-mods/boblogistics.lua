@@ -16,18 +16,15 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 require("__boblogistics__.prototypes.transport-belt-pictures")
 -- BELT
-data:extend
+TIMSABA.functions.create_items
 ({
     {
         localised_name = {localised_name_T4_transport_belt},
-        type = item,
         name = T4_transport_belt,
         subgroup = is_logistic_T4,
         icon = "__boblogistics__/graphics/icons/purple-transport-belt.png",
         icon_size = 32,
         order = a,
-        stack_size = 200,
-        weight = 5000,
         place_result = T4_transport_belt,
         drop_sound = belt_drop_move,
         inventory_move_sound = belt_drop_move,
@@ -35,7 +32,6 @@ data:extend
     },
     {
         localised_name = {localised_name_T4_underground_belt},
-        type = item,
         name = T4_underground_belt,
         subgroup = is_logistic_T4,
         icon = "__boblogistics__/graphics/icons/purple-transport-belt-to-ground.png",
@@ -50,7 +46,6 @@ data:extend
     },
     {
         localised_name = {localised_name_T4_splitter},
-        type = item,
         name = T4_splitter,
         subgroup = is_logistic_T4,
         icon = "__boblogistics__/graphics/icons/purple-splitter.png",
@@ -70,7 +65,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {localised_name_T4_transport_belt},
         name = T4_transport_belt,
-        category = pressing,
+        categories = {crafting, metallurgy},
         subgroup = is_logistic_T4,
         order = a,
         energy_required = 0.5,
@@ -87,7 +82,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {localised_name_T4_underground_belt},
         name = T4_underground_belt,
-        category = pressing,
+        categories = {crafting, metallurgy},
         subgroup = is_logistic_T4,
         order = b,
         energy_required = 1,
@@ -104,7 +99,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {localised_name_T4_splitter},
         name = T4_splitter,
-        category = pressing,
+        categories = {crafting, metallurgy},
         subgroup = is_logistic_T4,
         order = c,
         energy_required = 1,
@@ -349,23 +344,19 @@ data:extend
 
 local item_sounds = require("__base__.prototypes.item_sounds")
 -- PIPE
-data:extend
+TIMSABA.functions.create_items
 ({
     {
-        type = item,
         name = stone_pipe,
         subgroup = is_pipe,
         icon = "__boblogistics__/graphics/icons/pipe/stone-pipe.png",
         order = c,
-        stack_size = 200,
-        weight = 5000,
         place_result = stone_pipe,
         drop_sound = item_sounds.brick_inventory_move,
         inventory_move_sound = item_sounds.brick_inventory_pickup,
         pick_sound = item_sounds.brick_inventory_move
     },
     {
-        type = item,
         name = stone_pipe_to_ground,
         subgroup = is_pipe_to_ground,
         icon = "__boblogistics__/graphics/icons/pipe/stone-pipe-to-ground.png",
@@ -378,20 +369,16 @@ data:extend
         pick_sound = item_sounds.brick_inventory_move
     },
     {
-        type = item,
         name = nitinol_pipe,
         subgroup = is_pipe,
         icon = "__boblogistics__/graphics/icons/pipe/nitinol-pipe.png",
         order = k,
-        stack_size = 200,
-        weight = 5000,
         place_result = nitinol_pipe,
         drop_sound = item_sounds.metal_small_inventory_move,
         inventory_move_sound = item_sounds.metal_small_inventory_pickup,
         pick_sound = item_sounds.metal_small_inventory_move
     },
     {
-        type = item,
         name = nitinol_pipe_to_ground,
         subgroup = is_pipe_to_ground,
         icon = "__boblogistics__/graphics/icons/pipe/nitinol-pipe-to-ground.png",
@@ -409,7 +396,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = stone_pipe,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_pipe,
         order = c,
         energy_required = 0.5,
@@ -419,7 +406,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = stone_pipe_to_ground,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_pipe_to_ground,
         order = c,
         energy_required = 4,
@@ -433,7 +420,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = nitinol_pipe,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_pipe,
         order = k,
         energy_required = 0.5,
@@ -443,7 +430,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = nitinol_pipe_to_ground,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_pipe_to_ground,
         order = k,
         energy_required = 4,
@@ -631,30 +618,25 @@ data_pipe[stone_pipe].heating_energy = 1 .. kW
 data_pipe[nitinol_pipe].heating_energy = 1 .. kW
 data_pipe_to_ground[stone_pipe_to_ground].heating_energy = 100 .. kW
 data_pipe_to_ground[nitinol_pipe_to_ground].heating_energy = 300 .. kW
-if mods["space-age"] then
-    local function frozenpatch()
-        local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
-        return result
-    end
-    data_pipe_to_ground[stone_pipe_to_ground].frozen_patch = frozenpatch()
-    data_pipe_to_ground[nitinol_pipe_to_ground].frozen_patch = frozenpatch()
-    local function frozenpatch2()
-        local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
-        return result
-    end
-    data_pipe[stone_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
-    data_pipe[nitinol_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
-    data_pipe_to_ground[stone_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
-    data_pipe_to_ground[nitinol_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
+
+local function frozenpatch()
+    local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
+    return result
 end
+data_pipe_to_ground[stone_pipe_to_ground].frozen_patch = frozenpatch()
+data_pipe_to_ground[nitinol_pipe_to_ground].frozen_patch = frozenpatch()
+local function frozenpatch2()
+    local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
+    return result
+end
+data_pipe[stone_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
+data_pipe[nitinol_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
+data_pipe_to_ground[stone_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
+data_pipe_to_ground[nitinol_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
 
 if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value then
     bobmods.logistics.set_pipe_distance(stone_pipe_to_ground, 1)
     bobmods.logistics.set_pipe_distance(nitinol_pipe_to_ground, 5)
-end
-
-if not reskins or not reskins.lib then
-    return
 end
 
 local icons_pipe =
@@ -699,19 +681,16 @@ for _, info in ipairs(icons_pipe) do
         clean_name = string.gsub(clean_name, "bob%-", "")
         clean_name = string.gsub(clean_name, "timsaba%-", "")
 
-        -- Определяем подпапку графики в зависимости от того, относится ли объект к pipe_to_ground
         local folder = pipe
         if info.type == pipe_to_ground or string.find(info.name, "to%-ground") then
             folder = pipe_to_ground
         end
 
-        -- Сбрасываем старую иконку и ставим новую
         prototype.icon = nil
         prototype.icons = {{icon = "__reskins-bobs__/graphics/icons/logistics/" .. folder .. "/" .. clean_name .. "-icon.png", icon_size = 64}}
 
         reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.number, info.name, info.type)
 
-        -- Создаем частицы только для физических труб на земле
         if info.type == pipe or info.type == pipe_to_ground then
             reskins.lib.create_particle(info.name, info.type, reskins.lib.particle_index["medium"], 1, info.color)
         end

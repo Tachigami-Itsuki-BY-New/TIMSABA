@@ -23,7 +23,7 @@ if settings.startup[setting_bobmods_power_steam].value then
         {
             type = recipe,
             name = boiler_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_boiler,
             icon = "__base__/graphics/icons/boiler.png",
             order = f,
@@ -77,7 +77,7 @@ if settings.startup[setting_bobmods_power_steam].value then
         {
             type = recipe,
             name = steam_engine_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_steam_engine,
             icon = "__base__/graphics/icons/steam-engine.png",
             order = f,
@@ -127,7 +127,7 @@ if settings.startup[setting_bobmods_power_steam].value then
         {
             type = recipe,
             name = steam_turbine_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_energy_steam_turbine,
             icon = "__base__/graphics/icons/steam-turbine.png",
             order = d,
@@ -192,7 +192,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_small_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel_small,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -243,7 +243,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -294,7 +294,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_large_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel_large,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -358,8 +358,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
         {
             type = recipe,
             name = accumulator_4,
-            category = crafting,
-            additional_categories = {electromagnetics},
+            categories = {crafting, electromagnetics},
             subgroup = is_accumulator,
             icon = "__base__/graphics/icons/accumulator.png",
             order = d,
@@ -423,7 +422,7 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
         {
             type = recipe,
             name = electric_mining_drill_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_mining,
             icon = "__base__/graphics/icons/electric-mining-drill.png",
             order = f,
@@ -489,7 +488,7 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
         {
             type = recipe,
             name = pumpjack_5,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
             order = f,
@@ -545,7 +544,7 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
         {
             type = recipe,
             name = pumpjack_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
             order = g,
@@ -611,7 +610,7 @@ data:extend
     {
         type = recipe,
         name = tritium_reactor,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_reactor,
         icon = "__base__/graphics/icons/nuclear-reactor.png",
         order = d,

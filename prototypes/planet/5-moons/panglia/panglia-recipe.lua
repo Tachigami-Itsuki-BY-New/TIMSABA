@@ -6,7 +6,7 @@ if mods[panglia_mods] then
     ({
         {
             name = electronic_circuit_from_panglite_fiber,
-            category = electronics,
+            categories = {electronics},
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(electronic_circuit, panglite_fiber),
             order = g_a,
@@ -25,7 +25,7 @@ if mods[panglia_mods] then
         },
         {
             name = processing_unit_from_panglite_fiber,
-            category = electronics,
+            categories = {electronics},
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(processing_unit, panglite_fiber),
             order = g_c,
@@ -46,7 +46,7 @@ if mods[panglia_mods] then
         },
         {
             name = advanced_processing_unit_from_panglite_fiber,
-            category = electronics,
+            categories = {electronics},
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(advanced_processing_unit, panglite_fiber),
             order = g_d,

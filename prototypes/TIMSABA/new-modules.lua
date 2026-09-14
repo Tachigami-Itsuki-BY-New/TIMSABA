@@ -119,8 +119,7 @@ if mods[bobmodules] then
         ({
             {
                 name = name,
-                category = crafting,
-                additional_categories = {electronics},
+                categories = {crafting, electronics},
                 subgroup = subgroup,
                 order = order,
                 auto_recycle = true,
@@ -167,8 +166,7 @@ if mods[bobmodules] then
         ({
             {
                 name = name,
-                category = crafting,
-                additional_categories = {electronics},
+                categories = {crafting, electronics},
                 subgroup = is_agricultural_module,
                 order = order,
                 auto_recycle = true,

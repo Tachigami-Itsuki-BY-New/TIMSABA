@@ -7,7 +7,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = jivolite_bacteria,
-        category = organic_hand_crafting,
+        categories = {organic, hand_crafting},
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(jelly, nil, jivolite_bacteria, spoilage),
         order = b,
@@ -17,7 +17,7 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = jelly, amount = 8}},
         results =
         {
-            {type = item, name = jivolite_bacteria, amount = 1, probability = 0.25},
+            {type = item, name = jivolite_bacteria, amount = 1, independent_probability = 0.25},
             {type = item, name = spoilage, amount = 4}
         },
         main_product = jivolite_bacteria,
@@ -25,7 +25,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crotinnium_bacteria,
-        category = organic_hand_crafting,
+        categories = {organic, hand_crafting},
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(yumako_mash, nil, crotinnium_bacteria, spoilage),
         order = d,
@@ -35,7 +35,7 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = yumako_mash, amount = 8}},
         results =
         {
-            {type = item, name = crotinnium_bacteria, amount = 1, probability = 0.25},
+            {type = item, name = crotinnium_bacteria, amount = 1, independent_probability = 0.25},
             {type = item, name = spoilage, amount = 4}
         },
         main_product = crotinnium_bacteria,
@@ -43,7 +43,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rubyte_bacteria,
-        category = organic_hand_crafting,
+        categories = {organic, hand_crafting},
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(jelly, yumako_mash, rubyte_bacteria, spoilage),
         order = e,
@@ -57,7 +57,7 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = rubyte_bacteria, amount = 1, probability = 0.25},
+            {type = item, name = rubyte_bacteria, amount = 1, independent_probability = 0.25},
             {type = item, name = spoilage, amount = 4}
         },
         main_product = rubyte_bacteria,
@@ -65,7 +65,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = bobmonium_bacteria,
-        category = organic_hand_crafting,
+        categories = {organic, hand_crafting},
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(yumako_mash, jelly, bobmonium_bacteria, spoilage),
         order = f,
@@ -79,7 +79,7 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = bobmonium_bacteria, amount = 1, probability = 0.25},
+            {type = item, name = bobmonium_bacteria, amount = 1, independent_probability = 0.25},
             {type = item, name = spoilage, amount = 4}
         },
         main_product = bobmonium_bacteria,
@@ -87,7 +87,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = jivolite_bacteria_cultivation,
-        category = organic,
+        categories = {organic},
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, jivolite_bacteria),
         order = b,
@@ -104,7 +104,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crotinnium_bacteria_cultivation,
-        category = organic,
+        categories = {organic},
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, crotinnium_bacteria),
         order = d,
@@ -121,7 +121,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rubyte_bacteria_cultivation,
-        category = organic,
+        categories = {organic},
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, rubyte_bacteria),
         order = e,
@@ -138,7 +138,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = bobmonium_bacteria_cultivation,
-        category = organic,
+        categories = {organic},
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, bobmonium_bacteria),
         order = f,
@@ -202,7 +202,7 @@ for _, RECIPE in ipairs(recipe_nutrients) do
             localised_name = {"recipe-name.nutrients-from", {"item-name." .. RECIPE.name}},
             type = recipe,
             name = "nutrients-from-" .. RECIPE.name,
-            category = organic,
+            categories = {organic},
             subgroup = is_nutrients,
             icons = TWO_I(RECIPE.name, nutrients),
             order = RECIPE.order,
@@ -211,10 +211,9 @@ for _, RECIPE in ipairs(recipe_nutrients) do
             allow_productivity = true,
             allow_quality = true,
             allow_decomposition = false,
-            reset_freshness_on_craft = true, -- new
             energy_required = 2,
             ingredients = {{type = item, name = RECIPE.name, amount = RECIPE.ingredient}},
-            results = {{type = item, name = nutrients, amount = RECIPE.result}},
+            results = {{type = item, name = nutrients, amount = RECIPE.result, reset_freshness_on_craft = true}},
             main_product = nutrients
         }
     })
@@ -225,7 +224,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = nutrient_pulp_from_nutrients,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_gleba_recipe,
         icons = THREE_I(nutrients, water, nutrient_pulp),
         order = f_a,
@@ -262,7 +261,6 @@ for _, RECIPE in ipairs(recipe_breeding_fish) do
             allow_productivity = true,
             allow_quality = false,
             allow_decomposition = false,
-            reset_freshness_on_craft = true, -- new
             energy_required = 32,
             ingredients =
             {
@@ -274,7 +272,7 @@ for _, RECIPE in ipairs(recipe_breeding_fish) do
             },
             results =
             {
-                {type = item, name = RECIPE.name, amount_min = 8, amount_max = 16},
+                {type = item, name = RECIPE.name, amount_min = 8, amount_max = 16, reset_freshness_on_craft = true},
                 {type = fluid, name = polluted_water_for_fish, amount = 120, ignored_by_productivity = 120}
             },
             main_product = RECIPE.name
@@ -306,7 +304,6 @@ for _, RECIPE in ipairs(recipe_breeding_puffer) do
             allow_productivity = true,
             allow_quality = false,
             allow_decomposition = false,
-            reset_freshness_on_craft = true, -- new
             energy_required = 32,
             ingredients =
             {
@@ -318,7 +315,7 @@ for _, RECIPE in ipairs(recipe_breeding_puffer) do
             },
             results =
             {
-                {type = item, name = RECIPE.name, amount = 4},
+                {type = item, name = RECIPE.name, amount = 4, reset_freshness_on_craft = true},
                 {type = fluid, name = acid_angels, amount = 30, ignored_by_productivity = 30}
             },
             main_product = RECIPE.name

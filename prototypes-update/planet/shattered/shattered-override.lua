@@ -540,34 +540,34 @@ if mods [shattered_mods] then
         end
     end
 
-    data_tool[heu_science_pack].subgroup = is_shattered_building
-    data_tool[heu_science_pack].order = f
+    data_item[heu_science_pack].subgroup = is_shattered_building
+    data_item[heu_science_pack].order = f
     data_recipe[heu_science_pack].subgroup = is_shattered_building
     data_recipe[heu_science_pack].order = f
 
-    data_tool[hep_science_pack].subgroup = is_shattered_building
-    data_tool[hep_science_pack].order = g
+    data_item[hep_science_pack].subgroup = is_shattered_building
+    data_item[hep_science_pack].order = g
     data_recipe[hep_science_pack].subgroup = is_shattered_building
     data_recipe[hep_science_pack].order = g
 
-    data_tool[hea_science_pack].subgroup = is_shattered_building
-    data_tool[hea_science_pack].order = h
+    data_item[hea_science_pack].subgroup = is_shattered_building
+    data_item[hea_science_pack].order = h
     data_recipe[hea_science_pack].subgroup = is_shattered_building
     data_recipe[hea_science_pack].order = h
 
-    data_tool[hec_science_pack].subgroup = is_shattered_building
-    data_tool[hec_science_pack].order = i
+    data_item[hec_science_pack].subgroup = is_shattered_building
+    data_item[hec_science_pack].order = i
     data_recipe[hec_science_pack].subgroup = is_shattered_building
     data_recipe[hec_science_pack].order = i
     data_recipe[hec_science_pack].main_product = hec_science_pack
 
-    data_tool[hef_science_pack].subgroup = is_shattered_building
-    data_tool[hef_science_pack].order = j
+    data_item[hef_science_pack].subgroup = is_shattered_building
+    data_item[hef_science_pack].order = j
     data_recipe[hef_science_pack].subgroup = is_shattered_building
     data_recipe[hef_science_pack].order = j
 
-    data_tool[antimatter_cell].subgroup = is_shattered_building
-    data_tool[antimatter_cell].order = k
+    data_item[antimatter_cell].subgroup = is_shattered_building
+    data_item[antimatter_cell].order = k
     data_recipe[antimatter_cell].subgroup = is_shattered_building
     data_recipe[antimatter_cell].order = k
 

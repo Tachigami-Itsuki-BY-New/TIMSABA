@@ -153,7 +153,7 @@ data_recipe[tungsten_plate].hidden_in_factoriopedia = false
 data_technology["tungsten-steel"].effects = {{type = unlock_recipe, recipe = tungsten_plate}}
 
 -- AQUILO
-data_recipe[lithium_plate].category = smelting
+data_recipe[lithium_plate].categories = {smelting}
 
 data_technology[tech_logistics_4].effects =
 {

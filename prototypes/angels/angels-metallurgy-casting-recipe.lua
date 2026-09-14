@@ -3,7 +3,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = titanium_rod,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_titanium_casting,
         icons = TWO_I(titanium_plate_bob, titanium_rod),
         order = d,
@@ -24,7 +24,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = hazard_concrete_processing,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_stone_casting,
         icons = TWO_I(hazard_concrete, concrete),
         order = b_a,
@@ -35,7 +35,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_hazard_concrete_processing,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_stone_casting,
         icons = TWO_I(reinforced_hazard_concrete, reinforced_concrete),
         order = d_a,
@@ -46,7 +46,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_concrete_2,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_stone_casting,
         icons = R_P_I(reinforced_concrete, nil, nil, number_2),
         order = c_a,
@@ -62,7 +62,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = refined_concrete_liquid,
-        category = centrifuging_4,
+        categories = {centrifuging_4},
         subgroup = is_stone_casting,
         icons = THREE_R_I(concrete_liquid, refined_concrete_liquid, slag_angels),
         order = f,
@@ -83,8 +83,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = stone_brick_from_stone_crushed,
-        category = smelting,
-        additional_categories = {angels_sintering_1, metallurgy},
+        categories = {smelting},
         subgroup = is_bricks_casting,
         icons = TWO_I(stone_crushed_angels, stone_brick),
         order = c_a,
@@ -97,7 +96,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_titanium_concrete_brick,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bricks_casting,
         icons = AR_FOUR_ALT_I(concrete_liquid, titanium_rod, stone_brick, reinforced_titanium_concrete_brick),
         order = f,
@@ -115,7 +114,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = carbon_concrete_brick,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bricks_casting,
         order = g,
         allow_productivity = true,
@@ -132,7 +131,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_graphene_concrete_brick,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_bricks_casting,
         order = h,
         allow_productivity = true,

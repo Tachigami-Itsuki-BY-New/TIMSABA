@@ -5,7 +5,7 @@ if mods[muluna_mods] then
     data_item[lunar_regolith].stack_size = 200
 
     local regolith_sorting = "muluna-regolith-sorting"
-    data_recipe[regolith_sorting].category = angels_ore_sorting_5
+    data_recipe[regolith_sorting].categories = {angels_ore_sorting_5}
     data_recipe[regolith_sorting].subgroup = is_muluna_crushing
     data_recipe[regolith_sorting].icons = RECYCLING_I(recycling_png, lunar_regolith)
     data_recipe[regolith_sorting].order = a_a
@@ -39,8 +39,7 @@ if mods[muluna_mods] then
     data_recipe[landfill_stone_crushed].ingredients = {{type = item, name = stone_crushed_angels, amount = 64}}
 
     local stone_bricks_stone_crushed = "stone-bricks-stone-crushed"
-    data_recipe[stone_bricks_stone_crushed].category = smelting_filtering
-    data_recipe[stone_bricks_stone_crushed].additional_categories = {angels_sintering_1, metallurgy}
+    data_recipe[stone_bricks_stone_crushed].categories = {smelting_filtering}
     data_recipe[stone_bricks_stone_crushed].subgroup = is_muluna_crushing
     data_recipe[stone_bricks_stone_crushed].icons = TWO_I(stone_crushed_angels, stone_brick)
     data_recipe[stone_bricks_stone_crushed].order = a_d
@@ -170,7 +169,7 @@ if mods[muluna_mods] then
     -- SILICON SOLAR PANELS
     local silicon_solar_panel_1 = "muluna-silicon-solar-panel"
     data_recipe[silicon_solar_panel_1].localised_name = {"recipe-name.muluna-silicon-solar-panel-1"}
-    data_recipe[silicon_solar_panel_1].category = crafting
+    data_recipe[silicon_solar_panel_1].categories = {crafting}
     data_recipe[silicon_solar_panel_1].subgroup = is_muluna_SPM_silicon
     data_recipe[silicon_solar_panel_1].icons = BUILDING_R_IS(solar_panel_1, silicon_cell_mods)
     data_recipe[silicon_solar_panel_1].order = a
@@ -303,9 +302,9 @@ if mods[muluna_mods] then
 
     local tree_crushing = "muluna-tree-crushing"
     if mods[lignumis_mods] then
-        data_recipe[tree_crushing].category = "wood-processing"
+        data_recipe[tree_crushing].categories = {"wood-processing"}
     else
-        data_recipe[tree_crushing].category = lumber_mill_recipe_category
+        data_recipe[tree_crushing].categories = {lumber_mill_recipe_category}
     end
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
@@ -313,7 +312,6 @@ if mods[muluna_mods] then
     data_recipe[tree_crushing].energy_required = 4
     data_recipe[tree_crushing].results = {{type = item, name = wood, amount = 8}}
 
-    local greenhouse_wood = "muluna-greenhouse-wood"
     data_item[greenhouse_wood].subgroup = is_muluna_recipe_tree
     data_item[greenhouse_wood].icons = nil
     data_item[greenhouse_wood].icon = "__muluna-graphics__/graphics/greenhouse/sprites/greenhouse-icon.png"
@@ -377,7 +375,7 @@ if mods[muluna_mods] then
     {
         {type = fluid, name = methane_angels, amount = 30},
         {type = fluid, name = tar_mods, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, independent_probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[wood_gasification].main_product = methane_angels
     data_recipe[wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
@@ -398,7 +396,7 @@ if mods[muluna_mods] then
         {type = fluid, name = tar_mods, amount = 30},
         {type = fluid, name = naphtha_angels, amount = 15},
         {type = fluid, name = fuel_oil_angels, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, independent_probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[advanced_wood_gasification].main_product = tar_mods
     data_recipe[advanced_wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
@@ -446,7 +444,7 @@ if mods[muluna_mods] then
     data_recipe[electric_engine_unit_from_carbon].order = a
 
     local muluna_oxygen_from_oxidizer = "muluna-oxygen-from-oxidizer"
-    data_recipe[muluna_oxygen_from_oxidizer].category = angels_advanced_chemistry
+    data_recipe[muluna_oxygen_from_oxidizer].categories = {angels_advanced_chemistry}
     data_recipe[muluna_oxygen_from_oxidizer].subgroup = is_muluna_recipe
     data_recipe[muluna_oxygen_from_oxidizer].icons = FOUR_R_I(thruster_oxidizer, nitrogen_angels, oxygen_angels, water)
     data_recipe[muluna_oxygen_from_oxidizer].order = b
@@ -487,8 +485,8 @@ if mods[muluna_mods] then
     }
     data_recipe[diffused_plastic_muluna].results =
     {
-        {type = item, name = diffused_plastic_muluna, amount = 1, probability = 0.25},
-        {type = item, name = diffused_plastic_muluna, amount = 1, probability = 0.25, percent_spoiled = 0.95},
+        {type = item, name = diffused_plastic_muluna, amount = 1, independent_probability = 0.25},
+        {type = item, name = diffused_plastic_muluna, amount = 1, independent_probability = 0.25, percent_spoiled = 0.95},
         {type = fluid, name = carbon_dioxide_angels, amount = 60}
     }
 
@@ -530,8 +528,8 @@ if mods[muluna_mods] then
     }
     data_recipe[space_science_pack_muluna].results[1].amount = 2
 
-    data_tool[interstellar_science_pack].subgroup = is_muluna_recipe
-    data_tool[interstellar_science_pack].order = h
+    data_item[interstellar_science_pack].subgroup = is_muluna_recipe
+    data_item[interstellar_science_pack].order = h
     data_recipe[interstellar_science_pack].subgroup = is_muluna_recipe
     data_recipe[interstellar_science_pack].icons = R_P_I(interstellar_science_pack, planet_muluna)
     data_recipe[interstellar_science_pack].order = h
@@ -692,7 +690,7 @@ if mods[muluna_mods] then
     data_fluid[cooled_steam].order = a
 
     local steam_condensation = "muluna-steam-condensation"
-    data_recipe[steam_condensation].category = angels_cooling
+    data_recipe[steam_condensation].categories = {angels_cooling}
     data_recipe[steam_condensation].subgroup = is_muluna_turbine
     data_recipe[steam_condensation].icons = TWO_I(cooled_steam, water)
     data_recipe[steam_condensation].order = a_a
@@ -935,9 +933,9 @@ if mods[muluna_mods] then
 
     if mods[moshine_mods] then
         local datacell_empty_astronomical_data = "datacell-empty-astronomical-data"
-        data_tool[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
-        data_tool[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)
-        data_tool[datacell_empty_astronomical_data].stack_size = 200
+        data_item[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
+        data_item[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)
+        data_item[datacell_empty_astronomical_data].stack_size = 200
         data_recipe[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
         data_recipe[datacell_empty_astronomical_data].icons = THREE_IS(datacell_empty, astronomical_data_muluna, datacell_empty_astronomical_data)
         data_recipe[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)

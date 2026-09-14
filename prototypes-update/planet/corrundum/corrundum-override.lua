@@ -9,7 +9,7 @@ if mods[corrundum_mods] then
 
     data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
     data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_recipe[platinum_plate_mods].category = sintering_6
+    data_recipe[platinum_plate_mods].categories = {sintering_6}
     data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
     data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
     data_recipe[platinum_plate_mods].order = c
@@ -36,7 +36,7 @@ if mods[corrundum_mods] then
 
     local catalytic_chemistry = "catalytic-chemistry"
     local sulfur_combustion = "sulfur-combustion"
-    data_recipe[sulfur_combustion].category = catalytic_chemistry
+    data_recipe[sulfur_combustion].categories = {catalytic_chemistry}
     data_recipe[sulfur_combustion].subgroup = is_corrundum_sulfur
     data_recipe[sulfur_combustion].icons = TWO_D_I(sulfur, carbon_dioxide_angels, sulfur_dioxide_angels, carbon_angels)
     data_recipe[sulfur_combustion].order = a_a
@@ -72,7 +72,7 @@ if mods[corrundum_mods] then
     data_recipe[hydrogen_sulfide_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
     local sulfur_reduction = "sulfur-reduction"
-    data_recipe[sulfur_reduction].category = catalytic_chemistry
+    data_recipe[sulfur_reduction].categories = {catalytic_chemistry}
     data_recipe[sulfur_reduction].subgroup = is_corrundum_sulfur
     data_recipe[sulfur_reduction].icons = THREE_D_I(hydrogen_sulfide_angels, nil, sulfur_dioxide_angels, sulfur, water_purified_angels, oxygen_angels)
     data_recipe[sulfur_reduction].order = a_c
@@ -110,7 +110,7 @@ if mods[corrundum_mods] then
     data_recipe[sulfurous_oxidation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
     local hydrogen_sulfide_combustion = "hydrogen-sulfide-combustion"
-    data_recipe[hydrogen_sulfide_combustion].category = catalytic_chemistry
+    data_recipe[hydrogen_sulfide_combustion].categories = {catalytic_chemistry}
     data_recipe[hydrogen_sulfide_combustion].subgroup = is_corrundum_sulfur
     data_recipe[hydrogen_sulfide_combustion].icons = TWO_D_I(hydrogen_sulfide_angels, oxygen_angels, sulfur_dioxide_angels, hydrogen_angels)
     data_recipe[hydrogen_sulfide_combustion].order = a_e
@@ -128,8 +128,8 @@ if mods[corrundum_mods] then
     data_recipe[hydrogen_sulfide_combustion].main_product = sulfur_dioxide_angels
     data_recipe[hydrogen_sulfide_combustion].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
-    data_tool[electrochemical_science_pack].subgroup = is_corrundum_sulfur
-    data_tool[electrochemical_science_pack].order = b
+    data_item[electrochemical_science_pack].subgroup = is_corrundum_sulfur
+    data_item[electrochemical_science_pack].order = b
     data_recipe[electrochemical_science_pack].subgroup = is_corrundum_sulfur
     data_recipe[electrochemical_science_pack].order = b
     data_recipe[electrochemical_science_pack].energy_required = 16
@@ -141,7 +141,7 @@ if mods[corrundum_mods] then
     }
 
     -- CALCIUM SULFATE
-    data_recipe[calcium_sulfate_mods].category = catalytic_chemistry
+    data_recipe[calcium_sulfate_mods].categories = {catalytic_chemistry}
     data_recipe[calcium_sulfate_mods].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_mods].icons = THREE_D_I(calcite, nil, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels, carbon_dioxide_angels)
     data_recipe[calcium_sulfate_mods].order = c
@@ -160,14 +160,14 @@ if mods[corrundum_mods] then
     data_recipe[calcium_sulfate_mods].main_product = calcium_sulfate_angels
 
     local calcium_sulfate_fish = "calcium-sulfate-fish"
-    data_recipe[calcium_sulfate_fish].category = organic
+    data_recipe[calcium_sulfate_fish].categories = {organic}
     data_recipe[calcium_sulfate_fish].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_fish].icons = THREE_D_I(factorian_fish, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_fish].order = c_a
     data_recipe[calcium_sulfate_fish].results[1].amount = 32
 
     local calcium_sulfate_bioflux = "calcium-sulfate-bioflux"
-    data_recipe[calcium_sulfate_bioflux].category = organic
+    data_recipe[calcium_sulfate_bioflux].categories = {organic}
     data_recipe[calcium_sulfate_bioflux].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_bioflux].icons = THREE_D_I(bioflux, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_bioflux].order = c_b
@@ -180,7 +180,7 @@ if mods[corrundum_mods] then
     data_recipe[calcium_sulfate_bioflux].results[1].amount = 64
 
     local calcium_sulfate_egg = "calcium-sulfate-egg"
-    data_recipe[calcium_sulfate_egg].category = organic
+    data_recipe[calcium_sulfate_egg].categories = {organic}
     data_recipe[calcium_sulfate_egg].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_egg].icons = THREE_D_I(biter_egg, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_egg].order = c_c

@@ -12,7 +12,7 @@ data_recipe[saphirite_bacteria].order = a
 data_recipe[saphirite_bacteria].ingredients[1].amount = 4
 data_recipe[saphirite_bacteria].results =
 {
-    {type = item, name = saphirite_bacteria, amount = 1, probability = 0.25},
+    {type = item, name = saphirite_bacteria, amount = 1, independent_probability = 0.25},
     {type = item, name = spoilage, amount = 4}
 }
 
@@ -29,7 +29,7 @@ data_recipe[stiratite_bacteria].order = c
 data_recipe[stiratite_bacteria].ingredients[1].amount = 4
 data_recipe[stiratite_bacteria].results =
 {
-    {type = item, name = stiratite_bacteria, amount = 1, probability = 0.25},
+    {type = item, name = stiratite_bacteria, amount = 1, independent_probability = 0.25},
     {type = item, name = spoilage, amount = 4}
 }
 
@@ -97,7 +97,7 @@ data_recipe[nutrients_from_bioflux].ingredients[1].amount = 4
 data_recipe[nutrients_from_bioflux].results[1].amount = 32
 
 local nutrients_from_biter_egg = "nutrients-from-biter-egg"
-data_recipe[nutrients_from_biter_egg].category = organic
+data_recipe[nutrients_from_biter_egg].categories = {organic}
 data_recipe[nutrients_from_biter_egg].localised_name = {"recipe-name.nutrients-from-biter-egg"}
 data_recipe[nutrients_from_biter_egg].subgroup = is_nutrients
 data_recipe[nutrients_from_biter_egg].icons = TWO_I(biter_egg, nutrients)
@@ -106,7 +106,7 @@ data_recipe[nutrients_from_biter_egg].results[1].amount = 16
 
 local nutrients_from_factorian_fish = "nutrients-from-fish"
 data_recipe[nutrients_from_factorian_fish].localised_name = {"recipe-name.nutrients-from-factorian-fish"}
-data_recipe[nutrients_from_factorian_fish].category = organic
+data_recipe[nutrients_from_factorian_fish].categories = {organic}
 data_recipe[nutrients_from_factorian_fish].subgroup = is_nutrients
 data_recipe[nutrients_from_factorian_fish].icons = TWO_I(factorian_fish, nutrients)
 data_recipe[nutrients_from_factorian_fish].order = a_r
@@ -145,7 +145,7 @@ data_recipe[jellynut_processing].order = c_a
 data_recipe[jellynut_processing].results =
 {
     {type = item, name = jelly, amount = 4},
-    {type = item, name = jellynut_seed, amount = 1, probability = 0.03125}
+    {type = item, name = jellynut_seed, amount = 1, independent_probability = 0.03125}
 }
 
 data_item[artificial_jellynut_soil].subgroup = is_jellynut
@@ -198,7 +198,7 @@ data_recipe[yumako_processing].order = c_a
 data_recipe[yumako_processing].results =
 {
     {type = item, name = yumako_mash, amount = 4},
-    {type = item, name = yumako_seed, amount = 1, probability = 0.03125}
+    {type = item, name = yumako_seed, amount = 1, independent_probability = 0.03125}
 }
 
 data_item[artificial_yumako_soil].subgroup = is_yumako
@@ -272,8 +272,8 @@ data_recipe[biolubricant].energy_required = 4
 data_recipe[biolubricant].ingredients[1].amount = 64
 data_recipe[biolubricant].results[1].amount = 30
 
-data_tool[agricultural_science_pack].subgroup = is_pentapod_egg_and_bioflux
-data_tool[agricultural_science_pack].order = c
+data_item[agricultural_science_pack].subgroup = is_pentapod_egg_and_bioflux
+data_item[agricultural_science_pack].order = c
 TIMSABA.void.freezing_organics(agricultural_science_pack)
 data_recipe[agricultural_science_pack].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[agricultural_science_pack].order = c
@@ -319,18 +319,17 @@ data_recipe[coal_synthesis].order = b_a
 data_recipe[coal_synthesis].ingredients[1].amount = 4
 data_recipe[coal_synthesis].ingredients[3].amount = 15
 
-local wood_processing = "wood-processing"
-data_recipe[wood_processing].icons = TWO_I(wood, tree_seed)
-data_recipe[wood_processing].category = "angels-seed-extractor"
+data_recipe[tree_seed].icons = TWO_I(wood, tree_seed)
+data_recipe[tree_seed].categories  = {"angels-seed-extractor"}
 if mods[lignumis_mods] then
-    data_recipe[wood_processing].additional_categories = {hand_crafting}
+    table.insert(data_recipe[tree_seed].categories, hand_crafting)
 end
-data_recipe[wood_processing].subgroup = is_gleba_recipe
-data_recipe[wood_processing].order = c_a
-data_recipe[wood_processing].surface_conditions = nil
+data_recipe[tree_seed].subgroup = is_gleba_recipe
+data_recipe[tree_seed].order = c_a
+data_recipe[tree_seed].surface_conditions = nil
 
 factorian_fish_breeding = "fish-breeding"
-data_recipe[factorian_fish_breeding].category = "angels-bio-refugium-fish"
+data_recipe[factorian_fish_breeding].categories  = {"angels-bio-refugium-fish"}
 data_recipe[factorian_fish_breeding].localised_name = {"recipe-name.breeding-factorian-fish"}
 data_recipe[factorian_fish_breeding].subgroup = is_gleba_recipe
 data_recipe[factorian_fish_breeding].icons = STONKS_I(stonks_png, factorian_fish)

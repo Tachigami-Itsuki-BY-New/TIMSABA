@@ -28,7 +28,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = antimonite_asteroid_crushing,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_4,
         icons = TWO_I(antimonite_asteroid_chunk, antimonite_ore),
         order = e_a,
@@ -40,7 +40,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanite_asteroid_crushing,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_5,
         icons = TWO_I(germanite_asteroid_chunk, germanite_ore),
         order = e_a,

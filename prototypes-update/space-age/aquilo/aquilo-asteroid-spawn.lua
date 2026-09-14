@@ -83,7 +83,7 @@ if edge_conn then
 end
 
 -- 4. CLEANUP FOR INTERMEDIATE ROUTES (Asteroid Belt integration)
-if mods["AsteroidBelt"] then
+if mods[asteroid_belt_mods] then
     local routes_to_clean =
     {
         "fulgora-asteroid-belt-inner-edge",
@@ -95,7 +95,8 @@ if mods["AsteroidBelt"] then
         if connection and connection.asteroid_spawn_definitions then
             for i = #connection.asteroid_spawn_definitions, 1, -1 do
                 local def = connection.asteroid_spawn_definitions[i]
-                if def.asteroid:find("antimonite") or def.asteroid:find("germanite") then
+                local asteroid_name = tostring(def.asteroid)
+                if asteroid_name:find("antimonite") or asteroid_name:find("germanite") then
                     table.remove(connection.asteroid_spawn_definitions, i)
                 end
             end

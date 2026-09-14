@@ -5,7 +5,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = ceramic_gear_wheel,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_gears,
         icons = TWO_I(silicon_nitride_bob, ceramic_gear_wheel),
         order = d,
@@ -19,7 +19,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_tungsten_gear_wheel,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_gears,
         icons = TWO_I(copper_tungsten_powder, copper_tungsten_gear_wheel),
         order = i,
@@ -34,7 +34,7 @@ TIMSABA.functions.create_recipes
     -- BEARING BALL
     {
         name = iron_bearing_ball,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_bearing_ball,
         icons = TWO_I(iron_plate, iron_bearing_ball),
         order = a,
@@ -49,7 +49,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = brass_bearing_ball,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_bearing_ball,
         icons = TWO_I(brass_plate_bob, brass_bearing_ball),
         order = c,
@@ -63,7 +63,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tungsten_bearing_ball,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_bearing_ball,
         icons = TWO_I(tungsten_powder, tungsten_bearing_ball),
         order = g,
@@ -77,7 +77,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_tungsten_bearing_ball,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_bearing_ball,
         icons = TWO_I(copper_tungsten_powder, copper_tungsten_bearing_ball),
         order = i,
@@ -92,7 +92,7 @@ TIMSABA.functions.create_recipes
     -- BEARING
     {
         name = iron_bearing,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_bearing,
         icons = TWO_I(iron_plate, iron_bearing),
         order = a,
@@ -111,7 +111,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = brass_bearing,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bearing,
         icons = B_F_L(lubricant, brass_bearing_ball, brass_plate_bob, brass_bearing),
         order = c,
@@ -130,7 +130,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tungsten_bearing,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_bearing,
         icons = B_F_L(nil, tungsten_bearing_ball, tungsten_powder, tungsten_bearing),
         order = g,
@@ -148,7 +148,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_tungsten_bearing,
-        category = angels_sintering_4,
+        categories = {angels_sintering_4},
         subgroup = is_bearing,
         icons = B_F_L(nil, copper_tungsten_bearing_ball, copper_tungsten_powder, copper_tungsten_bearing),
         order = i,
@@ -166,7 +166,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = battery_graphene,
-        category = chemistry_or_cryogenics,
+        categories = {chemistry, cryogenics},
         subgroup = "intermediate-product",
         icon = data_item[battery_graphene].icon,
         order = d,
@@ -184,8 +184,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = advanced_deuterium_fuel_cell_reprocessing,
-        category = angels_advanced_chemistry,
-        additional_categories = {cryogenics},
+        categories = {angels_advanced_chemistry, cryogenics},
         subgroup = is_deuterium_cell,
         icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = b_b,
@@ -207,7 +206,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tritium_fuel_cell,
-        category = centrifuging_4,
+        categories = {centrifuging_4},
         subgroup = is_tritium_cell,
         icon = data_item[tritium_fuel_cell].icon,
         order = a,
@@ -225,8 +224,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tritium_fuel_cell_reprocessing,
-        category = angels_advanced_chemistry,
-        additional_categories = {cryogenics},
+        categories = {angels_advanced_chemistry, cryogenics},
         subgroup = is_tritium_cell,
         icons = TWO_D_I(depleted_tritium_fuel_cell, nil, muon_fusion_catalyst, tritium_gas),
         order = b_a,
@@ -243,8 +241,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = advanced_tritium_fuel_cell_reprocessing,
-        category = angels_advanced_chemistry,
-        additional_categories = {cryogenics},
+        categories = {angels_advanced_chemistry, cryogenics},
         subgroup = is_tritium_cell,
         icons = THREE_D_I(depleted_tritium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = b_b,
@@ -259,9 +256,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = muon_fusion_catalyst, amount = 4},
-            {type = item, name = muon_fusion_catalyst, amount = 4, probability = 0.25},
+            {type = item, name = muon_fusion_catalyst, amount = 4, independent_probability = 0.25},
             {type = fluid, name = tritium_gas, amount = 960},
-            {type = fluid, name = tritium_gas, amount = 960, probability = 0.25},
+            {type = fluid, name = tritium_gas, amount = 960, independent_probability = 0.25},
             {type = fluid, name = water_greenyellow_waste, amount = 60}
         },
         main_product = muon_fusion_catalyst
@@ -269,5 +266,5 @@ TIMSABA.functions.create_recipes
 })
 
 if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_gear_wheel].category = angels_sintering_2
+    data_recipe[ceramic_gear_wheel].categories = {angels_sintering_2}
 end

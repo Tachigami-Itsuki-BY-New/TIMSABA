@@ -130,7 +130,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = rhenium_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_rhenium,
         icons = TWO_I(rhenium_ore, rhenium_processed),
         order = b,
@@ -141,7 +141,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_rhenium,
         icons = TWO_I(rhenium_processed, rhenium_pellet),
         order = c,
@@ -152,7 +152,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_powder,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_rhenium,
         icons = TWO_D_I(rhenium_oxide_VI, hydrogen_angels, rhenium_powder, steam),
         order = d,
@@ -171,7 +171,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_powder_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_rhenium,
         icons = THREE_D_I(potassium_perrhenate, nil, hydrogen_angels, rhenium_powder, potassium_hydroxide, steam),
         order = d_a,
@@ -191,7 +191,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_powder_3,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_rhenium,
         icons = THREE_D_I(ammonium_perrhenate, nil, hydrogen_angels, rhenium_powder, nitrogen_angels, steam),
         order = d_b,
@@ -212,7 +212,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = rhenium_oxide_VI,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium_chemistry,
         icons = THREE_I(rhenium_ore, oxygen_angels, rhenium_oxide_VI),
         order = a,
@@ -227,7 +227,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_oxide_VI_2,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium_chemistry,
         icons = THREE_I(rhenium_oxide_IV, oxygen_angels, rhenium_oxide_VI),
         order = a_a,
@@ -242,7 +242,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_chloride_V,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_rhenium_chemistry,
         icons = THREE_I(rhenium_processed, chlorine_angels, rhenium_oxide_VI),
         order = b,
@@ -257,7 +257,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_oxide_IV,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_rhenium_chemistry,
         icons = FOUR_THREE_R_I(rhenium_chloride_V, nil, potassium_hydroxide_solution, rhenium_oxide_IV, potassium_perrhenate_solution, potassium_chloride_solution, water_purified_angels),
         order = c,
@@ -278,7 +278,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_perrhenate,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium_chemistry,
         icons = THREE_R_I(potassium_perrhenate_solution, potassium_perrhenate, steam),
         order = e,
@@ -293,7 +293,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_acid,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_rhenium_chemistry,
         icons = THREE_D_I(rhenium_pellet, nil, nitric_acid_angels, rhenium_acid, nitrogen_dioxide_angels, water_purified_angels),
         order = f,
@@ -313,7 +313,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_perrhenate,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_rhenium_chemistry,
         icons = TWO_D_I(rhenium_acid, ammonia_angels, ammonium_perrhenate, water_purified_angels),
         order = g,

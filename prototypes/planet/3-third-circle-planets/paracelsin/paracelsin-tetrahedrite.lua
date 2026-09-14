@@ -49,7 +49,7 @@ if mods[paracelsin_mods] then
         -- CRUSHED
         {
             name = tetrahedrite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_tetrahedrite,
             icons = THREE_R_I(tetrahedrite_ore, tetrahedrite_crushed, stone_crushed_angels),
             order = b,
@@ -65,7 +65,7 @@ if mods[paracelsin_mods] then
         -- CHUNKS
         {
             name = tetrahedrite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_tetrahedrite,
             icons = THREE_D_I(tetrahedrite_crushed, nil, water_purified_angels, tetrahedrite_chunks, sulfur, water_red_waste),
             order = c,
@@ -78,7 +78,7 @@ if mods[paracelsin_mods] then
             results =
             {
                 {type = item, name = tetrahedrite_chunks, amount = 4},
-                {type = item, name = sulfur, amount = 1, probability = 0.5},
+                {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_red_waste, amount = 60}
             },
             main_product = tetrahedrite_chunks
@@ -86,7 +86,7 @@ if mods[paracelsin_mods] then
         -- CRYSTALS
         {
             name = tetrahedrite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_tetrahedrite,
             icons = THREE_I(tetrahedrite_chunks, nitric_acid_angels, tetrahedrite_crystals),
             order = d,
@@ -102,7 +102,7 @@ if mods[paracelsin_mods] then
         -- PURIFIED
         {
             name = tetrahedrite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_tetrahedrite,
             icons = TWO_I(tetrahedrite_crystals, tetrahedrite_purified),
             order = e,
@@ -114,7 +114,7 @@ if mods[paracelsin_mods] then
         -- SORTING
         {
             name = tetrahedrite_crushed_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_crushed),
             order = f,
@@ -131,7 +131,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = tetrahedrite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_chunks),
             order = g,
@@ -150,7 +150,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = tetrahedrite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_crystals),
             order = h,
@@ -170,7 +170,7 @@ if mods[paracelsin_mods] then
         },
         {
             name = tetrahedrite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_purified),
             order = i,
@@ -191,7 +191,7 @@ if mods[paracelsin_mods] then
         -- SYNTHESIS
         {
             name = antimony_ore_recipe,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, tetrahedrite_purified, antimony_ore),
             order = a_o,

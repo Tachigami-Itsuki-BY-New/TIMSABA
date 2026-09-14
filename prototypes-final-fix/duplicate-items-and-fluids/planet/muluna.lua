@@ -1,5 +1,6 @@
 if mods[muluna_mods] then
 	local sapling_muluna = "muluna-sapling"
+	local greenhouse_muluna = "muluna-greenhouse"
     local replace_prototypes =
     {
         [alumina_mods] = aluminium_oxide,
@@ -10,7 +11,8 @@ if mods[muluna_mods] then
         [sapling_muluna] = tree_angels,
         [molten_aluminium_mods] = aluminium_molten_angels,
         [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels
+        [carbon_dioxide_mods] = carbon_dioxide_angels,
+		[greenhouse_muluna] = greenhouse_wood
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -40,7 +42,7 @@ if mods[muluna_mods] then
 		--"thruster-fuel-productivity",
 		"muluna-rocket-buggy",
 		"space-chest-muluna",
-		"muluna-greenhouse"
+		greenhouse_muluna
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

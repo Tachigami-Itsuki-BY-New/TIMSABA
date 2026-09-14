@@ -132,7 +132,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = carnallite,
-        category = angels_salination_plant,
+        categories = {angels_salination_plant},
         subgroup = is_potassium,
         icons = TWO_I(water_saline_angels, carnallite),
         order = a,
@@ -141,7 +141,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_hydroxide,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_potassium,
         icons = FOUR_R_I(potassium_chloride_solution, hydrogen_angels, potassium_hydroxide, chlorine_angels),
         order = c,
@@ -162,7 +162,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_chlorate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_potassium,
         icons = THREE_R_I(potassium_chlorate_solution, potassium_chlorate, steam),
         order = e,
@@ -178,7 +178,7 @@ TIMSABA.functions.create_recipes
     -- FLUID
     {
         name = carnallite_reprocessing,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_potassium_fluid,
         icons = THREE_D_I(carnallite, nil, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution, water),
         order = a,
@@ -198,7 +198,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_chloride_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_potassium_fluid,
         icons = THREE_I(potassium_chloride, water_purified_angels, potassium_chloride_solution),
         order = b,
@@ -213,7 +213,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_chloride_solution_2,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_potassium_fluid,
         icons = TWO_D_I(potassium, hydrochloric_acid_angels, potassium_chloride_solution, hydrogen_angels),
         order = b_a,
@@ -232,7 +232,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_hydroxide_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_potassium_fluid,
         icons = THREE_I(potassium_hydroxide, water_purified_angels, potassium_hydroxide_solution),
         order = c,
@@ -246,7 +246,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_hydroxide_solution_from_potassium_sulfate_solution,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_potassium_fluid,
         icons = FOUR_R_I(potassium_sulfate_solution, potassium_hydroxide_solution, nil, sulfuric_acid_angels),
         order = c_a,
@@ -267,7 +267,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_hypochlorite_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_potassium_fluid,
         icons = TWO_D_I(potassium_hydroxide_solution, chlorine_angels, potassium_hypochlorite_solution, potassium_chloride_solution),
         order = d,
@@ -287,7 +287,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_chlorate_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_potassium_fluid,
         icons = THREE_R_I(potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_chloride_solution),
         order = e,

@@ -22,7 +22,7 @@ if mods[paracelsin_mods] then
     data_recipe[vaterite_formation].results = {{type = item, name = vaterite, amount_min = 1, amount_max = 8}}
 
     local vaterite_processing = "vaterite-processing"
-    data_recipe[vaterite_processing].category = chemistry
+    data_recipe[vaterite_processing].categories = {chemistry}
     data_recipe[vaterite_processing].subgroup = is_vaterite_zinc
     data_recipe[vaterite_processing].icons = RECYCLING_I(recycling_png, vaterite)
     data_recipe[vaterite_processing].order = a_b
@@ -43,7 +43,7 @@ if mods[paracelsin_mods] then
     data_recipe[vaterite_processing].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
     data_recipe[zinc_plate_mods].localised_name = data_item[zinc_plate_bob].localised_name
-    data_recipe[zinc_plate_mods].category = sintering_6
+    data_recipe[zinc_plate_mods].categories = {sintering_6}
     data_recipe[zinc_plate_mods].subgroup = is_vaterite_zinc
     data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
     data_recipe[zinc_plate_mods].order = c
@@ -167,8 +167,8 @@ if mods[paracelsin_mods] then
     }
     data_recipe[nitric_acid_plastic].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
-    data_tool[galvanization_science_pack].subgroup = is_paracelsin_recipe
-    data_tool[galvanization_science_pack].order = b
+    data_item[galvanization_science_pack].subgroup = is_paracelsin_recipe
+    data_item[galvanization_science_pack].order = b
     data_recipe[galvanization_science_pack].subgroup = is_paracelsin_recipe
     data_recipe[galvanization_science_pack].order = b
     data_recipe[galvanization_science_pack].energy_required = 8

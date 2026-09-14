@@ -10,8 +10,8 @@ data_recipe[scrap_recycling].order = a_a
 data_recipe[scrap_recycling].energy_required = 0.25 -- Scrap --> Construction scrap + Machinery scrap
 data_recipe[scrap_recycling].results =
 {
-    {type = item, name = construction_scrap, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
-    {type = item, name = machinery_scrap, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false}
+    {type = item, name = construction_scrap, amount = 1, independent_probability = 0.5, show_details_in_recipe_tooltip = false},
+    {type = item, name = machinery_scrap, amount = 1, independent_probability = 0.5, show_details_in_recipe_tooltip = false}
 }
 
 -- HOLMIUM SMELTING
@@ -29,7 +29,7 @@ data_item[holmium_plate].localised_description = show_formula and {chemical_form
 data_item[holmium_plate].subgroup = is_holmium_casting
 data_item[holmium_plate].order = c
 data_item[holmium_plate].stack_size = 200
-data_recipe[holmium_plate].category = angels_casting_4
+data_recipe[holmium_plate].categories = {angels_casting_4}
 data_recipe[holmium_plate].subgroup = is_holmium_casting
 data_recipe[holmium_plate].icons = TWO_I(holmium_molten, holmium_plate)
 data_recipe[holmium_plate].order = c
@@ -77,7 +77,7 @@ data_recipe[supercapacitor].ingredients =
 data_fluid[electrolyte].subgroup = is_fulgora_recipe
 data_fluid[electrolyte].order = c
 TIMSABA.barreling.add_dangerous_fluid(electrolyte)
-data_recipe[electrolyte].category = angels_advanced_chemistry
+data_recipe[electrolyte].categories = {angels_advanced_chemistry}
 data_recipe[electrolyte].subgroup = is_fulgora_recipe
 data_recipe[electrolyte].icons = FOUR_I(nitric_acid_angels, sulfuric_acid_angels, hydrochloric_acid_angels, electrolyte)
 data_recipe[electrolyte].order = c
@@ -91,8 +91,8 @@ data_recipe[electrolyte].ingredients =
 data_recipe[electrolyte].results[1].amount = 60
 data_recipe[electrolyte].allow_quality = false
 
-data_tool[electromagnetic_science_pack].subgroup = is_fulgora_recipe
-data_tool[electromagnetic_science_pack].order = d
+data_item[electromagnetic_science_pack].subgroup = is_fulgora_recipe
+data_item[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].subgroup = is_fulgora_recipe
 data_recipe[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].energy_required = 8
@@ -326,34 +326,38 @@ data_technology[planet_discovery_fulgora].unit.ingredients =
 table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = construction_scrap_recycling})
 table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = machinery_scrap_recycling})
 
-data_technology[tech_holmium_processing].icon = "__space-age__/graphics/icons/holmium-plate.png"
-data_technology[tech_holmium_processing].icon_size = 64
-data_technology[tech_holmium_processing].prerequisites = {tech_brannerite_processing_1}
-data_technology[tech_holmium_processing].effects =
-{
-    {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
-    {type = unlock_recipe, recipe = calcium},
-    {type = unlock_recipe, recipe = holmium_chloride_III_solution},
-    {type = unlock_recipe, recipe = holmium_fluoride_III},
-    {type = unlock_recipe, recipe = holmium_cathode},
-    {type = unlock_recipe, recipe = holmium_ingot},
-    {type = unlock_recipe, recipe = holmium_powder},
-    {type = unlock_recipe, recipe = holmium_molten},
-    {type = unlock_recipe, recipe = holmium_plate}
-}
-data_technology[tech_holmium_processing].research_trigger =
-{
-    type = craft_item,
-    item = holmium_ore,
-    count = 256
-}
-
+data_technology[electromagnetic_science_pack].prerequisites = {tech_holmium_smelting_1}
 data_technology[electromagnetic_science_pack].research_trigger =
 {
     type = craft_item,
     item = supercapacitor,
     count = 256
 }
+
+data_technology[tech_holmium_processing].icon = "__space-age__/graphics/icons/holmium-plate.png"
+data_technology[tech_holmium_processing].icon_size = 64
+data_technology[tech_holmium_processing].prerequisites = {tech_holmium_smelting_2}
+data_technology[tech_holmium_processing].effects =
+{
+    {type = unlock_recipe, recipe = holmium_roll},
+    {type = unlock_recipe, recipe = holmium_plate_2}
+}
+data_technology[tech_holmium_processing].unit =
+{
+    count = 1000,
+    ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    },
+    time = 30
+}
+data_technology[tech_holmium_processing].research_trigger = nil
 
 if mods[bobequipment] then
     data_technology[mech_armor].prerequisites = {electromagnetic_science_pack, "bob-power-armor-5"}

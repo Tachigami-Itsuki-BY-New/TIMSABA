@@ -11,8 +11,8 @@ if mods[aegis_bellicos_mods] then
     local delete_prototypes =
 	{
         "beryllium-oxyde",
-        "beryllium_gear",
-        "copper_beryllium_plate",
+        "beryllium-gear",
+        "copper-beryllium-plate",
         "beryllium-processing",
         "long-lightweight-inserter",
         "lightweight-inserter",

@@ -38,7 +38,7 @@
     {
         type = recipe,
         name = ,
-        category = ,
+        categories = {},
         subgroup = ,
         icons = ,
         order = ,
