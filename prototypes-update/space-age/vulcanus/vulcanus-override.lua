@@ -54,23 +54,25 @@ data_recipe[stiratite_from_lava].main_product = ore_stiratite
 data_recipe[stiratite_from_lava].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 -- MOLTEN
-data_recipe[molten_iron].localised_name = {"recipe-name.molten-iron"}
-data_recipe[molten_iron].subgroup = is_vulcanus_molten
-data_recipe[molten_iron].icons = TWO_I(iron_ingot, iron_molten_angels)
-data_recipe[molten_iron].order = a
-data_recipe[molten_iron].energy_required = 8
-data_recipe[molten_iron].ingredients = {{type = item, name = iron_ingot, amount = 16}}
-data_recipe[molten_iron].results[1].amount = 240
-data_recipe[molten_iron].allow_quality = false
+local molten_iron_from_lava = molten_iron .. "-from-lava"
+data_recipe[molten_iron_from_lava].localised_name = {"recipe-name.molten-iron"}
+data_recipe[molten_iron_from_lava].subgroup = is_vulcanus_molten
+data_recipe[molten_iron_from_lava].icons = TWO_I(iron_ingot, iron_molten_angels)
+data_recipe[molten_iron_from_lava].order = a
+data_recipe[molten_iron_from_lava].energy_required = 8
+data_recipe[molten_iron_from_lava].ingredients = {{type = item, name = iron_ingot, amount = 16}}
+data_recipe[molten_iron_from_lava].results[1].amount = 240
+data_recipe[molten_iron_from_lava].allow_quality = false
 
-data_recipe[molten_copper].localised_name = {"recipe-name.molten-copper"}
-data_recipe[molten_copper].subgroup = is_vulcanus_molten
-data_recipe[molten_copper].icons = TWO_I(copper_ingot, copper_molten_angels)
-data_recipe[molten_copper].order = c
-data_recipe[molten_copper].energy_required = 8
-data_recipe[molten_copper].ingredients = {{type = item, name = copper_ingot, amount = 16}}
-data_recipe[molten_copper].results[1].amount = 240
-data_recipe[molten_copper].allow_quality = false
+local molten_copper_from_lava = molten_copper .. "-from-lava"
+data_recipe[molten_copper_from_lava].localised_name = {"recipe-name.molten-copper"}
+data_recipe[molten_copper_from_lava].subgroup = is_vulcanus_molten
+data_recipe[molten_copper_from_lava].icons = TWO_I(copper_ingot, copper_molten_angels)
+data_recipe[molten_copper_from_lava].order = c
+data_recipe[molten_copper_from_lava].energy_required = 8
+data_recipe[molten_copper_from_lava].ingredients = {{type = item, name = copper_ingot, amount = 16}}
+data_recipe[molten_copper_from_lava].results[1].amount = 240
+data_recipe[molten_copper_from_lava].allow_quality = false
 
 -- PLATE
 local casting_iron = "casting-iron"
@@ -154,7 +156,7 @@ data_item[calcite].order = a
 data_item[calcite].stack_size = 200
 
 local acid_neutralisation = "acid-neutralisation"
-data_recipe[acid_neutralisation].category = angels_advanced_chemistry
+data_recipe[acid_neutralisation].categories = {angels_advanced_chemistry}
 data_recipe[acid_neutralisation].subgroup = is_calcite
 data_recipe[acid_neutralisation].icons = FOUR_R_I(sulfuric_acid_angels, sulfur_trioxide_gas, steam, carbon_dioxide_angels)
 data_recipe[acid_neutralisation].order = a_a
@@ -174,7 +176,7 @@ data_recipe[acid_neutralisation].results =
 data_recipe[acid_neutralisation].main_product = steam
 
 local steam_condensation = "steam-condensation"
-data_recipe[steam_condensation].category = angels_cooling
+data_recipe[steam_condensation].categories = {angels_cooling}
 data_recipe[steam_condensation].subgroup = is_calcite
 data_recipe[steam_condensation].icons = TWO_I(steam, water)
 data_recipe[steam_condensation].order = a_b
@@ -206,7 +208,7 @@ data_recipe[simple_coal_liquefaction].surface_conditions = {{property = pressure
 
 data_recipe[carbon].hidden = false
 data_recipe[carbon].hidden_in_factoriopedia = false
-data_recipe[carbon].category = chemistry
+data_recipe[carbon].categories = {chemistry}
 data_recipe[carbon].subgroup = is_calcite
 data_recipe[carbon].icons = THREE_D_I(coal, nil, sulfuric_acid_angels, carbon_angels, water_yellow_waste, oxygen_angels)
 data_recipe[carbon].order = b
@@ -225,7 +227,7 @@ data_recipe[carbon].results =
 data_recipe[carbon].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 -- TUNGSTEN
-data_recipe[tungsten_carbide].category = sintering_6
+data_recipe[tungsten_carbide].categories = {sintering_6}
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_carbide].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
 data_recipe[tungsten_carbide].order = b
@@ -239,7 +241,7 @@ data_recipe[tungsten_carbide].results[1].amount = 1
 data_recipe[tungsten_carbide].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[tungsten_plate].localised_name = data_item[tungsten_plate_bob].localised_name
-data_recipe[tungsten_plate].category = sintering_6
+data_recipe[tungsten_plate].categories = {sintering_6}
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = c
@@ -248,8 +250,8 @@ data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder,
 data_recipe[tungsten_plate].results[1].amount = 1
 data_recipe[tungsten_plate].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
-data_tool[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
-data_tool[metallurgic_science_pack].order = d
+data_item[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
+data_item[metallurgic_science_pack].order = d
 data_recipe[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
 data_recipe[metallurgic_science_pack].order = d
 data_recipe[metallurgic_science_pack].energy_required = 8
@@ -481,9 +483,9 @@ data_technology[foundry].effects =
     {type = unlock_recipe, recipe = rubyte_from_lava},
     {type = unlock_recipe, recipe = bobmonium_from_lava},
     -- MOLTEN
-    {type = unlock_recipe, recipe = molten_iron},
+    {type = unlock_recipe, recipe = molten_iron_from_lava},
     {type = unlock_recipe, recipe = molten_steel},
-    {type = unlock_recipe, recipe = molten_copper},
+    {type = unlock_recipe, recipe = molten_copper_from_lava},
     {type = unlock_recipe, recipe = molten_lead},
     {type = unlock_recipe, recipe = molten_tin},
     {type = unlock_recipe, recipe = molten_manganese},

@@ -887,7 +887,7 @@ if mods[bobtech] then
             table.insert(data_lab[lab_alien].inputs, vanadium_science_pack)
         end
         if mods[muria_mods] then
-            table.insert(data_lab[lab_alien].inputs, muriatic_science_pack)
+            table.insert(data_lab[lab_alien].inputs, acidworking_science_pack)
         end
         if mods[pelagos_mods] then
             table.insert(data_lab[lab_alien].inputs, spoilage_science_pack)

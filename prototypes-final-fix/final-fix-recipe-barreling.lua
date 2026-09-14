@@ -158,16 +158,13 @@ end
 local function generate_fluid_barrel_recipe_icons(fluids, base_icon, side_mask, top_mask, fluid_icon_shift)
     local icons = generate_fluid_barrel_item_icons(fluids, base_icon, side_mask, top_mask)
     if fluids.icon then
-        table.insert(icons,
-        {
-            icon = fluids.icon,
-            icon_size = (fluids.icon_size or defines.default_icon_size),
-            scale = 16.0 / (fluids.icon_size or defines.default_icon_size),
-            shift = fluid_icon_shift
-        }
-    )
+        local current_icon_size = fluids.icon_size or 64
+
+        table.insert(icons, { icon = fluids.icon, icon_size = current_icon_size, scale = 16.0 / current_icon_size, shift = fluid_icon_shift})
     elseif fluids.icons then
-        icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = fluid_icon_shift}, fluids.icon_size)
+        local current_icon_size = fluids.icon_size or 64
+
+        icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = fluid_icon_shift}, current_icon_size)
     end
     return icons
 end
@@ -212,7 +209,7 @@ local function create_container_recipes(fluids, info)
             localised_name = {"recipe-name.fill-" .. info.name, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = recipe,
             name = fluids.name .. "-" .. info.name,
-            category = angels_barreling_pump,
+            categories = {angels_barreling_pump},
             subgroup = info.sub,
             icons = fill_icons,
             enabled = false,
@@ -233,7 +230,7 @@ local function create_container_recipes(fluids, info)
             localised_name = {"recipe-name.empty-" .. info.name, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = recipe,
             name = "empty-" .. fluids.name .. "-" .. info.name,
-            category = angels_barreling_pump,
+            categories = {angels_barreling_pump},
             subgroup = info.sub .. "-empty",
             icons = empty_icons,
             enabled = false,
@@ -378,7 +375,7 @@ if mods[pelagos_mods] then
             localised_name = {"recipe-name.fill-" .. titanium_barrel, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = recipe,
             name = items.name,
-            category = angels_barreling_pump,
+            categories = {angels_barreling_pump},
             subgroup = is_titanium_barrel,
             icons = generate_barrel_recipe_icons(fluids, barrel_fill_icon, barrel_fill_side_mask, barrel_fill_top_mask, {-8, -8}),
             order = fluids.order,
@@ -408,7 +405,7 @@ if mods[pelagos_mods] then
             localised_name = {"recipe-name.empty-" .. titanium_barrel, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = recipe,
             name = "empty-" .. items.name,
-            category = angels_barreling_pump,
+            categories = {angels_barreling_pump},
             subgroup = is_titanium_barrel_empty,
             icons = generate_barrel_recipe_icons(fluids, barrel_empty_icon, barrel_empty_side_mask, barrel_empty_top_mask, {7, 8}),
             order = fluids.order,

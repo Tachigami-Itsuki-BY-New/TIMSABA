@@ -9,18 +9,18 @@ if mods[moshine_mods] then
         mining_time = 2,
         results =
         {
-            {type = item, name = monazite_ore,     amount = 1, probability = 0.5}, -- Nd + Ho + U + Th + Сe + Pm (PO₄)
-            {type = item, name = calcite,          amount = 1, probability = 0.06125}, -- CaCO₃
-            {type = item, name = limestone_angels, amount = 1, probability = 0.06125}, -- CaCO₃
-            {type = item, name = barite,           amount = 1, probability = 0.125}, -- (Ba,Ca,Pb)SO₄
-            {type = item, name = fluorite_angels,  amount = 1, probability = 0.06125}, -- CaF₂
-            {type = item, name = sand_angels,      amount = 1, probability = 0.06125}, -- SiO₂
-            {type = item, name = biotite_mica,     amount = 1, probability = 0.125} -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
+            {type = item, name = monazite_ore,     amount = 1, independent_probability = 0.5}, -- Nd + Ho + U + Th + Сe + Pm (PO₄)
+            {type = item, name = calcite,          amount = 1, independent_probability = 0.06125}, -- CaCO₃
+            {type = item, name = limestone_angels, amount = 1, independent_probability = 0.06125}, -- CaCO₃
+            {type = item, name = barite,           amount = 1, independent_probability = 0.125}, -- (Ba,Ca,Pb)SO₄
+            {type = item, name = fluorite_angels,  amount = 1, independent_probability = 0.06125}, -- CaF₂
+            {type = item, name = sand_angels,      amount = 1, independent_probability = 0.06125}, -- SiO₂
+            {type = item, name = biotite_mica,     amount = 1, independent_probability = 0.125} -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
         }
     }
 
     -- data_item[silicon_boule_mods] --> "mods-update/mods/mods-override"
-    data_recipe[silicon_boule_mods].category = angels_chemical_smelting_4
+    data_recipe[silicon_boule_mods].categories = {angels_chemical_smelting_4}
     data_recipe[silicon_boule_mods].subgroup = is_moshine_recipe
     data_recipe[silicon_boule_mods].icons = THREE_D_I(sand_angels, nil, steam, silicon_boule_mods, hydrogen_angels, oxygen_angels)
     data_recipe[silicon_boule_mods].order = g
@@ -45,7 +45,7 @@ if mods[moshine_mods] then
     -- data_recipe[silicon_carbide_mods] --> "mods-update/mods/mods-override"
 
     data_recipe[glass_mods].localised_name = {"item-name.angels-plate-glass"}
-    data_recipe[glass_mods].category = smelting_filtering
+    data_recipe[glass_mods].categories = {smelting_filtering}
     data_recipe[glass_mods].subgroup = is_moshine_recipe
     data_recipe[glass_mods].icons = TWO_I(sand_angels, glass_bob)
     data_recipe[glass_mods].order = j
@@ -56,7 +56,7 @@ if mods[moshine_mods] then
     data_item[neodymium_magnet].subgroup = is_neodymium_casting
     data_item[neodymium_magnet].order = b
     data_item[neodymium_magnet].stack_size = 200
-    data_recipe[neodymium_magnet].category = metallurgy
+    data_recipe[neodymium_magnet].categories = {metallurgy}
     data_recipe[neodymium_magnet].subgroup = is_neodymium_casting
     data_recipe[neodymium_magnet].icons = TWO_I(neodymium_iron_boron_molten, neodymium_magnet)
     data_recipe[neodymium_magnet].order = b
@@ -65,9 +65,9 @@ if mods[moshine_mods] then
     data_recipe[neodymium_magnet].results[1].amount = 4
 
     -- DATA CELL
-    data_tool[datacell_empty].subgroup = is_moshine_datacell
-    data_tool[datacell_empty].order = a
-    data_tool[datacell_empty].stack_size = 200
+    data_item[datacell_empty].subgroup = is_moshine_datacell
+    data_item[datacell_empty].order = a
+    data_item[datacell_empty].stack_size = 200
     data_recipe[datacell_empty].subgroup = is_moshine_datacell
     data_recipe[datacell_empty].order = a
     data_recipe[datacell_empty].energy_required = 8
@@ -83,9 +83,9 @@ if mods[moshine_mods] then
     data_fluid[raw_data].order = b
 
     local datacell_raw_data = "datacell-raw-data"
-    data_tool[datacell_raw_data].subgroup = is_moshine_datacell
-    data_tool[datacell_raw_data].order = c
-    data_tool[datacell_raw_data].stack_size = 200
+    data_item[datacell_raw_data].subgroup = is_moshine_datacell
+    data_item[datacell_raw_data].order = c
+    data_item[datacell_raw_data].stack_size = 200
     data_recipe[datacell_raw_data].subgroup = is_moshine_datacell
     data_recipe[datacell_raw_data].icons = THREE_I(datacell_empty, raw_data, datacell_raw_data)
     data_recipe[datacell_raw_data].order = c
@@ -109,47 +109,47 @@ if mods[moshine_mods] then
     local model_stable = "model-stable"
 
     local datacell_ai_model_data = "datacell-ai-model-data"
-    data_tool[datacell_ai_model_data].subgroup = is_moshine_datacell
-    data_tool[datacell_ai_model_data].order = e
-    data_tool[datacell_ai_model_data].stack_size = 200
+    data_item[datacell_ai_model_data].subgroup = is_moshine_datacell
+    data_item[datacell_ai_model_data].order = e
+    data_item[datacell_ai_model_data].stack_size = 200
     data_recipe[datacell_ai_model_data].subgroup = is_moshine_datacell
     data_recipe[datacell_ai_model_data].icons = TWO_D_I(datacell_empty, model_stable, datacell_ai_model_data, _3d_data_storage)
     data_recipe[datacell_ai_model_data].order = e
     data_recipe[datacell_ai_model_data].energy_required = 8
 
     local datacell_equation = "datacell-equation"
-    data_tool[datacell_equation].subgroup = is_moshine_datacell
-    data_tool[datacell_equation].order = f
-    data_tool[datacell_equation].stack_size = 200
+    data_item[datacell_equation].subgroup = is_moshine_datacell
+    data_item[datacell_equation].order = f
+    data_item[datacell_equation].stack_size = 200
     data_recipe[datacell_equation].subgroup = is_moshine_datacell
     data_recipe[datacell_equation].icons = TWO_I(datacell_empty, datacell_equation)
     data_recipe[datacell_equation].order = f
     data_recipe[datacell_equation].energy_required = 1024
 
     local datacell_solved_equation = "datacell-solved-equation"
-    data_tool[datacell_solved_equation].subgroup = is_moshine_datacell
-    data_tool[datacell_solved_equation].order = g
-    data_tool[datacell_solved_equation].stack_size = 200
+    data_item[datacell_solved_equation].subgroup = is_moshine_datacell
+    data_item[datacell_solved_equation].order = g
+    data_item[datacell_solved_equation].stack_size = 200
 
     if mods[panglia_mods] then
-        data_tool[datacell_dna_raw].subgroup = is_moshine_datacell
-        data_tool[datacell_dna_raw].order = h
-        data_tool[datacell_dna_raw].stack_size = 200
+        data_item[datacell_dna_raw].subgroup = is_moshine_datacell
+        data_item[datacell_dna_raw].order = h
+        data_item[datacell_dna_raw].stack_size = 200
         data_recipe[datacell_dna_raw].subgroup = is_moshine_datacell
         data_recipe[datacell_dna_raw].icons = THREE_R_I(datacell_empty, datacell_dna_raw, datacell_empty)
         data_recipe[datacell_dna_raw].order = h
         data_recipe[datacell_dna_raw].energy_required = 64
 
-        data_tool[datacell_dna_sequenced].subgroup = is_moshine_datacell
-        data_tool[datacell_dna_sequenced].order = i
-        data_tool[datacell_dna_sequenced].stack_size = 200
+        data_item[datacell_dna_sequenced].subgroup = is_moshine_datacell
+        data_item[datacell_dna_sequenced].order = i
+        data_item[datacell_dna_sequenced].stack_size = 200
     end
 
     -- CORE
     data_item[_3d_data_storage].subgroup = is_moshine_core
     data_item[_3d_data_storage].order = a
     data_item[_3d_data_storage].stack_size = 200
-    data_recipe[_3d_data_storage].category = electromagnetics
+    data_recipe[_3d_data_storage].categories = {electromagnetics}
     data_recipe[_3d_data_storage].subgroup = is_moshine_core
     data_recipe[_3d_data_storage].order = a
     data_recipe[_3d_data_storage].energy_required = 8
@@ -212,9 +212,9 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_2].energy_required = 128
     data_recipe[ai_tier_2].results =
     {
-        {type = item, name = ai_tier_1, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_2, amount = 1, probability = 0.5},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_1, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_2, amount = 1, independent_probability = 0.5},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_3 = "ai-tier-3"
@@ -226,10 +226,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_3].energy_required = 128
     data_recipe[ai_tier_3].results =
     {
-        {type = item, name = ai_tier_1, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_2, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_3, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_1, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_2, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_3, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_4 = "ai-tier-4"
@@ -241,10 +241,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_4].energy_required = 128
     data_recipe[ai_tier_4].results =
     {
-        {type = item, name = ai_tier_2, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_3, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_4, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_2, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_3, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_4, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_5 = "ai-tier-5"
@@ -256,10 +256,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_5].energy_required = 128
     data_recipe[ai_tier_5].results =
     {
-        {type = item, name = ai_tier_3, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_4, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_5, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_3, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_4, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_5, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_6 = "ai-tier-6"
@@ -271,10 +271,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_6].energy_required = 128
     data_recipe[ai_tier_6].results =
     {
-        {type = item, name = ai_tier_4, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_5, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_6, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_4, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_5, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_6, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_7 = "ai-tier-7"
@@ -286,10 +286,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_7].energy_required = 128
     data_recipe[ai_tier_7].results =
     {
-        {type = item, name = ai_tier_5, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_6, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_7, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_5, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_6, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_7, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_8 = "ai-tier-8"
@@ -301,10 +301,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_8].energy_required = 128
     data_recipe[ai_tier_8].results =
     {
-        {type = item, name = ai_tier_6, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_7, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_8, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_6, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_7, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_8, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     local ai_tier_9 = "ai-tier-9"
@@ -316,10 +316,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_9].energy_required = 128
     data_recipe[ai_tier_9].results =
     {
-        {type = item, name = ai_tier_7, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_8, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_9, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_7, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_8, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_9, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     ai_tier_10 = "ai-tier-10"
@@ -331,10 +331,10 @@ if mods[moshine_mods] then
     data_recipe[ai_tier_10].energy_required = 128
     data_recipe[ai_tier_10].results =
     {
-        {type = item, name = ai_tier_8, amount = 1, probability = 0.25},
-        {type = item, name = ai_tier_9, amount = 1, probability = 0.5},
-        {type = item, name = ai_tier_10, amount = 1, probability = 0.25},
-        {type = item, name = model_unstable, amount = 1, probability = 0.015625}
+        {type = item, name = ai_tier_8, amount = 1, independent_probability = 0.25},
+        {type = item, name = ai_tier_9, amount = 1, independent_probability = 0.5},
+        {type = item, name = ai_tier_10, amount = 1, independent_probability = 0.25},
+        {type = item, name = model_unstable, amount = 1, independent_probability = 0.015625}
     }
 
     -- LOGISTICS
@@ -485,7 +485,7 @@ if mods[moshine_mods] then
     data_recipe[space_train_battery_pack].energy_required = 8
 
     local space_train_battery_pack_refurbish = "space-train-battery-pack-refurbish"
-    data_recipe[space_train_battery_pack_refurbish].category = electromagnetics
+    data_recipe[space_train_battery_pack_refurbish].categories = {electromagnetics}
     data_recipe[space_train_battery_pack_refurbish].subgroup = is_moshine_logistic_battery
     data_recipe[space_train_battery_pack_refurbish].icon = data_item[space_train_discharged_battery_pack].icon
     data_recipe[space_train_battery_pack_refurbish].order = b_b
@@ -512,7 +512,7 @@ if mods[moshine_mods] then
     data_item[big_solar_panel].order = a
     data_item[big_solar_panel].stack_size = 32
     data_item[big_solar_panel].weight = 31250
-    data_recipe[big_solar_panel].category = electromagnetics
+    data_recipe[big_solar_panel].categories = {electromagnetics}
     data_recipe[big_solar_panel].subgroup = is_moshine_building_energy
     data_recipe[big_solar_panel].order = a
     data_recipe[big_solar_panel].energy_required = 8
@@ -542,7 +542,7 @@ if mods[moshine_mods] then
     data_item[big_accumulator].order = b
     data_item[big_accumulator].stack_size = 32
     data_item[big_accumulator].weight = 31250
-    data_recipe[big_accumulator].category = electromagnetics
+    data_recipe[big_accumulator].categories = {electromagnetics}
     data_recipe[big_accumulator].subgroup = is_moshine_building_energy
     data_recipe[big_accumulator].order = b
     data_recipe[big_accumulator].energy_required = 8

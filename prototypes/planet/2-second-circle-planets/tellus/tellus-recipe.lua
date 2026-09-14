@@ -3,7 +3,7 @@ if mods[tellus_mods] then
     ({
         {
             name = magnesium_dust,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_tellus_magnesium,
             icons = TWO_I(magnesium_ore, magnesium_dust),
             order = b,
@@ -29,7 +29,7 @@ if mods[tellus_mods] then
             ({
                 {
                     name = orange_dye,
-                    category = centrifuging_4,
+                    categories = {centrifuging_4},
                     subgroup = is_dyes,
                     icons = THREE_D_I(alien_artifact_orange, nutrients, water, orange_dye),
                     order = a,
@@ -56,7 +56,7 @@ if mods[tellus_mods] then
             ({
                 {
                     name = orange_dye,
-                    category = centrifuging_4,
+                    categories = {centrifuging_4},
                     subgroup = is_dyes,
                     icons = THREE_D_I(crushed_cupric, nutrients, water, orange_dye),
                     order = a,
@@ -85,7 +85,7 @@ if mods[tellus_mods] then
             {
                 type = recipe,
                 name = black_dye,
-                category = centrifuging_4,
+                categories = {centrifuging_4},
                 subgroup = is_dyes,
                 icons = THREE_D_I(coal_crushed_angels, nutrients, water, black_dye),
                 order = h,
@@ -114,7 +114,7 @@ if mods[tellus_mods] then
         {
             type = recipe,
             name = name,
-            category = crafting,
+            categories = {crafting},
             subgroup = subgroup,
             order = order,
             enabled = false,

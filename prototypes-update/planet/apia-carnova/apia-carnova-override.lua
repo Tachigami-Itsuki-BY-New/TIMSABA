@@ -23,17 +23,17 @@ if mods[apia_carnova_mods] then
     data_item[fossil_larvae].order = b
 
     local fossil_larvae_processing = "fossil-larvae-processing"
-    data_recipe[fossil_larvae_processing].category = crushing
+    data_recipe[fossil_larvae_processing].categories = {crushing}
     data_recipe[fossil_larvae_processing].subgroup = is_apia_recipe
     data_recipe[fossil_larvae_processing].icons = RECYCLING_I(recycling_png, fossil_larvae)
     data_recipe[fossil_larvae_processing].order = b_a
     -- Fossil Larvae --> CaCO₃ + SiO₂ + FeS₂
     data_recipe[fossil_larvae_processing].results =
     {
-        {type = item, name = calcite,          amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = silicon_oxide_IV, amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = iron_ore,         amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sulfur,           amount_min = 0, amount_max = 2, probability = 0.50}
+        {type = item, name = calcite,          amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = silicon_oxide_IV, amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = iron_ore,         amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sulfur,           amount_min = 0, amount_max = 2, independent_probability = 0.50}
     }
 
     data_fluid[royal_jelly].subgroup = is_apia_recipe
@@ -141,20 +141,20 @@ if mods[apia_carnova_mods] then
     data_item[bone_meal].order = b
 
     local simple_bone_processing = "simple-bone-processing"
-    data_recipe[simple_bone_processing].category = angels_ore_refining_T1
+    data_recipe[simple_bone_processing].categories = {angels_ore_refining_T1}
     data_recipe[simple_bone_processing].subgroup = is_carnova_recipe
     data_recipe[simple_bone_processing].icons = TWO_I(bones, bone_meal)
     data_recipe[simple_bone_processing].order = b_a
 
     local advanced_bone_processing = "advanced-bone-processing"
-    data_recipe[advanced_bone_processing].category = angels_ore_refining_T1
+    data_recipe[advanced_bone_processing].categories = {angels_ore_refining_T1}
     data_recipe[advanced_bone_processing].subgroup = is_carnova_recipe
     data_recipe[advanced_bone_processing].icons = TWO_I(bones, calcite)
     data_recipe[advanced_bone_processing].order = b_b
-    data_recipe[advanced_bone_processing].results = {{type = item, name = calcite, amount = 4, probability = 0.25}}
+    data_recipe[advanced_bone_processing].results = {{type = item, name = calcite, amount = 4, independent_probability = 0.25}}
 
     local bone_meal_sieving = "bone-meal-sieving"
-    data_recipe[bone_meal_sieving].category = ore_sorting_6
+    data_recipe[bone_meal_sieving].categories = {ore_sorting_6}
     data_recipe[bone_meal_sieving].subgroup = is_carnova_recipe
     data_recipe[bone_meal_sieving].icons = RECYCLING_I(recycling_png, bone_meal)
     data_recipe[bone_meal_sieving].order = b_c
@@ -165,26 +165,26 @@ if mods[apia_carnova_mods] then
     data_recipe[bone_meal_sieving].results =
     {
         -- MINERALS
-        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 4, probability = 0.50},
-        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 2, probability = 0.50},
-        {type = item, name = potassium,                amount_min = 0, amount_max = 4, probability = 0.50},
-        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 1, probability = 0.50},
+        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 4, independent_probability = 0.50},
+        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 2, independent_probability = 0.50},
+        {type = item, name = potassium,                amount_min = 0, amount_max = 4, independent_probability = 0.50},
+        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
         -- ORGANICS
-        --{type = item, name = collagen, amount_min = 0, amount_max = 1, probability = 0.25}
+        --{type = item, name = collagen, amount_min = 0, amount_max = 1, independent_probability = 0.25}
         -- WATER
-        --{type = fluid, name = water, amount_min = 0, amount_max = 15, probability = 0.125}
+        --{type = fluid, name = water, amount_min = 0, amount_max = 15, independent_probability = 0.125}
         -- METALS
-        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, probability = 0.015625},
+        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, independent_probability = 0.015625},
     }
     if mods[moshine_mods] then
-        table.insert(data_recipe[bone_meal_sieving].results, {type = item, name = boron, amount_min = 0, amount_max = 1, probability = 0.015625})
+        table.insert(data_recipe[bone_meal_sieving].results, {type = item, name = boron, amount_min = 0, amount_max = 1, independent_probability = 0.015625})
     end
 
     data_item[flesh].subgroup = is_carnova_recipe
@@ -637,14 +637,20 @@ if mods[apia_carnova_mods] then
     }
 
     tech_refreshment = "refreshment"
-    data_technology[tech_refreshment].unit.ingredients =
+    data_technology[tech_refreshment].unit =
     {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {agricultural_science_pack, 1}
+        count = 1000,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {agricultural_science_pack, 1}
+        },
+        time = 30
     }
+    data_technology[tech_refreshment].research_trigger = nil
 end

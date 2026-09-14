@@ -64,7 +64,7 @@ TIMSABA.functions.create_recipes
     -- CRUSHED
     {
         name = germanite_crushed,
-        category = angels_ore_refining_T1,
+        categories = {angels_ore_refining_T1},
         subgroup = is_germanite,
         icons = THREE_R_I(germanite_ore, germanite_crushed, stone_crushed_angels),
         order = b,
@@ -80,7 +80,7 @@ TIMSABA.functions.create_recipes
     -- CHUNKS
     {
         name = germanite_chunks,
-        category = angels_ore_refining_T2,
+        categories = {angels_ore_refining_T2},
         subgroup = is_germanite,
         icons = THREE_D_I(germanite_crushed, nil, water_purified_angels, germanite_chunks, sulfur, water_yellow_waste),
         order = c,
@@ -93,7 +93,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = germanite_chunks, amount = 4},
-            {type = item, name = sulfur, amount = 1, probability = 0.5},
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
             {type = fluid, name = water_yellow_waste, amount = 60}
         },
         main_product = germanite_chunks
@@ -101,7 +101,7 @@ TIMSABA.functions.create_recipes
     -- CRYSTALS
     {
         name = germanite_crystals,
-        category = angels_ore_refining_T3,
+        categories = {angels_ore_refining_T3},
         subgroup = is_germanite,
         icons = THREE_I(germanite_chunks, sulfuric_acid_angels, germanite_crystals),
         order = d,
@@ -117,7 +117,7 @@ TIMSABA.functions.create_recipes
     -- PURIFIED
     {
         name = germanite_purified,
-        category = angels_ore_refining_T4,
+        categories = {angels_ore_refining_T4},
         subgroup = is_germanite,
         icons = TWO_I(germanite_crystals, germanite_purified),
         order = e,
@@ -129,7 +129,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = germanite_crushed_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crushed),
         order = f,
@@ -146,7 +146,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanite_chunks_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_chunks),
         order = g,
@@ -165,7 +165,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanite_crystals_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crystals),
         order = h,
@@ -185,7 +185,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanite_purified_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_purified),
         order = i,

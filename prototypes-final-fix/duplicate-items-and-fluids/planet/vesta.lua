@@ -85,20 +85,4 @@ if mods[vesta_mods] then
 		local delete_prototypes = {"ske_crude_solution"}
 		TIMSABA.functions.delete_prototypes(delete_prototypes)
 	end
-
-	local magnetic_pipe = "magnetic-pipe"
-	local replacements = {[magnetic_pipe] = magnetic_pipe_vesta}
-	for _, technology in pairs(data_technology or {}) do
-		if technology.effects then
-			for _, effect in pairs(technology.effects) do
-				if effect.type == unlock_recipe then
-					local replace = replacements[effect.recipe]
-					if replace then
-						effect.recipe = replace
-					end
-				end
-			end
-		end
-	end
-	data_recipe[magnetic_pipe] = nil
 end

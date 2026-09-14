@@ -143,7 +143,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = holmium_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_holmium,
         icons = TWO_I(holmium_ore, holmium_processed),
         order = b,
@@ -154,7 +154,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_holmium,
         icons = TWO_I(holmium_processed, holmium_pellet),
         order = c,
@@ -165,7 +165,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_ingot,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_holmium,
         icons = FOUR_THREE_I(holmium_cathode, lime_angels, carbon_angels, oxygen_angels, holmium_ingot, nil, limestone_angels),
         order = d,
@@ -186,7 +186,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_powder,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_holmium,
         icons = TWO_I(holmium_ingot, holmium_powder),
         order = e,
@@ -198,7 +198,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = holmium_chloride_III_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_holmium_chemistry,
         icons = THREE_D_I(holmium_ore, nil, hydrochloric_acid_angels, holmium_chloride_III_solution, hydrogen_angels, water_purified_angels),
         order = a,
@@ -218,7 +218,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_fluoride_III,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
         icons = THREE_D_I(holmium_chloride_III_solution, nil, hydrofluoric_acid_angels, holmium_fluoride_III, hydrochloric_acid_angels, water_purified_angels),
         order = b,
@@ -238,7 +238,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_fluoride_III_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
         icons = TWO_D_I(holmium_oxide_III, hydrogen_fluoride_angels, holmium_fluoride_III, water_purified_angels),
         order = b_a,
@@ -257,7 +257,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_fluoride_III_3,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
         icons = THREE_I(holmium_pellet, fluorine, holmium_fluoride_III),
         order = b_b,
@@ -272,7 +272,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_holmium_chemistry,
         icons = FOUR_R_I(holmium_fluoride_III, holmium_cathode, nil, fluorite_angels),
         order = c,
@@ -293,7 +293,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_nitrate_III_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
         icons = THREE_D_I(holmium_processed, dinitrogen_tetroxide_angels, water_purified_angels, holmium_nitrate_III_solution, nil, nitrogen_monoxide_angels),
         order = d,
@@ -313,7 +313,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_oxide_III,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_holmium_chemistry,
         icons = FOUR_D_I(holmium_nitrate_III_solution, nil, nil, nil, holmium_oxide_III, nitrogen_dioxide_angels, oxygen_angels, steam),
         order = e,
@@ -331,7 +331,7 @@ TIMSABA.functions.create_recipes
     -- CASTING
     {
         name = holmium_molten,
-        category = angels_induction_smelting_4,
+        categories = {angels_induction_smelting_4},
         subgroup = is_holmium_casting,
         icons = TWO_I(holmium_ingot, holmium_molten),
         order = a,
@@ -342,7 +342,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_roll,
-        category = angels_strand_casting_4,
+        categories = {angels_strand_casting_4},
         subgroup = is_holmium_casting,
         icons = TWO_I(holmium_molten, holmium_roll, number_1),
         order = b,
@@ -361,7 +361,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_roll_2,
-        category = angels_strand_casting_4,
+        categories = {angels_strand_casting_4},
         subgroup = is_holmium_casting,
         icons = TWO_I(holmium_molten, holmium_roll, number_2),
         order = b_a,
@@ -379,7 +379,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = holmium_plate_2,
-        category = advanced_crafting,
+        categories = {advanced_crafting},
         subgroup = is_holmium_casting,
         icons = TWO_I(holmium_roll, holmium_plate),
         order = c_a,
@@ -392,7 +392,7 @@ TIMSABA.functions.create_recipes
     -- VULCANUS RECIPE
     {
         name = molten_holmium,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_molten,
         icons = TWO_I(holmium_ingot, holmium_molten),
         order = y,
@@ -404,7 +404,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_holmium,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_plate,
         icons = TWO_I(holmium_molten, holmium_plate),
         order = y,

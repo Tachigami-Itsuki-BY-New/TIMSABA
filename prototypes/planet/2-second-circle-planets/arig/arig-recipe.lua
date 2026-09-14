@@ -3,7 +3,7 @@ if mods[arig_mods] then
     ({
         {
             name = sand_arig,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_arig_recipe,
             order = a,
             energy_required = 8,
@@ -14,7 +14,7 @@ if mods[arig_mods] then
         },
         {
             name = pure_sand_arig,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_arig_recipe,
             icons = TWO_I(sand_arig, pure_sand_arig),
             order = b,
@@ -39,7 +39,7 @@ if mods[arig_mods] then
             {
                 localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name." .. planet_name}},
                 name = planet_name .. _water_harvesting,
-                category = arig_water_production,
+                categories = {arig_water_production},
                 subgroup = subgroup,
                 icons = BUILDING_R_I(water, planet_name),
                 order = data_planet[planet_name].order,

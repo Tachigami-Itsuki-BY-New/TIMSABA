@@ -7,7 +7,7 @@ if mods[castra_mods] then
     ({
         {
             name = castra_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_castra_air,
             order = a,
             energy_required = 8,
@@ -18,7 +18,7 @@ if mods[castra_mods] then
         },
         {
             name = castra_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_castra_air,
             icons = FOUR_R_I(castra_air, nitrogen_angels, carbon_dioxide_angels, condensates_angels),
             order = a_a,
@@ -41,7 +41,7 @@ if mods[castra_mods] then
     ({
         {
             name = advanced_processing_unit_battlefield_data,
-            category = electronics_assembling,
+            categories = {electronics, advanced_crafting},
             subgroup = is_castra_recipe,
             icons = BUILDING_R_I(advanced_processing_unit, castra_data),
             order = a_d,
@@ -63,23 +63,23 @@ if mods[castra_mods] then
         },
         {
             name = castra_data,
-            category = "jammed-data-collector-process",
+            categories = {"jammed-data-collector-process"},
             subgroup = is_castra_recipe,
             order = c,
             energy_required = 16,
             ingredients = {},
             results =
             {
-                {type = item, name = electric_engine_unit, amount = 1, probability = 0.03125},
-                {type = item, name = low_density_structure, amount = 1, probability = 0.125},
-                {type = item, name = heat_shielding_tile, amount = 1, probability = 0.25},
-                {type = item, name = advanced_processing_unit, amount = 1, probability = 0.25},
-                {type = item, name = copper_tungsten_pipe, amount = 1, probability = 0.25},
-                {type = item, name = tungsten_plate_bob, amount = 1, probability = 0.25},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 1, probability = 0.25},
-                {type = item, name = copper_tungsten_plate_bob, amount = 1, probability = 0.25},
-                {type = item, name = reinforced_concrete, amount = 1, probability = 0.25},
-                {type = item, name = castra_data, amount = 1, probability = 0.5}
+                {type = item, name = electric_engine_unit, amount = 1, independent_probability = 0.03125},
+                {type = item, name = low_density_structure, amount = 1, independent_probability = 0.125},
+                {type = item, name = heat_shielding_tile, amount = 1, independent_probability = 0.25},
+                {type = item, name = advanced_processing_unit, amount = 1, independent_probability = 0.25},
+                {type = item, name = copper_tungsten_pipe, amount = 1, independent_probability = 0.25},
+                {type = item, name = tungsten_plate_bob, amount = 1, independent_probability = 0.25},
+                {type = item, name = tungsten_carbide_plate_bob, amount = 1, independent_probability = 0.25},
+                {type = item, name = copper_tungsten_plate_bob, amount = 1, independent_probability = 0.25},
+                {type = item, name = reinforced_concrete, amount = 1, independent_probability = 0.25},
+                {type = item, name = castra_data, amount = 1, independent_probability = 0.5}
             },
             main_product = castra_data
         }
@@ -113,7 +113,7 @@ if mods[castra_mods] then
         -- POTASSIUM
         {
             name = potassium_nitrate,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen,
             icons = THREE_R_I(potassium_nitrate_solution, potassium_nitrate, steam),
             order = h,
@@ -129,7 +129,7 @@ if mods[castra_mods] then
         -- NITROGEN
         {
             name = nitrosyl_chloride_gas,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_nitrogen_fluids,
             icons = FOUR_THREE_R_I(potassium_nitrate, nil, hydrogen_chloride_angels, nitrosyl_chloride_gas, chlorine_angels, potassium_chloride, water_purified_angels),
             order = y,
@@ -150,7 +150,7 @@ if mods[castra_mods] then
         },
         {
             name = nitrosyl_chloride_reversed,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen_fluids,
             icons = THREE_R_I(nitrosyl_chloride_gas, nitrogen_monoxide_angels, chlorine_angels),
             order = y_a,
@@ -166,7 +166,7 @@ if mods[castra_mods] then
         -- SULFUR
         {
             name = toluene_sulfur_solution_reversed,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_sulfur,
             icons = THREE_R_I(toluene_sulfur_solution, sulfur, toluene_angels),
             order = a_b,
@@ -189,7 +189,7 @@ if mods[castra_mods] then
         {
             localised_name = {"item-name." .. nickel_powder},
             name = nickel_powder_castra,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_castra_nickel,
             icons = TWO_I(nickel_ore_bob, nickel_powder),
             order = a,
@@ -201,7 +201,7 @@ if mods[castra_mods] then
         {
             localised_name = {"item-name." .. nickel_plate_bob},
             name = nickel_plate_castra,
-            category = sintering_6,
+            categories = {sintering_6},
             subgroup = is_castra_nickel,
             icons = TWO_I(nickel_powder, nickel_plate_bob),
             order = b,

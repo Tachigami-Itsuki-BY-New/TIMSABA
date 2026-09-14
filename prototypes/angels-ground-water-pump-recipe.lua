@@ -35,7 +35,7 @@ for _, RECIPE in ipairs(recipes) do
                 localised_name = {"recipe-name.extract-ground", {"fluid-name." .. RECIPE.fluid}},
                 type = recipe,
                 name = extract_ground .. "-" .. RECIPE.fluid,
-                category = extract_ground,
+                categories = {extract_ground},
                 enabled = true,
                 hidden = true,
                 energy_required = 1,

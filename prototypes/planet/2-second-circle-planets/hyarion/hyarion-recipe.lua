@@ -4,7 +4,7 @@ if mods[hyarion_mods] then
     ({
         {
             name = hyarion_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_hyarion_air,
             order = a,
             energy_required = 8,
@@ -15,7 +15,7 @@ if mods[hyarion_mods] then
         },
         {
             name = hyarion_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_hyarion_air,
             icons = FOUR_R_I(hyarion_air, nitrogen_angels, methane_angels, silane_gas),
             order = a_a,
@@ -54,7 +54,7 @@ if mods[hyarion_mods] then
             {
                 localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. parameters.local_name}},
                 name = parameters.name,
-                category = metallurgy,
+                categories = {metallurgy},
                 subgroup = is_hyarion_recipe_ore,
                 icons = THREE_I(metallic_ore, lava, parameters.ore),
                 order = parameters.order,
@@ -91,7 +91,7 @@ if mods[hyarion_mods] then
         -- SELENIUM
         {
             name = selenium_powder,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_selenium,
             icons = TWO_I(selenium, selenium_powder),
             order = b,
@@ -103,7 +103,7 @@ if mods[hyarion_mods] then
         -- SPACE
         {
             name = bismuth_oxyselenide,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_space_environment_8,
             icons = THREE_D_I(raw_bismuth, selenium_powder, oxygen_angels, bismuth_oxyselenide),
             order = h,

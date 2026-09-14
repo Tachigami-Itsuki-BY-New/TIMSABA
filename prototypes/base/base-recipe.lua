@@ -1,11 +1,9 @@
 TIMSABA.functions.create_recipes
 ({
-    -- BASE
     {
         name = pistol,
-        category = crafting,
+        categories = {crafting},
         subgroup = data_gun[pistol].subgroup,
-        icon = data_gun[pistol].icon,
         order = data_gun[pistol].order,
         enabled = true,
         allow_quality = true,

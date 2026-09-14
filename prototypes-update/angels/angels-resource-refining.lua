@@ -827,22 +827,22 @@ local slag_processing_1 = "angels-slag-processing-1"
 data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, ore_saphirite, ore_bobmonium)
 data_recipe[slag_processing_1].order = e
 data_recipe[slag_processing_1].ingredients[1].amount = 120
-data_recipe[slag_processing_1].results[1].probability = 0.5
-data_recipe[slag_processing_1].results[2].probability = 0.5
+data_recipe[slag_processing_1].results[1].independent_probability = 0.5
+data_recipe[slag_processing_1].results[2].independent_probability = 0.5
 
 local slag_processing_2 = "angels-slag-processing-2"
 data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, ore_jivolite, ore_crotinnium)
 data_recipe[slag_processing_2].order = f
 data_recipe[slag_processing_2].ingredients[1].amount = 120
-data_recipe[slag_processing_2].results[1].probability = 0.5
-data_recipe[slag_processing_2].results[2].probability = 0.5
+data_recipe[slag_processing_2].results[1].independent_probability = 0.5
+data_recipe[slag_processing_2].results[2].independent_probability = 0.5
 
 local slag_processing_3 = "angels-slag-processing-3"
 data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, ore_stiratite, ore_rubyte)
 data_recipe[slag_processing_3].order = g
 data_recipe[slag_processing_3].ingredients[1].amount = 120
-data_recipe[slag_processing_3].results[1].probability = 0.5
-data_recipe[slag_processing_3].results[2].probability = 0.5
+data_recipe[slag_processing_3].results[1].independent_probability = 0.5
+data_recipe[slag_processing_3].results[2].independent_probability = 0.5
 
 local is_geode_crystallization = "angels-geode-crystallization"
 local crystal_slurry_filtering_1 = "angels-crystal-slurry-filtering-1"
@@ -1134,7 +1134,7 @@ data_fluid[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
 data_fluid[iron_chloride_III_solution_angels].order = e
 TIMSABA.barreling.add_dangerous_fluid(iron_chloride_III_solution_angels)
 data_recipe[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
-data_recipe[iron_chloride_III_solution_angels].category = chemistry
+data_recipe[iron_chloride_III_solution_angels].categories = {chemistry}
 data_recipe[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
 data_recipe[iron_chloride_III_solution_angels].icons = TWO_D_I(iron_ore, hydrochloric_acid_angels, iron_chloride_III_solution_angels, hydrogen_angels)
 data_recipe[iron_chloride_III_solution_angels].order = e
@@ -1308,7 +1308,7 @@ data_fluid[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
 data_fluid[copper_chloride_II_solution_angels].order = e
 TIMSABA.barreling.add_dangerous_fluid(copper_chloride_II_solution_angels)
 data_recipe[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
-data_recipe[copper_chloride_II_solution_angels].category = chemistry
+data_recipe[copper_chloride_II_solution_angels].categories = {chemistry}
 data_recipe[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
 data_recipe[copper_chloride_II_solution_angels].icons = TWO_D_I(copper_ore, hydrochloric_acid_angels, copper_chloride_II_solution_angels, hydrogen_angels)
 data_recipe[copper_chloride_II_solution_angels].order = e

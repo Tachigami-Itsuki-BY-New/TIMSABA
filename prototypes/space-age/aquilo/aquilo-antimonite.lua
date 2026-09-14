@@ -59,7 +59,7 @@ TIMSABA.functions.create_recipes
     -- CRUSHED
     {
         name = antimonite_crushed,
-        category = angels_ore_refining_T1,
+        categories = {angels_ore_refining_T1},
         subgroup = is_antimonite,
         icons = THREE_R_I(antimonite_ore, antimonite_crushed, stone_crushed_angels),
         order = b,
@@ -75,7 +75,7 @@ TIMSABA.functions.create_recipes
     -- CHUNKS
     {
         name = antimonite_chunks,
-        category = angels_ore_refining_T2,
+        categories = {angels_ore_refining_T2},
         subgroup = is_antimonite,
         icons = THREE_D_I(antimonite_crushed, nil, water_purified_angels, antimonite_chunks, sulfur, water_green_waste),
         order = c,
@@ -88,7 +88,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = antimonite_chunks, amount = 4},
-            {type = item, name = sulfur, amount = 1, probability = 0.5},
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
             {type = fluid, name = water_green_waste, amount = 60}
         },
         main_product = antimonite_chunks
@@ -96,7 +96,7 @@ TIMSABA.functions.create_recipes
     -- CRYSTALS
     {
         name = antimonite_crystals,
-        category = angels_ore_refining_T3,
+        categories = {angels_ore_refining_T3},
         subgroup = is_antimonite,
         icons = THREE_I(antimonite_chunks, hydrochloric_acid_angels, antimonite_crystals),
         order = d,
@@ -112,7 +112,7 @@ TIMSABA.functions.create_recipes
     -- PURIFIED
     {
         name = antimonite_purified,
-        category = angels_ore_refining_T4,
+        categories = {angels_ore_refining_T4},
         subgroup = is_antimonite,
         icons = TWO_I(antimonite_crystals, antimonite_purified),
         order = e,
@@ -124,7 +124,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = antimonite_crushed_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crushed),
         order = f,
@@ -141,7 +141,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimonite_chunks_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_chunks),
         order = g,
@@ -160,7 +160,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimonite_crystals_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crystals),
         order = h,
@@ -180,7 +180,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = antimonite_purified_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_purified),
         order = i,

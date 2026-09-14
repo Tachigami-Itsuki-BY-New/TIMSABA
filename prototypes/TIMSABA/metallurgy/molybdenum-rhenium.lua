@@ -120,7 +120,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = molybdenum_rhenium_powder_mixture,
-        category = angels_powder_mixing_4,
+        categories = {angels_powder_mixing_4},
         subgroup = is_molybdenum,
         icons = THREE_I(molybdenum_powder, rhenium_powder, molybdenum_rhenium_powder_mixture),
         order = f,
@@ -136,7 +136,7 @@ TIMSABA.functions.create_recipes
     -- CASTING
     {
         name = molybdenum_plate,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_molybdenum_rhenium,
         icons = TWO_I(molybdenum_powder, molybdenum_plate),
         order = a,
@@ -149,7 +149,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_plate,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_molybdenum_rhenium,
         icons = TWO_I(rhenium_powder, rhenium_plate),
         order = b,
@@ -162,7 +162,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_rhenium_plate,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_molybdenum_rhenium,
         icons = TWO_I(molybdenum_rhenium_powder_mixture, molybdenum_rhenium_plate),
         order = c,
@@ -176,7 +176,7 @@ TIMSABA.functions.create_recipes
     -- INTERMEDIATE
     {
         name = molybdenum_gear_wheel,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_gears,
         icons = TWO_I(molybdenum_powder, molybdenum_gear_wheel),
         order = i,
@@ -189,7 +189,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_bearing_ball,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_bearing_ball,
         icons = TWO_I(rhenium_powder, rhenium_bearing_ball),
         order = i,
@@ -202,7 +202,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_bearing,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_bearing,
         icons = THREE_I(rhenium_bearing_ball, rhenium_powder, rhenium_bearing),
         order = i,
@@ -220,7 +220,7 @@ TIMSABA.functions.create_recipes
     -- LOGISTICS
     {
         name = molybdenum_rhenium_pipe,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_pipe,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe.png",
         order = m,
@@ -233,7 +233,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_rhenium_pipe_to_ground,
-        category = angels_sintering_5,
+        categories = {angels_sintering_5},
         subgroup = is_pipe_to_ground,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe-to-ground.png",
         order = m,

@@ -76,7 +76,7 @@ do
 	local inputs =
 	{
 		mod = bobs_mod,
-		group = "mining",
+		group = mining,
 		type = technology,
 		technology_icon_size = 256
 	}
@@ -89,7 +89,7 @@ do
 		{
 			tier = tier,
 			prog_tier = prog_tier,
-			icon_name = "mining-drill",
+			icon_name = mining_drill,
 			technology_icon_size = 128
 		}
 		return override

@@ -71,8 +71,7 @@ TIMSABA.functions.create_recipes
         localised_name = recipes.localised_name,
         localised_description = recipes.localised_description,
         name = recipes.name,
-        category = recipes.category,
-        additional_categories = recipes.additional_categories,
+        categories = recipes.categories,
         subgroup = recipes.subgroup,
         icons = recipes.icons,
         order = recipes.order,
@@ -89,63 +88,34 @@ TIMSABA.functions.create_recipes
     }
 })
 
-TIMSABA.functions.create_buildings
-({
-    {
-        name = buildings.name,
-        subgroup = buildings.subgroup,
-        icons = buildings.icons,
-        order = buildings.order or d,
-        place_result = buildings.name,
-        stack_size = buildings.stack_size or 32,
-        weight = buildings.weight or 31250
-    },
-    {
-        name = buildings.name,
-        category = crafting,
-        subgroup = buildings.subgroup,
-        icons = buildings.icons,
-        order = buildings.order or d,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = buildings.energy_required or 4,
-        ingredients = buildings.ingredients,
-        results = {{type = item, name = buildings.name, amount = 1}},
-        main_product = buildings.name,
-        surface_conditions = buildings.surface_conditions
-    },
-    util.merge
-    ({
-        buildings.base_prototype,
-        {
-            localised_name = buildings.localised_name,
-            localised_description = buildings.localised_description,
-            name = buildings.name,
-            subgroup = buildings.subgroup,
-            icons = buildings.icons,
-            order = buildings.order or d,
-            minable = {result = buildings.name},
-            module_slots = buildings.module_slots or 4,
-            crafting_speed = buildings.crafting_speed or 4,
-            energy_source =
-            {
-                type = electric,
-                usage_priority = secondary_input,
-                emissions_per_minute = {pollution = buildings.pollution or 4},
-                drain = buildings.drain or (60 .. kW)
-            },
-            energy_usage = buildings.energy_usage or (420 .. kW),
-            max_health = buildings.max_health,
-            heating_energy = buildings.heating_energy
-        }
-    })
-})
-
-function TIMSABA.functions.create_burner_buildings(list)
+function TIMSABA.functions.create_buildings(list)
     for _, buildings in ipairs(list) do
+        local new_building = util.merge
+        ({
+            buildings.base_prototype,
+            {
+                localised_name = buildings.localised_name,
+                localised_description = buildings.localised_description,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                minable = {result = buildings.name},
+                module_slots = buildings.module_slots or 4,
+                crafting_speed = buildings.crafting_speed or 4,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = buildings.pollution or 4},
+                    drain = buildings.drain or (60 .. kW)
+                },
+                energy_usage = buildings.energy_usage or (420 .. kW),
+                max_health = buildings.max_health,
+                heating_energy = buildings.heating_energy
+            }
+        })
+
         data:extend
         ({
             {
@@ -163,7 +133,7 @@ function TIMSABA.functions.create_burner_buildings(list)
                 localised_name = buildings.localised_name,
                 type = recipe,
                 name = buildings.name,
-                category = crafting,
+                categories = {crafting},
                 subgroup = buildings.subgroup,
                 icons = buildings.icons,
                 order = buildings.order or d,
@@ -178,34 +148,153 @@ function TIMSABA.functions.create_burner_buildings(list)
                 main_product = buildings.name,
                 surface_conditions = buildings.surface_conditions
             },
-            util.merge
-            ({
-                buildings.base_prototype,
-                {
-                    localised_name = buildings.localised_name,
-                    localised_description = buildings.localised_description,
-                    name = buildings.name,
-                    subgroup = buildings.subgroup,
-                    icons = buildings.icons,
-                    order = buildings.order or d,
-                    minable = {result = buildings.name},
-                    module_slots = buildings.module_slots or 0,
-                    crafting_speed = buildings.crafting_speed or 4,
-                    crafting_categories = buildings.crafting_categories,
-                    energy_source =
-                    {
-                        type = burner,
-                        effectivity = 1,
-                        fuel_categories = {base_fuel, advanced_fuel},
-                        fuel_inventory_size = 1,
-                        emissions_per_minute = {pollution = buildings.pollution or 4}
-                    },
-                    energy_usage = buildings.energy_usage or (900 .. kW),
-                    max_health = buildings.max_health
-                }
-            })
+            new_building
         })
     end
+end
+
+function TIMSABA.functions.create_burner_buildings(list)
+    for _, buildings in ipairs(list) do
+        local new_building =
+        util.merge
+        ({
+            buildings.base_prototype,
+            {
+                localised_name = buildings.localised_name,
+                localised_description = buildings.localised_description,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                minable = {result = buildings.name},
+                module_slots = buildings.module_slots or 0,
+                crafting_speed = buildings.crafting_speed or 4,
+                crafting_categories = buildings.crafting_categories,
+                energy_source =
+                {
+                    type = burner,
+                    effectivity = 1,
+                    fuel_categories = {base_fuel, advanced_fuel},
+                    fuel_inventory_size = 1,
+                    emissions_per_minute = {pollution = buildings.pollution or 4}
+                },
+                energy_usage = buildings.energy_usage or (900 .. kW),
+                max_health = buildings.max_health
+            }
+        })
+
+        data:extend
+        ({
+            {
+                localised_name = buildings.localised_name,
+                type = item,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                place_result = buildings.name,
+                stack_size = buildings.stack_size or 32,
+                weight = buildings.weight or 31250
+            },
+            {
+                localised_name = buildings.localised_name,
+                type = recipe,
+                name = buildings.name,
+                categories = {crafting},
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                enabled = false,
+                auto_recycle = true,
+                allow_productivity = false,
+                allow_quality = true,
+                allow_decomposition = true,
+                energy_required = buildings.energy_required or 4,
+                ingredients = buildings.ingredients,
+                results = {{type = item, name = buildings.name, amount = 1}},
+                main_product = buildings.name,
+                surface_conditions = buildings.surface_conditions
+            },
+            new_building
+        })
+    end
+end
+
+function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
+    return
+    {
+        localised_description = {"entity-description." .. resource_parameters.name},
+        factoriopedia_description = resource_parameters.factoriopedia_description or "",
+        type = resource,
+        name = resource_parameters.name,
+        subgroup = resource_parameters.subgroup,
+        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        order = resource_parameters.order,
+        category = resource_parameters.category,
+        minable = resource_parameters.minable or
+        {
+            mining_particle = resource_parameters.name .. _particle,
+            mining_time = 1,
+            result = resource_parameters.name
+        },
+        flags = {"placeable-neutral"},
+        tree_removal_probability = 0.8,
+        tree_removal_max_distance = 32 * 32,
+        walking_sound = base_tile_sounds.walking.ore,
+        collision_mask = resource_parameters.collision_mask,
+        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
+        autoplace = autoplace_parameters.probability_expression ~= nil and
+        {
+            order = resource_parameters.order,
+            probability_expression = autoplace_parameters.probability_expression,
+            richness_expression = autoplace_parameters.richness_expression
+        }
+            or resource_autoplace.resource_autoplace_settings
+        {
+            name = resource_parameters.name,
+            order = resource_parameters.order,
+            autoplace_control_name = resource_parameters.name,
+            base_density = autoplace_parameters.base_density,
+            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
+            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
+            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
+            candidate_spot_count = autoplace_parameters.candidate_spot_count,
+            tile_restriction = autoplace_parameters.tile_restriction
+        },
+        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+        stages =
+        {
+            sheet =
+            {
+                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+                priority = extra_high,
+                size = 128,
+                frame_count = 8,
+                variation_count = 8,
+                scale = 0.5
+            }
+        },
+        map_color = resource_parameters.map_color,
+        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
+        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
+    }
+end
+
+function TIMSABA.functions.create_autoplace_control(name, order)
+    data:extend
+    ({
+        {
+            localised_name = {"", "[entity=" .. name .. "] ", {"entity-name." .. name}},
+            type = autoplace_control,
+            name = name,
+            order = order or name,
+            category = resource,
+            richness = true,
+            can_be_disabled = true
+        }
+    })
 end
 
 TIMSABA.barreling.add_simple_fluid("name-fluid")

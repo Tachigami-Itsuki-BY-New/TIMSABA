@@ -8,7 +8,7 @@ if mods[vesta_mods] then
     end
 
     data_recipe[deuterium_mods].localised_name = {"fluid-name." .. deuterium_angels}
-    data_recipe[deuterium_mods].category = angels_petrochem_air_filtering
+    data_recipe[deuterium_mods].categories = {angels_petrochem_air_filtering}
     data_recipe[deuterium_mods].subgroup = is_vesta_air
     data_recipe[deuterium_mods].icons = BUILDING_R_I(deuterium_angels, planet_vesta)
     data_recipe[deuterium_mods].order = g
@@ -19,7 +19,7 @@ if mods[vesta_mods] then
     data_recipe[deuterium_mods].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     data_recipe[tritium_mods].localised_name = {"fluid-name." .. tritium_gas}
-    data_recipe[tritium_mods].category = angels_petrochem_air_filtering
+    data_recipe[tritium_mods].categories = {angels_petrochem_air_filtering}
     data_recipe[tritium_mods].subgroup = is_vesta_air
     data_recipe[tritium_mods].icons = BUILDING_R_I(tritium_gas, planet_vesta)
     data_recipe[tritium_mods].order = h
@@ -47,7 +47,7 @@ if mods[vesta_mods] then
 
     local stone_mineraliztion = "ske-carbon-mineralization"
     if data_recipe[stone_mineraliztion] then
-        data_recipe[stone_mineraliztion].category = angels_bio_processing_4
+        data_recipe[stone_mineraliztion].categories = {angels_bio_processing_4}
         data_recipe[stone_mineraliztion].subgroup = is_vesta_recipe
         data_recipe[stone_mineraliztion].icons = STONKS_I(stonks_png, stone)
         data_recipe[stone_mineraliztion].order = a_a
@@ -65,7 +65,7 @@ if mods[vesta_mods] then
         coal_mineraliztion = "ske-coal-mineralization"
     end
     if data_recipe[coal_mineraliztion] then
-        data_recipe[coal_mineraliztion].category = angels_bio_processing_4
+        data_recipe[coal_mineraliztion].categories = {angels_bio_processing_4}
         data_recipe[coal_mineraliztion].subgroup = is_vesta_recipe
         data_recipe[coal_mineraliztion].icons = STONKS_I(stonks_png, coal)
         data_recipe[coal_mineraliztion].order = a_b
@@ -81,7 +81,7 @@ if mods[vesta_mods] then
 
     local carbon_seperation = "ske-carbon-seperation"
     if data_recipe[carbon_seperation] then
-        data_recipe[carbon_seperation].category = cryogenics
+        data_recipe[carbon_seperation].categories = {cryogenics}
         data_recipe[carbon_seperation].subgroup = is_vesta_recipe
         data_recipe[carbon_seperation].icons = THREE_R_I(carbon_dioxide_angels, carbon_monoxide_angels, oxygen_angels)
         data_recipe[carbon_seperation].order = a_c
@@ -97,7 +97,7 @@ if mods[vesta_mods] then
     end
 
     local co2_filter_carbon = "ske_co2_filter_carbon"
-    data_recipe[co2_filter_carbon].category = cryogenics
+    data_recipe[co2_filter_carbon].categories = {cryogenics}
     data_recipe[co2_filter_carbon].subgroup = is_vesta_recipe
     data_recipe[co2_filter_carbon].icons = THREE_R_I(carbon_dioxide_angels, carbon_angels, oxygen_angels)
     data_recipe[co2_filter_carbon].order = a_d
@@ -216,7 +216,7 @@ if mods[vesta_mods] then
     data_recipe[algea_clump_stonite].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local algea_stone_electrolysis = "ske-algea-stone-electrolysis"
-    data_recipe[algea_stone_electrolysis].category = vesta_electrolyser
+    data_recipe[algea_stone_electrolysis].categories = {vesta_electrolyser}
     data_recipe[algea_stone_electrolysis].subgroup = is_vesta_recipe
     data_recipe[algea_stone_electrolysis].icons = FOUR_R_I(algea_clump_stonite, stone, nil, stone)
     data_recipe[algea_stone_electrolysis].order = g_a
@@ -232,7 +232,7 @@ if mods[vesta_mods] then
     data_recipe[algea_stone_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     if data_recipe[lithium_brine] then
-        data_recipe[lithium_brine].category = angels_petrochem_air_filtering
+        data_recipe[lithium_brine].categories = {angels_petrochem_air_filtering}
         data_recipe[lithium_brine].subgroup = is_vesta_recipe
         data_recipe[lithium_brine].icons = TWO_I(water, water_thermal_angels)
         data_recipe[lithium_brine].order = f
@@ -268,7 +268,7 @@ if mods[vesta_mods] then
     data_fluid[supermagnetic_vesta].subgroup = is_vesta_recipe
     data_fluid[supermagnetic_vesta].order = g
     TIMSABA.barreling.add_dangerous_fluid(supermagnetic_vesta)
-    data_recipe[supermagnetic_vesta].category = vesta_magnetizing
+    data_recipe[supermagnetic_vesta].categories = {vesta_magnetics}
     data_recipe[supermagnetic_vesta].subgroup = is_vesta_recipe
     data_recipe[supermagnetic_vesta].icons = TWO_I(electrolyte, supermagnetic_vesta)
     data_recipe[supermagnetic_vesta].order = g
@@ -310,7 +310,7 @@ if mods[vesta_mods] then
     data_item[iridium_plate_mods].subgroup = is_iridium_casting
     data_item[iridium_plate_mods].order = a
     data_item[iridium_plate_mods].stack_size = 200
-    data_recipe[iridium_plate_mods].category = sintering_6
+    data_recipe[iridium_plate_mods].categories = {sintering_6}
     data_recipe[iridium_plate_mods].subgroup = is_iridium_casting
     data_recipe[iridium_plate_mods].icons = TWO_I(iridium_powder, iridium_plate_mods)
     data_recipe[iridium_plate_mods].order = a
@@ -319,14 +319,33 @@ if mods[vesta_mods] then
     data_recipe[iridium_plate_mods].results[1].amount = 16
 
     -- LOGISTICS
-    data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-    data_item[magnetic_pipe_vesta].order = a
-    data_item[magnetic_pipe_vesta].stack_size = 200
-    if mods[moshine_mods] then
-        data_recipe[magnetic_pipe_vesta].ingredients[3].name = neodymium_magnet
+    if data_item[magnetic_pipe_vesta] then
+        data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistic
+        data_item[magnetic_pipe_vesta].order = a
+        data_item[magnetic_pipe_vesta].stack_size = 200
+        data_recipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
+        data_recipe[magnetic_pipe_vesta].order = a
+        data_recipe[magnetic_pipe_vesta].energy_required = 1
+        data_recipe[magnetic_pipe_vesta].ingredients =
+        {
+            {type = item, name = niobium_titanium_plate, amount = 1},
+            {type = item, name = niobium_titanium_cable, amount = 8},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
+            {type = item, name = iridium_plate_mods, amount = 1},
+            {type = fluid, name = supermagnetic_vesta, amount = 30}
+        }
+        data_recipe[magnetic_pipe_vesta].results =
+        {
+            {type = item, name = magnetic_pipe_vesta, amount = 1},
+            {type = fluid, name = electrolyte, amount = 15},
+        }
+        data_recipe[magnetic_pipe_vesta].main_product = magnetic_pipe_vesta
+        if mods[moshine_mods] then
+            table.insert(data_recipe[magnetic_pipe_vesta].ingredients, {type = item, name = neodymium_magnet, amount = 4})
+        end
+        data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
+        data_pipe[magnetic_pipe_vesta].order = a
     end
-    data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-    data_pipe[magnetic_pipe_vesta].order = a
 
     -- BUILDING
     data_item[electrolyzer_vesta].subgroup = is_vesta_building
@@ -434,7 +453,7 @@ if mods[vesta_mods] then
 
     data_fluid[fusion_thruster_fuel].subgroup = is_vesta_recipe_space
     data_fluid[fusion_thruster_fuel].order = b
-    data_recipe[fusion_thruster_fuel].category = cryogenics
+    data_recipe[fusion_thruster_fuel].categories = {cryogenics}
     data_recipe[fusion_thruster_fuel].subgroup = is_vesta_recipe_space
     data_recipe[fusion_thruster_fuel].icons = THREE_I(thruster_fuel, fusion_plasma, fusion_thruster_fuel)
     data_recipe[fusion_thruster_fuel].order = b

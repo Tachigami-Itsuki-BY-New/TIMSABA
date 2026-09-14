@@ -4,7 +4,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = vulcanus_air,
-        category = angels_petrochem_air_filtering,
+        categories = {angels_petrochem_air_filtering},
         subgroup = is_vulcanus_air,
         order = a,
         energy_required = 8,
@@ -15,7 +15,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = vulcanus_air_separation,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_vulcanus_air,
         icons = FOUR_R_I(vulcanus_air, nitrogen_angels, carbon_dioxide_angels, hydrogen_sulfide_angels),
         order = a_a,
@@ -40,7 +40,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = lava,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_lava,
         icons = TWO_I(stone, lava),
         order = a,
@@ -53,7 +53,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = jivolite_from_lava,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_jivolite, stone),
         order = a_b,
@@ -74,7 +74,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crotinnium_from_lava,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_crotinnium, stone),
         order = a_d,
@@ -95,7 +95,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rubyte_from_lava,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_rubyte, stone),
         order = a_e,
@@ -116,7 +116,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = bobmonium_from_lava,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_bobmonium, stone),
         order = a_f,
@@ -164,7 +164,7 @@ local function molten_metal(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_molten,
         icons = TWO_I(parameters.ing, parameters.res),
         order = parameters.order,
@@ -208,7 +208,7 @@ local function advanced_molten_metal(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_molten,
         icons = AR_FOUR_I(parameters.ing, manganese_molten_angels, magnesium_molten, parameters.res),
         order = parameters.order,
@@ -239,7 +239,7 @@ local function molten_alloy(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_molten,
         icons = THREE_I(parameters.ing_1, parameters.ing_2, parameters.res),
         order = parameters.order,
@@ -288,7 +288,7 @@ local function casting_metal(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_plate,
         icons = TWO_I(parameters.ing, parameters.res),
         order = parameters.order,
@@ -349,7 +349,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = casting_steel_rod,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_rod,
         icons = TWO_I(steel_molten_angels, steel_rod),
         order = b,
@@ -362,7 +362,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_titanium_rod,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_rod,
         icons = TWO_I(titanium_molten_angels, titanium_rod),
         order = c,
@@ -376,7 +376,7 @@ TIMSABA.functions.create_recipes
     -- GEAR WHEEL
     {
         name = casting_steel_gear_wheel,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(steel_molten_angels, steel_gear_wheel),
         order = b,
@@ -389,7 +389,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_brass_gear_wheel,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(brass_molten_angels, brass_gear_wheel),
         order = c,
@@ -402,7 +402,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_cobalt_steel_gear_wheel,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_gear_wheel),
         order = d,
@@ -415,7 +415,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_titanium_gear_wheel,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(titanium_molten_angels, titanium_gear_wheel),
         order = e,
@@ -428,7 +428,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_nitinol_gear_wheel,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(nitinol_molten_angels, nitinol_gear_wheel),
         order = f,
@@ -442,7 +442,7 @@ TIMSABA.functions.create_recipes
     -- BEARING BALL
     {
         name = casting_iron_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(iron_molten_angels, iron_bearing_ball),
         order = a,
@@ -455,7 +455,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_steel_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(steel_molten_angels, steel_bearing_ball),
         order = b,
@@ -468,7 +468,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_brass_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(brass_molten_angels, brass_bearing_ball),
         order = c,
@@ -481,7 +481,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_cobalt_steel_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_bearing_ball),
         order = d,
@@ -494,7 +494,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_titanium_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(titanium_molten_angels, titanium_bearing_ball),
         order = e,
@@ -507,7 +507,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_nitinol_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(nitinol_molten_angels, nitinol_bearing_ball),
         order = f,
@@ -521,7 +521,7 @@ TIMSABA.functions.create_recipes
     -- BEARING
     {
         name = casting_iron_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(nil, iron_bearing_ball, iron_molten_angels, iron_bearing),
         order = a,
@@ -538,7 +538,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_steel_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(nil, steel_bearing_ball, steel_molten_angels, steel_bearing),
         order = b,
@@ -555,7 +555,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_brass_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, brass_bearing_ball, brass_molten_angels, brass_bearing),
         order = c,
@@ -573,7 +573,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_cobalt_steel_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, cobalt_steel_bearing_ball, cobalt_steel_molten_angels, cobalt_steel_bearing),
         order = d,
@@ -591,7 +591,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_titanium_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, titanium_bearing_ball, titanium_molten_angels, titanium_bearing),
         order = e,
@@ -609,7 +609,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_nitinol_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, nitinol_bearing_ball, nitinol_molten_angels, nitinol_bearing),
         order = f,
@@ -628,7 +628,7 @@ TIMSABA.functions.create_recipes
     -- CABLE
     {
         name = casting_tin_cable,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, tin_molten_angels, tin_cable),
         order = b,
@@ -644,7 +644,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_silver_cable,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, silver_molten_angels, silver_cable),
         order = c,
@@ -660,7 +660,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_gold_cable,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, gold_molten_angels, gold_cable),
         order = d,
@@ -676,7 +676,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = casting_platinum_cable,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, platinum_molten_angels, platinum_cable),
         order = e,
@@ -704,7 +704,7 @@ local function casting_pipes(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_pipe,
         icons = TWO_I(parameters.ing, parameters.res),
         order = parameters.order,
@@ -739,7 +739,7 @@ local function casting_pipes(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_vulcanus_pipe_to_ground,
         icons = TWO_I(parameters.ing, parameters.res),
         order = parameters.order,
@@ -769,7 +769,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. tungsten_powder},
         name = tungsten_powder_vulcanus,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_vulcanus_tungsten,
         icons = TWO_I(tungsten_ore_bob, tungsten_powder),
         order = a,

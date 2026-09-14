@@ -34,8 +34,8 @@ data_recipe[garden_desert].ingredients[3].amount = 16
 data_recipe[garden_desert].ingredients[4].amount = 240
 
 local is_farming_gardens = "angels-farming-gardens"
-data_tool[bio_token].subgroup = is_farming_gardens
-data_tool[bio_token].order = e
+data_item[bio_token].subgroup = is_farming_gardens
+data_item[bio_token].order = e
 
 local garden_temperate_cultivating_a = "angels-temperate-garden-cultivating-a"
 data_recipe[garden_temperate_cultivating_a].icons = TWO_I(garden_temperate, bio_token)
@@ -102,11 +102,11 @@ data_recipe[garden_temperate_a].energy_required = 256
 data_recipe[garden_temperate_a].results =
 {
     {type = item, name = bio_token, amount = 16},
-    {type = item, name = seed_wheaton, amount = 4, probability = 0.125},
-    {type = item, name = seed_tianaton, amount = 4, probability = 0.125},
-    {type = item, name = seed_okarinome, amount = 4, probability = 0.125},
-    {type = item, name = seed_kendallion, amount = 4, probability = 0.0625},
-    {type = item, name = seed_quillnoa, amount = 4, probability = 0.0625}
+    {type = item, name = seed_wheaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_tianaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_okarinome, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_kendallion, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_quillnoa, amount = 4, independent_probability = 0.0625}
 }
 
 local garden_temperate_b = "angels-temperate-garden-b"
@@ -114,11 +114,11 @@ data_recipe[garden_temperate_b].icons = CORNER_I(garden_temperate, seed_wheaton,
 data_recipe[garden_temperate_b].energy_required = 256
 data_recipe[garden_temperate_b].results =
 {
-    {type = item, name = seed_wheaton, amount = 4, probability = 0.25},
-    {type = item, name = seed_tianaton, amount = 4, probability = 0.25},
-    {type = item, name = seed_okarinome, amount = 4, probability = 0.25},
-    {type = item, name = seed_kendallion, amount = 4, probability = 0.125},
-    {type = item, name = seed_quillnoa, amount = 4, probability = 0.125}
+    {type = item, name = seed_wheaton, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_tianaton, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_okarinome, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_kendallion, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_quillnoa, amount = 4, independent_probability = 0.125}
 }
 
 data_item_subgroup["angels-farming-temperate"].order = b_b
@@ -185,36 +185,36 @@ data_recipe[sorting_wheaton].subgroup = is_temperate_vegetables_processing
 data_recipe[sorting_wheaton].icons = TWO_I(wheaton, corn)
 data_recipe[sorting_wheaton].ingredients[1].amount = 16
 data_recipe[sorting_wheaton].results[1].amount = 8
-data_recipe[sorting_wheaton].reset_freshness_on_craft = true
+data_recipe[sorting_wheaton].results[1].reset_freshness_on_craft = true
 
 local sorting_tianaton = "angels-sorting-temperate-2"
 data_recipe[sorting_tianaton].subgroup = is_temperate_vegetables_processing
 data_recipe[sorting_tianaton].icons = TWO_I(tianaton, cellulose_fiber_angels)
 data_recipe[sorting_tianaton].ingredients[1].amount = 16
 data_recipe[sorting_tianaton].results[1].amount = 16
-data_recipe[sorting_tianaton].reset_freshness_on_craft = true
 
 local sorting_okarinome = "angels-sorting-temperate-3"
 data_recipe[sorting_okarinome].subgroup = is_temperate_vegetables_processing
 data_recipe[sorting_okarinome].icons = TWO_D_I(okarinome, nil, leaves, cellulose_fiber_angels)
 data_recipe[sorting_okarinome].ingredients[1].amount = 16
+data_recipe[sorting_okarinome].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_okarinome].results[2].amount = 8
-data_recipe[sorting_okarinome].reset_freshness_on_craft = true
 
 local sorting_quillnoa = "angels-sorting-temperate-4"
 data_recipe[sorting_quillnoa].subgroup = is_temperate_vegetables_processing
 data_recipe[sorting_quillnoa].icons = TWO_D_I(quillnoa, nil, pips, fruits)
 data_recipe[sorting_quillnoa].ingredients[1].amount = 16
 data_recipe[sorting_quillnoa].results[1].amount = 8
+data_recipe[sorting_quillnoa].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_quillnoa].results[2].amount = 32
-data_recipe[sorting_quillnoa].reset_freshness_on_craft = true
+data_recipe[sorting_quillnoa].results[2].reset_freshness_on_craft = true
 
 local sorting_kendallion = "angels-sorting-temperate-5"
 data_recipe[sorting_kendallion].subgroup = is_temperate_vegetables_processing
 data_recipe[sorting_kendallion].icons = THREE_D_I(kendallion, nil, nil, corn, cellulose_fiber_angels, crystal_dust)
 data_recipe[sorting_kendallion].ingredients[1].amount = 16
 data_recipe[sorting_kendallion].results[1].amount = 16
-data_recipe[sorting_kendallion].reset_freshness_on_craft = true
+data_recipe[sorting_kendallion].results[1].reset_freshness_on_craft = true
 
 -- SWAMP GARDEN
 data_item_subgroup["angels-farming-swamp-seed"].order = c_a
@@ -253,11 +253,11 @@ data_recipe[garden_swamp_a].energy_required = 256
 data_recipe[garden_swamp_a].results =
 {
     {type = item, name = bio_token, amount = 16},
-    {type = item, name = seed_elendilomone, amount = 4, probability = 0.125},
-    {type = item, name = seed_zombieecalyptus, amount = 4, probability = 0.125},
-    {type = item, name = seed_saundsrcress, amount = 4, probability = 0.125},
-    {type = item, name = seed_nexeflax, amount = 4, probability = 0.0625},
-    {type = item, name = seed_mushredtato, amount = 4, probability = 0.0625}
+    {type = item, name = seed_elendilomone, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zombieecalyptus, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_saundsrcress, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nexeflax, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_mushredtato, amount = 4, independent_probability = 0.0625}
 }
 
 local garden_swamp_b = "angels-swamp-garden-b"
@@ -265,11 +265,11 @@ data_recipe[garden_swamp_b].icons = CORNER_I(garden_swamp, seed_elendilomone, se
 data_recipe[garden_swamp_b].energy_required = 256
 data_recipe[garden_swamp_b].results =
 {
-    {type = item, name = seed_elendilomone, amount = 4, probability = 0.25},
-    {type = item, name = seed_zombieecalyptus, amount = 4, probability = 0.25},
-    {type = item, name = seed_saundsrcress, amount = 4, probability = 0.25},
-    {type = item, name = seed_nexeflax, amount = 4, probability = 0.125},
-    {type = item, name = seed_mushredtato, amount = 4, probability = 0.125}
+    {type = item, name = seed_elendilomone, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_zombieecalyptus, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_saundsrcress, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_nexeflax, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_mushredtato, amount = 4, independent_probability = 0.125}
 }
 
 data_item_subgroup["angels-farming-swamp"].order = c_b
@@ -335,37 +335,40 @@ local sorting_elendilomone = "angels-sorting-swamp-1"
 data_recipe[sorting_elendilomone].subgroup = is_swamp_vegetables_processing
 data_recipe[sorting_elendilomone].icons = TWO_I(elendilomone, nuts)
 data_recipe[sorting_elendilomone].ingredients[1].amount = 16
-data_recipe[sorting_elendilomone].reset_freshness_on_craft = true
+data_recipe[sorting_elendilomone].results[1].reset_freshness_on_craft = true
 
 local sorting_zombieecalyptus = "angels-sorting-swamp-2"
 data_recipe[sorting_zombieecalyptus].subgroup = is_swamp_vegetables_processing
 data_recipe[sorting_zombieecalyptus].icons = TWO_I(zombieecalyptus, beans)
 data_recipe[sorting_zombieecalyptus].ingredients[1].amount = 16
 data_recipe[sorting_zombieecalyptus].results[1].amount = 16
-data_recipe[sorting_zombieecalyptus].reset_freshness_on_craft = true
+data_recipe[sorting_zombieecalyptus].results[1].reset_freshness_on_craft = true
 
 local sorting_saundsrcress = "angels-sorting-swamp-3"
 data_recipe[sorting_saundsrcress].subgroup = is_swamp_vegetables_processing
 data_recipe[sorting_saundsrcress].icons = TWO_D_I(saundsrcress, nil, leaves, nuts)
 data_recipe[sorting_saundsrcress].ingredients[1].amount = 16
 data_recipe[sorting_saundsrcress].results[1].amount = 32
+data_recipe[sorting_saundsrcress].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_saundsrcress].results[2].amount = 8
-data_recipe[sorting_saundsrcress].reset_freshness_on_craft = true
+data_recipe[sorting_saundsrcress].results[2].reset_freshness_on_craft = true
 
 local sorting_nexeflax = "angels-sorting-swamp-4"
 data_recipe[sorting_nexeflax].subgroup = is_swamp_vegetables_processing
 data_recipe[sorting_nexeflax].icons = TWO_D_I(nexeflax, nil, leaves, crystal_dust)
 data_recipe[sorting_nexeflax].ingredients[1].amount = 16
 data_recipe[sorting_nexeflax].results[1].amount = 16
+data_recipe[sorting_nexeflax].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_nexeflax].results[2].amount = 8
-data_recipe[sorting_nexeflax].reset_freshness_on_craft = true
 
 local sorting_mushredtato = "angels-sorting-swamp-5"
 data_recipe[sorting_mushredtato].subgroup = is_swamp_vegetables_processing
 data_recipe[sorting_mushredtato].icons = THREE_D_I(mushredtato, nil, nil, fruits, pips, alien_bacteria)
 data_recipe[sorting_mushredtato].ingredients[1].amount = 16
+data_recipe[sorting_mushredtato].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_mushredtato].results[2].amount = 8
-data_recipe[sorting_mushredtato].reset_freshness_on_craft = true
+data_recipe[sorting_mushredtato].results[2].reset_freshness_on_craft = true
+data_recipe[sorting_mushredtato].results[3].reset_freshness_on_craft = true
 
 -- DESERT GARDEN
 data_item_subgroup["angels-farming-desert-seed"].order = d_a
@@ -404,11 +407,11 @@ data_recipe[garden_desert_a].energy_required = 256
 data_recipe[garden_desert_a].results =
 {
     {type = item, name = bio_token, amount = 16},
-    {type = item, name = seed_binafran, amount = 4, probability = 0.125},
-    {type = item, name = seed_primedeadelion, amount = 4, probability = 0.125},
-    {type = item, name = seed_nilaubergine, amount = 4, probability = 0.125},
-    {type = item, name = seed_zelosquash, amount = 4, probability = 0.0625},
-    {type = item, name = seed_arumbiphila, amount = 4, probability = 0.0625}
+    {type = item, name = seed_binafran, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_primedeadelion, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nilaubergine, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zelosquash, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_arumbiphila, amount = 4, independent_probability = 0.0625}
 }
 
 local garden_desert_b = "angels-desert-garden-b"
@@ -416,11 +419,11 @@ data_recipe[garden_desert_b].icons = CORNER_I(garden_swamp, seed_binafran, seed_
 data_recipe[garden_desert_b].energy_required = 256
 data_recipe[garden_desert_b].results =
 {
-    {type = item, name = seed_binafran, amount = 4, probability = 0.25},
-    {type = item, name = seed_primedeadelion, amount = 4, probability = 0.25},
-    {type = item, name = seed_nilaubergine, amount = 4, probability = 0.25},
-    {type = item, name = seed_zelosquash, amount = 4, probability = 0.125},
-    {type = item, name = seed_arumbiphila, amount = 4, probability = 0.125}
+    {type = item, name = seed_binafran, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_primedeadelion, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_nilaubergine, amount = 4, independent_probability = 0.25},
+    {type = item, name = seed_zelosquash, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_arumbiphila, amount = 4, independent_probability = 0.125}
 }
 
 data_item_subgroup["angels-farming-desert"].order = d_b
@@ -487,21 +490,21 @@ data_recipe[sorting_binafran].subgroup = is_desert_vegetables_processing
 data_recipe[sorting_binafran].icons = TWO_I(binafran, beans)
 data_recipe[sorting_binafran].ingredients[1].amount = 16
 data_recipe[sorting_binafran].results[1].amount = 8
-data_recipe[sorting_binafran].reset_freshness_on_craft = true
+data_recipe[sorting_binafran].results[1].reset_freshness_on_craft = true
 
 local sorting_primedeadelion = "angels-sorting-desert-2"
 data_recipe[sorting_primedeadelion].subgroup = is_desert_vegetables_processing
 data_recipe[sorting_primedeadelion].icons = TWO_I(primedeadelion, corn)
 data_recipe[sorting_primedeadelion].ingredients[1].amount = 16
 data_recipe[sorting_primedeadelion].results[1].amount = 8
-data_recipe[sorting_primedeadelion].reset_freshness_on_craft = true
+data_recipe[sorting_primedeadelion].results[1].reset_freshness_on_craft = true
 
 local sorting_nilaubergine = "angels-sorting-desert-3"
 data_recipe[sorting_nilaubergine].subgroup = is_desert_vegetables_processing
 data_recipe[sorting_nilaubergine].icons = TWO_D_I(nilaubergine, nil, pips, crystal_dust)
 data_recipe[sorting_nilaubergine].ingredients[1].amount = 16
 data_recipe[sorting_nilaubergine].results[1].amount = 16
-data_recipe[sorting_nilaubergine].reset_freshness_on_craft = true
+data_recipe[sorting_nilaubergine].results[1].reset_freshness_on_craft = true
 
 local sorting_zelosquash = "angels-sorting-desert-4"
 data_recipe[sorting_zelosquash].subgroup = is_desert_vegetables_processing
@@ -509,14 +512,15 @@ data_recipe[sorting_zelosquash].icons = TWO_D_I(zelosquash, nil, cellulose_fiber
 data_recipe[sorting_zelosquash].ingredients[1].amount = 16
 data_recipe[sorting_zelosquash].results[1].amount = 8
 data_recipe[sorting_zelosquash].results[2].amount = 16
-data_recipe[sorting_zelosquash].reset_freshness_on_craft = true
+data_recipe[sorting_zelosquash].results[2].reset_freshness_on_craft = true
 
 local sorting_arumbiphila = "angels-sorting-desert-5"
 data_recipe[sorting_arumbiphila].subgroup = is_desert_vegetables_processing
 data_recipe[sorting_arumbiphila].icons = THREE_D_I(arumbiphila, nil, nil, corn, nuts, crystal_dust)
 data_recipe[sorting_arumbiphila].ingredients[1].amount = 16
+data_recipe[sorting_arumbiphila].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_arumbiphila].results[2].amount = 8
-data_recipe[sorting_arumbiphila].reset_freshness_on_craft = true
+data_recipe[sorting_arumbiphila].results[2].reset_freshness_on_craft = true
 
 -- VEGETABLES RESULTS
 data_item[beans].spoil_ticks = 15 * minute
@@ -596,7 +600,7 @@ data_recipe[nutrients_from_fruits].order = a_f
 data_recipe[nutrients_from_fruits].ingredients[1].amount = 4
 
 local nutrients_refining_1 = "angels-nutrients-refining-1"
-data_recipe[nutrients_refining_1].category = angels_advanced_chemistry
+data_recipe[nutrients_refining_1].categories = {angels_advanced_chemistry}
 data_recipe[nutrients_refining_1].icons = FOUR_R_I(nutrient_pulp, fuel_oil_angels, acetone_angels, synthesis_angels)
 data_recipe[nutrients_refining_1].order = a_g
 data_recipe[nutrients_refining_1].ingredients[1].amount = 120
@@ -605,14 +609,14 @@ data_recipe[nutrients_refining_1].results[2].amount = 60
 data_recipe[nutrients_refining_1].results[3].amount = 30
 
 local nutrients_refining_2 = "angels-nutrients-refining-2"
-data_recipe[nutrients_refining_2].category = chemistry
+data_recipe[nutrients_refining_2].categories = {chemistry}
 data_recipe[nutrients_refining_2].icons = FOUR_R_I(nutrient_pulp, fuel_oil_angels, nil, glycerol_angels)
 data_recipe[nutrients_refining_2].order = a_h
 data_recipe[nutrients_refining_2].ingredients[1].amount = 120
 data_recipe[nutrients_refining_2].results[2].amount = 60
 
 local nutrients_refining_3 = "angels-nutrients-refining-3"
-data_recipe[nutrients_refining_3].category = angels_advanced_chemistry
+data_recipe[nutrients_refining_3].categories = {angels_advanced_chemistry}
 data_recipe[nutrients_refining_3].icons = FOUR_R_I(nutrient_pulp, acetone_angels, ethanol_angels, butane_angels)
 data_recipe[nutrients_refining_3].order = a_i
 data_recipe[nutrients_refining_3].ingredients[1].amount = 120
@@ -737,7 +741,7 @@ data_recipe[ethanol_angels].ingredients[1].amount = 120
 data_recipe[ethanol_angels].results[1].amount = 60
 
 local ethylene_from_ethanol = "angels-ethanol-to-ethylene-synthesis"
-data_recipe[ethylene_from_ethanol].category = angels_advanced_chemistry
+data_recipe[ethylene_from_ethanol].categories = {angels_advanced_chemistry}
 data_recipe[ethylene_from_ethanol].icons = THREE_R_I(ethanol_angels, ethylene_angels, steam)
 data_recipe[ethylene_from_ethanol].order = e_a
 -- C₂H₆O -H₂SO₄-> C₂H₄ + H₂O

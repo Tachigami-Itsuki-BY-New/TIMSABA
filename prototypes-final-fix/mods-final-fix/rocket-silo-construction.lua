@@ -56,7 +56,7 @@ if mods["Rocket-Silo-Construction"] then
     end
     data_recipe[construction_stage1].results =
     {
-        {type = item, name = "rsc-building-stage1", amount = 1, probability = 0},
+        {type = item, name = "rsc-building-stage1", amount = 1, independent_probability = 0},
         {type = item, name = stone, amount = 64},
         {type = item, name = stone_crushed_angels, amount = 32},
         {type = item, name = sand_angels, amount = 32},
@@ -74,13 +74,13 @@ if mods["Rocket-Silo-Construction"] then
     }
     data_recipe[construction_stage2].results =
     {
-        {type = item, name = "rsc-building-stage2", amount = 1, probability = 0},
+        {type = item, name = "rsc-building-stage2", amount = 1, independent_probability = 0},
         {type = item, name = stone, amount = 32}
     }
 
     data_recipe[construction_stage3].results =
     {
-        {type = item, name = "rsc-building-stage3", amount = 1, probability = 0},
+        {type = item, name = "rsc-building-stage3", amount = 1, independent_probability = 0},
         {type = item, name = stone, amount = 64},
         {type = item, name = ore_saphirite, amount = 4},
         {type = item, name = ore_jivolite, amount = 4},
@@ -101,7 +101,7 @@ if mods["Rocket-Silo-Construction"] then
     }
     data_recipe[construction_stage4].results =
     {
-        {type = item, name = "rsc-building-stage4", amount = 1, probability = 0},
+        {type = item, name = "rsc-building-stage4", amount = 1, independent_probability = 0},
         {type = item, name = stone, amount = 32}
     }
 

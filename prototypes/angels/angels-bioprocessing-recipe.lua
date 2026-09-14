@@ -3,7 +3,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = iodine_gas,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = "angels-bio-processing-brown",
         icons = TWO_I(algae_brown, iodine_gas),
         order = c,
@@ -19,7 +19,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = cellulose_triacetate,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_bio_plastic,
         icons = THREE_I(cellulose_fiber_angels, acetic_anhydride, cellulose_triacetate),
         order = a,
@@ -41,7 +41,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = cellulose_diacetate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_bio_plastic,
         icons = TWO_D_I(cellulose_triacetate, water_purified_angels, cellulose_diacetate, acetic_acid),
         order = b,
@@ -66,7 +66,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"recipe-name.raw-fish"},
         name = factorian_fish,
-        category = "angels-bio-refugium-fish",
+        categories = {"angels-bio-refugium-fish"},
         subgroup = "angels-bio-fish",
         icons = {{icon = "__angelsbioprocessinggraphics__/graphics/icons/breeding.png", icon_size = 32}, {icon = "__base__/graphics/icons/fish.png", icon_size = 64}},
         order = a,
@@ -87,7 +87,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = polluted_water_for_fish,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = "angels-bio-fish-breeding",
         icons = THREE_I(raw_meat, water_for_fish, polluted_water_for_fish),
         order = b,
@@ -102,7 +102,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_splinter_blue_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_splinter_2,
         icons = THREE_R_I(crystal_splinter, crystal_splinter_blue_cut, crystal_powder),
         order = a,
@@ -117,7 +117,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_splinter_green_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_splinter_2,
         icons = THREE_R_I(crystal_splinter, crystal_splinter_green_cut, crystal_powder),
         order = b,
@@ -133,7 +133,7 @@ TIMSABA.functions.create_recipes
     {
         type = recipe,
         name = crystal_splinter_red_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_splinter_2,
         icons = THREE_R_I(crystal_splinter, crystal_splinter_red_cut, crystal_powder),
         order = c,
@@ -148,7 +148,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_shard_blue_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_shard_2,
         icons = THREE_R_I(crystal_shard, crystal_shard_blue_cut, crystal_powder),
         order = a,
@@ -163,7 +163,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_shard_green_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_shard_2,
         icons = THREE_R_I(crystal_shard, crystal_shard_green_cut, crystal_powder),
         order = b,
@@ -178,7 +178,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_shard_red_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_shard_2,
         icons = THREE_R_I(crystal_shard, crystal_shard_red_cut, crystal_powder),
         order = c,
@@ -193,7 +193,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_full_blue_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_full_2,
         icons = THREE_R_I(crystal_full, crystal_full_blue_cut, crystal_powder),
         order = a,
@@ -208,7 +208,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_full_green_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_full_2,
         icons = THREE_R_I(crystal_full, crystal_full_green_cut, crystal_powder),
         order = b,
@@ -223,7 +223,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_full_red_cut,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_crystals_full_2,
         icons = THREE_R_I(crystal_full, crystal_full_red_cut, crystal_powder),
         order = c,

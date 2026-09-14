@@ -1,14 +1,12 @@
-local tree_seed_angels = "angels-tree-seed"
+
 local replace_prototypes =
 {
-	[tree_seed_angels] = tree_seed
+	[tree_seed] = tree_seed_angels
 }
 TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
 local delete_proto =
 {
-    tree_seed_angels,
-
     -- ANGELS RESOURCE REFINING
     "angels-thorium-ore",
 
@@ -33,7 +31,10 @@ local delete_proto =
 
     -- VOIDS
     "angels-chemical-void",
-    "angels-water-void"
+    "angels-water-void",
+
+    -- SPACE AGE
+    tree_seed
 }
 TIMSABA.functions.delete_duplicated_items(delete_proto)
 

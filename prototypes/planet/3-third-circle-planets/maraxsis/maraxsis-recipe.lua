@@ -4,7 +4,7 @@ if mods[maraxsis_mods] then
     ({
         {
             name = maraxsis_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_maraxsis_air,
             icons = FOUR_R_I(maraxsis_air, nitrogen_angels, hydrogen_angels, oxygen_angels),
             order = a_a,

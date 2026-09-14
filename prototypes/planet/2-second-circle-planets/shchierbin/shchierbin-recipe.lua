@@ -6,7 +6,7 @@ if mods[shchierbin_mods] then
     ({
         {
             name = vanadium_processed,
-            category = angels_processed_pressing_4,
+            categories = {angels_processed_pressing_4},
             subgroup = is_shchierbin_vanadium,
             icons = TWO_I(vanadium_ore, vanadium_processed),
             order = b,
@@ -17,7 +17,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_pellet,
-            category = angels_pellet_pressing_4,
+            categories = {angels_pellet_pressing_4},
             subgroup = is_shchierbin_vanadium,
             icons = TWO_I(vanadium_processed, vanadium_pellet),
             order = c,
@@ -28,7 +28,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_ingot,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_shchierbin_vanadium,
             icons = TWO_D_I(vanadium_oxide_V, calcium, vanadium_ingot, lime_angels),
             order = d,
@@ -47,7 +47,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_powder,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_shchierbin_vanadium,
             icons = TWO_I(vanadium_ingot, vanadium_powder),
             order = e,
@@ -60,7 +60,7 @@ if mods[shchierbin_mods] then
         {
             localised_name = {"item-name." .. vanadium_oxide_V},
             name = vanadium_oxide_V_2,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(dioxovanadium_nitrate_V, nil, nil, vanadium_oxide_V, nitrogen_dioxide_angels, oxygen_angels),
             order = a_a,
@@ -77,7 +77,7 @@ if mods[shchierbin_mods] then
         {
             localised_name = {"item-name." .. vanadium_oxide_V},
             name = vanadium_oxide_V_3,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(ammonium_metavanadate, nil, oxygen_angels, vanadium_oxide_V, nitrogen_angels, steam),
             order = a_b,
@@ -97,7 +97,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = dioxovanadium_nitrate_V,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(vanadium_processed, nil, nitric_acid_angels, dioxovanadium_nitrate_V, nitrogen_dioxide_angels, oxygen_angels),
             order = b,
@@ -117,7 +117,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_sulfate_IV_solution,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(vanadium_pellet, nil, sulfuric_acid_angels, vanadium_sulfate_IV_solution, sulfur_dioxide_angels, water_purified_angels),
             order = c,
@@ -137,7 +137,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = ammonium_metavanadate,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(vanadium_sulfate_IV_solution, hydrogen_peroxide, ammonia_solution, ammonium_metavanadate, ammonium_sulfate_solution, water_purified_angels),
             order = d,
@@ -159,7 +159,7 @@ if mods[shchierbin_mods] then
         -- CASTING
         {
             name = vanadium_molten,
-            category = angels_induction_smelting_4,
+            categories = {angels_induction_smelting_4},
             subgroup = is_shchierbin_vanadium_casting,
             icons = TWO_I(vanadium_ingot, vanadium_molten),
             order = a,
@@ -172,7 +172,7 @@ if mods[shchierbin_mods] then
         -- CASTING FeC-V
         {
             name = vanadium_steel_molten,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_vanadium_steel,
             icons = THREE_I(steel_molten_angels, vanadium_molten, vanadium_steel_molten),
             order = a,
@@ -188,7 +188,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_steel_gear_wheel,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_vanadium_steel,
             icons = TWO_I(vanadium_steel_molten, vanadium_steel_gear_wheel),
             order = c,
@@ -202,7 +202,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_steel_bearing_ball,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_vanadium_steel,
             icons = TWO_I(vanadium_steel_molten, vanadium_steel_bearing_ball),
             order = d,
@@ -216,7 +216,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = vanadium_steel_bearing,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_vanadium_steel,
             icons = B_F_L(lubricant, vanadium_steel_bearing_ball, vanadium_steel_molten, vanadium_steel_bearing),
             order = e,
@@ -236,7 +236,7 @@ if mods[shchierbin_mods] then
         -- CASTING Ti-Al-V
         {
             name = titanium_aluminium_vanadium_molten,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_titanium_aluminium_vanadium,
             icons = AR_FOUR_I(vanadium_ingot, aluminium_molten_angels, titanium_molten_angels, titanium_aluminium_vanadium_molten),
             order = a,
@@ -253,7 +253,7 @@ if mods[shchierbin_mods] then
         },
         {
             name = titanium_aluminium_vanadium_plate,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_shchierbin_titanium_aluminium_vanadium,
             icons = TWO_I(titanium_aluminium_vanadium_molten, titanium_aluminium_vanadium_plate),
             order = b,

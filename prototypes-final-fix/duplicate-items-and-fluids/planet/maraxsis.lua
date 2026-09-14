@@ -18,7 +18,6 @@ if mods[maraxsis_mods] then
 	{
 		glass_panes_maraxsis,
 		water_saline_maraxsis,
-		"maraxsis-liquid-atmosphere",
 		"maraxsis-liquid-atmosphere-decompression",
 		"maraxsis-limestone-processing",
 		"maraxsis-petroleum-gas-cracking",

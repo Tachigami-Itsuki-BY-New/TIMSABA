@@ -5,7 +5,7 @@ if mods[muria_mods] then
     ({
         {
             name = muria_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_muria_air,
             order = a,
             energy_required = 8,
@@ -16,7 +16,7 @@ if mods[muria_mods] then
         },
         {
             name = muria_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_advanced_chemistry},
             subgroup = is_muria_air,
             icons = FOUR_R_I(muria_air, nitrogen_angels, hydrogen_chloride_angels, hydrogen_sulfide_angels),
             order = a_a,
@@ -39,7 +39,7 @@ if mods[muria_mods] then
         {
             localised_name = {"item-name." .. lead_powder},
             name = lead_powder_muria,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_muria_lead,
             icons = TWO_I(lead_ore_bob, lead_powder),
             order = b,
@@ -49,18 +49,18 @@ if mods[muria_mods] then
             surface_conditions = {{property = pressure, min = 2180, max = 2180}}
         },
         {
-            name = muriatic_science_pack,
-            category = chemistry,
+            name = acidworking_science_pack,
+            categories = {chemistry},
             subgroup = is_muria_lead,
             order = f,
             energy_required = 1,
             ingredients =
             {
-                {type = item, name = inert_muriatic_science_pack, amount = 1},
+                {type = item, name = inert_acidworking_science_pack, amount = 1},
                 {type = fluid, name = hydrogen_chloride_angels, amount = (15/4)}
             },
-            results = {{type = item, name = muriatic_science_pack, amount = 1}},
-            main_product = muriatic_science_pack
+            results = {{type = item, name = acidworking_science_pack, amount = 1}},
+            main_product = acidworking_science_pack
         }
     })
 end

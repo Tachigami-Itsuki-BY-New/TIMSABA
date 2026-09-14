@@ -101,7 +101,7 @@ if mods[muria_mods] then
     }
     data_recipe[polyvinyl_chloride].surface_conditions = {{property = pressure, min = 2180, max = 2180}}
 
-    local hydrogen_chloride_from_biter_egg = "chlorane-from-biter-egg"
+    local hydrogen_chloride_from_biter_egg = "hydrogen-chloride-from-biter-egg"
     data_recipe[hydrogen_chloride_from_biter_egg].subgroup = is_muria_recipe
     data_recipe[hydrogen_chloride_from_biter_egg].icons = THREE_I(biter_egg, water_purified_angels, hydrogen_chloride_angels)
     data_recipe[hydrogen_chloride_from_biter_egg].order = b_g
@@ -112,7 +112,7 @@ if mods[muria_mods] then
     }
     data_recipe[hydrogen_chloride_from_biter_egg].results[1].amount = 120
 
-    local hydrogen_chloride_from_spoilage = "chlorane-from-spoilage"
+    local hydrogen_chloride_from_spoilage = "hydrogen-chloride-from-spoilage"
     data_recipe[hydrogen_chloride_from_spoilage].subgroup = is_muria_recipe
     data_recipe[hydrogen_chloride_from_spoilage].icons = THREE_I(spoilage, water_purified_angels, hydrogen_chloride_angels)
     data_recipe[hydrogen_chloride_from_spoilage].order = b_h
@@ -123,7 +123,7 @@ if mods[muria_mods] then
     }
     data_recipe[hydrogen_chloride_from_spoilage].results[1].amount = 60
 
-    local hydrogen_chloride_explosives = "chlorane-explosives"
+    local hydrogen_chloride_explosives = "hydrogen-chloride-explosives"
     data_recipe[hydrogen_chloride_explosives].subgroup = is_muria_recipe
     data_recipe[hydrogen_chloride_explosives].icons = THREE_D_I(carbon_angels, oxygen_angels, hydrogen_chloride_angels, explosives)
     data_recipe[hydrogen_chloride_explosives].order = b_i
@@ -276,7 +276,7 @@ if mods[muria_mods] then
 
     local lead_plate_muria = "muria-lead-plate"
     data_recipe[lead_plate_muria].localised_name = data_item[lead_plate_bob].localised_name
-    data_recipe[lead_plate_muria].category = sintering_6
+    data_recipe[lead_plate_muria].categories = {sintering_6}
     data_recipe[lead_plate_muria].subgroup = is_muria_lead
     data_recipe[lead_plate_muria].icons = TWO_I(lead_powder, lead_plate_bob)
     data_recipe[lead_plate_muria].order = c
@@ -301,12 +301,12 @@ if mods[muria_mods] then
         {type = fluid, name = naphtha_angels, amount = 30}
     }
 
-    data_item[inert_muriatic_science_pack].subgroup = is_muria_lead
-    data_item[inert_muriatic_science_pack].order = e
-    data_recipe[inert_muriatic_science_pack].subgroup = is_muria_lead
-    data_recipe[inert_muriatic_science_pack].order = e
-    data_recipe[inert_muriatic_science_pack].energy_required = 8
-    data_recipe[inert_muriatic_science_pack].ingredients =
+    data_item[inert_acidworking_science_pack].subgroup = is_muria_lead
+    data_item[inert_acidworking_science_pack].order = e
+    data_recipe[inert_acidworking_science_pack].subgroup = is_muria_lead
+    data_recipe[inert_acidworking_science_pack].order = e
+    data_recipe[inert_acidworking_science_pack].energy_required = 8
+    data_recipe[inert_acidworking_science_pack].ingredients =
     {
         {type = item, name = chloric_fuel, amount = 4},
         {type = item, name = eschatotaxite_paste, amount = 4},
@@ -314,12 +314,12 @@ if mods[muria_mods] then
         {type = fluid, name = water_purified_angels, amount = 15},
         {type = fluid, name = hydrogen_chloride_angels, amount = 15}
     }
-    data_recipe[inert_muriatic_science_pack].results[1].amount = 8
+    data_recipe[inert_acidworking_science_pack].results[1].amount = 8
 
-    data_tool[muriatic_science_pack].subgroup = is_muria_lead
-    data_tool[muriatic_science_pack].order = f
-    data_tool[muriatic_science_pack].spoil_result = inert_muriatic_science_pack
-    TIMSABA.void.freezing_organics(muriatic_science_pack)
+    data_item[acidworking_science_pack].subgroup = is_muria_lead
+    data_item[acidworking_science_pack].order = f
+    data_item[acidworking_science_pack].spoil_result = inert_acidworking_science_pack
+    TIMSABA.void.freezing_organics(acidworking_science_pack)
 
     data_item[anti_corrosion_cladding].subgroup = is_muria_lead
     data_item[anti_corrosion_cladding].order = g
@@ -538,7 +538,7 @@ if mods[muria_mods] then
     data_technology[tech_advanced_lead_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
     data_technology[tech_advanced_lead_processing].icon_size = 64
 
-    data_technology[muriatic_science_pack].research_trigger =
+    data_technology[acidworking_science_pack].research_trigger =
     {
         type = craft_item,
         item = leaded_fuel,
@@ -546,7 +546,7 @@ if mods[muria_mods] then
     }
 
     local battery = "battery"
-    data_technology[battery .. _productivity].prerequisites = {muriatic_science_pack}
+    data_technology[battery .. _productivity].prerequisites = {acidworking_science_pack}
     data_technology[battery .. _productivity].effects =
     {
         {type = change_recipe_productivity, recipe = battery_lead_acid, change = 0.1},
@@ -569,21 +569,23 @@ if mods[muria_mods] then
     local advanced_paste_applications = "advanced-paste-applications"
     table.insert(data_technology[advanced_paste_applications].unit.ingredients, {metallurgic_science_pack, 1})
 
-    local offworld_chlorane_production = "offworld-chlorane-production"
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {automation_science_pack, 1})
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {logistic_science_pack, 1})
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {production_science_pack, 1})
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {metallurgic_science_pack, 1})
-    table.insert(data_technology[offworld_chlorane_production].unit.ingredients, {agricultural_science_pack, 1})
+    local offworld_chlorine_compounds_production = "offworld-chlorine-compounds-production"
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {automation_science_pack, 1})
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {logistic_science_pack, 1})
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[offworld_chlorine_compounds_production].unit.ingredients, {agricultural_science_pack, 1})
 
     table.insert(data_technology[shotgun_turret].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[shotgun_turret].unit.ingredients, {metallurgic_science_pack, 1})
 
     local _damage = "-damage"
-    table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {production_science_pack, 1})
-    table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {metallurgic_science_pack, 1})
-    table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {agricultural_science_pack, 1})
+    if data_technology[shotgun_turret .. _damage] then
+        table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {production_science_pack, 1})
+        table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[shotgun_turret .. _damage].unit.ingredients, {agricultural_science_pack, 1})
+    end
 
     local tech_weapon_shooting_speed_7 = "weapon-shooting-speed-7"
     table.insert(data_technology[tech_weapon_shooting_speed_7].unit.ingredients, {production_science_pack, 1})
@@ -602,7 +604,7 @@ if mods[muria_mods] then
     table.insert(data_technology[tech_refined_acid_weaponry].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[tech_refined_acid_weaponry].unit.ingredients, {metallurgic_science_pack, 1})
 
-    local tech_hydrogen_chloride_explosives = "chlorane-explosives"
+    local tech_hydrogen_chloride_explosives = "hydrogen-chloride-explosives"
     table.insert(data_technology[tech_hydrogen_chloride_explosives].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[tech_hydrogen_chloride_explosives].unit.ingredients, {metallurgic_science_pack, 1})
 

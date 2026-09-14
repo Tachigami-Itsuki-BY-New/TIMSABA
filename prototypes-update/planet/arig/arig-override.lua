@@ -28,7 +28,7 @@ if mods[arig_mods] then
         data_recipe[cactus_mash].results =
         {
             {type = item, name = cactus_mash, amount = 2},
-            {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+            {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
         }
         data_recipe[cactus_mash].main_product = cactus_mash
 
@@ -46,7 +46,7 @@ if mods[arig_mods] then
     data_recipe[cactus_wood].results =
     {
         {type = item, name = wood, amount = 2},
-        {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+        {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
     }
 
     local compression_cactus_wood = "planetaris-compression-cactus-wood"
@@ -56,7 +56,7 @@ if mods[arig_mods] then
     data_recipe[compression_cactus_wood].results =
     {
         {type = item, name = wood, amount = 1},
-        {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+        {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
     }
 
     local compression_wood_coal = "planetaris-compression-wood-coal"
@@ -99,16 +99,16 @@ if mods[arig_mods] then
     data_recipe[sand_sifting].ingredients[1].amount = 240
     data_recipe[sand_sifting].results =
     {
-        {type = item, name = ore_saphirite, amount = 2, probability = 0.25},
-        {type = item, name = ore_jivolite, amount = 1, probability = 0.25},
-        {type = item, name = ore_stiratite, amount = 2, probability = 0.25},
-        {type = item, name = ore_crotinnium, amount = 1, probability = 0.25},
-        {type = item, name = ore_rubyte, amount = 2, probability = 0.25},
-        {type = item, name = ore_bobmonium, amount = 2, probability = 0.25},
-        {type = item, name = stone, amount = 1, probability = 0.03125},
-        {type = item, name = sulfur, amount = 1, probability = 0.015625},
-        {type = fluid, name = pure_sand_arig, amount = 30, probability = 0.25},
-        {type = fluid, name = steam, amount = 30, probability = 0.25, temperature = 915}
+        {type = item, name = ore_saphirite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_jivolite, amount = 1, independent_probability = 0.25},
+        {type = item, name = ore_stiratite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.25},
+        {type = item, name = ore_rubyte, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_bobmonium, amount = 2, independent_probability = 0.25},
+        {type = item, name = stone, amount = 1, independent_probability = 0.03125},
+        {type = item, name = sulfur, amount = 1, independent_probability = 0.015625},
+        {type = fluid, name = pure_sand_arig, amount = 30, independent_probability = 0.25},
+        {type = fluid, name = steam, amount = 30, independent_probability = 0.25, temperature = 915}
     }
 
     data_recipe[advanced_sand_sifting].subgroup = is_arig_recipe
@@ -117,13 +117,13 @@ if mods[arig_mods] then
     data_recipe[advanced_sand_sifting].ingredients[1].amount = 240
     data_recipe[advanced_sand_sifting].results =
     {
-        {type = item, name = sand_angels, amount = 1, probability = 0.25},
-        {type = item, name = limestone_angels, amount_min = 0, amount_max = 1, probability = 0.25},
-        {type = item, name = calcite, amount_min = 0, amount_max = 1, probability = 0.25},
-        {type = item, name = sulfur, amount = 1, probability = 0.25},
-        {type = item, name = coal, amount = 1, probability = 0.125},
-        {type = fluid, name = pure_sand_arig, amount = 30, probability = 0.50},
-        {type = fluid, name = steam, amount = 30, probability = 0.125, temperature = 915}
+        {type = item, name = sand_angels, amount = 1, independent_probability = 0.25},
+        {type = item, name = limestone_angels, amount_min = 0, amount_max = 1, independent_probability = 0.25},
+        {type = item, name = calcite, amount_min = 0, amount_max = 1, independent_probability = 0.25},
+        {type = item, name = sulfur, amount = 1, independent_probability = 0.25},
+        {type = item, name = coal, amount = 1, independent_probability = 0.125},
+        {type = fluid, name = pure_sand_arig, amount = 30, independent_probability = 0.50},
+        {type = fluid, name = steam, amount = 30, independent_probability = 0.125, temperature = 915}
     }
 
     local advanced_pure_sand_sifting = "planetaris-advanced-pure-sand-sifting"
@@ -159,7 +159,7 @@ if mods[arig_mods] then
     data_tile[sandstone_foundation].order = e
 
     local advanced_heavy_oil_cracking = "planetaris-advanced-heavy-oil-cracking"
-    data_recipe[advanced_heavy_oil_cracking].category = angels_steam_cracking
+    data_recipe[advanced_heavy_oil_cracking].categories = {angels_steam_cracking}
     data_recipe[advanced_heavy_oil_cracking].subgroup = is_arig_recipe
     data_recipe[advanced_heavy_oil_cracking].icons = TWO_D_I(heavy_oil_timsaba, steam, fuel_oil_angels, methane_angels)
     data_recipe[advanced_heavy_oil_cracking].order = f_a
@@ -190,7 +190,7 @@ if mods[arig_mods] then
     data_recipe[compression_rocket_fuel].results[1].amount = 2
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    data_recipe[glass_arig].category = metallurgy
+    data_recipe[glass_arig].categories = {metallurgy}
     data_recipe[glass_arig].subgroup = is_arig_recipe
     data_recipe[glass_arig].icons = TWO_I(pure_sand_arig, glass_bob)
     data_recipe[glass_arig].order = g
@@ -202,7 +202,7 @@ if mods[arig_mods] then
     data_item[heavy_glass_arig].subgroup = is_arig_recipe
     data_item[heavy_glass_arig].order = h
     data_item[heavy_glass_arig].stack_size = 200
-    data_recipe[heavy_glass_arig].category = metallurgy
+    data_recipe[heavy_glass_arig].categories = {metallurgy}
     data_recipe[heavy_glass_arig].subgroup = is_arig_recipe
     data_recipe[heavy_glass_arig].icons = THREE_I(tungsten_powder, glass_molten_angels, heavy_glass_arig)
     data_recipe[heavy_glass_arig].order = h
@@ -286,8 +286,8 @@ if mods[arig_mods] then
     data_recipe[silica_arig].main_product = silica_arig
     data_recipe[silica_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    data_tool[compression_science_pack].subgroup = is_arig_recipe
-    data_tool[compression_science_pack].order = k
+    data_item[compression_science_pack].subgroup = is_arig_recipe
+    data_item[compression_science_pack].order = k
     data_recipe[compression_science_pack].subgroup = is_arig_recipe
     data_recipe[compression_science_pack].order = k
     data_recipe[compression_science_pack].energy_required = 8

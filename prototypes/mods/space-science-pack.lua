@@ -22,8 +22,8 @@ if mods[space_age_science_packs] then
         }
     end
     for _, pack in pairs(list_base_or_space) do
-        data_tool[pack].icon = "__sa-science-packs__/graphics/items/sasp-" .. pack .. ".png"
-        data_tool[pack].icons = nil
+        data_item[pack].icon = "__sa-science-packs__/graphics/items/sasp-" .. pack .. ".png"
+        data_item[pack].icons = nil
     end
 
     data_recipe[space_science_pack].icon = nil
@@ -43,8 +43,8 @@ if mods[space_age_science_packs] then
                 "bob-science-pack-gold"
             }
             for _, pack in pairs(list_bob_tech) do
-                data_tool[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"
-                data_tool[pack].icons = nil
+                data_item[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"
+                data_item[pack].icons = nil
             end
         end
     end
@@ -57,8 +57,8 @@ if mods[space_age_science_packs] then
                 steam_science_pack
             }
             for _, pack in pairs(list_bob_tech) do
-                data_tool[pack].icon = "__TIMSABA__/graphics/icons/lignumis/sasp-" .. pack .. ".png"
-                data_tool[pack].icons = nil
+                data_item[pack].icon = "__TIMSABA__/graphics/icons/lignumis/sasp-" .. pack .. ".png"
+                data_item[pack].icons = nil
             end
         end
     end

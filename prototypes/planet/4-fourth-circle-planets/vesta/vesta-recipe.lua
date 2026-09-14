@@ -4,7 +4,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. hydrogen_angels},
             name = hydrogen_vesta,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(hydrogen_angels, planet_vesta),
             order = a,
@@ -17,7 +17,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_vesta,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(nitrogen_angels, planet_vesta),
             order = b,
@@ -30,7 +30,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. carbon_dioxide_angels},
             name = carbon_dioxide_vesta,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(carbon_dioxide_angels, planet_vesta),
             order = c,
@@ -43,7 +43,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. hydrogen_sulfide_angels},
             name = hydrogen_sulfide_vesta,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(hydrogen_sulfide_angels, planet_vesta),
             order = d,
@@ -56,7 +56,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. methane_angels},
             name = methane_vesta,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(methane_angels, planet_vesta),
             order = e,
@@ -73,7 +73,7 @@ if mods[vesta_mods] then
         ({
             {
                 name = helium_vesta,
-                category = angels_petrochem_air_filtering,
+                categories = {angels_petrochem_air_filtering},
                 subgroup = is_vesta_air,
                 icons = BUILDING_R_I(helium_vesta, planet_vesta),
                 order = f,
@@ -91,7 +91,7 @@ if mods[vesta_mods] then
             {
                 localised_name = {"fluid-name." .. helium_vesta},
                 name = helium_vesta_alt,
-                category = angels_petrochem_air_filtering,
+                categories = {angels_petrochem_air_filtering},
                 subgroup = is_vesta_air,
                 icons = BUILDING_R_I(helium, planet_vesta),
                 order = f,
@@ -112,7 +112,7 @@ if mods[vesta_mods] then
             {
                 localised_name = {"recipe-name.burning", {"item-name." .. name_plate}},
                 name = name_plate .. _burning,
-                category = vesta_combustion,
+                categories = {vesta_combustion},
                 subgroup = is_ore_to_plate,
                 icons = TWO_I(name_ore, name_plate),
                 order = order,
@@ -157,7 +157,7 @@ if mods[vesta_mods] then
             {
                 localised_name = {"recipe-name.burning", {"item-name." .. name_plate}},
                 name = name_plate .. _burning,
-                category = vesta_combustion,
+                categories = {vesta_combustion},
                 subgroup = is_ore_to_plate,
                 icons = THREE_I(name_ore_1, name_ore_2, name_plate),
                 order = order,
@@ -188,7 +188,7 @@ if mods[vesta_mods] then
             {
                 localised_name = {"recipe-name.burning", {"item-name." .. name_plate}},
                 name = name_plate .. _burning,
-                category = vesta_combustion,
+                categories = {vesta_combustion},
                 subgroup = is_ore_to_plate,
                 icons = AR_FOUR_I(name_ore_1, name_ore_2, name_ore_3, name_plate),
                 order = order,
@@ -225,7 +225,7 @@ if mods[vesta_mods] then
     ({
         {
             name = iridium_ore,
-            category = cryogenics,
+            categories = {cryogenics},
             subgroup = is_iridium,
             order = a,
             allow_productivity = true,
@@ -246,7 +246,7 @@ if mods[vesta_mods] then
         },
         {
             name = iridium_processed,
-            category = angels_processed_pressing_4,
+            categories = {angels_processed_pressing_4},
             subgroup = is_iridium,
             icons = TWO_I(iridium_ore, iridium_processed),
             order = b,
@@ -257,7 +257,7 @@ if mods[vesta_mods] then
         },
         {
             name = iridium_pellet,
-            category = angels_pellet_pressing_4,
+            categories = {angels_pellet_pressing_4},
             subgroup = is_iridium,
             icons = TWO_I(iridium_processed, iridium_pellet),
             order = c,
@@ -268,7 +268,7 @@ if mods[vesta_mods] then
         },
         {
             name = iridium_powder,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium,
             icons = THREE_D_I(ammonium_hexachloroiridate_IV, nil, hydrogen_angels, iridium_powder, ammonia_angels, hydrogen_chloride_angels),
             order = e,
@@ -289,7 +289,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"item-name." .. iridium_powder},
             name = iridium_powder_2,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium,
             icons = THREE_D_I(hexachloroiridic_acid, nil, nil, iridium_powder, chlorine_angels, hydrogen_chloride_angels),
             order = e_a,
@@ -306,7 +306,7 @@ if mods[vesta_mods] then
         -- CHEMISTRY
         {
             name = sodium_hexachloroiridate_IV,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = THREE_D_I(iridium_ore, salt_angels, chlorine_angels, sodium_hexachloroiridate_IV),
             order = a,
@@ -323,7 +323,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"item-name." .. sodium_hexachloroiridate_IV},
             name = sodium_hexachloroiridate_IV_2,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = TWO_D_I(sodium_iridate_IV, hydrogen_chloride_angels, sodium_hexachloroiridate_IV, water_purified_angels),
             order = a_a,
@@ -342,7 +342,7 @@ if mods[vesta_mods] then
         },
         {
             name = ammonium_hexachloroiridate_IV,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = TWO_D_I(sodium_hexachloroiridate_IV, ammonium_chloride_solution_angels, ammonium_hexachloroiridate_IV, sodium_chloride_solution),
             order = b,
@@ -361,7 +361,7 @@ if mods[vesta_mods] then
         },
         {
             name = sodium_iridate_IV,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = TWO_D_I(iridium_processed, sodium_peroxide, sodium_iridate_IV, sodium_oxide),
             order = c,
@@ -380,7 +380,7 @@ if mods[vesta_mods] then
         },
         {
             name = iridium_fluoride_VI,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = THREE_I(iridium_pellet, fluorine, iridium_fluoride_VI),
             order = d,
@@ -395,7 +395,7 @@ if mods[vesta_mods] then
         },
         {
             name = iridium_hydroxide_IV,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = THREE_D_I(iridium_fluoride_VI, nil, water_purified_angels, iridium_hydroxide_IV, hydrogen_fluoride_angels, oxygen_angels),
             order = e,
@@ -415,7 +415,7 @@ if mods[vesta_mods] then
         },
         {
             name = hexachloroiridic_acid,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = TWO_D_I(iridium_hydroxide_IV, hydrogen_chloride_angels, hexachloroiridic_acid, water_purified_angels),
             order = f,
@@ -439,7 +439,7 @@ if mods[vesta_mods] then
         -- NITROGEN
         {
             name = ammonium_chloride,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen,
             icons = THREE_I(ammonia_angels, hydrogen_chloride_angels, ammonium_chloride),
             order = e,
@@ -455,7 +455,7 @@ if mods[vesta_mods] then
         -- SODIUM
         {
             name = sodium_peroxide,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_sodium,
             icons = THREE_I(sodium_oxide, oxygen_angels, sodium_peroxide),
             order = l,
@@ -469,9 +469,9 @@ if mods[vesta_mods] then
             main_product = sodium_peroxide
         },
         -- LOGISTICS
-        {
+        --[[{
             name = magnetic_pipe_vesta,
-            category = vesta_magnetizing,
+            categories = {vesta_magnetics},
             subgroup = is_vesta_logistic,
             order = a,
             energy_required = 1,
@@ -489,6 +489,6 @@ if mods[vesta_mods] then
                 {type = fluid, name = electrolyte, amount = 15},
             },
             main_product = magnetic_pipe_vesta
-        }
+        }]]
     })
 end

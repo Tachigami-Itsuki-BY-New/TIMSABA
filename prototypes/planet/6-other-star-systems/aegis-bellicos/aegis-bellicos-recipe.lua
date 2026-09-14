@@ -7,7 +7,7 @@ if mods[aegis_bellicos_mods] then
     ({
         {
             name = beryllium_processed,
-            category = angels_processed_pressing_4,
+            categories = {angels_processed_pressing_4},
             subgroup = is_beryllium,
             icons = TWO_I(beryllium_ore, beryllium_processed),
             order = b,
@@ -19,7 +19,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_pellet,
-            category = angels_pellet_pressing_4,
+            categories = {angels_pellet_pressing_4},
             subgroup = is_beryllium,
             icons = TWO_I(beryllium_processed, beryllium_pellet),
             order = c,
@@ -31,7 +31,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_ingot,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium,
             icons = TWO_D_I(beryllium_chloride_gas, magnesium_ingot, beryllium_ingot, magnesium_chloride),
             order = d,
@@ -52,7 +52,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. beryllium_ingot},
             name = beryllium_ingot_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_beryllium,
             icons = TWO_D_I(beryllium_fluoride, magnesium_ingot, beryllium_ingot, magnesium_fluoride),
             order = d_a,
@@ -73,7 +73,7 @@ if mods[aegis_bellicos_mods] then
         -- CHEMISTRY
         {
             name = beryllium_oxide,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_I(beryllium_ore, oxygen_angels, beryllium_oxide),
             order = a,
@@ -90,7 +90,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. beryllium_oxide},
             name = beryllium_oxide_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_R_I(beryllium_hydroxide, beryllium_oxide, steam),
             order = a_a,
@@ -106,7 +106,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_chloride_gas,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_D_I(beryllium_oxide, carbon_angels, chlorine_angels, beryllium_chloride_gas, nil, carbon_monoxide_angels),
             order = b,
@@ -127,7 +127,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_sulfate_solution,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_D_I(beryllium_processed, oxygen_angels, sulfuric_acid_angels, beryllium_sulfate_solution),
             order = c,
@@ -144,7 +144,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_hydroxide,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = TWO_D_I(beryllium_sulfate_solution, sodium_hydroxide_angels, beryllium_hydroxide, sodium_sulfate_solution),
             order = d,
@@ -164,7 +164,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = ammonium_fluoroberyllate,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_D_I(beryllium_pellet, ammonium_hydrofluoride, oxygen_angels, ammonium_fluoroberyllate, nil, steam),
             order = e,
@@ -185,7 +185,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_fluoride,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_beryllium_chemistry,
             icons = THREE_R_I(ammonium_fluoroberyllate, beryllium_fluoride, ammonium_fluoride_gas),
             order = f,
@@ -202,7 +202,7 @@ if mods[aegis_bellicos_mods] then
         -- CASTING
         {
             name = beryllium_molten,
-            category = angels_induction_smelting_4,
+            categories = {angels_induction_smelting_4},
             subgroup = is_beryllium_casting,
             icons = TWO_I(beryllium_ingot, beryllium_molten),
             order = a,
@@ -215,7 +215,7 @@ if mods[aegis_bellicos_mods] then
         -- CASTING Cu-Be-Ni
         {
             name = beryllium_bronze_molten,
-            category = angels_induction_smelting_4,
+            categories = {angels_induction_smelting_4},
             subgroup = is_beryllium_bronze,
             icons = B_F_L(copper_ingot, beryllium_ingot, nickel_ingot, beryllium_bronze_molten, number_1),
             order = a,
@@ -233,7 +233,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"fluid-name." .. beryllium_bronze_molten},
             name = beryllium_bronze_molten_2,
-            category = angels_induction_smelting_4,
+            categories = {angels_induction_smelting_4},
             subgroup = is_beryllium_bronze,
             icons = B_F_L(copper_ingot, beryllium_ingot, nickel_ingot, beryllium_bronze_molten, number_2),
             order = a_a,
@@ -252,7 +252,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_bronze_plate,
-            category = angels_casting_4,
+            categories = {angels_casting_4},
             subgroup = is_beryllium_bronze,
             icons = TWO_I(beryllium_bronze_molten, beryllium_bronze_plate),
             order = b,
@@ -265,7 +265,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_bronze_gear_wheel,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_beryllium_bronze,
             icons = TWO_I(beryllium_bronze_plate, beryllium_bronze_gear_wheel),
             order = c,
@@ -279,7 +279,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_bronze_bearing_ball,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_beryllium_bronze,
             icons = TWO_I(beryllium_bronze_plate, beryllium_bronze_bearing_ball),
             order = d,
@@ -293,7 +293,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = beryllium_bronze_bearing,
-            category = crafting_fluid,
+            categories = {crafting_fluid},
             subgroup = is_beryllium_bronze,
             icons = B_F_L(lubricant, beryllium_bronze_bearing_ball, beryllium_bronze_plate, beryllium_bronze_bearing),
             order = e,
@@ -322,7 +322,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. magnesium_ingot},
             name = magnesium_ingot_2,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, potassium, magnesium_ingot, potassium_fluoride),
             order = d_a,
@@ -342,7 +342,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. magnesium_ingot},
             name = magnesium_ingot_3,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, sodium_angels, magnesium_ingot, sodium_fluoride),
             order = d_b,
@@ -362,7 +362,7 @@ if mods[aegis_bellicos_mods] then
         -- POTASSIUM
         {
             name = potassium_sulfate_solution,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_potassium_fluid,
             icons = THREE_D_I(potassium_fluoride, water_purified_angels, sulfuric_acid_angels, potassium_sulfate_solution, hydrogen_fluoride_angels),
             order = g_a,
@@ -383,7 +383,7 @@ if mods[aegis_bellicos_mods] then
         -- NITROGEN
         {
             name = ammonium_fluoride_solution,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen,
             icons = THREE_I(ammonium_fluoride_gas, water_purified_angels, ammonium_fluoride_solution),
             order = v,
@@ -402,7 +402,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = ammonium_hydrosulfate,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen,
             icons = TWO_D_I(ammonium_fluoride_solution, sulfuric_acid_angels, ammonium_hydrosulfate, hydrofluoric_acid_angels),
             order = f,
@@ -421,7 +421,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = ammonium_hydrofluoride,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_nitrogen,
             icons = THREE_I(ammonia_angels, hydrogen_fluoride_angels, ammonium_hydrofluoride),
             order = j,
@@ -438,7 +438,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"fluid-name." .. sodium_sulfate_solution},
             name = sodium_sulfate_solution_2,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_sodium_fluid,
             icons = THREE_D_I(sodium_fluoride, water_purified_angels, sulfuric_acid_angels, sodium_sulfate_solution, hydrogen_fluoride_angels),
             order = g_a,
@@ -464,7 +464,7 @@ if mods[aegis_bellicos_mods] then
     ({
         {
             name = helium_3_gas,
-            category = centrifuging_4,
+            categories = {centrifuging_4},
             subgroup = is_bellicos_recipe,
             icons = THREE_R_IS(radioactive_ice, ice, helium_3_gas),
             order = e,
@@ -479,7 +479,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = helium_4_gas,
-            category = centrifuging_4,
+            categories = {centrifuging_4},
             subgroup = is_bellicos_recipe,
             icons = THREE_R_IS(radioactive_ice, ice, helium_4_gas),
             order = e,
@@ -494,7 +494,7 @@ if mods[aegis_bellicos_mods] then
         },
         {
             name = helium_liquid,
-            category = cryogenics,
+            categories = {cryogenics},
             subgroup = is_bellicos_recipe,
             icons = TWO_I(He_icon, helium_liquid),
             order = h,
@@ -513,7 +513,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. advanced_processing_unit},
             name = helium_advanced_processing_unit,
-            category = electromagnetics,
+            categories = {electromagnetics},
             subgroup = is_bellicos_recipe,
             icons = BUILDING_R_I(advanced_processing_unit, helium_liquid),
             order = h_d,

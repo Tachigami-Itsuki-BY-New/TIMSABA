@@ -3,7 +3,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = argon_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_basic_fluids,
         icons = TWO_I(compressed_air, argon_gas),
         order = h,
@@ -20,7 +20,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = coke_processed,
-        category = angels_processed_pressing_1,
+        categories = {angels_processed_pressing_1},
         subgroup = is_coal,
         icons = TWO_I(coke_angels, coke_processed),
         order = e,
@@ -31,7 +31,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = pitch,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_coal,
         icons = FOUR_THREE_R_I(coal_tar_liquid, nil, steam, pitch, phenol, benzene_angels, hydrogen_angels),
         order = g,
@@ -52,7 +52,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = raw_graphite_block,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_coal,
         icons = THREE_I(coke_angels, pitch, raw_graphite_block),
         order = h,
@@ -68,7 +68,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = raw_graphite_block_2,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_coal,
         icons = THREE_I(graphite_chips, pitch, raw_graphite_block),
         order = h_a,
@@ -84,7 +84,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = graphite_block,
-        category = smelting,
+        categories = {smelting},
         subgroup = is_coal,
         icons = TWO_I(raw_graphite_block, graphite_block),
         order = i,
@@ -96,7 +96,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = graphite_plate,
-        category = advanced_crafting,
+        categories = {advanced_crafting},
         subgroup = is_coal,
         icons = THREE_R_I(graphite_block, graphite_plate, graphite_chips),
         order = j,
@@ -112,7 +112,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = graphite_electrode,
-        category = smelting,
+        categories = {smelting},
         subgroup = is_coal,
         icons = THREE_I(graphite_block, pitch, graphite_electrode),
         order = l,
@@ -128,7 +128,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = carbon_nanotube,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_coal,
         icons = FOUR_R_I(graphite_electrode, carbon_nanotube, nil, graphite_chips),
         order = m,
@@ -150,7 +150,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = graphene_oxide,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_coal,
         icons = THREE_D_I(graphite_plate, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate_II_solution, potassium_sulfate_solution),
         order = n,
@@ -172,7 +172,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = graphene,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_coal,
         icons = THREE_D_I(graphene_oxide, nil, dinitrogen_tetroxide_angels, graphene, steam, nitrogen_angels),
         order = o,
@@ -194,7 +194,7 @@ TIMSABA.functions.create_recipes
     -- COAL FLUID
     {
         name = coal_tar_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluid_1,
         icons = THREE_R_I(coal, coal_tar_liquid, coke_angels),
         order = d,
@@ -215,7 +215,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = carbonic_acid_reversed,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluid_1,
         icons = THREE_R_I(carbonic_acid, water_purified_angels, carbon_dioxide_angels),
         order = c_a,
@@ -242,7 +242,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = ammonium_sulfate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen,
         icons = THREE_I(ammonia_angels, sulfuric_acid_angels, ammonium_sulfate),
         order = d,
@@ -257,7 +257,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_chloride_reprocess,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen,
         icons = TWO_D_I(ammonium_chloride, sodium_hydroxide_solution_angels, ammonia_solution, sodium_chloride_solution),
         order = e_a,
@@ -276,7 +276,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_hydrosulfate_reprocess,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen,
         icons = FOUR_R_I(ammonium_hydrosulfate, ammonia_angels, sulfur_trioxide_gas, steam),
         order = f_a,
@@ -292,7 +292,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexamethylenediamine,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen,
         icons = THREE_I(adiponitrile_liquid, hydrogen_angels, hexamethylenediamine),
         order = g,
@@ -307,7 +307,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = imidazole,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen,
         icons = THREE_R_I(imidazole_solution, imidazole, steam),
         order = h,
@@ -322,7 +322,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = imidazolium_salt,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen,
         icons = THREE_I(imidazole, chlorobutane_liquid, imidazolium_salt),
         order = i,
@@ -343,7 +343,7 @@ TIMSABA.functions.create_recipes
     -- FLUID
     {
         name = ammonia_gas_alt,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_R_I(ammonia_solution, ammonia_angels, steam),
         order = b_a,
@@ -361,7 +361,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = nitrogen_monoxide_2,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = TWO_D_I(ammonia_angels, oxygen_angels, nitrogen_monoxide_angels, steam, number_2),
         order = c_a,
@@ -382,7 +382,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = melamine_solution_from_dicyandiamide_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_R_I(dicyandiamide_solution, melamine_solution_angels, water_purified_angels),
         order = g_a,
@@ -402,7 +402,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_chloride_solution_alt,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(ammonium_chloride, water_purified_angels, ammonium_chloride_solution_angels),
         order = o_a,
@@ -417,7 +417,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = dicyandiamide_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_R_I(cyanamide_solution, dicyandiamide_solution, water_purified_angels),
         order = q,
@@ -432,7 +432,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_sulfate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(ammonium_sulfate, water_purified_angels, ammonium_sulfate_solution),
         order = r,
@@ -447,7 +447,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_sulfate_solution_alt,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(ammonium_hydrosulfate, ammonia_solution, ammonium_sulfate_solution),
         order = r_a,
@@ -462,7 +462,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = acrylonitrile,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(acetylene_gas, hydrocyanic_acid, acrylonitrile),
         order = s,
@@ -482,7 +482,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = acetone_cyanohydrin,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(methanol_angels, hydrocyanic_acid, acetone_cyanohydrin),
         order = t,
@@ -502,7 +502,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = adiponitrile_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(butadiene_angels, hydrocyanic_acid, adiponitrile_liquid),
         order = w,
@@ -517,7 +517,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = imidazole_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_D_I(glyoxal_liquid, ammonia_angels, formaldehyde_angels, imidazole_solution, nil, water_purified_angels),
         order = x,
@@ -542,7 +542,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = hydrogen_fluoride_liquefied,
-        category = angels_cooling,
+        categories = {angels_cooling},
         subgroup = is_fluorine_fluid,
         icons = TWO_I(hydrogen_fluoride_angels, hydrogen_fluoride_liquefied),
         order = c,
@@ -577,7 +577,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_chloride,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium,
         icons = THREE_R_I(sodium_chloride_solution, salt_angels, steam),
         order = c,
@@ -592,7 +592,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_sulfate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium,
         icons = THREE_R_I(sodium_sulfate_solution, sodium_sulfate_angels, steam),
         order = d_a,
@@ -607,7 +607,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_carbonate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium,
         icons = THREE_R_I(sodium_carbonate_solution, sodium_carbonate_angels, steam),
         order = e_a,
@@ -622,7 +622,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_nitrate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium,
         icons = THREE_R_I(sodium_nitrate_solution, sodium_nitrate_angels, steam),
         order = g_a,
@@ -637,7 +637,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_peroxide_reprocess,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium,
         icons = TWO_D_I(sodium_peroxide, hydrocyanic_acid, sodium_cyanide_angels, hydrogen_peroxide),
         order = l_a,
@@ -658,7 +658,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_chloride_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(salt_angels, water_purified_angels, sodium_chloride_solution),
         order = b,
@@ -673,7 +673,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_sulfate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_sulfate_angels, water_purified_angels, sodium_sulfate_solution),
         order = c,
@@ -688,7 +688,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_carbonate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_carbonate_angels, water_purified_angels, sodium_carbonate_solution),
         order = d,
@@ -703,7 +703,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_nitrate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_nitrate_angels, water_purified_angels, sodium_nitrate_solution),
         order = e,
@@ -718,7 +718,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_hypochlorite_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_hypochlorite_angels, water_purified_angels, sodium_hypochlorite_solution),
         order = f,
@@ -733,7 +733,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_hypochlorite_solution_from_sodium_hydroxide_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_sodium_fluid,
         icons = THREE_D_I(sodium_hydroxide_solution_angels, nil, chlorine_angels, sodium_hypochlorite_solution, sodium_chloride_solution, water_purified_angels),
         order = f_a,
@@ -753,7 +753,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_chlorate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_chlorate_angels, water_purified_angels, sodium_chlorate_solution),
         order = g,
@@ -768,7 +768,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_chlorate_solution_from_sodium_hypochlorite_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = THREE_R_I(sodium_hypochlorite_solution, sodium_chlorate_solution, sodium_chloride_solution),
         order = g_a,
@@ -783,7 +783,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_perchlorate_solution,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_perchlorate_angels, water_purified_angels, sodium_perchlorate_solution),
         order = h,
@@ -798,7 +798,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_perchlorate_solution_from_sodium_chlorate_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_chlorate_solution, water_purified_angels, sodium_perchlorate_solution, hydrogen_angels),
         order = h_a,
@@ -819,7 +819,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_chloride_solution_from_sodium_bicarbonate_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_bicarbonate_solution, hydrochloric_acid_angels, sodium_chloride_solution, carbonic_acid),
         order = i_a,
@@ -838,7 +838,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_sulfate_from_sodium_bicarbonate_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_bicarbonate_solution, sulfuric_acid_angels, sodium_sulfate_angels, carbonic_acid),
         order = i_b,
@@ -857,7 +857,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_cyanide_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_cyanide_angels, water_purified_angels, sodium_cyanide_solution),
         order = j,
@@ -872,7 +872,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sodium_cyanide_solution_alt,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_hydroxide_angels, hydrocyanic_acid, sodium_cyanide_solution),
         order = j,
@@ -894,7 +894,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sulfur_trioxide_separation,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sulfur_fluids,
         icons = THREE_R_I(sulfur_trioxide_gas, sulfur_dioxide_angels, oxygen_angels),
         order = d_b,
@@ -914,7 +914,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sulfuric_acid_from_hydrogen_peroxide,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sulfur_fluids,
         icons = THREE_I(hydrogen_peroxide, sulfur_dioxide_angels, sulfuric_acid_angels),
         order = f_a,
@@ -929,7 +929,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = sulfur_trioxide_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_sulfur_fluids,
         icons = THREE_I(sulfur_dioxide_angels, oxygen_angels, sulfur_trioxide_gas),
         order = e,
@@ -944,7 +944,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = peroxydisulfuric_acid,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_sulfur_fluids,
         icons = FOUR_R_I(sulfuric_acid_angels, hydrogen_angels, peroxydisulfuric_acid, oxygen_angels),
         order = g,
@@ -971,7 +971,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = phosgene_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_chlorine_fluids,
         icons = THREE_I(carbon_monoxide_angels, chlorine_angels, phosgene_gas),
         order = g,
@@ -985,7 +985,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chlorine_oxide_gas,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_chlorine_fluids,
         icons = THREE_D_I(chlorine_angels, sodium_carbonate_solution, water_purified_angels, chlorine_oxide_gas, sodium_chlorate_solution, sodium_bicarbonate_solution),
         order = h,
@@ -1006,7 +1006,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hypochlorous_acid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_chlorine_fluids,
         icons = THREE_I(chlorine_oxide_gas, water_purified_angels, hypochlorous_acid),
         order = i,
@@ -1021,7 +1021,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chloroethane_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_chlorine_fluids,
         icons = THREE_I(ethylene_angels, hydrogen_chloride_angels, chloroethane_gas),
         order = j,
@@ -1036,7 +1036,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chlorobutane_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_chlorine_fluids,
         icons = TWO_D_I(butane_angels, chlorine_angels, chlorobutane_liquid, hydrogen_chloride_angels),
         order = k,
@@ -1064,7 +1064,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = calcium_sulfate_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_hydroxide, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels),
         order = b,
@@ -1083,7 +1083,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lime_from_calcium_hydroxide,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_calcium,
         icons = THREE_R_I(calcium_hydroxide, lime_angels, steam),
         order = c_a,
@@ -1098,7 +1098,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_carbide,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_calcium,
         icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
         order = e,
@@ -1117,7 +1117,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_cyanamide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, nitrogen_angels, calcium_cyanamide, carbon_angels),
         order = f,
@@ -1136,7 +1136,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_hydroxide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, water_purified_angels, calcium_hydroxide, acetylene_gas),
         order = g,
@@ -1155,7 +1155,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_hydroxide_from_calcium_cyanamide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_cyanamide, water_purified_angels, calcium_hydroxide, urea_solution_angels),
         order = g_a,
@@ -1174,7 +1174,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = limestone_from_calcium_cyanamide,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_calcium,
         icons = THREE_D_I(calcium_cyanamide, water_purified_angels, carbon_dioxide_angels, limestone_angels, nil, cyanamide_solution),
         order = h_a,
@@ -1194,7 +1194,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = limestone_from_calcium_hydroxide_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_hydroxide_solution, carbon_dioxide_angels, limestone_angels, water_purified_angels),
         order = h_b,-- Ca(OH)₂(aq) + CO₂ --> CaCO₃ + 2H₂O
@@ -1212,7 +1212,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_chloride_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_calcium_fluid,
         icons = TWO_D_I(calcium_hydroxide, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
         order = b,-- Ca(OH)₂ + 2HCl(aq) --> CaCl₂(aq) + 2H₂O
@@ -1230,7 +1230,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_hydroxide_solution,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_calcium_fluid,
         icons = THREE_I(calcium_hydroxide, water_purified_angels, calcium_hydroxide_solution),
         order = c,-- Ca(OH)₂ + H₂O --> Ca(OH)₂(aq)
@@ -1251,7 +1251,7 @@ TIMSABA.functions.create_recipes
     -- FLUID
     {
         name = hydrogen_peroxide,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_others_fluid,
         icons = TWO_D_I(peroxydisulfuric_acid, water_purified_angels, hydrogen_peroxide, sulfuric_acid_angels),
         order = a,
@@ -1270,7 +1270,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ionic_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_others_fluid,
         icons = TWO_D_I(imidazolium_salt, hexafluorophosphoric_acid, ionic_liquid, hydrochloric_acid_angels),
         order = c,
@@ -1295,7 +1295,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = residual_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_multi_phase_oil,
         icons = THREE_I(methane_angels, carbon_dioxide_angels, residual_angels),
         order = d,-- CH₄ + CO₂ --> (CH₄ + CO₂)
@@ -1309,7 +1309,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lubricant,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_multi_phase_oil,
         icons = TWO_I(fuel_oil_angels, lubricant),
         order = f,
@@ -1328,7 +1328,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lubricant_from_naphtha,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_multi_phase_oil,
         icons = TWO_D_I(naphtha_angels, residual_angels, lubricant, steam),
         order = f_b,
@@ -1357,7 +1357,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = methane_from_acetylene_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_I(acetylene_gas, hydrogen_angels, methane_angels),
         order = a_a,
@@ -1377,7 +1377,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ethane_from_acetylene_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_I(acetylene_gas, hydrogen_angels, ethane_angels),
         order = a_b,
@@ -1397,7 +1397,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chloroethane_from_acetylene_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_I(acetylene_gas, hydrogen_chloride_angels, chloroethane_gas),
         order = a_c,
@@ -1417,7 +1417,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = diethyl_ether,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_R_I(ethanol_angels, diethyl_ether, steam),
         order = b,
@@ -1437,7 +1437,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = methyl_methacrylate,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_D_I(acetone_cyanohydrin, methanol_angels, sulfuric_acid_angels, methyl_methacrylate, nil, ammonium_hydrosulfate),
         order = c,
@@ -1457,7 +1457,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = formic_acid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_carbon_fluids_2,
         icons = THREE_D_I(formaldehyde_angels, nil, copper_hydroxide_II, formic_acid, copper_oxide_I, water_purified_angels),
         order = e,
@@ -1484,7 +1484,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = methane_from_ethane,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_methane,
         icons = TWO_I(ethane_angels, methane_angels),
         order = a_a,
@@ -1504,7 +1504,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = methane_and_propene_from_butane,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_methane,
         icons = THREE_R_I(butane_angels, methane_angels, propene_angels),
         order = a_b,
@@ -1524,7 +1524,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = dimethyl_carbonate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_methane,
         icons = TWO_D_I(methanol_angels, phosgene_gas, dimethyl_carbonate, hydrogen_chloride_angels),
         order = d,
@@ -1549,7 +1549,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = ethane_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = TWO_D_I(chloromethane_angels, sodium_angels, ethane_angels, salt_angels),
         order = a,
@@ -1568,7 +1568,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ethane_and_ethylene_from_butane,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = THREE_R_I(butane_angels, ethane_angels, ethylene_angels),
         order = a_a,
@@ -1588,7 +1588,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = polyethylene,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = TWO_I(ethylene_angels, polyethylene),
         order = d,
@@ -1607,7 +1607,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ethylene_oxide,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = THREE_I(ethylene_angels, oxygen_angels, ethylene_oxide),
         order = e,
@@ -1627,7 +1627,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ethylene_carbonate,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = THREE_I(ethylene_oxide, carbon_dioxide_angels, ethylene_carbonate),
         order = f,
@@ -1647,7 +1647,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ethylene_glycol_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = THREE_I(ethylene_oxide, water_purified_angels, ethylene_glycol_liquid),
         order = g,
@@ -1662,7 +1662,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = glyoxal_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_ethane,
         icons = TWO_D_I(ethylene_glycol_liquid, oxygen_angels, glyoxal_liquid, water_purified_angels),
         order = h,
@@ -1689,7 +1689,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = butane_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = TWO_D_I(chloroethane_gas, sodium_angels, butane_angels, salt_angels),
         order = a,
@@ -1708,7 +1708,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = butene_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = TWO_I(ethylene_angels, butene_gas),
         order = b,
@@ -1727,7 +1727,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = butene_gas_from_butane_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = TWO_I(butane_angels, butene_gas),
         order = b_a,
@@ -1747,7 +1747,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = acetone_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = THREE_I(propene_angels, oxygen_angels, acetone_angels),
         order = h,
@@ -1767,7 +1767,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phenol,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = THREE_I(benzene_angels, oxygen_angels, phenol),
         order = g,
@@ -1787,7 +1787,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = bisphenol_a,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_butane,
         icons = TWO_D_I(phenol, acetone_angels, bisphenol_a, water_purified_angels),
         order = i,
@@ -1815,7 +1815,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = liquid_plastic_4,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_plastic,
         icons = FOUR_I(acrylonitrile, butadiene_angels, styrene_angels, liquid_plastic_angels),
         order = a_c,
@@ -1836,7 +1836,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = liquid_plastic_5,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_plastic,
         icons = TWO_I(methyl_methacrylate, liquid_plastic_angels),
         order = a_d,
@@ -1860,7 +1860,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = epoxy_resin_liquid,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_resin,
         icons = THREE_D_I(bisphenol_a, epichlorohydrin_angels, sodium_hydroxide_solution_angels, epoxy_resin_liquid, sodium_chloride_solution, water_purified_angels),
         order = c,
@@ -1886,7 +1886,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = glycerol_dichlorohydrin,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_explosives,
         icons = TWO_D_I(allyl_chloride_angels, hypochlorous_acid, glycerol_dichlorohydrin, water_purified_angels),
         order = b,

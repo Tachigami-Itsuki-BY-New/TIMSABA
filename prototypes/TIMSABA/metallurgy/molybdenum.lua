@@ -111,7 +111,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = molybdenum_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_ore, molybdenum_processed),
         order = b,
@@ -122,7 +122,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_processed, molybdenum_pellet),
         order = c,
@@ -133,7 +133,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_powder,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_molybdenum,
         icons = TWO_D_I(molybdenum_oxide_VI, hydrogen_angels, molybdenum_powder, steam),
         order = d,
@@ -152,7 +152,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_powder_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_molybdenum,
         icons = TWO_D_I(molybdenum_fluoride_IV, hydrogen_angels, molybdenum_powder, hydrogen_fluoride_angels),
         order = d_a,
@@ -172,7 +172,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = molybdenum_oxide_VI,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_molybdenum_chemistry,
         icons = THREE_I(molybdenum_ore, oxygen_angels, molybdenum_oxide_VI),
         order = a,
@@ -187,7 +187,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_oxide_VI_2,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_molybdenum_chemistry,
         icons = THREE_R_I(molybdic_acid, molybdenum_oxide_VI, steam),
         order = a_a,
@@ -202,7 +202,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_molybdate,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_molybdenum_chemistry,
         icons = THREE_D_I(molybdenum_processed, potassium_hydroxide, potassium_chlorate, potassium_molybdate, potassium_chloride, steam),
         order = b,
@@ -223,7 +223,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_chloride_III_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_molybdenum_chemistry,
         icons = FOUR_THREE_R_I(potassium_molybdate, zinc_ingot, hydrochloric_acid_angels, molybdenum_chloride_III_solution, potassium_chloride_solution, zinc_chloride, water_purified_angels),
         order = c,
@@ -245,7 +245,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdic_acid,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_molybdenum_chemistry,
         icons = THREE_D_I(molybdenum_chloride_III_solution, nitrogen_monoxide_angels, water_purified_angels, molybdic_acid, ammonium_chloride_solution_angels, hydrochloric_acid_angels),
         order = d,
@@ -266,7 +266,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_fluoride_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_molybdenum_chemistry,
         icons = THREE_I(molybdenum_pellet, fluorine, molybdenum_fluoride_IV),
         order = e,

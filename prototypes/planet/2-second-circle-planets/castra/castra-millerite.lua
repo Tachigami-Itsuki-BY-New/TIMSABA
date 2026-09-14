@@ -49,7 +49,7 @@ if mods[castra_mods] then
         -- CRUSHED
         {
             name = millerite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_millerite,
             icons = THREE_R_I(millerite_ore, millerite_crushed, stone_crushed_angels),
             order = b,
@@ -65,7 +65,7 @@ if mods[castra_mods] then
         -- CHUNKS
         {
             name = millerite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_millerite,
             icons = THREE_D_I(millerite_crushed, nil, water_purified_angels, millerite_chunks, sulfur, water_yellow_waste),
             order = c,
@@ -78,7 +78,7 @@ if mods[castra_mods] then
             results =
             {
                 {type = item, name = millerite_chunks, amount = 4},
-                {type = item, name = sulfur, amount = 1, probability = 0.5},
+                {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_yellow_waste, amount = 60}
             },
             main_product = millerite_chunks
@@ -86,7 +86,7 @@ if mods[castra_mods] then
         -- CRYSTALS
         {
             name = millerite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_millerite,
             icons = THREE_I(millerite_chunks, sulfuric_acid_angels, millerite_crystals),
             order = d,
@@ -102,7 +102,7 @@ if mods[castra_mods] then
         -- PURIFIED
         {
             name = millerite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_millerite,
             icons = TWO_I(millerite_crystals, millerite_purified),
             order = e,
@@ -114,7 +114,7 @@ if mods[castra_mods] then
         -- SORTING
         {
             name = millerite_crushed_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_crushed),
             order = f,
@@ -131,7 +131,7 @@ if mods[castra_mods] then
         },
         {
             name = millerite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_chunks),
             order = g,
@@ -150,7 +150,7 @@ if mods[castra_mods] then
         },
         {
             name = millerite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_crystals),
             order = h,
@@ -170,7 +170,7 @@ if mods[castra_mods] then
         },
         {
             name = millerite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_purified),
             order = i,
@@ -191,7 +191,7 @@ if mods[castra_mods] then
         -- SYNTHESIS
         {
             name = vanadium_ore_recipe,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, germanite_purified, millerite_purified, vanadium_ore),
             order = a_q,

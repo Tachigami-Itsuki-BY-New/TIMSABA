@@ -28,7 +28,7 @@ data_recipe[iron_ingot].ingredients =
 }
 data_recipe[iron_ingot].results[1].amount = 16
 
-data_recipe[iron_ingot_2].category = angels_chemical_smelting_1
+data_recipe[iron_ingot_2].categories = {angels_chemical_smelting_1}
 data_recipe[iron_ingot_2].icons = THREE_D_I(iron_hydroxide_II, nil, coke_angels, iron_ingot, carbon_dioxide_angels, hydrogen_angels)
 data_recipe[iron_ingot_2].order = d_a
 data_recipe[iron_ingot_2].energy_required = 8 -- Fe(OH)₂ + C --> Fe + CO₂ + H₂
@@ -117,7 +117,7 @@ data_recipe[copper_ingot].ingredients =
 }
 data_recipe[copper_ingot].results[1].amount = 16
 
-data_recipe[copper_ingot_2].category = angels_chemical_smelting_1
+data_recipe[copper_ingot_2].categories = {angels_chemical_smelting_1}
 data_recipe[copper_ingot_2].icons = THREE_D_I(copper_hydroxide_II, nil, coke_angels, copper_ingot, carbon_dioxide_angels, hydrogen_angels)
 data_recipe[copper_ingot_2].order = d_a
 data_recipe[copper_ingot_2].energy_required = 8 -- Cu(OH)₂ + C --> Cu + CO₂ + H₂
@@ -133,7 +133,7 @@ data_recipe[copper_ingot_2].results =
     {type = fluid, name = hydrogen_angels, amount = 120} -- 240
 }
 
-data_recipe[copper_ingot_3].category = angels_blast_smelting_3
+data_recipe[copper_ingot_3].categories = {angels_blast_smelting_3}
 data_recipe[copper_ingot_3].icons = FOUR_THREE_I(copper_cathode, lime_angels, carbon_angels, oxygen_angels, copper_ingot, nil, limestone_angels)
 data_recipe[copper_ingot_3].order = d_b
 data_recipe[copper_ingot_3].energy_required = 8 -- Cu + CaO + C + O₂ --> Cu + CaCO₃
@@ -160,7 +160,7 @@ data_item[copper_cathode].localised_name = {"item-name.copper-cathode"}
 data_item[copper_cathode].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_cathode].subgroup = is_copper_chemistry
 data_item[copper_cathode].order = d
-data_recipe[copper_cathode].category = angels_petrochem_electrolyser
+data_recipe[copper_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[copper_cathode].subgroup = is_copper_chemistry
 data_recipe[copper_cathode].icons = FOUR_R_I(copper_sulfate_II_solution, sulfur_dioxide_angels, copper_cathode, hydrogen_peroxide)
 data_recipe[copper_cathode].order = d
@@ -225,7 +225,7 @@ data_recipe[lead_ingot_2].results =
     {type = fluid, name = carbon_dioxide_angels, amount = 120}
 }
 
-data_recipe[lead_ingot_3].category = angels_blast_smelting_3
+data_recipe[lead_ingot_3].categories = {angels_blast_smelting_3}
 data_recipe[lead_ingot_3].icons = FOUR_THREE_I(lead_cathode, lime_angels, carbon_angels, oxygen_angels, lead_ingot, nil, limestone_angels)
 data_recipe[lead_ingot_3].order = d_b
 data_recipe[lead_ingot_3].energy_required = 8 -- Pb + CaO + C + O₂ --> Pb + CaCO₃
@@ -268,7 +268,7 @@ data_item[lead_cathode].localised_name = {"item-name.lead-cathode"}
 data_item[lead_cathode].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_cathode].subgroup = is_lead_chemistry
 data_item[lead_cathode].order = d
-data_recipe[lead_cathode].category = angels_petrochem_electrolyser
+data_recipe[lead_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[lead_cathode].subgroup = is_lead_chemistry
 data_recipe[lead_cathode].icons = FOUR_R_I(hexafluorosilicate_lead_II_solution, silicon_fluoride_IV_gas, lead_cathode, hydrogen_fluoride_angels)
 data_recipe[lead_cathode].order = d
@@ -319,7 +319,7 @@ data_recipe[tin_ingot].ingredients =
 }
 data_recipe[tin_ingot].results[1].amount = 16
 
-data_recipe[tin_ingot_2].category = angels_chemical_smelting_1
+data_recipe[tin_ingot_2].categories = {angels_chemical_smelting_1}
 data_recipe[tin_ingot_2].icons = TWO_D_I(tin_chloride_IV, hydrogen_angels, tin_ingot, hydrogen_chloride_angels)
 data_recipe[tin_ingot_2].order = d_a
 data_recipe[tin_ingot_2].energy_required = 8 -- SnCl₄ + 2H₂ --> Sn + 4HCl
@@ -408,7 +408,7 @@ data_item[manganese_oxide_II].subgroup = is_manganese_chemistry
 data_item[manganese_oxide_II].order = d
 
 data_recipe[manganese_oxide_II_2].localised_name = {"item-name.manganese-oxide-II"}
-data_recipe[manganese_oxide_II_2].category = angels_blast_smelting_3
+data_recipe[manganese_oxide_II_2].categories = {angels_blast_smelting_3}
 data_recipe[manganese_oxide_II_2].subgroup = is_manganese_chemistry
 data_recipe[manganese_oxide_II_2].icons = THREE_I(manganese_pellet, oxygen_angels, manganese_oxide_II)
 data_recipe[manganese_oxide_II_2].order = d_a
@@ -423,7 +423,7 @@ data_recipe[manganese_oxide_II_2].results[1].amount = 16
 data_item[manganese_cathode].localised_description = show_formula and {chemical_formula, "Mn"} or nil
 data_item[manganese_cathode].subgroup = is_manganese_chemistry
 data_item[manganese_cathode].order = e
-data_recipe[manganese_cathode].category = angels_petrochem_electrolyser
+data_recipe[manganese_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[manganese_cathode].subgroup = is_manganese_chemistry
 data_recipe[manganese_cathode].icons = FOUR_R_I(manganese_sulfate_II_solution, sulfur_dioxide_angels, manganese_cathode, hydrogen_peroxide)
 data_recipe[manganese_cathode].order = e
@@ -444,7 +444,7 @@ data_recipe[manganese_cathode].results =
 }
 data_recipe[manganese_cathode].main_product = manganese_cathode
 
-data_recipe[manganese_cathode_2].category = angels_petrochem_electrolyser
+data_recipe[manganese_cathode_2].categories = {angels_petrochem_electrolyser}
 data_recipe[manganese_cathode_2].subgroup = is_manganese_chemistry
 data_recipe[manganese_cathode_2].icons = FOUR_R_I(manganese_sulfate_II_solution, sulfuric_acid_angels, manganese_cathode, ammonia_angels)
 data_recipe[manganese_cathode_2].order = e_a
@@ -598,7 +598,7 @@ data_fluid[hexafluorosilicic_acid].localised_description = show_formula and {che
 data_fluid[hexafluorosilicic_acid].subgroup = is_silicon_chemistry
 data_fluid[hexafluorosilicic_acid].order = h
 TIMSABA.barreling.add_dangerous_fluid(hexafluorosilicic_acid)
-data_recipe[hexafluorosilicic_acid].category = angels_chemical_smelting_2
+data_recipe[hexafluorosilicic_acid].categories = {angels_chemical_smelting_2}
 data_recipe[hexafluorosilicic_acid].subgroup = is_silicon_chemistry
 data_recipe[hexafluorosilicic_acid].icons = THREE_D_I(silicon_ingot, hydrogen_fluoride_angels, water_purified_angels, hexafluorosilicic_acid, nil, hydrogen_angels)
 data_recipe[hexafluorosilicic_acid].order = h
@@ -686,7 +686,7 @@ data_item[nickel_sulfate_II].localised_name = {"item-name.nickel-sulfate-II"}
 data_item[nickel_sulfate_II].localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4[/font]"} or nil
 data_item[nickel_sulfate_II].subgroup = is_nickel_chemistry
 data_item[nickel_sulfate_II].order = a
-data_recipe[nickel_sulfate_II].category = angels_chemical_smelting_2
+data_recipe[nickel_sulfate_II].categories = {angels_chemical_smelting_2}
 data_recipe[nickel_sulfate_II].subgroup = is_nickel_chemistry
 data_recipe[nickel_sulfate_II].icons = TWO_D_I(nickel_processed, sulfuric_acid_angels, nickel_sulfate_II, hydrogen_angels)
 data_recipe[nickel_sulfate_II].order = a
@@ -706,7 +706,7 @@ data_recipe[nickel_sulfate_II].main_product = nickel_sulfate_II
 data_item[nickel_cathode].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_cathode].subgroup = is_nickel_chemistry
 data_item[nickel_cathode].order = c
-data_recipe[nickel_cathode].category = angels_petrochem_electrolyser
+data_recipe[nickel_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[nickel_cathode].subgroup = is_nickel_chemistry
 data_recipe[nickel_cathode].icons = FOUR_R_I(nickel_sulfate_II_solution, diborane_gas, nickel_cathode, sulfur_trioxide_gas)
 data_recipe[nickel_cathode].order = c
@@ -767,7 +767,7 @@ data_recipe[aluminium_ingot].main_product = aluminium_ingot
 data_item[aluminium_hydroxide].localised_description = show_formula and {chemical_formula, "Al(OH)[font=default-tiny-bold]3[/font]"} or nil
 data_item[aluminium_hydroxide].subgroup = is_aluminium_chemistry
 data_item[aluminium_hydroxide].order = c
-data_recipe[aluminium_hydroxide].category = angels_chemical_smelting_1
+data_recipe[aluminium_hydroxide].categories = {angels_chemical_smelting_1}
 data_recipe[aluminium_hydroxide].subgroup = is_aluminium_chemistry
 data_recipe[aluminium_hydroxide].icons = TWO_D_I(aluminium_chloride, sodium_hydroxide_solution_angels, aluminium_hydroxide, sodium_chloride_solution)
 data_recipe[aluminium_hydroxide].order = c
@@ -784,7 +784,7 @@ data_recipe[aluminium_hydroxide].results =
 }
 data_recipe[aluminium_hydroxide].main_product = aluminium_hydroxide
 
-data_recipe[aluminium_hydroxide_2].category = angels_chemical_smelting_2
+data_recipe[aluminium_hydroxide_2].categories = {angels_chemical_smelting_2}
 data_recipe[aluminium_hydroxide_2].subgroup = is_aluminium_chemistry
 data_recipe[aluminium_hydroxide_2].icons = THREE_D_I(aluminium_chloride, ammonia_angels, water_purified_angels, aluminium_hydroxide, ammonium_chloride)
 data_recipe[aluminium_hydroxide_2].order = c_a
@@ -836,7 +836,7 @@ data_recipe[aluminium_oxide].results =
 data_recipe[aluminium_oxide].main_product = aluminium_oxide
 
 local aluminium_oxide_2 = "angels-solid-aluminium-oxide-2"
-data_recipe[aluminium_oxide_2].category = angels_chemical_smelting_3
+data_recipe[aluminium_oxide_2].categories = {angels_chemical_smelting_3}
 data_recipe[aluminium_oxide_2].subgroup = is_aluminium_chemistry
 data_recipe[aluminium_oxide_2].icons = THREE_D_I(sodium_aluminate, hydrochloric_acid_angels, water_purified_angels, aluminium_oxide, salt_angels, steam)
 data_recipe[aluminium_oxide_2].order = e_a
@@ -874,7 +874,7 @@ data_recipe[zinc_pellet].ingredients[1].amount = 4
 
 data_item[zinc_ingot].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_ingot].order = d
-data_recipe[zinc_ingot].category = angels_chemical_smelting_1
+data_recipe[zinc_ingot].categories = {angels_chemical_smelting_1}
 data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_ingot, zinc_ingot, magnesium_chloride_solution)
 data_recipe[zinc_ingot].order = d
 data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg --> Zn + MgCl₂(aq)
@@ -930,7 +930,7 @@ data_item[zinc_oxide].localised_description = show_formula and {chemical_formula
 data_item[zinc_oxide].subgroup = is_zinc_chemistry
 data_item[zinc_oxide].order = c
 data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
-data_recipe[zinc_oxide].category = angels_blast_smelting_3
+data_recipe[zinc_oxide].categories = {angels_blast_smelting_3}
 data_recipe[zinc_oxide].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide].icons = THREE_I(zinc_processed, oxygen_angels, zinc_oxide)
 data_recipe[zinc_oxide].order = c
@@ -942,7 +942,7 @@ data_recipe[zinc_oxide].ingredients =
 }
 data_recipe[zinc_oxide].results = {{type = item, name = zinc_oxide, amount = 16}}
 
-data_recipe[zinc_oxide_2].category = angels_blast_smelting_4
+data_recipe[zinc_oxide_2].categories = {angels_blast_smelting_4}
 data_recipe[zinc_oxide_2].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide_2].icons = THREE_I(zinc_pellet, oxygen_angels, zinc_oxide)
 data_recipe[zinc_oxide_2].order = c_a
@@ -953,7 +953,7 @@ data_recipe[zinc_oxide_2].results = {{type = item, name = zinc_oxide, amount = 1
 data_item[zinc_cathode].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_cathode].subgroup = is_zinc_chemistry
 data_item[zinc_cathode].order = f
-data_recipe[zinc_cathode].category = angels_petrochem_electrolyser
+data_recipe[zinc_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[zinc_cathode].subgroup = is_zinc_chemistry
 data_recipe[zinc_cathode].icons = FOUR_R_I(zinc_sulfate_solution, sulfur_dioxide_angels, zinc_cathode, hydrogen_peroxide)
 data_recipe[zinc_cathode].order = f
@@ -1005,7 +1005,7 @@ data_recipe[silver_ingot].ingredients =
 data_recipe[silver_ingot].results[1].amount = 16
 
 local silver_ingot_2 = "angels-ingot-silver-2"
-data_recipe[silver_ingot_2].category = angels_chemical_smelting_2
+data_recipe[silver_ingot_2].categories = {angels_chemical_smelting_2}
 data_recipe[silver_ingot_2].icons = THREE_D_I(silver_nitrate_I, nil, nil, silver_ingot, nitrogen_monoxide_angels, oxygen_angels)
 data_recipe[silver_ingot_2].order = d_a
 data_recipe[silver_ingot_2].energy_required = 8 -- AgNO₃ --> Ag + NO + O₂
@@ -1040,7 +1040,7 @@ data_item[silver_nitrate_I].localised_description = show_formula and {chemical_f
 data_item[silver_nitrate_I].subgroup = is_silver_chemistry
 data_item[silver_nitrate_I].order = a
 data_recipe[silver_nitrate_I].localised_name = {"item-name.silver-nitrate-I"}
-data_recipe[silver_nitrate_I].category = angels_chemical_smelting_2
+data_recipe[silver_nitrate_I].categories = {angels_chemical_smelting_2}
 data_recipe[silver_nitrate_I].subgroup = is_silver_chemistry
 data_recipe[silver_nitrate_I].icons = THREE_D_I(silver_processed, nil, nitric_acid_angels, silver_nitrate_I, nitrogen_dioxide_angels, water_purified_angels)
 data_recipe[silver_nitrate_I].order = a
@@ -1080,7 +1080,7 @@ data_recipe[sodium_dicyanoargentate_I].main_product = sodium_dicyanoargentate_I
 data_item[silver_cathode].localised_description = show_formula and {chemical_formula, "Ag"} or nil
 data_item[silver_cathode].subgroup = is_silver_chemistry
 data_item[silver_cathode].order = d
-data_recipe[silver_cathode].category = angels_petrochem_electrolyser
+data_recipe[silver_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[silver_cathode].subgroup = is_silver_chemistry
 data_recipe[silver_cathode].icons = FOUR_R_I(sodium_dicyanoargentate_I_solution, hydrocyanic_acid, silver_cathode, hydrogen_angels)
 data_recipe[silver_cathode].order = d
@@ -1108,7 +1108,7 @@ data_item[silver_oxide_I_bob].subgroup = is_silver_chemistry
 data_item[silver_oxide_I_bob].order = e
 data_item[silver_oxide_I_bob].stack_size = 200
 data_recipe[silver_oxide_I_bob].localised_name = {"item-name.silver-oxide-I"}
-data_recipe[silver_oxide_I_bob].category = angels_chemical_smelting_3
+data_recipe[silver_oxide_I_bob].categories = {angels_chemical_smelting_3}
 data_recipe[silver_oxide_I_bob].subgroup = is_silver_chemistry
 data_recipe[silver_oxide_I_bob].icons = THREE_D_I(silver_nitrate_I, nil, sodium_hydroxide_angels, silver_oxide_I_bob, sodium_nitrate_angels, water_purified_angels)
 data_recipe[silver_oxide_I_bob].order = e
@@ -1272,7 +1272,7 @@ data_fluid[chlorauric_acid].localised_description = show_formula and {chemical_f
 data_fluid[chlorauric_acid].subgroup = is_gold_chemistry
 data_fluid[chlorauric_acid].order = a
 TIMSABA.barreling.add_dangerous_fluid(chlorauric_acid)
-data_recipe[chlorauric_acid].category = angels_advanced_chemistry
+data_recipe[chlorauric_acid].categories = {angels_advanced_chemistry}
 data_recipe[chlorauric_acid].subgroup = is_gold_chemistry
 data_recipe[chlorauric_acid].icons = THREE_D_I(gold_processed, nitric_acid_angels, hydrochloric_acid_angels, chlorauric_acid, nitrogen_dioxide_angels, water_purified_angels)
 data_recipe[chlorauric_acid].order = a
@@ -1316,7 +1316,7 @@ data_recipe[sodium_dicyanoaurate_I].main_product = sodium_dicyanoaurate_I
 data_item[gold_cathode].localised_description = show_formula and {chemical_formula, "Au"} or nil
 data_item[gold_cathode].subgroup = is_gold_chemistry
 data_item[gold_cathode].order = d
-data_recipe[gold_cathode].category = angels_petrochem_electrolyser
+data_recipe[gold_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[gold_cathode].subgroup = is_gold_chemistry
 data_recipe[gold_cathode].icons = FOUR_R_I(chlorauric_acid, hydrogen_chloride_angels, gold_cathode, hydrogen_peroxide)
 data_recipe[gold_cathode].order = d
@@ -1336,7 +1336,7 @@ data_recipe[gold_cathode].results =
 }
 data_recipe[gold_cathode].main_product = gold_cathode
 
-data_recipe[gold_cathode_2].category = angels_petrochem_electrolyser
+data_recipe[gold_cathode_2].categories = {angels_petrochem_electrolyser}
 data_recipe[gold_cathode_2].subgroup = is_gold_chemistry
 data_recipe[gold_cathode_2].icons = FOUR_R_I(sodium_dicyanoaurate_I_solution, hydrocyanic_acid, gold_cathode, hydrogen_angels)
 data_recipe[gold_cathode_2].order = d_a
@@ -1411,7 +1411,7 @@ data_item[cobalt_oxide_II_III].localised_description = show_formula and {chemica
 data_item[cobalt_oxide_II_III].subgroup = is_cobalt_chemistry
 data_item[cobalt_oxide_II_III].order = a
 data_recipe[cobalt_oxide_II_III].localised_name = {"item-name.cobalt-oxide-II-III"}
-data_recipe[cobalt_oxide_II_III].category = angels_blast_smelting_3
+data_recipe[cobalt_oxide_II_III].categories = {angels_blast_smelting_3}
 data_recipe[cobalt_oxide_II_III].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III].icons = THREE_I(cobalt_ore_bob, oxygen_angels, cobalt_oxide_II_III)
 data_recipe[cobalt_oxide_II_III].order = a
@@ -1426,7 +1426,7 @@ data_recipe[cobalt_oxide_II_III].main_product = cobalt_oxide_II_III
 
 local cobalt_oxide_II_III_2 = "angels-solid-cobalt-oxide-2"
 data_recipe[cobalt_oxide_II_III_2].localised_name = {"item-name.cobalt-oxide-II-III"}
-data_recipe[cobalt_oxide_II_III_2].category = angels_blast_smelting_4
+data_recipe[cobalt_oxide_II_III_2].categories = {angels_blast_smelting_4}
 data_recipe[cobalt_oxide_II_III_2].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III_2].icons = THREE_I(cobalt_processed, oxygen_angels, cobalt_oxide_II_III)
 data_recipe[cobalt_oxide_II_III_2].order = a_a
@@ -1439,7 +1439,7 @@ data_recipe[cobalt_oxide_II_III_2].ingredients =
 data_recipe[cobalt_oxide_II_III_2].results = {{type = item, name = cobalt_oxide_II_III, amount = 16}}
 
 data_recipe[cobalt_oxide_II_III_3].localised_name = {"item-name.cobalt-oxide-II-III"}
-data_recipe[cobalt_oxide_II_III_3].category = angels_blast_smelting_4
+data_recipe[cobalt_oxide_II_III_3].categories = {angels_blast_smelting_4}
 data_recipe[cobalt_oxide_II_III_3].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III_3].icons = TWO_D_I(cobalt_hydroxide_II, oxygen_angels, cobalt_oxide_II_III, steam)
 data_recipe[cobalt_oxide_II_III_3].order = a_b
@@ -1459,7 +1459,7 @@ data_item[cobalt_hydroxide_II].localised_name = {"item-name.cobalt-hydroxide-II"
 data_item[cobalt_hydroxide_II].localised_description = show_formula and {chemical_formula, "Co(OH)[font=default-tiny-bold]2[/font]"} or nil
 data_item[cobalt_hydroxide_II].subgroup = is_cobalt_chemistry
 data_item[cobalt_hydroxide_II].order = c
-data_recipe[cobalt_hydroxide_II].category = angels_chemical_smelting_4
+data_recipe[cobalt_hydroxide_II].categories = {angels_chemical_smelting_4}
 data_recipe[cobalt_hydroxide_II].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_hydroxide_II].icons = THREE_D_I(cobalt_chloride_II_solution, nil, sodium_hydroxide_solution_angels, cobalt_hydroxide_II, sodium_chloride_solution, water_purified_angels)
 data_recipe[cobalt_hydroxide_II].order = c
@@ -1507,7 +1507,7 @@ data_recipe[chromium_pellet].ingredients[1].amount = 4
 data_item[chromium_ingot].localised_name = {"item-name.chromium-ingot"}
 data_item[chromium_ingot].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_ingot].order = d
-data_recipe[chromium_ingot].category = angels_blast_smelting_4
+data_recipe[chromium_ingot].categories = {angels_blast_smelting_4}
 data_recipe[chromium_ingot].icons = FOUR_THREE_I(chromium_cathode, lime_angels, carbon_angels, oxygen_angels, chromium_ingot, nil, limestone_angels)
 data_recipe[chromium_ingot].order = d
 data_recipe[chromium_ingot].energy_required = 8 -- Cr + CaO + C + O₂ --> Cr + CaCO₃
@@ -1526,7 +1526,7 @@ data_recipe[chromium_ingot].results =
 data_recipe[chromium_ingot].main_product = chromium_ingot
 
 data_recipe[chromium_ingot_2].localised_name = {"item-name.chromium-ingot"}
-data_recipe[chromium_ingot_2].category = angels_chemical_smelting_4
+data_recipe[chromium_ingot_2].categories = {angels_chemical_smelting_4}
 data_recipe[chromium_ingot_2].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_ingot, chromium_ingot, zinc_sulfate_solution)
 data_recipe[chromium_ingot_2].order = d_a
 data_recipe[chromium_ingot_2].energy_required = 8 -- CrSO₄(aq) + Zn --> Cr + ZnSO₄(aq)
@@ -1543,7 +1543,7 @@ data_recipe[chromium_ingot_2].results =
 data_recipe[chromium_ingot_2].main_product = chromium_ingot
 
 data_recipe[chromium_ingot_3].localised_name = {"item-name.chromium-ingot"}
-data_recipe[chromium_ingot_3].category = angels_blast_smelting_4
+data_recipe[chromium_ingot_3].categories = {angels_blast_smelting_4}
 data_recipe[chromium_ingot_3].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_ingot, chromium_ingot, aluminium_oxide, steam)
 data_recipe[chromium_ingot_3].order = d_b
 data_recipe[chromium_ingot_3].energy_required = 8 -- 2Cr(OH)₃ + 2Al --> 2Cr + Al₂O₃ + 3H₂O
@@ -1565,7 +1565,7 @@ data_item[chromium_oxide_III].localised_name = {"item-name.chromium-oxide-III"}
 data_item[chromium_oxide_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_oxide_III].subgroup = is_chromium_chemistry
 data_item[chromium_oxide_III].order = e
-data_recipe[chromium_oxide_III].category = angels_blast_smelting_4
+data_recipe[chromium_oxide_III].categories = {angels_blast_smelting_4}
 data_recipe[chromium_oxide_III].subgroup = is_chromium_chemistry
 data_recipe[chromium_oxide_III].icons = THREE_I(chromium_pellet, oxygen_angels, chromium_oxide_III)
 data_recipe[chromium_oxide_III].order = e
@@ -1582,7 +1582,7 @@ data_item[chromium_sulfate_III].localised_name = {"item-name.chromium-sulfate-II
 data_item[chromium_sulfate_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_sulfate_III].subgroup = is_chromium_chemistry
 data_item[chromium_sulfate_III].order = h
-data_recipe[chromium_sulfate_III].category = angels_advanced_chemistry
+data_recipe[chromium_sulfate_III].categories = {angels_advanced_chemistry}
 data_recipe[chromium_sulfate_III].subgroup = is_chromium_chemistry
 data_recipe[chromium_sulfate_III].icons = FOUR_THREE_R_I(potassium_dichromate_solution, ethanol_angels, sulfuric_acid_angels, chromium_sulfate_III, acetaldehyde, water_purified_angels, potassium_sulfate_solution)
 data_recipe[chromium_sulfate_III].order = h
@@ -1606,7 +1606,7 @@ data_item[chromium_hydroxide_III].localised_name = {"item-name.chromium-hydroxid
 data_item[chromium_hydroxide_III].localised_description = show_formula and {chemical_formula, "Cr(OH)[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_hydroxide_III].subgroup = is_chromium_chemistry
 data_item[chromium_hydroxide_III].order = i
-data_recipe[chromium_hydroxide_III].category = angels_chemical_smelting_4
+data_recipe[chromium_hydroxide_III].categories = {angels_chemical_smelting_4}
 data_recipe[chromium_hydroxide_III].subgroup = is_chromium_chemistry
 data_recipe[chromium_hydroxide_III].icons = THREE_D_I(chromium_sulfate_III, nil, potassium_hydroxide_solution, chromium_hydroxide_III, potassium_sulfate_solution, water_purified_angels)
 data_recipe[chromium_hydroxide_III].order = i
@@ -1646,7 +1646,7 @@ data_recipe[tungsten_pellet].ingredients[1].amount = 4
 data_item[tungsten_powder].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_powder].stack_size = 200
 data_item[tungsten_powder].order = d
-data_recipe[tungsten_powder].category = angels_chemical_smelting_3
+data_recipe[tungsten_powder].categories = {angels_chemical_smelting_3}
 data_recipe[tungsten_powder].icons = THREE_D_I(tungsten_fluoride_VI_gas, nil, silane_gas, tungsten_powder, silicon_fluoride_IV_gas, hydrogen_angels)
 data_recipe[tungsten_powder].order = d
 data_recipe[tungsten_powder].energy_required = 8 -- 2WF₆ + 3SiH₄ --> 2W + 3SiF₄ + 6H₂
@@ -1683,7 +1683,7 @@ data_recipe[tungsten_oxide_VI].results[1].amount = 16
 data_recipe[tungsten_oxide_VI].main_product = tungsten_oxide_VI
 
 data_recipe[tungsten_oxide_VI_2].localised_name = {"item-name.tungsten-oxide-VI"}
-data_recipe[tungsten_oxide_VI_2].category = angels_chemical_smelting_4
+data_recipe[tungsten_oxide_VI_2].categories = {angels_chemical_smelting_4}
 data_recipe[tungsten_oxide_VI_2].subgroup = is_tungsten_chemistry
 data_recipe[tungsten_oxide_VI_2].icons = THREE_D_I(ammonium_paratungstate, nil, nil, tungsten_oxide_VI, ammonia_angels, steam)
 data_recipe[tungsten_oxide_VI_2].order = a_a
@@ -1699,7 +1699,7 @@ data_recipe[tungsten_oxide_VI_2].results =
 data_fluid[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
 data_fluid[tungsten_fluoride_VI_gas].order = b
 TIMSABA.barreling.add_gas(tungsten_fluoride_VI_gas)
-data_recipe[tungsten_fluoride_VI_gas].category = angels_chemical_smelting_3
+data_recipe[tungsten_fluoride_VI_gas].categories = {angels_chemical_smelting_3}
 data_recipe[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
 data_recipe[tungsten_fluoride_VI_gas].icons = TWO_D_I(tungsten_oxide_VI, hydrogen_fluoride_angels, tungsten_fluoride_VI_gas, water_purified_angels)
 data_recipe[tungsten_fluoride_VI_gas].order = b
@@ -1719,7 +1719,7 @@ data_recipe[tungsten_fluoride_VI_gas].main_product = tungsten_fluoride_VI_gas
 data_item[ammonium_paratungstate].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]4[/font])[font=default-tiny-bold]10[/font]H[font=default-tiny-bold]2[/font]W[font=default-tiny-bold]12[/font]O[font=default-tiny-bold]42[/font]"} or nil
 data_item[ammonium_paratungstate].subgroup = is_tungsten_chemistry
 data_item[ammonium_paratungstate].order = c
-data_recipe[ammonium_paratungstate].category = angels_advanced_chemistry
+data_recipe[ammonium_paratungstate].categories = {angels_advanced_chemistry}
 data_recipe[ammonium_paratungstate].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_paratungstate].icons = FOUR_D_I(tungsten_processed, carbon_angels, ammonia_angels, water_purified_angels, ammonium_paratungstate)
 data_recipe[ammonium_paratungstate].order = c
@@ -1751,7 +1751,7 @@ data_fluid[ammonium_tungstate_solution].localised_description = show_formula and
 data_fluid[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_fluid[ammonium_tungstate_solution].order = f
 TIMSABA.barreling.add_dangerous_fluid(ammonium_tungstate_solution)
-data_recipe[ammonium_tungstate_solution].category =  angels_chemical_smelting_4
+data_recipe[ammonium_tungstate_solution].categories = {angels_chemical_smelting_4}
 data_recipe[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_tungstate_solution].icons = THREE_D_I(tungstic_acid, ammonia_angels, water_purified_angels, ammonium_tungstate_solution)
 data_recipe[ammonium_tungstate_solution].order = f
@@ -1799,7 +1799,7 @@ data_item_subgroup[is_alloys].order = t
 
 data_item[lithium_perchlorate_bob].localised_description = show_formula and {chemical_formula, "LiClO[font=default-tiny-bold]4[/font]"} or nil
 data_item[lithium_perchlorate_bob].order = d
-data_recipe[lithium_perchlorate_bob].category = chemistry
+data_recipe[lithium_perchlorate_bob].categories = {chemistry}
 data_recipe[lithium_perchlorate_bob].icons = THREE_R_I(lithium_perchlorate_solution, lithium_perchlorate_bob, steam)
 data_recipe[lithium_perchlorate_bob].order = d
 data_recipe[lithium_perchlorate_bob].energy_required = 4 -- LiClO₄(aq) --> LiClO₄ + H₂O
@@ -1814,7 +1814,7 @@ data_recipe[lithium_perchlorate_bob].main_product = lithium_perchlorate_bob
 data_item[lithium_cobalt_oxide_III_bob].localised_name = {"item-name.lithium-cobalt-oxide-III"}
 data_item[lithium_cobalt_oxide_III_bob].localised_description = show_formula and {chemical_formula, "LiCoO[font=default-tiny-bold]2[/font]"} or nil
 data_item[lithium_cobalt_oxide_III_bob].order = e
-data_recipe[lithium_cobalt_oxide_III_bob].category = chemistry
+data_recipe[lithium_cobalt_oxide_III_bob].categories = {chemistry}
 data_recipe[lithium_cobalt_oxide_III_bob].icons = THREE_D_I(cobalt_oxide_II_III, lithium_bob, oxygen_angels, lithium_cobalt_oxide_III_bob)
 data_recipe[lithium_cobalt_oxide_III_bob].order = e
 data_recipe[lithium_cobalt_oxide_III_bob].energy_required = 4 -- Co₃O₄ + 3Li + O₂ --> 3LiCoO₂
@@ -1828,7 +1828,7 @@ data_recipe[lithium_cobalt_oxide_III_bob].results[1].amount = 12
 
 data_item[lithium_bob].localised_description = show_formula and {chemical_formula, "Li"} or nil
 data_item[lithium_bob].order = f
-data_recipe[lithium_bob].category = angels_petrochem_electrolyser
+data_recipe[lithium_bob].categories = {angels_petrochem_electrolyser}
 data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_chloride_angels, lithium_bob, hydrogen_peroxide)
 data_recipe[lithium_bob].order = f
 data_recipe[lithium_bob].allow_productivity = false

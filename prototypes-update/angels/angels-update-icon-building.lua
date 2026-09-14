@@ -990,8 +990,8 @@ do
         priority = extra_high,
         width = 160,
         height = 160,
-        shift = { 0, 0 },
-        blend_mode = "additive",
+        shift = {0, 0},
+        blend_mode = additive,
         draw_as_glow = true,
     })
     for name, map in pairs(tier_map) do

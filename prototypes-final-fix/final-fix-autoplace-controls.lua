@@ -23,7 +23,7 @@ data_autoplace_control["angels-fissure"].order = data_planet[planet_nauvis].orde
 -- VULCANUS
 data_autoplace_control["vulcanus_coal"].order = data_planet[planet_vulcanus].order .. a
 local wolframite_ore_ac = "tungsten_ore"
-data_autoplace_control[wolframite_ore_ac].localised_name = {"", "[item=tungsten-ore] ", {"entity-name.wolframite"}}
+data_autoplace_control[wolframite_ore_ac].localised_name = {"entity-name.wolframite"}
 data_autoplace_control[wolframite_ore_ac].order = data_planet[planet_vulcanus].order .. a_a
 data_autoplace_control[calcite].order = data_planet[planet_vulcanus].order .. a_b
 data_autoplace_control["sulfuric_acid_geyser"].order = data_planet[planet_vulcanus].order .. a_c
@@ -37,7 +37,7 @@ data_autoplace_control[scrap].order = data_planet[planet_fulgora].order .. a
 -- AQUILO
 data_autoplace_control["aquilo_crude_oil"].order = data_planet[planet_aquilo].order .. a
 local thermal_water_geyser_ac = "lithium_brine"
-data_autoplace_control[thermal_water_geyser_ac].localised_name = {"", "[entity=lithium-brine] ", {"entity-name.thermal-water-geyser"}}
+data_autoplace_control[thermal_water_geyser_ac].localised_name = {"entity-name.thermal-water-geyser"}
 data_autoplace_control[thermal_water_geyser_ac].order = data_planet[planet_aquilo].order .. a_a
 data_autoplace_control["fluorine_vent"].order = data_planet[planet_aquilo].order .. a_b
 
@@ -105,12 +105,8 @@ end
 -- VESTA
 if mods[vesta_mods] then
     data_autoplace_control["vesta_crude_oil"].order = data_planet[planet_vesta].order .. a
-    local deuterium = "deuterium"
-    data_autoplace_control[deuterium].localised_name = {"", "[fluid=angels-gas-deuterium] ", {"autoplace-control-name.deuterium"}}
-    data_autoplace_control[deuterium].order = data_planet[planet_vesta].order .. a_a
-    local tritium = "tritium"
-    data_autoplace_control[tritium].localised_name = {"", "[fluid=tritium-gas] ", {"autoplace-control-name.tritium"}}
-    data_autoplace_control[tritium].order = data_planet[planet_vesta].order .. a_b
+    data_autoplace_control["deuterium"].order = data_planet[planet_vesta].order .. a_a
+    data_autoplace_control["tritium"].order = data_planet[planet_vesta].order .. a_b
 end
 
 -- SHATTERED
@@ -138,11 +134,11 @@ end
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then
-    data_autoplace_control[metallic_asteroid_chunk].localised_name = {"", "[entity=metallic-asteroid-chunk] ", {"entity-name.metallic-chunk"}}
+    data_autoplace_control[metallic_asteroid_chunk].localised_name = {"entity-name.metallic-chunk"}
     data_autoplace_control[metallic_asteroid_chunk].order = data_planet[planet_muluna].order .. a
-    data_autoplace_control[carbonic_asteroid_chunk].localised_name = {"", "[entity=carbonic-asteroid-chunk] ", {"entity-name.carbonic-chunk"}}
+    data_autoplace_control[carbonic_asteroid_chunk].localised_name = {"entity-name.carbonic-chunk"}
     data_autoplace_control[carbonic_asteroid_chunk].order = data_planet[planet_muluna].order .. a_a
-    data_autoplace_control[oxide_asteroid_chunk].localised_name = {"", "[entity=oxide-asteroid-chunk] ", {"entity-name.oxide-chunk"}}
+    data_autoplace_control[oxide_asteroid_chunk].localised_name = {"entity-name.oxide-chunk"}
     data_autoplace_control[oxide_asteroid_chunk].order = data_planet[planet_muluna].order .. a_b
     data_autoplace_control[anorthite_chunk].order = data_planet[planet_muluna].order .. a_c
 end

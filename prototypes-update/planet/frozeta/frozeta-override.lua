@@ -12,55 +12,55 @@ if mods[secretas_frozeta_mods] then
     data_recipe[spaceship_scrap_recycling].order = a_a
     data_recipe[spaceship_scrap_recycling].results =
     {
-        {type = item, name = solid_fuel, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
-        {type = item, name = enriched_fuel_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = electric_engine_unit, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
-        {type = item, name = supercapacitor, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = carbon_fiber, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = space_platform_foundation, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = storage_tank_4_alt, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = rocket, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = T5_inserter, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = pump_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = medium_electric_pole_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = small_lamp, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = combinator_arithmetic, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = combinator_constant, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = display_panel, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = heat_pipe_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = scrap, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false}
+        {type = item, name = solid_fuel, amount = 1, independent_probability = 0.0625, show_details_in_recipe_tooltip = false},
+        {type = item, name = enriched_fuel_bob, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = electric_engine_unit, amount = 1, independent_probability = 0.0625, show_details_in_recipe_tooltip = false},
+        {type = item, name = supercapacitor, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = carbon_fiber, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = space_platform_foundation, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = molybdenum_rhenium_pipe, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = storage_tank_4_alt, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = rocket, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = T5_inserter, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = pump_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = medium_electric_pole_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = small_lamp, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = combinator_arithmetic, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = combinator_constant, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = display_panel, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = heat_pipe_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = scrap, amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false}
     }
     if settings.startup[setting_bobmods_power_steam].value then
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_6, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_6, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     else
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     end
     if settings.startup[setting_bobmods_power_solar].value then
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     else
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     end
     if data_item[flying_robot_frame_4] then
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     else
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     end
     if data_item[gun_turret_5] then
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_5, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     else
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     end
     if data_item[laser_turret_5] then
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_5, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     else
-        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_1, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
     end
 
     data_recipe[gold_plate_mods].localised_name = data_item[gold_plate_bob].localised_name
-    data_recipe[gold_plate_mods].category = sintering_6
+    data_recipe[gold_plate_mods].categories = {sintering_6}
     data_recipe[gold_plate_mods].subgroup = is_frozeta_recipe
     data_recipe[gold_plate_mods].icons = TWO_I(gold_powder, gold_plate_bob)
     data_recipe[gold_plate_mods].order = c
@@ -94,8 +94,8 @@ if mods[secretas_frozeta_mods] then
     data_item[golden_biter_egg].fuel_category = base_fuel
     data_item[golden_biter_egg].fuel_value = 14400 .. kJ
 
-    data_tool[golden_science_pack].subgroup = is_frozeta_recipe
-    data_tool[golden_science_pack].order = f
+    data_item[golden_science_pack].subgroup = is_frozeta_recipe
+    data_item[golden_science_pack].order = f
     data_recipe[golden_science_pack].subgroup = is_frozeta_recipe
     data_recipe[golden_science_pack].order = f
     data_recipe[golden_science_pack].energy_required = 16

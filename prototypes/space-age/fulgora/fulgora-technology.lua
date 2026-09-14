@@ -128,7 +128,7 @@ data:extend
 local graphics_holmium_smelting_tech = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png"
 tech_holmium_processing = "holmium-processing"
 tech_holmium_smelting_1 = "holmium-smelting-1"
-local tech_holmium_smelting_2 = "holmium-smelting-2"
+tech_holmium_smelting_2 = "holmium-smelting-2"
 tech_holmium_smelting_3 = "holmium-smelting-3"
 local graphics_fulgora_tech = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/"
 tech_holmium_synthesis = "holmium-synthesis"
@@ -141,16 +141,23 @@ data:extend
         name = tech_holmium_smelting_1,
         icon = graphics_holmium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_holmium_processing},
+        prerequisites = {tech_brannerite_processing_1},
         effects =
         {
-            {type = unlock_recipe, recipe = holmium_roll},
-            {type = unlock_recipe, recipe = holmium_plate_2}
+            {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
+            {type = unlock_recipe, recipe = calcium},
+            {type = unlock_recipe, recipe = holmium_chloride_III_solution},
+            {type = unlock_recipe, recipe = holmium_fluoride_III},
+            {type = unlock_recipe, recipe = holmium_cathode},
+            {type = unlock_recipe, recipe = holmium_ingot},
+            {type = unlock_recipe, recipe = holmium_powder},
+            {type = unlock_recipe, recipe = holmium_molten},
+            {type = unlock_recipe, recipe = holmium_plate}
         },
         research_trigger =
         {
             type = craft_item,
-            item = holmium_plate,
+            item = holmium_ore,
             count = 256
         }
     },

@@ -325,12 +325,3 @@ end
 if mods[aegis_bellicos_mods] then
     data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
 end
-
--- MODS
-if mods[clowns_nuclear] then
-    data_item[uranium_235].icons = nil
-    data_item[uranium_235].icon = "__base__/graphics/icons/uranium-235.png"
-
-    data_item[uranium_238].icons = nil
-    data_item[uranium_238].icon = "__base__/graphics/icons/uranium-238.png"
-end

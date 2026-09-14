@@ -28,7 +28,7 @@ local function metallic_asteroid_crushing(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_1,
         icons = TWO_I(metallic_asteroid_chunk, parameters.res),
         order = parameters.order,
@@ -76,7 +76,7 @@ data:extend
     {
         type = recipe,
         name = advanced_carbonic_asteroid_crushing_2,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_2,
         icons = TWO_I(carbonic_asteroid_chunk, calcite),
         order = f_b,
@@ -104,7 +104,7 @@ local function oxide_asteroid_crushing(parameters)
     {
         type = recipe,
         name = parameters.name,
-        category = parameters.category,
+        categories = {parameters.categories},
         subgroup = is_space_environment_3,
         icons = TWO_I(oxide_asteroid_chunk, parameters.res),
         order = parameters.order,
@@ -120,12 +120,12 @@ local function oxide_asteroid_crushing(parameters)
     }
     data:extend({info_recipe})
 end
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          category = chemistry, order = e_b, type_res = fluid, amount = 120, res = nitrogen_oxide})
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          category = chemistry, order = e_c, type_res = fluid, amount = 120, res = chlorine_oxide_gas})
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_4,          category = crushing,  order = e_d, type_res = item,  amount = 8,   res = sodium_oxide})
-oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, category = chemistry, order = f_b, type_res = fluid, amount = 120, res = nitrogen_dioxide_angels})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     category = crushing,  order = g_a, type_res = item,  amount = 8,   res = lithium_oxide})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     category = chemistry, order = g_b, type_res = fluid, amount = 120, res = oxygen_fluoride_gas})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          categories = chemistry, order = e_b, type_res = fluid, amount = 120, res = nitrogen_oxide})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          categories = chemistry, order = e_c, type_res = fluid, amount = 120, res = chlorine_oxide_gas})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_4,          categories = crushing,  order = e_d, type_res = item,  amount = 8,   res = sodium_oxide})
+oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, categories = chemistry, order = f_b, type_res = fluid, amount = 120, res = nitrogen_dioxide_angels})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     categories = crushing,  order = g_a, type_res = item,  amount = 8,   res = lithium_oxide})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     categories = chemistry, order = g_b, type_res = fluid, amount = 120, res = oxygen_fluoride_gas})
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
@@ -139,7 +139,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = nitrogen_oxide_separation,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing,
         icons = THREE_R_I(nitrogen_oxide, nitrogen_angels, oxygen_angels),
         order = b,
@@ -157,7 +157,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chlorine_oxide_separation,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing,
         icons = THREE_R_I(chlorine_oxide_gas, chlorine_angels, oxygen_angels),
         order = c,
@@ -172,7 +172,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = nitrogen_monoxide_space,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing,
         icons = BUILDING_R_I(nitrogen_monoxide_angels, space_platform),
         order = e,
@@ -194,7 +194,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hydrazine_space,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing,
         icons = BUILDING_R_I(hydrazine_angels, space_platform),
         order = f,
@@ -216,7 +216,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = dinitrogen_tetroxide_space,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing,
         icons = BUILDING_R_I(nitrogen_dioxide_angels, space_platform),
         order = g,
@@ -236,7 +236,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = oxygen_fluoride_space,
-        category = cryogenics,
+        categories = {cryogenics},
         subgroup = is_space_processing,
         icons = BUILDING_R_I(oxygen_fluoride_gas, space_platform),
         order = h,
@@ -252,7 +252,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = fluoroketone_liquid,
-        category = cryogenics,
+        categories = {cryogenics},
         subgroup = is_space_processing,
         icons = BUILDING_R_I(fluoroketone_hot, space_platform),
         order = i,
@@ -280,7 +280,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_hydroxide_space,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_space_processing_2,
         icons = THREE_I(sodium_oxide, water_purified_angels, sodium_hydroxide_angels),
         order = a,
@@ -296,7 +296,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lime_space,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_space_processing_2,
         icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
         order = b,
@@ -311,7 +311,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_space,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_space_processing_2,
         icons = TWO_D_I(lithium_oxide, silicon_powder, lithium_bob, silicon_oxide_IV),
         order = c,

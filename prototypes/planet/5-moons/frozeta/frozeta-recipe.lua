@@ -7,7 +7,7 @@ if mods[secretas_frozeta_mods] then
         {
             localised_name = {"fluid-name." .. ammonia_angels},
             name = ammonia_from_frozeta_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_frozeta_air,
             icons = BUILDING_R_I(ammonia_angels, planet_frozeta),
             order = a,
@@ -21,7 +21,7 @@ if mods[secretas_frozeta_mods] then
         {
             localised_name = {"item-name." .. gold_powder},
             name = gold_powder_frozeta,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_frozeta_recipe,
             icons = TWO_I(gold_ore_bob, gold_powder),
             order = b,
@@ -33,7 +33,7 @@ if mods[secretas_frozeta_mods] then
         -- EGG
         {
             name = golden_biter_egg,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_frozeta_recipe,
             icons = THREE_D_I(biter_egg, gold_plate_bob, jelly, golden_biter_egg),
             order = e,

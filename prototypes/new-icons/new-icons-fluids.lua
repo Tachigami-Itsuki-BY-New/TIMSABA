@@ -423,6 +423,8 @@ if mods[muluna_mods] then
 
     data_fluid[cooled_steam_mods].icons = nil
     data_fluid[cooled_steam_mods].icon = graphics_muluna .. cooled_steam_mods .. ".png"
+
+    data_fluid[heat].max_temperature = 915
 end
 
 -- PANGLIA
@@ -490,7 +492,7 @@ if mods[maraxsis_mods] then
 
     data_fluid[water_brackish_maraxsis].icon = graphics_maraxsis .. water_brackish_maraxsis .. ".png"
 
-    data_fluid[molten_salt_mods].icon = graphics_maraxsis .. molten_salt_mods .. ".png"
+    --data_fluid[molten_salt_mods].icon = graphics_maraxsis .. molten_salt_mods .. ".png"
 end
 
 -- VESTA

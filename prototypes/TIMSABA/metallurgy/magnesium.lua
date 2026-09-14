@@ -154,7 +154,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = magnesium_ore_recipe,
-        category = angels_ore_sorting_2,
+        categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_cupric, crushed_bobmonium, magnesium_ore),
         order = a_f,
@@ -171,7 +171,7 @@ TIMSABA.functions.create_recipes
     -- SMELTING
     {
         name = magnesium_processed,
-        category = angels_processed_pressing_1,
+        categories = {angels_processed_pressing_1},
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_ore, magnesium_processed),
         order = b,
@@ -182,7 +182,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_pellet,
-        category = angels_pellet_pressing_1,
+        categories = {angels_pellet_pressing_1},
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_processed, magnesium_pellet),
         order = c,
@@ -193,7 +193,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_ingot,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_gas, magnesium_ingot),
         order = d,
@@ -212,7 +212,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_powder,
-        category = angels_powderizing_1,
+        categories = {angels_powderizing_1},
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_ingot, magnesium_powder),
         order = e,
@@ -223,7 +223,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_silicide_ingot,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_magnesium,
         icons = THREE_I(magnesium_powder, silicon_powder, magnesium_silicide_ingot),
         order = f,
@@ -239,7 +239,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = magnesium_oxide,
-        category = angels_blast_smelting_1,
+        categories = {angels_blast_smelting_1},
         subgroup = is_magnesium_chemistry,
         icons = THREE_I(magnesium_ore, oxygen_angels, magnesium_oxide),
         order = a,
@@ -254,7 +254,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_oxide_2,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_magnesium_chemistry,
         icons = THREE_I(magnesium_processed, oxygen_angels, magnesium_oxide),
         order = a_a,
@@ -269,7 +269,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_gas,
-        category = angels_blast_smelting_1,
+        categories = {angels_blast_smelting_1},
         subgroup = is_magnesium_chemistry,
         icons = TWO_D_I(magnesium_oxide, calcium, magnesium_gas, lime_angels),
         order = b,
@@ -288,7 +288,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_gas_from_magnesium_chloride_gas,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_petrochem_electrolyser},
         subgroup = is_magnesium_chemistry,
         icons = FOUR_R_I(magnesium_chloride_gas, magnesium_gas, nil, chlorine_angels),
         order = b_a,
@@ -308,7 +308,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_chloride,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_magnesium_chemistry,
         icons = THREE_I(magnesium_pellet, chlorine_angels, magnesium_chloride),
         order = c,
@@ -323,7 +323,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_chloride_from_magnesium_chloride_solution,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_magnesium_chemistry,
         icons = THREE_R_I(magnesium_chloride_solution, magnesium_chloride, steam),
         order = c_a,
@@ -338,7 +338,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_chloride_gas,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_magnesium_chemistry,
         icons = TWO_I(magnesium_chloride, magnesium_chloride_gas),
         order = d,
@@ -350,7 +350,7 @@ TIMSABA.functions.create_recipes
     -- CASTING
     {
         name = magnesium_molten,
-        category = angels_induction_smelting_1,
+        categories = {angels_induction_smelting_1},
         subgroup = is_magnesium_casting,
         icons = TWO_I(magnesium_ingot, magnesium_molten),
         order = a,

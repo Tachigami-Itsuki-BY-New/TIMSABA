@@ -5,7 +5,7 @@ if mods[lignumis_mods] then
         {
             localised_name = {"item-name." .. gold_plate_bob},
             name = gold_plate_lignumis,
-            category = smelting,
+            categories = {smelting},
             subgroup = is_lignumis_recipe,
             icons = TWO_I(gold_ore_bob, gold_plate_bob),
             order = d,
@@ -25,8 +25,7 @@ if mods[lignumis_mods] then
         ({
             {
                 name = ingredient .. _sortiong_stone,
-                category = hand_crafting,
-                additional_categories = {angels_ore_sorting_1},
+                categories = {hand_crafting, angels_ore_sorting_1},
                 subgroup = is_sortiong_ore,
                 icons = RECYCLING_I(recycling_png, ingredient),
                 order = order,
@@ -48,7 +47,7 @@ if mods[lignumis_mods] then
         ({
             {
                 name = ingredient .. _sortiong_stone,
-                category = angels_ore_sorting_1,
+                categories = {angels_ore_sorting_1},
                 subgroup = is_sortiong_ore,
                 icons = RECYCLING_I(recycling_png, ingredient),
                 order = order,

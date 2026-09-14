@@ -18,7 +18,7 @@ if mods[muluna_mods] and not mods[lignumis_mods] then
         {
             type = recipe,
             name = lumber_mill,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_muluna_recipe_tree,
             icon = "__TIMSABA__/graphics/icons/muluna/lumber-mill.png",
             order = z_a,

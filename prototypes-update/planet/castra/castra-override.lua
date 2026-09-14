@@ -41,7 +41,7 @@ if mods[castra_mods] then
     }
 
     local gunpowder_carbon = "gunpowder-carbon"
-    data_recipe[gunpowder_carbon].category = chemistry
+    data_recipe[gunpowder_carbon].categories = {chemistry}
     data_recipe[gunpowder_carbon].subgroup = is_gunpowder
     data_recipe[gunpowder_carbon].icons = THREE_D_I(gunpowder, water_purified_angels, toluene_angels, carbon_angels, potassium_nitrate_solution, toluene_sulfur_solution)
     data_recipe[gunpowder_carbon].order = a_d
@@ -113,7 +113,7 @@ if mods[castra_mods] then
     data_recipe[processing_unit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local hydrogen_sulfide_electrolysis = "hydrogen-sulfide-electrolysis"
-    data_recipe[hydrogen_sulfide_electrolysis].category = angels_petrochem_electrolyser
+    data_recipe[hydrogen_sulfide_electrolysis].categories = {angels_petrochem_electrolyser}
     data_recipe[hydrogen_sulfide_electrolysis].subgroup = is_castra_recipe
     data_recipe[hydrogen_sulfide_electrolysis].icons = FOUR_R_I(hydrogen_sulfide_angels, hydrogen_angels, sulfur, oxygen_angels)
     data_recipe[hydrogen_sulfide_electrolysis].order = b_a

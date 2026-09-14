@@ -7,7 +7,7 @@ if mods[apia_carnova_mods] then
         {
             localised_name = {"fluid-name." .. hydrogen_angels},
             name = hydrogen_apia_carnova,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_apia_carnova_air,
             icons = PLANET_D_IS(hydrogen_angels, planet_apia, planet_carnova),
             order = a,
@@ -20,7 +20,7 @@ if mods[apia_carnova_mods] then
         {
             localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_apia_carnova,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_apia_carnova_air,
             icons = PLANET_D_IS(nitrogen_angels, planet_apia, planet_carnova),
             order = b,
@@ -33,7 +33,7 @@ if mods[apia_carnova_mods] then
         {
             localised_name = {"fluid-name." .. oxygen_angels},
             name = oxygen_apia_carnova,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_petrochem_air_filtering},
             subgroup = is_apia_carnova_air,
             icons = PLANET_D_IS(oxygen_angels, planet_apia, planet_carnova),
             order = c,

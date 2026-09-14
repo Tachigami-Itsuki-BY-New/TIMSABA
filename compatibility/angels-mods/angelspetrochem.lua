@@ -16,9 +16,9 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = coke_purification_2,
-        category = angels_liquifying,
+        categories = {angels_liquifying},
         subgroup = is_coal,
-        icon = data_item[carbon_angels].icon,
+        icons = TWO_D_I(coke_angels, water_purified_angels, carbon_angels, water_yellow_waste, number_2),
         order = d_a,
         ingredients =
         {
@@ -33,29 +33,3 @@ TIMSABA.functions.create_recipes
         main_product = carbon_angels
     }
 })
-
-if not data_technology[tech_coal_processing_3] then
-    data:extend
-    ({
-        {
-
-            localised_name = {"technology-name.angels-coal-processing"},
-            localised_description = {"technology-description.angels-coal-processing"},
-            type = technology,
-            name = tech_coal_processing_3,
-            icons = TIMSABA.functions.create_gas_tech_icon("CcCcCc"),
-            prerequisites = {tech_coal_processing_2, tech_chlorine_processing_1, tech_nitrogen_processing_1},
-            effects = {{type = unlock_recipe, recipe = coke_purification_2}},
-            unit =
-            {
-                count = 100,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1}
-                },
-                time = 15
-            }
-        }
-    })
-end

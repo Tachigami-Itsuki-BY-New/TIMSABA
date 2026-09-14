@@ -13,7 +13,7 @@ if mods[asteroid_belt_mods] then
         table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, vanadium_science_pack)
     end
     if mods[muria_mods] then
-        table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, muriatic_science_pack)
+        table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, acidworking_science_pack)
     end
     if mods[pelagos_mods] then
         table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, spoilage_science_pack)

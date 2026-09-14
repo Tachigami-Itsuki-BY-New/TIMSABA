@@ -5,7 +5,7 @@ if mods[terrapalus_mods] then
     ({
         {
             name = palusium_powder,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_terrapalus_recipe,
             icons = TWO_I(palusium_ore, palusium_powder),
             order = b,
@@ -16,7 +16,7 @@ if mods[terrapalus_mods] then
         },
         {
             name = palusium_crystal,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_terrapalus_recipe,
             icons = THREE_I(palusium_powder, water_purified_angels, palusium_crystal),
             order = c,
@@ -31,7 +31,7 @@ if mods[terrapalus_mods] then
         },
         {
             name = palusium_plate,
-            category = smelting,
+            categories = {smelting},
             subgroup = is_terrapalus_recipe,
             icons = TWO_I(palusium_powder, palusium_plate),
             order = d,
@@ -42,7 +42,7 @@ if mods[terrapalus_mods] then
         },
         {
             name = ultravium,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_terrapalus_recipe,
             icons = THREE_D_I(palusium_powder, water_purified_angels, crude_oil, ultravium),
             order = e,

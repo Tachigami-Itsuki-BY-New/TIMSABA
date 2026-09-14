@@ -58,7 +58,7 @@ if mods[lignumis_mods] then
     data_recipe[moist_stromatolite_remnant_desiccation].energy_required = 8
     data_recipe[moist_stromatolite_remnant_desiccation].results =
     {
-        {type = item, name = peat, amount = 1, probability = 0.5},
+        {type = item, name = peat, amount = 1, independent_probability = 0.5},
         {type = fluid, name = steam, amount = 240, temperature = 165}
     }
 
@@ -79,7 +79,7 @@ if mods[lignumis_mods] then
     data_fluid[wood_pulp].order = k
     TIMSABA.barreling.add_simple_fluid(wood_pulp)
 
-    data_recipe[wood_liquefaction].category = chemistry
+    data_recipe[wood_liquefaction].categories = {chemistry}
     data_recipe[wood_liquefaction].subgroup = is_lignumis_recipe
     data_recipe[wood_liquefaction].icons = TWO_I(wood, wood_pulp)
     data_recipe[wood_liquefaction].order = k_a
@@ -87,7 +87,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_liquefaction].results[1].amount = (15/2)
 
     local wood_liquefaction_steam = wood_liquefaction .. "-" .. steam
-    data_recipe[wood_liquefaction_steam].category = chemistry
+    data_recipe[wood_liquefaction_steam].categories = {chemistry}
     data_recipe[wood_liquefaction_steam].subgroup = is_lignumis_recipe
     data_recipe[wood_liquefaction_steam].icons = TWO_D_I(wood, steam, wood_pulp)
     data_recipe[wood_liquefaction_steam].order = k_b
@@ -103,7 +103,7 @@ if mods[lignumis_mods] then
     data_recipe[nutrients_from_wood_pulp].results[1].amount = 4
 
     local rocket_fuel_from_wood_pulp_and_peat = rocket_fuel .. "-from-" .. wood_pulp .. "-and-" .. peat
-    data_recipe[rocket_fuel_from_wood_pulp_and_peat].category = chemistry
+    data_recipe[rocket_fuel_from_wood_pulp_and_peat].categories = {chemistry}
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].subgroup = is_lignumis_recipe
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].icons = BUILDING_R_I(rocket_fuel, planet_lignumis)
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].order = k_d
@@ -143,7 +143,7 @@ if mods[lignumis_mods] then
         {type = fluid, name = wood_pulp, amount = 120},
         {type = fluid, name = water, amount = 120}
     }
-    data_recipe[cupriavidus_necator_starter].results = {{type = item, name = cupriavidus_necator, amount_min = 4, amount_max = 8, probability = 0.25}}
+    data_recipe[cupriavidus_necator_starter].results = {{type = item, name = cupriavidus_necator, amount_min = 4, amount_max = 8, independent_probability = 0.25}}
 
     local plastic_from_cupriavidus_necator = "plastic-from-" .. cupriavidus_necator
     data_recipe[plastic_from_cupriavidus_necator].subgroup = is_lignumis_recipe
@@ -174,16 +174,16 @@ if mods[lignumis_mods] then
         {type = fluid, name = wood_pulp, amount = (15/2)}
     }
 
-    data_tool[wood_science_pack].subgroup = is_lignumis_recipe
-    data_tool[wood_science_pack].order = n
+    data_item[wood_science_pack].subgroup = is_lignumis_recipe
+    data_item[wood_science_pack].order = n
     data_recipe[wood_science_pack].subgroup = is_lignumis_recipe
     data_recipe[wood_science_pack].order = n
     data_recipe[wood_science_pack].energy_required = 4
     data_recipe[wood_science_pack].surface_conditions = nil
 
-    data_tool[steam_science_pack].subgroup = is_lignumis_recipe
-    data_tool[steam_science_pack].order = o
-    data_recipe[steam_science_pack].category = advanced_crafting
+    data_item[steam_science_pack].subgroup = is_lignumis_recipe
+    data_item[steam_science_pack].order = o
+    data_recipe[steam_science_pack].categories = {advanced_crafting}
     data_recipe[steam_science_pack].subgroup = is_lignumis_recipe
     data_recipe[steam_science_pack].icons = R_P_I(steam_science_pack, planet_lignumis, nil, number_1)
     data_recipe[steam_science_pack].order = o
@@ -621,7 +621,7 @@ if mods[lignumis_mods] then
     data_item[basic_radar].order = e
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
-    data_recipe[basic_radar].category = crafting
+    data_recipe[basic_radar].categories = {crafting}
     data_recipe[basic_radar].subgroup = is_lignumis_war
     data_recipe[basic_radar].order = e
     data_recipe[basic_radar].energy_required = 8

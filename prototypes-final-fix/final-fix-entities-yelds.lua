@@ -1,5 +1,5 @@
 -- BASE
-data_fish["fish"].minable.count = 4 -- = {mining_time = 0.4, result = factorian_fish, count = 4}
+data_fish["fish"].minable.count = 4
 
 for tree_name, tree_data in pairs(data_tree) do
     if string.find(tree_name, "tree") and not string.find(tree_name, "angels") and not string.find(tree_name, "ashland%-lichen") and tree_data.minable then
@@ -7,7 +7,7 @@ for tree_name, tree_data in pairs(data_tree) do
         local already_has_seed = false
         if minable.results then
             for _, drop in ipairs(minable.results) do
-                if drop.name == "tree-seed" then
+                if drop.name == tree_seed_angels then
                     already_has_seed = true
                     break
                 end
@@ -23,13 +23,7 @@ for tree_name, tree_data in pairs(data_tree) do
             if not minable.results then
                 minable.results = {}
             end
-            table.insert(minable.results,
-            {
-                type = item,
-                name = tree_seed,
-                amount = 1,
-                probability = 0.5
-            })
+            table.insert(minable.results, {type = item, name = tree_seed_angels, amount = 1, independent_probability = 0.5})
         end
     end
 end
@@ -346,31 +340,31 @@ data_tree[garden_temperate].order = z_a
 data_tree[garden_temperate].minable.results =
 {
     {type = item, name = garden_temperate, amount = 1},
-    {type = item, name = wheaton, amount = 4, probability = 0.125},
-    {type = item, name = tianaton, amount = 4, probability = 0.125},
-    {type = item, name = okarinome, amount = 4, probability = 0.125},
-    {type = item, name = quillnoa, amount = 4, probability = 0.0625},
-    {type = item, name = kendallion, amount = 4, probability = 0.0625}
+    {type = item, name = wheaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = tianaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = okarinome, amount = 4, independent_probability = 0.125},
+    {type = item, name = quillnoa, amount = 4, independent_probability = 0.0625},
+    {type = item, name = kendallion, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_swamp].order = z_b
 data_tree[garden_swamp].minable.results =
 {
     {type = item, name = garden_swamp, amount = 1},
-    {type = item, name = elendilomone, amount = 4, probability = 0.125},
-    {type = item, name = zombieecalyptus, amount = 4, probability = 0.125},
-    {type = item, name = saundsrcress, amount = 4, probability = 0.125},
-    {type = item, name = nexeflax, amount = 4, probability = 0.0625},
-    {type = item, name = mushredtato, amount = 4, probability = 0.0625}
+    {type = item, name = elendilomone, amount = 4, independent_probability = 0.125},
+    {type = item, name = zombieecalyptus, amount = 4, independent_probability = 0.125},
+    {type = item, name = saundsrcress, amount = 4, independent_probability = 0.125},
+    {type = item, name = nexeflax, amount = 4, independent_probability = 0.0625},
+    {type = item, name = mushredtato, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_desert].order = z_c
 data_tree[garden_desert].minable.results =
 {
     {type = item, name = garden_desert, amount = 1},
-    {type = item, name = binafran, amount = 4, probability = 0.125},
-    {type = item, name = primedeadelion, amount = 4, probability = 0.125},
-    {type = item, name = nilaubergine, amount = 4, probability = 0.125},
-    {type = item, name = zelosquash, amount = 4, probability = 0.0625},
-    {type = item, name = arumbiphila, amount = 4, probability = 0.0625}
+    {type = item, name = binafran, amount = 4, independent_probability = 0.125},
+    {type = item, name = primedeadelion, amount = 4, independent_probability = 0.125},
+    {type = item, name = nilaubergine, amount = 4, independent_probability = 0.125},
+    {type = item, name = zelosquash, amount = 4, independent_probability = 0.0625},
+    {type = item, name = arumbiphila, amount = 4, independent_probability = 0.0625}
 }
 data_tree[tree_temperate].order = z_d
 data_tree[tree_temperate].minable.results[1].amount = 128
@@ -657,11 +651,11 @@ if mods[castra_mods] then
     local data_collector = "data-collector"
     data_unit_spawner[data_collector].loot =
     {
-        {item = advanced_circuit,      probability = 1, count_min = 4, count_max = 8},
-        {item = nickel_plate_bob,      probability = 1, count_min = 4, count_max = 16},
-        {item = electronic_circuit,    probability = 1, count_min = 8, count_max = 32},
-        {item = low_density_structure, probability = 1, count_min = 4, count_max = 12},
-        {item = electric_engine_unit,  probability = 1, count_min = 4, count_max = 8}
+        {type = item, name = advanced_circuit,      independent_probability = 1, amount_min = 4, amount_max = 8},
+        {type = item, name = nickel_plate_bob,      independent_probability = 1, amount_min = 4, amount_max = 16},
+        {type = item, name = electronic_circuit,    independent_probability = 1, amount_min = 8, amount_max = 32},
+        {type = item, name = low_density_structure, independent_probability = 1, amount_min = 4, amount_max = 12},
+        {type = item, name = electric_engine_unit,  independent_probability = 1, amount_min = 4, amount_max = 8}
     }
 end
 
@@ -804,7 +798,7 @@ if mods[apia_carnova_mods] then
         {type = item, name = honeycombs, amount = 32}
     }
 
-    data_unit_spawner["piranha-spawner"].loot = {{item = piranha_roe, probability = 1, count_min = 4, count_max = 8}}
+    data_unit_spawner["piranha-spawner"].loot = {{type = item, name = piranha_roe, independent_probability = 1, amount_min = 4, amount_max = 8}}
     data_entity["bone-nodes"].minable.results = {{type = item, name = bones, amount = 16}}
     data_entity["flesh-tree"].minable.results =
     {

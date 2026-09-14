@@ -26,7 +26,7 @@ if mods[bobwarfare] then
     }
 end
 
-data_recipe[lithium_perchlorate_bob].category = angels_liquifying
+data_recipe[lithium_perchlorate_bob].categories = {angels_liquifying}
 
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
@@ -81,10 +81,10 @@ data_recipe[tin_cable].hidden = false
 data_recipe[tin_cable].hidden_in_factoriopedia = false
 data_fluid[manganese_molten_angels].hidden = false
 data_fluid[manganese_molten_angels].hidden_in_factoriopedia = false
-data_recipe[nickel_plate_bob].category = smelting
+data_recipe[nickel_plate_bob].categories = {smelting}
 data_recipe[nickel_plate_bob].hidden = false
 data_recipe[nickel_plate_bob].hidden_in_factoriopedia = false
-data_recipe[zinc_plate_bob].category = smelting
+data_recipe[zinc_plate_bob].categories = {smelting}
 data_recipe[zinc_plate_bob].hidden = false
 data_recipe[zinc_plate_bob].hidden_in_factoriopedia = false
 data_item[gold_cable].hidden = false
@@ -118,9 +118,9 @@ if mods[bobwarfare] then
     table.insert(data_armor[mech_armor].resistances, {type = "bob-plasma", percent = 100})
 end
 
-tech_rocket_part_productivity = "rocket-part-productivity"
+--[[tech_rocket_part_productivity = "rocket-part-productivity"
 data_technology[tech_rocket_part_productivity].effects = {{type = change_recipe_productivity, recipe = rocket_part, change = 0.1}}
-table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})]]
 
 data_recipe[casting_low_density_structure].ingredients =
 {
@@ -220,9 +220,9 @@ if mods[muluna_mods] then
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 
     -- ROCKET PART
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
+    --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
 
-    local tech_rocket_part_productivity_2 = "rocket-part-productivity-2"
+    --[[local tech_rocket_part_productivity_2 = "rocket-part-productivity-2"
     table.insert(data_technology[tech_rocket_part_productivity_2].unit.ingredients, {utility_science_pack, 1})
     data_technology[tech_rocket_part_productivity_2].effects =
     {
@@ -306,7 +306,7 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
 
     if mods[arig_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
@@ -320,7 +320,7 @@ if mods[muluna_mods] then
     end
 
     if mods[hyarion_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
@@ -334,7 +334,7 @@ if mods[muluna_mods] then
     end
 
     if mods[tellus_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
@@ -348,7 +348,7 @@ if mods[muluna_mods] then
     end
 
     if mods[maraxsis_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
@@ -362,7 +362,7 @@ if mods[muluna_mods] then
     end
 
     if mods[muria_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
@@ -376,7 +376,7 @@ if mods[muluna_mods] then
     end
 
     if mods[pelagos_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
@@ -390,7 +390,7 @@ if mods[muluna_mods] then
     end
 
     if mods[lignumis_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        --table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
@@ -401,10 +401,10 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-    end
+    end]]
 end
 
-if not mods[muluna_mods] and mods[arig_mods] then
+--[[if not mods[muluna_mods] and mods[arig_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
 end
 
@@ -430,11 +430,11 @@ end
 
 if not mods[muluna_mods] and mods[lignumis_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-end
+end]]
 
 -- MOSHINE
 if mods[moshine_mods] then
-    data_recipe[boron].category = smelting_filtering
+    data_recipe[boron].categories = {smelting_filtering}
 end
 
 -- ARIG
@@ -505,7 +505,7 @@ if mods[hyarion_mods] then
     -- RECIPE
     local remelting_of_metal_ore_1 = "planetaris-iron-metallic-sifting"
     data_recipe[remelting_of_metal_ore_1].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. iron_ore}}
-    data_recipe[remelting_of_metal_ore_1].category = metallurgy
+    data_recipe[remelting_of_metal_ore_1].categories = {metallurgy}
     data_recipe[remelting_of_metal_ore_1].subgroup = is_hyarion_recipe_ore
     data_recipe[remelting_of_metal_ore_1].icons = THREE_I(metallic_ore, lava, iron_ore)
     data_recipe[remelting_of_metal_ore_1].order = a_a
@@ -519,7 +519,7 @@ if mods[hyarion_mods] then
 
     local remelting_of_metal_ore_2 = "planetaris-copper-metallic-sifting"
     data_recipe[remelting_of_metal_ore_2].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. copper_ore}}
-    data_recipe[remelting_of_metal_ore_2].category = metallurgy
+    data_recipe[remelting_of_metal_ore_2].categories = {metallurgy}
     data_recipe[remelting_of_metal_ore_2].subgroup = is_hyarion_recipe_ore
     data_recipe[remelting_of_metal_ore_2].icons = THREE_I(metallic_ore, lava, copper_ore)
     data_recipe[remelting_of_metal_ore_2].order = a_b
@@ -676,30 +676,8 @@ if mods[maraxsis_mods] then
     data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
     data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
 
-    -- !?
-    if not mods.pystellarexpedition then
-        local electricity_description = {""}
-
-        for _, quality in pairs(data.raw.quality) do
-            if quality.hidden then goto continue end
-            local quality_name = quality.localised_name or {"quality-name." .. quality.name}
-
-            local quality_level = quality.level
-            local fluid_amount = 16 * quality_level * quality_level + 16
-
-            table.insert(electricity_description, {"recipe-description.maraxsis-molten-salt-quality-description", quality.name, quality_name, tostring(fluid_amount)})
-            table.insert(electricity_description, "\n")
-            ::continue::
-        end
-        electricity_description[#electricity_description] = nil
-
-        electricity_description = maraxsis.shorten_localised_string(electricity_description)
-
-        data_recipe[molten_salt_mods].localised_description = {"recipe-description.molten-salt", electricity_description}
-    end
-
     -- RESEARCE VESSEL
-    for name in pairs(data_item) do
+    --[[for name in pairs(data_item) do
         if string.find(name, "^maraxsis%-") and string.find(name, "%-research%-vessel$") and name ~= empty_research_vessel then
             data_item[name].subgroup = is_research_vessel_fill
             data_item[name].stack_size = 32
@@ -729,13 +707,13 @@ if mods[maraxsis_mods] then
             data_recipe[name].subgroup = is_research_vessel_empty
             data_recipe[name].energy_required = 16
             data_recipe[name].results[1].amount = 128
-            data_recipe[name].results[2].probability = 1
+            data_recipe[name].results[2].independent_probability = 1
             data_recipe[name].hidden = false
             data_recipe[name].hidden_in_factoriopedia = false
             data_recipe[name].hide_from_player_crafting = true
             data_recipe[name].factoriopedia_alternative = nil
         end
-    end
+    end]]
 end
 
 -- PELAGOS

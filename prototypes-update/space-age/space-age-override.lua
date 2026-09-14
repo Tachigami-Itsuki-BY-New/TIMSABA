@@ -30,7 +30,7 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = rocket_fuel, amount = 2}
 }
 
-if mods[muluna_mods] then
+if mods[muluna_mods] and data_recipe[rocket_part_muluna] then
     data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
     data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_muluna].order
     data_recipe[rocket_part_muluna].energy_required = 4
@@ -470,8 +470,8 @@ data_recipe[advanced_metallic_asteroid_crushing_1].results = {{type = item, name
 data_recipe[metallic_asteroid_reprocessing].icons = THREE_R_I(metallic_asteroid_chunk, carbonic_asteroid_chunk, oxide_asteroid_chunk)
 data_recipe[metallic_asteroid_reprocessing].results =
 {
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, probability = 0.5}
+    {type = item, name = carbonic_asteroid_chunk, amount = 1, independent_probability = 0.5},
+    {type = item, name = oxide_asteroid_chunk, amount = 1, independent_probability = 0.5}
 }
 
 local carbonic_asteroid_reprocessing = "carbonic-asteroid-reprocessing"
@@ -509,8 +509,8 @@ data_recipe[advanced_carbonic_asteroid_crushing_1].results = {{type = item, name
 data_recipe[carbonic_asteroid_reprocessing].icons = THREE_R_I(carbonic_asteroid_chunk, metallic_asteroid_chunk, oxide_asteroid_chunk)
 data_recipe[carbonic_asteroid_reprocessing].results =
 {
-    {type = item, name = metallic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, probability = 0.5}
+    {type = item, name = metallic_asteroid_chunk, amount = 1, independent_probability = 0.5},
+    {type = item, name = oxide_asteroid_chunk, amount = 1, independent_probability = 0.5}
 }
 
 local oxide_asteroid_reprocessing = "oxide-asteroid-reprocessing"
@@ -550,8 +550,8 @@ data_recipe[advanced_oxide_asteroid_crushing_1].hidden_in_factoriopedia = true
 data_recipe[oxide_asteroid_reprocessing].icons = THREE_R_I(oxide_asteroid_chunk, carbonic_asteroid_chunk, metallic_asteroid_chunk)
 data_recipe[oxide_asteroid_reprocessing].results =
 {
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = metallic_asteroid_chunk, amount = 1, probability = 0.5}
+    {type = item, name = carbonic_asteroid_chunk, amount = 1, independent_probability = 0.5},
+    {type = item, name = metallic_asteroid_chunk, amount = 1, independent_probability = 0.5}
 }
 
 local promethium_asteroids =
@@ -753,8 +753,8 @@ end
 
 if mods[hyarion_mods] then
     local is_space_facilities = "space-facilities"
-    data_tool[space_science_pack].subgroup = is_space_facilities
-    data_tool[space_science_pack].order = a
+    data_item[space_science_pack].subgroup = is_space_facilities
+    data_item[space_science_pack].order = a
     data_recipe[space_science_pack].subgroup = is_space_facilities
     data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform, nil, number_1)
     data_recipe[space_science_pack].order = a
@@ -780,8 +780,8 @@ if mods[hyarion_mods] then
     }
     data_recipe[space_science_pack_hyarion].results[1].amount = 32
 
-    data_tool[promethium_science_pack].subgroup = is_space_facilities
-    data_tool[promethium_science_pack].order = b
+    data_item[promethium_science_pack].subgroup = is_space_facilities
+    data_item[promethium_science_pack].order = b
     data_recipe[promethium_science_pack].subgroup = is_space_facilities
     data_recipe[promethium_science_pack].icons = R_P_I(promethium_science_pack, space_platform, nil, number_1)
     data_recipe[promethium_science_pack].order = b
@@ -819,7 +819,7 @@ data_recipe[ice_melting].icons = TWO_I(ice, water)
 data_recipe[ice_melting].order = a
 data_recipe[ice_melting].results[1].amount = 15
 
-data_recipe[hydrogen_chloride_separation].category = angels_petrochem_electrolyser
+data_recipe[hydrogen_chloride_separation].categories = {angels_petrochem_electrolyser}
 data_recipe[hydrogen_chloride_separation].subgroup = is_space_processing
 data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
 data_recipe[hydrogen_chloride_separation].order = d
