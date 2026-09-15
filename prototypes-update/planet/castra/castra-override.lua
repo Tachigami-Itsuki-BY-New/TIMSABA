@@ -452,6 +452,7 @@ if mods[castra_mods] then
     table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = nitrosyl_chloride_reversed})
     table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = toluene_sulfur_solution_reversed})
 
+    data_technology[hydrogen_sulfide_mods .. _processing].icons = TIMSABA.functions.create_gas_tech_icon("SHH")
     data_technology[hydrogen_sulfide_mods .. _processing].research_trigger =
     {
         type = craft_fluid,

@@ -123,7 +123,6 @@ data_capsule[jellynut].fuel_value = 7200 .. kJ
 TIMSABA.void.void_organics(jellynut)
 TIMSABA.void.freezing_organics(jellynut)
 
-local jellynut_seed = "jellynut-seed"
 data_item[jellynut_seed].subgroup = is_jellynut
 data_item[jellynut_seed].order = b
 data_item[jellynut_seed].stack_size = 200
@@ -176,7 +175,6 @@ data_capsule[yumako].fuel_value = 1800 .. kJ
 TIMSABA.void.void_organics(yumako)
 TIMSABA.void.freezing_organics(yumako)
 
-local yumako_seed = "yumako-seed"
 data_item[yumako_seed].subgroup = is_yumako
 data_item[yumako_seed].order = b
 data_item[yumako_seed].stack_size = 200
@@ -319,12 +317,10 @@ data_recipe[coal_synthesis].order = b_a
 data_recipe[coal_synthesis].ingredients[1].amount = 4
 data_recipe[coal_synthesis].ingredients[3].amount = 15
 
-data_recipe[tree_seed].icons = TWO_I(wood, tree_seed)
-data_recipe[tree_seed].categories  = {"angels-seed-extractor"}
-if mods[lignumis_mods] then
-    table.insert(data_recipe[tree_seed].categories, hand_crafting)
-end
+data_recipe[tree_seed].localised_name = {"item-name." .. tree_seed_angels}
+data_recipe[tree_seed].categories = {"angels-seed-extractor", hand_crafting}
 data_recipe[tree_seed].subgroup = is_gleba_recipe
+data_recipe[tree_seed].icons = TWO_I(wood, tree_seed_angels)
 data_recipe[tree_seed].order = c_a
 data_recipe[tree_seed].surface_conditions = nil
 

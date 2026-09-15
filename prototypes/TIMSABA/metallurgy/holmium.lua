@@ -19,7 +19,6 @@ holmium_powder = "holmium-powder"
 holmium_fluoride_III = "holmium-fluoride-III"
 holmium_cathode = "holmium-cathode"
 holmium_oxide_III = "holmium-oxide-III"
-holmium_roll = "holmium-roll"
 TIMSABA.functions.create_items
 ({
     {
@@ -83,14 +82,6 @@ TIMSABA.functions.create_items
         subgroup = is_holmium_chemistry,
         icon = graphics_holmium .. holmium_oxide_III .. ".png",
         order = e
-    },
-    -- CASTING
-    {
-        localised_description = show_formula and {chemical_formula, "Ho"} or nil,
-        name = holmium_roll,
-        subgroup = is_holmium_casting,
-        icon = graphics_holmium .. holmium_roll .. ".png",
-        order = b
     }
 })
 
@@ -135,10 +126,6 @@ TIMSABA.barreling.add_dangerous_fluid(holmium_nitrate_III_solution)
 -- RECIPE
 holmium_fluoride_III_2 = "holmium-fluoride-III-2"
 holmium_fluoride_III_3 = "holmium-fluoride-III-3"
-holmium_roll_2 = "holmium-roll-2"
-holmium_plate_2 = "holmium-plate-2"
-molten_holmium = "molten-holmium"
-casting_holmium = "casting-holmium"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -339,79 +326,5 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = holmium_ingot, amount = 16}},
         results = {{type = fluid, name = holmium_molten, amount = 240}},
         main_product = holmium_molten
-    },
-    {
-        name = holmium_roll,
-        categories = {angels_strand_casting_4},
-        subgroup = is_holmium_casting,
-        icons = TWO_I(holmium_molten, holmium_roll, number_1),
-        order = b,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = holmium_molten, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240}
-        },
-        results =
-        {
-            {type = item, name = holmium_roll, amount = 4},
-            {type = fluid, name = steam, amount = 120} -- 120
-        },
-        main_product = holmium_roll
-    },
-    {
-        name = holmium_roll_2,
-        categories = {angels_strand_casting_4},
-        subgroup = is_holmium_casting,
-        icons = TWO_I(holmium_molten, holmium_roll, number_2),
-        order = b_a,
-        ingredients =
-        {
-            {type = fluid, name = holmium_molten, amount = 240},
-            {type = fluid, name = coolant, amount = 120}
-        },
-        results =
-        {
-            {type = item, name = holmium_roll, amount = 8},
-            {type = fluid, name = coolant_used, amount = 60, temperature = 300} -- 120
-        },
-        main_product = holmium_roll
-    },
-    {
-        name = holmium_plate_2,
-        categories = {advanced_crafting},
-        subgroup = is_holmium_casting,
-        icons = TWO_I(holmium_roll, holmium_plate),
-        order = c_a,
-        allow_productivity = true,
-        allow_quality = true,
-        ingredients = {{type = item, name = holmium_roll, amount = 1}},
-        results = {{type = item, name = holmium_plate, amount = 4}},
-        main_product = holmium_plate
-    },
-    -- VULCANUS RECIPE
-    {
-        name = molten_holmium,
-        categories = {metallurgy},
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(holmium_ingot, holmium_molten),
-        order = y,
-        allow_productivity = true,
-        energy_required = 8,
-        ingredients = {{type = item, name = holmium_ingot, amount = 16}},
-        results = {{type = fluid, name = holmium_molten, amount = 240}},
-        main_product = holmium_molten
-    },
-    {
-        name = casting_holmium,
-        categories = {metallurgy},
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(holmium_molten, holmium_plate),
-        order = y,
-        allow_productivity = true,
-        allow_quality = true,
-        ingredients = {{type = fluid, name = holmium_molten, amount = 60}},
-        results = {{type = item, name = holmium_plate, amount = 4}},
-        main_product = holmium_plate
     }
 })

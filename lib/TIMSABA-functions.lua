@@ -311,34 +311,7 @@ function TIMSABA.functions.create_gas_tech_icon(tints)
     }
 end
 
-function TIMSABA.functions.create_liquid_fluid_icon(molecule_icon, tints)
-    if molecule_icon then
-        if type(molecule_icon) ~= "table" then
-            molecule_icon =
-            {
-                icon = molecule_icon,
-                icon_size = 64
-            }
-        else
-            molecule_icon.icon = molecule_icon.icon or molecule_icon[1] or nil
-            if molecule_icon.icon then
-                molecule_icon.icon_size = molecule_icon.icon_size or molecule_icon[2] or 64
-            else
-                molecule_icon.icon = "__angelsrefininggraphics__/graphics/icons/void.png"
-                molecule_icon.icon_size = 32
-            end
-        end
-        molecule_icon.shift = molecule_icon.shift or molecule_icon[3] or {-10, -10}
-        molecule_icon.scale = molecule_icon.scale or molecule_icon[4] or 15 / molecule_icon.icon_size
-        molecule_icon.tint = molecule_icon.tint or molecule_icon[5] or nil
-        molecule_icon[1] = nil
-        molecule_icon[2] = nil
-        molecule_icon[3] = nil
-        molecule_icon[4] = nil
-        molecule_icon[5] = nil
-    else
-        molecule_icon = nil
-    end
+function TIMSABA.functions.create_fluid_tech_icon(tints)
     if tints then
         if type(tints) ~= "table" then
             local reference = get_molecule_codes(tints)
@@ -362,31 +335,26 @@ function TIMSABA.functions.create_liquid_fluid_icon(molecule_icon, tints)
             icon = "__angelsrefininggraphics__/graphics/icons/angels-liquid/liquid-item-base.png",
             icon_size = 330,
             scale = 32 / 330,
-            tint = {r = 0.25, g = 0.25, b = 0.25, a = 0.7},
-            shift = molecule_icon and {3.5, 0} or nil
+            tint = {r = 0.25, g = 0.25, b = 0.25, a = 0.7}
         },
         {
             icon = "__angelsrefininggraphics__/graphics/icons/angels-liquid/liquid-item-top.png",
             icon_size = 330,
             scale = 32 / 330,
-            tint = tints.top,
-            shift = molecule_icon and {3.5, 0} or nil
+            tint = tints.top
         },
         {
             icon = "__angelsrefininggraphics__/graphics/icons/angels-liquid/liquid-item-mid.png",
             icon_size = 330,
             scale = 32 / 330,
-            tint = tints.mid,
-            shift = molecule_icon and {3.5, 0} or nil
+            tint = tints.mid
         },
         {
             icon = "__angelsrefininggraphics__/graphics/icons/angels-liquid/liquid-item-bot.png",
             icon_size = 330,
             scale = 32 / 330,
-            tint = tints.bot,
-            shift = molecule_icon and {3.5, 0} or nil
-        },
-        molecule_icon
+            tint = tints.bot
+        }
     }
 end
 
@@ -709,7 +677,7 @@ function TIMSABA.functions.create_autoplace_control(name, order)
     data:extend
     ({
         {
-            localised_name = {"entity-name." .. name},
+            localised_name = {"", "[item=" .. name .. "] ", {"entity-name." .. name .. ""}},
             type = autoplace_control,
             name = name,
             order = order or name,
@@ -970,7 +938,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
         car, locomotive, wagon_cargo, wagon_fluid, unit,
         item_module, beacon,
         assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator, fusion_reactor, generator,
-        inserter, heat_pipe, container, logistic_container, construction_robot, pipe_to_ground,
+        inserter, heat_pipe, container, logistic_container, logistic_robot, construction_robot, roboport, pipe_to_ground,
         repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
         projectile,
     }

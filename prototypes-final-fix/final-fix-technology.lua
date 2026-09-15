@@ -82,8 +82,6 @@ data_technology[tech_automation_1].effects = {{type = unlock_recipe, recipe = as
 
 data_technology[logistic_science_pack].unit.time = 16
 
-data_technology[tech_holmium_smelting_1].research_trigger.count = 4096
-
 if data_technology[tech_logistics_0] then
     data_technology[tech_logistics_0].research_trigger.count = 32
 end

@@ -6,9 +6,9 @@ local is_antimony_chemistry = "is-antimony-chemistry"
 local is_antimony_casting = "is-antimony-casting"
 TIMSABA.functions.create_subgroups(ig_aquilo,
 {
-    {name = is_antimony,           order = d},
-    {name = is_antimony_chemistry, order = d_a},
-    {name = is_antimony_casting,   order = d_b}
+    {name = is_antimony,           order = e},
+    {name = is_antimony_chemistry, order = e_a},
+    {name = is_antimony_casting,   order = e_b}
 })
 
 -- ITEM

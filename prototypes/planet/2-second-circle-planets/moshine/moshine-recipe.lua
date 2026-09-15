@@ -460,4 +460,42 @@ if mods[moshine_mods] then
             main_product = promethium_ore
         }
     })
+
+    -- DATA
+    cosmic_data_outsignal_creation = cosmic_data_outsignal .. "-creation"
+    local cosmic_data_outsignal_recipe = util.table.deepcopy(data_recipe[cosmic_data_outsignal_creation])
+    cosmic_data_outsignal_recipe.name = cosmic_data_outsignal
+    cosmic_data_outsignal_recipe.subgroup = is_moshine_datacell
+    cosmic_data_outsignal_recipe.order = h
+    cosmic_data_outsignal_recipe.energy_required = 8
+    cosmic_data_outsignal_recipe.ingredients =
+    {
+        {type = fluid, name = raw_data, amount = 1920},
+        {type = fluid, name = solved_equation_data, amount = 120}
+    }
+    cosmic_data_outsignal_recipe.results[1].amount = 15
+
+    cosmic_data_creation = cosmic_data .. "-creation"
+    local cosmic_data_recipe = util.table.deepcopy(data_recipe[cosmic_data_creation])
+    cosmic_data_recipe.name = cosmic_data
+    cosmic_data_recipe.subgroup = is_moshine_datacell
+    cosmic_data_recipe.order = j
+    cosmic_data_recipe.energy_required = 128
+    cosmic_data_recipe.ingredients[1].amount = 960
+    cosmic_data_recipe.results = {{type = fluid, name = cosmic_data, amount_min = 960, amount_max = 15360, independent_probability = 0.5}}
+
+    data:extend({cosmic_data_outsignal_recipe, cosmic_data_recipe})
+
+    if mods[panglia_mods] then
+        timewarp_data_making = "panglia_" .. timewarp_data .. "_making"
+        local timewarp_data_recipe = util.table.deepcopy(data_recipe[timewarp_data_making])
+        timewarp_data_recipe.name = timewarp_data
+        timewarp_data_recipe.subgroup = is_moshine_datacell
+        timewarp_data_recipe.order = l
+        timewarp_data_recipe.energy_required = 128
+        timewarp_data_recipe.ingredients[1].amount = 120
+        timewarp_data_recipe.results = {{type = fluid, name = timewarp_data, amount_min = 0, amount_max = 120}}
+
+        data:extend({timewarp_data_recipe})
+    end
 end

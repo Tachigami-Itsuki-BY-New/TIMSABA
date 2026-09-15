@@ -362,6 +362,7 @@ data_technology[heating_tower].effects = {{type = unlock_recipe, recipe = heatin
 
 local tech_lithium_processing = "lithium-processing"
 data_technology[tech_lithium_processing].icons = TIMSABA.functions.create_gas_tech_icon("LiLiLi")
+data_technology[tech_lithium_processing].prerequisites = {planet_discovery_aquilo}
 data_technology[tech_lithium_processing].effects =
 {
     {type = unlock_recipe, recipe = lithium},

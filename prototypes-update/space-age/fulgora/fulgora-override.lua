@@ -326,7 +326,9 @@ data_technology[planet_discovery_fulgora].unit.ingredients =
 table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = construction_scrap_recycling})
 table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = machinery_scrap_recycling})
 
-data_technology[electromagnetic_science_pack].prerequisites = {tech_holmium_smelting_1}
+data_technology[electromagnetic_plant].prerequisites = {tech_holmium_smelting_1}
+
+data_technology[electromagnetic_science_pack].prerequisites = {electromagnetic_plant}
 data_technology[electromagnetic_science_pack].research_trigger =
 {
     type = craft_item,
@@ -336,11 +338,11 @@ data_technology[electromagnetic_science_pack].research_trigger =
 
 data_technology[tech_holmium_processing].icon = "__space-age__/graphics/icons/holmium-plate.png"
 data_technology[tech_holmium_processing].icon_size = 64
-data_technology[tech_holmium_processing].prerequisites = {tech_holmium_smelting_2}
+data_technology[tech_holmium_processing].prerequisites = {metallurgic_science_pack, electromagnetic_science_pack}
 data_technology[tech_holmium_processing].effects =
 {
-    {type = unlock_recipe, recipe = holmium_roll},
-    {type = unlock_recipe, recipe = holmium_plate_2}
+    {type = unlock_recipe, recipe = molten_holmium},
+    {type = unlock_recipe, recipe = casting_holmium}
 }
 data_technology[tech_holmium_processing].unit =
 {
@@ -353,6 +355,7 @@ data_technology[tech_holmium_processing].unit =
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
         {electromagnetic_science_pack, 1}
     },
     time = 30

@@ -82,9 +82,9 @@ TIMSABA.functions.create_subgroups(ig_smelting,
     {name = is_titanium_chemistry,        order = l_a},
     {name = is_gold_chemistry,            order = m_a},
     {name = is_cobalt_chemistry,          order = n_a},
-    {name = is_chromium_chemistry,        order = o_a},
-    {name = is_tungsten_chemistry,        order = p_a},
-    {name = is_platinum_chemistry,        order = q_a},
+    {name = is_chromium_chemistry,        order = q_a},
+    {name = is_tungsten_chemistry,        order = r_a},
+    {name = is_platinum_chemistry,        order = s_a},
     {name = is_electric_blast_furnace,    order = z_f}
 })
 
@@ -102,12 +102,12 @@ is_alloys_casting_6 = "is-alloys-casting-6"
 is_sintering_oven = "angels-sintering-oven"
 TIMSABA.functions.create_subgroups(ig_casting,
 {
-    {name = is_bricks_casting,   order = w_a},
-    {name = is_alloys_casting_2, order = y_a},
-    {name = is_alloys_casting_3, order = y_b},
-    {name = is_alloys_casting_4, order = y_c},
-    {name = is_alloys_casting_5, order = y_d},
-    {name = is_alloys_casting_6, order = y_e}
+    {name = is_bricks_casting,   order = u},
+    {name = is_alloys_casting_2, order = v_b},
+    {name = is_alloys_casting_3, order = v_c},
+    {name = is_alloys_casting_4, order = v_d},
+    {name = is_alloys_casting_5, order = v_e},
+    {name = is_alloys_casting_6, order = v_f}
 })
 
 -- ANGELS WATER TREATMENT

@@ -97,7 +97,7 @@ data:extend
         name = tech_advanced_full_asteroid_processing,
         icon = data_technology[tech_advanced_asteroid_processing].icon,
         icon_size = 256,
-        prerequisites = {tech_full_asteroid_processing, promethium_science_pack},
+        prerequisites = {promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},

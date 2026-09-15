@@ -303,17 +303,20 @@ data_resource[fissure].minable.mining_time = 2
 
 local sulfuric_acid_geyser = "sulfuric-acid-geyser"
 data_resource[sulfuric_acid_geyser].order = d
+data_resource[sulfuric_acid_geyser].minable.results[1].amount = 30
 data_resource[sulfuric_acid_geyser].minable.results[1].amount_min = 30
 data_resource[sulfuric_acid_geyser].minable.results[1].amount_max = 30
 
 local thermal_geyser = "lithium-brine"
 data_resource[thermal_geyser].order = e
 data_resource[thermal_geyser].localised_name = {"entity-name.thermal-water-geyser"}
+data_resource[thermal_geyser].minable.results[1].amount = 30
 data_resource[thermal_geyser].minable.results[1].amount_min = 30
 data_resource[thermal_geyser].minable.results[1].amount_max = 30
 
 local fluorine_vent = "fluorine-vent"
 data_resource[fluorine_vent].order = f
+data_resource[fluorine_vent].minable.results[1].amount = 30
 data_resource[fluorine_vent].minable.results[1].amount_min = 30
 data_resource[fluorine_vent].minable.results[1].amount_max = 30
 
@@ -514,6 +517,10 @@ if mods[hyarion_mods] then
         {type = item, name = carbon_angels, amount_min = 8, amount_max = 16},
         {type = item, name = metallic_ore, amount_min = 0, amount_max = 4}
     }
+
+    data_resource["emerald-geode"].minable.mining_time = 8
+    data_resource["ruby-geode"].minable.mining_time = 8
+    data_resource["sapphire-geode"].minable.mining_time = 8
 end
 
 -- TELLUS
@@ -643,6 +650,7 @@ if mods[castra_mods] then
     data_resource[uranium_ore] = nil
 
     local hydrogen_sulfide_vent = "hydrogen-sulfide-vent"
+    data_resource[hydrogen_sulfide_vent].minable.mining_time = 1
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_min = 30
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_max = 30
 

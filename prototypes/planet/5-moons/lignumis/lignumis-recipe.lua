@@ -19,12 +19,12 @@ if mods[lignumis_mods] then
     })
 
     -- SORTING ORE --> STONE
-    _sortiong_stone = "-sortiong-stone"
+    _sorting_stone = "-sorting-stone"
     local function sortiong_ore_recipe_true(ingredient, order)
         TIMSABA.functions.create_recipes
         ({
             {
-                name = ingredient .. _sortiong_stone,
+                name = ingredient .. _sorting_stone,
                 categories = {hand_crafting, angels_ore_sorting_1},
                 subgroup = is_sortiong_ore,
                 icons = RECYCLING_I(recycling_png, ingredient),
@@ -46,7 +46,8 @@ if mods[lignumis_mods] then
         TIMSABA.functions.create_recipes
         ({
             {
-                name = ingredient .. _sortiong_stone,
+                localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. ingredient}},
+                name = ingredient .. _sorting_stone,
                 categories = {angels_ore_sorting_1},
                 subgroup = is_sortiong_ore,
                 icons = RECYCLING_I(recycling_png, ingredient),
@@ -64,8 +65,8 @@ if mods[lignumis_mods] then
     sortiong_ore_recipe_false(ore_crotinnium, d)
     sortiong_ore_recipe_false(ore_rubyte, e)
     sortiong_ore_recipe_false(ore_bobmonium, f)
-    --sortiong_ore_recipe_false(, g)
-    --sortiong_ore_recipe_false(, h)
+    --sortiong_ore_recipe_false(ore_senaite, g)
+    --sortiong_ore_recipe_false(ore_franckeite, h)
     sortiong_ore_recipe_false(powellite_ore, i)
     sortiong_ore_recipe_false(molybdenite_ore, j)
     sortiong_ore_recipe_false(wolframite_ore, k)

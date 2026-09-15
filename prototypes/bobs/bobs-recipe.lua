@@ -184,7 +184,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = advanced_deuterium_fuel_cell_reprocessing,
-        categories = {angels_advanced_chemistry, cryogenics},
+        categories = {angels_advanced_chemistry},
         subgroup = is_deuterium_cell,
         icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = b_b,
@@ -224,7 +224,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tritium_fuel_cell_reprocessing,
-        categories = {angels_advanced_chemistry, cryogenics},
+        categories = {chemistry},
         subgroup = is_tritium_cell,
         icons = TWO_D_I(depleted_tritium_fuel_cell, nil, muon_fusion_catalyst, tritium_gas),
         order = b_a,
@@ -241,7 +241,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = advanced_tritium_fuel_cell_reprocessing,
-        categories = {angels_advanced_chemistry, cryogenics},
+        categories = {angels_advanced_chemistry},
         subgroup = is_tritium_cell,
         icons = THREE_D_I(depleted_tritium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = b_b,

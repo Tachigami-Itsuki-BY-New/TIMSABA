@@ -1478,13 +1478,17 @@ data_recipe[cobalt_hydroxide_II].results =
 data_recipe[cobalt_hydroxide_II].main_product = cobalt_hydroxide_II
 
 -- URANIUM
-
+data_item[uranium_ore].localised_description = show_formula and {chemical_formula, "U"} or nil
+data_item[uranium_ore].subgroup = is_uranium
+data_item[uranium_ore].order = a
 
 -- THORIUM
-
+data_item[thorium_ore_bob].localised_description = show_formula and {chemical_formula, "Th"} or nil
+data_item[thorium_ore_bob].subgroup = is_thorium
+data_item[thorium_ore_bob].order = a
 
 -- CHROMIUM
-data_item_subgroup["angels-chrome"].order = o
+data_item_subgroup["angels-chrome"].order = q
 
 data_item[chromium_ore_angels].localised_name = {"item-name.chromium-ore"}
 data_item[chromium_ore_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
@@ -1625,7 +1629,7 @@ data_recipe[chromium_hydroxide_III].results =
 data_recipe[chromium_hydroxide_III].main_product = chromium_hydroxide_III
 
 -- TUNGSTEN
-data_item_subgroup[is_tungsten].order = p
+data_item_subgroup[is_tungsten].order = r
 
 data_item[tungsten_ore_bob].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_ore_bob].order = a
@@ -1766,7 +1770,7 @@ data_recipe[ammonium_tungstate_solution].results = {{type = fluid, name = ammoni
 data_recipe[ammonium_tungstate_solution].main_product = ammonium_tungstate_solution
 
 -- PLATINUM
-data_item_subgroup["angels-platinum"].order = q
+data_item_subgroup["angels-platinum"].order = s
 
 data_item[platinum_ore_angels].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_ore_angels].order = a
@@ -1848,7 +1852,7 @@ data_recipe[lithium_bob].results =
 data_recipe[lithium_bob].main_product = lithium_bob
 
 -- GLASS
-data_item_subgroup["angels-glass"].order = x
+data_item_subgroup["angels-glass"].order = t
 
 data_recipe[glass_mixture].icons = TWO_I(silicon_oxide_IV, glass_mixture, number_1)
 data_recipe[glass_mixture].energy_required = 8 -- 2 = 1
@@ -1884,7 +1888,7 @@ data_recipe[glass_mixture_4].ingredients =
 data_recipe[glass_mixture_4].results[1].amount = 16
 
 -- STONE
-data_item_subgroup["angels-stone"].order = y
+data_item_subgroup["angels-stone"].order = u
 
 data_item[cement].order = a
 data_recipe[cement].icons = THREE_D_I(lime_angels, silicon_oxide_IV, slag_angels, cement, nil, nil, number_1)

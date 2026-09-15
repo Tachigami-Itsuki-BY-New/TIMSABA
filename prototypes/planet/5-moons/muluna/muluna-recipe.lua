@@ -315,11 +315,11 @@ if mods[muluna_mods] then
             name = anorthite_crushing_2,
             categories = {crushing},
             subgroup = is_space_environment_7,
-            icons = TWO_I(anorthite_chunk, lime_angels),
+            icons = TWO_I(anorthite_asteroid_chunk, lime_angels),
             order = e_b,
             allow_productivity = true,
             allow_quality = true,
-            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            ingredients = {{type = item, name = anorthite_asteroid_chunk, amount = 1}},
             results = {{type = item, name = lime_angels, amount = 8}},
             main_product = lime_angels
         },
@@ -327,11 +327,11 @@ if mods[muluna_mods] then
             name = anorthite_crushing_3,
             categories = {crushing},
             subgroup = is_space_environment_7,
-            icons = TWO_I(anorthite_chunk, silicon_ore_bob),
+            icons = TWO_I(anorthite_asteroid_chunk, silicon_ore_bob),
             order = e_c,
             allow_productivity = true,
             allow_quality = true,
-            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            ingredients = {{type = item, name = anorthite_asteroid_chunk, amount = 1}},
             results = {{type = item, name = silicon_ore_bob, amount = 8}},
             main_product = silicon_ore_bob
         }

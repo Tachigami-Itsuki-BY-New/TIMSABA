@@ -105,6 +105,7 @@ data_loader_1x1 = data.raw["loader-1x1"]
 data_stream = data.raw["stream"]
 data_turret = data.raw["turret"]
 data_optimized_particle = data.raw["optimized-particle"]
+data_cargo_pod = data.raw["cargo-pod"]
 
 -- GLOBAL NAME
 item = "item"
@@ -126,7 +127,9 @@ pump = "pump"
 heat_pipe = "heat-pipe"
 container = "container"
 logistic_container = "logistic-container"
+logistic_robot = "logistic-robot"
 construction_robot = "construction-robot"
+roboport = "roboport"
 boiler = "boiler"
 generator = "generator"
 burner_generator = "burner-generator"
@@ -299,6 +302,7 @@ angels_bio_processing_1 = "angels-bio-processing"
 angels_bio_processing_2 = "angels-bio-processing-2"
 angels_bio_processing_3 = "angels-bio-processing-3"
 angels_bio_processing_4 = "angels-bio-processing-4"
+moshine_data_processing = "data-processing"
 arig_water_production = "water-production"
 vesta_electrolyser = "electrolysis"
 vesta_magnetics = "magnetics"

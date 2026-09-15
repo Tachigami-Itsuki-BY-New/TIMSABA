@@ -904,7 +904,7 @@ if mods[pelagos_mods] then
     }
 
     data_technology[ethanol_mods].iocn = nil
-    data_technology[ethanol_mods].icons = TIMSABA.functions.create_liquid_fluid_icon(nil, "CHO")
+    data_technology[ethanol_mods].icons = TIMSABA.functions.create_fluid_tech_icon("CHO")
 
     data_technology["Pirate_Ship"].unit.ingredients =
     {

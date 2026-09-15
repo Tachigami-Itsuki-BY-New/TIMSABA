@@ -256,6 +256,11 @@ data_recipe[gaseous_puffer_egg].ingredients[3].amount = 30
 data_recipe[gaseous_puffer_egg].ingredients[4].amount = 30
 data_recipe[gaseous_puffer_egg].results[1].reset_freshness_on_craft = true
 data_recipe[gaseous_puffer_egg].results[2].amount = 30
+data_recipe[gaseous_puffer_egg].results[2].reset_freshness_on_craft = true
+data_recipe[gaseous_puffer_egg].results[3].reset_freshness_on_craft = true
+data_recipe[gaseous_puffer_egg].results[4].reset_freshness_on_craft = true
+data_recipe[gaseous_puffer_egg].results[5].reset_freshness_on_craft = true
+data_recipe[gaseous_puffer_egg].results[6].reset_freshness_on_craft = true
 
 data_item[rancid_puffer_egg].spoil_ticks = 3 * hour
 data_item[rancid_puffer_egg].spoil_result = spoilage
@@ -266,6 +271,11 @@ data_recipe[rancid_puffer_egg].ingredients[3].amount = 30
 data_recipe[rancid_puffer_egg].ingredients[4].amount = 30
 data_recipe[rancid_puffer_egg].results[1].reset_freshness_on_craft = true
 data_recipe[rancid_puffer_egg].results[2].amount = 30
+data_recipe[rancid_puffer_egg].results[2].reset_freshness_on_craft = true
+data_recipe[rancid_puffer_egg].results[3].reset_freshness_on_craft = true
+data_recipe[rancid_puffer_egg].results[4].reset_freshness_on_craft = true
+data_recipe[rancid_puffer_egg].results[5].reset_freshness_on_craft = true
+data_recipe[rancid_puffer_egg].results[6].reset_freshness_on_craft = true
 
 data_item[blazing_puffer_egg].spoil_ticks = 3 * hour
 data_item[blazing_puffer_egg].spoil_result = spoilage
@@ -276,6 +286,11 @@ data_recipe[blazing_puffer_egg].ingredients[3].amount = 30
 data_recipe[blazing_puffer_egg].ingredients[4].amount = 30
 data_recipe[blazing_puffer_egg].results[1].reset_freshness_on_craft = true
 data_recipe[blazing_puffer_egg].results[2].amount = 30
+data_recipe[blazing_puffer_egg].results[2].reset_freshness_on_craft = true
+data_recipe[blazing_puffer_egg].results[3].reset_freshness_on_craft = true
+data_recipe[blazing_puffer_egg].results[4].reset_freshness_on_craft = true
+data_recipe[blazing_puffer_egg].results[5].reset_freshness_on_craft = true
+data_recipe[blazing_puffer_egg].results[6].reset_freshness_on_craft = true
 
 data_item[acidic_puffer_egg].spoil_ticks = 3 * hour
 data_item[acidic_puffer_egg].spoil_result = spoilage
@@ -286,6 +301,11 @@ data_recipe[acidic_puffer_egg].ingredients[3].amount = 30
 data_recipe[acidic_puffer_egg].ingredients[4].amount = 30
 data_recipe[acidic_puffer_egg].results[1].reset_freshness_on_craft = true
 data_recipe[acidic_puffer_egg].results[2].amount = 30
+data_recipe[acidic_puffer_egg].results[2].reset_freshness_on_craft = true
+data_recipe[acidic_puffer_egg].results[3].reset_freshness_on_craft = true
+data_recipe[acidic_puffer_egg].results[4].reset_freshness_on_craft = true
+data_recipe[acidic_puffer_egg].results[5].reset_freshness_on_craft = true
+data_recipe[acidic_puffer_egg].results[6].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer_egg].spoil_ticks = 3 * hour
 data_item[corrosive_puffer_egg].spoil_result = spoilage
@@ -296,6 +316,11 @@ data_recipe[corrosive_puffer_egg].ingredients[3].amount = 30
 data_recipe[corrosive_puffer_egg].ingredients[4].amount = 30
 data_recipe[corrosive_puffer_egg].results[1].reset_freshness_on_craft = true
 data_recipe[corrosive_puffer_egg].results[2].amount = 30
+data_recipe[corrosive_puffer_egg].results[2].reset_freshness_on_craft = true
+data_recipe[corrosive_puffer_egg].results[3].reset_freshness_on_craft = true
+data_recipe[corrosive_puffer_egg].results[4].reset_freshness_on_craft = true
+data_recipe[corrosive_puffer_egg].results[5].reset_freshness_on_craft = true
+data_recipe[corrosive_puffer_egg].results[6].reset_freshness_on_craft = true
 
 -- PUFFER
 local is_puffer_1 = "angels-bio-puffer-1"
@@ -306,40 +331,40 @@ data_item[gaseous_puffer].spoil_result = spoilage
 TIMSABA.void.freezing_organics(gaseous_puffer)
 data_recipe[gaseous_puffer].icons = THREE_D_I(gaseous_puffer_egg, nil, nil, puffer_egg_shell, gaseous_puffer, rancid_puffer)
 data_recipe[gaseous_puffer].energy_required = 8
-data_recipe[gaseous_puffer].results[1].reset_freshness_on_craft = true
 data_recipe[gaseous_puffer].results[2].reset_freshness_on_craft = true
+data_recipe[gaseous_puffer].results[3].reset_freshness_on_craft = true
 
 data_item[rancid_puffer].spoil_ticks = 6 * hour
 data_item[rancid_puffer].spoil_result = spoilage
 TIMSABA.void.freezing_organics(rancid_puffer)
 data_recipe[rancid_puffer].icons = THREE_D_I(rancid_puffer_egg, nil, nil, puffer_egg_shell, rancid_puffer, gaseous_puffer)
 data_recipe[rancid_puffer].energy_required = 8
-data_recipe[rancid_puffer].results[1].reset_freshness_on_craft = true
 data_recipe[rancid_puffer].results[2].reset_freshness_on_craft = true
+data_recipe[rancid_puffer].results[3].reset_freshness_on_craft = true
 
 data_item[blazing_puffer].spoil_ticks = 6 * hour
 data_item[blazing_puffer].spoil_result = spoilage
 TIMSABA.void.freezing_organics(blazing_puffer)
 data_recipe[blazing_puffer].icons = THREE_D_I(blazing_puffer_egg, nil, nil, puffer_egg_shell, blazing_puffer, gaseous_puffer)
 data_recipe[blazing_puffer].energy_required = 8
-data_recipe[blazing_puffer].results[1].reset_freshness_on_craft = true
 data_recipe[blazing_puffer].results[2].reset_freshness_on_craft = true
+data_recipe[blazing_puffer].results[3].reset_freshness_on_craft = true
 
 data_item[acidic_puffer].spoil_ticks = 6 * hour
 data_item[acidic_puffer].spoil_result = spoilage
 TIMSABA.void.freezing_organics(acidic_puffer)
 data_recipe[acidic_puffer].icons = THREE_D_I(acidic_puffer_egg, nil, nil, puffer_egg_shell, acidic_puffer, gaseous_puffer)
 data_recipe[acidic_puffer].energy_required = 8
-data_recipe[acidic_puffer].results[1].reset_freshness_on_craft = true
 data_recipe[acidic_puffer].results[2].reset_freshness_on_craft = true
+data_recipe[acidic_puffer].results[3].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer].spoil_ticks = 6 * hour
 data_item[corrosive_puffer].spoil_result = spoilage
 TIMSABA.void.freezing_organics(corrosive_puffer)
 data_recipe[corrosive_puffer].icons = THREE_D_I(corrosive_puffer_egg, nil, nil, puffer_egg_shell, corrosive_puffer, gaseous_puffer)
 data_recipe[corrosive_puffer].energy_required = 8
-data_recipe[corrosive_puffer].results[1].reset_freshness_on_craft = true
 data_recipe[corrosive_puffer].results[2].reset_freshness_on_craft = true
+data_recipe[corrosive_puffer].results[3].reset_freshness_on_craft = true
 
 data_item[puffer_egg_shell].subgroup = is_puffer_1
 data_item[puffer_egg_shell].order = y
@@ -650,6 +675,7 @@ data_recipe[biter_small].order = b
 data_recipe[biter_small].energy_required = 64
 data_recipe[biter_small].ingredients[3].amount = 15
 data_recipe[biter_small].results[1].reset_freshness_on_craft = true
+data_recipe[biter_small].results[2].reset_freshness_on_craft = true
 
 local biter_small_keeping = "angels-biter-small-keeping"
 data_recipe[biter_small_keeping].icons = TWO_I(biter_small, crystal_splinter)
@@ -657,6 +683,7 @@ data_recipe[biter_small_keeping].order = b_a
 data_recipe[biter_small_keeping].energy_required = 32
 data_recipe[biter_small_keeping].ingredients[3].amount = 30
 data_recipe[biter_small_keeping].results[1].reset_freshness_on_craft = true
+data_recipe[biter_small_keeping].results[2].reset_freshness_on_craft = true
 
 data_item[biter_queen_small].order = c
 data_item[biter_queen_small].spoil_ticks = 3 * hour
@@ -668,6 +695,9 @@ data_recipe[biter_small_breeding].order = c_a
 data_recipe[biter_small_breeding].energy_required = 64
 data_recipe[biter_small_breeding].ingredients[3].amount = 30
 data_recipe[biter_small_breeding].results[1].reset_freshness_on_craft = true
+data_recipe[biter_small_breeding].results[2].reset_freshness_on_craft = true
+data_recipe[biter_small_breeding].results[3].reset_freshness_on_craft = true
+data_recipe[biter_small_breeding].results[4].reset_freshness_on_craft = true
 
 local biter_small_butchering = "angels-biter-small-butchering"
 data_recipe[biter_small_butchering].subgroup = is_biter_1
@@ -758,6 +788,7 @@ data_recipe[biter_medium].order = b
 data_recipe[biter_medium].energy_required = 64
 data_recipe[biter_medium].ingredients[3].amount = 30
 data_recipe[biter_medium].results[1].reset_freshness_on_craft = true
+data_recipe[biter_medium].results[2].reset_freshness_on_craft = true
 
 local biter_medium_keeping = "angels-biter-medium-keeping"
 data_recipe[biter_medium_keeping].subgroup = is_biter_2
@@ -766,6 +797,7 @@ data_recipe[biter_medium_keeping].order = b_a
 data_recipe[biter_medium_keeping].energy_required = 32
 data_recipe[biter_medium_keeping].ingredients[3].amount = 60
 data_recipe[biter_medium_keeping].results[1].reset_freshness_on_craft = true
+data_recipe[biter_medium_keeping].results[2].reset_freshness_on_craft = true
 
 data_item[biter_queen_medium].subgroup = is_biter_2
 data_item[biter_queen_medium].order = c
@@ -779,6 +811,9 @@ data_recipe[biter_medium_breeding].order = c_a
 data_recipe[biter_medium_breeding].energy_required = 64
 data_recipe[biter_medium_breeding].ingredients[3].amount = 60
 data_recipe[biter_medium_breeding].results[1].reset_freshness_on_craft = true
+data_recipe[biter_medium_breeding].results[2].reset_freshness_on_craft = true
+data_recipe[biter_medium_breeding].results[3].reset_freshness_on_craft = true
+data_recipe[biter_medium_breeding].results[4].reset_freshness_on_craft = true
 
 local biter_medium_butchering = "angels-biter-medium-butchering"
 data_recipe[biter_medium_butchering].subgroup = is_biter_2
@@ -869,6 +904,7 @@ data_recipe[biter_big].order = b
 data_recipe[biter_big].energy_required = 64
 data_recipe[biter_big].ingredients[3].amount = 60
 data_recipe[biter_big].results[1].reset_freshness_on_craft = true
+data_recipe[biter_big].results[2].reset_freshness_on_craft = true
 
 local biter_big_keeping = "angels-biter-big-keeping"
 data_recipe[biter_big_keeping].subgroup = is_biter_3
@@ -877,6 +913,7 @@ data_recipe[biter_big_keeping].order = b_a
 data_recipe[biter_big_keeping].energy_required = 32
 data_recipe[biter_big_keeping].ingredients[3].amount = 120
 data_recipe[biter_big_keeping].results[1].reset_freshness_on_craft = true
+data_recipe[biter_big_keeping].results[2].reset_freshness_on_craft = true
 
 data_item[biter_queen_big].subgroup = is_biter_3
 data_item[biter_queen_big].order = c
@@ -890,6 +927,9 @@ data_recipe[biter_big_breeding].order = c_a
 data_recipe[biter_big_breeding].energy_required = 64
 data_recipe[biter_big_breeding].ingredients[3].amount = 120
 data_recipe[biter_big_breeding].results[1].reset_freshness_on_craft = true
+data_recipe[biter_big_breeding].results[2].reset_freshness_on_craft = true
+data_recipe[biter_big_breeding].results[3].reset_freshness_on_craft = true
+data_recipe[biter_big_breeding].results[4].reset_freshness_on_craft = true
 
 local biter_big_butchering = "angels-biter-big-butchering"
 data_recipe[biter_big_butchering].subgroup = is_biter_3

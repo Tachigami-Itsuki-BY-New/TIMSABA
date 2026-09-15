@@ -4,10 +4,10 @@ local graphics_silicon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/"
 -- GROUPS
 is_phosphorus = "is-phosphorus"
 is_phosphorus_fluid = "is-phosphorus-fluid"
-TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
+TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
-    {name = is_phosphorus, order = w}, -- l
-    {name = is_phosphorus_fluid, order = w_a} -- l_a
+    {name = is_phosphorus, order = l},
+    {name = is_phosphorus_fluid, order = l_a}
 })
 
 -- ITEM

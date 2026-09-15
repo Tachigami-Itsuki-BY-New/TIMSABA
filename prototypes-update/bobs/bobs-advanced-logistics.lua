@@ -260,15 +260,36 @@ artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel,           
 artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel,                  rhenium_bearing,         advanced_processing_unit, artillery_wagon_1,  molybdenum_rhenium_plate)
 artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing,    advanced_processing_unit, artillery_wagon_2,  niobium_tungsten_molybdenum_plate)
 
+local lignumobile = "lignumobile"
+if mods[lignumis_mods] then
+    data_item_entity[lignumobile].weight = 1000000
+    data_recipe[lignumobile].energy_required = 16
+    data_recipe[lignumobile].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 16},
+        {type = item, name = iron_bearing, amount = 8},
+        {type = item, name = basic_circuit_board, amount = 8},
+        {type = item, name = lumber,  amount = 8},
+        {type = item, name = iron_plate, amount = 16}
+    }
+
+    bobmods.lib.recipe.update_recycling_recipe({lignumobile})
+end
+
 local car = "car"
 data_item_entity[car].weight = 1000000
-data_recipe[car].energy_required = 4
+data_recipe[car].energy_required = 16
 data_recipe[car].ingredients =
 {
-    {type = item, name = engine_unit, amount = 8},
-    {type = item, name = iron_plate,  amount = 16},
-    {type = item, name = steel_plate, amount = 4}
+    {type = item, name = steel_gear_wheel, amount = 16},
+    {type = item, name = steel_bearing, amount = 8},
+    {type = item, name = electronic_circuit, amount = 8},
+    {type = item, name = engine_unit,  amount = 8},
+    {type = item, name = steel_plate, amount = 16}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[car].ingredients, {type = item, name = lignumobile, amount = 1})
+end
 data_car[car].consumption = 225 .. kW
 data_car[car].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 data_car[car].equipment_grid = small_equipment_grid
@@ -312,8 +333,8 @@ local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
         {type = item, name = plate,      amount = 64}
     }
 end
-tank_recipe(tank_1, brass_gear_wheel,    brass_bearing,    advanced_circuit,         car,    invar_plate_bob)
-tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit,          tank_1, titanium_plate_bob)
+tank_recipe(tank_1,           brass_gear_wheel,         brass_bearing,             advanced_circuit,    car, invar_plate_bob)
+tank_recipe(tank_2,        titanium_gear_wheel,         titanium_bearing,           processing_unit, tank_1, titanium_plate_bob)
 tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
 
 data_item_subgroup["bob-logistic-robots"].order = f_b

@@ -3,10 +3,10 @@ local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
 -- GROUPS
 is_boron = "is-boron"
 is_boron_fluid = "is-boron-fluid"
-TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
+TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
-    {name = is_boron, order = u}, -- j
-    {name = is_boron_fluid, order = u_a} -- j_a
+    {name = is_boron, order = j},
+    {name = is_boron_fluid, order = j_a}
 })
 
 -- ITEM

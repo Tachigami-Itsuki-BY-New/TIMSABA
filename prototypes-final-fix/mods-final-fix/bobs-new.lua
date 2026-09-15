@@ -1,3 +1,4 @@
+data_item[wolframite_ore].icons = nil
 data_item[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_item[wolframite_ore].icon_size = 64
 data_item[wolframite_ore].pictures =
@@ -7,6 +8,7 @@ data_item[wolframite_ore].pictures =
     {size = 64, filename = "__space-age__/graphics/icons/tungsten-ore-2.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__space-age__/graphics/icons/tungsten-ore-3.png", scale = 0.5, mipmap_count = 4}
 }
+data_resource[wolframite_ore].icons = nil
 data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
@@ -14,7 +16,7 @@ data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/en
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
 
 if mods[lignumis_mods] then
-    data_recipe[wolframite_ore .. _sortiong_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
+    data_recipe[wolframite_ore .. _sorting_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
 end
 
 data_item[cobalt_steel_gear_wheel].hidden = false

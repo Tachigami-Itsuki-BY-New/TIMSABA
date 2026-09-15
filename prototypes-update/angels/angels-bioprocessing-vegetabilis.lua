@@ -511,8 +511,8 @@ data_recipe[sorting_zelosquash].subgroup = is_desert_vegetables_processing
 data_recipe[sorting_zelosquash].icons = TWO_D_I(zelosquash, nil, cellulose_fiber_angels, fruits)
 data_recipe[sorting_zelosquash].ingredients[1].amount = 16
 data_recipe[sorting_zelosquash].results[1].amount = 8
+data_recipe[sorting_zelosquash].results[1].reset_freshness_on_craft = true
 data_recipe[sorting_zelosquash].results[2].amount = 16
-data_recipe[sorting_zelosquash].results[2].reset_freshness_on_craft = true
 
 local sorting_arumbiphila = "angels-sorting-desert-5"
 data_recipe[sorting_arumbiphila].subgroup = is_desert_vegetables_processing

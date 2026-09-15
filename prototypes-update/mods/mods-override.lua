@@ -1,6 +1,6 @@
 if mods[vulcanus_sulfuric_bacteria_mods] then
     is_vulcanus_sulfuric = "vulcanus-sulfuric"
-    TIMSABA.functions.create_subgroups("vulcanus", {{name = is_vulcanus_sulfuric, order = e_a}})
+    TIMSABA.functions.create_subgroups(ig_vulcanus, {{name = is_vulcanus_sulfuric, order = e_a}})
 
     data_item[sulfuric_bacteria].subgroup = is_vulcanus_sulfuric
     data_item[sulfuric_bacteria].order = a
@@ -16,6 +16,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_recipe[sulfuric_bacteria_pruning].ingredients[1].amount = 4
     data_recipe[sulfuric_bacteria_pruning].ingredients[2].amount = 120
     data_recipe[sulfuric_bacteria_pruning].results[1].amount = 4
+    data_recipe[sulfuric_bacteria_pruning].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     local sulfuric_bacteria_filtering = "sulfuric-bacteria-filtering"
     data_recipe[sulfuric_bacteria_filtering].subgroup = is_vulcanus_sulfuric
@@ -28,6 +29,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
     data_recipe[sulfuric_bacteria_filtering].results[1].independent_probability = 0.03125
+    data_recipe[sulfuric_bacteria_filtering].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     data_recipe[sulfuric_bacteria_cultivation].subgroup = is_vulcanus_sulfuric
     data_recipe[sulfuric_bacteria_cultivation].icons = STONKS_I(stonks_png, sulfuric_bacteria)
@@ -38,6 +40,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = calcite, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
+    data_recipe[sulfuric_bacteria_cultivation].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     local sulfuric_bacteria_melting = "sulfuric-bacteria-melting"
     data_recipe[sulfuric_bacteria_melting].subgroup = is_vulcanus_sulfuric
@@ -53,6 +56,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = tungsten_carbide_plate_bob, amount = 1, independent_probability = 0.03125},
         {type = item, name = stone, amount = 1, independent_probability = 0.5}
     }
+    data_recipe[sulfuric_bacteria_melting].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 end
 
 if mods[moshine_mods] or mods[muluna_mods] then

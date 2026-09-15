@@ -965,7 +965,7 @@ data_recipe[cobalt_molten_angels].results[1].amount = 240
 
 
 -- CHROMIUM
-data_item_subgroup["angels-chrome-casting"].order = o
+data_item_subgroup["angels-chrome-casting"].order = q
 
 data_fluid[chromium_molten_angels].localised_name = {"fluid-name.angels-liquid-molten-chrome"}
 data_fluid[chromium_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
@@ -978,7 +978,7 @@ data_recipe[chromium_molten_angels].ingredients[1].amount = 16
 data_recipe[chromium_molten_angels].results[1].amount = 240
 
 -- TUNGSTEN
-data_item_subgroup["angels-tungsten-casting"].order = p
+data_item_subgroup["angels-tungsten-casting"].order = r
 
 data_item[tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_plate_bob].order = a
@@ -1012,7 +1012,7 @@ data_recipe[copper_tungsten_plate_bob].ingredients = {{type = item, name = coppe
 data_recipe[copper_tungsten_plate_bob].results[1].amount = 16
 
 -- PLATINUM
-data_item_subgroup["angels-platinum-casting"].order = q
+data_item_subgroup["angels-platinum-casting"].order = s
 
 data_fluid[platinum_molten_angels].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_fluid[platinum_molten_angels].order = a
@@ -1098,7 +1098,7 @@ data_recipe[platinum_cable_2].order = e_a
 data_recipe[platinum_cable_2].energy_required = 8
 
 -- GLASS
-data_item_subgroup["angels-glass-casting"].order = v
+data_item_subgroup["angels-glass-casting"].order = t
 
 data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
 data_recipe[glass_molten_angels].energy_required = 8
@@ -1136,8 +1136,44 @@ data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
 data_recipe[glass_angels].ingredients[1].amount = 60
 data_recipe[glass_angels].results[1].amount = 4
 
+-- BRICK
+local clay_brick_raw = "angels-clay-brick-raw"
+data_item[clay_brick_raw].subgroup = is_bricks_casting
+data_item[clay_brick_raw].order = a
+data_recipe[clay_brick_raw].subgroup = is_bricks_casting
+data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
+data_recipe[clay_brick_raw].order = a
+
+data_item[clay_brick].subgroup = is_bricks_casting
+data_item[clay_brick].order = b
+data_recipe[clay_brick].subgroup = is_bricks_casting
+data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
+data_recipe[clay_brick].order = b
+
+data_item[stone_brick].subgroup = is_bricks_casting
+data_item[stone_brick].order = c
+data_recipe[stone_brick].subgroup = is_bricks_casting
+data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
+data_recipe[stone_brick].order = c
+data_recipe[stone_brick].energy_required = 4
+
+data_item[concrete_brick].subgroup = is_bricks_casting
+data_item[concrete_brick].order = d
+data_recipe[concrete_brick].subgroup = is_bricks_casting
+data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
+data_recipe[concrete_brick].order = d
+data_recipe[concrete_brick].ingredients[1].amount = 60
+
+data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_item[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
+data_recipe[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
+data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
+
 -- STONE
-data_item_subgroup[is_stone_casting].order = w
+data_item_subgroup[is_stone_casting].order = u_a
 
 data_item[concrete].order = a
 data_recipe[concrete].icons = R_P_I(concrete, nil, nil, number_1)
@@ -1210,44 +1246,9 @@ data_recipe[concrete_liquid_2].ingredients =
 }
 data_recipe[concrete_liquid_2].results[1].amount = 480
 
--- BRICK
-local clay_brick_raw = "angels-clay-brick-raw"
-data_item[clay_brick_raw].subgroup = is_bricks_casting
-data_item[clay_brick_raw].order = a
-data_recipe[clay_brick_raw].subgroup = is_bricks_casting
-data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
-data_recipe[clay_brick_raw].order = a
-
-data_item[clay_brick].subgroup = is_bricks_casting
-data_item[clay_brick].order = b
-data_recipe[clay_brick].subgroup = is_bricks_casting
-data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
-data_recipe[clay_brick].order = b
-
-data_item[stone_brick].subgroup = is_bricks_casting
-data_item[stone_brick].order = c
-data_recipe[stone_brick].subgroup = is_bricks_casting
-data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
-data_recipe[stone_brick].order = c
-data_recipe[stone_brick].energy_required = 4
-
-data_item[concrete_brick].subgroup = is_bricks_casting
-data_item[concrete_brick].order = d
-data_recipe[concrete_brick].subgroup = is_bricks_casting
-data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
-data_recipe[concrete_brick].order = d
-data_recipe[concrete_brick].ingredients[1].amount = 60
-
-data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_item[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
-data_recipe[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
-data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
-
+-- ALLOYS
 -- SOLDER
-data_item_subgroup["angels-solder-casting"].order = x
+data_item_subgroup["angels-solder-casting"].order = v
 
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
@@ -1325,9 +1326,8 @@ data_recipe[solder_2].order = c_b
 data_recipe[solder_2].energy_required = 8
 data_recipe[solder_2].results[1].amount = 16
 
--- ALLOYS
 -- BRONZE
-data_item_subgroup["angels-alloys-casting"].order = y
+data_item_subgroup["angels-alloys-casting"].order = v_a
 
 data_fluid[bronze_molten_angels].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_recipe[bronze_molten_angels].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_1)

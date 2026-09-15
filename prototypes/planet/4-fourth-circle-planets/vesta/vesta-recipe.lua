@@ -211,7 +211,7 @@ if mods[vesta_mods] then
     three_ores_to_plate_recipe(copper_ore, tin_ore_bob, zinc_ore_bob, k_c, gunmetal_plate_bob)
     three_ores_to_plate_recipe(iron_ore, carbon_angels, cobalt_ore_bob, k_e, cobalt_steel_plate_bob)
     if mods[shchierbin_mods] then
-        three_ores_to_plate_recipe(iron_ore, carbon_angels, vanadium_ore, o_a, vanadium_steel_plate)
+        three_ores_to_plate_recipe(vanadium_ore, iron_ore, carbon_angels, o_a, vanadium_steel_plate)
         three_ores_to_plate_recipe(vanadium_ore, aluminium_ore_bob, titanium_ore_bob, o_b, titanium_aluminium_vanadium_plate)
     end
     if mods[aegis_bellicos_mods] then
@@ -467,28 +467,6 @@ if mods[vesta_mods] then
             },
             results = {{type = item, name = sodium_peroxide, amount = 8}},
             main_product = sodium_peroxide
-        },
-        -- LOGISTICS
-        --[[{
-            name = magnetic_pipe_vesta,
-            categories = {vesta_magnetics},
-            subgroup = is_vesta_logistic,
-            order = a,
-            energy_required = 1,
-            ingredients =
-            {
-                {type = item, name = niobium_titanium_plate, amount = 1},
-                {type = item, name = niobium_titanium_cable, amount = 8},
-                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
-                {type = item, name = iridium_plate_mods, amount = 1},
-                {type = fluid, name = supermagnetic_vesta, amount = 30}
-            },
-            results =
-            {
-                {type = item, name = magnetic_pipe_vesta, amount = 1},
-                {type = fluid, name = electrolyte, amount = 15},
-            },
-            main_product = magnetic_pipe_vesta
-        }]]
+        }
     })
 end

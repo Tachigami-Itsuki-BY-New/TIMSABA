@@ -168,14 +168,13 @@ data:extend
         name = tech_holmium_smelting_2,
         icon = graphics_holmium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_holmium_smelting_1, electromagnetic_science_pack, tech_brannerite_processing_2},
+        prerequisites = {tech_holmium_smelting_1, electromagnetic_science_pack, tech_brannerite_processing_2, tech_holmium_processing},
         effects =
         {
             {type = unlock_recipe, recipe = holmium_processed},
             {type = unlock_recipe, recipe = holmium_nitrate_III_solution},
             {type = unlock_recipe, recipe = holmium_oxide_III},
-            {type = unlock_recipe, recipe = holmium_fluoride_III_2},
-            {type = unlock_recipe, recipe = holmium_roll_2}
+            {type = unlock_recipe, recipe = holmium_fluoride_III_2}
         },
         unit =
         {
@@ -203,9 +202,7 @@ data:extend
         prerequisites = {tech_holmium_smelting_2, cryogenic_science_pack, tech_vulcanus_metallurgic, tech_brannerite_processing_3},
         effects =
         {
-            {type = unlock_recipe, recipe = holmium_fluoride_III_3},
-            {type = unlock_recipe, recipe = molten_holmium},
-            {type = unlock_recipe, recipe = casting_holmium}
+            {type = unlock_recipe, recipe = holmium_fluoride_III_3}
         },
         unit =
         {

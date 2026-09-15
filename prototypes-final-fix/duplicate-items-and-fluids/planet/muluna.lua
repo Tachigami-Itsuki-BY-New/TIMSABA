@@ -39,10 +39,19 @@ if mods[muluna_mods] then
 		"muluna-placed-tree",
 		molten_aluminium_mods,
 		"muluna-gas-venting",
-		--"thruster-fuel-productivity",
 		"muluna-rocket-buggy",
 		"space-chest-muluna",
-		greenhouse_muluna
+		greenhouse_muluna,
+		"aluminum-ore-melting",
+		"muluna-battery-from-aluminum",
+		"muluna-roboport-propellant",
+		"muluna-burner-roboport",
+		"muluna-burner-roboport-roboport",
+		"muluna-" .. metallic_asteroid_chunk .. "-upcycling",
+		"muluna-" .. carbonic_asteroid_chunk .. "-upcycling",
+		"muluna-" .. oxide_asteroid_chunk .. "-upcycling",
+		"muluna-" .. anorthite_asteroid_chunk .. "-upcycling",
+		"muluna-asteroid-upcycling"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
