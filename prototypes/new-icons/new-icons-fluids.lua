@@ -491,8 +491,6 @@ if mods[maraxsis_mods] then
     data_fluid[supercritical_steam_maraxsis].icon = graphics_maraxsis .. supercritical_steam_maraxsis .. ".png"
 
     data_fluid[water_brackish_maraxsis].icon = graphics_maraxsis .. water_brackish_maraxsis .. ".png"
-
-    --data_fluid[molten_salt_mods].icon = graphics_maraxsis .. molten_salt_mods .. ".png"
 end
 
 -- VESTA

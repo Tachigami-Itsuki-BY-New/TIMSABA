@@ -7,14 +7,14 @@ if mods["Rocket-Silo-Construction"] then
         {name = is_silo_stage,         order = a_b}
     })
 
-    local entity_name = "entity-name."
-    local entity_description = "entity-description."
     local excavation_site = "rsc-excavation-site"
-    data_item[excavation_site].localised_name = {entity_name .. excavation_site}
-    data_item[excavation_site].localised_description = {entity_description .. excavation_site}
+    data_item[excavation_site].localised_name = {"entity-name." .. excavation_site}
+    data_item[excavation_site].localised_description = {"entity-description." .. excavation_site}
+    data_item[excavation_site].order = i
     data_item[excavation_site].weight = 1000000000
     data_recipe[excavation_site].localised_name = data_item[excavation_site].localised_name
     data_recipe[excavation_site].localised_description = data_item[excavation_site].localised_description
+    data_recipe[excavation_site].order = i
     data_recipe[excavation_site].energy_required = 128
     data_recipe[excavation_site].ingredients =
     {
@@ -140,8 +140,8 @@ if mods["Rocket-Silo-Construction"] then
         {name = silo_stage6, order = f}
     }
     for _, BUILD in pairs(silo_stages) do
-        data_assembling[BUILD.name].localised_name = {entity_name .. BUILD.name}
-        data_assembling[BUILD.name].localised_description = {entity_description .. BUILD.name}
+        data_assembling[BUILD.name].localised_name = {"entity-name." .. BUILD.name}
+        data_assembling[BUILD.name].localised_description = {"entity-description." .. BUILD.name}
         data_assembling[BUILD.name].subgroup = is_silo_stage
         data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].energy_usage = (128000 - 4000) .. kW

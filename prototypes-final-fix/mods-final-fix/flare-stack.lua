@@ -9,6 +9,10 @@ if mods["Flare Stack"] then
             --[] = true,
         }
 
+        if mods[lignumis_mods] then
+            allowed_incineration[big_wooden_pole] = true
+        end
+
         local deleted_fuels =
         {
             [uranium_234_fuel_cell] = true,

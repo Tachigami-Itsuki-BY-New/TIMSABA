@@ -3,10 +3,10 @@ local graphics_potassium = "__TIMSABA__/graphics/icons/angels/petrochem/potassiu
 -- GROUPS
 is_potassium = "is-potassium"
 is_potassium_fluid = "is-potassium-fluid"
-TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
+TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
-    {name = is_potassium,       order = v}, -- k
-    {name = is_potassium_fluid, order = v_a} -- k_a
+    {name = is_potassium,       order = k},
+    {name = is_potassium_fluid, order = k_a}
 })
 
 -- ITEM

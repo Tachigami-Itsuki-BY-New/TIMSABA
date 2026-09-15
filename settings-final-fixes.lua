@@ -30,12 +30,6 @@ if mods["secretas"] then
     data_bool_setting["condense-level-4-modules-into-one-technology"].hidden = true
 end
 
--- VESTA
-if mods["skewer_planet_vesta"] then
-    data_bool_setting["ske_vesta_gases"].default_value = true
-    data_bool_setting["ske_vesta_legacy_recipes"].default_value = false
-end
-
 -- MODS
 local data_double_setting = data.raw["double-setting"]
 if mods["Accumulator-V2"] then

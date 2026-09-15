@@ -61,9 +61,7 @@ if mods[vesta_mods] then
         data_recipe[stone_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
     end
 
-    if settings.startup["ske_vesta_legacy_recipes"].value then
-        coal_mineraliztion = "ske-coal-mineralization"
-    end
+    local coal_mineraliztion = "ske-coal-mineralization"
     if data_recipe[coal_mineraliztion] then
         data_recipe[coal_mineraliztion].categories = {angels_bio_processing_4}
         data_recipe[coal_mineraliztion].subgroup = is_vesta_recipe
@@ -319,33 +317,58 @@ if mods[vesta_mods] then
     data_recipe[iridium_plate_mods].results[1].amount = 16
 
     -- LOGISTICS
-    if data_item[magnetic_pipe_vesta] then
-        data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-        data_item[magnetic_pipe_vesta].order = a
-        data_item[magnetic_pipe_vesta].stack_size = 200
-        data_recipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-        data_recipe[magnetic_pipe_vesta].order = a
-        data_recipe[magnetic_pipe_vesta].energy_required = 1
-        data_recipe[magnetic_pipe_vesta].ingredients =
-        {
-            {type = item, name = niobium_titanium_plate, amount = 1},
-            {type = item, name = niobium_titanium_cable, amount = 8},
-            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
-            {type = item, name = iridium_plate_mods, amount = 1},
-            {type = fluid, name = supermagnetic_vesta, amount = 30}
-        }
-        data_recipe[magnetic_pipe_vesta].results =
-        {
-            {type = item, name = magnetic_pipe_vesta, amount = 1},
-            {type = fluid, name = electrolyte, amount = 15},
-        }
-        data_recipe[magnetic_pipe_vesta].main_product = magnetic_pipe_vesta
-        if mods[moshine_mods] then
-            table.insert(data_recipe[magnetic_pipe_vesta].ingredients, {type = item, name = neodymium_magnet, amount = 4})
-        end
-        data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-        data_pipe[magnetic_pipe_vesta].order = a
+    local magnetic_pipe = "magnetic-pipe"
+    data_item[magnetic_pipe].subgroup = is_vesta_logistic
+    data_item[magnetic_pipe].order = a
+    data_item[magnetic_pipe].stack_size = 200
+    data_recipe[magnetic_pipe].subgroup = is_vesta_logistic
+    data_recipe[magnetic_pipe].order = a
+    data_recipe[magnetic_pipe].energy_required = 1
+    data_recipe[magnetic_pipe].ingredients =
+    {
+        {type = item, name = niobium_titanium_plate, amount = 1},
+        {type = item, name = niobium_titanium_cable, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
+        {type = item, name = iridium_plate_mods, amount = 1},
+        {type = fluid, name = supermagnetic_vesta, amount = 30}
+    }
+    data_recipe[magnetic_pipe].results =
+    {
+        {type = item, name = magnetic_pipe, amount = 1},
+        {type = fluid, name = electrolyte, amount = 15},
+    }
+    data_recipe[magnetic_pipe].main_product = magnetic_pipe
+    if mods[moshine_mods] then
+        table.insert(data_recipe[magnetic_pipe].ingredients, {type = item, name = neodymium_magnet, amount = 4})
     end
+    data_pipe[magnetic_pipe].subgroup = is_vesta_logistic
+    data_pipe[magnetic_pipe].order = a
+
+    local simulations = require("prototypes.factoriopedia-simulations")
+
+    local magnetic_pipe_to_ground = "magnetic-pipe-to-ground"
+    data_item[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_item[magnetic_pipe_to_ground].order = b
+    data_item[magnetic_pipe_to_ground].stack_size = 32
+    data_item[magnetic_pipe_to_ground].weight = 31250
+    data_recipe[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_recipe[magnetic_pipe_to_ground].order = b
+    data_recipe[magnetic_pipe_to_ground].ingredients =
+    {
+        {type = item, name = magnetic_pipe, amount = 32},
+        {type = item, name = iridium_plate_mods, amount = 4},
+        {type = fluid, name = supermagnetic_vesta, amount = 120}
+    }
+    data_recipe[magnetic_pipe_to_ground].results =
+    {
+        {type = item, name = magnetic_pipe_to_ground, amount = 2},
+        {type = fluid, name = electrolyte, amount = 60},
+    }
+    data_recipe[magnetic_pipe_to_ground].main_product = magnetic_pipe_to_ground
+    data_pipe_to_ground[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_pipe_to_ground[magnetic_pipe_to_ground].order = b
+    data_pipe_to_ground[magnetic_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 32
+    data_pipe_to_ground[magnetic_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_magnetic_pipe_to_ground
 
     -- BUILDING
     data_item[electrolyzer_vesta].subgroup = is_vesta_building
@@ -429,7 +452,7 @@ if mods[vesta_mods] then
         {type = item, name = quantum_processor, amount = 8},
         {type = item, name = niobium_titanium_plate, amount = 4},
         {type = item, name = niobium_titanium_cable, amount = 32},
-        {type = item, name = magnetic_pipe_vesta, amount = 4},
+        {type = item, name = magnetic_pipe, amount = 4},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
         {type = item, name = iridium_plate_mods, amount = 16},
         {type = fluid, name = supermagnetic_vesta, amount = 120}
@@ -480,7 +503,8 @@ if mods[vesta_mods] then
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
-        magnetic_pipe_vesta,
+        magnetic_pipe,
+        magnetic_pipe_to_ground,
         electrolyzer_vesta,
         supermagnet,
         combustion_furnace,
@@ -529,7 +553,9 @@ if mods[vesta_mods] then
         table.insert(data_technology[planet_discovery_vesta].effects, {type = unlock_recipe, recipe = recipe_name})
     end
     added_recipe_in_planet_discovery_vesta(stone_mineraliztion)
-    added_recipe_in_planet_discovery_vesta(coal_mineraliztion)
+    if data_recipe[coal_mineraliztion] then
+        added_recipe_in_planet_discovery_vesta(coal_mineraliztion)
+    end
     added_recipe_in_planet_discovery_vesta(carbon_seperation)
     added_recipe_in_planet_discovery_vesta(co2_filter_carbon)
     added_recipe_in_planet_discovery_vesta(carbon_super_cooling)

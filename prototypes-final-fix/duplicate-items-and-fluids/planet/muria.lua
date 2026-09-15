@@ -47,7 +47,20 @@ if mods[muria_mods] then
         "oxygenated-iron-bacteria-cultivation",
         "oxygenated-copper-bacteria-cultivation",
         "oxygenated-bacteria-cultivation",
-        "acidthrower-turret"
+        "acidthrower-turret",
+        "lead-logistic-robot",
+        "lead-construction-robot",
+        "lead-robots",
+        "chlorine-traces-from-ice",
+        "sulfur-chlorine-salt-redox",
+        "advanced-acid-processing",
+        "casting-pickled-iron",
+        "casting-pickled-copper",
+        "casting-pickled-steel",
+        "casting-pickled-" .. iron_gear_wheel,
+        "casting-pickled-" .. iron_rod,
+        "casting-pickled-" .. copper_cable,
+        "pickled-casting"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

@@ -18,6 +18,7 @@ if mods[maraxsis_mods] then
 	{
 		glass_panes_maraxsis,
 		water_saline_maraxsis,
+		"maraxsis-liquid-atmosphere",
 		"maraxsis-liquid-atmosphere-decompression",
 		"maraxsis-limestone-processing",
 		"maraxsis-petroleum-gas-cracking",
@@ -25,7 +26,22 @@ if mods[maraxsis_mods] then
 		"maraxsis-stone-centrifuging",
 		"maraxsis-conduit",
 		"maraxsis-effect-transmission-2",
-		"sp-spidertron-automation"
+		"sp-spidertron-automation",
+		"maraxsis-fish-oil",
+		"maraxsis-bio-oil",
+		"maraxsis-omega-3",
+		"maraxsis-vitamin-infused-agricultural-science",
+		"maraxsis-vitamin-infused-hydraulic-science",
+		"maraxsis-omega_3",
+		"maraxsis-vitamin-infused-promethium-science-1",
+		"maraxsis-promethium-quality-1",
+		"maraxsis-vitamin-infused-promethium-science-2",
+		"maraxsis-promethium-quality-2",
+		"maraxsis-vitamin-infused-promethium-science-3",
+		"maraxsis-promethium-quality-3",
+		"maraxsis-vitamin-infused-promethium-science-4",
+		"maraxsis-promethium-quality-4",
+		"maraxsis-" .. limestone_mods .. "-crushing"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

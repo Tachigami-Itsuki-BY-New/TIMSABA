@@ -53,7 +53,9 @@ data_fluid[molten_copper] = nil
 local delete_prototypes =
 {
 	holmium_solution,
-	"concrete-from-molten-iron"
+	"concrete-from-molten-iron",
+	"iron-ore-melting",
+	"copper-ore-melting"
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 

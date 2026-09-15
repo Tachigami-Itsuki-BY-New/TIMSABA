@@ -225,10 +225,10 @@ if mods[muluna_mods] then
     local graphics_muluna = "__TIMSABA__/graphics/icons/muluna/"
 
     data_item[aluminium_pipe].icons = {{icon = graphics_muluna .. aluminium_pipe .. ".png", icon_size = 64}}
-    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe, item)
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(3, aluminium_pipe, item)
 
     data_item[aluminium_pipe_to_ground].icons = {{icon = graphics_muluna .. aluminium_pipe_to_ground .. ".png", icon_size = 64}}
-    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe_to_ground, item)
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(3, aluminium_pipe_to_ground, item)
 end
 
 -- TELLUS

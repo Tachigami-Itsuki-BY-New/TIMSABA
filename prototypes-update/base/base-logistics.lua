@@ -666,6 +666,16 @@ data_recipe[small_electric_pole].ingredients[1].amount = 2
 data_electric_pole[small_electric_pole].maximum_wire_distance = 10.5
 data_electric_pole[small_electric_pole].supply_area_distance = 3.5
 
+if mods[lignumis_mods] then
+    data_item[big_wooden_pole].stack_size = 32
+    data_item[big_wooden_pole].weight = 31250
+    data_recipe[big_wooden_pole].ingredients[1].amount = 8
+    data_recipe[big_wooden_pole].ingredients[2].amount = 8
+    data_electric_pole[big_wooden_pole].maximum_wire_distance = 42
+
+    bobmods.lib.recipe.update_recycling_recipe({big_wooden_pole})
+end
+
 local medium_poles =
 {
     {name = medium_electric_pole_1, order = a, max_wire = 13,   supply_area = 4.5},
@@ -792,8 +802,8 @@ local pipes =
     {name = iron_pipe,            order = a},
     {name = copper_pipe,          order = b},
     {name = stone_pipe,           order = c},
-    {name = bronze_pipe,          order = d},
-    {name = steel_pipe,           order = e},
+    {name = steel_pipe,           order = d},
+    {name = bronze_pipe,          order = e},
     {name = plastic_pipe,         order = f},
     {name = brass_pipe,           order = g},
     {name = titanium_pipe,        order = h},
@@ -826,8 +836,8 @@ local pipes_to_ground =
     {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8,  simulations = simulations.factoriopedia_iron_pipe_to_ground},
     {name = copper_pipe_to_ground,          order = b, max_underground_distance = 8,  simulations = simulations.factoriopedia_copper_pipe_to_ground},
     {name = stone_pipe_to_ground,           order = c, max_underground_distance = 8,  simulations = simulations.factoriopedia_stone_pipe_to_ground},
-    {name = bronze_pipe_to_ground,          order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
-    {name = steel_pipe_to_ground,           order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = steel_pipe_to_ground,           order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = bronze_pipe_to_ground,          order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
     {name = plastic_pipe_to_ground,         order = f, max_underground_distance = 24, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
     {name = brass_pipe_to_ground,           order = g, max_underground_distance = 24, simulations = simulations.factoriopedia_brass_pipe_to_ground},
     {name = titanium_pipe_to_ground,        order = h, max_underground_distance = 32, simulations = simulations.factoriopedia_titanium_pipe_to_ground},
@@ -865,8 +875,8 @@ end
 pipe_to_ground_recipe(iron_pipe_to_ground,                       iron_pipe,             iron_plate, 8)
 pipe_to_ground_recipe(copper_pipe_to_ground,                   copper_pipe,           copper_plate, 8)
 pipe_to_ground_recipe(stone_pipe_to_ground,                     stone_pipe,            stone_brick, 8)
-pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,       bronze_plate_bob, 16)
 pipe_to_ground_recipe(steel_pipe_to_ground,                     steel_pipe,            steel_plate, 16)
+pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,       bronze_plate_bob, 16)
 pipe_to_ground_recipe(plastic_pipe_to_ground,                 plastic_pipe,                plastic, 24)
 pipe_to_ground_recipe(brass_pipe_to_ground,                     brass_pipe,        brass_plate_bob, 24)
 pipe_to_ground_recipe(titanium_pipe_to_ground,               titanium_pipe,     titanium_plate_bob, 32)

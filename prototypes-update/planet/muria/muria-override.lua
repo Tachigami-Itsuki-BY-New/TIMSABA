@@ -123,10 +123,16 @@ if mods[muria_mods] then
     }
     data_recipe[hydrogen_chloride_from_spoilage].results[1].amount = 60
 
+    local chlorine_from_acidophile_lichen = "chlorine-from-" .. acidophile_lichen
+    data_recipe[chlorine_from_acidophile_lichen].subgroup = is_muria_recipe
+    data_recipe[chlorine_from_acidophile_lichen].icons = TWO_I(acidophile_lichen, chlorine_angels)
+    data_recipe[chlorine_from_acidophile_lichen].order = b_i
+    data_recipe[chlorine_from_acidophile_lichen].results[1].amount = (15/2)
+
     local hydrogen_chloride_explosives = "hydrogen-chloride-explosives"
     data_recipe[hydrogen_chloride_explosives].subgroup = is_muria_recipe
     data_recipe[hydrogen_chloride_explosives].icons = THREE_D_I(carbon_angels, oxygen_angels, hydrogen_chloride_angels, explosives)
-    data_recipe[hydrogen_chloride_explosives].order = b_i
+    data_recipe[hydrogen_chloride_explosives].order = b_j
     data_recipe[hydrogen_chloride_explosives].energy_required = 8
     data_recipe[hydrogen_chloride_explosives].ingredients =
     {

@@ -757,6 +757,7 @@ if mods[tellus_mods] then
     data_assembling[bioassembler].subgroup = is_tellus_building
     data_assembling[bioassembler].order = b
     data_assembling[bioassembler].energy_usage = 1875 .. kW
+    data_assembling[bioassembler].effect_receiver.base_effect.productivity = 0.5
 
     local bioassembler_dead = "planetaris-bioassembler-dead"
     data_assembling[bioassembler_dead].minable.result = compost_angels

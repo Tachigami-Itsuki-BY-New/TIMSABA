@@ -567,12 +567,15 @@ if mods[corrundum_mods] then
     }
 
     local tech_sulfur_redox1 = "sulfur-redox1"
+    data_technology[tech_sulfur_redox1].icons = TIMSABA.functions.create_gas_tech_icon("SSS")
     data_technology[tech_sulfur_redox1].prerequisites = {electrochemical_science_pack}
 
     local tech_sulfur_redox2 = "sulfur-redox2"
+    data_technology[tech_sulfur_redox2].icons = TIMSABA.functions.create_gas_tech_icon("SSS")
     data_technology[tech_sulfur_redox2].prerequisites = {tech_sulfur_redox1}
 
     local tech_sulfate_processing_1 = "sulfate-processing-1"
+    data_technology[tech_sulfate_processing_1].icons = TIMSABA.functions.create_gas_tech_icon("SOO")
     data_technology[tech_sulfate_processing_1].prerequisites = {tech_sulfur_redox2}
 
     data_technology[calcium_sulfate_mods].prerequisites = {tech_sulfate_processing_1}

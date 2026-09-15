@@ -78,7 +78,6 @@ if mods[moshine_mods] then
         {type = item, name = neodymium_magnet, amount = 1}
     }
 
-    local raw_data = "raw-data"
     data_fluid[raw_data].subgroup = is_moshine_datacell
     data_fluid[raw_data].order = b
 
@@ -98,50 +97,142 @@ if mods[moshine_mods] then
     local datacell_remove_raw_data = "datacell-remove-raw-data"
     data_recipe[datacell_remove_raw_data].subgroup = is_moshine_datacell
     data_recipe[datacell_remove_raw_data].icons = THREE_R_I(datacell_raw_data, datacell_empty, raw_data)
-    data_recipe[datacell_remove_raw_data].order = d
+    data_recipe[datacell_remove_raw_data].order = c_a
     data_recipe[datacell_remove_raw_data].results =
     {
         {type = item, name = datacell_empty, amount = 1},
         {type = fluid, name = raw_data, amount = 960}
     }
 
-    local _3d_data_storage = "3d-data-storage"
-    local model_stable = "model-stable"
-
     local datacell_ai_model_data = "datacell-ai-model-data"
     data_item[datacell_ai_model_data].subgroup = is_moshine_datacell
-    data_item[datacell_ai_model_data].order = e
+    data_item[datacell_ai_model_data].order = d
     data_item[datacell_ai_model_data].stack_size = 200
     data_recipe[datacell_ai_model_data].subgroup = is_moshine_datacell
     data_recipe[datacell_ai_model_data].icons = TWO_D_I(datacell_empty, model_stable, datacell_ai_model_data, _3d_data_storage)
-    data_recipe[datacell_ai_model_data].order = e
+    data_recipe[datacell_ai_model_data].order = d
     data_recipe[datacell_ai_model_data].energy_required = 8
+
+    local datacell_remove_ai_model_data = "datacell-remove-ai-model-data"
+    data_recipe[datacell_remove_ai_model_data].subgroup = is_moshine_datacell
+    data_recipe[datacell_remove_ai_model_data].icons = TWO_D_I(datacell_ai_model_data, _3d_data_storage, datacell_empty, model_stable)
+    data_recipe[datacell_remove_ai_model_data].order = d_a
+    data_recipe[datacell_remove_ai_model_data].energy_required = 16
 
     local datacell_equation = "datacell-equation"
     data_item[datacell_equation].subgroup = is_moshine_datacell
-    data_item[datacell_equation].order = f
+    data_item[datacell_equation].order = e
     data_item[datacell_equation].stack_size = 200
     data_recipe[datacell_equation].subgroup = is_moshine_datacell
     data_recipe[datacell_equation].icons = TWO_I(datacell_empty, datacell_equation)
-    data_recipe[datacell_equation].order = f
+    data_recipe[datacell_equation].order = e
     data_recipe[datacell_equation].energy_required = 1024
+
+    data_fluid[solved_equation_data].subgroup = is_moshine_datacell
+    data_fluid[solved_equation_data].order = f
 
     local datacell_solved_equation = "datacell-solved-equation"
     data_item[datacell_solved_equation].subgroup = is_moshine_datacell
     data_item[datacell_solved_equation].order = g
     data_item[datacell_solved_equation].stack_size = 200
+    data_recipe[datacell_solved_equation].subgroup = is_moshine_datacell
+    data_recipe[datacell_solved_equation].icons = THREE_I(datacell_empty, solved_equation_data, datacell_solved_equation)
+    data_recipe[datacell_solved_equation].order = g
+
+    local datacell_remove_solved_equation = "datacell-remove-solved-equation"
+    data_recipe[datacell_remove_solved_equation].subgroup = is_moshine_datacell
+    data_recipe[datacell_remove_solved_equation].icons = THREE_R_I(datacell_solved_equation, datacell_empty, solved_equation_data)
+    data_recipe[datacell_remove_solved_equation].order = g_a
+
+    data_fluid[cosmic_data_outsignal].subgroup = is_moshine_datacell
+    data_fluid[cosmic_data_outsignal].order = h
+
+    local datacell_cosmic_data_outsignal = "datacell-" .. cosmic_data_outsignal
+    data_item[datacell_cosmic_data_outsignal].subgroup = is_moshine_datacell
+    data_item[datacell_cosmic_data_outsignal].order = i
+    data_item[datacell_cosmic_data_outsignal].stack_size = 200
+    data_recipe[datacell_cosmic_data_outsignal].subgroup = is_moshine_datacell
+    data_recipe[datacell_cosmic_data_outsignal].icons = THREE_I(datacell_empty, cosmic_data_outsignal, datacell_cosmic_data_outsignal)
+    data_recipe[datacell_cosmic_data_outsignal].order = i
+    data_recipe[datacell_cosmic_data_outsignal].ingredients =
+    {
+        {type = item, name = datacell_empty, amount = 1},
+        {type = fluid, name = cosmic_data_outsignal, amount = 120}
+    }
+
+    local datacell_remove_cosmic_data_outsignal = "datacell-remove-" .. cosmic_data_outsignal
+    data_recipe[datacell_remove_cosmic_data_outsignal].subgroup = is_moshine_datacell
+    data_recipe[datacell_remove_cosmic_data_outsignal].icons = THREE_R_I(datacell_cosmic_data_outsignal, datacell_empty, cosmic_data_outsignal)
+    data_recipe[datacell_remove_cosmic_data_outsignal].order = i_a
+    data_recipe[datacell_remove_cosmic_data_outsignal].results =
+    {
+        {type = item, name = datacell_empty, amount = 1},
+        {type = fluid, name = cosmic_data_outsignal, amount = 120}
+    }
+
+    data_fluid[cosmic_data].subgroup = is_moshine_datacell
+    data_fluid[cosmic_data].order = j
+
+    local datacell_cosmic_data = "datacell-" .. cosmic_data
+    data_item[datacell_cosmic_data].subgroup = is_moshine_datacell
+    data_item[datacell_cosmic_data].order = k
+    data_item[datacell_cosmic_data].stack_size = 200
+    data_recipe[datacell_cosmic_data].subgroup = is_moshine_datacell
+    data_recipe[datacell_cosmic_data].icons = THREE_I(datacell_empty, cosmic_data, datacell_cosmic_data)
+    data_recipe[datacell_cosmic_data].order = k
+    data_recipe[datacell_cosmic_data].ingredients =
+    {
+        {type = item, name = datacell_empty, amount = 1},
+        {type = fluid, name = cosmic_data, amount = 120}
+    }
+
+    local datacell_remove_cosmic_data = "datacell-remove-" .. cosmic_data
+    data_recipe[datacell_remove_cosmic_data].subgroup = is_moshine_datacell
+    data_recipe[datacell_remove_cosmic_data].icons = THREE_R_I(datacell_cosmic_data, datacell_empty, cosmic_data)
+    data_recipe[datacell_remove_cosmic_data].order = k_a
+    data_recipe[datacell_remove_cosmic_data].results =
+    {
+        {type = item, name = datacell_empty, amount = 1},
+        {type = fluid, name = cosmic_data, amount = 120}
+    }
 
     if mods[panglia_mods] then
+        data_fluid[timewarp_data].subgroup = is_moshine_datacell
+        data_fluid[timewarp_data].order = l
+
+        local datacell_timewarp_data = "datacell-" .. timewarp_data
+        data_item[datacell_timewarp_data].subgroup = is_moshine_datacell
+        data_item[datacell_timewarp_data].order = m
+        data_item[datacell_timewarp_data].stack_size = 200
+        data_recipe[datacell_timewarp_data].subgroup = is_moshine_datacell
+        data_recipe[datacell_timewarp_data].icons = THREE_I(datacell_empty, timewarp_data, datacell_timewarp_data)
+        data_recipe[datacell_timewarp_data].order = m
+        data_recipe[datacell_timewarp_data].ingredients =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = timewarp_data, amount = 120}
+        }
+
+        local datacell_remove_timewarp_data = "datacell-remove-" .. timewarp_data
+        data_recipe[datacell_remove_timewarp_data].subgroup = is_moshine_datacell
+        data_recipe[datacell_remove_timewarp_data].icons = THREE_R_I(datacell_timewarp_data, datacell_empty, timewarp_data)
+        data_recipe[datacell_remove_timewarp_data].order = m_a
+        data_recipe[datacell_remove_timewarp_data].results =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = timewarp_data, amount = 120}
+        }
+
         data_item[datacell_dna_raw].subgroup = is_moshine_datacell
-        data_item[datacell_dna_raw].order = h
+        data_item[datacell_dna_raw].order = n
         data_item[datacell_dna_raw].stack_size = 200
         data_recipe[datacell_dna_raw].subgroup = is_moshine_datacell
         data_recipe[datacell_dna_raw].icons = THREE_R_I(datacell_empty, datacell_dna_raw, datacell_empty)
-        data_recipe[datacell_dna_raw].order = h
+        data_recipe[datacell_dna_raw].order = n
         data_recipe[datacell_dna_raw].energy_required = 64
 
         data_item[datacell_dna_sequenced].subgroup = is_moshine_datacell
-        data_item[datacell_dna_sequenced].order = i
+        data_item[datacell_dna_sequenced].order = o
         data_item[datacell_dna_sequenced].stack_size = 200
     end
 
@@ -187,12 +278,6 @@ if mods[moshine_mods] then
         {type = item, name = model_unstable, amount = 1},
         {type = fluid, name = raw_data, amount = 960}
     }
-
-    local datacell_remove_ai_model_data = "datacell-remove-ai-model-data"
-    data_recipe[datacell_remove_ai_model_data].subgroup = is_moshine_core
-    data_recipe[datacell_remove_ai_model_data].icons = TWO_D_I(datacell_ai_model_data, _3d_data_storage, datacell_empty, model_stable)
-    data_recipe[datacell_remove_ai_model_data].order = d
-    data_recipe[datacell_remove_ai_model_data].energy_required = 16
 
     -- AI CORE
     local ai_tier_1 = "ai-tier-1"

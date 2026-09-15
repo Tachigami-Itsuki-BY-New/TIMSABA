@@ -13,12 +13,6 @@ if mods[maraxsis_mods] then
 
     data_recipe[maraxsis_air_separation].ingredients[1].amount = 120
 
-    data_fluid[maraxsis_liquid_air].subgroup = is_maraxsis_air
-    data_fluid[maraxsis_liquid_air].order = b
-    TIMSABA.barreling.add_gas(maraxsis_air)
-    data_recipe[maraxsis_liquid_air].subgroup = is_maraxsis_air
-    data_recipe[maraxsis_liquid_air].order = b
-
     -- RECIPE
     data_item[salt_filter_maraxsis].subgroup = is_maraxsis_recipe
     data_item[salt_filter_maraxsis].order = a
@@ -196,13 +190,6 @@ if mods[maraxsis_mods] then
     data_recipe[wyrm_specimen].order = i
     data_recipe[wyrm_specimen].energy_required = 8
 
-    local geothermal_sulfur = "maraxsis-geothermal-sulfur"
-    data_recipe[geothermal_sulfur].subgroup = is_maraxsis_recipe
-    data_recipe[geothermal_sulfur].icons = THREE_I(steam, lava, sulfur)
-    data_recipe[geothermal_sulfur].order = i_a
-    data_recipe[geothermal_sulfur].ingredients[1].amount = 120
-    data_recipe[geothermal_sulfur].ingredients[2].amount = 120
-
     data_item[hydraulic_science_pack].subgroup = is_maraxsis_recipe
     data_item[hydraulic_science_pack].order = j
     data_recipe[hydraulic_science_pack].subgroup = is_maraxsis_recipe
@@ -229,14 +216,12 @@ if mods[maraxsis_mods] then
         {type = fluid, name = hydrogen_angels, amount = 960}
     }
 
-    if mods[pelagos_mods] then -- ???
+    if mods[pelagos_mods] then
         local super_sealant_substance_pelagos = "pelagos-" .. super_sealant_substance_maraxsis
-        if data_recipe[super_sealant_substance_pelagos] then
-            data_recipe[super_sealant_substance_pelagos].subgroup = is_maraxsis_recipe
-            data_recipe[super_sealant_substance_pelagos].icons = TWO_I(coconut_sealant, super_sealant_substance_maraxsis)
-            data_recipe[super_sealant_substance_pelagos].order = k_a
-            data_recipe[super_sealant_substance_pelagos].energy_required = 4
-        end
+        data_recipe[super_sealant_substance_pelagos].subgroup = is_maraxsis_recipe
+        data_recipe[super_sealant_substance_pelagos].icons = TWO_I(coconut_sealant, super_sealant_substance_maraxsis)
+        data_recipe[super_sealant_substance_pelagos].order = k_a
+        data_recipe[super_sealant_substance_pelagos].energy_required = 4
     end
 
     -- LOGISTCIS
@@ -402,25 +387,24 @@ if mods[maraxsis_mods] then
     data_storage_tank["duct-long"].fluid_box.volume = 1920
 
     -- BUILDING POWER
-    --[[local salt_reactor = "maraxsis-salt-reactor"
-    data_item[salt_reactor].subgroup = is_maraxsis_building_energy
-    data_item[salt_reactor].order = a
-    data_item[salt_reactor].stack_size = 4
-    data_item[salt_reactor].weight = 250000
-    data_recipe[salt_reactor].subgroup = is_maraxsis_building_energy
-    data_recipe[salt_reactor].order = a
-    data_recipe[salt_reactor].energy_required = 8
-    data_recipe[salt_reactor].ingredients =
+    local geothermal_generator = "maraxsis-geothermal-generator"
+    data_item[geothermal_generator].subgroup = is_maraxsis_building_energy
+    data_item[geothermal_generator].order = a
+    data_item[geothermal_generator].stack_size = 32
+    data_item[geothermal_generator].weight = 31250
+    data_recipe[geothermal_generator].subgroup = is_maraxsis_building_energy
+    data_recipe[geothermal_generator].order = a
+    data_recipe[geothermal_generator].energy_required = 8
+    data_recipe[geothermal_generator].ingredients =
     {
-        {type = item, name = advanced_processing_unit, amount = 512},
-        {type = item, name = lead_plate_bob, amount = 256},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 256},
-        {type = item, name = reinforced_graphene_concrete_brick, amount = 512}
+        {type = item, name = advanced_processing_unit, amount = 32},
+        {type = item, name = trench_duct, amount = 1},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
+        {type = item, name = reinforced_graphene_concrete_brick, amount = 256}
     }
-    data_reactor_fusion[salt_reactor].subgroup = is_maraxsis_building_energy
-    data_reactor_fusion[salt_reactor].order = a
-    data_reactor_fusion[salt_reactor].max_fluid_usage = 240/60
-    data_reactor_fusion[salt_reactor].power_input = 1800 .. kW]]
+    data_assembling[geothermal_generator].subgroup = is_maraxsis_building_energy
+    data_assembling[geothermal_generator].order = a
+    data_assembling[geothermal_generator].module_slots = 4
 
     local oversized_steam_turbine = "maraxsis-oversized-steam-turbine"
     data_item[oversized_steam_turbine].subgroup = is_maraxsis_building_energy
@@ -445,28 +429,35 @@ if mods[maraxsis_mods] then
 
     data_fluid[supercritical_steam_maraxsis].subgroup = is_maraxsis_building_energy
     data_fluid[supercritical_steam_maraxsis].order = c
+    data_recipe[supercritical_steam_maraxsis].subgroup = is_maraxsis_building_energy
+    data_recipe[supercritical_steam_maraxsis].icons = TWO_I(water_purified_angels, supercritical_steam_maraxsis)
+    data_recipe[supercritical_steam_maraxsis].order = c
+    data_recipe[supercritical_steam_maraxsis].ingredients = {{type = fluid, name = water_purified_angels, amount = 480}}
+    data_recipe[supercritical_steam_maraxsis].results[1].amount = 480
 
-    --[[data_fluid[molten_salt_mods].subgroup = is_maraxsis_building_energy
-    data_fluid[molten_salt_mods].order = d
-    data_recipe[molten_salt_mods].subgroup = is_maraxsis_building_energy
-    data_recipe[molten_salt_mods].icons = TWO_I(salt_angels, molten_salt_mods)
-    data_recipe[molten_salt_mods].order = d
-    data_recipe[molten_salt_mods].ingredients[1].amount = 64
-    data_recipe[molten_salt_mods].results[1].amount = 960]]
-
-    --[[local msr_fuel_cell = "msr-fuel-cell"
-    data_item[msr_fuel_cell].subgroup = is_maraxsis_building_energy
-    data_item[msr_fuel_cell].order = e
-    data_item[msr_fuel_cell].fuel_value = ((40000 * 0.9375) * 1.875) .. kJ
-    data_recipe[msr_fuel_cell].subgroup = is_maraxsis_building_energy
-    data_recipe[msr_fuel_cell].icon = data_item[msr_fuel_cell].icon
-    data_recipe[msr_fuel_cell].order = e
-    data_recipe[msr_fuel_cell].ingredients =
+    local supercritical_steam_cooling = supercritical_steam_maraxsis .. "-cooling"
+    data_recipe[supercritical_steam_cooling].categories = {angels_advanced_chemistry, cryogenics}
+    data_recipe[supercritical_steam_cooling].subgroup = is_maraxsis_building_energy
+    data_recipe[supercritical_steam_cooling].icons = TWO_I(supercritical_steam_maraxsis, steam)
+    data_recipe[supercritical_steam_cooling].order = d
+    data_recipe[supercritical_steam_cooling].ingredients =
     {
-        {type = item, name = uranium_235, amount = 1},
-        {type = item, name = lead_plate_bob, amount = 8},
-        {type = fluid, name = molten_salt_mods, amount = 480}
-    }]]
+        {type = fluid, name = supercritical_steam_maraxsis, amount = 60},
+        {type = fluid, name = fluoroketone_cold, amount = 15}
+    }
+    data_recipe[supercritical_steam_cooling].results =
+    {
+        {type = fluid, name = steam, amount = 60, temperature = 915},
+        {type = fluid, name = fluoroketone_hot, amount = 15}
+    }
+
+    local geothermal_sulfur = "maraxsis-geothermal-sulfur"
+    data_recipe[geothermal_sulfur].subgroup = is_maraxsis_building_energy
+    data_recipe[geothermal_sulfur].icons = THREE_I(supercritical_steam_maraxsis, lava, sulfur)
+    data_recipe[geothermal_sulfur].order = e
+    data_recipe[geothermal_sulfur].energy_required = 4
+    data_recipe[geothermal_sulfur].ingredients[1].amount = 120
+    data_recipe[geothermal_sulfur].ingredients[2].amount = 120
 
     -- BUILDING
     local hydro_plant = "maraxsis-hydro-plant"
@@ -679,21 +670,10 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_utility_science_pack].results[1].amount = 8
     data_recipe[deepsea_research_utility_science_pack].surface_conditions = nil
 
-    -- RESEARCE VESSEL
-    --[[data_item[empty_research_vessel].subgroup = is_research_vessel
-    data_item[empty_research_vessel].order = a
-    data_item[empty_research_vessel].stack_size = 200
-    data_recipe[empty_research_vessel].subgroup = is_research_vessel
-    data_recipe[empty_research_vessel].icons = THREE_I(steel_plate, glass_bob, empty_research_vessel)
-    data_recipe[empty_research_vessel].order = a
-    data_recipe[empty_research_vessel].ingredients[1].amount = 8
-    data_recipe[empty_research_vessel].ingredients[2].amount = 8]]
-
     bobmods.lib.recipe.update_recycling_recipe
     ({
         fish_food,
         wyrm_confinement_cell,
-        --empty_research_vessel,
         duct_small,
         duct_t_junction,
         duct_curve,
@@ -704,7 +684,7 @@ if mods[maraxsis_mods] then
         duct_exhaust,
         trench_duct,
         spidertron_dock,
-        --salt_reactor,
+        geothermal_generator,
         oversized_steam_turbine,
         hydro_plant,
         pressure_dome,
@@ -773,20 +753,6 @@ if mods[maraxsis_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    --[[local tech_research_vessel = "maraxsis-research-vessel"
-    data_technology[tech_research_vessel].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
-    }]]
-
     local tech_deepsea_research = "maraxsis-deepsea-research"
     data_technology[tech_deepsea_research].prerequisites = {tech_project_seadragon}
     data_technology[tech_deepsea_research].unit.ingredients =
@@ -813,15 +779,6 @@ if mods[maraxsis_mods] then
     if mods[moshine_mods] then
         add_recipe_for_glass_productivity(glass_mods)
     end
-
-    --[[local tech_promethium = "maraxsis-promethium"
-    data_technology[tech_promethium .. _productivity].effects = {}
-    local function add_recipe_for_promethium_productivity(recipe)
-        table.insert(data_technology[tech_promethium .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
-    end
-    if mods[moshine_mods] then
-        add_recipe_for_promethium_productivity(promethium_asteroid_crushing_1)
-    end]]
 
     if mods[bobmodules] then
         table.insert(data_technology[speed_module_7].prerequisites, hydraulic_science_pack)

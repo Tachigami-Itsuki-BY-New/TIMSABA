@@ -489,7 +489,6 @@ if mods[lignumis_mods] then
     data_assembling[lumber_mill].order = e
     data_assembling[lumber_mill].energy_usage = 900 .. kW
 
-    local wood_lab = "wood-lab"
     data_item[wood_lab].subgroup = is_lignumis_building
     data_item[wood_lab].order = h
     data_item[wood_lab].stack_size = 32
@@ -501,8 +500,7 @@ if mods[lignumis_mods] then
         {type = item, name = wooden_gear_wheel, amount = 4},
         {type = item, name = basic_circuit_board, amount = 8},
         {type = item, name = lumber, amount = 4},
-        {type = item, name = stone_brick, amount = 8},
-        {type = item, name = gold_plate_bob, amount = 8}
+        {type = item, name = stone_brick, amount = 8}
     }
     data_lab[wood_lab].subgroup = is_lignumis_building
     data_lab[wood_lab].order = h
@@ -668,6 +666,8 @@ if mods[lignumis_mods] then
         basic_gun_turret
     })
 
+    data_assembling[burner_chemical_plant].crafting_categories = {chemistry}
+
     -- TECHNOLOGY
     local planet_discovery_lignumis = "planet-discovery-lignumis"
     if mods[muluna_mods] then
@@ -778,24 +778,24 @@ if mods[lignumis_mods] then
 
     data_technology[tech_worker_robots_speed .. "-5"].prerequisites = {tech_worker_robots_speed .. "-4", utility_science_pack}
 
-    table.insert(data_technology[tech_powellite_processing_1].effects, {type = unlock_recipe, recipe = powellite_ore .. _sortiong_stone})
-    table.insert(data_technology[tech_molybdenite_processing_1].effects, {type = unlock_recipe, recipe = molybdenite_ore .. _sortiong_stone})
-    table.insert(data_technology[tech_wolframite_processing_1].effects, {type = unlock_recipe, recipe = wolframite_ore .. _sortiong_stone})
-    table.insert(data_technology[tech_brannerite_processing_1].effects, {type = unlock_recipe, recipe = brannerite_ore .. _sortiong_stone})
-    table.insert(data_technology[tech_antimonite_processing_1].effects, {type = unlock_recipe, recipe = antimonite_ore .. _sortiong_stone})
-    table.insert(data_technology[tech_germanite_processing_1].effects, {type = unlock_recipe, recipe = germanite_ore .. _sortiong_stone})
+    table.insert(data_technology[tech_powellite_processing_1].effects, {type = unlock_recipe, recipe = powellite_ore .. _sorting_stone})
+    table.insert(data_technology[tech_molybdenite_processing_1].effects, {type = unlock_recipe, recipe = molybdenite_ore .. _sorting_stone})
+    table.insert(data_technology[tech_wolframite_processing_1].effects, {type = unlock_recipe, recipe = wolframite_ore .. _sorting_stone})
+    table.insert(data_technology[tech_brannerite_processing_1].effects, {type = unlock_recipe, recipe = brannerite_ore .. _sorting_stone})
+    table.insert(data_technology[tech_antimonite_processing_1].effects, {type = unlock_recipe, recipe = antimonite_ore .. _sorting_stone})
+    table.insert(data_technology[tech_germanite_processing_1].effects, {type = unlock_recipe, recipe = germanite_ore .. _sorting_stone})
 
     if mods[moshine_mods] then
-        table.insert(data_technology[tech_monazite_processing_1].effects, {type = unlock_recipe, recipe = monazite_ore .. _sortiong_stone})
+        table.insert(data_technology[tech_monazite_processing_1].effects, {type = unlock_recipe, recipe = monazite_ore .. _sorting_stone})
     end
     if mods[corrundum_mods] then
-        table.insert(data_technology[tech_chalcopyrite_processing_1].effects, {type = unlock_recipe, recipe = chalcopyrite_ore .. _sortiong_stone})
+        table.insert(data_technology[tech_chalcopyrite_processing_1].effects, {type = unlock_recipe, recipe = chalcopyrite_ore .. _sorting_stone})
     end
     if mods[castra_mods] then
-        table.insert(data_technology[tech_millerite_processing_1].effects, {type = unlock_recipe, recipe = millerite_ore .. _sortiong_stone})
+        table.insert(data_technology[tech_millerite_processing_1].effects, {type = unlock_recipe, recipe = millerite_ore .. _sorting_stone})
     end
     if mods[paracelsin_mods] then
-        table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = sphalerite_ore .. _sortiong_stone})
-        table.insert(data_technology[tech_tetrahedrite_processing_1].effects, {type = unlock_recipe, recipe = tetrahedrite_ore .. _sortiong_stone})
+        table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = sphalerite_ore .. _sorting_stone})
+        table.insert(data_technology[tech_tetrahedrite_processing_1].effects, {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting_stone})
     end
 end

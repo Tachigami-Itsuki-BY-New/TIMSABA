@@ -473,6 +473,21 @@ simulations.factoriopedia_military_underground_belt_arig =
     ]]
 }
 
+-- VESTA
+simulations.factoriopedia_magnetic_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqVkNsKwjAMQP8lz51sZfXSXxGRXcIIrGnpOnGM/rvt9uCDiPgUcjuHZIV2nNF54gB6BeosT6CvK0w0cDPmGjcGQYNpBsZAXeHIYRFsMXg7cw9RAHGPT9BVvAlADhQId8iWLHeeTYs+DYhfMAHOTmnfcjZn5kEJWLaYRD157PZuJaP4EMj/BedvgjpfQwFNor1/JOCBftoG1FFeVC3riyrlSZYxvgD3/G5j",
+            position = {0, 0}
+        }
+    ]]
+}
+
 -- LIGNUMIS
 simulations.factoriopedia_wood_underground_belt =
 {

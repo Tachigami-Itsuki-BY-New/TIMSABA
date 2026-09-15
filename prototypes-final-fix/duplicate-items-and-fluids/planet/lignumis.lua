@@ -37,7 +37,11 @@ if mods[lignumis_mods] then
         "gold-module-3",
         "burner-lamp",
         "burner-lamp-copper",
-        "basic-" .. gun_turret_1 .. "-copper"
+        "basic-" .. gun_turret_1 .. "-copper",
+        "basic-storage-chest",
+        "basic-roboport",
+        "basic-repair-pack-copper",
+        "wood-lab-copper"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

@@ -814,6 +814,9 @@ data_recipe[lab_1].order = a
 data_recipe[lab_1].energy_required = 1
 data_recipe[lab_1].ingredients[1].amount = 8
 data_recipe[lab_1].ingredients[2].amount = 8
+if mods[lignumis_mods] then
+    table.insert(data_recipe[lab_1].ingredients, {type = item, name = wood_lab, amount = 1})
+end
 data_lab[lab_1].subgroup = is_lab
 data_lab[lab_1].order = a
 
@@ -894,10 +897,6 @@ if mods[bobtech] then
         end
         if mods[apia_carnova_mods] then
             table.insert(data_lab[lab_alien].inputs, apicultural_science_pack)
-        end
-        if mods[lignumis_mods] then
-            --table.insert(data_lab[lab_alien].inputs, wood_science_pack)
-            --table.insert(data_lab[lab_alien].inputs, steam_science_pack)
         end
         -- УБРАТЬ или ИЗМЕНИТЬ
         if mods[obsidiax_mods] then
