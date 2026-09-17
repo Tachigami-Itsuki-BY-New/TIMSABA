@@ -226,7 +226,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He-3"} or nil,
             name = helium_3_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}},
+            icon = graphics_vesta .. helium_vesta .. ".png",
             order = e,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
@@ -235,7 +235,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He-4"} or nil,
             name = helium_4_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}},
+            icon = graphics_vesta .. helium_vesta .. ".png",
             order = f,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
@@ -250,7 +250,10 @@ if mods[aegis_bellicos_mods] then
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
         }
     })
-    --TIMSABA.barreling.add_gas(helium_3_gas)
-    --TIMSABA.barreling.add_gas(helium_4_gas)
     TIMSABA.barreling.add_gas(helium_liquid)
+
+    data_fluid[helium_3_gas].icon = nil
+    data_fluid[helium_3_gas].icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}}
+    data_fluid[helium_4_gas].icon = nil
+    data_fluid[helium_4_gas].icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}}
 end

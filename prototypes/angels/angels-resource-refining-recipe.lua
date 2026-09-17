@@ -1,9 +1,8 @@
+-- STONE
 crushed_stone_sorting_1 = "crushed-stone-sorting-1"
 crushed_stone_sorting_2 = "crushed-stone-sorting-2"
 crushed_stone_sorting_3 = "crushed-stone-sorting-3"
-manganese_ore_recipe = "ore-crushed-mix5-processing"
-chromium_ore_recipe = "ore-crystal-mix7-processing"
-molybdenum_ore_recipe = "molybdenum-ore-pure-mix-processing"
+calcium_from_crushed_stone = "calcium-from-crushed-stone"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -66,66 +65,16 @@ TIMSABA.functions.create_recipes
         main_product = sodium_angels
     },
     {
-        name = stone,
-        categories = {angels_ore_sorting_1},
+        localised_name = {"item-name." .. calcium},
+        name = calcium_from_crushed_stone,
+        categories = {angels_ore_refining_T1},
         subgroup = is_processing_crafting,
-        icons = TWO_I(slag_angels, stone),
-        order = d,
+        icons = TWO_I(stone_crushed_angels, calcium),
+        order = g,
         allow_productivity = true,
         energy_required = 1,
-        ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results = {{type = item, name = stone, amount = 8}},
-        main_product = stone
-    },
-    {
-        name = manganese_ore_recipe,
-        categories = {angels_ore_sorting_2},
-        subgroup = is_ore_sorting_advanced_1,
-        icons = AR_FOUR_I(mineral_catalyst, crushed_ferrous, crushed_rubyte, manganese_ore_angels),
-        order = a_e,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = mineral_catalyst, amount = 1},
-            {type = item, name = crushed_ferrous, amount = 2},
-            {type = item, name = crushed_rubyte, amount = 2}
-        },
-        results = {{type = item, name = manganese_ore_angels, amount = 4}},
-        main_product = manganese_ore_angels
-    },
-    {
-        name = chromium_ore_recipe,
-        categories = {angels_ore_sorting_4},
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_rubyte, chromium_ore_angels),
-        order = a_g,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = crystal_ferrous, amount = 2},
-            {type = item, name = crystal_rubyte, amount = 2}
-        },
-        results = {{type = item, name = chromium_ore_angels, amount = 4}},
-        main_product = chromium_ore_angels
-    },
-    {
-        name = molybdenum_ore_recipe,
-        categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, powellite_purified, molybdenum_ore),
-        order = a_j,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = molybdenite_purified, amount = 2},
-            {type = item, name = powellite_purified, amount = 2}
-        },
-        results = {{type = item, name = molybdenum_ore, amount = 4}},
-        main_product = molybdenum_ore
+        ingredients ={{type = item, name = stone_crushed_angels, amount = 4}},
+        results = {{type = item, name = calcium, amount = 1}},
+        main_product = calcium
     }
 })

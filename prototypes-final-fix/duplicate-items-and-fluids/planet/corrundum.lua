@@ -5,9 +5,6 @@ if mods[corrundum_mods] then
     {
 		[sulfur_ore_mods] = sulfur,
 		[petroleum_gas] = methane_angels,
-        [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
-        [sulfur_dioxide_mods] = sulfur_dioxide_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels,
         [calcium_sulfate_mods] = calcium_sulfate_angels,
 		[platinum_ore_mods] = platinum_ore_angels,
 		[platinum_plate_mods] = platinum_plate,

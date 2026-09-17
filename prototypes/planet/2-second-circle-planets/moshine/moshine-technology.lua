@@ -1,6 +1,7 @@
 if mods[moshine_mods] then
     planet_discovery_moshine = "planet-discovery-moshine"
     tech_magnet_moshine = "moshine-tech-magnet"
+    tech_machine_learning = "moshine-tech-data-processor"
 
     -- MONAZITE
     local graphics_monazite_tech = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png"
@@ -20,6 +21,7 @@ if mods[moshine_mods] then
             prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
             effects =
             {
+                {type = unlock_recipe, recipe = monazite_ore .. _sorting_stone},
                 {type = unlock_recipe, recipe = monazite_crushed},
                 {type = unlock_recipe, recipe = monazite_crushed_sorting}
             },
@@ -47,7 +49,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_2,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {cryogenic_science_pack, tech_monazite_processing_1},
+            prerequisites = {tech_machine_learning, tech_monazite_processing_1},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_chunks},
@@ -78,7 +80,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_3,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_monazite_processing_2},
+            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_crystals},
@@ -109,11 +111,145 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_4,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {tech_monazite_processing_3},
+            prerequisites = {promethium_science_pack, tech_monazite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_purified},
                 {type = unlock_recipe, recipe = monazite_purified_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+
+    -- AESCHYNITE
+    local graphics_aeschynite_tech = "__TIMSABA__/graphics/icons/moshine/technology/aeschynite-processing.png"
+    tech_aeschynite_processing_1 = "aeschynite-processing-1"
+    tech_aeschynite_processing_2 = "aeschynite-processing-2"
+    tech_aeschynite_processing_3 = "aeschynite-processing-3"
+    tech_aeschynite_processing_4 = "aeschynite-processing-4"
+    data:extend
+    ({
+        {
+            localised_name = {"technology-name." .. tech_aeschynite_processing_1},
+            localised_description = {"technology-description.angels-ore-crushing"},
+            type = technology,
+            name = tech_aeschynite_processing_1,
+            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon_size = 256,
+            prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
+            effects =
+            {
+                {type = unlock_recipe, recipe = aeschynite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = aeschynite_crushed},
+                {type = unlock_recipe, recipe = aeschynite_crushed_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_aeschynite_processing_2},
+            localised_description = {"technology-description.angels-ore-floatation"},
+            type = technology,
+            name = tech_aeschynite_processing_2,
+            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon_size = 256,
+            prerequisites = {tech_machine_learning, tech_aeschynite_processing_1},
+            effects =
+            {
+                {type = unlock_recipe, recipe = aeschynite_chunks},
+                {type = unlock_recipe, recipe = aeschynite_chunks_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_aeschynite_processing_3},
+            localised_description = {"technology-description.angels-ore-leaching"},
+            type = technology,
+            name = tech_aeschynite_processing_3,
+            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon_size = 256,
+            prerequisites = {cryogenic_science_pack, tech_aeschynite_processing_2},
+            effects =
+            {
+                {type = unlock_recipe, recipe = aeschynite_crystals},
+                {type = unlock_recipe, recipe = aeschynite_crystals_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_aeschynite_processing_4},
+            localised_description = {"technology-description.angels-ore-refining"},
+            type = technology,
+            name = tech_aeschynite_processing_4,
+            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon_size = 256,
+            prerequisites = {promethium_science_pack, tech_aeschynite_processing_3},
+            effects =
+            {
+                {type = unlock_recipe, recipe = aeschynite_purified},
+                {type = unlock_recipe, recipe = aeschynite_purified_sorting}
             },
             unit =
             {
@@ -151,7 +287,7 @@ if mods[moshine_mods] then
             name = tech_neodymium_smelting_1,
             icon = graphics_neodymium_smelting_tech,
             icon_size = 256,
-            prerequisites = {tech_monazite_processing_1},
+            prerequisites = {tech_monazite_processing_1, tech_aeschynite_processing_1},
             effects =
             {
                 {type = unlock_recipe, recipe = neodymium_chloride_III},
@@ -181,7 +317,7 @@ if mods[moshine_mods] then
             name = tech_neodymium_smelting_2,
             icon = graphics_neodymium_smelting_tech,
             icon_size = 256,
-            prerequisites = {tech_monazite_processing_2, tech_neodymium_smelting_1},
+            prerequisites = {tech_monazite_processing_2, tech_aeschynite_processing_2, tech_neodymium_smelting_1},
             effects =
             {
                 {type = unlock_recipe, recipe = neodymium_processed},
@@ -214,7 +350,7 @@ if mods[moshine_mods] then
             name = tech_neodymium_smelting_3,
             icon = graphics_neodymium_smelting_tech,
             icon_size = 256,
-            prerequisites = {tech_monazite_processing_3, tech_neodymium_smelting_2},
+            prerequisites = {tech_monazite_processing_3, tech_aeschynite_processing_3, tech_neodymium_smelting_2},
             effects =
             {
                 {type = unlock_recipe, recipe = neodymium_pellet},

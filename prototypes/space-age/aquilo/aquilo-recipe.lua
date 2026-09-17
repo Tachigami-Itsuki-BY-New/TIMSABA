@@ -404,8 +404,8 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = galium_arsenide, amount = 4},
-            {type = item, name = galium_nitride, amount = 4},
+            {type = item, name = gallium_arsenide, amount = 4},
+            {type = item, name = gallium_nitride, amount = 4},
             {type = item, name = niobium_titanium_cable, amount = 4},
             {type = fluid, name = photoresist_liquid, amount = 60}
         },
@@ -415,27 +415,9 @@ TIMSABA.functions.create_recipes
 })
 
 -- OTHERS
-arsenic_recipe = "arsenic-pure-mix-processing"
 ethanol_from_chloroethane_gas = "ethanol-from-chloroethane-gas"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = arsenic_recipe,
-        categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, germanite_purified, arsenic),
-        order = b_a,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = antimonite_purified, amount = 2},
-            {type = item, name = germanite_purified, amount = 2}
-        },
-        results = {{type = item, name = arsenic, amount = 4}},
-        main_product = arsenic
-    },
     {
         type = recipe,
         name = ethanol_from_chloroethane_gas,

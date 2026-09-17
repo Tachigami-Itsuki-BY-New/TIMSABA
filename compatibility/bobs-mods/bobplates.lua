@@ -107,14 +107,14 @@ TIMSABA.functions.create_recipes
     }
 })
 
-if not data_technology[tech_tungsten_alloy_processing] then
+if not data_technology[tech_copper_tungsten_processing] then
     data:extend
     ({
         {
             localised_name = {"technology-name.bob-tungsten-alloy-processing"},
             localised_description = {"technology-description.bob-tungsten-alloy-processing"},
             type = technology,
-            name = tech_tungsten_alloy_processing,
+            name = tech_copper_tungsten_processing,
             icon = "__reskins-bobs__/graphics/technology/plates/plates/bob-tungsten-alloy-processing.png",
             icon_size = 256,
             prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack},

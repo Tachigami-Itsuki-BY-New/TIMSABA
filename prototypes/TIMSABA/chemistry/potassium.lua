@@ -131,15 +131,6 @@ potassium_chloride_solution_2 = "potassium-chloride-solution-2"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = carnallite,
-        categories = {angels_salination_plant},
-        subgroup = is_potassium,
-        icons = TWO_I(water_saline_angels, carnallite),
-        order = a,
-        ingredients = {{type = fluid, name = water_saline_angels, amount = 960}},
-        results = {{type = item, name = carnallite, amount = 16}},
-    },
-    {
         name = potassium_hydroxide,
         categories = {angels_petrochem_electrolyser},
         subgroup = is_potassium,

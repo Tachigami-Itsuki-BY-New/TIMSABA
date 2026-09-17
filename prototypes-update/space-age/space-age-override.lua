@@ -16,11 +16,10 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = copper_tungsten_plate_bob, amount = 512}
 }
 data_rocket_silo[rocket_silo].order = a
-data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
+data_rocket_silo[rocket_silo].energy_usage = (3840 - drain) .. kW
 data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
 if mods[muluna_mods] then
-    local big_rocket_silo = "muluna-big-rocket-silo"
     data_item[big_rocket_silo].order = b
     data_item[big_rocket_silo].stack_size = 1
     data_item[big_rocket_silo].weight = 1000000000
@@ -40,8 +39,6 @@ if mods[muluna_mods] then
     }
     data_rocket_silo[big_rocket_silo].order = b
     data_rocket_silo[big_rocket_silo].crafting_speed = 4
-    data_rocket_silo[big_rocket_silo].energy_usage = ((4800 * 4) - (drain * 4)) .. kW
-    data_rocket_silo[big_rocket_silo].energy_source.drain = (drain * 4) .. kW
 
     bobmods.lib.recipe.update_recycling_recipe({big_rocket_silo})
 end
@@ -163,6 +160,70 @@ data_temporary_container[cargo_pod_container].order = g
 data_temporary_container["fulgoran-" .. cargo_pod_container].order = h
 
 data_item_subgroup[space_platform].order = b
+
+if mods[moshine_mods] then
+    local cosmicscanner_construction_stage_1 = "moshine_cosmicscanner-construction-stage-1"
+    data_item[cosmicscanner_construction_stage_1].weight = 1000000000
+    data_recipe[cosmicscanner_construction_stage_1].energy_required = 128
+    data_recipe[cosmicscanner_construction_stage_1].ingredients =
+    {
+        {type = item, name = silicon_boule_mods, amount = 64},
+        {type = item, name = space_platform_foundation, amount = 512},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 512},
+        {type = item, name = reinforced_graphene_concrete_brick, amount = 1024}
+    }
+    data_assembling[cosmicscanner_construction_stage_1].energy_usage = ((960 * 256) - (drain * 256)) .. kW
+    data_assembling[cosmicscanner_construction_stage_1].energy_source.drain = (drain * 256) .. kW
+
+    local cosmicscanner_construct_2 = "moshine_cosmicscanner-construct-1"
+    data_recipe[cosmicscanner_construct_2].energy_required = 8
+    data_recipe[cosmicscanner_construct_2].ingredients =
+    {
+        {type = item, name = silicon_carbide_bob, amount = 128},
+        {type = item, name = engine_unit, amount = 64},
+        {type = item, name = niobium_titanium_cable, amount = 32},
+        {type = item, name = neodymium_magnet, amount = 256}
+    }
+
+    local cosmicscanner_construct_3 = "moshine_cosmicscanner-construct-2"
+    data_recipe[cosmicscanner_construct_3].energy_required = 8
+    data_recipe[cosmicscanner_construct_3].ingredients =
+    {
+        {type = item, name = data_processor, amount = 1},
+        {type = item, name = silicon_cell_mods, amount = 1},
+        {type = item, name = glass_bob, amount = 64},
+        {type = item, name = holmium_plate, amount = 64}
+    }
+
+    local cosmicscanner_construct_4 = "moshine_cosmicscanner-construct-3"
+    data_recipe[cosmicscanner_construct_4].energy_required = 16
+    data_recipe[cosmicscanner_construct_4].ingredients =
+    {
+        {type = item, name = data_extractor, amount = 1},
+        {type = item, name = tesla_turret, amount = 1},
+        {type = item, name = electric_engine_unit, amount = 32},
+        {type = item, name = low_density_structure, amount = 256}
+    }
+
+    local cosmicscanner_construct_5 = "moshine_cosmicscanner-construct-4"
+    data_recipe[cosmicscanner_construct_5].energy_required = 16
+    data_recipe[cosmicscanner_construct_5].ingredients =
+    {
+        {type = item, name = ai_tier_1, amount = 1},
+        {type = item, name = glass_bob, amount = 128},
+        {type = item, name = electric_engine_unit, amount = 32}
+    }
+    if data_item[lab_2] then
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = lab_2, amount = 1})
+    else
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = lab_1, amount = 1})
+    end
+    if data_item[radar_5] then
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = radar_5, amount = 1})
+    else
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = radar_1, amount = 1})
+    end
+end
 
 data_item[space_platform_foundation].stack_size = 200
 data_item[space_platform_foundation].weight = 5000

@@ -1,6 +1,6 @@
 local graphics_antimonite = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/"
 
--- Antimonite ore / Sb + Pb + Fe + Cu + Ag + As
+-- Antimonite ore / Sb + As + Fe + Cu + Pb + Ag
 antimonite_ore = "antimonite-ore"
 antimonite_crushed = "antimonite-crushed"
 antimonite_chunks = "antimonite-chunks"
@@ -123,18 +123,31 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
+        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. antimonite_ore}},
+        name = antimonite_ore .. _sorting_stone,
+        categories = {ore_sorting_6},
+        subgroup = is_antimonite,
+        icons = RECYCLING_I(recycling_png, antimonite_ore),
+        order = f,
+        allow_productivity = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = antimonite_ore, amount = 4}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
         name = antimonite_crushed_sorting,
         categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crushed),
-        order = f,
+        order = g,
         allow_productivity = true,
-        energy_required = 1, -- Antimonite crushed (Sorting) / Sb + Pb + S
+        energy_required = 1, -- Antimonite crushed (Sorting) / Sb + As + S
         ingredients = {{type = item, name = antimonite_crushed, amount = 4}},
         results =
         {
             {type = item, name = antimony_ore, amount = 2},
-            {type = item, name = lead_ore_bob, amount = 1},
+            {type = item, name = arsenic, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
         main_product = antimony_ore
@@ -144,14 +157,14 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_chunks),
-        order = g,
+        order = h,
         allow_productivity = true,
-        energy_required = 2, -- Antimonite chunks (Sorting) / Sb + Pb + Fe + Cu + S
+        energy_required = 2, -- Antimonite chunks (Sorting) / Sb + As + Fe + Cu + S
         ingredients = {{type = item, name = antimonite_chunks, amount = 8}},
         results =
         {
             {type = item, name = antimony_ore, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
+            {type = item, name = arsenic, amount = 2},
             {type = item, name = iron_ore, amount = 1},
             {type = item, name = copper_ore, amount = 1},
             {type = item, name = sulfur, amount = 1}
@@ -163,17 +176,17 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crystals),
-        order = h,
+        order = i,
         allow_productivity = true,
-        energy_required = 2, -- Antimonite crystals (Sorting) / Sb + Pb + Fe + Cu + Ag + S
+        energy_required = 2, -- Antimonite crystals (Sorting) / Sb + As + Fe + Cu + Pb + S
         ingredients = {{type = item, name = antimonite_crystals, amount = 8}},
         results =
         {
             {type = item, name = antimony_ore, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
+            {type = item, name = arsenic, amount = 2},
             {type = item, name = iron_ore, amount = 1},
             {type = item, name = copper_ore, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
+            {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
         main_product = antimony_ore
@@ -183,18 +196,18 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_purified),
-        order = i,
+        order = j,
         allow_productivity = true,
-        energy_required = 2, -- Antimonite purified (Sorting) / Sb + Pb + Fe + Cu + Ag + As
+        energy_required = 2, -- Antimonite purified (Sorting) / Sb + As + Fe + Cu + Pb + Ag
         ingredients = {{type = item, name = antimonite_purified, amount = 8}},
         results =
         {
             {type = item, name = antimony_ore, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
+            {type = item, name = arsenic, amount = 2},
             {type = item, name = iron_ore, amount = 1},
             {type = item, name = copper_ore, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = arsenic, amount = 1}
+            {type = item, name = lead_ore_bob, amount = 1},
+            {type = item, name = silver_ore_bob, amount = 1}
         },
         main_product = antimony_ore
     }

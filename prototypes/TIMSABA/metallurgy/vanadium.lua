@@ -3,7 +3,7 @@ if not mods[shchierbin_mods] then
 
     -- GROUPS
     local is_vanadium = "is-vanadium"
-    TIMSABA.functions.create_subgroups(ig_aquilo, {{name = is_vanadium, order = h}})
+    TIMSABA.functions.create_subgroups(ig_fulgora, {{name = is_vanadium, order = f}})
 
     -- ITEM
     TIMSABA.functions.create_items

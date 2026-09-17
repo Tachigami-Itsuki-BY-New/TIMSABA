@@ -1,7 +1,7 @@
 if mods[paracelsin_mods] then
     local graphics_sphalerite = "__TIMSABA__/graphics/icons/paracelsin/sphalerite/"
 
-    -- Sphalerite ore / Zn + Fe + Mn + Co + Ge + Sb
+    -- Sphalerite ore / Zn + Ge + Fe + Mn + Co + Sb
     sphalerite_crushed = "sphalerite-crushed"
     sphalerite_chunks = "sphalerite-chunks"
     sphalerite_crystals = "sphalerite-crystals"
@@ -43,7 +43,6 @@ if mods[paracelsin_mods] then
     sphalerite_chunks_sorting = "sphalerite-chunks-sorting"
     sphalerite_crystals_sorting = "sphalerite-crystals-sorting"
     sphalerite_purified_sorting = "sphalerite-purified-sorting"
-    germanium_ore_recipe = "germanium-ore-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED
@@ -113,18 +112,31 @@ if mods[paracelsin_mods] then
         },
         -- SORTING
         {
+            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. sphalerite_ore}},
+            name = sphalerite_ore .. _sorting_stone,
+            categories = {ore_sorting_6},
+            subgroup = is_sphalerite,
+            icons = RECYCLING_I(recycling_png, sphalerite_ore),
+            order = f,
+            allow_productivity = true,
+            energy_required = 1,
+            ingredients = {{type = item, name = sphalerite_ore, amount = 4}},
+            results = {{type = item, name = stone, amount = 1}},
+            main_product = stone
+        },
+        {
             name = sphalerite_crushed_sorting,
             categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_crushed),
-            order = f,
+            order = g,
             allow_productivity = true,
-            energy_required = 1, -- Sphalerite crushed (Sorting) / Zn + Fe + S
+            energy_required = 1, -- Sphalerite crushed (Sorting) / Zn + Ge + S
             ingredients = {{type = item, name = sphalerite_crushed, amount = 4}},
             results =
             {
                 {type = item, name = zinc_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
+                {type = item, name = germanium_ore, amount = 1},
                 {type = item, name = sulfur, amount = 1}
             },
             main_product = zinc_ore_bob
@@ -134,16 +146,16 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
-            energy_required = 2, -- Sphalerite chunks (Sorting) / Zn + Fe + Mn + Co + S
+            energy_required = 2, -- Sphalerite chunks (Sorting) / Zn + Ge + Fe + Mn + S
             ingredients = {{type = item, name = sphalerite_chunks, amount = 8}},
             results =
             {
                 {type = item, name = zinc_ore_bob, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = germanium_ore, amount = 2},
+                {type = item, name = iron_ore, amount = 1},
                 {type = item, name = manganese_ore_angels, amount = 1},
-                {type = item, name = cobalt_ore_bob, amount = 1},
                 {type = item, name = sulfur, amount = 1}
             },
             main_product = zinc_ore_bob
@@ -153,17 +165,17 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
-            energy_required = 2, -- Sphalerite crystals (Sorting) / Zn + Fe + Mn + Co + Ge + S
+            energy_required = 2, -- Sphalerite crystals (Sorting) / Zn + Ge + Fe + Mn + Co + S
             ingredients = {{type = item, name = sphalerite_crystals, amount = 8}},
             results =
             {
                 {type = item, name = zinc_ore_bob, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = germanium_ore, amount = 2},
+                {type = item, name = iron_ore, amount = 1},
                 {type = item, name = manganese_ore_angels, amount = 1},
                 {type = item, name = cobalt_ore_bob, amount = 1},
-                {type = item, name = germanium_ore, amount = 1},
                 {type = item, name = sulfur, amount = 1}
             },
             main_product = zinc_ore_bob
@@ -173,38 +185,20 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
-            energy_required = 2, -- Sphalerite purified (Sorting) / Zn + Fe + Mn + Co + Ge + Sb
+            energy_required = 2, -- Sphalerite purified (Sorting) / Zn + Ge + Fe + Mn + Co + Sb
             ingredients = {{type = item, name = sphalerite_purified, amount = 8}},
             results =
             {
                 {type = item, name = zinc_ore_bob, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = germanium_ore, amount = 2},
+                {type = item, name = iron_ore, amount = 1},
                 {type = item, name = manganese_ore_angels, amount = 1},
                 {type = item, name = cobalt_ore_bob, amount = 1},
-                {type = item, name = germanium_ore, amount = 1},
                 {type = item, name = antimony_ore, amount = 1}
             },
             main_product = zinc_ore_bob
-        },
-        -- SYNTHESIS
-        {
-            name = germanium_ore_recipe,
-            categories = {ore_sorting_6},
-            subgroup = is_ore_sorting_advanced_3,
-            icons = AR_FOUR_I(hybride_catalyst, germanite_purified, sphalerite_purified, germanium_ore),
-            order = a_p,
-            allow_productivity = true,
-            energy_required = 2,
-            ingredients =
-            {
-                {type = item, name = hybride_catalyst, amount = 1},
-                {type = item, name = germanite_purified, amount = 2},
-                {type = item, name = sphalerite_purified, amount = 2}
-            },
-            results = {{type = item, name = germanium_ore, amount = 4}},
-            main_product = germanium_ore
         }
     })
 end

@@ -1,6 +1,6 @@
 local graphics_germanite = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/"
 
--- Germanite Ore / Ge + Cu + Fe + Ga + V + As
+-- Germanite Ore / Ge + Ga + Fe + Cu + V + As
 germanite_ore = "germanite-ore"
 germanite_crushed = "germanite-crushed"
 germanite_chunks = "germanite-chunks"
@@ -128,18 +128,31 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
+        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. germanite_ore}},
+        name = germanite_ore .. _sorting_stone,
+        categories = {ore_sorting_6},
+        subgroup = is_germanite,
+        icons = RECYCLING_I(recycling_png, germanite_ore),
+        order = f,
+        allow_productivity = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = germanite_ore, amount = 4}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
         name = germanite_crushed_sorting,
         categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crushed),
-        order = f,
+        order = g,
         allow_productivity = true,
-        energy_required = 1, -- Germanite crushed (Sorting) / Ge + Cu + S
+        energy_required = 1, -- Germanite crushed (Sorting) / Ge + Ga + S
         ingredients = {{type = item, name = germanite_crushed, amount = 4}},
         results =
         {
             {type = item, name = germanium_ore, amount = 2},
-            {type = item, name = copper_ore, amount = 1},
+            {type = item, name = gallium_ore, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
         main_product = germanium_ore
@@ -149,16 +162,16 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_chunks),
-        order = g,
+        order = h,
         allow_productivity = true,
-        energy_required = 2, -- Germanite chunks (Sorting) / Ge + Cu + Fe + Ga + S
+        energy_required = 2, -- Germanite chunks (Sorting) / Ge + Ga + Fe + Cu + S
         ingredients = {{type = item, name = germanite_chunks, amount = 8}},
         results =
         {
             {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = gallium_ore, amount = 2},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
         main_product = germanium_ore
@@ -168,16 +181,16 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crystals),
-        order = h,
+        order = i,
         allow_productivity = true,
-        energy_required = 2, -- Germanite crystals (Sorting) / Ge + Cu + Fe + Ga + V + S
+        energy_required = 2, -- Germanite crystals (Sorting) / Ge + Ga + Fe + Cu + V + S
         ingredients = {{type = item, name = germanite_crystals, amount = 8}},
         results =
         {
             {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = gallium_ore, amount = 2},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = vanadium_ore, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
@@ -188,16 +201,16 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_purified),
-        order = i,
+        order = j,
         allow_productivity = true,
-        energy_required = 2, -- Germanite purified (Sorting) / Ge + Cu + Fe + Ga + V + As
+        energy_required = 2, -- Germanite purified (Sorting) / Ge + Ga + Fe + Cu + V + As
         ingredients = {{type = item, name = germanite_purified, amount = 8}},
         results =
         {
             {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = gallium_ore, amount = 2},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = vanadium_ore, amount = 1},
             {type = item, name = arsenic, amount = 1}
         },

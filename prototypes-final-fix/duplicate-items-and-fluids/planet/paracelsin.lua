@@ -3,7 +3,6 @@ if mods[paracelsin_mods] then
     {
 		[zinc_mods] = zinc_ore_bob,
         [zinc_plate_mods] = zinc_plate_bob,
-        [nitrogen_mods] = nitrogen_angels,
         [nitric_acid_mods] = nitric_acid_angels
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)

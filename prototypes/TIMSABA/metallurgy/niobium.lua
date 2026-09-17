@@ -8,11 +8,11 @@ local is_niobium_iron = "is-niobium-iron"
 local is_niobium_tungsten_molybdenum = "is-niobium-tungsten-molybdenum"
 TIMSABA.functions.create_subgroups(ig_vulcanus,
 {
-    {name = is_niobium,                     order = c_a},
-    {name = is_niobium_chemistry,           order = c_b},
-    {name = is_niobium_titanium,            order = c_d},
-    {name = is_niobium_iron,                order = c_e},
-    {name = is_niobium_tungsten_molybdenum, order = c_f}
+    {name = is_niobium,                     order = d_a},
+    {name = is_niobium_chemistry,           order = d_b},
+    {name = is_niobium_titanium,            order = d_d},
+    {name = is_niobium_iron,                order = d_e},
+    {name = is_niobium_tungsten_molybdenum, order = d_f}
 })
 
 -- ITEM

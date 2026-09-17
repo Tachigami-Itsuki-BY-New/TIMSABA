@@ -125,11 +125,24 @@ if mods[moshine_mods] then
         },
         -- SORTING
         {
+            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. monazite_ore}},
+            name = monazite_ore .. _sorting_stone,
+            categories = {ore_sorting_6},
+            subgroup = is_monazite,
+            icons = RECYCLING_I(recycling_png, monazite_ore),
+            order = f,
+            allow_productivity = true,
+            energy_required = 1,
+            ingredients = {{type = item, name = monazite_ore, amount = 4}},
+            results = {{type = item, name = stone, amount = 1}},
+            main_product = stone
+        },
+        {
             name = monazite_crushed_sorting,
             categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_crushed),
-            order = f,
+            order = g,
             allow_productivity = true,
             energy_required = 1, -- Monazite crushed (Sorting) / Nd + Ho + Ca₃(PO₄)₂
             ingredients = {{type = item, name = monazite_crushed, amount = 4}},
@@ -146,7 +159,7 @@ if mods[moshine_mods] then
             categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
             energy_required = 2, -- Monazite chunks (Sorting) / Nd + Ho + U + Th + Ca₃(PO₄)₂
             ingredients = {{type = item, name = monazite_chunks, amount = 8}},
@@ -165,7 +178,7 @@ if mods[moshine_mods] then
             categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
             energy_required = 2, -- Monazite crystals (Sorting) / Nd + Ho + U + Th + Ce + Ca₃(PO₄)₂
             ingredients = {{type = item, name = monazite_crystals, amount = 8}},
@@ -185,7 +198,7 @@ if mods[moshine_mods] then
             categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
             energy_required = 2, -- Monazite purified (Sorting) / Nd + Ho + U + Th + Ce + Pm
             ingredients = {{type = item, name = monazite_purified, amount = 8}},

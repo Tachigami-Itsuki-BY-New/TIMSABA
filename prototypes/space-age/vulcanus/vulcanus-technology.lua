@@ -3,7 +3,7 @@ planet_discovery_vulcanus = "planet-discovery-vulcanus"
 -- WOLFRAMITE
 local graphics_wolframite_tech = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png"
 tech_wolframite_processing_1 = "wolframite-processing-1"
-local tech_wolframite_processing_2 = "wolframite-processing-2"
+tech_wolframite_processing_2 = "wolframite-processing-2"
 tech_wolframite_processing_3 = "wolframite-processing-3"
 tech_wolframite_processing_4 = "wolframite-processing-4"
 data:extend
@@ -18,13 +18,15 @@ data:extend
         prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
         effects =
         {
+            {type = unlock_recipe, recipe = wolframite_ore .. _sorting_stone},
             {type = unlock_recipe, recipe = wolframite_crushed},
-            {type = unlock_recipe, recipe = wolframite_crushed_sorting}
+            {type = unlock_recipe, recipe = wolframite_crushed_sorting},
+            {type = unlock_recipe, recipe = tungsten_plate_bob}
         },
         research_trigger =
         {
             type = mine_entity,
-            entities = {"big-volcanic-rock"}
+            entities = {"big-volcanic-rock", "huge-volcanic-rock"}
         }
     },
     {
@@ -122,11 +124,134 @@ data:extend
     }
 })
 
+-- SAMARSKITE
+local graphics_samarskite_tech = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/samarskite-processing.png"
+tech_samarskite_processing_1 = "samarskite-processing-1"
+tech_samarskite_processing_2 = "samarskite-processing-2"
+tech_samarskite_processing_3 = "samarskite-processing-3"
+tech_samarskite_processing_4 = "samarskite-processing-4"
+data:extend
+({
+    {
+        localised_name = {"technology-name." .. tech_samarskite_processing_1},
+        localised_description = {"technology-description.angels-ore-crushing"},
+        type = technology,
+        name = tech_samarskite_processing_1,
+        icon = tech_error_png,--graphics_samarskite_tech,
+        icon_size = 256,
+        prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
+        effects =
+        {
+            {type = unlock_recipe, recipe = samarskite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = samarskite_crushed},
+            {type = unlock_recipe, recipe = samarskite_crushed_sorting}
+        },
+        research_trigger =
+        {
+            type = mine_entity,
+            entities = {"big-volcanic-rock", "huge-volcanic-rock"}
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_samarskite_processing_2},
+        localised_description = {"technology-description.angels-ore-floatation"},
+        type = technology,
+        name = tech_samarskite_processing_2,
+        icon = tech_error_png,--graphics_samarskite_tech,
+        icon_size = 256,
+        prerequisites = {metallurgic_science_pack, tech_samarskite_processing_1},
+        effects =
+        {
+            {type = unlock_recipe, recipe = samarskite_chunks},
+            {type = unlock_recipe, recipe = samarskite_chunks_sorting}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_samarskite_processing_3},
+        localised_description = {"technology-description.angels-ore-leaching"},
+        type = technology,
+        name = tech_samarskite_processing_3,
+        icon = tech_error_png,--graphics_samarskite_tech,
+        icon_size = 256,
+        prerequisites = {cryogenic_science_pack, tech_samarskite_processing_2},
+        effects =
+        {
+            {type = unlock_recipe, recipe = samarskite_crystals},
+            {type = unlock_recipe, recipe = samarskite_crystals_sorting}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1},
+                {cryogenic_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_samarskite_processing_4},
+        localised_description = {"technology-description.angels-ore-refining"},
+        type = technology,
+        name = tech_samarskite_processing_4,
+        icon = tech_error_png,--graphics_samarskite_tech,
+        icon_size = 256,
+        prerequisites = {promethium_science_pack, tech_samarskite_processing_3},
+        effects =
+        {
+            {type = unlock_recipe, recipe = samarskite_purified},
+            {type = unlock_recipe, recipe = samarskite_purified_sorting}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1},
+                {cryogenic_science_pack, 1}
+            },
+            time = 30
+        }
+    }
+})
+
 -- NIOBIUM
 local graphics_niobium_smelting_tech = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png"
-local tech_niobium_smelting_1 = "niobium-smelting-1"
-local tech_niobium_smelting_2 = "niobium-smelting-2"
-local tech_niobium_smelting_3 = "niobium-smelting-3"
+tech_niobium_smelting_1 = "niobium-smelting-1"
+tech_niobium_smelting_2 = "niobium-smelting-2"
+tech_niobium_smelting_3 = "niobium-smelting-3"
 local graphics_vulcanus_tech = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/"
 tech_niobium_titanium_processing = "niobium-titanium-processing"
 tech_niobium_iron_processing = "niobium-iron-processing"
@@ -140,7 +265,7 @@ data:extend
         name = tech_niobium_smelting_1,
         icon = graphics_niobium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_wolframite_processing_1},
+        prerequisites = {tech_wolframite_processing_1, tech_samarskite_processing_1},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_oxide_V},
@@ -168,7 +293,7 @@ data:extend
         name = tech_niobium_smelting_2,
         icon = graphics_niobium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack, tech_wolframite_processing_2},
+        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack, tech_wolframite_processing_2, tech_samarskite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_processed},
@@ -198,7 +323,7 @@ data:extend
         name = tech_niobium_smelting_3,
         icon = graphics_niobium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_niobium_smelting_2, cryogenic_science_pack, tech_wolframite_processing_3},
+        prerequisites = {tech_niobium_smelting_2, cryogenic_science_pack, tech_wolframite_processing_3, tech_samarskite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_pellet},
@@ -229,8 +354,10 @@ data:extend
     {
         type = technology,
         name = tech_niobium_titanium_processing,
-        icon = graphics_vulcanus_tech .. tech_niobium_titanium_processing .. ".png",
-        icon_size = 256,
+        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium/" .. niobium_titanium_plate .. ".png",
+        --icon = graphics_vulcanus_tech .. tech_niobium_titanium_processing .. ".png",
+        icon_size = 64,
+        --icon_size = 256,
         prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
@@ -257,8 +384,10 @@ data:extend
     {
         type = technology,
         name = tech_niobium_iron_processing,
-        icon = graphics_vulcanus_tech .. tech_niobium_iron_processing .. ".png",
-        icon_size = 256,
+        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium/" .. niobium_iron_plate .. ".png",
+        --icon = graphics_vulcanus_tech .. tech_niobium_iron_processing .. ".png",
+        icon_size = 64,
+        --icon_size = 256,
         prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
@@ -286,8 +415,10 @@ data:extend
     {
         type = technology,
         name = tech_niobium_tungsten_molybdenum_processing,
-        icon = graphics_vulcanus_tech .. tech_niobium_tungsten_molybdenum_processing .. ".png",
-        icon_size = 256,
+        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium/" .. niobium_tungsten_molybdenum_plate .. ".png",
+        --icon = graphics_vulcanus_tech .. tech_niobium_tungsten_molybdenum_processing .. ".png",
+        icon_size = 64,
+        --icon_size = 256,
         prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
@@ -315,7 +446,6 @@ data:extend
 
 -- OTHERS
 tech_vulcanus_metallurgic = "vulcanus-metallurgic"
-tech_rhenium_synthesis = "rhenium-synthesis"
 data:extend
 ({
     {
@@ -345,32 +475,6 @@ data:extend
                 {metallurgic_science_pack, 1}
             },
             time = 60
-        }
-    },
-    {
-        type = technology,
-        name = tech_rhenium_synthesis,
-        icon = graphics_vulcanus_tech .. tech_rhenium_synthesis .. ".png",
-        icon_size = 256,
-        prerequisites = {promethium_science_pack, tech_rhenium_smelting_3, tech_molybdenite_processing_4, tech_wolframite_processing_4},
-        effects = {{type = unlock_recipe, recipe = rhenium_ore_recipe}},
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1},
-                {metallurgic_science_pack, 1},
-                {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
-            },
-            time = 30
         }
     }
 })

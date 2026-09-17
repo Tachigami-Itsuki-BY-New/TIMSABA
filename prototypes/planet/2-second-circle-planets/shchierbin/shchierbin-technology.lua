@@ -4,7 +4,7 @@ if mods[shchierbin_mods] then
 
     local graphics_vanadium_smelting_tech = "__TIMSABA__/graphics/icons/shchierbin/vanadium/technology/smelting-vanadium-tech.png"
     tech_vanadium_smelting_1 = "vanadium-smelting-1"
-    local tech_vanadium_smelting_2 = "vanadium-smelting-2"
+    tech_vanadium_smelting_2 = "vanadium-smelting-2"
     tech_vanadium_smelting_3 = "vanadium-smelting-3"
     tech_titanium_aluminium_vanadium_processing = "titanium-aluminium-vanadium-processing"
     data:extend

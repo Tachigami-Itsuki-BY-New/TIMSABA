@@ -6,7 +6,6 @@ if mods[castra_mods] then
     local tech_millerite_processing_2 = "millerite-processing-2"
     tech_millerite_processing_3 = "millerite-processing-3"
     tech_millerite_processing_4 = "millerite-processing-4"
-    tech_vanadium_synthesis = "vanadium-synthesis"
     tech_nickel_processing = "nickel-processing"
     data:extend
     ({
@@ -20,6 +19,7 @@ if mods[castra_mods] then
             prerequisites = {planet_discovery_castra},
             effects =
             {
+                {type = unlock_recipe, recipe = millerite_ore .. _sorting_stone},
                 {type = unlock_recipe, recipe = millerite_crushed},
                 {type = unlock_recipe, recipe = millerite_crushed_sorting},
                 {type = unlock_recipe, recipe = nickel_plate_bob}
@@ -134,33 +134,6 @@ if mods[castra_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
-                },
-                time = 30
-            }
-        },
-        {
-            type = technology,
-            name = tech_vanadium_synthesis,
-            icon = "__TIMSABA__/graphics/icons/castra/technology/vanadium-synthesis.png",
-            icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_germanite_processing_4, tech_millerite_processing_4},
-            effects = {{type = unlock_recipe, recipe = vanadium_ore_recipe}},
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {military_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {metallurgic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30

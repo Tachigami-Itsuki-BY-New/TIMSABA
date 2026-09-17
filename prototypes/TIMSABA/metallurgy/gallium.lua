@@ -1,4 +1,4 @@
-local graphics_galium = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/"
+local graphics_gallium = "__TIMSABA__/graphics/icons/space-age/aquilo/gallium/"
 
 -- GROUPS
 local is_gallium = "is-gallium"
@@ -10,112 +10,112 @@ TIMSABA.functions.create_subgroups(ig_aquilo,
 })
 
 -- ITEM
-galium_ore = "galium-ore"
-galium_processed = "galium-processed"
-galium_pellet = "galium-pellet"
-galium_ingot = "galium-ingot"
-galium_powder = "galium-powder"
-galium_hydroxide_III = "galium-hydroxide-III"
-galium_oxide_III = "galium-oxide-III"
-galium_chloride_III = "galium-chloride-III"
-galium_arsenide = "galium-arsenide"
-galium_nitride = "galium-nitride"
+gallium_ore = "gallium-ore"
+gallium_processed = "gallium-processed"
+gallium_pellet = "gallium-pellet"
+gallium_ingot = "gallium-ingot"
+gallium_powder = "gallium-powder"
+gallium_hydroxide_III = "gallium-hydroxide-III"
+gallium_oxide_III = "gallium-oxide-III"
+gallium_chloride_III = "gallium-chloride-III"
+gallium_arsenide = "gallium-arsenide"
+gallium_nitride = "gallium-nitride"
 TIMSABA.functions.create_items
 ({
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_ore,
+        name = gallium_ore,
         subgroup = is_gallium,
-        icon = graphics_galium .. galium_ore .. ".png",
+        icon = graphics_gallium .. gallium_ore .. ".png",
         pictures =
         {
-            {filename = graphics_galium .. galium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_gallium .. gallium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_processed,
+        name = gallium_processed,
         subgroup = is_gallium,
-        icon = graphics_galium .. galium_processed .. ".png",
+        icon = graphics_gallium .. gallium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_pellet,
+        name = gallium_pellet,
         subgroup = is_gallium,
-        icon = graphics_galium .. galium_pellet .. ".png",
+        icon = graphics_gallium .. gallium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_ingot,
+        name = gallium_ingot,
         subgroup = is_gallium,
-        icon = graphics_galium .. galium_ingot .. ".png",
+        icon = graphics_gallium .. gallium_ingot .. ".png",
         pictures =
         {
-            {filename = graphics_galium .. galium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_galium .. galium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_gallium .. gallium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_gallium .. gallium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_powder,
+        name = gallium_powder,
         subgroup = is_gallium,
-        icon = graphics_galium .. galium_powder .. ".png",
+        icon = graphics_gallium .. gallium_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
     {
         localised_description = show_formula and {chemical_formula, "Ga(OH)[font=default-tiny-bold]3[/font]"} or nil,
-        name = galium_hydroxide_III,
+        name = gallium_hydroxide_III,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_hydroxide_III .. ".png",
+        icon = graphics_gallium .. gallium_hydroxide_III .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
-        name = galium_oxide_III,
+        name = gallium_oxide_III,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_oxide_III .. ".png",
+        icon = graphics_gallium .. gallium_oxide_III .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3[/font]"} or nil,
-        name = galium_chloride_III,
+        name = gallium_chloride_III,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_chloride_III .. ".png",
+        icon = graphics_gallium .. gallium_chloride_III .. ".png",
         order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "GaAs"} or nil,
-        name = galium_arsenide,
+        name = gallium_arsenide,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_arsenide .. ".png",
+        icon = graphics_gallium .. gallium_arsenide .. ".png",
         order = h
     },
     {
         localised_description = show_formula and {chemical_formula, "GaN"} or nil,
-        name = galium_nitride,
+        name = gallium_nitride,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_nitride .. ".png",
+        icon = graphics_gallium .. gallium_nitride .. ".png",
         order = i
     }
 })
 
 -- FLUID
 sodium_tetrahydroxogallate_III_solution = "sodium-tetrahydroxogallate-III-solution"
-galium_liquid = "galium-liquid"
-galium_chloride_III_solution_ether = "galium-chloride-III-solution-ether"
+gallium_liquid = "gallium-liquid"
+gallium_chloride_III_solution_ether = "gallium-chloride-III-solution-ether"
 lithium_gallium_hydride_solution_ether = "lithium-gallium-hydride-solution-ether"
 TIMSABA.functions.create_fluids
 ({
@@ -123,25 +123,25 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NaGa(OH)[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = sodium_tetrahydroxogallate_III_solution,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. sodium_tetrahydroxogallate_III_solution .. ".png",
+        icon = graphics_gallium .. sodium_tetrahydroxogallate_III_solution .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("NaGaO4H4Wp"),
         flow_color = TIMSABA.functions.flow_color("NaGaO4H4Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
-        name = galium_liquid,
+        name = gallium_liquid,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_liquid .. ".png",
+        icon = graphics_gallium .. gallium_liquid .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("GaGaGa"),
         flow_color = TIMSABA.functions.flow_color("GaGaGa")
     },
     {
         localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
-        name = galium_chloride_III_solution_ether,
+        name = gallium_chloride_III_solution_ether,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. galium_chloride_III_solution_ether .. ".png",
+        icon = graphics_gallium .. gallium_chloride_III_solution_ether .. ".png",
         order = f,
         base_color = TIMSABA.functions.fluid_color("GaCl3De"),
         flow_color = TIMSABA.functions.flow_color("GaCl3De")
@@ -150,110 +150,110 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "LiGaH[font=default-tiny-bold]4(ether)[/font]"} or nil,
         name = lithium_gallium_hydride_solution_ether,
         subgroup = is_gallium_chemistry,
-        icon = graphics_galium .. lithium_gallium_hydride_solution_ether .. ".png",
+        icon = graphics_gallium .. lithium_gallium_hydride_solution_ether .. ".png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("LiGaH4De"),
         flow_color = TIMSABA.functions.flow_color("LiGaH4De")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(sodium_tetrahydroxogallate_III_solution)
-TIMSABA.barreling.add_dangerous_fluid(galium_chloride_III_solution_ether)
+TIMSABA.barreling.add_dangerous_fluid(gallium_chloride_III_solution_ether)
 TIMSABA.barreling.add_dangerous_fluid(lithium_gallium_hydride_solution_ether)
 
 -- RECIPE
-galium_hydroxide_III_2 = "galium-hydroxide-III-2"
+gallium_hydroxide_III_2 = "gallium-hydroxide-III-2"
 sodium_tetrahydroxogallate_III_2_solution = "sodium-tetrahydroxogallate-III-2-solution"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = galium_processed,
+        name = gallium_processed,
         categories = {angels_processed_pressing_4},
         subgroup = is_gallium,
-        icons = TWO_I(galium_ore, galium_processed),
+        icons = TWO_I(gallium_ore, gallium_processed),
         order = b,
         energy_required = 2,
         ingredients =
         {
-            {type = item, name = galium_ore, amount = 4},
+            {type = item, name = gallium_ore, amount = 4},
             {type = item, name = ice, amount = 4}
         },
-        results = {{type = item, name = galium_processed, amount = 4}},
-        main_product = galium_processed
+        results = {{type = item, name = gallium_processed, amount = 4}},
+        main_product = gallium_processed
     },
     {
-        name = galium_pellet,
+        name = gallium_pellet,
         categories = {angels_pellet_pressing_4},
         subgroup = is_gallium,
-        icons = TWO_I(galium_processed, galium_pellet),
+        icons = TWO_I(gallium_processed, gallium_pellet),
         order = c,
         energy_required = 2,
         ingredients =
         {
-            {type = item, name = galium_processed, amount = 4},
+            {type = item, name = gallium_processed, amount = 4},
             {type = item, name = ice, amount = 4}
         },
-        results = {{type = item, name = galium_pellet, amount = 4}},
-        main_product = galium_pellet
+        results = {{type = item, name = gallium_pellet, amount = 4}},
+        main_product = gallium_pellet
     },
     {
-        name = galium_ingot,
+        name = gallium_ingot,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium,
-        icons = TWO_D_I(galium_liquid, nitrogen_liquid, galium_ingot, nitrogen_angels),
+        icons = TWO_D_I(gallium_liquid, nitrogen_liquid, gallium_ingot, nitrogen_angels),
         order = d,
         energy_required = 8, -- Ga(l) + N₂(l) --> Ga(s) + N₂(g)
         ingredients =
         {
-            {type = fluid, name = galium_liquid, amount = 240},
+            {type = fluid, name = gallium_liquid, amount = 240},
             {type = fluid, name = nitrogen_liquid, amount = 240}
         },
         results =
         {
-            {type = item, name = galium_ingot, amount = 16},
+            {type = item, name = gallium_ingot, amount = 16},
             {type = fluid, name = nitrogen_angels, amount = 120} -- 240
         },
-        main_product = galium_ingot
+        main_product = gallium_ingot
     },
     {
-        name = galium_powder,
+        name = gallium_powder,
         categories = {powderizing_4},
         subgroup = is_gallium,
-        icons = TWO_I(galium_ingot, galium_powder),
+        icons = TWO_I(gallium_ingot, gallium_powder),
         order = e,
         energy_required = 0.5,
         ingredients =
         {
-            {type = item, name = galium_ingot, amount = 1},
+            {type = item, name = gallium_ingot, amount = 1},
             {type = item, name = ice, amount = 1}
         },
-        results = {{type = item, name = galium_powder, amount = 1}},
-        main_product = galium_powder
+        results = {{type = item, name = gallium_powder, amount = 1}},
+        main_product = gallium_powder
     },
     -- CHEMISTRY
     {
-        name = galium_hydroxide_III,
+        name = gallium_hydroxide_III,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = TWO_D_I(galium_ore, water_purified_angels, galium_hydroxide_III, hydrogen_angels),
+        icons = TWO_D_I(gallium_ore, water_purified_angels, gallium_hydroxide_III, hydrogen_angels),
         order = a,
         energy_required = 8, -- 2Ga(s) + 6H₂O(l) --> 2Ga(OH)₃(s) + 3H₂(g)
         ingredients =
         {
-            {type = item, name = galium_ore, amount = 32},
+            {type = item, name = gallium_ore, amount = 32},
             {type = fluid, name = water_purified_angels, amount = 720}
         },
         results =
         {
-            {type = item, name = galium_hydroxide_III, amount = 16},
+            {type = item, name = gallium_hydroxide_III, amount = 16},
             {type = fluid, name = hydrogen_angels, amount = 120} -- 360
         },
-        main_product = galium_hydroxide_III
+        main_product = gallium_hydroxide_III
     },
     {
-        name = galium_hydroxide_III_2,
+        name = gallium_hydroxide_III_2,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = FOUR_THREE_R_I(lithium_gallium_hydride_solution_ether, nil, water_purified_angels, galium_hydroxide_III, lithium_hydroxide, hydrogen_angels, diethyl_ether),
+        icons = FOUR_THREE_R_I(lithium_gallium_hydride_solution_ether, nil, water_purified_angels, gallium_hydroxide_III, lithium_hydroxide, hydrogen_angels, diethyl_ether),
         order = a_a,
         energy_required = 8, -- LiGaH₄(ether) + 4H₂O(l) --> Ga(OH)₃(s) + LiOH(s) + 4H₂(g) + (C₂H₅)₂O
         ingredients =
@@ -263,38 +263,38 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = galium_hydroxide_III, amount = 16},
+            {type = item, name = gallium_hydroxide_III, amount = 16},
             {type = item, name = lithium_hydroxide, amount = 8}, -- 16
             {type = fluid, name = hydrogen_angels, amount = 480}, -- 960
             {type = fluid, name = diethyl_ether, amount = 120} -- 240
         },
-        main_product = galium_hydroxide_III
+        main_product = gallium_hydroxide_III
     },
     {
-        name = galium_oxide_III,
+        name = gallium_oxide_III,
         categories = {angels_blast_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_R_I(galium_hydroxide_III, galium_oxide_III, steam),
+        icons = THREE_R_I(gallium_hydroxide_III, gallium_oxide_III, steam),
         order = b,
         energy_required = 8, -- 2Ga(OH)₃(s) --> Ga₂O₃(s) + 3H₂O(g)
-        ingredients = {{type = item, name = galium_hydroxide_III, amount = 32}},
+        ingredients = {{type = item, name = gallium_hydroxide_III, amount = 32}},
         results =
         {
-            {type = item, name = galium_oxide_III, amount = 16},
+            {type = item, name = gallium_oxide_III, amount = 16},
             {type = fluid, name = steam, amount = 240} -- 720
         },
-        main_product = galium_oxide_III
+        main_product = gallium_oxide_III
     },
     {
         name = sodium_tetrahydroxogallate_III_solution,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_D_I(galium_oxide_III, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution),
+        icons = THREE_D_I(gallium_oxide_III, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution),
         order = c,
         energy_required = 8, -- Ga₂O₃(s) + 2NaOH(aq) + 3H₂O(l) --> 2NaGa(OH)₄(aq)
         ingredients =
         {
-            {type = item, name = galium_oxide_III, amount = 16},
+            {type = item, name = gallium_oxide_III, amount = 16},
             {type = fluid, name = sodium_hydroxide_solution_angels, amount = 480},
             {type = fluid, name = water_purified_angels, amount = 720}
         },
@@ -305,12 +305,12 @@ TIMSABA.functions.create_recipes
         name = sodium_tetrahydroxogallate_III_2_solution,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_D_I(galium_pellet, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution, nil, hydrogen_angels),
+        icons = THREE_D_I(gallium_pellet, sodium_hydroxide_solution_angels, water_purified_angels, sodium_tetrahydroxogallate_III_solution, nil, hydrogen_angels),
         order = c_a,
         energy_required = 8, -- 2Ga(s) + 2NaOH(aq) + 6H₂O(l) --> 2NaGa(OH)₄(aq) + 3H₂(g)
         ingredients =
         {
-            {type = item, name = galium_pellet, amount = 8},
+            {type = item, name = gallium_pellet, amount = 8},
             {type = fluid, name = sodium_hydroxide_solution_angels, amount = 16},
             {type = fluid, name = water_purified_angels, amount = 720}
         },
@@ -322,10 +322,10 @@ TIMSABA.functions.create_recipes
         main_product = sodium_tetrahydroxogallate_III_solution
     },
     {
-        name = galium_liquid,
+        name = gallium_liquid,
         categories = {angels_petrochem_electrolyser},
         subgroup = is_gallium_chemistry,
-        icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, galium_liquid, sodium_hydroxide_angels), -- or FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, galium_liquid, sodium_hydroxide_solution_angels),
+        icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, gallium_liquid, sodium_hydroxide_angels), -- or FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, gallium_liquid, sodium_hydroxide_solution_angels),
         order = d,
         energy_required = 8, -- 4NaGa(OH)₄(aq) -electrolys/electrode-> 4Ga(l) + 3O₂(g) + 4NaOH(s) + 6H₂O(l) + 4H₂O(l)
         ingredients =
@@ -335,58 +335,58 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = fluid, name = galium_liquid, amount = 240},
+            {type = fluid, name = gallium_liquid, amount = 240},
             {type = fluid, name = oxygen_angels, amount = 60}, -- 180
             {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16 or --{type = fluid, name = sodium_hydroxide_solution_angels, amount = 120} -- 240
             --{type = fluid, name = water_purified_angels, amount = 120}, -- 360
             {type = item, name = electrode_used, amount = 1}
         },
-        main_product = galium_liquid
+        main_product = gallium_liquid
     },
     {
-        name = galium_chloride_III,
+        name = gallium_chloride_III,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = TWO_D_I(galium_processed, hydrogen_chloride_angels, galium_chloride_III, hydrogen_angels),
+        icons = TWO_D_I(gallium_processed, hydrogen_chloride_angels, gallium_chloride_III, hydrogen_angels),
         order = e,
         energy_required = 8, -- 2Ga(s) + 6HCl(g) --> 2GaCl₃(s) + 3H₂(g)
         ingredients =
         {
-            {type = item, name = galium_processed, amount = 16},
+            {type = item, name = gallium_processed, amount = 16},
             {type = fluid, name = hydrogen_chloride_angels, amount = 720}
         },
         results =
         {
-            {type = item, name = galium_chloride_III, amount = 16},
+            {type = item, name = gallium_chloride_III, amount = 16},
             {type = fluid, name = hydrogen_angels, amount = 120} -- 360
         },
-        main_product = galium_chloride_III
+        main_product = gallium_chloride_III
     },
     {
-        name = galium_chloride_III_solution_ether,
+        name = gallium_chloride_III_solution_ether,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_I(galium_chloride_III, diethyl_ether, galium_chloride_III_solution_ether),
+        icons = THREE_I(gallium_chloride_III, diethyl_ether, gallium_chloride_III_solution_ether),
         order = f,
         energy_required = 8, -- GaCl₃(s) + (C₂H₅)₂O(l) --> GaCl₃(ether)
         ingredients =
         {
-            {type = item, name = galium_chloride_III, amount = 16},
+            {type = item, name = gallium_chloride_III, amount = 16},
             {type = fluid, name = diethyl_ether, amount = 240}
         },
-        results = {{type = fluid, name = galium_chloride_III_solution_ether, amount = 240}},
-        main_product = galium_chloride_III_solution_ether
+        results = {{type = fluid, name = gallium_chloride_III_solution_ether, amount = 240}},
+        main_product = gallium_chloride_III_solution_ether
     },
     {
         name = lithium_gallium_hydride_solution_ether,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = TWO_D_I(galium_chloride_III_solution_ether, lithium_hydride, lithium_gallium_hydride_solution_ether, salt_angels),
+        icons = TWO_D_I(gallium_chloride_III_solution_ether, lithium_hydride, lithium_gallium_hydride_solution_ether, salt_angels),
         order = g,
         energy_required = 8, -- GaCl₃(ether) + 4LiH(s) --> LiGaH₄(ether) + 3LiCl(s)
         ingredients =
         {
-            {type = fluid, name = galium_chloride_III_solution_ether, amount = 240},
+            {type = fluid, name = gallium_chloride_III_solution_ether, amount = 240},
             {type = item, name = lithium_hydride, amount = 960}
         },
         results =
@@ -397,37 +397,37 @@ TIMSABA.functions.create_recipes
         main_product = lithium_gallium_hydride_solution_ether
     },
     {
-        name = galium_arsenide,
+        name = gallium_arsenide,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_I(galium_powder, arsenic_powder, galium_arsenide),
+        icons = THREE_I(gallium_powder, arsenic_powder, gallium_arsenide),
         order = h,
         energy_required = 8, -- Ga(powder) + As(powder) --> GaAs(s)
         ingredients =
         {
-            {type = item, name = galium_powder, amount = 16},
+            {type = item, name = gallium_powder, amount = 16},
             {type = item, name = arsenic_powder, amount = 16}
         },
-        results = {{type = item, name = galium_arsenide, amount = 16}},
-        main_product = galium_arsenide
+        results = {{type = item, name = gallium_arsenide, amount = 16}},
+        main_product = gallium_arsenide
     },
     {
-        name = galium_nitride,
+        name = gallium_nitride,
         categories = {angels_chemical_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = TWO_D_I(galium_powder, ammonia_angels, galium_nitride, hydrogen_angels),
+        icons = TWO_D_I(gallium_powder, ammonia_angels, gallium_nitride, hydrogen_angels),
         order = i,
         energy_required = 8, -- 2Ga(powder) + 2NH₃(g) --> 2GaN(s) + 3H₂(g)
         ingredients =
         {
-            {type = item, name = galium_powder, amount = 16},
+            {type = item, name = gallium_powder, amount = 16},
             {type = fluid, name = ammonia_angels, amount = 240}
         },
         results =
         {
-            {type = item, name = galium_nitride, amount = 16},
+            {type = item, name = gallium_nitride, amount = 16},
             {type = fluid, name = hydrogen_angels, amount = 120} -- 360
         },
-        main_product = galium_nitride
+        main_product = gallium_nitride
     }
 })

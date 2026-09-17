@@ -21,7 +21,7 @@ advanced_full_metallic_asteroid_crushing_3 = "advanced-full-metallic-asteroid-cr
 advanced_full_metallic_asteroid_crushing_4 = "advanced-full-metallic-asteroid-crushing-4" -- Holmium ore
 advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-crushing-5" -- Antimony ore
 advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Germanium ore
-advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Galium ore
+advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Gallium ore
 advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Vanadium ore
 local function metallic_asteroid_crushing(parameters)
     local info_recipe =
@@ -66,7 +66,7 @@ metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_3, o
 metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_4, order = h_d, res = holmium_ore})
 metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_5, order = h_e, res = antimony_ore})
 metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_6, order = h_f, res = germanium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_7, order = h_g, res = galium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_7, order = h_g, res = gallium_ore})
 metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_8, order = h_h, res = vanadium_ore})
 
 -- CARBONIC

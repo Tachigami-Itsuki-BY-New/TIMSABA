@@ -282,7 +282,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = copper_sulfate_II, amount = 16},
             {type = fluid, name = water_purified_angels, amount = 240}
         },
-        results = {{type = fluid, name = copper_sulfate_II_solution, amount = 120}},
+        results = {{type = fluid, name = copper_sulfate_II_solution, amount = 240}},
         main_product = copper_sulfate_II_solution
     },
     {

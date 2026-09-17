@@ -43,7 +43,6 @@ if mods[castra_mods] then
     millerite_chunks_sorting = "millerite-chunks-sorting"
     millerite_crystals_sorting = "millerite-crystals-sorting"
     millerite_purified_sorting = "millerite-purified-sorting"
-    vanadium_ore_recipe = "vanadium-ore-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED
@@ -113,11 +112,24 @@ if mods[castra_mods] then
         },
         -- SORTING
         {
+            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. millerite_ore}},
+            name = millerite_ore .. _sorting_stone,
+            categories = {ore_sorting_6},
+            subgroup = is_millerite,
+            icons = RECYCLING_I(recycling_png, millerite_ore),
+            order = f,
+            allow_productivity = true,
+            energy_required = 1,
+            ingredients = {{type = item, name = millerite_ore, amount = 4}},
+            results = {{type = item, name = stone, amount = 1}},
+            main_product = stone
+        },
+        {
             name = millerite_crushed_sorting,
             categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_crushed),
-            order = f,
+            order = g,
             allow_productivity = true,
             energy_required = 1, -- Millerite crushed (Sorting) / Ni + Co + S
             ingredients = {{type = item, name = millerite_crushed, amount = 4}},
@@ -134,7 +146,7 @@ if mods[castra_mods] then
             categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
             energy_required = 2, -- Millerite chunks (Sorting) / Ni + Co + Fe + Cu + S
             ingredients = {{type = item, name = millerite_chunks, amount = 8}},
@@ -153,7 +165,7 @@ if mods[castra_mods] then
             categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
             energy_required = 2, -- Millerite crystals (Sorting) / Ni + Co + Fe + Cu + Cr + S
             ingredients = {{type = item, name = millerite_crystals, amount = 8}},
@@ -173,7 +185,7 @@ if mods[castra_mods] then
             categories = {ore_sorting_6},
             subgroup = is_millerite,
             icons = RECYCLING_I(recycling_png, millerite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
             energy_required = 2, -- Millerite purified (Sorting) / Ni + Co + Fe + Cu + Cr + V
             ingredients = {{type = item, name = millerite_purified, amount = 8}},
@@ -187,24 +199,6 @@ if mods[castra_mods] then
                 {type = item, name = vanadium_ore, amount = 1}
             },
             main_product = nickel_ore_bob
-        },
-        -- SYNTHESIS
-        {
-            name = vanadium_ore_recipe,
-            categories = {ore_sorting_6},
-            subgroup = is_ore_sorting_advanced_3,
-            icons = AR_FOUR_I(hybride_catalyst, germanite_purified, millerite_purified, vanadium_ore),
-            order = a_q,
-            allow_productivity = true,
-            energy_required = 2,
-            ingredients =
-            {
-                {type = item, name = hybride_catalyst, amount = 1},
-                {type = item, name = germanite_purified, amount = 2},
-                {type = item, name = millerite_purified, amount = 2}
-            },
-            results = {{type = item, name = vanadium_ore, amount = 4}},
-            main_product = vanadium_ore
         }
     })
 end

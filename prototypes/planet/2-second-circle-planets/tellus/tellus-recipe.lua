@@ -58,13 +58,13 @@ if mods[tellus_mods] then
                     name = orange_dye,
                     categories = {centrifuging_4},
                     subgroup = is_dyes,
-                    icons = THREE_D_I(crushed_cupric, nutrients, water, orange_dye),
+                    icons = THREE_D_I(crushed_senaite, nutrients, water, orange_dye),
                     order = a,
                     allow_productivity = true,
                     allow_quality = true,
                     ingredients =
                     {
-                        {type = item, name = crushed_cupric, amount = 1},
+                        {type = item, name = crushed_senaite, amount = 1},
                         {type = item, name = nutrients, amount = 8},
                         {type = fluid, name = water, amount = 30}
                     },

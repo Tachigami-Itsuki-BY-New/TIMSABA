@@ -242,9 +242,10 @@ data_recipe[tesla_ammo].ingredients =
     {type = fluid, name = electrolyte, amount = 30}
 }
 
-local tesla_turret = "tesla-turret"
 data_item[tesla_turret].subgroup = is_fulgora_war
 data_item[tesla_turret].order = c
+data_item[tesla_turret].stack_size = 32
+data_item[tesla_turret].weight = 31250
 data_recipe[tesla_turret].subgroup = is_fulgora_war
 data_recipe[tesla_turret].order = c
 data_recipe[tesla_turret].ingredients =

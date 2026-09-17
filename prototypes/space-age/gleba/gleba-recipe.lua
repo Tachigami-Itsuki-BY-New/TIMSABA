@@ -3,6 +3,8 @@ jivolite_bacteria_cultivation = "jivolite-bacteria-cultivation"
 crotinnium_bacteria_cultivation = "crotinnium-bacteria-cultivation"
 rubyte_bacteria_cultivation = "rubyte-bacteria-cultivation"
 bobmonium_bacteria_cultivation = "bobmonium-bacteria-cultivation"
+senaite_bacteria_cultivation = "senaite-bacteria-cultivation"
+franckeite_bacteria_cultivation = "franckeite-bacteria-cultivation"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -14,7 +16,7 @@ TIMSABA.functions.create_recipes
         allow_productivity = true,
         allow_quality = true,
         energy_required = 1,
-        ingredients = {{type = item, name = jelly, amount = 8}},
+        ingredients = {{type = item, name = jelly, amount = 4}},
         results =
         {
             {type = item, name = jivolite_bacteria, amount = 1, independent_probability = 0.25},
@@ -32,7 +34,7 @@ TIMSABA.functions.create_recipes
         allow_productivity = true,
         allow_quality = true,
         energy_required = 1,
-        ingredients = {{type = item, name = yumako_mash, amount = 8}},
+        ingredients = {{type = item, name = yumako_mash, amount = 4}},
         results =
         {
             {type = item, name = crotinnium_bacteria, amount = 1, independent_probability = 0.25},
@@ -52,8 +54,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = jelly, amount = 8},
-            {type = item, name = yumako_mash, amount = 4}
+            {type = item, name = jelly, amount = 4},
+            {type = item, name = saphirite_bacteria, amount = 1}
         },
         results =
         {
@@ -67,15 +69,15 @@ TIMSABA.functions.create_recipes
         name = bobmonium_bacteria,
         categories = {organic, hand_crafting},
         subgroup = is_bacteria_ore,
-        icons = TWO_D_I(yumako_mash, jelly, bobmonium_bacteria, spoilage),
+        icons = TWO_D_I(yumako_mash, stiratite_bacteria, bobmonium_bacteria, spoilage),
         order = f,
         allow_productivity = true,
         allow_quality = true,
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = yumako_mash, amount = 8},
-            {type = item, name = jelly, amount = 4}
+            {type = item, name = yumako_mash, amount = 4},
+            {type = item, name = stiratite_bacteria, amount = 1}
         },
         results =
         {
@@ -85,6 +87,51 @@ TIMSABA.functions.create_recipes
         main_product = bobmonium_bacteria,
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
+    {
+        name = senaite_bacteria,
+        categories = {organic, hand_crafting},
+        subgroup = is_bacteria_ore,
+        icons = TWO_D_I(jelly, jivolite_bacteria, senaite_bacteria, spoilage),
+        order = g,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = jelly, amount = 4},
+            {type = item, name = jivolite_bacteria, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = senaite_bacteria, amount = 1, independent_probability = 0.25},
+            {type = item, name = spoilage, amount = 4}
+        },
+        main_product = senaite_bacteria,
+        surface_conditions = {{property = pressure, min = 2000, max = 2000}}
+    },
+    {
+        name = franckeite_bacteria,
+        categories = {organic, hand_crafting},
+        subgroup = is_bacteria_ore,
+        icons = TWO_D_I(yumako_mash, crotinnium_bacteria, franckeite_bacteria, spoilage),
+        order = h,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = yumako_mash, amount = 4},
+            {type = item, name = crotinnium_bacteria, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = franckeite_bacteria, amount = 1, independent_probability = 0.25},
+            {type = item, name = spoilage, amount = 4}
+        },
+        main_product = franckeite_bacteria,
+        surface_conditions = {{property = pressure, min = 2000, max = 2000}}
+    },
+    -- CULTIVATION
     {
         name = jivolite_bacteria_cultivation,
         categories = {organic},
@@ -151,6 +198,40 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = bobmonium_bacteria, amount = 4}},
         main_product = bobmonium_bacteria,
+        surface_conditions = {{property = pressure, min = 2000, max = 2000}}
+    },
+    {
+        name = senaite_bacteria_cultivation,
+        categories = {organic},
+        subgroup = is_bacteria_cultivation,
+        icons = STONKS_I(stonks_png, senaite_bacteria),
+        order = g,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients =
+        {
+            {type = item, name = senaite_bacteria, amount = 2},
+            {type = item, name = bioflux, amount = 1}
+        },
+        results = {{type = item, name = senaite_bacteria, amount = 4}},
+        main_product = senaite_bacteria,
+        surface_conditions = {{property = pressure, min = 2000, max = 2000}}
+    },
+    {
+        name = franckeite_bacteria_cultivation,
+        categories = {organic},
+        subgroup = is_bacteria_cultivation,
+        icons = STONKS_I(stonks_png, franckeite_bacteria),
+        order = h,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients =
+        {
+            {type = item, name = franckeite_bacteria, amount = 2},
+            {type = item, name = bioflux, amount = 1}
+        },
+        results = {{type = item, name = franckeite_bacteria, amount = 4}},
+        main_product = franckeite_bacteria,
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     }
 })

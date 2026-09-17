@@ -22,7 +22,7 @@ if mods[space_age_science_packs] then
         }
     end
     for _, pack in pairs(list_base_or_space) do
-        data_item[pack].icon = "__sa-science-packs__/graphics/items/sasp-" .. pack .. ".png"
+        data_item[pack].icon = "__sa-science-packs-fix__/graphics/items/sasp-" .. pack .. ".png"
         data_item[pack].icons = nil
     end
 

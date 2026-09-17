@@ -6,19 +6,13 @@ if mods[shchierbin_mods] then
         [slaked_lime_mods] = calcium_hydroxide,
         [calcium_mods] = calcium,
         [natural_gas_mods] = natural_gas_angels,
-        [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
-        [sulfur_dioxide_mods] = sulfur_dioxide_angels,
         [methane_mods] = methane_angels,
         [chloromethane_mods] = chloromethane_angels,
         [ethylene_mods] = ethylene_angels,
         [sea_water_mods] = water_saline_angels,
         [sodium_hydroxide_mods] = sodium_hydroxide_solution_angels,
         [ferric_chloride_mods] = iron_chloride_III_solution_angels,
-        [chlorine_mods] = chlorine_angels,
-        [nitrogen_mods] = nitrogen_angels,
-        [hydrogen_mods] = hydrogen_angels,
-        [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels
+        [chlorine_mods] = chlorine_angels
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 

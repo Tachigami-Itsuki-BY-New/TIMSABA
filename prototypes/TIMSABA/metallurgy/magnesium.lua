@@ -146,28 +146,11 @@ TIMSABA.functions.create_fluids
 TIMSABA.barreling.add_dangerous_fluid(magnesium_chloride_solution)
 
 -- RECIPE
-magnesium_ore_recipe = "magnesium-ore-crushed-mix-processing"
 magnesium_oxide_2 = "magnesium-oxide-2"
 magnesium_gas_from_magnesium_chloride_gas = "magnesium-gas-from-magnesium-chloride-gas"
 magnesium_chloride_from_magnesium_chloride_solution = "magnesium-chloride-from-magnesium-chloride-solution"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = magnesium_ore_recipe,
-        categories = {angels_ore_sorting_2},
-        subgroup = is_ore_sorting_advanced_1,
-        icons = AR_FOUR_I(mineral_catalyst, crushed_cupric, crushed_bobmonium, magnesium_ore),
-        order = a_f,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = mineral_catalyst, amount = 1},
-            {type = item, name = crushed_cupric, amount = 2},
-            {type = item, name = crushed_bobmonium, amount = 2}
-        },
-        results = {{type = item, name = magnesium_ore, amount = 4}},
-    },
     -- SMELTING
     {
         name = magnesium_processed,

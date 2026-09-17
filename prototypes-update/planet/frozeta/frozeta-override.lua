@@ -12,24 +12,25 @@ if mods[secretas_frozeta_mods] then
     data_recipe[spaceship_scrap_recycling].order = a_a
     data_recipe[spaceship_scrap_recycling].results =
     {
-        {type = item, name = solid_fuel, amount = 1, independent_probability = 0.0625, show_details_in_recipe_tooltip = false},
-        {type = item, name = enriched_fuel_bob, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = electric_engine_unit, amount = 1, independent_probability = 0.0625, show_details_in_recipe_tooltip = false},
-        {type = item, name = supercapacitor, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = carbon_fiber, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = solid_fuel,                amount = 1, independent_probability = 0.06250, show_details_in_recipe_tooltip = false},
+        {type = item, name = enriched_fuel_bob,         amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = electric_engine_unit,      amount = 1, independent_probability = 0.06250, show_details_in_recipe_tooltip = false},
+        {type = item, name = supercapacitor,            amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = carbon_fiber,              amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = space_platform_foundation, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = storage_tank_4_alt, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = rocket, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = T5_inserter, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = pump_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = medium_electric_pole_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = small_lamp, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = combinator_arithmetic, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = combinator_constant, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = display_panel, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = heat_pipe_4, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = scrap, amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false}
+        {type = item, name = molybdenum_rhenium_pipe,   amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = storage_tank_4_alt,        amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = rocket,                    amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = T5_inserter,               amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = pump_4,                    amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = medium_electric_pole_4,    amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = small_lamp,                amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = combinator_arithmetic,     amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = combinator_constant,       amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = display_panel,             amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = heat_pipe_4,               amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
+        {type = item, name = scrap,                     amount = 1, independent_probability = 0.25000, show_details_in_recipe_tooltip = false},
+        {type = item, name = gallite_ore,               amount = 1, independent_probability = 0.50000, show_details_in_recipe_tooltip = false}
     }
     if settings.startup[setting_bobmods_power_steam].value then
         table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_6, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
@@ -285,11 +286,15 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
         table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
     end
+
+    table.insert(data_technology[tech_powellite_processing_4].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_samarskite_processing_3].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_rheniite_processing_3].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_antimonite_processing_2].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_germanite_processing_2].prerequisites, golden_science_pack)
-    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, golden_science_pack)
-    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, golden_science_pack)
-    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, golden_science_pack)
     if mods[castra_mods] then
         table.insert(data_technology[tech_millerite_processing_3].prerequisites, golden_science_pack)
     end
@@ -297,7 +302,8 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, golden_science_pack)
     end
     if mods[moshine_mods] then
-        table.insert(data_technology[tech_monazite_processing_2].prerequisites, golden_science_pack)
+        table.insert(data_technology[tech_monazite_processing_3].prerequisites, golden_science_pack)
+        table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, golden_science_pack)
     end
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, golden_science_pack)

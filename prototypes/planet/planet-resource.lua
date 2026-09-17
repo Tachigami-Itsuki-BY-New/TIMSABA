@@ -6,6 +6,7 @@
 
 -- SECOND CIRCLE PLANETS
 require("prototypes.planet.2-second-circle-planets.moshine.moshine-monazite")
+require("prototypes.planet.2-second-circle-planets.moshine.moshine-aeschynite")
 -- arig
 -- hyarion
 -- tellus
@@ -28,7 +29,7 @@ require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-tetrahed
 -- MOONS
 -- muluna
 -- panglia
--- frozeta
+require("prototypes.planet.5-moons.frozeta.frozeta-gallite")
 -- lignumis
 
 -- OTHER STAR SYSTEMS

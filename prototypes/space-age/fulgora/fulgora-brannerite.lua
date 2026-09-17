@@ -1,6 +1,6 @@
 local graphics_brannerite = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite/"
 
--- Brannerite ore / Ho + U + Th + Fe + Ti + Ca
+-- Brannerite ore / Ho + Ca + U + Th + Fe + Ti
 brannerite_ore = "brannerite-ore"
 brannerite_crushed = "brannerite-crushed"
 brannerite_chunks = "brannerite-chunks"
@@ -54,7 +54,6 @@ brannerite_crushed_sorting = "brannerite-crushed-sorting"
 brannerite_chunks_sorting = "brannerite-chunks-sorting"
 brannerite_crystals_sorting = "brannerite-crystals-sorting"
 brannerite_purified_sorting = "brannerite-purified-sorting"
-holmium_ore_recipe = "holmium-ore-pure-mix-processing"
 TIMSABA.functions.create_recipes
 ({
     -- CRUSHED
@@ -124,19 +123,32 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
+        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. brannerite_ore}},
+        name = brannerite_ore .. _sorting_stone,
+        categories = {ore_sorting_6},
+        subgroup = is_brannerite,
+        icons = RECYCLING_I(recycling_png, brannerite_ore),
+        order = f,
+        allow_productivity = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = brannerite_ore, amount = 4}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
         name = brannerite_crushed_sorting,
         categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crushed),
-        order = f,
+        order = g,
         allow_productivity = true,
-        energy_required = 1, -- Brannerite crushed (Sorting) / Ho + U + Slag
+        energy_required = 1, -- Brannerite crushed (Sorting) / Ho + Ca + Calcium silicate
         ingredients = {{type = item, name = brannerite_crushed, amount = 4}},
         results =
         {
             {type = item, name = holmium_ore, amount = 2},
             {type = item, name = calcium, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = holmium_ore
     },
@@ -145,9 +157,9 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_chunks),
-        order = g,
+        order = h,
         allow_productivity = true,
-        energy_required = 2, -- Brannerite chunks (Sorting) / Ho + U + Th + Fe + Slag
+        energy_required = 2, -- Brannerite chunks (Sorting) / Ho + Ca + U + Th + Calcium silicate
         ingredients = {{type = item, name = brannerite_chunks, amount = 8}},
         results =
         {
@@ -155,7 +167,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = calcium, amount = 2},
             {type = item, name = uranium_ore, amount = 1},
             {type = item, name = thorium_ore_bob, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = holmium_ore
     },
@@ -164,9 +176,9 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crystals),
-        order = h,
+        order = i,
         allow_productivity = true,
-        energy_required = 2, -- Brannerite crystals (Sorting) / Ho + U + Th + Fe + Ti + Slag
+        energy_required = 2, -- Brannerite crystals (Sorting) / Ho + Ca + U + Th + Fe + Calcium silicate
         ingredients = {{type = item, name = brannerite_crystals, amount = 8}},
         results =
         {
@@ -175,7 +187,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = uranium_ore, amount = 1},
             {type = item, name = thorium_ore_bob, amount = 1},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = holmium_ore
     },
@@ -184,9 +196,9 @@ TIMSABA.functions.create_recipes
         categories = {ore_sorting_6},
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_purified),
-        order = i,
+        order = j,
         allow_productivity = true,
-        energy_required = 2, -- Brannerite purified (Sorting) / Ho + U + Th + Fe + Ti + Ca
+        energy_required = 2, -- Brannerite purified (Sorting) / Ho + Ca + U + Th + Fe + Ti
         ingredients = {{type = item, name = brannerite_purified, amount = 8}},
         results =
         {
@@ -197,24 +209,6 @@ TIMSABA.functions.create_recipes
             {type = item, name = iron_ore, amount = 1},
             {type = item, name = titanium_ore_bob, amount = 1}
         },
-        main_product = holmium_ore
-    },
-    -- SYNTHESIS
-    {
-        name = holmium_ore_recipe,
-        categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, brannerite_purified, powellite_purified, holmium_ore),
-        order = a_m,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = brannerite_purified, amount = 2},
-            {type = item, name = powellite_purified, amount = 2}
-        },
-        results = {{type = item, name = holmium_ore, amount = 4}},
         main_product = holmium_ore
     }
 })

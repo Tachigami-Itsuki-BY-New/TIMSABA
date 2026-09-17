@@ -33,8 +33,8 @@ Date: ??.??.2026
           5. Thorium(IV) hydroxide.
           6. Thorium(IV) fluoride.
         Others:
-          1. Plumbium.
-          2. Stannium.
+          1. Plumbium Branch.
+          2. Stannium Branch.
           3. Purified catalyst.
     - [All] Added new recipes and technologies.
 
@@ -58,10 +58,14 @@ Date: ??.??.2026
     - [All] Replaced an ingredient in the T4 Ore recipes (Molybdenum Ore - Arsenic): Hybrid Catalyst → Purified Catalyst.
     - [All] Removed the Plutonium-239 from the Thorium Ore.
     - [All] Adjusted the balance of some recipes.
+    - [All] Improved parameters for logistics and construction drones.
 
   Modding:
     - [Mods] Removed "MadClown01's Nuclear Extension" mod from the optional dependencies.
     - [Mods] Removed "MadClown01's AngelBob Nuclear Extension", "MadClown01's Extended AngelBob Minerals", and "MadClown01's Processing" mods from the incompatible.
+
+  Graphics:
+    - [All] Updated some icons.
 
   Locale:
     - [All] Renamed the Ferrous to Ferrium.
@@ -691,16 +695,16 @@ Date: 10.05.2026
           10. Sodium Hexachlorogermanate(IV).
           11. Molten Germanium.
           12. Germanium Plate.
-        Galium Branch:
-          1. Galium Ore (Cold).
-          2. Processed Galium (Cold).
-          3. Galium Pellet (Cold).
-          4. Galium Ingot (Cold).
-          5. Galium Powder (Cold).
+        Gallium Branch:
+          1. Gallium Ore (Cold).
+          2. Processed Gallium (Cold).
+          3. Gallium Pellet (Cold).
+          4. Gallium Ingot (Cold).
+          5. Gallium Powder (Cold).
           6. Gallium(III) Hydroxide.
-          7. Galium(III) Oxide.
+          7. Gallium(III) Oxide.
           8. Sodium Tetrahydroxogallate(III) Solution.
-          9. Liquid Galium.
+          9. Liquid Gallium.
           10. Gallium(III) Chloride.
           11. Gallium(III) Chloride Solution (Ether)
           12. Lithium Gallium Hydride Solution (ether)

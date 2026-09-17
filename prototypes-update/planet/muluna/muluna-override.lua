@@ -13,15 +13,16 @@ if mods[muluna_mods] then
     data_recipe[regolith_sorting].ingredients[1].amount = 8
     data_recipe[regolith_sorting].results =
     {
-        {type = item, name = stone, amount = 2},
         {type = item, name = ore_saphirite, amount = 1},
         {type = item, name = ore_jivolite, amount = 1},
         {type = item, name = ore_stiratite, amount = 1},
         {type = item, name = ore_crotinnium, amount = 1},
         {type = item, name = ore_rubyte, amount = 1},
-        {type = item, name = ore_bobmonium, amount = 1}
+        {type = item, name = ore_bobmonium, amount = 1},
+        {type = item, name = ore_senaite, amount = 1},
+        {type = item, name = ore_franckeite, amount = 1}
     }
-    data_recipe[regolith_sorting].main_product = stone
+    data_recipe[regolith_sorting].main_product = nil
 
     local stone_crushing = "stone-crushing"
     data_recipe[stone_crushing].subgroup = is_muluna_crushing

@@ -5,9 +5,7 @@ if mods[maraxsis_mods] then
 		[limestone_mods] = limestone_angels,
 		[glass_panes_maraxsis] = glass_bob,
 		[sand_mods] = sand_angels,
-        [water_saline_maraxsis] = water_saline_angels,
-        [oxygen_mods] = oxygen_angels,
-        [hydrogen_mods] = hydrogen_angels,
+        [water_saline_maraxsis] = water_saline_angels
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 

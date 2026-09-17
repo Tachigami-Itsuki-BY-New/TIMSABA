@@ -1,7 +1,7 @@
 if mods[paracelsin_mods] then
     local graphics_tetrahedrite = "__TIMSABA__/graphics/icons/paracelsin/tetrahedrite/"
 
-    -- tetrahedrite ore / Cu + Fe + Ag + Au + Sb + As
+    -- Tetrahedrite ore / Cu + Sb + Ag + Au + Fe + As
     tetrahedrite_crushed = "tetrahedrite-crushed"
     tetrahedrite_chunks = "tetrahedrite-chunks"
     tetrahedrite_crystals = "tetrahedrite-crystals"
@@ -43,7 +43,6 @@ if mods[paracelsin_mods] then
     tetrahedrite_chunks_sorting = "tetrahedrite-chunks-sorting"
     tetrahedrite_crystals_sorting = "tetrahedrite-crystals-sorting"
     tetrahedrite_purified_sorting = "tetrahedrite-purified-sorting"
-    antimony_ore_recipe = "antimony-ore-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED
@@ -113,18 +112,31 @@ if mods[paracelsin_mods] then
         },
         -- SORTING
         {
+            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. tetrahedrite_ore}},
+            name = tetrahedrite_ore .. _sorting_stone,
+            categories = {ore_sorting_6},
+            subgroup = is_tetrahedrite,
+            icons = RECYCLING_I(recycling_png, tetrahedrite_ore),
+            order = f,
+            allow_productivity = true,
+            energy_required = 1,
+            ingredients = {{type = item, name = tetrahedrite_ore, amount = 4}},
+            results = {{type = item, name = stone, amount = 1}},
+            main_product = stone
+        },
+        {
             name = tetrahedrite_crushed_sorting,
             categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_crushed),
-            order = f,
+            order = g,
             allow_productivity = true,
-            energy_required = 1, -- Tetrahedrite crushed (Sorting) / Cu + Fe + S
+            energy_required = 1, -- Tetrahedrite crushed (Sorting) / Cu + Sb + S
             ingredients = {{type = item, name = tetrahedrite_crushed, amount = 4}},
             results =
             {
                 {type = item, name = copper_ore, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
+                {type = item, name = antimony_ore, amount = 1},
                 {type = item, name = sulfur, amount = 1}
             },
             main_product = copper_ore
@@ -134,14 +146,14 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
-            energy_required = 2, -- Tetrahedrite chunks (Sorting) / Cu + Fe + Ag + Au + S
+            energy_required = 2, -- Tetrahedrite chunks (Sorting) / Cu + Sb + Ag + Au + S
             ingredients = {{type = item, name = tetrahedrite_chunks, amount = 8}},
             results =
             {
                 {type = item, name = copper_ore, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = antimony_ore, amount = 2},
                 {type = item, name = silver_ore_bob, amount = 1},
                 {type = item, name = gold_ore_bob, amount = 1},
                 {type = item, name = sulfur, amount = 1}
@@ -153,17 +165,17 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
-            energy_required = 2, -- Tetrahedrite crystals (Sorting) / Cu + Fe + Ag + Au + Sb + S
+            energy_required = 2, -- Tetrahedrite crystals (Sorting) / Cu + Sb + Ag + Au + Fe + S
             ingredients = {{type = item, name = tetrahedrite_crystals, amount = 8}},
             results =
             {
                 {type = item, name = copper_ore, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = antimony_ore, amount = 2},
                 {type = item, name = silver_ore_bob, amount = 1},
                 {type = item, name = gold_ore_bob, amount = 1},
-                {type = item, name = antimony_ore, amount = 1},
+                {type = item, name = iron_ore, amount = 1},
                 {type = item, name = sulfur, amount = 1}
             },
             main_product = copper_ore
@@ -173,38 +185,20 @@ if mods[paracelsin_mods] then
             categories = {ore_sorting_6},
             subgroup = is_tetrahedrite,
             icons = RECYCLING_I(recycling_png, tetrahedrite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
-            energy_required = 2, -- Tetrahedrite purified (Sorting) / Cu + Fe + Ag + Au + Sb + As
+            energy_required = 2, -- Tetrahedrite purified (Sorting) / Cu + Sb + Ag + Au + Fe + As
             ingredients = {{type = item, name = tetrahedrite_purified, amount = 8}},
             results =
             {
                 {type = item, name = copper_ore, amount = 4},
-                {type = item, name = iron_ore, amount = 2},
+                {type = item, name = antimony_ore, amount = 2},
                 {type = item, name = silver_ore_bob, amount = 1},
                 {type = item, name = gold_ore_bob, amount = 1},
-                {type = item, name = antimony_ore, amount = 1},
+                {type = item, name = iron_ore, amount = 1},
                 {type = item, name = arsenic, amount = 1}
             },
             main_product = copper_ore
-        },
-        -- SYNTHESIS
-        {
-            name = antimony_ore_recipe,
-            categories = {ore_sorting_6},
-            subgroup = is_ore_sorting_advanced_3,
-            icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, tetrahedrite_purified, antimony_ore),
-            order = a_o,
-            allow_productivity = true,
-            energy_required = 2,
-            ingredients =
-            {
-                {type = item, name = hybride_catalyst, amount = 1},
-                {type = item, name = antimonite_purified, amount = 2},
-                {type = item, name = tetrahedrite_purified, amount = 2}
-            },
-            results = {{type = item, name = antimony_ore, amount = 4}},
-            main_product = antimony_ore
         }
     })
 end
