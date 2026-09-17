@@ -6,6 +6,7 @@ data_item[saphirite_bacteria].stack_size = 200
 data_item[saphirite_bacteria].spoil_result = ore_saphirite
 TIMSABA.void.freezing_organics(saphirite_bacteria)
 data_recipe[saphirite_bacteria].localised_name = {"item-name.saphirite-bacteria"}
+data_recipe[saphirite_bacteria].categories = {organic, hand_crafting}
 data_recipe[saphirite_bacteria].subgroup = is_bacteria_ore
 data_recipe[saphirite_bacteria].icons = TWO_D_I(jelly, nil, saphirite_bacteria, spoilage)
 data_recipe[saphirite_bacteria].order = a
@@ -23,6 +24,7 @@ data_item[stiratite_bacteria].stack_size = 200
 data_item[stiratite_bacteria].spoil_result = ore_stiratite
 TIMSABA.void.freezing_organics(stiratite_bacteria)
 data_recipe[stiratite_bacteria].localised_name = {"item-name.stiratite-bacteria"}
+data_recipe[stiratite_bacteria].categories = {organic, hand_crafting}
 data_recipe[stiratite_bacteria].subgroup = is_bacteria_ore
 data_recipe[stiratite_bacteria].icons = TWO_D_I(yumako, nil, stiratite_bacteria, spoilage)
 data_recipe[stiratite_bacteria].order = c
@@ -533,6 +535,8 @@ data_technology[biochamber].effects =
     {type = unlock_recipe, recipe = biochamber},
     {type = unlock_recipe, recipe = rubyte_bacteria},
     {type = unlock_recipe, recipe = bobmonium_bacteria},
+    {type = unlock_recipe, recipe = senaite_bacteria},
+    {type = unlock_recipe, recipe = franckeite_bacteria},
     {type = unlock_recipe, recipe = burnt_spoilage},
     {type = unlock_recipe, recipe = "nutrients-from-jelly"},
     {type = unlock_recipe, recipe = nutrients_from_yumako_mash},
@@ -547,7 +551,9 @@ data_technology[tech_bacteria_cultivation].effects =
     {type = unlock_recipe, recipe = stiratite_bacteria_cultivation},
     {type = unlock_recipe, recipe = crotinnium_bacteria_cultivation},
     {type = unlock_recipe, recipe = rubyte_bacteria_cultivation},
-    {type = unlock_recipe, recipe = bobmonium_bacteria_cultivation}
+    {type = unlock_recipe, recipe = bobmonium_bacteria_cultivation},
+    {type = unlock_recipe, recipe = senaite_bacteria_cultivation},
+    {type = unlock_recipe, recipe = franckeite_bacteria_cultivation}
 }
 data_technology[tech_bacteria_cultivation].research_trigger =
 {

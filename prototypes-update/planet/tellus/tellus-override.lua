@@ -833,13 +833,13 @@ if mods[tellus_mods] then
     -- COLORED PROTOTYPES
     local dyes =
     {
-        --{name = orange_dye,  order = a, artifact = alien_artifact_orange,  ore = crushed_cupric},
+        --{name = orange_dye,  order = a, artifact = alien_artifact_orange,  ore = crushed_senaite},
         {name = blue_dye,    order = b, artifact = alien_artifact_blue,    ore = crushed_saphirite},
         {name = yellow_dye,  order = c, artifact = alien_artifact_yellow,  ore = crushed_jivolite},
         {name = magenta_dye, order = d, artifact = alien_artifact_magenta, ore_1 = crushed_saphirite, ore_2 = crushed_rubyte},
-        {name = green_dye,   order = e, artifact = alien_artifact_green,   ore = crushed_ferrous},
+        {name = green_dye,   order = e, artifact = alien_artifact_green,   ore = crushed_franckeite},
         {name = red_dye,     order = f, artifact = alien_artifact_red,     ore = crushed_rubyte},
-        {name = cyan_dye,    order = g,                                    ore_1 = crushed_saphirite, ore_2 = crushed_ferrous},
+        {name = cyan_dye,    order = g,                                    ore_1 = crushed_saphirite, ore_2 = crushed_franckeite},
         --{name = black_dye,   order = h,                                    ore = coal_crushed_angels}
     }
     for _, prototypes in pairs(dyes) do

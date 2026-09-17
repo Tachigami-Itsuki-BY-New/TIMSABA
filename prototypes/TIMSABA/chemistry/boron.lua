@@ -50,28 +50,10 @@ TIMSABA.barreling.add_dangerous_fluid(boric_acid_solution)
 TIMSABA.barreling.add_gas(diborane_gas)
 
 -- RECIPE
-borax_recipe = "borax-ore-chunk-mix-processing"
 boric_acid_from_diborane_gas = "boric-acid-from-diborane-gas"
 boric_acid_from_hydrochloric_acid = "boric-acid-from-hydrochloric-acid"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = borax_recipe,
-        categories = {angels_ore_sorting_3},
-        subgroup = is_ore_sorting_advanced_2,
-        icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_jivolite, borax),
-        order = a_g,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = crystal_catalyst, amount = 1},
-            {type = item, name = chunk_saphirite, amount = 2},
-            {type = item, name = chunk_jivolite, amount = 2}
-        },
-        results = {{type = item, name = borax, amount = 4}},
-        main_product = borax
-    },
     -- SMELTING
     {
         name = boric_acid_solution,

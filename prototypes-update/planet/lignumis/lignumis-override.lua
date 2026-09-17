@@ -327,6 +327,10 @@ if mods[lignumis_mods] then
     }
     data_construction_robot[basic_construction_robot_gold].subgroup = is_lignumis_logistic
     data_construction_robot[basic_construction_robot_gold].order = g
+    data_construction_robot[basic_construction_robot_gold].max_payload_size = 0.5
+    data_construction_robot[basic_construction_robot_gold].speed = (0.5 * 2) / 60
+    data_construction_robot[basic_construction_robot_gold].max_energy = 900 .. kJ
+    data_construction_robot[basic_construction_robot_gold].energy_per_tick = 30 .. J
 
     local basic_repair_pack = "basic-repair-pack"
     data_repair_tool[basic_repair_pack].subgroup = is_lignumis_logistic
@@ -777,25 +781,4 @@ if mods[lignumis_mods] then
     end
 
     data_technology[tech_worker_robots_speed .. "-5"].prerequisites = {tech_worker_robots_speed .. "-4", utility_science_pack}
-
-    table.insert(data_technology[tech_powellite_processing_1].effects, {type = unlock_recipe, recipe = powellite_ore .. _sorting_stone})
-    table.insert(data_technology[tech_molybdenite_processing_1].effects, {type = unlock_recipe, recipe = molybdenite_ore .. _sorting_stone})
-    table.insert(data_technology[tech_wolframite_processing_1].effects, {type = unlock_recipe, recipe = wolframite_ore .. _sorting_stone})
-    table.insert(data_technology[tech_brannerite_processing_1].effects, {type = unlock_recipe, recipe = brannerite_ore .. _sorting_stone})
-    table.insert(data_technology[tech_antimonite_processing_1].effects, {type = unlock_recipe, recipe = antimonite_ore .. _sorting_stone})
-    table.insert(data_technology[tech_germanite_processing_1].effects, {type = unlock_recipe, recipe = germanite_ore .. _sorting_stone})
-
-    if mods[moshine_mods] then
-        table.insert(data_technology[tech_monazite_processing_1].effects, {type = unlock_recipe, recipe = monazite_ore .. _sorting_stone})
-    end
-    if mods[corrundum_mods] then
-        table.insert(data_technology[tech_chalcopyrite_processing_1].effects, {type = unlock_recipe, recipe = chalcopyrite_ore .. _sorting_stone})
-    end
-    if mods[castra_mods] then
-        table.insert(data_technology[tech_millerite_processing_1].effects, {type = unlock_recipe, recipe = millerite_ore .. _sorting_stone})
-    end
-    if mods[paracelsin_mods] then
-        table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = sphalerite_ore .. _sorting_stone})
-        table.insert(data_technology[tech_tetrahedrite_processing_1].effects, {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting_stone})
-    end
 end

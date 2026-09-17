@@ -12,7 +12,6 @@ if mods[shattered_mods] then
         [thorium_232_bob] = thorium_shattered,
         [argon_mods] = argon_gas,
         [helium_mods] = helium_vesta,
-        [nitrogen_mods] = nitrogen_angels,
         [liquid_nitrogen_shattered] = nitrogen_liquid,
         [speed_module_3_shattered] = speed_module_8,
         [efficiency_module_3_shattered] = efficiency_module_8,

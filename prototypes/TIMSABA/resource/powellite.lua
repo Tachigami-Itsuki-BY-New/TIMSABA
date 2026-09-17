@@ -1,6 +1,6 @@
 local graphics_powellite = "__TIMSABA__/graphics/icons/angels/resource/powellite-ore/"
 
--- Powellite ore / Ca + Cu + Pb + W + Mo + Ho
+-- Powellite ore / Ca + Mo + Cu + Pb + W + Ho
 powellite_ore = "powellite-ore"
 powellite_crushed = "powellite-crushed"
 powellite_chunks = "powellite-chunks"
@@ -52,7 +52,7 @@ TIMSABA.functions.create_items
 
 -- FLUID
 
-
+-- RECIPE
 powellite_crushed_sorting = "powellite-crushed-sorting"
 powellite_chunks_sorting = "powellite-chunks-sorting"
 powellite_crystals_sorting = "powellite-crystals-sorting"
@@ -127,57 +127,57 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = powellite_crushed_sorting,
-        categories = {angels_ore_sorting_1},
+        categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, powellite_crushed),
         order = i,
         allow_productivity = true,
-        energy_required = 1, -- Powellite crushed (Sorting) / Ca + Cu + Slag
+        energy_required = 1, -- Powellite crushed (Sorting) / Ca + Mo + Calcium silicate
         ingredients = {{type = item, name = powellite_crushed, amount = 4}},
         results =
         {
             {type = item, name = calcium, amount = 2},
-            {type = item, name = copper_ore, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = molybdenum_ore, amount = 1},
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = calcium
     },
     {
         name = powellite_chunks_sorting,
-        categories = {angels_ore_sorting_4},
+        categories = {ore_sorting_6},
         subgroup = is_ore_sorting_T2,
         icons = RECYCLING_I(recycling_png, powellite_chunks),
         order = i,
         allow_productivity = true,
-        energy_required = 2, -- Powellite chunks (Sorting) / Ca + Cu + Pb + W + Slag
+        energy_required = 2, -- Powellite chunks (Sorting) / Ca + Mo + Cu + Pb + Calcium silicate
         ingredients = {{type = item, name = powellite_chunks, amount = 8}},
         results =
         {
             {type = item, name = calcium, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = molybdenum_ore, amount = 2},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = lead_ore_bob, amount = 1},
-            {type = item, name = tungsten_ore_bob, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = calcium
     },
     {
         name = powellite_crystals_sorting,
-        categories = {angels_ore_sorting_5},
+        categories = {ore_sorting_6},
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, powellite_crystals),
         order = i,
         allow_productivity = true,
-        energy_required = 2, -- Powellite crystals (Sorting) / Ca + Cu + Pb + W + Mo + Slag
+        energy_required = 2, -- Powellite crystals (Sorting) / Ca + Mo + Cu + Pb + W + Calcium silicate
         ingredients = {{type = item, name = powellite_crystals, amount = 8}},
         results =
         {
             {type = item, name = calcium, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = molybdenum_ore, amount = 2},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = tungsten_ore_bob, amount = 1},
-            {type = item, name = molybdenum_ore, amount = 1},
-            {type = item, name = slag_angels, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = calcium
     },
@@ -188,15 +188,15 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powellite_purified),
         order = i,
         allow_productivity = true,
-        energy_required = 2, -- Powellite purified (Sorting) / Ca + Cu + Pb + W + Mo + Ho
+        energy_required = 2, -- Powellite purified (Sorting) / Ca + Mo + Cu + Pb + W + Ho
         ingredients = {{type = item, name = powellite_purified, amount = 8}},
         results =
         {
             {type = item, name = calcium, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = molybdenum_ore, amount = 2},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = tungsten_ore_bob, amount = 1},
-            {type = item, name = molybdenum_ore, amount = 1},
             {type = item, name = holmium_ore, amount = 1}
         },
         main_product = calcium
@@ -207,14 +207,14 @@ TIMSABA.functions.create_recipes
 local powellite_ore_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
 powellite_ore_particle.name = powellite_ore .. _particle
 for _, picture in pairs(powellite_ore_particle.pictures) do
-    picture.tint = {r = 215/256, g = 145/256, b = 45/256, a = 1.000}
+    picture.tint = {r = 185/256, g = 115/256, b = 035/256, a = 1.000}
 end
 data:extend({powellite_ore_particle})
 
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = powellite_ore, subgroup = is_ores, order = i, map_color = {r = 180/255, g = 110/255, b = 30/255, a = 1.000}, mining_visualisation_tint = {r = 240/255, g = 175/255, b = 60/255, a = 1.000}},
+        {name = powellite_ore, subgroup = is_ores, order = i, map_color = {r = 140/255, g = 080/255, b = 020/255, a = 1.000}, mining_visualisation_tint = {r = 200/255, g = 130/255, b = 045/255, a = 1.000}},
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })
@@ -222,9 +222,6 @@ data:extend
 TIMSABA.functions.create_autoplace_control(powellite_ore)
 
 data_planet[planet_nauvis].map_gen_settings.autoplace_controls[powellite_ore] = {}
-if not data_planet[planet_nauvis].map_gen_settings then
-    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
-end
 data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[powellite_ore] = {}
 
 data_resource[powellite_ore].location = planet_nauvis

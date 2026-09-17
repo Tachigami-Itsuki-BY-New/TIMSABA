@@ -1,7 +1,6 @@
 if mods[castra_mods] then
     local replace_prototypes =
     {
-        [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
         [nickel_plate_mods] = nickel_plate_bob
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)

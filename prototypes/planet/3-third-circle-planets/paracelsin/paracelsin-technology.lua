@@ -19,6 +19,7 @@ if mods[paracelsin_mods] then
             prerequisites = {planet_discovery_paracelsin},
             effects =
             {
+                {type = unlock_recipe, recipe = sphalerite_ore .. _sorting_stone},
                 {type = unlock_recipe, recipe = sphalerite_crushed},
                 {type = unlock_recipe, recipe = sphalerite_crushed_sorting}
             },
@@ -155,6 +156,7 @@ if mods[paracelsin_mods] then
             prerequisites = {planet_discovery_paracelsin},
             effects =
             {
+                {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting_stone},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed_sorting}
             },
@@ -274,64 +276,9 @@ if mods[paracelsin_mods] then
     })
 
     -- OTHERS
-    local graphics_paracelsin_tech = "__TIMSABA__/graphics/icons/paracelsin/technology/"
-    tech_germanium_synthesis = "germanium-synthesis"
-    tech_antimony_synthesis = "antimony-synthesis"
     tech_zinc_processing = "zinc-processing"
     data:extend
     ({
-        {
-            type = technology,
-            name = tech_germanium_synthesis,
-            icon = graphics_paracelsin_tech .. tech_germanium_synthesis .. ".png",
-            icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_germanium_smelting_3, tech_germanite_processing_4, tech_sphalerite_processing_4},
-            effects = {{type = unlock_recipe, recipe = germanium_ore_recipe}},
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
-                },
-                time = 30
-            }
-        },
-        {
-            type = technology,
-            name = tech_antimony_synthesis,
-            icon = graphics_paracelsin_tech .. tech_antimony_synthesis .. ".png",
-            icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_antimony_smelting_3, tech_antimonite_processing_4, tech_tetrahedrite_processing_4},
-            effects = {{type = unlock_recipe, recipe = antimony_ore_recipe}},
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
-                },
-                time = 30
-            }
-        },
         {
             type = technology,
             name = tech_zinc_processing,

@@ -6,9 +6,9 @@ local is_holmium_chemistry = "is-holmium-chemistry"
 local is_holmium_casting = "is-holmium-casting"
 TIMSABA.functions.create_subgroups(ig_fulgora,
 {
-    {name = is_holmium,           order = d},
-    {name = is_holmium_chemistry, order = d_a},
-    {name = is_holmium_casting,   order = d_b}
+    {name = is_holmium,           order = e},
+    {name = is_holmium_chemistry, order = e_a},
+    {name = is_holmium_casting,   order = e_b}
 })
 
 -- ITEM

@@ -539,11 +539,15 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)
         table.insert(data_technology[artillery_wagon_2].prerequisites, galvanization_science_pack)
     end
+
+    table.insert(data_technology[tech_powellite_processing_4].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_samarskite_processing_3].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_rheniite_processing_3].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_antimonite_processing_2].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_germanite_processing_2].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, galvanization_science_pack)
     if mods[castra_mods] then
         table.insert(data_technology[tech_millerite_processing_3].prerequisites, galvanization_science_pack)
     end
@@ -551,7 +555,8 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, galvanization_science_pack)
     end
     if mods[moshine_mods] then
-        table.insert(data_technology[tech_monazite_processing_2].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[tech_monazite_processing_3].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, galvanization_science_pack)
     end
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, galvanization_science_pack)

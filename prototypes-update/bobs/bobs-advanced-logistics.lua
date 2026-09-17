@@ -340,11 +340,11 @@ tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advan
 data_item_subgroup["bob-logistic-robots"].order = f_b
 local logistic_robots =
 {
-    {name = logistic_robot_1, MPS = 1, max_energy = 900,  EPT = 25},
-    {name = logistic_robot_2, MPS = 2, max_energy = 1800, EPT = 55},
-    {name = logistic_robot_3, MPS = 3, max_energy = 2700, EPT = 85},
-    {name = logistic_robot_4, MPS = 4, max_energy = 3600, EPT = 115},
-    {name = logistic_robot_5, MPS = 5, max_energy = 4500, EPT = 0}
+    {name = logistic_robot_1, MPS = 1, max_energy = 1800, EPT = 30},
+    {name = logistic_robot_2, MPS = 2, max_energy = 3600, EPT = 60},
+    {name = logistic_robot_3, MPS = 3, max_energy = 5400, EPT = 90},
+    {name = logistic_robot_4, MPS = 4, max_energy = 7200, EPT = 120},
+    {name = logistic_robot_5, MPS = 5, max_energy = 9000, EPT = 0}
 }
 for _, DRONE in pairs(logistic_robots) do
     if data_item[DRONE.name] then
@@ -359,11 +359,11 @@ end
 data_item_subgroup["bob-construction-robots"].order = f_c
 local construction_robots =
 {
-    {name = construction_robot_1, MPS = 1, max_energy = 900,  EPT = 25},
-    {name = construction_robot_2, MPS = 2, max_energy = 1800, EPT = 55},
-    {name = construction_robot_3, MPS = 3, max_energy = 2700, EPT = 85},
-    {name = construction_robot_4, MPS = 4, max_energy = 3600, EPT = 115},
-    {name = construction_robot_5, MPS = 5, max_energy = 4500, EPT = 0}
+    {name = construction_robot_1, MPS = 1, max_energy = 1800, EPT = 30},
+    {name = construction_robot_2, MPS = 2, max_energy = 3600, EPT = 60},
+    {name = construction_robot_3, MPS = 3, max_energy = 5400, EPT = 80},
+    {name = construction_robot_4, MPS = 4, max_energy = 7200, EPT = 120},
+    {name = construction_robot_5, MPS = 5, max_energy = 9000, EPT = 0}
 }
 for _, DRONE in pairs(construction_robots) do
     if data_item[DRONE.name] then

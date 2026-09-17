@@ -58,7 +58,7 @@ local table_of_chemical_elements =
     Ni = {{059, 123, 117}, {053, 111, 105}, {048, 100, 095}}, -- Nickel
     Cu = {{149, 098, 083}, {134, 088, 075}, {121, 079, 068}}, -- Copper
     Zn = {{098, 180, 174}, {088, 162, 157}, {079, 146, 141}}, -- Zinc
-    Ga = {{160, 120, 120}, {140, 100, 100}, {120, 080, 080}}, -- Galium
+    Ga = {{160, 120, 120}, {140, 100, 100}, {120, 080, 080}}, -- Gallium
     Ge = {{100, 140, 140}, {085, 120, 120}, {070, 100, 100}}, -- Germanium
     As = {{143, 161, 073}, {117, 133, 055}, {101, 116, 047}}, -- Arsenic
     Se = {{126, 040, 068}, {090, 030, 050}, {060, 020, 040}}, -- Selenium
@@ -149,6 +149,8 @@ local table_of_chemical_elements =
     -- OTHERS
     Cc = {{069, 069, 069}, {054, 054, 054}, {036, 036, 036}}, -- Crude Oil
     Sa = {{255, 220, 189}, {199, 163, 133}, {170, 142, 119}}, -- Sand Fluid
+    Sl = {{105, 046, 007}, {086, 037, 004}, {063, 026, 002}}, -- Slurry Slag
+    Sd = {{230, 100, 000}, {210, 080, 000}, {190, 060, 000}}, -- Sludge Mineral
     -- SOLUTIONS
     Wp = {{090, 106, 164}, {090, 106, 164}, {090, 106, 164}}, -- Water purified
     De = {{187, 174, 174}, {187, 174, 174}, {187, 174, 174}}, -- Diethyl ether
@@ -311,8 +313,26 @@ function TIMSABA.functions.create_gas_tech_icon(tints)
     }
 end
 
+local function hex_to_rgb(hex_str)
+    if type(hex_str) ~= "string" then return hex_str end
+
+    hex_str = hex_str:gsub("#", "")
+
+    if #hex_str == 6 then
+        local r = tonumber(hex_str:sub(1, 2), 16) or 0
+        local g = tonumber(hex_str:sub(3, 4), 16) or 0
+        local b = tonumber(hex_str:sub(5, 6), 16) or 0
+        return {r = r / 255, g = g / 255, b = b / 255}
+    end
+
+    return nil
+end
+
 function TIMSABA.functions.create_fluid_tech_icon(tints)
-    if tints then
+    if type(tints) == "string" and (tints:sub(1,1) == "#" or #tints == 6) then
+        local rgb = hex_to_rgb(tints)
+        tints = {top = rgb, mid = rgb, bot = rgb}
+    elseif tints then
         if type(tints) ~= "table" then
             local reference = get_molecule_codes(tints)
             tints =
@@ -322,9 +342,24 @@ function TIMSABA.functions.create_fluid_tech_icon(tints)
                 bot = unify_tint(table_of_chemical_elements[(reference[3] or {form = "unknown"}).form][3] or {}),
             }
         else
-            tints.top = unify_tint(tints.top or tints[1] or nil)
-            tints.mid = unify_tint(tints.mid or tints[2] or nil)
-            tints.bot = unify_tint(tints.bot or tints[3] or nil)
+            local top_raw = tints.top or tints[1]
+            local mid_raw = tints.mid or tints[2]
+            local bot_raw = tints.bot or tints[3]
+
+            if tints.r or tints.g or tints.b then
+                tints = {top = tints, mid = tints, bot = tints}
+            else
+                tints =
+                {
+                    top = type(top_raw) == "string" and hex_to_rgb(top_raw) or top_raw,
+                    mid = type(mid_raw) == "string" and hex_to_rgb(mid_raw) or mid_raw,
+                    bot = type(bot_raw) == "string" and hex_to_rgb(bot_raw) or bot_raw,
+                }
+            end
+
+            tints.top = unify_tint(tints.top or nil)
+            tints.mid = unify_tint(tints.mid or nil)
+            tints.bot = unify_tint(tints.bot or nil)
         end
     else
         tints = {}
@@ -384,7 +419,6 @@ function TIMSABA.functions.create_items(list)
                 name = items.name,
                 subgroup = items.subgroup,
                 icon = items.icon or error_png,
-                icons = items.icons,
                 icon_size = items.icon_size or 64,
 
                 pictures = items.pictures,
@@ -422,7 +456,6 @@ function TIMSABA.functions.create_fluids(list)
                 subgroup = fluids.subgroup,
                 order = fluids.order,
                 icon = fluids.icon or error_png,
-                icons = fluids.icons,
                 icon_size = fluids.icon_size or 64,
 
                 default_temperature = fluids.default_temperature or 0,
@@ -616,7 +649,7 @@ function TIMSABA.functions.create_resource(resource_parameters, autoplace_parame
         type = resource,
         name = resource_parameters.name,
         subgroup = resource_parameters.subgroup,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        icon = data_item[resource_parameters.name].icon,
         icon_size = resource_parameters.icon_size or 64,
         order = resource_parameters.order,
         category = resource_parameters.category,
@@ -659,7 +692,7 @@ function TIMSABA.functions.create_resource(resource_parameters, autoplace_parame
         {
             sheet =
             {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+                filename = "__TIMSABA__/graphics/icons/angels/resource/ores/" .. resource_parameters.name .. ".png",
                 priority = extra_high,
                 size = 128,
                 frame_count = 8,
@@ -945,55 +978,55 @@ function TIMSABA.functions.delete_prototypes(replacements)
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
             if data.raw[proto_type] then
-                if data.raw[proto_type][name] then data.raw[proto_type][name] = nil end
-                if data.raw[proto_type][tiny_ .. name] then data.raw[proto_type][tiny_ .. name] = nil end
+                data.raw[proto_type][name] = nil
+                data.raw[proto_type][tiny_ .. name] = nil
                 for i = 25, 2400, 25 do
-                    if data.raw[proto_type][name .. __rigor_module_mod__ .. i] then data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil end
+                    data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil
                 end
-                if data.raw[proto_type][harene_infused_ .. name] then data.raw[proto_type][harene_infused_ .. name] = nil end
+                data.raw[proto_type][harene_infused_ .. name] = nil
             end
         end
-        if data_item[RTThrower_ .. name .. _Item] then data_item[RTThrower_ .. name .. _Item] = nil end
-        if data_recipe[name .. _recycling] then data_recipe[name .. _recycling] = nil end
-        if data_recipe[name .. _barrel_recycling] then data_recipe[name .. _barrel_recycling] = nil end
-        if data_recipe[name .. _flaring] then data_recipe[name .. _flaring] = nil end
-        if data_recipe[name .. _incineration] then data_recipe[name .. _incineration] = nil end
-        if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[item_ .. name .. _barrel_panglia_crushing] then data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil end
-        if data_recipe[ammo_ .. name .. _panglia_crushing] then data_recipe[ammo_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[repair_tool_ .. name .. _panglia_crushing] then data_recipe[repair_tool_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[module_ .. name .. _panglia_crushing] then data_recipe[module_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[capsule_ .. name .. _panglia_crushing] then data_recipe[capsule_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[name .. _smelting] then data_recipe[name .. _smelting] = nil end
-        if data_recipe[cargo_crate_ .. name] then data_recipe[cargo_crate_ .. name] = nil end
-        if data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] then data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[unpack_cargo_crate_ .. name] then data_recipe[unpack_cargo_crate_ .. name] = nil end
-        if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
-        if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
-        if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
-        if data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] then data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[yeet_ammo_ .. name] then data_recipe[yeet_ammo_ .. name] = nil end
-        if data_recipe[yeet_capsule_ .. name] then data_recipe[yeet_capsule_ .. name] = nil end
-        if data_recipe[yeet_item_ .. name] then data_recipe[yeet_item_ .. name] = nil end
-        if data_recipe[yeet_item_entity_ .. name] then data_recipe[yeet_item_entity_ .. name] = nil end
-        if data_recipe[yeet_module_ .. name] then data_recipe[yeet_module_ .. name] = nil end
-        if data_recipe[yeet_repair_tool_ .. name] then data_recipe[yeet_repair_tool_ .. name] = nil end
-        if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
-        if data_recipe[yeet_item_ .. tiny_ .. name] then data_recipe[yeet_item_ .. tiny_ .. name] = nil end
-        if data_recipe[harene_infused_ .. name .. _recycling] then data_recipe[harene_infused_ .. name .. _recycling] = nil end
-        if data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] then data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
-        if data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] then data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil end
-        if data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] then data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil end
-        if data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] then data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] = nil end
-        if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
-        if data_inserter[harene_infused_ .. name .. _panglia_fast_version] then data_inserter[harene_infused_ .. name .. _panglia_fast_version] = nil end
-        if data_inserter[RTThrower_ .. name] then data_inserter[RTThrower_ .. name] = nil end
-        if data_inserter[RTThrower_ .. name .. _panglia_fast_version] then data_inserter[RTThrower_ .. name .. _panglia_fast_version] = nil end
+        data_item[RTThrower_ .. name .. _Item] = nil
+        data_recipe[name .. _recycling] = nil
+        data_recipe[name .. _barrel_recycling] = nil
+        data_recipe[name .. _flaring] = nil
+        data_recipe[name .. _incineration] = nil
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+        data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil
+        data_recipe[ammo_ .. name .. _panglia_crushing] = nil
+        data_recipe[repair_tool_ .. name .. _panglia_crushing] = nil
+        data_recipe[module_ .. name .. _panglia_crushing] = nil
+        data_recipe[capsule_ .. name .. _panglia_crushing] = nil
+        data_recipe[name .. _smelting] = nil
+        data_recipe[cargo_crate_ .. name] = nil
+        data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] = nil
+        data_recipe[unpack_cargo_crate_ .. name] = nil
+        data_recipe[maraxsis_fluid_void_ .. name] = nil
+        data_recipe[item_ .. name .. _barrel_incineration] = nil
+        data_recipe[name .. _outlet] = nil
+        data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] = nil
+        data_recipe[yeet_ammo_ .. name] = nil
+        data_recipe[yeet_capsule_ .. name] = nil
+        data_recipe[yeet_item_ .. name] = nil
+        data_recipe[yeet_item_entity_ .. name] = nil
+        data_recipe[yeet_module_ .. name] = nil
+        data_recipe[yeet_repair_tool_ .. name] = nil
+        data_recipe[yeet_item_ .. name .. _barrel] = nil
+        data_recipe[yeet_item_ .. tiny_ .. name] = nil
+        data_recipe[harene_infused_ .. name .. _recycling] = nil
+        data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] = nil
+        data_recipe[RTThrower_ .. name .. _Recipe] = nil
+        data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil
+        data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil
+        data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] = nil
+        data_inserter[name .. _panglia_fast_version] = nil
+        data_inserter[harene_infused_ .. name .. _panglia_fast_version] = nil
+        data_inserter[RTThrower_ .. name] = nil
+        data_inserter[RTThrower_ .. name .. _panglia_fast_version] = nil
         for i = 1, 99 do
-            if data_solar_panel[sp_ .. i .. "-" .. name] then data_solar_panel[sp_ .. i .. "-" .. name] = nil end
-            if data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] then data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] = nil end
-            if data_accumulator[sp_ .. i .. "-" .. name] then data_accumulator[sp_ .. i .. "-" .. name] = nil end
+            data_solar_panel[sp_ .. i .. "-" .. name] = nil
+            data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] = nil
+            data_accumulator[sp_ .. i .. "-" .. name] = nil
         end
         for _, container_type in ipairs({container, logistic_container}) do
             if data.raw[container_type] then
@@ -1004,9 +1037,9 @@ function TIMSABA.functions.delete_prototypes(replacements)
                 end
             end
         end
-        if data_car[rubia_auto_variant_ .. name] then data_car[rubia_auto_variant_ .. name] = nil end
-        if data_stream[name .. _projectileFromRenaiTransportationPrimed] then data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil end
-        if data_turret[RTPrimerThrowerShooter_ .. name] then data_turret[RTPrimerThrowerShooter_ .. name] = nil end
+        data_car[rubia_auto_variant_ .. name] = nil
+        data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil
+        data_turret[RTPrimerThrowerShooter_ .. name] = nil
     end
 end
 
@@ -1014,17 +1047,17 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
     for _, name in ipairs(replacements or {}) do
         data_item[name] = nil
         data_recipe[name .. _recycling] = nil
-        if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
-        if data_recipe[yeet_item_ .. name] then data_recipe[yeet_item_ .. name] = nil end
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+        data_recipe[yeet_item_ .. name] = nil
     end
 end
 
 function TIMSABA.functions.delete_duplicated_fluids(replacements)
     for _, name in ipairs(replacements or {}) do
         data_fluid[name] = nil
-        if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
-        if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
-        if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
+        data_recipe[yeet_item_ .. name .. _barrel] = nil
+        data_recipe[maraxsis_fluid_void_ .. name] = nil
+        data_recipe[name .. _outlet] = nil
     end
 end
 

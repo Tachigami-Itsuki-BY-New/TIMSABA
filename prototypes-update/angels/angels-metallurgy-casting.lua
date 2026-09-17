@@ -982,6 +982,14 @@ data_item_subgroup["angels-tungsten-casting"].order = r
 
 data_item[tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_plate_bob].order = a
+    if settings.startup[setting_game_difficulty].value == easy then
+        data_recipe[tungsten_plate_bob].ingredients = {{type = item, name = wolframite_crushed, amount = 4}}
+        data_recipe[tungsten_plate_bob].results = {{type = item, name = tungsten_plate_bob, amount = 2}}
+    elseif settings.startup[setting_game_difficulty].value == normal then
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        data_recipe[tungsten_plate_bob].ingredients = {{type = item, name = wolframite_crushed, amount = 8}}
+        data_recipe[tungsten_plate_bob].results = {{type = item, name = tungsten_plate_bob, amount = 1}}
+    end
 
 data_recipe[tungsten_plate_angels].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate_angels].order = a_a

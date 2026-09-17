@@ -18,6 +18,12 @@ if mods[panglia_mods] then
     data_recipe[mixed_dust].subgroup = is_panglia_recipe
     data_recipe[mixed_dust].order = b
 
+    local mixed_dust_panglia_crushing = item_ .. mixed_dust .. _panglia_crushing
+    data_recipe[mixed_dust_panglia_crushing].localised_name = {"recipe-name.recycling", {"item-name." .. mixed_dust}}
+    data_recipe[mixed_dust_panglia_crushing].subgroup = is_panglia_recipe
+    data_recipe[mixed_dust_panglia_crushing].icons = RECYCLING_IS(recycling_png, mixed_dust)
+    data_recipe[mixed_dust_panglia_crushing].order = b_a
+
     data_item[panglite].subgroup = is_panglia_recipe
     data_item[panglite].order = c
     data_item[panglite].stack_size = 200
@@ -116,47 +122,51 @@ if mods[panglia_mods] then
     data_item[cloned_specimen_body_0].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_0)
     data_recipe[cloned_specimen_body_0].subgroup = is_panglia_recipe
-    data_recipe[cloned_specimen_body_0].icons = THREE_D_I(bioflux, uranium_235, datacell_dna_sequenced, cloned_specimen_body_0, uranium_238, datacell_dna_raw)
+    data_recipe[cloned_specimen_body_0].icons = FOUR_THREE_R_I(bioflux, uranium_235, datacell_dna_sequenced, cloned_specimen_body_0, uranium_238, mutated_monster_egg, datacell_dna_raw)
     data_recipe[cloned_specimen_body_0].order = i
     data_recipe[cloned_specimen_body_0].energy_required = 1024
 
+    data_item[mutated_monster_egg].subgroup = is_panglia_recipe
+    data_item[mutated_monster_egg].order = j
+    TIMSABA.void.freezing_organics(mutated_monster_egg)
+
     data_item[cloned_specimen_body_1].subgroup = is_panglia_recipe
-    data_item[cloned_specimen_body_1].order = j
+    data_item[cloned_specimen_body_1].order = k
     data_item[cloned_specimen_body_1].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_1)
     data_recipe[cloned_specimen_body_1].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_1].icons = THREE_R_I(cloned_specimen_body_0, cloned_specimen_body_1, spoilage)
-    data_recipe[cloned_specimen_body_1].order = j
+    data_recipe[cloned_specimen_body_1].order = k
     data_recipe[cloned_specimen_body_1].energy_required = 2048
 
     data_item[cloned_specimen_body_2].subgroup = is_panglia_recipe
-    data_item[cloned_specimen_body_2].order = k
+    data_item[cloned_specimen_body_2].order = l
     data_item[cloned_specimen_body_2].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_2)
     data_recipe[cloned_specimen_body_2].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_2].icons = THREE_R_I(cloned_specimen_body_1, cloned_specimen_body_2, spoilage)
-    data_recipe[cloned_specimen_body_2].order = k
+    data_recipe[cloned_specimen_body_2].order = l
     data_recipe[cloned_specimen_body_2].energy_required = 4096
 
     data_item[cloned_specimen_body_3_genius].subgroup = is_panglia_recipe
-    data_item[cloned_specimen_body_3_genius].order = l
+    data_item[cloned_specimen_body_3_genius].order = m
     data_item[cloned_specimen_body_3_genius].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_3_genius)
 
     data_item[cloned_specimen_body_3].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_3].stack_size = 200
-    data_item[cloned_specimen_body_3].order = m
+    data_item[cloned_specimen_body_3].order = n
     TIMSABA.void.freezing_organics(cloned_specimen_body_3)
     data_recipe[cloned_specimen_body_3].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_3].icons = THREE_R_I(cloned_specimen_body_2, cloned_specimen_body_3_genius, cloned_specimen_body_3)
-    data_recipe[cloned_specimen_body_3].order = m
+    data_recipe[cloned_specimen_body_3].order = n
     data_recipe[cloned_specimen_body_3].energy_required = 2048
 
     data_item[sentient_processor].subgroup = is_panglia_recipe
-    data_item[sentient_processor].order = n
+    data_item[sentient_processor].order = o
     data_item[sentient_processor].stack_size = 200
     data_recipe[sentient_processor].subgroup = is_panglia_recipe
-    data_recipe[sentient_processor].order = n
+    data_recipe[sentient_processor].order = o
     data_recipe[sentient_processor].energy_required = 128
     data_recipe[sentient_processor].ingredients =
     {
@@ -238,6 +248,8 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = molybdenite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = powellite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
@@ -258,8 +270,11 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = calcite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_gleba = "cosmic_incubator_recipe_gleba"
@@ -277,7 +292,9 @@ if mods[panglia_mods] then
         {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_fulgora = "cosmic_incubator_recipe_fulgora"
@@ -296,7 +313,10 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = brannerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = brannerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = rheniite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     local cosmic_incubator_recipe_aquilo = "cosmic_incubator_recipe_aquilo"
@@ -315,6 +335,8 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = antimonite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = germanite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
@@ -335,7 +357,10 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = monazite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = aeschynite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = barite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = biotite_mica, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
@@ -356,7 +381,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -377,6 +404,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = metallic_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = raw_quartz_arig, amount_min = 0, amount_max = 64, independent_probability = 0.5}
@@ -399,7 +428,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -420,6 +451,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = vaterite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = sphalerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = tetrahedrite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
@@ -443,6 +476,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = calcite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = chalcopyrite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = platinum_ore_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
@@ -467,6 +502,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = gunpowder, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = millerite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
@@ -489,6 +526,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = vanadium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
@@ -510,7 +549,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
 
         local cosmic_incubator_recipe_maraxsis_trench = "cosmic_incubator_recipe_maraxsis-trench"
@@ -549,6 +590,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = iridium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -596,7 +639,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -616,7 +661,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
 
         local cosmic_incubator_recipe_carnova = "cosmic_incubator_recipe_carnova"
@@ -635,6 +682,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = bones, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -657,6 +706,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = lunar_regolith, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -676,6 +727,8 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = panglite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = branbalite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
@@ -697,6 +750,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = gallite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -718,6 +774,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = palusium_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -739,16 +797,62 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
     -- BUILDING
+    local timewarp_analyser = "panglia_" .. timewarp_data .. "_maker"
+    data_item[timewarp_analyser].subgroup = is_panglia_building
+    data_item[timewarp_analyser].order = a
+    data_item[timewarp_analyser].stack_size = 32
+    data_item[timewarp_analyser].weight = 31250
+    data_recipe[timewarp_analyser].subgroup = is_panglia_building
+    data_recipe[timewarp_analyser].order = a
+    data_recipe[timewarp_analyser].energy_required = 4
+    data_recipe[timewarp_analyser].ingredients =
+    {
+        {type = item, name = data_processor, amount = 1},
+        {type = item, name = data_extractor, amount = 1},
+        {type = item, name = panglite, amount = 8}
+    }
+    data_assembling[timewarp_analyser].subgroup = is_panglia_building
+    data_assembling[timewarp_analyser].order = a
+    data_assembling[timewarp_analyser].energy_usage = (30 - (15 / 8)) .. kW
+    data_assembling[timewarp_analyser].energy_source.drain = (15 / 8) .. kW
+
+    local cloning_vat = "cloning-vat"
+    data_item[cloning_vat].subgroup = is_panglia_building
+    data_item[cloning_vat].order = b
+    data_item[cloning_vat].stack_size = 32
+    data_item[cloning_vat].weight = 31250
+    data_recipe[cloning_vat].subgroup = is_panglia_building
+    data_recipe[cloning_vat].order = b
+    data_recipe[cloning_vat].energy_required = 4
+    data_recipe[cloning_vat].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = carbon_fiber, amount = 4},
+        {type = item, name = biochamber, amount = 1},
+        {type = fluid, name = branbalite_slurry, amount = 120}
+    }
+    data_assembling[cloning_vat].subgroup = is_panglia_building
+    data_assembling[cloning_vat].order = b
+    data_assembling[cloning_vat].crafting_speed = 2
+    data_assembling[cloning_vat].module_slots = 4
+    data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
+    data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
+    data_assembling[cloning_vat].energy_source.drain = drain .. kW
+
     local matter_printer = "matter_printer"
     data_item[matter_printer].subgroup = is_panglia_building
+    data_item[matter_printer].order = c
     data_item[matter_printer].stack_size = 32
     data_item[matter_printer].weight = 31250
     data_recipe[matter_printer].subgroup = is_panglia_building
+    data_recipe[matter_printer].order = c
     data_recipe[matter_printer].energy_required = 8
     data_recipe[matter_printer].ingredients =
     {
@@ -759,17 +863,20 @@ if mods[panglia_mods] then
         {type = item, name = panglite, amount = 8}
     }
     data_furnace[matter_printer].subgroup = is_panglia_building
+    data_furnace[matter_printer].order = c
     data_furnace[matter_printer].crafting_speed = 1
     data_furnace[matter_printer].module_slots = 4
-    data_furnace[matter_printer].energy_usage = (64000 - 4000) .. kW
+    data_furnace[matter_printer].energy_usage = 60000 .. kW
     data_furnace[matter_printer].energy_source.emissions_per_minute = {pollution = 128}
     data_furnace[matter_printer].energy_source.drain = 4000 .. kW
 
     local panglia_crusher = "panglia_crusher"
     data_item[panglia_crusher].subgroup = is_panglia_building
+    data_item[panglia_crusher].order = d
     data_item[panglia_crusher].stack_size = 32
     data_item[panglia_crusher].weight = 31250
     data_recipe[panglia_crusher].subgroup = is_panglia_building
+    data_recipe[panglia_crusher].order = d
     data_recipe[panglia_crusher].energy_required = 8
     data_recipe[panglia_crusher].ingredients =
     {
@@ -780,46 +887,31 @@ if mods[panglia_mods] then
         {type = item, name = panglite_fiber, amount = 8}
     }
     data_furnace[panglia_crusher].subgroup = is_panglia_building
+    data_furnace[panglia_crusher].order = d
     data_furnace[panglia_crusher].energy_usage = (240 - drain) .. kW
     data_furnace[panglia_crusher].energy_source.emissions_per_minute = {pollution = 16}
     data_furnace[panglia_crusher].energy_source.drain = drain .. kW
 
-
-    local cloning_vat = "cloning-vat"
-    data_item[cloning_vat].subgroup = is_panglia_building
-    data_item[cloning_vat].stack_size = 32
-    data_item[cloning_vat].weight = 31250
-    data_recipe[cloning_vat].subgroup = is_panglia_building
-    data_recipe[cloning_vat].energy_required = 4
-    data_recipe[cloning_vat].ingredients =
-    {
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = carbon_fiber, amount = 4},
-        {type = item, name = biochamber, amount = 1},
-        {type = fluid, name = branbalite_slurry, amount = 120}
-    }
-    data_assembling[cloning_vat].subgroup = is_panglia_building
-    data_assembling[cloning_vat].crafting_speed = 2
-    data_assembling[cloning_vat].module_slots = 4
-    data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
-    data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
-    data_assembling[cloning_vat].energy_source.drain = drain .. kW
-
     local simulation_chamber = "simulation_chamber"
     data_item[simulation_chamber].subgroup = is_panglia_building
+    data_item[simulation_chamber].order = e
     data_item[simulation_chamber].stack_size = 32
     data_item[simulation_chamber].weight = 31250
     data_recipe[simulation_chamber].subgroup = is_panglia_building
+    data_recipe[simulation_chamber].order = e
     data_furnace[simulation_chamber].subgroup = is_panglia_building
+    data_furnace[simulation_chamber].order = e
     data_furnace[simulation_chamber].crafting_speed = 0.125
     data_furnace[simulation_chamber].energy_usage = (240 - drain) .. kW
     data_furnace[simulation_chamber].energy_source.drain = drain .. kW
 
     local thinking_brain = "thinking-brain"
     data_item[thinking_brain].subgroup = is_panglia_building
+    data_item[thinking_brain].order = f
     data_item[thinking_brain].stack_size = 32
     data_item[thinking_brain].weight = 31250
     data_recipe[thinking_brain].subgroup = is_panglia_building
+    data_recipe[thinking_brain].order = f
     data_recipe[thinking_brain].energy_required = 8
     data_recipe[thinking_brain].ingredients =
     {
@@ -830,6 +922,7 @@ if mods[panglia_mods] then
         {type = fluid, name = branbalite_slurry, amount = 120}
     }
     data_assembling[thinking_brain].subgroup = is_panglia_building
+    data_assembling[thinking_brain].order = f
     data_assembling[thinking_brain].effect_receiver.base_effect.productivity = 1
     data_assembling[thinking_brain].energy_usage = (4000 - 120) .. kW
     data_assembling[thinking_brain].energy_source.drain = 120 .. kW
@@ -866,9 +959,10 @@ if mods[panglia_mods] then
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
+        timewarp_analyser,
+        cloning_vat,
         matter_printer,
         panglia_crusher,
-        cloning_vat,
         thinking_brain,
         snouz_long_electric_gun_turret
     })

@@ -123,6 +123,19 @@ data_item[limestone_angels].icon_size = 64
 data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/intermediates/solid-lime.png"
 data_item[lime_angels].icon_size = 64
 
+-- ANGELS RESOURCE REFINING
+local graphics_resource = "__TIMSABA__/graphics/icons/angels/resource/"
+
+data_item[crushed_ferrium].icon = graphics_resource .. crushed_ferrium .. ".png"
+data_item[powder_ferrium].icon = graphics_resource .. powder_ferrium .. ".png"
+data_item[dust_ferrium].icon = graphics_resource .. dust_ferrium .. ".png"
+data_item[crystal_ferrium].icon = graphics_resource .. crystal_ferrium .. ".png"
+
+data_item[crushed_cuprium].icon = graphics_resource .. crushed_cuprium .. ".png"
+data_item[powder_cuprium].icon = graphics_resource .. powder_cuprium .. ".png"
+data_item[dust_cuprium].icon = graphics_resource .. dust_cuprium .. ".png"
+data_item[crystal_cuprium].icon = graphics_resource .. crystal_cuprium .. ".png"
+
 -- ANGELS BIOPROCESSING
 data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
 data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
@@ -203,22 +216,10 @@ end
 local graphics_gleba = "__TIMSABA__/graphics/icons/space-age/gleba/"
 
 data_item[saphirite_bacteria].icon = graphics_gleba .. saphirite_bacteria .. ".png"
-data_item[saphirite_bacteria].pictures =
-{
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
-}
+data_item[saphirite_bacteria].pictures = nil
 
 data_item[stiratite_bacteria].icon = graphics_gleba .. stiratite_bacteria .. ".png"
-data_item[stiratite_bacteria].pictures =
-{
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
-}
+data_item[stiratite_bacteria].pictures = nil
 
 -- MULUNA
 if mods[muluna_mods] then

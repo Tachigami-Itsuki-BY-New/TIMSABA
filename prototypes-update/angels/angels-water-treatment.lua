@@ -105,7 +105,7 @@ data_recipe[water_thin_mud].ingredients[2].amount = 60
 data_recipe[water_thin_mud].results[1].amount = 240
 data_recipe[water_thin_mud].results[2].amount_max = 4
 
-data_fluid[water_saline_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaCl/KCl*MgCl[font=default-tiny-bold]2[/font]*6H[font=default-tiny-bold]2[/font]O)"} or nil
+data_fluid[water_saline_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaCl)"} or nil
 TIMSABA.barreling.add_simple_fluid(water_saline_angels)
 data_recipe[water_saline_angels].icons = THREE_I(water_thin_mud, water, water_saline_angels)
 data_recipe[water_saline_angels].energy_required = 4
@@ -114,7 +114,7 @@ data_recipe[water_saline_angels].ingredients[2].amount = 60
 data_recipe[water_saline_angels].results[1].amount = 240
 data_recipe[water_saline_angels].results[2].amount_max = 4
 
-data_fluid[water_thermal_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(LiCl/Hg)"} or nil
+data_fluid[water_thermal_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(LiCl)"} or nil
 data_fluid[water_thermal_angels].subgroup = is_water_washing_fluid
 data_fluid[water_thermal_angels].order = g
 TIMSABA.barreling.add_simple_fluid(water_thermal_angels)

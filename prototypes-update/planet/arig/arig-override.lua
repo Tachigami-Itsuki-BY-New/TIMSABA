@@ -105,6 +105,8 @@ if mods[arig_mods] then
         {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.25},
         {type = item, name = ore_rubyte, amount = 2, independent_probability = 0.25},
         {type = item, name = ore_bobmonium, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_senaite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_franckeite, amount = 2, independent_probability = 0.25},
         {type = item, name = stone, amount = 1, independent_probability = 0.03125},
         {type = item, name = sulfur, amount = 1, independent_probability = 0.015625},
         {type = fluid, name = pure_sand_arig, amount = 30, independent_probability = 0.25},

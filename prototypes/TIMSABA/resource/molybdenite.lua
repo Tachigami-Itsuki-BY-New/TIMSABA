@@ -215,7 +215,7 @@ data:extend({molybdenite_ore_particle})
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = molybdenite_ore, subgroup = is_ores, order = j, map_color = {r = 45/255, g = 110/255, b = 95/255, a = 1.000}, mining_visualisation_tint = {r = 100/255, g = 210/255, b = 180/255, a = 1.000}},
+        {name = molybdenite_ore, subgroup = is_ores, order = j, map_color = {r = 045/255, g = 110/255, b = 095/255, a = 1.000}, mining_visualisation_tint = {r = 100/255, g = 210/255, b = 180/255, a = 1.000}},
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })
@@ -223,9 +223,6 @@ data:extend
 TIMSABA.functions.create_autoplace_control(molybdenite_ore)
 
 data_planet[planet_nauvis].map_gen_settings.autoplace_controls[molybdenite_ore] = {}
-if not data_planet[planet_nauvis].map_gen_settings then
-    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
-end
 data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[molybdenite_ore] = {}
 
 data_resource[molybdenite_ore].location = planet_nauvis

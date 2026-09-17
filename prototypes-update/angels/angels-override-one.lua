@@ -1105,10 +1105,10 @@ data_item_subgroup[is_buildings_electrolyser].order = z
 
 local electrolysers =
 {
-    {name = electrolyser_1, crafting_speed = 1, energy_usage = 1200, order = a},
-    {name = electrolyser_2, crafting_speed = 2, energy_usage = 2400, order = b},
-    {name = electrolyser_3, crafting_speed = 3, energy_usage = 3600, order = c},
-    {name = electrolyser_4, crafting_speed = 4, energy_usage = 4800, order = d}
+    {name = electrolyser_1, crafting_speed = 1, energy_usage = 960,  order = a},
+    {name = electrolyser_2, crafting_speed = 2, energy_usage = 1920, order = b},
+    {name = electrolyser_3, crafting_speed = 3, energy_usage = 2880, order = c},
+    {name = electrolyser_4, crafting_speed = 4, energy_usage = 3840, order = d}
 }
 for _, BUILD in pairs(electrolysers) do
     data_item[BUILD.name].subgroup = is_buildings_electrolyser
@@ -1122,9 +1122,9 @@ for _, BUILD in pairs(electrolysers) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 10))) .. kW
+    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 8))) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
-    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
+    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 8)) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function electrolyser_recipe(name, circuit, pipe, plate, brick, electrolyser)

@@ -127,6 +127,9 @@ data_recipe[casting_low_density_structure].ingredients =
 
 -- MULUNA
 if mods[muluna_mods] then
+    data_rocket_silo[big_rocket_silo].energy_usage = (15360 - (drain * 4)) .. kW
+    data_rocket_silo[big_rocket_silo].energy_source.drain = (drain * 4) .. kW
+
     data_item[aluminium_pipe].hidden = false
     data_item[aluminium_pipe].hidden_in_factoriopedia = false
     data_recipe[aluminium_pipe].hidden = false
@@ -219,6 +222,23 @@ end
 -- MOSHINE
 if mods[moshine_mods] then
     data_recipe[boron].categories = {smelting_filtering}
+
+    local cosmicscanner_construction_stage_2 = "moshine_cosmicscanner-construction-stage-2"
+    data_assembling[cosmicscanner_construction_stage_2].energy_usage = ((960 * 256 * 2) - (drain * 256 * 2)) .. kW
+    data_assembling[cosmicscanner_construction_stage_2].energy_source.drain = (drain * 256 * 2) .. kW
+
+    local cosmicscanner_construction_stage_3 = "moshine_cosmicscanner-construction-stage-3"
+    data_assembling[cosmicscanner_construction_stage_3].energy_usage = ((960 * 256 * 3) - (drain * 256 * 3)) .. kW
+    data_assembling[cosmicscanner_construction_stage_3].energy_source.drain = (960 * 256 * 3) .. kW
+
+    local cosmicscanner_construction_stage_4 = "moshine_cosmicscanner-construction-stage-4"
+    data_assembling[cosmicscanner_construction_stage_4].energy_usage = ((960 * 256 * 4) - (drain * 256 * 4)) .. kW
+    data_assembling[cosmicscanner_construction_stage_4].energy_source.drain = (960 * 256 * 4) .. kW
+
+    local cosmicscanner = "moshine_cosmicscanner"
+    data_assembling[cosmicscanner].module_slots = 4
+    data_assembling[cosmicscanner].energy_usage = (((960 * 256 * 128) - (drain / 8))) .. kW
+    data_assembling[cosmicscanner].energy_source.drain = (drain / 8) .. kW
 end
 
 -- ARIG
@@ -745,7 +765,7 @@ if mods[space_age_science_packs] then
     end
     for _, pack in pairs(list_base_or_space) do
         data_technology[pack].icons = nil
-        data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
+        data_technology[pack].icon = "__sa-science-packs-fix__/graphics/techs/sasp-" .. pack .. ".png"
         data_technology[pack].icon_size = 256
     end
 

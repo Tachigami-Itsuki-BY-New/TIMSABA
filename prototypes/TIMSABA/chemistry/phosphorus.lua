@@ -111,27 +111,9 @@ TIMSABA.barreling.add_gas(phosphorus_fluoride_V_gas)
 TIMSABA.barreling.add_dangerous_fluid(hexafluorophosphoric_acid)
 
 -- RECIPE
-fluorapatite_recipe = "phosphate-ore-crystal-mix-processing"
 silicon_oxide_IV_from_metasilicic_acid = "silicon-oxide-IV-from-metasilicic-acid"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = fluorapatite_recipe,
-        categories = {angels_ore_sorting_4},
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, fluorapatite),
-        order = a_e,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = crystal_saphirite, amount = 2},
-            {type = item, name = crystal_jivolite, amount = 2}
-        },
-        results = {{type = item, name = fluorapatite, amount = 4}},
-        main_product = fluorapatite
-    },
     -- SMELTING
     {
         name = white_phosphorus_gas,

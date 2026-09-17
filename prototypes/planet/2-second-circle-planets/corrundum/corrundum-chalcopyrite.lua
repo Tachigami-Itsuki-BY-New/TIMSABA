@@ -43,7 +43,6 @@ if mods[corrundum_mods] then
     chalcopyrite_chunks_sorting = "chalcopyrite-chunks-sorting"
     chalcopyrite_crystals_sorting = "chalcopyrite-crystals-sorting"
     chalcopyrite_purified_sorting = "chalcopyrite-purified-sorting"
-    selenium_recipe = "selenium-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED
@@ -113,11 +112,24 @@ if mods[corrundum_mods] then
         },
         -- SORTING
         {
+            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. chalcopyrite_ore}},
+            name = chalcopyrite_ore .. _sorting_stone,
+            categories = {ore_sorting_6},
+            subgroup = is_chalcopyrite,
+            icons = RECYCLING_I(recycling_png, chalcopyrite_ore),
+            order = f,
+            allow_productivity = true,
+            energy_required = 1,
+            ingredients = {{type = item, name = chalcopyrite_ore, amount = 4}},
+            results = {{type = item, name = stone, amount = 1}},
+            main_product = stone
+        },
+        {
             name = chalcopyrite_crushed_sorting,
             categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_crushed),
-            order = f,
+            order = g,
             allow_productivity = true,
             energy_required = 1, -- Chalcopyrite crushed (Sorting) / Fe + Cu + S
             ingredients = {{type = item, name = chalcopyrite_crushed, amount = 4}},
@@ -134,7 +146,7 @@ if mods[corrundum_mods] then
             categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
             energy_required = 2, -- Chalcopyrite chunks (Sorting) / Fe + Cu + Ag + Au + S
             ingredients = {{type = item, name = chalcopyrite_chunks, amount = 8}},
@@ -153,7 +165,7 @@ if mods[corrundum_mods] then
             categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
             energy_required = 2, -- Chalcopyrite crystals (Sorting) / Fe + Cu + Ag + Au + Pt + S
             ingredients = {{type = item, name = chalcopyrite_crystals, amount = 8}},
@@ -173,7 +185,7 @@ if mods[corrundum_mods] then
             categories = {ore_sorting_6},
             subgroup = is_chalcopyrite,
             icons = RECYCLING_I(recycling_png, chalcopyrite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
             energy_required = 2, -- Chalcopyrite purified (Sorting) / Fe + Cu + Ag + Au + Pt + Se
             ingredients = {{type = item, name = chalcopyrite_purified, amount = 8}},
@@ -187,24 +199,6 @@ if mods[corrundum_mods] then
                 {type = item, name = selenium, amount = 1}
             },
             main_product = iron_ore
-        },
-        -- SYNTHESIS
-        {
-            name = selenium_recipe,
-            categories = {ore_sorting_6},
-            subgroup = is_ore_sorting_advanced_3,
-            icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, chalcopyrite_purified, selenium),
-            order = b,
-            allow_productivity = true,
-            energy_required = 2,
-            ingredients =
-            {
-                {type = item, name = hybride_catalyst, amount = 1},
-                {type = item, name = molybdenite_purified, amount = 2},
-                {type = item, name = chalcopyrite_purified, amount = 2}
-            },
-            results = {{type = item, name = selenium, amount = 4}},
-            main_product = selenium
         }
     })
 end

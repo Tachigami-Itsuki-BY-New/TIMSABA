@@ -42,7 +42,8 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = ore_refinery_4},
-            {type = unlock_recipe, recipe = electro_whinning_cell_4}
+            {type = unlock_recipe, recipe = electro_whinning_cell_4},
+            {type = unlock_recipe, recipe = purified_catalyst}
         },
         unit =
         {

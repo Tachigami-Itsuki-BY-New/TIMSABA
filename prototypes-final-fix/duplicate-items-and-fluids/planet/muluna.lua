@@ -10,8 +10,6 @@ if mods[muluna_mods] then
         [cellulose_mods] = cellulose_fiber_angels,
         [sapling_muluna] = tree_angels,
         [molten_aluminium_mods] = aluminium_molten_angels,
-        [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels,
 		[greenhouse_muluna] = greenhouse_wood
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
@@ -34,7 +32,6 @@ if mods[muluna_mods] then
 		"hydrogen-venting",
 		"carbon-dioxide-venting",
 		"thruster-fuel-from-rocket-fuel",
-		carbon_dioxide_mods,
 		"atmosphere-oxygen-separation",
 		"muluna-placed-tree",
 		molten_aluminium_mods,

@@ -1,6 +1,6 @@
 if mods[vulcanus_sulfuric_bacteria_mods] then
     is_vulcanus_sulfuric = "vulcanus-sulfuric"
-    TIMSABA.functions.create_subgroups(ig_vulcanus, {{name = is_vulcanus_sulfuric, order = e_a}})
+    TIMSABA.functions.create_subgroups(ig_vulcanus, {{name = is_vulcanus_sulfuric, order = f_a}})
 
     data_item[sulfuric_bacteria].subgroup = is_vulcanus_sulfuric
     data_item[sulfuric_bacteria].order = a

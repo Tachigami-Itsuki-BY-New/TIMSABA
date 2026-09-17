@@ -31,6 +31,36 @@ TIMSABA.functions.create_recipes
     }
 })
 
+-- TUNGSTEN
+tungsten_powder_vulcanus = "tungsten-powder-vulcanus"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = tungsten_plate_bob,
+        categories = {smelting},
+        subgroup = is_tungsten_casting,
+        icons = TWO_I(wolframite_crushed, tungsten_plate_bob),
+        order = a,
+        allow_quality = true,
+        energy_required = 8,
+        ingredients = {{type = item, name = wolframite_crushed, amount = 4}},
+        results = {{type = item, name = tungsten_plate_bob, amount = 1}},
+        main_product = tungsten_plate_bob
+    },
+    {
+        localised_name = {"item-name." .. tungsten_powder},
+        name = tungsten_powder_vulcanus,
+        categories = {powderizing_4},
+        subgroup = is_vulcanus_tungsten,
+        icons = TWO_I(tungsten_ore_bob, tungsten_powder),
+        order = a,
+        ingredients = {{type = item, name = tungsten_ore_bob, amount = 1}},
+        results = {{type = item, name = tungsten_powder, amount = 1}},
+        main_product = tungsten_powder,
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
+    }
+})
+
 -- LAVA
 TIMSABA.functions.create_recipes
 ({
@@ -89,8 +119,8 @@ create_recipe_from_lava(stiratite_from_lava,  a_c, ore_stiratite)
 create_recipe_from_lava(crotinnium_from_lava, a_d, ore_crotinnium)
 create_recipe_from_lava(rubyte_from_lava,     a_e, ore_rubyte)
 create_recipe_from_lava(bobmonium_from_lava,  a_f, ore_bobmonium)
---create_recipe_from_lava(senaite_from_lava, a_g, ore_senaite)
---create_recipe_from_lava(franckeite_from_lava, a_h, ore_franckeite)
+create_recipe_from_lava(senaite_from_lava,    a_g, ore_senaite)
+create_recipe_from_lava(franckeite_from_lava, a_h, ore_franckeite)
 
 -- MOLTEN
 molten_steel = "molten-steel"
@@ -532,21 +562,3 @@ if mods[lignumis_mods] then
     create_recipe_casting_pipes(casting_gold_pipe_to_ground, h, gold_molten_angels, gold_pipe_to_ground, 4)
 end
 create_recipe_casting_pipes(casting_nitinol_pipe_to_ground,  i,  nitinol_molten_angels,  nitinol_pipe_to_ground, 5)
-
--- TUNGSTEN
-tungsten_powder_vulcanus = "tungsten-powder-vulcanus"
-TIMSABA.functions.create_recipes
-({
-    {
-        localised_name = {"item-name." .. tungsten_powder},
-        name = tungsten_powder_vulcanus,
-        categories = {powderizing_4},
-        subgroup = is_vulcanus_tungsten,
-        icons = TWO_I(tungsten_ore_bob, tungsten_powder),
-        order = a,
-        ingredients = {{type = item, name = tungsten_ore_bob, amount = 1}},
-        results = {{type = item, name = tungsten_powder, amount = 1}},
-        main_product = tungsten_powder,
-        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
-    }
-})

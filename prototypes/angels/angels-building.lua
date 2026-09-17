@@ -271,6 +271,7 @@ data_assembling[filtration_unit_4].next_upgrade = nil
 
 data_assembling[crystallizer_3].next_upgrade = crystallizer_4
 data_assembling[crystallizer_4].next_upgrade = nil
+table.insert(data_assembling[crystallizer_4].crafting_categories, crystallizing_4)
 
 -- ANGELS METALLURGY SMELTING
 TIMSABA.functions.create_buildings

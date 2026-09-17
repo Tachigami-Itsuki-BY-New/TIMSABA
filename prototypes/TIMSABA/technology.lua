@@ -3,7 +3,7 @@
 local graphics_powellite_tech = "__TIMSABA__/graphics/icons/angels/resource/powellite-ore/technology/powellite-processing.png"
 tech_powellite_processing_1 = "powellite-processing-1"
 tech_powellite_processing_2 = "powellite-processing-2"
-local tech_powellite_processing_3 = "powellite-processing-3"
+tech_powellite_processing_3 = "powellite-processing-3"
 tech_powellite_processing_4 = "powellite-processing-4"
 data:extend
 ({
@@ -14,57 +14,11 @@ data:extend
         name = tech_powellite_processing_1,
         icon = graphics_powellite_tech,
         icon_size = 256,
-        prerequisites = {tech_ore_crushing},
+        prerequisites = {tech_advanced_ore_refining_4},
         effects =
         {
             {type = unlock_recipe, recipe = powellite_crushed},
             {type = unlock_recipe, recipe = powellite_crushed_sorting}
-        },
-        unit =
-        {
-            count = 50,
-            ingredients = {{automation_science_pack, 1}},
-            time = 30
-        }
-    },
-    {
-        localised_name = {"technology-name." .. tech_powellite_processing_2},
-        localised_description = {"technology-description.angels-ore-floatation"},
-        type = technology,
-        name = tech_powellite_processing_2,
-        icon = graphics_powellite_tech,
-        icon_size = 256,
-        prerequisites = {tech_ore_floatation, tech_powellite_processing_1, production_science_pack, tech_advanced_ore_refining_3},
-        effects =
-        {
-            {type = unlock_recipe, recipe = powellite_chunks},
-            {type = unlock_recipe, recipe = powellite_chunks_sorting}
-        },
-        unit =
-        {
-            count = 100,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    {
-        localised_name = {"technology-name." .. tech_powellite_processing_3},
-        localised_description = {"technology-description.angels-ore-leaching"},
-        type = technology,
-        name = tech_powellite_processing_3,
-        icon = graphics_powellite_tech,
-        icon_size = 256,
-        prerequisites = {tech_advanced_ore_refining_4, tech_powellite_processing_2},
-        effects =
-        {
-            {type = unlock_recipe, recipe = powellite_crystals},
-            {type = unlock_recipe, recipe = powellite_crystals_sorting}
         },
         unit =
         {
@@ -81,17 +35,17 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name." .. tech_powellite_processing_4},
-        localised_description = {"technology-description.angels-ore-refining"},
+        localised_name = {"technology-name." .. tech_powellite_processing_2},
+        localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
-        name = tech_powellite_processing_4,
+        name = tech_powellite_processing_2,
         icon = graphics_powellite_tech,
         icon_size = 256,
-        prerequisites = {tech_advanced_ore_refining_5, tech_powellite_processing_3},
+        prerequisites = {tech_advanced_ore_refining_5, tech_powellite_processing_1},
         effects =
         {
-            {type = unlock_recipe, recipe = powellite_purified},
-            {type = unlock_recipe, recipe = powellite_purified_sorting}
+            {type = unlock_recipe, recipe = powellite_chunks},
+            {type = unlock_recipe, recipe = powellite_chunks_sorting}
         },
         unit =
         {
@@ -107,13 +61,76 @@ data:extend
             },
             time = 30
         }
+    },
+    {
+        localised_name = {"technology-name." .. tech_powellite_processing_3},
+        localised_description = {"technology-description.angels-ore-leaching"},
+        type = technology,
+        name = tech_powellite_processing_3,
+        icon = graphics_powellite_tech,
+        icon_size = 256,
+        prerequisites = {metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack, tech_powellite_processing_2},
+        effects =
+        {
+            {type = unlock_recipe, recipe = powellite_crystals},
+            {type = unlock_recipe, recipe = powellite_crystals_sorting}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_powellite_processing_4},
+        localised_description = {"technology-description.angels-ore-refining"},
+        type = technology,
+        name = tech_powellite_processing_4,
+        icon = graphics_powellite_tech,
+        icon_size = 256,
+        prerequisites = {cryogenic_science_pack, tech_powellite_processing_3},
+        effects =
+        {
+            {type = unlock_recipe, recipe = powellite_purified},
+            {type = unlock_recipe, recipe = powellite_purified_sorting}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1},
+                {cryogenic_science_pack, 1}
+            },
+            time = 30
+        }
     }
 })
 
 -- MOLYBDENITE
 local graphics_molybdenite_tech = "__TIMSABA__/graphics/icons/angels/resource/molybdenite-ore/technology/molybdenite-processing.png"
 tech_molybdenite_processing_1 = "molybdenite-processing-1"
-local tech_molybdenite_processing_2 = "molybdenite-processing-2"
+tech_molybdenite_processing_2 = "molybdenite-processing-2"
 tech_molybdenite_processing_3 = "molybdenite-processing-3"
 tech_molybdenite_processing_4 = "molybdenite-processing-4"
 data:extend
@@ -327,12 +344,10 @@ data:extend
 
 -- MOLYBDENUM
 local graphics_molybdenum_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/smelting-molybdenum-technology.png"
-local tech_molybdenum_smelting_1 = "timsaba-molybdenum-smelting-1"
-local tech_molybdenum_smelting_2 = "timsaba-molybdenum-smelting-2"
+tech_molybdenum_smelting_1 = "timsaba-molybdenum-smelting-1"
+tech_molybdenum_smelting_2 = "timsaba-molybdenum-smelting-2"
 tech_molybdenum_smelting_3 = "timsaba-molybdenum-smelting-3"
-local graphics_molybdenum_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/"
 tech_molybdenum_processing = "timsaba-molybdenum-processing"
-tech_molybdenum_synthesis = "timsaba-molybdenum-synthesis"
 data:extend
 ({
     {
@@ -341,7 +356,7 @@ data:extend
         name = tech_molybdenum_smelting_1,
         icon = graphics_molybdenum_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_molybdenite_processing_1, tech_powder_metallurgy_5},
+        prerequisites = {tech_powellite_processing_1, tech_molybdenite_processing_1, tech_powder_metallurgy_5},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenum_oxide_VI},
@@ -368,7 +383,7 @@ data:extend
         name = tech_molybdenum_smelting_2,
         icon = graphics_molybdenum_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_molybdenum_smelting_1, tech_molybdenite_processing_2, tech_ore_processing_5},
+        prerequisites = {tech_powellite_processing_2, tech_molybdenum_smelting_1, tech_molybdenite_processing_2, tech_ore_processing_5},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenum_processed},
@@ -398,7 +413,7 @@ data:extend
         name = tech_molybdenum_smelting_3,
         icon = graphics_molybdenum_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_molybdenum_smelting_2, tech_molybdenite_processing_3},
+        prerequisites = {tech_powellite_processing_3, tech_molybdenum_smelting_2, tech_molybdenite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenum_pellet},
@@ -427,7 +442,7 @@ data:extend
         type = technology,
         name = tech_molybdenum_processing,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/" .. molybdenum_plate .. ".png",
-        --icon = graphics_molybdenum_tech .. tech_molybdenum_processing .. ".png",
+        --icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/" .. tech_molybdenum_processing .. ".png",
         icon_size = 64,
         --icon_size = 256,
         prerequisites = {tech_molybdenum_smelting_1},
@@ -438,39 +453,13 @@ data:extend
             item = molybdenum_plate,
             count = 256
         }
-    },
-    {
-        type = technology,
-        name = tech_molybdenum_synthesis,
-        icon = graphics_molybdenum_tech .. tech_molybdenum_synthesis .. ".png",
-        icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_molybdenite_processing_4, tech_molybdenum_smelting_3, tech_powellite_processing_4},
-        effects = {{type = unlock_recipe, recipe = molybdenum_ore_recipe}},
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1},
-                {metallurgic_science_pack, 1},
-                {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
-            },
-            time = 30
-        }
     }
 })
 
 -- RHENIUM
 local graphics_rhenium_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/technology/smelting-rhenium-technology.png"
-local tech_rhenium_smelting_1 = "rhenium-smelting-1"
-local tech_rhenium_smelting_2 = "rhenium-smelting-2"
+tech_rhenium_smelting_1 = "rhenium-smelting-1"
+tech_rhenium_smelting_2 = "rhenium-smelting-2"
 tech_rhenium_smelting_3 = "rhenium-smelting-3"
 tech_rhenium_processing = "rhenium-processing"
 data:extend
@@ -636,7 +625,6 @@ data:extend
         prerequisites = {tech_water_treatment_4},
         effects =
         {
-            {type = unlock_recipe, recipe = carnallite},
             {type = unlock_recipe, recipe = carnallite_reprocessing},
             {type = unlock_recipe, recipe = potassium_chloride_solution},
             {type = unlock_recipe, recipe = potassium_chloride_solution_2},
@@ -668,7 +656,6 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_2},
         effects =
         {
-            {type = unlock_recipe, recipe = borax_recipe},
             {type = unlock_recipe, recipe = boric_acid_solution},
             {type = unlock_recipe, recipe = boric_acid_from_diborane_gas},
             {type = unlock_recipe, recipe = boric_acid_from_hydrochloric_acid}
@@ -693,7 +680,6 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_3, tech_metallurgy_4},
         effects =
         {
-            {type = unlock_recipe, recipe = fluorapatite_recipe},
             {type = unlock_recipe, recipe = white_phosphorus_gas},
             {type = unlock_recipe, recipe = white_phosphorus},
             {type = unlock_recipe, recipe = phosphorus_chloride_III_liquid},

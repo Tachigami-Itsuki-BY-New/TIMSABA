@@ -99,7 +99,7 @@ if mods[pelagos_mods] then
     data_item[fermentation_bacteria].fuel_category = base_fuel
     data_item[fermentation_bacteria].fuel_value = (225/8) .. kJ
     data_recipe[fermentation_bacteria].subgroup = is_pelagos_titanium
-    data_recipe[fermentation_bacteria].iocns = THREE_D_I(factorian_fish, coconut_oil, methane_angels, fermentation_bacteria, nil, spoilage)
+    data_recipe[fermentation_bacteria].icons = THREE_D_I(factorian_fish, coconut_oil, methane_angels, fermentation_bacteria, nil, spoilage)
     data_recipe[fermentation_bacteria].order = a
     data_recipe[fermentation_bacteria].ingredients =
     {
@@ -903,7 +903,7 @@ if mods[pelagos_mods] then
         {agricultural_science_pack, 1}
     }
 
-    data_technology[ethanol_mods].iocn = nil
+    data_technology[ethanol_mods].icon = nil
     data_technology[ethanol_mods].icons = TIMSABA.functions.create_fluid_tech_icon("CHO")
 
     data_technology["Pirate_Ship"].unit.ingredients =

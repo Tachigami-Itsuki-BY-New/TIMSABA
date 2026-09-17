@@ -56,29 +56,35 @@ if mods[moshine_mods] then
     crotinnium_from_lava_moshine = "crotinnium-from-lava-moshine"
     rubyte_from_lava_moshine = "rubyte-from-lava-moshine"
     bobmonium_from_lava_moshine = "bobmonium-from-lava-moshine"
-    local function resource_from_lava_moshine(info)
-        local recipe_data =
-        {
-            name = info.name,
-            categories = {metallurgy},
-            subgroup = is_moshine_recipe,
-            icons = TWO_I(lava, info.results),
-            order = info.order,
-            allow_productivity = true,
-            energy_required = 16,
-            ingredients = {{type = fluid, name = lava, amount = 480}},
-            results = {{type = item, name = info.results, amount = 16}},
-            main_product = info.results,
-            surface_conditions = {{property = pressure, min = 701, max = 701}}
-        }
-        TIMSABA.functions.create_recipes({recipe_data})
+    senaite_from_lava_moshine = "senaite-from-lava-moshine"
+    franckeite_from_lava_moshine = "franckeite-from-lava-moshine"
+    local function resource_from_lava_moshine(name, order, result)
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                localised_name = {"recipe-name.ore-from-lava", {"item-name." .. result}},
+                name = name,
+                categories = {metallurgy},
+                subgroup = is_moshine_recipe,
+                icons = TWO_I(lava, result),
+                order = order,
+                allow_productivity = true,
+                energy_required = 16,
+                ingredients = {{type = fluid, name = lava, amount = 480}},
+                results = {{type = item, name = result, amount = 16}},
+                main_product = result,
+                surface_conditions = {{property = pressure, min = 701, max = 701}}
+            }
+        })
     end
-    resource_from_lava_moshine({name = saphirite_from_lava_moshine,  order = a_a, results = ore_saphirite})
-    resource_from_lava_moshine({name = jivolite_from_lava_moshine,   order = a_b, results = ore_jivolite})
-    resource_from_lava_moshine({name = stiratite_from_lava_moshine,  order = a_c, results = ore_stiratite})
-    resource_from_lava_moshine({name = crotinnium_from_lava_moshine, order = a_d, results = ore_crotinnium})
-    resource_from_lava_moshine({name = rubyte_from_lava_moshine,     order = a_e, results = ore_rubyte})
-    resource_from_lava_moshine({name = bobmonium_from_lava_moshine,  order = a_f, results = ore_bobmonium})
+    resource_from_lava_moshine(saphirite_from_lava_moshine,  a_a, ore_saphirite)
+    resource_from_lava_moshine(jivolite_from_lava_moshine,   a_b, ore_jivolite)
+    resource_from_lava_moshine(stiratite_from_lava_moshine,  a_c, ore_stiratite)
+    resource_from_lava_moshine(crotinnium_from_lava_moshine, a_d, ore_crotinnium)
+    resource_from_lava_moshine(rubyte_from_lava_moshine,     a_e, ore_rubyte)
+    resource_from_lava_moshine(bobmonium_from_lava_moshine,  a_f, ore_bobmonium)
+    resource_from_lava_moshine(senaite_from_lava_moshine,    a_g, ore_senaite)
+    resource_from_lava_moshine(franckeite_from_lava_moshine, a_h, ore_franckeite)
 
     -- NEODYMIUM
     neodymium_ingot_2 = "neodymium-ingot-2"

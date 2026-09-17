@@ -225,24 +225,25 @@ if mods[vesta_mods] then
     ({
         {
             name = iridium_ore,
-            categories = {cryogenics},
+            categories = {ore_sorting_6},
             subgroup = is_iridium,
             order = a,
             allow_productivity = true,
             energy_required = 8,
             ingredients =
             {
-                {type = item, name = pure_saphirite, amount = 4},
-                {type = item, name = pure_jivolite, amount = 4},
-                {type = item, name = pure_stiratite, amount = 4},
-                {type = item, name = pure_crotinnium, amount = 4},
-                {type = fluid, name = algea_water_vesta, amount = 15},
-                {type = fluid, name = deuterium_angels, amount = 15},
-                {type = fluid, name = tritium_gas, amount = 15}
+                {type = item, name = purified_catalyst, amount = 1},
+                {type = item, name = purified_saphirite, amount = 2},
+                {type = item, name = purified_jivolite, amount = 2},
+                {type = item, name = purified_stiratite, amount = 2},
+                {type = item, name = purified_crotinnium, amount = 2},
+                {type = item, name = purified_rubyte, amount = 2},
+                {type = item, name = purified_bobmonium, amount = 2},
+                {type = item, name = purified_senaite, amount = 2},
+                {type = item, name = purified_franckeite, amount = 2}
             },
             results = {{type = item, name = iridium_ore, amount = 16}},
-            main_product = iridium_ore,
-            surface_conditions = {{property = pressure, min = 500, max = 500}}
+            main_product = iridium_ore
         },
         {
             name = iridium_processed,

@@ -1490,25 +1490,21 @@ data_item[thorium_ore_bob].order = a
 -- CHROMIUM
 data_item_subgroup["angels-chrome"].order = q
 
-data_item[chromium_ore_angels].localised_name = {"item-name.chromium-ore"}
 data_item[chromium_ore_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_ore_angels].order = a
 
-data_item[chromium_processed].localised_name = {"item-name.chromium-processed"}
 data_item[chromium_processed].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_processed].order = b
 data_recipe[chromium_processed].icons = TWO_I(chromium_ore_angels, chromium_processed)
 data_recipe[chromium_processed].order = b
 data_recipe[chromium_processed].results[1].amount = 4
 
-data_item[chromium_pellet].localised_name = {"item-name.chromium-pellet"}
 data_item[chromium_pellet].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_pellet].order = c
 data_recipe[chromium_pellet].icons = TWO_I(chromium_processed, chromium_pellet)
 data_recipe[chromium_pellet].order = c
 data_recipe[chromium_pellet].ingredients[1].amount = 4
 
-data_item[chromium_ingot].localised_name = {"item-name.chromium-ingot"}
 data_item[chromium_ingot].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_ingot].order = d
 data_recipe[chromium_ingot].categories = {angels_blast_smelting_4}
@@ -1529,7 +1525,7 @@ data_recipe[chromium_ingot].results =
 }
 data_recipe[chromium_ingot].main_product = chromium_ingot
 
-data_recipe[chromium_ingot_2].localised_name = {"item-name.chromium-ingot"}
+data_recipe[chromium_ingot_2].localised_name = {"item-name." .. chromium_ingot}
 data_recipe[chromium_ingot_2].categories = {angels_chemical_smelting_4}
 data_recipe[chromium_ingot_2].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_ingot, chromium_ingot, zinc_sulfate_solution)
 data_recipe[chromium_ingot_2].order = d_a
@@ -1546,7 +1542,7 @@ data_recipe[chromium_ingot_2].results =
 }
 data_recipe[chromium_ingot_2].main_product = chromium_ingot
 
-data_recipe[chromium_ingot_3].localised_name = {"item-name.chromium-ingot"}
+data_recipe[chromium_ingot_3].localised_name = {"item-name." .. chromium_ingot}
 data_recipe[chromium_ingot_3].categories = {angels_blast_smelting_4}
 data_recipe[chromium_ingot_3].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_ingot, chromium_ingot, aluminium_oxide, steam)
 data_recipe[chromium_ingot_3].order = d_b
@@ -1565,7 +1561,6 @@ data_recipe[chromium_ingot_3].results =
 data_recipe[chromium_ingot_3].main_product = chromium_ingot
 
 -- CHROMIUM CHEMISTRY
-data_item[chromium_oxide_III].localised_name = {"item-name.chromium-oxide-III"}
 data_item[chromium_oxide_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_oxide_III].subgroup = is_chromium_chemistry
 data_item[chromium_oxide_III].order = e
@@ -1582,7 +1577,6 @@ data_recipe[chromium_oxide_III].ingredients =
 data_recipe[chromium_oxide_III].results = {{type = item, name = chromium_oxide_III, amount = 16}}
 data_recipe[chromium_oxide_III].main_product = chromium_oxide_III
 
-data_item[chromium_sulfate_III].localised_name = {"item-name.chromium-sulfate-III"}
 data_item[chromium_sulfate_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_sulfate_III].subgroup = is_chromium_chemistry
 data_item[chromium_sulfate_III].order = h
@@ -1606,7 +1600,6 @@ data_recipe[chromium_sulfate_III].results =
 }
 data_recipe[chromium_sulfate_III].main_product = chromium_sulfate_III
 
-data_item[chromium_hydroxide_III].localised_name = {"item-name.chromium-hydroxide-III"}
 data_item[chromium_hydroxide_III].localised_description = show_formula and {chemical_formula, "Cr(OH)[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_hydroxide_III].subgroup = is_chromium_chemistry
 data_item[chromium_hydroxide_III].order = i

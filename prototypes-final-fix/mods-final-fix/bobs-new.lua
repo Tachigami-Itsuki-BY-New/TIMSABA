@@ -13,11 +13,8 @@ data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
 
+data_recipe[wolframite_ore .. _sorting_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
-
-if mods[lignumis_mods] then
-    data_recipe[wolframite_ore .. _sorting_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
-end
 
 data_item[cobalt_steel_gear_wheel].hidden = false
 data_item[cobalt_steel_gear_wheel].hidden_in_factoriopedia = false
@@ -145,7 +142,7 @@ data_technology[tech_battery_3].effects =
 }
 
 -- HEAT SHIELD
-data_technology[tech_heat_shield].prerequisites = {tech_ceramics, tech_powder_metallurgy_4, tech_tungsten_processing}
+data_technology[tech_heat_shield].prerequisites = {tech_ceramic_processing, tech_powder_metallurgy_4, tech_tungsten_processing}
 table.insert(data_technology[tech_heat_shield].unit.ingredients, {production_science_pack, 1})
 
 -- VULCANUS
@@ -458,14 +455,14 @@ local function tech_prerequisites(name, tech)
     table.insert(data_technology[name].prerequisites, tech)
 end
 -- COPPER-TUNGSTEN PROCESSING
-tech_prerequisites(boiler_5, tech_tungsten_alloy_processing)
-tech_prerequisites(hydrazine_generator, tech_tungsten_alloy_processing)
-tech_prerequisites(heat_exchanger_4, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_advanced_material_processing_4, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_multi_purpose_furnace_2, tech_tungsten_alloy_processing)
-tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_plasma_turret_3, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_fluid_handling_4, tech_tungsten_alloy_processing)
+tech_prerequisites(boiler_5, tech_copper_tungsten_processing)
+tech_prerequisites(hydrazine_generator, tech_copper_tungsten_processing)
+tech_prerequisites(heat_exchanger_4, tech_copper_tungsten_processing)
+tech_prerequisites(tech_advanced_material_processing_4, tech_copper_tungsten_processing)
+tech_prerequisites(tech_multi_purpose_furnace_2, tech_copper_tungsten_processing)
+tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_copper_tungsten_processing)
+tech_prerequisites(tech_plasma_turret_3, tech_copper_tungsten_processing)
+tech_prerequisites(tech_fluid_handling_4, tech_copper_tungsten_processing)
 -- LITHIUM PROCESSING
 tech_prerequisites(tech_battery_2, tech_lithium_processing)
 -- COBALT-STEEL PROCESSING

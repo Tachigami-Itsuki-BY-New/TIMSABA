@@ -352,10 +352,6 @@ if mods[shchierbin_mods] then
         {agricultural_science_pack, 1}
     }
 
-    if mods[castra_mods] then
-        table.insert(data_technology[tech_vanadium_synthesis].prerequisites, tech_vanadium_smelting_3)
-    end
-
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, vanadium_science_pack)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_vinylchloride, change = 0.1})

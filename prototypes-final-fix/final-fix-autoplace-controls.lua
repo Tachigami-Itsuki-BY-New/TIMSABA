@@ -8,25 +8,26 @@ data_autoplace_control[ore_stiratite].order = data_planet[planet_nauvis].order .
 data_autoplace_control[ore_crotinnium].order = data_planet[planet_nauvis].order .. a_d
 data_autoplace_control[ore_rubyte].order = data_planet[planet_nauvis].order .. a_e
 data_autoplace_control[ore_bobmonium].order = data_planet[planet_nauvis].order .. a_f
---data_autoplace_control[ore_senaite].order = data_planet[planet_nauvis].order .. a_g
---data_autoplace_control[ore_franckeite].order = data_planet[planet_nauvis].order .. a_h
+data_autoplace_control[ore_senaite].order = data_planet[planet_nauvis].order .. a_g
+data_autoplace_control[ore_franckeite].order = data_planet[planet_nauvis].order .. a_h
 data_autoplace_control[powellite_ore].order =  data_planet[planet_nauvis].order .. a_i
 data_autoplace_control[molybdenite_ore].order =  data_planet[planet_nauvis].order .. a_j
-
-
-
-
-data_autoplace_control[crude_oil].order = data_planet[planet_nauvis].order .. a_m
-data_autoplace_control["angels-natural-gas"].order = data_planet[planet_nauvis].order .. a_n
-data_autoplace_control["angels-fissure"].order = data_planet[planet_nauvis].order .. a_o
+data_autoplace_control[fluorite_angels].order =  data_planet[planet_nauvis].order .. a_k
+data_autoplace_control[borax].order =  data_planet[planet_nauvis].order .. a_l
+data_autoplace_control[fluorapatite].order =  data_planet[planet_nauvis].order .. a_m
+data_autoplace_control[carnallite].order =  data_planet[planet_nauvis].order .. a_n
+data_autoplace_control[crude_oil].order = data_planet[planet_nauvis].order .. a_o
+data_autoplace_control["angels-natural-gas"].order = data_planet[planet_nauvis].order .. a_p
+data_autoplace_control["angels-fissure"].order = data_planet[planet_nauvis].order .. a_q
 
 -- VULCANUS
 data_autoplace_control["vulcanus_coal"].order = data_planet[planet_vulcanus].order .. a
 local wolframite_ore_ac = "tungsten_ore"
 data_autoplace_control[wolframite_ore_ac].localised_name = {"", "[item=tungsten-ore] ", {"entity-name.wolframite-ore"}}
 data_autoplace_control[wolframite_ore_ac].order = data_planet[planet_vulcanus].order .. a_a
-data_autoplace_control[calcite].order = data_planet[planet_vulcanus].order .. a_b
-data_autoplace_control["sulfuric_acid_geyser"].order = data_planet[planet_vulcanus].order .. a_c
+data_autoplace_control[samarskite_ore].order = data_planet[planet_vulcanus].order .. a_b
+data_autoplace_control[calcite].order = data_planet[planet_vulcanus].order .. a_c
+data_autoplace_control["sulfuric_acid_geyser"].order = data_planet[planet_vulcanus].order .. a_d
 
 -- GLEBA
 data_autoplace_control["gleba_stone"].order = data_planet[planet_gleba].order .. a

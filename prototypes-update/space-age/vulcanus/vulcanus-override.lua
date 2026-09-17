@@ -2,14 +2,14 @@
 local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
 data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
 data_item[wolframite_ore].localised_description = {"item-description.wolframite-ore"}
-data_item[wolframite_ore].subgroup = is_vulcanus_wolframite
+data_item[wolframite_ore].subgroup = is_wolframite
 data_item[wolframite_ore].order = a
 data_item[wolframite_ore].stack_size = 200
 data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
 data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
 data_resource[wolframite_ore].factoriopedia_description = ""
 data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
-data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
+data_resource[wolframite_ore].subgroup = is_wolframite
 data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4
 

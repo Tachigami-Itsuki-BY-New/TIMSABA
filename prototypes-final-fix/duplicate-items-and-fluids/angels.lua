@@ -52,6 +52,8 @@ local delete_prototypes =
     "angels-copper-nugget",
     "angels-copper-slag",
 
+    "angels-ore-chunk-mix6-processing",
+
     -- ANGELS METALLURGY SMELTING
     "angels-lead-ore",
     "angels-tin-ore",
