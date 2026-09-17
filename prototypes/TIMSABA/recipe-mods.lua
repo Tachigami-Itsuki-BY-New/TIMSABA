@@ -119,7 +119,7 @@ niobium_ore_recipe = "niobium-ore-pure-mix-processing"
 holmium_ore_recipe = "holmium-ore-pure-mix-processing"
 create_ore_recipe(molybdenum_ore_recipe, a_a,   powellite_crushed, molybdenite_crushed, molybdenum_ore)
 create_ore_recipe(rhenium_ore_recipe,    a_b, molybdenite_crushed,    rheniite_crushed, rhenium_ore)
-create_ore_recipe(niobium_ore_recipe,    a_c,      wolframite_ore,  samarskite_crushed, niobium_ore)
+create_ore_recipe(niobium_ore_recipe,    a_c,  wolframite_crushed,  samarskite_crushed, niobium_ore)
 create_ore_recipe(holmium_ore_recipe,    a_d,  brannerite_crushed,  samarskite_crushed, holmium_ore)
 if mods[paracelsin_mods] then
     antimony_ore_recipe = "antimony-ore-pure-mix-processing"

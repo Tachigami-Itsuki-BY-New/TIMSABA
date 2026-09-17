@@ -54,7 +54,7 @@ tech_niobium_synthesis = "niobium-ore-synthesis"
 create_synthesis_tech
 ({
     name = tech_niobium_synthesis,
-    prerequisites = {tech_samarskite_processing_2, tech_rheniite_processing_2},
+    prerequisites = {tech_wolframite_processing_2, tech_samarskite_processing_2},
     recipe = niobium_ore_recipe,
     ingredients =
     {
