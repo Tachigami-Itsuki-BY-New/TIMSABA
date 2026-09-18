@@ -150,7 +150,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.angels-ore-crushing"},
             type = technology,
             name = tech_aeschynite_processing_1,
-            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon = graphics_aeschynite_tech,
             icon_size = 256,
             prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
             effects =
@@ -181,7 +181,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.angels-ore-floatation"},
             type = technology,
             name = tech_aeschynite_processing_2,
-            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon = graphics_aeschynite_tech,
             icon_size = 256,
             prerequisites = {tech_machine_learning, tech_aeschynite_processing_1},
             effects =
@@ -212,7 +212,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.angels-ore-leaching"},
             type = technology,
             name = tech_aeschynite_processing_3,
-            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon = graphics_aeschynite_tech,
             icon_size = 256,
             prerequisites = {cryogenic_science_pack, tech_aeschynite_processing_2},
             effects =
@@ -243,7 +243,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.angels-ore-refining"},
             type = technology,
             name = tech_aeschynite_processing_4,
-            icon = tech_error_png,--graphics_aeschynite_tech,
+            icon = graphics_aeschynite_tech,
             icon_size = 256,
             prerequisites = {promethium_science_pack, tech_aeschynite_processing_3},
             effects =

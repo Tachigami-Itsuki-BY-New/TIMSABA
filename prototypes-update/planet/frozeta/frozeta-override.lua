@@ -141,7 +141,6 @@ if mods[secretas_frozeta_mods] then
     end
 
     -- BUILDING
-    local steam_recycler = "steam-recycler"
     data_item[steam_recycler].subgroup = is_frozeta_building
     data_item[steam_recycler].order = a
     data_item[steam_recycler].stack_size = 32
@@ -286,6 +285,11 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
         table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
     end
+
+    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)
+    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_gallium_smelting_2].prerequisites, tech_gallite_processing_2)
+    table.insert(data_technology[tech_gallium_smelting_3].prerequisites, tech_gallite_processing_3)
 
     table.insert(data_technology[tech_powellite_processing_4].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, golden_science_pack)

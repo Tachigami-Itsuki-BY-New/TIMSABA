@@ -1,14 +1,6 @@
 # Functions that can be used if you write mods based on **Project T.I.M.S.A.B.A.**:
 ```Lua
-TIMSABA.functions.create_subgroups(group_var,
-{
-    {
-        type = item_subgroup,
-        name = subgroup.name,
-        group = group_var,
-        order = subgroup.order
-    }
-})
+TIMSABA.functions.create_subgroups(group_var, {{name = subgroup.name, order = subgroup.order}})
 
 TIMSABA.functions.create_items
 ({
@@ -18,7 +10,6 @@ TIMSABA.functions.create_items
         name = items.name,
         subgroup = items.subgroup,
         icon = items.icon or error_png, -- if not sting "icon" then used "error_png" == "__TIMSABA__/graphics/icons/error.png"
-        icons = fluids.icons,
         icon_size = items.icon_size or 64,
 
         pictures = items.pictures,
@@ -51,7 +42,6 @@ TIMSABA.functions.create_fluids
         subgroup = fluids.subgroup,
         order = fluids.order,
         icon = fluids.icon or error_png, -- if not sting "icon" then used "error_png" == "__TIMSABA__/graphics/icons/error.png"
-        icons = fluids.icons,
         icon_size = items.icon_size or 64,
 
         default_temperature = fluids.default_temperature or 0,
@@ -88,214 +78,85 @@ TIMSABA.functions.create_recipes
     }
 })
 
-function TIMSABA.functions.create_buildings(list)
-    for _, buildings in ipairs(list) do
-        local new_building = util.merge
-        ({
-            buildings.base_prototype,
-            {
-                localised_name = buildings.localised_name,
-                localised_description = buildings.localised_description,
-                name = buildings.name,
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                minable = {result = buildings.name},
-                module_slots = buildings.module_slots or 4,
-                crafting_speed = buildings.crafting_speed or 4,
-                energy_source =
-                {
-                    type = electric,
-                    usage_priority = secondary_input,
-                    emissions_per_minute = {pollution = buildings.pollution or 4},
-                    drain = buildings.drain or (60 .. kW)
-                },
-                energy_usage = buildings.energy_usage or (420 .. kW),
-                max_health = buildings.max_health,
-                heating_energy = buildings.heating_energy
-            }
-        })
-
-        data:extend
-        ({
-            {
-                localised_name = buildings.localised_name,
-                type = item,
-                name = buildings.name,
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                place_result = buildings.name,
-                stack_size = buildings.stack_size or 32,
-                weight = buildings.weight or 31250
-            },
-            {
-                localised_name = buildings.localised_name,
-                type = recipe,
-                name = buildings.name,
-                categories = {crafting},
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                enabled = false,
-                auto_recycle = true,
-                allow_productivity = false,
-                allow_quality = true,
-                allow_decomposition = true,
-                energy_required = buildings.energy_required or 4,
-                ingredients = buildings.ingredients,
-                results = {{type = item, name = buildings.name, amount = 1}},
-                main_product = buildings.name,
-                surface_conditions = buildings.surface_conditions
-            },
-            new_building
-        })
-    end
-end
-
-function TIMSABA.functions.create_burner_buildings(list)
-    for _, buildings in ipairs(list) do
-        local new_building =
-        util.merge
-        ({
-            buildings.base_prototype,
-            {
-                localised_name = buildings.localised_name,
-                localised_description = buildings.localised_description,
-                name = buildings.name,
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                minable = {result = buildings.name},
-                module_slots = buildings.module_slots or 0,
-                crafting_speed = buildings.crafting_speed or 4,
-                crafting_categories = buildings.crafting_categories,
-                energy_source =
-                {
-                    type = burner,
-                    effectivity = 1,
-                    fuel_categories = {base_fuel, advanced_fuel},
-                    fuel_inventory_size = 1,
-                    emissions_per_minute = {pollution = buildings.pollution or 4}
-                },
-                energy_usage = buildings.energy_usage or (900 .. kW),
-                max_health = buildings.max_health
-            }
-        })
-
-        data:extend
-        ({
-            {
-                localised_name = buildings.localised_name,
-                type = item,
-                name = buildings.name,
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                place_result = buildings.name,
-                stack_size = buildings.stack_size or 32,
-                weight = buildings.weight or 31250
-            },
-            {
-                localised_name = buildings.localised_name,
-                type = recipe,
-                name = buildings.name,
-                categories = {crafting},
-                subgroup = buildings.subgroup,
-                icons = buildings.icons,
-                order = buildings.order or d,
-                enabled = false,
-                auto_recycle = true,
-                allow_productivity = false,
-                allow_quality = true,
-                allow_decomposition = true,
-                energy_required = buildings.energy_required or 4,
-                ingredients = buildings.ingredients,
-                results = {{type = item, name = buildings.name, amount = 1}},
-                main_product = buildings.name,
-                surface_conditions = buildings.surface_conditions
-            },
-            new_building
-        })
-    end
-end
-
-function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
-    return
+TIMSABA.functions.create_buildings
+({
     {
-        localised_description = {"entity-description." .. resource_parameters.name},
-        factoriopedia_description = resource_parameters.factoriopedia_description or "",
-        type = resource,
-        name = resource_parameters.name,
-        subgroup = resource_parameters.subgroup,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-        order = resource_parameters.order,
-        category = resource_parameters.category,
-        minable = resource_parameters.minable or
-        {
-            mining_particle = resource_parameters.name .. _particle,
-            mining_time = 1,
-            result = resource_parameters.name
-        },
-        flags = {"placeable-neutral"},
-        tree_removal_probability = 0.8,
-        tree_removal_max_distance = 32 * 32,
-        walking_sound = base_tile_sounds.walking.ore,
-        collision_mask = resource_parameters.collision_mask,
-        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
-        autoplace = autoplace_parameters.probability_expression ~= nil and
-        {
-            order = resource_parameters.order,
-            probability_expression = autoplace_parameters.probability_expression,
-            richness_expression = autoplace_parameters.richness_expression
-        }
-            or resource_autoplace.resource_autoplace_settings
+        -- All
+        localised_name = buildings.localised_name,
+        name = buildings.name,
+        subgroup = buildings.subgroup,
+        icons = buildings.icons,
+        order = buildings.order or d,
+
+        -- Item
+        stack_size = buildings.stack_size or 32,
+        weight = buildings.weight or 31250
+
+        -- Recipe
+        energy_required = buildings.energy_required or 4,
+        ingredients = buildings.ingredients,
+        surface_conditions = buildings.surface_conditions
+
+        -- Entity 
+        base_prototype = data.raw["type-building"]["name-copy-building"],
+
+        localised_description = buildings.localised_description,
+        module_slots = buildings.module_slots or 4,
+        crafting_speed = buildings.crafting_speed or 4,
+        pollution = buildings.pollution or 4,
+        energy_usage = buildings.energy_usage or (420 .. kW),
+        drain = buildings.drain or (60 .. kW),
+        max_health = buildings.max_health,
+        heating_energy = buildings.heating_energy
+    }
+})
+
+TIMSABA.functions.create_burner_buildings
+({
+    {
+        -- All
+        localised_name = buildings.localised_name,
+        name = buildings.name,
+        subgroup = buildings.subgroup,
+        icons = buildings.icons,
+        order = buildings.order or d,
+
+        -- Item
+        stack_size = buildings.stack_size or 32,
+        weight = buildings.weight or 31250
+
+        -- Recipe
+        energy_required = buildings.energy_required or 4,
+        ingredients = buildings.ingredients,
+        surface_conditions = buildings.surface_conditions
+
+        -- Entity 
+        base_prototype = data.raw["type-building"]["name-copy-building"],
+
+        localised_description = buildings.localised_description,
+        module_slots = buildings.module_slots or 4,
+        crafting_speed = buildings.crafting_speed or 4,
+        pollution = buildings.pollution or 4,
+        energy_usage = buildings.energy_usage or (900 .. kW),
+        max_health = buildings.max_health
+    }
+})
+
+data:extend
+({
+    TIMSABA.functions.create_resource(
         {
             name = resource_parameters.name,
+            subgroup = resource_parameters.subgroup,
             order = resource_parameters.order,
-            autoplace_control_name = resource_parameters.name,
-            base_density = autoplace_parameters.base_density,
-            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
-            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
-            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
-            candidate_spot_count = autoplace_parameters.candidate_spot_count,
-            tile_restriction = autoplace_parameters.tile_restriction
+            map_color = resource_parameters.map_color,
+            mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
         },
-        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
-        stages =
-        {
-            sheet =
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-                priority = extra_high,
-                size = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5
-            }
-        },
-        map_color = resource_parameters.map_color,
-        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
-        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
-    }
-end
+        {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8} -- Nauvis
+    )
+})
 
-function TIMSABA.functions.create_autoplace_control(name, order)
-    data:extend
-    ({
-        {
-            localised_name = {"", "[entity=" .. name .. "] ", {"entity-name." .. name}},
-            type = autoplace_control,
-            name = name,
-            order = order or name,
-            category = resource,
-            richness = true,
-            can_be_disabled = true
-        }
-    })
-end
+TIMSABA.functions.create_autoplace_control("name", "order")
 
 TIMSABA.barreling.add_simple_fluid("name-fluid")
 TIMSABA.barreling.add_dangerous_fluid("name-fluid")
@@ -312,7 +173,15 @@ TIMSABA.functions.replace_duplicate_prototypes(list_name)
 
 -- Function for removing prototypes.
 local list_name = {delete_proto} -- item/fluid/recipe/technology
-TIMSABA.functions.delete_the_replaced_prototypes(list_name)
+TIMSABA.functions.delete_prototypes(list_name)
+
+-- Function for removing only items.
+local list_name = {delete_proto}
+TIMSABA.functions.delete_duplicated_items(list_name)
+
+-- Function for removing only fluids.
+local list_name = {delete_proto}
+TIMSABA.functions.delete_duplicated_fluids(list_name)
 
 -- This segment is needed for functions related to the creation of fluids. From it, take the letters of the elements you need.
 local table_of_chemical_elements =
@@ -408,9 +277,9 @@ local table_of_chemical_elements =
     --Fr = {{, , }, {, , }, {, , }}, -- Francium
     --Ra = {{, , }, {, , }, {, , }}, -- Radium
     --Ac = {{, , }, {, , }, {, , }}, -- Actinium
-    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.0.0
+    Th = {{168, 025, 030}, {139, 021, 023}, {098, 020, 021}}, -- Thorium
     --Pa = {{, , }, {, , }, {, , }}, -- Protactinium
-    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.0.0
+    U  = {{116, 197, 028}, {096, 166, 022}, {089, 154, 015}}, -- Uranium
     --Np = {{, , }, {, , }, {, , }}, -- Neptunium
     --Pu = {{, , }, {, , }, {, , }}, -- Plutonium
     --Am = {{, , }, {, , }, {, , }}, -- Americium
@@ -440,6 +309,8 @@ local table_of_chemical_elements =
     -- OTHERS
     Cc = {{069, 069, 069}, {054, 054, 054}, {036, 036, 036}}, -- Crude Oil
     Sa = {{255, 220, 189}, {199, 163, 133}, {170, 142, 119}}, -- Sand Fluid
+    Sl = {{105, 046, 007}, {086, 037, 004}, {063, 026, 002}}, -- Slurry Slag
+    Sd = {{230, 100, 000}, {210, 080, 000}, {190, 060, 000}}, -- Sludge Mineral
     -- SOLUTIONS
     Wp = {{090, 106, 164}, {090, 106, 164}, {090, 106, 164}}, -- Water purified
     De = {{187, 174, 174}, {187, 174, 174}, {187, 174, 174}}, -- Diethyl ether

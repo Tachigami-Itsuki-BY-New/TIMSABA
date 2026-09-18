@@ -492,7 +492,7 @@ data:extend
         name = tech_gallium_smelting_1,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_2},
+        prerequisites = {tech_germanite_processing_1, cryogenic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_hydroxide_III},
@@ -528,7 +528,7 @@ data:extend
         name = tech_gallium_smelting_2,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_gallium_smelting_1, tech_germanite_processing_3},
+        prerequisites = {tech_gallium_smelting_1, tech_germanite_processing_2, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_processed},
@@ -563,7 +563,7 @@ data:extend
         name = tech_gallium_smelting_3,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_gallium_smelting_2, tech_germanite_processing_4},
+        prerequisites = {tech_gallium_smelting_2, tech_germanite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_pellet},

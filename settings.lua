@@ -1,125 +1,61 @@
+require("prototypes.global-name.global-name")
+require("prototypes.global-name.global-name-mods")
+require("prototypes.global-name.global-name-setting")
+
 local bool_setting = "bool-setting"
 local double_setting = "double-setting"
 local string_setting = "string-setting"
 local startup = "startup"
+local function create_bool_setting(name, default_value)
+    data:extend
+    ({
+        {
+            type = bool_setting,
+            name = name,
+            setting_type = startup,
+            default_value = default_value or false
+        }
+    })
+end
+create_bool_setting(setting_early_sintering_oven)
+create_bool_setting(setting_no_spoilage)
+create_bool_setting(setting_early_cliff_explosives)
+if mods[space_age_science_packs] then
+    create_bool_setting(setting_science_pack_nostalgia)
+end
+create_bool_setting(setting_multi_building)
+--create_bool_setting(setting_dynamic_underground_belts)
+--create_bool_setting(setting_dynamic_pipe_to_ground)
+create_bool_setting(setting_rebalance_belts_and_pipes, true)
+create_bool_setting(setting_flow_control_new)
+create_bool_setting(setting_infinite_research)
+
 data:extend
 ({
     {
-        type = bool_setting,
-        name = "setting-early-sintering-oven",
-        setting_type = startup,
-        default_value = false
-    },
-    {
-        type = bool_setting,
-        name = "setting-no-spoilage",
-        setting_type = startup,
-        default_value = false
-    },
-    {
-        type = bool_setting,
-        name = "setting-early-cliff-explosives",
-        setting_type = startup,
-        default_value = false
-    },
-    {
-        type = bool_setting,
-        name = "setting-multi-building",
-        setting_type = startup,
-        default_value = false
-    },
-    --[[{
-        type = bool_setting,
-        name = "setting-dynamic-underground-belts",
-        setting_type = startup,
-        default_value = false
-    },
-    {
-        type = bool_setting,
-        name = "setting-dynamic-pipe-to-ground",
-        setting_type = startup,
-        default_value = false
-    }]]
-    {
-        type = bool_setting,
-        name = "setting-rebalance-belts-and-pipes",
-        setting_type = startup,
-        default_value = true
-    },
-    {
-        type = bool_setting,
-        name = "setting-flow-control-new",
-        setting_type = startup,
-        default_value = false
-    },
-    {
         type = double_setting,
-        name = "setting-defrost-multiplier",
+        name = setting_defrost_multiplier,
         setting_type = startup,
         default_value = 2,
         minimum_value = 1,
         maximum_value = 720 -- if 12 hour then 1 year
     },
     {
-        type = bool_setting,
-        name = "setting-infinite-research",
-        setting_type = startup,
-        default_value = false
-    },
-    {
         type = string_setting,
-        name = "setting-game-difficulty",
+        name = setting_game_difficulty,
         setting_type = startup,
-        default_value = "normal",
-        allowed_values = {"easy", "normal", "hard"}
+        default_value = normal,
+        allowed_values = {easy, normal, hard}
     }
 })
 
-if mods["sa-science-packs"] then
-    data:extend
-    ({
-        {
-            type = bool_setting,
-            name = "setting-science-pack-nostalgia",
-            setting_type = startup,
-            default_value = false
-        }
-    })
+if mods[tellus_mods] then
+    create_bool_setting(setting_dye_concrete_brick, true)
 end
 
-if mods["planetaris-tellus"] then
-    data:extend
-    ({
-        {
-            type = bool_setting,
-            name = "setting-tellus-dye-concrete-brick",
-            setting_type = startup,
-            default_value = true
-        }
-    })
+if mods[flare_stack_mods] then
+    create_bool_setting(setting_real_incineration, true)
 end
-
-if mods["Flare Stack"] then
-    data:extend
-    ({
-        {
-            type = bool_setting,
-            name = "setting-real-incineration",
-            setting_type = startup,
-            default_value = true
-        }
-    })
-end
-
---[[data:extend
-({
-    {
-        type = bool_setting,
-        name = ,
-        setting_type = startup,
-        default_value = false
-    }
-})]]
 
 local function horogon_multiplier(name, default_value)
     return

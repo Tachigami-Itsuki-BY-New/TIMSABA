@@ -256,11 +256,11 @@ data:extend
 })
 
 -- ANGELS METALLURGY SMELTING and CASTING
+-- MAGNESIUM
 local graphics_magnesium_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/technology/smelting-magnesium-tech.png"
 tech_magnesium_smelting_1 = "magnesium-smelting-1"
 tech_magnesium_smelting_2 = "magnesium-smelting-2"
 tech_magnesium_smelting_3 = "magnesium-smelting-3"
--- MAGNESIUM
 data:extend
 ({
     {
@@ -342,6 +342,95 @@ data:extend
     }
 })
 
+local graphics_uranium_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/uranium/technology/smelting-uranium-tech.png"
+tech_uranium_smelting_1 = "uranium-smelting-1"
+tech_uranium_smelting_2 = "uranium-smelting-2"
+tech_uranium_smelting_3 = "uranium-smelting-3"
+data:extend
+({
+    {
+        localised_name = {"technology-name." .. tech_uranium_smelting_1},
+        localised_description = {"technology-description." .. tech_uranium_smelting_1},
+        type = technology,
+        name = tech_uranium_smelting_1,
+        icon = graphics_uranium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_ore_leaching, tech_metallurgy_3, centrifuge_1},
+        effects =
+        {
+            {type = unlock_recipe, recipe = uranium_oxide_IV},
+            {type = unlock_recipe, recipe = uranium_fluoride_IV},
+            {type = unlock_recipe, recipe = uranium_fluoride_VI_gas},
+            {type = unlock_recipe, recipe = uranium_processing},
+            {type = unlock_recipe, recipe = uranium_238_molten},
+            {type = unlock_recipe, recipe = uranium_238_plate}
+        },
+        research_trigger =
+        {
+            type = craft_item,
+            item = uranium_ore,
+            count = 256
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_uranium_smelting_2},
+        localised_description = {"technology-description." .. tech_uranium_smelting_2},
+        type = technology,
+        name = tech_uranium_smelting_2,
+        icon = graphics_uranium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_uranium_smelting_1, tech_ore_processing_3, tech_powder_metallurgy_4},
+        effects =
+        {
+            {type = unlock_recipe, recipe = uranium_processed},
+            {type = unlock_recipe, recipe = uranyl_sulfate_solution},
+            {type = unlock_recipe, recipe = ammonium_diuranate},
+            {type = unlock_recipe, recipe = uranium_oxide_VI},
+            {type = unlock_recipe, recipe = uranium_fluoride_VI_gas_2},
+            {type = unlock_recipe, recipe = calcium_sulfate_from_ammonium_sulfate_solution}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_uranium_smelting_3},
+        localised_description = {"technology-description." .. tech_uranium_smelting_3},
+        type = technology,
+        name = tech_uranium_smelting_3,
+        icon = graphics_uranium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_uranium_smelting_2, tech_ore_processing_4},
+        effects =
+        {
+            {type = unlock_recipe, recipe = uranium_pellet},
+            {type = unlock_recipe, recipe = uranium_fluoride_VI_gas_3}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1}
+            },
+            time = 30
+        }
+    }
+})
+
 -- MOLYBDENUM
 local graphics_molybdenum_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/smelting-molybdenum-technology.png"
 tech_molybdenum_smelting_1 = "timsaba-molybdenum-smelting-1"
@@ -352,6 +441,7 @@ data:extend
 ({
     {
         localised_name = {"technology-name." .. tech_molybdenum_smelting_1},
+        localised_description = {"technology-description." .. tech_molybdenum_smelting_1},
         type = technology,
         name = tech_molybdenum_smelting_1,
         icon = graphics_molybdenum_smelting_tech,
@@ -466,6 +556,7 @@ data:extend
 ({
     {
         localised_name = {"technology-name." .. tech_rhenium_smelting_1},
+        localised_description = {"technology-description." .. tech_rhenium_smelting_1},
         type = technology,
         name = tech_rhenium_smelting_1,
         icon = graphics_rhenium_tech,
@@ -702,8 +793,6 @@ data:extend
         }
     }
 })
-
-table.insert(data_technology[tech_magnesium_smelting_1].prerequisites, tech_powellite_processing_1)
 
 if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_molybdenum_rhenium_processing].effects, {type = unlock_recipe, recipe = molybdenum_rhenium_pipe .. _straight})

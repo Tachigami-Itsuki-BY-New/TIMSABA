@@ -521,6 +521,7 @@ if mods[corrundum_mods] then
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_corrundum].prerequisites, interstellar_science_pack)
     end
+    table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air})
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation})
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation_2})
     data_technology[planet_discovery_corrundum].unit.ingredients =
@@ -710,7 +711,7 @@ if mods[corrundum_mods] then
     end
 
     -- MODS
-    if mods["AsphaltRoadsPatched"] then
+    if mods[asphalt_roads_patched_mods] then
         local is_asphalt_1 = "Arci-asphalt-1"
         data_item_subgroup[is_asphalt_1].group = ig_corrundum
         data_item_subgroup[is_asphalt_1].order = z_a

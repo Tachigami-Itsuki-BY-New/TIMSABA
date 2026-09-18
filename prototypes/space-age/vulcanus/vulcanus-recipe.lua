@@ -300,7 +300,7 @@ create_recipe_casting_metal(casting_cobalt_steel, w, cobalt_steel_molten_angels,
 create_recipe_casting_metal(casting_nitinol,      x,      nitinol_molten_angels, nitinol_plate_bob)
 create_recipe_casting_metal(casting_holmium,      y,             holmium_molten, holmium_plate)
 
--- INTERMEDIATES
+-- INTERMEDIATE
 casting_steel_rod = "casting-steel-rod"
 casting_titanium_rod = "casting-titanium-rod"
 local function create_recipe_casting_rod(name, order, ingredient, result)

@@ -1416,9 +1416,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_chloride_solution,
         categories = {angels_liquifying},
-        subgroup = is_alloys,
+        subgroup = is_lithium_fluid,
         icons = THREE_I(lithium_chloride_angels, water_purified_angels, lithium_chloride_solution),
-        order = b,
+        order = a,
         energy_required = 4, -- LiCl + H₂O --> LiCl(aq)
         ingredients =
         {
@@ -1431,9 +1431,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_chloride_solution_from_lithium_hydroxide,
         categories = {chemistry},
-        subgroup = is_alloys,
+        subgroup = is_lithium_fluid,
         icons = TWO_D_I(lithium_hydroxide, hydrochloric_acid_angels, lithium_chloride_solution, water_purified_angels),
-        order = b_a,
+        order = a_a,
         energy_required = 8, -- LiOH(aq) + HCl(aq) --> LiCl(aq) + 2H₂O
         ingredients =
         {
@@ -1450,9 +1450,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_perchlorate_solution,
         categories = {chemistry},
-        subgroup = is_alloys,
+        subgroup = is_lithium_fluid,
         icons = TWO_D_I(sodium_perchlorate_solution, lithium_chloride_solution, lithium_perchlorate_solution, sodium_chloride_solution),
-        order = c,
+        order = b,
         energy_required = 4, -- NaClO₄(aq) + LiCl(aq) --> LiClO₄(aq) + NaCl(aq)
         ingredients =
         {
@@ -1469,9 +1469,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_hydride,
         categories = {chemistry},
-        subgroup = is_alloys,
+        subgroup = is_lithium,
         icons = THREE_I(lithium_bob, hydrogen_angels, lithium_hydride),
-        order = g,
+        order = e,
         energy_required = 8, -- 2Li + H₂ --> 2LiH
         ingredients =
         {
@@ -1484,9 +1484,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_hydroxide,
         categories = {angels_petrochem_electrolyser},
-        subgroup = is_alloys,
+        subgroup = is_lithium,
         icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
-        order = h,
+        order = f,
         energy_required = 8, -- 2(LiCl + H₂O) -electrode/electrolys-> 2LiOH + H₂ + Cl₂
         ingredients =
         {
@@ -1505,9 +1505,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_fluoride,
         categories = {chemistry},
-        subgroup = is_alloys,
+        subgroup = is_lithium,
         icons = TWO_D_I(lithium_hydroxide, hydrofluoric_acid_angels, lithium_fluoride, water_purified_angels),
-        order = j,
+        order = h,
         energy_required = 4, -- LiOH + HF(aq) --> LiF + 2H₂O
         ingredients =
         {
@@ -1524,9 +1524,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_hexafluorophosphate,
         categories = {chemistry},
-        subgroup = is_alloys,
+        subgroup = is_lithium,
         icons = THREE_I(lithium_fluoride, phosphorus_fluoride_V_gas, lithium_hexafluorophosphate),
-        order = k,
+        order = i,
         energy_required = 4, -- LiF + PF₅ -HF(liquefied)-> LiPF₆
         ingredients =
         {
@@ -1544,9 +1544,9 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_hexafluorophosphate_solution_carbonate,
         categories = {angels_liquifying},
-        subgroup = is_alloys,
+        subgroup = is_lithium_fluid,
         icons = THREE_I(lithium_hexafluorophosphate, ethylene_carbonate, lithium_hexafluorophosphate_solution_carbonate),
-        order = l,
+        order = i,
         energy_required = 4, -- LiPF₆ + C₃H₄O₃ --> LiPF₆(carbonate)
         ingredients =
         {

@@ -166,6 +166,7 @@ do
 	---@type CreateIconsFromListTable
 	local technologies =
 	{
+		[centrifuge_1] = {icon_name = centrifuge_1, tier = 1, prog_tier = 3},
 		[centrifuge_2] = {icon_name = centrifuge_1, tier = 2, prog_tier = 4},
 		[centrifuge_3] = {icon_name = centrifuge_1, tier = 3, prog_tier = 5},
 		[centrifuge_4] = {icon_name = centrifuge_1, tier = 4, prog_tier = 6}

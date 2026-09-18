@@ -75,6 +75,14 @@ Date: ??.??.2026
   Other:
     - [All] Initial release: Release version for Factorio 2.1.
 ---------------------------------------------------------------------------------------------------
+Version: 1.18.0 See you in Factorio 2.1
+Date: 18.09.2026
+  Bugfixes:
+    - [Mods] Fixed bugs related to the Flare Stack mod.
+
+  Other:
+    - [All] This is the final official TIMSABA patch for Factorio 2.0.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.0 Aegis & Bellicos
 Date: 07.09.2026
   Features:

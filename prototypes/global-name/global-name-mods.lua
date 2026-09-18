@@ -237,6 +237,7 @@ gold_ore_mods = "gold-ore"
 gold_plate_mods = "gold-plate"
 golden_biter_egg = "golden-biter-egg"
 golden_science_pack = "golden-science-pack"
+steam_recycler = "steam-recycler"
 
 -- TERRAPALUS
 terrapalus_mods = "terrapalus"
@@ -466,13 +467,13 @@ wood_pulp = "wood-pulp"
 cupriavidus_necator = "cupriavidus-necator"
 wood_science_pack = "wood-science-pack"
 steam_science_pack = "steam-science-pack"
-wood_transport_belt = "wood-" .. T1_transport_belt
-wood_underground_belt = "wood-" .. T1_underground_belt
-wood_splitter = "wood-" .. T1_splitter
+wood_transport_belt = "wood-transport-belt"
+wood_underground_belt = "wood-underground-belt"
+wood_splitter = "wood-splitter"
 gold_pipe = "gold-pipe"
 gold_pipe_to_ground = "gold-pipe-to-ground"
 gold_storage_tank = "gold-storage-tank"
-burner_assembling_machine = "burner-" .. assembling_machine
+burner_assembling_machine = "burner-assembling-machine"
 wood_lab = "wood-lab"
 quality_assembler = "quality-assembler"
 big_wooden_pole = "big-wooden-pole"
@@ -571,3 +572,9 @@ asteroid_belt_mods = "AsteroidBelt"
 
 -- TELOGISTICS
 telogistics_mods = "Telogistics"
+
+-- FLARE STACK
+flare_stack_mods = "Flare Stack"
+
+-- Asphalt Roads Patched
+asphalt_roads_patched_mods = "AsphaltRoadsPatched"

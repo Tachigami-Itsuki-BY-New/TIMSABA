@@ -224,6 +224,7 @@ data_recipe[fusion_power_cell].ingredients =
     {type = item, name = lithium_bob, amount = 8},
     {type = item, name = tungsten_plate_bob, amount = 8},
     {type = item, name = lead_plate_bob, amount = 32},
+    {type = item, name = uranium_238_plate, amount = 32},
     {type = item, name = holmium_plate, amount = 8},
     {type = fluid, name = deuterium_angels, amount = 240},
     {type = fluid, name = tritium_gas, amount = 240}

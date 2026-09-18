@@ -133,7 +133,7 @@ if mods[secretas_frozeta_mods] then
 end
 if mods[castra_mods] then
     vanadium_ore_recipe = "vanadium-ore-pure-mix-processing"
-    create_ore_recipe(vanadium_ore_recipe, a_g, rheniite_purified, millerite_purified, gallium_ore)
+    create_ore_recipe(vanadium_ore_recipe, a_g, rheniite_purified, millerite_purified, vanadium_ore)
 end
 if mods[moshine_mods] then
     neodymium_ore_recipe = "neodymium-ore-pure-mix-processing"

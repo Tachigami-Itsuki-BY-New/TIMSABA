@@ -214,7 +214,13 @@ data:extend({ore_franckeite_particle})
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = ore_franckeite, subgroup = is_ores, order = h, map_color = {r = 080/255, g = 135/255, b = 020/255, a = 1.000}, mining_visualisation_tint = {r = 145/255, g = 210/255, b = 045/255, a = 1.000}},
+        {
+            name = ore_franckeite,
+            subgroup = is_ores,
+            order = h,
+            map_color = {r = 080/255, g = 135/255, b = 020/255, a = 1.000},
+            mining_visualisation_tint = {r = 145/255, g = 210/255, b = 045/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })

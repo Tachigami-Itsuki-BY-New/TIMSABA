@@ -45,6 +45,8 @@ if mods[space_age_science_packs] then
             for _, pack in pairs(list_bob_tech) do
                 data_item[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"
                 data_item[pack].icons = nil
+                data_recipe[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"
+                data_recipe[pack].icons = nil
             end
         end
     end

@@ -1,5 +1,5 @@
 if mods[moshine_mods] then
-    local graphics_aeschynite = "__TIMSABA__/graphics/icons/angels/resource/aeschynite/"
+    local graphics_aeschynite = "__TIMSABA__/graphics/icons/moshine/aeschynite/"
 
     -- Aeschynite ore / Nd + Th + Fe + Sn + Ti + Nb
     aeschynite_ore = "aeschynite-ore"
@@ -12,41 +12,41 @@ if mods[moshine_mods] then
         {
             name = aeschynite_ore,
             subgroup = is_aeschynite,
-            --[[icon = graphics_aeschynite .. aeschynite_ore .. ".png",
+            icon = graphics_aeschynite .. aeschynite_ore .. ".png",
             pictures =
             {
                 {filename = graphics_aeschynite .. aeschynite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
                 {filename = graphics_aeschynite .. aeschynite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
                 {filename = graphics_aeschynite .. aeschynite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
-            },]]
+            },
             order = a
         },
         {
             name = aeschynite_crushed,
             subgroup = is_aeschynite,
-            --icon = graphics_aeschynite .. aeschynite_crushed .. ".png",
-            --icon_size = 32,
+            icon = graphics_aeschynite .. aeschynite_crushed .. ".png",
+            icon_size = 32,
             order = b
         },
         {
             name = aeschynite_chunks,
             subgroup = is_aeschynite,
-            --icon = graphics_aeschynite .. aeschynite_chunks .. ".png",
-            --icon_size = 32,
+            icon = graphics_aeschynite .. aeschynite_chunks .. ".png",
+            icon_size = 32,
             order = c
         },
         {
             name = aeschynite_crystals,
             subgroup = is_aeschynite,
-            --icon = graphics_aeschynite .. aeschynite_crystals .. ".png",
-            --icon_size = 32,
+            icon = graphics_aeschynite .. aeschynite_crystals .. ".png",
+            icon_size = 32,
             order = d
         },
         {
             name = aeschynite_purified,
             subgroup = is_aeschynite,
-            --icon = graphics_aeschynite .. aeschynite_purified .. ".png",
-            --icon_size = 32,
+            icon = graphics_aeschynite .. aeschynite_purified .. ".png",
+            icon_size = 32,
             order = e
         }
     })

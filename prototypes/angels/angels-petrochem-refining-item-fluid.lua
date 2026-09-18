@@ -616,37 +616,37 @@ TIMSABA.functions.create_items
     {
         localised_description = show_formula and {chemical_formula, "LiH"} or nil,
         name = lithium_hydride,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_hydride .. ".png",
-        order = g -- e
+        order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "LiOH"} or nil,
         name = lithium_hydroxide,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_hydroxide .. ".png",
-        order = h -- f
+        order = f
     },
     {
         localised_description = show_formula and {chemical_formula, "Li[font=default-tiny-bold]2[/font]O"} or nil,
         name = lithium_oxide,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_oxide .. ".png",
-        order = i -- g
+        order = g
     },
     {
         localised_description = show_formula and {chemical_formula, "LiF"} or nil,
         name = lithium_fluoride,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_fluoride .. ".png",
-        order = j -- h
+        order = h
     },
     {
         localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6[/font]"} or nil,
         name = lithium_hexafluorophosphate,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium ..  lithium_hexafluorophosphate.. ".png",
-        order = k -- i
+        order = i
     }
 })
 
@@ -659,27 +659,27 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "LiCl[font=default-tiny-bold](aq)[/font]"} or nil,
         name = lithium_chloride_solution,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_chloride_solution .. ".png",
-        order = b, -- a
+        order = a,
         base_color = TIMSABA.functions.fluid_color("LiClWp"),
         flow_color = TIMSABA.functions.flow_color("LiClWp")
     },
     {
         localised_description = show_formula and {chemical_formula, "LiClO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = lithium_perchlorate_solution,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_perchlorate_solution .. ".png",
-        order = c, -- b
+        order = b,
         base_color = TIMSABA.functions.fluid_color("LiClO4Wp"),
         flow_color = TIMSABA.functions.flow_color("LiClO4Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6(carbonate)[/font]"} or nil,
         name = lithium_hexafluorophosphate_solution_carbonate,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_hexafluorophosphate_solution_carbonate .. ".png",
-        order = l, -- i
+        order = i,
         base_color = TIMSABA.functions.fluid_color("LiPF6Ec"),
         flow_color = TIMSABA.functions.flow_color("LiPF6Ec")
     }

@@ -214,7 +214,13 @@ data:extend({ore_senaite_particle})
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = ore_senaite, subgroup = is_ores, order = g, map_color = {r = 115/255, g = 065/255, b = 015/255, a = 1.000}, mining_visualisation_tint = {r = 190/255, g = 125/255, b = 040/255, a = 1.000}},
+        {
+            name = ore_senaite,
+            subgroup = is_ores,
+            order = g,
+            map_color = {r = 115/255, g = 065/255, b = 015/255, a = 1.000},
+            mining_visualisation_tint = {r = 190/255, g = 125/255, b = 040/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })

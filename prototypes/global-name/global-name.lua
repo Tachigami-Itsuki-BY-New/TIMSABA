@@ -106,6 +106,10 @@ data_stream = data.raw["stream"]
 data_turret = data.raw["turret"]
 data_optimized_particle = data.raw["optimized-particle"]
 data_cargo_pod = data.raw["cargo-pod"]
+data_bool_setting = data.raw["bool-setting"]
+data_string_setting = data.raw["string-setting"]
+data_double_setting = data.raw["double-setting"]
+data_color_setting = data.raw["color-setting"]
 
 -- GLOBAL NAME
 item = "item"
@@ -215,7 +219,6 @@ craft_item = "craft-item"
 craft_fluid = "craft-fluid"
 mine_entity = "mine-entity"
 
-show_formula = settings.startup["angels-show-chemical-formula"].value
 chemical_formula = "tooltip-description.chemical-formula"
 
 -- RECIPE CATEGORY
