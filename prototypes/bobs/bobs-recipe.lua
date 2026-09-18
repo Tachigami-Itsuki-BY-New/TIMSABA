@@ -217,6 +217,7 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = muon_fusion_catalyst, amount = 1},
             {type = item, name = lead_plate_bob, amount = 32},
+            {type = item, name = uranium_238_plate, amount = 32},
             {type = fluid, name = tritium_gas, amount = 480}
         },
         results = {{type = item, name = tritium_fuel_cell, amount = 1}},

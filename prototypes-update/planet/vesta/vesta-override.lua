@@ -774,7 +774,8 @@ if mods[vesta_mods] then
         data_technology[tech_gallite_processing_3].prerequisites = {tech_gallite_processing_2, tech_gas_manipulation_science_pack}
         data_technology[tech_gallite_processing_4].prerequisites = {tech_gallite_processing_3, promethium_science_pack}
     end
-    data_technology[tech_gallium_smelting_3].prerequisites = {tech_germanite_processing_4, tech_gallite_processing_4, tech_gallium_smelting_2, promethium_science_pack}
+    data_technology[tech_gallium_smelting_2].prerequisites = {tech_gallium_smelting_1, tech_germanite_processing_2, tech_gas_manipulation_science_pack}
+    data_technology[tech_gallium_smelting_3].prerequisites = {tech_gallium_smelting_2, tech_germanite_processing_3, promethium_science_pack}
 
     data_technology[promethium_science_pack].prerequisites =
     {

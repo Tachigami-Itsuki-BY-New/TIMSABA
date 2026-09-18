@@ -236,7 +236,9 @@ end
 data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_brass_processing}
 data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_tungsten_processing}
 
-data_technology[centrifuge_2].prerequisites = {tech_uranium_processing, tech_tungsten_processing}
+data_technology[centrifuge_2].localised_name = {"technology-name." .. centrifuge_2}
+data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_processing}
+data_technology[centrifuge_3].localised_name = {"technology-name." .. centrifuge_3}
 data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_copper_tungsten_processing}
 
 data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
@@ -463,13 +465,42 @@ data_technology[tech_battery_2].effects =
 data_technology[tech_battery_3].localised_description = {"technology-description.battery"}
 data_technology[tech_battery_3].prerequisites = {tech_metallurgy_4, tech_silver_smelting_2}
 
-data_technology[tech_uranium_power_1].prerequisites = {tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
+data_technology[tech_uranium_power_1].prerequisites = {tech_uranium_smelting_1, tech_heat_exchanger_1, tech_steam_turbine_1}
 data_technology[tech_uranium_power_1].effects =
 {
     {type = unlock_recipe, recipe = uranium_reactor},
     {type = unlock_recipe, recipe = uranium_235_fuel_cell},
     {type = unlock_recipe, recipe = uranium_234_fuel_cell}
 }
+
+data_technology[tech_uranium_processing].prerequisites = {centrifuge_3, tech_uranium_smelting_3}
+data_technology[tech_uranium_processing].effects =
+{
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_20pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_35pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_45pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_55pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_65pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_70pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_75pc},
+    {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_80pc},
+    {type = unlock_recipe, recipe = uranium_235},
+    {type = unlock_recipe, recipe = uranium_238}
+}
+data_technology[tech_uranium_processing].unit =
+{
+    count = 200,
+    ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    },
+    time = 30
+}
+data_technology[tech_uranium_processing].research_trigger = nil
 
 data_technology[tech_plutonium_based_power_systems].prerequisites = {"nuclear-fuel-reprocessing", centrifuge_2, utility_science_pack}
 data_technology[tech_plutonium_based_power_systems].unit.ingredients =
@@ -481,10 +512,6 @@ data_technology[tech_plutonium_based_power_systems].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-thorium_processing = "angels-thorium-processing"
-advanced_mixed_oxide_reprocessing = "angels-advanced-mixed-oxide-reprocessing"
-thorium_fuel_cell_reprocessing = "angels-thorium-fuel-cell-reprocessing"
-plutonium_breeding = "angels-plutonium-breeding"
 data_technology[tech_thorium_power].prerequisites = {heat_exchanger_2, steam_turbine_2, tech_plutonium_based_power_systems}
 data_technology[tech_thorium_power].effects =
 {
@@ -496,8 +523,6 @@ data_technology[tech_thorium_power].effects =
     {type = unlock_recipe, recipe = plutonium_breeding}
 }
 
-advanced_thorium_fuel_cell_reprocessing = "angels-advanced-thorium-fuel-cell-reprocessing"
-deuterium_fuel_cell_reprocessing = "angels-deuterium-fuel-cell-reprocessing"
 data_technology[tech_deuterium_power].localised_name = {"technology-name.deuterium-power"}
 data_technology[tech_deuterium_power].localised_description = {"technology-description.deuterium-power"}
 data_technology[tech_deuterium_power].prerequisites = {centrifuge_3, tech_thorium_power, heat_exchanger_3, steam_turbine_3, "angels-water-chemistry-2"}
@@ -510,7 +535,7 @@ data_technology[tech_deuterium_power].effects =
 }
 
 -- COMBAT
-data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_processing}
+data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_smelting_1}
 if mods[bobwarfare] then
     data_technology[tech_uranium_ammo].effects =
     {
@@ -1223,7 +1248,6 @@ data_technology[tech_cobalt_smelting_3].effects =
 }
 
 -- CHROMIUM
-data_technology[tech_chromium_smelting_1].localised_name = {"technology-name.chromium-smelting-1"}
 data_technology[tech_chromium_smelting_1].prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell}
 data_technology[tech_chromium_smelting_1].effects =
 {
@@ -1234,7 +1258,6 @@ data_technology[tech_chromium_smelting_1].effects =
     {type = unlock_recipe, recipe = chromium_molten_angels}
 }
 
-data_technology[tech_chromium_smelting_2].localised_name = {"technology-name.chromium-smelting-2"}
 data_technology[tech_chromium_smelting_2].prerequisites = {tech_ore_processing_4, tech_chromium_smelting_1, tech_zinc_smelting_3}
 data_technology[tech_chromium_smelting_2].effects =
 {
@@ -1243,7 +1266,6 @@ data_technology[tech_chromium_smelting_2].effects =
     {type = unlock_recipe, recipe = chromium_ingot_2}
 }
 
-data_technology[tech_chromium_smelting_3].localised_name = {"technology-name.chromium-smelting-3"}
 data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2}
 data_technology[tech_chromium_smelting_3].effects =
 {
@@ -1771,6 +1793,8 @@ data_technology[tech_lithium_processing].effects =
     {type = unlock_recipe, recipe = lithium_perchlorate_bob},
     {type = unlock_recipe, recipe = lithium_bob}
 }
+
+data_technology[plutonium_fuel_angels].prerequisites = {tech_deuterium_power, rocket_fuel}
 
 -- ANGELS BIOPROCESSING NAUVIS
 data_technology[tech_bio_processing_brown].effects =

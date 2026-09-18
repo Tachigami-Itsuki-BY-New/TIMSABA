@@ -29,9 +29,9 @@ TIMSABA.functions.create_items
     },
     {
         name = lithium_bob,
-        subgroup = is_alloys,
+        subgroup = is_lithium,
         icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-lithium-plate.png",
-        order = f
+        order = c
     }
 })
 
@@ -89,8 +89,8 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_bob,
         categories = {angels_petrochem_electrolyser},
-        subgroup = is_alloys,
-        order = f,
+        subgroup = is_lithium,
+        order = c,
         energy_required = 8,
         ingredients =
         {

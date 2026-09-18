@@ -1,3 +1,13 @@
+-- INTERMEDIATE PRODUCTS
+uranium_processing = "uranium-processing"
+
+thorium_processing = "angels-thorium-processing"
+advanced_mixed_oxide_reprocessing = "angels-advanced-mixed-oxide-reprocessing"
+thorium_fuel_cell_reprocessing = "angels-thorium-fuel-cell-reprocessing"
+plutonium_breeding = "angels-plutonium-breeding"
+advanced_thorium_fuel_cell_reprocessing = "angels-advanced-thorium-fuel-cell-reprocessing"
+deuterium_fuel_cell_reprocessing = "angels-deuterium-fuel-cell-reprocessing"
+
 -- ANGELS RESOURCE REFINING
 crushed_saphirite_processing = "angels-ore1-crushed-processing"
 crushed_jivolite_processing = "angels-ore2-crushed-processing"

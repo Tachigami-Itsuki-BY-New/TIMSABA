@@ -214,7 +214,13 @@ data:extend({powellite_ore_particle})
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = powellite_ore, subgroup = is_ores, order = i, map_color = {r = 140/255, g = 080/255, b = 020/255, a = 1.000}, mining_visualisation_tint = {r = 200/255, g = 130/255, b = 045/255, a = 1.000}},
+        {
+            name = powellite_ore,
+            subgroup = is_ores,
+            order = i,
+            map_color = {r = 140/255, g = 080/255, b = 020/255, a = 1.000},
+            mining_visualisation_tint = {r = 200/255, g = 130/255, b = 045/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })

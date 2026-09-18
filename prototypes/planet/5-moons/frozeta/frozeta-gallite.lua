@@ -1,5 +1,5 @@
 if mods[secretas_frozeta_mods] then
-    local graphics_gallite = "__TIMSABA__/graphics/icons/angels/resource/gallite/"
+    local graphics_gallite = "__TIMSABA__/graphics/icons/frozeta/gallite/"
 
     -- Gallite ore / Ga + Au + Fe + Cu + Ag + Se
     gallite_ore = "gallite-ore"
@@ -12,41 +12,41 @@ if mods[secretas_frozeta_mods] then
         {
             name = gallite_ore,
             subgroup = is_gallite,
-            --[[icon = graphics_gallite .. gallite_ore .. ".png",
+            icon = graphics_gallite .. gallite_ore .. ".png",
             pictures =
             {
                 {filename = graphics_gallite .. gallite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
                 {filename = graphics_gallite .. gallite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
                 {filename = graphics_gallite .. gallite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
-            },]]
+            },
             order = a
         },
         {
             name = gallite_crushed,
             subgroup = is_gallite,
-            --icon = graphics_gallite .. gallite_crushed .. ".png",
-            --icon_size = 32,
+            icon = graphics_gallite .. gallite_crushed .. ".png",
+            icon_size = 32,
             order = b
         },
         {
             name = gallite_chunks,
             subgroup = is_gallite,
-            --icon = graphics_gallite .. gallite_chunks .. ".png",
-            --icon_size = 32,
+            icon = graphics_gallite .. gallite_chunks .. ".png",
+            icon_size = 32,
             order = c
         },
         {
             name = gallite_crystals,
             subgroup = is_gallite,
-            --icon = graphics_gallite .. gallite_crystals .. ".png",
-            --icon_size = 32,
+            icon = graphics_gallite .. gallite_crystals .. ".png",
+            icon_size = 32,
             order = d
         },
         {
             name = gallite_purified,
             subgroup = is_gallite,
-            --icon = graphics_gallite .. gallite_purified .. ".png",
-            --icon_size = 32,
+            icon = graphics_gallite .. gallite_purified .. ".png",
+            icon_size = 32,
             order = e
         }
     })

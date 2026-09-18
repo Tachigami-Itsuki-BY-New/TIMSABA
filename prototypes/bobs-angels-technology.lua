@@ -33,7 +33,9 @@ data:extend
     }
 })
 
-data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack, tech_battery_4}
+if data_technology[tech_electric_energy_accumulators_4] then
+    data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack, tech_battery_4}
+end
 
 table.insert(data_technology[centrifuge_4].prerequisites, tech_stone_smelting_5)
 

@@ -1,4 +1,4 @@
-local graphics_rheniite = "__TIMSABA__/graphics/icons/angels/resource/rheniite/"
+local graphics_rheniite = "__TIMSABA__/graphics/icons/space-age/fulgora/rheniite/"
 
 -- Rheniite ore / Re + Nb + Cr + W + Mo + V
 rheniite_ore = "rheniite-ore"
@@ -11,41 +11,41 @@ TIMSABA.functions.create_items
     {
         name = rheniite_ore,
         subgroup = is_rheniite,
-        --[[icon = graphics_rheniite .. rheniite_ore .. ".png",
+        icon = graphics_rheniite .. rheniite_ore .. ".png",
         pictures =
         {
             {filename = graphics_rheniite .. rheniite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
             {filename = graphics_rheniite .. rheniite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
             {filename = graphics_rheniite .. rheniite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
-        },]]
+        },
         order = a
     },
     {
         name = rheniite_crushed,
         subgroup = is_rheniite,
-        --icon = graphics_rheniite .. rheniite_crushed .. ".png",
-        --icon_size = 32,
+        icon = graphics_rheniite .. rheniite_crushed .. ".png",
+        icon_size = 32,
         order = b
     },
     {
         name = rheniite_chunks,
         subgroup = is_rheniite,
-        --icon = graphics_rheniite .. rheniite_chunks .. ".png",
-        --icon_size = 32,
+        icon = graphics_rheniite .. rheniite_chunks .. ".png",
+        icon_size = 32,
         order = c
     },
     {
         name = rheniite_crystals,
         subgroup = is_rheniite,
-        --icon = graphics_rheniite .. rheniite_crystals .. ".png",
-        --icon_size = 32,
+        icon = graphics_rheniite .. rheniite_crystals .. ".png",
+        icon_size = 32,
         order = d
     },
     {
         name = rheniite_purified,
         subgroup = is_rheniite,
-        --icon = graphics_rheniite .. rheniite_purified .. ".png",
-        --icon_size = 32,
+        icon = graphics_rheniite .. rheniite_purified .. ".png",
+        icon_size = 32,
         order = e
     }
 })

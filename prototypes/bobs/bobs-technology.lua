@@ -337,7 +337,25 @@ data:extend
 data:extend
 ({
     {
-        localised_name = {"technology-name.centrifuge-4"},
+        type = technology,
+        name = centrifuge_1,
+        icon = "__bobassembly__/graphics/icons/technology/centrifuge.png",
+        icon_size = 256,
+        prerequisites = {tech_stone_smelting_2},
+        effects = {{type = unlock_recipe, recipe = centrifuge_1}},
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
         type = technology,
         name = centrifuge_4,
         icon = "__bobassembly__/graphics/icons/technology/centrifuge.png",

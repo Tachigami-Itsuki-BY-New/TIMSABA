@@ -699,9 +699,9 @@ mixing_furnace_recipe(electric_mixing_furnace_3, advanced_processing_unit, elect
 
 local centrifuges =
 {
-    {name = centrifuge_1, crafting_speed = 1, energy_usage = 240, order = a, localised_name = {"entity-name.centrifuge-1"}},
-    {name = centrifuge_2, crafting_speed = 2, energy_usage = 480, order = b, localised_name = {"entity-name.centrifuge-2"}},
-    {name = centrifuge_3, crafting_speed = 3, energy_usage = 720, order = c, localised_name = {"entity-name.centrifuge-3"}}
+    {name = centrifuge_1, crafting_speed = 1, energy_usage = 240, order = a},
+    {name = centrifuge_2, crafting_speed = 2, energy_usage = 480, order = b},
+    {name = centrifuge_3, crafting_speed = 3, energy_usage = 720, order = c}
 }
 for _, BUILD in pairs(centrifuges) do
     data_item[BUILD.name].order = BUILD.order
@@ -709,7 +709,6 @@ for _, BUILD in pairs(centrifuges) do
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].order = BUILD.order
     data_recipe[BUILD.name].energy_required = 16
-    data_assembling[BUILD.name].localised_name = BUILD.localised_name
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed

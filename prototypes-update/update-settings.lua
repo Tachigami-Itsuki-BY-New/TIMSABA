@@ -188,7 +188,40 @@ function bobmods.logistics.set_pipe_distance(pipe, level)
     end
 end
 
-if settings.startup[setting_rebalance_belts_and_pipes].value == false then
+if settings.startup[setting_rebalance_belts_and_pipes].value then
+    data_pipe_to_ground[iron_pipe_to_ground].max_distance = 8
+    data_pipe_to_ground[copper_pipe_to_ground].max_distance = 8
+    data_pipe_to_ground[stone_pipe_to_ground].max_distance = 8
+    if mods[tellus_mods] then
+        data_pipe_to_ground[orange_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[blue_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[yellow_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[magenta_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[green_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[red_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[cyan_pipe_to_ground].max_distance = 8
+        data_pipe_to_ground[black_pipe_to_ground].max_distance = 8
+    end
+    data_pipe_to_ground[bronze_pipe_to_ground].max_distance = 16
+    data_pipe_to_ground[steel_pipe_to_ground].max_distance = 16
+    data_pipe_to_ground[plastic_pipe_to_ground].max_distance = 24
+    data_pipe_to_ground[brass_pipe_to_ground].max_distance = 24
+    if mods[muluna_mods] then
+        data_pipe_to_ground[aluminium_pipe_to_ground].max_distance = 24
+    end
+    data_pipe_to_ground[titanium_pipe_to_ground].max_distance = 32
+    data_pipe_to_ground[ceramic_pipe_to_ground].max_distance = 32
+    data_pipe_to_ground[tungsten_pipe_to_ground].max_distance = 32
+    if mods[lignumis_mods] then
+        data_pipe_to_ground[gold_pipe_to_ground].max_distance = 32
+    end
+    data_pipe_to_ground[nitinol_pipe_to_ground].max_distance = 40
+    data_pipe_to_ground[copper_tungsten_pipe_to_ground].max_distance = 40
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].max_distance = 48
+    if mods[paracelsin_mods] then
+        data_pipe_to_ground[galvanized_pipe_to_ground].max_distance = 48
+    end
+else
     data_pipe_to_ground[iron_pipe_to_ground].max_distance = 10
     data_pipe_to_ground[copper_pipe_to_ground].max_distance = 10
     data_pipe_to_ground[stone_pipe_to_ground].max_distance = 10

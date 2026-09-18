@@ -329,6 +329,5 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = ammonium_perrhenate
-    },
-    -- CASTING
+    }
 })

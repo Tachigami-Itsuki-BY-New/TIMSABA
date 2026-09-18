@@ -67,7 +67,7 @@ data_recipe[casting_copper].energy_required = 4
 data_recipe[casting_copper].ingredients[1].amount = 60
 data_recipe[casting_copper].results[1].amount = 4
 
--- INTERMEDIATES
+-- INTERMEDIATE
 local casting_iron_rod = "casting-iron-stick"
 data_recipe[casting_iron_rod].localised_name = {"recipe-name.casting-recipe", {"item-name." .. iron_rod}}
 data_recipe[casting_iron_rod].subgroup = is_vulcanus_rod

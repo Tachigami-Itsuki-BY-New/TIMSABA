@@ -60,7 +60,8 @@ if mods[muria_mods] then
         "casting-pickled-" .. iron_gear_wheel,
         "casting-pickled-" .. iron_rod,
         "casting-pickled-" .. copper_cable,
-        "pickled-casting"
+        "pickled-casting",
+        "explosive-shothun-shell"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

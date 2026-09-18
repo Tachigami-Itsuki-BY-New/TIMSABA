@@ -27,10 +27,6 @@ setting_horogon_production_multiplier = "setting-zh-horogon-production-multiplie
 setting_horogon_mech_armor_technology_cost = "setting-zi-horogon-mech-armor-technology-cost"
 setting_horogon_power_armor_chain_from_mech = "setting-zj-horogon-power-armor-chain-from-mech"
 
-if angelsmods and angelsmods.trigger then
-    angelsmods.trigger.early_sintering_oven = settings.startup[setting_early_sintering_oven].value
-end
-
 -- BOBS
 setting_bobmods_power_steam = "bobmods-power-steam"
 setting_bobmods_power_fluidgenerator = "bobmods-power-fluidgenerator"

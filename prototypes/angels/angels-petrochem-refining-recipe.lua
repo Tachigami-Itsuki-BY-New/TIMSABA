@@ -1056,6 +1056,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- CALCIUM
+calcium_sulfate_from_ammonium_sulfate_solution = "calcium-sulfate-from-ammonium-sulfate-solution"
 lime_from_calcium_hydroxide = "lime-from-calcium-hydroxide"
 calcium_hydroxide_from_calcium_cyanamide = "calcium-hydroxide-from-calcium-cyanamide"
 limestone_from_calcium_cyanamide = "limestone-from-calcium-cyanamide"
@@ -1068,7 +1069,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_hydroxide, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels),
         order = b,
-        -- Ca(OH)₂ + H₂SO₄ --> CaSO₄ + 2H₂O
+        -- Ca(OH)₂(s) + H₂SO₄(l) --> CaSO₄(s) + 2H₂O(l)
         ingredients =
         {
             {type = item, name = calcium_hydroxide, amount = 4},
@@ -1078,6 +1079,26 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = calcium_sulfate_angels, amount = 4},
             {type = fluid, name = water_purified_angels, amount = 60} -- 120
+        },
+        main_product = calcium_sulfate_angels
+    },
+    {
+        name = calcium_sulfate_from_ammonium_sulfate_solution,
+        categories = {chemistry},
+        subgroup = is_calcium,
+        icons = THREE_D_I(ammonium_sulfate_solution, nil, calcium_hydroxide, calcium_sulfate_angels, ammonia_angels, steam),
+        order = b_a,
+        -- (NH₄)₂SO₄(aq) + Ca(OH)₂(s) --> CaSO₄(s) + 2NH₃(g) + 2H₂O(g)
+        ingredients =
+        {
+            {type = fluid, name = ammonium_sulfate_solution, amount = 60},
+            {type = item, name = calcium_hydroxide, amount = 4}
+        },
+        results =
+        {
+            {type = item, name = calcium_sulfate_angels, amount = 4},
+            {type = fluid, name = ammonia_angels, amount = 60}, -- 120
+            {type = fluid, name = steam, amount = 60} -- 120
         },
         main_product = calcium_sulfate_angels
     },

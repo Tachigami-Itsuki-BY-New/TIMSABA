@@ -12,9 +12,9 @@ if mods[secretas_frozeta_mods] then
             localised_description = {"technology-description.angels-ore-crushing"},
             type = technology,
             name = tech_gallite_processing_1,
-            icon = tech_error_png,--graphics_gallite_tech,
+            icon = graphics_gallite_tech,
             icon_size = 256,
-            prerequisites = {},
+            prerequisites = {steam_recycler},
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_ore .. _sorting_stone},
@@ -44,7 +44,7 @@ if mods[secretas_frozeta_mods] then
             localised_description = {"technology-description.angels-ore-floatation"},
             type = technology,
             name = tech_gallite_processing_2,
-            icon = tech_error_png,--graphics_gallite_tech,
+            icon = graphics_gallite_tech,
             icon_size = 256,
             prerequisites = {tech_gallite_processing_1, cryogenic_science_pack},
             effects =
@@ -76,7 +76,7 @@ if mods[secretas_frozeta_mods] then
             localised_description = {"technology-description.angels-ore-leaching"},
             type = technology,
             name = tech_gallite_processing_3,
-            icon = tech_error_png,--graphics_gallite_tech,
+            icon = graphics_gallite_tech,
             icon_size = 256,
             prerequisites = {tech_gallite_processing_2, promethium_science_pack},
             effects =
@@ -108,7 +108,7 @@ if mods[secretas_frozeta_mods] then
             localised_description = {"technology-description.angels-ore-refining"},
             type = technology,
             name = tech_gallite_processing_4,
-            icon = tech_error_png,--graphics_gallite_tech,
+            icon = graphics_gallite_tech,
             icon_size = 256,
             prerequisites = {tech_gallite_processing_3},
             effects =

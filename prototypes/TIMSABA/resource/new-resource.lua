@@ -24,19 +24,44 @@ data:extend({fluorite_particle, borax_particle, carnallite_particle, fluorapatit
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = fluorite_angels, subgroup = is_calcium, icon_size = 32, order = b, map_color = {r = 120/255, g = 145/255, b = 030/255, a = 1.000}, mining_visualisation_tint = {r = 175/255, g = 210/255, b = 045/255, a = 1.000}},
+        {
+            name = fluorite_angels,
+            subgroup = is_calcium,
+            icon_size = 32,
+            order = b,
+            map_color = {r = 120/255, g = 145/255, b = 030/255, a = 1.000},
+            mining_visualisation_tint = {r = 175/255, g = 210/255, b = 045/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     ),
     TIMSABA.functions.create_resource(
-        {name = borax, subgroup = is_boron, order = a, map_color = {r = 150/255, g = 155/255, b = 160/255, a = 1.000}, mining_visualisation_tint = {r = 220/255, g = 225/255, b = 230/255, a = 1.000}},
+        {
+            name = borax,
+            subgroup = is_boron,
+            order = a,
+            map_color = {r = 150/255, g = 155/255, b = 160/255, a = 1.000},
+            mining_visualisation_tint = {r = 220/255, g = 225/255, b = 230/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     ),
     TIMSABA.functions.create_resource(
-        {name = carnallite, subgroup = is_potassium, order = a, map_color = {r = 110/255, g = 065/255, b = 055/255, a = 1.000}, mining_visualisation_tint = {r = 175/255, g = 110/255, b = 095/255, a = 1.000}},
+        {
+            name = carnallite,
+            subgroup = is_potassium,
+            order = a,
+            map_color = {r = 110/255, g = 065/255, b = 055/255, a = 1.000},
+            mining_visualisation_tint = {r = 175/255, g = 110/255, b = 095/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     ),
     TIMSABA.functions.create_resource(
-        {name = fluorapatite, subgroup = is_phosphorus, order = a, map_color = {r = 120/255, g = 120/255, b = 100/255, a = 1.000}, mining_visualisation_tint = {r = 195/255, g = 195/255, b = 165/255, a = 1.000}},
+        {
+            name = fluorapatite,
+            subgroup = is_phosphorus,
+            order = a,
+            map_color = {r = 120/255, g = 120/255, b = 100/255, a = 1.000},
+            mining_visualisation_tint = {r = 195/255, g = 195/255, b = 165/255, a = 1.000}
+        },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })

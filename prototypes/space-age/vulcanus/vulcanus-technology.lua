@@ -137,7 +137,7 @@ data:extend
         localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
         name = tech_samarskite_processing_1,
-        icon = tech_error_png,--graphics_samarskite_tech,
+        icon = graphics_samarskite_tech,
         icon_size = 256,
         prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
         effects =
@@ -157,7 +157,7 @@ data:extend
         localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
         name = tech_samarskite_processing_2,
-        icon = tech_error_png,--graphics_samarskite_tech,
+        icon = graphics_samarskite_tech,
         icon_size = 256,
         prerequisites = {metallurgic_science_pack, tech_samarskite_processing_1},
         effects =
@@ -186,7 +186,7 @@ data:extend
         localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
         name = tech_samarskite_processing_3,
-        icon = tech_error_png,--graphics_samarskite_tech,
+        icon = graphics_samarskite_tech,
         icon_size = 256,
         prerequisites = {cryogenic_science_pack, tech_samarskite_processing_2},
         effects =
@@ -218,7 +218,7 @@ data:extend
         localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
         name = tech_samarskite_processing_4,
-        icon = tech_error_png,--graphics_samarskite_tech,
+        icon = graphics_samarskite_tech,
         icon_size = 256,
         prerequisites = {promethium_science_pack, tech_samarskite_processing_3},
         effects =
@@ -311,7 +311,8 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {metallurgic_science_pack, 1}
+                {metallurgic_science_pack, 1},
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }

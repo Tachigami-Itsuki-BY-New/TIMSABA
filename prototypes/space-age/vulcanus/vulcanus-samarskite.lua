@@ -1,4 +1,4 @@
-local graphics_samarskite = "__TIMSABA__/graphics/icons/angels/resource/samarskite-ore/"
+local graphics_samarskite = "__TIMSABA__/graphics/icons/space-age/vulcanus/samarskite-ore/"
 
 -- Samarskite ore / Nb + Ho + Fe + Mn + U + Th
 samarskite_ore = "samarskite-ore"
@@ -11,41 +11,41 @@ TIMSABA.functions.create_items
     {
         name = samarskite_ore,
         subgroup = is_samarskite,
-        --[[icon = graphics_samarskite .. samarskite_ore .. ".png",
+        icon = graphics_samarskite .. samarskite_ore .. ".png",
         pictures =
         {
             {filename = graphics_samarskite .. samarskite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
             {filename = graphics_samarskite .. samarskite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
             {filename = graphics_samarskite .. samarskite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
-        },]]
+        },
         order = a
     },
     {
         name = samarskite_crushed,
         subgroup = is_samarskite,
-        --icon = graphics_samarskite .. samarskite_crushed .. ".png",
-        --icon_size = 32,
+        icon = graphics_samarskite .. samarskite_crushed .. ".png",
+        icon_size = 32,
         order = b
     },
     {
         name = samarskite_chunks,
         subgroup = is_samarskite,
-        --icon = graphics_samarskite .. samarskite_chunks .. ".png",
-        --icon_size = 32,
+        icon = graphics_samarskite .. samarskite_chunks .. ".png",
+        icon_size = 32,
         order = c
     },
     {
         name = samarskite_crystals,
         subgroup = is_samarskite,
-        --icon = graphics_samarskite .. samarskite_crystals .. ".png",
-        --icon_size = 32,
+        icon = graphics_samarskite .. samarskite_crystals .. ".png",
+        icon_size = 32,
         order = d
     },
     {
         name = samarskite_purified,
         subgroup = is_samarskite,
-        --icon = graphics_samarskite .. samarskite_purified .. ".png",
-        --icon_size = 32,
+        icon = graphics_samarskite .. samarskite_purified .. ".png",
+        icon_size = 32,
         order = e
     }
 })

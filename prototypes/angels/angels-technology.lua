@@ -14,7 +14,8 @@ data:extend
             {type = unlock_recipe, recipe = ore_leaching_plant_4},
             {type = unlock_recipe, recipe = ore_refinery_3},
             {type = unlock_recipe, recipe = ore_sorting_facility_6},
-            {type = unlock_recipe, recipe = electro_whinning_cell_3}
+            {type = unlock_recipe, recipe = electro_whinning_cell_3},
+            {type = unlock_recipe, recipe = purified_catalyst}
         },
         unit =
         {
@@ -42,8 +43,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = ore_refinery_4},
-            {type = unlock_recipe, recipe = electro_whinning_cell_4},
-            {type = unlock_recipe, recipe = purified_catalyst}
+            {type = unlock_recipe, recipe = electro_whinning_cell_4}
         },
         unit =
         {

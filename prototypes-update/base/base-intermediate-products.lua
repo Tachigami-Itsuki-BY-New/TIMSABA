@@ -545,17 +545,17 @@ data_item[thorium_232_bob].stack_size = 200
 data_item[muon_fusion_catalyst].subgroup = is_nuclear_item
 data_item[muon_fusion_catalyst].order = i
 
-local uranium_processing = "uranium-processing"
 data_recipe[uranium_processing].subgroup = is_nuclear_recipe
-data_recipe[uranium_processing].icons = THREE_R_I(uranium_ore, uranium_235, uranium_238)
+data_recipe[uranium_processing].icons = FOUR_R_I(uranium_fluoride_VI_gas, uranium_234, uranium_235, uranium_238)
 data_recipe[uranium_processing].order = a_a
-data_recipe[uranium_processing].energy_required = 8
-data_recipe[uranium_processing].ingredients[1].amount = 8
+data_recipe[uranium_processing].energy_required = 4 -- UF₆(g)(234/235/238) --> U-234 + U-235 + U-238 + F₂(g)
+data_recipe[uranium_processing].ingredients = {{type = fluid, name = uranium_fluoride_VI_gas, amount = 120}}
 data_recipe[uranium_processing].results =
 {
-    {type = item, name = uranium_234, amount = 2, independent_probability = 0.0055},
-    {type = item, name = uranium_235, amount = 2, independent_probability = 0.007},
-    {type = item, name = uranium_238, amount = 2, independent_probability = 0.9875}
+    {type = item, name = uranium_234, amount = 8, independent_probability = 0.0055},
+    {type = item, name = uranium_235, amount = 8, independent_probability = 0.0070},
+    {type = item, name = uranium_238, amount = 8, independent_probability = 0.9875},
+    {type = fluid, name = fluorine, amount = 120} -- 360
 }
 
 local plutonium_synthesis = "angels-plutonium-synthesis"
@@ -682,7 +682,8 @@ data_recipe[uranium_234_fuel_cell].ingredients =
 {
     {type = item, name = uranium_234, amount = 1},
     {type = item, name = uranium_238, amount = 128},
-    {type = item, name = lead_plate_bob, amount = 64}
+    {type = item, name = lead_plate_bob, amount = 64},
+    {type = item, name = uranium_238_plate, amount = 64}
 }
 data_recipe[uranium_234_fuel_cell].results[1].amount = 64
 
@@ -698,7 +699,9 @@ data_recipe[uranium_235_fuel_cell].ingredients =
 {
     {type = item, name = uranium_235, amount = 1},
     {type = item, name = uranium_238, amount = 32},
-    {type = item, name = lead_plate_bob, amount = 16}
+    {type = item, name = lead_plate_bob, amount = 16},
+    {type = item, name = uranium_238_plate, amount = 16}
+    
 }
 data_recipe[uranium_235_fuel_cell].results[1].amount = 16
 data_recipe[uranium_235_fuel_cell].allow_productivity = true
@@ -745,7 +748,8 @@ data_recipe[mixed_oxide_fuel_cell].ingredients =
 {
     {type = item, name = plutonium_239_bob, amount = 2},
     {type = item, name = uranium_238, amount = 32},
-    {type = item, name = lead_plate_bob, amount = 16}
+    {type = item, name = lead_plate_bob, amount = 16},
+    {type = item, name = uranium_238_plate, amount = 16}
 }
 data_recipe[mixed_oxide_fuel_cell].results[1].amount = 16
 
@@ -808,7 +812,8 @@ data_recipe[thorium_fuel_cell].ingredients =
     {type = item, name = thorium_232_bob, amount = 32},
     {type = item, name = plutonium_239_bob, amount = 8},
     {type = item, name = curium_245_angels, amount = 1},
-    {type = item, name = lead_plate_bob, amount = 16}
+    {type = item, name = lead_plate_bob, amount = 16},
+    {type = item, name = uranium_238_plate, amount = 16}
 }
 data_recipe[thorium_fuel_cell].results[1].amount = 16
 
@@ -867,6 +872,7 @@ data_recipe[deuterium_fuel_cell].ingredients =
 {
     {type = item, name = muon_fusion_catalyst, amount = 1},
     {type = item, name = lead_plate_bob, amount = 32},
+    {type = item, name = uranium_238_plate, amount = 32},
     {type = fluid, name = deuterium_angels, amount = 480}
 }
 data_recipe[deuterium_fuel_cell].allow_productivity = true

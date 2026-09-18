@@ -117,9 +117,9 @@ local table_of_chemical_elements =
     --Fr = {{, , }, {, , }, {, , }}, -- Francium
     --Ra = {{, , }, {, , }, {, , }}, -- Radium
     --Ac = {{, , }, {, , }, {, , }}, -- Actinium
-    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.0.0
+    Th = {{168, 025, 030}, {139, 021, 023}, {098, 020, 021}}, -- Thorium
     --Pa = {{, , }, {, , }, {, , }}, -- Protactinium
-    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.0.0
+    U  = {{116, 197, 028}, {096, 166, 022}, {089, 154, 015}}, -- Uranium
     --Np = {{, , }, {, , }, {, , }}, -- Neptunium
     --Pu = {{, , }, {, , }, {, , }}, -- Plutonium
     --Am = {{, , }, {, , }, {, , }}, -- Americium
@@ -1002,6 +1002,11 @@ function TIMSABA.functions.delete_prototypes(replacements)
         data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] = nil
         data_recipe[unpack_cargo_crate_ .. name] = nil
         data_recipe[maraxsis_fluid_void_ .. name] = nil
+        data_recipe[item_ .. name .. _incineration] = nil
+        data_recipe[ammo_ .. name .. _incineration] = nil
+        data_recipe[repair_tool_ .. name .. _incineration] = nil
+        data_recipe[module_ .. name .. _incineration] = nil
+        data_recipe[capsule_ .. name .. _incineration] = nil
         data_recipe[item_ .. name .. _barrel_incineration] = nil
         data_recipe[name .. _outlet] = nil
         data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] = nil
@@ -1049,6 +1054,13 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
         data_recipe[name .. _recycling] = nil
         data_recipe[item_ .. name .. _panglia_crushing] = nil
         data_recipe[yeet_item_ .. name] = nil
+        data_recipe[name .. _incineration] = nil
+        data_recipe[item_ .. name .. _incineration] = nil
+        data_recipe[ammo_ .. name .. _incineration] = nil
+        data_recipe[ammo_ .. name .. _incineration] = nil
+        data_recipe[repair_tool_ .. name .. _incineration] = nil
+        data_recipe[module_ .. name .. _incineration] = nil
+        data_recipe[capsule_ .. name .. _incineration] = nil
     end
 end
 
@@ -1058,6 +1070,7 @@ function TIMSABA.functions.delete_duplicated_fluids(replacements)
         data_recipe[yeet_item_ .. name .. _barrel] = nil
         data_recipe[maraxsis_fluid_void_ .. name] = nil
         data_recipe[name .. _outlet] = nil
+        data_recipe[name .. _flaring] = nil
     end
 end
 

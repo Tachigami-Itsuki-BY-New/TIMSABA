@@ -69,7 +69,7 @@ data_recipe[uranium_rounds_magazine].energy_required = 1
 data_recipe[uranium_rounds_magazine].ingredients =
 {
     {type = item, name = piercing_rounds_magazine, amount = 1},
-    {type = item, name = uranium_238, amount = 2},
+    {type = item, name = uranium_238_plate, amount = 2},
     {type = item, name = brass_plate_bob, amount = 2}
 }
 data_recipe[uranium_rounds_magazine].results[1].amount = 2
@@ -138,7 +138,7 @@ if mods[bobwarfare] then
     data_recipe[uranium_shotgun_shell].ingredients =
     {
         {type = item, name = piercing_shotgun_shell, amount = 2},
-        {type = item, name = uranium_238, amount = 4},
+        {type = item, name = uranium_238_plate, amount = 4},
         {type = item, name = brass_plate_bob, amount = 2}
     }
     data_recipe[uranium_shotgun_shell].results[1].amount = 2
@@ -222,6 +222,7 @@ data_recipe[atomic_rocket].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 8},
     {type = item, name = uranium_235, amount = 16},
+    {type = item, name = uranium_238_plate, amount = 32},
     {type = item, name = rocket_booster_angels, amount = 1},
     {type = item, name = explosives, amount = 8}
 }
@@ -235,6 +236,7 @@ if mods[shattered_mods] then
     {
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = plutonium_239_shattered, amount = 32},
+        {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = rocket_booster_angels, amount = 1},
         {type = item, name = explosives, amount = 8}
     }
@@ -244,6 +246,7 @@ else
     {
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = plutonium_239_bob, amount = 32},
+        {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = rocket_booster_angels, amount = 1},
         {type = item, name = explosives, amount = 8}
     }
@@ -257,6 +260,7 @@ data_recipe[atomic_rocket_3].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 16},
     {type = item, name = muon_fusion_catalyst, amount = 1},
+    {type = item, name = uranium_238_plate, amount = 32},
     {type = item, name = rocket_booster_angels, amount = 2},
     {type = item, name = explosives, amount = 16},
     {type = fluid, name = deuterium_angels, amount = 960}
@@ -304,8 +308,10 @@ for _, name in pairs(cannon_shells) do
     data_recipe[name].energy_required = 8
 end
 
+data_recipe[uranium_cannon_shell].ingredients[2].name = uranium_238_plate
 data_recipe[uranium_cannon_shell].ingredients[2].amount = 8
 
+data_recipe[uranium_explosive_cannon_shell].ingredients[2].name = uranium_238_plate
 data_recipe[uranium_explosive_cannon_shell].ingredients[2].amount = 8
 
 data_ammo[artillery_shell].stack_size = 32
@@ -333,6 +339,7 @@ if mods[bobwarfare] then
     {
         {type = item, name = artillery_shell, amount = 1},
         {type = item, name = plutonium_239_bob, amount = 32},
+        {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = tungsten_carbide_plate_bob, amount = 4},
         {type = item, name = calcite, amount = 1}
     }

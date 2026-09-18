@@ -3,7 +3,7 @@ require("prototypes.global-name.global-name-items")
 require("prototypes.global-name.global-name-fluids")
 require("prototypes.global-name.global-name-recipe")
 require("prototypes.global-name.global-name-mods")
-require("prototypes.prototypes-setting")
+require("prototypes.global-name.global-name-setting")
 
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")
@@ -12,6 +12,8 @@ require("lib.TIMSABA-functions")
 require("lib.barreling-and-void")
 
 require("prototypes.planet-order")
+
+require("prototypes.angels.angels-setting")
 
 require("prototypes.base.base-groups")
 require("prototypes.bobs.bobs-groups")
