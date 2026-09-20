@@ -65,8 +65,6 @@ sortiong_ore_recipe_false(ore_rubyte, e)
 sortiong_ore_recipe_false(ore_bobmonium, f)
 sortiong_ore_recipe_false(ore_senaite, g)
 sortiong_ore_recipe_false(ore_franckeite, h)
-sortiong_ore_recipe_false(powellite_ore, i)
-sortiong_ore_recipe_false(molybdenite_ore, j)
 
 TIMSABA.functions.create_recipes
 ({

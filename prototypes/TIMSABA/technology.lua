@@ -17,6 +17,7 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_4},
         effects =
         {
+            {type = unlock_recipe, recipe = powellite_ore .. _sorting_stone},
             {type = unlock_recipe, recipe = powellite_crushed},
             {type = unlock_recipe, recipe = powellite_crushed_sorting}
         },
@@ -145,6 +146,7 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_4},
         effects =
         {
+            {type = unlock_recipe, recipe = molybdenite_ore .. _sorting_stone},
             {type = unlock_recipe, recipe = molybdenite_crushed},
             {type = unlock_recipe, recipe = molybdenite_crushed_sorting}
         },

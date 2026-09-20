@@ -127,6 +127,19 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
+        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. molybdenite_ore}},
+        name = molybdenite_ore .. _sorting_stone,
+        categories = {angels_ore_sorting_5},
+        subgroup = is_ore_sorting,
+        icons = RECYCLING_I(recycling_png, molybdenite_ore),
+        order = j,
+        allow_productivity = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = molybdenite_ore, amount = 4}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
         name = molybdenite_crushed_sorting,
         categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_T1,

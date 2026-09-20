@@ -1,3 +1,6 @@
+-- SPACE AGE
+quality_mods = "quality"
+
 -- MULUNA
 muluna_mods = "planet-muluna"
 planet_muluna = "muluna"

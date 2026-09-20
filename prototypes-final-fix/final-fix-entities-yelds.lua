@@ -33,6 +33,14 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
+local pollution_absorption_multiplier = 2
+
+for _, tree in pairs(data_tree) do
+    if tree.emissions_per_second.pollution then
+        tree.emissions_per_second.pollution = tree.emissions_per_second.pollution / pollution_absorption_multiplier
+    end
+end
+
 local yumako_tree = "yumako-tree"
 data_plant[yumako_tree].minable.results[1].amount = 64
 

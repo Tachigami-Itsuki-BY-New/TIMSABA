@@ -745,8 +745,6 @@ data_technology[tech_ore_crushing].effects =
     {type = unlock_recipe, recipe = ore_bobmonium .. _sorting_stone},
     {type = unlock_recipe, recipe = ore_senaite .. _sorting_stone},
     {type = unlock_recipe, recipe = ore_franckeite .. _sorting_stone},
-    {type = unlock_recipe, recipe = powellite_ore .. _sorting_stone},
-    {type = unlock_recipe, recipe = molybdenite_ore .. _sorting_stone},
     {type = unlock_recipe, recipe = stone_crushed_angels},
     {type = unlock_recipe, recipe = crushed_stone_sorting_1},
     {type = unlock_recipe, recipe = calcium_from_crushed_stone},
