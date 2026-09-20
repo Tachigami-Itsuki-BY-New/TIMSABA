@@ -126,6 +126,19 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
+        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. powellite_ore}},
+        name = powellite_ore .. _sorting_stone,
+        categories = {angels_ore_sorting_5},
+        subgroup = is_ore_sorting,
+        icons = RECYCLING_I(recycling_png, powellite_ore),
+        order = i,
+        allow_productivity = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = powellite_ore, amount = 4}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
         name = powellite_crushed_sorting,
         categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_T1,

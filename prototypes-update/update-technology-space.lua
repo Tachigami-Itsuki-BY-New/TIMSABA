@@ -167,6 +167,46 @@ data_technology["asteroid-reprocessing"].unit.ingredients =
     {metallurgic_science_pack, 1}
 }
 
+-- QUALITY
+if mods[quality_mods] then
+    tech_epic_quality = "epic-quality"
+    if data_module[quality_module_6] then
+        data_technology[tech_epic_quality].prerequisites = {quality_module_6}
+    else
+        data_technology[tech_epic_quality].prerequisites = {quality_module_3}
+    end
+
+    data_technology[tech_epic_quality].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    }
+
+    tech_legendary_quality = "legendary-quality"
+    if data_module[quality_module_7] then
+        data_technology[tech_epic_quality].prerequisites = {quality_module_7}
+    end
+
+    data_technology[tech_epic_quality].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+end
+
 -- MODS
 if mods["AsteroidBelt"] then
     local space_discovery_asteroid_belt = "space-discovery-asteroid-belt"
@@ -180,8 +220,8 @@ if mods["AsteroidBelt"] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {electromagnetic_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 end

@@ -41,7 +41,9 @@ if mods[lignumis_mods] then
         "basic-storage-chest",
         "basic-roboport",
         "basic-repair-pack-copper",
-        "wood-lab-copper"
+        "wood-lab-copper",
+        electronic_circuit .. "-iron",
+        "experienced-quality-assembling-3"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

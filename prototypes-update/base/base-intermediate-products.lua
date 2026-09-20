@@ -746,7 +746,7 @@ data_recipe[mixed_oxide_fuel_cell].order = a
 data_recipe[mixed_oxide_fuel_cell].energy_required = 64
 data_recipe[mixed_oxide_fuel_cell].ingredients =
 {
-    {type = item, name = plutonium_239_bob, amount = 2},
+    {type = item, name = plutonium_239_bob, amount = 1},
     {type = item, name = uranium_238, amount = 32},
     {type = item, name = lead_plate_bob, amount = 16},
     {type = item, name = uranium_238_plate, amount = 16}

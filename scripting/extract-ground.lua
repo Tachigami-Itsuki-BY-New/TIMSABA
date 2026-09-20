@@ -55,7 +55,7 @@ local function on_entity_built(event)
         entity.set_recipe("extract-ground-water")
         entity.recipe_locked = true
     end
-    entity.active = true
+    entity.disabled_by_script = false
 end
 
 return {on_entity_built = on_entity_built}

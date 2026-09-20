@@ -992,7 +992,9 @@ if mods[moshine_mods] then
         data_technology["big-solar-energy"].prerequisites = {"moshine-tech-ai-tier-2", tech_solar_energy_4}
     end
 
-    data_technology["electric-energy-big-accumulators"].prerequisites = {"moshine-tech-ai-tier-6", tech_electric_substation_4, tech_electric_energy_accumulators_4}
+    if settings.startup[setting_bobmods_power_accumulators].value then
+        data_technology["electric-energy-big-accumulators"].prerequisites = {"moshine-tech-ai-tier-6", tech_electric_substation_4, tech_electric_energy_accumulators_4}
+    end
 
     data_recipe[promethium_science_pack].ingredients[1].name = promethium_ore
     data_recipe[promethium_science_pack].ingredients[1].amount = 128

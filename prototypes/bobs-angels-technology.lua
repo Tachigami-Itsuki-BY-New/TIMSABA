@@ -33,7 +33,7 @@ data:extend
     }
 })
 
-if data_technology[tech_electric_energy_accumulators_4] then
+if settings.startup[setting_bobmods_power_accumulators].value then
     data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack, tech_battery_4}
 end
 
