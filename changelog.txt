@@ -37,6 +37,7 @@ Date: ??.??.2026
           2. Stannium Branch.
           3. Purified catalyst.
     - [All] Added new recipes and technologies.
+    - [All] Added new addon: Early Quality.
 
   Changes:
     - [All] Moved from the Metallurgy Smelting Item-Group to the Petrochem Refining Item-Group the Lithium, Boron, Potassium, and Phosphorus branches.
@@ -59,6 +60,7 @@ Date: ??.??.2026
     - [All] Removed the Plutonium-239 from the Thorium Ore.
     - [All] Adjusted the balance of some recipes.
     - [All] Improved parameters for logistics and construction drones.
+    - [All] Adjusted for all "data.raw.tree" and "data.raw.plant" pollution absorption.
 
   Modding:
     - [Mods] Removed "MadClown01's Nuclear Extension" mod from the optional dependencies.

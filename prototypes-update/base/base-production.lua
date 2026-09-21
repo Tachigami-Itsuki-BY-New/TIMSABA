@@ -570,8 +570,6 @@ local heat_pipes =
 }
 for _, BUILD in pairs(heat_pipes) do
     data_item[BUILD.name].stack_size = 200
-    data_recipe[BUILD.name].ingredients[1].amount = 1
-    data_recipe[BUILD.name].ingredients[2].amount = 2
     data_heat_pipe[BUILD.name].localised_name = BUILD.localised_name
     data_heat_pipe[BUILD.name].localised_description = BUILD.localised_description
     data_heat_pipe[BUILD.name].heat_buffer.max_temperature = BUILD.max_temperature
@@ -579,6 +577,17 @@ for _, BUILD in pairs(heat_pipes) do
     data_heat_pipe[BUILD.name].heat_buffer.max_transfer = (BUILD.specific_heat * 5000) .. kW
     data_heat_pipe[BUILD.name].heat_buffer.minimum_glow_temperature = 250
 end
+local function heat_exchanger_recipe(name, plate_1, plate_2)
+    data_recipe[name].ingredients =
+    {
+        {type = item, name = plate_1, amount = 1},
+        {type = item, name = plate_2, amount = 1}
+    }
+end
+heat_exchanger_recipe(heat_pipe_1, nickel_plate_bob, aluminium_plate_bob)
+heat_exchanger_recipe(heat_pipe_2, cobalt_steel_plate_bob, silver_plate_bob)
+heat_exchanger_recipe(heat_pipe_3, tungsten_plate_bob, gold_plate_bob)
+heat_exchanger_recipe(heat_pipe_4, molybdenum_plate, platinum_plate)
 
 local heat_exchangers =
 {
@@ -609,10 +618,10 @@ local function heat_exchanger_recipe(name, pipe, heat_pipe, heat_exchanger, plat
         {type = item, name = plate,          amount = 8}
     }
 end
-heat_exchanger_recipe(heat_exchanger_1, steel_pipe,           heat_pipe_1, boiler_2,         steel_plate)
-heat_exchanger_recipe(heat_exchanger_2, brass_pipe,           heat_pipe_2, heat_exchanger_1, brass_plate_bob)
-heat_exchanger_recipe(heat_exchanger_3, tungsten_pipe,        heat_pipe_3, heat_exchanger_2, tungsten_plate_bob)
-heat_exchanger_recipe(heat_exchanger_4, copper_tungsten_pipe, heat_pipe_4, heat_exchanger_3, copper_tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_1, brass_pipe,              heat_pipe_1, boiler_3,         brass_plate_bob)
+heat_exchanger_recipe(heat_exchanger_2, tungsten_pipe,           heat_pipe_2, heat_exchanger_1, tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_3, copper_tungsten_pipe,    heat_pipe_3, heat_exchanger_2, copper_tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_4, molybdenum_rhenium_pipe, heat_pipe_4, heat_exchanger_3, molybdenum_rhenium_plate)
 
 local furnaces =
 {

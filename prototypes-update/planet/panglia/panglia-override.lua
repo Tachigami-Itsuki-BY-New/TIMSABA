@@ -216,7 +216,9 @@ if mods[panglia_mods] then
         {type = item, name = ore_stiratite, amount = 8},
         {type = item, name = ore_crotinnium, amount = 8},
         {type = item, name = ore_rubyte, amount = 8},
-        {type = item, name = ore_bobmonium, amount = 8}
+        {type = item, name = ore_bobmonium, amount = 8},
+        {type = item, name = ore_senaite, amount = 8},
+        {type = item, name = ore_franckeite, amount = 8}
     }
 
     local panglia_universe_precursor = "panglia_universe_precursor"
@@ -569,7 +571,9 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
 
@@ -619,6 +623,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = lead_ore_bob, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end
@@ -728,9 +734,7 @@ if mods[panglia_mods] then
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, independent_probability = 0.5},
         {type = item, name = ore_senaite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = panglite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-        {type = item, name = branbalite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5}
     }
 
     if mods[secretas_frozeta_mods] then

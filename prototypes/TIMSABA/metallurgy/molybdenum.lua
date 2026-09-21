@@ -5,8 +5,8 @@ is_molybdenum = "is-molybdenum"
 local is_molybdenum_chemistry = "is-molybdenum-chemistry"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_molybdenum,           order = r},
-    {name = is_molybdenum_chemistry, order = r_a}
+    {name = is_molybdenum,           order = t},
+    {name = is_molybdenum_chemistry, order = t_a}
 })
 
 -- ITEM

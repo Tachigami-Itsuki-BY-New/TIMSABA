@@ -4,10 +4,12 @@ local graphics_uranium_enrichment = "__TIMSABA__/graphics/icons/angels/metallurg
 -- GROUPS
 is_uranium = "is-uranium"
 local is_uranium_chemistry = "is-uranium-chemistry"
+local is_uranium_235 = "is-uranium-235"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_uranium,           order = o},
-    {name = is_uranium_chemistry, order = o_a}
+    {name = is_uranium,            order = o},
+    {name = is_uranium_chemistry,  order = o_a},
+    {name = is_uranium_235,        order = o_b}
 })
 local is_uranium_casting = "is-uranium-casting"
 TIMSABA.functions.create_subgroups(ig_casting, {{name = is_uranium_casting, order = o}})
@@ -66,6 +68,14 @@ TIMSABA.functions.create_items
         icon = graphics_uranium .. uranium_oxide_VI .. ".png",
         order = f
     },
+    -- URANIUM 235
+    {
+        localised_description = show_formula and {chemical_formula, "UF[font=default-tiny-bold]4[/font]-238"} or nil,
+        name = uranium_fluoride_IV_238,
+        subgroup = is_uranium_235,
+        icon = graphics_uranium_enrichment .. uranium_fluoride_IV_238 .. ".png",
+        order = i
+    },
     -- CASTING
     {
         localised_description = show_formula and {chemical_formula, "U-238"} or nil,
@@ -73,14 +83,6 @@ TIMSABA.functions.create_items
         subgroup = is_uranium_casting,
         icon = graphics_uranium .. uranium_238_plate .. ".png",
         order = b
-    },
-    -- INTERMEDIATE PRODUCTS
-    {
-        localised_description = show_formula and {chemical_formula, "UF[font=default-tiny-bold]4[/font]-238"} or nil,
-        name = uranium_fluoride_IV_238,
-        subgroup = is_uranium_235_recipe,
-        icon = graphics_uranium_enrichment .. uranium_fluoride_IV_238 .. ".png",
-        order = i
     }
 })
 
@@ -319,7 +321,7 @@ TIMSABA.functions.create_recipes
     }
 })
 
--- URANIUM ENRICHMENT
+-- URANIUM 235
 local uranium_fluoride_VI_235_gas_ = "uranium-fluoride-VI-235-gas-"
 uranium_fluoride_VI_235_gas_20pc = "uranium-fluoride-VI-235-gas-20pc"
 uranium_fluoride_VI_235_gas_35pc = "uranium-fluoride-VI-235-gas-35pc"
@@ -335,7 +337,7 @@ local function create_fluid_uranium_fluoride_VI_235_gas(percent, order)
         {
             localised_description = show_formula and {chemical_formula, "UF[font=default-tiny-bold]6[/font]-235"} or nil,
             name = uranium_fluoride_VI_235_gas_ .. percent .. "pc",
-            subgroup = is_uranium_235_recipe,
+            subgroup = is_uranium_235,
             icon = graphics_uranium_enrichment .. uranium_fluoride_VI_235_gas_ .. percent .. "pc.png",
             order = order,
             base_color = TIMSABA.functions.fluid_color("UF6"),
@@ -357,7 +359,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_20pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = a,
         allow_productivity = true,
         energy_required = 16, -- UF₆(g)(234/235/238) --> UF₆-235(g)(20%)
@@ -368,7 +370,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_35pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = b,
         energy_required = 32, -- 8UF₆-235(g)(20%) --> 4-5UF₆-235(g)(35%) + 3-4UF₄-238(s) + 3-4F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_20pc, amount = 120}},
@@ -383,7 +385,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_45pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = c,
         energy_required = 32, -- 8UF₆-235(g)(35%) --> 6UF₆-235(g)(45%) + 2UF₄-238(s) + 2F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_35pc, amount = 120}},
@@ -398,7 +400,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_55pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = d,
         energy_required = 32, -- 8UF₆-235(g)(45%) --> 6-7UF₆-235(g)(55%) + 1-2UF₄-238(s) + 1-2F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_45pc, amount = 120}},
@@ -413,7 +415,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_65pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = e,
         energy_required = 32, -- 8UF₆-235(g)(55%) --> 6-7UF₆-235(g)(65%) + 1-2UF₄-238(s) + 1-2F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_55pc, amount = 120}},
@@ -428,7 +430,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_70pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = f,
         energy_required = 32, -- 8UF₆-235(g)(65%) --> 7-8UF₆-235(g)(70%) + 0-1UF₄-238(s) + 0-1F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_65pc, amount = 120}},
@@ -443,7 +445,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_75pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = g,
         energy_required = 32, -- 8UF₆-235(g)(70%) --> 7-8UF₆-235(g)(75%) + 0-1UF₄-238(s) + 0-1F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_70pc, amount = 120}},
@@ -458,7 +460,7 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_fluoride_VI_235_gas_80pc,
         categories = {angels_centrifuging_3},
-        subgroup = is_uranium_235_recipe,
+        subgroup = is_uranium_235,
         order = h,
         energy_required = 32, -- 8UF₆-235(g)(75%) --> 7-8UF₆-235(g)(80%) + 0-1UF₄-238(s) + 0-1F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_75pc, amount = 120}},
@@ -473,8 +475,8 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_235,
         categories = {angels_centrifuging_3},
-        subgroup = is_nuclear_item,
-        order = b,
+        subgroup = is_uranium,
+        order = e,
         energy_required = 16, -- 8UF₆-235(g)(80%) --> 8U-235(s) + 24F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_80pc, amount = 120}},
         results =
@@ -487,8 +489,8 @@ TIMSABA.functions.create_recipes
     {
         name = uranium_238,
         categories = {angels_centrifuging_3},
-        subgroup = is_nuclear_item,
-        order = c,
+        subgroup = is_uranium,
+        order = f,
         energy_required = 16, -- 8UF₄-238(s) --> 8U-238(s) + 240F₂(g)
         ingredients = {{type = item, name = uranium_fluoride_IV_238, amount = 8}},
         results =

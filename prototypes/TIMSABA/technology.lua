@@ -433,6 +433,95 @@ data:extend
     }
 })
 
+-- THORIUM
+local graphics_thorium_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/thorium/technology/smelting-thorium-tech.png"
+tech_thorium_smelting_1 = "thorium-smelting-1"
+tech_thorium_smelting_2 = "thorium-smelting-2"
+tech_thorium_smelting_3 = "thorium-smelting-3"
+data:extend
+({
+    {
+        localised_name = {"technology-name." .. tech_thorium_smelting_1},
+        localised_description = {"technology-description." .. tech_thorium_smelting_1},
+        type = technology,
+        name = tech_thorium_smelting_1,
+        icon = graphics_thorium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_powder_metallurgy_4, tech_ore_refining},
+        effects =
+        {
+            {type = unlock_recipe, recipe = thorium_oxide_IV},
+            {type = unlock_recipe, recipe = thorium_232_bob}
+        },
+        research_trigger =
+        {
+            type = craft_item,
+            item = thorium_ore_bob,
+            count = 256
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_thorium_smelting_2},
+        localised_description = {"technology-description." .. tech_thorium_smelting_2},
+        type = technology,
+        name = tech_thorium_smelting_2,
+        icon = graphics_thorium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_thorium_smelting_1, tech_ore_processing_4},
+        effects =
+        {
+            {type = unlock_recipe, recipe = thorium_processed},
+            {type = unlock_recipe, recipe = thorium_nitrate_IV_solution},
+            {type = unlock_recipe, recipe = thorium_hydroxide_IV},
+            {type = unlock_recipe, recipe = thorium_oxide_IV_2},
+            {type = unlock_recipe, recipe = ammonium_nitrate_alt},
+            {type = unlock_recipe, recipe = gaseous_nitric_acid},
+            {type = unlock_recipe, recipe = gaseous_nitric_acid_cooling}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    {
+        localised_name = {"technology-name." .. tech_thorium_smelting_3},
+        localised_description = {"technology-description." .. tech_thorium_smelting_3},
+        type = technology,
+        name = tech_thorium_smelting_3,
+        icon = graphics_thorium_smelting_tech,
+        icon_size = 256,
+        prerequisites = {tech_thorium_smelting_2, tech_ore_processing_5},
+        effects =
+        {
+            {type = unlock_recipe, recipe = thorium_pellet},
+            {type = unlock_recipe, recipe = thorium_fluoride_IV}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1}
+            },
+            time = 30
+        }
+    }
+})
+
 -- MOLYBDENUM
 local graphics_molybdenum_smelting_tech = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/smelting-molybdenum-technology.png"
 tech_molybdenum_smelting_1 = "timsaba-molybdenum-smelting-1"

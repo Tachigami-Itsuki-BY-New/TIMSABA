@@ -65,16 +65,13 @@ for _, type_name in pairs(speed_types) do
 end
 
 -- FUEL
--- Функция для безопасного умножения энергетических строк (например, "4MJ", "500kJ")
 local function scale_fuel_value(value_str, multiplier)
-    -- Ищем число (включая дробные) и буквы в конце строки
     local number, unit = string.match(value_str, "([%d%.]+)%s*(%a+)")
     if number and unit then
         local new_number = tonumber(number) / multiplier
-        -- Собираем обратно, округляя до 4 знаков после запятой для красоты
         return string.format("%.4f%s", new_number, unit)
     end
-    return value_str -- Если формат не распознан, возвращаем как было
+    return value_str
 end
 
 local fuel_types = {data_item, data_capsule, data_fluid}
@@ -89,7 +86,6 @@ for _, type_name in pairs(fuel_types) do
 end
 
 -- FLUIDS IN THE RECIPES
--- Функция для обработки списка жидкостей
 local function scale_fluids(list)
     if not list then return end
     for _, entry in pairs(list) do
@@ -102,22 +98,18 @@ local function scale_fluids(list)
     end
 end
 
--- Проходим по всем рецептам Space Age
 for _, recipe in pairs(data_recipe) do
     scale_fluids(recipe.ingredients)
     scale_fluids(recipe.results)
 end
 
 -- FLUIDS IN THE RESOURCE
--- Проходим по всем месторождениям (ресурсам) на карте
 for _, resource in pairs(data_resource) do
     if resource.minable then
-        -- 1. Проверяем стандартную таблицу результатов (results)
         if resource.minable.results then
             for _, entry in pairs(resource.minable.results) do
                 if entry.type == fluid and entry.amount then
                     entry.amount = entry.amount / 0.9375
-                -- Если в моде используется диапазон добычи (минимум/максимум)
                 elseif entry.type == fluid and (entry.amount_min or entry.amount_max) then
                     if entry.amount_min then entry.amount_min = entry.amount_min / 0.9375 end
                     if entry.amount_max then entry.amount_max = entry.amount_max / 0.9375 end

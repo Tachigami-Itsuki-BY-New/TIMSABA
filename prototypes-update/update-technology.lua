@@ -233,8 +233,89 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
 end
 
-data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_brass_processing}
-data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_tungsten_processing}
+data_technology[tech_heat_pipe_1].prerequisites = {tech_nickel_smelting_1, tech_aluminium_smelting_1, chemical_science_pack}
+data_technology[tech_heat_pipe_1].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1}
+}
+
+data_technology[tech_heat_exchanger_1].prerequisites = {boiler_3, tech_heat_pipe_1, tech_brass_processing, chemical_science_pack}
+data_technology[tech_heat_exchanger_1].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1}
+}
+
+data_technology[heat_pipe_2].prerequisites = {tech_heat_pipe_1, tech_cobalt_steel_smelting_1, tech_silver_smelting_1, production_science_pack}
+data_technology[heat_pipe_2].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
+}
+
+data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_tungsten_processing, production_science_pack}
+data_technology[heat_exchanger_2].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
+}
+
+data_technology[heat_pipe_3].prerequisites = {heat_pipe_2, tech_tungsten_smelting_1, tech_gold_smelting_1, utility_science_pack}
+data_technology[heat_pipe_3].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1}
+}
+
+data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_copper_tungsten_processing, utility_science_pack}
+data_technology[heat_exchanger_3].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1}
+}
+
+data_technology[heat_pipe_4].prerequisites = {heat_pipe_3, tech_molybdenum_smelting_1, tech_platinum_smelting_1, space_science_pack}
+data_technology[heat_pipe_4].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1}
+}
+
+data_technology[heat_exchanger_4].prerequisites = {heat_exchanger_3, heat_pipe_4, tech_molybdenum_rhenium_processing, space_science_pack}
+data_technology[heat_exchanger_4].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1}
+}
 
 data_technology[centrifuge_2].localised_name = {"technology-name." .. centrifuge_2}
 data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_processing}
@@ -242,6 +323,13 @@ data_technology[centrifuge_3].localised_name = {"technology-name." .. centrifuge
 data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_copper_tungsten_processing}
 
 data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
+
+data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1}
+data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, tech_advanced_material_processing_2}
+
+data_technology[steel_mixing_furnace].prerequisites = {logistic_science_pack, tech_steel_processing}
+data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, steel_mixing_furnace}
+data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, electric_mixing_furnace_1}
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
@@ -502,17 +590,16 @@ data_technology[tech_uranium_processing].unit =
 }
 data_technology[tech_uranium_processing].research_trigger = nil
 
-data_technology[tech_plutonium_based_power_systems].prerequisites = {"nuclear-fuel-reprocessing", centrifuge_2, utility_science_pack}
+data_technology[tech_plutonium_based_power_systems].prerequisites = {"nuclear-fuel-reprocessing", centrifuge_2}
 data_technology[tech_plutonium_based_power_systems].unit.ingredients =
 {
     {automation_science_pack, 1},
     {logistic_science_pack, 1},
     {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
+    {production_science_pack, 1}
 }
 
-data_technology[tech_thorium_power].prerequisites = {heat_exchanger_2, steam_turbine_2, tech_plutonium_based_power_systems}
+data_technology[tech_thorium_power].prerequisites = {heat_exchanger_2, steam_turbine_2, tech_plutonium_based_power_systems, tech_thorium_smelting_1}
 data_technology[tech_thorium_power].effects =
 {
     {type = unlock_recipe, recipe = thorium_reactor},
@@ -521,6 +608,13 @@ data_technology[tech_thorium_power].effects =
     {type = unlock_recipe, recipe = thorium_fuel_cell},
     {type = unlock_recipe, recipe = thorium_fuel_cell_reprocessing},
     {type = unlock_recipe, recipe = plutonium_breeding}
+}
+data_technology[tech_thorium_power].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
 }
 
 data_technology[tech_deuterium_power].localised_name = {"technology-name.deuterium-power"}
@@ -741,8 +835,6 @@ data_technology[tech_ore_crushing].effects =
     {type = unlock_recipe, recipe = ore_sorting_facility_1},
     {type = unlock_recipe, recipe = ore_jivolite .. _sorting_stone},
     {type = unlock_recipe, recipe = ore_crotinnium .. _sorting_stone},
-    {type = unlock_recipe, recipe = ore_rubyte .. _sorting_stone},
-    {type = unlock_recipe, recipe = ore_bobmonium .. _sorting_stone},
     {type = unlock_recipe, recipe = ore_senaite .. _sorting_stone},
     {type = unlock_recipe, recipe = ore_franckeite .. _sorting_stone},
     {type = unlock_recipe, recipe = stone_crushed_angels},

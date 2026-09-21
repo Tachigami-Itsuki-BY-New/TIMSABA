@@ -233,14 +233,22 @@ if mods[vesta_mods] then
             ingredients =
             {
                 {type = item, name = purified_catalyst, amount = 1},
-                {type = item, name = purified_saphirite, amount = 2},
-                {type = item, name = purified_jivolite, amount = 2},
-                {type = item, name = purified_stiratite, amount = 2},
-                {type = item, name = purified_crotinnium, amount = 2},
-                {type = item, name = purified_rubyte, amount = 2},
-                {type = item, name = purified_bobmonium, amount = 2},
-                {type = item, name = purified_senaite, amount = 2},
-                {type = item, name = purified_franckeite, amount = 2}
+                {type = item, name = purified_saphirite, amount = 1},
+                {type = item, name = purified_jivolite, amount = 1},
+                {type = item, name = purified_stiratite, amount = 1},
+                {type = item, name = purified_crotinnium, amount = 1},
+                {type = item, name = purified_rubyte, amount = 1},
+                {type = item, name = purified_bobmonium, amount = 1},
+                {type = item, name = purified_senaite, amount = 1},
+                {type = item, name = purified_franckeite, amount = 1},
+                {type = item, name = powellite_purified, amount = 1},
+                {type = item, name = molybdenite_purified, amount = 1},
+                {type = item, name = wolframite_purified, amount = 1},
+                {type = item, name = samarskite_purified, amount = 1},
+                {type = item, name = brannerite_purified, amount = 1},
+                {type = item, name = rheniite_purified, amount = 1},
+                {type = item, name = antimonite_purified, amount = 1},
+                {type = item, name = germanite_purified, amount = 1}
             },
             results = {{type = item, name = iridium_ore, amount = 16}},
             main_product = iridium_ore

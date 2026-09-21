@@ -231,6 +231,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- NITROGEN
+ammonium_nitrate_alt = "ammonium-nitrate-alt"
 ammonia_gas_alt = "ammonia-gas-alt"
 nitrogen_monoxide_2 = "nitrogen-monoxide-2"
 ammonium_chloride_reprocess = "ammonium-chloride-reprocess"
@@ -240,6 +241,22 @@ ammonium_sulfate_solution_alt = "ammonium-sulfate-solution-alt"
 ammonium_hydrosulfate_reprocess = "ammonium-hydrosulfate-reprocess"
 TIMSABA.functions.create_recipes
 ({
+    {
+        localised_name = {"item-name." .. ammonium_nitrate_angels},
+        name = ammonium_nitrate_alt,
+        categories = {chemistry},
+        subgroup = is_nitrogen,
+        icons = THREE_R_I(ammonium_nitrate_solution, ammonium_nitrate_angels, steam),
+        order = a_a,
+        energy_required = 2, -- NH₄NO₃(aq) --> NH₄NO₃(s) + H₂O(g)
+        ingredients = {{type = fluid, name = ammonium_nitrate_solution, amount = 60}},
+        results =
+        {
+            {type = item, name = ammonium_nitrate_angels, amount = 4},
+            {type = fluid, name = steam, amount = 60}
+        },
+        main_product = ammonium_nitrate_angels
+    },
     {
         name = ammonium_sulfate,
         categories = {chemistry},
@@ -534,6 +551,46 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = imidazole_solution
+    }
+})
+
+-- NITROGEN 2
+gaseous_nitric_acid_cooling = "gaseous-nitric-acid-cooling"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = gaseous_nitric_acid,
+        categories = {chemistry},
+        subgroup = is_nitrogen_fluids_2,
+        icons = THREE_R_I(ammonium_nitrate_angels, gaseous_nitric_acid, ammonia_angels),
+        order = a,
+        energy_required = 2, -- NH₄NO₃(s) --> HNO₃(g) + NH₃(g)
+        ingredients = {{type = item, name = ammonium_nitrate_angels, amount = 4}},
+        results =
+        {
+            {type = fluid, name = gaseous_nitric_acid, amount = 60},
+            {type = fluid, name = ammonia_angels, amount = 60}
+        },
+        main_product = gaseous_nitric_acid
+    },
+    {
+        name = gaseous_nitric_acid_cooling,
+        categories = {angels_cooling},
+        subgroup = is_nitrogen_fluids_2,
+        -- HNO₃(g) -coolant-> HNO₃(l)
+        icons = TWO_I(gaseous_nitric_acid, nitric_acid_angels),
+        order = a_a,
+        ingredients =
+        {
+            {type = fluid, name = gaseous_nitric_acid, amount = 120},
+            {type = fluid, name = coolant, amount = 120}
+        },
+        results =
+        {
+            {type = fluid, name = nitric_acid_angels, amount = 120},
+            {type = fluid, name = coolant_used, amount = 60} -- 120
+        },
+        main_product = nitric_acid_angels
     }
 })
 

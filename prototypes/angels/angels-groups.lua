@@ -145,6 +145,7 @@ is_coal = "angels-petrochem-coal"
 is_carbon_fluid_1 = "is-carbon-fluid-1"
 is_nitrogen = "angels-petrochem-nitrogen"
 is_nitrogen_fluids = "angels-petrochem-nitrogen-fluids"
+is_nitrogen_fluids_2 = "is-nitrogen-fluids-2"
 is_fluorine_fluid = "is-fluorine-fluid"
 is_sodium = "angels-petrochem-sodium"
 is_sodium_fluid = "is-sodium-fluid"
@@ -182,6 +183,7 @@ is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_j
 TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
     {name = is_carbon_fluid_1,                    order = b_a},
+    {name = is_nitrogen_fluids_2,                 order = c_b},
     {name = is_fluorine_fluid,                    order = d},
     {name = is_sodium_fluid,                      order = e_a},
     {name = is_calcium,                           order = h},

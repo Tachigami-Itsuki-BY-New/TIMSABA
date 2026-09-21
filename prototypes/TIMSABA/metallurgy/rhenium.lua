@@ -6,8 +6,8 @@ local is_rhenium = "is-rhenium"
 local is_rhenium_chemistry = "is-rhenium-chemistry"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_rhenium,           order = s},
-    {name = is_rhenium_chemistry, order = s_a}
+    {name = is_rhenium,           order = u},
+    {name = is_rhenium_chemistry, order = u_a}
 })
 
 -- ITEM

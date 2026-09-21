@@ -170,41 +170,68 @@ data_technology["asteroid-reprocessing"].unit.ingredients =
 -- QUALITY
 if mods[quality_mods] then
     tech_epic_quality = "epic-quality"
-    if data_module[quality_module_6] then
-        data_technology[tech_epic_quality].prerequisites = {quality_module_6}
+    if settings.startup[setting_early_quality].value then
+        data_technology[tech_epic_quality].prerequisites = {tech_recycling}
+        data_technology[tech_epic_quality].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1}
+        }
     else
-        data_technology[tech_epic_quality].prerequisites = {quality_module_3}
+        if data_module[quality_module_6] then
+            data_technology[tech_epic_quality].prerequisites = {quality_module_6}
+        else
+            data_technology[tech_epic_quality].prerequisites = {quality_module_3}
+        end
+        data_technology[tech_epic_quality].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {electromagnetic_science_pack, 1}
+        }
     end
-
-    data_technology[tech_epic_quality].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {electromagnetic_science_pack, 1}
-    }
 
     tech_legendary_quality = "legendary-quality"
-    if data_module[quality_module_7] then
-        data_technology[tech_epic_quality].prerequisites = {quality_module_7}
+    if settings.startup[setting_early_quality].value then
+        data_technology[tech_legendary_quality].prerequisites = {metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack}
+        data_technology[tech_legendary_quality].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1}
+        }
+    else
+        if data_module[quality_module_7] then
+            data_technology[tech_legendary_quality].prerequisites = {quality_module_7}
+        end
+        data_technology[tech_legendary_quality].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
     end
-
-    data_technology[tech_epic_quality].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {cryogenic_science_pack, 1}
-    }
 end
 
 -- MODS

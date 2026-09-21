@@ -12,7 +12,7 @@ end
 local carnallite_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
 carnallite_particle.name = carnallite .. _particle
 for _, picture in pairs(carnallite_particle.pictures) do
-    picture.tint = {r = 155/256, g = 095/256, b = 080/256, a = 1.000}
+    picture.tint = {r = 155/256, g = 080/256, b = 130/256, a = 1.000}
 end
 local fluorapatite_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
 fluorapatite_particle.name = fluorapatite .. _particle
@@ -49,8 +49,8 @@ data:extend
             name = carnallite,
             subgroup = is_potassium,
             order = a,
-            map_color = {r = 110/255, g = 065/255, b = 055/255, a = 1.000},
-            mining_visualisation_tint = {r = 175/255, g = 110/255, b = 095/255, a = 1.000}
+            map_color = {r = 195/255, g = 100/255, b = 150/255, a = 1.000},
+            mining_visualisation_tint = {r = 175/255, g = 95/255, b = 140/255, a = 1.000}
         },
         {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     ),

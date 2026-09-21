@@ -61,6 +61,17 @@ TIMSABA.functions.create_recipes
     }
 })
 
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[tungsten_plate_bob].ingredients[1].amount = 4
+    data_recipe[tungsten_plate_bob].results[1].amount = 2
+elseif settings.startup[setting_game_difficulty].value == normal then
+    data_recipe[tungsten_plate_bob].ingredients[1].amount = 4
+    data_recipe[tungsten_plate_bob].results[1].amount = 1
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[tungsten_plate_bob].ingredients[1].amount = 8
+    data_recipe[tungsten_plate_bob].results[1].amount = 1
+end
+
 -- LAVA
 TIMSABA.functions.create_recipes
 ({

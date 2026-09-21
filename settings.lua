@@ -29,6 +29,7 @@ create_bool_setting(setting_multi_building)
 create_bool_setting(setting_rebalance_belts_and_pipes, true)
 create_bool_setting(setting_flow_control_new)
 create_bool_setting(setting_infinite_research)
+create_bool_setting(setting_early_quality)
 
 data:extend
 ({
