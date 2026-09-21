@@ -1059,6 +1059,68 @@ data_recipe[calcium_chloride_angels].results =
 }
 data_recipe[calcium_chloride_angels].main_product = calcium_chloride_angels
 
+-- LITHIUM
+data_item[lithium_perchlorate_bob].localised_description = show_formula and {chemical_formula, "LiClO[font=default-tiny-bold]4[/font]"} or nil
+data_item[lithium_perchlorate_bob].subgroup = is_lithium
+data_item[lithium_perchlorate_bob].order = b
+data_recipe[lithium_perchlorate_bob].categories = {chemistry}
+data_recipe[lithium_perchlorate_bob].subgroup = is_lithium
+data_recipe[lithium_perchlorate_bob].icons = THREE_R_I(lithium_perchlorate_solution, lithium_perchlorate_bob, steam)
+data_recipe[lithium_perchlorate_bob].order = b
+data_recipe[lithium_perchlorate_bob].energy_required = 4 -- LiClO₄(aq) --> LiClO₄ + H₂O
+data_recipe[lithium_perchlorate_bob].ingredients = {{type = fluid, name = lithium_perchlorate_solution, amount = 60}}
+data_recipe[lithium_perchlorate_bob].results =
+{
+    {type = item, name = lithium_perchlorate_bob, amount = 4},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[lithium_perchlorate_bob].main_product = lithium_perchlorate_bob
+
+data_item[lithium_bob].localised_description = show_formula and {chemical_formula, "Li"} or nil
+data_item[lithium_bob].subgroup = is_lithium
+data_item[lithium_bob].order = c
+data_recipe[lithium_bob].categories = {angels_petrochem_electrolyser}
+data_recipe[lithium_bob].subgroup = is_lithium
+data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_chloride_angels, lithium_bob, hydrogen_peroxide)
+data_recipe[lithium_bob].order = c
+data_recipe[lithium_bob].energy_required = 8 -- 2(LiCl + H₂O) -electrode/electrolys-> 2Li + 2HCl + H₂O₂
+data_recipe[lithium_bob].ingredients =
+{
+    {type = fluid, name = lithium_chloride_solution, amount = 240},
+    {type = item, name = electrode, amount = 1}
+}
+data_recipe[lithium_bob].results =
+{
+    {type = item, name = lithium_bob, amount = 16},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 120}, -- 240
+    {type = fluid, name = hydrogen_peroxide, amount = 60}, -- 120
+    {type = item, name = electrode_used, amount = 1}
+}
+data_recipe[lithium_bob].main_product = lithium_bob
+
+data_item[lithium_cobalt_oxide_III_bob].localised_name = {"item-name.lithium-cobalt-oxide-III"}
+data_item[lithium_cobalt_oxide_III_bob].localised_description = show_formula and {chemical_formula, "LiCoO[font=default-tiny-bold]2[/font]"} or nil
+data_item[lithium_cobalt_oxide_III_bob].subgroup = is_lithium
+data_item[lithium_cobalt_oxide_III_bob].order = d
+data_recipe[lithium_cobalt_oxide_III_bob].categories = {chemistry}
+data_recipe[lithium_cobalt_oxide_III_bob].subgroup = is_lithium
+data_recipe[lithium_cobalt_oxide_III_bob].icons = THREE_D_I(cobalt_oxide_II_III, lithium_bob, oxygen_angels, lithium_cobalt_oxide_III_bob)
+data_recipe[lithium_cobalt_oxide_III_bob].order = d
+data_recipe[lithium_cobalt_oxide_III_bob].energy_required = 4 -- Co₃O₄ + 3Li + O₂ --> 3LiCoO₂
+data_recipe[lithium_cobalt_oxide_III_bob].ingredients =
+{
+    {type = item, name = cobalt_oxide_II_III, amount = 4},
+    {type = item, name = lithium_bob, amount = 12},
+    {type = fluid, name = oxygen_angels, amount = 60}
+}
+data_recipe[lithium_cobalt_oxide_III_bob].results[1].amount = 12
+
+-- BORON
+
+-- POTASSIUM
+
+-- PHOSPHORUS
+
 -- NATURAL GAS
 data_fluid[natural_gas_angels].subgroup = is_natural_gas
 data_fluid[natural_gas_angels].order = a

@@ -294,6 +294,32 @@ TIMSABA.barreling.add_gas(nitrogen_oxide)
 TIMSABA.barreling.add_dangerous_fluid(adiponitrile_liquid)
 TIMSABA.barreling.add_dangerous_fluid(imidazole_solution)
 
+-- NITROGEN FLUID 2
+ammonium_nitrate_solution = "ammonium-nitrate-solution"
+gaseous_nitric_acid = "gaseous-nitric-acid"
+TIMSABA.functions.create_fluids
+({
+    {
+        localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]NO[font=default-tiny-bold]3[/font](aq)"} or nil,
+        name = ammonium_nitrate_solution,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. ammonium_nitrate_solution .. ".png",
+        order = a,
+        base_color = TIMSABA.functions.fluid_color("NH4NO3Wp"),
+        flow_color = TIMSABA.functions.flow_color("NH4NO3Wp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HNO[font=default-tiny-bold]3[/font]"} or nil,
+        name = gaseous_nitric_acid,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. gaseous_nitric_acid .. ".png",
+        order = b,
+        base_color = TIMSABA.functions.fluid_color("HNO3"),
+        flow_color = TIMSABA.functions.flow_color("HNO3")
+    }
+})
+TIMSABA.barreling.add_dangerous_fluid(ammonium_nitrate_solution)
+
 -- FLUORINE FLUID
 hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
 oxygen_fluoride_gas = "oxygen-fluoride-gas"

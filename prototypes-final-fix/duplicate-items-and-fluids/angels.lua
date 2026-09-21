@@ -42,6 +42,7 @@ local delete_prototypes =
 {
     "angels-plutonium-239",
     "angels-thorium-232",
+    "angels-thorium-processing",
 
     -- ANGELS RESOURCE REFINING
     "angels-stone-from-crushed-stone",

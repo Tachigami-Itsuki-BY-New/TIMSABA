@@ -40,6 +40,8 @@ local function sortiong_ore_recipe_true(ingredient, order)
 end
 sortiong_ore_recipe_true(ore_saphirite, a)
 sortiong_ore_recipe_true(ore_stiratite, c)
+sortiong_ore_recipe_true(ore_rubyte, e)
+sortiong_ore_recipe_true(ore_bobmonium, f)
 
 local function sortiong_ore_recipe_false(ingredient, order)
     TIMSABA.functions.create_recipes
@@ -61,8 +63,6 @@ local function sortiong_ore_recipe_false(ingredient, order)
 end
 sortiong_ore_recipe_false(ore_jivolite, b)
 sortiong_ore_recipe_false(ore_crotinnium, d)
-sortiong_ore_recipe_false(ore_rubyte, e)
-sortiong_ore_recipe_false(ore_bobmonium, f)
 sortiong_ore_recipe_false(ore_senaite, g)
 sortiong_ore_recipe_false(ore_franckeite, h)
 

@@ -10,6 +10,7 @@ setting_flow_control_new = "setting-flow-control-new"
 setting_defrost_multiplier = "setting-defrost-multiplier"
 setting_infinite_research = "setting-infinite-research"
 setting_game_difficulty = "setting-game-difficulty"
+setting_early_quality = "setting-early-quality"
 
 easy = "easy"
 normal = "normal"

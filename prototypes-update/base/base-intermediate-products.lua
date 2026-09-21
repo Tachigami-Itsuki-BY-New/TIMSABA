@@ -506,57 +506,27 @@ data_recipe[advanced_processing_unit].ingredients =
 }
 
 -- URANIUM ITEM
-data_item[uranium_234].localised_description = show_formula and {chemical_formula, "U-234"} or nil
-data_item[uranium_234].subgroup = is_nuclear_item
-data_item[uranium_234].order = a
-
-data_item[uranium_235].localised_description = show_formula and {chemical_formula, "U-235"} or nil
-data_item[uranium_235].subgroup = is_nuclear_item
-data_item[uranium_235].order = b
-
-data_item[uranium_238].localised_description = show_formula and {chemical_formula, "U-238"} or nil
-data_item[uranium_238].subgroup = is_nuclear_item
-data_item[uranium_238].order = c
-
 data_item[neptunium_240].localised_description = show_formula and {chemical_formula, "Np-240"} or nil
 data_item[neptunium_240].subgroup = is_nuclear_item
-data_item[neptunium_240].order = d
+data_item[neptunium_240].order = a
 
 data_item[plutonium_239_bob].localised_description = show_formula and {chemical_formula, "Pu-239"} or nil
 data_item[plutonium_239_bob].subgroup = is_nuclear_item
-data_item[plutonium_239_bob].order = e
+data_item[plutonium_239_bob].order = b
 data_item[plutonium_239_bob].stack_size = 200
 
 data_item[americium_241_angels].localised_description = show_formula and {chemical_formula, "Am-241"} or nil
 data_item[americium_241_angels].subgroup = is_nuclear_item
-data_item[americium_241_angels].order = f
+data_item[americium_241_angels].order = c
 data_item[americium_241_angels].stack_size = 200
 
 data_item[curium_245_angels].localised_description = show_formula and {chemical_formula, "Cm-245"} or nil
 data_item[curium_245_angels].subgroup = is_nuclear_item
-data_item[curium_245_angels].order = g
+data_item[curium_245_angels].order = d
 data_item[curium_245_angels].stack_size = 200
 
-data_item[thorium_232_bob].localised_description = show_formula and {chemical_formula, "Th-232"} or nil
-data_item[thorium_232_bob].subgroup = is_nuclear_item
-data_item[thorium_232_bob].order = h
-data_item[thorium_232_bob].stack_size = 200
-
 data_item[muon_fusion_catalyst].subgroup = is_nuclear_item
-data_item[muon_fusion_catalyst].order = i
-
-data_recipe[uranium_processing].subgroup = is_nuclear_recipe
-data_recipe[uranium_processing].icons = FOUR_R_I(uranium_fluoride_VI_gas, uranium_234, uranium_235, uranium_238)
-data_recipe[uranium_processing].order = a_a
-data_recipe[uranium_processing].energy_required = 4 -- UF₆(g)(234/235/238) --> U-234 + U-235 + U-238 + F₂(g)
-data_recipe[uranium_processing].ingredients = {{type = fluid, name = uranium_fluoride_VI_gas, amount = 120}}
-data_recipe[uranium_processing].results =
-{
-    {type = item, name = uranium_234, amount = 8, independent_probability = 0.0055},
-    {type = item, name = uranium_235, amount = 8, independent_probability = 0.0070},
-    {type = item, name = uranium_238, amount = 8, independent_probability = 0.9875},
-    {type = fluid, name = fluorine, amount = 120} -- 360
-}
+data_item[muon_fusion_catalyst].order = e
 
 local plutonium_synthesis = "angels-plutonium-synthesis"
 data_recipe[plutonium_synthesis].subgroup = is_nuclear_recipe
@@ -565,7 +535,7 @@ if mods[shattered_mods] then
 else
     data_recipe[plutonium_synthesis].icons = TWO_I(neptunium_240, plutonium_239_bob)
 end
-data_recipe[plutonium_synthesis].order = b
+data_recipe[plutonium_synthesis].order = a
 data_recipe[plutonium_synthesis].energy_required = 128
 data_recipe[plutonium_synthesis].results[1].amount = 4
 
@@ -576,7 +546,7 @@ if mods[shattered_mods] then
 else
     data_recipe[plutonium_recovery].icons = THREE_I(plutonium_239_bob, americium_241_angels, plutonium_239_bob)
 end
-data_recipe[plutonium_recovery].order = c
+data_recipe[plutonium_recovery].order = b
 data_recipe[plutonium_recovery].energy_required = 128
 data_recipe[plutonium_recovery].ingredients =
 {
@@ -597,7 +567,7 @@ if mods[shattered_mods] then
 else
     data_recipe[enrichment_process].icons = TWO_D_I(plutonium_239_bob, uranium_238, plutonium_239_bob, uranium_238)
 end
-data_recipe[enrichment_process].order = d
+data_recipe[enrichment_process].order = c
 data_recipe[enrichment_process].energy_required = 64
 data_recipe[enrichment_process].ingredients =
 {
@@ -617,7 +587,7 @@ if mods[shattered_mods] then
 else
     data_recipe[plutonium_nucleosynthesis].icons = THREE_R_I(uranium_235, plutonium_239_bob, uranium_235)
 end
-data_recipe[plutonium_nucleosynthesis].order = e
+data_recipe[plutonium_nucleosynthesis].order = d
 data_recipe[plutonium_nucleosynthesis].energy_required = 64
 data_recipe[plutonium_nucleosynthesis].ingredients =
 {
@@ -631,22 +601,6 @@ data_recipe[plutonium_nucleosynthesis].results =
     {type = item, name = plutonium_239_bob, amount = 1}
 }
 
-data_recipe[thorium_processing].categories = {angels_centrifuging_2}
-data_recipe[thorium_processing].subgroup = is_nuclear_recipe
-if mods[shattered_mods] then
-    data_recipe[thorium_processing].icons = THREE_R_I(thorium_ore_bob, thorium_shattered, plutonium_239_shattered)
-else
-    data_recipe[thorium_processing].icons = THREE_R_I(thorium_ore_bob, thorium_232_bob, plutonium_239_bob)
-end
-data_recipe[thorium_processing].order = f
-data_recipe[thorium_processing].energy_required = 16
-data_recipe[thorium_processing].ingredients[1].amount = 4
-data_recipe[thorium_processing].results =
-{
-    {type = item, name = thorium_232_bob, amount = 4},
-    {type = item, name = plutonium_239_bob, amount = 1, independent_probability = 0.125}
-}
-
 data_recipe[plutonium_breeding].categories = {angels_centrifuging_2}
 data_recipe[plutonium_breeding].subgroup = is_nuclear_recipe
 if mods[shattered_mods] then
@@ -654,7 +608,7 @@ if mods[shattered_mods] then
 else
     data_recipe[plutonium_breeding].icons = THREE_R_I(neptunium_240, plutonium_239_bob, uranium_235)
 end
-data_recipe[plutonium_breeding].order = g
+data_recipe[plutonium_breeding].order = e
 data_recipe[plutonium_breeding].energy_required = 32
 data_recipe[plutonium_breeding].ingredients =
 {
@@ -701,7 +655,6 @@ data_recipe[uranium_235_fuel_cell].ingredients =
     {type = item, name = uranium_238, amount = 32},
     {type = item, name = lead_plate_bob, amount = 16},
     {type = item, name = uranium_238_plate, amount = 16}
-    
 }
 data_recipe[uranium_235_fuel_cell].results[1].amount = 16
 data_recipe[uranium_235_fuel_cell].allow_productivity = true
