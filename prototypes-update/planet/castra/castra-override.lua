@@ -201,8 +201,8 @@ if mods[castra_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[military_underground_belt_mods].subgroup = is_castra_logistic
     data_item[military_underground_belt_mods].order = b
-    data_item[military_underground_belt_mods].stack_size = 32
-    data_item[military_underground_belt_mods].weight = 31250
+    data_item[military_underground_belt_mods].stack_size = 64
+    data_item[military_underground_belt_mods].weight = 15625
     data_recipe[military_underground_belt_mods].subgroup = is_castra_logistic
     data_recipe[military_underground_belt_mods].order = b
     data_recipe[military_underground_belt_mods].energy_required = 1
@@ -221,8 +221,8 @@ if mods[castra_mods] then
 
     data_item[military_splitter_mods].subgroup = is_castra_logistic
     data_item[military_splitter_mods].order = c
-    data_item[military_splitter_mods].stack_size = 16
-    data_item[military_splitter_mods].weight = 62500
+    data_item[military_splitter_mods].stack_size = 64
+    data_item[military_splitter_mods].weight = 15625
     data_recipe[military_splitter_mods].subgroup = is_castra_logistic
     data_recipe[military_splitter_mods].order = c
     data_recipe[military_splitter_mods].energy_required = 1

@@ -147,7 +147,7 @@ data_recipe[cargo_landing_pad].ingredients =
     {type = item, name = reinforced_concrete, amount = 128},
     {type = item, name = molybdenum_rhenium_plate, amount = 32}
 }
-data.raw[cargo_landing_pad][cargo_landing_pad].order = d
+data_cargo_landing_pad[cargo_landing_pad].order = d
 
 local cargo_pod = "cargo-pod"
 data_cargo_pod[cargo_pod].order =  e
@@ -248,8 +248,10 @@ data_recipe[space_platform_starter_pack].ingredients =
     {type = item, name = nitinol_plate_bob, amount = 16}
 }
 
+data_item[cargo_bay].subgroup = space_platform
 data_item[cargo_bay].stack_size = 8
 data_item[cargo_bay].weight = 125000
+data_recipe[cargo_bay].subgroup = space_platform
 data_recipe[cargo_bay].energy_required = 8
 data_recipe[cargo_bay].ingredients =
 {
@@ -257,9 +259,12 @@ data_recipe[cargo_bay].ingredients =
     {type = item, name = advanced_processing_unit, amount = 4},
     {type = item, name = nitinol_plate_bob, amount = 16}
 }
+data_cargo_bay[cargo_bay].subgroup = space_platform
 
+data_item[landing_pad_unloading_bay].subgroup = space_platform
 data_item[landing_pad_unloading_bay].stack_size = 8
 data_item[landing_pad_unloading_bay].weight = 125000
+data_recipe[landing_pad_unloading_bay].subgroup = space_platform
 data_recipe[landing_pad_unloading_bay].energy_required = 8
 data_recipe[landing_pad_unloading_bay].ingredients =
 {
@@ -267,6 +272,7 @@ data_recipe[landing_pad_unloading_bay].ingredients =
     {type = item, name = advanced_processing_unit, amount = 8},
     {type = item, name = cargo_bay, amount = 1}
 }
+data_cargo_bay[landing_pad_unloading_bay].subgroup = space_platform
 
 data_item[asteroid_collector].order = d
 data_item[asteroid_collector].stack_size = 8

@@ -111,7 +111,7 @@ if mods["Unipipe"] then
     data_item[unipipe_fill].weight = 31250
     local unipipe = {unipipe_extract, unipipe_fill}
     for _, name in pairs(unipipe) do
-        if settings.startup["zy-unipipe-crafting-cost"].value == "medium" then
+        if settings.startup[setting_unipipe_crafting_cost].value == medium then
             data_recipe[name].ingredients =
             {
                 {type = item, name = offshore_pump, amount = 1},
@@ -120,7 +120,7 @@ if mods["Unipipe"] then
                 {type = item, name = storage_tank_1_alt, amount = 4},
                 {type = item, name = advanced_circuit, amount = 4}
             }
-        elseif settings.startup["zy-unipipe-crafting-cost"].value == "hard" then
+        elseif settings.startup[setting_unipipe_crafting_cost].value == hard then
             data_recipe[name].ingredients =
             {
                 {type = item, name = offshore_pump, amount = 1},
@@ -141,6 +141,8 @@ if mods["Unipipe"] then
         end
         bobmods.lib.recipe.update_recycling_recipe({unipipe_extract, unipipe_fill})
     end
+    data_pump[unipipe_extract].pumping_speed = 32
+    data_pump[unipipe_fill].pumping_speed = 32
 end
 
 local silo = "angels-silo"
@@ -343,8 +345,8 @@ for _, BUILD in pairs(entities) do
             data_item[BUILD.name].stack_size = 200
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
-            data_item[BUILD.name].stack_size = 32
-            data_item[BUILD.name].weight = 31250
+            data_item[BUILD.name].stack_size = 64
+            data_item[BUILD.name].weight = 15625
             data_recipe[BUILD.name].energy_required = 1
             data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
             if settings.startup[setting_rebalance_belts_and_pipes].value then
@@ -353,8 +355,8 @@ for _, BUILD in pairs(entities) do
             data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
         end
         if BUILD.type_1 == data_splitter and data_splitter[BUILD.name] then
-            data_item[BUILD.name].stack_size = 16
-            data_item[BUILD.name].weight = 62500
+            data_item[BUILD.name].stack_size = 64
+            data_item[BUILD.name].weight = 15625
             data_recipe[BUILD.name].energy_required = 1
             data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
         end
@@ -848,8 +850,8 @@ local pipes_to_ground =
 }
 for _, pipe in pairs(pipes_to_ground) do
     data_item[pipe.name].order = pipe.order
-    data_item[pipe.name].stack_size = 32
-    data_item[pipe.name].weight = 31250
+    data_item[pipe.name].stack_size = 64
+    data_item[pipe.name].weight = 15625
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order

@@ -13,7 +13,7 @@ data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
 
-data_recipe[wolframite_ore .. _sorting_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
+data_recipe[wolframite_ore .. _sorting].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
 
 data_item[cobalt_steel_gear_wheel].hidden = false

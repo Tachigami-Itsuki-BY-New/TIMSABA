@@ -80,9 +80,11 @@ if mods[bobmodules] then
     create_module_item(pollution_create_module_7, is_pollution_create_module, pollution_create, 7, g, {pollution = 6 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["brown"])
     create_module_item(pollution_create_module_8, is_pollution_create_module, pollution_create, 8, h, {pollution = 7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["brown"])
     -- QUALITY
-    create_module_item(quality_module_6, is_quality_module, quality, 6, f, {speed = -7 * SpeedPerLevel + SpeedBonus, quality = 5 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
-    create_module_item(quality_module_7, is_quality_module, quality, 7, g, {speed = -8 * SpeedPerLevel + SpeedBonus, quality = 6 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
-    create_module_item(quality_module_8, is_quality_module, quality, 8, h, {speed = -9 * SpeedPerLevel + SpeedBonus, quality = 7 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+    if mods[quality_mods] then
+        create_module_item(quality_module_6, is_quality_module, quality, 6, f, {speed = -7 * SpeedPerLevel + SpeedBonus, quality = 5 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+        create_module_item(quality_module_7, is_quality_module, quality, 7, g, {speed = -8 * SpeedPerLevel + SpeedBonus, quality = 6 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+        create_module_item(quality_module_8, is_quality_module, quality, 8, h, {speed = -9 * SpeedPerLevel + SpeedBonus, quality = 7 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+    end
     -- AGRICULTURAL
     local function create_agricultural_module_item(name, type, number, order, effect)
         data:extend
@@ -157,9 +159,11 @@ if mods[bobmodules] then
     create_module_recipe(pollution_create_module_7, is_pollution_create_module, g, semiconductor,     processor_pollution_create_circuit_board, pollution_create_module_6)
     create_module_recipe(pollution_create_module_8, is_pollution_create_module, h, quantum_processor, processor_pollution_create_circuit_board, pollution_create_module_7)
     -- QUALITY
-    create_module_recipe(quality_module_6, is_quality_module, f, superconductor,    processor_quality_circuit_board, quality_module_5)
-    create_module_recipe(quality_module_7, is_quality_module, g, semiconductor,     processor_quality_circuit_board, quality_module_6)
-    create_module_recipe(quality_module_8, is_quality_module, h, quantum_processor, processor_quality_circuit_board, quality_module_7)
+    if mods[quality_mods] then
+        create_module_recipe(quality_module_6, is_quality_module, f, superconductor,    processor_quality_circuit_board, quality_module_5)
+        create_module_recipe(quality_module_7, is_quality_module, g, semiconductor,     processor_quality_circuit_board, quality_module_6)
+        create_module_recipe(quality_module_8, is_quality_module, h, quantum_processor, processor_quality_circuit_board, quality_module_7)
+    end
     -- AGRICULTURAL
     local function create_agricultural_module_recipe(name, number, order, amount, productivity_module, pollution_create_module, agricultural_module)
         TIMSABA.functions.create_recipes
@@ -272,12 +276,14 @@ if mods[bobmodules] then
         create_module_technology(pollution_create_module_8, pollution_create, 8, {promethium_science_pack, pollution_create_module_7}, 500)
     end
     -- QUALITY
-    create_module_technology(quality_module_6, quality, 6, {electromagnetic_science_pack, quality_module_5}, 350, electromagnetic_science_pack)
-    create_module_technology(quality_module_7, quality, 7, {cryogenic_science_pack, quality_module_6}, 450, cryogenic_science_pack)
-    if mods[vesta_mods] then
-        create_module_technology(quality_module_8, quality, 8, {quality_module_7}, 500)
-    else
-        create_module_technology(quality_module_8, quality, 8, {promethium_science_pack, quality_module_7}, 500)
+    if mods[quality_mods] then
+        create_module_technology(quality_module_6, quality, 6, {electromagnetic_science_pack, quality_module_5}, 350, electromagnetic_science_pack)
+        create_module_technology(quality_module_7, quality, 7, {cryogenic_science_pack, quality_module_6}, 450, cryogenic_science_pack)
+        if mods[vesta_mods] then
+            create_module_technology(quality_module_8, quality, 8, {quality_module_7}, 500)
+        else
+            create_module_technology(quality_module_8, quality, 8, {promethium_science_pack, quality_module_7}, 500)
+        end
     end
     -- AGRICULTURAL
     local function create_agricultural_module_technology(name, type, number, prerequisites, count)

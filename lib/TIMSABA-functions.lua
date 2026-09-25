@@ -434,7 +434,7 @@ function TIMSABA.functions.create_items(list)
                 inventory_move_sound = items.inventory_move_sound,
                 pick_sound = items.pick_sound,
 
-                fuel_category = items.fuel_category,
+                fuel_categories = items.fuel_categories,
                 fuel_value = items.fuel_value,
 
                 consumption_glow_alternative_tint = items.consumption_glow_alternative_tint,
@@ -523,7 +523,9 @@ function TIMSABA.functions.create_buildings(list)
                 },
                 energy_usage = buildings.energy_usage or (420 .. kW),
                 max_health = buildings.max_health,
-                heating_energy = buildings.heating_energy
+                heating_energy = buildings.heating_energy,
+                allowed_effects = buildings.allowed_effects,
+                allowed_module_categories = buildings.allowed_module_categories
             }
         })
 
@@ -590,7 +592,9 @@ function TIMSABA.functions.create_burner_buildings(list)
                     emissions_per_minute = {pollution = buildings.pollution or 4}
                 },
                 energy_usage = buildings.energy_usage or (900 .. kW),
-                max_health = buildings.max_health
+                max_health = buildings.max_health,
+                allowed_effects = buildings.allowed_effects,
+                allowed_module_categories = buildings.allowed_module_categories
             }
         })
 
@@ -973,7 +977,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
         assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator, fusion_reactor, generator,
         inserter, heat_pipe, container, logistic_container, logistic_robot, construction_robot, roboport, pipe_to_ground,
         repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
-        projectile,
+        projectile, "ammo-category"
     }
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
@@ -1061,6 +1065,9 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
         data_recipe[repair_tool_ .. name .. _incineration] = nil
         data_recipe[module_ .. name .. _incineration] = nil
         data_recipe[capsule_ .. name .. _incineration] = nil
+        for i = 25, 2400, 25 do
+            data_recipe[name .. __rigor_module_mod__ .. i] = nil
+        end
     end
 end
 
@@ -1071,6 +1078,9 @@ function TIMSABA.functions.delete_duplicated_fluids(replacements)
         data_recipe[maraxsis_fluid_void_ .. name] = nil
         data_recipe[name .. _outlet] = nil
         data_recipe[name .. _flaring] = nil
+        for i = 25, 2400, 25 do
+            data_recipe[name .. __rigor_module_mod__ .. i] = nil
+        end
     end
 end
 

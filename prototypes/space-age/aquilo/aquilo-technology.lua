@@ -18,7 +18,7 @@ data:extend
         prerequisites = {planet_discovery_aquilo},
         effects =
         {
-            {type = unlock_recipe, recipe = antimonite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = antimonite_ore .. _sorting},
             {type = unlock_recipe, recipe = antimonite_crushed},
             {type = unlock_recipe, recipe = antimonite_crushed_sorting}
         },
@@ -145,7 +145,7 @@ data:extend
         prerequisites = {planet_discovery_aquilo},
         effects =
         {
-            {type = unlock_recipe, recipe = germanite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = germanite_ore .. _sorting},
             {type = unlock_recipe, recipe = germanite_crushed},
             {type = unlock_recipe, recipe = germanite_crushed_sorting}
         },

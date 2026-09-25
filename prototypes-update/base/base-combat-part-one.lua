@@ -834,13 +834,19 @@ if settings.startup[setting_bobmods_logistics_robotparts].value then
     bobmods.lib.recipe.update_recycling_recipe({combat_robot_tool_1, combat_robot_tool_2, combat_robot_tool_3, combat_robot_tool_4})
 end
 
+local wood_armor = "wood-armor"
+if mods[lignumis_mods] then
+    data_recipe[wood_armor].ingredients = {{type = item, name = wood, amount = 16}}
+
+    table.insert(data_recipe[light_armor].ingredients, {type = item, name = wood_armor, amount = 1})
+end
+
 data_recipe[light_armor].energy_required = 4
 data_recipe[light_armor].ingredients[1].amount = 32
 
 data_recipe[heavy_armor].ingredients =
 {
-    {type = item, name = copper_plate, amount = 128},
-    {type = item, name = iron_plate, amount = 64},
+    {type = item, name = steel_plate, amount = 64},
     {type = item, name = light_armor, amount = 1}
 }
 
@@ -848,7 +854,7 @@ data_recipe[modular_armor].energy_required = 16
 data_recipe[modular_armor].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 32},
-    {type = item, name = steel_plate, amount = 64},
+    {type = item, name = bronze_plate_bob, amount = 64},
     {type = item, name = heavy_armor, amount = 1}
 }
 
@@ -858,7 +864,7 @@ data_recipe[power_armor_1].ingredients =
     {type = item, name = electric_engine_unit, amount = 16},
     {type = item, name = advanced_circuit, amount = 32},
     {type = item, name = modular_armor, amount = 1},
-    {type = item, name = steel_plate, amount = 32}
+    {type = item, name = brass_plate_bob, amount = 32}
 }
 
 data_recipe[power_armor_2].energy_required = 32
@@ -867,7 +873,7 @@ data_recipe[power_armor_2].ingredients =
     {type = item, name = electric_engine_unit, amount = 32},
     {type = item, name = advanced_circuit, amount = 64},
     {type = item, name = power_armor_1, amount = 1},
-    {type = item, name = cobalt_steel_plate_bob, amount = 64},
+    {type = item, name = invar_plate_bob, amount = 64},
     {type = item, name = speed_module_1, amount = 128},
     {type = item, name = efficiency_module_1, amount = 128}
 }
@@ -880,7 +886,7 @@ if mods[bobwarfare] then
             {type = item, name = processing_unit, amount = 64},
             {type = item, name = power_armor_2, amount = 1},
             {type = item, name = aluminium_plate_bob, amount = 32},
-            {type = item, name = invar_plate_bob, amount = 32},
+            {type = item, name = cobalt_steel_plate_bob, amount = 32},
             {type = item, name = alien_artifact_orange, amount = 32},
             {type = item, name = alien_artifact_blue, amount = 32},
             {type = item, name = speed_module_3, amount = 4},
@@ -892,7 +898,7 @@ if mods[bobwarfare] then
             {type = item, name = processing_unit, amount = 64},
             {type = item, name = power_armor_2, amount = 1},
             {type = item, name = aluminium_plate_bob, amount = 32},
-            {type = item, name = invar_plate_bob, amount = 32},
+            {type = item, name = cobalt_steel_plate_bob, amount = 32},
             {type = item, name = speed_module_3, amount = 4},
             {type = item, name = efficiency_module_3, amount = 4}
         }
@@ -1071,6 +1077,7 @@ data_recipe[fission_reactor_eq_1].ingredients =
     {type = item, name = advanced_circuit, amount = 128},
     {type = item, name = uranium_235_fuel_cell, amount = 16},
     {type = item, name = lead_plate_bob, amount = 128},
+    {type = item, name = uranium_238_plate, amount = 128},
     {type = item, name = steel_plate, amount = 256},
     {type = fluid, name = water_semiheavy_3, amount = 60, maximum_temperature = 30}
 }
@@ -1083,6 +1090,8 @@ if mods[bobequipment] then
             {type = item, name = fission_reactor_eq_1, amount = 1},
             {type = item, name = alien_artifact, amount = 64},
             {type = item, name = tungsten_plate_bob, amount = 256},
+            {type = item, name = lead_plate_bob, amount = 128},
+            {type = item, name = uranium_238_plate, amount = 128},
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
@@ -1094,6 +1103,8 @@ if mods[bobequipment] then
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = alien_artifact_yellow, amount = 64},
                 {type = item, name = alien_artifact_green, amount = 64},
                 {type = item, name = speed_module_4, amount = 1},
@@ -1105,6 +1116,8 @@ if mods[bobequipment] then
                 {type = item, name = deuterium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = blue_alloy, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_5, amount = 1},
                 {type = item, name = efficiency_module_5, amount = 1},
                 {type = fluid, name = red_fluid, amount = 960}
@@ -1117,6 +1130,8 @@ if mods[bobequipment] then
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = alien_artifact_yellow, amount = 64},
                 {type = item, name = alien_artifact_green, amount = 64},
                 {type = item, name = speed_module_3, amount = 1},
@@ -1128,6 +1143,8 @@ if mods[bobequipment] then
                 {type = item, name = deuterium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = blue_alloy, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1},
                 {type = fluid, name = red_fluid, amount = 960}
@@ -1140,6 +1157,8 @@ if mods[bobequipment] then
             {type = item, name = mixed_oxide_fuel_cell, amount = 16},
             {type = item, name = fission_reactor_eq_1, amount = 1},
             {type = item, name = tungsten_plate_bob, amount = 256},
+            {type = item, name = lead_plate_bob, amount = 128},
+            {type = item, name = uranium_238_plate, amount = 128},
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
@@ -1151,6 +1170,8 @@ if mods[bobequipment] then
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_4, amount = 1},
                 {type = item, name = efficiency_module_4, amount = 1}
             }
@@ -1159,6 +1180,8 @@ if mods[bobequipment] then
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_3, amount = 1},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_5, amount = 1},
                 {type = item, name = efficiency_module_5, amount = 1}
             }
@@ -1170,6 +1193,8 @@ if mods[bobequipment] then
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1}
             }
@@ -1178,6 +1203,8 @@ if mods[bobequipment] then
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_3, amount = 1},
+                {type = item, name = lead_plate_bob, amount = 128},
+                {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1}
             }
@@ -1741,6 +1768,7 @@ bobmods.lib.recipe.update_recycling_recipe
     distractor_capsule,
     destroyer_capsule,
     laser_capsule,
+    wood_armor,
     light_armor,
     heavy_armor,
     modular_armor,

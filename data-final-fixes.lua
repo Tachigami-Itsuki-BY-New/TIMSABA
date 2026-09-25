@@ -85,3 +85,22 @@ require("prototypes-final-fix.multi-building.entities")
 
 require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
+
+local prototypes =
+{
+    item, capsule,
+}
+
+for _, proto_name in ipairs(prototypes) do
+    if data.raw[proto_name] then
+        for _, proto in pairs(data.raw[proto_name]) do
+            if proto.fuel_category then
+                if not proto.fuel_categories then
+                    proto.fuel_categories = {proto.fuel_category}
+                end
+
+                proto.fuel_category = nil
+            end
+        end
+    end
+end

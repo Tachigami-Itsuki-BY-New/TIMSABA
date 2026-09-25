@@ -58,6 +58,8 @@ if mods[muluna_mods] then
     data_recipe[aluminium_plate_mods].icons = TWO_I(aluminium_oxide, aluminium_plate_bob)
     data_recipe[aluminium_plate_mods].order = b
     data_recipe[aluminium_plate_mods].energy_required = 4
+    data_recipe[aluminium_plate_mods].results[1].amount = 2
+    data_recipe[aluminium_plate_mods].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     data_item[aluminium_plate_crushed].localised_name = {"item-name.crushed-aluminium-plate"}
     data_item[aluminium_plate_crushed].localised_description = show_formula and {chemical_formula, "Al"} or nil
@@ -332,7 +334,7 @@ if mods[muluna_mods] then
     data_capsule[jellynut_seedless].subgroup = is_muluna_recipe_jellynut
     data_capsule[jellynut_seedless].order = a
     data_capsule[jellynut_seedless].stack_size = 200
-    data_capsule[jellynut_seedless].fuel_category = base_fuel
+    data_capsule[jellynut_seedless].fuel_categories = {base_fuel}
     data_capsule[jellynut_seedless].fuel_value = 7200 .. kJ
     TIMSABA.void.void_organics(jellynut_seedless)
     TIMSABA.void.freezing_organics(jellynut_seedless)
@@ -411,7 +413,7 @@ if mods[muluna_mods] then
     data_capsule[yumako_seedless].subgroup = is_muluna_recipe_yumako
     data_capsule[yumako_seedless].order = a
     data_capsule[yumako_seedless].stack_size = 200
-    data_capsule[yumako_seedless].fuel_category = base_fuel
+    data_capsule[yumako_seedless].fuel_categories = {base_fuel}
     data_capsule[yumako_seedless].fuel_value = 1800 .. kJ
     TIMSABA.void.void_organics(yumako_seedless)
     TIMSABA.void.freezing_organics(yumako_seedless)
@@ -860,9 +862,9 @@ if mods[muluna_mods] then
     else
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = steam_turbine_1, amount = 1})
     end
-    if mods[bobmodules] then
+    if mods[bobmodules] and mods[quality_mods] then
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_6, amount = 1})
-    else
+    elseif mods[quality_mods] then
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_3, amount = 1})
     end
     data_generator_fusion[cycling_steam_turbine].subgroup = is_muluna_turbine

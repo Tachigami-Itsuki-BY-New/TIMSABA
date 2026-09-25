@@ -109,7 +109,8 @@ if mods[muluna_mods] and not mods[lignumis_mods] then
                 emissions_per_minute = {pollution = 0},
                 drain = 15 .. kW
             },
-            allowed_effects = {"speed", "consumption", "pollution", "productivity", "quality"},
+            allowed_effects = {speed, consumption, productivity, quality},
+            allowed_module_categories = {speed, consumption, productivity, quality},
             effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
             impact_category = "metal",
             working_sound =

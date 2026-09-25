@@ -201,7 +201,7 @@ if mods[hyarion_mods] then
         data_item[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
         data_item[unstable_crystallizer].order = n
         data_item[unstable_crystallizer].stack_size = 200
-        data_item[unstable_crystallizer].fuel_category = base_fuel
+        data_item[unstable_crystallizer].fuel_categories = {base_fuel}
         data_item[unstable_crystallizer].fuel_value = 900 .. kJ
         data_recipe[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
         data_recipe[unstable_crystallizer].icons = THREE_I(unstable_shard, lava, unstable_crystallizer)

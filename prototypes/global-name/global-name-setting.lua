@@ -67,6 +67,8 @@ setting_vesta_gases = "ske_vesta_gases"
 setting_vesta_legacy_recipes = "ske_vesta_legacy_recipes"
 
 -- MODS
+setting_unipipe_crafting_cost = "zy-unipipe-crafting-cost"
+
 setting_real_incineration = "setting-real-incineration"
 
 setting_mdrn_use_electricity = "mdrn-use-electricity"

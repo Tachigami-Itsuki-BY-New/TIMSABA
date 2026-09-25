@@ -341,7 +341,7 @@ data:extend
         name = centrifuge_1,
         icon = "__bobassembly__/graphics/icons/technology/centrifuge.png",
         icon_size = 256,
-        prerequisites = {tech_stone_smelting_2},
+        prerequisites = {tech_stone_smelting_2, tech_brass_processing},
         effects = {{type = unlock_recipe, recipe = centrifuge_1}},
         unit =
         {

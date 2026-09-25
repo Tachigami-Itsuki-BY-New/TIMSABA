@@ -77,6 +77,7 @@ require("prototypes-update.planet.aegis-bellicos.aegis-bellicos-override")
 require("prototypes-update.planet.shattered.shattered-override")
 
 -- ???
+require("prototypes-update.planet.eneas.eneas-override")
 --require("prototypes-update.planet.rubia.rubia-override")
 --require("prototypes-update.planet.cubium.cubium-override")
 --require("prototypes-update.planet.nexus.nexus-override")

@@ -3,7 +3,7 @@ if mods[lignumis_mods] then
     data_item[gold_stromatolite_seed].subgroup = is_lignumis_recipe
     data_item[gold_stromatolite_seed].order = a
     data_item[gold_stromatolite_seed].stack_size = 200
-    data_item[gold_stromatolite_seed].fuel_category = base_fuel
+    data_item[gold_stromatolite_seed].fuel_categories = {base_fuel}
     data_item[gold_stromatolite_seed].fuel_value = (225/2) .. kJ
 
     local gold_stromatolite_seed_to_peat = gold_stromatolite_seed .. "-to-peat"
@@ -30,7 +30,7 @@ if mods[lignumis_mods] then
 
     data_item[lumber].subgroup = is_lignumis_recipe
     data_item[lumber].order = f
-    data_item[lumber].fuel_category = base_fuel
+    data_item[lumber].fuel_categories = {base_fuel}
     data_item[lumber].fuel_value = 3600 .. kJ
     data_recipe[lumber].subgroup = is_lignumis_recipe
     data_recipe[lumber].icons = TWO_I(wood, lumber)
@@ -70,7 +70,7 @@ if mods[lignumis_mods] then
 
     data_item[peat].subgroup = is_lignumis_recipe
     data_item[peat].order = j
-    data_item[peat].fuel_category = base_fuel
+    data_item[peat].fuel_categories = {base_fuel}
     data_item[peat].fuel_value = 7200 .. kJ
     data_resource[peat].subgroup = is_lignumis_recipe
     data_resource[peat].order = j
@@ -236,8 +236,8 @@ if mods[lignumis_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[wood_underground_belt].subgroup = is_lignumis_logistic
     data_item[wood_underground_belt].order = b
-    data_item[wood_underground_belt].stack_size = 32
-    data_item[wood_underground_belt].weight = 31250
+    data_item[wood_underground_belt].stack_size = 64
+    data_item[wood_underground_belt].weight = 15625
     data_recipe[wood_underground_belt].subgroup = is_lignumis_logistic
     data_recipe[wood_underground_belt].order = b
     data_recipe[wood_underground_belt].ingredients =
@@ -258,8 +258,8 @@ if mods[lignumis_mods] then
 
     data_item[wood_splitter].subgroup = is_lignumis_logistic
     data_item[wood_splitter].order = c
-    data_item[wood_splitter].stack_size = 16
-    data_item[wood_splitter].weight = 62500
+    data_item[wood_splitter].stack_size = 64
+    data_item[wood_splitter].weight = 15625
     data_recipe[wood_splitter].subgroup = is_lignumis_logistic
     data_recipe[wood_splitter].order = c
     data_splitter[wood_splitter].subgroup = is_lignumis_logistic
@@ -286,8 +286,8 @@ if mods[lignumis_mods] then
 
     data_item[gold_pipe_to_ground].subgroup = is_lignumis_logistic
     data_item[gold_pipe_to_ground].order = e
-    data_item[gold_pipe_to_ground].stack_size = 32
-    data_item[gold_pipe_to_ground].weight = 31250
+    data_item[gold_pipe_to_ground].stack_size = 64
+    data_item[gold_pipe_to_ground].weight = 15625
     data_recipe[gold_pipe_to_ground].subgroup = is_lignumis_logistic
     data_recipe[gold_pipe_to_ground].order = e
     data_recipe[gold_pipe_to_ground].energy_required = 4
@@ -611,7 +611,7 @@ if mods[lignumis_mods] then
     local wooden_wall = "wooden-wall"
     data_item[wooden_wall].subgroup = is_lignumis_war
     data_item[wooden_wall].order = d
-    data_item[wooden_wall].fuel_category = base_fuel
+    data_item[wooden_wall].fuel_categories = {base_fuel}
     data_item[wooden_wall].fuel_value = (7200 * 4) .. kJ
     data_recipe[wooden_wall].subgroup = is_lignumis_war
     data_recipe[wooden_wall].order = d

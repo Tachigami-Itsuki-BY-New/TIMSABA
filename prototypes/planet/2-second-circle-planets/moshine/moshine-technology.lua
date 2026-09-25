@@ -21,7 +21,7 @@ if mods[moshine_mods] then
             prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
             effects =
             {
-                {type = unlock_recipe, recipe = monazite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = monazite_ore .. _sorting},
                 {type = unlock_recipe, recipe = monazite_crushed},
                 {type = unlock_recipe, recipe = monazite_crushed_sorting}
             },
@@ -155,7 +155,7 @@ if mods[moshine_mods] then
             prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
             effects =
             {
-                {type = unlock_recipe, recipe = aeschynite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = aeschynite_ore .. _sorting},
                 {type = unlock_recipe, recipe = aeschynite_crushed},
                 {type = unlock_recipe, recipe = aeschynite_crushed_sorting}
             },

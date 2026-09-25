@@ -356,6 +356,7 @@ data_recipe[rtg].ingredients =
 {
     {type = item, name = aluminium_plate_bob, amount = 4},
     {type = item, name = lead_plate_bob, amount = 2},
+    {type = item, name = uranium_238_plate, amount = 2},
     {type = item, name = plastic, amount = 2},
     {type = item, name = plutonium_239_bob, amount = 1}
 }
@@ -628,7 +629,7 @@ data_item[uranium_234_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].d
 data_item[uranium_234_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[uranium_234_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[uranium_234_fuel_cell].fuel_value = (172800 * 4 * 2) .. kJ
-data_item[uranium_234_fuel_cell].fuel_category = nuclear_fuel_T1
+data_item[uranium_234_fuel_cell].fuel_categories = {nuclear_fuel_T1}
 data_recipe[uranium_234_fuel_cell].subgroup = is_uranium_cell
 data_recipe[uranium_234_fuel_cell].order = a
 data_recipe[uranium_234_fuel_cell].energy_required = 64
@@ -644,7 +645,7 @@ data_recipe[uranium_234_fuel_cell].results[1].amount = 64
 data_item[uranium_235_fuel_cell].subgroup = is_uranium_cell
 data_item[uranium_235_fuel_cell].order = b
 data_item[uranium_235_fuel_cell].fuel_value = (345600 * 4 * 2) .. kJ
-data_item[uranium_235_fuel_cell].fuel_category = nuclear_fuel_T1
+data_item[uranium_235_fuel_cell].fuel_categories = {nuclear_fuel_T1}
 data_recipe[uranium_235_fuel_cell].subgroup = is_uranium_cell
 data_recipe[uranium_235_fuel_cell].icons = R_P_I(uranium_235_fuel_cell, nil, nil, number_1)
 data_recipe[uranium_235_fuel_cell].order = b
@@ -693,7 +694,7 @@ data_item[mixed_oxide_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].d
 data_item[mixed_oxide_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[mixed_oxide_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[mixed_oxide_fuel_cell].fuel_value = (691200 * 4 * 2) .. kJ
-data_item[mixed_oxide_fuel_cell].fuel_category = nuclear_fuel_T1
+data_item[mixed_oxide_fuel_cell].fuel_categories = {nuclear_fuel_T1}
 data_recipe[mixed_oxide_fuel_cell].subgroup = is_mixed_oxide_cell
 data_recipe[mixed_oxide_fuel_cell].order = a
 data_recipe[mixed_oxide_fuel_cell].energy_required = 64
@@ -756,7 +757,7 @@ data_item[thorium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_
 data_item[thorium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[thorium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[thorium_fuel_cell].fuel_value = (921600 * 4 * 2) .. kJ
-data_item[thorium_fuel_cell].fuel_category = nuclear_fuel_T2
+data_item[thorium_fuel_cell].fuel_categories = {nuclear_fuel_T2}
 data_recipe[thorium_fuel_cell].subgroup = is_thorium_cell
 data_recipe[thorium_fuel_cell].order = a
 data_recipe[thorium_fuel_cell].energy_required = 64
@@ -817,7 +818,7 @@ data_item[deuterium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].dro
 data_item[deuterium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
 data_item[deuterium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[deuterium_fuel_cell].fuel_value = (1152000 * 4 * 2) .. kJ
-data_item[deuterium_fuel_cell].fuel_category = nuclear_fuel_T3
+data_item[deuterium_fuel_cell].fuel_categories = {nuclear_fuel_T3}
 data_recipe[deuterium_fuel_cell].subgroup = is_deuterium_cell
 data_recipe[deuterium_fuel_cell].order = a
 data_recipe[deuterium_fuel_cell].energy_required = 4

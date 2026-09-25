@@ -18,7 +18,7 @@ if mods[corrundum_mods] then
             prerequisites = {planet_discovery_corrundum},
             effects =
             {
-                {type = unlock_recipe, recipe = chalcopyrite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = chalcopyrite_ore .. _sorting},
                 {type = unlock_recipe, recipe = chalcopyrite_crushed},
                 {type = unlock_recipe, recipe = chalcopyrite_crushed_sorting}
             },

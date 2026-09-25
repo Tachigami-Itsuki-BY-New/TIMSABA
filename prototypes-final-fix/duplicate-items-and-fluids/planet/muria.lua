@@ -61,9 +61,20 @@ if mods[muria_mods] then
         "casting-pickled-" .. iron_rod,
         "casting-pickled-" .. copper_cable,
         "pickled-casting",
-        "explosive-shotgun-shell"
+        "explosive-" .. shotgun_shell
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+    for _, tech in pairs(data_technology) do
+        if tech.effects then
+            for i = #tech.effects, 1, -1 do
+                local effect = tech.effects[i]
+                if effect.ammo_category == "explosive-" .. shotgun_shell then
+                    table.remove(tech.effects, i)
+                end
+            end
+        end
+    end
 
     local acidworking_science_pack_activation = "acidworking-science-pack-activation"
     local replacements =

@@ -178,8 +178,8 @@ if mods[aegis_bellicos_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[space_underground_belt].subgroup = is_bellicos_logistic
     data_item[space_underground_belt].order = b
-    data_item[space_underground_belt].stack_size = 32
-    data_item[space_underground_belt].weight = 31250
+    data_item[space_underground_belt].stack_size = 64
+    data_item[space_underground_belt].weight = 15625
     data_recipe[space_underground_belt].subgroup = is_bellicos_logistic
     data_recipe[space_underground_belt].order = b
     data_recipe[space_underground_belt].energy_required = 1
@@ -202,8 +202,8 @@ if mods[aegis_bellicos_mods] then
 
     data_item[space_splitter].subgroup = is_bellicos_logistic
     data_item[space_splitter].order = c
-    data_item[space_splitter].stack_size = 16
-    data_item[space_splitter].weight = 62500
+    data_item[space_splitter].stack_size = 64
+    data_item[space_splitter].weight = 15625
     data_recipe[space_splitter].subgroup = is_bellicos_logistic
     data_recipe[space_splitter].order = c
     data_recipe[space_splitter].energy_required = 1
@@ -239,6 +239,7 @@ if mods[aegis_bellicos_mods] then
     {
         {type = item, name = advanced_processing_unit, amount = 4},
         {type = item, name = lead_plate_bob, amount = 4},
+        {type = item, name = uranium_238_plate, amount = 4},
         {type = item, name = beryllium_bronze_plate, amount = 8},
         {type = fluid, name = tritium_gas, amount = 960}
     }

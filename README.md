@@ -25,7 +25,7 @@ TIMSABA.functions.create_items
         inventory_move_sound = items.inventory_move_sound,
         pick_sound = items.pick_sound,
 
-        fuel_category = items.fuel_category,
+        fuel_categories = items.fuel_categories,
         fuel_value = items.fuel_value,
 
         consumption_glow_alternative_tint = items.consumption_glow_alternative_tint,
@@ -107,7 +107,9 @@ TIMSABA.functions.create_buildings
         energy_usage = buildings.energy_usage or (420 .. kW),
         drain = buildings.drain or (60 .. kW),
         max_health = buildings.max_health,
-        heating_energy = buildings.heating_energy
+        heating_energy = buildings.heating_energy,
+        allowed_effects = buildings.allowed_effects,
+        allowed_module_categories = buildings.allowed_module_categories
     }
 })
 
@@ -138,7 +140,9 @@ TIMSABA.functions.create_burner_buildings
         crafting_speed = buildings.crafting_speed or 4,
         pollution = buildings.pollution or 4,
         energy_usage = buildings.energy_usage or (900 .. kW),
-        max_health = buildings.max_health
+        max_health = buildings.max_health,
+        allowed_effects = buildings.allowed_effects,
+        allowed_module_categories = buildings.allowed_module_categories
     }
 })
 

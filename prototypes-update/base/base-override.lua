@@ -13,8 +13,10 @@ data_recipe[beacon_1].ingredients =
     {type = item, name = copper_cable,              amount = 8},
     {type = item, name = crystal_splinter_harmonic, amount = 1}
 }
+data_beacon[beacon_1].allowed_effects = {speed, consumption, pollution}
+data_beacon[beacon_1].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
--- speed
+-- SPEED
 data_recipe[speed_module_1].energy_required = 8
 data_recipe[speed_module_1].ingredients =
 {
@@ -42,7 +44,7 @@ data_recipe[speed_module_3].ingredients =
     {type = item, name = tungsten_carbide,         amount = 4}
 }
 
--- efficiency
+-- EFFICIENCY
 data_recipe[efficiency_module_1].energy_required = 8
 data_recipe[efficiency_module_1].ingredients =
 {
@@ -70,7 +72,7 @@ data_recipe[efficiency_module_3].ingredients =
     {type = item, name = spoilage,                 amount = 16}
 }
 
--- productivity
+-- PRODUCTIVITY
 data_recipe[productivity_module_1].energy_required = 8
 data_recipe[productivity_module_1].ingredients =
 {
@@ -98,35 +100,37 @@ data_recipe[productivity_module_3].ingredients =
     {type = item, name = biter_egg,                amount = 1}
 }
 
--- quality
-data_recipe[quality_module_1].energy_required = 8
-data_recipe[quality_module_1].ingredients =
-{
-    {type = item, name = electronic_circuit,        amount = 4},
-    {type = item, name = advanced_circuit,          amount = 4},
-    {type = item, name = crystal_splinter_harmonic, amount = 1}
-}
+-- QUALITY
+if mods[quality_mods] then
+    data_recipe[quality_module_1].energy_required = 8
+    data_recipe[quality_module_1].ingredients =
+    {
+        {type = item, name = electronic_circuit,        amount = 4},
+        {type = item, name = advanced_circuit,          amount = 4},
+        {type = item, name = crystal_splinter_harmonic, amount = 1}
+    }
 
-data_recipe[quality_module_2].energy_required = 8
-data_recipe[quality_module_2].ingredients =
-{
-    {type = item, name = advanced_circuit,       amount = 4},
-    {type = item, name = processing_unit,        amount = 4},
-    {type = item, name = quality_module_1,       amount = 1},
-    {type = item, name = crystal_shard_harmonic, amount = 1}
-}
+    data_recipe[quality_module_2].energy_required = 8
+    data_recipe[quality_module_2].ingredients =
+    {
+        {type = item, name = advanced_circuit,       amount = 4},
+        {type = item, name = processing_unit,        amount = 4},
+        {type = item, name = quality_module_1,       amount = 1},
+        {type = item, name = crystal_shard_harmonic, amount = 1}
+    }
 
-data_recipe[quality_module_3].energy_required = 16
-data_recipe[quality_module_3].ingredients =
-{
-    {type = item, name = processing_unit,          amount = 4},
-    {type = item, name = advanced_processing_unit, amount = 4},
-    {type = item, name = quality_module_2,         amount = 1},
-    {type = item, name = crystal_full_harmonic,    amount = 1},
-    {type = item, name = superconductor,           amount = 4}
-}
+    data_recipe[quality_module_3].energy_required = 16
+    data_recipe[quality_module_3].ingredients =
+    {
+        {type = item, name = processing_unit,          amount = 4},
+        {type = item, name = advanced_processing_unit, amount = 4},
+        {type = item, name = quality_module_2,         amount = 1},
+        {type = item, name = crystal_full_harmonic,    amount = 1},
+        {type = item, name = superconductor,           amount = 4}
+    }
+end
 
--- agricultural
+-- AGRICULTURAL
 data_recipe[agricultural_module_1].energy_required = 8
 data_recipe[agricultural_module_1].ingredients =
 {

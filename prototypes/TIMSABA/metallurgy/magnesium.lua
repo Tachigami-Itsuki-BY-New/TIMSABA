@@ -17,9 +17,9 @@ magnesium_processed = "magnesium-processed"
 magnesium_pellet = "magnesium-pellet"
 magnesium_ingot = "magnesium-ingot"
 magnesium_powder = "magnesium-powder"
-magnesium_silicide_ingot = "magnesium-silicide-ingot"
 magnesium_oxide = "magnesium-oxide"
 magnesium_chloride = "magnesium-chloride"
+magnesium_silicide = "magnesium-silicide"
 TIMSABA.functions.create_items
 ({
     {
@@ -74,13 +74,6 @@ TIMSABA.functions.create_items
         icon = graphics_magnesium .. magnesium_powder .. ".png",
         order = e
     },
-    {
-        localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]2[/font]Si"} or nil,
-        name = magnesium_silicide_ingot,
-        subgroup = is_magnesium,
-        icon = graphics_magnesium .. magnesium_silicide_ingot .. ".png",
-        order = f
-    },
     -- CHEMISTRY
     {
         localised_description = show_formula and {chemical_formula, "MgO"} or nil,
@@ -95,6 +88,13 @@ TIMSABA.functions.create_items
         subgroup = is_magnesium_chemistry,
         icon = graphics_magnesium .. magnesium_chloride .. ".png",
         order = c
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]2[/font]Si"} or nil,
+        name = magnesium_silicide,
+        subgroup = is_magnesium_chemistry,
+        icon = graphics_magnesium .. magnesium_silicide .. ".png",
+        order = z
     }
 })
 
@@ -203,21 +203,6 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = magnesium_ingot, amount = 1}},
         results = {{type = item, name = magnesium_powder, amount = 1}},
         main_product = magnesium_powder
-    },
-    {
-        name = magnesium_silicide_ingot,
-        categories = {angels_blast_smelting_4},
-        subgroup = is_magnesium,
-        icons = THREE_I(magnesium_powder, silicon_powder, magnesium_silicide_ingot),
-        order = f,
-        energy_required = 8, -- 2Mg + Si --> Mg₂Si
-        ingredients =
-        {
-            {type = item, name = magnesium_powder, amount = 32},
-            {type = item, name = silicon_powder, amount = 16}
-        },
-        results = {{type = item, name = magnesium_silicide_ingot, amount = 16}},
-        main_product = magnesium_silicide_ingot
     },
     -- CHEMISTRY
     {
@@ -329,6 +314,21 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = magnesium_chloride, amount = 16}},
         results = {{type = fluid, name = magnesium_chloride_gas, amount = 240}},
         main_product = magnesium_chloride_gas
+    },
+    {
+        name = magnesium_silicide,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_magnesium_chemistry,
+        icons = THREE_I(magnesium_powder, silicon_powder, magnesium_silicide),
+        order = z,
+        energy_required = 8, -- 2Mg + Si --> Mg₂Si
+        ingredients =
+        {
+            {type = item, name = magnesium_pellet, amount = 16},
+            {type = item, name = silicon_pellet, amount = 8}
+        },
+        results = {{type = item, name = magnesium_silicide, amount = 16}},
+        main_product = magnesium_silicide
     },
     -- CASTING
     {

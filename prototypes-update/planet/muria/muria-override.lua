@@ -145,14 +145,14 @@ if mods[muria_mods] then
     data_item[eschatotaxite_sprout].subgroup = is_eschatotaxite
     data_item[eschatotaxite_sprout].order = a
     data_item[eschatotaxite_sprout].stack_size = 200
-    data_item[eschatotaxite_sprout].fuel_category = base_fuel
+    data_item[eschatotaxite_sprout].fuel_categories = {base_fuel}
     data_item[eschatotaxite_sprout].fuel_value = 225 .. kJ
     TIMSABA.void.freezing_organics(eschatotaxite_sprout)
 
     local eschatotaxite_paste = "eschatotaxite-paste"
     data_capsule[eschatotaxite_paste].subgroup = is_eschatotaxite
     data_capsule[eschatotaxite_paste].order = b
-    data_capsule[eschatotaxite_paste].fuel_category = base_fuel
+    data_capsule[eschatotaxite_paste].fuel_categories = {base_fuel}
     data_capsule[eschatotaxite_paste].fuel_value = 225 .. kJ
     TIMSABA.void.freezing_organics(eschatotaxite_paste)
     data_recipe[eschatotaxite_paste].subgroup = is_eschatotaxite
@@ -248,7 +248,7 @@ if mods[muria_mods] then
     data_item[chloric_fuel].subgroup = is_acidophile
     data_item[chloric_fuel].order = d
     data_item[chloric_fuel].stack_size = 200
-    data_item[chloric_fuel].fuel_category = advanced_fuel
+    data_item[chloric_fuel].fuel_categories = {advanced_fuel}
     data_item[chloric_fuel].fuel_value = 7200 .. kJ
     TIMSABA.void.freezing_organics(chloric_fuel)
     data_recipe[chloric_fuel].subgroup = is_acidophile
@@ -295,7 +295,7 @@ if mods[muria_mods] then
     data_item[leaded_fuel].subgroup = is_muria_lead
     data_item[leaded_fuel].order = d
     data_item[leaded_fuel].stack_size = 50
-    data_item[leaded_fuel].fuel_category = transport_fuel
+    data_item[leaded_fuel].fuel_categories = {transport_fuel}
     data_item[leaded_fuel].fuel_value = (115200 * 4) .. kJ
     data_recipe[leaded_fuel].subgroup = is_muria_lead
     data_recipe[leaded_fuel].order = d
@@ -510,6 +510,7 @@ if mods[muria_mods] then
     data_ammo_turret[shotgun_turret].order = e
     data_ammo_turret[shotgun_turret].attack_parameters.min_range = 4
     data_ammo_turret[shotgun_turret].attack_parameters.range = 16
+    data_ammo_turret[shotgun_turret].attack_parameters.ammo_categories = {shotgun_shell}
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
@@ -520,7 +521,7 @@ if mods[muria_mods] then
         toxic_rounds_magazine,
         acidthrower,
         acidthrower_ammo,
-        1
+        shotgun_turret
     })
 
     -- TECHNOLOGY

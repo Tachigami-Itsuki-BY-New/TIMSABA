@@ -127,8 +127,8 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
-        localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. rheniite_ore}},
-        name = rheniite_ore .. _sorting_stone,
+        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. rheniite_ore}},
+        name = rheniite_ore .. _sorting,
         categories = {ore_sorting_6},
         subgroup = is_rheniite,
         icons = RECYCLING_I(recycling_png, rheniite_ore),
@@ -136,8 +136,8 @@ TIMSABA.functions.create_recipes
         allow_productivity = true,
         energy_required = 1,
         ingredients = {{type = item, name = rheniite_ore, amount = 4}},
-        results = {{type = item, name = stone, amount = 1}},
-        main_product = stone
+        results = {{type = item, name = slag_angels, amount = 1}},
+        main_product = slag_angels
     },
     {
         name = rheniite_crushed_sorting,

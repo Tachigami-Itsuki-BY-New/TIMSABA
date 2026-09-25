@@ -217,7 +217,7 @@ if mods[vesta_mods] then
     data_recipe[algea_stone_electrolysis].categories = {vesta_electrolyser}
     data_recipe[algea_stone_electrolysis].subgroup = is_vesta_recipe
     data_recipe[algea_stone_electrolysis].icons = FOUR_R_I(algea_clump_stonite, stone, nil, stone)
-    data_recipe[algea_stone_electrolysis].order = g_a
+    data_recipe[algea_stone_electrolysis].order = e_a
     data_recipe[algea_stone_electrolysis].ingredients = {{type = item, name = algea_clump_stonite, amount = 1}}
     if data_fluid[helium_vesta] then
         table.insert(data_recipe[algea_stone_electrolysis].ingredients, {type = fluid, name = helium_vesta, amount = 15})
@@ -300,7 +300,7 @@ if mods[vesta_mods] then
     data_item[algea_petrite_clump].subgroup = is_vesta_recipe
     data_item[algea_petrite_clump].order = j
     data_item[algea_petrite_clump].stack_size = 200
-    data_item[algea_petrite_clump].fuel_category = base_fuel
+    data_item[algea_petrite_clump].fuel_categories = {base_fuel}
     data_item[algea_petrite_clump].fuel_value = 28800 .. kJ
 
     -- IRIDIUM
@@ -349,8 +349,8 @@ if mods[vesta_mods] then
     local magnetic_pipe_to_ground = "magnetic-pipe-to-ground"
     data_item[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
     data_item[magnetic_pipe_to_ground].order = b
-    data_item[magnetic_pipe_to_ground].stack_size = 32
-    data_item[magnetic_pipe_to_ground].weight = 31250
+    data_item[magnetic_pipe_to_ground].stack_size = 64
+    data_item[magnetic_pipe_to_ground].weight = 15625
     data_recipe[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
     data_recipe[magnetic_pipe_to_ground].order = b
     data_recipe[magnetic_pipe_to_ground].ingredients =
@@ -517,7 +517,9 @@ if mods[vesta_mods] then
         table.insert(data_recipe[productivity_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
         table.insert(data_recipe[pollution_clean_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
         table.insert(data_recipe[pollution_create_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        if mods[quality_mods] then
+            table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        end
 
         bobmods.lib.recipe.update_recycling_recipe
         ({
@@ -810,6 +812,8 @@ if mods[vesta_mods] then
         table.insert(data_technology[productivity_module_8].prerequisites, tech_gas_manipulation_science_pack)
         table.insert(data_technology[pollution_clean_module_8].prerequisites, tech_gas_manipulation_science_pack)
         table.insert(data_technology[pollution_create_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        if mods[quality_mods] then
+            table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        end
     end
 end

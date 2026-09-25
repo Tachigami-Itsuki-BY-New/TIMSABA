@@ -19,7 +19,7 @@ if mods[paracelsin_mods] then
             prerequisites = {planet_discovery_paracelsin},
             effects =
             {
-                {type = unlock_recipe, recipe = sphalerite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = sphalerite_ore .. _sorting},
                 {type = unlock_recipe, recipe = sphalerite_crushed},
                 {type = unlock_recipe, recipe = sphalerite_crushed_sorting}
             },
@@ -156,7 +156,7 @@ if mods[paracelsin_mods] then
             prerequisites = {planet_discovery_paracelsin},
             effects =
             {
-                {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed_sorting}
             },

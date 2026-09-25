@@ -199,8 +199,8 @@ if mods[paracelsin_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_item[galvanized_pipe_to_ground].order = b
-    data_item[galvanized_pipe_to_ground].stack_size = 32
-    data_item[galvanized_pipe_to_ground].weight = 31250
+    data_item[galvanized_pipe_to_ground].stack_size = 64
+    data_item[galvanized_pipe_to_ground].weight = 15625
     data_recipe[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_recipe[galvanized_pipe_to_ground].order = b
     data_recipe[galvanized_pipe_to_ground].energy_required = 4
@@ -384,7 +384,9 @@ if mods[paracelsin_mods] then
         table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
         table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
         table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        if mods[quality_mods] then
+            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        end
 
         bobmods.lib.recipe.update_recycling_recipe
         ({
@@ -532,7 +534,9 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[productivity_module_7].prerequisites, galvanization_science_pack)
         table.insert(data_technology[pollution_clean_module_7].prerequisites, galvanization_science_pack)
         table.insert(data_technology[pollution_create_module_7].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[quality_module_7].prerequisites, galvanization_science_pack)
+        if mods[quality_mods] then
+            table.insert(data_technology[quality_module_7].prerequisites, galvanization_science_pack)
+        end
     end
 
     if mods[bobwarfare] then

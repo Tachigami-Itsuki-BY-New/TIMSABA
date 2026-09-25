@@ -45,7 +45,7 @@ TIMSABA.functions.create_items
         subgroup = is_coal,
         icon = graphics_petrochem_basics .. coke_processed .. ".png",
         order = e,
-        fuel_category = base_fuel,
+        fuel_categories = {base_fuel},
         fuel_value = 7200 .. kJ
     },
     {

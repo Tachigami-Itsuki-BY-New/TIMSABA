@@ -19,7 +19,7 @@ if mods[castra_mods] then
             prerequisites = {planet_discovery_castra},
             effects =
             {
-                {type = unlock_recipe, recipe = millerite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = millerite_ore .. _sorting},
                 {type = unlock_recipe, recipe = millerite_crushed},
                 {type = unlock_recipe, recipe = millerite_crushed_sorting},
                 {type = unlock_recipe, recipe = nickel_plate_bob}

@@ -47,11 +47,13 @@ if mods[bobmodules] then
     -- QUALITY
     local graphics_quality_module_tech = "__TIMSABA__/graphics/icons/bobs/modules/technology/quality/quality"
 
-    data_technology[quality_module_1].icon = graphics_quality_module_tech .. "-1.png"
-    data_technology[quality_module_2].icon = graphics_quality_module_tech .. "-2.png"
-    data_technology[quality_module_3].icon = graphics_quality_module_tech .. "-3.png"
-    data_technology[quality_module_4].icon = graphics_quality_module_tech .. "-4.png"
-    data_technology[quality_module_5].icon = graphics_quality_module_tech .. "-5.png"
+    if mods[quality_mods] then
+        data_technology[quality_module_1].icon = graphics_quality_module_tech .. "-1.png"
+        data_technology[quality_module_2].icon = graphics_quality_module_tech .. "-2.png"
+        data_technology[quality_module_3].icon = graphics_quality_module_tech .. "-3.png"
+        data_technology[quality_module_4].icon = graphics_quality_module_tech .. "-4.png"
+        data_technology[quality_module_5].icon = graphics_quality_module_tech .. "-5.png"
+    end
 
     -- AGRICULTURAL
     local graphics_agricultural_module_tech = "__TIMSABA__/graphics/icons/bobs/modules/technology/agricultural/agricultural"

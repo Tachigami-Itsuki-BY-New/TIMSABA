@@ -112,8 +112,8 @@ if mods[paracelsin_mods] then
         },
         -- SORTING
         {
-            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. sphalerite_ore}},
-            name = sphalerite_ore .. _sorting_stone,
+            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. sphalerite_ore}},
+            name = sphalerite_ore .. _sorting,
             categories = {ore_sorting_6},
             subgroup = is_sphalerite,
             icons = RECYCLING_I(recycling_png, sphalerite_ore),
@@ -121,8 +121,8 @@ if mods[paracelsin_mods] then
             allow_productivity = true,
             energy_required = 1,
             ingredients = {{type = item, name = sphalerite_ore, amount = 4}},
-            results = {{type = item, name = stone, amount = 1}},
-            main_product = stone
+            results = {{type = item, name = slag_angels, amount = 1}},
+            main_product = slag_angels
         },
         {
             name = sphalerite_crushed_sorting,

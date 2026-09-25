@@ -92,7 +92,7 @@ if mods[secretas_frozeta_mods] then
     data_item[golden_biter_egg].subgroup = is_frozeta_recipe
     data_item[golden_biter_egg].order = e
     data_item[golden_biter_egg].stack_size = 200
-    data_item[golden_biter_egg].fuel_category = base_fuel
+    data_item[golden_biter_egg].fuel_categories = {base_fuel}
     data_item[golden_biter_egg].fuel_value = 14400 .. kJ
 
     data_item[golden_science_pack].subgroup = is_frozeta_recipe
@@ -127,7 +127,9 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
         table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
         table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
-        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        if mods[quality_mods] then
+            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        end
 
         bobmods.lib.recipe.update_recycling_recipe
         ({
@@ -277,7 +279,9 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[productivity_module_7].prerequisites, golden_science_pack)
         table.insert(data_technology[pollution_clean_module_7].prerequisites, golden_science_pack)
         table.insert(data_technology[pollution_create_module_7].prerequisites, golden_science_pack)
-        table.insert(data_technology[quality_module_7].prerequisites, golden_science_pack)
+        if mods[quality_mods] then
+            table.insert(data_technology[quality_module_7].prerequisites, golden_science_pack)
+        end
     end
 
     table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)

@@ -17,7 +17,7 @@ if mods[secretas_frozeta_mods] then
             prerequisites = {steam_recycler},
             effects =
             {
-                {type = unlock_recipe, recipe = gallite_ore .. _sorting_stone},
+                {type = unlock_recipe, recipe = gallite_ore .. _sorting},
                 {type = unlock_recipe, recipe = gallite_crushed},
                 {type = unlock_recipe, recipe = gallite_crushed_sorting}
             },
