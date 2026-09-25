@@ -18,7 +18,7 @@ data:extend
         prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
         effects =
         {
-            {type = unlock_recipe, recipe = wolframite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = wolframite_ore .. _sorting},
             {type = unlock_recipe, recipe = wolframite_crushed},
             {type = unlock_recipe, recipe = wolframite_crushed_sorting},
             {type = unlock_recipe, recipe = tungsten_plate_bob}
@@ -142,7 +142,7 @@ data:extend
         prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
         effects =
         {
-            {type = unlock_recipe, recipe = samarskite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = samarskite_ore .. _sorting},
             {type = unlock_recipe, recipe = samarskite_crushed},
             {type = unlock_recipe, recipe = samarskite_crushed_sorting}
         },

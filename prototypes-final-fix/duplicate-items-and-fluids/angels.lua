@@ -1,7 +1,8 @@
 
 local replace_prototypes =
 {
-	[tree_seed] = tree_seed_angels
+	[tree_seed] = tree_seed_angels,
+    [calcium_carbonate] = limestone_angels
 }
 TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 

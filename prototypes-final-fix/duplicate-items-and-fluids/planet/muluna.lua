@@ -84,6 +84,12 @@ if mods[muluna_mods] then
 	data_recipe[alumina_crushing] = nil
 	data_recipe[aluminum_crushing] = nil
 	data_recipe[vacuum_heating] = nil
+	for i = 25, 2400, 25 do
+		data_recipe[regolith_digging .. __rigor_module_mod__ .. i] = nil
+		data_recipe[alumina_crushing .. __rigor_module_mod__ .. i] = nil
+		data_recipe[aluminum_crushing .. __rigor_module_mod__ .. i] = nil
+		data_recipe[vacuum_heating .. __rigor_module_mod__ .. i] = nil
+	end
 
 	data_recipe[copper_cable .. _recycling].surface_conditions = nil
 	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil

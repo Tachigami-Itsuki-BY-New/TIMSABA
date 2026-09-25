@@ -43,7 +43,7 @@ local function generate_self_recycling_recipe(info)
                 localised_name = {"recipe-name.recycling", get_item_localised_name(info.name)},
                 type = recipe,
                 name = info.name .. _recycling,
-                category = recycling,
+                categories = {recycling},
                 subgroup = data_item[info.name].subgroup,
                 icon = data_item[info.name].icon,
                 order = data_item[info.name].order,

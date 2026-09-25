@@ -147,19 +147,19 @@ data_item_subgroup[is_coal].order = b
 
 data_item[coal].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]N[font=default-tiny-bold]d[/font]S[font=default-tiny-bold]e[/font]"} or nil
 data_item[coal].order = a
-data_item[coal].fuel_category = base_fuel
+data_item[coal].fuel_categories = {base_fuel}
 data_item[coal].fuel_value = 3600 .. kJ
 
 data_item[coal_crushed_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]N[font=default-tiny-bold]d[/font]S[font=default-tiny-bold]e[/font]"} or nil
 data_item[coal_crushed_angels].order = b
-data_item[coal_crushed_angels].fuel_category = base_fuel
+data_item[coal_crushed_angels].fuel_categories = {base_fuel}
 data_item[coal_crushed_angels].fuel_value = 1800 .. kJ
 data_recipe[coal_crushed_angels].icons = TWO_I(coal, coal_crushed_angels)
 data_recipe[coal_crushed_angels].order = b
 
 data_item[coke_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]N[font=default-tiny-bold]d[/font]S[font=default-tiny-bold]e[/font]"} or nil
 data_item[coke_angels].order = c
-data_item[coke_angels].fuel_category = base_fuel
+data_item[coke_angels].fuel_categories = {base_fuel}
 data_item[coke_angels].fuel_value = 3600 .. kJ
 data_recipe[coke_angels].icons = TWO_I(coal_crushed_angels, coke_angels, number_1)
 data_recipe[coke_angels].order = c
@@ -174,7 +174,7 @@ data_recipe[solid_coke_sulfur].results[2].amount = 60
 
 data_item[carbon_angels].localised_description = show_formula and {chemical_formula, "C"} or nil
 data_item[carbon_angels].order = d
-data_item[carbon_angels].fuel_category = base_fuel
+data_item[carbon_angels].fuel_categories = {base_fuel}
 data_item[carbon_angels].fuel_value = 3600 .. kJ
 data_recipe[carbon_angels].categories = {smelting}
 data_recipe[carbon_angels].icons = TWO_I(coke_angels, carbon_angels, number_1)
@@ -185,7 +185,7 @@ data_recipe[carbon_angels].results[1].amount = 2
 
 data_item[coke_pellet_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]N[font=default-tiny-bold]d[/font]S[font=default-tiny-bold]e[/font]"} or nil
 data_item[coke_pellet_angels].order = f
-data_item[coke_pellet_angels].fuel_category = base_fuel
+data_item[coke_pellet_angels].fuel_categories = {base_fuel}
 data_item[coke_pellet_angels].fuel_value = 14400 .. kJ
 data_recipe[coke_pellet_angels].categories = {angels_pellet_pressing_1}
 data_recipe[coke_pellet_angels].icons = TWO_I(coke_processed, coke_pellet_angels)
@@ -322,7 +322,7 @@ data_recipe[ammonium_perchlorate_angels].results = {{type = item, name = ammoniu
 
 data_item[rocket_booster_angels].subgroup = is_nitrogen
 data_item[rocket_booster_angels].order = c
-data_item[rocket_booster_angels].fuel_category = transport_fuel
+data_item[rocket_booster_angels].fuel_categories = {transport_fuel}
 data_item[rocket_booster_angels].fuel_value = 7200 .. kJ
 data_item[rocket_booster_angels].fuel_acceleration_multiplier = 1.75
 data_recipe[rocket_booster_angels].subgroup = is_nitrogen
@@ -1144,7 +1144,7 @@ data_recipe[raw_gas_refining].order = b_a
 data_recipe[raw_gas_refining].energy_required = 4
 data_recipe[raw_gas_refining].ingredients[1].amount = 120
 data_recipe[raw_gas_refining].results[1].amount = 60
-data_recipe[raw_gas_refining].results[2].amount = 30
+data_recipe[raw_gas_refining].results[2].amount = 60
 
 data_fluid[NGL_angels].subgroup = is_natural_gas
 data_fluid[NGL_angels].order = c
@@ -1506,7 +1506,7 @@ data_item_subgroup["angels-petrochem-fuel"].order = r
 
 data_item[solid_fuel].order = a
 data_item[solid_fuel].stack_size = 200
-data_item[solid_fuel].fuel_category = advanced_fuel
+data_item[solid_fuel].fuel_categories = {advanced_fuel}
 data_item[solid_fuel].fuel_value = 14400 .. kJ
 data_item[solid_fuel].fuel_acceleration_multiplier = nil
 data_item[solid_fuel].fuel_top_speed_multiplier = nil
@@ -1538,7 +1538,7 @@ data_recipe[solid_fuel_hydrazine].ingredients[1].amount = 60
 
 data_item[enriched_fuel_bob].order = b
 data_item[enriched_fuel_bob].stack_size = 50
-data_item[enriched_fuel_bob].fuel_category = advanced_fuel
+data_item[enriched_fuel_bob].fuel_categories = {advanced_fuel}
 data_item[enriched_fuel_bob].fuel_value = 57600 .. kJ
 data_item[enriched_fuel_bob].fuel_acceleration_multiplier = nil
 data_item[enriched_fuel_bob].fuel_top_speed_multiplier = nil
@@ -1567,7 +1567,7 @@ data_recipe[fuel_capsule_angels].energy_required = 4
 
 data_item[rocket_fuel].order = e
 data_item[rocket_fuel].stack_size = 50
-data_item[rocket_fuel].fuel_category = transport_fuel
+data_item[rocket_fuel].fuel_categories = {transport_fuel}
 data_item[rocket_fuel].fuel_value = 115200 .. kJ
 data_item[rocket_fuel].fuel_acceleration_multiplier = 1.75
 data_item[rocket_fuel].fuel_top_speed_multiplier = 1.25
@@ -1581,7 +1581,7 @@ data_recipe[rocket_fuel].results[1].amount = 4
 
 data_item[nuclear_fuel].order = f
 data_item[nuclear_fuel].stack_size = 50
-data_item[nuclear_fuel].fuel_category = transport_fuel
+data_item[nuclear_fuel].fuel_categories = {transport_fuel}
 data_item[nuclear_fuel].fuel_value = 921600 .. kJ
 data_item[nuclear_fuel].fuel_acceleration_multiplier = 2.5
 data_item[nuclear_fuel].fuel_top_speed_multiplier = 1.25
@@ -1594,7 +1594,7 @@ data_recipe[nuclear_fuel].ingredients[2].name = uranium_235
 
 data_item[plutonium_fuel_angels].order = g
 data_item[plutonium_fuel_angels].stack_size = 50
-data_item[plutonium_fuel_angels].fuel_category = transport_fuel
+data_item[plutonium_fuel_angels].fuel_categories = {transport_fuel}
 data_item[plutonium_fuel_angels].fuel_value = 1843200 .. kJ
 data_item[plutonium_fuel_angels].fuel_top_speed_multiplier = 1.25
 if mods[shattered_mods] then
@@ -1609,7 +1609,7 @@ data_recipe[plutonium_fuel_angels].ingredients[2].name = plutonium_239_bob
 
 data_item[fusion_fuel_angels].order = h
 data_item[fusion_fuel_angels].stack_size = 50
-data_item[fusion_fuel_angels].fuel_category = transport_fuel
+data_item[fusion_fuel_angels].fuel_categories = {transport_fuel}
 data_item[fusion_fuel_angels].fuel_value = 3686400 .. kJ
 data_item[fusion_fuel_angels].fuel_top_speed_multiplier = 1.25
 data_recipe[fusion_fuel_angels].icons = THREE_I(rocket_fuel, muon_fusion_catalyst, fusion_fuel_angels)

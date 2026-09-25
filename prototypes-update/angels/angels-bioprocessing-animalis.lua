@@ -965,7 +965,7 @@ data_recipe[alien_spores].results =
     {type = fluid, name = water_yellow_waste, amount = 60}
 }
 
-data_recipe[alien_bacteria].icons = FOUR_I(calcium_carbonate, alien_spores, hydrochloric_acid_angels, alien_bacteria)
+data_recipe[alien_bacteria].icons = FOUR_I(limestone_angels, alien_spores, hydrochloric_acid_angels, alien_bacteria)
 data_recipe[alien_bacteria].energy_required = 4
 data_recipe[alien_bacteria].ingredients[1].amount = 60
 data_recipe[alien_bacteria].ingredients[3].amount = 60

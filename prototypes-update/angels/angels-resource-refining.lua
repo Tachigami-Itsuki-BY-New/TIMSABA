@@ -9,10 +9,10 @@ data_item[stone].subgroup = is_processing_crafting
 data_item[stone].order = d
 
 data_item[landfill].subgroup = is_processing_crafting
-data_item[landfill].order = e
+data_item[landfill].order = g
 data_recipe[landfill].subgroup = is_processing_crafting
 data_recipe[landfill].icons = THREE_I(stone, stone_crushed_angels, landfill)
-data_recipe[landfill].order = e
+data_recipe[landfill].order = g
 data_recipe[landfill].energy_required = 1
 data_recipe[landfill].ingredients =
 {
@@ -23,7 +23,7 @@ data_recipe[landfill].ingredients =
 solid_mud_landfill = "angels-solid-mud-landfill"
 data_recipe[solid_mud_landfill].subgroup = is_processing_crafting
 data_recipe[solid_mud_landfill].icons = THREE_I(mud_angels, stone_crushed_angels, landfill)
-data_recipe[solid_mud_landfill].order = e_a
+data_recipe[solid_mud_landfill].order = g_a
 data_recipe[solid_mud_landfill].energy_required = 1
 data_recipe[solid_mud_landfill].ingredients =
 {
@@ -778,7 +778,7 @@ data_recipe[slag_processing_filtering_2].order = b
 data_recipe[slag_processing_filtering_2].ingredients =
 {
     {type = fluid, name = slurry_slag, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 60},
+    {type = fluid, name = water_purified_angels, amount = 30},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[slag_processing_filtering_2].results =
@@ -814,7 +814,7 @@ data_recipe[crystal_slurry_filtering_conversion_2].energy_required = 2
 data_recipe[crystal_slurry_filtering_conversion_2].ingredients =
 {
     {type = fluid, name = slurry_crystal, amount = 30},
-    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = fluid, name = water_mineralized_angels, amount = 60},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[crystal_slurry_filtering_conversion_2].results =
@@ -881,7 +881,7 @@ data_recipe[crystal_slurry_filtering_2].energy_required = 2
 data_recipe[crystal_slurry_filtering_2].ingredients =
 {
     {type = fluid, name = slurry_crystal, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 60},
+    {type = fluid, name = water_purified_angels, amount = 30},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[crystal_slurry_filtering_2].results =
@@ -954,6 +954,11 @@ data_recipe[filter_ceramic_refurbish].icons = BUILDING_R_I(filter_ceramic, water
 data_recipe[filter_ceramic_refurbish].order = c_a
 data_recipe[filter_ceramic_refurbish].energy_required = 1
 data_recipe[filter_ceramic_refurbish].ingredients[2].amount = 60
+data_recipe[filter_ceramic_refurbish].results =
+{
+    {type = item, name = filter_ceramic, amount = 1},
+    {type = fluid, name = water, amount = 60}
+}
 
 local filter_ceramic_used = "angels-filter-ceramic-used"
 data_item[filter_ceramic_used].subgroup = is_catalysts_filters

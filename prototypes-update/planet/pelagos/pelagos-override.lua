@@ -2,7 +2,7 @@ if mods[pelagos_mods] then
     -- COCONUT
     data_item[coconut].subgroup = is_coconut
     data_item[coconut].order = a
-    data_item[coconut].fuel_category = base_fuel
+    data_item[coconut].fuel_categories = {base_fuel}
     data_item[coconut].fuel_value = 3600 .. kJ
     TIMSABA.void.freezing_organics(coconut)
 
@@ -10,14 +10,14 @@ if mods[pelagos_mods] then
     data_item[coconut_seed].subgroup = is_coconut
     data_item[coconut_seed].order = b
     data_item[coconut_seed].stack_size = 200
-    data_item[coconut_seed].fuel_category = base_fuel
+    data_item[coconut_seed].fuel_categories = {base_fuel}
     data_item[coconut_seed].fuel_value = 1800 .. kJ
 
     local coconut_meat = "coconut-meat"
     data_capsule[coconut_meat].subgroup = is_coconut
     data_capsule[coconut_meat].order = c
     data_capsule[coconut_meat].stack_size = 200
-    data_capsule[coconut_meat].fuel_category = base_fuel
+    data_capsule[coconut_meat].fuel_categories = {base_fuel}
     data_capsule[coconut_meat].fuel_value = 900 .. kJ
     TIMSABA.void.freezing_organics(coconut_meat)
 
@@ -31,7 +31,7 @@ if mods[pelagos_mods] then
     data_item[coconut_husk].subgroup = is_coconut
     data_item[coconut_husk].order = d
     data_item[coconut_husk].stack_size = 200
-    data_item[coconut_husk].fuel_category = base_fuel
+    data_item[coconut_husk].fuel_categories = {base_fuel}
     data_item[coconut_husk].fuel_value = 900 .. kJ
 
     data_recipe[coconut_processing].subgroup = is_coconut
@@ -96,7 +96,7 @@ if mods[pelagos_mods] then
     data_item[fermentation_bacteria].subgroup = is_pelagos_titanium
     data_item[fermentation_bacteria].order = a
     data_item[fermentation_bacteria].stack_size = 200
-    data_item[fermentation_bacteria].fuel_category = base_fuel
+    data_item[fermentation_bacteria].fuel_categories = {base_fuel}
     data_item[fermentation_bacteria].fuel_value = (225/8) .. kJ
     data_recipe[fermentation_bacteria].subgroup = is_pelagos_titanium
     data_recipe[fermentation_bacteria].icons = THREE_D_I(factorian_fish, coconut_oil, methane_angels, fermentation_bacteria, nil, spoilage)
@@ -236,7 +236,7 @@ if mods[pelagos_mods] then
     data_item[activated_carbon].subgroup = is_pelagos_coal
     data_item[activated_carbon].order = c
     data_item[activated_carbon].stack_size = 200
-    data_item[activated_carbon].fuel_category = base_fuel
+    data_item[activated_carbon].fuel_categories = {base_fuel}
     data_item[activated_carbon].fuel_value = 7200 .. kJ
     data_recipe[activated_carbon].subgroup = is_pelagos_coal
     data_recipe[activated_carbon].icons = TWO_I(carbon_angels, activated_carbon)
@@ -260,7 +260,7 @@ if mods[pelagos_mods] then
     data_item[copper_biter_egg].subgroup = is_pelagos_recipe
     data_item[copper_biter_egg].order = b
     data_item[copper_biter_egg].stack_size = 200
-    data_item[copper_biter_egg].fuel_category = base_fuel
+    data_item[copper_biter_egg].fuel_categories = {base_fuel}
     data_item[copper_biter_egg].fuel_value = 7200 .. kJ
     TIMSABA.void.freezing_organics(copper_biter_egg)
     data_recipe[copper_biter_egg].subgroup = is_pelagos_recipe

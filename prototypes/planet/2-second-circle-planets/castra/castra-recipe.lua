@@ -90,7 +90,7 @@ if mods[castra_mods] then
     ({
         {
             name = laser_capsule_castra_data,
-            category = "castra-basic-crafting",
+            categories = {"castra-crafting"},
             subgroup = is_castra_war,
             icons = BUILDING_R_IS(laser_capsule, castra_data),
             order = i,

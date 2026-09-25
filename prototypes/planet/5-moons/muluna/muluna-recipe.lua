@@ -5,7 +5,7 @@ if mods[muluna_mods] then
         {
             type = recipe,
             name = lunar_regolith,
-            category = "ground-digging",
+            categories = {"ground-digging"},
             subgroup = is_muluna_crushing,
             icon = data_item[lunar_regolith].icon,
             order = a,

@@ -1,4 +1,5 @@
 slag_processing_4 = "slag-processing-4"
+slag_processing_5 = "slag-processing-5"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -16,6 +17,23 @@ TIMSABA.functions.create_recipes
             {type = item, name = ore_bobmonium, amount = 1, independent_probability = 0.5},
             {type = item, name = ore_franckeite, amount = 1, independent_probability = 0.5}
         }
+    },
+    {
+        localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. powellite_ore}, {"item-name." .. molybdenite_ore}},
+        name = slag_processing_5,
+        categories = {crystallizing_4},
+        subgroup = slag_processing_1,
+        icons = THREE_R_I(sludge_mineral, powellite_ore, molybdenite_ore),
+        order = i,
+        allow_productivity = true,
+        energy_required = 8,
+        ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+        results =
+        {
+            {type = item, name = powellite_ore, amount = 1, independent_probability = 0.5},
+            {type = item, name = molybdenite_ore, amount = 1, independent_probability = 0.5}
+        },
+        surface_conditions = {{property = pressure, min = 1000, max = 1000}}
     }
 })
 
@@ -23,8 +41,8 @@ local function sortiong_ore_recipe_true(ingredient, order)
     TIMSABA.functions.create_recipes
     ({
         {
-            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. ingredient}},
-            name = ingredient .. _sorting_stone,
+            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. ingredient}},
+            name = ingredient .. _sorting,
             categories = {hand_crafting, angels_ore_sorting_1},
             subgroup = is_ore_sorting,
             icons = RECYCLING_I(recycling_png, ingredient),
@@ -33,8 +51,8 @@ local function sortiong_ore_recipe_true(ingredient, order)
             allow_productivity = true,
             energy_required = 1,
             ingredients = {{type = item, name = ingredient, amount = 4}},
-            results = {{type = item, name = stone, amount = 1}},
-            main_product = stone
+            results = {{type = item, name = slag_angels, amount = 1}},
+            main_product = slag_angels
         }
     })
 end
@@ -47,8 +65,8 @@ local function sortiong_ore_recipe_false(ingredient, order)
     TIMSABA.functions.create_recipes
     ({
         {
-            localised_name = {"recipe-name.sorting-stone-recipe", {"item-name." .. ingredient}},
-            name = ingredient .. _sorting_stone,
+            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. ingredient}},
+            name = ingredient .. _sorting,
             categories = {angels_ore_sorting_1},
             subgroup = is_ore_sorting,
             icons = RECYCLING_I(recycling_png, ingredient),
@@ -56,8 +74,8 @@ local function sortiong_ore_recipe_false(ingredient, order)
             allow_productivity = true,
             energy_required = 1,
             ingredients = {{type = item, name = ingredient, amount = 4}},
-            results = {{type = item, name = stone, amount = 1}},
-            main_product = stone
+            results = {{type = item, name = slag_angels, amount = 1}},
+            main_product = slag_angels
         }
     })
 end

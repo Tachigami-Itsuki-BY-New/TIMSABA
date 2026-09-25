@@ -624,6 +624,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_automation_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_automation_science_pack].icons = R_P_I(automation_science_pack, water_saline_angels)
     data_recipe[deepsea_research_automation_science_pack].order = a_a
+    data_recipe[deepsea_research_automation_science_pack].energy_required = 4
     data_recipe[deepsea_research_automation_science_pack].ingredients = util.table.deepcopy(data_recipe[automation_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_automation_science_pack].ingredients, {type = fluid, name = water_saline_angels, amount = 60})
     data_recipe[deepsea_research_automation_science_pack].surface_conditions = nil
@@ -632,6 +633,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_logistic_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_logistic_science_pack].icons = R_P_I(logistic_science_pack, water_brackish_maraxsis)
     data_recipe[deepsea_research_logistic_science_pack].order = a_b
+    data_recipe[deepsea_research_logistic_science_pack].energy_required = 4
     data_recipe[deepsea_research_logistic_science_pack].ingredients = util.table.deepcopy(data_recipe[logistic_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_logistic_science_pack].ingredients, {type = fluid, name = water_brackish_maraxsis, amount = 60})
     data_recipe[deepsea_research_logistic_science_pack].surface_conditions = nil
@@ -640,6 +642,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_military_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_military_science_pack].icons = R_P_I(military_science_pack, lava)
     data_recipe[deepsea_research_military_science_pack].order = a_c
+    data_recipe[deepsea_research_military_science_pack].energy_required = 8
     data_recipe[deepsea_research_military_science_pack].ingredients = util.table.deepcopy(data_recipe[military_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_military_science_pack].ingredients, {type = fluid, name = lava, amount = 120})
     data_recipe[deepsea_research_military_science_pack].surface_conditions = nil
@@ -648,6 +651,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_chemical_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_chemical_science_pack].icons = R_P_I(chemical_science_pack, sodium_sulfate_solution)
     data_recipe[deepsea_research_chemical_science_pack].order = a_d
+    data_recipe[deepsea_research_chemical_science_pack].energy_required = 16
     data_recipe[deepsea_research_chemical_science_pack].ingredients = util.table.deepcopy(data_recipe[chemical_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_chemical_science_pack].ingredients, {type = fluid, name = sodium_sulfate_solution, amount = 120})
     data_recipe[deepsea_research_chemical_science_pack].surface_conditions = nil
@@ -656,6 +660,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_production_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_production_science_pack].icons = R_P_I(production_science_pack, sodium_hydroxide_solution_angels)
     data_recipe[deepsea_research_production_science_pack].order = a_e
+    data_recipe[deepsea_research_production_science_pack].energy_required = 16
     data_recipe[deepsea_research_production_science_pack].ingredients = util.table.deepcopy(data_recipe[production_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_production_science_pack].ingredients, {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240})
     data_recipe[deepsea_research_production_science_pack].results[1].amount = 8
@@ -665,6 +670,7 @@ if mods[maraxsis_mods] then
     data_recipe[deepsea_research_utility_science_pack].subgroup = is_maraxsis_science
     data_recipe[deepsea_research_utility_science_pack].icons = R_P_I(utility_science_pack, deuterium_angels)
     data_recipe[deepsea_research_utility_science_pack].order = a_f
+    data_recipe[deepsea_research_utility_science_pack].energy_required = 16
     data_recipe[deepsea_research_utility_science_pack].ingredients = util.table.deepcopy(data_recipe[utility_science_pack].ingredients)
     table.insert(data_recipe[deepsea_research_utility_science_pack].ingredients, {type = fluid, name = deuterium_angels, amount = 240})
     data_recipe[deepsea_research_utility_science_pack].results[1].amount = 8
@@ -701,7 +707,9 @@ if mods[maraxsis_mods] then
         table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
         table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
         table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        if mods[quality_mods] then
+            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        end
 
         bobmods.lib.recipe.update_recycling_recipe
         ({
@@ -786,7 +794,9 @@ if mods[maraxsis_mods] then
         table.insert(data_technology[productivity_module_7].prerequisites, hydraulic_science_pack)
         table.insert(data_technology[pollution_clean_module_7].prerequisites, hydraulic_science_pack)
         table.insert(data_technology[pollution_create_module_7].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[quality_module_7].prerequisites, hydraulic_science_pack)
+        if mods[quality_mods] then
+            table.insert(data_technology[quality_module_7].prerequisites, hydraulic_science_pack)
+        end
     end
 
     table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)

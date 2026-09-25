@@ -461,7 +461,9 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 6}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         })
     })
@@ -469,6 +471,10 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_mining_drill[electric_mining_drill_6].next_upgrade = nil
     data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
     data_mining_drill[electric_mining_drill_6].collision_mask = data_mining_drill[electric_mining_drill_5].collision_mask
+    if mods[quality_mods] then
+        data_mining_drill[electric_mining_drill_6].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        table.insert(data_mining_drill[electric_mining_drill_6].allowed_module_categories, quality)
+    end
 end
 
 -- PUMPJACKS
@@ -528,7 +534,9 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 5}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         }),
         {
@@ -584,7 +592,9 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 6}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         })
     })
@@ -625,6 +635,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 512},
             {type = item, name = heat_pipe_4, amount = 32},
             {type = item, name = lead_plate_bob, amount = 256},
+            {type = item, name = uranium_238_plate, amount = 256},
             {type = item, name = molybdenum_rhenium_plate, amount = 256},
             {type = item, name = carbon_concrete_brick, amount = 512},
             {type = item, name = deuterium_reactor, amount = 1}
@@ -688,7 +699,9 @@ TIMSABA.functions.create_buildings
         pollution = 6,
         drain = 90 .. kW,
         energy_usage = 270 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     -- FURNACE (ASSEMBLY)
     {
@@ -713,7 +726,9 @@ TIMSABA.functions.create_buildings
         pollution = 6,
         drain = 90 .. kW,
         energy_usage = 270 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     -- CENTIFUGE
     {
@@ -736,7 +751,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[centrifuge_3],
 
         energy_usage = 1860 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     }
 })
 
@@ -750,4 +767,16 @@ data_assembling[electric_mixing_furnace_4].ingredient_count = 2
 
 data_assembling[centrifuge_3].next_upgrade = centrifuge_4
 data_assembling[centrifuge_4].next_upgrade = nil
+data_assembling[centrifuge_4].fluid_boxes_off_when_no_fluid_recipe = true
 table.insert(data_assembling[centrifuge_4].crafting_categories, centrifuging_4)
+
+if mods[quality_mods] then
+    data_furnace[electric_furnace_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_furnace[electric_furnace_4].allowed_module_categories, quality)
+
+    data_assembling[electric_mixing_furnace_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_assembling[electric_mixing_furnace_4].allowed_module_categories, quality)
+
+    data_assembling[centrifuge_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_assembling[centrifuge_4].allowed_module_categories, quality)
+end

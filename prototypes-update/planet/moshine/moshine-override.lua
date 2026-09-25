@@ -526,6 +526,11 @@ if mods[moshine_mods] then
     data_rail_planner[rail_minimal].stack_size = 200
     data_recipe[rail_minimal].subgroup = is_moshine_train
     data_recipe[rail_minimal].order = e
+    data_recipe[rail_minimal].ingredients =
+    {
+        {type = item, name = silicon_carbide_bob, amount = 1},
+        {type = item, name = neodymium_magnet, amount = 1}
+    }
 
     local rail_ramp_minimal = "rail-ramp-minimal"
     data_rail_planner[rail_ramp_minimal].subgroup = is_moshine_train
@@ -921,6 +926,8 @@ if mods[moshine_mods] then
         item = sand_angels,
         count = 256
     }
+
+    table.insert(data_technology["minimalist-rails"].prerequisites, tech_neodymium_smelting_1)
 
     local tech_space_train = "tech-space-trains"
     table.insert(data_technology[tech_space_train].prerequisites, fluid_wagon_3)

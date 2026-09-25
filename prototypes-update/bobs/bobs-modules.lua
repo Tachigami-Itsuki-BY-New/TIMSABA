@@ -115,14 +115,16 @@ if mods[bobmodules] then
     processor_module_boards(processor_quality_circuit_board,          polished_diamond_bob,  crystal_full_harmonic)
 
     local function module_tier_1(name)
-        data_recipe[name].energy_required = 32
-        data_recipe[name].ingredients =
-        {
-            {type = item, name = electronic_circuit,   amount = 8},
-            {type = item, name = module_case,          amount = 1},
-            {type = item, name = module_contact,       amount = 4},
-            {type = item, name = module_circuit_board, amount = 1}
-        }
+        if not data_recipe[name] then return end
+
+            data_recipe[name].energy_required = 32
+            data_recipe[name].ingredients =
+            {
+                {type = item, name = electronic_circuit,   amount = 8},
+                {type = item, name = module_case,          amount = 1},
+                {type = item, name = module_contact,       amount = 4},
+                {type = item, name = module_circuit_board, amount = 1}
+            }
     end
     module_tier_1(speed_module_1)
     module_tier_1(efficiency_module_1)
@@ -132,6 +134,8 @@ if mods[bobmodules] then
     module_tier_1(quality_module_1)
 
     local function module_tier_2(name, circuit_board, module)
+        if not data_recipe[name] then return end
+
         data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
@@ -148,6 +152,8 @@ if mods[bobmodules] then
     module_tier_2(quality_module_2,          quality_circuit_board,          quality_module_1)
 
     local function module_tier_3(name, circuit_board, module)
+        if not data_recipe[name] then return end
+
         data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
@@ -164,6 +170,8 @@ if mods[bobmodules] then
     module_tier_3(quality_module_3,          advanced_quality_circuit_board,          quality_module_2)
 
     local function module_tier_4(name, circuit_board, module)
+        if not data_recipe[name] then return end
+
         data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
@@ -180,6 +188,8 @@ if mods[bobmodules] then
     module_tier_4(quality_module_4,          processor_quality_circuit_board,          quality_module_3)
 
     local function module_tier_5(name, circuit_board, module)
+        if not data_recipe[name] then return end
+
         data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
@@ -260,10 +270,12 @@ if mods[bobmodules] then
         {name = agricultural_module_1,     subgroup = is_agricultural_module}
     }
     for _, modules in pairs(module_tier_1) do
-        data_module[modules.name].subgroup = modules.subgroup
-        data_module[modules.name].order = a
-        data_recipe[modules.name].subgroup = modules.subgroup
-        data_recipe[modules.name].order = a
+        if data_module[modules.name] then
+            data_module[modules.name].subgroup = modules.subgroup
+            data_module[modules.name].order = a
+            data_recipe[modules.name].subgroup = modules.subgroup
+            data_recipe[modules.name].order = a
+        end
     end
 
     local module_tier_2 =
@@ -277,10 +289,12 @@ if mods[bobmodules] then
         {name = agricultural_module_2,     subgroup = is_agricultural_module}
     }
     for _, modules in pairs(module_tier_2) do
-        data_module[modules.name].subgroup = modules.subgroup
-        data_module[modules.name].order = b
-        data_recipe[modules.name].subgroup = modules.subgroup
-        data_recipe[modules.name].order = b
+        if data_module[modules.name] then
+            data_module[modules.name].subgroup = modules.subgroup
+            data_module[modules.name].order = b
+            data_recipe[modules.name].subgroup = modules.subgroup
+            data_recipe[modules.name].order = b
+        end
     end
 
     local module_tier_3 =
@@ -294,10 +308,12 @@ if mods[bobmodules] then
         {name = agricultural_module_3,     subgroup = is_agricultural_module}
     }
     for _, modules in pairs(module_tier_3) do
-        data_module[modules.name].subgroup = modules.subgroup
-        data_module[modules.name].order = c
-        data_recipe[modules.name].subgroup = modules.subgroup
-        data_recipe[modules.name].order = c
+        if data_module[modules.name] then
+            data_module[modules.name].subgroup = modules.subgroup
+            data_module[modules.name].order = c
+            data_recipe[modules.name].subgroup = modules.subgroup
+            data_recipe[modules.name].order = c
+        end
     end
 
     local module_tier_4 =
@@ -311,10 +327,12 @@ if mods[bobmodules] then
         {name = agricultural_module_4,     subgroup = is_agricultural_module}
     }
     for _, modules in pairs(module_tier_4) do
-        data_module[modules.name].subgroup = modules.subgroup
-        data_module[modules.name].order = d
-        data_recipe[modules.name].subgroup = modules.subgroup
-        data_recipe[modules.name].order = d
+        if data_module[modules.name] then
+            data_module[modules.name].subgroup = modules.subgroup
+            data_module[modules.name].order = d
+            data_recipe[modules.name].subgroup = modules.subgroup
+            data_recipe[modules.name].order = d
+        end
     end
 
     local module_tier_5 =
@@ -328,10 +346,12 @@ if mods[bobmodules] then
         {name = agricultural_module_5,     subgroup = is_agricultural_module}
     }
     for _, modules in pairs(module_tier_5) do
-        data_module[modules.name].subgroup = modules.subgroup
-        data_module[modules.name].order = e
-        data_recipe[modules.name].subgroup = modules.subgroup
-        data_recipe[modules.name].order = e
+        if data_module[modules.name] then
+            data_module[modules.name].subgroup = modules.subgroup
+            data_module[modules.name].order = e
+            data_recipe[modules.name].subgroup = modules.subgroup
+            data_recipe[modules.name].order = e
+        end
     end
 
     data_item[beacon_2].stack_size = 32
@@ -347,6 +367,8 @@ if mods[bobmodules] then
         {type = item, name = crystal_shard_harmonic, amount = 1},
         {type = item, name = beacon_1,               amount = 1}
     }
+    data_beacon[beacon_2].allowed_effects = {speed, consumption, pollution}
+    data_beacon[beacon_2].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
     data_item[beacon_3].stack_size = 32
     data_item[beacon_3].weight = 31250
@@ -362,6 +384,8 @@ if mods[bobmodules] then
         {type = item, name = crystal_full_harmonic,    amount = 1},
         {type = item, name = beacon_2,                 amount = 1}
     }
+    data_beacon[beacon_3].allowed_effects = {speed, consumption, pollution}
+    data_beacon[beacon_3].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

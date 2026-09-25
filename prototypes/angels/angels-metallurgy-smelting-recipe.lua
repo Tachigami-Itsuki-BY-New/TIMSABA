@@ -573,7 +573,7 @@ TIMSABA.functions.create_recipes
 -- SILICON
 silicon_oxide_IV_from_silicon_chloride_IV_gas = "silicon-oxide-IV-from-silicon-chloride-IV-gas"
 silicon_oxide_IV_from_silicon_fluoride_IV_gas = "silicon-oxide-IV-from-silicon-fluoride-IV-gas"
-silane_gas_from_magnesium_silicide_ingot = "silane-gas-from-magnesium-silicide-ingot"
+silane_gas_from_magnesium_silicide = "silane-gas-from-magnesium-silicide"
 hexafluorosilicic_acid_from_silicon_fluoride_IV_gas = "hexafluorosilicic-acid-from-silicon-fluoride-IV-gas"
 TIMSABA.functions.create_recipes
 ({
@@ -631,15 +631,15 @@ TIMSABA.functions.create_recipes
         main_product = silicon_oxide_IV
     },
     {
-        name = silane_gas_from_magnesium_silicide_ingot,
+        name = silane_gas_from_magnesium_silicide,
         categories = {angels_advanced_chemistry},
         subgroup = is_silicon_chemistry,
-        icons = THREE_D_I(magnesium_silicide_ingot, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
+        icons = THREE_D_I(magnesium_silicide, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
         order = d_a,
         energy_required = 8, -- Mg₂Si + 4HCl(aq) --> 2MgCl₂(aq) + SiH₄ + 2H₂O
         ingredients =
         {
-            {type = item, name = magnesium_silicide_ingot, amount = 16},
+            {type = item, name = magnesium_silicide, amount = 16},
             {type = fluid, name = hydrochloric_acid_angels, amount = 960}
         },
         results =

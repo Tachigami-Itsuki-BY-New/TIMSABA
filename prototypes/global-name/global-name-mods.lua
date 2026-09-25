@@ -532,6 +532,9 @@ planet_reigia = "reigia"
 cubium_mods = "cubium"
 planet_cubium = "cubium"
 
+-- ENEAS
+eneas_mods = "moon-eneas"
+
 -- NEXUS
 nexus_mods = "Nexus"
 planet_nexus= "nexus"

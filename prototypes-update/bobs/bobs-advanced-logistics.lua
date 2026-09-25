@@ -183,9 +183,9 @@ local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
         {type = item, name = plate,       amount = 32}
     }
 end
-cargo_wagon_recipe(cargo_wagon_1, iron_gear_wheel,     iron_bearing,     iron_chest,    iron_plate)
+cargo_wagon_recipe(cargo_wagon_1, steel_gear_wheel, steel_bearing, iron_chest, steel_plate)
 if settings.startup[setting_bobmods_logistics_trains].value then
-    cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel,    steel_bearing,    cargo_wagon_1, steel_plate)
+    cargo_wagon_recipe(cargo_wagon_2,    brass_gear_wheel,    brass_bearing, cargo_wagon_1, brass_plate_bob)
     cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
 end
 
@@ -215,9 +215,9 @@ local function fluid_wagon_recipe(name, gear_wheel, bearing, fluid_wagon, plate)
         {type = item, name = plate,       amount = 32}
     }
 end
-fluid_wagon_recipe(fluid_wagon_1, iron_gear_wheel,     iron_bearing,     storage_tank_1, iron_plate)
+fluid_wagon_recipe(fluid_wagon_1, steel_gear_wheel, steel_bearing, small_storage_tank_inline, steel_plate)
 if settings.startup[setting_bobmods_logistics_trains].value then
-    fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel,    steel_bearing,    fluid_wagon_1,  steel_plate)
+    fluid_wagon_recipe(fluid_wagon_2,    brass_gear_wheel,    brass_bearing, fluid_wagon_1,  brass_plate_bob)
     fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2,  titanium_plate_bob)
 end
 

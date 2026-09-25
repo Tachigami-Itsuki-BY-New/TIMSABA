@@ -11,7 +11,7 @@ if mods[tellus_mods] then
                 subgroup = is_dyes,
                 icon = graphics_tellus .. orange_dye .. ".png",
                 order = a,
-                fuel_category = base_fuel,
+                fuel_categories = {base_fuel},
                 fuel_value = 1800 .. kJ
             },
             {
@@ -19,7 +19,7 @@ if mods[tellus_mods] then
                 subgroup = is_dyes,
                 icon = graphics_tellus .. black_dye .. ".png",
                 order = z,
-                fuel_category = base_fuel,
+                fuel_categories = {base_fuel},
                 fuel_value = 1800 .. kJ
             }
         })

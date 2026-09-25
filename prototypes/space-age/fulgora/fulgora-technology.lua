@@ -19,7 +19,7 @@ data:extend
         prerequisites = {tech_recycling, tech_advanced_ore_refining_5},
         effects =
         {
-            {type = unlock_recipe, recipe = brannerite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = brannerite_ore .. _sorting},
             {type = unlock_recipe, recipe = brannerite_crushed},
             {type = unlock_recipe, recipe = brannerite_crushed_sorting}
         },
@@ -143,7 +143,7 @@ data:extend
         prerequisites = {tech_recycling, tech_advanced_ore_refining_5},
         effects =
         {
-            {type = unlock_recipe, recipe = rheniite_ore .. _sorting_stone},
+            {type = unlock_recipe, recipe = rheniite_ore .. _sorting},
             {type = unlock_recipe, recipe = rheniite_crushed},
             {type = unlock_recipe, recipe = rheniite_crushed_sorting}
         },

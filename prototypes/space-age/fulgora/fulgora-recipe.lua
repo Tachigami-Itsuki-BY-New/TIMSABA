@@ -187,3 +187,5 @@ TIMSABA.functions.create_recipes
         main_product = calcium_chloride_solution
     }
 })
+
+-- SLAG PROCESSING

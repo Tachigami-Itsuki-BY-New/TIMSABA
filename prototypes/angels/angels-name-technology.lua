@@ -156,6 +156,8 @@ tech_steam_cracking_1 = "angels-steam-cracking-1"
 -- ANGELS BIOPROCESSING NAUVIS
 tech_bio_processing_brown = "angels-bio-processing-brown"
 tech_bio_processing_green = "angels-bio-processing-green"
+tech_bio_processing_red = "angels-bio-processing-red"
+tech_bio_processing_blue = "angels-bio-processing-blue"
 tech_bio_arboretum_2 = "angels-bio-arboretum-2"
 tech_bio_arboretum_3 = "angels-bio-arboretum-3"
 tech_bio_arboretum_4 = "angels-bio-arboretum-4"

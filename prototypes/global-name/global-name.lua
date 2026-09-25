@@ -105,11 +105,14 @@ data_loader_1x1 = data.raw["loader-1x1"]
 data_stream = data.raw["stream"]
 data_turret = data.raw["turret"]
 data_optimized_particle = data.raw["optimized-particle"]
+data_cargo_landing_pad = data.raw["cargo-landing-pad"]
 data_cargo_pod = data.raw["cargo-pod"]
+data_cargo_bay = data.raw["cargo-bay"]
 data_bool_setting = data.raw["bool-setting"]
 data_string_setting = data.raw["string-setting"]
 data_double_setting = data.raw["double-setting"]
 data_color_setting = data.raw["color-setting"]
+
 
 -- GLOBAL NAME
 item = "item"
@@ -435,4 +438,16 @@ _Item = "-Item"
 _Recipe = "-Recipe"
 
 -- RECIPE ?
-_sorting_stone = "-sorting-stone"
+_sorting = "-sorting"
+
+-- CATEGORIES MODULES
+speed = "speed"
+consumption = "consumption" -- Effect
+efficiency = "efficiency"
+productivity = "productivity"
+pollution = "pollution" -- Effect
+pollution_clean = "pollution-clean"
+pollution_create = "pollution-create"
+quality = "quality"
+agricultural = "angels-bio-yield"
+ai_speed = "ai-speed" -- Moshine

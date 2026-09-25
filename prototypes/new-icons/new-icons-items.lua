@@ -199,11 +199,13 @@ if mods[bobmodules] then
     -- QUALITY
     local graphics_quality_module = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality"
 
-    data_module[quality_module_1].icon = graphics_quality_module .. "-1.png"
-    data_module[quality_module_2].icon = graphics_quality_module .. "-2.png"
-    data_module[quality_module_3].icon = graphics_quality_module .. "-3.png"
-    data_module[quality_module_4].icon = graphics_quality_module .. "-4.png"
-    data_module[quality_module_5].icon = graphics_quality_module .. "-5.png"
+    if mods[quality_mods] then
+        data_module[quality_module_1].icon = graphics_quality_module .. "-1.png"
+        data_module[quality_module_2].icon = graphics_quality_module .. "-2.png"
+        data_module[quality_module_3].icon = graphics_quality_module .. "-3.png"
+        data_module[quality_module_4].icon = graphics_quality_module .. "-4.png"
+        data_module[quality_module_5].icon = graphics_quality_module .. "-5.png"
+    end
 
     -- AGRICULTURAL
     local graphics_agricultural_module = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural"

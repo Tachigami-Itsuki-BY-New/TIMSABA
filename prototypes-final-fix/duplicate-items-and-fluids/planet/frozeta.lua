@@ -9,9 +9,11 @@ if mods[secretas_frozeta_mods] then
         [gold_plate_mods] = gold_plate_bob,
         [speed_module_4_S] = speed_module_8,
         [efficiency_module_4_S] = efficiency_module_8,
-        [productivity_module_4_S] = productivity_module_8,
-        [quality_module_4_S] = quality_module_8
+        [productivity_module_4_S] = productivity_module_8
     }
+    if mods[quality_mods] then
+        replace_prototypes[quality_module_4_S] = quality_module_8
+    end
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     local delete_prototypes =

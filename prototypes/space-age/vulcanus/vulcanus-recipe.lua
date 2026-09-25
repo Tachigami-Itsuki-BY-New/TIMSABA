@@ -573,3 +573,5 @@ if mods[lignumis_mods] then
     create_recipe_casting_pipes(casting_gold_pipe_to_ground, h, gold_molten_angels, gold_pipe_to_ground, 4)
 end
 create_recipe_casting_pipes(casting_nitinol_pipe_to_ground,  i,  nitinol_molten_angels,  nitinol_pipe_to_ground, 5)
+
+-- SLAG PROCESSING

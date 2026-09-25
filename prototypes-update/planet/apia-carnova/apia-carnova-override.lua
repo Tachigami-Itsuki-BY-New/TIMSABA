@@ -3,7 +3,7 @@ if mods[apia_carnova_mods] then
     local raw_larvae = "raw-larvae"
     data_item[raw_larvae].subgroup = is_apia_recipe
     data_item[raw_larvae].order = a
-    data_item[raw_larvae].fuel_category = base_fuel
+    data_item[raw_larvae].fuel_categories = {base_fuel}
     data_item[raw_larvae].fuel_value = 1800 .. kJ
     TIMSABA.void.freezing_organics(raw_larvae)
 
@@ -68,7 +68,7 @@ if mods[apia_carnova_mods] then
 
     data_item[wax].subgroup = is_apia_recipe
     data_item[wax].order = e
-    data_item[wax].fuel_category = base_fuel
+    data_item[wax].fuel_categories = {base_fuel}
     data_item[wax].fuel_value = 1800 .. kJ
 
     data_item[honey].subgroup = is_apia_recipe
@@ -269,7 +269,7 @@ if mods[apia_carnova_mods] then
 
     data_item[lipids].subgroup = is_carnova_recipe
     data_item[lipids].order = g
-    data_item[lipids].fuel_category = base_fuel
+    data_item[lipids].fuel_categories = {base_fuel}
     data_item[lipids].fuel_value = 1800 .. kJ
     TIMSABA.void.freezing_organics(lipids)
 

@@ -16,6 +16,8 @@ else
     data_technology[rocket_silo].research_trigger.item = "bob-logistic-robot-5"
 end
 
+table.insert(data_technology[space_science_pack].effects, {type = unlock_recipe, recipe = slag_processing_5})
+
 tech_space_platform_thruster = "space-platform-thruster"
 if not mods[muluna_mods] then
     data_technology[tech_space_platform_thruster].unit.ingredients =

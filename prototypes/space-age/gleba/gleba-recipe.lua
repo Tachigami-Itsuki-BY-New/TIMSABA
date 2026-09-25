@@ -327,21 +327,16 @@ recipe_breeding_fish =
     {name = santa_ray,          order = d_d, ingredient = raw_meat}
 }
 for _, RECIPE in ipairs(recipe_breeding_fish) do
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
             localised_name = {"recipe-name.breeding", {"item-name." .. RECIPE.name}},
-            type = recipe,
             name = "breeding-" .. RECIPE.name,
-            category = "angels-bio-refugium-fish",
+            categories = {"angels-bio-refugium-fish"},
             subgroup = is_gleba_recipe,
             icons = STONKS_I(stonks_png, RECIPE.name),
             order = RECIPE.order,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {
@@ -370,21 +365,16 @@ recipe_breeding_puffer =
     {name = corrosive_puffer, order = e_e, ingredient = fruits, unlock_recipe = tech_gleba_biology}
 }
 for _, RECIPE in ipairs(recipe_breeding_puffer) do
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
             localised_name = {"recipe-name.breeding", {"item-name." .. RECIPE.name}},
-            type = recipe,
             name = "breeding-" .. RECIPE.name,
-            category = "angels-bio-refugium-puffer",
+            categories = {"angels-bio-refugium-puffer"},
             subgroup = is_gleba_recipe,
             icons = STONKS_I(stonks_png, RECIPE.name),
             order = RECIPE.order,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {
@@ -414,21 +404,16 @@ end
     {name = biter_queen_big,    order = f_f, ingredient = , unlock_recipe = tech_gleba_biology}
 }
 for _, RECIPE in ipairs(recipe_breeding_biter) do
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
             localised_name = {"recipe-name.breeding", {"item-name." .. RECIPE.name}},
-            type = recipe,
             name = "breeding-" .. RECIPE.name,
-            category = "angels-bio-refugium-biter",
+            categories = {"angels-bio-refugium-biter"},
             subgroup = is_gleba_recipe,
             icons = STONKS_I(stonks_png, RECIPE.name),
             order = RECIPE.order,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {

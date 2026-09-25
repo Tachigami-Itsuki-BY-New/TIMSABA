@@ -98,7 +98,7 @@ data_recipe[glass_bob].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].hidden = false
 data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 
-data_item[nuclear_fuel].fuel_category = transport_fuel
+data_item[nuclear_fuel].fuel_categories = {transport_fuel}
 
 -- SPACE AGE
 data_armor[mech_armor].resistances =
@@ -584,10 +584,10 @@ if mods[lignumis_mods] then
         data_recipe[T0_transport_belt].enabled = false
     end
 
-    data_item[sulfur].fuel_category = base_fuel
+    data_item[sulfur].fuel_categories = {base_fuel}
     data_item[sulfur].fuel_value = 14400 .. kJ
 
-    data_item[rocket_fuel].fuel_category = transport_fuel
+    data_item[rocket_fuel].fuel_categories = {transport_fuel}
 
     if data_technology[tech_logistics_0] then
         data_technology[tech_logistics_0].prerequisites = {tech_iron_processing, tech_copper_processing, "wood-logistics"}

@@ -112,35 +112,37 @@ if mods[bobmodules] then
     --data_module[pollution_create_module_5].effect = {pollution = 4 * bobmods.modules.PollutionCreatePerLevel + bobmods.modules.PollutionCreateBonus} -- 125%
 
     -- QUALITY
-    data_module[quality_module_1].effect =
-    {
-        speed = -1 * bobmods.modules.SpeedPenalty, -- -25%
-        quality = bobmods.modules.QualityBonus, -- 2%
-    }
+    if mods[quality_mods] then
+        data_module[quality_module_1].effect =
+        {
+            speed = -1 * bobmods.modules.SpeedPenalty, -- -25%
+            quality = bobmods.modules.QualityBonus, -- 2%
+        }
 
-    data_module[quality_module_2].effect =
-    {
-        speed = -1 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 50%
-        quality = bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 4%
-    }
+        data_module[quality_module_2].effect =
+        {
+            speed = -1 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 50%
+            quality = bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 4%
+        }
 
-    data_module[quality_module_3].effect =
-    {
-        speed = -2 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 75%
-        quality = 2 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 6%
-    }
+        data_module[quality_module_3].effect =
+        {
+            speed = -2 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 75%
+            quality = 2 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 6%
+        }
 
-    data_module[quality_module_4].effect =
-    {
-        speed = -3 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 100%
-        quality = 3 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 8%
-    }
+        data_module[quality_module_4].effect =
+        {
+            speed = -3 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 100%
+            quality = 3 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 8%
+        }
 
-    data_module[quality_module_5].effect =
-    {
-        speed = -4 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 125%
-        quality = 4 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 10%
-    }
+        data_module[quality_module_5].effect =
+        {
+            speed = -4 * bobmods.modules.SpeedPenaltyPerLevel - bobmods.modules.SpeedPenalty, -- 125%
+            quality = 4 * bobmods.modules.QualityPerLevel + bobmods.modules.QualityBonus, -- 10%
+        }
+    end
 
     -- AGRICULTURAL
     local module_color_map = {["yellow"] = {primary = util.color("e6c229"), secondary = util.color("ffe670")}}
@@ -182,14 +184,14 @@ end
 
 -- MOSHINE
 if mods[moshine_mods] then
-    data_module["ai-tier-1"].effect = {speed = 0.25}
-    data_module["ai-tier-2"].effect = {speed = 0.50}
-    data_module["ai-tier-3"].effect = {speed = 0.75}
-    data_module["ai-tier-4"].effect = {speed = 1.00}
-    data_module["ai-tier-5"].effect = {speed = 1.25}
-    data_module["ai-tier-6"].effect = {speed = 1.50}
-    data_module["ai-tier-7"].effect = {speed = 1.75}
-    data_module["ai-tier-8"].effect = {speed = 2.00}
-    data_module["ai-tier-9"].effect = {speed = 2.25}
-    data_module["ai-tier-10"].effect = {speed = 2.50}
+    data_module[ai_tier_1].effect = {speed = 0.25}
+    data_module[ai_tier_2].effect = {speed = 0.50}
+    data_module[ai_tier_3].effect = {speed = 0.75}
+    data_module[ai_tier_4].effect = {speed = 1.00}
+    data_module[ai_tier_5].effect = {speed = 1.25}
+    data_module[ai_tier_6].effect = {speed = 1.50}
+    data_module[ai_tier_7].effect = {speed = 1.75}
+    data_module[ai_tier_8].effect = {speed = 2.00}
+    data_module[ai_tier_9].effect = {speed = 2.25}
+    data_module[ai_tier_10].effect = {speed = 2.50}
 end
