@@ -276,7 +276,12 @@ data_recipe[coolant_used_filtration_1].icons = TWO_I(coolant_used, coolant, numb
 data_recipe[coolant_used_filtration_1].order = c
 data_recipe[coolant_used_filtration_1].energy_required = 4
 data_recipe[coolant_used_filtration_1].ingredients[1].amount = 240
-data_recipe[coolant_used_filtration_1].results[1].amount = 240
+data_recipe[coolant_used_filtration_1].results =
+{
+    {type = fluid, name = coolant, amount = 240},
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.9},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.1}
+}
 
 local coolant_used_filtration_2 = "angels-coolant-used-filtration-2"
 data_recipe[coolant_used_filtration_2].icons = TWO_I(coolant_used, coolant, number_2)

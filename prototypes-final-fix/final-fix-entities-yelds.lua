@@ -33,7 +33,7 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
-local pollution_absorption_multiplier = 2
+local pollution_absorption_multiplier = 250
 
 for _, tree in pairs(data_tree) do
     if tree.emissions_per_second.pollution then

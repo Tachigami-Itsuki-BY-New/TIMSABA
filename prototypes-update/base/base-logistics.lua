@@ -1,6 +1,11 @@
 data_item[wooden_chest].stack_size = 32
 data_item[wooden_chest].weight = 31250
-data_recipe[wooden_chest].ingredients[1].amount = 4
+if mods[lignumis_mods] then
+    data_recipe[wooden_chest].ingredients[1].name = lumber
+    data_recipe[wooden_chest].ingredients[1].amount = 2
+else
+    data_recipe[wooden_chest].ingredients[1].amount = 4
+end
 data_container[wooden_chest].next_upgrade = iron_chest
 data_container[wooden_chest].inventory_size = 20
 
@@ -662,8 +667,8 @@ if mods[loaders_modernized_integrations] then
     end
 end
 
-data_item[small_electric_pole].stack_size = 32
-data_item[small_electric_pole].weight = 31250
+data_item[small_electric_pole].stack_size = 64
+data_item[small_electric_pole].weight = 15625
 data_recipe[small_electric_pole].ingredients[1].amount = 2
 data_electric_pole[small_electric_pole].maximum_wire_distance = 10.5
 data_electric_pole[small_electric_pole].supply_area_distance = 3.5
@@ -689,8 +694,8 @@ for _, BUILD in pairs(medium_poles) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].subgroup = is_medium_electric_pole
         data_item[BUILD.name].order = BUILD.order
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
+        data_item[BUILD.name].stack_size = 64
+        data_item[BUILD.name].weight = 15625
         data_recipe[BUILD.name].subgroup = is_medium_electric_pole
         data_recipe[BUILD.name].order = BUILD.order
         data_electric_pole[BUILD.name].subgroup = is_medium_electric_pole

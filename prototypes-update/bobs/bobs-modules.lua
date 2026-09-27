@@ -367,8 +367,6 @@ if mods[bobmodules] then
         {type = item, name = crystal_shard_harmonic, amount = 1},
         {type = item, name = beacon_1,               amount = 1}
     }
-    data_beacon[beacon_2].allowed_effects = {speed, consumption, pollution}
-    data_beacon[beacon_2].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
     data_item[beacon_3].stack_size = 32
     data_item[beacon_3].weight = 31250
@@ -384,8 +382,6 @@ if mods[bobmodules] then
         {type = item, name = crystal_full_harmonic,    amount = 1},
         {type = item, name = beacon_2,                 amount = 1}
     }
-    data_beacon[beacon_3].allowed_effects = {speed, consumption, pollution}
-    data_beacon[beacon_3].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

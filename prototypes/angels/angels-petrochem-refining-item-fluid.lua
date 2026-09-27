@@ -46,7 +46,7 @@ TIMSABA.functions.create_items
         icon = graphics_petrochem_basics .. coke_processed .. ".png",
         order = e,
         fuel_categories = {base_fuel},
-        fuel_value = 7200 .. kJ
+        fuel_value = 14400 .. kJ
     },
     {
         localised_description = show_formula and {chemical_formula, "C"} or nil,

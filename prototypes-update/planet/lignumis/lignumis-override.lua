@@ -531,8 +531,9 @@ if mods[lignumis_mods] then
     data_assembling[quality_assembler].subgroup = is_lignumis_building
     data_assembling[quality_assembler].order = i
     data_assembling[quality_assembler].module_slots = 4
-    data_assembling[quality_assembler].energy_usage = 3600 .. kW
-    data_assembling[quality_assembler].effect_receiver.base_effect.quality = 5
+    data_assembling[quality_assembler].energy_usage = 3840 .. kW
+    data_assembling[quality_assembler].energy_source.emissions_per_minute.pollution = 0
+    data_assembling[quality_assembler].effect_receiver.base_effect.quality = 0.5
 
     local provisional_rocket_silo = "provisional-" .. rocket_silo
     data_item[provisional_rocket_silo].subgroup = is_lignumis_building

@@ -339,7 +339,7 @@ if mods[paracelsin_mods] then
     data_assembling[electrochemical_plant].energy_usage = 4200 .. kW
     data_assembling[electrochemical_plant].energy_source.emissions_per_minute.pollution = 8
     data_assembling[electrochemical_plant].energy_source.drain = 600 .. kW
-    data_assembling[electrochemical_plant].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[electrochemical_plant].effect_receiver.base_effect.productivity = 1
 
     local mechanical_plant = "mechanical-plant"
     data_item[mechanical_plant].subgroup = is_paracelsin_building

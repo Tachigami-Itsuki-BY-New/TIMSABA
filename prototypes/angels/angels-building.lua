@@ -402,6 +402,10 @@ TIMSABA.functions.create_buildings
         allowed_module_categories = {speed, efficiency, pollution_clean}
     }
 })
+data_assembling[electric_blast_furnace_1].next_upgrade = electric_blast_furnace_2
+data_assembling[electric_blast_furnace_2].next_upgrade = electric_blast_furnace_3
+data_assembling[electric_blast_furnace_3].next_upgrade = electric_blast_furnace_4
+data_assembling[electric_blast_furnace_4].next_upgrade = nil
 
 -- ANGELS METALLURGY CASTING
 if settings.startup[setting_early_sintering_oven].value then
@@ -1850,7 +1854,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = advanced_circuit, amount = 4},
             {type = item, name = brass_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = concrete_brick, amount = 16},
             {type = item, name = brass_plate_bob, amount = 4},
             {type = item, name = fish_refugium_1, amount = 1}
@@ -1878,7 +1881,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = processing_unit, amount = 4},
             {type = item, name = titanium_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = reinforced_concrete_brick, amount = 16},
             {type = item, name = titanium_plate_bob, amount = 4},
             {type = item, name = fish_refugium_2, amount = 1}
@@ -1905,7 +1907,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = nitinol_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
             {type = item, name = nitinol_plate_bob, amount = 4},
             {type = item, name = fish_refugium_3, amount = 1}

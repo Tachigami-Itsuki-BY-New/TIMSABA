@@ -866,9 +866,7 @@ data:extend
             {type = unlock_recipe, recipe = white_phosphorus},
             {type = unlock_recipe, recipe = phosphorus_chloride_III_liquid},
             {type = unlock_recipe, recipe = phosphorus_chloride_V},
-            {type = unlock_recipe, recipe = phosphorus_fluoride_V_gas},
-            {type = unlock_recipe, recipe = metasilicic_acid},
-            {type = unlock_recipe, recipe = silicon_oxide_IV_from_metasilicic_acid}
+            {type = unlock_recipe, recipe = phosphorus_fluoride_V_gas}
         },
         unit =
         {

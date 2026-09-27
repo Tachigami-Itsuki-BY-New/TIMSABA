@@ -186,7 +186,7 @@ data_recipe[carbon_angels].results[1].amount = 2
 data_item[coke_pellet_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]N[font=default-tiny-bold]d[/font]S[font=default-tiny-bold]e[/font]"} or nil
 data_item[coke_pellet_angels].order = f
 data_item[coke_pellet_angels].fuel_categories = {base_fuel}
-data_item[coke_pellet_angels].fuel_value = 14400 .. kJ
+data_item[coke_pellet_angels].fuel_value = 28800 .. kJ
 data_recipe[coke_pellet_angels].categories = {angels_pellet_pressing_1}
 data_recipe[coke_pellet_angels].icons = TWO_I(coke_processed, coke_pellet_angels)
 data_recipe[coke_pellet_angels].order = f
@@ -221,7 +221,8 @@ data_recipe[coal_cracking_2].results =
     {type = fluid, name = mineral_oil_angels, amount = 60},
     {type = fluid, name = fuel_oil_angels, amount = 60},
     {type = fluid, name = naphtha_angels, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 local coal_cracking_3 = "angels-coal-cracking-3"
@@ -240,7 +241,8 @@ data_recipe[coal_cracking_3].results =
     {type = fluid, name = synthesis_angels, amount = 60},
     {type = fluid, name = residual_angels, amount = 60},
     {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 -- CARBON FLUIDS ONE
@@ -375,7 +377,8 @@ data_recipe[nitrogen_monoxide_angels].results =
 {
     {type = fluid, name = nitrogen_monoxide_angels, amount = 30}, -- 60
     {type = fluid, name = steam, amount = 30}, -- 90
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 data_recipe[nitrogen_monoxide_angels].main_product = nitrogen_monoxide_angels
 
@@ -444,7 +447,8 @@ data_recipe[melamine_solution_angels].results =
     {type = fluid, name = ammonia_solution, amount = 30}, -- 90
     {type = fluid, name = melamine_solution_angels, amount = 15},
     {type = fluid, name = carbon_dioxide_angels, amount = 15}, -- 45
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 data_recipe[melamine_solution_angels].main_product = melamine_solution_angels
 
@@ -697,7 +701,8 @@ data_recipe[sodium_nitrate_processing].results =
     {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
     {type = fluid, name = nitrogen_dioxide_angels, amount = 60},
     {type = fluid, name = hydrogen_angels, amount = 30},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_item[sodium_sulfate_angels].localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4[/font]"} or nil
@@ -864,7 +869,8 @@ data_recipe[acid_gas_catalyst].results =
     {type = fluid, name = methane_angels, amount = 480},
     {type = fluid, name = hydrogen_sulfide_angels, amount = 240},
     {type = fluid, name = carbon_dioxide_angels, amount = 120},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_fluid[hydrogen_sulfide_angels].order = b
@@ -1317,7 +1323,8 @@ data_recipe[mineral_oil_catalyst].results =
     {type = fluid, name = mineral_oil_angels, amount = 15},
     {type = fluid, name = steam, amount = 60},
     {type = item, name = oil_residual_angels, amount = 4},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_fluid[lubricant].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]40[/font]H[font=default-tiny-bold]82[/font]"} or nil
@@ -1342,7 +1349,8 @@ data_recipe[mineral_oil_lubricant].results =
     {type = fluid, name = lubricant, amount = 30},
     {type = fluid, name = steam, amount = 60},
     {type = item, name = oil_residual_angels, amount = 4},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_fluid[fuel_oil_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]20[/font]H[font=default-tiny-bold]42[/font]"} or nil
@@ -1459,7 +1467,8 @@ data_recipe[synthesis_gas_methanation].results =
     {type = fluid, name = methane_angels, amount = 60},
     {type = fluid, name = ethane_angels, amount = 30},
     {type = fluid, name = butane_angels, amount = 30},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 local synthesis_gas_methanol = "angels-gas-synthesis-methanol"
@@ -1479,7 +1488,8 @@ data_recipe[synthesis_gas_methanol].results =
 {
     {type = fluid, name = methanol_angels, amount = 60},
     {type = fluid, name = steam, amount = 30},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 local naphtha_catalyst = "angels-liquid-naphtha-catalyst"
@@ -1498,7 +1508,8 @@ data_recipe[naphtha_catalyst].results =
 {
     {type = fluid, name = naphtha_angels, amount = 30},
     {type = fluid, name = steam, amount = 240},
-    {type = item, name = catalyst_carrier, amount = 1}
+    {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 -- FUEL
@@ -1641,7 +1652,8 @@ data_recipe[methanol_angels].ingredients[2].amount = 120
 data_recipe[methanol_angels].results =
 {
     {type = fluid, name = methanol_angels, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_recipe[steam_cracking_methane].subgroup = is_methane
@@ -1672,7 +1684,8 @@ data_recipe[formaldehyde_angels].results =
 {
     {type = fluid, name = formaldehyde_angels, amount = 60},
     {type = fluid, name = steam, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 -- ETHANE
@@ -1709,7 +1722,8 @@ data_recipe[propene_angels].results =
 {
     {type = fluid, name = propene_angels, amount = 120},
     {type = fluid, name = hydrogen_angels, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 data_recipe[catalyst_steam_cracking_naphtha].subgroup = is_ethane
@@ -1722,7 +1736,8 @@ data_recipe[catalyst_steam_cracking_naphtha].results =
 {
     {type = fluid, name = propene_angels, amount = 120},
     {type = fluid, name = ethane_angels, amount = 60},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 
 -- BUTANE
@@ -1743,7 +1758,8 @@ data_recipe[benzene_angels].results =
 {
     {type = fluid, name = benzene_angels, amount = 15},
     {type = fluid, name = ethane_angels, amount = 15},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 data_recipe[benzene_angels].main_product = benzene_angels
 
@@ -1785,7 +1801,8 @@ data_recipe[ethylbenzene_angels].ingredients =
 data_recipe[ethylbenzene_angels].results =
 {
     {type = fluid, name = ethylbenzene_angels, amount = 120},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
 }
 data_recipe[ethylbenzene_angels].main_product = ethylbenzene_angels
 

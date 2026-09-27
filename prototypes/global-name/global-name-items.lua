@@ -752,6 +752,7 @@ storage_tank_4_alt = "bob-storage-tank-all-corners-4"
 barrel = "barrel"
 canister = "bob-empty-canister"
 gas_bottle = "bob-gas-canister"
+barreling_pump = "angels-barreling-pump"
 
 -- ANGELS BIOPROCESSING NAUVIS
 algae_green = "angels-algae-green"
