@@ -13,10 +13,10 @@ if not mods[muluna_mods] then
         {utility_science_pack, 1}
     }
 else
-    data_technology[rocket_silo].research_trigger.item = "bob-logistic-robot-5"
+    data_technology[rocket_silo].research_trigger.item = logistic_robot_5
 end
 
-table.insert(data_technology[space_science_pack].effects, {type = unlock_recipe, recipe = slag_processing_5})
+table.insert(data_technology[space_science_pack].effects, {type = unlock_recipe, recipe = nauvis_slag_processing})
 
 tech_space_platform_thruster = "space-platform-thruster"
 if not mods[muluna_mods] then

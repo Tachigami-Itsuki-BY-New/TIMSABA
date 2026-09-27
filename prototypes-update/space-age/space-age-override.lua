@@ -135,20 +135,6 @@ if mods[lignumis_mods] then
     }
 end
 
-local cargo_landing_pad = "cargo-landing-pad"
-data_item[cargo_landing_pad].order = d
-data_recipe[cargo_landing_pad].order = d
-data_recipe[cargo_landing_pad].energy_required = 32
-data_recipe[cargo_landing_pad].ingredients =
-{
-    {type = item, name = electric_engine_unit, amount = 32},
-    {type = item, name = heat_shielding_tile, amount = 128},
-    {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = reinforced_concrete, amount = 128},
-    {type = item, name = molybdenum_rhenium_plate, amount = 32}
-}
-data_cargo_landing_pad[cargo_landing_pad].order = d
-
 local cargo_pod = "cargo-pod"
 data_cargo_pod[cargo_pod].order =  e
 
@@ -247,6 +233,23 @@ data_recipe[space_platform_starter_pack].ingredients =
     {type = item, name = space_platform_foundation, amount = 64},
     {type = item, name = nitinol_plate_bob, amount = 16}
 }
+
+local cargo_landing_pad = "cargo-landing-pad"
+data_item[cargo_landing_pad].subgroup = space_platform
+data_item[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
+data_recipe[cargo_landing_pad].subgroup = space_platform
+data_recipe[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
+data_recipe[cargo_landing_pad].energy_required = 32
+data_recipe[cargo_landing_pad].ingredients =
+{
+    {type = item, name = electric_engine_unit, amount = 32},
+    {type = item, name = heat_shielding_tile, amount = 128},
+    {type = item, name = advanced_processing_unit, amount = 8},
+    {type = item, name = reinforced_concrete, amount = 128},
+    {type = item, name = molybdenum_rhenium_plate, amount = 32}
+}
+data_cargo_landing_pad[cargo_landing_pad].subgroup = space_platform
+data_cargo_landing_pad[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
 
 data_item[cargo_bay].subgroup = space_platform
 data_item[cargo_bay].stack_size = 8

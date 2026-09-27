@@ -11,7 +11,7 @@ data_resource[wolframite_ore].factoriopedia_description = ""
 data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
 data_resource[wolframite_ore].subgroup = is_wolframite
 data_resource[wolframite_ore].order = a
-data_resource[wolframite_ore].minable.mining_time = 4
+data_resource[wolframite_ore].minable.mining_time = 1
 
 -- LAVA
 data_fluid[lava].subgroup = is_lava
@@ -388,9 +388,11 @@ data_recipe[foundry].ingredients =
 }
 data_assembling[foundry].subgroup = is_vulcanus_building
 data_assembling[foundry].order = a
+data_assembling[foundry].module_slots = 8
 data_assembling[foundry].energy_usage = 2340 .. kW
 data_assembling[foundry].energy_source.emissions_per_minute.pollution = 8
 data_assembling[foundry].energy_source.drain = 60 .. kW
+data_assembling[foundry].effect_receiver.base_effect.productivity = 1
 
 data_item[big_mining_drill].subgroup = is_vulcanus_building
 data_item[big_mining_drill].order = b
@@ -594,6 +596,7 @@ local tech_tungsten_steel = "tungsten-steel"
 data_technology[tech_tungsten_steel].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-tungsten.png"
 data_technology[tech_tungsten_steel].icon_size = 64
 
+table.insert(data_technology[metallurgic_science_pack].effects, {type = unlock_recipe, recipe = vulcanus_slag_processing})
 data_technology[metallurgic_science_pack].research_trigger =
 {
     type = craft_item,

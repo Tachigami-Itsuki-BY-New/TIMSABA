@@ -477,6 +477,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_centrifuging_3},
         subgroup = is_uranium,
         order = e,
+        allow_quality = true,
         energy_required = 16, -- 8UF₆-235(g)(80%) --> 8U-235(s) + 24F₂(g)
         ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_80pc, amount = 120}},
         results =
@@ -491,6 +492,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_centrifuging_3},
         subgroup = is_uranium,
         order = f,
+        allow_quality = true,
         energy_required = 16, -- 8UF₄-238(s) --> 8U-238(s) + 240F₂(g)
         ingredients = {{type = item, name = uranium_fluoride_IV_238, amount = 8}},
         results =
