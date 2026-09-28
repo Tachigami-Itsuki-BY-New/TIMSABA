@@ -202,7 +202,8 @@ local delete_proto =
 	phenol_angels,
 	bisphenol_a_angels,
 	cellulose_acetate_mixture,
-	cellulose_acetate
+	cellulose_acetate,
+    calcium_carbonate
 }
 TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 

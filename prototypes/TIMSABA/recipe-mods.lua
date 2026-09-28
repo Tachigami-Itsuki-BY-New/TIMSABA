@@ -1,5 +1,5 @@
 slag_processing_4 = "slag-processing-4"
-slag_processing_5 = "slag-processing-5"
+nauvis_slag_processing = "nauvis-slag-processing"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -20,7 +20,7 @@ TIMSABA.functions.create_recipes
     },
     {
         localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. powellite_ore}, {"item-name." .. molybdenite_ore}},
-        name = slag_processing_5,
+        name = nauvis_slag_processing,
         categories = {crystallizing_4},
         subgroup = slag_processing_1,
         icons = THREE_R_I(sludge_mineral, powellite_ore, molybdenite_ore),

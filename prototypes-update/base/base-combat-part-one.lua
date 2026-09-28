@@ -394,8 +394,9 @@ if mods[bobwarfare] then
     data_recipe[petroleum_jelly].results =
     {
         {type = item, name = petroleum_jelly, amount = 1},
-        {type = fluid, name = steam, amount = 480, ignored_by_productivity = 0},
-        {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 0}
+        {type = fluid, name = steam, amount = 480, ignored_by_productivity = 480},
+        {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9, ignored_by_productivity = 1},
+        {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1, ignored_by_productivity = 1}
     }
     data_recipe[petroleum_jelly].main_product = petroleum_jelly
 
@@ -407,8 +408,8 @@ if mods[bobwarfare] then
     data_recipe[gun_cotton].results =
     {
         {type = item, name = gun_cotton, amount = 4},
-        {type = fluid, name = sulfuric_acid_angels, amount = 30, ignored_by_productivity = 0},
-        {type = fluid, name = water_purified_angels, amount = 60, ignored_by_productivity = 0}
+        {type = fluid, name = sulfuric_acid_angels, amount = 30, ignored_by_productivity = 30},
+        {type = fluid, name = water_purified_angels, amount = 60, ignored_by_productivity = 60}
     }
     data_recipe[gun_cotton].main_product = gun_cotton
 
@@ -428,7 +429,7 @@ if mods[bobwarfare] then
     data_recipe[cordite].results =
     {
         {type = item, name = cordite, amount = 32},
-        {type = fluid, name = acetone_angels, amount = 30, ignored_by_productivity = 0}
+        {type = fluid, name = acetone_angels, amount = 30, ignored_by_productivity = 30}
     }
     data_recipe[cordite].main_product = cordite
 

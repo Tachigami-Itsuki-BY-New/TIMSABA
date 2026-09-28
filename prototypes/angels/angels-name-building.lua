@@ -106,6 +106,8 @@ electric_boiler_1 = "angels-electric-boiler"
 electric_boiler_2 = "angels-electric-boiler-2"
 electric_boiler_3 = "angels-electric-boiler-3"
 electric_boiler_4 = "electric-boiler-4"
+cooling_tower = "angels-cooling-tower"
+clarifier = "angels-clarifier"
 
 -- ANGELS PETROCHEM REFINING
 electrolyser_1 = "angels-electrolyser"
@@ -148,6 +150,7 @@ steam_cracker_1 = "angels-steam-cracker"
 steam_cracker_2 = "angels-steam-cracker-2"
 steam_cracker_3 = "angels-steam-cracker-3"
 steam_cracker_4 = "angels-steam-cracker-4"
+flare_stack = "angels-flare-stack"
 
 -- ANGELS BIOPROCESSING NAUVIS
 algae_farm_1 = "angels-algae-farm"

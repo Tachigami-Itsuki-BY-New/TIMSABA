@@ -154,6 +154,7 @@ data_recipe[cryogenic_plant].ingredients =
 }
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
 data_assembling[cryogenic_plant].order = a
+data_assembling[cryogenic_plant].crafting_speed = 4
 data_assembling[cryogenic_plant].energy_usage = 1140 .. kW
 data_assembling[cryogenic_plant].energy_source.emissions_per_minute.pollution = 8
 data_assembling[cryogenic_plant].energy_source.drain = 60 .. kW
@@ -405,6 +406,8 @@ data_technology[cryogenic_plant].research_trigger =
     item = lithium_bob,
     count = 256
 }
+
+table.insert(data_technology[cryogenic_science_pack].effects, {type = unlock_recipe, recipe = aquilo_slag_processing})
 
 table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
 table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})

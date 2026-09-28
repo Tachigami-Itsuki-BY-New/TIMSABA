@@ -249,6 +249,7 @@ if mods[arig_mods] then
         data_recipe[advanced_raw_quartz].surface_conditions = {{property = pressure, min = 600, max = 600}}
     end
 
+    data_recipe[raw_diamond_arig].localised_name = {"item-name." .. raw_diamond_bob}
     data_recipe[raw_diamond_arig].subgroup = is_arig_recipe
     data_recipe[raw_diamond_arig].icons = THREE_D_I(raw_quartz_arig, carbon_angels, methane_angels, raw_diamond_bob, sand_angels, hydrogen_angels)
     data_recipe[raw_diamond_arig].order = i_b

@@ -251,7 +251,7 @@ if mods[shchierbin_mods] then
     data_assembling[vanadium_crusher].crafting_speed = 2
     data_assembling[vanadium_crusher].energy_usage = 960 .. kW
     data_assembling[vanadium_crusher].energy_source.drain = 30 .. kW
-    data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 1
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

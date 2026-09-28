@@ -224,7 +224,7 @@ data_technology[tech_steam_turbine_1].prerequisites = {steam_engine_3, tech_cera
 data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
 data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_copper_tungsten_processing}
 
-if settings.startup["bobmods-power-fluidgenerator"].value then
+if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_ceramic_processing, tech_aluminium_smelting_1, tech_invar_smelting_1}
 
     data_technology[fluid_generator_3].prerequisites = {tech_tungsten_processing, fluid_generator_2}
@@ -875,6 +875,7 @@ data_technology[tech_ore_crushing].effects =
     {type = unlock_recipe, recipe = slag_sorting_1},
     {type = unlock_recipe, recipe = stone_crushed_angels},
     {type = unlock_recipe, recipe = crushed_stone_sorting_1},
+    {type = unlock_recipe, recipe = sand_from_crushed_stone},
     {type = unlock_recipe, recipe = calcium_from_crushed_stone},
     {type = unlock_recipe, recipe = crushed_jivolite},
     {type = unlock_recipe, recipe = crushed_crotinnium},
@@ -890,9 +891,13 @@ data_technology[tech_ore_crushing].effects =
     {type = unlock_recipe, recipe = crushed_franckeite_processing}
 }
 
+table.insert(data_technology[tech_ore_floatation].prerequisites, tech_advanced_ore_refining_1)
+table.insert(data_technology[tech_ore_floatation].prerequisites, tech_chlorine_processing_1)
 data_technology[tech_ore_floatation].effects =
 {
     {type = unlock_recipe, recipe = ore_floatation_cell_1},
+    {type = unlock_recipe, recipe = slag_sorting_2},
+    {type = unlock_recipe, recipe = crushed_stone_sorting_2},
     {type = unlock_recipe, recipe = chunk_saphirite},
     {type = unlock_recipe, recipe = chunk_jivolite},
     {type = unlock_recipe, recipe = chunk_stiratite},
@@ -908,12 +913,16 @@ data_technology[tech_ore_floatation].effects =
     {type = unlock_recipe, recipe = chunk_rubyte_processing},
     {type = unlock_recipe, recipe = chunk_bobmonium_processing},
     {type = unlock_recipe, recipe = chunk_senaite_processing},
-    {type = unlock_recipe, recipe = chunk_franckeite_processing}
+    {type = unlock_recipe, recipe = chunk_franckeite_processing},
+    {type = unlock_recipe, recipe = metasilicic_acid},
+    {type = unlock_recipe, recipe = silicon_oxide_IV_from_metasilicic_acid}
 }
 
 data_technology[tech_ore_leaching].effects =
 {
     {type = unlock_recipe, recipe = ore_leaching_plant_1},
+    {type = unlock_recipe, recipe = slag_sorting_3},
+    {type = unlock_recipe, recipe = crushed_stone_sorting_3},
     {type = unlock_recipe, recipe = crystal_saphirite},
     {type = unlock_recipe, recipe = crystal_jivolite},
     {type = unlock_recipe, recipe = crystal_stiratite},
@@ -935,6 +944,7 @@ data_technology[tech_ore_leaching].effects =
 data_technology[tech_ore_refining].effects =
 {
     {type = unlock_recipe, recipe = ore_refinery_1},
+    {type = unlock_recipe, recipe = crushed_stone_sorting_4},
     {type = unlock_recipe, recipe = purified_saphirite},
     {type = unlock_recipe, recipe = purified_jivolite},
     {type = unlock_recipe, recipe = purified_stiratite},
@@ -1026,7 +1036,6 @@ data_technology[tech_ore_electro_whinning_cell].effects =
 }
 
 table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = calcium_recipe})
-table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = crushed_stone_sorting_2})
 
 data_technology[tech_advanced_ore_refining_3].effects =
 {
@@ -1039,10 +1048,7 @@ data_technology[tech_advanced_ore_refining_3].effects =
     {type = unlock_recipe, recipe = gold_ore_recipe},
     {type = unlock_recipe, recipe = cobalt_ore_recipe},
     --{type = unlock_recipe, recipe = "angels-ore-crystal-mix4-processing"} ???
-    {type = unlock_recipe, recipe = uranium_ore_recipe},
-    {type = unlock_recipe, recipe = slag_sorting_2},
-    {type = unlock_recipe, recipe = slag_sorting_3},
-    {type = unlock_recipe, recipe = crushed_stone_sorting_3}
+    {type = unlock_recipe, recipe = uranium_ore_recipe}
 }
 
 table.insert(data_technology[tech_advanced_ore_refining_4].prerequisites, tech_stone_smelting_4)
