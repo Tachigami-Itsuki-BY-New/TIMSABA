@@ -319,7 +319,7 @@ TIMSABA.functions.create_recipes
         name = magnesium_silicide,
         categories = {angels_blast_smelting_4},
         subgroup = is_magnesium_chemistry,
-        icons = THREE_I(magnesium_powder, silicon_powder, magnesium_silicide),
+        icons = THREE_I(magnesium_pellet, silicon_pellet, magnesium_silicide),
         order = z,
         energy_required = 8, -- 2Mg + Si --> Mg₂Si
         ingredients =

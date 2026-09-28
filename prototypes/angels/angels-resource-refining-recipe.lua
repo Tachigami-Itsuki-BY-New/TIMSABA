@@ -6,10 +6,10 @@ if settings.startup[setting_early_sintering_oven].value then
             name = stone,
             categories = {angels_sintering_1},
             subgroup = is_processing_crafting,
-            icons = TWO_I(stone_crushed_angels, calcium),
+            icons = TWO_I(stone_crushed_angels, stone),
             order = d,
             energy_required = 1,
-            ingredients ={{type = item, name = stone_crushed_angels, amount = 4}},
+            ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
             results = {{type = item, name = stone, amount = 4}},
             main_product = stone
         }
@@ -22,6 +22,8 @@ slag_sorting_3 = "slag-sorting-3"
 crushed_stone_sorting_1 = "crushed-stone-sorting-1"
 crushed_stone_sorting_2 = "crushed-stone-sorting-2"
 crushed_stone_sorting_3 = "crushed-stone-sorting-3"
+crushed_stone_sorting_4 = "crushed-stone-sorting-4"
+sand_from_crushed_stone = "sand-from-crushed-stone"
 calcium_from_crushed_stone = "calcium-from-crushed-stone"
 TIMSABA.functions.create_recipes
 ({
@@ -33,43 +35,34 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, slag_angels, number_1),
         order = c_a,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄]
+        energy_required = 1, -- Slag --> (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂
         ingredients = {{type = item, name = slag_angels, amount = 4}},
         results = {{type = item, name = stone, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
         main_product = stone
     },
     {
         name = slag_sorting_2,
-        categories = {angels_ore_sorting_4},
+        categories = {angels_ore_sorting_2},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, slag_angels, number_2),
         order = c_b,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] + Silicides(Mg₂Si)
+        energy_required = 1, -- Slag --> CaSiO₃
         ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results =
-        {
-            {type = item, name = stone, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = magnesium_silicide, amount_min = 0, amount_max = 4, independent_probability = 0.5}
-        },
-        main_product = stone
+        results = {{type = item, name = calcium_silicate, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
+        main_product = calcium_silicate
     },
     {
         name = slag_sorting_3,
-        categories = {angels_ore_sorting_4},
+        categories = {angels_ore_sorting_3},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, slag_angels, number_3),
         order = c_c,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] + Silicides(Mg₂Si) + Silicates(CaSiO₃)
+        energy_required = 1, -- Slag --> Mg₂Si
         ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results =
-        {
-            {type = item, name = stone, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = magnesium_silicide, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = calcium_silicate, amount_min = 0, amount_max = 4, independent_probability = 0.5}
-        },
-        main_product = stone
+        results = {{type = item, name = magnesium_silicide, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
+        main_product = magnesium_silicide
     },
     -- CRUSHED STONE SORTING
     {
@@ -79,57 +72,67 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_1),
         order = e_a,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> Ca + 2Fe + Mg + SiO₂
+        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> Ca + 2Fe + Mg + Si
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
         {
             {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
             {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5}
         },
         main_product = calcium
     },
     {
         name = crushed_stone_sorting_2,
-        categories = {angels_ore_sorting_3},
+        categories = {angels_ore_sorting_2},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_2),
         order = e_b,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + Ca + 2Fe + Mg + 2Al + SiO₂
+        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> 2Si + 2Al
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
         {
-            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
+            {type = item, name = silicon_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5}
         },
-        main_product = sodium_angels
+        main_product = silicon_ore_bob
     },
     {
         name = crushed_stone_sorting_3,
-        categories = {angels_ore_sorting_4},
+        categories = {angels_ore_sorting_3},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_3),
         order = e_c,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + 2K + Ca + 2Fe + Mg + 2Al + SiO₂
+        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
-        results =
-        {
-            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = potassium, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, independent_probability = 0.5}
-        },
+        results = {{type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
         main_product = sodium_angels
+    },
+    {
+        name = crushed_stone_sorting_4,
+        categories = {angels_ore_sorting_4},
+        subgroup = is_processing_crafting,
+        icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_4),
+        order = e_d,
+        allow_productivity = true,
+        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2K
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results = {{type = item, name = potassium, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
+        main_product = potassium
+    },
+    {
+        localised_name = {"item-name." .. sand_angels},
+        name = sand_from_crushed_stone,
+        categories = {angels_ore_refining_T1},
+        subgroup = is_processing_crafting,
+        icons = TWO_I(stone_crushed_angels, sand_angels),
+        order = f,
+        energy_required = 1,
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
+        results = {{type = item, name = sand_angels, amount = 2}},
+        main_product = sand_angels
     },
     {
         localised_name = {"item-name." .. calcium},
@@ -137,10 +140,9 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_refining_T1},
         subgroup = is_processing_crafting,
         icons = TWO_I(stone_crushed_angels, calcium),
-        order = f,
-        allow_productivity = true,
+        order = g,
         energy_required = 1,
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
         results = {{type = item, name = calcium, amount = 1}},
         main_product = calcium
     }

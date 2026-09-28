@@ -395,7 +395,8 @@ if mods[hyarion_mods] then
         {type = item, name = carbon_nanotube, amount = 2},
         {type = fluid, name = hydrogen_angels, amount = 60},
         {type = fluid, name = nitrogen_angels, amount = 15}, -- 30
-        {type = item, name = catalyst_carrier, amount = 1}
+        {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+        {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
     }
     data_recipe[carbon_nanotube_hyarion].main_product = carbon_nanotube
     data_recipe[carbon_nanotube_hyarion].surface_conditions = {{property = pressure, min = 8000, max = 8000}}

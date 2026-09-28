@@ -13,8 +13,6 @@ data_recipe[beacon_1].ingredients =
     {type = item, name = copper_cable,              amount = 8},
     {type = item, name = crystal_splinter_harmonic, amount = 1}
 }
-data_beacon[beacon_1].allowed_effects = {speed, consumption, pollution}
-data_beacon[beacon_1].allowed_module_categories = {speed, efficiency, pollution_clean, pollution_create}
 
 -- SPEED
 data_recipe[speed_module_1].energy_required = 8

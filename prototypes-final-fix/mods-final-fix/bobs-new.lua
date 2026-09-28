@@ -15,6 +15,7 @@ data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/en
 
 data_recipe[wolframite_ore .. _sorting].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
+data_recipe[vulcanus_slag_processing].icons = THREE_R_I(sludge_mineral, wolframite_ore, samarskite_ore)
 
 data_item[cobalt_steel_gear_wheel].hidden = false
 data_item[cobalt_steel_gear_wheel].hidden_in_factoriopedia = false

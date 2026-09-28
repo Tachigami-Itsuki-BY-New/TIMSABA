@@ -405,15 +405,6 @@ for _, BUILD in pairs(mining_machines) do
         data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.mining_speed
         if BUILD.subgroup == is_extraction_machine_mining then
             data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
-            data_mining_drill[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-            data_mining_drill[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-            if mods[quality_mods] then
-                data_mining_drill[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-                table.insert(data_mining_drill[BUILD.name].allowed_module_categories, quality)
-            end
-        else
-            data_mining_drill[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-            data_mining_drill[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
         end
     end
 end
@@ -454,7 +445,6 @@ pumpjack_recipe(pumpjack_3, titanium_gear_wheel, processing_unit,          titan
 pumpjack_recipe(pumpjack_4, nitinol_gear_wheel,  advanced_processing_unit, nitinol_pipe,  pumpjack_3,          nitinol_plate_bob)
 
 if mods[pelagos_mods] then
-    local pumpplatform = "oil_rig"
     data_item[pumpplatform].subgroup = is_extraction_machine_pumpjack
     data_item[pumpplatform].order = z
     data_item[pumpplatform].stack_size = 32
@@ -478,8 +468,6 @@ if mods[pelagos_mods] then
     data_mining_drill[pumpplatform].module_slots = 4
     data_mining_drill[pumpplatform].energy_usage = 480 .. kW
     data_mining_drill[pumpplatform].energy_source.emissions_per_minute.pollution = 8
-    data_mining_drill[pumpplatform].allowed_effects = {speed, consumption, productivity, pollution}
-    data_mining_drill[pumpplatform].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     bobmods.lib.recipe.update_recycling_recipe({pumpplatform})
 
     local or_pole = "or_pole"
@@ -519,12 +507,6 @@ if settings.startup[setting_bobmods_mining_areadrills].value then
         data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = (BUILD.mining_speed * 2)
         data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
         data_mining_drill[BUILD.name].resource_searching_radius = 4.49
-        data_mining_drill[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-        data_mining_drill[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-        if mods[quality_mods] then
-            data_mining_drill[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-            table.insert(data_mining_drill[BUILD.name].allowed_module_categories, quality)
-        end
     end
     local function area_mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plate)
         data_recipe[name].ingredients =
@@ -671,12 +653,6 @@ for _, BUILD in pairs(furnaces) do
             data_furnace[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
             data_furnace[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
             data_furnace[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
-            data_furnace[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-            data_furnace[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-            if mods[quality_mods] then
-                data_furnace[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-                table.insert(data_furnace[BUILD.name].allowed_module_categories, quality)
-            end
         end
     end
     if data_assembling[BUILD.name] then
@@ -690,12 +666,6 @@ for _, BUILD in pairs(furnaces) do
             data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
             data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
             data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
-            data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-            data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-            if mods[quality_mods] then
-                data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-                table.insert(data_assembling[BUILD.name].allowed_module_categories, quality)
-            end
         end
     end
 end
@@ -755,12 +725,6 @@ for _, BUILD in pairs(centrifuges) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].fluid_boxes_off_when_no_fluid_recipe = true
-    data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution}
-    data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-    if mods[quality_mods] then
-        data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-        table.insert(data_assembling[BUILD.name].allowed_module_categories, quality)
-    end
 end
 local function centrifuge_recipe(name, gear_wheel, bearing, circuit, material, plate, centrifuge)
     local ingredients =
@@ -871,8 +835,6 @@ if mods[lignumis_mods] then
 end
 data_lab[lab_1].subgroup = is_lab
 data_lab[lab_1].order = a
-data_lab[lab_1].allowed_effects = {speed, consumption, productivity}
-data_lab[lab_1].allowed_module_categories = {speed, efficiency, productivity}
 
 if mods[bobtech] then
     data_item[lab_2].subgroup = is_lab
@@ -888,8 +850,6 @@ if mods[bobtech] then
     data_lab[lab_2].order = b
     data_lab[lab_2].energy_usage = 120 .. kW
     data_lab[lab_2].inputs = util.table.deepcopy(data_lab[lab_1].inputs)
-    data_lab[lab_2].allowed_effects = {speed, consumption, productivity}
-    data_lab[lab_2].allowed_module_categories = {speed, efficiency, productivity}
 
     bobmods.lib.recipe.update_recycling_recipe({lab_alien})
 
@@ -918,8 +878,6 @@ if mods[bobtech] then
         data_lab[lab_alien].researching_speed = 4
         data_lab[lab_alien].module_slots = 4
         data_lab[lab_alien].energy_usage = 120 .. kW
-        data_lab[lab_alien].allowed_effects = {speed, consumption, productivity}
-        data_lab[lab_alien].allowed_module_categories = {speed, efficiency, productivity}
 
         bobmods.lib.recipe.update_recycling_recipe({lab_alien})
 

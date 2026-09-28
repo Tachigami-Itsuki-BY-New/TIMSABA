@@ -107,6 +107,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_thorium,
         icons = TWO_D_I(thorium_oxide_IV, calcium, thorium_232_bob, lime_angels),
         order = d,
+        allow_quality = true,
         energy_required = 8, -- ThO₂(s) + 2Ca(s) --> Th-232(s) + 2CaO(s)
         ingredients =
         {

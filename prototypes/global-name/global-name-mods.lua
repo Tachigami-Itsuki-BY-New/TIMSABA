@@ -428,6 +428,7 @@ biodiesel = "biodiesel"
 captive_copper_biter_spawner = "captive-copper-biter-spawner"
 capture_robot_rocket_pelagos = "pelagos-capture-robot-rocket"
 titanium_barrel = "titanium-barrel"
+pumpplatform = "oil_rig"
 
 -- APIA and CARNOVA
 apia_carnova_mods = "apia"

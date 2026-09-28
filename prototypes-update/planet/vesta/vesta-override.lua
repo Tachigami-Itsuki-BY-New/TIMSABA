@@ -391,7 +391,7 @@ if mods[vesta_mods] then
     data_assembling[electrolyzer_vesta].module_slots = 4
     data_assembling[electrolyzer_vesta].energy_usage = 465 .. kW
     data_assembling[electrolyzer_vesta].energy_source.drain = 15 .. kW
-    data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 1
 
     local supermagnet = "supermagnet"
     data_item[supermagnet].subgroup = is_vesta_building
@@ -435,7 +435,7 @@ if mods[vesta_mods] then
     data_assembling[combustion_furnace].order = c
     data_assembling[combustion_furnace].energy_usage = 52.5 .. kW
     data_assembling[combustion_furnace].energy_source.drain = 7.5 .. kW
-    data_assembling[combustion_furnace].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[combustion_furnace].effect_receiver.base_effect.productivity = 1
 
     -- SPACE
     local fusion_thruster = "ske_fusion_thruster"

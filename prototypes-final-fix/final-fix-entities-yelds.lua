@@ -33,8 +33,10 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
+
 local pollution_absorption_multiplier = 125
 local processed_eps = {}
+
 
 for _, tree in pairs(data_tree) do
     local eps = tree.emissions_per_second

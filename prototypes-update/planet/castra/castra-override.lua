@@ -260,10 +260,10 @@ if mods[castra_mods] then
     data_assembling[forge].subgroup = is_castra_building
     data_assembling[forge].order = a
     data_assembling[forge].crafting_speed = 4
-    data_assembling[forge].module_slots = 4
+    data_assembling[forge].module_slots = 8
     data_assembling[forge].energy_usage = 4680 .. kW
     data_assembling[forge].energy_source.drain = 120 .. kW
-    data_assembling[forge].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[forge].effect_receiver.base_effect.productivity = 1
     data_assembling[forge].effect_receiver.base_effect.quality = nil
 
     local jammer_radar = "jammer-radar"

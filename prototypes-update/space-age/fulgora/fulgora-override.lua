@@ -155,10 +155,11 @@ data_recipe[electromagnetic_plant].ingredients =
 data_assembling[electromagnetic_plant].subgroup = is_fulgora_building
 data_assembling[electromagnetic_plant].order = b
 data_assembling[electromagnetic_plant].crafting_speed = 4
-data_assembling[electromagnetic_plant].module_slots = 4
+data_assembling[electromagnetic_plant].module_slots = 8
 data_assembling[electromagnetic_plant].energy_usage = 2340 .. kW
 data_assembling[electromagnetic_plant].energy_source.drain = 60 .. kW
 data_assembling[electromagnetic_plant].energy_source.emissions_per_minute.pollution = 0
+data_assembling[electromagnetic_plant].effect_receiver.base_effect.productivity = 1
 
 local lightning_rod = "lightning-rod"
 data_item[lightning_rod].subgroup = is_fulgora_building
@@ -330,6 +331,7 @@ table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, rec
 data_technology[electromagnetic_plant].prerequisites = {tech_holmium_smelting_1}
 
 data_technology[electromagnetic_science_pack].prerequisites = {electromagnetic_plant}
+table.insert(data_technology[electromagnetic_science_pack].effects, {type = unlock_recipe, recipe = fulgora_slag_processing})
 data_technology[electromagnetic_science_pack].research_trigger =
 {
     type = craft_item,

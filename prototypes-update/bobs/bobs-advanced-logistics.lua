@@ -67,8 +67,8 @@ data_recipe[programmable_speaker].ingredients =
 data_rail_planner[rail].stack_size = 200
 
 local rail_ramp = "rail-ramp"
-data_rail_planner[rail_ramp].stack_size = 8
-data_rail_planner[rail_ramp].weight = 125000
+data_rail_planner[rail_ramp].stack_size = 32
+data_rail_planner[rail_ramp].weight = 31250
 data_recipe[rail_ramp].energy_required = 8
 data_recipe[rail_ramp].ingredients =
 {
@@ -78,8 +78,8 @@ data_recipe[rail_ramp].ingredients =
 }
 
 local rail_support = "rail-support"
-data_item[rail_support].stack_size = 16
-data_item[rail_support].weight = 62500
+data_item[rail_support].stack_size = 64
+data_item[rail_support].weight = 15625
 data_recipe[rail_support].energy_required = 4
 data_recipe[rail_support].ingredients =
 {
@@ -88,8 +88,8 @@ data_recipe[rail_support].ingredients =
 }
 
 local train_stop = "train-stop"
-data_item[train_stop].stack_size = 8
-data_item[train_stop].weight = 125000
+data_item[train_stop].stack_size = 16
+data_item[train_stop].weight = 62500
 data_recipe[train_stop].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
@@ -99,8 +99,8 @@ data_recipe[train_stop].ingredients =
 }
 
 local rail_signal = "rail-signal"
-data_item[rail_signal].stack_size = 32
-data_item[rail_signal].weight = 31250
+data_item[rail_signal].stack_size = 64
+data_item[rail_signal].weight = 15625
 data_recipe[rail_signal].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 1},
@@ -108,8 +108,8 @@ data_recipe[rail_signal].ingredients =
 }
 
 local rail_chain_signal = "rail-chain-signal"
-data_item[rail_chain_signal].stack_size = 32
-data_item[rail_chain_signal].weight = 31250
+data_item[rail_chain_signal].stack_size = 64
+data_item[rail_chain_signal].weight = 15625
 data_recipe[rail_chain_signal].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 1},

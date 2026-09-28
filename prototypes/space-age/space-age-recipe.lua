@@ -187,7 +187,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = nitrogen_monoxide_angels, amount = 15}, -- 60
             {type = fluid, name = steam, amount = 30}, -- 90
-            {type = item, name = catalyst_carrier, amount = 1}
+            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
         },
         main_product = nitrogen_monoxide_angels,
         surface_conditions = {{property = gravity, min = 0, max = 0}}
@@ -209,7 +210,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = hydrazine_angels, amount = 30}, -- 60
             {type = fluid, name = hydrogen_chloride_angels, amount = 30}, -- 60
-            {type = item, name = catalyst_carrier, amount = 1}
+            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
         },
         main_product = hydrazine_angels,
         surface_conditions = {{property = gravity, min = 0, max = 0}}
@@ -229,7 +231,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = dinitrogen_tetroxide_angels, amount = 15}, -- 30
-            {type = item, name = catalyst_carrier, amount = 1}
+            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
         },
         main_product = dinitrogen_tetroxide_angels,
         surface_conditions = {{property = gravity, min = 0, max = 0}}
