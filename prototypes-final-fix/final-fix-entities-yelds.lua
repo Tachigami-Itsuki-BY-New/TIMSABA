@@ -33,13 +33,20 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
-local pollution_absorption_multiplier = 2
+local pollution_absorption_multiplier = 125
+local processed_eps = {}
 
 for _, tree in pairs(data_tree) do
-    if tree.emissions_per_second.pollution then
-        tree.emissions_per_second.pollution = tree.emissions_per_second.pollution / pollution_absorption_multiplier
-    else
-        tree.emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
+    local eps = tree.emissions_per_second
+    if eps and not processed_eps[eps] then
+        processed_eps[eps] = true
+        if tree.emissions_per_second then 
+            if tree.emissions_per_second.pollution then
+                tree.emissions_per_second.pollution = tree.emissions_per_second.pollution * pollution_absorption_multiplier
+            else
+                tree.emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
+            end
+        end
     end
 end
 
