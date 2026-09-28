@@ -54,7 +54,7 @@ TIMSABA.functions.create_items
         name = rhenium_powder,
         subgroup = is_rhenium,
         icon = graphics_rhenium .. rhenium_powder .. ".png",
-        order = e
+        order = d
     },
     -- CHEMISTRY
     {

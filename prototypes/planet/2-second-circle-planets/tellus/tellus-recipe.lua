@@ -43,12 +43,7 @@ if mods[tellus_mods] then
                     },
                     results = {{type = item, name = orange_dye, amount = 8}},
                     main_product = orange_dye,
-                    surface_conditions =
-                    {
-                        {property = pressure, min = 2000, max = 2000},
-                        {property = gravity, min = 20, max = 20},
-                        {property = "magnetic-field", min = 25, max = 25}
-                    }
+                    surface_conditions = {{property = "planetaris-pollen-corrosion", min = 50, max = 100}}
                 }
             })
         else
@@ -70,12 +65,7 @@ if mods[tellus_mods] then
                     },
                     results = {{type = item, name = orange_dye, amount = 8}},
                     main_product = orange_dye,
-                    surface_conditions =
-                    {
-                        {property = pressure, min = 2000, max = 2000},
-                        {property = gravity, min = 20, max = 20},
-                        {property = "magnetic-field", min = 25, max = 25}
-                    }
+                    surface_conditions = {{property = "planetaris-pollen-corrosion", min = 50, max = 100}}
                 }
             })
         end
@@ -99,56 +89,46 @@ if mods[tellus_mods] then
                 },
                 results = {{type = item, name = black_dye, amount = 8}},
                 main_product = black_dye,
-                surface_conditions =
-                {
-                    {property = pressure, min = 2000, max = 2000},
-                    {property = gravity, min = 20, max = 20},
-                    {property = "magnetic-field", min = 25, max = 25}
-                }
+                surface_conditions = {{property = "planetaris-pollen-corrosion", min = 50, max = 100}}
             }
         })
     end
 
     local function colored_recipe(name, subgroup, order, dye, item_name, amount)
-        local recipe_data =
-        {
-            type = recipe,
-            name = name,
-            categories = {crafting},
-            subgroup = subgroup,
-            order = order,
-            enabled = false,
-            auto_recycle = true,
-            allow_productivity = false,
-            allow_quality = true,
-            allow_decomposition = false,
-            energy_required = 4,
-            ingredients =
+        TIMSABA.functions.create_recipes
+        ({
             {
-                {type = item, name = dye, amount = 1},
-                {type = item, name = item_name, amount = amount}
-            },
-            results = {{type = item, name = name, amount = amount}},
-            main_product = name
-        }
-
-        data:extend({recipe_data})
+                name = name,
+                categories = {crafting},
+                subgroup = subgroup,
+                order = order,
+                auto_recycle = true,
+                allow_quality = true,
+                ingredients =
+                {
+                    {type = item, name = dye, amount = 1},
+                    {type = item, name = item_name, amount = amount}
+                },
+                results = {{type = item, name = name, amount = amount}},
+                main_product = name
+            }
+        })
     end
     if settings.startup[setting_dye_secondary_color].value then
         if settings.startup[setting_dye_pipes].value then
             colored_recipe(orange_pipe, is_tellus_pipe, a, orange_dye, stone_pipe, 32)
-            colored_recipe(black_pipe,  is_tellus_pipe, z, black_dye,  stone_pipe, 32)
+            colored_recipe(black_pipe,  is_tellus_pipe, z,  black_dye, stone_pipe, 32)
 
             colored_recipe(orange_pipe_to_ground, is_tellus_pipe_to_ground, a, orange_dye, stone_pipe_to_ground, 8)
-            colored_recipe(black_pipe_to_ground,  is_tellus_pipe_to_ground, z, black_dye,  stone_pipe_to_ground, 8)
+            colored_recipe(black_pipe_to_ground,  is_tellus_pipe_to_ground, z,  black_dye, stone_pipe_to_ground, 8)
         end
         if settings.startup[setting_dye_stone_path].value then
             colored_recipe(orange_stone_brick, is_tellus_stone_brick, a, orange_dye, stone_brick, 4)
-            colored_recipe(black_stone_brick,  is_tellus_stone_brick, z, black_dye,  stone_brick, 4)
+            colored_recipe(black_stone_brick,  is_tellus_stone_brick, z,  black_dye, stone_brick, 4)
         end
         if settings.startup[setting_dye_concrete].value then
             colored_recipe(orange_concrete, is_tellus_concrete, a, orange_dye, concrete, 8)
-            colored_recipe(black_concrete,  is_tellus_concrete, z, black_dye,  concrete, 8)
+            colored_recipe(black_concrete,  is_tellus_concrete, z,  black_dye, concrete, 8)
         end
         if settings.startup[setting_dye_hazard_concrete].value then
             colored_recipe(orange_hazard_concrete, is_tellus_hazard_concrete, a, orange_dye, hazard_concrete, 8)
@@ -158,21 +138,21 @@ if mods[tellus_mods] then
         end
         if settings.startup[setting_dye_stone_wall].value then
             colored_recipe(orange_stone_wall, is_tellus_stone_wall, a, orange_dye, stone_wall, 4)
-            colored_recipe(black_stone_wall,  is_tellus_stone_wall, z, black_dye,  stone_wall, 4)
+            colored_recipe(black_stone_wall,  is_tellus_stone_wall, z,  black_dye, stone_wall, 4)
         end
     end
     if settings.startup[setting_dye_concrete_brick].value then
-        colored_recipe(blue_concrete_brick, is_tellus_concrete_brick, b, blue_dye, concrete_brick, 4)
+        colored_recipe(blue_concrete_brick,  is_tellus_concrete_brick, b,  blue_dye, concrete_brick, 4)
         colored_recipe(green_concrete_brick, is_tellus_concrete_brick, e, green_dye, concrete_brick, 4)
-        colored_recipe(red_concrete_brick, is_tellus_concrete_brick, f, red_dye, concrete_brick, 4)
+        colored_recipe(red_concrete_brick,   is_tellus_concrete_brick, f,   red_dye, concrete_brick, 4)
     end
     if settings.startup[setting_dye_secondary_color].value then
         if settings.startup[setting_dye_concrete_brick].value then
-            colored_recipe(orange_concrete_brick, is_tellus_concrete_brick, a, orange_dye, concrete_brick, 4)
-            colored_recipe(yellow_concrete_brick, is_tellus_concrete_brick, c, yellow_dye, concrete_brick, 4)
+            colored_recipe(orange_concrete_brick,  is_tellus_concrete_brick, a,  orange_dye, concrete_brick, 4)
+            colored_recipe(yellow_concrete_brick,  is_tellus_concrete_brick, c,  yellow_dye, concrete_brick, 4)
             colored_recipe(magenta_concrete_brick, is_tellus_concrete_brick, d, magenta_dye, concrete_brick, 4)
-            colored_recipe(cyan_concrete_brick, is_tellus_concrete_brick, g, cyan_dye, concrete_brick, 4)
-            colored_recipe(black_concrete_brick, is_tellus_concrete_brick, h, black_dye, concrete_brick, 4)
+            colored_recipe(cyan_concrete_brick,    is_tellus_concrete_brick, g,    cyan_dye, concrete_brick, 4)
+            colored_recipe(black_concrete_brick,   is_tellus_concrete_brick, h,   black_dye, concrete_brick, 4)
         end
     end
 end

@@ -430,6 +430,7 @@ data_recipe[biochamber].ingredients[4].name = advanced_processing_unit
 data_recipe[biochamber].ingredients[4].amount = 4
 data_assembling[biochamber].subgroup = is_gleba_building
 data_assembling[biochamber].order = c
+data_assembling[biochamber].effect_receiver.base_effect.productivity = 1
 
 data_item[biolab].subgroup = is_gleba_building
 data_item[biolab].order = d
@@ -446,6 +447,7 @@ data_recipe[biolab].ingredients[3].amount = 32
 data_recipe[biolab].ingredients[5].amount = 4
 data_lab[biolab].subgroup = is_gleba_building
 data_lab[biolab].order = d
+data_lab[biolab].researching_speed = 4
 data_lab[biolab].energy_usage = 240 .. kW
 
 local captive_biter_spawner = "captive-biter-spawner"
@@ -542,6 +544,8 @@ data_technology[biochamber].effects =
     {type = unlock_recipe, recipe = nutrients_from_yumako_mash},
     {type = unlock_recipe, recipe = pentapod_egg}
 }
+
+table.insert(data_technology[agricultural_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
 
 local tech_bacteria_cultivation = "bacteria-cultivation"
 data_technology[tech_bacteria_cultivation].effects =

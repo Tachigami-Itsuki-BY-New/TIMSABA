@@ -115,7 +115,6 @@ else
 end
 
 -- BUILDING
-local recycler = "recycler"
 data_item[recycler].subgroup = is_fulgora_building
 data_item[recycler].order = a
 data_item[recycler].stack_size = 32
@@ -332,6 +331,7 @@ data_technology[electromagnetic_plant].prerequisites = {tech_holmium_smelting_1}
 
 data_technology[electromagnetic_science_pack].prerequisites = {electromagnetic_plant}
 table.insert(data_technology[electromagnetic_science_pack].effects, {type = unlock_recipe, recipe = fulgora_slag_processing})
+table.insert(data_technology[electromagnetic_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
 data_technology[electromagnetic_science_pack].research_trigger =
 {
     type = craft_item,

@@ -767,7 +767,7 @@ if mods[moshine_mods] then
     }
     data_lab[neural_computer].subgroup = is_moshine_building
     data_lab[neural_computer].order = b
-    data_lab[neural_computer].energy_usage = 4000 .. kW
+    data_lab[neural_computer].energy_usage = 3840 .. kW
 
     data_item[data_extractor].subgroup = is_moshine_building
     data_item[data_extractor].order = c
@@ -785,7 +785,8 @@ if mods[moshine_mods] then
     }
     data_mining_drill[data_extractor].subgroup = is_moshine_building
     data_mining_drill[data_extractor].order = c
-    data_mining_drill[data_extractor].energy_usage = 4000 .. kW
+    data_mining_drill[data_extractor].energy_usage = 3840 .. kW
+    data_mining_drill[data_extractor].energy_source.emissions_per_minute.pollution = 8
 
     local ai_trainer = "ai-trainer"
     data_item[ai_trainer].subgroup = is_moshine_building
@@ -826,6 +827,7 @@ if mods[moshine_mods] then
     }
     data_agricultural_tower[processing_grid].subgroup = is_moshine_building
     data_agricultural_tower[processing_grid].order = f
+    data_agricultural_tower[processing_grid].energy_usage = 1920 .. kW
 
     local webbed_processor_tile = "webbed_processor_tile"
     data_item[webbed_processor_tile].subgroup = is_moshine_building

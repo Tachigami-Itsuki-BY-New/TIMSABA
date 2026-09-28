@@ -126,6 +126,7 @@ solid_salt_from_saline = "angels-solid-salt-from-saline"
 
 
 -- ANGELS PETROCHEM REFINING
+water_saline_separation = "angels-water-saline-separation"
 coke_purification_2 = "angels-coke-purification-2"
 sodium_nitrate_processing = "angels-solid-sodium-nitrate-processing"
 sodium_nitrate_acid_processing = "angels-sodium-nitrate-acid-processing"
@@ -170,7 +171,6 @@ biolubricant = "biolubricant"
 
 -- MULUNA
 landfill_stone_crushed = "landfill-stone-crushed"
-rocket_part_muluna = "rocket-part-muluna"
 casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
 
 -- PANGLIA

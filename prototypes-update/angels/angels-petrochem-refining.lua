@@ -96,7 +96,6 @@ data_recipe[heavy_water_separation_2].results =
     {type = fluid, name = oxygen_angels, amount = 60}
 }
 
-local water_saline_separation = "angels-water-saline-separation"
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a

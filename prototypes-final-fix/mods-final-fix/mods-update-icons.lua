@@ -6,7 +6,7 @@ if mods[loaders_modernized_integrations] then
     {
         icon_name = "miniloader",
         base_entity_name = splitter,
-        mod = "compatibility",
+        mod = compatibility,
         group = "miniloader",
         particles = {[medium] = 1, [big] = 4},
         technology_icon_size = 256,
@@ -195,7 +195,6 @@ if mods[loaders_modernized_integrations] then
                     draw_as_shadow = true
                 }
             }
-
             entity.belt_animation_set = base_belt and base_belt.belt_animation_set
         end
 
@@ -267,4 +266,91 @@ if mods[loaders_modernized_integrations] then
 
         ::continue::
     end
+end
+
+-- ELECTRIC BLAST FURNACES
+local blast_furnace_icon = "__angelssmeltinggraphics__/graphics/icons/blast-furnace.png"
+local electricity_icon = "__TIMSABA__/graphics/icons/electricity.png"
+local icons_electric_blast_furnaces =
+{
+    {name = electric_blast_furnace_1, tier = 1},
+    {name = electric_blast_furnace_2, tier = 2},
+    {name = electric_blast_furnace_3, tier = 3},
+    {name = electric_blast_furnace_4, tier = 4}
+}
+for _, BUILD in pairs(icons_electric_blast_furnaces) do
+    local new_icons = util.table.deepcopy(data_item[BUILD.name].icons)
+    or angelsmods.functions.add_number_icon_layer({{icon = blast_furnace_icon, icon_size = 64, scale = 0.5}}, BUILD.tier, angelsmods.smelting.number_tint)
+
+    table.insert(new_icons, {icon = electricity_icon, icon_size = 64, scale = 0.25, shift = {8,-8}})
+
+    data_item[BUILD.name].icons = new_icons
+    data_recipe[BUILD.name].icons = new_icons
+    data_assembling[BUILD.name].icons = new_icons
+end
+
+-- CENTRIFUGES
+local underlay_name = "pipe-underlay"
+
+---@param filename string
+---@return table
+local function underlay_animation(filename)
+    return
+    {
+        filename = "__TIMSABA__/graphics/entity/fluid-centrifuge/" .. filename .. ".png",
+        priority = extra_high,
+        width = 256,
+        height = 256,
+        scale = 0.5
+    }
+end
+
+---@param type "input" | "output"
+---@param direction defines.direction
+---@param position [number, number]
+---@return table
+local function fluid_box(type, direction, position)
+    return
+    {
+        production_type = type,
+        pipe_covers = pipecoverspictures(),
+        enable_working_visualisations = {underlay_name},
+        volume = 1000,
+        pipe_connections = {{flow_direction = type, direction = direction, position = position}}
+    }
+end
+
+local centrifuges =
+{
+    data_assembling[centrifuge_1],
+    data_assembling[centrifuge_2],
+    data_assembling[centrifuge_3],
+    data_assembling[centrifuge_4]
+}
+
+for _, centrifuge in ipairs(centrifuges) do
+    centrifuge.use_mirroring = true
+    centrifuge.fluid_boxes =
+    {
+        fluid_box(input, defines.direction.north, {-1, -1}),
+        fluid_box(input, defines.direction.north, {1, -1}),
+        fluid_box(output, defines.direction.south, {-1, 1}),
+        fluid_box(output, defines.direction.south, {1, 1})
+    }
+
+    local vertical_underlay = underlay_animation("pipe-underlay-vertical")
+    local horizontal_underlay = underlay_animation("pipe-underlay-horizontal")
+
+    table.insert(centrifuge.graphics_set.working_visualisations, 1,
+    {
+        name = underlay_name,
+        enabled_by_name = true,
+        always_draw = true,
+        render_layer = "lower-object",
+        secondary_draw_order = -1,
+        north_animation = vertical_underlay,
+        east_animation = horizontal_underlay,
+        south_animation = vertical_underlay,
+        west_animation = horizontal_underlay
+    })
 end

@@ -225,13 +225,13 @@ TIMSABA.functions.create_recipes
         name = molybdenum_chloride_III_solution,
         categories = {angels_advanced_chemistry},
         subgroup = is_molybdenum_chemistry,
-        icons = FOUR_THREE_R_I(potassium_molybdate, zinc_ingot, hydrochloric_acid_angels, molybdenum_chloride_III_solution, potassium_chloride_solution, zinc_chloride, water_purified_angels),
+        icons = FOUR_THREE_R_I(potassium_molybdate, zinc_powder, hydrochloric_acid_angels, molybdenum_chloride_III_solution, potassium_chloride_solution, zinc_chloride, water_purified_angels),
         order = c,
         -- 2K₂MoO₄(s) + 3Zn(s) + 16HCl(aq) --> 2MoCl₃(aq) + 3ZnCl₂(s) + 4KCl(aq) + 8H₂O(l) + 10H₂O(l)
         ingredients =
         {
             {type = item, name = potassium_molybdate, amount = 8},
-            {type = item, name = zinc_ingot, amount = 12},
+            {type = item, name = zinc_powder, amount = 12},
             {type = fluid, name = hydrochloric_acid_angels, amount = 960}
         },
         results =

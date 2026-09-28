@@ -378,7 +378,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_35pc, amount_min = 60, amount_max = 75},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 3, amount_max = 4},
-            --{type = fluid, name = fluorine, amount_min = 45, amount_max = 60}
+            {type = fluid, name = fluorine, amount_min = 45, amount_max = 60}
         },
         main_product = uranium_fluoride_VI_235_gas_35pc
     },
@@ -393,7 +393,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_45pc, amount = 90},
             {type = item, name = uranium_fluoride_IV_238, amount = 2},
-            --{type = fluid, name = fluorine, amount = 30}
+            {type = fluid, name = fluorine, amount = 30}
         },
         main_product = uranium_fluoride_VI_235_gas_45pc
     },
@@ -408,7 +408,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_55pc, amount_min = 90, amount_max = 105},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 1, amount_max = 2},
-            --{type = fluid, name = fluorine, amount_min = 15, amount_max = 30}
+            {type = fluid, name = fluorine, amount_min = 15, amount_max = 30}
         },
         main_product = uranium_fluoride_VI_235_gas_55pc
     },
@@ -423,7 +423,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_65pc, amount_min = 90, amount_max = 105},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 1, amount_max = 2},
-            --{type = fluid, name = fluorine, amount_min = 15, amount_max = 30}
+            {type = fluid, name = fluorine, amount_min = 15, amount_max = 30}
         },
         main_product = uranium_fluoride_VI_235_gas_65pc
     },
@@ -438,7 +438,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_70pc, amount_min = 105, amount_max = 120},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 0, amount_max = 1},
-            --{type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
+            {type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
         },
         main_product = uranium_fluoride_VI_235_gas_70pc
     },
@@ -453,7 +453,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_75pc, amount_min = 105, amount_max = 120},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 0, amount_max = 1},
-            --{type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
+            {type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
         },
         main_product = uranium_fluoride_VI_235_gas_75pc
     },
@@ -468,7 +468,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = uranium_fluoride_VI_235_gas_80pc, amount_min = 105, amount_max = 120},
             {type = item, name = uranium_fluoride_IV_238, amount_min = 0, amount_max = 1},
-            --{type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
+            {type = fluid, name = fluorine, amount_min = 0, amount_max = 15}
         },
         main_product = uranium_fluoride_VI_235_gas_80pc
     },
@@ -483,7 +483,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = uranium_235, amount = 8},
-            {type = fluid, name = fluorine, amount = 360}
+            {type = fluid, name = fluorine, amount = 120} -- 360
         },
         main_product = uranium_235
     },
@@ -493,12 +493,12 @@ TIMSABA.functions.create_recipes
         subgroup = is_uranium,
         order = f,
         allow_quality = true,
-        energy_required = 16, -- 8UF₄-238(s) --> 8U-238(s) + 240F₂(g)
+        energy_required = 16, -- 8UF₄-238(s) --> 8U-238(s) + 16F₂(g)
         ingredients = {{type = item, name = uranium_fluoride_IV_238, amount = 8}},
         results =
         {
             {type = item, name = uranium_238, amount = 8},
-            {type = fluid, name = fluorine, amount = 240}
+            {type = fluid, name = fluorine, amount = 120} -- 240
         },
         main_product = uranium_238
     }

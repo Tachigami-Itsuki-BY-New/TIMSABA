@@ -249,7 +249,8 @@ if mods[shchierbin_mods] then
     data_recipe[vanadium_crusher].energy_required = 8
     data_assembling[vanadium_crusher].order = f
     data_assembling[vanadium_crusher].crafting_speed = 2
-    data_assembling[vanadium_crusher].energy_usage = 960 .. kW
+    data_assembling[vanadium_crusher].energy_usage = 930 .. kW
+    data_assembling[vanadium_crusher].energy_source.emissions_per_minute.pollution = 4
     data_assembling[vanadium_crusher].energy_source.drain = 30 .. kW
     data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 1
 

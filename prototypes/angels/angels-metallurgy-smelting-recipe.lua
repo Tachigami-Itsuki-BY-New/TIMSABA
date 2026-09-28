@@ -290,7 +290,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
-        order = e,
+        order = f,
         energy_required = 8, -- Cu(s) + CuCl₂(aq) --> 2CuCl(s) + H₂O(g)
         ingredients =
         {
@@ -309,7 +309,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
-        order = e_a,
+        order = f_a,
         energy_required = 8, -- 2CuCl₂(aq) + SO₃(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
         ingredients =
         {
@@ -330,7 +330,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = THREE_I(ammonium_chloride_solution_angels, copper_chloride_I, ammonium_dichlorocuprate_I_solution),
-        order = f,
+        order = g,
         energy_required = 8, -- NH₄Cl(aq) + CuCl --> NH₄CuCl₂(aq)
         ingredients =
         {
@@ -345,7 +345,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
-        order = h,
+        order = i,
         energy_required = 4, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
         ingredients =
         {

@@ -630,6 +630,7 @@ data_recipe[uranium_ore_recipe].ingredients =
 }
 data_recipe[uranium_ore_recipe].results = {{type = item, name = uranium_ore, amount = 4}}
 
+data_recipe[thorium_ore_recipe].categories = {angels_ore_sorting_5}
 data_recipe[thorium_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[thorium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, purified_crotinnium, purified_bobmonium, thorium_ore_bob)
 data_recipe[thorium_ore_recipe].order = a_f
@@ -1149,29 +1150,6 @@ data_recipe[concentrate_anodized_ferrium].ingredients[2].name = water_purified_a
 data_recipe[concentrate_anodized_ferrium].ingredients[2].amount = 60
 data_recipe[concentrate_anodized_ferrium].results[2].amount = 30
 
-data_fluid[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
-data_fluid[iron_chloride_III_solution_angels].localised_description = show_formula and {chemical_formula, "FeCl[font=default-tiny-bold]3(aq)[/font]"} or nil
-data_fluid[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
-data_fluid[iron_chloride_III_solution_angels].order = e
-TIMSABA.barreling.add_dangerous_fluid(iron_chloride_III_solution_angels)
-data_recipe[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
-data_recipe[iron_chloride_III_solution_angels].categories = {chemistry}
-data_recipe[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
-data_recipe[iron_chloride_III_solution_angels].icons = TWO_D_I(iron_ore, hydrochloric_acid_angels, iron_chloride_III_solution_angels, hydrogen_angels)
-data_recipe[iron_chloride_III_solution_angels].order = e
--- 2Fe + 6HCl --> 2FeCl₃ + 3H₂
-data_recipe[iron_chloride_III_solution_angels].ingredients =
-{
-    {type = item, name = iron_ore, amount = 4},
-    {type = fluid, name = hydrochloric_acid_angels, amount = 90}
-}
-data_recipe[iron_chloride_III_solution_angels].results =
-{
-    {type = fluid, name = iron_chloride_III_solution_angels, amount = 30},
-    {type = fluid, name = hydrogen_angels, amount = 30} -- 45
-}
-data_recipe[iron_chloride_III_solution_angels].main_product = iron_chloride_III_solution_angels
-
 -- COPPER ITEM
 data_item[crushed_cuprium].localised_description = {"item-description.cuprium-crushed"}
 data_item[crushed_cuprium].subgroup = is_copper_item
@@ -1320,29 +1298,6 @@ data_recipe[concentrate_anodized_cuprium].ingredients[2].name = water_purified_a
 data_recipe[concentrate_anodized_cuprium].ingredients[2].amount = 60
 data_recipe[concentrate_anodized_cuprium].results[2].name = water_greenyellow_waste
 data_recipe[concentrate_anodized_cuprium].results[2].amount = 30
-
-data_fluid[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
-data_fluid[copper_chloride_II_solution_angels].localised_description = show_formula and {chemical_formula, "CuCl[font=default-tiny-bold]2(aq)[/font]"} or nil
-data_fluid[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
-data_fluid[copper_chloride_II_solution_angels].order = e
-TIMSABA.barreling.add_dangerous_fluid(copper_chloride_II_solution_angels)
-data_recipe[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
-data_recipe[copper_chloride_II_solution_angels].categories = {chemistry}
-data_recipe[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
-data_recipe[copper_chloride_II_solution_angels].icons = TWO_D_I(copper_ore, hydrochloric_acid_angels, copper_chloride_II_solution_angels, hydrogen_angels)
-data_recipe[copper_chloride_II_solution_angels].order = e
--- Cu + 2HCl --> CuCl₂ + H₂
-data_recipe[copper_chloride_II_solution_angels].ingredients =
-{
-    {type = item, name = copper_ore, amount = 4},
-    {type = fluid, name = hydrochloric_acid_angels, amount = 60}
-}
-data_recipe[copper_chloride_II_solution_angels].results =
-{
-    {type = fluid, name = copper_chloride_II_solution_angels, amount = 30},
-    {type = fluid, name = hydrogen_angels, amount = 15} -- 39
-}
-data_recipe[copper_chloride_II_solution_angels].main_product = copper_chloride_II_solution_angels
 
 data_item_subgroup["angels-ore-sorting-fluid"].order = y
 

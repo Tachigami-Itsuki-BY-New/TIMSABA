@@ -71,6 +71,29 @@ data_item[iron_hydroxide_II].localised_description = show_formula and {chemical_
 data_item[iron_hydroxide_II].subgroup = is_iron_chemistry
 data_item[iron_hydroxide_II].order = a
 
+data_fluid[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
+data_fluid[iron_chloride_III_solution_angels].localised_description = show_formula and {chemical_formula, "FeCl[font=default-tiny-bold]3(aq)[/font]"} or nil
+data_fluid[iron_chloride_III_solution_angels].subgroup = is_iron_chemistry
+data_fluid[iron_chloride_III_solution_angels].order = g
+TIMSABA.barreling.add_dangerous_fluid(iron_chloride_III_solution_angels)
+data_recipe[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
+data_recipe[iron_chloride_III_solution_angels].categories = {angels_chemical_smelting_1}
+data_recipe[iron_chloride_III_solution_angels].subgroup = is_iron_chemistry
+data_recipe[iron_chloride_III_solution_angels].icons = TWO_D_I(iron_powder, hydrochloric_acid_angels, iron_chloride_III_solution_angels, hydrogen_angels)
+data_recipe[iron_chloride_III_solution_angels].order = g
+data_recipe[iron_chloride_III_solution_angels].energy_required = 8 -- 2Fe + 6HCl --> 2FeCl₃ + 3H₂
+data_recipe[iron_chloride_III_solution_angels].ingredients =
+{
+    {type = item, name = iron_powder, amount = 16},
+    {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+}
+data_recipe[iron_chloride_III_solution_angels].results =
+{
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+}
+data_recipe[iron_chloride_III_solution_angels].main_product = iron_chloride_III_solution_angels
+
 -- STEEL
 data_item[steel_ingot].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_item[steel_ingot].subgroup = is_steel
@@ -180,6 +203,29 @@ data_recipe[copper_cathode].results =
     {type = item, name = electrode_used, amount = 1}
 }
 data_recipe[copper_cathode].main_product = copper_cathode
+
+data_fluid[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
+data_fluid[copper_chloride_II_solution_angels].localised_description = show_formula and {chemical_formula, "CuCl[font=default-tiny-bold]2(aq)[/font]"} or nil
+data_fluid[copper_chloride_II_solution_angels].subgroup = is_copper_chemistry
+data_fluid[copper_chloride_II_solution_angels].order = e
+TIMSABA.barreling.add_dangerous_fluid(copper_chloride_II_solution_angels)
+data_recipe[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
+data_recipe[copper_chloride_II_solution_angels].categories = {angels_chemical_smelting_4}
+data_recipe[copper_chloride_II_solution_angels].subgroup = is_copper_chemistry
+data_recipe[copper_chloride_II_solution_angels].icons = TWO_D_I(copper_powder, hydrochloric_acid_angels, copper_chloride_II_solution_angels, hydrogen_angels)
+data_recipe[copper_chloride_II_solution_angels].order = e
+data_recipe[copper_chloride_II_solution_angels].energy_required = 8 -- Cu + 2HCl --> CuCl₂ + H₂
+data_recipe[copper_chloride_II_solution_angels].ingredients =
+{
+    {type = item, name = copper_powder, amount = 16},
+    {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+}
+data_recipe[copper_chloride_II_solution_angels].results =
+{
+    {type = fluid, name = copper_chloride_II_solution_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 120} -- 240
+}
+data_recipe[copper_chloride_II_solution_angels].main_product = copper_chloride_II_solution_angels
 
 -- LEAD
 data_item_subgroup[is_lead].order = c
@@ -600,12 +646,12 @@ data_fluid[hexafluorosilicic_acid].order = h
 TIMSABA.barreling.add_dangerous_fluid(hexafluorosilicic_acid)
 data_recipe[hexafluorosilicic_acid].categories = {angels_chemical_smelting_2}
 data_recipe[hexafluorosilicic_acid].subgroup = is_silicon_chemistry
-data_recipe[hexafluorosilicic_acid].icons = THREE_D_I(silicon_ingot, hydrogen_fluoride_angels, water_purified_angels, hexafluorosilicic_acid, nil, hydrogen_angels)
+data_recipe[hexafluorosilicic_acid].icons = THREE_D_I(silicon_powder, hydrogen_fluoride_angels, water_purified_angels, hexafluorosilicic_acid, nil, hydrogen_angels)
 data_recipe[hexafluorosilicic_acid].order = h
 data_recipe[hexafluorosilicic_acid].energy_required = 4 -- Si + 6HF + H₂O --> H₂SiF₆(aq) + 2H₂
 data_recipe[hexafluorosilicic_acid].ingredients =
 {
-    {type = item, name = silicon_ingot, amount = 8},
+    {type = item, name = silicon_powder, amount = 8},
     {type = fluid, name = hydrogen_fluoride_angels, amount = 720},
     {type = fluid, name = water_purified_angels, amount = 120}
 }
@@ -672,12 +718,8 @@ data_recipe[nickel_ingot_3].results =
     {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
 }
 
-data_item[nickel_powder].hidden = true
-data_item[nickel_powder].hidden_in_factoriopedia = true
 data_item[nickel_powder].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_powder].order = e
-data_recipe[nickel_powder].hidden = true
-data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_recipe[nickel_powder].icons = TWO_I(nickel_ingot, nickel_powder)
 data_recipe[nickel_powder].order = e
 
@@ -762,6 +804,11 @@ data_recipe[aluminium_ingot].results =
     {type = fluid, name = carbon_dioxide_angels, amount = 60} -- 180
 }
 data_recipe[aluminium_ingot].main_product = aluminium_ingot
+
+data_item[aluminium_powder].localised_description = show_formula and {chemical_formula, "Al"} or nil
+data_item[aluminium_powder].order = e
+data_recipe[aluminium_powder].icons = TWO_I(aluminium_ingot, aluminium_powder)
+data_recipe[aluminium_powder].order = e
 
 -- ALUMINIUM CHEMISTRY
 data_item[aluminium_hydroxide].localised_description = show_formula and {chemical_formula, "Al(OH)[font=default-tiny-bold]3[/font]"} or nil
@@ -875,13 +922,13 @@ data_recipe[zinc_pellet].ingredients[1].amount = 4
 data_item[zinc_ingot].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_ingot].order = d
 data_recipe[zinc_ingot].categories = {angels_chemical_smelting_1}
-data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_ingot, zinc_ingot, magnesium_chloride_solution)
+data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_powder, zinc_ingot, magnesium_chloride_solution)
 data_recipe[zinc_ingot].order = d
 data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg --> Zn + MgCl₂(aq)
 data_recipe[zinc_ingot].ingredients =
 {
     {type = fluid, name = zinc_chloride_solution, amount = 240},
-    {type = item, name = magnesium_ingot, amount = 16},
+    {type = item, name = magnesium_powder, amount = 16},
 }
 data_recipe[zinc_ingot].results =
 {
@@ -1198,13 +1245,13 @@ data_item[titanium_sponge].localised_description = show_formula and {chemical_fo
 data_item[titanium_sponge].subgroup = is_titanium_chemistry
 data_item[titanium_sponge].order = b
 data_recipe[titanium_sponge].subgroup = is_titanium_chemistry
-data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_ingot, titanium_sponge, magnesium_chloride_gas)
+data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_powder, titanium_sponge, magnesium_chloride_gas)
 data_recipe[titanium_sponge].order = b
 data_recipe[titanium_sponge].energy_required = 8 -- TiCl₄ + 2Mg --> Ti + 2MgCl₂(g)
 data_recipe[titanium_sponge].ingredients =
 {
     {type = fluid, name = titanium_chloride_IV, amount = 240},
-    {type = item, name = magnesium_ingot, amount = 32}
+    {type = item, name = magnesium_powder, amount = 32}
 }
 data_recipe[titanium_sponge].results =
 {
@@ -1504,7 +1551,7 @@ data_recipe[uranium_processing].results =
     {type = item, name = uranium_234, amount = 8, independent_probability = 0.0055},
     {type = item, name = uranium_235, amount = 8, independent_probability = 0.0070},
     {type = item, name = uranium_238, amount = 8, independent_probability = 0.9875},
-    {type = fluid, name = fluorine, amount = 120} -- 360
+    {type = fluid, name = fluorine, amount = 120, ignored_by_productivity = 120} -- 360
 }
 
 -- THORIUM
@@ -1557,13 +1604,13 @@ data_recipe[chromium_ingot].main_product = chromium_ingot
 
 data_recipe[chromium_ingot_2].localised_name = {"item-name." .. chromium_ingot}
 data_recipe[chromium_ingot_2].categories = {angels_chemical_smelting_4}
-data_recipe[chromium_ingot_2].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_ingot, chromium_ingot, zinc_sulfate_solution)
+data_recipe[chromium_ingot_2].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_powder, chromium_ingot, zinc_sulfate_solution)
 data_recipe[chromium_ingot_2].order = d_a
 data_recipe[chromium_ingot_2].energy_required = 8 -- CrSO₄(aq) + Zn --> Cr + ZnSO₄(aq)
 data_recipe[chromium_ingot_2].ingredients =
 {
     {type = fluid, name = chromium_sulfate_II_solution, amount = 240},
-    {type = item, name = zinc_ingot, amount = 16}
+    {type = item, name = zinc_powder, amount = 16}
 }
 data_recipe[chromium_ingot_2].results =
 {
@@ -1574,13 +1621,13 @@ data_recipe[chromium_ingot_2].main_product = chromium_ingot
 
 data_recipe[chromium_ingot_3].localised_name = {"item-name." .. chromium_ingot}
 data_recipe[chromium_ingot_3].categories = {angels_blast_smelting_4}
-data_recipe[chromium_ingot_3].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_ingot, chromium_ingot, aluminium_oxide, steam)
+data_recipe[chromium_ingot_3].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_powder, chromium_ingot, aluminium_oxide, steam)
 data_recipe[chromium_ingot_3].order = d_b
 data_recipe[chromium_ingot_3].energy_required = 8 -- 2Cr(OH)₃ + 2Al --> 2Cr + Al₂O₃ + 3H₂O
 data_recipe[chromium_ingot_3].ingredients =
 {
     {type = item, name = chromium_hydroxide_III, amount = 16},
-    {type = item, name = aluminium_ingot, amount = 16}
+    {type = item, name = aluminium_powder, amount = 16}
 }
 data_recipe[chromium_ingot_3].results =
 {

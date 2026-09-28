@@ -33,10 +33,8 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
-
 local pollution_absorption_multiplier = 125
 local processed_eps = {}
-
 
 for _, tree in pairs(data_tree) do
     local eps = tree.emissions_per_second
@@ -52,8 +50,9 @@ for _, tree in pairs(data_tree) do
     end
 end
 
+local pollution_data_plant = 250
 local tree_plant = "tree-plant"
-data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
+data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_data_plant)
 
 local yumako_tree = "yumako-tree"
 data_plant[yumako_tree].minable.results[1].amount = 64

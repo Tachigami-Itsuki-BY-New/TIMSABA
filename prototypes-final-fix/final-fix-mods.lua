@@ -52,8 +52,16 @@ data_item[silicon_powder].hidden = false
 data_item[silicon_powder].hidden_in_factoriopedia = false
 data_recipe[silicon_powder].hidden = false
 data_recipe[silicon_powder].hidden_in_factoriopedia = false
+data_item[nickel_powder].hidden = true
+data_item[nickel_powder].hidden_in_factoriopedia = true
+data_recipe[nickel_powder].hidden = true
+data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_item[aluminium_oxide].hidden = false
 data_item[aluminium_oxide].hidden_in_factoriopedia = false
+data_item[aluminium_powder].hidden = true
+data_item[aluminium_powder].hidden_in_factoriopedia = true
+data_recipe[aluminium_powder].hidden = true
+data_recipe[aluminium_powder].hidden_in_factoriopedia = true
 data_recipe[zinc_oxide].hidden = false
 data_recipe[zinc_oxide].hidden_in_factoriopedia = false
 data_item[silver_nitrate_I].hidden = false
@@ -164,13 +172,21 @@ if mods[muluna_mods] then
         data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
         data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
         data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+        data_assembling[BUILD.name .. _ground_digger].module_slots = BUILD.tier
         data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _ground_digger].energy_source.emissions_per_minute.pollution = BUILD.tier
         data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * drain) .. kW
+        data_assembling[BUILD.name .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 
     data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
+    data_assembling[big_mining_drill .. _ground_digger].module_slots = 8
     data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill .. _ground_digger].energy_source.emissions_per_minute.pollution = 32
     data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
+    data_assembling[big_mining_drill .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[big_mining_drill .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
 
     if data_item[area_mining_drill_1] then
         local muluna_large_area_mining_machine =
@@ -184,8 +200,12 @@ if mods[muluna_mods] then
             data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
             data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
             data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+            data_assembling[BUILD.name .. _ground_digger].module_slots = (BUILD.tier * 2)
             data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
+            data_assembling[BUILD.name .. _ground_digger].energy_source.emissions_per_minute.pollution = (BUILD.tier * 2)
             data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
+            data_assembling[BUILD.name .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+            data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
         end
     end
@@ -193,7 +213,10 @@ if mods[muluna_mods] then
     if mods[hyarion_mods] then
         data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
         data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
+        data_assembling[geode_mining_drill .. _ground_digger].energy_source.emissions_per_minute.pollution = nil
         data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
+        data_assembling[geode_mining_drill .. _ground_digger].allowed_effects = {speed, consumption, productivity}
+        data_assembling[geode_mining_drill .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity}
         data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
     end
 
@@ -204,6 +227,7 @@ if mods[muluna_mods] then
     data_assembling[vacuum_heating_tower].crafting_speed = 64
     data_assembling[vacuum_heating_tower].energy_usage = 14400 .. kW
     data_assembling[vacuum_heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
+    data_assembling[vacuum_heating_tower].energy_source.emissions_per_minute.pollution = 128
     data_assembling[vacuum_heating_tower].energy_source.effectivity = 4
     data_assembling[vacuum_heating_tower].fixed_recipe = heat
 
@@ -217,6 +241,45 @@ if mods[muluna_mods] then
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.specific_heat = 10800 .. kJ
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_transfer = 10800000 .. kW
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
+
+    tech_rocket_part_productivity_aquilo = "rocket-part-productivity-aquilo"
+    data_technology[tech_rocket_part_productivity_aquilo].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_nauvis, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {agricultural_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
+
+    if mods[arig_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+    end
+
+    if mods[hyarion_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+    end
+
+    if mods[tellus_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+    end
+
+    if mods[maraxsis_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+    end
+
+    if mods[muria_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
+    end
+
+    if mods[pelagos_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+    end
+
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+    end
 end
 
 -- MOSHINE
@@ -471,14 +534,22 @@ if mods[maraxsis_mods] then
         data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
         data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
         data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
+        data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
         data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
         data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
+        data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 
     data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
     data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
+    data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
     data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
     data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
+    data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
 end
 
 -- PELAGOS

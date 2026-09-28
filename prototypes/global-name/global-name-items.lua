@@ -262,6 +262,8 @@ compound_polishing_bob = "bob-polishing-compound"
 
 -- SPACE
 space_platform_foundation = "space-platform-foundation"
+space_platform_starter_pack = "space-platform-starter-pack"
+cargo_landing_pad = "cargo-landing-pad"
 cargo_bay = "cargo-bay"
 landing_pad_unloading_bay = "landing-pad-unloading-bay"
 asteroid_collector = "asteroid-collector"
@@ -985,6 +987,7 @@ rocket_turret = "rocket-turret"
 
 -- FULGORA
 scrap = "scrap"
+recycler = "recycler"
 electromagnetic_plant = "electromagnetic-plant"
 holmium_ore = "holmium-ore"
 holmium_plate = "holmium-plate"

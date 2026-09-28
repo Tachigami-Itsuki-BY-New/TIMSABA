@@ -64,7 +64,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. chromium_ore_angels},
         name = chromium_ore_recipe,
-        categories = {angels_ore_sorting_4},
+        categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, purified_saphirite, purified_senaite, chromium_ore_angels),
         order = a_g,
