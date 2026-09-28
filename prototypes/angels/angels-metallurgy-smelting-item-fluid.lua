@@ -80,14 +80,14 @@ TIMSABA.functions.create_items
         name = copper_chloride_I,
         subgroup = is_copper_chemistry,
         icon = graphics_copper .. copper_chloride_I .. ".png",
-        order = e
+        order = f
     },
     {
         localised_description = show_formula and {chemical_formula, "Cu[font=default-tiny-bold]2[/font]O"} or nil,
         name = copper_oxide_I,
         subgroup = is_copper_chemistry,
         icon = graphics_copper .. copper_oxide_I .. ".png",
-        order = g
+        order = h
     }
 })
 
@@ -111,7 +111,7 @@ TIMSABA.functions.create_fluids
         name = ammonium_dichlorocuprate_I_solution,
         subgroup = is_copper_chemistry,
         icon = graphics_copper .. ammonium_dichlorocuprate_I_solution .. ".png",
-        order = f,
+        order = g,
         base_color = TIMSABA.functions.fluid_color("NH4CuCl2Wp"),
         flow_color = TIMSABA.functions.flow_color("NH4CuCl2Wp")
     },
@@ -120,7 +120,7 @@ TIMSABA.functions.create_fluids
         name = copper_nitrate_II_solution,
         subgroup = is_copper_chemistry,
         icon = graphics_copper .. copper_nitrate_II_solution .. ".png",
-        order = h,
+        order = i,
         base_color = TIMSABA.functions.fluid_color("CuN2O6Wp"),
         flow_color = TIMSABA.functions.flow_color("CuN2O6Wp")
     }

@@ -764,11 +764,12 @@ for _, BUILD in pairs(assembling_machines) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
-    data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity}
-    data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity}
     if mods[quality_mods] then
         data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, quality}
-        table.insert(data_assembling[BUILD.name].allowed_module_categories, quality)
+        data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, quality}
+    else
+        data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity}
+        data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity}
     end
 end
 local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, plate, bearing)

@@ -786,6 +786,7 @@ if mods[muluna_mods] then
     data_assembling[advanced_boiler].order = z
     data_assembling[advanced_boiler].crafting_speed = 4
     data_assembling[advanced_boiler].energy_usage = 1800 .. kW
+    data_assembling[advanced_boiler].energy_source.emissions_per_minute.pollution = 128
     data_assembling[advanced_boiler].energy_source.effectivity = nil
 
     -- HEAT
@@ -994,6 +995,7 @@ if mods[muluna_mods] then
     data_assembling[crusher_2].order = e
     data_assembling[crusher_2].crafting_speed = 2
     data_assembling[crusher_2].energy_usage = 930 .. kW
+    data_assembling[crusher_2].energy_source.emissions_per_minute.pollution = 2
     data_assembling[crusher_2].energy_source.drain = 30 .. kW
 
     data_item[cryolab].subgroup = is_muluna_building

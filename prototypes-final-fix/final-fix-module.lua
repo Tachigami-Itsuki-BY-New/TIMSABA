@@ -496,7 +496,107 @@ for _, name in ipairs(beacons) do
 end
 
 -- SPACE AGE
+local rocket_silos = {rocket_silo, big_rocket_silo}
+for _, name in ipairs(rocket_silos) do
+    if data_rocket_silo[name] then
+        if mods[quality_mods] then
+            data_rocket_silo[name].allowed_effects = {speed, consumption, productivity, pollution, quality}
+            data_rocket_silo[name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+        else
+            data_rocket_silo[name].allowed_effects = {speed, consumption, productivity, pollution}
+            data_rocket_silo[name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        end
+    end
+end
+
+if mods[hyarion_mods] then
+    if mods[quality_mods] then
+        data_assembling[space_manufactorer].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[space_manufactorer].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[space_manufactorer].allowed_effects = {speed, consumption, productivity}
+        data_assembling[space_manufactorer].allowed_module_categories = {speed, efficiency, productivity}
+    end
+end
+
+-- VULCANUS
+if mods[quality_mods] then
+    data_assembling[foundry].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    data_assembling[foundry].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+else
+    data_assembling[foundry].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[foundry].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+end
+
+data_mining_drill[big_mining_drill].allowed_effects = {speed, consumption, productivity, pollution}
+data_mining_drill[big_mining_drill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+-- GLEBA
+if mods[quality_mods] then
+    data_assembling[biochamber].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    data_assembling[biochamber].allowed_module_categories = {speed, efficiency, pollution_create, quality, agricultural}
+else
+    data_assembling[biochamber].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[biochamber].allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
+end
+
+data_lab[biolab].allowed_effects = {speed, consumption, productivity, pollution}
+data_lab[biolab].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+-- FULGORA
+if mods[quality_mods] then
+    data_furnace[recycler].allowed_effects = {speed, consumption, pollution, quality}
+    data_furnace[recycler].allowed_module_categories = {speed, efficiency, pollution_clean, quality}
+
+    data_assembling[electromagnetic_plant].allowed_effects = {speed, consumption, productivity, quality}
+    data_assembling[electromagnetic_plant].allowed_module_categories = {speed, efficiency, productivity, quality}
+else
+    data_furnace[recycler].allowed_effects = {speed, consumption, pollution}
+    data_furnace[recycler].allowed_module_categories = {speed, efficiency, pollution_clean}
+
+    data_assembling[electromagnetic_plant].allowed_effects = {speed, consumption, productivity}
+    data_assembling[electromagnetic_plant].allowed_module_categories = {speed, efficiency, productivity}
+end
 
 -- MULUNA
+if mods[quality_mods] then
+    data_assembling[crusher].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    data_assembling[crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+else
+    data_assembling[crusher].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+end
 
--- 
+if mods[muluna_mods] then
+    if mods[quality_mods] then
+        data_assembling[crusher_2].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[crusher_2].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[crusher_2].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[crusher_2].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+if mods[shchierbin_mods] then
+    if mods[quality_mods] then
+        data_assembling[vanadium_crusher].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[vanadium_crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[vanadium_crusher].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[vanadium_crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- MOSHINE
+
+
+-- PANGLIA
+
+
+-- ARIG
+
+
+-- HYARION
+if mods[hyarion_mods] then
+    --
+end

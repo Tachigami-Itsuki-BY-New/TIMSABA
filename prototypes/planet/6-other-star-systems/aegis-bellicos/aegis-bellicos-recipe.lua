@@ -33,13 +33,13 @@ if mods[aegis_bellicos_mods] then
             name = beryllium_ingot,
             categories = {angels_chemical_smelting_4},
             subgroup = is_beryllium,
-            icons = TWO_D_I(beryllium_chloride_gas, magnesium_ingot, beryllium_ingot, magnesium_chloride),
+            icons = TWO_D_I(beryllium_chloride_gas, magnesium_powder, beryllium_ingot, magnesium_chloride),
             order = d,
             energy_required = 8, -- BeCl₂(g) + Mg(s) --> Be(s) + MgCl₂(s)
             ingredients =
             {
                 {type = fluid, name = beryllium_chloride_gas, amount = 240},
-                {type = item, name = magnesium_ingot, amount = 16}
+                {type = item, name = magnesium_powder, amount = 16}
             },
             results =
             {
@@ -54,13 +54,13 @@ if mods[aegis_bellicos_mods] then
             name = beryllium_ingot_2,
             categories = {angels_blast_smelting_4},
             subgroup = is_beryllium,
-            icons = TWO_D_I(beryllium_fluoride, magnesium_ingot, beryllium_ingot, magnesium_fluoride),
+            icons = TWO_D_I(beryllium_fluoride, magnesium_powder, beryllium_ingot, magnesium_fluoride),
             order = d_a,
             energy_required = 8, -- BeF₂(s) + Mg(s) --> Be(s) + MgF₂(s) 
             ingredients =
             {
                 {type = item, name = beryllium_fluoride, amount = 16},
-                {type = item, name = magnesium_ingot, amount = 16}
+                {type = item, name = magnesium_powder, amount = 16}
             },
             results =
             {

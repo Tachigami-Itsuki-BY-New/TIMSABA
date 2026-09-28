@@ -681,7 +681,7 @@ data_recipe[puffer_refugium_1].ingredients =
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = brass_pipe, amount = 32},
     {type = item, name = aluminium_plate_bob, amount = 16},
-    {type = item, name = glass_bob, amount = 4},
+    {type = item, name = glass_bob, amount = 16},
     {type = item, name = concrete_brick, amount = 16}
 }
 data_assembling[puffer_refugium_1].subgroup = is_puffer_refugium

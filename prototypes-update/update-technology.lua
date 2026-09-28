@@ -377,6 +377,15 @@ replace_prerequisites(tech_strand_casting_4, tech_tungsten_processing, tech_copp
 replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_copper_tungsten_processing)
 
 -- INTERMEDIATE PRODUCTS
+table.insert(data_technology[advanced_circuit].prerequisites, tech_iron_smelting_2)
+data_technology[advanced_circuit].effects =
+{
+    {type = unlock_recipe, recipe = phenolic_board},
+    {type = unlock_recipe, recipe = advanced_circuit_board},
+    {type = unlock_recipe, recipe = transistor},
+    {type = unlock_recipe, recipe = advanced_circuit}
+}
+
 data_technology[tech_bronze_processing].icons = nil
 data_technology[tech_bronze_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-bronze-alloy.png"
 data_technology[tech_bronze_processing].icon_size = 64
@@ -1099,7 +1108,8 @@ data_technology[tech_iron_smelting_2].effects =
     {type = unlock_recipe, recipe = iron_ingot_2},
     {type = unlock_recipe, recipe = iron_powder},
     {type = unlock_recipe, recipe = iron_hydroxide_III},
-    {type = unlock_recipe, recipe = iron_oxide_III}
+    {type = unlock_recipe, recipe = iron_oxide_III},
+    {type = unlock_recipe, recipe = iron_chloride_III_solution_angels}
 }
 
 data_technology[tech_iron_smelting_3].prerequisites = {tech_ore_processing_2, tech_iron_smelting_2, tech_nitrogen_processing_2, tech_sulfur_processing}
@@ -1712,15 +1722,11 @@ data_technology[tech_metallurgy_5].effects =
     {type = unlock_recipe, recipe = iron_oxide_III_from_iron_sulfate_II},
     {type = unlock_recipe, recipe = iron_hydroxide_II_from_iron_sulfate_II_solution},
     {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_sulfate_II_solution},
+    {type = unlock_recipe, recipe = copper_chloride_II_solution_angels},
     {type = unlock_recipe, recipe = copper_chloride_I},
     {type = unlock_recipe, recipe = copper_chloride_I_alt},
     {type = unlock_recipe, recipe = ammonium_chloride_solution_alt},
-    {type = unlock_recipe, recipe = ammonium_dichlorocuprate_I_solution},
-    {type = unlock_recipe, recipe = acrylonitrile},
-    {type = unlock_recipe, recipe = liquid_plastic_4},
-    {type = unlock_recipe, recipe = acetone_cyanohydrin},
-    {type = unlock_recipe, recipe = methyl_methacrylate},
-    {type = unlock_recipe, recipe = liquid_plastic_5}
+    {type = unlock_recipe, recipe = ammonium_dichlorocuprate_I_solution}
 }
 
 -- ANGELS WATER TREATMENT
@@ -1789,7 +1795,12 @@ data_technology[tech_nitrogen_processing_4].effects =
     {type = unlock_recipe, recipe = dicyandiamide_solution},
     {type = unlock_recipe, recipe = melamine_solution_from_dicyandiamide_solution},
     {type = unlock_recipe, recipe = ammonium_sulfate_solution_alt},
-    {type = unlock_recipe, recipe = ammonium_hydrosulfate_reprocess}
+    {type = unlock_recipe, recipe = ammonium_hydrosulfate_reprocess},
+    {type = unlock_recipe, recipe = acrylonitrile},
+    {type = unlock_recipe, recipe = liquid_plastic_4},
+    {type = unlock_recipe, recipe = acetone_cyanohydrin},
+    {type = unlock_recipe, recipe = methyl_methacrylate},
+    {type = unlock_recipe, recipe = liquid_plastic_5}
 }
 
 data_technology[tech_sodium_processing_1].icons = TIMSABA.functions.create_gas_tech_icon("NaNaNa")
@@ -1829,6 +1840,13 @@ data_technology[tech_sulfur_processing].effects =
     {type = unlock_recipe, recipe = hydrofluoric_acid_angels},
     {type = unlock_recipe, recipe = peroxydisulfuric_acid},
     {type = unlock_recipe, recipe = hydrogen_peroxide}
+}
+
+data_technology[tech_chlorine_processing_1].effects =
+{
+    {type = unlock_recipe, recipe = water_saline_separation},
+    {type = unlock_recipe, recipe = hydrogen_chloride_angels},
+    {type = unlock_recipe, recipe = hydrochloric_acid_angels}
 }
 
 table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock_recipe, recipe = sodium_hydroxide_solution_angels})

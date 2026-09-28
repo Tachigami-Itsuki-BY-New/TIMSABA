@@ -11,36 +11,36 @@ if settings.startup[setting_no_spoilage].value then
         end
     end
 
-    local function spoil_recipe(parameters)
+    local function spoil_recipe(ore, subgroup, order, bacteria)
         TIMSABA.functions.create_recipes
         ({
             {
-                name = parameters.ore,
+                name = ore,
                 categories = {"angels-bio-void"},
-                subgroup = parameters.subgroup,
-                icons = TWO_I(saphirite_bacteria, parameters.ore),
-                order = parameters.order,
+                subgroup = subgroup,
+                icons = TWO_I(bacteria, ore),
+                order = order,
                 enabled = true,
                 energy_required = 1,
-                ingredients = {{type = item, name = parameters.bacteria, amount = 1}},
-                results = {{type = item, name = parameters.ore, amount = 1}},
-                main_product = parameters.ore
+                ingredients = {{type = item, name = bacteria, amount = 1}},
+                results = {{type = item, name = ore, amount = 1}},
+                main_product = ore
             }
         })
     end
-    spoil_recipe({ore_saphirite,   saphirite_bacteria, a, is_ores})
-    spoil_recipe({ore_jivolite,     jivolite_bacteria, b, is_ores})
-    spoil_recipe({ore_stiratite,   stiratite_bacteria, c, is_ores})
-    spoil_recipe({ore_crotinnium, crotinnium_bacteria, d, is_ores})
-    spoil_recipe({ore_rubyte,         rubyte_bacteria, e, is_ores})
-    spoil_recipe({ore_bobmonium,   bobmonium_bacteria, f, is_ores})
-    spoil_recipe({ore_senaite,       senaite_bacteria, g, is_ores})
-    spoil_recipe({ore_franckeite, franckeite_bacteria, h, is_ores})
+    spoil_recipe(ore_saphirite,   saphirite_bacteria, a, is_ores)
+    spoil_recipe(ore_jivolite,     jivolite_bacteria, b, is_ores)
+    spoil_recipe(ore_stiratite,   stiratite_bacteria, c, is_ores)
+    spoil_recipe(ore_crotinnium, crotinnium_bacteria, d, is_ores)
+    spoil_recipe(ore_rubyte,         rubyte_bacteria, e, is_ores)
+    spoil_recipe(ore_bobmonium,   bobmonium_bacteria, f, is_ores)
+    spoil_recipe(ore_senaite,       senaite_bacteria, g, is_ores)
+    spoil_recipe(ore_franckeite, franckeite_bacteria, h, is_ores)
 
-    spoil_recipe({spoilage, compost_angels, a, is_spoilage})
+    spoil_recipe(spoilage, compost_angels, a, is_spoilage)
 
     if mods[tellus_mods] then
-        spoil_recipe({magnesium_ore, magnesium_bacteria, a, is_magnesium})
+        spoil_recipe(magnesium_ore, magnesium_bacteria, a, is_magnesium)
     end
 end
 

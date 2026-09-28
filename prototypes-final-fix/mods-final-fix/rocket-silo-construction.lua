@@ -1,4 +1,4 @@
-if mods["Rocket-Silo-Construction"] then
+if mods[rocket_silo_construction_mods] then
     local is_construction_stage = "is-construction-stage"
     local is_silo_stage = "is-silo-stage"
     TIMSABA.functions.create_subgroups(ig_space,
@@ -7,7 +7,6 @@ if mods["Rocket-Silo-Construction"] then
         {name = is_silo_stage,         order = a_b}
     })
 
-    local excavation_site = "rsc-excavation-site"
     data_item[excavation_site].localised_name = {"entity-name." .. excavation_site}
     data_item[excavation_site].localised_description = {"entity-description." .. excavation_site}
     data_item[excavation_site].order = i

@@ -1,3 +1,30 @@
+-- ROCKET PART
+rocket_part_nauvis = "rocket-part-nauvis"
+TIMSABA.functions.create_recipes
+({
+    {
+        localised_name = {"item-name." .. rocket_part},
+        name = rocket_part_nauvis,
+        categories = {"rocket-building"},
+        subgroup = "space-interactors",
+        icons = R_P_I(rocket_part, planet_nauvis),
+        order = c .. "-" .. data_planet[planet_nauvis].order,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients =
+        {
+            {type = item, name = low_density_structure, amount = 1},
+            {type = item, name = heat_shielding_tile, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 1},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
+            {type = item, name = rocket_fuel, amount = 1}
+        },
+        results = {{type = item, name = rocket_part, amount = 1}},
+        main_product = rocket_part,
+        surface_conditions = {{property = pressure, min = 1000, max = 1000}}
+    }
+})
+
 -- METALLIC
 metallic_asteroid_crushing_2 = "timsaba-metallic-asteroid-crushing-2" -- Copper ore
 metallic_asteroid_crushing_3 = "metallic-asteroid-crushing-3" -- Lead ore
@@ -23,69 +50,59 @@ advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-cr
 advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Germanium ore
 advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Gallium ore
 advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Vanadium ore
-local function metallic_asteroid_crushing(parameters)
-    local info_recipe =
-    {
-        type = recipe,
-        name = parameters.name,
-        categories = {crushing},
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, parameters.res),
-        order = parameters.order,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = parameters.res, amount = 8}},
-        main_product = parameters.res
-    }
-    data:extend({info_recipe})
+local function metallic_asteroid_crushing(name, order, result)
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            name = name,
+            categories = {crushing},
+            subgroup = is_space_environment_1,
+            icons = TWO_I(metallic_asteroid_chunk, result),
+            order = order,
+            allow_productivity = true,
+            ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
+            results = {{type = item, name = result, amount = 8}},
+            main_product = result
+        }
+    })
 end
-metallic_asteroid_crushing({name = metallic_asteroid_crushing_2,               order = e_b, res = copper_ore})
-metallic_asteroid_crushing({name = metallic_asteroid_crushing_3,               order = e_c, res = lead_ore_bob})
-metallic_asteroid_crushing({name = metallic_asteroid_crushing_4,               order = e_d, res = tin_ore_bob})
-metallic_asteroid_crushing({name = metallic_asteroid_crushing_5,               order = e_e, res = manganese_ore_angels})
-metallic_asteroid_crushing({name = metallic_asteroid_crushing_6,               order = e_f, res = magnesium_ore})
-metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_2,      order = f_b, res = aluminium_ore_bob})
-metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_3,      order = f_c, res = zinc_ore_bob})
-metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_4,      order = f_d, res = silver_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_1,          order = g_a, res = titanium_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_2,          order = g_b, res = gold_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_3,          order = g_c, res = cobalt_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_4,          order = g_d, res = uranium_ore})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_5,          order = g_e, res = thorium_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_6,          order = g_f, res = chromium_ore_angels})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_7,          order = g_g, res = tungsten_ore_bob})
-metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_8,          order = g_h, res = platinum_ore_angels})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_1, order = h_a, res = molybdenum_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_2, order = h_b, res = rhenium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_3, order = h_c, res = niobium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_4, order = h_d, res = holmium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_5, order = h_e, res = antimony_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_6, order = h_f, res = germanium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_7, order = h_g, res = gallium_ore})
-metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_8, order = h_h, res = vanadium_ore})
+metallic_asteroid_crushing(metallic_asteroid_crushing_2,               e_b, copper_ore)
+metallic_asteroid_crushing(metallic_asteroid_crushing_3,               e_c, lead_ore_bob)
+metallic_asteroid_crushing(metallic_asteroid_crushing_4,               e_d, tin_ore_bob)
+metallic_asteroid_crushing(metallic_asteroid_crushing_5,               e_e, manganese_ore_angels)
+metallic_asteroid_crushing(metallic_asteroid_crushing_6,               e_f, magnesium_ore)
+metallic_asteroid_crushing(advanced_metallic_asteroid_crushing_2,      f_b, aluminium_ore_bob)
+metallic_asteroid_crushing(advanced_metallic_asteroid_crushing_3,      f_c, zinc_ore_bob)
+metallic_asteroid_crushing(advanced_metallic_asteroid_crushing_4,      f_d, silver_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_1,          g_a, titanium_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_2,          g_b, gold_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_3,          g_c, cobalt_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_4,          g_d, uranium_ore)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_5,          g_e, thorium_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_6,          g_f, chromium_ore_angels)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_7,          g_g, tungsten_ore_bob)
+metallic_asteroid_crushing(full_metallic_asteroid_crushing_8,          g_h, platinum_ore_angels)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_1, h_a, molybdenum_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_2, h_b, rhenium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_3, h_c, niobium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_4, h_d, holmium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_5, h_e, antimony_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_6, h_f, germanium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_7, h_g, gallium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_8, h_h, vanadium_ore)
 
 -- CARBONIC
 advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = advanced_carbonic_asteroid_crushing_2,
         categories = {crushing},
         subgroup = is_space_environment_2,
         icons = TWO_I(carbonic_asteroid_chunk, calcite),
         order = f_b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients = {{type = item, name = carbonic_asteroid_chunk, amount = 1}},
         results = {{type = item, name = calcite, amount = 8}},
         main_product = calcite
@@ -99,33 +116,28 @@ oxide_asteroid_crushing_4 = "oxide-asteroid-crushing-4"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"
 full_oxide_asteroid_crushing_2 = "full-oxide-asteroid-crushing-2"
-local function oxide_asteroid_crushing(parameters)
-    local info_recipe =
-    {
-        type = recipe,
-        name = parameters.name,
-        categories = {parameters.categories},
-        subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, parameters.res),
-        order = parameters.order,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-        results = {{type = parameters.type_res, name = parameters.res, amount = parameters.amount}},
-        main_product = parameters.res
-    }
-    data:extend({info_recipe})
+local function oxide_asteroid_crushing(name, categories, order, type_results, result, amount)
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            name = name,
+            categories = categories,
+            subgroup = is_space_environment_3,
+            icons = TWO_I(oxide_asteroid_chunk, result),
+            order = order,
+            allow_productivity = true,
+            ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
+            results = {{type = type_results, name = result, amount = amount}},
+            main_product = result
+        }
+    })
 end
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          categories = chemistry, order = e_b, type_res = fluid, amount = 120, res = nitrogen_oxide})
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          categories = chemistry, order = e_c, type_res = fluid, amount = 120, res = chlorine_oxide_gas})
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_4,          categories = crushing,  order = e_d, type_res = item,  amount = 8,   res = sodium_oxide})
-oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, categories = chemistry, order = f_b, type_res = fluid, amount = 120, res = nitrogen_dioxide_angels})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     categories = crushing,  order = g_a, type_res = item,  amount = 8,   res = lithium_oxide})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     categories = chemistry, order = g_b, type_res = fluid, amount = 120, res = oxygen_fluoride_gas})
+oxide_asteroid_crushing(oxide_asteroid_crushing_2,          {chemistry}, e_b, fluid,          nitrogen_oxide, 120)
+oxide_asteroid_crushing(oxide_asteroid_crushing_3,          {chemistry}, e_c, fluid,      chlorine_oxide_gas, 120)
+oxide_asteroid_crushing(oxide_asteroid_crushing_4,           {crushing}, e_d,  item,            sodium_oxide, 8)
+oxide_asteroid_crushing(advanced_oxide_asteroid_crushing_2, {chemistry}, f_b, fluid, nitrogen_dioxide_angels, 120)
+oxide_asteroid_crushing(full_oxide_asteroid_crushing_1,      {crushing}, g_a,  item,           lithium_oxide, 8)
+oxide_asteroid_crushing(full_oxide_asteroid_crushing_2,     {chemistry}, g_b, fluid,     oxygen_fluoride_gas, 120)
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"

@@ -218,13 +218,13 @@ TIMSABA.functions.create_recipes
         name = antimony_ingot_3,
         categories = {angels_chemical_smelting_4},
         subgroup = is_antimony,
-        icons = THREE_D_I(hexachloroantimonic_acid, nil, zinc_ingot, antimony_ingot, zinc_chloride, hydrochloric_acid_angels),
+        icons = THREE_D_I(hexachloroantimonic_acid, nil, zinc_powder, antimony_ingot, zinc_chloride, hydrochloric_acid_angels),
         order = d_b,
         energy_required = 8, -- 2HSbCl₆(aq) + 5Zn --> 2Sb + 5ZnCl₂ + 2HCl(aq)
         ingredients =
         {
             {type = fluid, name = hexachloroantimonic_acid, amount = 240},
-            {type = item, name = zinc_ingot, amount = 40}
+            {type = item, name = zinc_powder, amount = 40}
         },
         results =
         {

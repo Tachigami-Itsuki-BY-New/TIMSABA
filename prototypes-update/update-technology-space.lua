@@ -3,6 +3,25 @@ table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_process
 table.insert(data_technology[rocket_silo].prerequisites, tech_rhenium_processing)
 table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_rhenium_processing)
 table.insert(data_technology[rocket_silo].prerequisites, tech_robots_4)
+if mods[rocket_silo_construction_mods] then
+    data_technology[rocket_silo].effects =
+    {
+        {type = unlock_recipe, recipe = excavation_site},
+        {type = unlock_recipe, recipe = rocket_part_nauvis},
+        {type = unlock_recipe, recipe = space_platform_foundation},
+        {type = unlock_recipe, recipe = space_platform_starter_pack},
+        {type = unlock_recipe, recipe = cargo_landing_pad}
+    }
+else
+    data_technology[rocket_silo].effects =
+    {
+        {type = unlock_recipe, recipe = rocket_silo},
+        {type = unlock_recipe, recipe = rocket_part_nauvis},
+        {type = unlock_recipe, recipe = space_platform_foundation},
+        {type = unlock_recipe, recipe = space_platform_starter_pack},
+        {type = unlock_recipe, recipe = cargo_landing_pad}
+    }
+end
 if not mods[muluna_mods] then
     data_technology[rocket_silo].unit.ingredients =
     {
@@ -75,10 +94,9 @@ data_technology[tech_advanced_asteroid_processing].effects =
     {type = unlock_recipe, recipe = advanced_carbonic_asteroid_crushing_2},
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_1},
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_2},
-    {type = unlock_recipe, recipe = lime_space},
-    --{type = unlock_recipe, recipe = sodium_hydroxide_space}
+    {type = unlock_recipe, recipe = lime_space}
 }
-data_technology[tech_advanced_asteroid_processing].prerequisites = {electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack}
+data_technology[tech_advanced_asteroid_processing].prerequisites = {metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack}
 data_technology[tech_advanced_asteroid_processing].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -87,9 +105,9 @@ data_technology[tech_advanced_asteroid_processing].unit.ingredients =
     {production_science_pack, 1},
     {utility_science_pack, 1},
     {space_science_pack, 1},
-    {electromagnetic_science_pack, 1},
+    {metallurgic_science_pack, 1},
     {agricultural_science_pack, 1},
-    {metallurgic_science_pack, 1}
+    {electromagnetic_science_pack, 1}
 }
 
 tech_asteroid_productivity = "asteroid-productivity"
@@ -123,9 +141,9 @@ data_technology[tech_asteroid_productivity].unit.ingredients =
     {production_science_pack, 1},
     {utility_science_pack, 1},
     {space_science_pack, 1},
-    {electromagnetic_science_pack, 1},
+    {metallurgic_science_pack, 1},
     {agricultural_science_pack, 1},
-    {metallurgic_science_pack, 1}
+    {electromagnetic_science_pack, 1}
 }
 
 if mods["CargoBayLimitResearch"] then

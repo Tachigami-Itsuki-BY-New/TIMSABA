@@ -234,7 +234,6 @@ data_recipe[space_platform_starter_pack].ingredients =
     {type = item, name = nitinol_plate_bob, amount = 16}
 }
 
-local cargo_landing_pad = "cargo-landing-pad"
 data_item[cargo_landing_pad].subgroup = space_platform
 data_item[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
 data_recipe[cargo_landing_pad].subgroup = space_platform
@@ -486,6 +485,7 @@ if mods[hyarion_mods] then
     data_assembling[space_manufactorer].energy_usage = (240 - drain) .. kW
     data_assembling[space_manufactorer].energy_source.emissions_per_minute.pollution = 0
     data_assembling[space_manufactorer].energy_source.drain = drain .. kW
+    data_assembling[space_manufactorer].effect_receiver.base_effect.productivity = 1
 
     data_item[zero_grav_accumulator].subgroup = is_space_platform_mods
     data_item[zero_grav_accumulator].order = e

@@ -585,3 +585,7 @@ flare_stack_mods = "Flare Stack"
 
 -- Asphalt Roads Patched
 asphalt_roads_patched_mods = "AsphaltRoadsPatched"
+
+-- Rocket-Silo-Construction
+rocket_silo_construction_mods = "Rocket-Silo-Construction"
+excavation_site = "rsc-excavation-site"
