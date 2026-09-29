@@ -65,6 +65,19 @@ if mods[moshine_mods] then
     data_recipe[neodymium_magnet].ingredients = {{type = fluid, name = neodymium_iron_boron_molten, amount = 60}}
     data_recipe[neodymium_magnet].results[1].amount = 4
 
+    local biter_flesh = "biter_dna_sample"
+    local demolisher_scale = "demolisher_dna_scale"
+    if mods[panglia_mods] then
+        data_item[biter_flesh].subgroup = is_panglia_enemy_parts
+        data_item[biter_flesh].order = a
+        data_item[biter_flesh].stack_size = 200
+        TIMSABA.void.freezing_organics(biter_flesh)
+
+        data_item[demolisher_scale].subgroup = is_panglia_enemy_parts
+        data_item[demolisher_scale].order = b
+        data_item[demolisher_scale].stack_size = 200
+    end
+
     -- DATA CELL
     data_item[datacell_empty].subgroup = is_moshine_datacell
     data_item[datacell_empty].order = a
@@ -224,17 +237,106 @@ if mods[moshine_mods] then
             {type = fluid, name = timewarp_data, amount = 120}
         }
 
+        local dna_raw_data = "dna_raw_data"
+        data_fluid[dna_raw_data].subgroup = is_moshine_datacell
+        data_fluid[dna_raw_data].order = n
+
+        local panglia_collect_dna_ = "panglia_collect_dna_"
+        local dna_raw_data_factorian_fish = panglia_collect_dna_ .. "fish"
+        data_recipe[dna_raw_data_factorian_fish].subgroup = is_moshine_datacell
+        data_recipe[dna_raw_data_factorian_fish].icons = THREE_R_I(factorian_fish, dna_raw_data, spoilage)
+        data_recipe[dna_raw_data_factorian_fish].order = n_a
+        data_recipe[dna_raw_data_factorian_fish].results =
+        {
+            {type = fluid, name = dna_raw_data, amount_min = 15, amount_max = 30},
+            {type = item, name = spoilage, amount = 1}
+        }
+
+        local dna_raw_data_biter_flesh = panglia_collect_dna_ .. "biter"
+        data_recipe[dna_raw_data_biter_flesh].subgroup = is_moshine_datacell
+        data_recipe[dna_raw_data_biter_flesh].icons = THREE_R_I(biter_flesh, dna_raw_data, spoilage)
+        data_recipe[dna_raw_data_biter_flesh].order = n_b
+
+        local dna_raw_data_biter_egg = panglia_collect_dna_ .. "biter_egg"
+        data_recipe[dna_raw_data_biter_egg].subgroup = is_moshine_datacell
+        data_recipe[dna_raw_data_biter_egg].icons = THREE_R_I(biter_egg, dna_raw_data, spoilage)
+        data_recipe[dna_raw_data_biter_egg].order = n_c
+        data_recipe[dna_raw_data_biter_egg].energy_required = 32
+        data_recipe[dna_raw_data_biter_egg].results =
+        {
+            {type = fluid, name = dna_raw_data, amount_min = 240, amount_max = 1920},
+            {type = item, name = spoilage, amount = 1}
+        }
+
+        local dna_raw_data_demolisher_scale = panglia_collect_dna_ .. "demolisher"
+        data_recipe[dna_raw_data_demolisher_scale].subgroup = is_moshine_datacell
+        data_recipe[dna_raw_data_demolisher_scale].icons = THREE_R_I(demolisher_scale, dna_raw_data, stone)
+        data_recipe[dna_raw_data_demolisher_scale].order = n_d
+        data_recipe[dna_raw_data_demolisher_scale].energy_required = 128
+        data_recipe[dna_raw_data_demolisher_scale].results =
+        {
+            {type = fluid, name = dna_raw_data, amount_min = 480, amount_max = 3840},
+            {type = item, name = stone, amount_min = 16, amount_max = 32}
+        }
+
+        local dna_raw_data_pentapod_egg = panglia_collect_dna_ .. "pentapod"
+        data_recipe[dna_raw_data_pentapod_egg].subgroup = is_moshine_datacell
+        data_recipe[dna_raw_data_pentapod_egg].icons = THREE_R_I(pentapod_egg, dna_raw_data, spoilage)
+        data_recipe[dna_raw_data_pentapod_egg].order = n_e
+        data_recipe[dna_raw_data_pentapod_egg].results =
+        {
+            {type = fluid, name = dna_raw_data, amount = 120},
+            {type = item, name = spoilage, amount = 1}
+        }
+
         data_item[datacell_dna_raw].subgroup = is_moshine_datacell
-        data_item[datacell_dna_raw].order = n
+        data_item[datacell_dna_raw].order = o
         data_item[datacell_dna_raw].stack_size = 200
         data_recipe[datacell_dna_raw].subgroup = is_moshine_datacell
-        data_recipe[datacell_dna_raw].icons = THREE_R_I(datacell_empty, datacell_dna_raw, datacell_empty)
-        data_recipe[datacell_dna_raw].order = n
-        data_recipe[datacell_dna_raw].energy_required = 64
+        data_recipe[datacell_dna_raw].icons = THREE_I(datacell_empty, dna_raw_data, datacell_dna_raw)
+        data_recipe[datacell_dna_raw].order = o
+        data_recipe[datacell_dna_raw].energy_required = 1
+        data_recipe[datacell_dna_raw].ingredients =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = dna_raw_data, amount = 120}
+        }
+
+        local datacell_remove_dna_raw_data = "datacell-remove-dna-raw"
+        data_recipe[datacell_remove_dna_raw_data].subgroup = is_moshine_datacell
+        data_recipe[datacell_remove_dna_raw_data].icons = THREE_R_I(datacell_dna_raw, datacell_empty, dna_raw_data)
+        data_recipe[datacell_remove_dna_raw_data].order = o_a
+        data_recipe[datacell_remove_dna_raw_data].results =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = dna_raw_data, amount = 120}
+        }
+
+        local dna_sequenced_data = "dna_sequenced_data"
+        data_fluid[dna_sequenced_data].subgroup = is_moshine_datacell
+        data_fluid[dna_sequenced_data].order = p
 
         data_item[datacell_dna_sequenced].subgroup = is_moshine_datacell
-        data_item[datacell_dna_sequenced].order = o
+        data_item[datacell_dna_sequenced].order = q
         data_item[datacell_dna_sequenced].stack_size = 200
+        data_recipe[datacell_dna_sequenced].subgroup = is_moshine_datacell
+        data_recipe[datacell_dna_sequenced].icons = THREE_I(datacell_empty, dna_sequenced_data, datacell_dna_sequenced)
+        data_recipe[datacell_dna_sequenced].order = q
+        data_recipe[datacell_dna_sequenced].ingredients =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = dna_sequenced_data, amount = 120}
+        }
+
+        local datacell_remove_dna_sequenced_data = "datacell-remove-dna-sequenced"
+        data_recipe[datacell_remove_dna_sequenced_data].subgroup = is_moshine_datacell
+        data_recipe[datacell_remove_dna_sequenced_data].icons = THREE_R_I(datacell_dna_sequenced, datacell_empty, dna_sequenced_data)
+        data_recipe[datacell_remove_dna_sequenced_data].order = q_a
+        data_recipe[datacell_remove_dna_sequenced_data].results =
+        {
+            {type = item, name = datacell_empty, amount = 1},
+            {type = fluid, name = dna_sequenced_data, amount = 120}
+        }
     end
 
     -- CORE

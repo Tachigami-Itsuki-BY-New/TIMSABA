@@ -611,9 +611,126 @@ if mods[panglia_mods] then
 end
 
 -- ARIG
+if mods[arig_mods] then
+    if mods[quality_mods] then
+        data_assembling[sifter].allowed_effects = {speed, consumption, pollution, quality}
+        data_assembling[sifter].allowed_module_categories = {speed, efficiency, pollution_clean, quality}
+    else
+        data_assembling[sifter].allowed_effects = {speed, consumption, pollution}
+        data_assembling[sifter].allowed_module_categories = {speed, efficiency, pollution_clean}
+    end
 
+    if mods[quality_mods] then
+        data_assembling[press].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[press].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[press].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[press].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    data_assembling[water_harvester].allowed_effects = {speed, productivity}
+    data_assembling[water_harvester].allowed_module_categories = {speed, productivity}
+end
 
 -- HYARION
 if mods[hyarion_mods] then
-    --
+    if mods[quality] then
+        data_mining_drill[geode_mining_drill].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_mining_drill[geode_mining_drill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_mining_drill[geode_mining_drill].allowed_effects = {speed, consumption, productivity, pollution}
+        data_mining_drill[geode_mining_drill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    if mods[quality] then
+        data_assembling[polisher].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[polisher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[polisher].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[polisher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    if mods[quality] then
+        data_assembling[hyper_assembling_machine].allowed_effects = {speed, consumption, productivity, quality}
+        data_assembling[hyper_assembling_machine].allowed_module_categories = {speed, efficiency, productivity, quality}
+    else
+        data_assembling[hyper_assembling_machine].allowed_effects = {speed, consumption, productivity}
+        data_assembling[hyper_assembling_machine].allowed_module_categories = {speed, efficiency, productivity}
+    end
+
+    if mods[quality] then
+        data_assembling[particle_manipulator].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[particle_manipulator].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[particle_manipulator].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[particle_manipulator].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    if mods[quality] then
+        data_assembling[refraction_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[refraction_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[refraction_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[refraction_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- TELLUS
+if mods[tellus_mods] then
+    if mods[quality] then
+        data_assembling[bioassembler].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[bioassembler].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[bioassembler].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[bioassembler].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    data_assembling[air_purifier].allowed_effects = {speed, consumption, pollution}
+    data_assembling[air_purifier].allowed_module_categories = {speed, efficiency, pollution_create}
+
+    if mods[quality] then
+        data_assembling[incubator].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[incubator].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[incubator].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[incubator].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- PARACELSIN
+if mods[paracelsin_mods] then
+    if mods[quality] then
+        data_assembling[electrochemical_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[electrochemical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[electrochemical_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[electrochemical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    if mods[quality] then
+        data_assembling[mechanical_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[mechanical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[mechanical_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[mechanical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- CORRUNDUM
+if mods[corrundum_mods] then
+    if mods[quality] then
+        data_assembling[catalytic_chemical_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[catalytic_chemical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[catalytic_chemical_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[catalytic_chemical_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+
+    if mods[quality] then
+        data_lab[pressure_lab].allowed_effects = {speed, consumption, productivity, pollution}
+        data_lab[pressure_lab].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    else
+        data_lab[pressure_lab].allowed_effects = {speed, consumption, productivity, pollution}
+        data_lab[pressure_lab].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
 end

@@ -429,7 +429,6 @@ if mods[corrundum_mods] then
     data_generator[red_steam_engine].effectivity = nil
     data_generator[red_steam_engine].fluid_box.filter = carbon_dioxide_angels
 
-    local catalytic_chemical_plant = "catalytic-chemical-plant"
     data_item[catalytic_chemical_plant].subgroup = is_corrundum_building
     data_item[catalytic_chemical_plant].order = d
     data_item[catalytic_chemical_plant].stack_size = 32
@@ -450,7 +449,6 @@ if mods[corrundum_mods] then
     data_assembling[catalytic_chemical_plant].energy_usage = 420 .. kW
     data_assembling[catalytic_chemical_plant].energy_source.drain = 60 .. kW
 
-    local pressure_lab = "pressure-lab"
     data_item[pressure_lab].subgroup = is_corrundum_building
     data_item[pressure_lab].order = e
     data_item[pressure_lab].stack_size = 32

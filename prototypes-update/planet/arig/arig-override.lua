@@ -612,7 +612,6 @@ if mods[arig_mods] then
     data_solar_panel[supported_solar_panel].production = 480 .. kW
 
     -- BUILDING
-    local sifter = "planetaris-sifter"
     data_item[sifter].subgroup = is_arig_building
     data_item[sifter].stack_size = 32
     data_item[sifter].weight = 31250
@@ -629,7 +628,6 @@ if mods[arig_mods] then
     data_assembling[sifter].energy_usage = (240 - drain) .. kW
     data_assembling[sifter].energy_source.drain = drain .. kW
 
-    local press = "planetaris-press"
     data_item[press].subgroup = is_arig_building
     data_item[press].stack_size = 32
     data_item[press].weight = 31250
@@ -644,12 +642,11 @@ if mods[arig_mods] then
     }
     data_assembling[press].subgroup = is_arig_building
     data_assembling[press].crafting_speed = 2
-    data_assembling[press].energy_usage = (360 - drain) .. kW
-    data_assembling[press].energy_source.emissions_per_minute.pollution = 2
+    data_assembling[press].energy_usage = (480 - drain) .. kW
+    data_assembling[press].energy_source.emissions_per_minute.pollution = 4
     data_assembling[press].energy_source.drain = drain .. kW
     data_assembling[press].effect_receiver.base_effect.productivity = 1
 
-    local water_harvester = "planetaris-water-harvester"
     data_item[water_harvester].subgroup = is_arig_building
     data_item[water_harvester].stack_size = 32
     data_item[water_harvester].weight = 31250

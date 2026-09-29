@@ -543,7 +543,6 @@ if mods[hyarion_mods] then
     data_lightning_attractor[big_refraction_ray_collector].order = c
     data_lightning_attractor[big_refraction_ray_collector].efficiency = 0.75
 
-    local polisher = "planetaris-polisher"
     data_item[polisher].subgroup = is_hyarion_building
     data_item[polisher].order = d
     data_item[polisher].stack_size = 32
@@ -562,7 +561,6 @@ if mods[hyarion_mods] then
     data_assembling[polisher].energy_usage = (240 - drain) .. kW
     data_assembling[polisher].energy_source.drain = drain .. kW
 
-    local hyper_assembling_machine = "planetaris-assembling-machine-4"
     data_item[hyper_assembling_machine].subgroup = is_hyarion_building
     data_item[hyper_assembling_machine].order = e
     data_item[hyper_assembling_machine].stack_size = 32
@@ -587,7 +585,6 @@ if mods[hyarion_mods] then
     data_assembling[hyper_assembling_machine].energy_source.emissions_per_minute.pollution = 0
     data_assembling[hyper_assembling_machine].energy_source.drain = 120 .. kW
 
-    local particle_manipulator = "planetaris-particle-manipulator"
     data_item[particle_manipulator].subgroup = is_hyarion_building
     data_item[particle_manipulator].order = f
     data_item[particle_manipulator].stack_size = 32
@@ -606,10 +603,9 @@ if mods[hyarion_mods] then
     data_assembling[particle_manipulator].subgroup = is_hyarion_building
     data_assembling[particle_manipulator].order = f
     data_assembling[particle_manipulator].module_slots = 4
-    data_assembling[particle_manipulator].energy_usage = (2400 - 60) .. kW
+    data_assembling[particle_manipulator].energy_usage = (1920 - 60) .. kW
     data_assembling[particle_manipulator].energy_source.drain = 60 .. kW
 
-    local refraction_plant = "planetaris-refraction-plant"
     data_item[refraction_plant].subgroup = is_hyarion_building
     data_item[refraction_plant].order = g
     data_item[refraction_plant].stack_size = 32
