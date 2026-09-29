@@ -881,15 +881,14 @@ if mods[panglia_mods] then
     data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
     data_assembling[cloning_vat].energy_source.drain = drain .. kW
 
-    local matter_printer = "matter_printer"
-    data_item[matter_printer].subgroup = is_panglia_building
-    data_item[matter_printer].order = d
-    data_item[matter_printer].stack_size = 32
-    data_item[matter_printer].weight = 31250
-    data_recipe[matter_printer].subgroup = is_panglia_building
-    data_recipe[matter_printer].order = d
-    data_recipe[matter_printer].energy_required = 8
-    data_recipe[matter_printer].ingredients =
+    data_item[matter_printer_entity].subgroup = is_panglia_building
+    data_item[matter_printer_entity].order = d
+    data_item[matter_printer_entity].stack_size = 32
+    data_item[matter_printer_entity].weight = 31250
+    data_recipe[matter_printer_entity].subgroup = is_panglia_building
+    data_recipe[matter_printer_entity].order = d
+    data_recipe[matter_printer_entity].energy_required = 8
+    data_recipe[matter_printer_entity].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = glass_bob, amount = 64},
@@ -897,13 +896,13 @@ if mods[panglia_mods] then
         {type = item, name = neural_computer, amount = 1},
         {type = item, name = panglite, amount = 8}
     }
-    data_furnace[matter_printer].subgroup = is_panglia_building
-    data_furnace[matter_printer].order = d
-    data_furnace[matter_printer].crafting_speed = 1
-    data_furnace[matter_printer].module_slots = 4
-    data_furnace[matter_printer].energy_usage = (61440 - 3840) .. kW
-    data_furnace[matter_printer].energy_source.emissions_per_minute = {pollution = 128}
-    data_furnace[matter_printer].energy_source.drain = 3840 .. kW
+    data_furnace[matter_printer_entity].subgroup = is_panglia_building
+    data_furnace[matter_printer_entity].order = d
+    data_furnace[matter_printer_entity].crafting_speed = 1
+    data_furnace[matter_printer_entity].module_slots = 4
+    data_furnace[matter_printer_entity].energy_usage = (61440 - 3840) .. kW
+    data_furnace[matter_printer_entity].energy_source.emissions_per_minute = {pollution = 128}
+    data_furnace[matter_printer_entity].energy_source.drain = 3840 .. kW
 
     local panglia_crusher = "panglia_crusher"
     data_item[panglia_crusher].subgroup = is_panglia_building
@@ -996,7 +995,7 @@ if mods[panglia_mods] then
         timewarp_analyser,
         dna_scanner,
         cloning_vat,
-        matter_printer,
+        matter_printer_entity,
         panglia_crusher,
         thinking_brain,
         snouz_long_electric_gun_turret
@@ -1038,7 +1037,7 @@ if mods[panglia_mods] then
         {agricultural_science_pack, 1}
     }
 
-    data_technology[matter_printer .. _technology].unit.ingredients =
+    data_technology[matter_printer_entity .. _technology].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
