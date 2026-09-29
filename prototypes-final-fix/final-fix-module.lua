@@ -603,6 +603,7 @@ if mods[panglia_mods] then
         data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency}
     end
 
+    local matter_printer = "matter_printer"
     data_furnace[matter_printer].allowed_effects = {speed, pollution}
     data_furnace[matter_printer].allowed_module_categories = {speed, pollution_clean}
 

@@ -31,7 +31,7 @@ local delete_proto =
     "angels-solid-rubber",
 
     -- ANGELS BIOPROCESSING
-    calcium_carbonate
+    calcium_carbonate,
 
     -- VOIDS
     "angels-chemical-void",
