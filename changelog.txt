@@ -66,6 +66,8 @@ Date: 01.10.2026
     - [Mods] Removed "MadClown01's Nuclear Extension" mod from the optional dependencies.
     - [Mods] Removed "MadClown01's AngelBob Nuclear Extension", "MadClown01's Extended AngelBob Minerals", and "MadClown01's Processing" mods from the incompatible.
     - [Space Age] Moved "Quality" mod to optional dependencies.
+    - [Space Age] Added "Nulla" mod to optional dependencies.
+    - [Space Age] Added "Rustara" mod to optional dependencies.
 
   Graphics:
     - [All] Updated some icons.

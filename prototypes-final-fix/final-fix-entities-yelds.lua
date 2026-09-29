@@ -33,14 +33,22 @@ for tree_name, tree_data in pairs(data_tree) do
     end
 end
 
-local pollution_absorption_multiplier = 125
+local pollution_absorption_multiplier = 1 -- -0.001
+if settings.startup[setting_game_difficulty].value == easy then
+    pollution_absorption_multiplier = (250/8) -- -0.03125
+elseif settings.startup[setting_game_difficulty].value == normal then
+    pollution_absorption_multiplier = (250/16) -- -0.015625
+elseif settings.startup[setting_game_difficulty].value == hard then
+    pollution_absorption_multiplier = (250/32) -- -0.0078125
+end
+
 local processed_eps = {}
 
 for _, tree in pairs(data_tree) do
     local eps = tree.emissions_per_second
     if eps and not processed_eps[eps] then
         processed_eps[eps] = true
-        if tree.emissions_per_second then 
+        if tree.emissions_per_second then
             if tree.emissions_per_second.pollution then
                 tree.emissions_per_second.pollution = tree.emissions_per_second.pollution * pollution_absorption_multiplier
             else
@@ -50,9 +58,8 @@ for _, tree in pairs(data_tree) do
     end
 end
 
-local pollution_data_plant = 250
 local tree_plant = "tree-plant"
-data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_data_plant)
+data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
 
 local yumako_tree = "yumako-tree"
 data_plant[yumako_tree].minable.results[1].amount = 64

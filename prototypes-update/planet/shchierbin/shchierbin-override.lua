@@ -73,6 +73,7 @@ if mods[shchierbin_mods] then
         {type = item, name = lime_angels, amount = 4},
         {type = fluid, name = water_purified_angels, amount = 60}
     }
+    data_recipe[slaked_lime_mods].results[1].amount = 4
     data_recipe[slaked_lime_mods].main_product = calcium_hydroxide
     data_recipe[slaked_lime_mods].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 

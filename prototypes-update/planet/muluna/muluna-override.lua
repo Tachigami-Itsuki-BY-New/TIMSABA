@@ -158,7 +158,7 @@ if mods[muluna_mods] then
     -- SILICON SOLAR PANELS
     local silicon_solar_panel_1 = "muluna-silicon-solar-panel"
     data_recipe[silicon_solar_panel_1].localised_name = {"recipe-name.muluna-silicon-solar-panel-1"}
-    data_recipe[silicon_solar_panel_1].categories = {crafting}
+    data_recipe[silicon_solar_panel_1].categories = {crafting, electronics}
     data_recipe[silicon_solar_panel_1].subgroup = is_muluna_SPM_silicon
     data_recipe[silicon_solar_panel_1].icons = BUILDING_R_IS(solar_panel_1, silicon_cell_mods)
     data_recipe[silicon_solar_panel_1].order = a
