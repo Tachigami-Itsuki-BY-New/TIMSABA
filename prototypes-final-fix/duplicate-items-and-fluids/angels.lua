@@ -30,6 +30,9 @@ local delete_proto =
     "angels-solid-resin",
     "angels-solid-rubber",
 
+    -- ANGELS BIOPROCESSING
+    calcium_carbonate
+
     -- VOIDS
     "angels-chemical-void",
     "angels-water-void",
@@ -202,8 +205,7 @@ local delete_proto =
 	phenol_angels,
 	bisphenol_a_angels,
 	cellulose_acetate_mixture,
-	cellulose_acetate,
-    calcium_carbonate
+	cellulose_acetate
 }
 TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 

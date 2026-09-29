@@ -414,6 +414,4 @@ table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, rec
 
 if mods[bobequipment] then
     data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_4}
-else
-    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_1}
 end

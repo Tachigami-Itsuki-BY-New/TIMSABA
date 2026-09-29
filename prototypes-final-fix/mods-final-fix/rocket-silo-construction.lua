@@ -1,4 +1,7 @@
 if mods[rocket_silo_construction_mods] then
+    data_rocket_silo[rocket_silo].energy_usage = (3840 - drain) .. kW
+    data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
+
     local is_construction_stage = "is-construction-stage"
     local is_silo_stage = "is-silo-stage"
     TIMSABA.functions.create_subgroups(ig_space,
@@ -131,9 +134,9 @@ if mods[rocket_silo_construction_mods] then
         data_assembling[BUILD.name].localised_description = {"entity-description." .. BUILD.name}
         data_assembling[BUILD.name].subgroup = is_silo_stage
         data_assembling[BUILD.name].order = BUILD.order
-        data_assembling[BUILD.name].energy_usage = (128000 - 4000) .. kW
+        data_assembling[BUILD.name].energy_usage = (122880 - 3840) .. kW
         data_assembling[BUILD.name].energy_source.emissions_per_minute = {pollution = 256}
-        data_assembling[BUILD.name].energy_source.drain = 4000 .. kW
+        data_assembling[BUILD.name].energy_source.drain = 3840 .. kW
         data_assembling[BUILD.name].hidden = false
         data_assembling[BUILD.name].hidden_in_factoriopedia = false
     end

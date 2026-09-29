@@ -83,6 +83,10 @@ datacell_dna_sequenced = "datacell-dna-sequenced"
 panglite_fiber = "panglia_panglite_fiber"
 sentient_processor = "panglia_sentient_processor"
 universe_precursor = "universe_precursor"
+dna_scanner = "panglia_dna_scanner"
+cloning_vat = "cloning-vat"
+matter_printer = "matter_printer"
+thinking_brain = "thinking-brain"
 galaxy_png = "__matter_printer__/graphics/icons/galaxy.png"
 
 -- ARIG

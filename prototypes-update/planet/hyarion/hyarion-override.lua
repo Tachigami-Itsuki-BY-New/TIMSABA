@@ -838,13 +838,9 @@ if mods[hyarion_mods] then
 
     if mods[bobequipment] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_6)
-    else
-        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_1)
     end
     if mods[bobwarfare] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, tech_laser_turret_5)
-    else
-        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_turret_1)
     end
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {electromagnetic_science_pack, 1})
