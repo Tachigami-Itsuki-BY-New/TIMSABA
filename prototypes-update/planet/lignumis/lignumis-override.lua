@@ -327,7 +327,7 @@ if mods[lignumis_mods] then
     }
     data_construction_robot[basic_construction_robot_gold].subgroup = is_lignumis_logistic
     data_construction_robot[basic_construction_robot_gold].order = g
-    data_construction_robot[basic_construction_robot_gold].max_payload_size = 0.5
+    data_construction_robot[basic_construction_robot_gold].max_payload_size = 1
     data_construction_robot[basic_construction_robot_gold].speed = (0.5 * 2) / 60
     data_construction_robot[basic_construction_robot_gold].max_energy = 900 .. kJ
     data_construction_robot[basic_construction_robot_gold].energy_per_tick = 30 .. J
