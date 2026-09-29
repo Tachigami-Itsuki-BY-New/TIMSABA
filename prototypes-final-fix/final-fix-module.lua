@@ -591,7 +591,24 @@ end
 
 
 -- PANGLIA
+if mods[panglia_mods] then
+    data_assembling[dna_scanner].allowed_effects = {speed, consumption, productivity}
+    data_assembling[dna_scanner].allowed_module_categories = {speed, efficiency, productivity}
 
+    if mods[quality_mods] then
+        data_assembling[cloning_vat].allowed_effects = {speed, consumption, quality}
+        data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency, quality}
+    else
+        data_assembling[cloning_vat].allowed_effects = {speed, consumption}
+        data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency}
+    end
+
+    data_furnace[matter_printer].allowed_effects = {speed, pollution}
+    data_furnace[matter_printer].allowed_module_categories = {speed, pollution_clean}
+
+    data_assembling[thinking_brain].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[thinking_brain].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+end
 
 -- ARIG
 

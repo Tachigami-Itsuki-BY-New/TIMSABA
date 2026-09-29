@@ -9,14 +9,14 @@ if mods[moshine_mods] then
         mining_time = 2,
         results =
         {
-            {type = item, name = monazite_ore,     amount = 1, independent_probability = 0.25}, -- Nd + Ho + U + Th + Сe + Pm
-            {type = item, name = aeschynite_ore,   amount = 1, independent_probability = 0.25}, -- Nd + Th + Fe + Sn + Ti + Nb
-            {type = item, name = calcite,          amount = 1, independent_probability = 0.06125}, -- CaCO₃
-            {type = item, name = limestone_angels, amount = 1, independent_probability = 0.06125}, -- CaCO₃
-            {type = item, name = barite,           amount = 1, independent_probability = 0.125}, -- (Ba,Ca,Pb)SO₄
-            {type = item, name = fluorite_angels,  amount = 1, independent_probability = 0.06125}, -- CaF₂
-            {type = item, name = sand_angels,      amount = 1, independent_probability = 0.06125}, -- SiO₂
-            {type = item, name = biotite_mica,     amount = 1, independent_probability = 0.125} -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
+            {type = item, name = monazite_ore,     amount = 1, independent_probability = 0.2500}, -- Nd + Ho + U + Th + Сe + Pm
+            {type = item, name = aeschynite_ore,   amount = 1, independent_probability = 0.2500}, -- Nd + Th + Fe + Sn + Ti + Nb
+            {type = item, name = calcite,          amount = 1, independent_probability = 0.0625}, -- CaCO₃
+            {type = item, name = limestone_angels, amount = 1, independent_probability = 0.0625}, -- CaCO₃
+            {type = item, name = barite,           amount = 1, independent_probability = 0.1250}, -- (Ba,Ca,Pb)SO₄
+            {type = item, name = fluorite_angels,  amount = 1, independent_probability = 0.0625}, -- CaF₂
+            {type = item, name = sand_angels,      amount = 1, independent_probability = 0.0625}, -- SiO₂
+            {type = item, name = biotite_mica,     amount = 1, independent_probability = 0.1250} -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
         }
     }
 

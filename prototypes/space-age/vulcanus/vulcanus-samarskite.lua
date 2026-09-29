@@ -227,8 +227,15 @@ data:extend({samarskite_ore_particle})
 data:extend
 ({
     TIMSABA.functions.create_resource(
-        {name = samarskite_ore, subgroup = is_samarskite, order = a, map_color = {r = 065/255, g = 020/255, b = 065/255, a = 1.000}, mining_visualisation_tint = {r = 085/255, g = 060/255, b = 085/255, a = 1.000}, category = "hard-solid"},
-        {probability_expression = 0}
+        {
+            name = samarskite_ore,
+            subgroup = is_samarskite,
+            order = a,
+            map_color = {r = 065/255, g = 020/255, b = 065/255, a = 1.000},
+            mining_visualisation_tint = {r = 085/255, g = 060/255, b = 085/255, a = 1.000},
+            category = "hard-solid"
+        },
+        {autoplace_control = samarskite_ore, probability_expression = "vulcanus_tungsten_ore_probability", richness_expression = "vulcanus_tungsten_ore_richness"}
     )
 })
 

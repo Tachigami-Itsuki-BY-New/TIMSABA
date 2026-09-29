@@ -34,12 +34,21 @@ if mods[panglia_mods] then
     data_recipe[panglite].ingredients[1].amount = 4
     data_recipe[panglite].results[1].amount = 5
 
+    local panglite_glass = "panglia_panglite_glass"
+    data_item[panglite_glass].subgroup = is_panglia_recipe
+    data_item[panglite_glass].order = d
+    data_item[panglite_glass].stack_size = 200
+    data_recipe[panglite_glass].subgroup = is_panglia_recipe
+    data_recipe[panglite_glass].icons = THREE_I(glass_bob, panglite, panglite_glass)
+    data_recipe[panglite_glass].order = d
+    data_recipe[panglite_glass].energy_required = 8
+
     data_item[panglite_fiber].subgroup = is_panglia_recipe
-    data_item[panglite_fiber].order = d
+    data_item[panglite_fiber].order = e
     data_item[panglite_fiber].stack_size = 200
     data_recipe[panglite_fiber].subgroup = is_panglia_recipe
     data_recipe[panglite_fiber].icons = TWO_D_I(panglite, uranium_238, panglite_fiber, uranium_235)
-    data_recipe[panglite_fiber].order = d
+    data_recipe[panglite_fiber].order = e
     data_recipe[panglite_fiber].energy_required = 256
     data_recipe[panglite_fiber].ingredients =
     {
@@ -54,20 +63,20 @@ if mods[panglia_mods] then
     data_recipe[panglite_fiber].main_product = panglite_fiber
 
     data_item[branbalite].subgroup = is_panglia_recipe
-    data_item[branbalite].order = e
+    data_item[branbalite].order = f
     data_item[branbalite].stack_size = 200
 
     data_fluid[branbalite_slurry].subgroup = is_panglia_recipe
-    data_fluid[branbalite_slurry].order = f
+    data_fluid[branbalite_slurry].order = g
     TIMSABA.barreling.add_simple_fluid(branbalite_slurry)
     data_recipe[branbalite_slurry].subgroup = is_panglia_recipe
     data_recipe[branbalite_slurry].icons = THREE_I(branbalite, water, branbalite_slurry)
-    data_recipe[branbalite_slurry].order = f
+    data_recipe[branbalite_slurry].order = g
     data_recipe[branbalite_slurry].results[1].amount = 30
 
     data_recipe[branbalite_slurry_to_lubricant].subgroup = is_panglia_recipe
     data_recipe[branbalite_slurry_to_lubricant].icons = TWO_I(branbalite_slurry, lubricant)
-    data_recipe[branbalite_slurry_to_lubricant].order = f_a
+    data_recipe[branbalite_slurry_to_lubricant].order = g_a
     data_recipe[branbalite_slurry_to_lubricant].energy_required = 32
     data_recipe[branbalite_slurry_to_lubricant].ingredients =
     {
@@ -84,7 +93,7 @@ if mods[panglia_mods] then
     local branbalite_slurry_to_rocket_fuel = "panglia_branbalite_slurry_to_rocket_fuel"
     data_recipe[branbalite_slurry_to_rocket_fuel].subgroup = is_panglia_recipe
     data_recipe[branbalite_slurry_to_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_panglia)
-    data_recipe[branbalite_slurry_to_rocket_fuel].order = f_b
+    data_recipe[branbalite_slurry_to_rocket_fuel].order = g_b
     data_recipe[branbalite_slurry_to_rocket_fuel].energy_required = 32
     data_recipe[branbalite_slurry_to_rocket_fuel].ingredients =
     {
@@ -96,7 +105,7 @@ if mods[panglia_mods] then
     data_recipe[advanced_circuit_from_panglite_fiber].localised_name = {"recipe-name.advanced-circuit-from-panglite-fiber"}
     data_recipe[advanced_circuit_from_panglite_fiber].subgroup = is_panglia_recipe
     data_recipe[advanced_circuit_from_panglite_fiber].icons = BUILDING_R_I(advanced_circuit, panglite_fiber)
-    data_recipe[advanced_circuit_from_panglite_fiber].order = g_b
+    data_recipe[advanced_circuit_from_panglite_fiber].order = h_b
     data_recipe[advanced_circuit_from_panglite_fiber].energy_required = 32
     data_recipe[advanced_circuit_from_panglite_fiber].ingredients =
     {
@@ -109,7 +118,7 @@ if mods[panglia_mods] then
     local low_density_structure_from_panglite_fiber = "panglia_low_density_structure_from_panglite_fiber"
     data_recipe[low_density_structure_from_panglite_fiber].subgroup = is_panglia_recipe
     data_recipe[low_density_structure_from_panglite_fiber].icons = BUILDING_R_I(low_density_structure, planet_panglia)
-    data_recipe[low_density_structure_from_panglite_fiber].order = h_a
+    data_recipe[low_density_structure_from_panglite_fiber].order = h_e
     data_recipe[low_density_structure_from_panglite_fiber].energy_required = 4
     data_recipe[low_density_structure_from_panglite_fiber].ingredients =
     {
@@ -827,13 +836,35 @@ if mods[panglia_mods] then
     data_assembling[timewarp_analyser].energy_usage = (30 - (15 / 8)) .. kW
     data_assembling[timewarp_analyser].energy_source.drain = (15 / 8) .. kW
 
-    local cloning_vat = "cloning-vat"
+    data_item[dna_scanner].subgroup = is_panglia_building
+    data_item[dna_scanner].order = b
+    data_item[dna_scanner].stack_size = 32
+    data_item[dna_scanner].weight = 31250
+    data_recipe[dna_scanner].subgroup = is_panglia_building
+    data_recipe[dna_scanner].order = b
+    data_recipe[dna_scanner].energy_required = 4
+    data_recipe[dna_scanner].ingredients =
+    {
+        {type = item, name = data_processor, amount = 1},
+        {type = item, name = _3d_data_storage, amount = 32},
+        {type = item, name = panglite_glass, amount = 8}
+    }
+    if mods[bobwarfare] then
+        table.insert(data_recipe[dna_scanner].ingredients, {type = item, name = laser_turret_5, amount = 1})
+    else
+        table.insert(data_recipe[dna_scanner].ingredients, {type = item, name = laser_turret_1, amount = 1})
+    end
+    data_assembling[dna_scanner].subgroup = is_panglia_building
+    data_assembling[dna_scanner].order = b
+    data_assembling[dna_scanner].energy_usage = (30 - (15 / 8)) .. kW
+    data_assembling[dna_scanner].energy_source.drain = (15 / 8) .. kW
+
     data_item[cloning_vat].subgroup = is_panglia_building
-    data_item[cloning_vat].order = b
+    data_item[cloning_vat].order = c
     data_item[cloning_vat].stack_size = 32
     data_item[cloning_vat].weight = 31250
     data_recipe[cloning_vat].subgroup = is_panglia_building
-    data_recipe[cloning_vat].order = b
+    data_recipe[cloning_vat].order = c
     data_recipe[cloning_vat].energy_required = 4
     data_recipe[cloning_vat].ingredients =
     {
@@ -843,20 +874,19 @@ if mods[panglia_mods] then
         {type = fluid, name = branbalite_slurry, amount = 120}
     }
     data_assembling[cloning_vat].subgroup = is_panglia_building
-    data_assembling[cloning_vat].order = b
+    data_assembling[cloning_vat].order = c
     data_assembling[cloning_vat].crafting_speed = 2
     data_assembling[cloning_vat].module_slots = 4
     data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
     data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
     data_assembling[cloning_vat].energy_source.drain = drain .. kW
 
-    local matter_printer = "matter_printer"
     data_item[matter_printer].subgroup = is_panglia_building
-    data_item[matter_printer].order = c
+    data_item[matter_printer].order = d
     data_item[matter_printer].stack_size = 32
     data_item[matter_printer].weight = 31250
     data_recipe[matter_printer].subgroup = is_panglia_building
-    data_recipe[matter_printer].order = c
+    data_recipe[matter_printer].order = d
     data_recipe[matter_printer].energy_required = 8
     data_recipe[matter_printer].ingredients =
     {
@@ -867,7 +897,7 @@ if mods[panglia_mods] then
         {type = item, name = panglite, amount = 8}
     }
     data_furnace[matter_printer].subgroup = is_panglia_building
-    data_furnace[matter_printer].order = c
+    data_furnace[matter_printer].order = d
     data_furnace[matter_printer].crafting_speed = 1
     data_furnace[matter_printer].module_slots = 4
     data_furnace[matter_printer].energy_usage = 60000 .. kW
@@ -876,11 +906,11 @@ if mods[panglia_mods] then
 
     local panglia_crusher = "panglia_crusher"
     data_item[panglia_crusher].subgroup = is_panglia_building
-    data_item[panglia_crusher].order = d
+    data_item[panglia_crusher].order = e
     data_item[panglia_crusher].stack_size = 32
     data_item[panglia_crusher].weight = 31250
     data_recipe[panglia_crusher].subgroup = is_panglia_building
-    data_recipe[panglia_crusher].order = d
+    data_recipe[panglia_crusher].order = e
     data_recipe[panglia_crusher].energy_required = 8
     data_recipe[panglia_crusher].ingredients =
     {
@@ -891,31 +921,30 @@ if mods[panglia_mods] then
         {type = item, name = panglite_fiber, amount = 8}
     }
     data_furnace[panglia_crusher].subgroup = is_panglia_building
-    data_furnace[panglia_crusher].order = d
+    data_furnace[panglia_crusher].order = e
     data_furnace[panglia_crusher].energy_usage = (240 - drain) .. kW
     data_furnace[panglia_crusher].energy_source.emissions_per_minute = {pollution = 16}
     data_furnace[panglia_crusher].energy_source.drain = drain .. kW
 
     local simulation_chamber = "simulation_chamber"
     data_item[simulation_chamber].subgroup = is_panglia_building
-    data_item[simulation_chamber].order = e
+    data_item[simulation_chamber].order = f
     data_item[simulation_chamber].stack_size = 32
     data_item[simulation_chamber].weight = 31250
     data_recipe[simulation_chamber].subgroup = is_panglia_building
-    data_recipe[simulation_chamber].order = e
+    data_recipe[simulation_chamber].order = f
     data_furnace[simulation_chamber].subgroup = is_panglia_building
-    data_furnace[simulation_chamber].order = e
+    data_furnace[simulation_chamber].order = f
     data_furnace[simulation_chamber].crafting_speed = 0.125
     data_furnace[simulation_chamber].energy_usage = (240 - drain) .. kW
     data_furnace[simulation_chamber].energy_source.drain = drain .. kW
 
-    local thinking_brain = "thinking-brain"
     data_item[thinking_brain].subgroup = is_panglia_building
-    data_item[thinking_brain].order = f
+    data_item[thinking_brain].order = g
     data_item[thinking_brain].stack_size = 32
     data_item[thinking_brain].weight = 31250
     data_recipe[thinking_brain].subgroup = is_panglia_building
-    data_recipe[thinking_brain].order = f
+    data_recipe[thinking_brain].order = g
     data_recipe[thinking_brain].energy_required = 8
     data_recipe[thinking_brain].ingredients =
     {
@@ -926,7 +955,7 @@ if mods[panglia_mods] then
         {type = fluid, name = branbalite_slurry, amount = 120}
     }
     data_assembling[thinking_brain].subgroup = is_panglia_building
-    data_assembling[thinking_brain].order = f
+    data_assembling[thinking_brain].order = g
     data_assembling[thinking_brain].effect_receiver.base_effect.productivity = 1
     data_assembling[thinking_brain].energy_usage = (4000 - 120) .. kW
     data_assembling[thinking_brain].energy_source.drain = 120 .. kW
@@ -964,6 +993,7 @@ if mods[panglia_mods] then
     bobmods.lib.recipe.update_recycling_recipe
     ({
         timewarp_analyser,
+        dna_scanner,
         cloning_vat,
         matter_printer,
         panglia_crusher,
@@ -988,6 +1018,12 @@ if mods[panglia_mods] then
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1}
     }
+
+    local tech_advanced_optics_nanotech = "panglia_advanced_optics_nanotech"
+    local tech_3d_data_storage = "moshine-tech" .. _3d_data_storage
+    if mods[bobwarfare] then
+        data_technology[tech_advanced_optics_nanotech].prerequisites = {panglite_glass, tech_3d_data_storage, tech_laser_turret_5}
+    end
 
     data_technology[cloning_vat .. _technology].unit.ingredients =
     {

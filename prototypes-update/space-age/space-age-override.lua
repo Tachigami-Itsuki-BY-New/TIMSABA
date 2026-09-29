@@ -16,8 +16,6 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = copper_tungsten_plate_bob, amount = 512}
 }
 data_rocket_silo[rocket_silo].order = a
-data_rocket_silo[rocket_silo].energy_usage = (3840 - drain) .. kW
-data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
 if mods[muluna_mods] then
     data_item[big_rocket_silo].order = b
