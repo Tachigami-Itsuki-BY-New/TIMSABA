@@ -753,7 +753,6 @@ if mods[tellus_mods] then
         {type = item, name = mycelia_seed, amount = 1}
     }
 
-    local bioassembler = "planetaris-bioassembler"
     data_assembling[bioassembler].subgroup = is_tellus_building
     data_assembling[bioassembler].order = b
     data_assembling[bioassembler].energy_usage = 1875 .. kW
@@ -766,7 +765,6 @@ if mods[tellus_mods] then
     local bioassembler_revive = "planetaris-revive-bioassembler"
     data_recipe[bioassembler_revive].ingredients[1].amount = 16
 
-    local air_purifier = "planetaris-air-purifier"
     data_item[air_purifier].subgroup = is_tellus_building
     data_item[air_purifier].order = c
     data_item[air_purifier].stack_size = 32
@@ -786,7 +784,6 @@ if mods[tellus_mods] then
     data_assembling[air_purifier].energy_usage = (2400 - 1200) .. kW
     data_assembling[air_purifier].energy_source.drain = 1200 .. kW
 
-    local incubator = "planetaris-incubator"
     data_item[incubator].subgroup = is_tellus_building
     data_item[incubator].order = d
     data_item[incubator].stack_size = 32

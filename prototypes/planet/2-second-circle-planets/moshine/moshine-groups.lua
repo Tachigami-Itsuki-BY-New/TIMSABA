@@ -26,6 +26,7 @@ if mods[moshine_mods] then
     is_promethium_casting = "is-promethium-casting"
     is_barium = "is-barium"
     is_biotite_mica = "is-biotite-mica"
+    is_panglia_enemy_parts = "is-panglia-enemy-parts"
     is_moshine_datacell = "is-moshine-datacell"
     is_moshine_core = "is-moshine-core"
     is_moshine_ai_core = "is-moshine-ai-core"
@@ -51,9 +52,10 @@ if mods[moshine_mods] then
         {name = is_promethium_casting,       order = g_b},
         {name = is_barium,                   order = h},
         {name = is_biotite_mica,             order = i},
-        {name = is_moshine_datacell,         order = j},
-        {name = is_moshine_core,             order = j_a},
-        {name = is_moshine_ai_core,          order = j_b},
+        {name = is_panglia_enemy_parts,      order = j},
+        {name = is_moshine_datacell,         order = j_a},
+        {name = is_moshine_core,             order = j_b},
+        {name = is_moshine_ai_core,          order = j_c},
         {name = is_moshine_train,            order = k},
         {name = is_moshine_train_battery,    order = l_a},
         {name = is_moshine_logistic,         order = m},

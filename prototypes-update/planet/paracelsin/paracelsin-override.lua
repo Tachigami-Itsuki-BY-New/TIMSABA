@@ -318,7 +318,6 @@ if mods[paracelsin_mods] then
     data_mining_drill[burner_pumpjack].energy_usage = 14400 .. kW
 
     -- BUILDING
-    local electrochemical_plant = "electrochemical-plant"
     data_item[electrochemical_plant].subgroup = is_paracelsin_building
     data_item[electrochemical_plant].order = a
     data_item[electrochemical_plant].stack_size = 32
@@ -341,7 +340,6 @@ if mods[paracelsin_mods] then
     data_assembling[electrochemical_plant].energy_source.drain = 600 .. kW
     data_assembling[electrochemical_plant].effect_receiver.base_effect.productivity = 1
 
-    local mechanical_plant = "mechanical-plant"
     data_item[mechanical_plant].subgroup = is_paracelsin_building
     data_item[mechanical_plant].order = b
     data_item[mechanical_plant].stack_size = 32
@@ -361,6 +359,7 @@ if mods[paracelsin_mods] then
     data_assembling[mechanical_plant].crafting_speed = 4
     data_assembling[mechanical_plant].energy_usage = 2100 .. kW
     data_assembling[mechanical_plant].energy_source.drain = 300 .. kW
+    data_assembling[mechanical_plant].effect_receiver.base_effect.productivity = 1
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
