@@ -1,3 +1,5 @@
+require("scripting.lingumis-plants-boost")
+
 local extract_ground = require("scripting.extract-ground")
 local multi_building = require("scripting.multi-building")
 local muluna_loot = require("scripting.muluna-loot")
