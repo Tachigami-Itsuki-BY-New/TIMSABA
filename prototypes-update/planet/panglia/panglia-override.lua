@@ -881,6 +881,7 @@ if mods[panglia_mods] then
     data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
     data_assembling[cloning_vat].energy_source.drain = drain .. kW
 
+    local matter_printer = "matter_printer"
     data_item[matter_printer].subgroup = is_panglia_building
     data_item[matter_printer].order = d
     data_item[matter_printer].stack_size = 32
@@ -900,9 +901,9 @@ if mods[panglia_mods] then
     data_furnace[matter_printer].order = d
     data_furnace[matter_printer].crafting_speed = 1
     data_furnace[matter_printer].module_slots = 4
-    data_furnace[matter_printer].energy_usage = 60000 .. kW
+    data_furnace[matter_printer].energy_usage = (61440 - 3840) .. kW
     data_furnace[matter_printer].energy_source.emissions_per_minute = {pollution = 128}
-    data_furnace[matter_printer].energy_source.drain = 4000 .. kW
+    data_furnace[matter_printer].energy_source.drain = 3840 .. kW
 
     local panglia_crusher = "panglia_crusher"
     data_item[panglia_crusher].subgroup = is_panglia_building
