@@ -30,7 +30,7 @@ TIMSABA.functions.create_recipes
     -- SLAG SORTING
     {
         name = slag_sorting_1,
-        categories = {angels_ore_sorting_1},
+        categories = {hand_crafting, angels_ore_sorting_1},
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, slag_angels, number_1),
         order = c_a,
@@ -147,3 +147,7 @@ TIMSABA.functions.create_recipes
         main_product = calcium
     }
 })
+
+if mods[lignumis_mods] then
+    data_recipe[slag_sorting_1].enabled = true
+end

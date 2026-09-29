@@ -63,7 +63,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-1"},
             name = silicon_solar_panel_small_1,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_1, silicon_cell_mods),
             order = a,
@@ -84,7 +84,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-2"},
             name = silicon_solar_panel_small_2,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_2, silicon_cell_mods),
             order = b,
@@ -105,7 +105,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-3"},
             name = silicon_solar_panel_small_3,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_3, silicon_cell_mods),
             order = c,
@@ -126,7 +126,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-4"},
             name = silicon_solar_panel_small_4,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_4, silicon_cell_mods),
             order = d,
@@ -148,7 +148,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-2"},
             name = silicon_solar_panel_2,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_2, silicon_cell_mods),
             order = b,
@@ -169,7 +169,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-3"},
             name = silicon_solar_panel_3,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_3, silicon_cell_mods),
             order = c,
@@ -190,7 +190,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-4"},
             name = silicon_solar_panel_4,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_4, silicon_cell_mods),
             order = d,
@@ -212,7 +212,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-1"},
             name = silicon_solar_panel_large_1,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_1, silicon_cell_mods),
             order = a,
@@ -232,7 +232,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-2"},
             name = silicon_solar_panel_large_2,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_2, silicon_cell_mods),
             order = b,
@@ -252,7 +252,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-3"},
             name = silicon_solar_panel_large_3,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_3, silicon_cell_mods),
             order = c,
@@ -272,7 +272,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-4"},
             name = silicon_solar_panel_large_4,
-            categories = {crafting},
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_4, silicon_cell_mods),
             order = d,

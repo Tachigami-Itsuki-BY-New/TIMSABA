@@ -208,6 +208,7 @@ if mods[bobmodules] then
     module_tier_5(pollution_create_module_5, processor_pollution_create_circuit_board, pollution_create_module_4)
     module_tier_5(quality_module_5,          processor_quality_circuit_board,          quality_module_4)
 
+    data_recipe[agricultural_module_1].categories = {crafting, electronics}
     data_recipe[agricultural_module_1].energy_required = 32
     data_recipe[agricultural_module_1].ingredients =
     {
@@ -217,6 +218,7 @@ if mods[bobmodules] then
         {type = item, name = pollution_create_module_1, amount = 1}
     }
 
+    data_recipe[agricultural_module_2].categories = {crafting, electronics}
     data_recipe[agricultural_module_2].energy_required = 32
     data_recipe[agricultural_module_2].ingredients =
     {
@@ -227,6 +229,7 @@ if mods[bobmodules] then
         {type = item, name = agricultural_module_1,     amount = 1}
     }
 
+    data_recipe[agricultural_module_3].categories = {crafting, electronics}
     data_recipe[agricultural_module_3].energy_required = 32
     data_recipe[agricultural_module_3].ingredients =
     {
@@ -238,6 +241,7 @@ if mods[bobmodules] then
     }
 
     data_module[agricultural_module_4].localised_description = {"item-description." .. agricultural_module_1}
+    data_recipe[agricultural_module_4].categories = {crafting, electronics}
     data_recipe[agricultural_module_4].energy_required = 32
     data_recipe[agricultural_module_4].ingredients =
     {
@@ -249,6 +253,7 @@ if mods[bobmodules] then
     }
 
     data_module[agricultural_module_5].localised_description = {"item-description." .. agricultural_module_1}
+    data_recipe[agricultural_module_5].categories = {crafting, electronics}
     data_recipe[agricultural_module_5].energy_required = 32
     data_recipe[agricultural_module_5].ingredients =
     {

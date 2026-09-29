@@ -873,32 +873,60 @@ for _, tech_name in ipairs(technologies) do
 end
 
 -- ANGELS RESOURCE REFINING
-data_technology[tech_ore_crushing].effects =
-{
-    {type = unlock_recipe, recipe = ore_crusher_1},
-    {type = unlock_recipe, recipe = ore_sorting_facility_1},
-    {type = unlock_recipe, recipe = ore_jivolite .. _sorting},
-    {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
-    {type = unlock_recipe, recipe = ore_senaite .. _sorting},
-    {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
-    {type = unlock_recipe, recipe = slag_sorting_1},
-    {type = unlock_recipe, recipe = stone_crushed_angels},
-    {type = unlock_recipe, recipe = crushed_stone_sorting_1},
-    {type = unlock_recipe, recipe = sand_from_crushed_stone},
-    {type = unlock_recipe, recipe = calcium_from_crushed_stone},
-    {type = unlock_recipe, recipe = crushed_jivolite},
-    {type = unlock_recipe, recipe = crushed_crotinnium},
-    {type = unlock_recipe, recipe = crushed_senaite},
-    {type = unlock_recipe, recipe = crushed_franckeite},
-    {type = unlock_recipe, recipe = crushed_saphirite_processing},
-    {type = unlock_recipe, recipe = crushed_jivolite_processing},
-    {type = unlock_recipe, recipe = crushed_stiratite_processing},
-    {type = unlock_recipe, recipe = crushed_crotinnium_processing},
-    {type = unlock_recipe, recipe = crushed_rubyte_processing},
-    {type = unlock_recipe, recipe = crushed_bobmonium_processing},
-    {type = unlock_recipe, recipe = crushed_senaite_processing},
-    {type = unlock_recipe, recipe = crushed_franckeite_processing}
-}
+if mods[lignumis_mods] then
+    data_technology[tech_ore_crushing].effects =
+    {
+        {type = unlock_recipe, recipe = ore_crusher_1},
+        {type = unlock_recipe, recipe = ore_sorting_facility_1},
+        {type = unlock_recipe, recipe = ore_jivolite .. _sorting},
+        {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
+        {type = unlock_recipe, recipe = ore_senaite .. _sorting},
+        {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
+        {type = unlock_recipe, recipe = stone_crushed_angels},
+        {type = unlock_recipe, recipe = crushed_stone_sorting_1},
+        {type = unlock_recipe, recipe = sand_from_crushed_stone},
+        {type = unlock_recipe, recipe = calcium_from_crushed_stone},
+        {type = unlock_recipe, recipe = crushed_jivolite},
+        {type = unlock_recipe, recipe = crushed_crotinnium},
+        {type = unlock_recipe, recipe = crushed_senaite},
+        {type = unlock_recipe, recipe = crushed_franckeite},
+        {type = unlock_recipe, recipe = crushed_saphirite_processing},
+        {type = unlock_recipe, recipe = crushed_jivolite_processing},
+        {type = unlock_recipe, recipe = crushed_stiratite_processing},
+        {type = unlock_recipe, recipe = crushed_crotinnium_processing},
+        {type = unlock_recipe, recipe = crushed_rubyte_processing},
+        {type = unlock_recipe, recipe = crushed_bobmonium_processing},
+        {type = unlock_recipe, recipe = crushed_senaite_processing},
+        {type = unlock_recipe, recipe = crushed_franckeite_processing}
+    }
+else
+    data_technology[tech_ore_crushing].effects =
+    {
+        {type = unlock_recipe, recipe = ore_crusher_1},
+        {type = unlock_recipe, recipe = ore_sorting_facility_1},
+        {type = unlock_recipe, recipe = ore_jivolite .. _sorting},
+        {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
+        {type = unlock_recipe, recipe = ore_senaite .. _sorting},
+        {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
+        {type = unlock_recipe, recipe = slag_sorting_1},
+        {type = unlock_recipe, recipe = stone_crushed_angels},
+        {type = unlock_recipe, recipe = crushed_stone_sorting_1},
+        {type = unlock_recipe, recipe = sand_from_crushed_stone},
+        {type = unlock_recipe, recipe = calcium_from_crushed_stone},
+        {type = unlock_recipe, recipe = crushed_jivolite},
+        {type = unlock_recipe, recipe = crushed_crotinnium},
+        {type = unlock_recipe, recipe = crushed_senaite},
+        {type = unlock_recipe, recipe = crushed_franckeite},
+        {type = unlock_recipe, recipe = crushed_saphirite_processing},
+        {type = unlock_recipe, recipe = crushed_jivolite_processing},
+        {type = unlock_recipe, recipe = crushed_stiratite_processing},
+        {type = unlock_recipe, recipe = crushed_crotinnium_processing},
+        {type = unlock_recipe, recipe = crushed_rubyte_processing},
+        {type = unlock_recipe, recipe = crushed_bobmonium_processing},
+        {type = unlock_recipe, recipe = crushed_senaite_processing},
+        {type = unlock_recipe, recipe = crushed_franckeite_processing}
+    }
+end
 
 table.insert(data_technology[tech_ore_floatation].prerequisites, tech_advanced_ore_refining_1)
 table.insert(data_technology[tech_ore_floatation].prerequisites, tech_chlorine_processing_1)
