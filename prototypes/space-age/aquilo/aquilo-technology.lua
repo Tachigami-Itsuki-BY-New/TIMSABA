@@ -592,7 +592,7 @@ data:extend
 
 -- OTHERS
 local graphics_aquilo_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/"
-local tech_arsenic_processing = "arsenic-processing"
+tech_arsenic_processing = "arsenic-processing"
 tech_aquilo_cryogenics = "aquilo-cryogenics"
 data:extend
 ({
@@ -656,8 +656,6 @@ data:extend
         }
     }
 })
-
-table.insert(data_technology[tech_molybdenum_smelting_3].prerequisites, planet_discovery_aquilo)
 
 -- AQUILO
 if settings.startup[setting_no_spoilage].value == false then

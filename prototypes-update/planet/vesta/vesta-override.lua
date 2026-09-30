@@ -791,8 +791,8 @@ if mods[vesta_mods] then
         tech_germanite_processing_3,
     }
     if mods[moshine_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_monazite_processing_3)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_aeschynite_processing_3)
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_monazite_processing_4)
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_aeschynite_processing_4)
     end
     if mods[paracelsin_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_sphalerite_processing_3)
@@ -800,6 +800,7 @@ if mods[vesta_mods] then
     end
     if mods[corrundum_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_chalcopyrite_processing_4)
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_sperrylite_processing_4)
     end
     if mods[castra_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)
