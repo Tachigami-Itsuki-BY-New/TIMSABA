@@ -322,7 +322,7 @@ data:extend
         name = tech_magnesium_smelting_3,
         icon = graphics_magnesium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_magnesium_smelting_2, tech_sulfur_processing, tech_ore_processing_2},
+        prerequisites = {tech_magnesium_smelting_2, tech_sulfur_processing_1, tech_ore_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = magnesium_pellet},
@@ -447,7 +447,7 @@ data:extend
         name = tech_thorium_smelting_1,
         icon = graphics_thorium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_powder_metallurgy_4, tech_ore_refining},
+        prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining},
         effects =
         {
             {type = unlock_recipe, recipe = thorium_oxide_IV},

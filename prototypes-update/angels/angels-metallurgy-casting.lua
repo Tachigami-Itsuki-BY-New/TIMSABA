@@ -1000,16 +1000,15 @@ data_recipe[tungsten_plate_angels].results[1].amount = 16
 
 data_item[tungsten_carbide_plate_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
 data_item[tungsten_carbide_plate_bob].order = b
-
-data_recipe[tungsten_carbide_plate_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
-data_recipe[tungsten_carbide_plate_2].order = b_a
-data_recipe[tungsten_carbide_plate_2].energy_required = 8 -- W + C --> WC
-data_recipe[tungsten_carbide_plate_2].ingredients =
+data_recipe[tungsten_carbide_plate_bob].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
+data_recipe[tungsten_carbide_plate_bob].order = b_a
+data_recipe[tungsten_carbide_plate_bob].energy_required = 8 -- W + C --> WC
+data_recipe[tungsten_carbide_plate_bob].ingredients =
 {
     {type = item, name = tungsten_powder, amount = 16},
     {type = item, name = carbon_angels, amount = 16}
 }
-data_recipe[tungsten_carbide_plate_2].results[1].amount = 16
+data_recipe[tungsten_carbide_plate_bob].results[1].amount = 16
 
 data_item[copper_tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "WCu"} or nil
 data_item[copper_tungsten_plate_bob].order = c
@@ -1056,9 +1055,21 @@ data_recipe[platinum_roll_2].results[2].amount = 60
 
 data_item[platinum_plate].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_plate].order = c
-data_recipe[platinum_plate].icons = TWO_I(platinum_molten_angels, platinum_plate)
-data_recipe[platinum_plate].order = c
-data_recipe[platinum_plate].ingredients[1].amount = 60
+if mods[corrundum_mods] then
+    data_recipe[platinum_plate].icons = TWO_I(sperrylite_crushed, platinum_plate)
+    data_recipe[platinum_plate].order = c
+    data_recipe[platinum_plate].energy_required = 8
+    if settings.startup[setting_game_difficulty].value == easy then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 4}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 2}}
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 4}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 1}}
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 8}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 1}}
+    end
+end
 
 local platinum_plate_2 = "angels-plate-platinum-2"
 data_recipe[platinum_plate_2].icons = TWO_I(platinum_roll, platinum_plate)

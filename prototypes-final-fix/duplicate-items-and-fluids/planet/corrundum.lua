@@ -6,7 +6,6 @@ if mods[corrundum_mods] then
 		[sulfur_ore_mods] = sulfur,
 		[petroleum_gas] = methane_angels,
         [calcium_sulfate_mods] = calcium_sulfate_angels,
-		[platinum_ore_mods] = platinum_ore_angels,
 		[platinum_plate_mods] = platinum_plate,
 		[iron_sulfate_solution] = iron_sulfate_II_solution,
 		[copper_sulfate_solution] = copper_sulfate_II_solution
@@ -17,7 +16,6 @@ if mods[corrundum_mods] then
 	{
 		sulfur_ore_mods,
 		calcium_sulfate_mods,
-		platinum_ore_mods,
 		platinum_plate_mods
 	}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)

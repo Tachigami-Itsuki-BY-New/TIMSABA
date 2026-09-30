@@ -280,6 +280,16 @@ if mods[paracelsin_mods] then
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pump, item)
 end
 
+-- CORRUNDUM
+if mods[corrundum_mods] then
+    data_item[sperrylite_ore].icon = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore.png"
+    data_item[sperrylite_ore].icon_size = 64
+    data_item[sperrylite_ore].pictures = nil
+    data_resource[sperrylite_ore].icon = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore.png"
+    data_resource[sperrylite_ore].icon_size = 64
+    data_resource[sperrylite_ore].stages.sheet.filename = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore/sperrylite-ore.png"
+end
+
 -- TERRAPALUS
 if mods[terrapalus_mods] then
     data_item[palusium_powder].icon = "__TIMSABA__/graphics/icons/terrapalus/palusium-powder.png"

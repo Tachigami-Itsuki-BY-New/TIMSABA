@@ -12,8 +12,10 @@ if mods[corrundum_mods] then
     })
 
     is_corrundum_air = "is-corrundum-air"
-    is_corrundum_platinum = "is-corrundum-platinum"
     is_chalcopyrite = "is-chalcopyrite"
+    is_sperrylite = "is-sperrylite"
+    is_corrundum_platinum = "is-corrundum-platinum"
+    is_corrundum_iridium = "is-corrundum-iridium"
     is_corrundum_sulfur = "is-corrundum-sulfur"
     is_corrundum_calcium = "is-corrundum-calcium"
     is_corrundum_recipe = "is-corrundum-recipe"
@@ -22,12 +24,14 @@ if mods[corrundum_mods] then
     TIMSABA.functions.create_subgroups(ig_corrundum,
     {
         {name = is_corrundum_air,      order = a},
-        {name = is_corrundum_platinum, order = b},
-        {name = is_chalcopyrite,       order = c},
-        {name = is_corrundum_sulfur,   order = d},
-        {name = is_corrundum_calcium,  order = e},
-        {name = is_corrundum_recipe,   order = f},
-        {name = is_corrundum_building, order = g},
-        {name = is_corrundum_war,      order = h}
+        {name = is_chalcopyrite,       order = b},
+        {name = is_sperrylite,         order = c},
+        {name = is_corrundum_platinum, order = d},
+        {name = is_corrundum_iridium,  order = e},
+        {name = is_corrundum_sulfur,   order = f},
+        {name = is_corrundum_calcium,  order = g},
+        {name = is_corrundum_recipe,   order = h},
+        {name = is_corrundum_building, order = i},
+        {name = is_corrundum_war,      order = j}
     })
 end

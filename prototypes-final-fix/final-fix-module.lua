@@ -384,8 +384,13 @@ data_furnace[clarifier].allowed_module_categories = {speed, efficiency, pollutio
 -- ANGELS PETROCHEM REFINING
 local electrolysers = {electrolyser_1, electrolyser_2, electrolyser_3, electrolyser_4}
 for _, name in ipairs(electrolysers) do
-    data_assembling[name].allowed_effects = {speed}
-    data_assembling[name].allowed_module_categories = {speed}
+    if mods[quality_mods] then
+        data_assembling[name].allowed_effects = {speed, productivity, quality}
+        data_assembling[name].allowed_module_categories = {speed, productivity, quality}
+    else
+        data_assembling[name].allowed_effects = {speed, productivity}
+        data_assembling[name].allowed_module_categories = {speed, productivity}
+    end
 end
 
 local air_filters = {air_filter_1, air_filter_2, air_filter_3, air_filter_4}

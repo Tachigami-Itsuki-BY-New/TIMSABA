@@ -141,43 +141,46 @@ end
 
 molybdenum_ore_recipe = "molybdenum-ore-pure-mix-processing"
 rhenium_ore_recipe = "rhenium-ore-pure-mix-processing"
-niobium_ore_recipe = "niobium-ore-pure-mix-processing"
-holmium_ore_recipe = "holmium-ore-pure-mix-processing"
 create_ore_recipe(molybdenum_ore_recipe, a_a,   powellite_crushed, molybdenite_crushed, molybdenum_ore)
 create_ore_recipe(rhenium_ore_recipe,    a_b, molybdenite_crushed,    rheniite_crushed, rhenium_ore)
-create_ore_recipe(niobium_ore_recipe,    a_c,  wolframite_crushed,  samarskite_crushed, niobium_ore)
-create_ore_recipe(holmium_ore_recipe,    a_d,  brannerite_crushed,  samarskite_crushed, holmium_ore)
-if mods[paracelsin_mods] then
-    antimony_ore_recipe = "antimony-ore-pure-mix-processing"
-    germanium_ore_recipe = "germanium-ore-pure-mix-processing"
-    create_ore_recipe(antimony_ore_recipe,  a_e, antimonite_crushed, tetrahedrite_crushed, antimony_ore)
-    create_ore_recipe(germanium_ore_recipe, a_f,  germanite_crushed,   sphalerite_crushed, germanium_ore)
-end
-if mods[secretas_frozeta_mods] then
-    gallium_ore_recipe = "gallium-ore-pure-mix-processing"
-    create_ore_recipe(gallium_ore_recipe, a_g, germanite_crushed, gallite_crushed, gallium_ore)
-end
-if mods[castra_mods] then
-    vanadium_ore_recipe = "vanadium-ore-pure-mix-processing"
-    create_ore_recipe(vanadium_ore_recipe, a_g, rheniite_purified, millerite_purified, vanadium_ore)
-
-    data_recipe[vanadium_ore_recipe].hidden = true
-    data_recipe[vanadium_ore_recipe].hidden_in_factoriopedia = true
-end
-if mods[moshine_mods] then
-    neodymium_ore_recipe = "neodymium-ore-pure-mix-processing"
-    create_ore_recipe(neodymium_ore_recipe, a_h, monazite_crushed, aeschynite_crushed, neodymium_ore)
-end
 if mods[corrundum_mods] then
     selenium_recipe = "selenium-pure-mix-processing"
-    create_ore_recipe(selenium_recipe, a_i, molybdenite_purified, chalcopyrite_purified, selenium)
+    create_ore_recipe(selenium_recipe, a_c, molybdenite_purified, chalcopyrite_purified, selenium)
 
     data_recipe[selenium_recipe].hidden = true
     data_recipe[selenium_recipe].hidden_in_factoriopedia = true
 end
-if mods[paracelsin_mods] then
-    arsenic_recipe = "arsenic-pure-mix-processing"
-    create_ore_recipe(arsenic_recipe, a_j, germanite_purified, tetrahedrite_purified, arsenic)
+niobium_ore_recipe = "niobium-ore-pure-mix-processing"
+holmium_ore_recipe = "holmium-ore-pure-mix-processing"
+create_ore_recipe(niobium_ore_recipe, a_d, wolframite_crushed, samarskite_crushed, niobium_ore)
+create_ore_recipe(holmium_ore_recipe, a_e, brannerite_crushed, samarskite_crushed, holmium_ore)
+if mods[castra_mods] then
+    vanadium_ore_recipe = "vanadium-ore-pure-mix-processing"
+    create_ore_recipe(vanadium_ore_recipe, a_f, rheniite_purified, millerite_purified, vanadium_ore)
+
+    data_recipe[vanadium_ore_recipe].hidden = true
+    data_recipe[vanadium_ore_recipe].hidden_in_factoriopedia = true
 end
--- cerium ore
--- promethium ore
+if mods[paracelsin_mods] then
+    antimony_ore_recipe = "antimony-ore-pure-mix-processing"
+    create_ore_recipe(antimony_ore_recipe, a_g, antimonite_crushed, tetrahedrite_crushed, antimony_ore)
+end
+if mods[corrundum_mods] then
+    arsenic_recipe = "arsenic-pure-mix-processing"
+    create_ore_recipe(arsenic_recipe, a_h, antimonite_crushed, sperrylite_crushed, arsenic)
+end
+if mods[paracelsin_mods] then
+    germanium_ore_recipe = "germanium-ore-pure-mix-processing"
+    create_ore_recipe(germanium_ore_recipe, a_i, germanite_crushed, sphalerite_crushed, germanium_ore)
+end
+if mods[secretas_frozeta_mods] then
+    gallium_ore_recipe = "gallium-ore-pure-mix-processing"
+    create_ore_recipe(gallium_ore_recipe, a_j, germanite_crushed, gallite_crushed, gallium_ore)
+end
+if mods[moshine_mods] then
+    neodymium_ore_recipe = "neodymium-ore-pure-mix-processing"
+    create_ore_recipe(neodymium_ore_recipe, a_k, monazite_crushed, aeschynite_crushed, neodymium_ore)
+end
+-- cerium_ore_recipe
+-- promethium_ore_recipe
+-- iridium_ore_recipe

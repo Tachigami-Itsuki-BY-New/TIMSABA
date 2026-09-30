@@ -155,7 +155,6 @@ TIMSABA.functions.delete_prototypes(delete_prototypes)
 data_recipe["bob-cobalt-steel-alloy"] = nil
 
 data_recipe["bob-solder"] = nil
-data_recipe[tungsten_carbide_plate_bob] = nil
 
 -- LOGISTICS
 data_container[steel_chest].next_upgrade = nil

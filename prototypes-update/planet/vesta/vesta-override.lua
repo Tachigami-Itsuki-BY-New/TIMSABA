@@ -767,6 +767,7 @@ if mods[vesta_mods] then
 
     if mods[corrundum_mods] then
         data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, tech_gas_manipulation_science_pack}
+        data_technology[tech_sperrylite_processing_4].prerequisites = {tech_sperrylite_processing_3, tech_gas_manipulation_science_pack}
     end
 
     if mods[castra_mods] then
