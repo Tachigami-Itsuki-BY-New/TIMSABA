@@ -137,10 +137,10 @@ data_item[steel_rod].order = d
 data_recipe[steel_rod].localised_name = data_item[steel_rod].localised_name
 data_recipe[steel_rod].icons = TWO_I(steel_plate, steel_rod)
 data_recipe[steel_rod].order = d
+data_recipe[steel_rod].enabled = false
 data_recipe[steel_rod].energy_required = 1
 data_recipe[steel_rod].ingredients[1].amount = 1
 data_recipe[steel_rod].results[1].amount = 2
-data_recipe[steel_rod].enabled = false
 
 -- COPPER
 data_item_subgroup["angels-copper-casting"].order = b
@@ -283,6 +283,13 @@ data_recipe[lead_plate_bob].categories = {smelting}
 data_recipe[lead_plate_bob].subgroup = "angels-lead-casting"
 data_recipe[lead_plate_bob].icons = TWO_I(crushed_rubyte, lead_plate_bob)
 data_recipe[lead_plate_bob].order = c
+if mods[lignumis_mods] then
+    data_recipe[lead_plate_bob].enabled = false
+else
+    data_recipe[lead_plate_bob].enabled = true
+end
+data_recipe[lead_plate_bob].allow_productivity = false
+data_recipe[lead_plate_bob].allow_quality = true
 data_recipe[lead_plate_bob].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
@@ -295,13 +302,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 1}}
 end
 data_recipe[lead_plate_bob].main_product = lead_plate_bob
-if mods[lignumis_mods] then
-    data_recipe[lead_plate_bob].enabled = false
-else
-    data_recipe[lead_plate_bob].enabled = true
-end
-data_recipe[lead_plate_bob].allow_productivity = false
-data_recipe[lead_plate_bob].allow_quality = true
 
 local lead_plate_angels = "angels-plate-lead"
 data_recipe[lead_plate_angels].icons = TWO_I(lead_molten_angels, lead_plate_bob)
@@ -355,6 +355,14 @@ data_recipe[tin_plate_bob].categories = {smelting}
 data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
 data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
+data_recipe[tin_plate_bob].main_product = tin_plate_bob
+if mods[lignumis_mods] then
+    data_recipe[tin_plate_bob].enabled = false
+else
+    data_recipe[tin_plate_bob].enabled = true
+end
+data_recipe[tin_plate_bob].allow_productivity = false
+data_recipe[tin_plate_bob].allow_quality = true
 data_recipe[tin_plate_bob].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 4}}
@@ -366,14 +374,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 8}}
     data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
 end
-data_recipe[tin_plate_bob].main_product = tin_plate_bob
-if mods[lignumis_mods] then
-    data_recipe[tin_plate_bob].enabled = false
-else
-    data_recipe[tin_plate_bob].enabled = true
-end
-data_recipe[tin_plate_bob].allow_productivity = false
-data_recipe[tin_plate_bob].allow_quality = true
 
 local tin_plate_angels = "angels-plate-tin"
 data_recipe[tin_plate_angels].icons = TWO_I(tin_molten_angels, tin_plate_bob)
@@ -535,6 +535,9 @@ if mods[castra_mods] then
     data_recipe[nickel_plate_bob].subgroup = "angels-nickel-casting"
     data_recipe[nickel_plate_bob].icons = TWO_I(millerite_crushed, nickel_plate_bob)
     data_recipe[nickel_plate_bob].order = c
+    data_recipe[nickel_plate_bob].enabled = false
+    data_recipe[nickel_plate_bob].allow_productivity = false
+    data_recipe[nickel_plate_bob].allow_quality = true
     data_recipe[nickel_plate_bob].energy_required = 8
     if settings.startup[setting_game_difficulty].value == easy then
         data_recipe[nickel_plate_bob].ingredients = {{type = item, name = millerite_crushed, amount = 4}}
@@ -547,9 +550,6 @@ if mods[castra_mods] then
         data_recipe[nickel_plate_bob].results = {{type = item, name = nickel_plate_bob, amount = 1}}
     end
     data_recipe[nickel_plate_bob].main_product = nickel_plate_bob
-    data_recipe[nickel_plate_bob].enabled = false
-    data_recipe[nickel_plate_bob].allow_productivity = false
-    data_recipe[nickel_plate_bob].allow_quality = true
 end
 
 local nickel_plate_angels = "angels-plate-nickel"
@@ -672,6 +672,9 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_bob].subgroup = "angels-nickel-casting"
     data_recipe[zinc_plate_bob].icons = TWO_I(sphalerite_crushed, zinc_plate_bob)
     data_recipe[zinc_plate_bob].order = c
+    data_recipe[zinc_plate_bob].enabled = false
+    data_recipe[zinc_plate_bob].allow_productivity = false
+    data_recipe[zinc_plate_bob].allow_quality = true
     data_recipe[zinc_plate_bob].energy_required = 8
     if settings.startup[setting_game_difficulty].value == easy then
         data_recipe[zinc_plate_bob].ingredients = {{type = item, name = sphalerite_crushed, amount = 4}}
@@ -684,9 +687,6 @@ if mods[paracelsin_mods] then
         data_recipe[zinc_plate_bob].results = {{type = item, name = zinc_plate_bob, amount = 1}}
     end
     data_recipe[zinc_plate_bob].main_product = zinc_plate_bob
-    data_recipe[zinc_plate_bob].enabled = false
-    data_recipe[zinc_plate_bob].allow_productivity = false
-    data_recipe[zinc_plate_bob].allow_quality = true
 end
 
 data_recipe[zinc_plate_angels].icons = TWO_I(zinc_molten_angels, zinc_plate_bob)
@@ -1058,6 +1058,7 @@ data_item[platinum_plate].order = c
 if mods[corrundum_mods] then
     data_recipe[platinum_plate].icons = TWO_I(sperrylite_crushed, platinum_plate)
     data_recipe[platinum_plate].order = c
+    data_recipe[platinum_plate].allow_productivity = false
     data_recipe[platinum_plate].energy_required = 8
     if settings.startup[setting_game_difficulty].value == easy then
         data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 4}}
