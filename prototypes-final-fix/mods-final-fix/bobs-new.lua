@@ -12,6 +12,7 @@ data_resource[wolframite_ore].icons = nil
 data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
+data_resource[wolframite_ore].factoriopedia_simulation = nil
 
 data_recipe[wolframite_ore .. _sorting].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
@@ -64,14 +65,10 @@ data_recipe[casting_cobalt_steel_bearing].main_product = cobalt_steel_bearing
 
 local brass_bearing_ball = "bob-brass-bearing-ball"
 for _, recipe in pairs(data_recipe) do
-    -- Проверяем, есть ли вообще ингредиенты у рецепта (у некоторых модов их может не быть)
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
-            -- Вариант 1: Ингредиент записан в виде таблицы с ключами (например, {name = "...", amount = 1})
             if ingredient.name == brass_bearing_ball then
                 ingredient.name = cobalt_steel_bearing_ball
-            -- Вариант 2: Ингредиент записан в виде простого массива (например, {"iron-plate", 5})
-            -- В Lua первый элемент массива [1] — это всегда имя предмета
             elseif ingredient[1] == brass_bearing_ball then
                 ingredient[1] = cobalt_steel_bearing_ball
             end
@@ -86,8 +83,7 @@ if mods[panglia_mods] then
 end
 
 local brass_bearing = "bob-brass-bearing"
-for _, recipe in pairs(data.raw.recipe) do
-    -- 1. ПРОВЕРКА ИНГРЕДИЕНТОВ (Ваш текущий код)
+for _, recipe in pairs(data_recipe) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
             if ingredient.name == brass_bearing then
@@ -98,12 +94,10 @@ for _, recipe in pairs(data.raw.recipe) do
         end
     end
 
-    -- 2. ПРОВЕРКА ОДИНОЧНОГО РЕЗУЛЬТАТА (Формат: result = "имя")
     if recipe.result == brass_bearing then
         recipe.result = cobalt_steel_bearing
     end
 
-    -- 3. ПРОВЕРКА ТАБЛИЦЫ РЕЗУЛЬТАТОВ (Формат: results = {{type="item", name="...", amount=1}})
     if recipe.results then
         for _, result in pairs(recipe.results) do
             if result.name == brass_bearing then
@@ -114,13 +108,11 @@ for _, recipe in pairs(data.raw.recipe) do
         end
     end
 
-    -- 4. ПРОВЕРКА ГЛАВНОГО ПРОДУКТА (На всякий случай, если он задан)
     if recipe.main_product == brass_bearing then
         recipe.main_product = cobalt_steel_bearing
     end
 end
 
--- Удаление предметов и ваших рецептов (Ваш текущий код)
 data_item[brass_bearing] = nil
 data_recipe[brass_bearing] = nil
 data_recipe[brass_bearing .. _recycling] = nil

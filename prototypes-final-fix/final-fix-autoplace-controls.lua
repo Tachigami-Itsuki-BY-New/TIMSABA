@@ -25,7 +25,7 @@ data_autoplace_control["vulcanus_coal"].order = data_planet[planet_vulcanus].ord
 local wolframite_ore_ac = "tungsten_ore"
 data_autoplace_control[wolframite_ore_ac].localised_name = {"", "[item=tungsten-ore] ", {"entity-name.wolframite-ore"}}
 data_autoplace_control[wolframite_ore_ac].order = data_planet[planet_vulcanus].order .. a_a
-data_autoplace_control[samarskite_ore].order = data_planet[planet_vulcanus].order .. a_b
+data_autoplace_control["samarskite_ore"].order = data_planet[planet_vulcanus].order .. a_b
 data_autoplace_control[calcite].order = data_planet[planet_vulcanus].order .. a_c
 data_autoplace_control["sulfuric_acid_geyser"].order = data_planet[planet_vulcanus].order .. a_d
 

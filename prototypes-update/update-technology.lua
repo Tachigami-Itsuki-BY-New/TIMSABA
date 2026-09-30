@@ -36,6 +36,10 @@ else
     }
 end
 
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_steam_power].effects, {type = unlock_recipe, recipe = burner_electric_generator})
+end
+
 if data_technology[tech_logistics_0] then
     data_technology[tech_logistics_0].effects =
     {

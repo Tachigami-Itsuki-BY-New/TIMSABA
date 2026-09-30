@@ -27,6 +27,7 @@ if mods[corrundum_mods] then
     data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
     data_resource[chalcopyrite_ore].order = a
     data_resource[chalcopyrite_ore].minable.mining_time = 1
+    data_resource[chalcopyrite_ore].factoriopedia_simulation = nil
 
     -- SUFUR
     data_resource[sulfur_ore_mods].subgroup = is_corrundum_sulfur

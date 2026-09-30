@@ -217,13 +217,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- ORE
-local samarskite_ore_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
-samarskite_ore_particle.name = samarskite_ore .. _particle
-for _, picture in pairs(samarskite_ore_particle.pictures) do
-    picture.tint = {r = 075/256, g = 040/256, b = 075/256, a = 1.000}
-end
-data:extend({samarskite_ore_particle})
-
+local samarskite_ore_ac = "samarskite_ore"
 data:extend
 ({
     TIMSABA.functions.create_resource(
@@ -235,13 +229,55 @@ data:extend
             mining_visualisation_tint = {r = 085/255, g = 060/255, b = 085/255, a = 1.000},
             category = "hard-solid"
         },
-        {autoplace_control = samarskite_ore, probability_expression = "vulcanus_tungsten_ore_probability", richness_expression = "vulcanus_tungsten_ore_richness"}
+        {probability_expression = 0}
     )
 })
 
-TIMSABA.functions.create_autoplace_control(samarskite_ore)
+local samarskite_ore_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
+samarskite_ore_particle.name = samarskite_ore .. _particle
+for _, picture in pairs(samarskite_ore_particle.pictures) do
+    picture.tint = {r = 075/256, g = 040/256, b = 075/256, a = 1.000}
+end
+data:extend({samarskite_ore_particle})
 
-data_planet[planet_vulcanus].map_gen_settings.autoplace_controls[samarskite_ore] = {}
+TIMSABA.functions.create_autoplace_control(samarskite_ore_ac, samarskite_ore_ac, {"", "[item=samarskite-ore] ", {"entity-name.samarskite-ore"}})
+
+data:extend
+({
+    {
+        type = "noise-expression",
+        name = "vulcanus_samarskite_ore_size",
+        expression = "slider_rescale(control:samarskite_ore:size, 2)"
+    },
+    {
+        type = "noise-expression",
+        name = "vulcanus_samarskite_ore_region",
+        expression = "max(vulcanus_starting_tungsten,\z
+        min(1 - vulcanus_starting_circle,\z
+        vulcanus_place_metal_spots(799, 15, 2,\z
+        vulcanus_samarskite_ore_size * min(1.2, vulcanus_ore_dist) * 25,\z
+        control:samarskite_ore:frequency,\z
+        vulcanus_basalts_resource_favorability)))"
+    },
+    {
+        type = "noise-expression",
+        name = "vulcanus_samarskite_ore_probability",
+        intended_property = "probability",
+        expression = "(control:samarskite_ore:size > 0) * (1000 * ((1 + vulcanus_samarskite_ore_region) * random_penalty_between(0.9, 1, 1) - 1))"
+    },
+    {
+        type = "noise-expression",
+        name = "vulcanus_samarskite_ore_richness",
+        intended_property = "richness",
+        expression = "vulcanus_samarskite_ore_region * random_penalty_between(0.9, 1, 1)\z
+        * 10000 * vulcanus_starting_area_multiplier\z
+        * control:samarskite_ore:richness / vulcanus_samarskite_ore_size"
+    }
+})
+
+data_planet[planet_vulcanus].map_gen_settings.property_expression_names["entity:samarskite-ore:probability"] = "vulcanus_samarskite_ore_probability"
+data_planet[planet_vulcanus].map_gen_settings.property_expression_names["entity:samarskite-ore:richness"] = "vulcanus_samarskite_ore_richness"
+data_planet[planet_vulcanus].map_gen_settings.autoplace_controls[samarskite_ore_ac] = {}
 data_planet[planet_vulcanus].map_gen_settings.autoplace_settings.entity.settings[samarskite_ore] = {}
 
 data_resource[samarskite_ore].location = planet_vulcanus
