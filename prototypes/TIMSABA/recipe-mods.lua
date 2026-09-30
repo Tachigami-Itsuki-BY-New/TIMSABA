@@ -83,11 +83,11 @@ local function sortiong_ore_recipe_false(ingredient, order)
     })
 end
 if mods[lignumis_mods] then
-    sortiong_ore_recipe_true(ore_saphirite, a)
-    sortiong_ore_recipe_true(ore_stiratite, c)
+    sortiong_ore_recipe_false(ore_saphirite, a)
+    sortiong_ore_recipe_false(ore_stiratite, c)
 elseif not mods[lignumis_mods] then
-    sortiong_ore_recipe_true(ore_rubyte, e)
-    sortiong_ore_recipe_true(ore_bobmonium, f)
+    sortiong_ore_recipe_false(ore_rubyte, e)
+    sortiong_ore_recipe_false(ore_bobmonium, f)
 end
 sortiong_ore_recipe_false(ore_jivolite, b)
 sortiong_ore_recipe_false(ore_crotinnium, d)
