@@ -647,10 +647,6 @@ if mods[lignumis_mods] then
     data_recipe[iron_bearing_ball].enabled = false
     data_recipe[iron_bearing].enabled = false
 
-    data_recipe[burner_ore_sorting_facility].enabled = true
-    data_recipe[burner_chemical_plant].enabled = true
-    data_recipe[burner_seed_extractor].enabled = true
-
     if data_recipe[T0_transport_belt] then
         data_recipe[T0_transport_belt].enabled = false
     end

@@ -93,6 +93,7 @@ TIMSABA.functions.create_buildings
         weight = buildings.weight or 31250
 
         -- Recipe
+        enabled = buildings.enabled or false,
         energy_required = buildings.energy_required or 4,
         ingredients = buildings.ingredients,
         surface_conditions = buildings.surface_conditions
@@ -128,6 +129,7 @@ TIMSABA.functions.create_burner_buildings
         weight = buildings.weight or 31250
 
         -- Recipe
+        enabled = buildings.enabled or false,
         energy_required = buildings.energy_required or 4,
         ingredients = buildings.ingredients,
         surface_conditions = buildings.surface_conditions

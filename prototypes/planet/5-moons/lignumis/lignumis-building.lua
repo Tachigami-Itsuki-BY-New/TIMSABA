@@ -33,7 +33,6 @@ if mods[lignumis_mods] then
             icons = angelsmods.functions.add_number_icon_layer({{icon = "__angelspetrochemgraphics__/graphics/icons/chemical-plant.png", icon_size = 32}}, 0, angelsmods.petrochem.number_tint),
             order = f,
 
-            enabled = true,
             ingredients =
             {
                 {type = item, name = basic_circuit_board, amount = 1},
@@ -72,4 +71,5 @@ if mods[lignumis_mods] then
     })
     data_assembling[burner_ore_sorting_facility].next_upgrade = ore_sorting_facility_1
     data_assembling[burner_chemical_plant].next_upgrade = chemical_plant_1
+    data_assembling[burner_seed_extractor].next_upgrade = seed_extractor_1
 end

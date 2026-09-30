@@ -835,11 +835,17 @@ if mods[lignumis_mods] then
         data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution, quality}
         data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
 
+        data_mining_drill[deep_miner].allowed_effects = {speed, consumption, productivity, quality}
+        data_mining_drill[deep_miner].allowed_module_categories = {speed, efficiency, productivity, quality}
+
         data_assembling[quality_assembler].allowed_effects = {speed, quality}
         data_assembling[quality_assembler].allowed_module_categories = {speed, quality}
     else
-        data_assembling[steam_assembling_machine].allowed_effects = {speed, consumption, productivity}
-        data_assembling[steam_assembling_machine].allowed_module_categories = {speed, efficiency, productivity}
+        data_assembling[steam_assembling_machine].allowed_effects = {speed, consumption, productivity, quality}
+        data_assembling[steam_assembling_machine].allowed_module_categories = {speed, efficiency, productivity, quality}
+
+        data_mining_drill[deep_miner].allowed_effects = {speed, consumption, productivity, quality}
+        data_mining_drill[deep_miner].allowed_module_categories = {speed, efficiency, productivity, quality}
 
         data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution}
         data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}

@@ -339,7 +339,6 @@ if mods[lignumis_mods] then
     data_recipe[basic_repair_pack].order = h
 
     -- MINING
-    local deep_miner = "deep-miner"
     data_item[deep_miner].subgroup = is_lignumis_mining
     data_item[deep_miner].order = a
     data_item[deep_miner].stack_size = 32
@@ -674,18 +673,9 @@ if mods[lignumis_mods] then
     data_assembling[burner_chemical_plant].crafting_categories = {chemistry}
 
     -- TECHNOLOGY
-    local planet_discovery_lignumis = "planet-discovery-lignumis"
-    if mods[muluna_mods] then
-        data_technology[planet_discovery_lignumis].prerequisites = {thruster_fuel}
-    end
-    data_technology[planet_discovery_lignumis].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1}
-    }
+    table.insert(data_technology[tech_tree_seeding].effects, {type = unlock_recipe, recipe = burner_seed_extractor})
+
+    table.insert(data_technology[wood_liquefaction].effects, {type = unlock_recipe, recipe = burner_chemical_plant})
 
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
 
@@ -723,6 +713,19 @@ if mods[lignumis_mods] then
         type = craft_item,
         item = crushed_stiratite,
         count = 200
+    }
+
+    local planet_discovery_lignumis = "planet-discovery-lignumis"
+    if mods[muluna_mods] then
+        data_technology[planet_discovery_lignumis].prerequisites = {thruster_fuel}
+    end
+    data_technology[planet_discovery_lignumis].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
     }
 
     local tech_active_noise_cancelling = "active-noise-cancelling"
