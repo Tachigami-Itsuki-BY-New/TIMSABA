@@ -136,7 +136,7 @@ data_technology[tech_lithium_processing].hidden = false
 data_technology[tech_lithium_processing].hidden_in_factoriopedia = false
 
 -- BATTERY
-data_technology[tech_battery_3].effects =
+data_technology[battery_silver_zinc].effects =
 {
     {type = unlock_recipe, recipe = silver_oxide_I_bob},
     {type = unlock_recipe, recipe = battery_silver_zinc}
@@ -351,104 +351,12 @@ data_splitter[T3_splitter].next_upgrade = T4_splitter
 data_splitter[T4_splitter].next_upgrade = T5_splitter
 data_splitter[T5_splitter].next_upgrade = vulcanus_splitter
 
--- FIXED ALL TECHNOLOGIES
--- === ТОЧЕЧНЫЙ ФИКС ДЛЯ bob-battery-3 ===
-local target_tech = data_technology[tech_battery_3]
-if target_tech then
-    -- 1. Удаляем cryogenic-science-pack из списка предварительных условий (prerequisites)
-    if target_tech.prerequisites then
-        for i = #target_tech.prerequisites, 1, -1 do
-            if target_tech.prerequisites[i] == cryogenic_science_pack then
-                table.remove(target_tech.prerequisites, i)
-                log("!!! TIMSABA MANUAL FIX: Удалена зависимость [cryogenic-science-pack] из [bob-battery-3]")
-            end
-        end
-    end
-
-    -- 2. Удаляем научную колбу cryogenic-science-pack из стоимости исследования (ingredients)
-    if target_tech.unit and target_tech.unit.ingredients then
-        for i = #target_tech.unit.ingredients, 1, -1 do
-            local ingredient = target_tech.unit.ingredients[i]
-            -- Ингредиент может быть записан как {"имя", количество} или {name="имя", amount=количество}
-            if ingredient[1] == cryogenic_science_pack or ingredient.name == cryogenic_science_pack then
-                table.remove(target_tech.unit.ingredients, i)
-                log("!!! TIMSABA MANUAL FIX: Удален научный пакет [cryogenic-science-pack] из стоимости [bob-battery-3]")
-            end
-        end
-    end
-end
-
--- Aвтоматический поиск петель
-local function break_cyclic_prerequisites()
-    local memo = {}
-
-    -- Рекурсивная функция для поиска петель в графе
-    local function check_cycle(tech_name, current_path)
-        if memo[tech_name] ~= nil then return memo[tech_name] end
-
-        -- Если технология уже есть в текущем пути — мы нашли петлю!
-        if current_path[tech_name] then
-            return true, tech_name
-        end
-
-        local tech = data.raw.technology[tech_name]
-        if not tech or not tech.prerequisites then
-            memo[tech_name] = false
-            return false
-        end
-
-        current_path[tech_name] = true
-
-        -- Перебираем все зависимости
-        for i = #tech.prerequisites, 1, -1 do
-            local prereq = tech.prerequisites[i]
-            local has_cycle, cyclic_name = check_cycle(prereq, current_path)
-
-            if has_cycle then
-                -- Логгируем, чтобы вы видели, кто кого закольцевал
-                log("!!! TIMSABA FIX: Обнаружена петля! Удаляем зависимость [" .. prereq .. "] из технологии [" .. tech_name .. "]")
-
-                -- Аккуратно удаляем именно то условие, которое создало петлю
-                table.remove(tech.prerequisites, i)
-
-                -- Сбрасываем кэш проверки, так как граф изменился
-                memo = {}
-                current_path[tech_name] = nil
-                return true, cyclic_name
-            end
-        end
-
-        current_path[tech_name] = nil
-        memo[tech_name] = false
-        return false
-    end
-
-    -- Запускаем проверку для абсолютно всех технологий в игре
-    local loop_found = true
-    while loop_found do
-        loop_found = false
-        for tech_name, _ in pairs(data.raw.technology) do
-            local has_cycle = check_cycle(tech_name, {})
-            if has_cycle then
-                loop_found = true
-                break -- Перезапускаем глобальный цикл, так как граф изменился
-            end
-        end
-    end
-end
-
--- Запускаем глобальную инженерную зачистку дерева исследований
-break_cyclic_prerequisites()
-
 -- FIXED PREREQUISITES
 local function tech_prerequisites(name, tech)
-    -- Если не передано имя или ID требования, вообще ничего не делаем
     if not name or not tech then return end
 
-    -- Если такой технологии нет в базе игры, выходим
     if not data_technology[name] then return end
 
-    -- Создаем таблицу требований, если её не было
     if not data_technology[name].prerequisites then
         data_technology[name].prerequisites = {}
     end
@@ -465,7 +373,7 @@ tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_copper_tungsten_processing)
 tech_prerequisites(tech_plasma_turret_3, tech_copper_tungsten_processing)
 tech_prerequisites(tech_fluid_handling_4, tech_copper_tungsten_processing)
 -- LITHIUM PROCESSING
-tech_prerequisites(tech_battery_2, tech_lithium_processing)
+tech_prerequisites(battery_lithium_ion, tech_lithium_processing)
 -- COBALT-STEEL PROCESSING
 tech_prerequisites(tech_cobalt_processing, tech_cobalt_steel_smelting_1)
 tech_prerequisites(tech_logistics_3, tech_cobalt_processing)

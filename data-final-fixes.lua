@@ -88,11 +88,7 @@ require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
 
 require("prototypes-final-fix.final-fix-lingumis-plants-boost")
 
-local prototypes =
-{
-    item, capsule,
-}
-
+local prototypes = {item, capsule}
 for _, proto_name in ipairs(prototypes) do
     if data.raw[proto_name] then
         for _, proto in pairs(data.raw[proto_name]) do

@@ -48,4 +48,20 @@ if mods[castra_mods] then
         end
     end
 	data_recipe[jammed_data_collector_process] = nil
+
+	for i, prerequisite in ipairs(data_technology[battery_eq_3].prerequisites) do
+        if prerequisite == "lithium-battery" then
+            table.remove(data_technology[battery_eq_3].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology[railgun].prerequisites) do
+        if prerequisite == "lithium-battery" then
+            table.remove(data_technology[railgun].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology["jammed-data-collector"].prerequisites) do
+        if prerequisite == "lithium-battery" then
+            table.remove(data_technology["jammed-data-collector"].prerequisites, i) break
+        end
+    end
 end

@@ -70,4 +70,20 @@ if mods[shchierbin_mods] then
             end
         end
     end
+
+    for i, prerequisite in ipairs(data_technology[vanadium_steel_plate].prerequisites) do
+        if prerequisite == "ferrovanadium" then
+            table.remove(data_technology[vanadium_steel_plate].prerequisites, i) break
+        end
+    end
+    for i, prerequisite in ipairs(data_technology["chemical-furnace"].prerequisites) do
+        if prerequisite == "gas-ballon" then
+            table.remove(data_technology["chemical-furnace"].prerequisites, i) break
+        end
+    end
+    for i, prerequisite in ipairs(data_technology["frozen-bacteria"].prerequisites) do
+        if prerequisite == "ammonia-syntes" then
+            table.remove(data_technology["frozen-bacteria"].prerequisites, i) break
+        end
+    end
 end

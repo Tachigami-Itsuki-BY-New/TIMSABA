@@ -351,15 +351,3 @@ if next(to_delete) then
         end
     end
 end
-
-for tech_name, technology in pairs(data_technology) do
-    if technology.prerequisites then
-        for i = #technology.prerequisites, 1, -1 do
-            local prereq_name = technology.prerequisites[i]
-
-            if not data_technology[prereq_name] then
-                table.remove(technology.prerequisites, i)
-            end
-        end
-    end
-end

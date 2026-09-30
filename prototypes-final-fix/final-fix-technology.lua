@@ -3,7 +3,6 @@ local base_costs = {}
 for _, tech in pairs(data_technology) do
     local unit = tech.unit
     if unit then
-        -- Округляем время исследования
         if unit.time and unit.time > 0 then
             local exp_time = math.floor(math.log(unit.time) / math.log(2) + 0.5)
             unit.time = math.pow(2, exp_time)
