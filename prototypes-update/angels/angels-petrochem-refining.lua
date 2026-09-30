@@ -2139,3 +2139,5 @@ data_recipe[catalyst_yellow].ingredients[1].amount = 8
 data_recipe[catalyst_yellow].ingredients[2].name = tungsten_ore_bob
 data_recipe[catalyst_yellow].ingredients[3].name = platinum_ore_angels
 data_recipe[catalyst_yellow].results[1].amount = 8
+
+bobmods.lib.recipe.update_recycling_recipe({insulated_cable})
