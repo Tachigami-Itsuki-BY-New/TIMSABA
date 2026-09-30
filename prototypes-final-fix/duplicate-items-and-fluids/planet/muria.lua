@@ -104,4 +104,12 @@ if mods[muria_mods] then
             end
         end
     end
+
+    if mods[paracelsin_mods] then
+        for i, prerequisite in ipairs(data_technology[planet_discovery_paracelsin].prerequisites) do
+            if prerequisite == "explosive-" .. shotgun_shell then
+                table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
+            end
+        end
+    end
 end

@@ -7,7 +7,7 @@ data:extend
         name = tech_battery_4,
         icon = "__base__/graphics/technology/battery.png",
         icon_size = 256,
-        prerequisites = {tech_battery_3, utility_science_pack, tech_phosphorus_processing, tech_coal_processing_4},
+        prerequisites = {battery_silver_zinc, utility_science_pack, tech_phosphorus_processing, tech_coal_processing_4},
         effects =
         {
             {type = unlock_recipe, recipe = hydrogen_fluoride_liquefied},

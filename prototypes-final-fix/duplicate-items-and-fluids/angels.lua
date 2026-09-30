@@ -249,3 +249,9 @@ data_recipe[platinum_ore_smelting] = nil
 data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
+
+for i, prerequisite in ipairs(data_technology[tech_sulfur_processing].prerequisites) do
+    if prerequisite == "angels-nickel-smelting-1" then
+        table.remove(data_technology[tech_sulfur_processing].prerequisites, i) break
+    end
+end

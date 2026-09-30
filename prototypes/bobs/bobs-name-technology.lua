@@ -75,8 +75,6 @@ tech_nitinol_processing = "bob-nitinol-processing"
 tech_tungsten_processing = "bob-tungsten-processing"
 tech_copper_tungsten_processing = "timsaba-tungsten-alloy-processing"
 tech_lithium_processing = "bob-lithium-processing"
-tech_battery_2 = "bob-battery-2"
-tech_battery_3 = "bob-battery-3"
 tech_battery_4 = "bob-battery-4"
 tech_electronics = "bob-electronics"
 

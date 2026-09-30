@@ -46,4 +46,16 @@ if mods[lignumis_mods] then
         "experienced-quality-assembling-3"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+    for i, prerequisite in ipairs(data_technology[production_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[production_science_pack].prerequisites, i) break
+        end
+    end
+
+    for i, prerequisite in ipairs(data_technology[utility_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[utility_science_pack].prerequisites, i) break
+        end
+    end
 end

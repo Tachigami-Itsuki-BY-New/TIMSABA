@@ -675,12 +675,6 @@ if mods[lignumis_mods] then
 
     data_technology[tech_automation_2].effects = {{type = unlock_recipe, recipe = assembling_machine_2}}
 
-    for i, prerequisite in ipairs(data_technology[production_science_pack].prerequisites) do
-        if prerequisite == tech_space_platform_thruster then
-            table.remove(data_technology[production_science_pack].prerequisites, i)
-            break
-        end
-    end
     data_technology[production_science_pack].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -688,12 +682,6 @@ if mods[lignumis_mods] then
         {chemical_science_pack, 1}
     }
 
-    for i, prerequisite in ipairs(data_technology[utility_science_pack].prerequisites) do
-        if prerequisite == tech_space_platform_thruster then
-            table.remove(data_technology[utility_science_pack].prerequisites, i)
-            break
-        end
-    end
     data_technology[utility_science_pack].unit.ingredients =
     {
         {automation_science_pack, 1},

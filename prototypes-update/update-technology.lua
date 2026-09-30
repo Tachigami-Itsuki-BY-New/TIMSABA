@@ -89,11 +89,11 @@ if data_technology[tech_robotics_1] then
 end
 
 if data_technology[tech_robotics_2] then
-    table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2)
+    table.insert(data_technology[tech_robotics_2].prerequisites, battery_lithium_ion)
 end
 
 if data_technology[tech_robotics_3] then
-    table.insert(data_technology[tech_robotics_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[tech_robotics_3].prerequisites, battery_silver_zinc)
 
     local already_has_pack = false
     for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
@@ -555,9 +555,9 @@ data_technology[battery_lead_acid].effects =
     {type = unlock_recipe, recipe = battery_lead_acid}
 }
 
-data_technology[tech_battery_2].localised_description = {"technology-description.battery"}
-data_technology[tech_battery_2].prerequisites = {tech_lithium_processing, tech_cobalt_smelting_1, battery_lead_acid}
-data_technology[tech_battery_2].effects =
+data_technology[battery_lithium_ion].localised_description = {"technology-description.battery"}
+data_technology[battery_lithium_ion].prerequisites = {tech_lithium_processing, tech_cobalt_smelting_1, battery_lead_acid}
+data_technology[battery_lithium_ion].effects =
 {
     {type = unlock_recipe, recipe = phosgene_gas},
     {type = unlock_recipe, recipe = dimethyl_carbonate},
@@ -567,8 +567,15 @@ data_technology[tech_battery_2].effects =
     {type = unlock_recipe, recipe = battery_lithium_ion}
 }
 
-data_technology[tech_battery_3].localised_description = {"technology-description.battery"}
-data_technology[tech_battery_3].prerequisites = {tech_metallurgy_4, tech_silver_smelting_2}
+data_technology[battery_silver_zinc].localised_description = {"technology-description.battery"}
+data_technology[battery_silver_zinc].prerequisites = {tech_metallurgy_4, tech_silver_smelting_2}
+data_technology[battery_silver_zinc].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
+}
 
 data_technology[tech_uranium_power_1].prerequisites = {tech_uranium_smelting_1, tech_heat_exchanger_1, tech_steam_turbine_1}
 data_technology[tech_uranium_power_1].effects =
@@ -681,14 +688,14 @@ data_technology[energy_shield_eq_2].unit.count = 200
 if mods[bobequipment] then
     table.insert(data_technology[fission_reactor_eq_4].prerequisites, tech_deuterium_power)
 
-    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, tech_battery_2}
+    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
     data_technology[roboport_eq_2].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
         {chemical_science_pack, 1}
     }
-    table.insert(data_technology[roboport_eq_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[roboport_eq_3].prerequisites, battery_silver_zinc)
     table.insert(data_technology[roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[roboport_eq_4].prerequisites, tech_battery_4)
@@ -697,15 +704,15 @@ if mods[bobequipment] then
     end
 
     table.insert(data_technology[laser_defense_eq_3].prerequisites, tech_invar_smelting_1)
-    table.insert(data_technology[laser_defense_eq_4].prerequisites, tech_battery_3)
+    table.insert(data_technology[laser_defense_eq_4].prerequisites, battery_silver_zinc)
     table.insert(data_technology[laser_defense_eq_5].prerequisites, tech_battery_4)
     table.insert(data_technology[laser_defense_eq_6].prerequisites, tech_battery_4)
 end
 
 if mods[bobvehicleequipment] then
-    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, tech_battery_2}
+    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
-    table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, battery_silver_zinc)
     table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
@@ -726,7 +733,7 @@ if mods[bobvehicleequipment] then
     data_technology[vehicle_plasma_cannon_eq_2].prerequisites = {vehicle_plasma_cannon_eq_1, tech_tungsten_smelting_1, processing_unit, production_science_pack}
 
     table.insert(data_technology[vehicle_laser_defense_eq_3].prerequisites, tech_invar_smelting_1)
-    table.insert(data_technology[vehicle_laser_defense_eq_4].prerequisites, tech_battery_3)
+    table.insert(data_technology[vehicle_laser_defense_eq_4].prerequisites, battery_silver_zinc)
     table.insert(data_technology[vehicle_laser_defense_eq_5].prerequisites, tech_battery_4)
     table.insert(data_technology[vehicle_laser_defense_eq_6].prerequisites, tech_battery_4)
 
@@ -739,7 +746,7 @@ if mods[bobwarfare] then
     table.insert(data_technology[laser_turret_1].prerequisites, tech_gunmetal_smelting_1)
     table.insert(data_technology[tech_laser_turret_2].prerequisites, tech_invar_smelting_1)
     table.insert(data_technology[tech_laser_turret_3].prerequisites, tech_cobalt_steel_smelting_1)
-    table.insert(data_technology[tech_laser_turret_4].prerequisites, tech_battery_3)
+    table.insert(data_technology[tech_laser_turret_4].prerequisites, battery_silver_zinc)
     table.insert(data_technology[tech_laser_turret_5].prerequisites, tech_battery_4)
 
     table.insert(data_technology[tech_sniper_turret_1].prerequisites, tech_gunmetal_smelting_1)
@@ -928,7 +935,6 @@ else
     }
 end
 
-table.insert(data_technology[tech_ore_floatation].prerequisites, tech_advanced_ore_refining_1)
 table.insert(data_technology[tech_ore_floatation].prerequisites, tech_chlorine_processing_1)
 data_technology[tech_ore_floatation].effects =
 {
@@ -1105,7 +1111,7 @@ data_technology[tech_advanced_ore_refining_4].effects =
     {type = unlock_recipe, recipe = platinum_ore_recipe}
 }
 
-table.insert(data_technology[tech_slag_processing_1].prerequisites, tech_sulfur_processing) -- ?
+--table.insert(data_technology[tech_slag_processing_1].prerequisites, tech_sulfur_processing) -- ?
 data_technology[tech_slag_processing_1].effects =
 {
     {type = unlock_recipe, recipe = filtration_unit_1},
@@ -1779,7 +1785,7 @@ data_technology[tech_water_treatment_4].effects =
 
 data_technology[electric_boiler_3].prerequisites = {electric_boiler_2, tech_advanced_chemistry_4, utility_science_pack, tech_copper_tungsten_processing}
 
-data_technology["angels-coolant-1"].prerequisites = {"angels-cooling", tech_slag_processing_2, "angels-oil-processing", tech_battery_2}
+data_technology["angels-coolant-1"].prerequisites = {"angels-cooling", tech_slag_processing_2, "angels-oil-processing", battery_lithium_ion}
 
 -- ANGELS PETROCHEM REFINING
 data_technology[tech_coal_processing_3].prerequisites = {tech_coal_processing_2}

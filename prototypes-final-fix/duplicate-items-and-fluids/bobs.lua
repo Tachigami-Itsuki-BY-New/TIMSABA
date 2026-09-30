@@ -168,3 +168,9 @@ data_logistic_container[storage_chest].next_upgrade = nil
 -- TECHNOLOGY
 data_technology["bob-lead-processing"].effects = {}
 data_technology["bob-aluminium-processing"].effects = {}
+
+for i, prerequisite in ipairs(data_technology[battery_lithium_ion].prerequisites) do
+    if prerequisite == utility_science_pack then
+        table.remove(data_technology[battery_lithium_ion].prerequisites, i) break
+    end
+end

@@ -83,3 +83,15 @@ data_recipe[fluoroketone_cooling] = nil
 
 if data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] = nil end
 if data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] = nil end
+
+for i, prerequisite in ipairs(data_technology[battery_lithium_ion].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[battery_lithium_ion].prerequisites, i) break
+    end
+end
+
+for i, prerequisite in ipairs(data_technology[battery_silver_zinc].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[battery_silver_zinc].prerequisites, i) break
+    end
+end

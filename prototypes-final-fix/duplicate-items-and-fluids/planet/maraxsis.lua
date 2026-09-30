@@ -43,4 +43,17 @@ if mods[maraxsis_mods] then
 		"maraxsis-" .. tech_legendary_quality
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+	for i, prerequisite in ipairs(data_technology["ducts"].prerequisites) do
+        if prerequisite == "sp-spidertron-automation" then
+            table.remove(data_technology["ducts"].prerequisites, i) break
+        end
+    end
+	if mods[lignumis_mods] then
+		for i, prerequisite in ipairs(data_technology[quality_assembler].prerequisites) do
+			if prerequisite == "maraxsis-legendary-quality" then
+				table.remove(data_technology[quality_assembler].prerequisites, i) break
+			end
+		end
+	end
 end

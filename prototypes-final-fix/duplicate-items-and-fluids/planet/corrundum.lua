@@ -67,4 +67,25 @@ if mods[corrundum_mods] then
 		table.insert(delete_prototypes, "petrol-dehydrogenation-and-combustion")
 	end
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+	for i, prerequisite in ipairs(data_technology["dry-ice"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["dry-ice"].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology[platinum_thruster].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology[platinum_thruster].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology["sulfur-poison-capsule"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["sulfur-poison-capsule"].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology["blue-rocket"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["blue-rocket"].prerequisites, i) break
+        end
+    end
 end

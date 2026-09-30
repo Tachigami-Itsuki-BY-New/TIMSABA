@@ -1020,7 +1020,7 @@ if mods[panglia_mods] then
     }
 
     local tech_advanced_optics_nanotech = "panglia_advanced_optics_nanotech"
-    local tech_3d_data_storage = "moshine-tech" .. _3d_data_storage
+    local tech_3d_data_storage = "moshine-tech-" .. _3d_data_storage
     if mods[bobwarfare] then
         data_technology[tech_advanced_optics_nanotech].prerequisites = {panglite_glass, tech_3d_data_storage, tech_laser_turret_5}
     end
