@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0 Reworked Angel's Ores, New Ores and Resources, New Uranium and Thorium Processing
-Date: 01.10.2026
+Date: ??.??.2026
   Features:
     - [All] Added new mineable resources:
         Nauvis:

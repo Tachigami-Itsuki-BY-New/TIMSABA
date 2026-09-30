@@ -151,10 +151,10 @@ local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive,
     end
     data_recipe[name].ingredients = ingredients
 end
-locomotive_recipe(locomotive_1, iron_gear_wheel,     iron_bearing,     electronic_circuit, nil,          iron_plate)
+locomotive_recipe(locomotive_1, steel_gear_wheel, steel_bearing, electronic_circuit, nil, steel_plate)
 if settings.startup[setting_bobmods_logistics_trains].value then
-    locomotive_recipe(locomotive_2, steel_gear_wheel,    steel_bearing,    advanced_circuit,   locomotive_1, steel_plate)
-    locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit,    locomotive_2, titanium_plate_bob)
+    locomotive_recipe(locomotive_2,    brass_gear_wheel,    brass_bearing, advanced_circuit, locomotive_1, brass_plate_bob)
+    locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing,  processing_unit, locomotive_2, titanium_plate_bob)
 end
 
 local cargo_wagons =
@@ -183,7 +183,7 @@ local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
         {type = item, name = plate,       amount = 32}
     }
 end
-cargo_wagon_recipe(cargo_wagon_1, steel_gear_wheel, steel_bearing, iron_chest, steel_plate)
+cargo_wagon_recipe(cargo_wagon_1, steel_gear_wheel, steel_bearing, steel_chest, steel_plate)
 if settings.startup[setting_bobmods_logistics_trains].value then
     cargo_wagon_recipe(cargo_wagon_2,    brass_gear_wheel,    brass_bearing, cargo_wagon_1, brass_plate_bob)
     cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)

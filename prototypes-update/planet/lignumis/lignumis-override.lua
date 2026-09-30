@@ -373,8 +373,7 @@ if mods[lignumis_mods] then
         {type = item, name = wooden_gear_wheel, amount = 16},
         {type = item, name = basic_circuit_board, amount = 8},
         {type = item, name = lumber, amount = 16},
-        {type = item, name = stone_brick, amount = 4},
-        {type = item, name = gold_plate_bob, amount = 8}
+        {type = item, name = stone_brick, amount = 4}
     }
     data_agricultural_tower[burner_agricultural_tower].subgroup = is_lignumis_building
     data_agricultural_tower[burner_agricultural_tower].order = b
@@ -486,7 +485,7 @@ if mods[lignumis_mods] then
         {type = item, name = basic_circuit_board, amount = 16},
         {type = item, name = lumber, amount = 64},
         {type = item, name = stone_brick, amount = 32},
-        {type = item, name = gold_plate_bob, amount = 16},
+        {type = item, name = gold_plate_bob, amount = 32},
         {type = item, name = burner_assembling_machine, amount = 2}
     }
     data_assembling[lumber_mill].subgroup = is_lignumis_building

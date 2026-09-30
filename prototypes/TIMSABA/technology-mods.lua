@@ -170,6 +170,9 @@ if mods[castra_mods] then
             {cryogenic_science_pack, 1}
         }
     })
+
+    data_technology[tech_vanadium_synthesis].hidden = true
+    data_technology[tech_vanadium_synthesis].hidden_in_factoriopedia = true
 end
 if mods[moshine_mods] then
     tech_neodymium_synthesis = "neodymium-ore-synthesis"

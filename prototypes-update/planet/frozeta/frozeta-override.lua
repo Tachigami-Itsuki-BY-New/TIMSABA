@@ -65,6 +65,7 @@ if mods[secretas_frozeta_mods] then
     data_recipe[gold_plate_mods].subgroup = is_frozeta_recipe
     data_recipe[gold_plate_mods].icons = TWO_I(gold_powder, gold_plate_bob)
     data_recipe[gold_plate_mods].order = c
+    data_recipe[gold_plate_mods].enabled = false
     data_recipe[gold_plate_mods].energy_required = 1
     data_recipe[gold_plate_mods].ingredients = {{type = item, name = gold_powder, amount = 1}}
     data_recipe[gold_plate_mods].results = {{type = item, name = gold_plate_bob, amount = 1}}

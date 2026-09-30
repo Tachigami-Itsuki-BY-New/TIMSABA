@@ -640,7 +640,7 @@ local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
 function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
     local mask = resource_parameters.collision_mask
     if mask and not mask.layers then
-        mask = { layers = {} }
+        mask = {layers = {}}
         for _, layer in ipairs(resource_parameters.collision_mask) do
             mask.layers[layer] = true
         end
@@ -710,11 +710,11 @@ function TIMSABA.functions.create_resource(resource_parameters, autoplace_parame
     }
 end
 
-function TIMSABA.functions.create_autoplace_control(name, order)
+function TIMSABA.functions.create_autoplace_control(name, order, localised_name)
     data:extend
     ({
         {
-            localised_name = {"", "[item=" .. name .. "] ", {"entity-name." .. name .. ""}},
+            localised_name = localised_name or {"", "[item=" .. name .. "] ", {"entity-name." .. name .. ""}},
             type = autoplace_control,
             name = name,
             order = order or name,

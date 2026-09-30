@@ -160,7 +160,8 @@ data:extend
     )
 })
 
-TIMSABA.functions.create_autoplace_control("name", "order")
+TIMSABA.functions.create_autoplace_control("name", "order", "localised-name")
+-- if not "localised-name" then localised_name = {"", "[item=" .. name .. "] ", {"entity-name." .. name .. ""}}
 
 TIMSABA.barreling.add_simple_fluid("name-fluid")
 TIMSABA.barreling.add_dangerous_fluid("name-fluid")
@@ -323,7 +324,13 @@ local table_of_chemical_elements =
     Dk = {{065, 065, 065}, {065, 065, 065}, {065, 065, 065}}, -- Dark
 }
 ```
-# You can also use global variables from my mod. You can find them in TIMSABA/prototypes/global-name/
+-------------------------------------------------------------------------------------------------------------------------------------------------
+# Versioning
+The mod version is formatted as x1.x2.x3.
+
+x1 is the major version. It changes when old saves are incompatible with the new version.
+x2 is the minor version. It changes when we make a simple update.
+x3 is the hotfix version. It changes when we make an urgent fix.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 # 🌌**Project T.I.M.S.A.B.A.**
 **Welcome to the Project T.I.M.S.A.B.A.** - an ambitious project that merges the classic depth of **Angel's & Bob's** mods with the innovative mechanics of the **Space Age** expansion.

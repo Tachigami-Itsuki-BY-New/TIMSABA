@@ -45,7 +45,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. calcium},
         name = calcium_recipe,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_3},
         subgroup = is_ore_sorting_advanced_2,
         icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, calcium),
         order = a_f,

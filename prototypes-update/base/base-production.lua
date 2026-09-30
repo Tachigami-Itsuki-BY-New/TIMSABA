@@ -170,11 +170,13 @@ if settings.startup[setting_bobmods_power_fluidgenerator].value then
     bobmods.lib.recipe.update_recycling_recipe({fluid_generator_1, fluid_generator_2, fluid_generator_3, hydrazine_generator})
 end
 
-local burner_electric_generator = "bob-burner-generator"
 if data_item[burner_electric_generator] then
     data_item[burner_electric_generator].order = z
     data_item[burner_electric_generator].stack_size = 32
     data_item[burner_electric_generator].weight = 31250
+    if mods[lignumis_mods] then
+        data_recipe[burner_electric_generator].enabled = false
+    end
     data_recipe[burner_electric_generator].order = z
     data_recipe[burner_electric_generator].ingredients =
     {

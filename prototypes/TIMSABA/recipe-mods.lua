@@ -150,6 +150,9 @@ end
 if mods[castra_mods] then
     vanadium_ore_recipe = "vanadium-ore-pure-mix-processing"
     create_ore_recipe(vanadium_ore_recipe, a_g, rheniite_purified, millerite_purified, vanadium_ore)
+
+    data_recipe[vanadium_ore_recipe].hidden = true
+    data_recipe[vanadium_ore_recipe].hidden_in_factoriopedia = true
 end
 if mods[moshine_mods] then
     neodymium_ore_recipe = "neodymium-ore-pure-mix-processing"
@@ -158,6 +161,9 @@ end
 if mods[corrundum_mods] then
     selenium_recipe = "selenium-pure-mix-processing"
     create_ore_recipe(selenium_recipe, a_i, molybdenite_purified, chalcopyrite_purified, selenium)
+
+    data_recipe[selenium_recipe].hidden = true
+    data_recipe[selenium_recipe].hidden_in_factoriopedia = true
 end
 if mods[paracelsin_mods] then
     arsenic_recipe = "arsenic-pure-mix-processing"
