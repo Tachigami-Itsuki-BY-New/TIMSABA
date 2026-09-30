@@ -241,7 +241,6 @@ if mods[castra_mods] then
     end
 
     -- BUILDING
-    local forge = "forge"
     data_item[forge].subgroup = is_castra_building
     data_item[forge].order = a
     data_item[forge].stack_size = 32
@@ -261,7 +260,8 @@ if mods[castra_mods] then
     data_assembling[forge].order = a
     data_assembling[forge].crafting_speed = 4
     data_assembling[forge].module_slots = 8
-    data_assembling[forge].energy_usage = 4680 .. kW
+    data_assembling[forge].energy_usage = (3840 - 120) .. kW
+    data_assembling[forge].energy_source.emissions_per_minute.pollution = 8
     data_assembling[forge].energy_source.drain = 120 .. kW
     data_assembling[forge].effect_receiver.base_effect.productivity = 1
     data_assembling[forge].effect_receiver.base_effect.quality = nil
@@ -293,7 +293,6 @@ if mods[castra_mods] then
     data_radar[jammer_radar].order = b
     data_radar[jammer_radar].energy_usage = 1200 .. kW
 
-    local jammed_data_collector = "jammed-data-collector"
     data_item[jammed_data_collector].subgroup = is_castra_building
     data_item[jammed_data_collector].order = c
     data_item[jammed_data_collector].stack_size = 32
@@ -313,6 +312,7 @@ if mods[castra_mods] then
     data_assembling[jammed_data_collector].energy_usage = 900 .. kW
 
     data_assembling["player-" .. jammed_data_collector].energy_usage = 900 .. kW
+    data_assembling["player-" .. jammed_data_collector].surface_conditions = {{property = pressure, max = 2254, min = 2254}}
 
     -- WAR
     local firearm_magazine_nickel = "firearm-magazine-nickel"
@@ -391,6 +391,7 @@ if mods[castra_mods] then
     data_recipe[distractor_capsule_castra_data].subgroup = is_castra_war
     data_recipe[distractor_capsule_castra_data].icons = BUILDING_R_IS(distractor_capsule, castra_data)
     data_recipe[distractor_capsule_castra_data].order = g
+    data_recipe[distractor_capsule_castra_data].energy_required = 32
     data_recipe[distractor_capsule_castra_data].ingredients =
     {
         {type = item, name = distractor_robot, amount = 4},
@@ -401,6 +402,7 @@ if mods[castra_mods] then
     data_recipe[destroyer_capsule_castra_data].subgroup = is_castra_war
     data_recipe[destroyer_capsule_castra_data].icons = BUILDING_R_IS(destroyer_capsule, castra_data)
     data_recipe[destroyer_capsule_castra_data].order = h
+    data_recipe[destroyer_capsule_castra_data].energy_required = 32
     data_recipe[destroyer_capsule_castra_data].ingredients =
     {
         {type = item, name = destroyer_robot, amount = 4},

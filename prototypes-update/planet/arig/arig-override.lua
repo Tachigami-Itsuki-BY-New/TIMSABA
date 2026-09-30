@@ -710,6 +710,7 @@ if mods[arig_mods] then
     data_recipe[nauvis_water_harvesting].enabled = true
     data_recipe[nauvis_water_harvesting].energy_required = 16
     data_recipe[nauvis_water_harvesting].results[1].amount = 240
+    data_recipe[nauvis_water_harvesting].hide_from_player_crafting = true
 
     local vulcanus_water_harvesting = "planetaris-vulcanus-water-harvesting"
     data_recipe[vulcanus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.vulcanus"}}
@@ -719,6 +720,7 @@ if mods[arig_mods] then
     data_recipe[vulcanus_water_harvesting].enabled = true
     data_recipe[vulcanus_water_harvesting].energy_required = 16
     data_recipe[vulcanus_water_harvesting].results[1].amount = 15
+    data_recipe[vulcanus_water_harvesting].hide_from_player_crafting = true
 
     local gleba_water_harvesting = "planetaris-gleba-water-harvesting"
     data_recipe[gleba_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.gleba"}}
@@ -728,6 +730,7 @@ if mods[arig_mods] then
     data_recipe[gleba_water_harvesting].enabled = true
     data_recipe[gleba_water_harvesting].energy_required = 16
     data_recipe[gleba_water_harvesting].results[1].amount = 480
+    data_recipe[gleba_water_harvesting].hide_from_player_crafting = true
 
     local fulgora_water_harvesting = "planetaris-fulgora-water-harvesting"
     data_recipe[fulgora_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.fulgora"}}
@@ -737,6 +740,7 @@ if mods[arig_mods] then
     data_recipe[fulgora_water_harvesting].enabled = true
     data_recipe[fulgora_water_harvesting].energy_required = 16
     data_recipe[fulgora_water_harvesting].results[1].amount = 120
+    data_recipe[fulgora_water_harvesting].hide_from_player_crafting = true
 
     local aquilo_water_harvesting = "planetaris-aquilo-water-harvesting"
     data_recipe[aquilo_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.aquilo"}}
@@ -746,6 +750,7 @@ if mods[arig_mods] then
     data_recipe[aquilo_water_harvesting].enabled = true
     data_recipe[aquilo_water_harvesting].energy_required = 16
     data_recipe[aquilo_water_harvesting].results[1].amount = 120
+    data_recipe[aquilo_water_harvesting].hide_from_player_crafting = true
 
     local arig_water_harvesting = "planetaris-water-harvesting"
     data_recipe[arig_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.arig"}}
@@ -755,6 +760,7 @@ if mods[arig_mods] then
     data_recipe[arig_water_harvesting].enabled = true
     data_recipe[arig_water_harvesting].energy_required = 16
     data_recipe[arig_water_harvesting].results[1].amount = 30
+    data_recipe[arig_water_harvesting].hide_from_player_crafting = true
 
     if mods[hyarion_mods] then
         local hyarion_water_harvesting = "planetaris-hyarion-water-harvesting"
@@ -765,6 +771,7 @@ if mods[arig_mods] then
         data_recipe[hyarion_water_harvesting].enabled = true
         data_recipe[hyarion_water_harvesting].energy_required = 16
         data_recipe[hyarion_water_harvesting].results[1].amount = 15
+        data_recipe[hyarion_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[tellus_mods] then
@@ -776,6 +783,7 @@ if mods[arig_mods] then
         data_recipe[tellus_water_harvesting].enabled = true
         data_recipe[tellus_water_harvesting].energy_required = 16
         data_recipe[tellus_water_harvesting].results[1].amount = 480
+        data_recipe[tellus_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[muria_mods] then
@@ -787,6 +795,7 @@ if mods[arig_mods] then
         data_recipe[muria_water_harvesting].enabled = true
         data_recipe[muria_water_harvesting].energy_required = 16
         data_recipe[muria_water_harvesting].results[1].amount = 60
+        data_recipe[muria_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[pelagos_mods] then
@@ -798,6 +807,7 @@ if mods[arig_mods] then
         data_recipe[pelagos_water_harvesting].enabled = true
         data_recipe[pelagos_water_harvesting].energy_required = 16
         data_recipe[pelagos_water_harvesting].results[1].amount = 240
+        data_recipe[pelagos_water_harvesting].hide_from_player_crafting = true
     end
 
     -- MOONS
@@ -810,6 +820,7 @@ if mods[arig_mods] then
         data_recipe[lignumis_water_harvesting].enabled = true
         data_recipe[lignumis_water_harvesting].energy_required = 16
         data_recipe[lignumis_water_harvesting].results[1].amount = 240
+        data_recipe[lignumis_water_harvesting].hide_from_player_crafting = true
     end
 
     -- TECHNOLOGY

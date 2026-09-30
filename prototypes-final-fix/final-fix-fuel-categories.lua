@@ -69,6 +69,19 @@ if mods[moshine_mods] then
     data_locomotive[space_locomotive].energy_source.fuel_categories = {"electrical"}
 end
 
+if mods[muria_mods] then
+    data_assembling[biovat].energy_source =
+    {
+        type = "burner",
+        fuel_categories = {"nutrients"},
+        effectivity = 1,
+        burner_usage = "nutrients",
+        fuel_inventory_size = 1,
+        emissions_per_minute = {pollution = -1},
+        light_flicker = require("__space-age__.prototypes.entity.biochamber-pictures").light_flicker
+    }
+end
+
 if mods[pelagos_mods] then
     data_assembling[captive_copper_biter_spawner].energy_source =
     {
@@ -93,6 +106,17 @@ if mods[pelagos_mods] then
 end
 
 if mods[apia_carnova_mods] then
+    data_assembling[biosynthesizer].energy_source =
+    {
+        type = "burner",
+        fuel_categories = {"nutrients"},
+        effectivity = 1,
+        burner_usage = "nutrients",
+        fuel_inventory_size = 1,
+        emissions_per_minute = {pollution = -1},
+        light_flicker = require("__space-age__.prototypes.entity.biochamber-pictures").light_flicker
+    }
+
     data_assembling[artificial_hive].energy_source =
     {
         type = "burner",

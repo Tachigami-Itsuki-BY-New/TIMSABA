@@ -53,6 +53,8 @@ if mods[arig_mods] then
                 surface_conditions = surface_conditions
             }
         })
+
+        data_recipe[planet_name .. _water_harvesting].hide_from_player_crafting = true
     end
     -- PLANETS
     if mods[moshine_mods] then

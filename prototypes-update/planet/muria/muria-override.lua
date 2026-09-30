@@ -360,7 +360,6 @@ if mods[muria_mods] then
     data_agricultural_tower[fungicultural_tower].order = a
     data_agricultural_tower[fungicultural_tower].energy_usage = 480 .. kW
 
-    local biovat = "biovat"
     data_item[biovat].subgroup = is_muria_building
     data_item[biovat].order = b
     data_item[biovat].stack_size = 32
@@ -377,9 +376,8 @@ if mods[muria_mods] then
     }
     data_assembling[biovat].subgroup = is_muria_building
     data_assembling[biovat].order = b
-    data_assembling[biovat].energy_usage = 900 .. kW
+    data_assembling[biovat].energy_usage = 1000 .. kW
 
-    local acidworking_plant = "acidworking-plant"
     data_item[acidworking_plant].subgroup = is_muria_building
     data_item[acidworking_plant].order = c
     data_item[acidworking_plant].stack_size = 32
@@ -399,7 +397,6 @@ if mods[muria_mods] then
     data_assembling[acidworking_plant].order = c
     data_assembling[acidworking_plant].energy_usage = 900 .. kW
 
-    local smelting_plant = "smelting-plant"
     data_item[smelting_plant].subgroup = is_muria_building
     data_item[smelting_plant].order = d
     data_item[smelting_plant].stack_size = 32

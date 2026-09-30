@@ -460,7 +460,6 @@ if mods[maraxsis_mods] then
     data_recipe[geothermal_sulfur].ingredients[2].amount = 120
 
     -- BUILDING
-    local hydro_plant = "maraxsis-hydro-plant"
     data_item[hydro_plant].subgroup = is_maraxsis_building
     data_item[hydro_plant].order = a
     data_item[hydro_plant].stack_size = 32
@@ -477,7 +476,8 @@ if mods[maraxsis_mods] then
     }
     data_assembling[hydro_plant].subgroup = is_maraxsis_building
     data_assembling[hydro_plant].order = a
-    data_assembling[hydro_plant].energy_usage = (2400 - 60) .. kW
+    data_assembling[hydro_plant].energy_usage = (1920 - 60) .. kW
+    data_assembling[hydro_plant].energy_source.emissions_per_minute.pollution = 8
     data_assembling[hydro_plant].energy_source.drain = 60 .. kW
 
     local pressure_dome = "maraxsis-pressure-dome"

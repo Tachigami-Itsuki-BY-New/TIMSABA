@@ -499,13 +499,8 @@ end
 local rocket_silos = {rocket_silo, big_rocket_silo}
 for _, name in ipairs(rocket_silos) do
     if data_rocket_silo[name] then
-        if mods[quality_mods] then
-            data_rocket_silo[name].allowed_effects = {speed, consumption, productivity, pollution, quality}
-            data_rocket_silo[name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
-        else
-            data_rocket_silo[name].allowed_effects = {speed, consumption, productivity, pollution}
-            data_rocket_silo[name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-        end
+        data_rocket_silo[name].allowed_effects = {speed, consumption, productivity, pollution}
+        data_rocket_silo[name].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 end
 
@@ -732,5 +727,121 @@ if mods[corrundum_mods] then
     else
         data_lab[pressure_lab].allowed_effects = {speed, consumption, productivity, pollution}
         data_lab[pressure_lab].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- SECRETAS / FROZETA
+if mods[secretas_frozeta_mods] then
+    if mods[quality_mods] then
+        data_furnace[steam_recycler].allowed_effects = {speed, consumption, pollution, quality}
+        data_furnace[steam_recycler].allowed_module_categories = {speed, efficiency, pollution_clean, quality}
+    else
+        data_furnace[steam_recycler].allowed_effects = {speed, consumption, pollution}
+        data_furnace[steam_recycler].allowed_module_categories = {speed, efficiency, pollution_clean}
+    end
+end
+
+-- CASTRA
+if mods[castra_mods] then
+    if mods[quality_mods] then
+        data_assembling[forge].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[forge].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling["player-" .. jammed_data_collector].allowed_effects = {speed, consumption, productivity, quality}
+        data_assembling["player-" .. jammed_data_collector].allowed_module_categories = {speed, efficiency, productivity, quality}
+    else
+        data_assembling[forge].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[forge].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+        data_assembling["player-" .. jammed_data_collector].allowed_effects = {speed, consumption, productivity}
+        data_assembling["player-" .. jammed_data_collector].allowed_module_categories = {speed, efficiency, productivity}
+    end
+end
+
+-- MARAXSIS
+if mods[maraxsis_mods] then
+    if mods[quality_mods] then
+        data_assembling[hydro_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[hydro_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[hydro_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[hydro_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- VESTA
+if mods[vesta_mods] then
+    if mods[quality_mods] then
+        data_assembling[electrolyzer_vesta].allowed_effects = {speed, productivity, pollution, quality}
+        data_assembling[electrolyzer_vesta].allowed_module_categories = {speed, productivity, pollution_clean, quality}
+
+        data_assembling[supermagnet].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[supermagnet].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling[combustion_furnace].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[combustion_furnace].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[electrolyzer_vesta].allowed_effects = {speed, productivity, pollution}
+        data_assembling[electrolyzer_vesta].allowed_module_categories = {speed, productivity, pollution_clean}
+
+        data_assembling[supermagnet].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[supermagnet].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+        data_assembling[combustion_furnace].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[combustion_furnace].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- MURIA
+if mods[vesta_mods] then
+    if mods[quality_mods] then
+        data_assembling[biovat].allowed_effects = {speed, productivity, pollution, quality}
+        data_assembling[biovat].allowed_module_categories = {speed, pollution_create, quality, agricultural}
+
+        data_assembling[acidworking_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[acidworking_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling[smelting_plant].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[smelting_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+    else
+        data_assembling[biovat].allowed_effects = {speed, productivity, pollution}
+        data_assembling[biovat].allowed_module_categories = {speed, pollution_create, agricultural}
+
+        data_assembling[acidworking_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[acidworking_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_create}
+
+        data_assembling[smelting_plant].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[smelting_plant].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
+end
+
+-- APIA and CARNOVA
+if mods[apia_carnova_mods] then
+    if mods[quality_mods] then
+        data_assembling[biosynthesizer].allowed_effects = {speed, productivity, pollution, quality}
+        data_assembling[biosynthesizer].allowed_module_categories = {speed, pollution_create, quality, agricultural}
+    else
+        data_assembling[biosynthesizer].allowed_effects = {speed, productivity, pollution}
+        data_assembling[biosynthesizer].allowed_module_categories = {speed, pollution_create, agricultural}
+    end
+end
+
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    if mods[quality_mods] then
+        data_assembling[steam_assembling_machine].allowed_effects = {speed, consumption, productivity, quality}
+        data_assembling[steam_assembling_machine].allowed_module_categories = {speed, efficiency, productivity, quality}
+
+        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling[quality_assembler].allowed_effects = {speed, quality}
+        data_assembling[quality_assembler].allowed_module_categories = {speed, quality}
+    else
+        data_assembling[steam_assembling_machine].allowed_effects = {speed, consumption, productivity}
+        data_assembling[steam_assembling_machine].allowed_module_categories = {speed, efficiency, productivity}
+
+        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 end

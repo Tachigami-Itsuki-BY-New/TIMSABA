@@ -668,7 +668,9 @@ if mods[lignumis_mods] then
 
     data_technology[tech_tree_seeding].unit.ingredients = {{wood_science_pack, 1}}
 
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_rubyte})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = lead_plate_bob})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_bobmonium})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = tin_plate_bob})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = steam_science_pack .. "-" .. steam})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = wood_liquefaction .. "-" .. steam})

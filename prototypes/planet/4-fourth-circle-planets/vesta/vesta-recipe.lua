@@ -117,6 +117,7 @@ if mods[vesta_mods] then
                 icons = TWO_I(name_ore, name_plate),
                 order = order,
                 allow_productivity = true,
+                allow_quality = true,
                 energy_required = 1,
                 ingredients =
                 {
@@ -162,6 +163,7 @@ if mods[vesta_mods] then
                 icons = THREE_I(name_ore_1, name_ore_2, name_plate),
                 order = order,
                 allow_productivity = true,
+                allow_quality = true,
                 energy_required = 1,
                 ingredients =
                 {
@@ -193,6 +195,7 @@ if mods[vesta_mods] then
                 icons = AR_FOUR_I(name_ore_1, name_ore_2, name_ore_3, name_plate),
                 order = order,
                 allow_productivity = true,
+                allow_quality = true,
                 energy_required = 1,
                 ingredients =
                 {

@@ -459,6 +459,7 @@ if mods[apia_carnova_mods] then
     data_assembling[biosynthesizer].module_slots = 8
     data_assembling[biosynthesizer].energy_source.emissions_per_minute.pollution = -4
     data_assembling[biosynthesizer].energy_usage = 900 .. kW
+    data_assembling[biosynthesizer].effect_receiver.base_effect.productivity = 1
 
     local biosynthesizer_apia = "biosynthesizer-apia"
     data_recipe[biosynthesizer_apia].subgroup = is_apia_carnova_building
