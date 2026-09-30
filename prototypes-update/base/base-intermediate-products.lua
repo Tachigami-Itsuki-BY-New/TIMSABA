@@ -396,11 +396,14 @@ data_recipe[CPU].results[1].amount = 4
 data_item[wooden_board].order = a
 data_recipe[wooden_board].icons = TWO_I(wood, wooden_board)
 data_recipe[wooden_board].order = a
+data_recipe[wooden_board].allow_productivity = true
 data_recipe[wooden_board].energy_required = 1
 
 data_item[phenolic_board].order = b
+data_recipe[phenolic_board].categories = {crafting_fluid, electronics_fluid}
 data_recipe[phenolic_board].icons = THREE_I(paper, liquid_resin_angels, phenolic_board)
 data_recipe[phenolic_board].order = b
+data_recipe[phenolic_board].allow_productivity = true
 data_recipe[phenolic_board].ingredients =
 {
     {type = item, name = paper, amount = 4},
@@ -408,10 +411,11 @@ data_recipe[phenolic_board].ingredients =
 }
 
 data_recipe[glass_fiber_board].localised_name = {"item-name.angels-glass-fiber-board"}
-data_recipe[glass_fiber_board].categories = {advanced_crafting, electronics_fluid}
+data_recipe[glass_fiber_board].categories = {crafting_fluid, electronics_fluid}
 data_recipe[glass_fiber_board].subgroup = is_boards
 data_recipe[glass_fiber_board].icons = THREE_I(glass_coil_fiber, liquid_resin_angels, glass_fiber_board)
 data_recipe[glass_fiber_board].order = c
+data_recipe[glass_fiber_board].allow_productivity = true
 data_recipe[glass_fiber_board].energy_required = 4
 data_recipe[glass_fiber_board].ingredients =
 {
@@ -423,6 +427,7 @@ data_item[basic_circuit_board].order = a
 data_item[basic_circuit_board].subgroup = is_circuit_boards
 data_recipe[basic_circuit_board].order = a
 data_recipe[basic_circuit_board].subgroup = is_circuit_boards
+data_recipe[basic_circuit_board].allow_productivity = true
 data_recipe[basic_circuit_board].ingredients =
 {
     {type = item, name = wooden_board, amount = 1},
@@ -470,6 +475,7 @@ data_recipe[advanced_circuit_board].ingredients =
 
 data_item[electronic_circuit].order = a
 data_recipe[electronic_circuit].order = a
+data_recipe[electronic_circuit].allow_productivity = true
 data_recipe[electronic_circuit].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 1},
@@ -479,10 +485,12 @@ data_recipe[electronic_circuit].ingredients =
 
 data_item[advanced_circuit].order = b
 data_recipe[advanced_circuit].order = b
+data_recipe[advanced_circuit].allow_productivity = true
 data_recipe[advanced_circuit].energy_required = 4
 
 data_item[processing_unit].order = c
 data_recipe[processing_unit].order = c
+data_recipe[processing_unit].allow_productivity = true
 data_recipe[processing_unit].energy_required = 4
 data_recipe[processing_unit].ingredients =
 {
@@ -495,6 +503,7 @@ data_recipe[processing_unit].ingredients =
 
 data_item[advanced_processing_unit].order = d
 data_recipe[advanced_processing_unit].order = d
+data_recipe[advanced_processing_unit].allow_productivity = true
 data_recipe[advanced_processing_unit].energy_required = 8
 data_recipe[advanced_processing_unit].ingredients =
 {

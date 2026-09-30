@@ -1,5 +1,5 @@
 if mods[corrundum_mods] then
-    local graphics_chalcopyrite = "__TIMSABA__/graphics/icons/corrundum/chalcopyrite/"
+    local graphics_chalcopyrite = "__TIMSABA__/graphics/icons/corrundum/chalcopyrite-ore/"
 
     -- Chalcopyrite ore / Fe + Cu + Mn + Ag + Au + Se
     chalcopyrite_crushed = "chalcopyrite-crushed"

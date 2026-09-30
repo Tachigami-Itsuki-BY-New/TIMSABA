@@ -491,7 +491,7 @@ if mods[panglia_mods] then
             {type = item, name = ore_franckeite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = calcite, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = chalcopyrite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
-            {type = item, name = platinum_ore_angels, amount_min = 0, amount_max = 64, independent_probability = 0.5},
+            {type = item, name = sperrylite_ore, amount_min = 0, amount_max = 64, independent_probability = 0.5},
             {type = item, name = sulfur, amount_min = 0, amount_max = 64, independent_probability = 0.5}
         }
     end

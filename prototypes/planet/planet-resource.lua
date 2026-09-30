@@ -11,6 +11,7 @@ require("prototypes.planet.2-second-circle-planets.moshine.moshine-aeschynite")
 -- hyarion
 -- tellus
 require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-chalcopyrite")
+require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-sperrylite")
 require("prototypes.planet.2-second-circle-planets.castra.castra-millerite")
 -- shchierbin
 -- muria

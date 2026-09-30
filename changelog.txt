@@ -14,7 +14,11 @@ Date: ??.??.2026
     - [All] Added new resources:
         Fulgora: Rheniite Ore.
         Moshine: Aeschynite Ore.
-        Frozeta: Gallite Ore.
+        Corrundum: Sperrylite Ore.
+        Shcherbin: Vanadinite Ore.
+        Frozeta:
+          1. Gallite Ore.
+          2. Sylvanite Ore.
     - [All] Added new items and fluids:
         Uranium Branch:
           1. Processed uranium.

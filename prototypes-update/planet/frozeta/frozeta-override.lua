@@ -311,6 +311,7 @@ if mods[secretas_frozeta_mods] then
     end
     if mods[corrundum_mods] then
         table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, golden_science_pack)
+        table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, golden_science_pack)
     end
     if mods[moshine_mods] then
         table.insert(data_technology[tech_monazite_processing_3].prerequisites, golden_science_pack)

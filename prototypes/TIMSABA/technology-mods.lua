@@ -50,6 +50,28 @@ create_synthesis_tech
         {space_science_pack, 1}
     }
 })
+if mods[corrundum_mods] then
+    tech_selenium_synthesis = "selenium-synthesis"
+    create_synthesis_tech
+    ({
+        name = tech_selenium_synthesis,
+        prerequisites = {tech_molybdenite_processing_4, tech_chalcopyrite_processing_4},
+        recipe = selenium_recipe,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+    })
+end
 tech_niobium_synthesis = "niobium-ore-synthesis"
 create_synthesis_tech
 ({
@@ -84,6 +106,32 @@ create_synthesis_tech
         {electromagnetic_science_pack, 1}
     }
 })
+if mods[castra_mods] then
+    tech_vanadium_synthesis = "vanadium-ore-synthesis"
+    create_synthesis_tech
+    ({
+        name = tech_vanadium_synthesis,
+        prerequisites = {tech_rheniite_processing_4, tech_millerite_processing_4},
+        recipe = vanadium_ore_recipe,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {military_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+    })
+
+    data_technology[tech_vanadium_synthesis].hidden = true
+    data_technology[tech_vanadium_synthesis].hidden_in_factoriopedia = true
+end
 if mods[paracelsin_mods] then
     tech_antimony_synthesis = "antimony-ore-synthesis"
     create_synthesis_tech
@@ -105,6 +153,30 @@ if mods[paracelsin_mods] then
             {cryogenic_science_pack, 1}
         }
     })
+end
+if mods[corrundum_mods] then
+    tech_arsenic_synthesis = "arsenic-synthesis"
+    create_synthesis_tech
+    ({
+        name = tech_arsenic_synthesis,
+        prerequisites = {tech_antimonite_processing_1, tech_sperrylite_processing_1},
+        recipe = arsenic_recipe,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+    })
+end
+if mods[paracelsin_mods] then
     tech_germanium_synthesis = "germanium-ore-synthesis"
     create_synthesis_tech
     ({
@@ -148,32 +220,6 @@ if mods[secretas_frozeta_mods] then
         }
     })
 end
-if mods[castra_mods] then
-    tech_vanadium_synthesis = "vanadium-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_vanadium_synthesis,
-        prerequisites = {tech_rheniite_processing_4, tech_millerite_processing_4},
-        recipe = vanadium_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {military_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-
-    data_technology[tech_vanadium_synthesis].hidden = true
-    data_technology[tech_vanadium_synthesis].hidden_in_factoriopedia = true
-end
 if mods[moshine_mods] then
     tech_neodymium_synthesis = "neodymium-ore-synthesis"
     create_synthesis_tech
@@ -194,49 +240,6 @@ if mods[moshine_mods] then
         }
     })
 end
-if mods[corrundum_mods] then
-    tech_selenium_synthesis = "selenium-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_selenium_synthesis,
-        prerequisites = {tech_molybdenite_processing_4, tech_chalcopyrite_processing_4},
-        recipe = selenium_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-end
-if mods[paracelsin_mods] then
-    tech_arsenic_synthesis = "arsenic-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_arsenic_synthesis,
-        prerequisites = {tech_germanite_processing_4, tech_tetrahedrite_processing_4},
-        recipe = arsenic_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-end
--- cerium ore
--- promethium ore
+-- tech_cerium_synthesis
+-- tech_promethium_synthesis
+-- tech_iridium_synthesis

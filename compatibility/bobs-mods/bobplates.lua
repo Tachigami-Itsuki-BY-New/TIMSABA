@@ -72,10 +72,10 @@ TIMSABA.functions.create_recipes
     },
     -- CASTING
     {
-        name = tungsten_carbide_plate_2,
+        name = tungsten_carbide_plate_bob,
         categories = {angels_sintering_4},
         subgroup = is_tungsten_casting,
-        order = b_a,
+        order = b,
         allow_productivity = true,
         energy_required = 8,
         ingredients =

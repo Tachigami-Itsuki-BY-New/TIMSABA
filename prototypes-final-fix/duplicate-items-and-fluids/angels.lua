@@ -250,8 +250,12 @@ data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
 
-for i, prerequisite in ipairs(data_technology[tech_sulfur_processing].prerequisites) do
+for i, prerequisite in ipairs(data_technology[tech_sulfur_processing_1].prerequisites) do
     if prerequisite == "angels-nickel-smelting-1" then
-        table.remove(data_technology[tech_sulfur_processing].prerequisites, i) break
+        table.remove(data_technology[tech_sulfur_processing_1].prerequisites, i) break
     end
+end
+
+if not mods[corrundum_mods] then
+    data_recipe[platinum_plate] = nil
 end

@@ -666,7 +666,7 @@ data_recipe[vegetable_oil_filtering_2].order = b_b
 data_recipe[vegetable_oil_filtering_2].energy_required = 2
 data_recipe[vegetable_oil_filtering_2].ingredients[1].amount = 60
 data_recipe[vegetable_oil_filtering_2].ingredients[2].amount = 60
-data_recipe[vegetable_oil_filtering_1].results =
+data_recipe[vegetable_oil_filtering_2].results =
 {
     {type = fluid, name = vegetable_oil, amount = 60},
     {type = fluid, name = nutrient_pulp, amount = 30},

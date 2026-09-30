@@ -1305,19 +1305,19 @@ TIMSABA.functions.create_recipes
         name = platinum_fluoride_IV,
         categories = {angels_blast_smelting_4},
         subgroup = is_platinum_chemistry,
-        icons = THREE_D_I(platinum_chloride_II, nil, hydrogen_fluoride_angels, platinum_fluoride_IV, platinum_ingot, hydrogen_chloride_angels),
+        icons = THREE_D_I(platinum_chloride_II, nil, hydrofluoric_acid_angels, platinum_fluoride_IV, platinum_ingot, hydrochloric_acid_angels),
         order = b,
         energy_required = 8, -- 2PtCl₂ + 4HF --> PtF₄ + Pt + 4HCl
         ingredients =
         {
             {type = item, name = platinum_chloride_II, amount = 32},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 960}
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 960}
         },
         results =
         {
             {type = item, name = platinum_fluoride_IV, amount = 16},
             {type = item, name = platinum_ingot, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 960
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480} -- 960
         },
         main_product = platinum_fluoride_IV
     },

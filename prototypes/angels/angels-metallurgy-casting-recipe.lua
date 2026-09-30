@@ -16,6 +16,26 @@ TIMSABA.functions.create_recipes
     }
 })
 
+-- PLATINUM
+platinum_plate_2 = "platinum-plate-2"
+TIMSABA.functions.create_recipes
+({
+    {
+        localised_name = {"item-name." .. platinum_plate},
+        name = platinum_plate_2,
+        categories = {angels_casting_4},
+        subgroup = is_platinum_casting,
+        icons = TWO_I(platinum_molten_angels, platinum_plate),
+        order = c_a,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients = {{type = fluid, name = platinum_molten_angels, amount = 60}},
+        results = {{type = item, name = platinum_plate, amount = 4}},
+        main_product = platinum_plate
+    }
+})
+
 -- STONE
 hazard_concrete_processing = "hazard-concrete-processing"
 reinforced_hazard_concrete_processing = "reinforced-hazard-concrete-processing"

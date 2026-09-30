@@ -1,9 +1,10 @@
 if mods[corrundum_mods] then
     planet_discovery_corrundum = "planet-discovery-corrundum"
 
+    -- CHALCOPYRITE
     local graphics_chalcopyrite_tech = "__TIMSABA__/graphics/icons/corrundum/technology/chalcopyrite-processing.png"
     tech_chalcopyrite_processing_1 = "chalcopyrite-processing-1"
-    local tech_chalcopyrite_processing_2 = "chalcopyrite-processing-2"
+    tech_chalcopyrite_processing_2 = "chalcopyrite-processing-2"
     tech_chalcopyrite_processing_3 = "chalcopyrite-processing-3"
     tech_chalcopyrite_processing_4 = "chalcopyrite-processing-4"
     data:extend
@@ -111,6 +112,140 @@ if mods[corrundum_mods] then
             {
                 {type = unlock_recipe, recipe = chalcopyrite_purified},
                 {type = unlock_recipe, recipe = chalcopyrite_purified_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+
+    -- SPERRYLITE
+    local graphics_sperrylite_tech = "__TIMSABA__/graphics/icons/corrundum/technology/sperrylite-processing.png"
+    tech_sperrylite_processing_1 = "sperrylite-processing-1"
+    tech_sperrylite_processing_2 = "sperrylite-processing-2"
+    tech_sperrylite_processing_3 = "sperrylite-processing-3"
+    tech_sperrylite_processing_4 = "sperrylite-processing-4"
+    data:extend
+    ({
+        {
+            localised_name = {"technology-name." .. tech_sperrylite_processing_1},
+            localised_description = {"technology-description.angels-ore-crushing"},
+            type = technology,
+            name = tech_sperrylite_processing_1,
+            icon = graphics_sperrylite_tech,
+            icon_size = 256,
+            prerequisites = {planet_discovery_corrundum},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sperrylite_ore .. _sorting},
+                {type = unlock_recipe, recipe = sperrylite_crushed},
+                {type = unlock_recipe, recipe = sperrylite_crushed_sorting},
+                {type = unlock_recipe, recipe = platinum_plate}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sperrylite_processing_2},
+            localised_description = {"technology-description.angels-ore-floatation"},
+            type = technology,
+            name = tech_sperrylite_processing_2,
+            icon = graphics_sperrylite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sperrylite_processing_1, electrochemical_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sperrylite_chunks},
+                {type = unlock_recipe, recipe = sperrylite_chunks_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sperrylite_processing_3},
+            localised_description = {"technology-description.angels-ore-leaching"},
+            type = technology,
+            name = tech_sperrylite_processing_3,
+            icon = graphics_sperrylite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sperrylite_processing_2, cryogenic_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sperrylite_crystals},
+                {type = unlock_recipe, recipe = sperrylite_crystals_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sperrylite_processing_4},
+            localised_description = {"technology-description.angels-ore-refining"},
+            type = technology,
+            name = tech_sperrylite_processing_4,
+            icon = graphics_sperrylite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sperrylite_processing_3, promethium_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sperrylite_purified},
+                {type = unlock_recipe, recipe = sperrylite_purified_sorting}
             },
             unit =
             {

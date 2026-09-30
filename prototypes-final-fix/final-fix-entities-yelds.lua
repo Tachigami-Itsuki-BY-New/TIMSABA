@@ -742,6 +742,7 @@ if mods[corrundum_mods] then
         {type = item, name = ore_senaite, amount_min = 16, amount_max = 32},
         {type = item, name = ore_franckeite, amount_min = 16, amount_max = 32},
         {type = item, name = chalcopyrite_ore, amount_min = 4, amount_max = 16},
+        {type = item, name = sperrylite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = sulfur, amount_min = 8, amount_max = 32}
     }
 end

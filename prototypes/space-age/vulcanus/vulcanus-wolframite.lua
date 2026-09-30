@@ -110,7 +110,7 @@ TIMSABA.functions.create_recipes
     },
     -- SORTING
     {
-        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. wolframite_ore}},
+        localised_name = {"recipe-name.sorting-recipe", {"item-name.wolframite-ore"}},
         name = wolframite_ore .. _sorting,
         categories = {ore_sorting_6},
         subgroup = is_wolframite,
