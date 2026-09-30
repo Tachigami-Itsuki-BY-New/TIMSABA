@@ -101,6 +101,7 @@ data_recipe[gold_cable].hidden = false
 data_recipe[gold_cable].hidden_in_factoriopedia = false
 data_fluid[cobalt_molten_angels].hidden = false
 data_fluid[cobalt_molten_angels].hidden_in_factoriopedia = false
+data_recipe[platinum_plate].categories = {smelting}
 data_recipe[glass_bob].hidden = false
 data_recipe[glass_bob].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].hidden = false
