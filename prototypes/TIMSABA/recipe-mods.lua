@@ -56,10 +56,13 @@ local function sortiong_ore_recipe_true(ingredient, order)
         }
     })
 end
-sortiong_ore_recipe_true(ore_saphirite, a)
-sortiong_ore_recipe_true(ore_stiratite, c)
-sortiong_ore_recipe_true(ore_rubyte, e)
-sortiong_ore_recipe_true(ore_bobmonium, f)
+if mods[lignumis_mods] then
+    sortiong_ore_recipe_true(ore_rubyte, e)
+    sortiong_ore_recipe_true(ore_bobmonium, f)
+elseif not mods[lignumis_mods] then
+    sortiong_ore_recipe_true(ore_saphirite, a)
+    sortiong_ore_recipe_true(ore_stiratite, c)
+end
 
 local function sortiong_ore_recipe_false(ingredient, order)
     TIMSABA.functions.create_recipes
@@ -78,6 +81,13 @@ local function sortiong_ore_recipe_false(ingredient, order)
             main_product = slag_angels
         }
     })
+end
+if mods[lignumis_mods] then
+    sortiong_ore_recipe_true(ore_saphirite, a)
+    sortiong_ore_recipe_true(ore_stiratite, c)
+elseif not mods[lignumis_mods] then
+    sortiong_ore_recipe_true(ore_rubyte, e)
+    sortiong_ore_recipe_true(ore_bobmonium, f)
 end
 sortiong_ore_recipe_false(ore_jivolite, b)
 sortiong_ore_recipe_false(ore_crotinnium, d)

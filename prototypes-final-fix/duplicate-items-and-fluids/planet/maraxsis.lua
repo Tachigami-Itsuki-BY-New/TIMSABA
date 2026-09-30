@@ -40,7 +40,8 @@ if mods[maraxsis_mods] then
 		"maraxsis-vitamin-infused-promethium-science-4",
 		"maraxsis-promethium-quality-4",
 		"maraxsis-" .. limestone_mods .. "-crushing",
-		"maraxsis-" .. tech_legendary_quality
+		"maraxsis-" .. tech_legendary_quality,
+		"maraxsis-shrinkflation"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

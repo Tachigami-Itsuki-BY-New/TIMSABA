@@ -385,7 +385,7 @@ table.insert(data_technology[advanced_circuit].prerequisites, tech_iron_smelting
 data_technology[advanced_circuit].effects =
 {
     {type = unlock_recipe, recipe = phenolic_board},
-    {type = unlock_recipe, recipe = advanced_circuit_board},
+    {type = unlock_recipe, recipe = circuit_board},
     {type = unlock_recipe, recipe = transistor},
     {type = unlock_recipe, recipe = advanced_circuit}
 }
@@ -889,6 +889,8 @@ if mods[lignumis_mods] then
     {
         {type = unlock_recipe, recipe = ore_crusher_1},
         {type = unlock_recipe, recipe = ore_sorting_facility_1},
+        {type = unlock_recipe, recipe = ore_saphirite .. _sorting},
+        {type = unlock_recipe, recipe = ore_stiratite .. _sorting},
         {type = unlock_recipe, recipe = ore_jivolite .. _sorting},
         {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
         {type = unlock_recipe, recipe = ore_senaite .. _sorting},
@@ -917,6 +919,8 @@ else
         {type = unlock_recipe, recipe = ore_sorting_facility_1},
         {type = unlock_recipe, recipe = ore_jivolite .. _sorting},
         {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
+        {type = unlock_recipe, recipe = ore_rubyte .. _sorting},
+        {type = unlock_recipe, recipe = ore_bobmonium .. _sorting},
         {type = unlock_recipe, recipe = ore_senaite .. _sorting},
         {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
         {type = unlock_recipe, recipe = slag_sorting_1},

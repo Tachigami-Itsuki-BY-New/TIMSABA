@@ -202,6 +202,7 @@ data_recipe[raw_fish_oil_from_santa_ray_fish].results[2].reset_freshness_on_craf
 
 local fish_oil_filtration_1 = "angels-liquid-raw-fish-oil-filtering-1"
 data_recipe[fish_oil_filtration_1].icons = TWO_D_I(raw_fish_oil, water_thermal_angels, fish_oil, mineral_oil_angels, number_1)
+data_recipe[fish_oil_filtration_1].energy_required = 4
 data_recipe[fish_oil_filtration_1].ingredients[1].amount = 120
 data_recipe[fish_oil_filtration_1].ingredients[2].amount = 60
 data_recipe[fish_oil_filtration_1].results =
@@ -214,14 +215,15 @@ data_recipe[fish_oil_filtration_1].results =
 
 local fish_oil_filtration_2 = "angels-liquid-raw-fish-oil-filtering-2"
 data_recipe[fish_oil_filtration_2].icons = TWO_D_I(raw_fish_oil, water_thermal_angels, fish_oil, mineral_oil_angels, number_2)
-data_recipe[fish_oil_filtration_2].energy_required = 4
+data_recipe[fish_oil_filtration_2].energy_required = 2
 data_recipe[fish_oil_filtration_2].ingredients[1].amount = 60
 data_recipe[fish_oil_filtration_2].ingredients[2].amount = 30
 data_recipe[fish_oil_filtration_2].results =
 {
     {type = fluid, name = fish_oil, amount = 60},
     {type = fluid, name = mineral_oil_angels, amount = 30},
-    {type = item, name = filter_ceramic_used, amount = 1}
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
 }
 
 local fish_oil_refining = "angels-liquid-fish-oil-refining"

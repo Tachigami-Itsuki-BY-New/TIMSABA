@@ -277,8 +277,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = concentrate_stannium, amount = 60},
-            {type = fluid, name = water_red_waste, amount = 30},
-            {type = item, name = filter_ceramic_used, amount = 1}
+            {type = fluid, name = water_red_waste, amount = 30}, -- 60
+            {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
+            {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
         },
         main_product = concentrate_stannium
     },

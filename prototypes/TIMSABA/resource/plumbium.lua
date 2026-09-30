@@ -277,8 +277,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = concentrate_plumbium, amount = 60},
-            {type = fluid, name = water_green_waste, amount = 30},
-            {type = item, name = filter_ceramic_used, amount = 1}
+            {type = fluid, name = water_green_waste, amount = 30}, -- 60
+            {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
+            {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
         },
         main_product = concentrate_plumbium
     },

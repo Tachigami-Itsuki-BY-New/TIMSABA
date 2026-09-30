@@ -162,6 +162,7 @@ if mods[vesta_mods] then
         data_recipe[algea_iron_electrolysis].subgroup = is_vesta_recipe
         data_recipe[algea_iron_electrolysis].icons = FOUR_R_I(algea_clump_iron, ore_saphirite, nil, ore_jivolite)
         data_recipe[algea_iron_electrolysis].order = c_a
+        data_recipe[algea_iron_electrolysis].allow_quality = false
         data_recipe[algea_iron_electrolysis].ingredients =
         {
             {type = item, name = algea_clump_iron, amount = 1},
@@ -189,6 +190,7 @@ if mods[vesta_mods] then
         data_recipe[algea_copper_electrolysis].subgroup = is_vesta_recipe
         data_recipe[algea_copper_electrolysis].icons = FOUR_R_I(algea_clump_copper, ore_stiratite, nil, ore_crotinnium)
         data_recipe[algea_copper_electrolysis].order = d_a
+        data_recipe[algea_copper_electrolysis].allow_quality = false
         data_recipe[algea_copper_electrolysis].ingredients =
         {
             {type = item, name = algea_clump_copper, amount = 1},
@@ -243,6 +245,7 @@ if mods[vesta_mods] then
     data_recipe[rocket_fuel_from_vesta].subgroup = is_vesta_recipe
     data_recipe[rocket_fuel_from_vesta].icons = BUILDING_R_I(rocket_fuel, planet_vesta)
     data_recipe[rocket_fuel_from_vesta].order = f_a
+    data_recipe[rocket_fuel_from_vesta].allow_quality = true
     data_recipe[rocket_fuel_from_vesta].energy_required = 2
     data_recipe[rocket_fuel_from_vesta].ingredients[1].amount = 30
     data_recipe[rocket_fuel_from_vesta].ingredients[2].amount = 30
@@ -389,11 +392,10 @@ if mods[vesta_mods] then
     data_assembling[electrolyzer_vesta].order = a
     data_assembling[electrolyzer_vesta].crafting_speed = 1
     data_assembling[electrolyzer_vesta].module_slots = 4
-    data_assembling[electrolyzer_vesta].energy_usage = 465 .. kW
-    data_assembling[electrolyzer_vesta].energy_source.drain = 15 .. kW
+    data_assembling[electrolyzer_vesta].energy_usage = (1920 - 120) .. kW
+    data_assembling[electrolyzer_vesta].energy_source.drain = 120 .. kW
     data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 1
 
-    local supermagnet = "supermagnet"
     data_item[supermagnet].subgroup = is_vesta_building
     data_item[supermagnet].order = b
     data_item[supermagnet].stack_size = 32
@@ -416,7 +418,6 @@ if mods[vesta_mods] then
     data_assembling[supermagnet].energy_usage = 4680 .. kW
     data_assembling[supermagnet].energy_source.drain = 120 .. kW
 
-    local combustion_furnace = "vesta-combustion-furnace"
     data_item[combustion_furnace].subgroup = is_vesta_building
     data_item[combustion_furnace].order = c
     data_item[combustion_furnace].stack_size = 32

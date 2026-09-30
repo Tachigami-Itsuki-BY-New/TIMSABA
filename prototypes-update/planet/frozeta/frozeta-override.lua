@@ -161,6 +161,7 @@ if mods[secretas_frozeta_mods] then
     }
     data_furnace[steam_recycler].subgroup = is_frozeta_building
     data_furnace[steam_recycler].order = a
+    data_furnace[steam_recycler].crafting_categories = {recycling}
     data_furnace[steam_recycler].module_slots = 4
     data_furnace[steam_recycler].crafting_speed = 1
     data_furnace[steam_recycler].energy_usage = 450 .. kW

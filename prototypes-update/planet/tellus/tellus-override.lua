@@ -755,6 +755,10 @@ if mods[tellus_mods] then
 
     data_assembling[bioassembler].subgroup = is_tellus_building
     data_assembling[bioassembler].order = b
+    data_assembling[bioassembler].crafting_categories = {"planetaris-bioassembling", organic, crafting}
+    if mods[castra_mods] then
+        table.insert(data_assembling[bioassembler].crafting_categories, "castra-" .. crafting)
+    end
     data_assembling[bioassembler].energy_usage = 1875 .. kW
     data_assembling[bioassembler].effect_receiver.base_effect.productivity = 1
 
@@ -1258,10 +1262,7 @@ if mods[tellus_mods] then
     }
 
     local concrete_brick = "concrete-brick"
-    -- 1. Последовательность цветов (сохраняет ваш порядок)
     local colors = {"planetaris-blue", "planetaris-green", "planetaris-red"}
-    -- 2. Карта соответствия: суффикс рецепта -> имя настройки
-    -- Порядок элементов в этом списке строго определяет порядок добавления в технологию!
     local recipe_configs =
     {
         {suffix = pipe,                       setting = setting_dye_pipes},
@@ -1274,22 +1275,16 @@ if mods[tellus_mods] then
         {suffix = stone_wall,                 setting = setting_dye_stone_wall},
         {suffix = concrete_brick,             setting = setting_dye_concrete_brick}
     }
-    -- 3. Результирующий массив эффектов технологии
     local tech_effects = {}
-    -- 4. Генерация списка в строгом соответствии с исходным порядком
     for _, color in ipairs(colors) do
-        -- Краситель (dye) всегда идет первым и не зависит от настроек предметов
         table.insert(tech_effects, {type = unlock_recipe, recipe = color .. "-dye"})
-        -- Проходим по списку рецептов для текущего цвета
         for _, config in ipairs(recipe_configs) do
             local setting_name = config.setting
-            -- Проверяем, включена ли настройка
             if settings.startup[setting_name].value then
                 table.insert(tech_effects, {type = unlock_recipe, recipe = color .. "-" .. config.suffix})
             end
         end
     end
-    -- 5. Записываем итоговый массив в технологию
     local tech_primary_dyes = "planetaris-primary-dyes"
     data_technology[tech_primary_dyes].effects = tech_effects
     data_technology[tech_primary_dyes].unit.ingredients =
@@ -1306,10 +1301,7 @@ if mods[tellus_mods] then
     }
 
     if settings.startup[setting_dye_secondary_color].value then
-        -- 1. Последовательность цветов (сохраняет ваш порядок)
         local colors = {"orange", "planetaris-yellow", "planetaris-magenta", "planetaris-cyan", "black"}
-        -- 2. Карта соответствия: суффикс рецепта -> имя настройки
-        -- Порядок элементов в этом списке строго определяет порядок добавления в технологию!
         local recipe_configs =
         {
             {suffix = pipe,                       setting = setting_dye_pipes},
@@ -1322,18 +1314,12 @@ if mods[tellus_mods] then
             {suffix = stone_wall,                 setting = setting_dye_stone_wall},
             {suffix = concrete_brick,             setting = setting_dye_concrete_brick}
         }
-        -- 3. Результирующий массив эффектов технологии
         local tech_effects = {}
-        -- 4. Генерация списка в строгом соответствии с исходным порядком
         for _, color in ipairs(colors) do
-            -- Краситель (dye) всегда идет первым и не зависит от настроек предметов
             table.insert(tech_effects, {type = unlock_recipe, recipe = color .. "-dye"})
-            -- Проходим по списку рецептов для текущего цвета
             for _, config in ipairs(recipe_configs) do
                 local setting_name = config.setting
-                -- Проверяем, включена ли настройка
                 if settings.startup[setting_name].value then
-                    -- ИСКЛЮЧЕНИЕ ДЛЯ ЧЕРНОГО ЦВЕТА: пропускаем обычную и улучшенную разметку
                     if color == "black" and (config.suffix == hazard_concrete or config.suffix == reinforced_hazard_concrete) then
                         -- Ничего не делаем, рецепт просто не добавится в технологию
                     else
@@ -1346,7 +1332,6 @@ if mods[tellus_mods] then
                 end
             end
         end
-        -- 5. Записываем итоговый массив в технологию
         local tech_secondary_dyes = "planetaris-secondary-dyes"
         data_technology[tech_secondary_dyes].effects = tech_effects
         data_technology[tech_secondary_dyes].unit.ingredients =

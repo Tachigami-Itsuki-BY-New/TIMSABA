@@ -663,10 +663,16 @@ data_recipe[vegetable_oil_filtering_1].results =
 local vegetable_oil_filtering_2 = "angels-liquid-raw-vegetable-oil-filtering-2"
 data_recipe[vegetable_oil_filtering_2].icons = TWO_D_I(raw_vegetable_oil, water_purified_angels, vegetable_oil, nutrient_pulp, number_2)
 data_recipe[vegetable_oil_filtering_2].order = b_b
-data_recipe[vegetable_oil_filtering_2].ingredients[1].amount = 120
-data_recipe[vegetable_oil_filtering_2].ingredients[2].amount = 120
-data_recipe[vegetable_oil_filtering_2].results[1].amount = 240
-data_recipe[vegetable_oil_filtering_2].results[2].amount = 30
+data_recipe[vegetable_oil_filtering_2].energy_required = 2
+data_recipe[vegetable_oil_filtering_2].ingredients[1].amount = 60
+data_recipe[vegetable_oil_filtering_2].ingredients[2].amount = 60
+data_recipe[vegetable_oil_filtering_1].results =
+{
+    {type = fluid, name = vegetable_oil, amount = 60},
+    {type = fluid, name = nutrient_pulp, amount = 30},
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
+}
 
 local vegetable_oil_refining = "angels-liquid-vegetable-oil-refining"
 data_recipe[vegetable_oil_refining].icons = THREE_R_I(vegetable_oil, fuel_oil_angels, mineral_oil_angels)

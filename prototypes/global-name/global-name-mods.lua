@@ -281,6 +281,8 @@ military_splitter_mods = "military-splitter"
 millerite_ore = "millerite"
 gunpowder = "gunpowder"
 battlefield_science_pack = "battlefield-science-pack"
+forge = "forge"
+jammed_data_collector = "jammed-data-collector"
 
 -- SHCHIERBIN
 shchierbin_mods = "shchierbin"
@@ -324,6 +326,7 @@ tropical_fish_maraxsis = "maraxsis-tropical-fish"
 coral_maraxsis = "maraxsis-coral"
 salt_filter_maraxsis = "maraxsis-salt-filter"
 saturated_salt_filter_maraxsis = "maraxsis-saturated-salt-filter"
+hydro_plant = "maraxsis-hydro-plant"
 
 -- VESTA
 vesta_mods = "skewer_planet_vesta"
@@ -348,6 +351,8 @@ gas_manipulation_science_pack = "gas-manipulation-science-pack"
 algea_nutrient_clump = "algea_nutrient_clump"
 algea_petrite_clump = "ske_algea_clump_petrite"
 electrolyzer_vesta = "vesta-electrolyzer"
+supermagnet = "supermagnet"
+combustion_furnace = "vesta-combustion-furnace"
 fusion_thruster_fuel = "fluorofuel"
 fusion_thruster_oxidizer = "plasmafuel"
 
@@ -428,6 +433,9 @@ leaded_fuel = "leaded-fuel"
 inert_acidworking_science_pack = "inert-acidworking-science-pack"
 acidworking_science_pack = "acidworking-science-pack"
 anti_corrosion_cladding = "anti-corrosion-cladding"
+biovat = "biovat"
+acidworking_plant = "acidworking-plant"
+smelting_plant = "smelting-plant"
 
 -- PELAGOS
 pelagos_mods = "pelagos"
@@ -495,7 +503,9 @@ wood_splitter = "wood-splitter"
 gold_pipe = "gold-pipe"
 gold_pipe_to_ground = "gold-pipe-to-ground"
 gold_storage_tank = "gold-storage-tank"
-burner_assembling_machine = "burner-assembling-machine"
+burner_assembling_machine = "burner-" .. assembling_machine
+steam_assembling_machine = "steam-" .. assembling_machine
+lumber_mill = "lumber-mill"
 wood_lab = "wood-lab"
 quality_assembler = "quality-assembler"
 big_wooden_pole = "big-wooden-pole"

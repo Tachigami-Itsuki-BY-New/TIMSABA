@@ -432,7 +432,6 @@ if mods[lignumis_mods] then
     data_assembling[burner_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[burner_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
-    local steam_assembling_machine = "steam-" .. assembling_machine
     data_item[steam_assembling_machine].subgroup = is_lignumis_building
     data_item[steam_assembling_machine].order = d
     data_item[steam_assembling_machine].stack_size = 32
@@ -471,7 +470,6 @@ if mods[lignumis_mods] then
     data_assembling[steam_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[steam_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
-    local lumber_mill = "lumber-mill"
     data_item[lumber_mill].subgroup = is_lignumis_building
     data_item[lumber_mill].order = e
     data_item[lumber_mill].stack_size = 32
@@ -508,31 +506,34 @@ if mods[lignumis_mods] then
     data_lab[wood_lab].subgroup = is_lignumis_building
     data_lab[wood_lab].order = h
     data_lab[wood_lab].energy_usage = 225 .. kW
+    data_lab[wood_lab].energy_source.emissions_per_minute.pollution = 4
 
-    data_item[quality_assembler].subgroup = is_lignumis_building
-    data_item[quality_assembler].order = i
-    data_item[quality_assembler].stack_size = 32
-    data_item[quality_assembler].weight = 31250
-    data_recipe[quality_assembler].subgroup = is_lignumis_building
-    data_recipe[quality_assembler].order = i
-    data_recipe[quality_assembler].energy_required = 64
-    data_recipe[quality_assembler].ingredients =
-    {
-        {type = item, name = semiconductor, amount = 64},
-        {type = item, name = superconductor, amount = 64},
-        {type = item, name = quantum_processor, amount = 8},
-        {type = item, name = niobium_titanium_cable, amount = 16},
-        {type = item, name = niobium_iron_bearing, amount = 8},
-        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-        {type = item, name = carbon_fiber, amount = 128},
-        {type = item, name = gold_plate_bob, amount = 64}
-    }
-    data_assembling[quality_assembler].subgroup = is_lignumis_building
-    data_assembling[quality_assembler].order = i
-    data_assembling[quality_assembler].module_slots = 4
-    data_assembling[quality_assembler].energy_usage = 3840 .. kW
-    data_assembling[quality_assembler].energy_source.emissions_per_minute.pollution = 0
-    data_assembling[quality_assembler].effect_receiver.base_effect.quality = 0.5
+    if mods[quality] then
+        data_item[quality_assembler].subgroup = is_lignumis_building
+        data_item[quality_assembler].order = i
+        data_item[quality_assembler].stack_size = 32
+        data_item[quality_assembler].weight = 31250
+        data_recipe[quality_assembler].subgroup = is_lignumis_building
+        data_recipe[quality_assembler].order = i
+        data_recipe[quality_assembler].energy_required = 64
+        data_recipe[quality_assembler].ingredients =
+        {
+            {type = item, name = semiconductor, amount = 64},
+            {type = item, name = superconductor, amount = 64},
+            {type = item, name = quantum_processor, amount = 8},
+            {type = item, name = niobium_titanium_cable, amount = 16},
+            {type = item, name = niobium_iron_bearing, amount = 8},
+            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
+            {type = item, name = carbon_fiber, amount = 128},
+            {type = item, name = gold_plate_bob, amount = 64}
+        }
+        data_assembling[quality_assembler].subgroup = is_lignumis_building
+        data_assembling[quality_assembler].order = i
+        data_assembling[quality_assembler].module_slots = 4
+        data_assembling[quality_assembler].energy_usage = 3840 .. kW
+        data_assembling[quality_assembler].energy_source.emissions_per_minute.pollution = 0
+        data_assembling[quality_assembler].effect_receiver.base_effect.quality = 0.5
+    end
 
     local provisional_rocket_silo = "provisional-" .. rocket_silo
     data_item[provisional_rocket_silo].subgroup = is_lignumis_building
@@ -688,11 +689,16 @@ if mods[lignumis_mods] then
 
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
 
+    local planet_discovery_nauvis = "planet-discovery-nauvis"
+    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = ore_saphirite .. "-hand"})
+    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = ore_stiratite .. "-hand"})
+
     tech_iron_processing = "iron-processing"
     data_technology[tech_iron_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"
     data_technology[tech_iron_processing].icon_size = 64
     data_technology[tech_iron_processing].effects =
     {
+        {type = unlock_recipe, recipe = crushed_saphirite},
         {type = unlock_recipe, recipe = iron_plate},
         {type = unlock_recipe, recipe = iron_gear_wheel},
         {type = unlock_recipe, recipe = iron_bearing_ball},
@@ -707,7 +713,11 @@ if mods[lignumis_mods] then
     }
 
     tech_copper_processing = "copper-processing"
-    data_technology[tech_copper_processing].effects = {{type = unlock_recipe, recipe = copper_plate}}
+    data_technology[tech_copper_processing].effects =
+    {
+        {type = unlock_recipe, recipe = crushed_stiratite},
+        {type = unlock_recipe, recipe = copper_plate}
+    }
     data_technology[tech_copper_processing].research_trigger =
     {
         type = craft_item,
