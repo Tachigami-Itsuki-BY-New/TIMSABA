@@ -79,7 +79,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_3,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
+            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2, tech_phosphorus_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_crystals},
@@ -275,7 +275,7 @@ if mods[moshine_mods] then
     local tech_neodymium_smelting_2 = "neodymium-smelting-2"
     tech_neodymium_smelting_3 = "neodymium-smelting-3"
     tech_boron_processing_2 = "boron-processing-2"
-    local tech_phosphorus_processing_2 = "phosphorus-processing-2"
+    tech_phosphorus_processing_2 = "phosphorus-processing-2"
     data:extend
     ({
         {

@@ -318,6 +318,6 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, golden_science_pack)
     end
     if mods[shchierbin_mods] then
-        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, golden_science_pack)
+        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, golden_science_pack)
     end
 end

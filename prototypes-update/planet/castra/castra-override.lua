@@ -160,6 +160,7 @@ if mods[castra_mods] then
 
     data_item[castra_data].subgroup = is_castra_recipe
     data_item[castra_data].order = c
+    data_item[castra_data].spoil_ticks = nil
 
     data_tool[battlefield_science_pack].subgroup = is_castra_recipe
     data_tool[battlefield_science_pack].order = d

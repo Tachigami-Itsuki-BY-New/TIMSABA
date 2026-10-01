@@ -13,7 +13,7 @@ require("prototypes.planet.2-second-circle-planets.moshine.moshine-aeschynite")
 require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-chalcopyrite")
 require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-sperrylite")
 require("prototypes.planet.2-second-circle-planets.castra.castra-millerite")
--- shchierbin
+require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-vanadinite")
 -- muria
 -- pelagos
 -- apia-carnova

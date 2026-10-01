@@ -918,7 +918,9 @@ if mods[apia_carnova_mods] then
     data_entity["wild-hive"].minable.results =
     {
         {type = item, name = spoilage, amount = 16},
-        {type = item, name = honeycombs, amount = 32}
+        {type = item, name = honeycombs, amount = 32},
+        {type = item, name = honeycombs .. "-iron", amount = 32},
+        {type = item, name = honeycombs .. "-copper", amount = 32}
     }
 
     data_unit_spawner["piranha-spawner"].loot = {{type = item, name = piranha_roe, independent_probability = 1, amount_min = 4, amount_max = 8}}

@@ -1,15 +1,15 @@
 if mods[paracelsin_mods] then
-    -- VATERITE and ZINC
+    -- VATERITE and RECIPE
     data_item[vaterite].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
-    data_item[vaterite].subgroup = is_vaterite_zinc
+    data_item[vaterite].subgroup = is_vaterite_and_recipe
     data_item[vaterite].order = a
     data_item[vaterite].stack_size = 200
-    data_resource[vaterite].subgroup = is_vaterite_zinc
+    data_resource[vaterite].subgroup = is_vaterite_and_recipe
     data_resource[vaterite].order = a
     data_resource[vaterite].minable.mining_time = 1
 
     local vaterite_formation = "vaterite-formation"
-    data_recipe[vaterite_formation].subgroup = is_vaterite_zinc
+    data_recipe[vaterite_formation].subgroup = is_vaterite_and_recipe
     data_recipe[vaterite_formation].icons = STONKS_I(stonks_png, vaterite)
     data_recipe[vaterite_formation].order = a_a
     data_recipe[vaterite_formation].energy_required = 4
@@ -23,7 +23,7 @@ if mods[paracelsin_mods] then
 
     local vaterite_processing = "vaterite-processing"
     data_recipe[vaterite_processing].categories = {chemistry}
-    data_recipe[vaterite_processing].subgroup = is_vaterite_zinc
+    data_recipe[vaterite_processing].subgroup = is_vaterite_and_recipe
     data_recipe[vaterite_processing].icons = RECYCLING_I(recycling_png, vaterite)
     data_recipe[vaterite_processing].order = a_b
     data_recipe[vaterite_processing].energy_required = 2 -- 4CaCO₃ + 2H₂O --> 2CaCO₃ + 2CaO + 2C + 2H₂ + 4O₂
@@ -42,54 +42,75 @@ if mods[paracelsin_mods] then
     }
     data_recipe[vaterite_processing].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
-    data_recipe[zinc_plate_mods].localised_name = data_item[zinc_plate_bob].localised_name
-    data_recipe[zinc_plate_mods].categories = {sintering_6}
-    data_recipe[zinc_plate_mods].subgroup = is_vaterite_zinc
-    data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
-    data_recipe[zinc_plate_mods].order = c
-    data_recipe[zinc_plate_mods].energy_required = 1
-    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
-    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
-    data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
-    data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
-
-    data_item[zinc_rivets].subgroup = is_vaterite_zinc
-    data_item[zinc_rivets].order = d
-    data_recipe[zinc_rivets].subgroup = is_vaterite_zinc
-    data_recipe[zinc_rivets].icons = TWO_I(zinc_plate_bob, zinc_rivets)
-    data_recipe[zinc_rivets].order = d
-    data_recipe[zinc_rivets].ingredients = {{type = item, name = zinc_plate_bob, amount = 4}}
-    data_recipe[zinc_rivets].results[1].amount = 8
-
-    data_item[zinc_cable].subgroup = is_vaterite_zinc
-    data_item[zinc_cable].order = e
-    data_recipe[zinc_cable].subgroup = is_vaterite_zinc
-    data_recipe[zinc_cable].icons = THREE_I(copper_cable, zinc_plate_bob, zinc_cable)
-    data_recipe[zinc_cable].order = e
-    data_recipe[zinc_cable].ingredients =
+    local nitrogen_nitric_acid = "nitrogen-nitric-acid"
+    data_recipe[nitrogen_nitric_acid].subgroup = is_vaterite_and_recipe
+    data_recipe[nitrogen_nitric_acid].icons = THREE_D_I(vaterite, water_purified_angels, nitrogen_liquid, nitric_acid_angels, lime_angels, calcium_carbide)
+    data_recipe[nitrogen_nitric_acid].order = b
+    -- 2CaCO₃ + H₂O + N₂ --> 2HNO₃ + CaO + CaC₂
+    data_recipe[nitrogen_nitric_acid].ingredients =
     {
-        {type = item, name = copper_cable, amount = 2},
-        {type = item, name = zinc_plate_bob, amount = 4}
+        {type = item, name = vaterite, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 30},
+        {type = fluid, name = nitrogen_liquid, amount = 30}
     }
-    data_recipe[zinc_cable].results[1].amount = 2
-
-    local electric_coil = "electric-coil"
-    data_item[electric_coil].subgroup = is_vaterite_zinc
-    data_item[electric_coil].order = e
-    data_item[electric_coil].stack_size = 200
-    data_recipe[electric_coil].subgroup = is_vaterite_zinc
-    data_recipe[electric_coil].order = e
-    data_recipe[electric_coil].ingredients =
+    data_recipe[nitrogen_nitric_acid].results =
     {
-        {type = item, name = copper_cable, amount = 32},
-        {type = item, name = plastic, amount = 1},
-        {type = item, name = iron_rod, amount = 1},
-        {type = item, name = zinc_cable, amount = 2}
+        {type = fluid, name = nitric_acid_angels, amount = 60},
+        {type = item, name = lime_angels, amount = 2},
+        {type = item, name = calcium_carbide, amount = 2}
     }
+    data_recipe[nitrogen_nitric_acid].main_product = nitric_acid_angels
+    data_recipe[nitrogen_nitric_acid].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
-    data_item[galvanized_steel_plate].subgroup = is_vaterite_zinc
-    data_item[galvanized_steel_plate].order = f
-    data_item[galvanized_steel_plate].stack_size = 200
+    local solid_fuel_from_nitrogen = "solid-fuel-from-nitrogen"
+    data_recipe[solid_fuel_from_nitrogen].subgroup = is_vaterite_and_recipe
+    data_recipe[solid_fuel_from_nitrogen].icons = THREE_I(vaterite, nitrogen_liquid, solid_fuel)
+    data_recipe[solid_fuel_from_nitrogen].order = c
+    data_recipe[solid_fuel_from_nitrogen].ingredients =
+    {
+        {type = item, name = vaterite, amount = 2},
+        {type = fluid, name = nitrogen_liquid, amount = 30}
+    }
+    data_recipe[solid_fuel_from_nitrogen].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+
+    local nitric_acid_rocket_fuel = "nitric-acid-rocket-fuel"
+    data_recipe[nitric_acid_rocket_fuel].subgroup = is_vaterite_and_recipe
+    data_recipe[nitric_acid_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_paracelsin)
+    data_recipe[nitric_acid_rocket_fuel].order = d
+    data_recipe[nitric_acid_rocket_fuel].energy_required = 8
+    data_recipe[nitric_acid_rocket_fuel].ingredients =
+    {
+        {type = item, name = solid_fuel, amount = 4},
+        {type = item, name = sulfur, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 240},
+        {type = fluid, name = nitric_acid_angels, amount = 240}
+    }
+    data_recipe[nitric_acid_rocket_fuel].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+
+    local nitric_acid_plastic = "nitric-acid-plastic"
+    data_recipe[nitric_acid_plastic].subgroup = is_vaterite_and_recipe
+    data_recipe[nitric_acid_plastic].icons = THREE_D_I(carbon_angels, water_purified_angels, nitric_acid_angels, plastic)
+    data_recipe[nitric_acid_plastic].order = e
+    data_recipe[nitric_acid_plastic].ingredients =
+    {
+        {type = item, name = carbon_angels, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 60},
+        {type = fluid, name = nitric_acid_angels, amount = 30}
+    }
+    data_recipe[nitric_acid_plastic].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+
+    data_item[galvanization_science_pack].subgroup = is_vaterite_and_recipe
+    data_item[galvanization_science_pack].order = f
+    data_recipe[galvanization_science_pack].subgroup = is_vaterite_and_recipe
+    data_recipe[galvanization_science_pack].order = f
+    data_recipe[galvanization_science_pack].energy_required = 8
+    data_recipe[galvanization_science_pack].ingredients =
+    {
+        {type = item, name = zinc_plate_bob, amount = 8},
+        {type = item, name = vaterite, amount = 4},
+        {type = item, name = electric_coil, amount = 2},
+        {type = fluid, name = nitric_acid_angels, amount = 60}
+    }
 
     -- SPHALERITE
     data_item[sphalerite_ore].subgroup = is_sphalerite
@@ -109,76 +130,54 @@ if mods[paracelsin_mods] then
     data_resource[tetrahedrite_ore].order = a
     data_resource[tetrahedrite_ore].minable.mining_time = 4
 
-    -- RECIPE
-    local nitrogen_nitric_acid = "nitrogen-nitric-acid"
-    data_recipe[nitrogen_nitric_acid].subgroup = is_paracelsin_recipe
-    data_recipe[nitrogen_nitric_acid].icons = THREE_D_I(vaterite, water_purified_angels, nitrogen_liquid, nitric_acid_angels, lime_angels, calcium_carbide)
-    data_recipe[nitrogen_nitric_acid].order = a_a
-    -- 2CaCO₃ + H₂O + N₂ --> 2HNO₃ + CaO + CaC₂
-    data_recipe[nitrogen_nitric_acid].ingredients =
-    {
-        {type = item, name = vaterite, amount = 4},
-        {type = fluid, name = water_purified_angels, amount = 30},
-        {type = fluid, name = nitrogen_liquid, amount = 30}
-    }
-    data_recipe[nitrogen_nitric_acid].results =
-    {
-        {type = fluid, name = nitric_acid_angels, amount = 60},
-        {type = item, name = lime_angels, amount = 2},
-        {type = item, name = calcium_carbide, amount = 2}
-    }
-    data_recipe[nitrogen_nitric_acid].main_product = nitric_acid_angels
-    data_recipe[nitrogen_nitric_acid].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+    -- GALVANIZED
+    data_recipe[zinc_plate_mods].localised_name = data_item[zinc_plate_bob].localised_name
+    data_recipe[zinc_plate_mods].categories = {sintering_6}
+    data_recipe[zinc_plate_mods].subgroup = is_paracelsin_zinc
+    data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
+    data_recipe[zinc_plate_mods].order = a
+    data_recipe[zinc_plate_mods].energy_required = 1
+    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
+    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
+    data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
+    data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
-    local solid_fuel_from_nitrogen = "solid-fuel-from-nitrogen"
-    data_recipe[solid_fuel_from_nitrogen].subgroup = is_paracelsin_recipe
-    data_recipe[solid_fuel_from_nitrogen].icons = THREE_I(vaterite, nitrogen_liquid, solid_fuel)
-    data_recipe[solid_fuel_from_nitrogen].order = a_b
-    data_recipe[solid_fuel_from_nitrogen].ingredients =
-    {
-        {type = item, name = vaterite, amount = 2},
-        {type = fluid, name = nitrogen_liquid, amount = 30}
-    }
-    data_recipe[solid_fuel_from_nitrogen].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+    data_item[zinc_rivets].subgroup = is_paracelsin_zinc
+    data_item[zinc_rivets].order = b
+    data_recipe[zinc_rivets].subgroup = is_paracelsin_zinc
+    data_recipe[zinc_rivets].icons = TWO_I(zinc_plate_bob, zinc_rivets)
+    data_recipe[zinc_rivets].order = b
+    data_recipe[zinc_rivets].ingredients = {{type = item, name = zinc_plate_bob, amount = 4}}
+    data_recipe[zinc_rivets].results[1].amount = 8
 
-    local nitric_acid_rocket_fuel = "nitric-acid-rocket-fuel"
-    data_recipe[nitric_acid_rocket_fuel].subgroup = is_paracelsin_recipe
-    data_recipe[nitric_acid_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_paracelsin)
-    data_recipe[nitric_acid_rocket_fuel].order = a_c
-    data_recipe[nitric_acid_rocket_fuel].energy_required = 8
-    data_recipe[nitric_acid_rocket_fuel].ingredients =
+    data_item[zinc_cable].subgroup = is_paracelsin_zinc
+    data_item[zinc_cable].order = c
+    data_recipe[zinc_cable].subgroup = is_paracelsin_zinc
+    data_recipe[zinc_cable].icons = THREE_I(copper_cable, zinc_plate_bob, zinc_cable)
+    data_recipe[zinc_cable].order = c
+    data_recipe[zinc_cable].ingredients =
     {
-        {type = item, name = solid_fuel, amount = 4},
-        {type = item, name = sulfur, amount = 4},
-        {type = fluid, name = water_purified_angels, amount = 240},
-        {type = fluid, name = nitric_acid_angels, amount = 240}
+        {type = item, name = copper_cable, amount = 2},
+        {type = item, name = zinc_plate_bob, amount = 4}
     }
-    data_recipe[nitric_acid_rocket_fuel].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+    data_recipe[zinc_cable].results[1].amount = 2
 
-    local nitric_acid_plastic = "nitric-acid-plastic"
-    data_recipe[nitric_acid_plastic].subgroup = is_paracelsin_recipe
-    data_recipe[nitric_acid_plastic].icons = THREE_D_I(carbon_angels, water_purified_angels, nitric_acid_angels, plastic)
-    data_recipe[nitric_acid_plastic].order = a_d
-    data_recipe[nitric_acid_plastic].ingredients =
+    data_item[electric_coil].subgroup = is_paracelsin_zinc
+    data_item[electric_coil].order = d
+    data_item[electric_coil].stack_size = 200
+    data_recipe[electric_coil].subgroup = is_paracelsin_zinc
+    data_recipe[electric_coil].order = d
+    data_recipe[electric_coil].ingredients =
     {
-        {type = item, name = carbon_angels, amount = 4},
-        {type = fluid, name = water_purified_angels, amount = 60},
-        {type = fluid, name = nitric_acid_angels, amount = 30}
+        {type = item, name = copper_cable, amount = 32},
+        {type = item, name = plastic, amount = 1},
+        {type = item, name = iron_rod, amount = 1},
+        {type = item, name = zinc_cable, amount = 2}
     }
-    data_recipe[nitric_acid_plastic].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
-    data_item[galvanization_science_pack].subgroup = is_paracelsin_recipe
-    data_item[galvanization_science_pack].order = b
-    data_recipe[galvanization_science_pack].subgroup = is_paracelsin_recipe
-    data_recipe[galvanization_science_pack].order = b
-    data_recipe[galvanization_science_pack].energy_required = 8
-    data_recipe[galvanization_science_pack].ingredients =
-    {
-        {type = item, name = zinc_plate_bob, amount = 8},
-        {type = item, name = vaterite, amount = 4},
-        {type = item, name = electric_coil, amount = 2},
-        {type = fluid, name = nitric_acid_angels, amount = 60}
-    }
+    data_item[galvanized_steel_plate].subgroup = is_paracelsin_zinc
+    data_item[galvanized_steel_plate].order = e
+    data_item[galvanized_steel_plate].stack_size = 200
 
     -- LOGISTICS
     data_item[galvanized_pipe].subgroup = is_paracelsin_logistic
@@ -563,7 +562,7 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, galvanization_science_pack)
     end
     if mods[shchierbin_mods] then
-        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, galvanization_science_pack)
     end
 
     table.insert(data_technology[tech_arsenic_processing].prerequisites, tech_tetrahedrite_processing_4)

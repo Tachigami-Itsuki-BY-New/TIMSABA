@@ -825,7 +825,7 @@ if mods[maraxsis_mods] then
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, hydraulic_science_pack)
     end
     if mods[shchierbin_mods] then
-        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, hydraulic_science_pack)
     end
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = smelt_microplastics, change = 0.1})

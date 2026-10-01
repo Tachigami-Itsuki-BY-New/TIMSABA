@@ -58,32 +58,77 @@ if mods[apia_carnova_mods] then
     TIMSABA.void.freezing_organics(honeycombs)
     data_recipe[honeycombs].subgroup = is_apia_recipe
     data_recipe[honeycombs].order = d
+    data_recipe[honeycombs].energy_required = 8
     data_recipe[honeycombs].results[1].amount = 8
 
     local honeycombs_processing = "honeycombs-processing"
-    data_recipe[honeycombs_processing].subgroup = is_carnova_recipe
+    data_recipe[honeycombs_processing].subgroup = is_apia_recipe
     data_recipe[honeycombs_processing].icons = THREE_R_I(honeycombs, wax, honey)
     data_recipe[honeycombs_processing].order = d_a
     data_recipe[honeycombs_processing].energy_required = 4
 
+    local honeycombs_iron = honeycombs .. "-iron"
+    data_item[honeycombs_iron].subgroup = is_apia_recipe
+    data_item[honeycombs_iron].order = e
+    data_item[honeycombs_iron].stack_size = 200
+    TIMSABA.void.freezing_organics(honeycombs_iron)
+    data_recipe[honeycombs_iron].subgroup = is_apia_recipe
+    data_recipe[honeycombs_iron].order = e
+    data_recipe[honeycombs_iron].energy_required = 8
+    data_recipe[honeycombs_iron].results[1].amount = 8
+
+    local honeycombs_iron_processing = honeycombs_iron .. "-processing"
+    data_recipe[honeycombs_iron_processing].subgroup = is_apia_recipe
+    data_recipe[honeycombs_iron_processing].icons = FOUR_R_I(honeycombs_iron, ore_saphirite, wax, ore_jivolite)
+    data_recipe[honeycombs_iron_processing].order = e_a
+    data_recipe[honeycombs_iron_processing].energy_required = 4
+    data_recipe[honeycombs_iron_processing].results =
+    {
+        {type = item, name = wax, amount = 2},
+        {type = item, name = ore_saphirite, amount = 1},
+        {type = item, name = ore_jivolite, amount = 1}
+    }
+
+    local honeycombs_copper = honeycombs .. "-copper"
+    data_item[honeycombs_copper].subgroup = is_apia_recipe
+    data_item[honeycombs_copper].order = f
+    data_item[honeycombs_copper].stack_size = 200
+    TIMSABA.void.freezing_organics()
+    data_recipe[honeycombs_copper].subgroup = is_apia_recipe
+    data_recipe[honeycombs_copper].order = f
+    data_recipe[honeycombs_copper].energy_required = 8
+    data_recipe[honeycombs_copper].results[1].amount = 8
+
+    local honeycombs_copper_processing = honeycombs_copper .. "-processing"
+    data_recipe[honeycombs_copper_processing].subgroup = is_apia_recipe
+    data_recipe[honeycombs_copper_processing].icons = FOUR_R_I(honeycombs_copper, ore_stiratite, wax, ore_crotinnium)
+    data_recipe[honeycombs_copper_processing].order = f_a
+    data_recipe[honeycombs_copper_processing].energy_required = 4
+    data_recipe[honeycombs_copper_processing].results =
+    {
+        {type = item, name = wax, amount = 2},
+        {type = item, name = ore_stiratite, amount = 1},
+        {type = item, name = ore_crotinnium, amount = 1}
+    }
+
     data_item[wax].subgroup = is_apia_recipe
-    data_item[wax].order = e
+    data_item[wax].order = g
     data_item[wax].fuel_categories = {base_fuel}
     data_item[wax].fuel_value = 1800 .. kJ
 
     data_item[honey].subgroup = is_apia_recipe
-    data_item[honey].order = f
+    data_item[honey].order = h
     TIMSABA.void.freezing_organics(honey)
 
     local nutrients_from_honey = "nutrients-from-honey"
     data_recipe[nutrients_from_honey].subgroup = is_apia_recipe
     data_recipe[nutrients_from_honey].icons = TWO_I(honey, nutrients)
-    data_recipe[nutrients_from_honey].order = f_a
+    data_recipe[nutrients_from_honey].order = h_a
 
     local honey_processing = "honey-processing"
     data_recipe[honey_processing].subgroup = is_apia_recipe
     data_recipe[honey_processing].icons = THREE_R_I(honey, polysaccharides, water)
-    data_recipe[honey_processing].order = f_b
+    data_recipe[honey_processing].order = h_b
     data_recipe[honey_processing].energy_required = 4
     data_recipe[honey_processing].ingredients[1].amount = 8
     data_recipe[honey_processing].results =
@@ -95,33 +140,21 @@ if mods[apia_carnova_mods] then
     local honey_dehydration = "honey-dehydration"
     data_recipe[honey_dehydration].subgroup = is_apia_recipe
     data_recipe[honey_dehydration].icons = TWO_I(honey, polysaccharides)
-    data_recipe[honey_dehydration].order = f_c
+    data_recipe[honey_dehydration].order = h_c
     data_recipe[honey_dehydration].ingredients[1].amount = 8
 
     data_item[polysaccharides].subgroup = is_apia_recipe
-    data_item[polysaccharides].order = g
+    data_item[polysaccharides].order = i
 
     local nutrients_from_polysaccharides = "nutrients-from-polysaccharides"
     data_recipe[nutrients_from_polysaccharides].subgroup = is_apia_recipe
     data_recipe[nutrients_from_polysaccharides].icons = TWO_I(polysaccharides, nutrients)
-    data_recipe[nutrients_from_polysaccharides].order = g_a
-
-    local carbon_fiber_apia = "carbon-fiber-apia"
-    data_recipe[carbon_fiber_apia].subgroup = is_apia_recipe
-    data_recipe[carbon_fiber_apia].icons = BUILDING_R_I(carbon_fiber, planet_apia)
-    data_recipe[carbon_fiber_apia].order = g_b
-    data_recipe[carbon_fiber_apia].energy_required = 4
-    data_recipe[carbon_fiber_apia].ingredients =
-    {
-        {type = item, name = carbon_angels, amount = 1},
-        {type = item, name = wax, amount = 4},
-        {type = item, name = polysaccharides, amount = 2}
-    }
+    data_recipe[nutrients_from_polysaccharides].order = i_a
 
     local solid_fuel_from_polysaccharides = "solid-fuel-from-polysaccharides"
     data_recipe[solid_fuel_from_polysaccharides].subgroup = is_apia_recipe
     data_recipe[solid_fuel_from_polysaccharides].icons = THREE_I(wax, polysaccharides, solid_fuel)
-    data_recipe[solid_fuel_from_polysaccharides].order = g_c
+    data_recipe[solid_fuel_from_polysaccharides].order = i_b
     data_recipe[solid_fuel_from_polysaccharides].ingredients =
     {
         {type = item, name = wax, amount = 4},
@@ -277,17 +310,6 @@ if mods[apia_carnova_mods] then
     data_recipe[nutrients_from_lipids].subgroup = is_carnova_recipe
     data_recipe[nutrients_from_lipids].icons = TWO_I(lipids, nutrients)
     data_recipe[nutrients_from_lipids].order = g_a
-
-    local carbon_fiber_carnova = "carbon-fiber-carnova"
-    data_recipe[carbon_fiber_carnova].subgroup = is_carnova_recipe
-    data_recipe[carbon_fiber_carnova].icons = BUILDING_R_I(carbon_fiber, planet_carnova)
-    data_recipe[carbon_fiber_carnova].order = g_b
-    data_recipe[carbon_fiber_carnova].energy_required = 4
-    data_recipe[carbon_fiber_carnova].ingredients =
-    {
-        {type = item, name = carbon_angels, amount = 1},
-        {type = item, name = lipids, amount = 4}
-    }
 
     data_item[proteins].subgroup = is_carnova_recipe
     data_item[proteins].order = h

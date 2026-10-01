@@ -95,9 +95,11 @@ end
 
 -- SHCHIERBIN
 if mods[shchierbin_mods] then
-    data_autoplace_control["vanadium_ore"].order = data_planet[planet_shchierbin].order .. a
+    data_autoplace_control["carbon-ore"].order = data_planet[planet_shchierbin].order .. a
     data_autoplace_control["natural_gas"].order = data_planet[planet_shchierbin].order .. a_a
-    data_autoplace_control["carbon-ore"].order = data_planet[planet_shchierbin].order .. a_b
+    local vanadinite_ore = "vanadium_ore"
+    data_autoplace_control[vanadinite_ore].localised_name = {"", "[item=vanadium-ore] ", {"entity-name.vanadinite-ore"}}
+    data_autoplace_control[vanadinite_ore].order = data_planet[planet_shchierbin].order .. a_b
 end
 
 -- MARAXSIS

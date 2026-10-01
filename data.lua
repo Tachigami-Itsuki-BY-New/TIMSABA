@@ -128,6 +128,11 @@ require("prototypes.angels-ground-water-pump-recipe")
 
 require("prototypes.mods.space-science-pack")
 
+require("prototypes.angels.angels-update-icon-building")
+require("prototypes.angels.angels-update-icon-technology")
+require("prototypes.bobs.bobs-update-icon-building")
+require("prototypes.bobs.bobs-update-icon-technology")
+
 for recipe_name, recipe in pairs(data.raw.recipe) do
 
     local function check_table(subtable_name)

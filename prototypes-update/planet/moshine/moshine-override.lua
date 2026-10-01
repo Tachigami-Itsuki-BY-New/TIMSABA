@@ -1139,4 +1139,8 @@ if mods[moshine_mods] then
         {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
         {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}
     }
+
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, tech_vanadinite_processing_2)
+    end
 end

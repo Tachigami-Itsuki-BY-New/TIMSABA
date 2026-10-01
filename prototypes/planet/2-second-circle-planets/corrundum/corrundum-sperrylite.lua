@@ -87,13 +87,13 @@ if mods[corrundum_mods] then
             name = sperrylite_crystals,
             categories = {angels_ore_refining_T3},
             subgroup = is_sperrylite,
-            icons = THREE_I(sperrylite_chunks, sulfuric_acid_angels, sperrylite_crystals),
+            icons = THREE_I(sperrylite_chunks, hydrofluoric_acid_angels, sperrylite_crystals),
             order = d,
             energy_required = 2, -- Sperrylite chunks + HF -leaching-> Sperrylite crystals
             ingredients =
             {
                 {type = item, name = sperrylite_chunks, amount = 4},
-                {type = fluid, name = sulfuric_acid_angels, amount = 15}
+                {type = fluid, name = hydrofluoric_acid_angels, amount = 15}
             },
             results = {{type = item, name = sperrylite_crystals, amount = 4}},
             main_product = sperrylite_crystals

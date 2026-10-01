@@ -1,42 +1,5 @@
 if mods[corrundum_mods] then
-    -- SPERRYLITE
-    data_item[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
-    data_item[sperrylite_ore].localised_description = {"item-description.sperrylite-ore"}
-    data_item[sperrylite_ore].subgroup = is_sperrylite
-    data_item[sperrylite_ore].order = a
-    data_item[sperrylite_ore].stack_size = 200
-    data_resource[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
-    data_resource[sperrylite_ore].localised_description = {"entity-description.sperrylite-ore"}
-    data_resource[sperrylite_ore].factoriopedia_description = ""
-    data_resource[sperrylite_ore].subgroup = is_sperrylite
-    data_resource[sperrylite_ore].order = a
-    data_resource[sperrylite_ore].minable.mining_time = 1
-    data_resource[sperrylite_ore].factoriopedia_simulation = nil
-
-    -- CHALCOPYRITE
-    data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
-    data_item[chalcopyrite_ore].order = a
-    data_item[chalcopyrite_ore].stack_size = 200
-    data_resource[chalcopyrite_ore].factoriopedia_description = ""
-    data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
-    data_resource[chalcopyrite_ore].order = a
-    data_resource[chalcopyrite_ore].minable.mining_time = 1
-    data_resource[chalcopyrite_ore].factoriopedia_simulation = nil
-
-    -- PLATINUM
-    data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
-    data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_recipe[platinum_plate_mods].categories = {sintering_6}
-    data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
-    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
-    data_recipe[platinum_plate_mods].order = b
-    data_recipe[platinum_plate_mods].energy_required = 1
-    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
-    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
-    data_recipe[platinum_plate_mods].main_product = platinum_plate
-    data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
-
-    -- SUFUR
+    -- SULFUR
     data_resource[sulfur_ore_mods].subgroup = is_corrundum_sulfur
     data_resource[sulfur_ore_mods].icon = data_item[sulfur].icon
     data_resource[sulfur_ore_mods].order = a
@@ -147,6 +110,43 @@ if mods[corrundum_mods] then
         {type = item, name = platinum_plate, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
+
+    -- SPERRYLITE
+    data_item[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
+    data_item[sperrylite_ore].localised_description = {"item-description.sperrylite-ore"}
+    data_item[sperrylite_ore].subgroup = is_sperrylite
+    data_item[sperrylite_ore].order = a
+    data_item[sperrylite_ore].stack_size = 200
+    data_resource[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
+    data_resource[sperrylite_ore].localised_description = {"entity-description.sperrylite-ore"}
+    data_resource[sperrylite_ore].factoriopedia_description = ""
+    data_resource[sperrylite_ore].subgroup = is_sperrylite
+    data_resource[sperrylite_ore].order = a
+    data_resource[sperrylite_ore].minable.mining_time = 1
+    data_resource[sperrylite_ore].factoriopedia_simulation = nil
+
+    -- CHALCOPYRITE
+    data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_item[chalcopyrite_ore].order = a
+    data_item[chalcopyrite_ore].stack_size = 200
+    data_resource[chalcopyrite_ore].factoriopedia_description = ""
+    data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_resource[chalcopyrite_ore].order = a
+    data_resource[chalcopyrite_ore].minable.mining_time = 1
+    data_resource[chalcopyrite_ore].factoriopedia_simulation = nil
+
+    -- PLATINUM
+    data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
+    data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
+    data_recipe[platinum_plate_mods].categories = {sintering_6}
+    data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
+    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
+    data_recipe[platinum_plate_mods].order = b
+    data_recipe[platinum_plate_mods].energy_required = 1
+    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
+    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
+    data_recipe[platinum_plate_mods].main_product = platinum_plate
+    data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
     -- CALCIUM SULFATE
     data_recipe[calcium_sulfate_mods].categories = {catalytic_chemistry}

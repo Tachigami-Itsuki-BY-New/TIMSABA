@@ -297,16 +297,25 @@ end
 
 -- SHCHIERBIN
 if mods[shchierbin_mods] then
-    local graphics_vanadium = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/"
 
-    data_item[vanadium_ore].icon = graphics_vanadium .. vanadium_ore .. ".png"
-    data_item[vanadium_ore].icon_size = 64
-    data_item[vanadium_ore].pictures =
+    data_item[vanadinite_ore].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore.png"
+    data_item[vanadinite_ore].icon_size = 64
+    data_item[vanadinite_ore].pictures = nil
+    data_resource[vanadinite_ore].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore.png"
+    data_resource[vanadinite_ore].icon_size = 64
+    data_resource[vanadinite_ore].stages =
     {
-        {filename = graphics_vanadium .. vanadium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
-        {filename = graphics_vanadium .. vanadium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
-        {filename = graphics_vanadium .. vanadium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
+        sheet =
+        {
+            filename = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore/vanadinite-ore.png",
+            priority = extra_high,
+            size = 128,
+            frame_count = 8,
+            variation_count = 8,
+            scale = 0.5
+        }
     }
+    data_resource[vanadinite_ore].stages_effect = nil
 
     data_item[vanadium_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/" .. vanadium_plate .. ".png"
     data_item[vanadium_plate].icon_size = 64
