@@ -80,7 +80,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = fluorine, amount = 360},
             {type = fluid, name = nitrogen_angels, amount = 120},
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = fluorine
     }

@@ -523,7 +523,10 @@ if mods[muria_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_muria = "planet-discovery-muria"
-    data_technology[planet_discovery_muria].prerequisites = {tech_advanced_asteroid_processing, rocket_turret}
+    data_technology[planet_discovery_muria].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_muria].prerequisites, interstellar_science_pack)
+    end
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air})
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air_separation})
 

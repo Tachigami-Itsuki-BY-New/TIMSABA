@@ -129,7 +129,8 @@ if mods[castra_mods] then
         {type = item, name = sulfur, amount = 16},
         {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
         {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-        {type = item, name = electrode_used, amount = 1}
+        {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
     }
     data_recipe[hydrogen_sulfide_electrolysis].main_product = sulfur
 
@@ -423,7 +424,7 @@ if mods[castra_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_castra = "planet-discovery-castra"
-    data_technology[planet_discovery_castra].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_castra].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_castra].prerequisites, interstellar_science_pack)
     end

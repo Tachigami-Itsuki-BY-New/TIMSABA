@@ -19,6 +19,7 @@ local steam_water = "angels-steam-water"
 data_recipe[steam_water].subgroup = is_water_treatment_fluid
 data_recipe[steam_water].icons = TWO_I(water, steam)
 data_recipe[steam_water].order = c_a
+data_recipe[steam_water].energy_required = 2
 data_recipe[steam_water].ingredients[1].amount = 30
 data_recipe[steam_water].results[1].amount = 30
 
@@ -26,6 +27,7 @@ local steam_water_purified = "angels-steam-water-purified"
 data_recipe[steam_water_purified].subgroup = is_water_treatment_fluid
 data_recipe[steam_water_purified].icons = TWO_I(water_purified_angels, steam)
 data_recipe[steam_water_purified].order = c_b
+data_recipe[steam_water_purified].energy_required = 2
 data_recipe[steam_water_purified].ingredients[1].amount = 30
 data_recipe[steam_water_purified].results[1].amount = 30
 

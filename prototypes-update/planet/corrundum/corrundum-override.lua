@@ -523,7 +523,7 @@ if mods[corrundum_mods] then
     })
 
     -- TECHNOLOGY
-    table.insert(data_technology[planet_discovery_corrundum].prerequisites, tech_advanced_asteroid_processing)
+    data_technology[planet_discovery_corrundum].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_corrundum].prerequisites, interstellar_science_pack)
     end

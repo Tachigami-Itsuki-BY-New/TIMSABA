@@ -1023,7 +1023,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = peroxydisulfuric_acid, amount = 8},
             {type = fluid, name = hydrogen_angels, amount = 120}, -- 240
             {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = peroxydisulfuric_acid
     }

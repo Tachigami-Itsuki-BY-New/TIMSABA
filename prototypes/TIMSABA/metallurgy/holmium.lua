@@ -274,7 +274,8 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = holmium_cathode, amount = 16},
             {type = item, name = fluorite_angels, amount = 8}, -- 24
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = holmium_cathode
     },

@@ -532,7 +532,7 @@ if mods[apia_carnova_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
-    data_technology[planet_discovery_apia_carnova].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_apia_carnova].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_apia_carnova].prerequisites, interstellar_science_pack)
     end
