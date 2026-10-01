@@ -26,7 +26,7 @@ if mods[paracelsin_mods] then
             localised_name = {"item-name." .. zinc_powder},
             name = zinc_powder_paracelsin,
             categories = {powderizing_4},
-            subgroup = is_vaterite_zinc,
+            subgroup = is_paracelsin_zinc,
             icons = TWO_I(zinc_ore_bob, zinc_powder),
             order = b,
             ingredients = {{type = item, name = zinc_ore_bob, amount = 1}},
@@ -37,7 +37,7 @@ if mods[paracelsin_mods] then
         {
             name = galvanized_steel_plate,
             categories = {metallurgy},
-            subgroup = is_vaterite_zinc,
+            subgroup = is_paracelsin_zinc,
             icons = THREE_I(steel_plate, zinc_molten_angels, galvanized_steel_plate),
             order = f,
             allow_productivity = true,
