@@ -31,6 +31,7 @@ require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-tetrahed
 -- muluna
 -- panglia
 require("prototypes.planet.5-moons.frozeta.frozeta-gallite")
+require("prototypes.planet.5-moons.frozeta.frozeta-sylvanite")
 -- lignumis
 
 -- OTHER STAR SYSTEMS

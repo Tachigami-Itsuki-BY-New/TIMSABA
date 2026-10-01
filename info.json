@@ -62,7 +62,7 @@
         "Muria = 1.8.7",
         "! pelagos",
         "apia = 0.5.0",
-        "lignumis = 2.11.0",
+        "+ lignumis = 2.11.0",
         "bellicos-and-aegis = 0.4.1",
 
         "+ recipe-hider",

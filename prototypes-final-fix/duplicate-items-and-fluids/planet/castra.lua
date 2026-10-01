@@ -64,4 +64,9 @@ if mods[castra_mods] then
             table.remove(data_technology["jammed-data-collector"].prerequisites, i) break
         end
     end
+	for i, prerequisite in ipairs(data_technology[promethium_science_pack].prerequisites) do
+        if prerequisite == "lithium-battery" then
+            table.remove(data_technology[promethium_science_pack].prerequisites, i) break
+        end
+    end
 end

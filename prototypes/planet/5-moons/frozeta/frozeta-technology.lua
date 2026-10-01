@@ -137,6 +137,145 @@ if mods[secretas_frozeta_mods] then
         }
     })
 
+    -- SYLVANITE
+    local graphics_sylvanite_tech = "__TIMSABA__/graphics/icons/frozeta/technology/sylvanite-processing.png"
+    tech_sylvanite_processing_1 = "sylvanite-processing-1"
+    tech_sylvanite_processing_2 = "sylvanite-processing-2"
+    tech_sylvanite_processing_3 = "sylvanite-processing-3"
+    tech_sylvanite_processing_4 = "sylvanite-processing-4"
+    data:extend
+    ({
+        {
+            localised_name = {"technology-name." .. tech_sylvanite_processing_1},
+            localised_description = {"technology-description.angels-ore-crushing"},
+            type = technology,
+            name = tech_sylvanite_processing_1,
+            icon = graphics_sylvanite_tech,
+            icon_size = 256,
+            prerequisites = {steam_recycler},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sylvanite_ore .. _sorting},
+                {type = unlock_recipe, recipe = sylvanite_crushed},
+                {type = unlock_recipe, recipe = sylvanite_crushed_sorting},
+                {type = unlock_recipe, recipe = gold_plate_bob}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sylvanite_processing_2},
+            localised_description = {"technology-description.angels-ore-floatation"},
+            type = technology,
+            name = tech_sylvanite_processing_2,
+            icon = graphics_sylvanite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sylvanite_processing_1, cryogenic_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sylvanite_chunks},
+                {type = unlock_recipe, recipe = sylvanite_chunks_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sylvanite_processing_3},
+            localised_description = {"technology-description.angels-ore-leaching"},
+            type = technology,
+            name = tech_sylvanite_processing_3,
+            icon = graphics_sylvanite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sylvanite_processing_2, promethium_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sylvanite_crystals},
+                {type = unlock_recipe, recipe = sylvanite_crystals_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_sylvanite_processing_4},
+            localised_description = {"technology-description.angels-ore-refining"},
+            type = technology,
+            name = tech_sylvanite_processing_4,
+            icon = graphics_sylvanite_tech,
+            icon_size = 256,
+            prerequisites = {tech_sylvanite_processing_3},
+            effects =
+            {
+                {type = unlock_recipe, recipe = sylvanite_purified},
+                {type = unlock_recipe, recipe = sylvanite_purified_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+
     local tech_gold_processing = "gold-processing"
     data:extend
     ({

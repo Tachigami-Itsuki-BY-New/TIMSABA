@@ -393,6 +393,7 @@ if mods[lignumis_mods] then
     data_furnace[desiccation_furnace].energy_usage = 225 .. kW
     data_furnace[desiccation_furnace].fluid_boxes[1].volume = 480
 
+    local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
     data_item[burner_assembling_machine].subgroup = is_lignumis_building
     data_item[burner_assembling_machine].order = c
     data_item[burner_assembling_machine].stack_size = 32
@@ -415,7 +416,7 @@ if mods[lignumis_mods] then
     {
         {
             production_type = input,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
             volume = 1000,
@@ -423,7 +424,7 @@ if mods[lignumis_mods] then
         },
         {
             production_type = output,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
             volume = 1000,
@@ -453,7 +454,7 @@ if mods[lignumis_mods] then
     {
         {
             production_type = input,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
             volume = 1000,
@@ -461,7 +462,7 @@ if mods[lignumis_mods] then
         },
         {
             production_type = output,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
             volume = 1000,

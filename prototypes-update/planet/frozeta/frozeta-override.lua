@@ -196,7 +196,7 @@ if mods[secretas_frozeta_mods] then
         {type = unlock_recipe, recipe = golden_biter_egg}
     }
 
-    data_technology[golden_science_pack].prerequisites = {steam_recycler}
+    data_technology[golden_science_pack].prerequisites = {tech_gallite_processing_1, tech_sylvanite_processing_1}
 
     data_technology[spaceship_scrap_recycling .. _productivity].prerequisites = {golden_science_pack}
 

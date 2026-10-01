@@ -95,6 +95,9 @@ data_recipe[nickel_plate_bob].hidden_in_factoriopedia = false
 data_recipe[zinc_plate_bob].categories = {smelting}
 data_recipe[zinc_plate_bob].hidden = false
 data_recipe[zinc_plate_bob].hidden_in_factoriopedia = false
+data_recipe[gold_plate_bob].categories = {smelting}
+data_recipe[gold_plate_bob].hidden = false
+data_recipe[gold_plate_bob].hidden_in_factoriopedia = false
 data_item[gold_cable].hidden = false
 data_item[gold_cable].hidden_in_factoriopedia = false
 data_recipe[gold_cable].hidden = false
@@ -874,5 +877,14 @@ if mods["Bio_Industries_2"] then
     if mods[linox_mods] then
         data_logistic_robot["linox_samarium-" .. logistic_robot_1].next_upgrade = nil
         data_construction_robot["linox_samarium-" .. construction_robot_1].next_upgrade = nil
+    end
+end
+
+if mods[loaders_modernized_integrations] then
+    data_loader_1x1[T4_loader].next_upgrade = T5_loader
+    if mods[arig_mods] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
+        data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
+        data_loader_1x1[stack_loader].next_upgrade = nil
     end
 end

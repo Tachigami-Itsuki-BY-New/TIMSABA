@@ -800,23 +800,24 @@ assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_pro
 assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
 
 if mods[lignumis_mods] then
+    local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
     data_assembling[assembling_machine_1].fluid_boxes =
     {
         {
             production_type = input,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
             volume = 1000,
-            secondary_draw_orders = {north = -1},
+            secondary_draw_orders = {north = -1}
         },
         {
             production_type = output,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
             volume = 1000,
-            secondary_draw_orders = {north = -1},
+            secondary_draw_orders = {north = -1}
         }
     }
     data_assembling[assembling_machine_1].fluid_boxes_off_when_no_fluid_recipe = true

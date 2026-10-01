@@ -2,7 +2,7 @@ data_item[wooden_chest].stack_size = 32
 data_item[wooden_chest].weight = 31250
 if mods[lignumis_mods] then
     data_recipe[wooden_chest].ingredients[1].name = lumber
-    data_recipe[wooden_chest].ingredients[1].amount = 2
+    data_recipe[wooden_chest].ingredients[1].amount = 8
 else
     data_recipe[wooden_chest].ingredients[1].amount = 4
 end

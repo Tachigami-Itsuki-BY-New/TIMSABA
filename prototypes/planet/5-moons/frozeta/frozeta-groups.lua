@@ -14,12 +14,14 @@ if mods[secretas_frozeta_mods] then
     is_frozeta_air = "is-frozeta-air"
     is_frozeta_recipe = "is-frozeta-recipe"
     is_gallite = "is-gallite"
+    is_sylvanite = "is-sylvanite"
     is_frozeta_building = "is-frozeta-building"
     TIMSABA.functions.create_subgroups(ig_frozeta,
     {
-        {name = is_frozeta_air, order = a},
-        {name = is_frozeta_recipe, order = b},
-        {name = is_gallite, order = c},
-        {name = is_frozeta_building, order = d}
+        {name = is_frozeta_air,      order = a},
+        {name = is_frozeta_recipe,   order = b},
+        {name = is_gallite,          order = c},
+        {name = is_sylvanite,        order = d},
+        {name = is_frozeta_building, order = e}
     })
 end
