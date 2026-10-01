@@ -112,7 +112,7 @@ data_bool_setting = data.raw["bool-setting"]
 data_string_setting = data.raw["string-setting"]
 data_double_setting = data.raw["double-setting"]
 data_color_setting = data.raw["color-setting"]
-
+data_entity_owner = data.raw["simple-entity-with-owner"]
 
 -- GLOBAL NAME
 item = "item"

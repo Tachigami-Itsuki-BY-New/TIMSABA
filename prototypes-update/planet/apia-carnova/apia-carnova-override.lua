@@ -471,6 +471,50 @@ if mods[apia_carnova_mods] then
         {type = fluid, name = royal_jelly, amount = 480}
     }
 
+    local artificial_honey_soil = "artificial-honey-soil"
+    data_item[artificial_honey_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_honey_soil].order = e
+    data_recipe[artificial_honey_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_honey_soil].order = e
+    data_recipe[artificial_honey_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = honey, amount = 8},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_honey_soil].results[1].amount = 8
+
+    local artificial_iron_soil = "artificial-iron-soil"
+    data_item[artificial_iron_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_iron_soil].order = f
+    data_recipe[artificial_iron_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_iron_soil].order = f
+    data_recipe[artificial_iron_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = saphirite_bacteria, amount = 1},
+        {type = item, name = jivolite_bacteria, amount = 1},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_iron_soil].results[1].amount = 8
+
+    local artificial_copper_soil = "artificial-copper-soil"
+    data_item[artificial_copper_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_copper_soil].order = g
+    data_recipe[artificial_copper_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_copper_soil].order = g
+    data_recipe[artificial_copper_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = stiratite_bacteria, amount = 1},
+        {type = item, name = crotinnium_bacteria, amount = 1},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_copper_soil].results[1].amount = 8
+
     -- BUILDING
     data_item[biosynthesizer].subgroup = is_apia_carnova_building
     data_item[biosynthesizer].order = a
@@ -528,7 +572,14 @@ if mods[apia_carnova_mods] then
     data_assembling[artificial_hive].order = b
     data_assembling[artificial_hive].energy_usage = 225 .. kW
 
-    bobmods.lib.recipe.update_recycling_recipe({wax_platform, artificial_hive})
+    bobmods.lib.recipe.update_recycling_recipe
+    ({
+        wax_platform,
+        artificial_honey_soil,
+        artificial_iron_soil,
+        artificial_copper_soil,
+        artificial_hive
+    })
 
     -- TECHNOLOGY
     local planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
