@@ -1,7 +1,7 @@
 if mods[shchierbin_mods] then
     local graphics_vanadinite = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/"
 
-    -- Vanadinite ore --> V + Pb + Ca + Cr + Mo + As
+    -- Vanadinite ore / V + Pb + Ca + Cr + Mo + As
     vanadinite_crushed = "vanadinite-crushed"
     vanadinite_chunks = "vanadinite-chunks"
     vanadinite_crystals = "vanadinite-crystals"
@@ -12,28 +12,24 @@ if mods[shchierbin_mods] then
             name = vanadinite_crushed,
             subgroup = is_vanadinite,
             icon = graphics_vanadinite .. vanadinite_crushed .. ".png",
-            icon_size = 32,
             order = b
         },
         {
             name = vanadinite_chunks,
             subgroup = is_vanadinite,
             icon = graphics_vanadinite .. vanadinite_chunks .. ".png",
-            icon_size = 32,
             order = c
         },
         {
             name = vanadinite_crystals,
             subgroup = is_vanadinite,
             icon = graphics_vanadinite .. vanadinite_crystals .. ".png",
-            icon_size = 32,
             order = d
         },
         {
             name = vanadinite_purified,
             subgroup = is_vanadinite,
             icon = graphics_vanadinite .. vanadinite_purified .. ".png",
-            icon_size = 32,
             order = e
         }
     })

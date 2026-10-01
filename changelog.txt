@@ -42,6 +42,7 @@ Date: ??.??.2026
           3. Purified catalyst.
     - [All] Added new recipes and technologies.
     - [All] Added new addon: Early Quality.
+    - [All] Added new mod setting: Loot from Spaceship.
 
   Changes:
     - [All] Moved from the Metallurgy Smelting Item-Group to the Petrochem Refining Item-Group the Lithium, Boron, Potassium, and Phosphorus branches.

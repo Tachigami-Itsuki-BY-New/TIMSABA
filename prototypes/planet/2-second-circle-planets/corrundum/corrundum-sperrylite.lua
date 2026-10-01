@@ -12,28 +12,24 @@ if mods[corrundum_mods] then
             name = sperrylite_crushed,
             subgroup = is_sperrylite,
             icon = graphics_sperrylite .. sperrylite_crushed .. ".png",
-            icon_size = 32,
             order = b
         },
         {
             name = sperrylite_chunks,
             subgroup = is_sperrylite,
             icon = graphics_sperrylite .. sperrylite_chunks .. ".png",
-            icon_size = 32,
             order = c
         },
         {
             name = sperrylite_crystals,
             subgroup = is_sperrylite,
             icon = graphics_sperrylite .. sperrylite_crystals .. ".png",
-            icon_size = 32,
             order = d
         },
         {
             name = sperrylite_purified,
             subgroup = is_sperrylite,
             icon = graphics_sperrylite .. sperrylite_purified .. ".png",
-            icon_size = 32,
             order = e
         }
     })

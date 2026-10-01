@@ -17,9 +17,9 @@ local function create_bool_setting(name, default_value)
         }
     })
 end
-create_bool_setting(setting_early_sintering_oven)
+create_bool_setting(setting_early_sintering_oven, true)
 create_bool_setting(setting_no_spoilage)
-create_bool_setting(setting_early_cliff_explosives)
+create_bool_setting(setting_early_cliff_explosives, true)
 if mods[space_age_science_packs] then
     create_bool_setting(setting_science_pack_nostalgia)
 end
@@ -30,6 +30,7 @@ create_bool_setting(setting_rebalance_belts_and_pipes, true)
 create_bool_setting(setting_flow_control_new)
 create_bool_setting(setting_infinite_research)
 create_bool_setting(setting_early_quality)
+create_bool_setting(setting_loot_from_spaceship)
 
 data:extend
 ({

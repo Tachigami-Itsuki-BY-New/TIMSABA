@@ -61,6 +61,7 @@ if mods[aegis_bellicos_mods] then
         {type = item, name = ice, amount = 8},
         {type = fluid, name = tritium_gas, amount = 120}
     }
+    data_recipe[tritium_gas_bellicos].main_product = tritium_gas
 
     data_item[pulsar_science_pack].subgroup = is_bellicos_recipe
     data_item[pulsar_science_pack].order = d

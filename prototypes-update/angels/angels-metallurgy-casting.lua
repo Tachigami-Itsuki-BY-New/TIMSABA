@@ -48,6 +48,7 @@ data_item[iron_plate].localised_description = show_formula and {chemical_formula
 data_item[iron_plate].order = c
 data_recipe[iron_plate].icons = TWO_I(crushed_saphirite, iron_plate)
 data_recipe[iron_plate].order = c
+data_recipe[iron_plate].allow_productivity = false
 data_recipe[iron_plate].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[iron_plate].ingredients[1].amount = 4
@@ -59,7 +60,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[iron_plate].ingredients[1].amount = 8
     data_recipe[iron_plate].results[1].amount = 1
 end
-data_recipe[iron_plate].allow_productivity = false
 
 local iron_plate_angels = "angels-plate-iron"
 data_recipe[iron_plate_angels].icons = TWO_I(iron_molten_angels, iron_plate)
@@ -181,6 +181,7 @@ data_item[copper_plate].localised_description = show_formula and {chemical_formu
 data_item[copper_plate].order = c
 data_recipe[copper_plate].icons = TWO_I(crushed_stiratite, copper_plate)
 data_recipe[copper_plate].order = c
+data_recipe[copper_plate].allow_productivity = false
 data_recipe[copper_plate].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[copper_plate].ingredients[1].amount = 4
@@ -192,7 +193,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[copper_plate].ingredients[1].amount = 8
     data_recipe[copper_plate].results[1].amount = 1
 end
-data_recipe[copper_plate].allow_productivity = false
 
 local copper_plate_angels = "angels-plate-copper"
 data_recipe[copper_plate_angels].icons = TWO_I(copper_molten_angels, copper_plate)
@@ -895,6 +895,27 @@ data_recipe[gold_roll_2].results[2].amount = 60
 data_item[gold_plate_bob].localised_description = show_formula and {chemical_formula, "Au"} or nil
 data_item[gold_plate_bob].order = c
 data_item[gold_plate_bob].weight = 5000
+if mods[secretas_frozeta_mods] then
+    data_recipe[gold_plate_bob].localised_name = data_item[gold_plate_bob].localised_name
+    data_recipe[gold_plate_bob].subgroup = "angels-gold-casting"
+    data_recipe[gold_plate_bob].icons = TWO_I(sylvanite_crushed, gold_plate_bob)
+    data_recipe[gold_plate_bob].order = c
+    data_recipe[gold_plate_bob].enabled = false
+    data_recipe[gold_plate_bob].allow_productivity = false
+    data_recipe[gold_plate_bob].allow_quality = true
+    data_recipe[gold_plate_bob].energy_required = 8
+    if settings.startup[setting_game_difficulty].value == easy then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 4}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 2}}
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 4}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 1}}
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 8}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 1}}
+    end
+    data_recipe[gold_plate_bob].main_product = gold_plate_bob
+end
 
 local gold_plate_angels = "angels-plate-gold"
 data_recipe[gold_plate_angels].icons = TWO_I(gold_molten_angels, gold_plate_bob)

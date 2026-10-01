@@ -16,95 +16,163 @@ local css_wreck_medium_2 = crash_site_spaceship .. "-wreck-medium-2"
 local css_wreck_medium_3 = crash_site_spaceship .. "-wreck-medium-3"
 local css_wreck_big_1 = crash_site_spaceship .. "-wreck-big-1"
 local css_wreck_big_2 = crash_site_spaceship .. "-wreck-big-2"
-if mods[lignumis_mods] then
-    data_container[crash_site_spaceship].minable =
-    {
-        mining_time = data_container[crash_site_spaceship].minable.mining_time,
-        results =
-        {
-            {type = item, name = stone, amount = 512},
-            {type = item, name = basic_circuit_board, amount = 256},
-            {type = item, name = lumber, amount = 1024},
-            {type = item, name = wooden_gear_wheel, amount = 512},
-            {type = item, name = gold_plate_bob, amount = 1024},
-            {type = item, name = gold_cable_mods, amount = 512}
-        }
-    }
-else
-    data_container[crash_site_spaceship].minable =
-    {
-        mining_time = data_container[crash_site_spaceship].minable.mining_time,
-        results =
-        {
-            {type = item, name = stone, amount = 512},
-            {type = item, name = basic_circuit_board, amount = 256},
-            {type = item, name = iron_plate, amount = 1024},
-            {type = item, name = iron_gear_wheel, amount = 512},
-            {type = item, name = iron_bearing, amount = 256},
-            {type = item, name = copper_plate, amount = 1024},
-            {type = item, name = copper_cable, amount = 512}
-        }
-    }
-end
-local function add_loot_in_crash_site_spaceship(name, amount)
-    if data_entity_owner[name] then
-        if mods[lignumis_mods] then
-            data_entity_owner[name].minable =
+if settings.startup[setting_loot_from_spaceship].value then
+    if mods[lignumis_mods] then
+        data_container[crash_site_spaceship].minable = {mining_time = data_container[crash_site_spaceship].minable.mining_time, results = {}}
+        if settings.startup[setting_game_difficulty].value == easy then
+            data_container[crash_site_spaceship].minable.results =
             {
-                mining_time = data_entity_owner[name].minable.mining_time,
-                results =
-                {
-                    {type = item, name = lumber, amount = amount},
-                    {type = item, name = gold_plate_bob, amount = amount}
-                }
+                {type = item, name = stone, amount = 1024},
+                {type = item, name = basic_circuit_board, amount = 256},
+                {type = item, name = lumber, amount = 1024},
+                {type = item, name = wooden_gear_wheel, amount = 512},
+                {type = item, name = gold_plate_bob, amount = 1024},
+                {type = item, name = gold_cable_mods, amount = 512}
             }
-        else
-            data_entity_owner[name].minable =
+        elseif settings.startup[setting_game_difficulty].value == normal then
+            data_container[crash_site_spaceship].minable.results =
             {
-                mining_time = data_entity_owner[name].minable.mining_time,
-                results =
-                {
-                    {type = item, name = iron_plate, amount = amount},
-                    {type = item, name = copper_plate, amount = amount}
-                }
+                {type = item, name = stone, amount = 512},
+                {type = item, name = basic_circuit_board, amount = 128},
+                {type = item, name = lumber, amount = 512},
+                {type = item, name = wooden_gear_wheel, amount = 256},
+                {type = item, name = gold_plate_bob, amount = 512},
+                {type = item, name = gold_cable_mods, amount = 256}
+            }
+        elseif settings.startup[setting_game_difficulty].value == hard then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 256},
+                {type = item, name = basic_circuit_board, amount = 64},
+                {type = item, name = lumber, amount = 256},
+                {type = item, name = wooden_gear_wheel, amount = 128},
+                {type = item, name = gold_plate_bob, amount = 256},
+                {type = item, name = gold_cable_mods, amount = 128}
+            }
+        end
+    else
+        data_container[crash_site_spaceship].minable = {mining_time = data_container[crash_site_spaceship].minable.mining_time, results = {}}
+        if settings.startup[setting_game_difficulty].value == easy then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 1024},
+                {type = item, name = basic_circuit_board, amount = 256},
+                {type = item, name = iron_plate, amount = 1024},
+                {type = item, name = iron_gear_wheel, amount = 512},
+                {type = item, name = iron_bearing, amount = 256},
+                {type = item, name = copper_plate, amount = 1024},
+                {type = item, name = copper_cable, amount = 512}
+            }
+        elseif settings.startup[setting_game_difficulty].value == normal then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 512},
+                {type = item, name = basic_circuit_board, amount = 128},
+                {type = item, name = iron_plate, amount = 512},
+                {type = item, name = iron_gear_wheel, amount = 256},
+                {type = item, name = iron_bearing, amount = 128},
+                {type = item, name = copper_plate, amount = 512},
+                {type = item, name = copper_cable, amount = 256}
+            }
+        elseif settings.startup[setting_game_difficulty].value == hard then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 256},
+                {type = item, name = basic_circuit_board, amount = 64},
+                {type = item, name = iron_plate, amount = 256},
+                {type = item, name = iron_gear_wheel, amount = 128},
+                {type = item, name = iron_bearing, amount = 64},
+                {type = item, name = copper_plate, amount = 256},
+                {type = item, name = copper_cable, amount = 128}
             }
         end
     end
-    if data_container[name] then
-        if mods[lignumis_mods] then
-            data_container[name].minable =
-            {
-                mining_time = data_container[name].minable.mining_time,
-                results =
+    local function add_loot_in_crash_site_spaceship(name, amount)
+        if data_entity_owner[name] then
+            if mods[lignumis_mods] then
+                data_entity_owner[name].minable =
                 {
-                    {type = item, name = lumber, amount = amount},
-                    {type = item, name = gold_plate_bob, amount = amount}
+                    mining_time = data_entity_owner[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = lumber, amount = amount},
+                        {type = item, name = gold_plate_bob, amount = amount}
+                    }
                 }
-            }
-        else
-            data_container[name].minable =
-            {
-                mining_time = data_container[name].minable.mining_time,
-                results =
+            else
+                data_entity_owner[name].minable =
                 {
-                    {type = item, name = iron_plate, amount = amount},
-                    {type = item, name = copper_plate, amount = amount}
+                    mining_time = data_entity_owner[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = iron_plate, amount = amount},
+                        {type = item, name = copper_plate, amount = amount}
+                    }
                 }
-            }
+            end
+        end
+        if data_container[name] then
+            if mods[lignumis_mods] then
+                data_container[name].minable =
+                {
+                    mining_time = data_container[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = lumber, amount = amount},
+                        {type = item, name = gold_plate_bob, amount = amount}
+                    }
+                }
+            else
+                data_container[name].minable =
+                {
+                    mining_time = data_container[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = iron_plate, amount = amount},
+                        {type = item, name = copper_plate, amount = amount}
+                    }
+                }
+            end
         end
     end
+    if settings.startup[setting_game_difficulty].value == easy then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 128)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 128)
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 64)
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 32)
+    end
 end
-add_loot_in_crash_site_spaceship(css_wreck_small_1, 32)
-add_loot_in_crash_site_spaceship(css_wreck_small_2, 32)
-add_loot_in_crash_site_spaceship(css_wreck_small_3, 32)
-add_loot_in_crash_site_spaceship(css_wreck_small_4, 32)
-add_loot_in_crash_site_spaceship(css_wreck_small_5, 32)
-add_loot_in_crash_site_spaceship(css_wreck_small_6, 32)
-add_loot_in_crash_site_spaceship(css_wreck_medium_1, 64)
-add_loot_in_crash_site_spaceship(css_wreck_medium_2, 64)
-add_loot_in_crash_site_spaceship(css_wreck_medium_3, 64)
-add_loot_in_crash_site_spaceship(css_wreck_big_1, 128)
-add_loot_in_crash_site_spaceship(css_wreck_big_2, 128)
 
 data_fish["fish"].minable.count = 4
 
