@@ -12,10 +12,10 @@ if mods[paracelsin_mods] then
     })
 
     is_paracelsin_air = "is-paracelsin-air"
-    is_vaterite_zinc = "is-vaterite-zinc"
+    is_vaterite_and_recipe = "is-vaterite-and-recipe"
     is_sphalerite = "is-sphalerite"
     is_tetrahedrite = "is-tetrahedrite"
-    is_paracelsin_recipe = "is-paracelsin-recipe"
+    is_paracelsin_zinc = "is-paracelsin-zinc"
     is_paracelsin_logistic = "is-paracelsin-logistic"
     is_paracelsin_energy = "is-paracelsin-energy"
     is_paracelsin_mining = "is-paracelsin-mining"
@@ -23,10 +23,10 @@ if mods[paracelsin_mods] then
     TIMSABA.functions.create_subgroups(ig_paracelsin,
     {
         {name = is_paracelsin_air,      order = a},
-        {name = is_vaterite_zinc,       order = b},
+        {name = is_vaterite_and_recipe, order = b},
         {name = is_sphalerite,          order = c},
         {name = is_tetrahedrite,        order = d},
-        {name = is_paracelsin_recipe,   order = e},
+        {name = is_paracelsin_zinc,     order = e},
         {name = is_paracelsin_logistic, order = f},
         {name = is_paracelsin_energy,   order = g},
         {name = is_paracelsin_mining,   order = h},

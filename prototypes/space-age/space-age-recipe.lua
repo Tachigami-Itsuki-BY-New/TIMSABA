@@ -86,10 +86,10 @@ metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_1, h_a, moly
 metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_2, h_b, rhenium_ore)
 metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_3, h_c, niobium_ore)
 metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_4, h_d, holmium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_5, h_e, antimony_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_6, h_f, germanium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_7, h_g, gallium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_8, h_h, vanadium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_5, h_e, vanadium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_6, h_f, antimony_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_7, h_g, germanium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_8, h_h, gallium_ore)
 
 -- CARBONIC
 advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"

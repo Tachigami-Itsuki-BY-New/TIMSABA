@@ -774,6 +774,10 @@ if mods[vesta_mods] then
         data_technology[tech_millerite_processing_4].prerequisites = {tech_millerite_processing_3, tech_gas_manipulation_science_pack}
     end
 
+    if mods[shchierbin_mods] then
+        data_technology[tech_vanadinite_processing_4].prerequisites = {tech_vanadinite_processing_3, tech_gas_manipulation_science_pack}
+    end
+
     if mods[secretas_frozeta_mods] then
         data_technology[tech_gallite_processing_3].prerequisites = {tech_gallite_processing_2, tech_gas_manipulation_science_pack}
         data_technology[tech_gallite_processing_4].prerequisites = {tech_gallite_processing_3, promethium_science_pack}
@@ -804,6 +808,9 @@ if mods[vesta_mods] then
     end
     if mods[castra_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_vanadinite_processing_4)
     end
     if mods[secretas_frozeta_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_gallite_processing_3)

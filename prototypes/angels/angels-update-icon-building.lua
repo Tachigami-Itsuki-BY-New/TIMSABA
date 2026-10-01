@@ -775,49 +775,81 @@ do
 		make_remnants = false
 	}
 	local tier_map = {[hydro_plant_4] = {tier = 4}}
-	for name, map in pairs(tier_map) do
-		---@type data.AssemblingMachinePrototype
-		local entity = data.raw[inputs.type][name]
-		if not entity then
-			goto continue
-		end
-		local tier = reskins.lib.tiers.get_tier(map)
-		inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
-		reskins.lib.setup_standard_entity(name, tier, inputs)
-		entity.graphics_set.animation =
-		{
-			layers =
-			{
-				{
-					filename = "__angelsrefininggraphics__/graphics/entity/hydro-plant/hydro-plant-base.png",
-					priority = extra_high,
-					width = 459,
-					height = 491,
-					shift = util.by_pixel(0, 0),
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-mask.png",
-					priority = extra_high,
-					width = 459,
-					height = 491,
-					shift = util.by_pixel(0, 0),
-					tint = inputs.tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-highlights.png",
-					priority = extra_high,
-					width = 459,
-					height = 491,
-					shift = util.by_pixel(0, 0),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
-				}
-			}
-		}
-		::continue::
-	end
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsrefininggraphics__/graphics/entity/hydro-plant/hydro-plant-base.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-mask.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    tint = inputs.tint,
+                    scale = 0.5
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-highlights.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    blend_mode = reskins.lib.settings.blend_mode,
+                    scale = 0.5
+                }
+            }
+        }
+        entity.graphics_set_flipped.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsrefininggraphics__/graphics/entity/hydro-plant/hydro-plant-base.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-mask.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    tint = inputs.tint,
+                    scale = 0.5
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/hydro-plant/hydro-plant-highlights.png",
+                    priority = extra_high,
+                    width = 459,
+                    height = 491,
+                    shift = util.by_pixel(0, 0),
+                    blend_mode = reskins.lib.settings.blend_mode,
+                    scale = 0.5
+                }
+            }
+        }
+        ::continue::
+    end
 end
 
 -- WASHING PLANT
