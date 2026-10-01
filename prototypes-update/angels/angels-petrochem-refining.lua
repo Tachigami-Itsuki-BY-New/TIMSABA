@@ -555,7 +555,7 @@ data_recipe[hydrogen_fluoride_angels].ingredients =
 data_recipe[hydrogen_fluoride_angels].results =
 {
     {type = fluid, name = hydrogen_fluoride_angels, amount = 120},
-    {type = item, name = calcium_sulfate_angels, amount = 4}
+    {type = item, name = calcium_sulfate_angels, amount = 2} -- 4
 }
 
 data_fluid[hydrofluoric_acid_angels].localised_description = show_formula and {chemical_formula, "HF[font=default-tiny-bold](aq)[/font]"} or nil
