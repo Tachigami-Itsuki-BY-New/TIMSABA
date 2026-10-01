@@ -977,11 +977,11 @@ data_recipe[filter_ceramic_refurbish].subgroup = is_catalysts_filters
 data_recipe[filter_ceramic_refurbish].icons = BUILDING_R_I(filter_ceramic, water_purified_angels)
 data_recipe[filter_ceramic_refurbish].order = c_a
 data_recipe[filter_ceramic_refurbish].energy_required = 1
-data_recipe[filter_ceramic_refurbish].ingredients[2].amount = 60
+data_recipe[filter_ceramic_refurbish].ingredients[2].amount = 30
 data_recipe[filter_ceramic_refurbish].results =
 {
     {type = item, name = filter_ceramic, amount = 1},
-    {type = fluid, name = water, amount = 60}
+    {type = fluid, name = water, amount = 30}
 }
 
 local filter_ceramic_used = "angels-filter-ceramic-used"
@@ -996,31 +996,43 @@ data_recipe[filter_lime].order = e
 
 local filter_lime_used_cleaning = "angels-filter-lime-used-cleaning"
 data_recipe[filter_lime_used_cleaning].localised_name = {"item-name." .. filter_lime}
+data_recipe[filter_lime_used_cleaning].categories = {crafting_fluid}
 data_recipe[filter_lime_used_cleaning].subgroup = is_catalysts_filters
-data_recipe[filter_lime_used_cleaning].icons = BUILDING_R_I(filter_lime, compressed_air)
+data_recipe[filter_lime_used_cleaning].icons = BUILDING_R_I(filter_lime, water_purified_angels)
 data_recipe[filter_lime_used_cleaning].order = e_b
+data_recipe[filter_lime_used_cleaning].energy_required = 1
 data_recipe[filter_lime_used_cleaning].ingredients =
 {
     {type = item, name = filter_lime_used, amount = 1},
-    {type = fluid, name = compressed_air, amount = 30}
+    {type = fluid, name = water_purified_angels, amount = 30}
 }
 data_recipe[filter_lime_used_cleaning].results =
 {
-    {type = item, name = filter_lime, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.1},
-    {type = fluid, name = acid_angels, amount = 30}
+    {type = item, name = filter_lime, amount = 1},
+    {type = fluid, name = water_yellow_waste, amount = 30}
 }
+data_recipe[filter_lime_used_cleaning].main_product = water_yellow_waste
 
 data_item[filter_lime_used].subgroup = is_catalysts_filters
 data_item[filter_lime_used].order = f
 
 local sulfur_air_scrubbing = "angels-sulfur-air-scrubbing"
 data_recipe[sulfur_air_scrubbing].subgroup = is_catalysts_filters
-data_recipe[sulfur_air_scrubbing].icons = TWO_I(water, water_yellow_waste)
+data_recipe[sulfur_air_scrubbing].icons = TWO_I(compressed_air, acid_angels)
 data_recipe[sulfur_air_scrubbing].order = f_a
-data_recipe[sulfur_air_scrubbing].energy_required = 4
-data_recipe[sulfur_air_scrubbing].ingredients[2].amount = 30
-data_recipe[sulfur_air_scrubbing].results[2].amount = 30
+data_recipe[sulfur_air_scrubbing].energy_required = 2
+data_recipe[sulfur_air_scrubbing].ingredients =
+{
+    {type = item, name = filter_lime, amount = 1},
+    {type = fluid, name = compressed_air, amount = 30}
+}
+data_recipe[sulfur_air_scrubbing].results =
+{
+    {type = item, name = filter_lime, amount = 1, independent_probability = 0.9},
+    {type = item, name = filter_lime_used, amount = 1, independent_probability = 0.1},
+    {type = fluid, name = acid_angels, amount = 30}
+}
+data_recipe[sulfur_air_scrubbing].main_product = acid_angels
 
 -- IRON ITEM
 data_item[crushed_ferrium].localised_description = {"item-description.ferrium-crushed"}

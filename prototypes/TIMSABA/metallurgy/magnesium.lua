@@ -270,7 +270,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = magnesium_gas, amount = 240},
             {type = fluid, name = chlorine_angels, amount = 120}, -- 240
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = magnesium_gas
     },

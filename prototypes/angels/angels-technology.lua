@@ -1300,5 +1300,6 @@ data:extend
 
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_stone_smelting_5)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_stone_smelting_6)
+table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_water_treatment_6)
 
 table.insert(data_technology[tech_stone_smelting_6].prerequisites, tech_advanced_chemistry_6)

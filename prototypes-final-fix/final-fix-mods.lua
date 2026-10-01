@@ -698,7 +698,7 @@ if mods[lignumis_mods] then
     data_technology[rocket_silo].prerequisites =
     {
         rocket_fuel, low_density_structure,
-        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4,
+        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4, tech_multi_purpose_furnace_2,
         tech_molybdenum_processing, tech_rhenium_processing, tech_molybdenum_rhenium_processing
     }
 

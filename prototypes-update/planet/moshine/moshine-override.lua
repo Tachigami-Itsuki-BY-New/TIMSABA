@@ -972,7 +972,10 @@ if mods[moshine_mods] then
     })
 
     -- TECHNOLOGY
-    data_technology[planet_discovery_moshine].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_moshine].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_moshine].prerequisites, interstellar_science_pack)
+    end
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation_2})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = saphirite_from_lava_moshine})

@@ -28,7 +28,7 @@ if mods[paracelsin_mods] then
             categories = {powderizing_4},
             subgroup = is_paracelsin_zinc,
             icons = TWO_I(zinc_ore_bob, zinc_powder),
-            order = b,
+            order = a,
             ingredients = {{type = item, name = zinc_ore_bob, amount = 1}},
             results = {{type = item, name = zinc_powder, amount = 1}},
             main_product = zinc_powder,

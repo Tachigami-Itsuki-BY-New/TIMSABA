@@ -135,7 +135,7 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_mods].categories = {sintering_6}
     data_recipe[zinc_plate_mods].subgroup = is_paracelsin_zinc
     data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
-    data_recipe[zinc_plate_mods].order = a
+    data_recipe[zinc_plate_mods].order = b
     data_recipe[zinc_plate_mods].energy_required = 1
     data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
     data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
@@ -143,18 +143,18 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
     data_item[zinc_rivets].subgroup = is_paracelsin_zinc
-    data_item[zinc_rivets].order = b
+    data_item[zinc_rivets].order = c
     data_recipe[zinc_rivets].subgroup = is_paracelsin_zinc
     data_recipe[zinc_rivets].icons = TWO_I(zinc_plate_bob, zinc_rivets)
-    data_recipe[zinc_rivets].order = b
+    data_recipe[zinc_rivets].order = c
     data_recipe[zinc_rivets].ingredients = {{type = item, name = zinc_plate_bob, amount = 4}}
     data_recipe[zinc_rivets].results[1].amount = 8
 
     data_item[zinc_cable].subgroup = is_paracelsin_zinc
-    data_item[zinc_cable].order = c
+    data_item[zinc_cable].order = d
     data_recipe[zinc_cable].subgroup = is_paracelsin_zinc
     data_recipe[zinc_cable].icons = THREE_I(copper_cable, zinc_plate_bob, zinc_cable)
-    data_recipe[zinc_cable].order = c
+    data_recipe[zinc_cable].order = d
     data_recipe[zinc_cable].ingredients =
     {
         {type = item, name = copper_cable, amount = 2},
@@ -163,10 +163,10 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_cable].results[1].amount = 2
 
     data_item[electric_coil].subgroup = is_paracelsin_zinc
-    data_item[electric_coil].order = d
+    data_item[electric_coil].order = e
     data_item[electric_coil].stack_size = 200
     data_recipe[electric_coil].subgroup = is_paracelsin_zinc
-    data_recipe[electric_coil].order = d
+    data_recipe[electric_coil].order = e
     data_recipe[electric_coil].ingredients =
     {
         {type = item, name = copper_cable, amount = 32},
@@ -176,7 +176,7 @@ if mods[paracelsin_mods] then
     }
 
     data_item[galvanized_steel_plate].subgroup = is_paracelsin_zinc
-    data_item[galvanized_steel_plate].order = e
+    data_item[galvanized_steel_plate].order = f
     data_item[galvanized_steel_plate].stack_size = 200
 
     -- LOGISTICS

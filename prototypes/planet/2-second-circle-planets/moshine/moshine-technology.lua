@@ -79,7 +79,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_3,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2, tech_phosphorus_processing_2},
+            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_crystals},
@@ -403,7 +403,7 @@ if mods[moshine_mods] then
             type = technology,
             name = tech_phosphorus_processing_2,
             icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-            prerequisites = {tech_phosphorus_processing, tech_monazite_processing_2, tech_water_treatment_6},
+            prerequisites = {tech_phosphorus_processing, tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = water_orange_waste_purification},
@@ -429,4 +429,6 @@ if mods[moshine_mods] then
             }
         }
     })
+
+    table.insert(data_technology[tech_monazite_processing_3].prerequisites, tech_phosphorus_processing_2)
 end

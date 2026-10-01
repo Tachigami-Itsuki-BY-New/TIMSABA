@@ -339,7 +339,8 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = oxygen_angels, amount = 60}, -- 180
             {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16 or --{type = fluid, name = sodium_hydroxide_solution_angels, amount = 120} -- 240
             --{type = fluid, name = water_purified_angels, amount = 120}, -- 360
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = gallium_liquid
     },

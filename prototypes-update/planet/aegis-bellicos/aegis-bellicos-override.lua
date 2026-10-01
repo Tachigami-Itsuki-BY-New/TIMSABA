@@ -333,7 +333,7 @@ if mods[aegis_bellicos_mods] then
     }
 
     local discovery_bellicos = "discovery-bellicos"
-    data_technology[discovery_bellicos].prerequisites = {tech_advanced_asteroid_processing, discovery_aegis_inner, rocket_turret}
+    data_technology[discovery_bellicos].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, discovery_aegis_inner, rocket_turret}
     data_technology[discovery_bellicos].unit.ingredients =
     {
         {automation_science_pack, 1},

@@ -932,7 +932,8 @@ data_recipe[hydrogen_chloride_separation].results =
 {
     {type = fluid, name = hydrogen_angels, amount = 120},
     {type = fluid, name = chlorine_angels, amount = 120},
-    {type = item, name = electrode_used, amount = 1}
+    {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
 }
 
 data_fluid[thruster_fuel].subgroup = is_space_processing

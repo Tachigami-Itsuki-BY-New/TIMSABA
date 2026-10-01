@@ -76,7 +76,8 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 480
             {type = fluid, name = ammonia_angels, amount = 240}, -- 480
             --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = iron_cathode
     },
@@ -472,7 +473,8 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = silicon_chloride_IV_gas, amount = 240}, -- 480
             {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 960
             --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = tin_cathode
     }
@@ -1074,7 +1076,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = chromium_cathode, amount = 16},
             {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
             {type = fluid, name = hydrogen_peroxide, amount = 240}, -- 720
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
         },
         main_product = chromium_cathode
     },

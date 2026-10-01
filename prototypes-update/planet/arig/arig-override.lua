@@ -825,7 +825,7 @@ if mods[arig_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_arig = "planet-discovery-arig"
-    data_technology[planet_discovery_arig].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_arig].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_arig].prerequisites, interstellar_science_pack)
     end
