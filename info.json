@@ -67,7 +67,6 @@
 
         "+ Custom-Production-UI-Fixed",
         "+ FilterHelper",
-        "+ Flare Stack",
         "+ vp-scale",
         "+ redrawn-space-compat-fixes",
         "+ Rocket-Silo-Construction",
@@ -115,6 +114,7 @@
         "? show-max-underground-distance",
         "? RateCalculator",
         "? kry-picker-extended",
+        "? Flare Stack",
 
         "! extendedangels",
         "! NoTimedSpoilage",

@@ -35,6 +35,8 @@ if mods[lignumis_mods] then
     data_recipe[lumber].subgroup = is_lignumis_recipe
     data_recipe[lumber].icons = TWO_I(wood, lumber)
     data_recipe[lumber].order = f
+    data_recipe[lumber].ingredients[1].amount = 1
+    data_recipe[lumber].results[1].amount = 2
 
     data_item[wooden_gear_wheel].subgroup = is_lignumis_recipe
     data_item[wooden_gear_wheel].order = g
@@ -680,8 +682,10 @@ if mods[lignumis_mods] then
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
 
     local planet_discovery_nauvis = "planet-discovery-nauvis"
-    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = ore_saphirite .. "-hand"})
-    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = ore_stiratite .. "-hand"})
+    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = burner_ore_crusher})
+    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_saphirite .. "-hand"})
+    table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_stiratite .. "-hand"})
+
 
     tech_iron_processing = "iron-processing"
     data_technology[tech_iron_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"

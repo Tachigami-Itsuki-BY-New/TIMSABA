@@ -7,6 +7,7 @@ data_recipe[burner_ore_crusher].subgroup = is_ore_crusher
 data_recipe[burner_ore_crusher].order = a
 data_recipe[burner_ore_crusher].energy_required = 4
 if mods[lignumis_mods] then
+    data_recipe[burner_ore_crusher].enabled = false
     data_recipe[burner_ore_crusher].ingredients[1].amount = 4
     data_recipe[burner_ore_crusher].ingredients[3].name = wooden_gear_wheel
     data_recipe[burner_ore_crusher].ingredients[3].amount = 4

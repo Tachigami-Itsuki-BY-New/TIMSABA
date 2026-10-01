@@ -4,6 +4,108 @@
 -- uranium_ore = ore_senaite, ore_franckeite
 
 -- BASE
+local crash_site_spaceship = "crash-site-spaceship"
+local css_wreck_small_1 = crash_site_spaceship .. "-wreck-small-1"
+local css_wreck_small_2 = crash_site_spaceship .. "-wreck-small-2"
+local css_wreck_small_3 = crash_site_spaceship .. "-wreck-small-3"
+local css_wreck_small_4 = crash_site_spaceship .. "-wreck-small-4"
+local css_wreck_small_5 = crash_site_spaceship .. "-wreck-small-5"
+local css_wreck_small_6 = crash_site_spaceship .. "-wreck-small-6"
+local css_wreck_medium_1 = crash_site_spaceship .. "-wreck-medium-1"
+local css_wreck_medium_2 = crash_site_spaceship .. "-wreck-medium-2"
+local css_wreck_medium_3 = crash_site_spaceship .. "-wreck-medium-3"
+local css_wreck_big_1 = crash_site_spaceship .. "-wreck-big-1"
+local css_wreck_big_2 = crash_site_spaceship .. "-wreck-big-2"
+if mods[lignumis_mods] then
+    data_container[crash_site_spaceship].minable =
+    {
+        mining_time = data_container[crash_site_spaceship].minable.mining_time,
+        results =
+        {
+            {type = item, name = stone, amount = 512},
+            {type = item, name = basic_circuit_board, amount = 256},
+            {type = item, name = lumber, amount = 1024},
+            {type = item, name = wooden_gear_wheel, amount = 512},
+            {type = item, name = gold_plate_bob, amount = 1024},
+            {type = item, name = gold_cable_mods, amount = 512}
+        }
+    }
+else
+    data_container[crash_site_spaceship].minable =
+    {
+        mining_time = data_container[crash_site_spaceship].minable.mining_time,
+        results =
+        {
+            {type = item, name = stone, amount = 512},
+            {type = item, name = basic_circuit_board, amount = 256},
+            {type = item, name = iron_plate, amount = 1024},
+            {type = item, name = iron_gear_wheel, amount = 512},
+            {type = item, name = iron_bearing, amount = 256},
+            {type = item, name = copper_plate, amount = 1024},
+            {type = item, name = copper_cable, amount = 512}
+        }
+    }
+end
+local function add_loot_in_crash_site_spaceship(name, amount)
+    if data_entity_owner[name] then
+        if mods[lignumis_mods] then
+            data_entity_owner[name].minable =
+            {
+                mining_time = data_entity_owner[name].minable.mining_time,
+                results =
+                {
+                    {type = item, name = lumber, amount = amount},
+                    {type = item, name = gold_plate_bob, amount = amount}
+                }
+            }
+        else
+            data_entity_owner[name].minable =
+            {
+                mining_time = data_entity_owner[name].minable.mining_time,
+                results =
+                {
+                    {type = item, name = iron_plate, amount = amount},
+                    {type = item, name = copper_plate, amount = amount}
+                }
+            }
+        end
+    end
+    if data_container[name] then
+        if mods[lignumis_mods] then
+            data_container[name].minable =
+            {
+                mining_time = data_container[name].minable.mining_time,
+                results =
+                {
+                    {type = item, name = lumber, amount = amount},
+                    {type = item, name = gold_plate_bob, amount = amount}
+                }
+            }
+        else
+            data_container[name].minable =
+            {
+                mining_time = data_container[name].minable.mining_time,
+                results =
+                {
+                    {type = item, name = iron_plate, amount = amount},
+                    {type = item, name = copper_plate, amount = amount}
+                }
+            }
+        end
+    end
+end
+add_loot_in_crash_site_spaceship(css_wreck_small_1, 32)
+add_loot_in_crash_site_spaceship(css_wreck_small_2, 32)
+add_loot_in_crash_site_spaceship(css_wreck_small_3, 32)
+add_loot_in_crash_site_spaceship(css_wreck_small_4, 32)
+add_loot_in_crash_site_spaceship(css_wreck_small_5, 32)
+add_loot_in_crash_site_spaceship(css_wreck_small_6, 32)
+add_loot_in_crash_site_spaceship(css_wreck_medium_1, 64)
+add_loot_in_crash_site_spaceship(css_wreck_medium_2, 64)
+add_loot_in_crash_site_spaceship(css_wreck_medium_3, 64)
+add_loot_in_crash_site_spaceship(css_wreck_big_1, 128)
+add_loot_in_crash_site_spaceship(css_wreck_big_2, 128)
+
 data_fish["fish"].minable.count = 4
 
 for tree_name, tree_data in pairs(data_tree) do

@@ -6,6 +6,7 @@ local muluna_loot = require("scripting.muluna-loot")
 local planet_messages = require("scripting.planet-messages")
 local dynamic_underground_belts = require("scripting.dynamic-underground-belts")
 local dynamic_pipe_to_ground = require("scripting.dynamic-pipe-to-ground")
+local starting_items = require("scripting.starting-items")
 
 script.on_event
 ({
