@@ -1877,11 +1877,11 @@ data_item[ammonium_hexachloroplatinate_IV].localised_description = show_formula 
 data_item[ammonium_hexachloroplatinate_IV].subgroup = is_platinum_chemistry
 data_item[ammonium_hexachloroplatinate_IV].order = d
 
--- 
-data_item_subgroup[is_alloys].order = t
+-- ALLOYS
+data_item_subgroup[is_alloys].order = v
 
 -- GLASS
-data_item_subgroup["angels-glass"].order = t
+data_item_subgroup["angels-glass"].order = w
 
 data_recipe[glass_mixture].icons = TWO_I(silicon_oxide_IV, glass_mixture, number_1)
 data_recipe[glass_mixture].energy_required = 8 -- 2 = 1
@@ -1917,7 +1917,7 @@ data_recipe[glass_mixture_4].ingredients =
 data_recipe[glass_mixture_4].results[1].amount = 16
 
 -- STONE
-data_item_subgroup["angels-stone"].order = u
+data_item_subgroup["angels-stone"].order = x
 
 data_item[cement].order = a
 data_recipe[cement].icons = THREE_D_I(lime_angels, silicon_oxide_IV, slag_angels, cement, nil, nil, number_1)
