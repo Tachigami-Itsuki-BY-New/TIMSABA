@@ -26,8 +26,8 @@ if mods[arig_mods] then
             results =
             {
                 {type = fluid, name = pure_sand_arig, amount = 30},
-                {type = item, name = filter_coal, amount = 1, independent_probability = 0.9},
-                {type = item, name = filter_frame, amount = 1, independent_probability = 0.1}
+                {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+                {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
             },
             main_product = pure_sand_arig,
             surface_conditions = {{property = pressure, min = 600, max = 600}}

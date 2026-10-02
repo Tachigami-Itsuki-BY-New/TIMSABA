@@ -439,6 +439,7 @@ if mods[paracelsin_mods] then
     data_technology[vaterite_processing].icon_size = 64
 
     table.insert(data_technology[galvanization_science_pack].prerequisites, vaterite_processing)
+    table.insert(data_technology[galvanization_science_pack].effects, {type = unlock_recipe, recipe = paracelsin_slag_processing})
 
     data_technology["galvanized-steel"].unit.ingredients =
     {

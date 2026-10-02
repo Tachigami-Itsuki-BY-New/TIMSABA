@@ -52,6 +52,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.foliax")
 -- obsidiax
 -- crucible
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.ribbonia")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.eneas")
 -- rubia
 -- cubium
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")

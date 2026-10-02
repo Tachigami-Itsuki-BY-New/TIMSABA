@@ -1001,6 +1001,16 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
+    local tech_water_cooling_device = water_cooling_device .. "_tech"
+    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
+
+    local tech_cryogenic_cooling_device = cryogenic_cooling_device .. "_tech"
+    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
+
     data_technology["moshine-tech-glass"].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -1102,6 +1112,9 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
+    local tech_neural_computer = "moshine-tech-" .. neural_computer
+    table.insert(data_technology[tech_neural_computer].effects, {type = unlock_recipe, recipe = moshine_slag_processing})
+
     if settings.startup[setting_bobmods_power_solar].value then
         data_technology["big-solar-energy"].prerequisites = {"moshine-tech-ai-tier-2", tech_solar_energy_4}
     end
@@ -1142,6 +1155,16 @@ if mods[moshine_mods] then
         {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
         {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}
     }
+
+    tech_cosmicscanner_construction_1 = "moshine-tech-cosmicscanner-construction1"
+    table.insert(data_technology[tech_cosmicscanner_construction_1].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[tech_cosmicscanner_construction_1].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_cosmicscanner_construction_1].unit.ingredients, {electromagnetic_science_pack, 1})
+
+    local tech_cosmicscanner_construction_2 = "moshine-tech-cosmicscanner-construction2"
+    table.insert(data_technology[tech_cosmicscanner_construction_2].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[tech_cosmicscanner_construction_2].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_cosmicscanner_construction_2].unit.ingredients, {electromagnetic_science_pack, 1})
 
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, tech_vanadinite_processing_2)

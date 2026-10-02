@@ -791,9 +791,19 @@ if mods[hyarion_mods] then
         {type = item, name = metallic_ore, amount_min = 0, amount_max = 4}
     }
 
-    data_resource["emerald-geode"].minable.mining_time = 8
-    data_resource["ruby-geode"].minable.mining_time = 8
-    data_resource["sapphire-geode"].minable.mining_time = 8
+    data_resource[quartz_ore].minable.result = quartz_ore
+
+    local emerald_geode = "emerald-geode"
+    data_resource[emerald_geode].minable.mining_time = 8
+    data_resource[emerald_geode].minable.results[1].name = emerald_bob
+
+    local ruby_geode = "ruby-geode"
+    data_resource[ruby_geode].minable.mining_time = 8
+    data_resource[ruby_geode].minable.results[1].name = ruby_bob
+
+    local sapphire_geode = "sapphire-geode"
+    data_resource[sapphire_geode].minable.mining_time = 8
+    data_resource[sapphire_geode].minable.results[1].name = sapphire_bob
 end
 
 -- TELLUS

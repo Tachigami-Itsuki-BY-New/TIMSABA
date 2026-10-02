@@ -887,4 +887,29 @@ if mods[loaders_modernized_integrations] then
         data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
         data_loader_1x1[stack_loader].next_upgrade = nil
     end
+
+    if data_technology[vulcanus_loader] then
+        table.insert(data_technology[vulcanus_loader].prerequisites, vulcanus_transport_belt)
+        if data_item[transport_science_pack] then
+            table.insert(data_technology[vulcanus_loader].unit.ingredients, {transport_science_pack, 1})
+        end
+        table.insert(data_technology[vulcanus_loader].unit.ingredients, {utility_science_pack, 1})
+    end
+
+    if data_technology[stack_loader] then
+        data_technology[stack_loader].prerequisites = {vulcanus_loader, stack_inserter}
+        if data_item[transport_science_pack] then
+            table.insert(data_technology[stack_loader].unit.ingredients, {transport_science_pack, 1})
+        end
+        table.insert(data_technology[stack_loader].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[stack_loader].unit.ingredients, {electromagnetic_science_pack, 1})
+    end
+
+    if data_technology[hyper_loader_arig] then
+        data_technology[hyper_loader_arig].prerequisites = {vulcanus_loader, hyper_transport_belt_arig}
+        table.insert(data_technology[hyper_loader_arig].unit.ingredients, {electromagnetic_science_pack, 1})
+        if data_technology[stack_loader] then
+            data_technology[stack_loader].prerequisites = {hyper_loader_arig, stack_inserter}
+        end
+    end
 end

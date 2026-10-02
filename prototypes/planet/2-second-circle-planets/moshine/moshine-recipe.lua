@@ -504,4 +504,27 @@ if mods[moshine_mods] then
 
         data:extend({timewarp_data_recipe})
     end
+
+    -- SLAG PROCESSING
+    moshine_slag_processing = "moshine-slag-processing"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. monazite_ore}, {"item-name." .. aeschynite_ore}},
+            name = moshine_slag_processing,
+            categories = {crystallizing_4},
+            subgroup = slag_processing_1,
+            icons = THREE_R_I(sludge_mineral, monazite_ore, aeschynite_ore),
+            order = c .. "-" .. data_planet[planet_moshine].order,
+            allow_productivity = true,
+            energy_required = 8,
+            ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+            results =
+            {
+                {type = item, name = monazite_ore, amount = 1, independent_probability = 0.5},
+                {type = item, name = aeschynite_ore, amount = 1, independent_probability = 0.5}
+            },
+            surface_conditions = {{property = pressure, min = 701, max = 701}}
+        }
+    })
 end

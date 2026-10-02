@@ -881,56 +881,194 @@ data_item_subgroup[is_gems_raw].group = intermediate_products
 data_item_subgroup[is_gems_raw].order = f_a
 
 data_item[raw_ruby_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[raw_ruby_bob].icons = TWO_I(ruby_bob, raw_ruby_bob)
+data_recipe[raw_ruby_bob].categories = {crafting_fluid}
+data_recipe[raw_ruby_bob].icons = TWO_D_I(ruby_bob, water_purified_angels, raw_ruby_bob, water)
+data_recipe[raw_ruby_bob].allow_productivity = false
+data_recipe[raw_ruby_bob].energy_required = 8
+data_recipe[raw_ruby_bob].ingredients =
+{
+    {type = item, name = ruby_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_ruby_bob].results =
+{
+    {type = item, name = raw_ruby_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_ruby_bob].main_product = raw_ruby_bob
 
 data_item[raw_sapphire_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[raw_sapphire_bob].icons = TWO_I(sapphire_bob, raw_sapphire_bob)
+data_recipe[raw_sapphire_bob].categories = {crafting_fluid}
+data_recipe[raw_sapphire_bob].icons = TWO_D_I(sapphire_bob, water_purified_angels, raw_sapphire_bob, water)
+data_recipe[raw_sapphire_bob].allow_productivity = false
+data_recipe[raw_sapphire_bob].energy_required = 8
+data_recipe[raw_sapphire_bob].ingredients =
+{
+    {type = item, name = sapphire_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_sapphire_bob].results =
+{
+    {type = item, name = raw_sapphire_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_sapphire_bob].main_product = raw_sapphire_bob
 
 data_item[raw_emerald_bob].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]18[/font]"} or nil
-data_recipe[raw_emerald_bob].icons = TWO_I(emerald_bob, raw_emerald_bob)
+data_recipe[raw_emerald_bob].categories = {crafting_fluid}
+data_recipe[raw_emerald_bob].icons = TWO_D_I(emerald_bob, water_purified_angels, raw_emerald_bob, water)
+data_recipe[raw_emerald_bob].allow_productivity = false
+data_recipe[raw_emerald_bob].energy_required = 8
+data_recipe[raw_emerald_bob].ingredients =
+{
+    {type = item, name = emerald_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_emerald_bob].results =
+{
+    {type = item, name = raw_emerald_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_emerald_bob].main_product = raw_emerald_bob
 
 data_item[raw_amethyst_bob].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[raw_amethyst_bob].icons = TWO_I(amethyst_bob, raw_amethyst_bob)
+data_recipe[raw_amethyst_bob].categories = {crafting_fluid}
+data_recipe[raw_amethyst_bob].icons = TWO_D_I(amethyst_bob, water_purified_angels, raw_amethyst_bob, water)
+data_recipe[raw_amethyst_bob].allow_productivity = false
+data_recipe[raw_amethyst_bob].energy_required = 8
+data_recipe[raw_amethyst_bob].ingredients =
+{
+    {type = item, name = amethyst_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_amethyst_bob].results =
+{
+    {type = item, name = raw_amethyst_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_amethyst_bob].main_product = raw_amethyst_bob
 
 data_item[raw_topaz_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]4[/font](FOH)[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[raw_topaz_bob].icons = TWO_I(topaz_bob, raw_topaz_bob)
+data_recipe[raw_topaz_bob].categories = {crafting_fluid}
+data_recipe[raw_topaz_bob].icons = TWO_D_I(topaz_bob, water_purified_angels, raw_topaz_bob, water)
+data_recipe[raw_topaz_bob].allow_productivity = false
+data_recipe[raw_topaz_bob].energy_required = 8
+data_recipe[raw_topaz_bob].ingredients =
+{
+    {type = item, name = topaz_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_topaz_bob].results =
+{
+    {type = item, name = raw_topaz_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_topaz_bob].main_product = raw_topaz_bob
 
 data_item[raw_diamond_bob].localised_description = show_formula and {chemical_formula, "C"} or nil
-data_recipe[raw_diamond_bob].icons = TWO_I(diamond_bob, raw_diamond_bob)
+data_recipe[raw_diamond_bob].categories = {crafting_fluid}
+data_recipe[raw_diamond_bob].icons = TWO_D_I(diamond_bob, water_purified_angels, raw_diamond_bob, water)
+data_recipe[raw_diamond_bob].allow_productivity = false
+data_recipe[raw_diamond_bob].energy_required = 8
+data_recipe[raw_diamond_bob].ingredients =
+{
+    {type = item, name = diamond_bob, amount = 1},
+    {type = fluid, name = water_purified_angels, amount = 15}
+}
+data_recipe[raw_diamond_bob].results =
+{
+    {type = item, name = raw_diamond_bob, amount = 1},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[raw_diamond_bob].main_product = raw_diamond_bob
 
 local is_gems_cut = "bob-gems-cut"
 data_item_subgroup[is_gems_cut].group = intermediate_products
 data_item_subgroup[is_gems_cut].order = f_b
 
 data_item[cut_ruby_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[cut_ruby_bob].icons = THREE_D_I(raw_ruby_bob, wheel_grinding_bob, water, cut_ruby_bob)
-data_recipe[cut_ruby_bob].energy_required = 4
+data_recipe[cut_ruby_bob].icons = TWO_D_I(raw_ruby_bob, water_purified_angels, cut_ruby_bob, water)
+data_recipe[cut_ruby_bob].allow_productivity = false
+data_recipe[cut_ruby_bob].energy_required = 8
+data_recipe[cut_ruby_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_ruby_bob].ingredients[3].amount = 15
+data_recipe[cut_ruby_bob].results =
+{
+    {type = item, name = cut_ruby_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_ruby_bob].main_product = cut_ruby_bob
 
 data_item[cut_sapphire_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[cut_sapphire_bob].icons = THREE_D_I(raw_sapphire_bob, wheel_grinding_bob, water, cut_sapphire_bob)
-data_recipe[cut_sapphire_bob].energy_required = 4
+data_recipe[cut_sapphire_bob].icons = TWO_D_I(raw_sapphire_bob, water_purified_angels, cut_sapphire_bob, water)
+data_recipe[cut_sapphire_bob].allow_productivity = false
+data_recipe[cut_sapphire_bob].energy_required = 8
+data_recipe[cut_sapphire_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_sapphire_bob].ingredients[3].amount = 15
+data_recipe[cut_sapphire_bob].results =
+{
+    {type = item, name = cut_sapphire_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_sapphire_bob].main_product = cut_sapphire_bob
 
 data_item[cut_emerald_bob].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]18[/font]"} or nil
-data_recipe[cut_emerald_bob].icons = THREE_D_I(raw_emerald_bob, wheel_grinding_bob, water, cut_emerald_bob)
-data_recipe[cut_emerald_bob].energy_required = 4
+data_recipe[cut_emerald_bob].icons = TWO_D_I(raw_emerald_bob, water_purified_angels, cut_emerald_bob, water)
+data_recipe[cut_emerald_bob].allow_productivity = false
+data_recipe[cut_emerald_bob].energy_required = 8
+data_recipe[cut_emerald_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_emerald_bob].ingredients[3].amount = 15
+data_recipe[cut_emerald_bob].results =
+{
+    {type = item, name = cut_emerald_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_emerald_bob].main_product = cut_emerald_bob
 
 data_item[cut_amethyst_bob].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[cut_amethyst_bob].icons = THREE_D_I(raw_amethyst_bob, wheel_grinding_bob, water, cut_amethyst_bob)
-data_recipe[cut_amethyst_bob].energy_required = 4
+data_recipe[cut_amethyst_bob].icons = TWO_D_I(raw_amethyst_bob, water_purified_angels, cut_amethyst_bob, water)
+data_recipe[cut_amethyst_bob].allow_productivity = false
+data_recipe[cut_amethyst_bob].energy_required = 8
+data_recipe[cut_amethyst_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_amethyst_bob].ingredients[3].amount = 15
+data_recipe[cut_amethyst_bob].results =
+{
+    {type = item, name = cut_amethyst_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_amethyst_bob].main_product = cut_amethyst_bob
 
 data_item[cut_topaz_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]4[/font](FOH)[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[cut_topaz_bob].icons = THREE_D_I(raw_topaz_bob, wheel_grinding_bob, water, cut_topaz_bob)
-data_recipe[cut_topaz_bob].energy_required = 4
+data_recipe[cut_topaz_bob].icons = TWO_D_I(raw_topaz_bob, water_purified_angels, cut_topaz_bob, water)
+data_recipe[cut_topaz_bob].allow_productivity = false
+data_recipe[cut_topaz_bob].energy_required = 8
+data_recipe[cut_topaz_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_topaz_bob].ingredients[3].amount = 15
+data_recipe[cut_topaz_bob].results =
+{
+    {type = item, name = cut_topaz_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_topaz_bob].main_product = cut_topaz_bob
 
 data_item[cut_diamond_bob].localised_description = show_formula and {chemical_formula, "C"} or nil
-data_recipe[cut_diamond_bob].icons = THREE_D_I(raw_diamond_bob, wheel_grinding_bob, water, cut_diamond_bob)
-data_recipe[cut_diamond_bob].energy_required = 4
+data_recipe[cut_diamond_bob].icons = TWO_D_I(raw_diamond_bob, wheel_grinding_bob, water, cut_diamond_bob)
+data_recipe[cut_diamond_bob].allow_productivity = false
+data_recipe[cut_diamond_bob].energy_required = 8
+data_recipe[cut_diamond_bob].ingredients[3].name = water_purified_angels
 data_recipe[cut_diamond_bob].ingredients[3].amount = 15
+data_recipe[cut_diamond_bob].results =
+{
+    {type = item, name = cut_diamond_bob, amount = 1},
+    {type = item, name = wheel_grinding_bob, amount = 1, independent_probability = 0.99},
+    {type = fluid, name = water, amount = 15}
+}
+data_recipe[cut_diamond_bob].main_product = cut_diamond_bob
 
 data_recipe[wheel_grinding_bob].icons = THREE_I(silicon_carbide_bob, steel_plate, wheel_grinding_bob)
 data_recipe[wheel_grinding_bob].ingredients[2].amount = 4
@@ -940,28 +1078,64 @@ data_item_subgroup[is_gems_polished].group = intermediate_products
 data_item_subgroup[is_gems_polished].order = f_c
 
 data_item[polished_ruby_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[polished_ruby_bob].icons = THREE_D_I(cut_ruby_bob, wheel_polishig_bob, compound_polishing_bob, polished_ruby_bob)
-data_recipe[polished_ruby_bob].energy_required = 16
+data_recipe[polished_ruby_bob].icons = THREE_I(cut_ruby_bob, compound_polishing_bob, polished_ruby_bob)
+data_recipe[polished_ruby_bob].energy_required = 8
+data_recipe[polished_ruby_bob].results =
+{
+    {type = item, name = polished_ruby_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_ruby_bob].main_product = polished_ruby_bob
 
 data_item[polished_sapphire_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[polished_sapphire_bob].icons = THREE_D_I(cut_sapphire_bob, wheel_polishig_bob, compound_polishing_bob, polished_sapphire_bob)
-data_recipe[polished_sapphire_bob].energy_required = 16
+data_recipe[polished_sapphire_bob].icons = THREE_I(cut_sapphire_bob, compound_polishing_bob, polished_sapphire_bob)
+data_recipe[polished_sapphire_bob].energy_required = 8
+data_recipe[polished_sapphire_bob].results =
+{
+    {type = item, name = polished_sapphire_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_sapphire_bob].main_product = polished_sapphire_bob
 
 data_item[polished_emerald_bob].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]18[/font]"} or nil
-data_recipe[polished_emerald_bob].icons = THREE_D_I(cut_emerald_bob, wheel_polishig_bob, compound_polishing_bob, polished_emerald_bob)
-data_recipe[polished_emerald_bob].energy_required = 16
+data_recipe[polished_emerald_bob].icons = THREE_I(cut_emerald_bob, compound_polishing_bob, polished_emerald_bob)
+data_recipe[polished_emerald_bob].energy_required = 8
+data_recipe[polished_emerald_bob].results =
+{
+    {type = item, name = polished_emerald_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_emerald_bob].main_product = polished_emerald_bob
 
 data_item[polished_amethyst_bob].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[polished_amethyst_bob].icons = THREE_D_I(cut_amethyst_bob, wheel_polishig_bob, compound_polishing_bob, polished_amethyst_bob)
-data_recipe[polished_amethyst_bob].energy_required = 16
+data_recipe[polished_amethyst_bob].icons = THREE_I(cut_amethyst_bob, compound_polishing_bob, polished_amethyst_bob)
+data_recipe[polished_amethyst_bob].energy_required = 8
+data_recipe[polished_amethyst_bob].results =
+{
+    {type = item, name = polished_amethyst_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_amethyst_bob].main_product = polished_amethyst_bob
 
 data_item[polished_topaz_bob].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]4[/font](FOH)[font=default-tiny-bold]2[/font]"} or nil
-data_recipe[polished_topaz_bob].icons = THREE_D_I(cut_topaz_bob, wheel_polishig_bob, compound_polishing_bob, polished_topaz_bob)
-data_recipe[polished_topaz_bob].energy_required = 16
+data_recipe[polished_topaz_bob].icons = THREE_I(cut_topaz_bob, compound_polishing_bob, polished_topaz_bob)
+data_recipe[polished_topaz_bob].energy_required = 8
+data_recipe[polished_topaz_bob].results =
+{
+    {type = item, name = polished_topaz_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_topaz_bob].main_product = polished_topaz_bob
 
 data_item[polished_diamond_bob].localised_description = show_formula and {chemical_formula, "C"} or nil
-data_recipe[polished_diamond_bob].icons = THREE_D_I(cut_diamond_bob, wheel_polishig_bob, compound_polishing_bob, polished_diamond_bob)
-data_recipe[polished_diamond_bob].energy_required = 16
+data_recipe[polished_diamond_bob].icons = THREE_I(cut_diamond_bob, compound_polishing_bob, polished_diamond_bob)
+data_recipe[polished_diamond_bob].energy_required = 8
+data_recipe[polished_diamond_bob].results =
+{
+    {type = item, name = polished_diamond_bob, amount = 1},
+    {type = item, name = wheel_polishig_bob, amount = 1, independent_probability = 0.99}
+}
+data_recipe[polished_diamond_bob].main_product = polished_diamond_bob
 
 data_recipe[wheel_polishig_bob].icons = THREE_I(plastic, steel_plate, wheel_polishig_bob)
 data_recipe[wheel_polishig_bob].ingredients[2].amount = 4

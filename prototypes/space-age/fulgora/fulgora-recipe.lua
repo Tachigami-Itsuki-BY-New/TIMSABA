@@ -163,8 +163,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = calcium, amount = 16},
             {type = fluid, name = hydrogen_chloride_angels, amount = 240}, -- 480
             {type = fluid, name = oxygen_angels, amount = 120}, -- 240
-            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = calcium
     },
@@ -199,7 +199,7 @@ TIMSABA.functions.create_recipes
         categories = {crystallizing_4},
         subgroup = slag_processing_1,
         icons = THREE_R_I(sludge_mineral, brannerite_ore, rheniite_ore),
-        order = k,
+        order = c .. "-" .. data_planet[planet_fulgora].order,
         allow_productivity = true,
         energy_required = 8,
         ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},

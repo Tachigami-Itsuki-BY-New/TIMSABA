@@ -80,8 +80,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = fluorine, amount = 360},
             {type = fluid, name = nitrogen_angels, amount = 120},
-            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = fluorine
     }
@@ -189,8 +189,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = hexafluoropropylene_oxide_gas, amount = 120},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = hexafluoropropylene_oxide_gas
     },
@@ -272,8 +272,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = aniline_liquid, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 60}, -- 120
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = aniline_liquid
     },
@@ -459,8 +459,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = acetaldehyde, amount = 60},
             {type = fluid, name = hydrogen_angels, amount = 30}, -- 60
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = acetaldehyde
     },
@@ -496,7 +496,7 @@ TIMSABA.functions.create_recipes
         categories = {crystallizing_4},
         subgroup = slag_processing_1,
         icons = THREE_R_I(sludge_mineral, antimonite_ore, germanite_ore),
-        order = l,
+        order = c .. "-" .. data_planet[planet_aquilo].order,
         allow_productivity = true,
         energy_required = 8,
         ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},

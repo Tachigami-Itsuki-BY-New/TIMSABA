@@ -144,8 +144,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = carbon_nanotube, amount = 8},
             {type = item, name = graphite_chips, amount = 16},
             {type = fluid, name = argon_gas, amount = 120}, -- 240
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = carbon_nanotube
     },
@@ -394,8 +394,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
             {type = fluid, name = steam, amount = 30}, -- 90
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = nitrogen_monoxide_angels
     },
@@ -515,8 +515,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = acetone_cyanohydrin, amount = 60},
-            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = acetone_cyanohydrin
     },
@@ -712,8 +712,8 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = sodium_cyanide_angels, amount = 8},
             {type = fluid, name = hydrogen_peroxide, amount = 60},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = sodium_cyanide_angels
     },
@@ -874,8 +874,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = sodium_perchlorate_solution, amount = 120},
             {type = fluid, name = hydrogen_angels, amount = 120},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = sodium_perchlorate_solution
     },
@@ -970,8 +970,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = sulfur_dioxide_angels, amount = 120},
             {type = fluid, name = oxygen_angels, amount = 60},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = sulfur_dioxide_angels
     },
@@ -1023,8 +1023,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = peroxydisulfuric_acid, amount = 8},
             {type = fluid, name = hydrogen_angels, amount = 120}, -- 240
             {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = peroxydisulfuric_acid
     }
@@ -1407,8 +1407,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = lubricant, amount = 30},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = lubricant
     },
@@ -1429,8 +1429,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = lubricant, amount = 15},
             {type = fluid, name = steam, amount = 30},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = lubricant
     }
@@ -1458,8 +1458,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = methane_angels, amount = 60},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = methane_angels
     },
@@ -1479,8 +1479,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = ethane_angels, amount = 60},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = ethane_angels
     },
@@ -1500,8 +1500,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = chloroethane_gas, amount = 60},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = chloroethane_gas
     },
@@ -1588,8 +1588,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = methane_angels, amount = 120},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = methane_angels
     },
@@ -1609,8 +1609,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = methane_angels, amount = 60},
             {type = fluid, name = propene_angels, amount = 60},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = methane_angels
     },
@@ -1674,8 +1674,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = ethane_angels, amount = 60},
             {type = fluid, name = ethylene_angels, amount = 60},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = ethane_angels
     },
@@ -1694,8 +1694,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = polyethylene, amount = 4},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = polyethylene
     },
@@ -1715,8 +1715,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = ethylene_oxide, amount = 120},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = ethylene_oxide
     },
@@ -1736,8 +1736,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = ethylene_carbonate, amount = 120},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = ethylene_carbonate
     },
@@ -1773,8 +1773,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = glyoxal_liquid, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 60}, -- 120
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = glyoxal_liquid
     }
@@ -1818,8 +1818,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = butene_gas, amount = 60},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = butene_gas
     },
@@ -1839,8 +1839,8 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = butene_gas, amount = 60},
             {type = fluid, name = hydrogen_angels, amount = 60},
-            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = butene_gas
     },
@@ -1860,8 +1860,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = acetone_angels, amount = 120},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = acetone_angels
     },
@@ -1881,8 +1881,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = phenol, amount = 8},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = phenol
     },
@@ -1931,8 +1931,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = liquid_plastic_angels, amount = 120},
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = liquid_plastic_angels
     },
@@ -1951,8 +1951,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = liquid_plastic_angels, amount = 60},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.9},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1}
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = liquid_plastic_angels
     }

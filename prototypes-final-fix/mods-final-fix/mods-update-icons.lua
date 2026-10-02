@@ -1,7 +1,4 @@
 if mods[loaders_modernized_integrations] then
-    if reskins.bobs and (reskins.bobs.triggers.logistics.entities == false) then return end
-
-    -- Set input parameters
     local inputs =
     {
         icon_name = "miniloader",
@@ -13,7 +10,6 @@ if mods[loaders_modernized_integrations] then
         make_remnants = false,
     }
 
-    -- Handle belt tier labels
     inputs.tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-belt-entity-tier-labeling") and true or false
 
     local tier_map =
@@ -50,7 +46,6 @@ if mods[loaders_modernized_integrations] then
         --item_map[stack_loader] = {tier = 0, base_item = T0_transport_belt}
     end
 
-    -- Reskin entities
     for name, map in pairs(tier_map) do
         if map.is_inserter then
             inputs.type = "inserter"
@@ -201,7 +196,6 @@ if mods[loaders_modernized_integrations] then
         ::continue::
     end
 
-    -- Reskin icons
     for name, map in pairs(item_map) do
 
         local item = data_item[name]

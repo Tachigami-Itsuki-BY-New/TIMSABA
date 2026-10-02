@@ -334,6 +334,7 @@ local mettalurgy_without_productivity =
     powder_mixer_1, powder_mixer_2, powder_mixer_3, powder_mixer_4,
     blast_furnace_1, blast_furnace_2, blast_furnace_3, blast_furnace_4,
     chemical_furnace_1, chemical_furnace_2, chemical_furnace_3, chemical_furnace_4,
+    electric_blast_furnace_1, electric_blast_furnace_2, electric_blast_furnace_3, electric_blast_furnace_4,
     induction_furnace_1, induction_furnace_2, induction_furnace_3, induction_furnace_4,
     strand_casting_machine_1, strand_casting_machine_2, strand_casting_machine_3, strand_casting_machine_4,
 }
