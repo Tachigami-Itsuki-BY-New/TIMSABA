@@ -644,6 +644,7 @@ data_recipe[green_liquor].results[1].amount = 45
 local kraft_process = "angels-kraft-causting"
 data_recipe[kraft_process].icons = THREE_D_I(green_liquor, lime_angels, water, white_liquor, nil, limestone_angels)
 data_recipe[kraft_process].order = e_a
+data_recipe[kraft_process].energy_required = 4
 data_recipe[kraft_process].results[1].amount = 60
 
 -- CELLULOSE PULP and PAPER

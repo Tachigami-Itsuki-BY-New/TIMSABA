@@ -706,10 +706,10 @@ TIMSABA.functions.create_buildings
 
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 16},
-            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
+            {type = item, name = processing_unit, amount = 4},
+            {type = item, name = titanium_pipe, amount = 16},
+            {type = item, name = titanium_plate_bob, amount = 16},
+            {type = item, name = reinforced_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_2, amount = 1}
         },
 
@@ -733,9 +733,9 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
-            {type = item, name = molybdenum_rhenium_plate, amount = 16},
-            {type = item, name = carbon_concrete_brick, amount = 8},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_3, amount = 1}
         },
 

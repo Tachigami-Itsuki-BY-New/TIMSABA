@@ -690,6 +690,6 @@ if mods[castra_mods] then
 
     table.insert(data_technology[electronic_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = electronic_circuit_battlefield_data, change = 0.1})
     table.insert(data_technology[advanced_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_circuit_battlefield_data, change = 0.1})
-
+    -- final-fix-mods
     table.insert(data_technology[tech_advanced_processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_processing_unit_battlefield_data, change = 0.1})
 end

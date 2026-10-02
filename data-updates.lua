@@ -1,3 +1,8 @@
+require("prototypes-update.angels.angels-update-icon-building")
+require("prototypes-update.angels.angels-update-icon-technology")
+require("prototypes-update.bobs.bobs-update-icon-building")
+require("prototypes-update.bobs.bobs-update-icon-technology")
+
 require("prototypes-update.update-technology")
 require("prototypes-update.update-technology-space")
 

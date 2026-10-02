@@ -74,6 +74,13 @@ else
     }
 end
 
+if mods[bobtech] then
+    data_technology[transport_science_pack].prerequisites = {tech_ceramic_processing, tech_T3_inserter}
+    if data_technology[tech_robotics_2] then
+       table.insert(data_technology[transport_science_pack].prerequisites, tech_robotics_2)
+    end
+end
+
 -- ADVANCED LOGISTICS
 if data_technology[tech_robotics_1] then
     if mods[bobmodules] then
@@ -1920,7 +1927,20 @@ data_technology[tech_steam_cracking_1].effects =
     {type = unlock_recipe, recipe = residual_angels}
 }
 
-table.insert(data_technology[tech_advanced_chemistry_2].effects, {type = unlock_recipe, recipe = butene_gas_from_butane_gas})
+data_technology[tech_advanced_chemistry_2].effects =
+{
+    {type = unlock_recipe, recipe = electrolyser_3},
+    {type = unlock_recipe, recipe = liquifier_3},
+    {type = unlock_recipe, recipe = chemical_plant_3},
+    {type = unlock_recipe, recipe = advanced_chemical_plant_2},
+    {type = unlock_recipe, recipe = gas_refinery_2},
+    {type = unlock_recipe, recipe = oil_refinery_2},
+    {type = unlock_recipe, recipe = separator_2},
+    {type = unlock_recipe, recipe = styrene_angels},
+    {type = unlock_recipe, recipe = benzene_angels},
+    {type = unlock_recipe, recipe = ethylbenzene_angels},
+    {type = unlock_recipe, recipe = butene_gas_from_butane_gas}
+}
 
 table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_recipe, recipe = lubricant})
 table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_recipe, recipe = lubricant_from_naphtha})
@@ -1928,14 +1948,26 @@ table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_
 table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_recipe, recipe = methane_and_propene_from_butane})
 table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_recipe, recipe = ethane_and_ethylene_from_butane})
 
-data_technology[tech_advanced_chemistry_4].prerequisites = {tech_titanium_processing, tech_stone_smelting_3, processing_unit}
+data_technology[tech_advanced_chemistry_4].prerequisites = {tech_titanium_processing, tech_stone_smelting_3, processing_unit, tech_advanced_chemistry_3}
+data_technology[tech_advanced_chemistry_4].effects =
+{
+    {type = unlock_recipe, recipe = electrolyser_4},
+    {type = unlock_recipe, recipe = liquifier_4},
+    {type = unlock_recipe, recipe = chemical_plant_4},
+    {type = unlock_recipe, recipe = advanced_chemical_plant_3},
+    {type = unlock_recipe, recipe = gas_refinery_3},
+    {type = unlock_recipe, recipe = advanced_gas_refinery_2},
+    {type = unlock_recipe, recipe = oil_refinery_3},
+    {type = unlock_recipe, recipe = separator_3},
+    {type = unlock_recipe, recipe = steam_cracker_3}
+}
 table.insert(data_technology[tech_advanced_chemistry_4].effects, {type = unlock_recipe, recipe = sulfur_trioxide_separation})
 table.insert(data_technology[tech_advanced_chemistry_4].effects, {type = unlock_recipe, recipe = sulfuric_acid_from_hydrogen_peroxide})
 
 table.insert(data_technology[tech_advanced_chemistry_5].prerequisites, tech_stone_smelting_4)
 data_technology[tech_advanced_chemistry_5].effects =
 {
-    {type = unlock_recipe, recipe = advanced_chemical_plant_3},
+    {type = unlock_recipe, recipe = advanced_chemical_plant_4},
     {type = unlock_recipe, recipe = gas_refinery_4},
     {type = unlock_recipe, recipe = advanced_gas_refinery_3},
     {type = unlock_recipe, recipe = oil_refinery_4},

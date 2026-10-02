@@ -314,11 +314,7 @@ data:extend
         icon = data_technology[tech_advanced_chemistry_5].icon,
         icon_size = data_technology[tech_advanced_chemistry_5].icon_size,
         prerequisites = {tech_advanced_chemistry_5, space_science_pack, tech_stone_smelting_5},
-        effects =
-        {
-            {type = unlock_recipe, recipe = advanced_chemical_plant_4},
-            {type = unlock_recipe, recipe = advanced_gas_refinery_4}
-        },
+        effects = {{type = unlock_recipe, recipe = advanced_gas_refinery_4}},
         unit =
         {
             count = 50,
