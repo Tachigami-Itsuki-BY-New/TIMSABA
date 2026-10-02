@@ -1310,7 +1310,7 @@ local function advanced_chemical_plant_recipe(name, circuit, pipe, plate, brick,
     data_recipe[name].ingredients = ingredients
 end
 advanced_chemical_plant_recipe(advanced_chemical_plant_1, electronic_circuit, bronze_pipe, bronze_plate_bob, clay_brick)
-advanced_chemical_plant_recipe(advanced_chemical_plant_2, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, advanced_chemical_plant_1)
+advanced_chemical_plant_recipe(advanced_chemical_plant_2,   advanced_circuit,  brass_pipe,  brass_plate_bob, concrete_brick, advanced_chemical_plant_1)
 
 data_item_subgroup[is_buildings_gas_refinery].order = z_e
 

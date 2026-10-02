@@ -376,3 +376,13 @@ tech_prerequisites(tech_sniper_turret_2, tech_cobalt_processing)
 -- SPACE LOGISTICS
 --tech_prerequisites(vulcanus_transport_belt, tech_logistics_5)
 tech_prerequisites(stack_inserter, vulcanus_transport_belt)
+
+data_technology[battery_eq_3].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
+}
+
+data_technology[utility_science_pack].prerequisites = {tech_stone_smelting_2, low_density_structure, processing_unit}

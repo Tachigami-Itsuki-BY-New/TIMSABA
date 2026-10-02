@@ -25,12 +25,14 @@ if mods[bobtech] then
     data_recipe[transport_science_pack].energy_required = 16
     data_recipe[transport_science_pack].ingredients =
     {
-        {type = item, name = T3_inserter, amount = 4},
-        {type = item, name = T3_transport_belt, amount = 2},
-        {type = item, name = flying_robot_frame_1, amount = 1},
-        {type = item, name = steel_chest, amount = 2}
+        {type = item, name = T3_inserter, amount = 1},
+        {type = item, name = T3_transport_belt, amount = 1},
+        {type = item, name = ceramic_pipe, amount = 2}
     }
     data_recipe[transport_science_pack].results[1].amount = 4
+    if data_item[flying_robot_frame_2] then
+        table.insert(data_recipe[transport_science_pack].ingredients, {type = item, name = flying_robot_frame_2, amount = 2})
+    end
 end
 
 data_recipe[production_science_pack].energy_required = 16
@@ -47,7 +49,7 @@ data_recipe[utility_science_pack].ingredients =
 {
     {type = item, name = low_density_structure, amount = 4},
     {type = item, name = processing_unit, amount = 2},
-    {type = item, name = flying_robot_frame_1, amount = 2}
+    {type = item, name = reinforced_concrete, amount = 2}
 }
 data_recipe[utility_science_pack].results[1].amount = 4
 

@@ -85,11 +85,22 @@ if data_technology[tech_logistics_0] then
     data_technology[tech_logistics_0].research_trigger.count = 32
 end
 
+data_technology[steel_plate .. _productivity].prerequisites = {metallurgic_science_pack}
 data_technology[steel_plate .. _productivity].effects =
 {
     {type = change_recipe_productivity, recipe = casting_steel, change = 0.1},
     {type = change_recipe_productivity, recipe = steel_plate_1, change = 0.1},
     {type = change_recipe_productivity, recipe = steel_plate_2, change = 0.1}
+}
+data_technology[steel_plate .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {metallurgic_science_pack, 1}
 }
 
 data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{type = "character-logistic-trash-slots", modifier = 5}}

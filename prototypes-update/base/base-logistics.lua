@@ -369,7 +369,7 @@ for _, BUILD in pairs(entities) do
             data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
             data_inserter[BUILD.name].extension_speed = BUILD.extension_speed
         end
-        if BUILD.type_1 == data_inserter and BUILD.name ~= T0_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
+        if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
             if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
                 data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
                 data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
@@ -379,7 +379,7 @@ for _, BUILD in pairs(entities) do
                 data_inserter[BUILD.name].energy_source.drain = ((drain * BUILD.tier) / 8) .. kW
             end
         end
-        if BUILD.type_2 == data_item and data_item[BUILD.name] then
+        if BUILD.type_2 and BUILD.type_2 == data_item then
             data_item[BUILD.name].stack_size = BUILD.stack
             data_item[BUILD.name].weight = BUILD.weight
             data_recipe[BUILD.name].categories = {crafting, electromagnetics}

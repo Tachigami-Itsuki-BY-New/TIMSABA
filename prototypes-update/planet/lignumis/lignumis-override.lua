@@ -799,4 +799,21 @@ if mods[lignumis_mods] then
     end
 
     data_technology[tech_worker_robots_speed .. "-5"].prerequisites = {tech_worker_robots_speed .. "-4", utility_science_pack}
+
+    data_technology[basic_circuit_board_mods .. _productivity].prerequisites = {electromagnetic_science_pack}
+    data_technology[basic_circuit_board_mods .. _productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = basic_circuit_board_mods, change = 0.1},
+        {type = change_recipe_productivity, recipe = basic_circuit_board, change = 0.1}
+    }
+    data_technology[basic_circuit_board_mods .. _productivity].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    }
 end

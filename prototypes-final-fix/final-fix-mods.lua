@@ -28,6 +28,18 @@ end
 
 data_recipe[lithium_perchlorate_bob].categories = {angels_liquifying}
 
+data_inserter[T2_inserter].rotation_speed = (720/21600)
+data_inserter[T2_inserter].extension_speed = 0.08
+
+if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
+    data_inserter[T2_inserter].energy_per_rotation = ((60 / 2) / ((720/21600) * 60)) .. kJ -- rotation_speed
+    data_inserter[T2_inserter].energy_per_movement = ((60 / 2) / (0.08 * 60)) .. kJ -- extension_speed
+else
+    data_inserter[T2_inserter].energy_per_rotation = (((60 - ((drain * 4) / 8)) / 2) / ((720/21600) * 60)) .. kJ -- rotation_speed
+    data_inserter[T2_inserter].energy_per_movement = (((60 - ((drain * 4) / 8)) / 2) / (0.08 * 60)) .. kJ -- extension_speed
+    data_inserter[T2_inserter].energy_source.drain = ((drain * 4) / 8) .. kW
+end
+
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
 data_item[oil_refinery_1].order = a
@@ -136,6 +148,8 @@ data_recipe[casting_low_density_structure].ingredients =
     {type = fluid, name = aluminium_molten_angels, amount = 240},
     {type = fluid, name = titanium_molten_angels, amount = 30}
 }
+
+data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
 
 -- MULUNA
 if mods[muluna_mods] then
@@ -306,6 +320,10 @@ if mods[moshine_mods] then
     data_assembling[cosmicscanner].module_slots = 4
     data_assembling[cosmicscanner].energy_usage = (((960 * 256 * 128) - (drain / 8))) .. kW
     data_assembling[cosmicscanner].energy_source.drain = (drain / 8) .. kW
+end
+
+if mods[panglia_mods] then
+    table.insert(data_technology[processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1})
 end
 
 -- ARIG
@@ -517,12 +535,6 @@ if mods[paracelsin_mods] then
     {
         {type = item, name = concrete, change = 0.1},
         {type = item, name = reinforced_concrete, change = 0.1}
-    }
-
-    data_technology[processing_unit .. _productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = processing_unit, change = 0.1},
-        {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1}
     }
 end
 
