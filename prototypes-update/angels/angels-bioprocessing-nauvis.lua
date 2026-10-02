@@ -639,7 +639,7 @@ data_fluid[green_liquor].order = e
 data_recipe[green_liquor].icons = TWO_I(black_liquor, green_liquor)
 data_recipe[green_liquor].order = e
 data_recipe[green_liquor].ingredients[1].amount = 60
-data_recipe[green_liquor].results[1].amount = 45
+data_recipe[green_liquor].results[1].amount = 30 -- 60
 
 local kraft_process = "angels-kraft-causting"
 data_recipe[kraft_process].icons = THREE_D_I(green_liquor, lime_angels, water, white_liquor, nil, limestone_angels)

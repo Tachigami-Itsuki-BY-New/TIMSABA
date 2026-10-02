@@ -1,5 +1,4 @@
 local graphics_bobs = "__TIMSABA__/graphics/icons/bobs/"
-ceramic_gear_wheel = "ceramic-gear-wheel"
 copper_tungsten_gear_wheel = "copper-tungsten-gear-wheel"
 iron_bearing_ball = "iron-bearing-ball"
 brass_bearing_ball = "brass-bearing-ball"
@@ -14,16 +13,6 @@ tritium_fuel_cell = "tritium-fuel-cell"
 depleted_tritium_fuel_cell = "depleted-tritium-fuel-cell"
 TIMSABA.functions.create_items
 ({
-    {
-        localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil,
-        name = ceramic_gear_wheel,
-        subgroup = is_gears,
-        icon = graphics_bobs .. ceramic_gear_wheel .. ".png",
-        order = d,
-        drop_sound = data_item[stone_brick].drop_sound,
-        inventory_move_sound = data_item[stone_brick].inventory_move_sound,
-        pick_sound = data_item[stone_brick].pick_sound
-    },
     {
         localised_description = show_formula and {chemical_formula, "WCu"} or nil,
         name = copper_tungsten_gear_wheel,

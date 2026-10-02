@@ -4,20 +4,6 @@ advanced_tritium_fuel_cell_reprocessing = "advanced-tritium-fuel-cell-reprocessi
 TIMSABA.functions.create_recipes
 ({
     {
-        name = ceramic_gear_wheel,
-        categories = {crafting},
-        subgroup = is_gears,
-        icons = TWO_I(silicon_nitride_bob, ceramic_gear_wheel),
-        order = d,
-        auto_recycle = true,
-        allow_productivity = true,
-        allow_quality = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = silicon_nitride_bob, amount = 1}},
-        results = {{type = item, name = ceramic_gear_wheel, amount = 1}},
-        main_product = ceramic_gear_wheel
-    },
-    {
         name = copper_tungsten_gear_wheel,
         categories = {angels_sintering_4},
         subgroup = is_gears,
@@ -265,7 +251,3 @@ TIMSABA.functions.create_recipes
         main_product = muon_fusion_catalyst
     }
 })
-
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_gear_wheel].categories = {angels_sintering_2}
-end

@@ -1,19 +1,5 @@
 TIMSABA.functions.create_items
 ({
-    -- BEARING BALL
-    {
-        name = ceramic_bearing_ball,
-        subgroup = is_bearing_ball,
-        icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-ceramic-bearing-ball.png",
-        order = d
-    },
-    -- BEARING
-    {
-        name = ceramic_bearing,
-        subgroup = is_bearing,
-        icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-ceramic-bearing.png",
-        order = d
-    },
     -- CASTING
     {
         name = tungsten_plate_bob,
@@ -37,39 +23,6 @@ TIMSABA.functions.create_items
 
 TIMSABA.functions.create_recipes
 ({
-    -- BEARING BALL
-    {
-        name = ceramic_bearing_ball,
-        categories = {crafting},
-        subgroup = is_bearing_ball,
-        order = d,
-        auto_recycle = true,
-        allow_productivity = true,
-        allow_quality = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = silicon_nitride_bob, amount = 1}},
-        results = {{type = item, name = ceramic_bearing_ball, amount = 8}},
-        main_product = ceramic_bearing_ball
-    },
-    -- BEARING
-    {
-        name = ceramic_bearing,
-        categories = {crafting_fluid},
-        subgroup = is_bearing,
-        order = d,
-        auto_recycle = true,
-        allow_productivity = true,
-        allow_quality = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = ceramic_bearing_ball, amount = 16},
-            {type = item, name = silicon_nitride_bob, amount = 2},
-            {type = fluid, name = lubricant, amount = 15}
-        },
-        results = {{type = item, name = ceramic_bearing, amount = 2}},
-        main_product = ceramic_bearing
-    },
     -- CASTING
     {
         name = tungsten_carbide_plate_bob,
