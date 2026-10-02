@@ -231,12 +231,12 @@ data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_proc
 data_technology[steam_engine_4].prerequisites = {steam_engine_3, tech_tungsten_processing}
 data_technology[steam_engine_5].prerequisites = {steam_engine_4, tech_copper_tungsten_processing}
 
-data_technology[tech_steam_turbine_1].prerequisites = {steam_engine_3, tech_ceramic_processing, tech_aluminium_smelting_1}
+data_technology[tech_steam_turbine_1].prerequisites = {tech_brass_processing, chemical_science_pack}
 data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
 data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_copper_tungsten_processing}
 
 if settings.startup[setting_bobmods_power_fluidgenerator].value then
-    data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_ceramic_processing, tech_aluminium_smelting_1, tech_invar_smelting_1}
+    data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_brass_processing, tech_aluminium_smelting_1, chemical_science_pack}
 
     data_technology[fluid_generator_3].prerequisites = {tech_tungsten_processing, fluid_generator_2}
 end
@@ -261,7 +261,7 @@ data_technology[tech_heat_pipe_1].unit.ingredients =
     {chemical_science_pack, 1}
 }
 
-data_technology[tech_heat_exchanger_1].prerequisites = {boiler_3, tech_heat_pipe_1, tech_brass_processing, chemical_science_pack}
+data_technology[tech_heat_exchanger_1].prerequisites = {tech_heat_pipe_1, tech_brass_processing, chemical_science_pack}
 data_technology[tech_heat_exchanger_1].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -457,13 +457,10 @@ data_technology[tech_cobalt_processing].icon_size = 64
 data_technology[tech_ceramic_processing].icons = nil
 data_technology[tech_ceramic_processing].icon = "__reskins-bobs__/graphics/icons/plates/powders/bob-silicon-nitride.png"
 data_technology[tech_ceramic_processing].icon_size = 64
-data_technology[tech_ceramic_processing].prerequisites = {chemical_science_pack, lubricant}
+data_technology[tech_ceramic_processing].prerequisites = {chemical_science_pack}
 data_technology[tech_ceramic_processing].effects =
 {
     {type = unlock_recipe, recipe = silicon_nitride_bob},
-    {type = unlock_recipe, recipe = ceramic_gear_wheel},
-    {type = unlock_recipe, recipe = ceramic_bearing_ball},
-    {type = unlock_recipe, recipe = ceramic_bearing},
     {type = unlock_recipe, recipe = ceramic_pipe},
     {type = unlock_recipe, recipe = ceramic_pipe_to_ground}
 }

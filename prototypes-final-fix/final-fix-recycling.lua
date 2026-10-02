@@ -134,7 +134,6 @@ local recycling_items =
     copper_tungsten_pipe, copper_tungsten_pipe_to_ground,
     molybdenum_rhenium_pipe, molybdenum_rhenium_pipe_to_ground,
 
-    ceramic_gear_wheel, ceramic_bearing_ball, ceramic_bearing,
     tungsten_gear_wheel, tungsten_bearing_ball, tungsten_bearing,
     copper_tungsten_gear_wheel, copper_tungsten_bearing_ball, copper_tungsten_bearing,
     molybdenum_gear_wheel, rhenium_bearing_ball, rhenium_bearing,

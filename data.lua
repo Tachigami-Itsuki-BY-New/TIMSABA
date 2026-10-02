@@ -127,20 +127,3 @@ require("prototypes.mods.flow-control-new.flow-control-mods")
 require("prototypes.angels-ground-water-pump-recipe")
 
 require("prototypes.mods.space-science-pack")
-
-for recipe_name, recipe in pairs(data.raw.recipe) do
-
-    local function check_table(subtable_name)
-        local st = recipe[subtable_name]
-        if st then
-            for index, item in pairs(st) do
-                if type(item) == "table" and (not item.name or item[1] ~= nil) then
-                    error(string.format("\n\n[CRITICAL ERROR] Найден устаревший (сокращенный) формат 1.1!\n" .. "Рецепт: '%s'\n" .. "Где косяк: в таблице '%s' (элемент №%s)\n" .. "Содержимое элемента: %s\n" .."Исправьте этот рецепт в своем моде на полный формат {type='item', name='...', amount=...}\n", recipe_name, subtable_name, tostring(index), serpent.block(item)))
-                end
-            end
-        end
-    end
-
-    check_table("ingredients")
-    check_table("results")
-end

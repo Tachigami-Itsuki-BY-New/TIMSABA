@@ -112,17 +112,20 @@ end
 local function steam_turbine_recipe(name, gear_wheel, bearing, circuit, pipe, turbine, plate)
     if not data_recipe[name] then return end
 
-    data_recipe[name].ingredients =
+    local ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
         {type = item, name = bearing,    amount = 8},
         {type = item, name = circuit,    amount = 4},
         {type = item, name = pipe,       amount = 8},
-        {type = item, name = turbine,    amount = 1},
         {type = item, name = plate,      amount = 32}
     }
+    if turbine then
+        table.insert(ingredients, {type = item, name = turbine, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
 end
-steam_turbine_recipe(steam_turbine_1,         ceramic_gear_wheel,          ceramic_bearing,          advanced_circuit,         ceramic_pipe,  steam_engine_3, aluminium_plate_bob)
+steam_turbine_recipe(steam_turbine_1,           brass_gear_wheel,            brass_bearing,          advanced_circuit,           brass_pipe,             nil, brass_plate_bob)
 steam_turbine_recipe(steam_turbine_2,        tungsten_gear_wheel,         tungsten_bearing,           processing_unit,        tungsten_pipe, steam_turbine_1, tungsten_plate_bob)
 steam_turbine_recipe(steam_turbine_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe, steam_turbine_2, copper_tungsten_plate_bob)
 
@@ -162,8 +165,8 @@ if settings.startup[setting_bobmods_power_fluidgenerator].value then
         end
         data_recipe[name].ingredients = ingredients
     end
-    fluid_generator_recipe(fluid_generator_1,             steel_gear_wheel,           steel_bearing,       electronic_circuit,          bronze_pipe,               nil,         steel_plate, bronze_plate_bob)
-    fluid_generator_recipe(fluid_generator_2,           ceramic_gear_wheel,         ceramic_bearing,         advanced_circuit,         ceramic_pipe, fluid_generator_1, aluminium_plate_bob, invar_plate_bob)
+    fluid_generator_recipe(fluid_generator_1,             steel_gear_wheel,           steel_bearing,       electronic_circuit,           steel_pipe,               nil,    bronze_plate_bob, steel_plate)
+    fluid_generator_recipe(fluid_generator_2,             brass_gear_wheel,           brass_bearing,         advanced_circuit,           brass_pipe, fluid_generator_1,     brass_plate_bob, aluminium_plate_bob)
     fluid_generator_recipe(fluid_generator_3,          tungsten_gear_wheel,        tungsten_bearing,          processing_unit,        tungsten_pipe, fluid_generator_2,  titanium_plate_bob, tungsten_plate_bob)
     fluid_generator_recipe(hydrazine_generator, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit, copper_tungsten_pipe, fluid_generator_3,   nitinol_plate_bob, copper_tungsten_plate_bob)
 
@@ -612,17 +615,20 @@ for _, BUILD in pairs(heat_exchangers) do
     data_boiler[BUILD.name].energy_source.minimum_glow_temperature = 250
 end
 local function heat_exchanger_recipe(name, pipe, heat_pipe, heat_exchanger, plate)
-    data_recipe[name].ingredients =
+    local ingredients =
     {
         {type = item, name = pipe,           amount = 4},
         {type = item, name = heat_pipe,      amount = 4},
-        {type = item, name = heat_exchanger, amount = 1},
         {type = item, name = plate,          amount = 8}
     }
+    if heat_exchanger then
+        table.insert(ingredients, {type = item, name = heat_exchanger, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
 end
-heat_exchanger_recipe(heat_exchanger_1, brass_pipe,              heat_pipe_1, boiler_3,         brass_plate_bob)
-heat_exchanger_recipe(heat_exchanger_2, tungsten_pipe,           heat_pipe_2, heat_exchanger_1, tungsten_plate_bob)
-heat_exchanger_recipe(heat_exchanger_3, copper_tungsten_pipe,    heat_pipe_3, heat_exchanger_2, copper_tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_1,              brass_pipe, heat_pipe_1,              nil, brass_plate_bob)
+heat_exchanger_recipe(heat_exchanger_2,           tungsten_pipe, heat_pipe_2, heat_exchanger_1, tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_3,    copper_tungsten_pipe, heat_pipe_3, heat_exchanger_2, copper_tungsten_plate_bob)
 heat_exchanger_recipe(heat_exchanger_4, molybdenum_rhenium_pipe, heat_pipe_4, heat_exchanger_3, molybdenum_rhenium_plate)
 
 local furnaces =

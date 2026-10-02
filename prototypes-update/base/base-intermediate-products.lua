@@ -143,7 +143,7 @@ local gear_wheels =
     {name = iron_gear_wheel, order = a},
     {name = steel_gear_wheel, order = b},
     {name = brass_gear_wheel, order = c},
-    --{name = ceramic_gear_wheel, order = d},
+    --{name = , order = d},
     {name = cobalt_steel_gear_wheel, order = e},
     {name = titanium_gear_wheel, order = f},
     {name = tungsten_gear_wheel, order = g},
@@ -187,7 +187,7 @@ local bearing_balls =
     --{name = iron_bearing_ball, order = a},
     {name = steel_bearing_ball, order = b},
     --{name = brass_bearing_ball, order = c},
-    {name = ceramic_bearing_ball, order = d},
+    --{name = , order = d},
     {name = cobalt_steel_bearing_ball, order = e},
     {name = titanium_bearing_ball, order = f},
     --{name = tungsten_bearing_ball, order = g},
@@ -206,10 +206,6 @@ end
 data_item[steel_bearing_ball].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_recipe[steel_bearing_ball].icons = TWO_I(steel_plate, steel_bearing_ball)
 
-data_item[ceramic_bearing_ball].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing_ball].categories = {angels_sintering_2} end
-data_recipe[ceramic_bearing_ball].icons = TWO_I(silicon_nitride_bob, ceramic_bearing_ball)
-
 data_item[cobalt_steel_bearing_ball].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
 data_recipe[cobalt_steel_bearing_ball].icons = TWO_I(cobalt_steel_plate_bob, cobalt_steel_bearing_ball)
 
@@ -224,7 +220,7 @@ local bearings =
     --{name = iron_bearing, order = a},
     {name = steel_bearing, order = b},
     --{name = brass_bearing, order = c},
-    {name = ceramic_bearing, order = d},
+    --{name = , order = d},
     {name = cobalt_steel_bearing, order = e},
     {name = titanium_bearing, order = f},
     --{name = tungsten_bearing_ball, order = g},
@@ -244,16 +240,6 @@ end
 data_item[steel_bearing].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_recipe[steel_bearing].icons = B_F_L(nil, steel_bearing_ball, steel_plate, steel_bearing)
 data_recipe[steel_bearing].ingredients[1].amount = 2
-
-data_item[ceramic_bearing].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-data_recipe[ceramic_bearing].categories = {crafting}
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing].categories = {angels_sintering_2} end
-data_recipe[ceramic_bearing].icons = B_F_L(nil, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)
-data_recipe[ceramic_bearing].ingredients =
-{
-    {type = item, name = ceramic_bearing_ball, amount = 16},
-    {type = item, name = silicon_nitride_bob, amount = 2}
-}
 
 data_item[cobalt_steel_bearing].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
 data_recipe[cobalt_steel_bearing].icons = B_F_L(lubricant, cobalt_steel_bearing_ball, cobalt_steel_plate_bob, cobalt_steel_bearing)
@@ -1219,12 +1205,10 @@ end
 bobmods.lib.recipe.update_recycling_recipe
 ({
     steel_bearing_ball,
-    ceramic_bearing_ball,
     cobalt_steel_bearing_ball,
     titanium_bearing_ball,
     nitinol_bearing_ball,
     steel_bearing,
-    ceramic_bearing,
     cobalt_steel_bearing,
     titanium_bearing,
     nitinol_bearing,
