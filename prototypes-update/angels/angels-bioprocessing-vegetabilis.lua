@@ -132,7 +132,7 @@ data_recipe[wheaton].energy_required = 32
 data_recipe[wheaton].ingredients[1].amount = 4
 data_recipe[wheaton].ingredients[2].amount = 4
 data_recipe[wheaton].ingredients[3].amount = 60
-data_recipe[wheaton].results = {{type = item, name = wheaton, amount = 64}}
+data_recipe[wheaton].results = {{type = item, name = wheaton, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[tianaton].spoil_ticks = 1 * hour
 data_item[tianaton].spoil_result = spoilage
@@ -143,7 +143,7 @@ data_recipe[tianaton].energy_required = 32
 data_recipe[tianaton].ingredients[1].amount = 4
 data_recipe[tianaton].ingredients[2].amount = 4
 data_recipe[tianaton].ingredients[3].amount = 60
-data_recipe[tianaton].results = {{type = item, name = tianaton, amount = 64}}
+data_recipe[tianaton].results = {{type = item, name = tianaton, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[okarinome].spoil_ticks = 2 * hour
 data_item[okarinome].spoil_result = spoilage
@@ -154,7 +154,7 @@ data_recipe[okarinome].energy_required = 32
 data_recipe[okarinome].ingredients[1].amount = 4
 data_recipe[okarinome].ingredients[2].amount = 4
 data_recipe[okarinome].ingredients[3].amount = 60
-data_recipe[okarinome].results = {{type = item, name = okarinome, amount = 32}}
+data_recipe[okarinome].results = {{type = item, name = okarinome, amount = 32, reset_freshness_on_craft = true}}
 
 data_item[quillnoa].spoil_ticks = 4 * hour
 data_item[quillnoa].spoil_result = spoilage
@@ -166,7 +166,7 @@ data_recipe[quillnoa].ingredients[1].amount = 4
 data_recipe[quillnoa].ingredients[2].amount = 4
 data_recipe[quillnoa].ingredients[3].amount = 1
 data_recipe[quillnoa].ingredients[4].amount = 60
-data_recipe[quillnoa].results = {{type = item, name = quillnoa, amount = 16}}
+data_recipe[quillnoa].results = {{type = item, name = quillnoa, amount = 16, reset_freshness_on_craft = true}}
 
 data_item[kendallion].spoil_ticks = 4 * hour
 data_item[kendallion].spoil_result = spoilage
@@ -178,7 +178,7 @@ data_recipe[kendallion].ingredients[1].amount = 4
 data_recipe[kendallion].ingredients[2].amount = 4
 data_recipe[kendallion].ingredients[3].amount = 1
 data_recipe[kendallion].ingredients[4].amount = 60
-data_recipe[kendallion].results = {{type = item, name = kendallion, amount = 16}}
+data_recipe[kendallion].results = {{type = item, name = kendallion, amount = 16, reset_freshness_on_craft = true}}
 
 local sorting_wheaton = "angels-sorting-temperate-1"
 data_recipe[sorting_wheaton].subgroup = is_temperate_vegetables_processing
@@ -283,7 +283,7 @@ data_recipe[elendilomone].energy_required = 32
 data_recipe[elendilomone].ingredients[1].amount = 4
 data_recipe[elendilomone].ingredients[2].amount = 4
 data_recipe[elendilomone].ingredients[3].amount = 60
-data_recipe[elendilomone].results = {{type = item, name = elendilomone, amount = 64}}
+data_recipe[elendilomone].results = {{type = item, name = elendilomone, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[zombieecalyptus].spoil_ticks = 1 * hour
 data_item[zombieecalyptus].spoil_result = spoilage
@@ -294,7 +294,7 @@ data_recipe[zombieecalyptus].energy_required = 32
 data_recipe[zombieecalyptus].ingredients[1].amount = 4
 data_recipe[zombieecalyptus].ingredients[2].amount = 4
 data_recipe[zombieecalyptus].ingredients[3].amount = 60
-data_recipe[zombieecalyptus].results = {{type = item, name = zombieecalyptus, amount = 64}}
+data_recipe[zombieecalyptus].results = {{type = item, name = zombieecalyptus, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[saundsrcress].spoil_ticks = 2 * hour
 data_item[saundsrcress].spoil_result = spoilage
@@ -305,7 +305,7 @@ data_recipe[saundsrcress].energy_required = 32
 data_recipe[saundsrcress].ingredients[1].amount = 4
 data_recipe[saundsrcress].ingredients[2].amount = 4
 data_recipe[saundsrcress].ingredients[3].amount = 60
-data_recipe[saundsrcress].results = {{type = item, name = saundsrcress, amount = 32}}
+data_recipe[saundsrcress].results = {{type = item, name = saundsrcress, amount = 32, reset_freshness_on_craft = true}}
 
 data_item[nexeflax].spoil_ticks = 4 * hour
 data_item[nexeflax].spoil_result = spoilage
@@ -317,7 +317,7 @@ data_recipe[nexeflax].ingredients[1].amount = 4
 data_recipe[nexeflax].ingredients[2].amount = 4
 data_recipe[nexeflax].ingredients[3].amount = 1
 data_recipe[nexeflax].ingredients[4].amount = 60
-data_recipe[nexeflax].results = {{type = item, name = nexeflax, amount = 16}}
+data_recipe[nexeflax].results = {{type = item, name = nexeflax, amount = 16, reset_freshness_on_craft = true}}
 
 data_item[mushredtato].spoil_ticks = 4 * hour
 data_item[mushredtato].spoil_result = spoilage
@@ -329,7 +329,7 @@ data_recipe[mushredtato].ingredients[1].amount = 4
 data_recipe[mushredtato].ingredients[2].amount = 4
 data_recipe[mushredtato].ingredients[3].amount = 1
 data_recipe[mushredtato].ingredients[4].amount = 60
-data_recipe[mushredtato].results = {{type = item, name = mushredtato, amount = 16}}
+data_recipe[mushredtato].results = {{type = item, name = mushredtato, amount = 16, reset_freshness_on_craft = true}}
 
 local sorting_elendilomone = "angels-sorting-swamp-1"
 data_recipe[sorting_elendilomone].subgroup = is_swamp_vegetables_processing
@@ -437,7 +437,7 @@ data_recipe[binafran].energy_required = 32
 data_recipe[binafran].ingredients[1].amount = 4
 data_recipe[binafran].ingredients[2].amount = 4
 data_recipe[binafran].ingredients[3].amount = 60
-data_recipe[binafran].results = {{type = item, name = binafran, amount = 64}}
+data_recipe[binafran].results = {{type = item, name = binafran, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[primedeadelion].spoil_ticks = 1 * hour
 data_item[primedeadelion].spoil_result = spoilage
@@ -448,7 +448,7 @@ data_recipe[primedeadelion].energy_required = 32
 data_recipe[primedeadelion].ingredients[1].amount = 4
 data_recipe[primedeadelion].ingredients[2].amount = 4
 data_recipe[primedeadelion].ingredients[3].amount = 60
-data_recipe[primedeadelion].results = {{type = item, name = primedeadelion, amount = 64}}
+data_recipe[primedeadelion].results = {{type = item, name = primedeadelion, amount = 64, reset_freshness_on_craft = true}}
 
 data_item[nilaubergine].spoil_ticks = 2 * hour
 data_item[nilaubergine].spoil_result = spoilage
@@ -459,7 +459,7 @@ data_recipe[nilaubergine].energy_required = 32
 data_recipe[nilaubergine].ingredients[1].amount = 4
 data_recipe[nilaubergine].ingredients[2].amount = 4
 data_recipe[nilaubergine].ingredients[3].amount = 60
-data_recipe[nilaubergine].results = {{type = item, name = nilaubergine, amount = 32}}
+data_recipe[nilaubergine].results = {{type = item, name = nilaubergine, amount = 32, reset_freshness_on_craft = true}}
 
 data_item[zelosquash].spoil_ticks = 4 * hour
 data_item[zelosquash].spoil_result = spoilage
@@ -471,7 +471,7 @@ data_recipe[zelosquash].ingredients[1].amount = 4
 data_recipe[zelosquash].ingredients[2].amount = 4
 data_recipe[zelosquash].ingredients[3].amount = 1
 data_recipe[zelosquash].ingredients[4].amount = 60
-data_recipe[zelosquash].results = {{type = item, name = zelosquash, amount = 16}}
+data_recipe[zelosquash].results = {{type = item, name = zelosquash, amount = 16, reset_freshness_on_craft = true}}
 
 data_item[arumbiphila].spoil_ticks = 4 * hour
 data_item[arumbiphila].spoil_result = spoilage
@@ -483,7 +483,7 @@ data_recipe[arumbiphila].ingredients[1].amount = 4
 data_recipe[arumbiphila].ingredients[2].amount = 4
 data_recipe[arumbiphila].ingredients[3].amount = 1
 data_recipe[arumbiphila].ingredients[4].amount = 60
-data_recipe[arumbiphila].results = {{type = item, name = arumbiphila, amount = 16}}
+data_recipe[arumbiphila].results = {{type = item, name = arumbiphila, amount = 16, reset_freshness_on_craft = true}}
 
 local sorting_binafran = "angels-sorting-desert-1"
 data_recipe[sorting_binafran].subgroup = is_desert_vegetables_processing
@@ -656,8 +656,8 @@ data_recipe[vegetable_oil_filtering_1].results =
 {
     {type = fluid, name = vegetable_oil, amount = 120},
     {type = fluid, name = nutrient_pulp, amount = 60},
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
 
 local vegetable_oil_filtering_2 = "angels-liquid-raw-vegetable-oil-filtering-2"
@@ -670,8 +670,8 @@ data_recipe[vegetable_oil_filtering_2].results =
 {
     {type = fluid, name = vegetable_oil, amount = 60},
     {type = fluid, name = nutrient_pulp, amount = 30},
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
 
 local vegetable_oil_refining = "angels-liquid-vegetable-oil-refining"

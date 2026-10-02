@@ -19,6 +19,15 @@ if mods[hyarion_mods] then
     bismuth_oxyselenide = "bismuth-oxyselenide"
     TIMSABA.functions.create_items
     ({
+        -- QUARTZ
+        {
+            localised_name = {"entity-name." .. quartz_ore},
+            localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil,
+            name = quartz_ore,
+            subgroup = is_hyarion_recipe_ore,
+            icon = "__planetaris-hyarion__/graphics/icons/" .. quartz_ore .. ".png",
+            order = c
+        },
         -- SELENIUM
         {
             localised_description = show_formula and {chemical_formula, "Se"} or nil,

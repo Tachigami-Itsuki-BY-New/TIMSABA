@@ -281,8 +281,8 @@ data_recipe[coolant_used_filtration_1].ingredients[1].amount = 240
 data_recipe[coolant_used_filtration_1].results =
 {
     {type = fluid, name = coolant, amount = 240},
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
 
 local coolant_used_filtration_2 = "angels-coolant-used-filtration-2"
@@ -293,8 +293,8 @@ data_recipe[coolant_used_filtration_2].ingredients[1].amount = 240
 data_recipe[coolant_used_filtration_2].results =
 {
     {type = fluid, name = coolant, amount = 240},
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
 
 local coolant_cool_100 = "angels-coolant-cool-100"

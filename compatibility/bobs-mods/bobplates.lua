@@ -101,8 +101,8 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = lithium_bob, amount = 16},
             {type = fluid, name = chlorine_angels, amount = 240},
-            {type = item, name = electrode, amount = 1, independent_probability = 0.9},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = lithium_bob
     }

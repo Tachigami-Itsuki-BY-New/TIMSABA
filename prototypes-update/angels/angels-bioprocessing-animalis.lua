@@ -209,8 +209,8 @@ data_recipe[fish_oil_filtration_1].results =
 {
     {type = fluid, name = fish_oil, amount = 120},
     {type = fluid, name = mineral_oil_angels, amount = 60},
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
 
 local fish_oil_filtration_2 = "angels-liquid-raw-fish-oil-filtering-2"
@@ -222,8 +222,8 @@ data_recipe[fish_oil_filtration_2].results =
 {
     {type = fluid, name = fish_oil, amount = 60},
     {type = fluid, name = mineral_oil_angels, amount = 30},
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.9},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.1}
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
 
 local fish_oil_refining = "angels-liquid-fish-oil-refining"
@@ -414,7 +414,7 @@ data_recipe[rancid_puffer_puffing].ingredients[4].amount = 120
 data_recipe[rancid_puffer_puffing].results =
 {
     {type = item, name = rancid_puffer, amount = 3, ignored_by_productivity = 3, ignored_by_stats = 3, reset_freshness_on_craft = true},
-    {type = item, name = rancid_puffer, amount = 1, independent_probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
+    {type = item, name = rancid_puffer, amount = 1, independent_probability = 0.8755, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
     {type = fluid, name = raw_gas_angels, amount = 240}
 }
 
@@ -429,7 +429,7 @@ data_recipe[blazing_puffer_puffing].ingredients[4].amount = 120
 data_recipe[blazing_puffer_puffing].results =
 {
     {type = item, name = blazing_puffer, amount = 3, ignored_by_productivity = 3, ignored_by_stats = 3, reset_freshness_on_craft = true},
-    {type = item, name = blazing_puffer, amount = 1, independent_probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
+    {type = item, name = blazing_puffer, amount = 1, independent_probability = 0.8755, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
     {type = fluid, name = urea_solution_angels, amount = 240}
 }
 
@@ -445,7 +445,7 @@ data_recipe[acidic_puffer_puffing].ingredients[4].amount = 120
 data_recipe[acidic_puffer_puffing].results =
 {
     {type = item, name = acidic_puffer, amount = 3, ignored_by_productivity = 3, ignored_by_stats = 3, reset_freshness_on_craft = true},
-    {type = item, name = acidic_puffer, amount = 1, independent_probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
+    {type = item, name = acidic_puffer, amount = 1, independent_probability = 0.8755, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
     {type = fluid, name = synthesis_angels, amount = 240}
 }
 
@@ -461,7 +461,7 @@ data_recipe[corrosive_puffer_puffing].ingredients[4].amount = 120
 data_recipe[corrosive_puffer_puffing].results =
 {
     {type = item, name = corrosive_puffer, amount = 3, ignored_by_productivity = 3, ignored_by_stats = 3, reset_freshness_on_craft = true},
-    {type = item, name = corrosive_puffer, amount = 1, independent_probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
+    {type = item, name = corrosive_puffer, amount = 1, independent_probability = 0.8755, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false, reset_freshness_on_craft = true},
     {type = fluid, name = hydrazine_angels, amount = 240}
 }
 
@@ -1140,7 +1140,7 @@ data_recipe[crystal_shard_blue].subgroup = is_crystals_shard_3
 data_recipe[crystal_shard_blue].icons = TWO_D_I(crystal_shard_blue_cut, slurry_crystal, crystal_shard_blue)
 data_recipe[crystal_shard_blue].order = a
 data_recipe[crystal_shard_blue].ingredients[3].amount = 15
-data_recipe[crystal_shard_blue].results[2].independent_probability = 0.75
+data_recipe[crystal_shard_blue].results[2].independent_probability = 0.5
 
 data_item[crystal_shard_green].subgroup = is_crystals_shard_3
 data_item[crystal_shard_green].order = b
@@ -1148,7 +1148,7 @@ data_recipe[crystal_shard_green].subgroup = is_crystals_shard_3
 data_recipe[crystal_shard_green].icons = TWO_D_I(crystal_shard_green_cut, slurry_crystal, crystal_shard_green)
 data_recipe[crystal_shard_green].order = b
 data_recipe[crystal_shard_green].ingredients[3].amount = 15
-data_recipe[crystal_shard_green].results[2].independent_probability = 0.75
+data_recipe[crystal_shard_green].results[2].independent_probability = 0.5
 
 data_item[crystal_shard_red].subgroup = is_crystals_shard_3
 data_item[crystal_shard_red].order = c
@@ -1156,7 +1156,7 @@ data_recipe[crystal_shard_red].subgroup = is_crystals_shard_3
 data_recipe[crystal_shard_red].icons = TWO_D_I(crystal_shard_red_cut, slurry_crystal, crystal_shard_red)
 data_recipe[crystal_shard_red].order = c
 data_recipe[crystal_shard_red].ingredients[3].amount = 15
-data_recipe[crystal_shard_red].results[2].independent_probability = 0.75
+data_recipe[crystal_shard_red].results[2].independent_probability = 0.5
 
 data_item[crystal_shard_harmonic].subgroup = is_crystals_shard_3
 data_item[crystal_shard_harmonic].order = d
@@ -1204,7 +1204,7 @@ data_recipe[crystal_full_blue].subgroup = is_crystals_full_3
 data_recipe[crystal_full_blue].icons = TWO_D_I(crystal_full_blue_cut, slurry_crystal, crystal_full_blue)
 data_recipe[crystal_full_blue].order = a
 data_recipe[crystal_full_blue].ingredients[3].amount = 15
-data_recipe[crystal_full_blue].results[2].independent_probability = 0.75
+data_recipe[crystal_full_blue].results[2].independent_probability = 0.25
 
 data_item[crystal_full_green].subgroup = is_crystals_full_3
 data_item[crystal_full_green].order = b
@@ -1212,7 +1212,7 @@ data_recipe[crystal_full_green].subgroup = is_crystals_full_3
 data_recipe[crystal_full_green].icons = TWO_D_I(crystal_full_green_cut, slurry_crystal, crystal_full_green)
 data_recipe[crystal_full_green].order = b
 data_recipe[crystal_full_green].ingredients[3].amount = 15
-data_recipe[crystal_full_green].results[2].independent_probability = 0.75
+data_recipe[crystal_full_green].results[2].independent_probability = 0.25
 
 data_item[crystal_full_red].subgroup = is_crystals_full_3
 data_item[crystal_full_red].order = c
@@ -1220,7 +1220,7 @@ data_recipe[crystal_full_red].subgroup = is_crystals_full_3
 data_recipe[crystal_full_red].icons = TWO_D_I(crystal_full_red_cut, slurry_crystal, crystal_full_red)
 data_recipe[crystal_full_red].order = c
 data_recipe[crystal_full_red].ingredients[3].amount = 15
-data_recipe[crystal_full_red].results[2].independent_probability = 0.75
+data_recipe[crystal_full_red].results[2].independent_probability = 0.25
 
 data_item[crystal_full_harmonic].subgroup = is_crystals_full_3
 data_item[crystal_full_harmonic].order = d

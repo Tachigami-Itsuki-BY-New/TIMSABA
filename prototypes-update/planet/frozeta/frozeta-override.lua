@@ -30,7 +30,8 @@ if mods[secretas_frozeta_mods] then
         {type = item, name = display_panel,             amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = heat_pipe_4,               amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = scrap,                     amount = 1, independent_probability = 0.25000, show_details_in_recipe_tooltip = false},
-        {type = item, name = gallite_ore,               amount = 1, independent_probability = 0.50000, show_details_in_recipe_tooltip = false}
+        {type = item, name = gallite_ore,               amount = 1, independent_probability = 0.50000, show_details_in_recipe_tooltip = false},
+        {type = item, name = sylvanite_ore,             amount = 1, independent_probability = 0.50000, show_details_in_recipe_tooltip = false}
     }
     if settings.startup[setting_bobmods_power_steam].value then
         table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_6, amount = 1, independent_probability = 0.03125, show_details_in_recipe_tooltip = false})
@@ -192,11 +193,12 @@ if mods[secretas_frozeta_mods] then
     {
         {type = unlock_recipe, recipe = steam_recycler},
         {type = unlock_recipe, recipe = spaceship_scrap_recycling},
-        {type = unlock_recipe, recipe = solid_fuel_liquefaction},
-        {type = unlock_recipe, recipe = golden_biter_egg}
+        {type = unlock_recipe, recipe = solid_fuel_liquefaction}
     }
 
     data_technology[golden_science_pack].prerequisites = {tech_gallite_processing_1, tech_sylvanite_processing_1}
+    table.insert(data_technology[golden_science_pack].effects, {type = unlock_recipe, recipe = frozeta_slag_processing})
+    table.insert(data_technology[golden_science_pack].effects, {type = unlock_recipe, recipe = golden_biter_egg})
 
     data_technology[spaceship_scrap_recycling .. _productivity].prerequisites = {golden_science_pack}
 

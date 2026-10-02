@@ -55,9 +55,9 @@ if mods[moshine_mods] then
 	data_recipe[cosmic_data_creation] = nil
 	if mods[panglia_mods] then data_recipe[timewarp_data_making] = nil end
 
-	for i, prerequisite in ipairs(data_technology["moshine-tech-cosmicscanner-construction1"].prerequisites) do
+	for i, prerequisite in ipairs(data_technology[tech_cosmicscanner_construction_1].prerequisites) do
         if prerequisite == "moshine-concrete-from-molten-iron-and-sand" then
-            table.remove(data_technology["moshine-tech-cosmicscanner-construction1"].prerequisites, i) break
+            table.remove(data_technology[tech_cosmicscanner_construction_1].prerequisites, i) break
         end
     end
 end

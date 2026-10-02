@@ -25,6 +25,7 @@ crushed_stone_sorting_3 = "crushed-stone-sorting-3"
 crushed_stone_sorting_4 = "crushed-stone-sorting-4"
 sand_from_crushed_stone = "sand-from-crushed-stone"
 calcium_from_crushed_stone = "calcium-from-crushed-stone"
+crystal_dust_sorting = "crystal-dust-sorting"
 TIMSABA.functions.create_recipes
 ({
     -- SLAG SORTING
@@ -145,6 +146,27 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
         results = {{type = item, name = calcium, amount = 1}},
         main_product = calcium
+    },
+    -- CRYSTAL SORTING
+    {
+        name = crystal_dust_sorting,
+        categories = {angels_ore_sorting_5},
+        subgroup = "angels-geode-processing-2",
+        icons = RECYCLING_I(recycling_png, crystal_dust),
+        order = g,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 1,
+        ingredients = {{type = item, name = crystal_dust, amount = 4}},
+        results =
+        {
+            {type = item, name = ruby_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = sapphire_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = emerald_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = amethyst_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = topaz_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
+            {type = item, name = diamond_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5}
+        }
     }
 })
 

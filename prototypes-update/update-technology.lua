@@ -1116,7 +1116,8 @@ data_technology[tech_advanced_ore_refining_4].effects =
     {type = unlock_recipe, recipe = thorium_ore_recipe},
     {type = unlock_recipe, recipe = chromium_ore_recipe},
     {type = unlock_recipe, recipe = tungsten_ore_recipe},
-    {type = unlock_recipe, recipe = platinum_ore_recipe}
+    {type = unlock_recipe, recipe = platinum_ore_recipe},
+    {type = unlock_recipe, recipe = crystal_dust_sorting}
 }
 
 data_technology[tech_slag_processing_1].effects =

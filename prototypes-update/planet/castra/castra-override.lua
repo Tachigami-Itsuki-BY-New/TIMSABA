@@ -129,8 +129,8 @@ if mods[castra_mods] then
         {type = item, name = sulfur, amount = 16},
         {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
         {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-        {type = item, name = electrode, amount = 1, independent_probability = 0.9},
-    {type = item, name = electrode_used, amount = 1, independent_probability = 0.1}
+        {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
     }
     data_recipe[hydrogen_sulfide_electrolysis].main_product = sulfur
 

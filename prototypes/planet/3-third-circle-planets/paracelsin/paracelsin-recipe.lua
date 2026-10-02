@@ -52,4 +52,27 @@ if mods[paracelsin_mods] then
             main_product = galvanized_steel_plate
         }
     })
+
+    -- SLAG PROCESSING
+    paracelsin_slag_processing = "paracelsin-slag-processing"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. sphalerite_ore}, {"item-name." .. tetrahedrite_ore}},
+            name = paracelsin_slag_processing,
+            categories = {crystallizing_4},
+            subgroup = slag_processing_1,
+            icons = THREE_R_I(sludge_mineral, sphalerite_ore, tetrahedrite_ore),
+            order = c .. "-" .. data_planet[planet_paracelsin].order,
+            allow_productivity = true,
+            energy_required = 8,
+            ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+            results =
+            {
+                {type = item, name = sphalerite_ore, amount = 1, independent_probability = 0.5},
+                {type = item, name = tetrahedrite_ore, amount = 1, independent_probability = 0.5}
+            },
+            surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+        }
+    })
 end

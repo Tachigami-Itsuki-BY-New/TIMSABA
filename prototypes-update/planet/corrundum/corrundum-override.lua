@@ -544,6 +544,7 @@ if mods[corrundum_mods] then
     data_technology[catalytic_chemical_plant].prerequisites = {tech_sperrylite_processing_1}
 
     data_technology[electrochemical_science_pack].prerequisites = {catalytic_chemical_plant}
+    table.insert(data_technology[electrochemical_science_pack].effects, {type = unlock_recipe, recipe = corrundum_slag_processing})
 
     tech_platinum_processing = "platinum-processing"
     data_technology[tech_platinum_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-platinum.png"
