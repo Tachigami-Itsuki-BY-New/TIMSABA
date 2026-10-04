@@ -87,7 +87,7 @@ require("prototypes-final-fix.multi-building.entities")
 require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
 
-require("prototypes-final-fix.final-fix-lingumis-plants-boost")
+--require("prototypes-final-fix.final-fix-lingumis-plants-boost")
 
 local prototypes = {item, capsule}
 for _, proto_name in ipairs(prototypes) do

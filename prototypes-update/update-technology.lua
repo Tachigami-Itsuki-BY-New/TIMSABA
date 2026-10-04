@@ -74,11 +74,11 @@ else
     }
 end
 
-if mods[bobtech] then
-    data_technology[transport_science_pack].prerequisites = {tech_ceramic_processing, tech_T3_inserter}
-    if data_technology[tech_robotics_2] then
-       table.insert(data_technology[transport_science_pack].prerequisites, tech_robotics_2)
-    end
+local _capacity_bonus_ = "-capacity-bonus-"
+data_technology[inserter .. _capacity_bonus_ .. "4"].prerequisites = {inserter .. _capacity_bonus_ .. "3"}
+data_technology[inserter .. _capacity_bonus_ .. "5"].prerequisites = {inserter .. _capacity_bonus_ .. "4"}
+if data_technology[transport_science_pack] then
+    table.insert(data_technology[inserter .. _capacity_bonus_ .. "5"].prerequisites, transport_science_pack)
 end
 
 -- ADVANCED LOGISTICS
@@ -211,6 +211,12 @@ if data_technology[heavy_spidertron] then
 end
 
 -- PRODUCTION
+data_technology[logistic_science_pack].prerequisites = {tech_electronics, tech_logistics_1, tech_steel_processing}
+
+if mods[bobtech] then
+    data_technology[transport_science_pack].prerequisites = {tech_robots_1, tech_T3_inserter}
+end
+
 data_technology[tech_electronics_0].effects =
 {
     {type = unlock_recipe, recipe = copper_cable},
@@ -899,9 +905,7 @@ if mods[lignumis_mods] then
         {type = unlock_recipe, recipe = ore_crotinnium .. _sorting},
         {type = unlock_recipe, recipe = ore_senaite .. _sorting},
         {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
-        {type = unlock_recipe, recipe = stone_crushed_angels},
         {type = unlock_recipe, recipe = crushed_stone_sorting_1},
-        {type = unlock_recipe, recipe = sand_from_crushed_stone},
         {type = unlock_recipe, recipe = calcium_from_crushed_stone},
         {type = unlock_recipe, recipe = crushed_jivolite},
         {type = unlock_recipe, recipe = crushed_crotinnium},
@@ -928,9 +932,7 @@ else
         {type = unlock_recipe, recipe = ore_senaite .. _sorting},
         {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
         {type = unlock_recipe, recipe = slag_sorting_1},
-        {type = unlock_recipe, recipe = stone_crushed_angels},
         {type = unlock_recipe, recipe = crushed_stone_sorting_1},
-        {type = unlock_recipe, recipe = sand_from_crushed_stone},
         {type = unlock_recipe, recipe = calcium_from_crushed_stone},
         {type = unlock_recipe, recipe = crushed_jivolite},
         {type = unlock_recipe, recipe = crushed_crotinnium},

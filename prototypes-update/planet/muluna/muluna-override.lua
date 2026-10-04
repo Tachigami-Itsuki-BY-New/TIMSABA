@@ -665,7 +665,7 @@ if mods[muluna_mods] then
     data_recipe[space_science_pack_muluna].energy_required = 16
     data_recipe[space_science_pack_muluna].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 2},
+        {type = item, name = aluminium_plate_bob, amount = 8},
         {type = item, name = carbon_angels, amount = 4},
         {type = item, name = ice, amount = 4}
     }

@@ -189,14 +189,23 @@ if mods[lignumis_mods] then
     data_recipe[steam_science_pack].subgroup = is_lignumis_recipe
     data_recipe[steam_science_pack].icons = R_P_I(steam_science_pack, planet_lignumis, nil, number_1)
     data_recipe[steam_science_pack].order = o
-    data_recipe[steam_science_pack].energy_required = 16
+    data_recipe[steam_science_pack].energy_required = 8
+    data_recipe[steam_science_pack].ingredients =
+    {
+        {type = item, name = gold_plate_bob, amount = 2},
+        {type = fluid, name = steam, amount = 30}
+    }
 
     local steam_science_pack_steam = steam_science_pack .. "-" .. steam
     data_recipe[steam_science_pack_steam].subgroup = is_lignumis_recipe
     data_recipe[steam_science_pack_steam].icons = R_P_I(steam_science_pack, nil, nil, number_2)
     data_recipe[steam_science_pack_steam].order = o_a
-    data_recipe[steam_science_pack_steam].energy_required = 16
-    data_recipe[steam_science_pack_steam].ingredients = {{type = fluid, name = steam, amount = 30}}
+    data_recipe[steam_science_pack_steam].energy_required = 8
+    data_recipe[steam_science_pack_steam].ingredients =
+    {
+        {type = item, name = glass_bob, amount = 2},
+        {type = fluid, name = steam, amount = 30}
+    }
     data_recipe[steam_science_pack_steam].surface_conditions = nil
 
     local gold_quality_catalyst = "gold-quality-catalyst"
