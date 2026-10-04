@@ -1,4 +1,4 @@
-require("scripting.lingumis-plants-boost")
+--require("scripting.lingumis-plants-boost")
 require("scripting.starting-items")
 
 local extract_ground = require("scripting.extract-ground")

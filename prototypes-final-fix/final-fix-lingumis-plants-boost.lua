@@ -2,8 +2,7 @@ local speed_boost_modifyer = 4
 
 local original = data_plant["tree-plant"]
 if not original then
-    log("[LignumisBoost|data-final-fix] ERROR: prototype 'tree-plant' no")
-    return
+    log("[LignumisBoost|data-final-fix] ERROR: prototype 'tree-plant' no") return
 end
 
 local fast = table.deepcopy(original)
@@ -21,5 +20,4 @@ fast.localised_name = original.localised_name
 fast.localised_description = original.localised_description
 
 data_plant[fast.name] = fast
-log("[LignumisBoost|data-final-fix] Registered " .. fast.name ..
-    " (growth_ticks=" .. tostring(fast.growth_ticks) .. ")")
+log("[LignumisBoost|data-final-fix] Registered " .. fast.name .. " (growth_ticks=" .. tostring(fast.growth_ticks) .. ")")

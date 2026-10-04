@@ -716,6 +716,7 @@ data_item[stone_crushed_angels].order = i
 data_recipe[stone_crushed_angels].subgroup = is_geode_processing_1
 data_recipe[stone_crushed_angels].icons = TWO_I(stone, stone_crushed_angels)
 data_recipe[stone_crushed_angels].order = i
+data_recipe[stone_crushed_angels].enabled = true
 data_recipe[stone_crushed_angels].ingredients[1].name = stone
 
 local geode_blue_liquify = "angels-geode-blue-liquify"

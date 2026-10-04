@@ -860,9 +860,9 @@ if mods[hyarion_mods] then
     data_recipe[space_science_pack].energy_required = 16
     data_recipe[space_science_pack].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 2},
-        {type = item, name = carbon_angels, amount = 4},
-        {type = item, name = ice, amount = 4}
+        {type = item, name = advanced_processing_unit, amount = 4},
+        {type = item, name = molybdenum_plate, amount = 2},
+        {type = item, name = rhenium_plate, amount = 2}
     }
     data_recipe[space_science_pack].results[1].amount = 4
 
@@ -873,9 +873,9 @@ if mods[hyarion_mods] then
     data_recipe[space_science_pack_hyarion].energy_required = 32
     data_recipe[space_science_pack_hyarion].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 8},
-        {type = item, name = carbon_angels, amount = 16},
-        {type = item, name = ice, amount = 16}
+        {type = item, name = advanced_processing_unit, amount = 16},
+        {type = item, name = molybdenum_plate, amount = 8},
+        {type = item, name = rhenium_plate, amount = 8}
     }
     data_recipe[space_science_pack_hyarion].results[1].amount = 32
 

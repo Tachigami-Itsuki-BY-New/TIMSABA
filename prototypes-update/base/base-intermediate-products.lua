@@ -1,21 +1,26 @@
-data_recipe[automation_science_pack].energy_required = 4
-
-data_recipe[logistic_science_pack].energy_required = 4
-
-data_recipe[chemical_science_pack].ingredients =
+data_recipe[automation_science_pack].energy_required = 8
+data_recipe[automation_science_pack].ingredients =
 {
-    {type = item, name = engine_unit, amount = 2},
-    {type = item, name = advanced_circuit, amount = 2},
-    {type = item, name = sulfur, amount = 1},
-    {type = item, name = sodium_hydroxide_angels, amount = 1}
+    {type = item, name = iron_gear_wheel, amount = 1},
+    {type = item, name = basic_circuit_board, amount = 1},
+    {type = item, name = glass_bob, amount = 2}
 }
+data_recipe[automation_science_pack].results[1].amount = 2
+
+data_recipe[logistic_science_pack].energy_required = 8
+data_recipe[logistic_science_pack].ingredients =
+{
+    {type = item, name = electronic_circuit, amount = 1},
+    {type = item, name = transport_belt, amount = 1},
+    {type = item, name = steel_pipe, amount = 2}
+}
+data_recipe[logistic_science_pack].results[1].amount = 2
 
 data_recipe[military_science_pack].energy_required = 8
 
-data_recipe[chemical_science_pack].energy_required = 16
+data_recipe[chemical_science_pack].energy_required = 8
 data_recipe[chemical_science_pack].ingredients =
 {
-    {type = item, name = engine_unit, amount = 2},
     {type = item, name = advanced_circuit, amount = 2},
     {type = item, name = sulfur, amount = 1},
     {type = item, name = sodium_hydroxide_angels, amount = 1}
@@ -25,14 +30,11 @@ if mods[bobtech] then
     data_recipe[transport_science_pack].energy_required = 16
     data_recipe[transport_science_pack].ingredients =
     {
-        {type = item, name = T3_inserter, amount = 1},
-        {type = item, name = T3_transport_belt, amount = 1},
-        {type = item, name = ceramic_pipe, amount = 2}
+        {type = item, name = T3_inserter, amount = 4},
+        {type = item, name = logistic_robot_2, amount = 1},
+        {type = item, name = construction_robot_2, amount = 1}
     }
     data_recipe[transport_science_pack].results[1].amount = 4
-    if data_item[flying_robot_frame_2] then
-        table.insert(data_recipe[transport_science_pack].ingredients, {type = item, name = flying_robot_frame_2, amount = 2})
-    end
 end
 
 data_recipe[production_science_pack].energy_required = 16
@@ -47,9 +49,9 @@ data_recipe[production_science_pack].results[1].amount = 4
 data_recipe[utility_science_pack].energy_required = 16
 data_recipe[utility_science_pack].ingredients =
 {
-    {type = item, name = low_density_structure, amount = 4},
+    {type = item, name = low_density_structure, amount = 2},
     {type = item, name = processing_unit, amount = 2},
-    {type = item, name = reinforced_concrete, amount = 2}
+    {type = item, name = reinforced_concrete, amount = 4}
 }
 data_recipe[utility_science_pack].results[1].amount = 4
 
@@ -57,9 +59,9 @@ data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform
 data_recipe[space_science_pack].energy_required = 16
 data_recipe[space_science_pack].ingredients =
 {
-    {type = item, name = nitinol_plate_bob, amount = 2},
-    {type = item, name = carbon_angels, amount = 4},
-    {type = item, name = ice, amount = 4}
+    {type = item, name = advanced_processing_unit, amount = 4},
+    {type = item, name = molybdenum_plate, amount = 2},
+    {type = item, name = rhenium_plate, amount = 2}
 }
 data_recipe[space_science_pack].results[1].amount = 4
 

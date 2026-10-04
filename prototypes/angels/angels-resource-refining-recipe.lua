@@ -126,10 +126,11 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. sand_angels},
         name = sand_from_crushed_stone,
-        categories = {angels_ore_refining_T1},
+        categories = {angels_ore_refining_T1, hand_crafting},
         subgroup = is_processing_crafting,
         icons = TWO_I(stone_crushed_angels, sand_angels),
         order = f,
+        enabled = true,
         energy_required = 1,
         ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
         results = {{type = item, name = sand_angels, amount = 2}},
