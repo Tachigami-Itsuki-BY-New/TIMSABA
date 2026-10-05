@@ -32,6 +32,9 @@ if mods[lignumis_mods] then
     data_item[lumber].order = f
     data_item[lumber].fuel_categories = {base_fuel}
     data_item[lumber].fuel_value = 3600 .. kJ
+    if mods[muluna_mods] then
+        table.insert(data_recipe[lumber].categories, advanced_wood_processing)
+    end
     data_recipe[lumber].subgroup = is_lignumis_recipe
     data_recipe[lumber].icons = TWO_I(wood, lumber)
     data_recipe[lumber].order = f
@@ -40,11 +43,17 @@ if mods[lignumis_mods] then
 
     data_item[wooden_gear_wheel].subgroup = is_lignumis_recipe
     data_item[wooden_gear_wheel].order = g
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wooden_gear_wheel].categories, advanced_wood_processing)
+    end
     data_recipe[wooden_gear_wheel].subgroup = is_lignumis_recipe
     data_recipe[wooden_gear_wheel].icons = TWO_I(lumber, wooden_gear_wheel)
     data_recipe[wooden_gear_wheel].order = g
 
     data_recipe[basic_circuit_board_mods].localised_name = {"item-name." .. basic_circuit_board}
+    if mods[muluna_mods] then
+        table.insert(data_recipe[basic_circuit_board_mods].categories, advanced_wood_processing)
+    end
     data_recipe[basic_circuit_board_mods].subgroup = is_lignumis_recipe
     data_recipe[basic_circuit_board_mods].icons = BUILDING_R_I(basic_circuit_board, planet_lignumis)
     data_recipe[basic_circuit_board_mods].order = h
@@ -227,12 +236,15 @@ if mods[lignumis_mods] then
     -- LOGISTICS
     data_item[wood_transport_belt].subgroup = is_lignumis_logistic
     data_item[wood_transport_belt].order = a
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wood_transport_belt].categories, advanced_wood_processing)
+    end
     data_recipe[wood_transport_belt].subgroup = is_lignumis_logistic
     data_recipe[wood_transport_belt].order = a
     data_recipe[wood_transport_belt].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 2},
-        {type = item, name = lumber, amount = 2}
+        {type = item, name = wooden_gear_wheel, amount = 1},
+        {type = item, name = lumber, amount = 1}
     }
     data_transport_belt[wood_transport_belt].subgroup = is_lignumis_logistic
     data_transport_belt[wood_transport_belt].order = a
@@ -249,12 +261,15 @@ if mods[lignumis_mods] then
     data_item[wood_underground_belt].order = b
     data_item[wood_underground_belt].stack_size = 64
     data_item[wood_underground_belt].weight = 15625
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wood_underground_belt].categories, advanced_wood_processing)
+    end
     data_recipe[wood_underground_belt].subgroup = is_lignumis_logistic
     data_recipe[wood_underground_belt].order = b
     data_recipe[wood_underground_belt].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 8},
-        {type = item, name = lumber, amount = 8}
+        {type = item, name = wooden_gear_wheel, amount = 4},
+        {type = item, name = lumber, amount = 4}
     }
     data_underground_belt[wood_underground_belt].subgroup = is_lignumis_logistic
     data_underground_belt[wood_underground_belt].order = b
@@ -271,15 +286,18 @@ if mods[lignumis_mods] then
     data_item[wood_splitter].order = c
     data_item[wood_splitter].stack_size = 64
     data_item[wood_splitter].weight = 15625
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wood_splitter].categories, advanced_wood_processing)
+    end
     data_recipe[wood_splitter].subgroup = is_lignumis_logistic
     data_recipe[wood_splitter].order = c
-    data_splitter[wood_splitter].subgroup = is_lignumis_logistic
-    data_splitter[wood_splitter].order = c
     data_recipe[wood_splitter].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 4},
-        {type = item, name = lumber, amount = 4}
+        {type = item, name = wooden_gear_wheel, amount = 2},
+        {type = item, name = lumber, amount = 2}
     }
+    data_splitter[wood_splitter].subgroup = is_lignumis_logistic
+    data_splitter[wood_splitter].order = c
     if data_splitter[T0_splitter] then
         data_splitter[wood_splitter].speed = 0.46875/60
         data_splitter[wood_splitter].next_upgrade = T0_splitter
@@ -375,6 +393,9 @@ if mods[lignumis_mods] then
     data_item[burner_agricultural_tower].order = a
     data_item[burner_agricultural_tower].stack_size = 32
     data_item[burner_agricultural_tower].weight = 31250
+    if mods[muluna_mods] then
+        table.insert(data_recipe[burner_agricultural_tower].categories, advanced_wood_processing)
+    end
     data_recipe[burner_agricultural_tower].subgroup = is_lignumis_building
     data_recipe[burner_agricultural_tower].order = a
     data_recipe[burner_agricultural_tower].energy_required = 8
@@ -407,6 +428,9 @@ if mods[lignumis_mods] then
     data_item[burner_assembling_machine].order = c
     data_item[burner_assembling_machine].stack_size = 32
     data_item[burner_assembling_machine].weight = 31250
+    if mods[muluna_mods] then
+        data_recipe[burner_assembling_machine].categories = util.table.deepcopy(data_recipe[burner_agricultural_tower].categories)
+    end
     data_recipe[burner_assembling_machine].subgroup = is_lignumis_building
     data_recipe[burner_assembling_machine].order = c
     data_recipe[burner_assembling_machine].energy_required = 1
@@ -481,14 +505,17 @@ if mods[lignumis_mods] then
     data_assembling[steam_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[steam_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
-    data_item[lumber_mill].subgroup = is_lignumis_building
-    data_item[lumber_mill].order = e
-    data_item[lumber_mill].stack_size = 32
-    data_item[lumber_mill].weight = 31250
-    data_recipe[lumber_mill].subgroup = is_lignumis_building
-    data_recipe[lumber_mill].order = e
-    data_recipe[lumber_mill].energy_required = 64
-    data_recipe[lumber_mill].ingredients =
+    data_item[burner_lumber_mill].subgroup = is_lignumis_building
+    data_item[burner_lumber_mill].order = e
+    data_item[burner_lumber_mill].stack_size = 32
+    data_item[burner_lumber_mill].weight = 31250
+    if mods[muluna_mods] then
+        data_recipe[burner_lumber_mill].categories = util.table.deepcopy(data_recipe[burner_agricultural_tower].categories)
+    end
+    data_recipe[burner_lumber_mill].subgroup = is_lignumis_building
+    data_recipe[burner_lumber_mill].order = e
+    data_recipe[burner_lumber_mill].energy_required = 64
+    data_recipe[burner_lumber_mill].ingredients =
     {
         {type = item, name = wooden_gear_wheel, amount = 64},
         {type = item, name = basic_circuit_board, amount = 16},
@@ -497,14 +524,43 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 32},
         {type = item, name = burner_assembling_machine, amount = 2}
     }
-    data_assembling[lumber_mill].subgroup = is_lignumis_building
-    data_assembling[lumber_mill].order = e
-    data_assembling[lumber_mill].energy_usage = 900 .. kW
+    data_assembling[burner_lumber_mill].subgroup = is_lignumis_building
+    data_assembling[burner_lumber_mill].order = e
+    data_assembling[burner_lumber_mill].energy_usage = 900 .. kW
+    data_assembling[burner_lumber_mill].energy_source.emissions_per_minute.pollution = 8
+    if mods[muluna_mods] then
+        data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
+    end
+
+    burner_lumber_mill_copper = burner_lumber_mill .. "-copper"
+    if mods[muluna_mods] then
+        data_recipe[burner_lumber_mill_copper].categories = util.table.deepcopy(data_recipe[burner_agricultural_tower].categories)
+    end
+    data_recipe[burner_lumber_mill_copper].subgroup = is_lignumis_building
+    data_recipe[burner_lumber_mill_copper].order = e_a
+    data_recipe[burner_lumber_mill_copper].energy_required = 64
+    data_recipe[burner_lumber_mill_copper].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 64},
+        {type = item, name = basic_circuit_board, amount = 16},
+        {type = item, name = lumber, amount = 64},
+        {type = item, name = stone_brick, amount = 32},
+        {type = item, name = copper_plate, amount = 32},
+        {type = item, name = burner_assembling_machine, amount = 2}
+    }
+
+    if mods[muluna_mods] then
+        table.insert(data_assembling[burner_lumber_mill].crafting_categories, advanced_wood_processing)
+        table.insert(data_assembling[lumber_mill].crafting_categories, lignumis_wood_processing)
+    end
 
     data_item[wood_lab].subgroup = is_lignumis_building
     data_item[wood_lab].order = h
     data_item[wood_lab].stack_size = 32
     data_item[wood_lab].weight = 31250
+    if mods[muluna_mods] then
+        data_recipe[wood_lab].categories = util.table.deepcopy(data_recipe[burner_agricultural_tower].categories)
+    end
     data_recipe[wood_lab].subgroup = is_lignumis_building
     data_recipe[wood_lab].order = h
     data_recipe[wood_lab].ingredients =
@@ -590,6 +646,9 @@ if mods[lignumis_mods] then
     data_ammo[wood_darts_magazine].subgroup = is_lignumis_war
     data_ammo[wood_darts_magazine].order = a
     data_ammo[wood_darts_magazine].magazine_size = 30
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wood_darts_magazine].categories, advanced_wood_processing)
+    end
     data_recipe[wood_darts_magazine].subgroup = is_lignumis_war
     data_recipe[wood_darts_magazine].order = a
 
@@ -625,6 +684,9 @@ if mods[lignumis_mods] then
     data_item[wooden_wall].order = d
     data_item[wooden_wall].fuel_categories = {base_fuel}
     data_item[wooden_wall].fuel_value = (7200 * 4) .. kJ
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wooden_wall].categories, advanced_wood_processing)
+    end
     data_recipe[wooden_wall].subgroup = is_lignumis_war
     data_recipe[wooden_wall].order = d
     data_wall[wooden_wall].subgroup = is_lignumis_war
@@ -635,7 +697,9 @@ if mods[lignumis_mods] then
     data_item[basic_radar].order = e
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
-    data_recipe[basic_radar].categories = {crafting}
+    if mods[muluna_mods] then
+        table.insert(data_recipe[wooden_wall].categories, advanced_wood_processing)
+    end
     data_recipe[basic_radar].subgroup = is_lignumis_war
     data_recipe[basic_radar].order = e
     data_recipe[basic_radar].energy_required = 8
@@ -646,6 +710,10 @@ if mods[lignumis_mods] then
     local basic_gun_turret = "basic-" .. gun_turret_1
     data_item[basic_gun_turret].subgroup = is_lignumis_war
     data_item[basic_gun_turret].order = f
+    table.insert(data_recipe[basic_gun_turret].categories, lignumis_wood_processing)
+    if mods[muluna_mods] then
+        table.insert(data_recipe[basic_gun_turret].categories, advanced_wood_processing)
+    end
     data_recipe[basic_gun_turret].subgroup = is_lignumis_war
     data_recipe[basic_gun_turret].order = f
     data_recipe[basic_gun_turret].ingredients =
@@ -720,7 +788,8 @@ if mods[lignumis_mods] then
     data_technology[tech_copper_processing].effects =
     {
         {type = unlock_recipe, recipe = crushed_stiratite},
-        {type = unlock_recipe, recipe = copper_plate}
+        {type = unlock_recipe, recipe = copper_plate},
+        {type = unlock_recipe, recipe = burner_lumber_mill_copper}
     }
     data_technology[tech_copper_processing].research_trigger =
     {

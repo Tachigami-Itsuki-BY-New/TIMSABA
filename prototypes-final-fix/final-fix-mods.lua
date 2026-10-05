@@ -680,6 +680,8 @@ if mods[lignumis_mods] then
 
     data_technology[tech_tree_seeding].unit.ingredients = {{wood_science_pack, 1}}
 
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = stone_crushed_angels})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = sand_from_crushed_stone})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_rubyte})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = lead_plate_bob})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_bobmonium})

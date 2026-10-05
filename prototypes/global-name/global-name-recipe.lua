@@ -171,6 +171,7 @@ biolubricant = "biolubricant"
 -- MULUNA
 landfill_stone_crushed = "landfill-stone-crushed"
 casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
+tree_crushing = "muluna-tree-crushing"
 
 -- PANGLIA
 branbalite_slurry_to_lubricant = "panglia_branbalite_slurry_to_lubricant"

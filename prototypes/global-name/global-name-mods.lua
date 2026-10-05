@@ -32,6 +32,8 @@ carbon_dioxide_mods = "carbon-dioxide"
 anorthite_asteroid_chunk = "anorthite-chunk"
 interstellar_science_pack = "interstellar-science-pack"
 greenhouse_wood = "muluna-greenhouse-wood"
+greenhouse_jellynut = "muluna-greenhouse-jellynut"
+greenhouse_yumako = "muluna-greenhouse-yumako"
 
 -- MOSHINE
 moshine_mods = "Moshine"
@@ -507,7 +509,7 @@ gold_storage_tank = "gold-storage-tank"
 deep_miner = "deep-miner"
 burner_assembling_machine = "burner-" .. assembling_machine
 steam_assembling_machine = "steam-" .. assembling_machine
-lumber_mill = "lumber-mill"
+burner_lumber_mill = "lumber-mill"
 wood_lab = "wood-lab"
 quality_assembler = "quality-assembler"
 big_wooden_pole = "big-wooden-pole"

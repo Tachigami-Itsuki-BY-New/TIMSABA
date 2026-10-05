@@ -79,7 +79,9 @@ end
 
 -- CORRUNDUM
 if mods[corrundum_mods] then
-    data_autoplace_control["sulfur_ore"].order = data_planet[planet_corrundum].order .. a
+    local sulfur_ore = "sulfur_ore"
+    data_autoplace_control[sulfur_ore].localised_name = {"", "[item=sulfur] ", {"item-name." .. sulfur}}
+    data_autoplace_control[sulfur_ore].order = data_planet[planet_corrundum].order .. a
     data_autoplace_control["chalcopyrite_ore"].order = data_planet[planet_corrundum].order .. a_a
     local sperrylite_ore = "platinum_ore"
     data_autoplace_control[sperrylite_ore].localised_name = {"", "[item=platinum-ore] ", {"entity-name.sperrylite-ore"}}

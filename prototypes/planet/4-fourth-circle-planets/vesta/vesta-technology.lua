@@ -26,11 +26,11 @@ if mods[vesta_mods] then
                 {type = unlock_recipe, recipe = ammonium_chloride}
             },
             research_trigger =
-        {
-            type = craft_item,
-            item = iridium_ore,
-            count = 256
-        }
+            {
+                type = craft_item,
+                item = iridium_ore,
+                count = 256
+            }
         },
         {
             localised_name = {"technology-name." .. tech_iridium_smelting_2},

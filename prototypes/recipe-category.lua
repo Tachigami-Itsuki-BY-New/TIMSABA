@@ -15,7 +15,7 @@ create_recipe_category(crystallizing_4)
 create_recipe_category(sintering_6)
 create_recipe_category(extract_ground)
 
-if mods[muluna_mods] and not mods[lignumis_mods] then
-    lumber_mill_recipe_category = "lumber-mill-recipe-category"
-    create_recipe_category(lumber_mill_recipe_category)
+if mods[muluna_mods] then
+    advanced_wood_processing = "advanced-wood-processing"
+    create_recipe_category(advanced_wood_processing)
 end

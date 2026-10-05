@@ -563,6 +563,7 @@ end
 if mods[quality_mods] then
     data_assembling[crusher].allowed_effects = {speed, consumption, productivity, pollution, quality}
     data_assembling[crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
 else
     data_assembling[crusher].allowed_effects = {speed, consumption, productivity, pollution}
     data_assembling[crusher].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
@@ -572,9 +573,33 @@ if mods[muluna_mods] then
     if mods[quality_mods] then
         data_assembling[crusher_2].allowed_effects = {speed, consumption, productivity, pollution, quality}
         data_assembling[crusher_2].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+
+        data_assembling[greenhouse_wood].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[greenhouse_wood].allowed_module_categories = {speed, efficiency, pollution_create, quality, agricultural}
+
+        data_assembling[greenhouse_jellynut].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[greenhouse_jellynut].allowed_module_categories = {speed, efficiency, pollution_create, quality, agricultural}
+
+        data_assembling[greenhouse_yumako].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[greenhouse_yumako].allowed_module_categories = {speed, efficiency, pollution_create, quality, agricultural}
     else
         data_assembling[crusher_2].allowed_effects = {speed, consumption, productivity, pollution}
         data_assembling[crusher_2].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+
+        data_assembling[greenhouse_wood].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[greenhouse_wood].allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
+
+        data_assembling[greenhouse_jellynut].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[greenhouse_jellynut].allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
+
+        data_assembling[greenhouse_yumako].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[greenhouse_yumako].allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     end
 end
 
@@ -838,8 +863,8 @@ if mods[lignumis_mods] then
         data_assembling[steam_assembling_machine].allowed_effects = {speed, consumption, productivity, quality}
         data_assembling[steam_assembling_machine].allowed_module_categories = {speed, efficiency, productivity, quality}
 
-        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution, quality}
-        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
+        data_assembling[burner_lumber_mill].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        data_assembling[burner_lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
 
         data_mining_drill[deep_miner].allowed_effects = {speed, consumption, productivity, quality}
         data_mining_drill[deep_miner].allowed_module_categories = {speed, efficiency, productivity, quality}
@@ -853,7 +878,7 @@ if mods[lignumis_mods] then
         data_mining_drill[deep_miner].allowed_effects = {speed, consumption, productivity, quality}
         data_mining_drill[deep_miner].allowed_module_categories = {speed, efficiency, productivity, quality}
 
-        data_assembling[lumber_mill].allowed_effects = {speed, consumption, productivity, pollution}
-        data_assembling[lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        data_assembling[burner_lumber_mill].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[burner_lumber_mill].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 end

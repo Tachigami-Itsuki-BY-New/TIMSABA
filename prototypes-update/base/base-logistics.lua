@@ -1,5 +1,8 @@
 data_item[wooden_chest].stack_size = 32
 data_item[wooden_chest].weight = 31250
+if mods[muluna_mods] then
+    table.insert(data_recipe[wooden_chest].categories, advanced_wood_processing)
+end
 if mods[lignumis_mods] then
     data_recipe[wooden_chest].ingredients[1].name = lumber
     data_recipe[wooden_chest].ingredients[1].amount = 8
@@ -669,6 +672,9 @@ end
 
 data_item[small_electric_pole].stack_size = 64
 data_item[small_electric_pole].weight = 15625
+if mods[muluna_mods] then
+    table.insert(data_recipe[small_electric_pole].categories, advanced_wood_processing)
+end
 data_recipe[small_electric_pole].ingredients[1].amount = 2
 data_electric_pole[small_electric_pole].maximum_wire_distance = 10.5
 data_electric_pole[small_electric_pole].supply_area_distance = 3.5
@@ -676,6 +682,7 @@ data_electric_pole[small_electric_pole].supply_area_distance = 3.5
 if mods[lignumis_mods] then
     data_item[big_wooden_pole].stack_size = 32
     data_item[big_wooden_pole].weight = 31250
+    data_recipe[big_wooden_pole].categories = util.table.deepcopy(data_recipe[small_electric_pole].categories)
     data_recipe[big_wooden_pole].ingredients[1].amount = 8
     data_recipe[big_wooden_pole].ingredients[2].amount = 8
     data_electric_pole[big_wooden_pole].maximum_wire_distance = 42
