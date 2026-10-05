@@ -130,7 +130,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_processing_crafting,
         icons = TWO_I(stone_crushed_angels, sand_angels),
         order = f,
-        enabled = true,
         energy_required = 1,
         ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
         results = {{type = item, name = sand_angels, amount = 2}},
@@ -173,4 +172,7 @@ TIMSABA.functions.create_recipes
 
 if mods[lignumis_mods] then
     data_recipe[slag_sorting_1].enabled = true
+end
+if not mods[lignumis_mods] then
+    data_recipe[sand_from_crushed_stone].enabled = true
 end

@@ -264,7 +264,6 @@ end
 
 -- ELECTRIC BLAST FURNACES
 local blast_furnace_icon = "__angelssmeltinggraphics__/graphics/icons/blast-furnace.png"
-local electricity_icon = "__TIMSABA__/graphics/icons/electricity.png"
 local icons_electric_blast_furnaces =
 {
     {name = electric_blast_furnace_1, tier = 1},

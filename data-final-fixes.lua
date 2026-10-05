@@ -1,7 +1,8 @@
 local map_settings = data.raw["map-settings"]["map-settings"]
-map_settings.pollution.enabled = true
-map_settings.enemy_evolution.enabled = true
 map_settings.enemy_expansion.enabled = true
+map_settings.enemy_evolution.enabled = true
+map_settings.enemy_evolution.time_factor = 0
+map_settings.pollution.enabled = true
 
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
@@ -88,18 +89,3 @@ require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
 
 --require("prototypes-final-fix.final-fix-lingumis-plants-boost")
-
-local prototypes = {item, capsule}
-for _, proto_name in ipairs(prototypes) do
-    if data.raw[proto_name] then
-        for _, proto in pairs(data.raw[proto_name]) do
-            if proto.fuel_category then
-                if not proto.fuel_categories then
-                    proto.fuel_categories = {proto.fuel_category}
-                end
-
-                proto.fuel_category = nil
-            end
-        end
-    end
-end

@@ -6,14 +6,24 @@ data_item[burner_ore_crusher].weight = 31250
 data_recipe[burner_ore_crusher].subgroup = is_ore_crusher
 data_recipe[burner_ore_crusher].order = a
 data_recipe[burner_ore_crusher].energy_required = 4
+if mods[muluna_mods] and mods[lignumis_mods] then
+    data_recipe[burner_ore_crusher].categories = util.table.deepcopy(data_recipe[small_electric_pole].categories)
+end
 if mods[lignumis_mods] then
     data_recipe[burner_ore_crusher].enabled = false
-    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
-    data_recipe[burner_ore_crusher].ingredients[3].name = wooden_gear_wheel
-    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+    data_recipe[burner_ore_crusher].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 4},
+        {type = item, name = lumber, amount = 4},
+        {type = item, name = stone, amount = 8}
+    }
 else
-    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
-    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+    data_recipe[burner_ore_crusher].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = iron_plate, amount = 4},
+        {type = item, name = stone, amount = 8}
+    }
 end
 data_assembling[burner_ore_crusher].subgroup = is_ore_crusher
 data_assembling[burner_ore_crusher].order = a

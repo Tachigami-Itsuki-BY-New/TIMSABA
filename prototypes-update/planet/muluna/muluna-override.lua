@@ -289,12 +289,7 @@ if mods[muluna_mods] then
         {type = fluid, name = oxygen_angels, amount = 1920}
     }
 
-    local tree_crushing = "muluna-tree-crushing"
-    if mods[lignumis_mods] then
-        data_recipe[tree_crushing].categories = {"wood-processing"}
-    else
-        data_recipe[tree_crushing].categories = {lumber_mill_recipe_category}
-    end
+    data_recipe[tree_crushing].categories = {advanced_wood_processing}
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
     data_recipe[tree_crushing].order = b
@@ -328,6 +323,10 @@ if mods[muluna_mods] then
     data_assembling[greenhouse_wood].energy_usage = 420 .. kW
     data_assembling[greenhouse_wood].energy_source.emissions_per_minute.spores = 16
     data_assembling[greenhouse_wood].energy_source.drain = 60 .. kW
+
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[lumber_mill].ingredients, {type = item, name = burner_lumber_mill, amount = 1})
+    end
 
     -- JELLYNUT
     local jellynut_seedless = "jellynut-seedless"
@@ -384,7 +383,6 @@ if mods[muluna_mods] then
         {type = fluid, name = oxygen_angels, amount = 1920}
     }
 
-    local greenhouse_jellynut = "muluna-greenhouse-jellynut"
     data_item[greenhouse_jellynut].subgroup = is_muluna_recipe_jellynut
     data_item[greenhouse_jellynut].icons = R_P_IS(greenhouse_icon, jellynut)
     data_item[greenhouse_jellynut].order = z
@@ -464,7 +462,6 @@ if mods[muluna_mods] then
         {type = fluid, name = oxygen_angels, amount = 1920}
     }
 
-    local greenhouse_yumako = "muluna-greenhouse-yumako"
     data_item[greenhouse_yumako].subgroup = is_muluna_recipe_yumako
     data_item[greenhouse_yumako].icons = R_P_IS(greenhouse_icon, yumako)
     data_item[greenhouse_yumako].order = z
@@ -1143,6 +1140,7 @@ if mods[muluna_mods] then
     bobmods.lib.recipe.update_recycling_recipe
     ({
         greenhouse_wood,
+        lumber_mill,
         LDSPF,
         advanced_boiler,
         vacuum_heating_tower,
@@ -1406,10 +1404,11 @@ if mods[muluna_mods] then
     data_technology[tech_oxygen].effects = {{type = unlock_recipe, recipe = muluna_oxygen_from_oxidizer}}
 
     local tech_greenhouses = "muluna-greenhouses"
-    data_technology[tech_greenhouses].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
-    if not mods[lignumis_mods] then
-        table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})
-    end
+    data_technology[tech_greenhouses].effects =
+    {
+        {type = unlock_recipe, recipe = greenhouse_wood},
+        {type = unlock_recipe, recipe = lumber_mill}
+    }
 
     local tech_wood_cultivation = "muluna-wood-cultivation"
     data_technology[tech_wood_cultivation].icons =
@@ -1522,6 +1521,12 @@ if mods[muluna_mods] then
     local tech_wood_gas_processing = "wood-gas-processing"
     data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/technology/wood-gas-processing.png"
     data_technology[tech_wood_gas_processing].icon_size = 256
+    data_technology[tech_wood_gas_processing].research_trigger =
+    {
+        type = craft_item,
+        item = cellulose_fiber_angels,
+        count = 256
+    }
 
     local tech_alice_propellant = "muluna-alice-propellant"
     data_technology[tech_alice_propellant].icons =
@@ -1679,4 +1684,8 @@ if mods[muluna_mods] then
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_from_wood, change = 0.1})
 
     table.insert(data_technology[water .. _recycling .. _productivity].unit.ingredients, {production_science_pack, 1})
+
+    local tech_advanced_space_research = "advanced-space-science-pack"
+    table.insert(data_technology[tech_advanced_space_research].prerequisites, metallurgic_science_pack)
+    table.insert(data_technology[tech_advanced_space_research].unit.ingredients, {metallurgic_science_pack, 1})
 end

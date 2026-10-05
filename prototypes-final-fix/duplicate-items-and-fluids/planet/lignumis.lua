@@ -33,7 +33,6 @@ if mods[lignumis_mods] then
         "desiccation-" .. furnace .. "-iron",
         "burner-" .. agricultural_tower .. "-copper",
         "steam-" .. assembling_machine .. "-iron",
-        "lumber-mill-copper",
         "gold-module-3",
         "burner-lamp",
         "burner-lamp-copper",

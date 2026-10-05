@@ -322,6 +322,7 @@ hyarion_polishing = "polishing"
 vesta_electrolyser = "electrolysis"
 vesta_magnetics = "magnetics"
 vesta_combustion = "combustion"
+lignumis_wood_processing = "wood-processing"
 
 -- Alphabet
 a = "a" a_a = "a-a" a_b = "a-b" a_c = "a-c" a_d = "a-d" a_e = "a-e" a_f = "a-f" a_g = "a-g" a_h = "a-h" a_i = "a-i" a_j = "a-j" a_k = "a-k" a_l = "a-l" a_m = "a-m" a_n = "a-n" a_o = "a-o" a_p = "a-p" a_q = "a-q" a_r = "a-r" a_s = "a-s" a_t = "a-t" a_u = "a-u" a_v = "a-v" a_w = "a-w" a_x = "a-x" a_y = "a-y" a_z = "a-z"
@@ -371,6 +372,7 @@ cooling_png = "__TIMSABA__/graphics/icons/cooling.png"
 heating_png = "__TIMSABA__/graphics/icons/heating.png"
 stonks_png = "__TIMSABA__/graphics/icons/stonks.png"
 ice_translucent_png = "__TIMSABA__/graphics/icons/ice-translucent.png"
+electricity_icon = "__TIMSABA__/graphics/icons/electricity.png"
 
 NHH = "__TIMSABA__/graphics/icons/fluid/NHH.png"
 _C2H4_O2H2_ = "__TIMSABA__/graphics/icons/fluid/C2H4(OH)2.png"

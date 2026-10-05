@@ -367,6 +367,9 @@ accumulator_recipe(accumulator_3, battery_silver_zinc, processing_unit,    accum
 
 data_item[burner_mining_drill].stack_size = 32
 data_item[burner_mining_drill].weight = 31250
+if mods[muluna_mods] and mods[lignumis_mods] then
+    table.insert(data_recipe[burner_mining_drill].categories, advanced_wood_processing)
+end
 if not mods[lignumis_mods] then
     data_recipe[burner_mining_drill].ingredients =
     {

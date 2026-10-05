@@ -713,10 +713,13 @@ data_item[slag_angels].order = h
 data_item[stone_crushed_angels].localised_description = show_formula and {chemical_formula, "(Na,K.Ca)[font=default-tiny-bold]1-2[/font](Fe,Al,Mg)[font=default-tiny-bold]2-3[/font][SiO[font=default-tiny-bold]4[/font]][font=default-tiny-bold]2[/font]"} or nil
 data_item[stone_crushed_angels].subgroup = is_geode_processing_1
 data_item[stone_crushed_angels].order = i
+data_recipe[stone_crushed_angels].categories = {angels_ore_refining_T1, hand_crafting}
 data_recipe[stone_crushed_angels].subgroup = is_geode_processing_1
 data_recipe[stone_crushed_angels].icons = TWO_I(stone, stone_crushed_angels)
 data_recipe[stone_crushed_angels].order = i
-data_recipe[stone_crushed_angels].enabled = true
+if not mods[lignumis_mods] then
+    data_recipe[stone_crushed_angels].enabled = true
+end
 data_recipe[stone_crushed_angels].ingredients[1].name = stone
 
 local geode_blue_liquify = "angels-geode-blue-liquify"

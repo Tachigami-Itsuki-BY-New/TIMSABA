@@ -182,10 +182,12 @@ data_item_subgroup[is_bio_processing_wood].order = f
 
 data_item[wood].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
 data_item[wood].fuel_value = 1800 .. kJ
+data_item[wood].order = a
 data_item[wood].fuel_categories = {base_fuel}
 
 local wood_1 = "angels-wood-sawing-1"
 data_recipe[wood_1].icons = TWO_I(tree_angels, wood, number_1)
+data_recipe[wood_1].order = a_a
 data_recipe[wood_1].results =
 {
     {type = item, name = wood, amount = 8},
@@ -194,6 +196,7 @@ data_recipe[wood_1].results =
 
 local wood_2 = "angels-wood-sawing-2"
 data_recipe[wood_2].icons = TWO_I(tree_angels, wood, number_2)
+data_recipe[wood_2].order = a_b
 data_recipe[wood_2].results =
 {
     {type = item, name = wood, amount = 16},
@@ -202,11 +205,17 @@ data_recipe[wood_2].results =
 
 local wood_3 = "angels-wood-sawing-3"
 data_recipe[wood_3].icons = TWO_I(tree_angels, wood, number_3)
+data_recipe[wood_3].order = a_c
 data_recipe[wood_3].results =
 {
     {type = item, name = wood, amount = 32},
     {type = item, name = saw_crystal_full, amount = 1, independent_probability = 0.99}
 }
+
+if mods[muluna_mods] and mods[lignumis_mods] then
+    data_recipe[tree_crushing].subgroup = is_bio_processing_wood
+    data_recipe[tree_crushing].order = a_d
+end
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
 if mods[muluna_mods] then

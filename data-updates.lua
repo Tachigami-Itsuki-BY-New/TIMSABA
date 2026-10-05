@@ -1,3 +1,18 @@
+local prototypes = {item, capsule}
+for _, proto_name in ipairs(prototypes) do
+    if data.raw[proto_name] then
+        for _, proto in pairs(data.raw[proto_name]) do
+            if proto.fuel_category then
+                if not proto.fuel_categories then
+                    proto.fuel_categories = {proto.fuel_category}
+                end
+
+                proto.fuel_category = nil
+            end
+        end
+    end
+end
+
 require("prototypes-update.angels.angels-update-icon-building")
 require("prototypes-update.angels.angels-update-icon-technology")
 require("prototypes-update.bobs.bobs-update-icon-building")
@@ -69,6 +84,7 @@ require("prototypes-update.planet.frozeta.frozeta-override")
 require("prototypes-update.planet.terrapalus.terrapalus-override")
 require("prototypes-update.planet.lignumis.lignumis-override")
 require("prototypes-update.planet.lignumis.lignumis-update-icon-building")
+require("prototypes-update.planet.lignumis.lignumis-update-lumber-mill")
 
 -- OTHER STAR SYSTEMS
 require("prototypes-update.planet.aegis-bellicos.aegis-bellicos-override")
