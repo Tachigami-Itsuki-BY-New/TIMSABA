@@ -102,9 +102,9 @@ if mods[muluna_mods] then
                 }
             },
             crafting_categories = {advanced_wood_processing},
-            crafting_speed = 4,
+            crafting_speed = 1,
             module_slots = 4,
-            energy_usage = (480 - drain) .. kW,
+            energy_usage = (240 - drain) .. kW,
             energy_source =
             {
                 type = electric,

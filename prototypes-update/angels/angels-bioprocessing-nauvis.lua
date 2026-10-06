@@ -218,7 +218,11 @@ if mods[muluna_mods] and mods[lignumis_mods] then
 end
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
+if mods[lignumis_mods] then
+    table.insert(data_recipe[cellulose_fiber_raw_wood].categories, lignumis_wood_processing)
+end
 if mods[muluna_mods] then
+    table.insert(data_recipe[cellulose_fiber_raw_wood].categories, advanced_wood_processing)
     data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels, number_1)
 else
     data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels)
@@ -233,6 +237,12 @@ data_item[wood_pellets].localised_description = show_formula and {chemical_formu
 data_item[wood_pellets].order = c
 data_item[wood_pellets].fuel_value = 7200 .. kJ
 data_item[wood_pellets].fuel_categories = {base_fuel}
+if mods[muluna_mods] then
+    table.insert(data_recipe[wood_pellets].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[wood_pellets].categories, lignumis_wood_processing)
+end
 data_recipe[wood_pellets].icons = TWO_I(cellulose_fiber_angels, wood_pellets)
 data_recipe[wood_pellets].order = c
 data_recipe[wood_pellets].ingredients[1].amount = 8
@@ -248,6 +258,12 @@ data_item[wood_bricks].localised_description = show_formula and {chemical_formul
 data_item[wood_bricks].order = d
 data_item[wood_bricks].fuel_value = 28800 .. kJ
 data_item[wood_bricks].fuel_categories = {base_fuel}
+if mods[muluna_mods] then
+    table.insert(data_recipe[wood_bricks].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[wood_bricks].categories, lignumis_wood_processing)
+end
 data_recipe[wood_bricks].icons = TWO_I(wood_pellets, wood_bricks)
 data_recipe[wood_bricks].order = d
 

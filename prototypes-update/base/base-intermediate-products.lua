@@ -1,9 +1,9 @@
 data_recipe[automation_science_pack].energy_required = 8
 data_recipe[automation_science_pack].ingredients =
 {
-    {type = item, name = iron_gear_wheel, amount = 1},
+    {type = item, name = iron_gear_wheel, amount = 2},
     {type = item, name = basic_circuit_board, amount = 1},
-    {type = item, name = glass_bob, amount = 2}
+    {type = item, name = glass_bob, amount = 1}
 }
 data_recipe[automation_science_pack].results[1].amount = 2
 
@@ -384,6 +384,12 @@ data_recipe[CPU].ingredients =
 data_recipe[CPU].results[1].amount = 4
 
 data_item[wooden_board].order = a
+if mods[muluna_mods] then
+    table.insert(data_recipe[wooden_board].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[wooden_board].categories, lignumis_wood_processing)
+end
 data_recipe[wooden_board].icons = TWO_I(wood, wooden_board)
 data_recipe[wooden_board].order = a
 data_recipe[wooden_board].allow_productivity = true
@@ -415,6 +421,12 @@ data_recipe[glass_fiber_board].ingredients =
 
 data_item[basic_circuit_board].order = a
 data_item[basic_circuit_board].subgroup = is_circuit_boards
+if mods[muluna_mods] then
+    table.insert(data_recipe[basic_circuit_board].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[basic_circuit_board].categories, lignumis_wood_processing)
+end
 data_recipe[basic_circuit_board].order = a
 data_recipe[basic_circuit_board].subgroup = is_circuit_boards
 data_recipe[basic_circuit_board].allow_productivity = true

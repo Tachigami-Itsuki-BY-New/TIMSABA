@@ -507,6 +507,7 @@ gold_pipe = "gold-pipe"
 gold_pipe_to_ground = "gold-pipe-to-ground"
 gold_storage_tank = "gold-storage-tank"
 deep_miner = "deep-miner"
+burner_agricultural_tower = "burner-agricultural-tower"
 burner_assembling_machine = "burner-" .. assembling_machine
 steam_assembling_machine = "steam-" .. assembling_machine
 burner_lumber_mill = "lumber-mill"

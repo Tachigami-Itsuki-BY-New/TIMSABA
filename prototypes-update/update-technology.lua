@@ -1730,11 +1730,7 @@ data_technology[tech_nitinol_smelting_1].prerequisites = {tech_titanium_smelting
 if settings.startup[setting_early_sintering_oven].value then
     data_technology[tech_powder_metallurgy_1].prerequisites = {tech_metallurgy_1}
     table.insert(data_technology[tech_powder_metallurgy_1].effects, {type = unlock_recipe, recipe = stone})
-    data_technology[tech_powder_metallurgy_1].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1}
-    }
+    data_technology[tech_powder_metallurgy_1].unit.ingredients = {{automation_science_pack, 1}}
 end
 
 data_technology[tech_ore_processing_1].effects =
