@@ -212,7 +212,7 @@ if mods[lignumis_mods] then
     data_recipe[steam_science_pack_steam].energy_required = 8
     data_recipe[steam_science_pack_steam].ingredients =
     {
-        {type = item, name = glass_bob, amount = 2},
+        {type = item, name = iron_plate, amount = 2},
         {type = fluid, name = steam, amount = 30}
     }
     data_recipe[steam_science_pack_steam].surface_conditions = nil
@@ -388,7 +388,6 @@ if mods[lignumis_mods] then
     data_mining_drill[deep_miner].energy_usage = 24000 .. kW
 
     -- BUILDING
-    local burner_agricultural_tower = "burner-" .. agricultural_tower
     data_item[burner_agricultural_tower].subgroup = is_lignumis_building
     data_item[burner_agricultural_tower].order = a
     data_item[burner_agricultural_tower].stack_size = 32
@@ -544,8 +543,10 @@ if mods[lignumis_mods] then
     }
     data_assembling[burner_lumber_mill].subgroup = is_lignumis_building
     data_assembling[burner_lumber_mill].order = e
-    data_assembling[burner_lumber_mill].energy_usage = 900 .. kW
+    data_assembling[burner_lumber_mill].crafting_speed = 0.5
+    data_assembling[burner_lumber_mill].energy_usage = 450 .. kW
     data_assembling[burner_lumber_mill].energy_source.emissions_per_minute.pollution = 8
+    data_assembling[burner_lumber_mill].energy_source.effectivity = 0.5
     if mods[muluna_mods] then
         data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
     end

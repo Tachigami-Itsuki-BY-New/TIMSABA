@@ -389,6 +389,12 @@ for _, BUILD in pairs(entities) do
         end
     end
 end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[T0_inserter].categories, lignumis_wood_processing)
+    if mods[muluna_mods] then
+        table.insert(data_recipe[T0_inserter].categories, advanced_wood_processing)
+    end
+end
 data_inserter[T0_inserter].energy_per_rotation = (450/2.6/2) .. kJ -- rotation_speed
 data_inserter[T0_inserter].energy_per_movement = ((450/2.6/2) * 1.75) .. kJ -- extension_speed
 data_inserter[T0_inserter].energy_source.fuel_categories = {base_fuel, advanced_fuel}
