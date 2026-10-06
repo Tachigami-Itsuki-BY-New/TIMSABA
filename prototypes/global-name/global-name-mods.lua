@@ -513,6 +513,7 @@ burner_lumber_mill = "lumber-mill"
 wood_lab = "wood-lab"
 quality_assembler = "quality-assembler"
 big_wooden_pole = "big-wooden-pole"
+basic_gun_turret = "basic-gun-turret"
 
 -- BELLICOS AEGIS
 aegis_bellicos_mods = "bellicos-and-aegis"

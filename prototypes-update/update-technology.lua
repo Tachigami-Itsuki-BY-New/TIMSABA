@@ -212,6 +212,9 @@ end
 
 -- PRODUCTION
 data_technology[logistic_science_pack].prerequisites = {tech_electronics, tech_logistics_1, tech_steel_processing}
+if mods[muluna_mods] then
+    table.insert(data_technology[logistic_science_pack].effects, {type = unlock_recipe, recipe = lumber_mill})
+end
 
 if mods[bobtech] then
     data_technology[transport_science_pack].prerequisites = {tech_robots_1, tech_T3_inserter}

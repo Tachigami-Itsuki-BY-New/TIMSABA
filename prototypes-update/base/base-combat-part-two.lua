@@ -1170,12 +1170,13 @@ local function gun_turret_recipe(name, gear_wheel, plate, gun_turret, bearing)
     if gun_turret then
         table.insert(ingredients, {type = item, name = gun_turret, amount = 1})
     end
-    if name == gun_turret_1 then
-        table.insert(ingredients, {type = item, name = copper_plate, amount = 32})
-    end
     data_recipe[name].ingredients = ingredients
 end
-gun_turret_recipe(gun_turret_1,     iron_gear_wheel,         iron_plate,          nil, iron_bearing)
+if mods[lignumis_mods] then
+    gun_turret_recipe(gun_turret_1,     iron_gear_wheel,         iron_plate, basic_gun_turret, iron_bearing)
+else
+    gun_turret_recipe(gun_turret_1,     iron_gear_wheel,         iron_plate,              nil, iron_bearing)
+end
 gun_turret_recipe(gun_turret_2,    steel_gear_wheel,        steel_plate, gun_turret_1, steel_bearing)
 gun_turret_recipe(gun_turret_3,    brass_gear_wheel,    invar_plate_bob, gun_turret_2, brass_bearing)
 gun_turret_recipe(gun_turret_4, titanium_gear_wheel, titanium_plate_bob, gun_turret_3, titanium_bearing)
