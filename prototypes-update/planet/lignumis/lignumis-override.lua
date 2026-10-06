@@ -404,11 +404,29 @@ if mods[lignumis_mods] then
         {type = item, name = wooden_gear_wheel, amount = 16},
         {type = item, name = basic_circuit_board, amount = 8},
         {type = item, name = lumber, amount = 16},
-        {type = item, name = stone_brick, amount = 4}
+        {type = item, name = stone_brick, amount = 4},
+        {type = item, name = gold_plate_bob, amount = 8}
     }
     data_agricultural_tower[burner_agricultural_tower].subgroup = is_lignumis_building
     data_agricultural_tower[burner_agricultural_tower].order = b
     data_agricultural_tower[burner_agricultural_tower].energy_usage = 225 .. kW
+
+    local burner_agricultural_tower_copper = burner_agricultural_tower .. "-copper"
+    if mods[muluna_mods] then
+        table.insert(data_recipe[burner_agricultural_tower_copper].categories, advanced_wood_processing)
+    end
+    data_recipe[burner_agricultural_tower_copper].subgroup = is_lignumis_building
+    data_recipe[burner_agricultural_tower_copper].icons = BUILDING_R_I(burner_agricultural_tower, copper_plate)
+    data_recipe[burner_agricultural_tower_copper].order = a_a
+    data_recipe[burner_agricultural_tower_copper].energy_required = 8
+    data_recipe[burner_agricultural_tower_copper].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 16},
+        {type = item, name = basic_circuit_board, amount = 8},
+        {type = item, name = lumber, amount = 16},
+        {type = item, name = stone_brick, amount = 4},
+        {type = item, name = copper_plate, amount = 8}
+    }
 
     local desiccation_furnace = "desiccation-furnace"
     data_item[desiccation_furnace].subgroup = is_lignumis_building
@@ -521,7 +539,7 @@ if mods[lignumis_mods] then
         {type = item, name = basic_circuit_board, amount = 16},
         {type = item, name = lumber, amount = 64},
         {type = item, name = stone_brick, amount = 32},
-        {type = item, name = gold_plate_bob, amount = 32},
+        {type = item, name = gold_plate_bob, amount = 16},
         {type = item, name = burner_assembling_machine, amount = 2}
     }
     data_assembling[burner_lumber_mill].subgroup = is_lignumis_building
@@ -532,11 +550,12 @@ if mods[lignumis_mods] then
         data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
     end
 
-    burner_lumber_mill_copper = burner_lumber_mill .. "-copper"
+    local burner_lumber_mill_copper = burner_lumber_mill .. "-copper"
     if mods[muluna_mods] then
         data_recipe[burner_lumber_mill_copper].categories = util.table.deepcopy(data_recipe[burner_agricultural_tower].categories)
     end
     data_recipe[burner_lumber_mill_copper].subgroup = is_lignumis_building
+    data_recipe[burner_lumber_mill_copper].icons = BUILDING_R_I(burner_lumber_mill, copper_plate)
     data_recipe[burner_lumber_mill_copper].order = e_a
     data_recipe[burner_lumber_mill_copper].energy_required = 64
     data_recipe[burner_lumber_mill_copper].ingredients =
@@ -545,7 +564,7 @@ if mods[lignumis_mods] then
         {type = item, name = basic_circuit_board, amount = 16},
         {type = item, name = lumber, amount = 64},
         {type = item, name = stone_brick, amount = 32},
-        {type = item, name = copper_plate, amount = 32},
+        {type = item, name = copper_plate, amount = 16},
         {type = item, name = burner_assembling_machine, amount = 2}
     }
 
@@ -707,7 +726,6 @@ if mods[lignumis_mods] then
     data_radar[basic_radar].order = e
     data_radar[basic_radar].energy_usage = (225 / 8) .. kW
 
-    local basic_gun_turret = "basic-" .. gun_turret_1
     data_item[basic_gun_turret].subgroup = is_lignumis_war
     data_item[basic_gun_turret].order = f
     table.insert(data_recipe[basic_gun_turret].categories, lignumis_wood_processing)
@@ -726,6 +744,26 @@ if mods[lignumis_mods] then
     data_ammo_turret[basic_gun_turret].order = f
     data_ammo_turret[basic_gun_turret].attack_parameters.range = 16
     data_ammo_turret[basic_gun_turret].attack_parameters.cooldown = 7.5
+    data_ammo_turret[basic_gun_turret].next_upgrade = gun_turret_1
+
+    if mods[bobwarfare] then
+        data_ammo_turret[gun_turret_1].next_upgrade = gun_turret_2
+    end
+
+    local basic_gun_turret_copper = basic_gun_turret .. "-copper"
+    table.insert(data_recipe[basic_gun_turret_copper].categories, lignumis_wood_processing)
+    if mods[muluna_mods] then
+        table.insert(data_recipe[basic_gun_turret_copper].categories, advanced_wood_processing)
+    end
+    data_recipe[basic_gun_turret_copper].subgroup = is_lignumis_war
+    data_recipe[basic_gun_turret_copper].icons = BUILDING_R_I(basic_gun_turret, copper_plate)
+    data_recipe[basic_gun_turret_copper].order = f_a
+    data_recipe[basic_gun_turret_copper].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 4},
+        {type = item, name = basic_circuit_board, amount = 8},
+        {type = item, name = copper_plate, amount = 8}
+    }
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
@@ -789,7 +827,9 @@ if mods[lignumis_mods] then
     {
         {type = unlock_recipe, recipe = crushed_stiratite},
         {type = unlock_recipe, recipe = copper_plate},
-        {type = unlock_recipe, recipe = burner_lumber_mill_copper}
+        {type = unlock_recipe, recipe = burner_agricultural_tower_copper},
+        {type = unlock_recipe, recipe = burner_lumber_mill_copper},
+        {type = unlock_recipe, recipe = basic_gun_turret_copper}
     }
     data_technology[tech_copper_processing].research_trigger =
     {

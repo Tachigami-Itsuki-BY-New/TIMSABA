@@ -388,6 +388,9 @@ data_recipe[agricultural_tower].ingredients[1].amount = 8
 data_recipe[agricultural_tower].ingredients[2].name = advanced_processing_unit
 data_recipe[agricultural_tower].ingredients[2].amount = 4
 data_recipe[agricultural_tower].ingredients[3].amount = 16
+if mods[lignumis_mods] then
+    table.insert(data_recipe[agricultural_tower].ingredients, {type = item, name = burner_lumber_mill, amount = 1})
+end
 data_agricultural_tower[agricultural_tower].subgroup = is_gleba_building
 data_agricultural_tower[agricultural_tower].order = a
 data_agricultural_tower[agricultural_tower].energy_usage = 120 .. kW

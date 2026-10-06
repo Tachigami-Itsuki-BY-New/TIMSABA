@@ -1404,11 +1404,7 @@ if mods[muluna_mods] then
     data_technology[tech_oxygen].effects = {{type = unlock_recipe, recipe = muluna_oxygen_from_oxidizer}}
 
     local tech_greenhouses = "muluna-greenhouses"
-    data_technology[tech_greenhouses].effects =
-    {
-        {type = unlock_recipe, recipe = greenhouse_wood},
-        {type = unlock_recipe, recipe = lumber_mill}
-    }
+    data_technology[tech_greenhouses].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
 
     local tech_wood_cultivation = "muluna-wood-cultivation"
     data_technology[tech_wood_cultivation].icons =
