@@ -1183,7 +1183,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_carbide,
-        categories = {angels_blast_smelting_4},
+        categories = {smelting_filtering},
         subgroup = is_calcium,
         icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
         order = e,
@@ -1202,78 +1202,78 @@ TIMSABA.functions.create_recipes
     },
     {
         name = calcium_cyanamide,
-        categories = {angels_chemical_smelting_4},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, nitrogen_angels, calcium_cyanamide, carbon_angels),
         order = f,
-        energy_required = 8, -- CaC₂ + N₂ --> CaCN₂ + C
+        -- CaC₂ + N₂ --> CaCN₂ + C
         ingredients =
         {
-            {type = item, name = calcium_carbide, amount = 16},
-            {type = fluid, name = nitrogen_angels, amount = 240}
+            {type = item, name = calcium_carbide, amount = 4},
+            {type = fluid, name = nitrogen_angels, amount = 60}
         },
         results =
         {
-            {type = item, name = calcium_cyanamide, amount = 16},
-            {type = item, name = carbon_angels, amount = 8} -- 16
+            {type = item, name = calcium_cyanamide, amount = 4},
+            {type = item, name = carbon_angels, amount = 2} -- 4
         },
         main_product = calcium_cyanamide
     },
     {
         name = calcium_hydroxide,
-        categories = {angels_chemical_smelting_4},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, water_purified_angels, calcium_hydroxide, acetylene_gas),
         order = g,
-        energy_required = 8, -- CaC₂ + 2H₂O --> Ca(OH)₂ + C₂H₂
+        -- CaC₂ + 2H₂O --> Ca(OH)₂ + C₂H₂
         ingredients =
         {
-            {type = item, name = calcium_carbide, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 480}
+            {type = item, name = calcium_carbide, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 120}
         },
         results =
         {
-            {type = item, name = calcium_hydroxide, amount = 16},
-            {type = fluid, name = acetylene_gas, amount = 240}
+            {type = item, name = calcium_hydroxide, amount = 4},
+            {type = fluid, name = acetylene_gas, amount = 60}
         },
         main_product = calcium_hydroxide
     },
     {
         name = calcium_hydroxide_from_calcium_cyanamide,
-        categories = {angels_chemical_smelting_4},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_cyanamide, water_purified_angels, calcium_hydroxide, urea_solution_angels),
         order = g_a,
-        energy_required = 8, -- CaCN₂ + 4H₂O --> Ca(OH)₂ + (NH₂)₂CO(aq)
+        -- CaCN₂ + 4H₂O --> Ca(OH)₂ + (NH₂)₂CO(aq)
         ingredients =
         {
-            {type = item, name = calcium_cyanamide, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 960}
+            {type = item, name = calcium_cyanamide, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
-            {type = item, name = calcium_hydroxide, amount = 16},
-            {type = fluid, name = urea_solution_angels, amount = 240}
+            {type = item, name = calcium_hydroxide, amount = 4},
+            {type = fluid, name = urea_solution_angels, amount = 60}
         },
         main_product = calcium_hydroxide
     },
     {
         name = limestone_from_calcium_cyanamide,
-        categories = {angels_chemical_smelting_4},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = THREE_D_I(calcium_cyanamide, water_purified_angels, carbon_dioxide_angels, limestone_angels, nil, cyanamide_solution),
         order = h_a,
-        energy_required = 8, -- CaCN₂ + 2H₂O + CO₂ --> CaCO₃ + NH₂CN(aq)
+        -- CaCN₂ + 2H₂O + CO₂ --> CaCO₃ + NH₂CN(aq)
         ingredients =
         {
-            {type = item, name = calcium_cyanamide, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 480},
-            {type = fluid, name = carbon_dioxide_angels, amount = 240}
+            {type = item, name = calcium_cyanamide, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 120},
+            {type = fluid, name = carbon_dioxide_angels, amount = 60}
         },
         results =
         {
-            {type = item, name = limestone_angels, amount = 16},
-            {type = fluid, name = cyanamide_solution, amount = 240}
+            {type = item, name = limestone_angels, amount = 4},
+            {type = fluid, name = cyanamide_solution, amount = 60}
         },
         main_product = limestone_angels
     },

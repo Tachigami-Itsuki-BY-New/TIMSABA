@@ -1048,13 +1048,14 @@ data_item[calcium_sulfate_angels].order = c
 data_item[lime_angels].localised_description = show_formula and {chemical_formula, "CaO"} or nil
 data_item[lime_angels].subgroup = is_calcium
 data_item[lime_angels].order = d
+data_recipe[lime_angels].categories = {chemistry}
 data_recipe[lime_angels].subgroup = is_calcium
 data_recipe[lime_angels].icons = THREE_R_I(limestone_angels, lime_angels, carbon_monoxide_angels)
 data_recipe[lime_angels].order = d
 data_recipe[lime_angels].energy_required = 8 -- CaCO₃ --> CaO + CO₂
-data_recipe[lime_angels].ingredients[1].amount = 16
-data_recipe[lime_angels].results[1].amount = 16
-data_recipe[lime_angels].results[2].amount = 120 -- 240
+data_recipe[lime_angels].ingredients[1].amount = 4
+data_recipe[lime_angels].results[1].amount = 4
+data_recipe[lime_angels].results[2].amount = 30 -- 60
 
 data_item[calcium_chloride_angels].localised_description = show_formula and {chemical_formula, "CaCl[font=default-tiny-bold]2[/font]"} or nil
 data_item[calcium_chloride_angels].subgroup = is_calcium
