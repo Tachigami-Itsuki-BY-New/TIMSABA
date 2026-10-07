@@ -547,6 +547,22 @@ if mods[maraxsis_mods] then
     data_item[sonar].order = b
     data_recipe[sonar].subgroup = is_maraxsis_war
     data_recipe[sonar].order = b
+    data_recipe[sonar].energy_required = 8
+    data_recipe[sonar].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
+        {type = item, name = niobium_iron_bearing, amount = 8},
+        {type = item, name = niobium_titanium_cable, amount = 16},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4}
+    }
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[sonar].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+    end
+    if data_item[radar_5] then
+        table.insert(data_recipe[sonar].ingredients, {type = item, name = radar_5, amount = 1})
+    else
+        table.insert(data_recipe[sonar].ingredients, {type = item, name = radar_1, amount = 1})
+    end
     data_radar[sonar].subgroup = is_maraxsis_war
     data_radar[sonar].order = b
 
@@ -761,6 +777,8 @@ if mods[maraxsis_mods] then
         {electromagnetic_science_pack, 1}
     }
 
+    data_technology[sonar].prerequisites = {tech_project_seadragon}
+
     local tech_deepsea_research = "maraxsis-deepsea-research"
     data_technology[tech_deepsea_research].prerequisites = {tech_project_seadragon}
     data_technology[tech_deepsea_research].unit.ingredients =
@@ -826,6 +844,9 @@ if mods[maraxsis_mods] then
     end
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, hydraulic_science_pack)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, hydraulic_science_pack)
     end
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = smelt_microplastics, change = 0.1})

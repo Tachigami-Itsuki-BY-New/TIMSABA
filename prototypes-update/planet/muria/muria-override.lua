@@ -529,6 +529,10 @@ if mods[muria_mods] then
     end
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air})
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air_separation})
+    table.insert(data_technology[planet_discovery_muria].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[planet_discovery_muria].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[planet_discovery_muria].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[planet_discovery_muria].unit.ingredients, {agricultural_science_pack, 1})
 
     table.insert(data_technology["lichen-cultivation"].effects, {type = unlock_recipe, recipe = artificial_lichen_colony})
 

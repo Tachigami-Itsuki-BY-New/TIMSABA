@@ -763,9 +763,9 @@ data_recipe[big_electric_pole_1].ingredients =
     {type = item, name = steel_plate, amount = 4}
 }
 if data_recipe[big_electric_pole_2] then
-    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1,       tin_cable, aluminium_plate_bob)
     big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
-    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3,      gold_cable, nitinol_plate_bob)
 end
 
 local substations =
@@ -811,9 +811,9 @@ data_recipe[substation_1].ingredients =
     {type = item, name = electronic_circuit, amount = 4}
 }
 if data_recipe[substation_2] then
-    substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
-    substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
-    substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
+    substation_recipe(substation_2,         advanced_circuit, substation_1,       tin_cable, aluminium_plate_bob)
+    substation_recipe(substation_3,          processing_unit, substation_2, insulated_cable, titanium_plate_bob)
+    substation_recipe(substation_4, advanced_processing_unit, substation_3,      gold_cable, nitinol_plate_bob)
 end
 
 data_item_subgroup[is_pipe].order = e

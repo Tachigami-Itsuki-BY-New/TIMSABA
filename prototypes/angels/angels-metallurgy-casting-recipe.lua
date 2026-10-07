@@ -29,7 +29,6 @@ TIMSABA.functions.create_recipes
         order = c_a,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4,
         ingredients = {{type = fluid, name = platinum_molten_angels, amount = 60}},
         results = {{type = item, name = platinum_plate, amount = 4}},
         main_product = platinum_plate
@@ -165,5 +164,39 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = reinforced_graphene_concrete_brick, amount = 4}},
         main_product = reinforced_graphene_concrete_brick
+    }
+})
+
+-- ALLOYS
+aluminium_lithium_plate_2 = "aluminium-lithium-plate-2"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = aluminium_lithium_molten,
+        categories = {angels_induction_smelting_4},
+        subgroup = is_alloys_casting_7,
+        icons = THREE_I(aluminium_ingot, lithium_bob, aluminium_lithium_molten),
+        order = a,
+        energy_required = 8,
+        ingredients =
+        {
+            {type = item, name = aluminium_ingot, amount = 16},
+            {type = item, name = lithium_bob, amount = 16}
+        },
+        results = {{type = fluid, name = aluminium_lithium_molten, amount = 240}},
+        main_product = aluminium_lithium_molten
+    },
+    {
+        localised_name = {"item-name." .. aluminium_lithium_plate},
+        name = aluminium_lithium_plate_2,
+        categories = {angels_casting_4},
+        subgroup = is_alloys_casting_7,
+        icons = TWO_I(aluminium_lithium_molten, aluminium_lithium_plate),
+        order = b_a,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients = {{type = fluid, name = aluminium_lithium_molten, amount = 60}},
+        results = {{type = item, name = aluminium_lithium_plate, amount = 4}},
+        main_product = aluminium_lithium_plate
     }
 })

@@ -1205,7 +1205,12 @@ if mods[lignumis_mods] then
         {type = item, name = gold_stromatolite_seed, amount = 1, independent_probability = 0.25}
     }
 
-    data_resource["gold-patch"].subgroup = "mineable-fluids"
+    local wodginite_patch = "gold-patch"
+    data_resource[wodginite_patch].localised_name = {"entity-name.wodginite-patch"}
+    data_resource[wodginite_patch].subgroup = "mineable-fluids"
+    data_resource[wodginite_patch].icon = "__TIMSABA__/graphics/icons/lignumis/wodginite/wodginite-patch.png"
+    data_resource[wodginite_patch].minable.result = wodginite_ore
+    data_resource[wodginite_patch].stages.sheet.filename = "__TIMSABA__/graphics/icons/lignumis/wodginite/resource/wodginite-patch.png"
 end
 
 -- MODS

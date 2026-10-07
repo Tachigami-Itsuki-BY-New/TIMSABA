@@ -19,6 +19,7 @@ Date: ??.??.2026
         Frozeta:
           1. Gallite Ore.
           2. Sylvanite Ore.
+        Lignumis: Wodginite Ore.
     - [All] Added new items and fluids:
         Uranium Branch:
           1. Processed uranium.
@@ -36,10 +37,27 @@ Date: ??.??.2026
           4. Thorium(IV) nitrate solution.
           5. Thorium(IV) hydroxide.
           6. Thorium(IV) fluoride.
+        Tantalum Branch:
+          1. Tantalum Ore.
+          2. Processed tantalum.
+          3. Tantalum pellet.
+          4. Tantalum Powder.
+          5. Hexafluorotantalic Acid.
+          6. Tantalum(V) Hydroxide.
+          7. Tantalum(V) Oxide.
+          8. Potassium Heptafluorotantalate.
+          9. Tantalum(V) Chloride Gas.
+          10. Sodium Tantalate.
+          11. Tantalum-Tungsten Powder Mixture, Plate and Gear Wheel.
+          12. Ta-Mo-Re Powder Mixture and Plate.
+          13. Tantalum-Niobium Powder Mixture and Plate.
         Others:
           1. Plumbium Branch.
           2. Stannium Branch.
-          3. Purified catalyst.
+          3. Purified Catalyst.
+          4. Calcium Hydride.
+          5. Molten Aluminum-Lithium.
+          6. Aluminum-Lithium Plate.
     - [All] Added new recipes and technologies.
     - [All] Added new addon: Early Quality.
     - [All] Added new mod setting: Loot from Spaceship.
@@ -47,6 +65,8 @@ Date: ??.??.2026
   Changes:
     - [All] Moved from the Metallurgy Smelting Item-Group to the Petrochem Refining Item-Group the Lithium, Boron, Potassium, and Phosphorus branches.
     - [All] Moved from the Intermediate Product Item-Group to the Item-Group Metallurgy Smelting Item-Group the Uranium and Thorium branches.
+    - [Lignumis] Reworked Burner Lumber Mill.
+    - [Muluna] Reworked Lumber Mill.
 
   Balancing:
     - [All] Replaced ingredients in the Thorium Ore recipe:
@@ -81,6 +101,7 @@ Date: ??.??.2026
     - [All] Renamed the Ferrous to Ferrium.
     - [All] Renamed the Cupric to Cuprium.
     - [Rus] Removed the Russian localization. You can find the file for it on my Discord server.
+    - [Lignumis] Renamed the Lumber Mill to Burner Lumber Mill.
 
   Other:
     - [All] Initial release: Release version for Factorio 2.1.

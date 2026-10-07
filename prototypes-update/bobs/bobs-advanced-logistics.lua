@@ -128,6 +128,7 @@ for _, TRANSPORT in pairs(locomotives) do
         data_item_entity[TRANSPORT.name].stack_size = 32
         data_item_entity[TRANSPORT.name].weight = 31250
         data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_recipe[TRANSPORT.name].energy_required = 4
         data_locomotive[TRANSPORT.name].order = TRANSPORT.order
         data_locomotive[TRANSPORT.name].max_speed = TRANSPORT.max_speed
         data_locomotive[TRANSPORT.name].max_power = TRANSPORT.max_power .. kW
@@ -169,6 +170,7 @@ for _, TRANSPORT in pairs(cargo_wagons) do
         data_item_entity[TRANSPORT.name].stack_size = 32
         data_item_entity[TRANSPORT.name].weight = 31250
         data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_recipe[TRANSPORT.name].energy_required = 4
         data_wagon_cargo[TRANSPORT.name].order = TRANSPORT.order
         data_wagon_cargo[TRANSPORT.name].inventory_size = TRANSPORT.inventory_size
         data_wagon_cargo[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
@@ -201,6 +203,7 @@ for _, TRANSPORT in pairs(fluid_wagons) do
         data_item_entity[TRANSPORT.name].stack_size = 32
         data_item_entity[TRANSPORT.name].weight = 31250
         data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_recipe[TRANSPORT.name].energy_required = 4
         data_wagon_fluid[TRANSPORT.name].order = TRANSPORT.order
         data_wagon_fluid[TRANSPORT.name].capacity = TRANSPORT.capacity
         data_wagon_fluid[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
@@ -617,7 +620,7 @@ local function rp_chargepad_recipe(name, battery, circuit, plate)
     }
 end
 rp_chargepad_recipe(roboport_chargepad_1, battery_lead_acid,     electronic_circuit,       steel_plate)
-rp_chargepad_recipe(roboport_chargepad_2, battery_lithium_ion,   advanced_circuit,         invar_plate_bob)
+rp_chargepad_recipe(roboport_chargepad_2, battery_lithium_ion,   advanced_circuit,         cobalt_steel_plate_bob)
 rp_chargepad_recipe(roboport_chargepad_3, battery_silver_zinc,   processing_unit,          titanium_plate_bob)
 rp_chargepad_recipe(roboport_chargepad_4, battery_graphene,      advanced_processing_unit, nitinol_plate_bob)
 
@@ -646,36 +649,34 @@ local function flying_robot_frame_recipe(name, battery, plate)
         {type = item, name = electric_engine_unit, amount = 1}
     }
 end
-flying_robot_frame_recipe(flying_robot_frame_1, battery_lead_acid,   steel_plate)
-flying_robot_frame_recipe(flying_robot_frame_2, battery_lithium_ion, aluminium_plate_bob)
+flying_robot_frame_recipe(flying_robot_frame_1,   battery_lead_acid, steel_plate)
+flying_robot_frame_recipe(flying_robot_frame_2, battery_lithium_ion, cobalt_steel_plate_bob)
 flying_robot_frame_recipe(flying_robot_frame_3, battery_silver_zinc, titanium_plate_bob)
-flying_robot_frame_recipe(flying_robot_frame_4, battery_graphene,    nitinol_plate_bob)
+flying_robot_frame_recipe(flying_robot_frame_4,    battery_graphene, nitinol_plate_bob)
 
-local function robot_brain_recipe(name, circuit_1, circuit_2)
-    if not data_recipe[name] or not data_item[circuit_1] or not data_item[circuit_2] then return end
+local function robot_brain_recipe(name, circuit)
+    if not data_recipe[name] then return end
 
     if mods[bobmodules] then
         data_recipe[name].ingredients =
         {
-            {type = item, name = circuit_1,   amount = 2},
-            {type = item, name = circuit_2,   amount = 2},
+            {type = item, name = circuit,   amount = 2},
             {type = item, name = solder,      amount = 4},
             {type = item, name = module_case, amount = 1}
         }
     else
         data_recipe[name].ingredients =
         {
-            {type = item, name = circuit_1,   amount = 2},
-            {type = item, name = circuit_2,   amount = 2},
+            {type = item, name = circuit,   amount = 2},
             {type = item, name = solder,      amount = 4},
             --{type = item, name = module_case, amount = 1}
         }
     end
 end
-robot_brain_recipe(robot_brain_1, basic_circuit_board, electronic_circuit)
-robot_brain_recipe(robot_brain_2, electronic_circuit,  advanced_circuit)
-robot_brain_recipe(robot_brain_3, advanced_circuit,    processing_unit)
-robot_brain_recipe(robot_brain_4, processing_unit,     advanced_processing_unit)
+robot_brain_recipe(robot_brain_1, electronic_circuit)
+robot_brain_recipe(robot_brain_2, advanced_circuit)
+robot_brain_recipe(robot_brain_3, processing_unit)
+robot_brain_recipe(robot_brain_4, advanced_processing_unit)
 
 local robot_tool_c_1 = "bob-robot-tool-construction"
 local robot_tool_c_2 = "bob-robot-tool-construction-2"

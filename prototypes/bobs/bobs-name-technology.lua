@@ -1,7 +1,12 @@
 tech_electronics_0 = "electronics"
 tech_steam_power = "steam-power"
 
+tech_electric_pole_2 = "bob-electric-pole-2"
+tech_electric_pole_3 = "bob-electric-pole-3"
+tech_electric_pole_4 = "bob-electric-pole-4"
 
+tech_electric_substation_2 = "bob-electric-substation-2"
+tech_electric_substation_3 = "bob-electric-substation-3"
 tech_electric_substation_4 = "bob-electric-substation-4"
 
 tech_robotics_1 = "robotics"
@@ -115,6 +120,9 @@ tech_plasma_turret_2 = "bob-plasma-turrets-2"
 tech_plasma_turret_3 = "bob-plasma-turrets-3"
 tech_plasma_turret_4 = "bob-plasma-turrets-4"
 
+tech_fluid_handling_1 = "fluid-handling"
+tech_fluid_handling_2 = "bob-fluid-handling-2"
+tech_fluid_handling_3 = "bob-fluid-handling-3"
 tech_fluid_handling_4 = "bob-fluid-handling-4"
 
 tech_artillery = "artillery"

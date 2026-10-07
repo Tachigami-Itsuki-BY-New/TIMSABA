@@ -121,19 +121,19 @@ TIMSABA.functions.create_recipes
         subgroup = is_phosphorus_fluid,
         icons = FOUR_THREE_R_I(fluorapatite, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
         order = a,
-        energy_required = 16, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
+        -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
-            {type = item, name = fluorapatite, amount = 8},
-            {type = item, name = sand_angels, amount = 36},
-            {type = item, name = coke_angels, amount = 60}
+            {type = item, name = fluorapatite, amount = 4},
+            {type = item, name = sand_angels, amount = 18},
+            {type = item, name = coke_angels, amount = 30}
         },
         results =
         {
-            {type = fluid, name = white_phosphorus_gas, amount = 90},
-            {type = item, name = calcium_silicate, amount = 72},
-            {type = item, name = fluorite_angels, amount = 8},
-            {type = fluid, name = carbon_dioxide_angels, amount = 900}
+            {type = fluid, name = white_phosphorus_gas, amount = 45},
+            {type = item, name = calcium_silicate, amount = 18},
+            {type = item, name = fluorite_angels, amount = 2},
+            {type = fluid, name = carbon_dioxide_angels, amount = 450}
         },
         main_product = white_phosphorus_gas
     },

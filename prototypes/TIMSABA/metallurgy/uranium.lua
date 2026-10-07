@@ -314,7 +314,7 @@ TIMSABA.functions.create_recipes
         order = b,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4, -- U-238(molten) --> U-238(plate)
+        -- U-238(molten) --> U-238(plate)
         ingredients = {{type = fluid, name = uranium_238_molten, amount = 60}},
         results = {{type = item, name = uranium_238_plate, amount = 4}},
         main_product = uranium_238_plate

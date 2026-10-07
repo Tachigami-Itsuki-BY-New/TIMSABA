@@ -425,28 +425,28 @@ if mods[moshine_mods] then
     })
 
     -- SPACE
-    advanced_full_metallic_asteroid_crushing_9 = "advanced-full-metallic-asteroid-crushing-9"
-    advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10"
+    advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10" -- Neodymium ore
+    advanced_full_metallic_asteroid_crushing_11 = "advanced-full-metallic-asteroid-crushing-11" -- Cerium ore
     promethium_asteroid_crushing_1 = "promethium-asteroid-crushing"
     TIMSABA.functions.create_recipes
     ({
         {
-            name = advanced_full_metallic_asteroid_crushing_9,
+            name = advanced_full_metallic_asteroid_crushing_10,
             categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, neodymium_ore),
-            order = h_i,
+            order = h_j,
             allow_productivity = true,
             ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
             results = {{type = item, name = neodymium_ore, amount = 8}},
             main_product = neodymium_ore
         },
         {
-            name = advanced_full_metallic_asteroid_crushing_10,
+            name = advanced_full_metallic_asteroid_crushing_11,
             categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, cerium_ore),
-            order = h_j,
+            order = h_k,
             allow_productivity = true,
             ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
             results = {{type = item, name = cerium_ore, amount = 8}},

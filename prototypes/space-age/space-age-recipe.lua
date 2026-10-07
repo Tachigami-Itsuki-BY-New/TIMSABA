@@ -44,12 +44,15 @@ full_metallic_asteroid_crushing_7 = "full-metallic-asteroid-crushing-7" -- Tungs
 full_metallic_asteroid_crushing_8 = "full-metallic-asteroid-crushing-8" -- Platinum ore
 advanced_full_metallic_asteroid_crushing_1 = "advanced-full-metallic-asteroid-crushing-1" -- Molybdenum ore
 advanced_full_metallic_asteroid_crushing_2 = "advanced-full-metallic-asteroid-crushing-2" -- Rhenium ore
-advanced_full_metallic_asteroid_crushing_3 = "advanced-full-metallic-asteroid-crushing-3" -- Niobium ore
-advanced_full_metallic_asteroid_crushing_4 = "advanced-full-metallic-asteroid-crushing-4" -- Holmium ore
-advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-crushing-5" -- Antimony ore
-advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Germanium ore
-advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Gallium ore
-advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Vanadium ore
+--advanced_full_metallic_asteroid_crushing_3 = "advanced-full-metallic-asteroid-crushing-3" -- Tantalum ore / Lignumis
+advanced_full_metallic_asteroid_crushing_4 = "advanced-full-metallic-asteroid-crushing-4" -- Niobium ore
+advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-crushing-5" -- Holmium ore
+advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Vanadium ore
+advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Antimony ore
+advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Germanium ore
+advanced_full_metallic_asteroid_crushing_9 = "advanced-full-metallic-asteroid-crushing-9" -- Gallium ore
+--advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10" -- Neodymium ore / Moshine
+--advanced_full_metallic_asteroid_crushing_11 = "advanced-full-metallic-asteroid-crushing-10" -- Cerium ore / Moshine
 local function metallic_asteroid_crushing(name, order, result)
     TIMSABA.functions.create_recipes
     ({
@@ -84,12 +87,15 @@ metallic_asteroid_crushing(full_metallic_asteroid_crushing_7,          g_g, tung
 metallic_asteroid_crushing(full_metallic_asteroid_crushing_8,          g_h, platinum_ore_angels)
 metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_1, h_a, molybdenum_ore)
 metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_2, h_b, rhenium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_3, h_c, niobium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_4, h_d, holmium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_5, h_e, vanadium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_6, h_f, antimony_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_7, h_g, germanium_ore)
-metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_8, h_h, gallium_ore)
+--metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_3, h_c, tantalum_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_4, h_d, niobium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_5, h_e, holmium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_6, h_f, vanadium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_7, h_g, antimony_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_8, h_h, germanium_ore)
+metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_9, h_i, gallium_ore)
+--metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_10, h_j, neodymium_ore)
+--metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_11, h_k, cerium_ore)
 
 -- CARBONIC
 advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"
@@ -113,9 +119,9 @@ TIMSABA.functions.create_recipes
 oxide_asteroid_crushing_2 = "timsaba-oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
 oxide_asteroid_crushing_4 = "oxide-asteroid-crushing-4"
+oxide_asteroid_crushing_5 = "oxide-asteroid-crushing-5"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"
-full_oxide_asteroid_crushing_2 = "full-oxide-asteroid-crushing-2"
 local function oxide_asteroid_crushing(name, categories, order, type_results, result, amount)
     TIMSABA.functions.create_recipes
     ({
@@ -135,9 +141,9 @@ end
 oxide_asteroid_crushing(oxide_asteroid_crushing_2,          {chemistry}, e_b, fluid,          nitrogen_oxide, 120)
 oxide_asteroid_crushing(oxide_asteroid_crushing_3,          {chemistry}, e_c, fluid,      chlorine_oxide_gas, 120)
 oxide_asteroid_crushing(oxide_asteroid_crushing_4,           {crushing}, e_d,  item,            sodium_oxide, 8)
+oxide_asteroid_crushing(oxide_asteroid_crushing_5,           {crushing}, e_e,  item,           lithium_oxide, 8)
 oxide_asteroid_crushing(advanced_oxide_asteroid_crushing_2, {chemistry}, f_b, fluid, nitrogen_dioxide_angels, 120)
-oxide_asteroid_crushing(full_oxide_asteroid_crushing_1,      {crushing}, g_a,  item,           lithium_oxide, 8)
-oxide_asteroid_crushing(full_oxide_asteroid_crushing_2,     {chemistry}, g_b, fluid,     oxygen_fluoride_gas, 120)
+oxide_asteroid_crushing(full_oxide_asteroid_crushing_1,     {chemistry}, g_a, fluid,     oxygen_fluoride_gas, 120)
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
@@ -289,8 +295,8 @@ TIMSABA.functions.create_recipes
 
 -- SPACE PROCESSING 2
 sodium_hydroxide_space = "sodium-hydroxide-space"
-lime_space = "lime-space"
 lithium_space = "lithium-space"
+lime_space = "lime-space"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -310,11 +316,31 @@ TIMSABA.functions.create_recipes
         main_product = sodium_hydroxide_angels
     },
     {
+        name = lithium_space,
+        categories = {smelting_filtering},
+        subgroup = is_space_processing_2,
+        icons = TWO_D_I(lithium_oxide, silicon_powder, lithium_bob, silicon_oxide_IV),
+        order = b,
+        allow_quality = true,
+        -- 2Li₂O + Si -electrolys-> 4Li + SiO₂
+        ingredients =
+        {
+            {type = item, name = lithium_oxide, amount = 8},
+            {type = item, name = silicon_powder, amount = 4}
+        },
+        results =
+        {
+            {type = item, name = lithium_bob, amount = 16},
+            {type = item, name = silicon_oxide_IV, amount = 2}
+        },
+        main_product = lithium_bob
+    },
+    {
         name = lime_space,
         categories = {angels_blast_smelting_4},
         subgroup = is_space_processing_2,
         icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
-        order = b,
+        order = c,
         energy_required = 8, -- CaCO₃ --> CaO + CO₂
         ingredients = {{type = item, name = calcite, amount = 16}},
         results =
@@ -323,26 +349,6 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = carbon_dioxide_angels, amount = 120} -- 240
         },
         main_product = lime_angels
-    },
-    {
-        name = lithium_space,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_space_processing_2,
-        icons = TWO_D_I(lithium_oxide, silicon_powder, lithium_bob, silicon_oxide_IV),
-        order = c,
-        allow_quality = true,
-        energy_required = 8, -- 2Li₂O + Si -electrolys-> 4Li + SiO₂
-        ingredients =
-        {
-            {type = item, name = lithium_oxide, amount = 16},
-            {type = item, name = silicon_powder, amount = 8}
-        },
-        results =
-        {
-            {type = item, name = lithium_bob, amount = 32},
-            {type = item, name = silicon_oxide_IV, amount = 4} -- 8
-        },
-        main_product = lithium_bob
     }
 })
 

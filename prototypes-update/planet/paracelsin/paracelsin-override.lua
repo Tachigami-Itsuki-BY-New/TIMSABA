@@ -289,32 +289,15 @@ if mods[paracelsin_mods] then
     {
         {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
         {type = item, name = niobium_iron_bearing, amount = 8},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-        {type = item, name = niobium_titanium_cable, amount = 8}
+        {type = item, name = niobium_titanium_cable, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8}
     }
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[cryovolcanic_turbine].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+    end
     data_generator[cryovolcanic_turbine].subgroup = is_paracelsin_energy
     data_generator[cryovolcanic_turbine].order = a
     data_generator[cryovolcanic_turbine].max_power_output = 225 .. kW
-
-    -- MINING
-    local burner_pumpjack = "burner-pumpjack"
-    data_item[burner_pumpjack].subgroup = is_paracelsin_mining
-    data_item[burner_pumpjack].order = a
-    data_item[burner_pumpjack].stack_size = 32
-    data_item[burner_pumpjack].weight = 31250
-    data_recipe[burner_pumpjack].subgroup = is_paracelsin_mining
-    data_recipe[burner_pumpjack].order = a
-    data_recipe[burner_pumpjack].energy_required = 8
-    data_recipe[burner_pumpjack].ingredients =
-    {
-        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-        {type = item, name = niobium_iron_plate, amount = 8},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4}
-    }
-    data_mining_drill[burner_pumpjack].subgroup = is_paracelsin_mining
-    data_mining_drill[burner_pumpjack].order = a
-    data_mining_drill[burner_pumpjack].mining_speed = 2
-    data_mining_drill[burner_pumpjack].energy_usage = 14400 .. kW
 
     -- BUILDING
     data_item[electrochemical_plant].subgroup = is_paracelsin_building
@@ -331,6 +314,9 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_iron_plate, amount = 32},
         {type = item, name = zinc_cable, amount = 16}
     }
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[electrochemical_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+    end
     data_assembling[electrochemical_plant].subgroup = is_paracelsin_building
     data_assembling[electrochemical_plant].order = a
     data_assembling[electrochemical_plant].crafting_speed = 4
@@ -353,6 +339,9 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
         {type = item, name = zinc_rivets, amount = 16}
     }
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[mechanical_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+    end
     data_assembling[mechanical_plant].subgroup = is_paracelsin_building
     data_assembling[mechanical_plant].order = b
     data_assembling[mechanical_plant].crafting_speed = 4
@@ -371,7 +360,6 @@ if mods[paracelsin_mods] then
         galvanized_pump,
         elevated_pipe,
         cryovolcanic_turbine,
-        burner_pumpjack,
         electrochemical_plant,
         mechanical_plant
     })
@@ -564,6 +552,9 @@ if mods[paracelsin_mods] then
     end
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, galvanization_science_pack)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, galvanization_science_pack)
     end
 
     table.insert(data_technology[tech_arsenic_processing].prerequisites, tech_tetrahedrite_processing_4)

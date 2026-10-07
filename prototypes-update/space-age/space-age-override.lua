@@ -214,9 +214,9 @@ data_item[space_platform_foundation].weight = 5000
 data_recipe[space_platform_foundation].energy_required = 8
 data_recipe[space_platform_foundation].ingredients =
 {
-    {type = item, name = molybdenum_plate, amount = 16},
-    {type = item, name = rhenium_plate, amount = 8},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
 
 local space_platform_starter_pack = "space-platform-starter-pack"
@@ -229,7 +229,9 @@ data_recipe[space_platform_starter_pack].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 16},
     {type = item, name = space_platform_foundation, amount = 64},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 32},
+    {type = item, name = nitinol_plate_bob, amount = 16},
+    {type = item, name = aluminium_lithium_plate, amount = 16}
 }
 
 data_item[cargo_landing_pad].subgroup = space_platform
@@ -257,7 +259,9 @@ data_recipe[cargo_bay].ingredients =
 {
     {type = item, name = low_density_structure, amount = 16},
     {type = item, name = advanced_processing_unit, amount = 4},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
 data_cargo_bay[cargo_bay].subgroup = space_platform
 
@@ -284,7 +288,10 @@ data_recipe[asteroid_collector].ingredients =
     {type = item, name = electric_engine_unit, amount = 8},
     {type = item, name = low_density_structure, amount = 8},
     {type = item, name = heat_shielding_tile, amount = 16},
-    {type = item, name = advanced_processing_unit, amount = 4}
+    {type = item, name = advanced_processing_unit, amount = 4},
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
 data_asteroid_collector[asteroid_collector].order = d
 data_asteroid_collector[asteroid_collector].inventory_size = 40
@@ -307,9 +314,11 @@ if mods[panglia_mods] then
     data_recipe[asteroid_collector_2].energy_required = 8
     data_recipe[asteroid_collector_2].ingredients =
     {
-        {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = asteroid_collector, amount = 1},
         {type = item, name = sentient_processor, amount = 1},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
+        {type = item, name = niobium_titanium_plate, amount = 8},
+        {type = item, name = niobium_iron_plate, amount = 8},
         {type = fluid, name = fluoroketone_cold, amount = 60}
     }
     data_recipe[asteroid_collector_2].results =
@@ -860,22 +869,23 @@ if mods[hyarion_mods] then
     data_recipe[space_science_pack].energy_required = 16
     data_recipe[space_science_pack].ingredients =
     {
-        {type = item, name = advanced_processing_unit, amount = 4},
-        {type = item, name = molybdenum_plate, amount = 2},
-        {type = item, name = rhenium_plate, amount = 2}
+        {type = item, name = ice, amount = 8},
+        {type = item, name = aluminium_lithium_plate, amount = 4},
+        {type = item, name = graphite_plate, amount = 4}
     }
     data_recipe[space_science_pack].results[1].amount = 4
 
     space_science_pack_hyarion = "planetaris-space-science-pack"
+    data_recipe[space_science_pack_hyarion].localised_description = {"item-description.science-pack"}
     data_recipe[space_science_pack_hyarion].subgroup = is_space_facilities
     data_recipe[space_science_pack_hyarion].icons = R_P_I(space_science_pack, space_platform, nil, number_2)
     data_recipe[space_science_pack_hyarion].order = a_a
     data_recipe[space_science_pack_hyarion].energy_required = 32
     data_recipe[space_science_pack_hyarion].ingredients =
     {
-        {type = item, name = advanced_processing_unit, amount = 16},
-        {type = item, name = molybdenum_plate, amount = 8},
-        {type = item, name = rhenium_plate, amount = 8}
+        {type = item, name = ice, amount = 16},
+        {type = item, name = aluminium_lithium_plate, amount = 8},
+        {type = item, name = graphite_plate, amount = 8}
     }
     data_recipe[space_science_pack_hyarion].results[1].amount = 32
 
@@ -964,7 +974,8 @@ data_recipe[advanced_thruster_fuel].ingredients =
 data_recipe[advanced_thruster_fuel].results =
 {
     {type = fluid, name = thruster_fuel, amount = 480},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
+    {type = item, name = catalyst_yellow, amount = 1, ignored_by_productivity = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, independent_probability = 0.125}
 }
 
 data_fluid[thruster_oxidizer].subgroup = is_space_processing
@@ -995,7 +1006,8 @@ data_recipe[advanced_thruster_oxidizer].ingredients =
 data_recipe[advanced_thruster_oxidizer].results =
 {
     {type = fluid, name = thruster_oxidizer, amount = 480},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
+    {type = item, name = catalyst_yellow, amount = 1, ignored_by_productivity = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, independent_probability = 0.125}
 }
 
 bobmods.lib.recipe.update_recycling_recipe({crusher})

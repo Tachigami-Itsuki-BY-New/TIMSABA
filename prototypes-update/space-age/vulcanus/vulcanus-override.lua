@@ -387,9 +387,9 @@ data_recipe[foundry].ingredients =
 data_assembling[foundry].subgroup = is_vulcanus_building
 data_assembling[foundry].order = a
 data_assembling[foundry].module_slots = 8
-data_assembling[foundry].energy_usage = 2340 .. kW
+data_assembling[foundry].energy_usage = (3840 - 240) .. kW
 data_assembling[foundry].energy_source.emissions_per_minute.pollution = 8
-data_assembling[foundry].energy_source.drain = 60 .. kW
+data_assembling[foundry].energy_source.drain = 240 .. kW
 data_assembling[foundry].effect_receiver.base_effect.productivity = 1
 
 data_item[big_mining_drill].subgroup = is_vulcanus_building

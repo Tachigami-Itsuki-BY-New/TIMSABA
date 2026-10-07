@@ -30,9 +30,9 @@ if mods[bobtech] then
     data_recipe[transport_science_pack].energy_required = 16
     data_recipe[transport_science_pack].ingredients =
     {
-        {type = item, name = T3_inserter, amount = 4},
-        {type = item, name = logistic_robot_2, amount = 1},
-        {type = item, name = construction_robot_2, amount = 1}
+        {type = item, name = flying_robot_frame_2, amount = 2},
+        {type = item, name = storage_tank_2_alt, amount = 1},
+        {type = item, name = locomotive_2, amount = 1}
     }
     data_recipe[transport_science_pack].results[1].amount = 4
 end
@@ -55,6 +55,7 @@ data_recipe[utility_science_pack].ingredients =
 }
 data_recipe[utility_science_pack].results[1].amount = 4
 
+data_item[space_science_pack].localised_description = {"item-description.science-pack"}
 data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform)
 data_recipe[space_science_pack].energy_required = 16
 data_recipe[space_science_pack].ingredients =
@@ -423,9 +424,6 @@ data_item[basic_circuit_board].order = a
 data_item[basic_circuit_board].subgroup = is_circuit_boards
 if mods[muluna_mods] then
     table.insert(data_recipe[basic_circuit_board].categories, advanced_wood_processing)
-end
-if mods[lignumis_mods] then
-    table.insert(data_recipe[basic_circuit_board].categories, lignumis_wood_processing)
 end
 data_recipe[basic_circuit_board].order = a
 data_recipe[basic_circuit_board].subgroup = is_circuit_boards

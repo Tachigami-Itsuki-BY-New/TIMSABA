@@ -126,7 +126,7 @@ data_recipe[recycler].ingredients =
 {
     {type = item, name = molybdenum_gear_wheel, amount = 32},
     {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = molybdenum_plate, amount = 16},
+    {type = item, name = rhenium_plate, amount = 16},
     {type = item, name = molybdenum_rhenium_plate, amount = 16},
     {type = item, name = reinforced_concrete, amount = 16}
 }
@@ -155,8 +155,8 @@ data_assembling[electromagnetic_plant].subgroup = is_fulgora_building
 data_assembling[electromagnetic_plant].order = b
 data_assembling[electromagnetic_plant].crafting_speed = 4
 data_assembling[electromagnetic_plant].module_slots = 8
-data_assembling[electromagnetic_plant].energy_usage = 2340 .. kW
-data_assembling[electromagnetic_plant].energy_source.drain = 60 .. kW
+data_assembling[electromagnetic_plant].energy_usage = (3840 - 240) .. kW
+data_assembling[electromagnetic_plant].energy_source.drain = 240 .. kW
 data_assembling[electromagnetic_plant].energy_source.emissions_per_minute.pollution = 0
 data_assembling[electromagnetic_plant].effect_receiver.base_effect.productivity = 1
 

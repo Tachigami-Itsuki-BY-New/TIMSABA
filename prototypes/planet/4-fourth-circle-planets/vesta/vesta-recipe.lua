@@ -183,6 +183,7 @@ if mods[vesta_mods] then
     two_ores_to_plate_recipe(copper_ore, zinc_ore_bob, k_b, brass_plate_bob)
     two_ores_to_plate_recipe(iron_ore, nickel_ore_bob, k_d, invar_plate_bob)
     two_ores_to_plate_recipe(titanium_ore_bob, nickel_ore_bob, k_f, nitinol_plate_bob)
+    two_ores_to_plate_recipe(aluminium_ore_bob, lithium_bob, k_g, aluminium_lithium_plate)
 
     local function three_ores_to_plate_recipe(name_ore_1, name_ore_2, name_ore_3, order, name_plate)
         TIMSABA.functions.create_recipes

@@ -32,7 +32,7 @@ require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-tetrahed
 -- panglia
 require("prototypes.planet.5-moons.frozeta.frozeta-gallite")
 require("prototypes.planet.5-moons.frozeta.frozeta-sylvanite")
--- lignumis
+require("prototypes.planet.5-moons.lignumis.lignumis-wodginite")
 
 -- OTHER STAR SYSTEMS
 -- aegis-bellicos

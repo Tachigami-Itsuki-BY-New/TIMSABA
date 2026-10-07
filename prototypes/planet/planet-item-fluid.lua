@@ -29,7 +29,7 @@ require("prototypes.planet.5-moons.muluna.muluna-item-fluid")
 -- panglia
 -- frozeta
 -- terrapalus
--- lignumis
+require("prototypes.planet.5-moons.lignumis.lignumis-item-fluid")
 
 -- OTHER STAR SYSTEMS
 require("prototypes.planet.6-other-star-systems.aegis-bellicos.aegis-bellicos-item-fluid")

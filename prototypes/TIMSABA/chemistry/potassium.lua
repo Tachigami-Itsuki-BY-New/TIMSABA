@@ -174,17 +174,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_potassium_fluid,
         icons = THREE_D_I(carnallite, nil, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution, water),
         order = a,
-        -- KCl * MgCl₂ * 6H₂O + 2H₂O --> KCl(aq) + MgCl₂(aq) + 6H₂O
+        -- (KCl * MgCl₂ * 6H₂O) + 2H₂O --> KCl(aq) + MgCl₂(aq) + 6H₂O
         ingredients =
         {
-            {type = item, name = carnallite, amount = 8},
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = item, name = carnallite, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 120}
         },
         results =
         {
-            {type = fluid, name = potassium_chloride_solution, amount = 120},
-            {type = fluid, name = magnesium_chloride_solution, amount = 120},
-            {type = fluid, name = water, amount = 720}
+            {type = fluid, name = potassium_chloride_solution, amount = 60},
+            {type = fluid, name = magnesium_chloride_solution, amount = 60},
+            {type = fluid, name = water, amount = 360}
         },
         main_product = potassium_chloride_solution
     },

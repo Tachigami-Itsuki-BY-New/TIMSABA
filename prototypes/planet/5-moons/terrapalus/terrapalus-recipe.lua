@@ -9,7 +9,6 @@ if mods[terrapalus_mods] then
             subgroup = is_terrapalus_recipe,
             icons = TWO_I(palusium_ore, palusium_powder),
             order = b,
-            energy_required = 4,
             ingredients = {{type = item, name = palusium_ore, amount = 1}},
             results = {{type = item, name = palusium_powder, amount = 1}},
             main_product = palusium_powder
@@ -35,7 +34,6 @@ if mods[terrapalus_mods] then
             subgroup = is_terrapalus_recipe,
             icons = TWO_I(palusium_powder, palusium_plate),
             order = d,
-            energy_required = 4,
             ingredients = {{type = item, name = palusium_powder, amount = 4}},
             results = {{type = item, name = palusium_plate, amount = 1}},
             main_product = palusium_plate
@@ -46,7 +44,6 @@ if mods[terrapalus_mods] then
             subgroup = is_terrapalus_recipe,
             icons = THREE_D_I(palusium_powder, water_purified_angels, crude_oil, ultravium),
             order = e,
-            energy_required = 4,
             ingredients =
             {
                 {type = item, name = palusium_powder, amount = 8},

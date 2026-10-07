@@ -632,7 +632,7 @@ if mods[lignumis_mods] then
     data_fluid[wood_pulp].icon = "__TIMSABA__/graphics/icons/lignumis/wood-pulp.png"
 end
 
--- BELLICOS AEGIS
+-- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
     if not data_fluid[helium_vesta] then
         data_fluid[helium].icon = graphics_vesta .. helium_vesta .. ".png"

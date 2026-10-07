@@ -97,6 +97,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
@@ -128,6 +129,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
@@ -230,6 +232,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
@@ -261,6 +264,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },

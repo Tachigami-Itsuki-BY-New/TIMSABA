@@ -54,3 +54,31 @@ TIMSABA.functions.create_items
         order = h
     }
 })
+
+local graphics_alloys = "__TIMSABA__/graphics/icons/angels/metallurgy/alloys/"
+
+-- ALLOYS ITEM
+aluminium_lithium_plate = "aluminium-lithium-plate"
+TIMSABA.functions.create_items
+({
+    {
+        name = aluminium_lithium_plate,
+        subgroup = is_alloys_casting_7,
+        icon = graphics_alloys .. aluminium_lithium_plate .. ".png",
+        order = b
+    }
+})
+
+-- ALLOYS FLUID
+aluminium_lithium_molten = "aluminium-lithium-molten"
+TIMSABA.functions.create_fluids
+({
+    {
+        name = aluminium_lithium_molten,
+        subgroup = is_alloys_casting_7,
+        icon = graphics_alloys .. aluminium_lithium_molten .. ".png",
+        order = a,
+        base_color = TIMSABA.functions.fluid_color("AlLi"),
+        flow_color = TIMSABA.functions.flow_color("AlLi")
+    }
+})

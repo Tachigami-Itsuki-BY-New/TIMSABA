@@ -286,7 +286,6 @@ local function create_recipe_casting_metal(name, order, ingredient, result)
             order = order,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 4,
             ingredients = {{type = fluid, name = ingredient, amount = 60}},
             results = {{type = item, name = result, amount = 4}},
             main_product = result
