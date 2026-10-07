@@ -1262,9 +1262,13 @@ data_recipe[advanced_crude_oil_refining].order = b_b
 data_recipe[advanced_crude_oil_refining].energy_required = 4
 data_recipe[advanced_crude_oil_refining].ingredients[1].amount = 120
 data_recipe[advanced_crude_oil_refining].ingredients[2].amount = 30
-data_recipe[advanced_crude_oil_refining].results[1].amount = 30
-data_recipe[advanced_crude_oil_refining].results[2].amount = 30
-data_recipe[advanced_crude_oil_refining].results[3].amount = 60
+data_recipe[advanced_crude_oil_refining].results =
+{
+    {type = item, name = oil_residual_angels, amount = 1},
+    {type = fluid, name = mineral_oil_angels, amount = 60},
+    {type = fluid, name = fuel_oil_angels, amount = 30},
+    {type = fluid, name = naphtha_angels, amount = 30}
+}
 
 local condensates_crude_oil_refining = "angels-condensates-oil-refining"
 data_recipe[condensates_crude_oil_refining].subgroup = is_multi_phase_oil
@@ -1273,18 +1277,28 @@ data_recipe[condensates_crude_oil_refining].order = b_c
 data_recipe[condensates_crude_oil_refining].energy_required = 4
 data_recipe[condensates_crude_oil_refining].ingredients[1].amount = 120
 data_recipe[condensates_crude_oil_refining].ingredients[2].amount = 30
-data_recipe[condensates_crude_oil_refining].results[1].amount = 30
-data_recipe[condensates_crude_oil_refining].results[3].amount = 60
+data_recipe[condensates_crude_oil_refining].results =
+{
+    {type = item, name = oil_residual_angels, amount = 1},
+    {type = fluid, name = mineral_oil_angels, amount = 30},
+    {type = fluid, name = fuel_oil_angels, amount = 30},
+    {type = fluid, name = naphtha_angels, amount = 60}
+}
 
 local residual_crude_oil_refining = "angels-residual-oil-refining"
 data_recipe[residual_crude_oil_refining].subgroup = is_multi_phase_oil
 data_recipe[residual_crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, fuel_oil_angels, naphtha_angels, number_4)
 data_recipe[residual_crude_oil_refining].order = b_d
 data_recipe[residual_crude_oil_refining].energy_required = 4
-data_recipe[residual_crude_oil_refining].ingredients[2].amount = 120
+data_recipe[residual_crude_oil_refining].ingredients[1].amount = 120
 data_recipe[residual_crude_oil_refining].ingredients[2].amount = 30
-data_recipe[residual_crude_oil_refining].results[2].amount = 30
-data_recipe[residual_crude_oil_refining].results[3].amount = 30
+data_recipe[residual_crude_oil_refining].results =
+{
+    {type = item, name = oil_residual_angels, amount = 1},
+    {type = fluid, name = mineral_oil_angels, amount = 30},
+    {type = fluid, name = fuel_oil_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 30}
+}
 
 data_item[oil_residual_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]n[/font]H[font=default-tiny-bold]2n+2[/font]"} or nil
 data_item[oil_residual_angels].subgroup = is_multi_phase_oil

@@ -154,12 +154,15 @@ if mods[secretas_frozeta_mods] then
     data_recipe[steam_recycler].energy_required = 4
     data_recipe[steam_recycler].ingredients =
     {
-        {type = item, name = molybdenum_gear_wheel, amount = 16},
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
         {type = item, name = advanced_processing_unit, amount = 4},
-        {type = item, name = molybdenum_plate, amount = 8},
-        {type = item, name = molybdenum_rhenium_plate, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+        {type = item, name = niobium_iron_plate, amount = 8},
         {type = item, name = reinforced_concrete, amount = 8}
     }
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[steam_recycler].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+    end
     data_furnace[steam_recycler].subgroup = is_frozeta_building
     data_furnace[steam_recycler].order = a
     data_furnace[steam_recycler].crafting_categories = {recycling}
@@ -321,5 +324,8 @@ if mods[secretas_frozeta_mods] then
     end
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, golden_science_pack)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, golden_science_pack)
     end
 end

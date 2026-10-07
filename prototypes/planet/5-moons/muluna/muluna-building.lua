@@ -32,11 +32,11 @@ if mods[muluna_mods] then
             energy_required = 1,
             ingredients =
             {
-                {type = item, name = steel_gear_wheel, amount = 64},
-                {type = item, name = electronic_circuit, amount = 16},
-                {type = item, name = steel_plate, amount = 64},
-                {type = item, name = clay_brick, amount = 32},
-                {type = item, name = saw, amount = 8}
+                {type = item, name = molybdenum_gear_wheel, amount = 64},
+                {type = item, name = advanced_processing_unit, amount = 16},
+                {type = item, name = rhenium_plate, amount = 64},
+                {type = item, name = reinforced_graphene_concrete_brick, amount = 32},
+                {type = item, name = saw_crystal_full, amount = 32}
             },
             results = {{type = item, name = lumber_mill, amount = 1}},
             main_product = lumber_mill
@@ -102,15 +102,15 @@ if mods[muluna_mods] then
                 }
             },
             crafting_categories = {advanced_wood_processing},
-            crafting_speed = 1,
-            module_slots = 4,
-            energy_usage = (240 - drain) .. kW,
+            crafting_speed = 4,
+            module_slots = 8,
+            energy_usage = (3840 - 240) .. kW,
             energy_source =
             {
                 type = electric,
                 usage_priority = secondary_input,
                 emissions_per_minute = {pollution = 0},
-                drain = drain .. kW
+                drain = 240 .. kW
             },
             allowed_effects = {speed, consumption, productivity, quality},
             allowed_module_categories = {speed, efficiency, productivity, quality},
@@ -135,4 +135,10 @@ if mods[muluna_mods] then
             perceived_performance = {minimum = 0.25, performance_to_activity_rate = 0.25, maximum = 4}
         }
     })
+
+    if mods[lignumis_mods] then
+        data_recipe[lumber_mill].surface_conditions = {{property = pressure, min = 900, max = 900}, {property = gravity, min = 4, max = 4}}
+    else
+        data_recipe[lumber_mill].surface_conditions = {{property = gravity, min = 2, max = 2}, {property = oxygen, min = 0, max = 0}}
+    end
 end

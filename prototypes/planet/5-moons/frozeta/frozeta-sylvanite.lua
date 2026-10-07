@@ -1,7 +1,7 @@
 if mods[secretas_frozeta_mods] then
     local graphics_sylvanite = "__TIMSABA__/graphics/icons/frozeta/sylvanite/"
 
-    -- Sylvanite / Au + Ag + Pb + Cu + Ni + Sb
+    -- Sylvanite ore / Au + Ag + Pb + Cu + Ni + Sb
     sylvanite_ore = "sylvanite-ore"
     sylvanite_crushed = "sylvanite-crushed"
     sylvanite_chunks = "sylvanite-chunks"

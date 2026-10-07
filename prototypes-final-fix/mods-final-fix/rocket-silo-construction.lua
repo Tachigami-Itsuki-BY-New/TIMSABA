@@ -21,8 +21,6 @@ if mods[rocket_silo_construction_mods] then
     data_recipe[excavation_site].ingredients =
     {
         {type = item, name = electric_engine_unit, amount = 128},
-        {type = item, name = low_density_structure, amount = 64},
-        {type = item, name = heat_shielding_tile, amount = 128},
         {type = item, name = advanced_processing_unit, amount = 64},
         {type = item, name = copper_tungsten_pipe, amount = 64},
         {type = item, name = reinforced_concrete, amount = 256},

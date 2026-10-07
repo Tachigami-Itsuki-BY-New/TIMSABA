@@ -1,3 +1,11 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+# Versioning
+The mod version is formatted as x1.x2.x3.
+
+x1 is the major version. It changes when old saves are incompatible with the new version.
+x2 is the minor version. It changes when we make a simple update.
+x3 is the hotfix version. It changes when we make an urgent fix.
+-------------------------------------------------------------------------------------------------------------------------------------------------
 # Functions that can be used if you write mods based on **Project T.I.M.S.A.B.A.**:
 ```Lua
 TIMSABA.functions.create_subgroups(group_var, {{name = subgroup.name, order = subgroup.order}})
@@ -267,7 +275,7 @@ local table_of_chemical_elements =
     --Yb = {{, , }, {, , }, {, , }}, -- Ytterbium
     --Lu = {{, , }, {, , }, {, , }}, -- Lutetium
     --Hf = {{, , }, {, , }, {, , }}, -- Hafnium
-    --Ta = {{, , }, {, , }, {, , }}, -- Tantalum
+    Ta = {{142, 142, 142}, {118, 118, 118}, {095, 095, 095}}, -- Tantalum
     W  = {{138, 096, 063}, {124, 086, 057}, {112, 077, 051}}, -- Tungsten
     Re = {{126, 090, 102}, {110, 079, 089}, {094, 067, 076}}, -- Rhenium
     --Os = {{, , }, {, , }, {, , }}, -- Osmium
@@ -326,13 +334,6 @@ local table_of_chemical_elements =
     Dk = {{065, 065, 065}, {065, 065, 065}, {065, 065, 065}}, -- Dark
 }
 ```
--------------------------------------------------------------------------------------------------------------------------------------------------
-# Versioning
-The mod version is formatted as x1.x2.x3.
-
-x1 is the major version. It changes when old saves are incompatible with the new version.
-x2 is the minor version. It changes when we make a simple update.
-x3 is the hotfix version. It changes when we make an urgent fix.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 # 🌌**Project T.I.M.S.A.B.A.**
 **Welcome to the Project T.I.M.S.A.B.A.** - an ambitious project that merges the classic depth of **Angel's & Bob's** mods with the innovative mechanics of the **Space Age** expansion.

@@ -205,6 +205,7 @@ roe_reproduction = "roe-reproduction"
 -- LIGNUMIS
 wood_liquefaction = "wood-liquefaction"
 rocket_part_lignumis = "provisional-rocket-part"
+sodium_sulfate_solution_2 = "sodium-sulfate-solution-2"
 
 -- VUCLANUS SULFURIC BACTERIA
 sulfuric_bacteria_cultivation = "sulfuric-bacteria-cultivation"

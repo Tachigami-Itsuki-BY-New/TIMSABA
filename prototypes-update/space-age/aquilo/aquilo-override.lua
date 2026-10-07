@@ -69,7 +69,7 @@ data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
 data_recipe[lithium].icons = BUILDING_R_I(lithium_chloride_angels, planet_aquilo)
 data_recipe[lithium].order = d
-data_recipe[lithium].energy_required = 16 -- 2Ho + 16H₂O(LiCl/Hg) + 6NH₃ + 16F₂ --> 4LiCl + 2Ho(NO₃)₃(aq) + 4H₂O + 32HF - 5H₂
+data_recipe[lithium].energy_required = 8 -- 2Ho + 16H₂O(LiCl/Hg) + 6NH₃ + 16F₂ --> 4LiCl + 2Ho(NO₃)₃(aq) + 4H₂O + 32HF - 5H₂
 data_recipe[lithium].ingredients =
 {
     {type = fluid, name = water_thermal_angels, amount = 240},
@@ -152,12 +152,15 @@ data_recipe[cryogenic_plant].ingredients =
     {type = item, name = superconductor, amount = 16},
     {type = item, name = semiconductor, amount = 16}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[cryogenic_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+end
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
 data_assembling[cryogenic_plant].order = a
 data_assembling[cryogenic_plant].crafting_speed = 4
-data_assembling[cryogenic_plant].energy_usage = 1140 .. kW
+data_assembling[cryogenic_plant].energy_usage = (1920 - 120) .. kW
 data_assembling[cryogenic_plant].energy_source.emissions_per_minute.pollution = 8
-data_assembling[cryogenic_plant].energy_source.drain = 60 .. kW
+data_assembling[cryogenic_plant].energy_source.drain = 120 .. kW
 
 -- POWER
 data_item[fusion_reactor].subgroup = is_aquilo_power
@@ -178,6 +181,9 @@ data_recipe[fusion_reactor].ingredients =
     {type = item, name = semiconductor, amount = 256},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 256}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[fusion_reactor].ingredients, {type = item, name = tantalum_niobium_plate, amount = 256})
+end
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
 data_reactor_fusion[fusion_reactor].neighbour_bonus = 1.5
@@ -203,6 +209,9 @@ data_recipe[fusion_generator].ingredients =
     {type = item, name = semiconductor, amount = 128},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 128}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[fusion_generator].ingredients, {type = item, name = tantalum_niobium_plate, amount = 128})
+end
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
 data_generator_fusion[fusion_generator].max_fluid_usage = 15/60
@@ -249,6 +258,9 @@ data_recipe[railgun].ingredients =
     {type = item, name = quantum_processor, amount = 4},
     {type = fluid, name = fluoroketone_cold, amount = 15}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[railgun].ingredients, {type = item, name = tantalum_niobium_plate, amount = 4})
+end
 
 data_item[railgun_turret].subgroup = is_aquilo_war
 data_item[railgun_turret].order = b
@@ -267,6 +279,9 @@ data_recipe[railgun_turret].ingredients =
     {type = item, name = carbon_fiber, amount = 32},
     {type = fluid, name = fluoroketone_cold, amount = 120}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[railgun_turret].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+end
 data_ammo_turret[railgun_turret].subgroup = is_aquilo_war
 data_ammo_turret[railgun_turret].order = b
 data_ammo_turret[railgun_turret].attack_parameters.min_range = 8
@@ -283,7 +298,7 @@ data_ammo[railgun_ammo].weight = 62500
 data_ammo[railgun_ammo].ammo_type.action.range = 60.4
 data_recipe[railgun_ammo].subgroup = is_aquilo_war
 data_recipe[railgun_ammo].order = c
-data_recipe[railgun_ammo].energy_required = 16
+data_recipe[railgun_ammo].energy_required = 8
 data_recipe[railgun_ammo].ingredients =
 {
     {type = item, name = tungsten_plate_bob, amount = 2},
@@ -389,7 +404,7 @@ data_technology[cryogenic_plant].effects =
     {type = unlock_recipe, recipe = photoresist_liquid},
     {type = unlock_recipe, recipe = semiconductor},
     {type = unlock_recipe, recipe = cryogenic_plant},
-    {type = unlock_recipe, recipe = hydogen_fluoride_gas},
+    {type = unlock_recipe, recipe = hydrogen_fluoride_gas},
     {type = unlock_recipe, recipe = chloroform_liquid},
     {type = unlock_recipe, recipe = difluorochloromethane_gas},
     {type = unlock_recipe, recipe = tetrafluoroethylene_gas},

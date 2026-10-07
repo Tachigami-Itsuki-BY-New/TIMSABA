@@ -71,6 +71,9 @@ if mods[corrundum_mods] then
             {cryogenic_science_pack, 1}
         }
     })
+
+    data_technology[tech_selenium_synthesis].hidden = true
+    data_technology[tech_selenium_synthesis].hidden_in_factoriopedia = true
 end
 tech_niobium_synthesis = "niobium-ore-synthesis"
 create_synthesis_tech
@@ -159,7 +162,7 @@ if mods[corrundum_mods] then
     create_synthesis_tech
     ({
         name = tech_arsenic_synthesis,
-        prerequisites = {tech_antimonite_processing_1, tech_sperrylite_processing_1},
+        prerequisites = {tech_antimonite_processing_2, tech_sperrylite_processing_2},
         recipe = arsenic_recipe,
         ingredients =
         {

@@ -160,9 +160,7 @@ if mods[aegis_bellicos_mods] then
 
     -- OTHER CHEMISTRY ITEM
     magnesium_fluoride = "magnesium-fluoride"
-    potassium_fluoride = "potassium-fluoride"
     ammonium_hydrofluoride = "ammonium-hydrofluoride"
-    sodium_fluoride = "sodium-fluoride"
     TIMSABA.functions.create_items
     ({
         -- MAGNESIUM
@@ -173,14 +171,6 @@ if mods[aegis_bellicos_mods] then
             icon = graphics_bellicos_and_aegis .. magnesium_fluoride .. ".png",
             order = f
         },
-        -- POTASSIUM
-        {
-            localised_description = show_formula and {chemical_formula, "KF"} or nil,
-            name = potassium_fluoride,
-            subgroup = is_potassium,
-            icon = graphics_bellicos_and_aegis .. potassium_fluoride .. ".png",
-            order = i
-        },
         -- NITROGNE
         {
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]HF[font=default-tiny-bold]2[/font]"} or nil,
@@ -188,16 +178,30 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_nitrogen,
             icon = graphics_bellicos_and_aegis .. ammonium_hydrofluoride .. ".png",
             order = j
-        },
-        -- SODIUM
-        {
-            localised_description = show_formula and {chemical_formula, "NaF"} or nil,
-            name = sodium_fluoride,
-            subgroup = is_sodium,
-            icon = graphics_bellicos_and_aegis .. sodium_fluoride .. ".png",
-            order = n
         }
     })
+
+    if not data_item[potassium_fluoride] and not data_item[sodium_fluoride] then
+        TIMSABA.functions.create_items
+        ({
+            -- POTASSIUM
+            {
+                localised_description = show_formula and {chemical_formula, "KF"} or nil,
+                name = potassium_fluoride,
+                subgroup = is_potassium,
+                icon = graphics_bellicos_and_aegis .. potassium_fluoride .. ".png",
+                order = i
+            },
+            -- SODIUM
+            {
+                localised_description = show_formula and {chemical_formula, "NaF"} or nil,
+                name = sodium_fluoride,
+                subgroup = is_sodium,
+                icon = graphics_bellicos_and_aegis .. sodium_fluoride .. ".png",
+                order = n
+            }
+        })
+    end
 
     -- OTHER CHEMISTRY FLUID
     ammonium_fluoride_gas = "ammonium-fluoride-gas"

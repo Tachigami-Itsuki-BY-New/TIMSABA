@@ -28,7 +28,7 @@ require("prototypes.planet.4-fourth-circle-planets.vesta.vesta-technology")
 -- muluna
 -- panglia
 require("prototypes.planet.5-moons.frozeta.frozeta-technology")
--- lignumis
+require("prototypes.planet.5-moons.lignumis.lignumis-technology")
 
 -- OTHER STAR SYSTEMS
 require("prototypes.planet.6-other-star-systems.aegis-bellicos.aegis-bellicos-technology")

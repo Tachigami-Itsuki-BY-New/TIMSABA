@@ -347,17 +347,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
         order = i,
-        energy_required = 4, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
+        energy_required = 8, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
         ingredients =
         {
-            {type = item, name = copper_oxide_I, amount = 8},
-            {type = fluid, name = nitric_acid_angels, amount = 720}
+            {type = item, name = copper_oxide_I, amount = 16},
+            {type = fluid, name = nitric_acid_angels, amount = 1440}
         },
         results =
         {
-            {type = fluid, name = copper_nitrate_II_solution, amount = 240},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 60} -- 120
+            {type = fluid, name = copper_nitrate_II_solution, amount = 480},
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = copper_nitrate_II_solution
     }
@@ -800,16 +800,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_aluminium_chemistry_ether,
         icons = TWO_D_I(lithium_hydride, aluminium_chloride_solution_ether, lithium_aluminium_hydride_solution_ether, lithium_chloride_angels),
         order = b,
-        energy_required = 4, -- 4LiH + AlCl₃(ether) --> LiAlH₄(ether) + 3LiCl
+        energy_required = 8, -- 4LiH + AlCl₃(ether) --> LiAlH₄(ether) + 3LiCl
         ingredients =
         {
-            {type = item, name = lithium_hydride, amount = 16},
-            {type = fluid, name = aluminium_chloride_solution_ether, amount = 60}
+            {type = item, name = lithium_hydride, amount = 64},
+            {type = fluid, name = aluminium_chloride_solution_ether, amount = 240}
         },
         results =
         {
-            {type = fluid, name = lithium_aluminium_hydride_solution_ether, amount = 60},
-            {type = item, name = lithium_chloride_angels, amount = 4} -- 12
+            {type = fluid, name = lithium_aluminium_hydride_solution_ether, amount = 240},
+            {type = item, name = lithium_chloride_angels, amount = 16} -- 48
         },
         main_product = lithium_aluminium_hydride_solution_ether
     },
@@ -1409,154 +1409,5 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = fluid, name = sodium_hexahydroxoplatinate_IV_solution, amount = 240}},
         main_product = sodium_hexahydroxoplatinate_IV_solution
-    }
-})
-
--- LITHIUM
-lithium_chloride_solution_from_lithium_hydroxide = "lithium-chloride-solution-from-lithium-hydroxide"
-TIMSABA.functions.create_recipes
-({
-    {
-        name = lithium_chloride_solution,
-        categories = {angels_liquifying},
-        subgroup = is_lithium_fluid,
-        icons = THREE_I(lithium_chloride_angels, water_purified_angels, lithium_chloride_solution),
-        order = a,
-        energy_required = 4, -- LiCl + H₂O --> LiCl(aq)
-        ingredients =
-        {
-            {type = item, name = lithium_chloride_angels, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results = {{type = fluid, name = lithium_chloride_solution, amount = 60}},
-        main_product = lithium_chloride_solution
-    },
-    {
-        name = lithium_chloride_solution_from_lithium_hydroxide,
-        categories = {chemistry},
-        subgroup = is_lithium_fluid,
-        icons = TWO_D_I(lithium_hydroxide, hydrochloric_acid_angels, lithium_chloride_solution, water_purified_angels),
-        order = a_a,
-        energy_required = 8, -- LiOH(aq) + HCl(aq) --> LiCl(aq) + 2H₂O
-        ingredients =
-        {
-            {type = item, name = lithium_hydroxide, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 240}
-        },
-        results =
-        {
-            {type = fluid, name = lithium_chloride_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
-        },
-        main_product = lithium_chloride_solution
-    },
-    {
-        name = lithium_perchlorate_solution,
-        categories = {chemistry},
-        subgroup = is_lithium_fluid,
-        icons = TWO_D_I(sodium_perchlorate_solution, lithium_chloride_solution, lithium_perchlorate_solution, sodium_chloride_solution),
-        order = b,
-        energy_required = 4, -- NaClO₄(aq) + LiCl(aq) --> LiClO₄(aq) + NaCl(aq)
-        ingredients =
-        {
-            {type = fluid, name = sodium_perchlorate_solution, amount = 60},
-            {type = fluid, name = lithium_chloride_solution, amount = 60},
-        },
-        results =
-        {
-            {type = fluid, name = lithium_perchlorate_solution, amount = 60},
-            {type = fluid, name = sodium_chloride_solution, amount = 60},
-        },
-        main_product = lithium_perchlorate_solution
-    },
-    {
-        name = lithium_hydride,
-        categories = {chemistry},
-        subgroup = is_lithium,
-        icons = THREE_I(lithium_bob, hydrogen_angels, lithium_hydride),
-        order = e,
-        energy_required = 8, -- 2Li + H₂ --> 2LiH
-        ingredients =
-        {
-            {type = item, name = lithium_bob, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 240}
-        },
-        results = {{type = item, name = lithium_hydride, amount = 16}},
-        main_product = lithium_hydride
-    },
-    {
-        name = lithium_hydroxide,
-        categories = {angels_petrochem_electrolyser},
-        subgroup = is_lithium,
-        icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
-        order = f,
-        energy_required = 8, -- 2(LiCl + H₂O) -electrode/electrolys-> 2LiOH + H₂ + Cl₂
-        ingredients =
-        {
-            {type = fluid, name = lithium_chloride_solution, amount = 240},
-            {type = item, name = graphite_electrode, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = lithium_hydroxide, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
-            {type = fluid, name = chlorine_angels, amount = 60}, -- 120
-            {type = item, name = graphite_chips, amount = 4}
-        },
-        main_product = lithium_hydroxide
-    },
-    {
-        name = lithium_fluoride,
-        categories = {chemistry},
-        subgroup = is_lithium,
-        icons = TWO_D_I(lithium_hydroxide, hydrofluoric_acid_angels, lithium_fluoride, water_purified_angels),
-        order = h,
-        energy_required = 4, -- LiOH + HF(aq) --> LiF + 2H₂O
-        ingredients =
-        {
-            {type = item, name = lithium_hydroxide, amount = 4},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = lithium_fluoride, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60} -- 120
-        },
-        main_product = lithium_fluoride
-    },
-    {
-        name = lithium_hexafluorophosphate,
-        categories = {chemistry},
-        subgroup = is_lithium,
-        icons = THREE_I(lithium_fluoride, phosphorus_fluoride_V_gas, lithium_hexafluorophosphate),
-        order = i,
-        energy_required = 4, -- LiF + PF₅ -HF(liquefied)-> LiPF₆
-        ingredients =
-        {
-            {type = item, name = lithium_fluoride, amount = 4},
-            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
-            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = lithium_hexafluorophosphate, amount = 4},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 30}
-        },
-        main_product = lithium_hexafluorophosphate
-    },
-    {
-        name = lithium_hexafluorophosphate_solution_carbonate,
-        categories = {angels_liquifying},
-        subgroup = is_lithium_fluid,
-        icons = THREE_I(lithium_hexafluorophosphate, ethylene_carbonate, lithium_hexafluorophosphate_solution_carbonate),
-        order = i,
-        energy_required = 4, -- LiPF₆ + C₃H₄O₃ --> LiPF₆(carbonate)
-        ingredients =
-        {
-            {type = item, name = lithium_hexafluorophosphate, amount = 4},
-            {type = fluid, name = ethylene_carbonate, amount = 60}
-        },
-        results = {{type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}},
-        main_product = lithium_hexafluorophosphate_solution_carbonate
     }
 })

@@ -315,7 +315,6 @@ if mods[aegis_bellicos_mods] then
     -- OTHER CHEMISTRY
     magnesium_ingot_2 = "magnesium-ingot-2"
     magnesium_ingot_3 = "magnesium-ingot-3"
-    sodium_sulfate_solution_2 = "sodium-sulfate-solution-2"
     TIMSABA.functions.create_recipes
     ({
         -- MAGNESIUM
@@ -358,27 +357,6 @@ if mods[aegis_bellicos_mods] then
                 {type = item, name = sodium_fluoride, amount = 16} -- 32
             },
             main_product = magnesium_ingot
-        },
-        -- POTASSIUM
-        {
-            name = potassium_sulfate_solution,
-            categories = {chemistry},
-            subgroup = is_potassium_fluid,
-            icons = THREE_D_I(potassium_fluoride, water_purified_angels, sulfuric_acid_angels, potassium_sulfate_solution, hydrogen_fluoride_angels),
-            order = g_a,
-            -- 2KF(s) + H₂O(l) + H₂SO₄(l) --> K₂SO₄(aq) + HF(g)
-            ingredients =
-            {
-                {type = item, name = potassium_fluoride, amount = 8},
-                {type = fluid, name = water_purified_angels, amount = 60},
-                {type = fluid, name = sulfuric_acid_angels, amount = 60}
-            },
-            results =
-            {
-                {type = fluid, name = potassium_sulfate_solution, amount = 60},
-                {type = fluid, name = hydrogen_fluoride_angels, amount = 60}
-            },
-            main_product = potassium_sulfate_solution
         },
         -- NITROGEN
         {
@@ -433,30 +411,57 @@ if mods[aegis_bellicos_mods] then
             },
             results = {{type = item, name = ammonium_hydrofluoride, amount = 4}},
             main_product = ammonium_hydrofluoride
-        },
-        -- SODIUM
-        {
-            localised_name = {"fluid-name." .. sodium_sulfate_solution},
-            name = sodium_sulfate_solution_2,
-            categories = {chemistry},
-            subgroup = is_sodium_fluid,
-            icons = THREE_D_I(sodium_fluoride, water_purified_angels, sulfuric_acid_angels, sodium_sulfate_solution, hydrogen_fluoride_angels),
-            order = g_a,
-            -- 2NaF(s) + H₂O(l) + H₂SO₄(l) --> Na₂SO₄(aq) + HF(g)
-            ingredients =
-            {
-                {type = item, name = sodium_fluoride, amount = 8},
-                {type = fluid, name = water_purified_angels, amount = 60},
-                {type = fluid, name = sulfuric_acid_angels, amount = 60}
-            },
-            results =
-            {
-                {type = fluid, name = sodium_sulfate_solution, amount = 60},
-                {type = fluid, name = hydrogen_fluoride_angels, amount = 60}
-            },
-            main_product = sodium_sulfate_solution
         }
     })
+
+    if not data_recipe[potassium_sulfate_solution] and not data_recipe[sodium_sulfate_solution_2] then
+        TIMSABA.functions.create_recipes
+        ({
+            -- POTASSIUM
+            {
+                name = potassium_sulfate_solution,
+                categories = {chemistry},
+                subgroup = is_potassium_fluid,
+                icons = THREE_D_I(potassium_fluoride, water_purified_angels, sulfuric_acid_angels, potassium_sulfate_solution, hydrogen_fluoride_angels),
+                order = g_a,
+                -- 2KF(s) + H₂O(l) + H₂SO₄(l) --> K₂SO₄(aq) + HF(g)
+                ingredients =
+                {
+                    {type = item, name = potassium_fluoride, amount = 8},
+                    {type = fluid, name = water_purified_angels, amount = 60},
+                    {type = fluid, name = sulfuric_acid_angels, amount = 60}
+                },
+                results =
+                {
+                    {type = fluid, name = potassium_sulfate_solution, amount = 60},
+                    {type = fluid, name = hydrogen_fluoride_angels, amount = 60}
+                },
+                main_product = potassium_sulfate_solution
+            },
+            -- SODIUM
+            {
+                localised_name = {"fluid-name." .. sodium_sulfate_solution},
+                name = sodium_sulfate_solution_2,
+                categories = {chemistry},
+                subgroup = is_sodium_fluid,
+                icons = THREE_D_I(sodium_fluoride, water_purified_angels, sulfuric_acid_angels, sodium_sulfate_solution, hydrogen_fluoride_angels),
+                order = g_a,
+                -- 2NaF(s) + H₂O(l) + H₂SO₄(l) --> Na₂SO₄(aq) + HF(g)
+                ingredients =
+                {
+                    {type = item, name = sodium_fluoride, amount = 8},
+                    {type = fluid, name = water_purified_angels, amount = 60},
+                    {type = fluid, name = sulfuric_acid_angels, amount = 60}
+                },
+                results =
+                {
+                    {type = fluid, name = sodium_sulfate_solution, amount = 60},
+                    {type = fluid, name = hydrogen_fluoride_angels, amount = 60}
+                },
+                main_product = sodium_sulfate_solution
+            }
+        })
+    end
 
     -- RECIPE
     helium_advanced_processing_unit = "helium-advanced-processing-unit"

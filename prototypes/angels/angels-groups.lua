@@ -112,6 +112,7 @@ is_alloys_casting_3 = "is-alloys-casting-3"
 is_alloys_casting_4 = "is-alloys-casting-4"
 is_alloys_casting_5 = "is-alloys-casting-5"
 is_alloys_casting_6 = "is-alloys-casting-6"
+is_alloys_casting_7 = "is-alloys-casting-7"
 is_sintering_oven = "angels-sintering-oven"
 TIMSABA.functions.create_subgroups(ig_casting,
 {
@@ -120,7 +121,8 @@ TIMSABA.functions.create_subgroups(ig_casting,
     {name = is_alloys_casting_3, order = v_c},
     {name = is_alloys_casting_4, order = v_d},
     {name = is_alloys_casting_5, order = v_e},
-    {name = is_alloys_casting_6, order = v_f}
+    {name = is_alloys_casting_6, order = v_f},
+    {name = is_alloys_casting_7, order = v_g}
 })
 
 -- ANGELS WATER TREATMENT

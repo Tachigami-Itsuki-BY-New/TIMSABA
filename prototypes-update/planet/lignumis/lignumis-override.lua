@@ -1,71 +1,43 @@
 if mods[lignumis_mods] then
-    -- RECIPE
-    data_item[gold_stromatolite_seed].subgroup = is_lignumis_recipe
-    data_item[gold_stromatolite_seed].order = a
-    data_item[gold_stromatolite_seed].stack_size = 200
-    data_item[gold_stromatolite_seed].fuel_categories = {base_fuel}
-    data_item[gold_stromatolite_seed].fuel_value = (225/2) .. kJ
-
-    local gold_stromatolite_seed_to_peat = gold_stromatolite_seed .. "-to-peat"
-    data_recipe[gold_stromatolite_seed_to_peat].subgroup = is_lignumis_recipe
-    data_recipe[gold_stromatolite_seed_to_peat].icons = THREE_R_I(gold_stromatolite_seed, peat, gold_ore_bob)
-    data_recipe[gold_stromatolite_seed_to_peat].order = a_a
-    data_recipe[gold_stromatolite_seed_to_peat].energy_required = 4
-    data_recipe[gold_stromatolite_seed_to_peat].ingredients[1].amount = 8
-
-    data_item[gold_bacteria].subgroup = is_lignumis_recipe
-    data_item[gold_bacteria].order = b
-    data_item[gold_bacteria].stack_size = 200
-    TIMSABA.void.freezing_organics(gold_bacteria)
-
-    -- c
-    -- d
-
-    data_item[gold_cable_mods].localised_description = show_formula and {chemical_formula, "Au"} or nil
-    data_item[gold_cable_mods].subgroup = is_lignumis_recipe
-    data_item[gold_cable_mods].order = e
-    data_recipe[gold_cable_mods].subgroup = is_lignumis_recipe
-    data_recipe[gold_cable_mods].icons = TWO_I(gold_plate_bob, gold_cable_mods)
-    data_recipe[gold_cable_mods].order = e
-
-    data_item[lumber].subgroup = is_lignumis_recipe
-    data_item[lumber].order = f
+    -- WOOD
+    data_item[lumber].subgroup = is_lignumis_wood
+    data_item[lumber].order = a
     data_item[lumber].fuel_categories = {base_fuel}
     data_item[lumber].fuel_value = 3600 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[lumber].categories, advanced_wood_processing)
     end
-    data_recipe[lumber].subgroup = is_lignumis_recipe
+    data_recipe[lumber].subgroup = is_lignumis_wood
     data_recipe[lumber].icons = TWO_I(wood, lumber)
-    data_recipe[lumber].order = f
+    data_recipe[lumber].order = a
     data_recipe[lumber].ingredients[1].amount = 1
     data_recipe[lumber].results[1].amount = 2
 
-    data_item[wooden_gear_wheel].subgroup = is_lignumis_recipe
-    data_item[wooden_gear_wheel].order = g
+    data_item[wooden_gear_wheel].subgroup = is_lignumis_wood
+    data_item[wooden_gear_wheel].order = b
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_gear_wheel].categories, advanced_wood_processing)
     end
-    data_recipe[wooden_gear_wheel].subgroup = is_lignumis_recipe
+    data_recipe[wooden_gear_wheel].subgroup = is_lignumis_wood
     data_recipe[wooden_gear_wheel].icons = TWO_I(lumber, wooden_gear_wheel)
-    data_recipe[wooden_gear_wheel].order = g
+    data_recipe[wooden_gear_wheel].order = b
 
     data_recipe[basic_circuit_board_mods].localised_name = {"item-name." .. basic_circuit_board}
     if mods[muluna_mods] then
         table.insert(data_recipe[basic_circuit_board_mods].categories, advanced_wood_processing)
     end
-    data_recipe[basic_circuit_board_mods].subgroup = is_lignumis_recipe
+    data_recipe[basic_circuit_board_mods].subgroup = is_lignumis_wood
     data_recipe[basic_circuit_board_mods].icons = BUILDING_R_I(basic_circuit_board, planet_lignumis)
-    data_recipe[basic_circuit_board_mods].order = h
+    data_recipe[basic_circuit_board_mods].order = c
     data_recipe[basic_circuit_board_mods].surface_conditions = {{property = pressure, min = 900, max = 900}}
 
-    data_item[moist_stromatolite_remnant].subgroup = is_lignumis_recipe
-    data_item[moist_stromatolite_remnant].order = i
+    data_item[moist_stromatolite_remnant].subgroup = is_lignumis_wood
+    data_item[moist_stromatolite_remnant].order = d
 
     local moist_stromatolite_remnant_desiccation = moist_stromatolite_remnant .. "-desiccation"
-    data_recipe[moist_stromatolite_remnant_desiccation].subgroup = is_lignumis_recipe
+    data_recipe[moist_stromatolite_remnant_desiccation].subgroup = is_lignumis_wood
     data_recipe[moist_stromatolite_remnant_desiccation].icons = THREE_R_I(moist_stromatolite_remnant, peat, steam)
-    data_recipe[moist_stromatolite_remnant_desiccation].order = i_a
+    data_recipe[moist_stromatolite_remnant_desiccation].order = d_a
     data_recipe[moist_stromatolite_remnant_desiccation].energy_required = 8
     data_recipe[moist_stromatolite_remnant_desiccation].results =
     {
@@ -74,50 +46,50 @@ if mods[lignumis_mods] then
     }
 
     local moist_stromatolite_remnant_desiccation_without_steam = moist_stromatolite_remnant_desiccation .. "-without-steam"
-    data_recipe[moist_stromatolite_remnant_desiccation_without_steam].subgroup = is_lignumis_recipe
+    data_recipe[moist_stromatolite_remnant_desiccation_without_steam].subgroup = is_lignumis_wood
     data_recipe[moist_stromatolite_remnant_desiccation_without_steam].icons = TWO_I(moist_stromatolite_remnant, peat)
-    data_recipe[moist_stromatolite_remnant_desiccation_without_steam].order = i_b
+    data_recipe[moist_stromatolite_remnant_desiccation_without_steam].order = d_b
     data_recipe[moist_stromatolite_remnant_desiccation_without_steam].ingredients[1].amount = 8
 
-    data_item[peat].subgroup = is_lignumis_recipe
-    data_item[peat].order = j
+    data_item[peat].subgroup = is_lignumis_wood
+    data_item[peat].order = e
     data_item[peat].fuel_categories = {base_fuel}
     data_item[peat].fuel_value = 7200 .. kJ
-    data_resource[peat].subgroup = is_lignumis_recipe
-    data_resource[peat].order = j
+    data_resource[peat].subgroup = is_lignumis_wood
+    data_resource[peat].order = e
 
-    data_fluid[wood_pulp].subgroup = is_lignumis_recipe
-    data_fluid[wood_pulp].order = k
+    data_fluid[wood_pulp].subgroup = is_lignumis_wood
+    data_fluid[wood_pulp].order = f
     TIMSABA.barreling.add_simple_fluid(wood_pulp)
 
     data_recipe[wood_liquefaction].categories = {chemistry}
-    data_recipe[wood_liquefaction].subgroup = is_lignumis_recipe
+    data_recipe[wood_liquefaction].subgroup = is_lignumis_wood
     data_recipe[wood_liquefaction].icons = TWO_I(wood, wood_pulp)
-    data_recipe[wood_liquefaction].order = k_a
+    data_recipe[wood_liquefaction].order = f_a
     data_recipe[wood_liquefaction].energy_required = 4
     data_recipe[wood_liquefaction].results[1].amount = (15/2)
 
     local wood_liquefaction_steam = wood_liquefaction .. "-" .. steam
     data_recipe[wood_liquefaction_steam].categories = {chemistry}
-    data_recipe[wood_liquefaction_steam].subgroup = is_lignumis_recipe
+    data_recipe[wood_liquefaction_steam].subgroup = is_lignumis_wood
     data_recipe[wood_liquefaction_steam].icons = TWO_D_I(wood, steam, wood_pulp)
-    data_recipe[wood_liquefaction_steam].order = k_b
+    data_recipe[wood_liquefaction_steam].order = f_b
     data_recipe[wood_liquefaction_steam].energy_required = 4
     data_recipe[wood_liquefaction_steam].ingredients[2].amount = (15/2)
     data_recipe[wood_liquefaction_steam].results[1].amount = 15
 
     local nutrients_from_wood_pulp = "nutrients-from-wood-pulp"
-    data_recipe[nutrients_from_wood_pulp].subgroup = is_lignumis_recipe
+    data_recipe[nutrients_from_wood_pulp].subgroup = is_lignumis_wood
     data_recipe[nutrients_from_wood_pulp].icons = TWO_I(wood_pulp, nutrients)
-    data_recipe[nutrients_from_wood_pulp].order = k_c
+    data_recipe[nutrients_from_wood_pulp].order = f_c
     data_recipe[nutrients_from_wood_pulp].ingredients[1].amount = (15/2)
     data_recipe[nutrients_from_wood_pulp].results[1].amount = 4
 
     local rocket_fuel_from_wood_pulp_and_peat = rocket_fuel .. "-from-" .. wood_pulp .. "-and-" .. peat
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].categories = {chemistry}
-    data_recipe[rocket_fuel_from_wood_pulp_and_peat].subgroup = is_lignumis_recipe
+    data_recipe[rocket_fuel_from_wood_pulp_and_peat].subgroup = is_lignumis_wood
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].icons = BUILDING_R_I(rocket_fuel, planet_lignumis)
-    data_recipe[rocket_fuel_from_wood_pulp_and_peat].order = k_d
+    data_recipe[rocket_fuel_from_wood_pulp_and_peat].order = f_d
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].energy_required = 16
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].ingredients =
     {
@@ -126,13 +98,91 @@ if mods[lignumis_mods] then
     }
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].surface_conditions = {{property = pressure, min = 900, max = 900}}
 
-    data_item[cupriavidus_necator].subgroup = is_lignumis_recipe
-    data_item[cupriavidus_necator].order = l
+    data_item[wood_science_pack].subgroup = is_lignumis_wood
+    data_item[wood_science_pack].order = g
+    data_recipe[wood_science_pack].subgroup = is_lignumis_wood
+    data_recipe[wood_science_pack].order = g
+    data_recipe[wood_science_pack].energy_required = 4
+    data_recipe[wood_science_pack].surface_conditions = nil
+
+    -- GOLD
+    data_item[gold_stromatolite_seed].subgroup = is_lignumis_gold
+    data_item[gold_stromatolite_seed].order = a
+    data_item[gold_stromatolite_seed].stack_size = 200
+    data_item[gold_stromatolite_seed].fuel_categories = {base_fuel}
+    data_item[gold_stromatolite_seed].fuel_value = (225/2) .. kJ
+
+    local gold_stromatolite_seed_to_peat = gold_stromatolite_seed .. "-to-peat"
+    data_recipe[gold_stromatolite_seed_to_peat].subgroup = is_lignumis_gold
+    data_recipe[gold_stromatolite_seed_to_peat].icons = THREE_R_I(gold_stromatolite_seed, peat, gold_ore_bob)
+    data_recipe[gold_stromatolite_seed_to_peat].order = a_a
+    data_recipe[gold_stromatolite_seed_to_peat].energy_required = 4
+    data_recipe[gold_stromatolite_seed_to_peat].ingredients[1].amount = 8
+
+    data_item[gold_bacteria].subgroup = is_lignumis_gold
+    data_item[gold_bacteria].order = b
+    data_item[gold_bacteria].stack_size = 200
+    TIMSABA.void.freezing_organics(gold_bacteria)
+
+    -- c
+
+    data_item[gold_cable_mods].localised_description = show_formula and {chemical_formula, "Au"} or nil
+    data_item[gold_cable_mods].subgroup = is_lignumis_gold
+    data_item[gold_cable_mods].order = d
+    data_recipe[gold_cable_mods].subgroup = is_lignumis_gold
+    data_recipe[gold_cable_mods].icons = TWO_I(gold_plate_bob, gold_cable_mods)
+    data_recipe[gold_cable_mods].order = d
+
+    data_item[steam_science_pack].subgroup = is_lignumis_gold
+    data_item[steam_science_pack].order = e
+    data_recipe[steam_science_pack].categories = {advanced_crafting}
+    data_recipe[steam_science_pack].subgroup = is_lignumis_gold
+    data_recipe[steam_science_pack].icons = R_P_I(steam_science_pack, planet_lignumis, nil, number_1)
+    data_recipe[steam_science_pack].order = e
+    data_recipe[steam_science_pack].energy_required = 8
+    data_recipe[steam_science_pack].ingredients =
+    {
+        {type = item, name = gold_plate_bob, amount = 2},
+        {type = fluid, name = steam, amount = 30}
+    }
+
+    local steam_science_pack_steam = steam_science_pack .. "-" .. steam
+    data_recipe[steam_science_pack_steam].subgroup = is_lignumis_gold
+    data_recipe[steam_science_pack_steam].icons = R_P_I(steam_science_pack, nil, nil, number_2)
+    data_recipe[steam_science_pack_steam].order = e_a
+    data_recipe[steam_science_pack_steam].energy_required = 8
+    data_recipe[steam_science_pack_steam].ingredients =
+    {
+        {type = item, name = iron_plate, amount = 2},
+        {type = fluid, name = steam, amount = 30}
+    }
+    data_recipe[steam_science_pack_steam].surface_conditions = nil
+
+    local gold_quality_catalyst = "gold-quality-catalyst"
+    data_item[gold_quality_catalyst].subgroup = is_lignumis_gold
+    data_item[gold_quality_catalyst].order = f
+    data_item[gold_quality_catalyst].fuel_value = 1800 .. kJ
+    data_recipe[gold_quality_catalyst].subgroup = is_lignumis_gold
+    data_recipe[gold_quality_catalyst].order = f
+    data_recipe[gold_quality_catalyst].energy_required = 64
+    data_recipe[gold_quality_catalyst].ingredients =
+    {
+        {type = item, name = gold_plate_bob, amount = 8},
+        {type = item, name = niobium_titanium_cable, amount = 4},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 2},
+        {type = item, name = carbon_fiber, amount = 2},
+        {type = item, name = supercapacitor, amount = 2},
+        {type = item, name = tantalum_niobium_plate, amount = 2}
+    }
+
+    -- CUPRIAVIDUS
+    data_item[cupriavidus_necator].subgroup = is_cupriavidus
+    data_item[cupriavidus_necator].order = a
     data_item[cupriavidus_necator].stack_size = 200
     TIMSABA.void.freezing_organics(cupriavidus_necator)
-    data_recipe[cupriavidus_necator].subgroup = is_lignumis_recipe
+    data_recipe[cupriavidus_necator].subgroup = is_cupriavidus
     data_recipe[cupriavidus_necator].icons = STONKS_I(stonks_png, cupriavidus_necator)
-    data_recipe[cupriavidus_necator].order = l
+    data_recipe[cupriavidus_necator].order = a
     data_recipe[cupriavidus_necator].energy_required = 16
     data_recipe[cupriavidus_necator].ingredients =
     {
@@ -143,9 +193,9 @@ if mods[lignumis_mods] then
     data_recipe[cupriavidus_necator].results[1].amount = 40
 
     local cupriavidus_necator_starter = cupriavidus_necator .. "-starter"
-    data_recipe[cupriavidus_necator_starter].subgroup = is_lignumis_recipe
+    data_recipe[cupriavidus_necator_starter].subgroup = is_cupriavidus
     data_recipe[cupriavidus_necator_starter].icons = FOUR_D_I(gold_stromatolite_seed, wood_pulp, peat, water, cupriavidus_necator)
-    data_recipe[cupriavidus_necator_starter].order = l_a
+    data_recipe[cupriavidus_necator_starter].order = a_a
     data_recipe[cupriavidus_necator_starter].energy_required = 16
     data_recipe[cupriavidus_necator_starter].ingredients =
     {
@@ -157,9 +207,9 @@ if mods[lignumis_mods] then
     data_recipe[cupriavidus_necator_starter].results = {{type = item, name = cupriavidus_necator, amount_min = 4, amount_max = 8, independent_probability = 0.25}}
 
     local plastic_from_cupriavidus_necator = "plastic-from-" .. cupriavidus_necator
-    data_recipe[plastic_from_cupriavidus_necator].subgroup = is_lignumis_recipe
+    data_recipe[plastic_from_cupriavidus_necator].subgroup = is_cupriavidus
     data_recipe[plastic_from_cupriavidus_necator].icons = THREE_R_I(cupriavidus_necator, plastic, wood_pulp)
-    data_recipe[plastic_from_cupriavidus_necator].order = l_b
+    data_recipe[plastic_from_cupriavidus_necator].order = a_b
     data_recipe[plastic_from_cupriavidus_necator].energy_required = 16
     data_recipe[plastic_from_cupriavidus_necator].ingredients[1].amount = 128
     data_recipe[plastic_from_cupriavidus_necator].results =
@@ -169,68 +219,20 @@ if mods[lignumis_mods] then
     }
 
     local dead_cupriavidus_necator = "dead-" .. cupriavidus_necator
-    data_item[dead_cupriavidus_necator].subgroup = is_lignumis_recipe
-    data_item[dead_cupriavidus_necator].order = m
+    data_item[dead_cupriavidus_necator].subgroup = is_cupriavidus
+    data_item[dead_cupriavidus_necator].order = b
     data_item[dead_cupriavidus_necator].stack_size = 200
 
     local plastic_from_dead_cupriavidus_necator = "plastic-from-" .. dead_cupriavidus_necator
-    data_recipe[plastic_from_dead_cupriavidus_necator].subgroup = is_lignumis_recipe
+    data_recipe[plastic_from_dead_cupriavidus_necator].subgroup = is_cupriavidus
     data_recipe[plastic_from_dead_cupriavidus_necator].icons = THREE_R_I(dead_cupriavidus_necator, plastic, wood_pulp)
-    data_recipe[plastic_from_dead_cupriavidus_necator].order = m_a
+    data_recipe[plastic_from_dead_cupriavidus_necator].order = b_a
     data_recipe[plastic_from_dead_cupriavidus_necator].energy_required = 16
     data_recipe[plastic_from_dead_cupriavidus_necator].ingredients[1].amount = 128
     data_recipe[plastic_from_dead_cupriavidus_necator].results =
     {
         {type = item, name = plastic, amount_min = 0, amount_max = 8},
         {type = fluid, name = wood_pulp, amount = (15/2)}
-    }
-
-    data_item[wood_science_pack].subgroup = is_lignumis_recipe
-    data_item[wood_science_pack].order = n
-    data_recipe[wood_science_pack].subgroup = is_lignumis_recipe
-    data_recipe[wood_science_pack].order = n
-    data_recipe[wood_science_pack].energy_required = 4
-    data_recipe[wood_science_pack].surface_conditions = nil
-
-    data_item[steam_science_pack].subgroup = is_lignumis_recipe
-    data_item[steam_science_pack].order = o
-    data_recipe[steam_science_pack].categories = {advanced_crafting}
-    data_recipe[steam_science_pack].subgroup = is_lignumis_recipe
-    data_recipe[steam_science_pack].icons = R_P_I(steam_science_pack, planet_lignumis, nil, number_1)
-    data_recipe[steam_science_pack].order = o
-    data_recipe[steam_science_pack].energy_required = 8
-    data_recipe[steam_science_pack].ingredients =
-    {
-        {type = item, name = gold_plate_bob, amount = 2},
-        {type = fluid, name = steam, amount = 30}
-    }
-
-    local steam_science_pack_steam = steam_science_pack .. "-" .. steam
-    data_recipe[steam_science_pack_steam].subgroup = is_lignumis_recipe
-    data_recipe[steam_science_pack_steam].icons = R_P_I(steam_science_pack, nil, nil, number_2)
-    data_recipe[steam_science_pack_steam].order = o_a
-    data_recipe[steam_science_pack_steam].energy_required = 8
-    data_recipe[steam_science_pack_steam].ingredients =
-    {
-        {type = item, name = iron_plate, amount = 2},
-        {type = fluid, name = steam, amount = 30}
-    }
-    data_recipe[steam_science_pack_steam].surface_conditions = nil
-
-    local gold_quality_catalyst = "gold-quality-catalyst"
-    data_item[gold_quality_catalyst].subgroup = is_lignumis_recipe
-    data_item[gold_quality_catalyst].order = p
-    data_item[gold_quality_catalyst].fuel_value = 1800 .. kJ
-    data_recipe[gold_quality_catalyst].subgroup = is_lignumis_recipe
-    data_recipe[gold_quality_catalyst].order = p
-    data_recipe[gold_quality_catalyst].energy_required = 64
-    data_recipe[gold_quality_catalyst].ingredients =
-    {
-        {type = item, name = gold_plate_bob, amount = 8},
-        {type = item, name = niobium_titanium_cable, amount = 4},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 2},
-        {type = item, name = carbon_fiber, amount = 2},
-        {type = item, name = supercapacitor, amount = 2}
     }
 
     -- LOGISTICS
@@ -379,8 +381,9 @@ if mods[lignumis_mods] then
     {
         {type = item, name = electric_engine_unit, amount = 128},
         {type = item, name = advanced_processing_unit, amount = 128},
-        {type = item, name = molybdenum_rhenium_plate, amount = 256},
-        {type = item, name = reinforced_titanium_concrete_brick, amount = 64}
+        {type = item, name = tantalum_tungsten_gear_wheel, amount = 256},
+        {type = item, name = tantalum_molybdenum_rhenium_plate, amount = 128},
+        {type = item, name = tantalum_niobium_plate, amount = 128}
     }
     data_mining_drill[deep_miner].subgroup = is_lignumis_mining
     data_mining_drill[deep_miner].order = a
@@ -544,7 +547,8 @@ if mods[lignumis_mods] then
     data_assembling[burner_lumber_mill].subgroup = is_lignumis_building
     data_assembling[burner_lumber_mill].order = e
     data_assembling[burner_lumber_mill].crafting_speed = 0.5
-    data_assembling[burner_lumber_mill].energy_usage = 450 .. kW
+    data_assembling[burner_lumber_mill].module_slots = 0
+    data_assembling[burner_lumber_mill].energy_usage = 900 .. kW
     data_assembling[burner_lumber_mill].energy_source.emissions_per_minute.pollution = 8
     data_assembling[burner_lumber_mill].energy_source.effectivity = 0.5
     if mods[muluna_mods] then
@@ -568,11 +572,6 @@ if mods[lignumis_mods] then
         {type = item, name = copper_plate, amount = 16},
         {type = item, name = burner_assembling_machine, amount = 2}
     }
-
-    if mods[muluna_mods] then
-        table.insert(data_assembling[burner_lumber_mill].crafting_categories, advanced_wood_processing)
-        table.insert(data_assembling[lumber_mill].crafting_categories, lignumis_wood_processing)
-    end
 
     data_item[wood_lab].subgroup = is_lignumis_building
     data_item[wood_lab].order = h
@@ -608,15 +607,19 @@ if mods[lignumis_mods] then
             {type = item, name = semiconductor, amount = 64},
             {type = item, name = superconductor, amount = 64},
             {type = item, name = quantum_processor, amount = 8},
-            {type = item, name = niobium_titanium_cable, amount = 16},
+            {type = item, name = niobium_titanium_cable, amount = 32},
             {type = item, name = niobium_iron_bearing, amount = 8},
             {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
             {type = item, name = carbon_fiber, amount = 128},
-            {type = item, name = gold_plate_bob, amount = 64}
+            {type = item, name = gold_plate_bob, amount = 64},
+            {type = item, name = tantalum_tungsten_plate, amount = 64},
+            {type = item, name = tantalum_molybdenum_rhenium_plate, amount = 64},
+            {type = item, name = tantalum_niobium_plate, amount = 64}
         }
         data_assembling[quality_assembler].subgroup = is_lignumis_building
         data_assembling[quality_assembler].order = i
         data_assembling[quality_assembler].module_slots = 4
+        data_assembling[quality_assembler].crafting_categories = {"quality-assembling", crafting, advanced_crafting, electronics}
         data_assembling[quality_assembler].energy_usage = 3840 .. kW
         data_assembling[quality_assembler].energy_source.emissions_per_minute.pollution = 0
         data_assembling[quality_assembler].effect_receiver.base_effect.quality = 0.5
@@ -864,6 +867,7 @@ if mods[lignumis_mods] then
         {space_science_pack, 1}
     }
 
+    data_technology[deep_miner].prerequisites = {tech_tantalum_tungsten_processing, tech_tantalum_molybdenum_rhenium_processing, tech_tantalum_niobium_processing}
     data_technology[deep_miner].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -935,4 +939,35 @@ if mods[lignumis_mods] then
         {space_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
+
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9}
+    }
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1}
+    }
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_advanced_full_asteroid_processing].effects, {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10})
+        table.insert(data_technology[tech_advanced_full_asteroid_processing].effects, {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11})
+        table.insert(data_technology[tech_advanced_full_asteroid_productivity].effects, {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1})
+        table.insert(data_technology[tech_advanced_full_asteroid_productivity].effects, {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1})
+    end
 end

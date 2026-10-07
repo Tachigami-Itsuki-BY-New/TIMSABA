@@ -18,7 +18,6 @@ if mods[paracelsin_mods] then
     is_paracelsin_zinc = "is-paracelsin-zinc"
     is_paracelsin_logistic = "is-paracelsin-logistic"
     is_paracelsin_energy = "is-paracelsin-energy"
-    is_paracelsin_mining = "is-paracelsin-mining"
     is_paracelsin_building = "is-paracelsin-building"
     TIMSABA.functions.create_subgroups(ig_paracelsin,
     {
@@ -29,7 +28,6 @@ if mods[paracelsin_mods] then
         {name = is_paracelsin_zinc,     order = e},
         {name = is_paracelsin_logistic, order = f},
         {name = is_paracelsin_energy,   order = g},
-        {name = is_paracelsin_mining,   order = h},
-        {name = is_paracelsin_building, order = i}
+        {name = is_paracelsin_building, order = h}
     })
 end

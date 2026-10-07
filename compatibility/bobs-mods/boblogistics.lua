@@ -409,7 +409,6 @@ TIMSABA.functions.create_recipes
         categories = {crafting},
         subgroup = is_pipe_to_ground,
         order = c,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = stone_pipe, amount = 8},
@@ -433,7 +432,6 @@ TIMSABA.functions.create_recipes
         categories = {crafting},
         subgroup = is_pipe_to_ground,
         order = k,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = nitinol_pipe, amount = 40},

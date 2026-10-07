@@ -516,7 +516,10 @@ quality_assembler = "quality-assembler"
 big_wooden_pole = "big-wooden-pole"
 basic_gun_turret = "basic-gun-turret"
 
--- BELLICOS AEGIS
+potassium_fluoride = "potassium-fluoride"
+sodium_fluoride = "sodium-fluoride"
+
+-- AEGIS BELLICOS
 aegis_bellicos_mods = "bellicos-and-aegis"
 bellicos_orbit = "bellicos-orbit"
 helium = "helium"

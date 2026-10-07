@@ -96,7 +96,6 @@ TIMSABA.functions.create_items
         icon = graphics_niobium .. niobium_hydroxide_V .. ".png",
         order = d
     },
-    -- CASTING
     -- CASTING Nb-Ti
     {
         localised_description = show_formula and {chemical_formula, "NbTi"} or nil,
@@ -278,7 +277,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = niobium_powder, amount = 24},
-            {type = item, name = aluminium_oxide, amount = 8} -- 20
+            {type = item, name = aluminium_oxide, amount = 4} -- 20
         },
         main_product = niobium_powder
     },
@@ -410,7 +409,6 @@ TIMSABA.functions.create_recipes
         },
         main_product = niobium_hydroxide_V
     },
-    -- CASTING
     -- CASTING Nb-Ti
     {
         name = niobium_titanium_molten,

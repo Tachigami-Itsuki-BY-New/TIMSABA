@@ -199,7 +199,7 @@ TIMSABA.functions.create_recipes
         name = antimony_ingot_2,
         categories = {angels_blast_smelting_4},
         subgroup = is_antimony,
-        icons = TWO_D_I(antimony_oxide_III, carbon, antimony_ingot, carbon_dioxide_angels),
+        icons = TWO_D_I(antimony_oxide_III, carbon, antimony_ingot, carbon_monoxide_angels),
         order = d_a,
         energy_required = 8, -- Sb₂O₅ + 5C --> 2Sb + 5CO 
         ingredients =
@@ -210,7 +210,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = antimony_ingot, amount = 16},
-            {type = fluid, name = carbon_dioxide_angels, amount = 480} -- 1200
+            {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 600
         },
         main_product = antimony_ingot
     },

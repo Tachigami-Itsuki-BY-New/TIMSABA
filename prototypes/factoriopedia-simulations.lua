@@ -517,7 +517,7 @@ simulations.factoriopedia_gold_pipe_to_ground =
     ]]
 }
 
--- BELLICOS AEGIS
+-- AEGIS BELLICOS
 simulations.factoriopedia_space_underground_belt =
 {
     init =

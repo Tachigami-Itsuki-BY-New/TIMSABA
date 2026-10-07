@@ -203,7 +203,7 @@ if mods[lignumis_mods] then
     TIMSABA.functions.auto_added_science_pack(steam_science_pack, steam_science_pack)
 end
 
--- BELLICOS AEGIS
+-- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
     TIMSABA.functions.auto_added_science_pack(lightweight_science_pack, lightweight_science_pack)
     TIMSABA.functions.auto_added_science_pack(pulsar_science_pack, pulsar_science_pack)

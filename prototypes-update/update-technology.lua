@@ -210,15 +210,17 @@ if data_technology[heavy_spidertron] then
     table.insert(data_technology[heavy_spidertron].unit.ingredients, {agricultural_science_pack, 1})
 end
 
+local tech_robo_modular_2 = "bob-robo-modular-2"
+data_technology[tech_robo_modular_2].prerequisites = {"bob-robo-modular-1", tech_cobalt_steel_smelting_1, battery_lithium_ion}
+
 -- PRODUCTION
 data_technology[logistic_science_pack].prerequisites = {tech_electronics, tech_logistics_1, tech_steel_processing}
-if mods[muluna_mods] then
-    table.insert(data_technology[logistic_science_pack].effects, {type = unlock_recipe, recipe = lumber_mill})
-end
 
 if mods[bobtech] then
-    data_technology[transport_science_pack].prerequisites = {tech_robots_1, tech_T3_inserter}
+    data_technology[transport_science_pack].prerequisites = {tech_robots_1, "bob-bulk-inserter-2", roboport_eq_2, vehicle_roboport_eq_2, tech_robo_modular_2, tech_fluid_handling_2, "bob-railway-2", tech_electric_substation_2, tech_electric_pole_2}
 end
+
+data_technology[production_science_pack].prerequisites = {"railway", tech_advanced_material_processing_2, productivity_module_1}
 
 data_technology[tech_electronics_0].effects =
 {
@@ -895,6 +897,10 @@ for _, tech_name in ipairs(technologies) do
         end
     end
 end
+
+data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+
+data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
 -- ANGELS RESOURCE REFINING
 if mods[lignumis_mods] then
@@ -2020,7 +2026,6 @@ data_technology[tech_lithium_processing].effects =
 data_technology[plutonium_fuel_angels].prerequisites = {tech_deuterium_power, rocket_fuel}
 
 -- BARRALING
-local tech_fluid_handling_1 = "fluid-handling"
 data_technology[tech_fluid_handling_1].effects =
 {
     {type = unlock_recipe, recipe = storage_tank_1},
@@ -2028,13 +2033,10 @@ data_technology[tech_fluid_handling_1].effects =
     {type = unlock_recipe, recipe = pump_1}
 }
 
-local tech_fluid_handling_2 = "bob-fluid-handling-2"
 data_technology[tech_fluid_handling_2].prerequisites = {chemical_science_pack, tech_brass_processing, tech_fluid_handling_1}
 
-local tech_fluid_handling_3 = "bob-fluid-handling-3"
-data_technology[tech_fluid_handling_3].prerequisites = {production_science_pack, tech_brass_processing, tech_fluid_handling_2}
+data_technology[tech_fluid_handling_3].prerequisites = {production_science_pack, tech_titanium_processing, tech_fluid_handling_2}
 
-local tech_fluid_handling_4 = "bob-fluid-handling-4"
 data_technology[tech_fluid_handling_4].prerequisites = {utility_science_pack, tech_nitinol_processing, tech_fluid_handling_3}
 if mods[bobtech] then
     table.insert(data_technology[tech_fluid_handling_4].prerequisites, transport_science_pack)

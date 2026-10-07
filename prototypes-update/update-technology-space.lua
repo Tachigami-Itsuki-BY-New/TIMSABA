@@ -6,6 +6,8 @@ table.insert(data_technology[rocket_silo].prerequisites, tech_robots_4)
 if mods[rocket_silo_construction_mods] then
     data_technology[rocket_silo].effects =
     {
+        {type = unlock_recipe, recipe = aluminium_lithium_molten},
+        {type = unlock_recipe, recipe = aluminium_lithium_plate_2},
         {type = unlock_recipe, recipe = excavation_site},
         {type = unlock_recipe, recipe = rocket_part_nauvis},
         {type = unlock_recipe, recipe = space_platform_foundation},
@@ -15,6 +17,8 @@ if mods[rocket_silo_construction_mods] then
 else
     data_technology[rocket_silo].effects =
     {
+        {type = unlock_recipe, recipe = aluminium_lithium_molten},
+        {type = unlock_recipe, recipe = aluminium_lithium_plate_2},
         {type = unlock_recipe, recipe = rocket_silo},
         {type = unlock_recipe, recipe = rocket_part_nauvis},
         {type = unlock_recipe, recipe = space_platform_foundation},
@@ -71,13 +75,15 @@ if not mods[muluna_mods] then
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_5},
         {type = unlock_recipe, recipe = nitrogen_oxide_separation},
         {type = unlock_recipe, recipe = chlorine_oxide_separation},
-        {type = unlock_recipe, recipe = sodium_hydroxide_space},
         {type = unlock_recipe, recipe = hydrogen_chloride_separation},
         {type = unlock_recipe, recipe = nitrogen_monoxide_space},
         {type = unlock_recipe, recipe = hydrazine_space},
-        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space}
+        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space},
+        {type = unlock_recipe, recipe = sodium_hydroxide_space},
+        {type = unlock_recipe, recipe = lithium_space}
     }
 end
 

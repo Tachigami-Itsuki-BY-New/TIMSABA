@@ -61,16 +61,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_boron_fluid,
         icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid_solution, sodium_sulfate_solution),
         order = a,
-        energy_required = 8, -- (Na₂B₄O₇ * 10H₂O)(s) + H₂SO₄(l) --> 4H₃BO₃(aq) + Na₂SO₄(aq)
+        -- (Na₂B₄O₇ * 10H₂O)(s) + H₂SO₄(l) --> 4H₃BO₃(aq) + Na₂SO₄(aq)
         ingredients =
         {
-            {type = item, name = borax, amount = 16},
-            {type = fluid, name = sulfuric_acid_angels, amount = 240}
+            {type = item, name = borax, amount = 4},
+            {type = fluid, name = sulfuric_acid_angels, amount = 60}
         },
         results =
         {
-            {type = fluid, name = boric_acid_solution, amount = 960},
-            {type = fluid, name = sodium_sulfate_solution, amount = 120} -- 240
+            {type = fluid, name = boric_acid_solution, amount = 240},
+            {type = fluid, name = sodium_sulfate_solution, amount = 30} -- 60
         },
         main_product = boric_acid_solution
     },
@@ -80,17 +80,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_boron_fluid,
         icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid_solution, sodium_chloride_solution, water_purified_angels),
         order = a_a,
-        energy_required = 8, -- (Na₂B₄O₇ * 10H₂O)(s) + 2HCl(aq) --> 4H₃BO₃(aq) + 2NaCl(aq) + H₂O(l)
+        -- (Na₂B₄O₇ * 10H₂O)(s) + 2HCl(aq) --> 4H₃BO₃(aq) + 2NaCl(aq) + H₂O(l)
         ingredients =
         {
-            {type = item, name = borax, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 240}
+            {type = item, name = borax, amount = 4},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 120}
         },
         results =
         {
-            {type = fluid, name = boric_acid_solution, amount = 960},
-            {type = fluid, name = sodium_chloride_solution, amount = 240}, -- 480
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+            {type = fluid, name = boric_acid_solution, amount = 240},
+            {type = fluid, name = sodium_chloride_solution, amount = 60}, -- 120
+            {type = fluid, name = water_purified_angels, amount = 30} -- 60
         }
     },
     {
