@@ -332,15 +332,28 @@ local mettalurgy_without_productivity =
     ore_processing_machine_1, ore_processing_machine_2, ore_processing_machine_3, ore_processing_machine_4,
     pellet_press_1, pellet_press_2, pellet_press_3, pellet_press_4,
     powder_mixer_1, powder_mixer_2, powder_mixer_3, powder_mixer_4,
-    blast_furnace_1, blast_furnace_2, blast_furnace_3, blast_furnace_4,
-    chemical_furnace_1, chemical_furnace_2, chemical_furnace_3, chemical_furnace_4,
-    electric_blast_furnace_1, electric_blast_furnace_2, electric_blast_furnace_3, electric_blast_furnace_4,
     induction_furnace_1, induction_furnace_2, induction_furnace_3, induction_furnace_4,
-    strand_casting_machine_1, strand_casting_machine_2, strand_casting_machine_3, strand_casting_machine_4,
 }
 for _, name in ipairs(mettalurgy_without_productivity) do
     data_assembling[name].allowed_effects = {speed, consumption, pollution}
     data_assembling[name].allowed_module_categories = {speed, efficiency, pollution_clean}
+end
+
+local mettalurgy_without_productivity_but_with_quality =
+{
+    blast_furnace_1, blast_furnace_2, blast_furnace_3, blast_furnace_4,
+    chemical_furnace_1, chemical_furnace_2, chemical_furnace_3, chemical_furnace_4,
+    electric_blast_furnace_1, electric_blast_furnace_2, electric_blast_furnace_3, electric_blast_furnace_4,
+    strand_casting_machine_1, strand_casting_machine_2, strand_casting_machine_3, strand_casting_machine_4
+}
+for _, name in ipairs(mettalurgy_without_productivity_but_with_quality) do
+    if mods[quality_mods] then
+        data_assembling[name].allowed_effects = {speed, consumption, pollution, quality}
+        data_assembling[name].allowed_module_categories = {speed, efficiency, pollution_clean, quality}
+    else
+        data_assembling[name].allowed_effects = {speed, consumption, pollution}
+        data_assembling[name].allowed_module_categories = {speed, efficiency, pollution_clean}
+    end
 end
 
 local mettalurgy_with_productivity =
