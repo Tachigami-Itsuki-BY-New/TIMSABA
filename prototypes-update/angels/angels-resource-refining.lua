@@ -478,7 +478,315 @@ data_recipe[purified_bobmonium_processing].results =
     {type = item, name = thorium_ore_bob, amount = 1}
 }
 
-data_item_subgroup[is_ore_sorting_advanced_1].order = c_e
+-- IRON ITEM
+data_item[crushed_ferrium].localised_description = {"item-description.ferrium-crushed"}
+data_item[crushed_ferrium].subgroup = is_iron_item
+data_item[crushed_ferrium].order = a
+data_recipe[crushed_ferrium].subgroup = is_iron_item
+data_recipe[crushed_ferrium].icons = THREE_I(crushed_saphirite, crushed_jivolite, crushed_ferrium)
+data_recipe[crushed_ferrium].order = a
+data_recipe[crushed_ferrium].energy_required = 2
+data_recipe[crushed_ferrium].ingredients =
+{
+    {type = item, name = crushed_saphirite, amount = 2},
+    {type = item, name = crushed_jivolite, amount = 2}
+}
+data_recipe[crushed_ferrium].results[1].amount = 4
+
+data_item[powder_ferrium].localised_description = {"item-description.ferrium-powder"}
+data_item[powder_ferrium].subgroup = is_iron_item
+data_item[powder_ferrium].order = b
+data_recipe[powder_ferrium].subgroup = is_iron_item
+data_recipe[powder_ferrium].order = b
+data_recipe[powder_ferrium].icons = TWO_I(crushed_ferrium, powder_ferrium)
+data_recipe[powder_ferrium].ingredients[1].amount = 4
+data_recipe[powder_ferrium].results[1].amount = 4
+
+data_item[dust_ferrium].localised_description = {"item-description.ferrium-dust"}
+data_item[dust_ferrium].subgroup = is_iron_item
+data_item[dust_ferrium].order = c
+data_recipe[dust_ferrium].subgroup = is_iron_item
+data_recipe[dust_ferrium].order = c
+data_recipe[dust_ferrium].icons = TWO_D_I(sludge_ferrium, sodium_angels, dust_ferrium, water_yellow_waste)
+data_recipe[dust_ferrium].energy_required = 2
+data_recipe[dust_ferrium].ingredients =
+{
+    {type = item, name = sodium_angels, amount = 4},
+    {type = fluid, name = sludge_ferrium, amount = 60}
+}
+data_recipe[dust_ferrium].results =
+{
+    {type = item, name = dust_ferrium, amount = 4},
+    {type = fluid, name = water_yellow_waste, amount = 30}
+}
+
+data_item[crystal_ferrium].localised_description = {"item-description.ferrium-crystal"}
+data_item[crystal_ferrium].subgroup = is_iron_item
+data_item[crystal_ferrium].order = d
+data_recipe[crystal_ferrium].subgroup = is_iron_item
+data_recipe[crystal_ferrium].icons = TWO_I(concentrate_anodized_ferrium, crystal_ferrium)
+data_recipe[crystal_ferrium].order = d
+data_recipe[crystal_ferrium].results[1].amount = 4
+
+data_recipe[crushed_ferrium_processing].subgroup = is_iron_item
+data_recipe[crushed_ferrium_processing].icons = RECYCLING_I(recycling_png, crushed_ferrium)
+data_recipe[crushed_ferrium_processing].order = d_a
+data_recipe[crushed_ferrium_processing].results =
+{
+    {type = item, name = iron_ore, amount = 2},
+    {type = item, name = lead_ore_bob, amount = 2}
+}
+
+data_recipe[powder_ferrium_processing].subgroup = is_iron_item
+data_recipe[powder_ferrium_processing].icons = RECYCLING_I(recycling_png, powder_ferrium)
+data_recipe[powder_ferrium_processing].order = d_b
+data_recipe[powder_ferrium_processing].energy_required = 2
+data_recipe[powder_ferrium_processing].ingredients[1].amount = 8
+data_recipe[powder_ferrium_processing].results =
+{
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = lead_ore_bob, amount = 2},
+    {type = item, name = nickel_ore_bob, amount = 1},
+    {type = item, name = zinc_ore_bob, amount = 1}
+}
+
+data_recipe[dust_ferrium_processing].subgroup = is_iron_item
+data_recipe[dust_ferrium_processing].icons = RECYCLING_I(recycling_png, dust_ferrium)
+data_recipe[dust_ferrium_processing].order = d_c
+data_recipe[dust_ferrium_processing].energy_required = 2
+data_recipe[dust_ferrium_processing].results =
+{
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = lead_ore_bob, amount = 2},
+    {type = item, name = nickel_ore_bob, amount = 1},
+    {type = item, name = zinc_ore_bob, amount = 1},
+    {type = item, name = titanium_ore_bob, amount = 1}
+}
+
+data_recipe[crystal_ferrium_processing].subgroup = is_iron_item
+data_recipe[crystal_ferrium_processing].icons = RECYCLING_I(recycling_png, crystal_ferrium)
+data_recipe[crystal_ferrium_processing].order = d_d
+data_recipe[crystal_ferrium_processing].energy_required = 2
+data_recipe[crystal_ferrium_processing].ingredients[1].amount = 8
+data_recipe[crystal_ferrium_processing].results =
+{
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = lead_ore_bob, amount = 2},
+    {type = item, name = nickel_ore_bob, amount = 1},
+    {type = item, name = zinc_ore_bob, amount = 1},
+    {type = item, name = titanium_ore_bob, amount = 1},
+    {type = item, name = chromium_ore_angels, amount = 1}
+}
+
+-- IRON FLUID
+data_fluid[sludge_ferrium].subgroup = is_iron_fluid
+data_fluid[sludge_ferrium].order = a
+TIMSABA.barreling.add_simple_fluid(sludge_ferrium)
+data_recipe[sludge_ferrium].subgroup = is_iron_fluid
+data_recipe[sludge_ferrium].icons = THREE_D_I(powder_ferrium, water_thermal_angels, sulfuric_acid_angels, sludge_ferrium)
+data_recipe[sludge_ferrium].order = a
+data_recipe[sludge_ferrium].ingredients =
+{
+    {type = item, name = powder_ferrium, amount = 4},
+    {type = fluid, name = water_thermal_angels, amount = 30},
+    {type = fluid, name = sulfuric_acid_angels, amount = 30}
+}
+data_recipe[sludge_ferrium].results[1].amount = 60
+
+data_fluid[slurry_ferrium].subgroup = is_iron_fluid
+data_fluid[slurry_ferrium].order = b
+TIMSABA.barreling.add_simple_fluid(slurry_ferrium)
+data_recipe[slurry_ferrium].subgroup = is_iron_fluid
+data_recipe[slurry_ferrium].icons = THREE_I(dust_ferrium, sulfuric_acid_angels, slurry_ferrium)
+data_recipe[slurry_ferrium].order = b
+data_recipe[slurry_ferrium].ingredients =
+{
+    {type = item, name = dust_ferrium, amount = 4},
+    {type = fluid, name = sulfuric_acid_angels, amount = 60}
+}
+data_recipe[slurry_ferrium].results[1].amount = 60
+
+data_fluid[concentrate_ferrium].subgroup = is_iron_fluid
+data_fluid[concentrate_ferrium].order = c
+TIMSABA.barreling.add_simple_fluid(concentrate_ferrium)
+data_recipe[concentrate_ferrium].subgroup = is_iron_fluid
+data_recipe[concentrate_ferrium].icons = TWO_D_I(slurry_ferrium, water_purified_angels, concentrate_ferrium, water_yellow_waste)
+data_recipe[concentrate_ferrium].order = c
+data_recipe[concentrate_ferrium].ingredients[2].amount = 60
+data_recipe[concentrate_ferrium].results =
+{
+    {type = fluid, name = concentrate_ferrium, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+data_fluid[concentrate_anodized_ferrium].subgroup = is_iron_fluid
+data_fluid[concentrate_anodized_ferrium].order = d
+TIMSABA.barreling.add_simple_fluid(concentrate_anodized_ferrium)
+data_recipe[concentrate_anodized_ferrium].subgroup = is_iron_fluid
+data_recipe[concentrate_anodized_ferrium].icons = THREE_D_I(concentrate_ferrium, nil, water_purified_angels, concentrate_anodized_ferrium, slag_angels, water_yellow_waste)
+data_recipe[concentrate_anodized_ferrium].order = d
+data_recipe[concentrate_anodized_ferrium].ingredients[2].name = water_purified_angels
+data_recipe[concentrate_anodized_ferrium].ingredients[2].amount = 60
+data_recipe[concentrate_anodized_ferrium].results[2].amount = 30
+
+-- COPPER ITEM
+data_item[crushed_cuprium].localised_description = {"item-description.cuprium-crushed"}
+data_item[crushed_cuprium].subgroup = is_copper_item
+data_item[crushed_cuprium].order = a
+data_recipe[crushed_cuprium].subgroup = is_copper_item
+data_recipe[crushed_cuprium].icons = THREE_I(crushed_stiratite, crushed_crotinnium, crushed_cuprium)
+data_recipe[crushed_cuprium].order = a
+data_recipe[crushed_cuprium].energy_required = 2
+data_recipe[crushed_cuprium].ingredients =
+{
+    {type = item, name = crushed_stiratite, amount = 2},
+    {type = item, name = crushed_crotinnium, amount = 2}
+}
+data_recipe[crushed_cuprium].results[1].amount = 4
+
+data_item[powder_cuprium].localised_description = {"item-description.cuprium-powder"}
+data_item[powder_cuprium].subgroup = is_copper_item
+data_item[powder_cuprium].order = b
+data_recipe[powder_cuprium].subgroup = is_copper_item
+data_recipe[powder_cuprium].order = b
+data_recipe[powder_cuprium].icons = TWO_I(crushed_cuprium, powder_cuprium)
+data_recipe[powder_cuprium].ingredients[1].amount = 4
+data_recipe[powder_cuprium].results[1].amount = 4
+
+data_item[dust_cuprium].localised_description = {"item-description.cuprium-dust"}
+data_item[dust_cuprium].subgroup = is_copper_item
+data_item[dust_cuprium].order = c
+data_recipe[dust_cuprium].subgroup = is_copper_item
+data_recipe[dust_cuprium].order = c
+data_recipe[dust_cuprium].icons = TWO_D_I(sludge_cuprium, sodium_angels, dust_cuprium, water_greenyellow_waste)
+data_recipe[dust_cuprium].energy_required = 2
+data_recipe[dust_cuprium].ingredients =
+{
+    {type = item, name = sodium_angels, amount = 4},
+    {type = fluid, name = sludge_cuprium, amount = 60}
+}
+data_recipe[dust_cuprium].results =
+{
+    {type = item, name = dust_cuprium, amount = 4},
+    {type = fluid, name = water_greenyellow_waste, amount = 30}
+}
+
+data_item[crystal_cuprium].localised_description = {"item-description.cuprium-crystal"}
+data_item[crystal_cuprium].subgroup = is_copper_item
+data_item[crystal_cuprium].order = d
+data_recipe[crystal_cuprium].subgroup = is_copper_item
+data_recipe[crystal_cuprium].icons = TWO_I(concentrate_anodized_cuprium, crystal_cuprium)
+data_recipe[crystal_cuprium].order = d
+data_recipe[crystal_cuprium].results[1].amount = 4
+
+data_recipe[crushed_cuprium_processing].subgroup = is_copper_item
+data_recipe[crushed_cuprium_processing].icons = RECYCLING_I(recycling_png, crushed_cuprium)
+data_recipe[crushed_cuprium_processing].order = d_a
+data_recipe[crushed_cuprium_processing].results =
+{
+    {type = item, name = copper_ore, amount = 2},
+    {type = item, name = tin_ore_bob, amount = 2}
+}
+
+data_recipe[powder_cuprium_processing].subgroup = is_copper_item
+data_recipe[powder_cuprium_processing].icons = RECYCLING_I(recycling_png, powder_cuprium)
+data_recipe[powder_cuprium_processing].order = d_b
+data_recipe[powder_cuprium_processing].energy_required = 2
+data_recipe[powder_cuprium_processing].ingredients[1].amount = 8
+data_recipe[powder_cuprium_processing].results =
+{
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = tin_ore_bob, amount = 2},
+    {type = item, name = aluminium_ore_bob, amount = 1},
+    {type = item, name = silver_ore_bob, amount = 1}
+}
+
+data_recipe[dust_cuprium_processing].subgroup = is_copper_item
+data_recipe[dust_cuprium_processing].icons = RECYCLING_I(recycling_png, dust_cuprium)
+data_recipe[dust_cuprium_processing].order = d_c
+data_recipe[dust_cuprium_processing].energy_required = 2
+data_recipe[dust_cuprium_processing].results =
+{
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = tin_ore_bob, amount = 2},
+    {type = item, name = aluminium_ore_bob, amount = 1},
+    {type = item, name = silver_ore_bob, amount = 1},
+    {type = item, name = gold_ore_bob, amount = 1}
+}
+
+data_recipe[crystal_cuprium_processing].subgroup = is_copper_item
+data_recipe[crystal_cuprium_processing].icons = RECYCLING_I(recycling_png, crystal_cuprium)
+data_recipe[crystal_cuprium_processing].order = d_d
+data_recipe[crystal_cuprium_processing].energy_required = 2
+data_recipe[crystal_cuprium_processing].ingredients[1].amount = 8
+data_recipe[crystal_cuprium_processing].results =
+{
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = tin_ore_bob, amount = 2},
+    {type = item, name = aluminium_ore_bob, amount = 1},
+    {type = item, name = silver_ore_bob, amount = 1},
+    {type = item, name = gold_ore_bob, amount = 1},
+    {type = item, name = platinum_ore_angels, amount = 1}
+}
+
+-- COPPER FLUID
+data_fluid[sludge_cuprium].subgroup = is_copper_fluid
+data_fluid[sludge_cuprium].order = a
+TIMSABA.barreling.add_simple_fluid(sludge_cuprium)
+data_recipe[sludge_cuprium].subgroup = is_copper_fluid
+data_recipe[sludge_cuprium].icons = THREE_D_I(powder_cuprium, water_thermal_angels, hydrofluoric_acid_angels, sludge_cuprium)
+data_recipe[sludge_cuprium].order = a
+data_recipe[sludge_cuprium].ingredients =
+{
+    {type = item, name = powder_cuprium, amount = 4},
+    {type = fluid, name = water_thermal_angels, amount = 30},
+    {type = fluid, name = hydrofluoric_acid_angels, amount = 30}
+}
+data_recipe[sludge_cuprium].results[1].amount = 60
+
+data_fluid[slurry_cuprium].subgroup = is_copper_fluid
+data_fluid[slurry_cuprium].order = b
+TIMSABA.barreling.add_simple_fluid(slurry_cuprium)
+data_recipe[slurry_cuprium].subgroup = is_copper_fluid
+data_recipe[slurry_cuprium].icons = THREE_I(dust_cuprium, hydrofluoric_acid_angels, slurry_cuprium)
+data_recipe[slurry_cuprium].order = b
+data_recipe[slurry_cuprium].ingredients =
+{
+    {type = item, name = dust_cuprium, amount = 4},
+    {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
+}
+data_recipe[slurry_cuprium].results[1].amount = 60
+
+data_fluid[concentrate_cuprium].subgroup = is_copper_fluid
+data_fluid[concentrate_cuprium].order = c
+TIMSABA.barreling.add_simple_fluid(concentrate_cuprium)
+data_recipe[concentrate_cuprium].subgroup = is_copper_fluid
+data_recipe[concentrate_cuprium].icons = TWO_D_I(slurry_cuprium, water_purified_angels, concentrate_cuprium, water_greenyellow_waste)
+data_recipe[concentrate_cuprium].order = c
+data_recipe[concentrate_cuprium].ingredients[2].amount = 60
+data_recipe[concentrate_cuprium].results[2].name = water_greenyellow_waste
+data_recipe[concentrate_cuprium].results =
+{
+    {type = fluid, name = concentrate_cuprium, amount = 60},
+    {type = fluid, name = water_greenyellow_waste, amount = 30}, -- 60
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+data_fluid[concentrate_anodized_cuprium].subgroup = is_copper_fluid
+data_fluid[concentrate_anodized_cuprium].order = d
+TIMSABA.barreling.add_simple_fluid(concentrate_anodized_cuprium)
+data_recipe[concentrate_anodized_cuprium].subgroup = is_copper_fluid
+data_recipe[concentrate_anodized_cuprium].icons = THREE_D_I(concentrate_cuprium, nil, water_purified_angels, concentrate_anodized_cuprium, slag_angels, water_greenyellow_waste)
+data_recipe[concentrate_anodized_cuprium].order = d
+data_recipe[concentrate_anodized_cuprium].ingredients[2].name = water_purified_angels
+data_recipe[concentrate_anodized_cuprium].ingredients[2].amount = 60
+data_recipe[concentrate_anodized_cuprium].results[2].name = water_greenyellow_waste
+data_recipe[concentrate_anodized_cuprium].results[2].amount = 30
+
+data_item_subgroup[is_ore_sorting_advanced_1].order = h
 
 data_item[mineral_catalyst].subgroup = is_ore_sorting_advanced_1
 data_item[mineral_catalyst].order = a
@@ -1037,314 +1345,6 @@ data_recipe[sulfur_air_scrubbing].results =
     {type = fluid, name = acid_angels, amount = 30}
 }
 data_recipe[sulfur_air_scrubbing].main_product = acid_angels
-
--- IRON ITEM
-data_item[crushed_ferrium].localised_description = {"item-description.ferrium-crushed"}
-data_item[crushed_ferrium].subgroup = is_iron_item
-data_item[crushed_ferrium].order = a
-data_recipe[crushed_ferrium].subgroup = is_iron_item
-data_recipe[crushed_ferrium].icons = THREE_I(crushed_saphirite, crushed_jivolite, crushed_ferrium)
-data_recipe[crushed_ferrium].order = a
-data_recipe[crushed_ferrium].energy_required = 2
-data_recipe[crushed_ferrium].ingredients =
-{
-    {type = item, name = crushed_saphirite, amount = 2},
-    {type = item, name = crushed_jivolite, amount = 2}
-}
-data_recipe[crushed_ferrium].results[1].amount = 4
-
-data_item[powder_ferrium].localised_description = {"item-description.ferrium-powder"}
-data_item[powder_ferrium].subgroup = is_iron_item
-data_item[powder_ferrium].order = b
-data_recipe[powder_ferrium].subgroup = is_iron_item
-data_recipe[powder_ferrium].order = b
-data_recipe[powder_ferrium].icons = TWO_I(crushed_ferrium, powder_ferrium)
-data_recipe[powder_ferrium].ingredients[1].amount = 4
-data_recipe[powder_ferrium].results[1].amount = 4
-
-data_item[dust_ferrium].localised_description = {"item-description.ferrium-dust"}
-data_item[dust_ferrium].subgroup = is_iron_item
-data_item[dust_ferrium].order = c
-data_recipe[dust_ferrium].subgroup = is_iron_item
-data_recipe[dust_ferrium].order = c
-data_recipe[dust_ferrium].icons = TWO_D_I(sludge_ferrium, sodium_angels, dust_ferrium, water_yellow_waste)
-data_recipe[dust_ferrium].energy_required = 2
-data_recipe[dust_ferrium].ingredients =
-{
-    {type = item, name = sodium_angels, amount = 4},
-    {type = fluid, name = sludge_ferrium, amount = 60}
-}
-data_recipe[dust_ferrium].results =
-{
-    {type = item, name = dust_ferrium, amount = 4},
-    {type = fluid, name = water_yellow_waste, amount = 30}
-}
-
-data_item[crystal_ferrium].localised_description = {"item-description.ferrium-crystal"}
-data_item[crystal_ferrium].subgroup = is_iron_item
-data_item[crystal_ferrium].order = d
-data_recipe[crystal_ferrium].subgroup = is_iron_item
-data_recipe[crystal_ferrium].icons = TWO_I(concentrate_anodized_ferrium, crystal_ferrium)
-data_recipe[crystal_ferrium].order = d
-data_recipe[crystal_ferrium].results[1].amount = 4
-
-data_recipe[crushed_ferrium_processing].subgroup = is_iron_item
-data_recipe[crushed_ferrium_processing].icons = RECYCLING_I(recycling_png, crushed_ferrium)
-data_recipe[crushed_ferrium_processing].order = d_a
-data_recipe[crushed_ferrium_processing].results =
-{
-    {type = item, name = iron_ore, amount = 2},
-    {type = item, name = lead_ore_bob, amount = 2}
-}
-
-data_recipe[powder_ferrium_processing].subgroup = is_iron_item
-data_recipe[powder_ferrium_processing].icons = RECYCLING_I(recycling_png, powder_ferrium)
-data_recipe[powder_ferrium_processing].order = d_b
-data_recipe[powder_ferrium_processing].energy_required = 2
-data_recipe[powder_ferrium_processing].ingredients[1].amount = 8
-data_recipe[powder_ferrium_processing].results =
-{
-    {type = item, name = iron_ore, amount = 4},
-    {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1}
-}
-
-data_recipe[dust_ferrium_processing].subgroup = is_iron_item
-data_recipe[dust_ferrium_processing].icons = RECYCLING_I(recycling_png, dust_ferrium)
-data_recipe[dust_ferrium_processing].order = d_c
-data_recipe[dust_ferrium_processing].energy_required = 2
-data_recipe[dust_ferrium_processing].results =
-{
-    {type = item, name = iron_ore, amount = 4},
-    {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1},
-    {type = item, name = titanium_ore_bob, amount = 1}
-}
-
-data_recipe[crystal_ferrium_processing].subgroup = is_iron_item
-data_recipe[crystal_ferrium_processing].icons = RECYCLING_I(recycling_png, crystal_ferrium)
-data_recipe[crystal_ferrium_processing].order = d_d
-data_recipe[crystal_ferrium_processing].energy_required = 2
-data_recipe[crystal_ferrium_processing].ingredients[1].amount = 8
-data_recipe[crystal_ferrium_processing].results =
-{
-    {type = item, name = iron_ore, amount = 4},
-    {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1},
-    {type = item, name = titanium_ore_bob, amount = 1},
-    {type = item, name = chromium_ore_angels, amount = 1}
-}
-
--- IRON FLUID
-data_fluid[sludge_ferrium].subgroup = is_iron_fluid
-data_fluid[sludge_ferrium].order = a
-TIMSABA.barreling.add_simple_fluid(sludge_ferrium)
-data_recipe[sludge_ferrium].subgroup = is_iron_fluid
-data_recipe[sludge_ferrium].icons = THREE_D_I(powder_ferrium, water_thermal_angels, sulfuric_acid_angels, sludge_ferrium)
-data_recipe[sludge_ferrium].order = a
-data_recipe[sludge_ferrium].ingredients =
-{
-    {type = item, name = powder_ferrium, amount = 4},
-    {type = fluid, name = water_thermal_angels, amount = 30},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30}
-}
-data_recipe[sludge_ferrium].results[1].amount = 60
-
-data_fluid[slurry_ferrium].subgroup = is_iron_fluid
-data_fluid[slurry_ferrium].order = b
-TIMSABA.barreling.add_simple_fluid(slurry_ferrium)
-data_recipe[slurry_ferrium].subgroup = is_iron_fluid
-data_recipe[slurry_ferrium].icons = THREE_I(dust_ferrium, sulfuric_acid_angels, slurry_ferrium)
-data_recipe[slurry_ferrium].order = b
-data_recipe[slurry_ferrium].ingredients =
-{
-    {type = item, name = dust_ferrium, amount = 4},
-    {type = fluid, name = sulfuric_acid_angels, amount = 60}
-}
-data_recipe[slurry_ferrium].results[1].amount = 60
-
-data_fluid[concentrate_ferrium].subgroup = is_iron_fluid
-data_fluid[concentrate_ferrium].order = c
-TIMSABA.barreling.add_simple_fluid(concentrate_ferrium)
-data_recipe[concentrate_ferrium].subgroup = is_iron_fluid
-data_recipe[concentrate_ferrium].icons = TWO_D_I(slurry_ferrium, water_purified_angels, concentrate_ferrium, water_yellow_waste)
-data_recipe[concentrate_ferrium].order = c
-data_recipe[concentrate_ferrium].ingredients[2].amount = 60
-data_recipe[concentrate_ferrium].results =
-{
-    {type = fluid, name = concentrate_ferrium, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
-}
-
-data_fluid[concentrate_anodized_ferrium].subgroup = is_iron_fluid
-data_fluid[concentrate_anodized_ferrium].order = d
-TIMSABA.barreling.add_simple_fluid(concentrate_anodized_ferrium)
-data_recipe[concentrate_anodized_ferrium].subgroup = is_iron_fluid
-data_recipe[concentrate_anodized_ferrium].icons = THREE_D_I(concentrate_ferrium, nil, water_purified_angels, concentrate_anodized_ferrium, slag_angels, water_yellow_waste)
-data_recipe[concentrate_anodized_ferrium].order = d
-data_recipe[concentrate_anodized_ferrium].ingredients[2].name = water_purified_angels
-data_recipe[concentrate_anodized_ferrium].ingredients[2].amount = 60
-data_recipe[concentrate_anodized_ferrium].results[2].amount = 30
-
--- COPPER ITEM
-data_item[crushed_cuprium].localised_description = {"item-description.cuprium-crushed"}
-data_item[crushed_cuprium].subgroup = is_copper_item
-data_item[crushed_cuprium].order = a
-data_recipe[crushed_cuprium].subgroup = is_copper_item
-data_recipe[crushed_cuprium].icons = THREE_I(crushed_stiratite, crushed_crotinnium, crushed_cuprium)
-data_recipe[crushed_cuprium].order = a
-data_recipe[crushed_cuprium].energy_required = 2
-data_recipe[crushed_cuprium].ingredients =
-{
-    {type = item, name = crushed_stiratite, amount = 2},
-    {type = item, name = crushed_crotinnium, amount = 2}
-}
-data_recipe[crushed_cuprium].results[1].amount = 4
-
-data_item[powder_cuprium].localised_description = {"item-description.cuprium-powder"}
-data_item[powder_cuprium].subgroup = is_copper_item
-data_item[powder_cuprium].order = b
-data_recipe[powder_cuprium].subgroup = is_copper_item
-data_recipe[powder_cuprium].order = b
-data_recipe[powder_cuprium].icons = TWO_I(crushed_cuprium, powder_cuprium)
-data_recipe[powder_cuprium].ingredients[1].amount = 4
-data_recipe[powder_cuprium].results[1].amount = 4
-
-data_item[dust_cuprium].localised_description = {"item-description.cuprium-dust"}
-data_item[dust_cuprium].subgroup = is_copper_item
-data_item[dust_cuprium].order = c
-data_recipe[dust_cuprium].subgroup = is_copper_item
-data_recipe[dust_cuprium].order = c
-data_recipe[dust_cuprium].icons = TWO_D_I(sludge_cuprium, sodium_angels, dust_cuprium, water_greenyellow_waste)
-data_recipe[dust_cuprium].energy_required = 2
-data_recipe[dust_cuprium].ingredients =
-{
-    {type = item, name = sodium_angels, amount = 4},
-    {type = fluid, name = sludge_cuprium, amount = 60}
-}
-data_recipe[dust_cuprium].results =
-{
-    {type = item, name = dust_cuprium, amount = 4},
-    {type = fluid, name = water_greenyellow_waste, amount = 30}
-}
-
-data_item[crystal_cuprium].localised_description = {"item-description.cuprium-crystal"}
-data_item[crystal_cuprium].subgroup = is_copper_item
-data_item[crystal_cuprium].order = d
-data_recipe[crystal_cuprium].subgroup = is_copper_item
-data_recipe[crystal_cuprium].icons = TWO_I(concentrate_anodized_cuprium, crystal_cuprium)
-data_recipe[crystal_cuprium].order = d
-data_recipe[crystal_cuprium].results[1].amount = 4
-
-data_recipe[crushed_cuprium_processing].subgroup = is_copper_item
-data_recipe[crushed_cuprium_processing].icons = RECYCLING_I(recycling_png, crushed_cuprium)
-data_recipe[crushed_cuprium_processing].order = d_a
-data_recipe[crushed_cuprium_processing].results =
-{
-    {type = item, name = copper_ore, amount = 2},
-    {type = item, name = tin_ore_bob, amount = 2}
-}
-
-data_recipe[powder_cuprium_processing].subgroup = is_copper_item
-data_recipe[powder_cuprium_processing].icons = RECYCLING_I(recycling_png, powder_cuprium)
-data_recipe[powder_cuprium_processing].order = d_b
-data_recipe[powder_cuprium_processing].energy_required = 2
-data_recipe[powder_cuprium_processing].ingredients[1].amount = 8
-data_recipe[powder_cuprium_processing].results =
-{
-    {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1}
-}
-
-data_recipe[dust_cuprium_processing].subgroup = is_copper_item
-data_recipe[dust_cuprium_processing].icons = RECYCLING_I(recycling_png, dust_cuprium)
-data_recipe[dust_cuprium_processing].order = d_c
-data_recipe[dust_cuprium_processing].energy_required = 2
-data_recipe[dust_cuprium_processing].results =
-{
-    {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1},
-    {type = item, name = gold_ore_bob, amount = 1}
-}
-
-data_recipe[crystal_cuprium_processing].subgroup = is_copper_item
-data_recipe[crystal_cuprium_processing].icons = RECYCLING_I(recycling_png, crystal_cuprium)
-data_recipe[crystal_cuprium_processing].order = d_d
-data_recipe[crystal_cuprium_processing].energy_required = 2
-data_recipe[crystal_cuprium_processing].ingredients[1].amount = 8
-data_recipe[crystal_cuprium_processing].results =
-{
-    {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1},
-    {type = item, name = gold_ore_bob, amount = 1},
-    {type = item, name = platinum_ore_angels, amount = 1}
-}
-
--- COPPER FLUID
-data_fluid[sludge_cuprium].subgroup = is_copper_fluid
-data_fluid[sludge_cuprium].order = a
-TIMSABA.barreling.add_simple_fluid(sludge_cuprium)
-data_recipe[sludge_cuprium].subgroup = is_copper_fluid
-data_recipe[sludge_cuprium].icons = THREE_D_I(powder_cuprium, water_thermal_angels, hydrofluoric_acid_angels, sludge_cuprium)
-data_recipe[sludge_cuprium].order = a
-data_recipe[sludge_cuprium].ingredients =
-{
-    {type = item, name = powder_cuprium, amount = 4},
-    {type = fluid, name = water_thermal_angels, amount = 30},
-    {type = fluid, name = hydrofluoric_acid_angels, amount = 30}
-}
-data_recipe[sludge_cuprium].results[1].amount = 60
-
-data_fluid[slurry_cuprium].subgroup = is_copper_fluid
-data_fluid[slurry_cuprium].order = b
-TIMSABA.barreling.add_simple_fluid(slurry_cuprium)
-data_recipe[slurry_cuprium].subgroup = is_copper_fluid
-data_recipe[slurry_cuprium].icons = THREE_I(dust_cuprium, hydrofluoric_acid_angels, slurry_cuprium)
-data_recipe[slurry_cuprium].order = b
-data_recipe[slurry_cuprium].ingredients =
-{
-    {type = item, name = dust_cuprium, amount = 4},
-    {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
-}
-data_recipe[slurry_cuprium].results[1].amount = 60
-
-data_fluid[concentrate_cuprium].subgroup = is_copper_fluid
-data_fluid[concentrate_cuprium].order = c
-TIMSABA.barreling.add_simple_fluid(concentrate_cuprium)
-data_recipe[concentrate_cuprium].subgroup = is_copper_fluid
-data_recipe[concentrate_cuprium].icons = TWO_D_I(slurry_cuprium, water_purified_angels, concentrate_cuprium, water_greenyellow_waste)
-data_recipe[concentrate_cuprium].order = c
-data_recipe[concentrate_cuprium].ingredients[2].amount = 60
-data_recipe[concentrate_cuprium].results[2].name = water_greenyellow_waste
-data_recipe[concentrate_cuprium].results =
-{
-    {type = fluid, name = concentrate_cuprium, amount = 60},
-    {type = fluid, name = water_greenyellow_waste, amount = 30}, -- 60
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
-}
-
-data_fluid[concentrate_anodized_cuprium].subgroup = is_copper_fluid
-data_fluid[concentrate_anodized_cuprium].order = d
-TIMSABA.barreling.add_simple_fluid(concentrate_anodized_cuprium)
-data_recipe[concentrate_anodized_cuprium].subgroup = is_copper_fluid
-data_recipe[concentrate_anodized_cuprium].icons = THREE_D_I(concentrate_cuprium, nil, water_purified_angels, concentrate_anodized_cuprium, slag_angels, water_greenyellow_waste)
-data_recipe[concentrate_anodized_cuprium].order = d
-data_recipe[concentrate_anodized_cuprium].ingredients[2].name = water_purified_angels
-data_recipe[concentrate_anodized_cuprium].ingredients[2].amount = 60
-data_recipe[concentrate_anodized_cuprium].results[2].name = water_greenyellow_waste
-data_recipe[concentrate_anodized_cuprium].results[2].amount = 30
 
 data_item_subgroup["angels-ore-sorting-fluid"].order = y
 
