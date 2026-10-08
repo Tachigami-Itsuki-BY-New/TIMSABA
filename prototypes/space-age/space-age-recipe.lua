@@ -337,7 +337,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lime_space,
-        categories = {angels_blast_smelting_4},
+        categories = {chemistry},
         subgroup = is_space_processing_2,
         icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
         order = c,
