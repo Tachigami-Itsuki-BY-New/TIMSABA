@@ -1803,7 +1803,7 @@ data_technology[tech_water_treatment_4].effects =
     {type = unlock_recipe, recipe = solid_salt_from_saline}
 }
 
-data_technology[electric_boiler_3].prerequisites = {electric_boiler_2, tech_advanced_chemistry_4, utility_science_pack, tech_copper_tungsten_processing}
+data_technology[electric_boiler_3].prerequisites = {electric_boiler_2, tech_advanced_chemistry_4, tech_tungsten_processing}
 
 data_technology["angels-coolant-1"].prerequisites = {"angels-cooling", tech_slag_processing_2, "angels-oil-processing", battery_lithium_ion}
 
@@ -1840,7 +1840,6 @@ data_technology[tech_nitrogen_processing_3].effects =
 data_technology[tech_nitrogen_processing_4].prerequisites = {tech_nitrogen_processing_3, tech_copper_tungsten_processing, tech_advanced_chemistry_5, tech_metallurgy_5}
 data_technology[tech_nitrogen_processing_4].effects =
 {
-    {type = unlock_recipe, recipe = air_filter_4},
     {type = unlock_recipe, recipe = dinitrogen_tetroxide_angels},
     {type = unlock_recipe, recipe = methylamine_angels},
     {type = unlock_recipe, recipe = dimethylamine_angels},
@@ -1955,6 +1954,7 @@ table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_
 data_technology[tech_advanced_chemistry_4].prerequisites = {tech_titanium_processing, tech_stone_smelting_3, processing_unit, tech_advanced_chemistry_3}
 data_technology[tech_advanced_chemistry_4].effects =
 {
+    {type = unlock_recipe, recipe = air_filter_4},
     {type = unlock_recipe, recipe = electrolyser_4},
     {type = unlock_recipe, recipe = liquifier_4},
     {type = unlock_recipe, recipe = chemical_plant_4},
