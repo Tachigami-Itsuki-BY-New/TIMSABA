@@ -129,7 +129,7 @@ TIMSABA.functions.create_recipes
         localised_name = {"recipe-name.sorting-recipe", {"item-name." .. powellite_ore}},
         name = powellite_ore .. _sorting,
         categories = {angels_ore_sorting_5},
-        subgroup = is_ore_sorting,
+        subgroup = is_powellite,
         icons = RECYCLING_I(recycling_png, powellite_ore),
         order = f,
         allow_productivity = true,
@@ -141,7 +141,7 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_crushed_sorting,
         categories = {angels_ore_sorting_5},
-        subgroup = is_ore_sorting_T1,
+        subgroup = is_powellite,
         icons = RECYCLING_I(recycling_png, powellite_crushed),
         order = g,
         allow_productivity = true,

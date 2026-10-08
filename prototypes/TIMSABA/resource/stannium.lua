@@ -1,6 +1,6 @@
 local graphics_stannium = "__TIMSABA__/graphics/icons/angels/resource/stannium/"
 
--- Stannium / Sn + Cu + Al + Ag + U + Th
+-- Stannium / Sn + Mg + Al + Ag + U + Th
 
 -- ITEM
 crushed_stannium = "stannium-crushed"
@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_stannium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 1, -- Stannium crushed (Sorting) / Sn + Cu
+        energy_required = 1, -- Stannium crushed (Sorting) / Sn + Mg
         ingredients = {{type = item, name = crushed_stannium, amount = 4}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 2},
-            {type = item, name = copper_ore, amount = 2}
+            {type = item, name = magnesium_ore, amount = 2}
         },
         main_product = tin_ore_bob
     },
@@ -180,12 +180,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powder_stannium),
         order = d_b,
         allow_productivity = true,
-        energy_required = 2, -- Stannium powder (Sorting) / Sn + Cu + Al + Ag
+        energy_required = 2, -- Stannium powder (Sorting) / Sn + Mg + Al + Ag
         ingredients = {{type = item, name = powder_stannium, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = magnesium_ore, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1}
         },
@@ -198,12 +198,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, dust_stannium),
         order = d_c,
         allow_productivity = true,
-        energy_required = 2, -- Stannium dust (Sorting) / Sn + Cu + Al + Ag + U
+        energy_required = 2, -- Stannium dust (Sorting) / Sn + Mg + Al + Ag + U
         ingredients = {{type = item, name = dust_stannium, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = magnesium_ore, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = uranium_ore, amount = 1}
@@ -217,12 +217,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_stannium),
         order = d_d,
         allow_productivity = true,
-        energy_required = 2, -- Stannium crystal (Sorting) / Sn + Cu + Al + Ag + U + Th
+        energy_required = 2, -- Stannium crystal (Sorting) / Sn + Mg + Al + Ag + U + Th
         ingredients = {{type = item, name = crystal_stannium, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = magnesium_ore, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = uranium_ore, amount = 1},
