@@ -1038,9 +1038,7 @@ data_technology[tech_ore_advanced_crushing].effects =
     {type = unlock_recipe, recipe = crushed_ferrium_processing},
     {type = unlock_recipe, recipe = crushed_cuprium_processing},
     {type = unlock_recipe, recipe = crushed_plumbium_processing},
-    {type = unlock_recipe, recipe = crushed_stannium_processing},
-    {type = unlock_recipe, recipe = manganese_ore_recipe},
-    {type = unlock_recipe, recipe = magnesium_ore_recipe}
+    {type = unlock_recipe, recipe = crushed_stannium_processing}
 }
 
 data_technology[tech_ore_powderizer].effects =
@@ -1100,6 +1098,9 @@ data_technology[tech_ore_electro_whinning_cell].effects =
     {type = unlock_recipe, recipe = crystal_plumbium_processing},
     {type = unlock_recipe, recipe = crystal_stannium_processing}
 }
+
+table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
 
 table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = calcium_recipe})
 
