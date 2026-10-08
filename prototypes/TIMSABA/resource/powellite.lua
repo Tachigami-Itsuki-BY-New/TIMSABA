@@ -10,7 +10,7 @@ TIMSABA.functions.create_items
 ({
     {
         name = powellite_ore,
-        subgroup = is_ores,
+        subgroup = is_powellite,
         icon = graphics_powellite .. powellite_ore .. ".png",
         pictures =
         {
@@ -18,35 +18,35 @@ TIMSABA.functions.create_items
             {filename = graphics_powellite .. powellite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
             {filename = graphics_powellite .. powellite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
-        order = i
+        order = a
     },
     {
         name = powellite_crushed,
-        subgroup = is_ore_processing_a,
+        subgroup = is_powellite,
         icon = graphics_powellite .. powellite_crushed .. ".png",
         icon_size = 32,
-        order = i
+        order = b
     },
     {
         name = powellite_chunks,
-        subgroup = is_ore_processing_b,
+        subgroup = is_powellite,
         icon = graphics_powellite .. powellite_chunks .. ".png",
         icon_size = 32,
-        order = i
+        order = c
     },
     {
         name = powellite_crystals,
-        subgroup = is_ore_processing_c,
+        subgroup = is_powellite,
         icon = graphics_powellite .. powellite_crystals .. ".png",
         icon_size = 32,
-        order = i
+        order = d
     },
     {
         name = powellite_purified,
-        subgroup = is_ore_processing_d,
+        subgroup = is_powellite,
         icon = graphics_powellite .. powellite_purified .. ".png",
         icon_size = 32,
-        order = i
+        order = e
     }
 })
 
@@ -63,9 +63,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_crushed,
         categories = {angels_ore_refining_T1},
-        subgroup = is_ore_processing_a,
+        subgroup = is_powellite,
         icons = THREE_R_I(powellite_ore, powellite_crushed, stone_crushed_angels),
-        order = i,
+        order = b,
         energy_required = 2, -- Powellite ore -crushing-> Powellite crushed + Stone crushed (crushing)
         ingredients = {{type = item, name = powellite_ore, amount = 2}},
         results =
@@ -79,9 +79,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_chunks,
         categories = {angels_ore_refining_T2},
-        subgroup = is_ore_processing_b,
+        subgroup = is_powellite,
         icons = THREE_D_I(powellite_crushed, nil, water_purified_angels, powellite_chunks, calcium_silicate, water_green_waste),
-        order = i,
+        order = c,
         energy_required = 2, -- Powellite crushed + Purified water -flotation-> Powellite chunks + Calcium silicate + Chloric waste water
         ingredients =
         {
@@ -100,9 +100,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_crystals,
         categories = {angels_ore_refining_T3},
-        subgroup = is_ore_processing_c,
+        subgroup = is_powellite,
         icons = THREE_I(powellite_chunks, hydrochloric_acid_angels, powellite_crystals),
-        order = i,
+        order = d,
         energy_required = 2, -- Powellite chunks + HCl -leaching-> Powellite crystals
         ingredients =
         {
@@ -116,9 +116,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_purified,
         categories = {angels_ore_refining_T4},
-        subgroup = is_ore_processing_d,
+        subgroup = is_powellite,
         icons = TWO_I(powellite_crystals, powellite_purified),
-        order = i,
+        order = e,
         energy_required = 2, -- Powellite crystals -refinery-> Powellite purified
         ingredients = {{type = item, name = powellite_crystals, amount = 4}},
         results = {{type = item, name = powellite_purified, amount = 4}},
@@ -131,7 +131,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting,
         icons = RECYCLING_I(recycling_png, powellite_ore),
-        order = i,
+        order = f,
         allow_productivity = true,
         energy_required = 1,
         ingredients = {{type = item, name = powellite_ore, amount = 4}},
@@ -143,7 +143,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, powellite_crushed),
-        order = i,
+        order = g,
         allow_productivity = true,
         energy_required = 1, -- Powellite crushed (Sorting) / Ca + Mo + Calcium silicate
         ingredients = {{type = item, name = powellite_crushed, amount = 4}},
@@ -158,9 +158,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_chunks_sorting,
         categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_T2,
+        subgroup = is_powellite,
         icons = RECYCLING_I(recycling_png, powellite_chunks),
-        order = i,
+        order = h,
         allow_productivity = true,
         energy_required = 2, -- Powellite chunks (Sorting) / Ca + Mo + Cu + Pb + Calcium silicate
         ingredients = {{type = item, name = powellite_chunks, amount = 8}},
@@ -177,7 +177,7 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_crystals_sorting,
         categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_T3,
+        subgroup = is_powellite,
         icons = RECYCLING_I(recycling_png, powellite_crystals),
         order = i,
         allow_productivity = true,
@@ -197,9 +197,9 @@ TIMSABA.functions.create_recipes
     {
         name = powellite_purified_sorting,
         categories = {ore_sorting_6},
-        subgroup = is_ore_sorting_T4,
+        subgroup = is_powellite,
         icons = RECYCLING_I(recycling_png, powellite_purified),
-        order = i,
+        order = j,
         allow_productivity = true,
         energy_required = 2, -- Powellite purified (Sorting) / Ca + Mo + Cu + Pb + W + Ho
         ingredients = {{type = item, name = powellite_purified, amount = 8}},
