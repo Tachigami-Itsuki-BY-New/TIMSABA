@@ -1,6 +1,6 @@
 local graphics_franckeite = "__TIMSABA__/graphics/icons/angels/resource/franckeite-ore/"
 
--- Franckeite ore / Sn + Mg + Al + Ag + Au + Pt
+-- Franckeite ore / Sn + Pb + Al + Ag + Au + Pt
 ore_franckeite = "franckeite-ore"
 crushed_franckeite = "franckeite-crushed"
 chunk_franckeite = "franckeite-chunk"
@@ -132,12 +132,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_franckeite),
         order = h,
         allow_productivity = true,
-        energy_required = 1, -- Franckeite crushed (Sorting) / Sn + Mg + Calcium silicate
+        energy_required = 1, -- Franckeite crushed (Sorting) / Sn + Pb + Calcium silicate
         ingredients = {{type = item, name = crushed_franckeite, amount = 4}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 2},
-            {type = item, name = magnesium_ore, amount = 1},
+            {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = tin_ore_bob
@@ -149,12 +149,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, chunk_franckeite),
         order = h,
         allow_productivity = true,
-        energy_required = 2, -- Franckeite chunks (Sorting) / Sn + Mg + Al + Ag + Calcium silicate
+        energy_required = 2, -- Franckeite chunks (Sorting) / Sn + Pb + Al + Ag + Calcium silicate
         ingredients = {{type = item, name = chunk_franckeite, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
+            {type = item, name = lead_ore_bob, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
@@ -168,12 +168,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_franckeite),
         order = h,
         allow_productivity = true,
-        energy_required = 2, -- Franckeite crystals (Sorting) / Sn + Mg + Al + Ag + Au + Calcium silicate
+        energy_required = 2, -- Franckeite crystals (Sorting) / Sn + Pb + Al + Ag + Au + Calcium silicate
         ingredients = {{type = item, name = crystal_franckeite, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
+            {type = item, name = lead_ore_bob, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = gold_ore_bob, amount = 1},
@@ -188,12 +188,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, purified_franckeite),
         order = h,
         allow_productivity = true,
-        energy_required = 2, -- Franckeite purified (Sorting) / Sn + Mg + Al + Ag + Au + Pt
+        energy_required = 2, -- Franckeite purified (Sorting) / Sn + Pb + Al + Ag + Au + Pt
         ingredients = {{type = item, name = purified_franckeite, amount = 8}},
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
+            {type = item, name = lead_ore_bob, amount = 2},
             {type = item, name = aluminium_ore_bob, amount = 1},
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = gold_ore_bob, amount = 1},
