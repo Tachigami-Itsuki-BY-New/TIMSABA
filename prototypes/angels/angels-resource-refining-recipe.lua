@@ -8,9 +8,9 @@ if settings.startup[setting_early_sintering_oven].value then
             subgroup = is_processing_crafting,
             icons = TWO_I(stone_crushed_angels, stone),
             order = d,
-            energy_required = 1,
-            ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
-            results = {{type = item, name = stone, amount = 4}},
+            energy_required = 8,
+            ingredients = {{type = item, name = stone_crushed_angels, amount = 16}},
+            results = {{type = item, name = stone, amount = 8}},
             main_product = stone
         }
     })
