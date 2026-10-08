@@ -650,7 +650,7 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-electric-boiler"},
         pollution = 0,
-        drain = 480,
+        drain = 480 .. kW,
         energy_usage = (3840 - 480) .. kW,
         max_health = 800,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
