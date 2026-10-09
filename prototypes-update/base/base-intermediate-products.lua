@@ -422,9 +422,6 @@ data_recipe[glass_fiber_board].ingredients =
 
 data_item[basic_circuit_board].order = a
 data_item[basic_circuit_board].subgroup = is_circuit_boards
-if mods[muluna_mods] then
-    table.insert(data_recipe[basic_circuit_board].categories, advanced_wood_processing)
-end
 data_recipe[basic_circuit_board].order = a
 data_recipe[basic_circuit_board].subgroup = is_circuit_boards
 data_recipe[basic_circuit_board].allow_productivity = true
