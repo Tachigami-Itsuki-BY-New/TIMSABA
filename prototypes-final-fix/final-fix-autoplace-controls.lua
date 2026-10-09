@@ -167,7 +167,7 @@ end
 -- LIGNUMIS
 if mods[lignumis_mods] then
     local wodginite_patch = "lignumis_gold"
-    data_autoplace_control[wodginite_patch].localised_name = {"", "[entity=wodginite-patch] ", {"entity-name.wodginite-patch"}}
+    data_autoplace_control[wodginite_patch].localised_name = {"", "[entity=gold-patch] ", {"entity-name.wodginite-patch"}}
     data_autoplace_control[wodginite_patch].order = data_planet[planet_lignumis].order .. a
     data_autoplace_control["lignumis_peat"].order = data_planet[planet_lignumis].order .. a_a
 end
