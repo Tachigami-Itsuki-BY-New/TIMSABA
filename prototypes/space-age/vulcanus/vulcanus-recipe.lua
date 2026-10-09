@@ -474,7 +474,7 @@ local function create_recipe_casting_cable(name, order, ingredient, result)
             order = order,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 1,
+            energy_required = 4,
             ingredients =
             {
                 {type = fluid, name = copper_molten_angels, amount = 60},
