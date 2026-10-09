@@ -69,7 +69,15 @@ if mods[lignumis_mods] then
             energy_usage = 225 .. kW
         }
     })
+    table.insert(data_recipe[burner_ore_sorting_facility].categories, lignumis_wood_processing)
     data_assembling[burner_ore_sorting_facility].next_upgrade = ore_sorting_facility_1
+    table.insert(data_recipe[burner_chemical_plant].categories, lignumis_wood_processing)
     data_assembling[burner_chemical_plant].next_upgrade = chemical_plant_1
+    table.insert(data_recipe[burner_seed_extractor].categories, lignumis_wood_processing)
     data_assembling[burner_seed_extractor].next_upgrade = seed_extractor_1
+    if mods[muluna_mods] then
+        table.insert(data_recipe[burner_ore_sorting_facility].categories, advanced_wood_processing)
+        table.insert(data_recipe[burner_chemical_plant].categories, advanced_wood_processing)
+        table.insert(data_recipe[burner_seed_extractor].categories, advanced_wood_processing)
+    end
 end

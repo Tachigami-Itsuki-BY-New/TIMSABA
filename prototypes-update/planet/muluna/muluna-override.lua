@@ -290,6 +290,9 @@ if mods[muluna_mods] then
     }
 
     data_recipe[tree_crushing].categories = {advanced_wood_processing}
+    if mods[lignumis_mods] then
+        table.insert(data_recipe[tree_crushing].categories, lignumis_wood_processing)
+    end
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
     data_recipe[tree_crushing].order = b
