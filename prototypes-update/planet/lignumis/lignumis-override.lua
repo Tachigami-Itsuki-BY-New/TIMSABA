@@ -546,11 +546,10 @@ if mods[lignumis_mods] then
     }
     data_assembling[burner_lumber_mill].subgroup = is_lignumis_building
     data_assembling[burner_lumber_mill].order = e
-    data_assembling[burner_lumber_mill].crafting_speed = 0.5
-    data_assembling[burner_lumber_mill].module_slots = 0
+    data_assembling[burner_lumber_mill].crafting_speed = 1
+    data_assembling[burner_lumber_mill].module_slots = 2
     data_assembling[burner_lumber_mill].energy_usage = 900 .. kW
     data_assembling[burner_lumber_mill].energy_source.emissions_per_minute.pollution = 8
-    data_assembling[burner_lumber_mill].energy_source.effectivity = 0.5
     if mods[muluna_mods] then
         data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
     end
@@ -721,7 +720,7 @@ if mods[lignumis_mods] then
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
     if mods[muluna_mods] then
-        table.insert(data_recipe[wooden_wall].categories, advanced_wood_processing)
+        table.insert(data_recipe[basic_radar].categories, advanced_wood_processing)
     end
     data_recipe[basic_radar].subgroup = is_lignumis_war
     data_recipe[basic_radar].order = e

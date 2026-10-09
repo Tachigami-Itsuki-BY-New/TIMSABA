@@ -240,6 +240,9 @@ data_item[wood_pellets].fuel_categories = {base_fuel}
 if mods[muluna_mods] then
     table.insert(data_recipe[wood_pellets].categories, advanced_wood_processing)
 end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[wood_pellets].categories, lignumis_wood_processing)
+end
 data_recipe[wood_pellets].icons = TWO_I(cellulose_fiber_angels, wood_pellets)
 data_recipe[wood_pellets].order = c
 data_recipe[wood_pellets].ingredients[1].amount = 8
@@ -257,6 +260,9 @@ data_item[wood_bricks].fuel_value = 28800 .. kJ
 data_item[wood_bricks].fuel_categories = {base_fuel}
 if mods[muluna_mods] then
     table.insert(data_recipe[wood_bricks].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[wood_bricks].categories, lignumis_wood_processing)
 end
 data_recipe[wood_bricks].icons = TWO_I(wood_pellets, wood_bricks)
 data_recipe[wood_bricks].order = d
