@@ -27,14 +27,14 @@ data_recipe[chemical_science_pack].ingredients =
 }
 
 if mods[bobtech] then
-    data_recipe[transport_science_pack].energy_required = 16
+    data_recipe[transport_science_pack].energy_required = 64
     data_recipe[transport_science_pack].ingredients =
     {
-        {type = item, name = flying_robot_frame_2, amount = 2},
+        {type = item, name = flying_robot_frame_2, amount = 8},
         {type = item, name = storage_tank_2_alt, amount = 1},
         {type = item, name = locomotive_2, amount = 1}
     }
-    data_recipe[transport_science_pack].results[1].amount = 4
+    data_recipe[transport_science_pack].results[1].amount = 16
 end
 
 data_recipe[production_science_pack].energy_required = 16
