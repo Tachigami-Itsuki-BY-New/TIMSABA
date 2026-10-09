@@ -1,6 +1,6 @@
 local graphics_senaite = "__TIMSABA__/graphics/icons/angels/resource/senaite-ore/"
 
--- Senaite ore / Pb + Mn + Ni + Zn + Ti + Cr
+-- Senaite ore / Pb + Sn + Ni + Zn + Ti + Cr
 ore_senaite = "senaite-ore"
 crushed_senaite = "senaite-crushed"
 chunk_senaite = "senaite-chunk"
@@ -132,12 +132,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_senaite),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Senaite crushed (Sorting) / Pb + Mn + Calcium silicate
+        energy_required = 1, -- Senaite crushed (Sorting) / Pb + Sn + Calcium silicate
         ingredients = {{type = item, name = crushed_senaite, amount = 4}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = manganese_ore_angels, amount = 1},
+            {type = item, name = tin_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
         },
         main_product = lead_ore_bob
@@ -149,12 +149,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, chunk_senaite),
         order = g,
         allow_productivity = true,
-        energy_required = 2, -- Senaite chunks (Sorting) / Pb + Mn + Ni + Zn + Calcium silicate
+        energy_required = 2, -- Senaite chunks (Sorting) / Pb + Sn + Ni + Zn + Calcium silicate
         ingredients = {{type = item, name = chunk_senaite, amount = 8}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = manganese_ore_angels, amount = 2},
+            {type = item, name = tin_ore_bob, amount = 2},
             {type = item, name = nickel_ore_bob, amount = 1},
             {type = item, name = zinc_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
@@ -168,12 +168,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_senaite),
         order = g,
         allow_productivity = true,
-        energy_required = 2, -- Senaite crystals (Sorting) / Pb + Mn + Ni + Zn + Ti + Calcium silicate
+        energy_required = 2, -- Senaite crystals (Sorting) / Pb + Sn + Ni + Zn + Ti + Calcium silicate
         ingredients = {{type = item, name = crystal_senaite, amount = 8}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = manganese_ore_angels, amount = 2},
+            {type = item, name = tin_ore_bob, amount = 2},
             {type = item, name = nickel_ore_bob, amount = 1},
             {type = item, name = zinc_ore_bob, amount = 1},
             {type = item, name = titanium_ore_bob, amount = 1},
@@ -188,12 +188,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, purified_senaite),
         order = g,
         allow_productivity = true,
-        energy_required = 2, -- Senaite purified (Sorting) / Pb + Mn + Ni + Zn + Ti + Cr
+        energy_required = 2, -- Senaite purified (Sorting) / Pb + Sn + Ni + Zn + Ti + Cr
         ingredients = {{type = item, name = purified_senaite, amount = 8}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = manganese_ore_angels, amount = 2},
+            {type = item, name = tin_ore_bob, amount = 2},
             {type = item, name = nickel_ore_bob, amount = 1},
             {type = item, name = zinc_ore_bob, amount = 1},
             {type = item, name = titanium_ore_bob, amount = 1},
