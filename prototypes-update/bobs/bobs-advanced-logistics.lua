@@ -388,7 +388,7 @@ local roboports =
 }
 for _, BUILD in pairs(roboports) do
     if data_item[BUILD.name] then
-        data_item[BUILD.name].stack_size = 8
+        data_item[BUILD.name].stack_size = 16
         data_item[BUILD.name].weight = 125000
         data_recipe[BUILD.name].energy_required = 4
         data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 100) .. kJ -- 200MJ
@@ -432,7 +432,7 @@ local logistic_zone =
 }
 for _, BUILD in pairs(logistic_zone) do
     if data_item[BUILD.name] then
-        data_item[BUILD.name].stack_size = 16
+        data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 62500
         data_recipe[BUILD.name].energy_required = 4
         data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 20) .. kJ -- 10MJ * charging_station_count
@@ -473,7 +473,7 @@ local robochests =
 }
 for _, BUILD in pairs(robochests) do
     if data_item[BUILD.name] then
-        data_item[BUILD.name].stack_size = 8
+        data_item[BUILD.name].stack_size = 16
         data_item[BUILD.name].weight = 125000
         data_recipe[BUILD.name].energy_required = 4
         data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 20) .. kJ -- 20000kJ
@@ -503,7 +503,7 @@ local robo_port =
 }
 for _, BUILD in pairs(robo_port) do
     if data_item[BUILD.name] then
-        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].stack_size = 64
         data_item[BUILD.name].weight = 31250
         data_recipe[BUILD.name].energy_required = 4
         data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 64) .. kJ -- 100000kJ
@@ -542,7 +542,7 @@ for _, BUILD in pairs(robo_port_large) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].subgroup = is_logistic_roboport_charge_large
         data_item[BUILD.name].order = BUILD.order
-        data_item[BUILD.name].stack_size = 16
+        data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 62500
         data_recipe[BUILD.name].subgroup = is_logistic_roboport_charge_large
         data_recipe[BUILD.name].order = BUILD.order
