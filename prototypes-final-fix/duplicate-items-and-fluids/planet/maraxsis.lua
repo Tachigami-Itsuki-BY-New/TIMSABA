@@ -57,4 +57,9 @@ if mods[maraxsis_mods] then
 			end
 		end
 	end
+	for name, _ in pairs(data_recipe) do
+		if name:find("^maraxsis%-fluid%-void%-") then
+			data_recipe[name] = nil
+		end
+	end
 end
