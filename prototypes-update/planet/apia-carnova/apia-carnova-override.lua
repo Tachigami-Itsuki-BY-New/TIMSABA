@@ -350,11 +350,19 @@ if mods[apia_carnova_mods] then
 
     local biolubricant_from_glycerine = "biolubricant-from-glycerine"
     data_recipe[biolubricant_from_glycerine].subgroup = is_carnova_recipe
-    data_recipe[biolubricant_from_glycerine].icons = TWO_I(glycerol_angels, lubricant)
+    data_recipe[biolubricant_from_glycerine].icons = TWO_D_I(glycerol_angels, hydrogen_angels, lubricant, water_purified_angels)
     data_recipe[biolubricant_from_glycerine].order = j_a
-    data_recipe[biolubricant_from_glycerine].energy_required = 4 -- 8C₃H₈O₃ -bio-> C₄₀H₈₂
-    data_recipe[biolubricant_from_glycerine].ingredients[1].amount = 120
-    data_recipe[biolubricant_from_glycerine].results[1].amount = 15
+    data_recipe[biolubricant_from_glycerine].energy_required = 4 -- 16C₃H₈O₃(l) + 33H₂(g) -bio-> C₄₈H₉₈(l) + 48H₂O(l)
+    data_recipe[biolubricant_from_glycerine].ingredients =
+    {
+        {type = fluid, name = water_purified_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 495}
+    }
+    data_recipe[biolubricant_from_glycerine].results =
+    {
+        {type = fluid, name = lubricant, amount = 15},
+        {type = fluid, name = water_purified_angels, amount = 240} -- 720
+    }
 
     local solid_fuel_from_glycerine = "solid-fuel-from-glycerine"
     data_recipe[solid_fuel_from_glycerine].subgroup = is_carnova_recipe
