@@ -1179,3 +1179,8 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
         end
     end
 end
+
+function TIMSABA.numeral_tier(icon_data, tier, tint)
+    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
+    return icons
+end
