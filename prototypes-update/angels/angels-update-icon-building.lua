@@ -1080,6 +1080,44 @@ do
     end
 end
 
+-- ADVANCED ELECTROLYSER
+do
+    local advanced_electrolysers =
+    {
+        {name = advanced_electrolyser_1, tier = 1},
+        {name = advanced_electrolyser_2, tier = 2},
+        {name = advanced_electrolyser_3, tier = 3},
+        {name = advanced_electrolyser_4, tier = 4}
+    }
+    for _, info in ipairs(advanced_electrolysers) do
+        data_item[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, item)
+        data_recipe[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, recipe)
+        data_assembling[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, assembling_machine)
+    end
+end
+
+-- INDUSTRIAL ELECTROLYSER
+do
+    local advanced_electrolysers =
+    {
+        {name = industrial_electrolyser_1, tier = 1},
+        {name = industrial_electrolyser_2, tier = 2},
+        {name = industrial_electrolyser_3, tier = 3},
+        {name = industrial_electrolyser_4, tier = 4}
+    }
+    for _, info in ipairs(advanced_electrolysers) do
+        data_item[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, item)
+        data_recipe[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, recipe)
+        data_assembling[info.name].icons = {{icon = error_png, icon_size = 64}}
+        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.tier, info.name, assembling_machine)
+    end
+end
+
 -- AIR FILTER
 do
     local inputs =
@@ -1878,6 +1916,7 @@ do
         ::continue::
     end
 end
+
 -- BUTCHERY
 do
     local inputs =

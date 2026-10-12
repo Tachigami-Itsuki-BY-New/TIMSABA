@@ -152,7 +152,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_calcium,
         icons = FOUR_R_I(calcium_chloride_solution, hydrogen_chloride_angels, calcium, oxygen_angels),
         order = a,
-        energy_required = 8, -- (CaCl₂ + H₂O) -electrode/electrolyser-> Ca + 2HCl + O₂
+        energy_required = 8, -- 2CaCl₂(aq) -electrode/electrolyser-> 2Ca(s) + 4HCl(g) + O₂(g)
         ingredients =
         {
             {type = fluid, name = calcium_chloride_solution, amount = 240},
@@ -161,8 +161,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = calcium, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 240}, -- 480
-            {type = fluid, name = oxygen_angels, amount = 120}, -- 240
+            {type = fluid, name = hydrogen_chloride_angels, amount = 480},
+            {type = fluid, name = oxygen_angels, amount = 120},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },

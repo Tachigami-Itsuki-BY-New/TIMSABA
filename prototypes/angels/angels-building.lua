@@ -1,8 +1,3 @@
-function TIMSABA.numeral_tier(icon_data, tier, tint)
-    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
-    return icons
-end
-
 -- ANGELS RESOURCE REFINING
 TIMSABA.functions.create_buildings
 ({
@@ -673,6 +668,8 @@ data_assembling[electric_boiler_3].next_upgrade = electric_boiler_4
 data_assembling[electric_boiler_4].next_upgrade = nil
 
 -- ANGELS PETROCHEM REFINING
+require("prototypes.angels.angels-building-electrolyser")
+
 TIMSABA.functions.create_buildings
 ({
     -- AIR FILTER

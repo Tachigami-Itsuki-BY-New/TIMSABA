@@ -176,17 +176,20 @@ is_plastic = "is-plastic"
 is_resin = "is-resin"
 is_rubber = "is-rubber"
 is_explosives = "is-explosives"
-is_buildings_electrolyser = "angels-petrochem-buildings-electrolyser" -- z
-is_buildings_air_filter = "is-buildings-air-filter" -- z_a
-is_buildings_liquefier = "is-buildings-liquefier" -- z_b
-is_buildings_chemical_plant = "angels-petrochem-buildings-chemical-plant" -- z_c
-is_buildings_advanced_chemical_plant = "is-buildings-advanced-chemical-plant" -- z_d
-is_buildings_gas_refinery = "angels-petrochem-buildings-gas-refinery" -- z_e
-is_buildings_advanced_gas_refinery = "is-buildings-advanced-gas-refinery" -- z_f
-is_buildings_oil_refinery = "angels-petrochem-buildings-oil-refinery" -- z_g
-is_buildings_oil_gas_separator = "is-buildings-oil-gas-separator" -- z_h
-is_buildings_steam = "angels-petrochem-buildings-steam" -- z_i
-is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_j
+is_buildings_burner_chemistry = "is-buildings-burner-chemistry" -- z
+is_buildings_electrolyser = "angels-petrochem-buildings-electrolyser" -- z_a
+is_buildings_advanced_electrolyser = "is-buildings-advanced-electrolyser" -- z_a_a
+is_buildings_industrial_electrolyser = "is-buildings-industrial-electrolyser" -- z_a_b
+is_buildings_air_filter = "is-buildings-air-filter" -- z_b
+is_buildings_liquefier = "is-buildings-liquefier" -- z_c
+is_buildings_chemical_plant = "angels-petrochem-buildings-chemical-plant" -- z_d
+is_buildings_advanced_chemical_plant = "is-buildings-advanced-chemical-plant" -- z_e
+is_buildings_gas_refinery = "angels-petrochem-buildings-gas-refinery" -- z_f
+is_buildings_advanced_gas_refinery = "is-buildings-advanced-gas-refinery" -- z_g
+is_buildings_oil_refinery = "angels-petrochem-buildings-oil-refinery" -- z_h
+is_buildings_oil_gas_separator = "is-buildings-oil-gas-separator" -- z_i
+is_buildings_steam = "angels-petrochem-buildings-steam" -- z_j
+is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_k
 TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
     {name = is_carbon_fluid_1,                    order = b_a},
@@ -209,12 +212,15 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
     {name = is_resin,                             order = t},
     {name = is_rubber,                            order = u},
     {name = is_explosives,                        order = v},
-    {name = is_buildings_air_filter,              order = z_a},
-    {name = is_buildings_liquefier,               order = z_b},
-    {name = is_buildings_advanced_chemical_plant, order = z_d},
-    {name = is_buildings_advanced_gas_refinery,   order = z_f},
-    {name = is_buildings_oil_gas_separator,       order = z_h},
-    {name = is_buildings_petrochem_others,        order = z_j}
+    {name = is_buildings_burner_chemistry,        order = z},
+    {name = is_buildings_advanced_electrolyser,   order = z_a .. "-" .. a},
+    {name = is_buildings_industrial_electrolyser, order = z_a .. "-" .. b},
+    {name = is_buildings_air_filter,              order = z_b},
+    {name = is_buildings_liquefier,               order = z_c},
+    {name = is_buildings_advanced_chemical_plant, order = z_e},
+    {name = is_buildings_advanced_gas_refinery,   order = z_g},
+    {name = is_buildings_oil_gas_separator,       order = z_i},
+    {name = is_buildings_petrochem_others,        order = z_k}
 })
 
 

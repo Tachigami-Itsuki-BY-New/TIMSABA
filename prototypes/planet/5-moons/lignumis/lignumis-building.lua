@@ -29,9 +29,9 @@ if mods[lignumis_mods] then
         -- CHEMICAL PLANT
         {
             name = burner_chemical_plant,
-            subgroup = is_lignumis_building,
+            subgroup = is_buildings_burner_chemistry,
             icons = angelsmods.functions.add_number_icon_layer({{icon = "__angelspetrochemgraphics__/graphics/icons/chemical-plant.png", icon_size = 32}}, 0, angelsmods.petrochem.number_tint),
-            order = f,
+            order = a,
 
             ingredients =
             {

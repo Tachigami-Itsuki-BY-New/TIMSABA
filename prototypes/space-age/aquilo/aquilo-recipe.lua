@@ -463,26 +463,6 @@ TIMSABA.functions.create_recipes
             {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = acetaldehyde
-    },
-    {
-        name = hydrocyanic_acid,
-        categories = {angels_advanced_chemistry},
-        subgroup = is_others_fluid,
-        icons = THREE_D_I(methane_angels, ammonia_angels, oxygen_angels, hydrocyanic_acid, nil, steam),
-        order = b,
-        -- 2CH₄(g) + 2NH₃(g) + 3O₂(g) --> 2HCN + 6H₂O
-        ingredients =
-        {
-            {type = fluid, name = methane_angels, amount = 120},
-            {type = fluid, name = ammonia_angels, amount = 120},
-            {type = fluid, name = oxygen_angels, amount = 180}
-        },
-        results =
-        {
-            {type = fluid, name = hydrocyanic_acid, amount = 120},
-            {type = fluid, name = steam, amount = 240} -- 720
-        },
-        main_product = hydrocyanic_acid
     }
 })
 

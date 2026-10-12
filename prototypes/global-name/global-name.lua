@@ -382,6 +382,8 @@ He_icon = "__TIMSABA__/graphics/icons/vesta/vesta_helium.png"
 
 tech_error_png = "__TIMSABA__/graphics/icons/tech-error.png"
 
+entity_error_png = "__TIMSABA__/graphics/icons/entity-error.png"
+
 -- SPACE
 planet_nauvis = "nauvis"
 planet_vulcanus = "vulcanus"

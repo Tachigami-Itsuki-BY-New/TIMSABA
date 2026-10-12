@@ -126,7 +126,7 @@ TIMSABA.barreling.add_dangerous_fluid(potassium_sulfate_solution)
 
 -- RECIPE
 carnallite_reprocessing = "carnallite-reprocessing"
-potassium_hydroxide_solution_from_potassium_sulfate_solution = "potassium-hydroxide-solution-from-potassium-sulfate-solution"
+potassium_hydroxide_from_potassium_sulfate_solution = "potassium-hydroxide-from-potassium-sulfate-solution"
 potassium_chloride_solution_2 = "potassium-chloride-solution-2"
 TIMSABA.functions.create_recipes
 ({
@@ -136,7 +136,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_potassium,
         icons = FOUR_R_I(potassium_chloride_solution, hydrogen_angels, potassium_hydroxide, chlorine_angels),
         order = c,
-        energy_required = 8, -- 2KCl(aq) -electrode/electrolys-> 2KOH + Cl₂ + H₂
+        energy_required = 8, -- 2KCl(aq) -electrode/electrolys-> 2KOH(s) + Cl₂(g) + H₂(g)
         ingredients =
         {
             {type = fluid, name = potassium_chloride_solution, amount = 240},
@@ -145,8 +145,29 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = potassium_hydroxide, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
-            {type = fluid, name = chlorine_angels, amount = 60}, -- 120
+            {type = fluid, name = hydrogen_angels, amount = 120},
+            {type = fluid, name = chlorine_angels, amount = 120},
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+        },
+        main_product = potassium_hydroxide
+    },
+    {
+        name = potassium_hydroxide_from_potassium_sulfate_solution,
+        categories = {angels_petrochem_electrolyser},
+        subgroup = is_potassium,
+        icons = FOUR_R_I(potassium_sulfate_solution, potassium_hydroxide, nil, sulfur_trioxide_gas),
+        order = c_a,
+        energy_required = 8, -- K₂SO₄(aq) -electrode/electrolys-> 2KOH(s) + SO₃(g)
+        ingredients =
+        {
+            {type = fluid, name = potassium_sulfate_solution, amount = 240},
+            {type = item, name = electrode, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = potassium_hydroxide, amount = 32},
+            {type = fluid, name = sulfur_trioxide_gas, amount = 240},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
@@ -234,28 +255,6 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 60}
         },
         results = {{type = fluid, name = potassium_hydroxide_solution, amount = 60}},
-        main_product = potassium_hydroxide_solution
-    },
-    {
-        name = potassium_hydroxide_solution_from_potassium_sulfate_solution,
-        categories = {angels_petrochem_electrolyser},
-        subgroup = is_potassium_fluid,
-        icons = FOUR_R_I(potassium_sulfate_solution, potassium_hydroxide_solution, nil, sulfuric_acid_angels),
-        order = c_a,
-        energy_required = 8, -- K₂SO₄(aq) + 2H₂O -electrode/electrolys-> 2KOH(aq) + H₂SO₄
-        ingredients =
-        {
-            {type = fluid, name = potassium_sulfate_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 480},
-            {type = item, name = electrode, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = potassium_hydroxide_solution, amount = 480},
-            {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-        },
         main_product = potassium_hydroxide_solution
     },
     {
