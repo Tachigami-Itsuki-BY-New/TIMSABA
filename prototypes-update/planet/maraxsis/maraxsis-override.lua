@@ -134,6 +134,7 @@ if mods[maraxsis_mods] then
         {type = item, name = jelly, amount = 1},
         {type = item, name = sand_angels, amount = 1}
     }
+    data_recipe[fish_food].results[1].amount = 4
 
     local maraxsis_carbon = "maraxsis-carbon"
     data_recipe[maraxsis_carbon].subgroup = is_maraxsis_recipe
@@ -150,14 +151,15 @@ if mods[maraxsis_mods] then
     data_item[microplastics].subgroup = is_maraxsis_recipe
     data_item[microplastics].order = g
     data_item[microplastics].stack_size = 200
+    data_recipe[microplastics].categories = {angels_bio_butchery}
     data_recipe[microplastics].subgroup = is_maraxsis_recipe
-    data_recipe[microplastics].icons = THREE_R_I(tropical_fish_maraxsis, microplastics, jelly)
+    data_recipe[microplastics].icons = THREE_R_I(tropical_fish_maraxsis, microplastics, raw_meat)
     data_recipe[microplastics].order = g
-    data_recipe[microplastics].ingredients[1].amount = 1
+    data_recipe[microplastics].ingredients = {{type = item, name = tropical_fish_maraxsis, amount = 1}}
     data_recipe[microplastics].results =
     {
         {type = item, name = microplastics, amount = 8},
-        {type = item, name = jelly, amount = 8}
+        {type = item, name = raw_meat, amount = 1}
     }
     data_recipe[microplastics].main_product = microplastics
 
