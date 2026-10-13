@@ -265,49 +265,49 @@ local industrial_electrolyser_fluid_boxes =
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 128,
         pipe_connections = {{flow_direction = input, position = {-2, 4}, direction = defines.direction.south}},
     },
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 128,
         pipe_connections = {{flow_direction = input, position = {0, 4}, direction = defines.direction.south}},
     },
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 128,
         pipe_connections = {{flow_direction = input, position = {2, 4}, direction = defines.direction.south}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 1024,
         pipe_connections = {{flow_direction = output, position = {-4, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 1024,
         pipe_connections = {{flow_direction = output, position = {-2, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 1024,
         pipe_connections = {{flow_direction = output, position = {0, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 1024,
         pipe_connections = {{flow_direction = output, position = {2, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 120,
+        volume = 1024,
         pipe_connections = {{flow_direction = output, position = {4, -4}, direction = defines.direction.north}},
     }
 }
