@@ -319,19 +319,20 @@ data_recipe[lead_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[lead_cathode].subgroup = is_lead_chemistry
 data_recipe[lead_cathode].icons = FOUR_R_I(hexafluorosilicate_lead_II_solution, silicon_fluoride_IV_gas, lead_cathode, hydrogen_fluoride_angels)
 data_recipe[lead_cathode].order = d
-data_recipe[lead_cathode].energy_required = 8 -- (PbSiF₆ + H₂O) + (H₂SiF₆ + H₂O) -electrode/electrolys-> Pb + 2SiF₄ + 4HF + H₂O₂
+data_recipe[lead_cathode].energy_required = 8 -- 2PbSiF₆(aq) + -electrode/electrolys/H₂SiF₆(aq)-> 2Pb(s) + 2SiF₄(g) + 4HF(g) + O₂(g)
 data_recipe[lead_cathode].ingredients =
 {
     {type = fluid, name = hexafluorosilicate_lead_II_solution, amount = 240},
-    {type = fluid, name = hexafluorosilicic_acid, amount = 240},
+    {type = fluid, name = hexafluorosilicic_acid, amount = 60},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[lead_cathode].results =
 {
     {type = item, name = lead_cathode, amount = 16},
-    {type = fluid, name = silicon_fluoride_IV_gas, amount = 240}, -- 480
-    {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 960
-    --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
+    {type = fluid, name = silicon_fluoride_IV_gas, amount_min = 120, amount_max = 240},
+    {type = fluid, name = hydrogen_fluoride_angels, amount_min = 240, amount_max = 480},
+    {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+    {type = fluid, name = hexafluorosilicic_acid, amount_min = 30, amount_max = 60},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }

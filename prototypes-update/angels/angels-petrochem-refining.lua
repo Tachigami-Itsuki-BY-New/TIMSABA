@@ -107,9 +107,9 @@ data_recipe[water_saline_separation].ingredients[1].amount = 120
 data_recipe[water_saline_separation].results =
 {
     {type = item, name = sodium_hydroxide_angels, amount = 2},
-    {type = fluid, name = hydrogen_angels, amount = 60}, -- 105
+    {type = fluid, name = hydrogen_angels, amount = 105},
     {type = fluid, name = chlorine_angels, amount = 60},
-    --{type = fluid, name = oxygen_angels, amount = 30} -- 45
+    {type = fluid, name = oxygen_angels, amount = 45}
 }
 
 -- BASIC PETROCHEN FLUIDS

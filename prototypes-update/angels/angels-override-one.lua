@@ -1134,6 +1134,26 @@ for _, BUILD in pairs(electrolysers) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 8)) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+    table.insert(data_assembling[BUILD.name].fluid_boxes,
+    {
+        production_type = output,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1024,
+        pipe_connections = {{flow_direction = output, position = {0, 2}, direction = defines.direction.south}}
+    })
+    table.insert(data_assembling[BUILD.name].fluid_boxes,
+    {
+        production_type = output,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1024,
+        pipe_connections =
+        {
+            {flow_direction = input_output, position = {-2, 0}, direction = defines.direction.west, lock_by_recipe = true},
+            {flow_direction = input_output, position = {2, 0}, direction = defines.direction.east, lock_by_recipe = true}
+        }
+    })
 end
 local function electrolyser_recipe(name, circuit, pipe, plate, brick, electrolyser)
     local ingredients =
