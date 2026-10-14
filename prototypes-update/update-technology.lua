@@ -1317,7 +1317,7 @@ data_technology[tech_silicon_smelting_3].effects =
 -- NICKEL
 data_technology[tech_nickel_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation}
 
-data_technology[tech_nickel_smelting_2].prerequisites = {tech_ore_processing_2, tech_nickel_smelting_1, tech_powder_metallurgy_3, tech_sulfur_processing_1}
+data_technology[tech_nickel_smelting_2].prerequisites = {tech_ore_processing_2, tech_nickel_smelting_1, tech_powder_metallurgy_3, tech_zinc_smelting_2}
 data_technology[tech_nickel_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = nickel_processed},
