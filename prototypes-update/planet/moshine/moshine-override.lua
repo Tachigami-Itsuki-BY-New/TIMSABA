@@ -1096,7 +1096,6 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    local tech_data_processor_building = "moshine-tech-data-processor-building"
     if mods[bobmodules] then
         table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_6)
     end
