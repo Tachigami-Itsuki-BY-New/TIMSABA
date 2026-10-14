@@ -191,7 +191,7 @@ data_recipe[wood_1].order = a_a
 data_recipe[wood_1].results =
 {
     {type = item, name = wood, amount = 8},
-    {type = item, name = saw, amount = 1, independent_probability = 0.99}
+    {type = item, name = saw, amount = 1, independent_probability = 0.875}
 }
 
 local wood_2 = "angels-wood-sawing-2"
@@ -200,7 +200,8 @@ data_recipe[wood_2].order = a_b
 data_recipe[wood_2].results =
 {
     {type = item, name = wood, amount = 16},
-    {type = item, name = saw_crystal_tipped, amount = 1, independent_probability = 0.99}
+    {type = item, name = saw_crystal_tipped, amount = 1, independent_probability = 0.875},
+    {type = item, name = saw, amount = 1, independent_probability = 0.125}
 }
 
 local wood_3 = "angels-wood-sawing-3"
@@ -209,7 +210,8 @@ data_recipe[wood_3].order = a_c
 data_recipe[wood_3].results =
 {
     {type = item, name = wood, amount = 32},
-    {type = item, name = saw_crystal_full, amount = 1, independent_probability = 0.99}
+    {type = item, name = saw_crystal_full, amount = 1, independent_probability = 0.875},
+    {type = item, name = saw_crystal_tipped, amount = 1, independent_probability = 0.125}
 }
 
 if mods[muluna_mods] and mods[lignumis_mods] then
