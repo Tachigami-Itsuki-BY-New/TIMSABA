@@ -593,10 +593,10 @@ local function chemical_furnace_recipe(name, circuit, pipe, brick, plate, chemic
     end
     data_recipe[name].ingredients = ingredients
 end
-chemical_furnace_recipe(chemical_furnace_1, electronic_circuit, steel_pipe, clay_brick, steel_plate)
-chemical_furnace_recipe(chemical_furnace_2, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, chemical_furnace_1)
-chemical_furnace_recipe(chemical_furnace_3, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, chemical_furnace_2)
-chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, tungsten_pipe, reinforced_titanium_concrete_brick, tungsten_plate_bob, chemical_furnace_3)
+chemical_furnace_recipe(chemical_furnace_1,       electronic_circuit,           steel_pipe,                         clay_brick,           steel_plate)
+chemical_furnace_recipe(chemical_furnace_2,         advanced_circuit,           brass_pipe,                     concrete_brick,       aluminium_plate_bob, chemical_furnace_1)
+chemical_furnace_recipe(chemical_furnace_3,          processing_unit,        titanium_pipe,          reinforced_concrete_brick,        titanium_plate_bob, chemical_furnace_2)
+chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, copper_tungsten_pipe, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, chemical_furnace_3)
 
 -- ANGELS METTALURGY CASTING
 local induction_furnaces =
