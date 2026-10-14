@@ -298,19 +298,41 @@ TIMSABA.barreling.add_gas(silicon_chloride_IV_gas)
 TIMSABA.barreling.add_gas(silicon_fluoride_IV_gas)
 
 local graphics_nickel = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/"
+-- NICKEL ITEM
+nickel_hydroxide_II = "nickel-hydroxide-II"
+nickel_oxide_II = "nickel-oxide-II"
+TIMSABA.functions.create_items
+({
+    {
+        localised_description = show_formula and {chemical_formula, "Ni(OH)[font=default-tiny-bold]2[/font]"} or nil,
+        name = nickel_hydroxide_II,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_hydroxide_II .. ".png",
+        order = b
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NiO"} or nil,
+        name = nickel_oxide_II,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_oxide_II .. ".png",
+        order = e
+    }
+})
+
 -- NICKEL FLUID
-nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
+nickel_chloride_II_solution = "nickel-chloride-II-solution"
 tetracarbonyl_nickel = "tetracarbonyl-nickel-liquid"
+nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
 TIMSABA.functions.create_fluids
 ({
     {
-        localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
-        name = nickel_sulfate_II_solution,
+        localised_description = show_formula and {chemical_formula, "NiCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
+        name = nickel_chloride_II_solution,
         subgroup = is_nickel_chemistry,
-        icon = graphics_nickel .. nickel_sulfate_II_solution .. ".png",
-        order = b,
-        base_color = TIMSABA.functions.fluid_color("NiSO4Wp"),
-        flow_color = TIMSABA.functions.flow_color("NiSO4Wp")
+        icon = graphics_nickel .. nickel_chloride_II_solution .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("NiCl2Wp"),
+        flow_color = TIMSABA.functions.flow_color("NiCl2Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "Ni(CO)[font=default-tiny-bold]4[/font]"} or nil,
@@ -320,10 +342,20 @@ TIMSABA.functions.create_fluids
         order = d,
         base_color = TIMSABA.functions.fluid_color("NiC4O4"),
         flow_color = TIMSABA.functions.flow_color("NiC4O4")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = nickel_sulfate_II_solution,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_sulfate_II_solution .. ".png",
+        order = f,
+        base_color = TIMSABA.functions.fluid_color("NiSO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("NiSO4Wp")
     }
 })
-TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
+TIMSABA.barreling.add_dangerous_fluid(nickel_chloride_II_solution)
 TIMSABA.barreling.add_dangerous_fluid(tetracarbonyl_nickel)
+TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
 
 local graphics_aluminium = "__TIMSABA__/graphics/icons/angels/metallurgy/aluminium/"
 -- ALUMINIUM ITEM

@@ -673,34 +673,93 @@ TIMSABA.functions.create_recipes
 TIMSABA.functions.create_recipes
 ({
     {
-        name = nickel_sulfate_II_solution,
+        name = nickel_hydroxide_II,
         categories = {angels_chemical_smelting_2},
         subgroup = is_nickel_chemistry,
-        icons = THREE_I(nickel_sulfate_II, water_purified_angels, nickel_sulfate_II_solution),
+        icons = THREE_D_I(nickel_sulfate_II, sodium_hydroxide_angels, water_purified_angels, nickel_hydroxide_II, nil, sodium_sulfate_solution),
         order = b,
-        energy_required = 8, -- NiSO₄ + H₂O --> NiSO₄(aq)
+        energy_required = 8, -- NiSO₄(s) + 2NaOH(s) + H₂O(l) --> Ni(OH)₂(s) + Na₂SO₄(aq)
         ingredients =
         {
             {type = item, name = nickel_sulfate_II, amount = 16},
+            {type = item, name = sodium_hydroxide_angels, amount = 32},
             {type = fluid, name = water_purified_angels, amount = 240}
         },
-        results = {{type = fluid, name = nickel_sulfate_II_solution, amount = 240}},
-        main_product = nickel_sulfate_II_solution
+        results =
+        {
+            {type = item, name = nickel_hydroxide_II, amount = 16},
+            {type = fluid, name = sodium_sulfate_solution, amount = 120} -- 240
+        },
+        main_product = nickel_hydroxide_II
+    },
+    {
+        name = nickel_chloride_II_solution,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_nickel_chemistry,
+        icons = TWO_D_I(nickel_hydroxide_II, hydrochloric_acid_angels, nickel_chloride_II_solution, water_purified_angels),
+        order = c,
+        energy_required = 8, -- Ni(OH)₂(s) + 2HCl(aq) --> NiCl₂(aq) + 3H₂O(l)
+        ingredients =
+        {
+            {type = item, name = nickel_hydroxide_II, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = fluid, name = nickel_chloride_II_solution, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240} -- 720
+        },
+        main_product = nickel_chloride_II_solution
     },
     {
         name = tetracarbonyl_nickel,
-        categories = {angels_chemical_smelting_3},
+        categories = {angels_chemical_smelting_2},
         subgroup = is_nickel_chemistry,
-        icons = THREE_I(nickel_pellet, carbon_monoxide_angels, tetracarbonyl_nickel),
-        order = c,
-        energy_required = 8, -- Ni + 4CO --> Ni(CO)₄
+        icons = THREE_D_I(nickel_chloride_II_solution, carbon_monoxide_angels, zinc_powder, tetracarbonyl_nickel, nil, zinc_chloride_solution),
+        order = d,
+        energy_required = 8, -- NiCl₂(aq) + 4CO(g) + Zn(s) --> Ni(CO)₄(l) + ZnCl₂(aq)
+        ingredients =
+        {
+            {type = fluid, name = nickel_chloride_II_solution, amount = 240},
+            {type = fluid, name = carbon_monoxide_angels, amount = 960},
+            {type = item, name = zinc_powder, amount = 16}
+        },
+        results =
+        {
+            {type = fluid, name = tetracarbonyl_nickel, amount = 240},
+            {type = fluid, name = zinc_chloride_solution, amount = 120}
+        },
+        main_product = tetracarbonyl_nickel
+    },
+    {
+        name = nickel_oxide_II,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_nickel_chemistry,
+        icons = THREE_I(nickel_pellet, oxygen_angels, nickel_oxide_II),
+        order = e,
+        energy_required = 8, -- 2Ni(s) + O₂(g) --> 2NiO(s)
         ingredients =
         {
             {type = item, name = nickel_pellet, amount = 8},
-            {type = fluid, name = carbon_monoxide_angels, amount = 960}
+            {type = fluid, name = oxygen_angels, amount = 120}
         },
-        results = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}},
-        main_product = tetracarbonyl_nickel
+        results = {{type = item, name = nickel_oxide_II, amount = 16}},
+        main_product = nickel_oxide_II
+    },
+    {
+        name = nickel_sulfate_II_solution,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_nickel_chemistry,
+        icons = THREE_I(nickel_oxide_II, sulfuric_acid_angels, nickel_sulfate_II_solution),
+        order = f,
+        energy_required = 8, -- NiO(s) + H₂SO₄(l) --> NiSO₄(aq)
+        ingredients =
+        {
+            {type = item, name = nickel_oxide_II, amount = 16},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240}
+        },
+        results = {{type = fluid, name = nickel_sulfate_II_solution, amount = 240}},
+        main_product = nickel_sulfate_II_solution
     }
 })
 
