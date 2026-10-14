@@ -835,7 +835,7 @@ data:extend
         type = technology,
         name = tech_boron_processing,
         icons = TIMSABA.functions.create_gas_tech_icon("BBB"),
-        prerequisites = {tech_advanced_ore_refining_2},
+        prerequisites = {tech_advanced_chemistry_4},
         effects =
         {
             {type = unlock_recipe, recipe = boric_acid_solution},
@@ -849,7 +849,8 @@ data:extend
             {
                 {automation_science_pack, 1},
                 {logistic_science_pack, 1},
-                {chemical_science_pack, 1}
+                {chemical_science_pack, 1},
+                {production_science_pack, 1}
             },
             time = 30
         }
