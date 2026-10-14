@@ -205,7 +205,23 @@ if mods[bobwarfare] then
     }
 end
 
+data_technology[spidertron].prerequisites = {space_science_pack, tech_military_4, tech_rocketry}
+if data_technology[tankotron] then
+    table.insert(data_technology[spidertron].prerequisites, tankotron)
+end
+data_technology[spidertron].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1}
+}
+
 if data_technology[heavy_spidertron] then
+    data_technology[heavy_spidertron].prerequisites = {spidertron, rocket_turret}
     table.insert(data_technology[heavy_spidertron].unit.ingredients, {space_science_pack, 1})
     table.insert(data_technology[heavy_spidertron].unit.ingredients, {agricultural_science_pack, 1})
 end
@@ -824,7 +840,7 @@ if mods[bobwarfare] then
     data_technology[tech_plasma_turret_2].prerequisites = {tech_plasma_turret_1, processing_unit, tech_titanium_processing, tech_tungsten_smelting_1}
 end
 
-data_technology[atomic_rocket].prerequisites = {"rocketry", tech_military_4, tech_deuterium_power}
+data_technology[atomic_rocket].prerequisites = {tech_rocketry, tech_military_4, tech_deuterium_power}
 data_technology[atomic_rocket].unit.ingredients =
 {
     {automation_science_pack, 1},
