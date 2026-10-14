@@ -83,7 +83,11 @@ if not mods[muluna_mods] then
         {type = unlock_recipe, recipe = hydrazine_space},
         {type = unlock_recipe, recipe = dinitrogen_tetroxide_space},
         {type = unlock_recipe, recipe = sodium_hydroxide_space},
-        {type = unlock_recipe, recipe = lithium_space}
+        {type = unlock_recipe, recipe = lithium_space},
+        {type = unlock_recipe, recipe = electric_blast_furnace_1},
+        {type = unlock_recipe, recipe = electric_blast_furnace_2},
+        {type = unlock_recipe, recipe = electric_blast_furnace_3},
+        {type = unlock_recipe, recipe = electric_blast_furnace_4}
     }
 end
 
