@@ -1453,25 +1453,14 @@ data_technology[tech_cobalt_smelting_3].effects =
 data_technology[tech_chromium_smelting_1].prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining}
 data_technology[tech_chromium_smelting_1].effects =
 {
-    {type = unlock_recipe, recipe = chromium_oxide_VI},
-    {type = unlock_recipe, recipe = chromic_acid},
-    {type = unlock_recipe, recipe = chromium_cathode},
-    {type = unlock_recipe, recipe = chromium_ingot},
-    {type = unlock_recipe, recipe = chromium_molten_angels}
+    {type = unlock_recipe, recipe = chromium_sulfate_II_solution},
+    {type = unlock_recipe, recipe = chromium_ingot_2}
 }
 
 data_technology[tech_chromium_smelting_2].prerequisites = {tech_ore_processing_4, tech_chromium_smelting_1, tech_zinc_smelting_3}
 data_technology[tech_chromium_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = chromium_processed},
-    {type = unlock_recipe, recipe = chromium_sulfate_II_solution},
-    {type = unlock_recipe, recipe = chromium_ingot_2}
-}
-
-data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2}
-data_technology[tech_chromium_smelting_3].effects =
-{
-    {type = unlock_recipe, recipe = chromium_pellet},
     {type = unlock_recipe, recipe = chromium_oxide_III},
     {type = unlock_recipe, recipe = potassium_chromate_solution},
     {type = unlock_recipe, recipe = potassium_dichromate_solution},
@@ -1483,6 +1472,17 @@ data_technology[tech_chromium_smelting_3].effects =
     {type = unlock_recipe, recipe = lithium_chloride_solution_from_lithium_hydroxide},
     {type = unlock_recipe, recipe = aluminium_chloride_solution_from_aluminium_hydroxide},
     {type = unlock_recipe, recipe = potassium_hydroxide_solution_from_potassium_sulfate_solution}
+}
+
+data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2}
+data_technology[tech_chromium_smelting_3].effects =
+{
+    {type = unlock_recipe, recipe = chromium_pellet},
+    {type = unlock_recipe, recipe = chromium_oxide_VI},
+    {type = unlock_recipe, recipe = chromic_acid},
+    {type = unlock_recipe, recipe = chromium_cathode},
+    {type = unlock_recipe, recipe = chromium_ingot},
+    {type = unlock_recipe, recipe = chromium_molten_angels}
 }
 
 -- TUNGSTEN
