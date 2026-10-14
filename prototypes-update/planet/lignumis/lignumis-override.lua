@@ -388,7 +388,7 @@ if mods[lignumis_mods] then
     data_mining_drill[deep_miner].subgroup = is_lignumis_mining
     data_mining_drill[deep_miner].order = a
     data_mining_drill[deep_miner].mining_speed = 8
-    data_mining_drill[deep_miner].energy_usage = 24000 .. kW
+    data_mining_drill[deep_miner].energy_usage = 30720 .. kW
 
     -- BUILDING
     data_item[burner_agricultural_tower].subgroup = is_lignumis_building
