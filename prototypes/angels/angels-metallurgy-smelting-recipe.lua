@@ -853,6 +853,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- ZINC
+zinc_chloride_solution_2 = "zinc-chloride-solution-2"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -861,7 +862,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_ore_bob, chlorine_angels, zinc_chloride),
         order = a,
-        energy_required = 8, -- Zn + Cl₂ --> ZnCl₂
+        energy_required = 8, -- Zn(s) + Cl₂(g) --> ZnCl₂(s)
         ingredients =
         {
             {type = item, name = zinc_ore_bob, amount = 32},
@@ -876,7 +877,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_chloride, water_purified_angels, zinc_chloride_solution),
         order = b,
-        energy_required = 8, -- ZnCl₂ + H₂O --> ZnCl₂(aq)
+        energy_required = 8, -- ZnCl₂(s) + H₂O(l) --> ZnCl₂(aq)
         ingredients =
         {
             {type = item, name = zinc_chloride, amount = 16},
@@ -886,31 +887,72 @@ TIMSABA.functions.create_recipes
         main_product = zinc_chloride_solution
     },
     {
-        name = zinc_gas,
-        categories = {angels_blast_smelting_1},
+        localised_name = {"fluid-name." .. zinc_chloride_solution},
+        name = zinc_chloride_solution_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_zinc_chemistry,
-        icons = TWO_D_I(zinc_oxide, silicon_powder, zinc_gas, silicon_oxide_IV),
-        order = d,
-        energy_required = 8, -- 2ZnO + Si -T-> 2Zn(g) + SiO₂
+        icons = TWO_D_I(zinc_hydroxide, hydrochloric_acid_angels, zinc_chloride_solution, water_purified_angels),
+        order = b_a,
+        energy_required = 8, -- Zn(OH)₂(s) + 2HCl(aq) --> ZnCl₂(aq) + 3H₂O(l)
         ingredients =
         {
-            {type = item, name = zinc_oxide, amount = 16},
-            {type = item, name = silicon_powder, amount = 8}
+            {type = item, name = zinc_hydroxide, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
         },
         results =
         {
-            {type = fluid, name = zinc_gas, amount = 240},
-            {type = item, name = silicon_oxide_IV, amount = 4}
+            {type = fluid, name = zinc_chloride_solution, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240} -- 720
         },
-        main_product = zinc_gas
+        main_product = zinc_chloride_solution
+    },
+    {
+        name = sodium_tetrahydroxozincate_II_solution,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_zinc_chemistry,
+        icons = THREE_D_I(zinc_processed, sodium_hydroxide_angels, water_purified_angels, sodium_tetrahydroxozincate_II_solution, nil, hydrogen_angels),
+        order = c,
+        energy_required = 8, -- Zn(s) + 2NaOH(aq) + H₂O(l) --> Na₂Zn(OH)₄(aq) + H₂(g)
+        ingredients =
+        {
+            {type = item, name = zinc_processed, amount = 16},
+            {type = item, name = sodium_hydroxide_angels, amount = 32},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = fluid, name = sodium_tetrahydroxozincate_II_solution, amount = 240},
+            {type = fluid, name = hydrogen_angels, amount = 120} -- 240
+        },
+        main_product = sodium_tetrahydroxozincate_II_solution
+    },
+    {
+        name = zinc_hydroxide,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_zinc_chemistry,
+        icons = THREE_D_I(sodium_tetrahydroxozincate_II_solution, nil, hydrochloric_acid_angels, zinc_hydroxide, sodium_chloride_solution, water_purified_angels),
+        order = d,
+        energy_required = 8, -- Na₂Zn(OH)₄(aq) + 2HCl(g) --> Zn(OH)₂(s) + 2NaCl(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = sodium_tetrahydroxozincate_II_solution, amount = 240},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = zinc_hydroxide, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = zinc_hydroxide
     },
     {
         name = zinc_sulfate_solution,
         categories = {angels_chemical_smelting_3},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_oxide, sulfuric_acid_angels, zinc_sulfate_solution),
-        order = e,
-        energy_required = 8, -- ZnO + H₂SO₄ --> ZnSO₄(aq)
+        order = f,
+        energy_required = 8, -- ZnO(s) + H₂SO₄(l) --> ZnSO₄(aq)
         ingredients =
         {
             {type = item, name = zinc_oxide, amount = 16},
