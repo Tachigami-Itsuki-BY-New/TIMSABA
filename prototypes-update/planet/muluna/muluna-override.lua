@@ -1661,6 +1661,8 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = hydrazine_space},
         {type = unlock_recipe, recipe = dinitrogen_tetroxide_space},
         {type = unlock_recipe, recipe = sodium_hydroxide_space},
+        {type = unlock_recipe, recipe = sodium_peroxide},
+        {type = unlock_recipe, recipe = sodium_peroxide_reprocess},
         {type = unlock_recipe, recipe = lithium_space}
     }
 

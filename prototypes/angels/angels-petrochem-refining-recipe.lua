@@ -479,26 +479,6 @@ TIMSABA.functions.create_recipes
         main_product = ammonium_sulfate_solution
     },
     {
-        name = hydrocyanic_acid,
-        categories = {angels_advanced_chemistry},
-        subgroup = is_others_fluid,
-        icons = THREE_D_I(methane_angels, ammonia_angels, oxygen_angels, hydrocyanic_acid, nil, steam),
-        order = b,
-        -- 2CH₄(g) + 2NH₃(g) + 3O₂(g) --> 2HCN + 6H₂O
-        ingredients =
-        {
-            {type = fluid, name = methane_angels, amount = 120},
-            {type = fluid, name = ammonia_angels, amount = 120},
-            {type = fluid, name = oxygen_angels, amount = 180}
-        },
-        results =
-        {
-            {type = fluid, name = hydrocyanic_acid, amount = 120},
-            {type = fluid, name = steam, amount = 240} -- 720
-        },
-        main_product = hydrocyanic_acid
-    },
-    {
         name = acrylonitrile,
         categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen_fluids,
@@ -644,6 +624,7 @@ TIMSABA.functions.create_recipes
 sodium_chloride = "sodium-chloride"
 sodium_sulfate = "sodium-sulfate"
 sodium_carbonate = "sodium-carbonate"
+sodium_cyanide_2 = "sodium-cyanide-2"
 sodium_nitrate = "sodium-nitrate"
 sodium_peroxide_reprocess = "sodium-peroxide-reprocess"
 sodium_hypochlorite_solution_from_sodium_hydroxide_solution = "sodium-hypochlorite-solution-from-sodium-hydroxide-solution"
@@ -651,7 +632,7 @@ sodium_chlorate_solution_from_sodium_hypochlorite_solution = "sodium-chlorate-so
 sodium_perchlorate_solution_from_sodium_chlorate_solution = "sodium-perchlorate-solution-from-sodium-chlorate-solution"
 sodium_chloride_solution_from_sodium_bicarbonate_solution = "sodium-chloride-solution-from-sodium-bicarbonate-solution"
 sodium_sulfate_from_sodium_bicarbonate_solution = "sodium-sulfate-from-sodium-bicarbonate-solution"
-sodium_cyanide_solution_alt = "sodium-cyanide-solution-alt"
+sodium_cyanide_solution_2 = sodium_cyanide_solution .. "-2"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -698,6 +679,26 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = steam, amount = 60}
         },
         main_product = sodium_carbonate_angels
+    },
+    {
+        localised_name = {"item-name." .. sodium_cyanide_angels},
+        name = sodium_cyanide_2,
+        categories = {chemistry},
+        subgroup = is_sodium,
+        icons = TWO_D_I(sodium_hydroxide_angels, hydrogen_cyanide_gas, sodium_cyanide_angels, steam),
+        order = f_a,
+        -- NaOH(s) + HCN(g) --> NaCN(s) + H₂O(g)
+        ingredients =
+        {
+            {type = item, name = sodium_hydroxide_angels, amount = 4},
+            {type = fluid, name = hydrogen_cyanide_gas, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = sodium_cyanide_angels, amount = 4},
+            {type = fluid, name = steam, amount = 30} -- 60
+        },
+        main_product = sodium_cyanide_angels
     },
     {
         name = sodium_nitrate,
@@ -957,7 +958,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_cyanide_angels, water_purified_angels, sodium_cyanide_solution),
         order = j,
-        energy_required = 2, -- NaCN + H₂O --> NaCN(aq)
+        -- NaCN(s) + H₂O(l) --> NaCN(aq)
         ingredients =
         {
             {type = item, name = sodium_cyanide_angels, amount = 4},
@@ -967,18 +968,23 @@ TIMSABA.functions.create_recipes
         main_product = sodium_cyanide_solution
     },
     {
-        name = sodium_cyanide_solution_alt,
+        localised_name = {"fluid-name." .. sodium_cyanide_solution},
+        name = sodium_cyanide_solution_2,
         categories = {chemistry},
         subgroup = is_sodium_fluid,
-        icons = THREE_I(sodium_hydroxide_angels, hydrocyanic_acid, sodium_cyanide_solution),
-        order = j,
-        energy_required = 2, -- NaOH + HCN--> NaCN(aq)
+        icons = TWO_D_I(sodium_hydroxide_angels, hydrocyanic_acid, sodium_cyanide_solution, water_purified_angels),
+        order = j_a,
+        -- NaOH(s) + HCN(aq) --> NaCN(aq) + H₂O(l)
         ingredients =
         {
             {type = item, name = sodium_hydroxide_angels, amount = 4},
             {type = fluid, name = hydrocyanic_acid, amount = 60}
         },
-        results = {{type = fluid, name = sodium_cyanide_solution, amount = 60}},
+        results =
+        {
+            {type = fluid, name = sodium_cyanide_solution, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 30} -- 60
+        },
         main_product = sodium_cyanide_solution
     }
 })
@@ -1514,6 +1520,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- OTHERS
+hydrocyanic_acid_2 = hydrocyanic_acid .. "-2"
 TIMSABA.functions.create_recipes
 ({
     -- ITEM
@@ -1538,11 +1545,47 @@ TIMSABA.functions.create_recipes
         main_product = hydrogen_peroxide
     },
     {
+        name = hydrocyanic_acid,
+        categories = {angels_advanced_chemistry},
+        subgroup = is_others_fluid,
+        icons = THREE_D_I(methane_angels, ammonia_angels, oxygen_angels, hydrocyanic_acid, nil, steam),
+        order = b,
+        energy_required = 8, -- 2CH₄(g) + 2NH₃(g) + 3O₂(g) --> 2HCN(aq) + 4H₂O(g)
+        ingredients =
+        {
+            {type = fluid, name = methane_angels, amount = 240},
+            {type = fluid, name = ammonia_angels, amount = 240},
+            {type = fluid, name = oxygen_angels, amount = 360}
+        },
+        results =
+        {
+            {type = fluid, name = hydrocyanic_acid, amount = 240},
+            {type = fluid, name = steam, amount = 240} -- 480
+        },
+        main_product = hydrocyanic_acid
+    },
+    {
+        localised_name = {"fluid-name." .. hydrocyanic_acid},
+        name = hydrocyanic_acid_2,
+        categories = {chemistry},
+        subgroup = is_others_fluid,
+        icons = THREE_I(hydrogen_cyanide_gas, water_purified_angels, hydrocyanic_acid),
+        order = b_a,
+        -- HCN(g) + H₂O(l) --> HCN(aq)
+        ingredients =
+        {
+            {type = fluid, name = hydrogen_cyanide_gas, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60}
+        },
+        results = {{type = fluid, name = hydrocyanic_acid, amount = 60}},
+        main_product = hydrocyanic_acid
+    },
+    {
         name = ionic_liquid,
         categories = {chemistry},
         subgroup = is_others_fluid,
         icons = TWO_D_I(imidazolium_salt, hexafluorophosphoric_acid, ionic_liquid, hydrochloric_acid_angels),
-        order = c,
+        order = d,
         -- [C₇H₁₃N₂]Cl(s) + HPF₆(aq) --> [C₇H₁₃N₂]PF₆(l) + HCl(aq)
         ingredients =
         {
