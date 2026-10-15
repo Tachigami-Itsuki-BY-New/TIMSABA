@@ -127,7 +127,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = crushed_franckeite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_1},
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, crushed_franckeite),
         order = h,
@@ -144,7 +144,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chunk_franckeite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_T2,
         icons = RECYCLING_I(recycling_png, chunk_franckeite),
         order = h,
@@ -163,7 +163,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_franckeite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_3},
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, crystal_franckeite),
         order = h,
@@ -183,7 +183,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = purified_franckeite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_4},
         subgroup = is_ore_sorting_T4,
         icons = RECYCLING_I(recycling_png, purified_franckeite),
         order = h,

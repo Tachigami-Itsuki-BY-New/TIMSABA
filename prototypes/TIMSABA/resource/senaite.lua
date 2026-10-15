@@ -127,7 +127,7 @@ TIMSABA.functions.create_recipes
     -- SORTING
     {
         name = crushed_senaite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_1},
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, crushed_senaite),
         order = g,
@@ -144,7 +144,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chunk_senaite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_T2,
         icons = RECYCLING_I(recycling_png, chunk_senaite),
         order = g,
@@ -163,7 +163,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = crystal_senaite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_3},
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, crystal_senaite),
         order = g,
@@ -183,7 +183,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = purified_senaite_processing,
-        categories = {ore_sorting_6},
+        categories = {angels_ore_sorting_4},
         subgroup = is_ore_sorting_T4,
         icons = RECYCLING_I(recycling_png, purified_senaite),
         order = g,
