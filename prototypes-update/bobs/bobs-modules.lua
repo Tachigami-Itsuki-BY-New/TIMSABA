@@ -193,10 +193,7 @@ if mods[bobmodules] then
         data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
-            {type = item, name = electronic_circuit,       amount = 8},
-            {type = item, name = advanced_circuit,         amount = 8},
-            {type = item, name = processing_unit,          amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = circuit_board,            amount = 4},
             {type = item, name = module,                   amount = 1}
         }
