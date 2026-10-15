@@ -35,7 +35,7 @@ if mods[shchierbin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {metallurgic_science_pack, 1}
+                    {agricultural_science_pack, 1}
                 },
                 time = 30
             }
@@ -64,7 +64,7 @@ if mods[shchierbin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {metallurgic_science_pack, 1}
+                    {agricultural_science_pack, 1}
                 },
                 time = 30
             }
