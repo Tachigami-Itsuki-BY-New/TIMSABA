@@ -1362,7 +1362,7 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = fluid, name = lithium_chloride_solution, amount = 4},
+            {type = fluid, name = lithium_chloride_solution, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = lithium_chloride_solution
