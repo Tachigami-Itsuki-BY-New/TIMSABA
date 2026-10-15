@@ -718,6 +718,7 @@ TIMSABA.barreling.add_dangerous_fluid(lithium_hexafluorophosphate_solution_carbo
 
 -- OTHERS FLUID
 hydrogen_peroxide = "hydrogen-peroxide-liquid"
+hydrogen_cyanide_gas = "hydrogen-cyanide-gas"
 hydrocyanic_acid = "hydrocyanic-acid"
 ionic_liquid = "ionic-liquid"
 TIMSABA.functions.create_fluids
@@ -733,19 +734,28 @@ TIMSABA.functions.create_fluids
     },
     {
         localised_description = show_formula and {chemical_formula, "HCN"} or nil,
-        name = hydrocyanic_acid,
+        name = hydrogen_cyanide_gas,
         subgroup = is_others_fluid,
-        icon = graphics_petrochem_basics .. hydrocyanic_acid .. ".png",
+        icon = graphics_petrochem_basics .. hydrogen_cyanide_gas .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("HCN"),
         flow_color = TIMSABA.functions.flow_color("HCN")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HCN[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = hydrocyanic_acid,
+        subgroup = is_others_fluid,
+        icon = graphics_petrochem_basics .. hydrocyanic_acid .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("HCNWp"),
+        flow_color = TIMSABA.functions.flow_color("HCNWp")
     },
     {
         localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]PF[font=default-tiny-bold]6[/font]"} or nil,
         name = ionic_liquid,
         subgroup = is_others_fluid,
         icon = graphics_petrochem_basics .. ionic_liquid .. ".png",
-        order = c,
+        order = d,
         base_color = {r = 0.537, g = 0.675, b = 0.706},
         flow_color = {r = 0.537, g = 0.675, b = 0.706}
     }
