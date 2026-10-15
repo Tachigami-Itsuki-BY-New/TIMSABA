@@ -503,7 +503,8 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = thorium_pellet},
-            {type = unlock_recipe, recipe = thorium_fluoride_IV}
+            {type = unlock_recipe, recipe = thorium_fluoride_IV},
+            {type = unlock_recipe, recipe = thorium_oxide_IV_3}
         },
         unit =
         {
