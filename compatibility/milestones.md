@@ -52,3 +52,9 @@ Transport belts are discovered from visible placeable belt items and sorted by `
 Tanks MK1–MK3, power armor MK1–MK5, mech armor, Antron, Tankotron, Logitron, Spidertron and Heavy Spidertron have normal production goals and separate rare/epic/legendary goals. Additional visible spider-vehicle items from installed mods are discovered automatically. Each equipment family remains separate within each quality.
 
 The redundant `Resources` row with productivity modules comes from the **Bob's Modules** addon. It is not in this standalone preset. To remove it from the displayed list, select **TIMSABA - Family layout** directly in Milestones settings and apply. Automatic initialization and Reset append other mods' addons again. The integration cannot disable those addons through Milestones 1.5.2's preset API; it does not modify Bob's Modules or Milestones.
+
+## Science progression and armored trains
+
+Science production goals follow the supplied TIMSABA progression: wood → steam → automation → logistic → chemical → military → advanced logistic → production → utility → Bob's alien science family → space → interstellar → electromagnetic → metallurgic → agricultural → lightweight → metabolic → acidworking → vanadium → compression → pulsar → polishing → refraction → bioengineering → pathological → cryogenic → galvanization → hydraulic → golden → gas manipulation → promethium. Alien research itself is a technology, so its eight produced packs occupy that stage; this preset does not substitute technology research for production goals. Other installed science packs remain after the ordered sequence. Missing optional packs are skipped. Milestones' own completed-goal sorting still uses completion times.
+
+Rubia's armored locomotive, cargo wagon and fluid wagon have separate first-production goals under `Armored trains`. These are different from the Bob's armored trains removed by TIMSABA. Reapply `TIMSABA - Family layout` to refresh an existing save's list.

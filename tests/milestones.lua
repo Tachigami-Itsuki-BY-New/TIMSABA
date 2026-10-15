@@ -35,6 +35,30 @@ end
 prototypes.technology.a = {hidden = false, research_unit_ingredients = {{name = "automation-science-pack"}, {name = "test-planet-pack"}}}
 prototypes.technology.b = {hidden = false, research_unit_ingredients = {{name = "test-planet-pack"}}}
 prototypes.technology.hidden = {hidden = true, research_unit_ingredients = {{name = "not-a-real-pack"}}}
+-- Scrambled prototype enumeration must not change the requested science progression.
+local science_progression = {
+    "wood-science-pack", "steam-science-pack", "automation-science-pack",
+    "logistic-science-pack", "chemical-science-pack", "military-science-pack",
+    "bob-advanced-logistic-science-pack", "production-science-pack", "utility-science-pack",
+    "bob-alien-science-pack", "bob-alien-science-pack-blue", "bob-alien-science-pack-orange",
+    "bob-alien-science-pack-purple", "bob-alien-science-pack-yellow", "bob-alien-science-pack-green",
+    "bob-alien-science-pack-red", "bob-science-pack-gold", "space-science-pack",
+    "interstellar-science-pack", "electromagnetic-science-pack", "metallurgic-science-pack",
+    "agricultural-science-pack", "space-logistic-science-pack", "apicultural-science-pack",
+    "acidworking-science-pack", "vanadium-science-pack", "planetaris-compression-science-pack",
+    "pulsar-science-pack", "planetaris-polishing-science-pack", "planetaris-refraction-science-pack",
+    "planetaris-bioengineering-science-pack", "planetaris-pathological-science-pack", "cryogenic-science-pack",
+    "galvanization-science-pack", "hydraulic-science-pack", "golden-science-pack",
+    "gas-manipulation-science-pack", "promethium-science-pack",
+}
+prototypes.technology.progression = {hidden = false, research_unit_ingredients = {}}
+for index = #science_progression, 1, -1 do
+    local name = science_progression[index]
+    prototypes.item[name] = {name = name}
+    table.insert(prototypes.technology.progression.research_unit_ingredients, {name = name})
+end
+local armored_train_items = {"rubia-armored-locomotive", "rubia-armored-cargo-wagon", "rubia-armored-fluid-wagon"}
+for _, name in ipairs(armored_train_items) do prototypes.item[name] = {name = name} end
 -- Tooltip items from the user's screenshots, including similarly named mod variants.
 local screenshot_items = {
     "planetaris-hyper-transport-belt", "planetaris-assembling-machine-4",
@@ -111,6 +135,30 @@ check(groups[ordinary_drills[1]] ~= groups[area_drills[1]], "Separate ordinary a
 check(groups["big-mining-drill"] ~= groups[ordinary_drills[1]], "Separate planetary drills")
 check(groups["hyarion-geode-mining-drill"] == groups["big-mining-drill"], "Group planetary drills together")
 check(groups["rigor-module-4-S"] ~= groups["quality-module"], "Rigor is not a quality module")
+local science_index, science_group = 1, false
+for _, goal in ipairs(result) do
+    if goal.type == "group" then
+        science_group = goal.name == "Science"
+    elseif science_group and science_index <= #science_progression then
+        check(goal.name == science_progression[science_index], "Science must follow the supplied progression")
+        science_index = science_index + 1
+    end
+end
+check(science_index == #science_progression + 1, "Include the complete known science progression")
+check(positions["test-planet-pack"] > positions["promethium-science-pack"], "Preserve extra packs after known science")
+for _, name in ipairs(armored_train_items) do
+    check(seen["item" .. name], "Include Rubia armored rolling stock")
+    check(groups[name] == "Armored trains", "Keep armored trains in a separate family")
+end
+-- Missing optional packs and Rubia must not leave invalid goals or empty sections.
+prototypes.item["wood-science-pack"] = nil
+for _, name in ipairs(armored_train_items) do prototypes.item[name] = nil end
+local optional_result = remote.preset.milestones_presets()["TIMSABA - Family layout"].milestones
+for _, goal in ipairs(optional_result) do
+    check(goal.name ~= "wood-science-pack" and goal.name ~= "Armored trains", "Skip absent optional prototypes")
+end
+for _, name in ipairs(armored_train_items) do prototypes.item[name] = {name = name} end
+prototypes.item["wood-science-pack"] = {name = "wood-science-pack"}
 check(seen["itemtest-planet-pack"], "Discover installed planet science")
 check(not seen["itemnot-a-real-pack"], "Ignore hidden technologies")
 local last_speed = -1

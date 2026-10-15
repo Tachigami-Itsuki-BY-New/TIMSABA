@@ -43,6 +43,30 @@ local function make_preset()
         "biorecycling-science-pack", "rubia-biofusion-science-pack"}) do
         if prototypes.item[name] then packs[name] = true end
     end
+    -- Production progression supplied for TIMSABA, not alphabetical prototype IDs.
+    -- Alien research unlocks several packs; keep that family before space science.
+    local science_order = {
+        "wood-science-pack", "steam-science-pack", "automation-science-pack",
+        "logistic-science-pack", "chemical-science-pack", "military-science-pack",
+        "bob-advanced-logistic-science-pack", "production-science-pack", "utility-science-pack",
+        "bob-alien-science-pack", "bob-alien-science-pack-blue", "bob-alien-science-pack-orange",
+        "bob-alien-science-pack-purple", "bob-alien-science-pack-yellow", "bob-alien-science-pack-green",
+        "bob-alien-science-pack-red", "bob-science-pack-gold", "space-science-pack",
+        "interstellar-science-pack", "electromagnetic-science-pack", "metallurgic-science-pack",
+        "agricultural-science-pack", "space-logistic-science-pack", "apicultural-science-pack",
+        "acidworking-science-pack", "vanadium-science-pack", "planetaris-compression-science-pack",
+        "pulsar-science-pack", "planetaris-polishing-science-pack", "planetaris-refraction-science-pack",
+        "planetaris-bioengineering-science-pack", "planetaris-pathological-science-pack", "cryogenic-science-pack",
+        "galvanization-science-pack", "hydraulic-science-pack", "golden-science-pack",
+        "gas-manipulation-science-pack", "promethium-science-pack",
+    }
+    for _, name in ipairs(science_order) do
+        if packs[name] then
+            add("item", name)
+            packs[name] = nil
+        end
+    end
+    -- Preserve science packs from other installed mods without disturbing the main progression.
     for _, name in ipairs(sorted_keys(packs)) do add("item", name) end
     family("Locomotives", {
         "locomotive", "bob-locomotive-2", "bob-locomotive-3",
@@ -58,6 +82,9 @@ local function make_preset()
     })
     family("Space trains", {
         "space-locomotive", "space-cargo-wagon", "space-fluid-wagon",
+    })
+    family("Armored trains", {
+        "rubia-armored-locomotive", "rubia-armored-cargo-wagon", "rubia-armored-fluid-wagon",
     })
     family("Basic construction robots", {
         "basic-construction-robot-gold", "basic-construction-robot-copper",
