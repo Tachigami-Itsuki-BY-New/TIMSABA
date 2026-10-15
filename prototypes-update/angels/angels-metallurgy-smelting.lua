@@ -1272,9 +1272,9 @@ data_item[titanium_sponge].localised_description = show_formula and {chemical_fo
 data_item[titanium_sponge].subgroup = is_titanium_chemistry
 data_item[titanium_sponge].order = b
 data_recipe[titanium_sponge].subgroup = is_titanium_chemistry
-data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_powder, titanium_sponge, magnesium_chloride_gas)
+data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_powder, titanium_sponge, magnesium_chloride)
 data_recipe[titanium_sponge].order = b
-data_recipe[titanium_sponge].energy_required = 8 -- TiCl₄ + 2Mg --> Ti + 2MgCl₂(g)
+data_recipe[titanium_sponge].energy_required = 8 -- TiCl₄(l) + 2Mg(s) --> Ti(s) + 2MgCl₂(s)
 data_recipe[titanium_sponge].ingredients =
 {
     {type = fluid, name = titanium_chloride_IV, amount = 240},
@@ -1283,7 +1283,7 @@ data_recipe[titanium_sponge].ingredients =
 data_recipe[titanium_sponge].results =
 {
     {type = item, name = titanium_sponge, amount = 16},
-    {type = fluid, name = magnesium_chloride_gas, amount = 240} -- 480
+    {type = item, name = magnesium_chloride, amount = 16} -- 32
 
 }
 data_recipe[titanium_sponge].main_product = titanium_sponge
