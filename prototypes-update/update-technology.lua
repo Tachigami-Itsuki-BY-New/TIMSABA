@@ -1333,22 +1333,25 @@ data_technology[tech_silicon_smelting_3].effects =
 -- NICKEL
 data_technology[tech_nickel_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation}
 
-data_technology[tech_nickel_smelting_2].prerequisites = {tech_ore_processing_2, tech_nickel_smelting_1, tech_powder_metallurgy_3, tech_boron_processing, tech_sulfur_processing_1}
+data_technology[tech_nickel_smelting_2].prerequisites = {tech_ore_processing_2, tech_nickel_smelting_1, tech_powder_metallurgy_3, tech_zinc_smelting_2}
 data_technology[tech_nickel_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = nickel_processed},
     {type = unlock_recipe, recipe = nickel_sulfate_II},
-    {type = unlock_recipe, recipe = nickel_sulfate_II_solution},
-    {type = unlock_recipe, recipe = nickel_cathode},
+    {type = unlock_recipe, recipe = nickel_hydroxide_II},
+    {type = unlock_recipe, recipe = nickel_chloride_II_solution},
+    {type = unlock_recipe, recipe = tetracarbonyl_nickel},
     {type = unlock_recipe, recipe = nickel_ingot_2},
     {type = unlock_recipe, recipe = nickel_powder}
 }
 
-data_technology[tech_nickel_smelting_3].prerequisites = {tech_ore_processing_3, tech_nickel_smelting_2}
+data_technology[tech_nickel_smelting_3].prerequisites = {tech_ore_processing_3, tech_nickel_smelting_2, tech_boron_processing}
 data_technology[tech_nickel_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = nickel_pellet},
-    {type = unlock_recipe, recipe = tetracarbonyl_nickel},
+    {type = unlock_recipe, recipe = nickel_oxide_II},
+    {type = unlock_recipe, recipe = nickel_sulfate_II_solution},
+    {type = unlock_recipe, recipe = nickel_cathode},
     {type = unlock_recipe, recipe = nickel_ingot_3}
 }
 
