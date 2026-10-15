@@ -696,30 +696,30 @@ data_recipe[nickel_ingot].ingredients =
 }
 data_recipe[nickel_ingot].results[1].amount = 16
 
-data_recipe[nickel_ingot_2].icons = FOUR_THREE_I(nickel_cathode, lime_angels, carbon_angels, oxygen_angels, nickel_ingot, nil, limestone_angels)
+data_recipe[nickel_ingot_2].icons = TWO_D_I(tetracarbonyl_nickel, nil, nickel_ingot, carbon_monoxide_angels)
 data_recipe[nickel_ingot_2].order = d_a
-data_recipe[nickel_ingot_2].energy_required = 8 -- Ni + CaO + C + O₂ --> Ni + CaCO₃
-data_recipe[nickel_ingot_2].ingredients =
+data_recipe[nickel_ingot_2].energy_required = 8 -- Ni(CO)₄(l) --> Ni(s) + 4CO(g)
+data_recipe[nickel_ingot_2].ingredients = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}}
+data_recipe[nickel_ingot_2].results =
+{
+    {type = item, name = nickel_ingot, amount = 16},
+    {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
+}
+
+data_recipe[nickel_ingot_3].icons = FOUR_THREE_I(nickel_cathode, lime_angels, carbon_angels, oxygen_angels, nickel_ingot, nil, limestone_angels)
+data_recipe[nickel_ingot_3].order = d_b
+data_recipe[nickel_ingot_3].energy_required = 8 -- Ni(s) + CaO(s) + C(s) + O₂(g) --> Ni(s) + CaCO₃(s)
+data_recipe[nickel_ingot_3].ingredients =
 {
     {type = item, name = nickel_cathode, amount = 16},
     {type = item, name = lime_angels, amount = 8},
     {type = item, name = carbon_angels, amount = 8},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
-data_recipe[nickel_ingot_2].results =
-{
-    {type = item, name = nickel_ingot, amount = 16},
-    {type = item, name = limestone_angels, amount = 4} -- 8
-}
-
-data_recipe[nickel_ingot_3].icons = TWO_D_I(tetracarbonyl_nickel, nil, nickel_ingot, carbon_monoxide_angels)
-data_recipe[nickel_ingot_3].order = d_b
-data_recipe[nickel_ingot_3].energy_required = 8 -- Ni(CO)₄ --> Ni + 4CO
-data_recipe[nickel_ingot_3].ingredients = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}}
 data_recipe[nickel_ingot_3].results =
 {
     {type = item, name = nickel_ingot, amount = 16},
-    {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
+    {type = item, name = limestone_angels, amount = 4} -- 8
 }
 
 data_item[nickel_powder].localised_description = show_formula and {chemical_formula, "Ni"} or nil
@@ -736,7 +736,7 @@ data_recipe[nickel_sulfate_II].categories = {angels_chemical_smelting_2}
 data_recipe[nickel_sulfate_II].subgroup = is_nickel_chemistry
 data_recipe[nickel_sulfate_II].icons = TWO_D_I(nickel_processed, sulfuric_acid_angels, nickel_sulfate_II, hydrogen_angels)
 data_recipe[nickel_sulfate_II].order = a
-data_recipe[nickel_sulfate_II].energy_required = 8 -- Ni + H₂SO₄ --> NiSO₄ + H₂
+data_recipe[nickel_sulfate_II].energy_required = 8 -- Ni(s) + H₂SO₄(l) --> NiSO₄(s) + H₂(l)
 data_recipe[nickel_sulfate_II].ingredients =
 {
     {type = item, name = nickel_processed, amount = 16},
@@ -751,11 +751,11 @@ data_recipe[nickel_sulfate_II].main_product = nickel_sulfate_II
 
 data_item[nickel_cathode].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_cathode].subgroup = is_nickel_chemistry
-data_item[nickel_cathode].order = c
+data_item[nickel_cathode].order = g
 data_recipe[nickel_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[nickel_cathode].subgroup = is_nickel_chemistry
 data_recipe[nickel_cathode].icons = FOUR_R_I(nickel_sulfate_II_solution, diborane_gas, nickel_cathode, sulfur_trioxide_gas)
-data_recipe[nickel_cathode].order = c
+data_recipe[nickel_cathode].order = g
 data_recipe[nickel_cathode].energy_required = 8 -- 2(NiSO₄ + H₂O) + 2(H₃BO₃ + H₂O) -electrode/electrolys-> 2Ni + B₂H₆ + 2SO₃ + 4O₂ + 2H₂O₂
 data_recipe[nickel_cathode].ingredients =
 {
