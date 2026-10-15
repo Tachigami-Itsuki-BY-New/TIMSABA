@@ -1071,76 +1071,19 @@ TIMSABA.functions.create_recipes
 TIMSABA.functions.create_recipes
 ({
     {
-        name = chromium_oxide_VI,
-        categories = {angels_blast_smelting_4},
+        name = chromium_sulfate_II_solution,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_chromium_chemistry,
-        icons = THREE_I(chromium_ore_angels, oxygen_angels, chromium_oxide_VI),
+        icons = THREE_D_I(chromium_ore_angels, sulfuric_acid_angels, oxygen_angels, chromium_sulfate_II_solution),
         order = a,
-        energy_required = 8, -- 2Cr + 3O₂ --> 2CrO₃
+        energy_required = 8, -- 2Cr(s) + 2H₂SO₄(l) + O₂(g) --> 2CrSO₄(aq)
         ingredients =
         {
             {type = item, name = chromium_ore_angels, amount = 32},
-            {type = fluid, name = oxygen_angels, amount = 360}
-        },
-        results = {{type = item, name = chromium_oxide_VI, amount = 16}},
-        main_product = chromium_oxide_VI
-    },
-    {
-        name = chromic_acid,
-        categories = {angels_chemical_smelting_3},
-        subgroup = is_chromium_chemistry,
-        icons = THREE_I(chromium_oxide_VI, water_purified_angels, chromic_acid),
-        order = b,
-        energy_required = 8, -- CrO₃ + 2H₂O --> H₂CrO₄(aq)
-        ingredients =
-        {
-            {type = item, name = chromium_oxide_VI, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 480}
-        },
-        results = {{type = fluid, name = chromic_acid, amount = 240}},
-        main_product = chromic_acid
-    },
-    {
-        name = chromium_cathode,
-        categories = {angels_petrochem_electrolyser},
-        subgroup = is_chromium_chemistry,
-        icons = FOUR_R_I(chromic_acid, sulfur_trioxide_gas, chromium_cathode, hydrogen_peroxide),
-        order = c,
-        energy_required = 8, -- (H₂CrO₄ + H₂O) + H₂SO₄ -electrode/electrolys-> Cr + SO₃ + 3H₂O₂
-        ingredients =
-        {
-            {type = fluid, name = chromic_acid, amount = 240},
             {type = fluid, name = sulfuric_acid_angels, amount = 240},
-            {type = item, name = electrode, amount = 1}
+            {type = fluid, name = oxygen_angels, amount = 120}
         },
-        results =
-        {
-            {type = item, name = chromium_cathode, amount = 16},
-            {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
-            {type = fluid, name = hydrogen_peroxide, amount = 240}, -- 720
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-        },
-        main_product = chromium_cathode
-    },
-    {
-        name = chromium_sulfate_II_solution,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_chromium_chemistry,
-        icons = THREE_D_I(chromium_processed, sulfuric_acid_angels, water_purified_angels, chromium_sulfate_II_solution, nil, hydrogen_angels),
-        order = d,
-        energy_required = 8, -- Cr + H₂SO₄ + H₂O --> CrSO₄(aq) + H₂
-        ingredients =
-        {
-            {type = item, name = chromium_processed, amount = 16},
-            {type = fluid, name = sulfuric_acid_angels, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240}
-        },
-        results =
-        {
-            {type = fluid, name = chromium_sulfate_II_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 240
-        },
+        results = {{type = fluid, name = chromium_sulfate_II_solution, amount = 240}},
         main_product = chromium_sulfate_II_solution
     },
     {
@@ -1148,8 +1091,8 @@ TIMSABA.functions.create_recipes
         categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(chromium_oxide_III, potassium_hypochlorite_solution, potassium_hydroxide_solution, potassium_chromate_solution, potassium_chloride_solution, water_purified_angels),
-        order = f,
-        energy_required = 8, -- Cr₂O₃ + 3KClO(aq) + 4KOH(aq) --> 2K₂CrO₄(aq) + 3KCl(aq) + 2H₂O + (2H₂O = aq)
+        order = c,
+        energy_required = 8, -- Cr₂O₃(s) + 3KClO(aq) + 4KOH(aq) --> 2K₂CrO₄(aq) + 3KCl(aq) + 4H₂O(l)
         ingredients =
         {
             {type = item, name = chromium_oxide_III, amount = 16},
@@ -1169,8 +1112,8 @@ TIMSABA.functions.create_recipes
         categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(potassium_chromate_solution, nil, sulfuric_acid_angels, potassium_dichromate_solution, potassium_sulfate_solution, water_purified_angels),
-        order = g,
-        energy_required = 8, -- 2K₂CrO₄(aq) + H₂SO₄ --> K₂Cr₂O₇(aq) + K₂SO₄(aq) + H₂O
+        order = d,
+        energy_required = 8, -- 2K₂CrO₄(aq) + H₂SO₄(l) --> K₂Cr₂O₇(aq) + K₂SO₄(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = potassium_chromate_solution, amount = 480},
@@ -1183,6 +1126,59 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = potassium_dichromate_solution
+    },
+    {
+        name = chromium_oxide_VI,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_chromium_chemistry,
+        icons = THREE_I(chromium_pellet, oxygen_angels, chromium_oxide_VI),
+        order = g,
+        energy_required = 8, -- 2Cr(s) + 3O₂(g) --> 2CrO₃(s)
+        ingredients =
+        {
+            {type = item, name = chromium_pellet, amount = 8},
+            {type = fluid, name = oxygen_angels, amount = 360}
+        },
+        results = {{type = item, name = chromium_oxide_VI, amount = 16}},
+        main_product = chromium_oxide_VI
+    },
+    {
+        name = chromic_acid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_chromium_chemistry,
+        icons = THREE_I(chromium_oxide_VI, water_purified_angels, chromic_acid),
+        order = h,
+        energy_required = 8, -- CrO₃(s) + 2H₂O(l) --> H₂CrO₄(aq)
+        ingredients =
+        {
+            {type = item, name = chromium_oxide_VI, amount = 16},
+            {type = fluid, name = water_purified_angels, amount = 480}
+        },
+        results = {{type = fluid, name = chromic_acid, amount = 240}},
+        main_product = chromic_acid
+    },
+    {
+        name = chromium_cathode,
+        categories = {angels_petrochem_electrolyser},
+        subgroup = is_chromium_chemistry,
+        icons = FOUR_R_I(chromic_acid, sulfur_trioxide_gas, chromium_cathode, hydrogen_peroxide),
+        order = i,
+        energy_required = 8, -- (H₂CrO₄ + H₂O) + H₂SO₄ -electrode/electrolys-> Cr + SO₃ + 3H₂O₂
+        ingredients =
+        {
+            {type = fluid, name = chromic_acid, amount = 240},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240},
+            {type = item, name = electrode, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = chromium_cathode, amount = 16},
+            {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
+            {type = fluid, name = hydrogen_peroxide, amount = 240}, -- 720
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+        },
+        main_product = chromium_cathode
     }
 })
 
