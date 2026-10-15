@@ -14,7 +14,7 @@ if mods[lignumis_mods] then
             name = tech_wodginite_processing_1,
             icon = graphics_wodginite_tech,
             icon_size = 256,
-            prerequisites = {space_science_pack},
+            prerequisites = {deep_miner},
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_ore .. _sorting},

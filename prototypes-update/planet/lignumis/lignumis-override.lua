@@ -383,14 +383,14 @@ if mods[lignumis_mods] then
     {
         {type = item, name = electric_engine_unit, amount = 128},
         {type = item, name = advanced_processing_unit, amount = 128},
-        {type = item, name = tantalum_tungsten_gear_wheel, amount = 256},
-        {type = item, name = tantalum_molybdenum_rhenium_plate, amount = 128},
-        {type = item, name = tantalum_niobium_plate, amount = 128}
+        {type = item, name = molybdenum_gear_wheel, amount = 256},
+        {type = item, name = rhenium_bearing, amount = 128},
+        {type = item, name = molybdenum_rhenium_plate, amount = 256}
     }
     data_mining_drill[deep_miner].subgroup = is_lignumis_mining
     data_mining_drill[deep_miner].order = a
     data_mining_drill[deep_miner].mining_speed = 8
-    data_mining_drill[deep_miner].energy_usage = 24000 .. kW
+    data_mining_drill[deep_miner].energy_usage = 30720 .. kW
 
     -- BUILDING
     data_item[burner_agricultural_tower].subgroup = is_lignumis_building
@@ -833,7 +833,6 @@ if mods[lignumis_mods] then
         {space_science_pack, 1}
     }
 
-    data_technology[deep_miner].prerequisites = {tech_tantalum_tungsten_processing, tech_tantalum_molybdenum_rhenium_processing, tech_tantalum_niobium_processing}
     data_technology[deep_miner].unit.ingredients =
     {
         {automation_science_pack, 1},
