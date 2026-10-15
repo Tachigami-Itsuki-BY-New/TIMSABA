@@ -298,19 +298,41 @@ TIMSABA.barreling.add_gas(silicon_chloride_IV_gas)
 TIMSABA.barreling.add_gas(silicon_fluoride_IV_gas)
 
 local graphics_nickel = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/"
+-- NICKEL ITEM
+nickel_hydroxide_II = "nickel-hydroxide-II"
+nickel_oxide_II = "nickel-oxide-II"
+TIMSABA.functions.create_items
+({
+    {
+        localised_description = show_formula and {chemical_formula, "Ni(OH)[font=default-tiny-bold]2[/font]"} or nil,
+        name = nickel_hydroxide_II,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_hydroxide_II .. ".png",
+        order = b
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NiO"} or nil,
+        name = nickel_oxide_II,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_oxide_II .. ".png",
+        order = e
+    }
+})
+
 -- NICKEL FLUID
-nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
+nickel_chloride_II_solution = "nickel-chloride-II-solution"
 tetracarbonyl_nickel = "tetracarbonyl-nickel-liquid"
+nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
 TIMSABA.functions.create_fluids
 ({
     {
-        localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
-        name = nickel_sulfate_II_solution,
+        localised_description = show_formula and {chemical_formula, "NiCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
+        name = nickel_chloride_II_solution,
         subgroup = is_nickel_chemistry,
-        icon = graphics_nickel .. nickel_sulfate_II_solution .. ".png",
-        order = b,
-        base_color = TIMSABA.functions.fluid_color("NiSO4Wp"),
-        flow_color = TIMSABA.functions.flow_color("NiSO4Wp")
+        icon = graphics_nickel .. nickel_chloride_II_solution .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("NiCl2Wp"),
+        flow_color = TIMSABA.functions.flow_color("NiCl2Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "Ni(CO)[font=default-tiny-bold]4[/font]"} or nil,
@@ -320,10 +342,20 @@ TIMSABA.functions.create_fluids
         order = d,
         base_color = TIMSABA.functions.fluid_color("NiC4O4"),
         flow_color = TIMSABA.functions.flow_color("NiC4O4")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = nickel_sulfate_II_solution,
+        subgroup = is_nickel_chemistry,
+        icon = graphics_nickel .. nickel_sulfate_II_solution .. ".png",
+        order = f,
+        base_color = TIMSABA.functions.fluid_color("NiSO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("NiSO4Wp")
     }
 })
-TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
+TIMSABA.barreling.add_dangerous_fluid(nickel_chloride_II_solution)
 TIMSABA.barreling.add_dangerous_fluid(tetracarbonyl_nickel)
+TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
 
 local graphics_aluminium = "__TIMSABA__/graphics/icons/angels/metallurgy/aluminium/"
 -- ALUMINIUM ITEM
@@ -391,6 +423,7 @@ TIMSABA.barreling.add_dangerous_fluid(lithium_tetraethoxy_aluminate_solution_eth
 local graphics_zinc = "__TIMSABA__/graphics/icons/angels/metallurgy/zinc/"
 -- ZINC ITEM
 zinc_chloride = "zinc-chloride"
+zinc_hydroxide = "zinc-hydroxide"
 TIMSABA.functions.create_items
 ({
     {
@@ -399,12 +432,19 @@ TIMSABA.functions.create_items
         subgroup = is_zinc_chemistry,
         icon = graphics_zinc .. zinc_chloride .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Zn(OH)[font=default-tiny-bold]2[/font]"} or nil,
+        name = zinc_hydroxide,
+        subgroup = is_zinc_chemistry,
+        icon = graphics_zinc .. zinc_hydroxide .. ".png",
+        order = d
     }
 })
 
 -- ZINC FLUID
 zinc_chloride_solution = "zinc-chloride-solution"
-zinc_gas = "zinc-gas"
+sodium_tetrahydroxozincate_II_solution = "sodium-tetrahydroxozincate-II-solution"
 zinc_sulfate_solution = "zinc-sulfate-solution"
 TIMSABA.functions.create_fluids
 ({
@@ -418,20 +458,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("ZnCl2Wp")
     },
     {
-        localised_description = show_formula and {chemical_formula, "Zn"} or nil,
-        name = zinc_gas,
+        localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]Zn(OH)[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = sodium_tetrahydroxozincate_II_solution,
         subgroup = is_zinc_chemistry,
-        icon = graphics_zinc .. zinc_gas .. ".png",
-        order = d,
-        base_color = TIMSABA.functions.fluid_color("ZnZnZn"),
-        flow_color = TIMSABA.functions.flow_color("ZnZnZn")
+        icon = graphics_zinc .. sodium_tetrahydroxozincate_II_solution .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("Na2ZnO4H4Wp"),
+        flow_color = TIMSABA.functions.flow_color("Na2ZnO4H4Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "ZnSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = zinc_sulfate_solution,
         subgroup = is_zinc_chemistry,
         icon = graphics_zinc .. zinc_sulfate_solution .. ".png",
-        order = e,
+        order = f,
         base_color = TIMSABA.functions.fluid_color("ZnSO4Wp"),
         flow_color = TIMSABA.functions.flow_color("ZnSO4Wp")
     }
@@ -533,7 +573,7 @@ TIMSABA.functions.create_items
         name = chromium_oxide_VI,
         subgroup = is_chromium_chemistry,
         icon = graphics_chromium .. chromium_oxide_VI .. ".png",
-        order = a,
+        order = g,
     },
     {
         localised_description = show_formula and {chemical_formula, "Cr"} or nil,
@@ -541,32 +581,23 @@ TIMSABA.functions.create_items
         subgroup = is_chromium_chemistry,
         icon = graphics_chromium .. chromium_cathode .. ".png",
         icon_size = 32,
-        order = c
+        order = i
     }
 })
 
 -- CHROMIUM FLUID
-chromic_acid = "chromic-acid-solution"
 chromium_sulfate_II_solution = "chromium-sulfate-II-solution"
+chromic_acid = "chromic-acid-solution"
 potassium_chromate_solution = "potassium-chromate-solution"
 potassium_dichromate_solution = "potassium-dichromate-solution"
 TIMSABA.functions.create_fluids
 ({
     {
-        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]CrO[font=default-tiny-bold]4(aq)[/font]"} or nil,
-        name = chromic_acid,
-        subgroup = is_chromium_chemistry,
-        icon = graphics_chromium .. chromic_acid .. ".png",
-        order = b,
-        base_color = TIMSABA.functions.fluid_color("H2CrO4Wp"),
-        flow_color = TIMSABA.functions.flow_color("H2CrO4Wp")
-    },
-    {
         localised_description = show_formula and {chemical_formula, "CrSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = chromium_sulfate_II_solution,
         subgroup = is_chromium_chemistry,
         icon = graphics_chromium .. chromium_sulfate_II_solution .. ".png",
-        order = d,
+        order = a,
         base_color = TIMSABA.functions.fluid_color("CrSO4Wp"),
         flow_color = TIMSABA.functions.flow_color("CrSO4Wp")
     },
@@ -575,7 +606,7 @@ TIMSABA.functions.create_fluids
         name = potassium_chromate_solution,
         subgroup = is_chromium_chemistry,
         icon = graphics_chromium .. potassium_chromate_solution .. ".png",
-        order = f,
+        order = b,
         base_color = TIMSABA.functions.fluid_color("K2CrO4Wp"),
         flow_color = TIMSABA.functions.flow_color("K2CrO4Wp")
     },
@@ -584,15 +615,24 @@ TIMSABA.functions.create_fluids
         name = potassium_dichromate_solution,
         subgroup = is_chromium_chemistry,
         icon = graphics_chromium .. potassium_dichromate_solution .. ".png",
-        order = g,
+        order = c,
         base_color = TIMSABA.functions.fluid_color("K2Cr2O7Wp"),
         flow_color = TIMSABA.functions.flow_color("K2Cr2O7Wp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]CrO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = chromic_acid,
+        subgroup = is_chromium_chemistry,
+        icon = graphics_chromium .. chromic_acid .. ".png",
+        order = h,
+        base_color = TIMSABA.functions.fluid_color("H2CrO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("H2CrO4Wp")
     }
 })
-TIMSABA.barreling.add_dangerous_fluid(chromic_acid)
 TIMSABA.barreling.add_dangerous_fluid(chromium_sulfate_II_solution)
 TIMSABA.barreling.add_dangerous_fluid(potassium_chromate_solution)
 TIMSABA.barreling.add_dangerous_fluid(potassium_dichromate_solution)
+TIMSABA.barreling.add_dangerous_fluid(chromic_acid)
 
 local graphics_tungsten = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/"
 -- TUNGSTEN ITEM

@@ -39,8 +39,8 @@ local replace_prototypes =
     [electric_chemical_furnace_1] = electric_mixing_furnace_1
 }
 if mods[lignumis_mods] then
-    replace_prototypes[burner_assembling_machine_bob] = "burner-assembling-machine"
-    replace_prototypes[steam_assembling_machine_bob] = "steam-assembling-machine"
+    replace_prototypes[burner_assembling_machine_bob] = burner .. "-" .. assembling_machine
+    replace_prototypes[steam_assembling_machine_bob] = assembling_machine_1
 else
     replace_prototypes[burner_assembling_machine_bob] = assembling_machine_1
     replace_prototypes[steam_assembling_machine_bob] = assembling_machine_1

@@ -696,30 +696,30 @@ data_recipe[nickel_ingot].ingredients =
 }
 data_recipe[nickel_ingot].results[1].amount = 16
 
-data_recipe[nickel_ingot_2].icons = FOUR_THREE_I(nickel_cathode, lime_angels, carbon_angels, oxygen_angels, nickel_ingot, nil, limestone_angels)
+data_recipe[nickel_ingot_2].icons = TWO_D_I(tetracarbonyl_nickel, nil, nickel_ingot, carbon_monoxide_angels)
 data_recipe[nickel_ingot_2].order = d_a
-data_recipe[nickel_ingot_2].energy_required = 8 -- Ni + CaO + C + O₂ --> Ni + CaCO₃
-data_recipe[nickel_ingot_2].ingredients =
+data_recipe[nickel_ingot_2].energy_required = 8 -- Ni(CO)₄(l) --> Ni(s) + 4CO(g)
+data_recipe[nickel_ingot_2].ingredients = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}}
+data_recipe[nickel_ingot_2].results =
+{
+    {type = item, name = nickel_ingot, amount = 16},
+    {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
+}
+
+data_recipe[nickel_ingot_3].icons = FOUR_THREE_I(nickel_cathode, lime_angels, carbon_angels, oxygen_angels, nickel_ingot, nil, limestone_angels)
+data_recipe[nickel_ingot_3].order = d_b
+data_recipe[nickel_ingot_3].energy_required = 8 -- Ni(s) + CaO(s) + C(s) + O₂(g) --> Ni(s) + CaCO₃(s)
+data_recipe[nickel_ingot_3].ingredients =
 {
     {type = item, name = nickel_cathode, amount = 16},
     {type = item, name = lime_angels, amount = 8},
     {type = item, name = carbon_angels, amount = 8},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
-data_recipe[nickel_ingot_2].results =
-{
-    {type = item, name = nickel_ingot, amount = 16},
-    {type = item, name = limestone_angels, amount = 4} -- 8
-}
-
-data_recipe[nickel_ingot_3].icons = TWO_D_I(tetracarbonyl_nickel, nil, nickel_ingot, carbon_monoxide_angels)
-data_recipe[nickel_ingot_3].order = d_b
-data_recipe[nickel_ingot_3].energy_required = 8 -- Ni(CO)₄ --> Ni + 4CO
-data_recipe[nickel_ingot_3].ingredients = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}}
 data_recipe[nickel_ingot_3].results =
 {
     {type = item, name = nickel_ingot, amount = 16},
-    {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
+    {type = item, name = limestone_angels, amount = 4} -- 8
 }
 
 data_item[nickel_powder].localised_description = show_formula and {chemical_formula, "Ni"} or nil
@@ -736,7 +736,7 @@ data_recipe[nickel_sulfate_II].categories = {angels_chemical_smelting_2}
 data_recipe[nickel_sulfate_II].subgroup = is_nickel_chemistry
 data_recipe[nickel_sulfate_II].icons = TWO_D_I(nickel_processed, sulfuric_acid_angels, nickel_sulfate_II, hydrogen_angels)
 data_recipe[nickel_sulfate_II].order = a
-data_recipe[nickel_sulfate_II].energy_required = 8 -- Ni + H₂SO₄ --> NiSO₄ + H₂
+data_recipe[nickel_sulfate_II].energy_required = 8 -- Ni(s) + H₂SO₄(l) --> NiSO₄(s) + H₂(l)
 data_recipe[nickel_sulfate_II].ingredients =
 {
     {type = item, name = nickel_processed, amount = 16},
@@ -751,11 +751,11 @@ data_recipe[nickel_sulfate_II].main_product = nickel_sulfate_II
 
 data_item[nickel_cathode].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_cathode].subgroup = is_nickel_chemistry
-data_item[nickel_cathode].order = c
+data_item[nickel_cathode].order = g
 data_recipe[nickel_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[nickel_cathode].subgroup = is_nickel_chemistry
 data_recipe[nickel_cathode].icons = FOUR_R_I(nickel_sulfate_II_solution, diborane_gas, nickel_cathode, sulfur_trioxide_gas)
-data_recipe[nickel_cathode].order = c
+data_recipe[nickel_cathode].order = g
 data_recipe[nickel_cathode].energy_required = 8 -- 2(NiSO₄ + H₂O) + 2(H₃BO₃ + H₂O) -electrode/electrolys-> 2Ni + B₂H₆ + 2SO₃ + 4O₂ + 2H₂O₂
 data_recipe[nickel_cathode].ingredients =
 {
@@ -929,7 +929,7 @@ data_item[zinc_ingot].order = d
 data_recipe[zinc_ingot].categories = {angels_chemical_smelting_1}
 data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_powder, zinc_ingot, magnesium_chloride_solution)
 data_recipe[zinc_ingot].order = d
-data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg --> Zn + MgCl₂(aq)
+data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg(s) --> Zn(s) + MgCl₂(aq)
 data_recipe[zinc_ingot].ingredients =
 {
     {type = fluid, name = zinc_chloride_solution, amount = 240},
@@ -942,23 +942,23 @@ data_recipe[zinc_ingot].results =
 }
 data_recipe[zinc_ingot].main_product = zinc_ingot
 
-data_recipe[zinc_ingot_2].icons = TWO_I(zinc_gas, zinc_ingot)
+--[[data_recipe[zinc_ingot_2].icons = TWO_D_I(zinc_chloride_solution, sodium_angels, zinc_ingot, sodium_chloride_solution)
 data_recipe[zinc_ingot_2].order = d_a
-data_recipe[zinc_ingot_2].energy_required = 8 -- Zn(g) -H₂O-> Zn
+data_recipe[zinc_ingot_2].energy_required = 8 -- ZnCl₂(aq) + Na(s) --> Zn(s) + NaCl₂(aq)
 data_recipe[zinc_ingot_2].ingredients =
 {
-    {type = fluid, name = zinc_gas, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = zinc_chloride_solution, amount = 240},
+    {type = item, name = sodium_angels, amount = 16},
 }
 data_recipe[zinc_ingot_2].results =
 {
     {type = item, name = zinc_ingot, amount = 16},
-    {type = fluid, name = steam, amount = 120} -- 240
-}
+    {type = fluid, name = sodium_chloride_solution, amount = 120} -- 240
+}]]
 
 data_recipe[zinc_ingot_3].icons = FOUR_THREE_I(zinc_cathode, lime_angels, carbon_angels, oxygen_angels, zinc_ingot, nil, limestone_angels)
 data_recipe[zinc_ingot_3].order = d_b
-data_recipe[zinc_ingot_3].energy_required = 8 -- Zn + CaO + C + O₂ --> Zn + CaCO₃
+data_recipe[zinc_ingot_3].energy_required = 8 -- Zn(s) + CaO(s) + C(s) + O₂(g) --> Zn(s) + CaCO₃(s)
 data_recipe[zinc_ingot_3].ingredients =
 {
     {type = item, name = zinc_cathode, amount = 16},
@@ -980,35 +980,35 @@ data_recipe[zinc_powder].order = e
 -- ZINC CHEMISTRY
 data_item[zinc_oxide].localised_description = show_formula and {chemical_formula, "ZnO"} or nil
 data_item[zinc_oxide].subgroup = is_zinc_chemistry
-data_item[zinc_oxide].order = c
-data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
+data_item[zinc_oxide].order = e
+--[[data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
 data_recipe[zinc_oxide].categories = {angels_blast_smelting_3}
 data_recipe[zinc_oxide].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide].icons = THREE_I(zinc_processed, oxygen_angels, zinc_oxide)
-data_recipe[zinc_oxide].order = c
-data_recipe[zinc_oxide].energy_required = 8 -- 2Zn + O₂ --> 2ZnO
+data_recipe[zinc_oxide].order = e
+data_recipe[zinc_oxide].energy_required = 8 -- 2Zn(s) + O₂(g) --> 2ZnO(s)
 data_recipe[zinc_oxide].ingredients =
 {
     {type = item, name = zinc_processed, amount = 16},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
-data_recipe[zinc_oxide].results = {{type = item, name = zinc_oxide, amount = 16}}
+data_recipe[zinc_oxide].results = {{type = item, name = zinc_oxide, amount = 16}}]]
 
 data_recipe[zinc_oxide_2].categories = {angels_blast_smelting_4}
 data_recipe[zinc_oxide_2].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide_2].icons = THREE_I(zinc_pellet, oxygen_angels, zinc_oxide)
-data_recipe[zinc_oxide_2].order = c_a
-data_recipe[zinc_oxide_2].energy_required = 8 -- 2Zn + O₂ --> 2ZnO
+data_recipe[zinc_oxide_2].order = e_a
+data_recipe[zinc_oxide_2].energy_required = 8 -- 2Zn(s) + O₂(g) --> 2ZnO(s)
 data_recipe[zinc_oxide_2].ingredients[2].amount = 120
 data_recipe[zinc_oxide_2].results = {{type = item, name = zinc_oxide, amount = 16}}
 
 data_item[zinc_cathode].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_cathode].subgroup = is_zinc_chemistry
-data_item[zinc_cathode].order = f
+data_item[zinc_cathode].order = g
 data_recipe[zinc_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[zinc_cathode].subgroup = is_zinc_chemistry
 data_recipe[zinc_cathode].icons = FOUR_R_I(zinc_sulfate_solution, sulfur_dioxide_angels, zinc_cathode, hydrogen_peroxide)
-data_recipe[zinc_cathode].order = f
+data_recipe[zinc_cathode].order = g
 data_recipe[zinc_cathode].energy_required = 8 -- 2ZnSO₄(aq) + 2H₂SO₄ -electrode/electrolys-> 2Zn + 4SO₂ + 4H₂O₂ + O₂
 data_recipe[zinc_cathode].ingredients =
 {
@@ -1594,106 +1594,106 @@ data_recipe[chromium_pellet].ingredients[1].amount = 4
 data_item[chromium_ingot].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_ingot].order = d
 data_recipe[chromium_ingot].categories = {angels_blast_smelting_4}
-data_recipe[chromium_ingot].icons = FOUR_THREE_I(chromium_cathode, lime_angels, carbon_angels, oxygen_angels, chromium_ingot, nil, limestone_angels)
+data_recipe[chromium_ingot].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_powder, chromium_ingot, zinc_sulfate_solution)
 data_recipe[chromium_ingot].order = d
-data_recipe[chromium_ingot].energy_required = 8 -- Cr + CaO + C + O₂ --> Cr + CaCO₃
+data_recipe[chromium_ingot].energy_required = 8 -- CrSO₄(aq) + Zn(s) --> Cr(s) + ZnSO₄(aq)
 data_recipe[chromium_ingot].ingredients =
+{
+    {type = fluid, name = chromium_sulfate_II_solution, amount = 240},
+    {type = item, name = zinc_powder, amount = 16}
+}
+data_recipe[chromium_ingot].results =
+{
+    {type = item, name = chromium_ingot, amount = 16},
+    {type = fluid, name = zinc_sulfate_solution, amount = 120} -- 240
+}
+data_recipe[chromium_ingot].main_product = chromium_ingot
+
+data_recipe[chromium_ingot_2].localised_name = {"item-name." .. chromium_ingot}
+data_recipe[chromium_ingot_2].categories = {angels_chemical_smelting_4}
+data_recipe[chromium_ingot_2].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_powder, chromium_ingot, aluminium_oxide, steam)
+data_recipe[chromium_ingot_2].order = d_a
+data_recipe[chromium_ingot_2].energy_required = 8 -- 2Cr(OH)₃(s) + 2Al(s) --> 2Cr(s) + Al₂O₃(s) + 3H₂O(aq)
+data_recipe[chromium_ingot_2].ingredients =
+{
+    {type = item, name = chromium_hydroxide_III, amount = 16},
+    {type = item, name = aluminium_powder, amount = 16}
+}
+data_recipe[chromium_ingot_2].results =
+{
+    {type = item, name = chromium_ingot, amount = 16},
+    {type = item, name = aluminium_oxide, amount = 4}, -- 8
+    {type = fluid, name = steam, amount = 120} -- 360
+}
+data_recipe[chromium_ingot_2].main_product = chromium_ingot
+
+data_recipe[chromium_ingot_3].localised_name = {"item-name." .. chromium_ingot}
+data_recipe[chromium_ingot_3].categories = {angels_blast_smelting_4}
+data_recipe[chromium_ingot_3].icons = FOUR_THREE_I(chromium_cathode, lime_angels, carbon_angels, oxygen_angels, chromium_ingot, nil, limestone_angels)
+data_recipe[chromium_ingot_3].order = d_b
+data_recipe[chromium_ingot_3].energy_required = 8 -- Cr(s) + CaO(s) + C(s) + O₂(g) --> Cr(s) + CaCO₃(s)
+data_recipe[chromium_ingot_3].ingredients =
 {
     {type = item, name = chromium_cathode, amount = 16},
     {type = item, name = lime_angels, amount = 8},
     {type = item, name = carbon_angels, amount = 8},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
-data_recipe[chromium_ingot].results =
-{
-    {type = item, name = chromium_ingot, amount = 16},
-    {type = item, name = limestone_angels, amount = 4}
-}
-data_recipe[chromium_ingot].main_product = chromium_ingot
-
-data_recipe[chromium_ingot_2].localised_name = {"item-name." .. chromium_ingot}
-data_recipe[chromium_ingot_2].categories = {angels_chemical_smelting_4}
-data_recipe[chromium_ingot_2].icons = TWO_D_I(chromium_sulfate_II_solution, zinc_powder, chromium_ingot, zinc_sulfate_solution)
-data_recipe[chromium_ingot_2].order = d_a
-data_recipe[chromium_ingot_2].energy_required = 8 -- CrSO₄(aq) + Zn --> Cr + ZnSO₄(aq)
-data_recipe[chromium_ingot_2].ingredients =
-{
-    {type = fluid, name = chromium_sulfate_II_solution, amount = 240},
-    {type = item, name = zinc_powder, amount = 16}
-}
-data_recipe[chromium_ingot_2].results =
-{
-    {type = item, name = chromium_ingot, amount = 16},
-    {type = fluid, name = zinc_sulfate_solution, amount = 120} -- 240
-}
-data_recipe[chromium_ingot_2].main_product = chromium_ingot
-
-data_recipe[chromium_ingot_3].localised_name = {"item-name." .. chromium_ingot}
-data_recipe[chromium_ingot_3].categories = {angels_blast_smelting_4}
-data_recipe[chromium_ingot_3].icons = THREE_D_I(chromium_hydroxide_III, nil, aluminium_powder, chromium_ingot, aluminium_oxide, steam)
-data_recipe[chromium_ingot_3].order = d_b
-data_recipe[chromium_ingot_3].energy_required = 8 -- 2Cr(OH)₃ + 2Al --> 2Cr + Al₂O₃ + 3H₂O
-data_recipe[chromium_ingot_3].ingredients =
-{
-    {type = item, name = chromium_hydroxide_III, amount = 16},
-    {type = item, name = aluminium_powder, amount = 16}
-}
 data_recipe[chromium_ingot_3].results =
 {
     {type = item, name = chromium_ingot, amount = 16},
-    {type = item, name = aluminium_oxide, amount = 4}, -- 8
-    {type = fluid, name = steam, amount = 120} -- 360
+    {type = item, name = limestone_angels, amount = 4}
 }
 data_recipe[chromium_ingot_3].main_product = chromium_ingot
 
 -- CHROMIUM CHEMISTRY
 data_item[chromium_oxide_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_oxide_III].subgroup = is_chromium_chemistry
-data_item[chromium_oxide_III].order = e
+data_item[chromium_oxide_III].order = b
 data_recipe[chromium_oxide_III].categories = {angels_blast_smelting_4}
 data_recipe[chromium_oxide_III].subgroup = is_chromium_chemistry
-data_recipe[chromium_oxide_III].icons = THREE_I(chromium_pellet, oxygen_angels, chromium_oxide_III)
-data_recipe[chromium_oxide_III].order = e
-data_recipe[chromium_oxide_III].energy_required = 8 -- 4Сr + 3O₂ --> 2Cr₂O₃
+data_recipe[chromium_oxide_III].icons = THREE_I(chromium_processed, oxygen_angels, chromium_oxide_III)
+data_recipe[chromium_oxide_III].order = b
+data_recipe[chromium_oxide_III].energy_required = 8 -- 4Сr(s) + 3O₂(g) --> 2Cr₂O₃(s)
 data_recipe[chromium_oxide_III].ingredients =
 {
-    {type = item, name = chromium_pellet, amount = 16},
-    {type = fluid, name = oxygen_angels, amount = 180}
+    {type = item, name = chromium_processed, amount = 16},
+    {type = fluid, name = oxygen_angels, amount = 90}
 }
-data_recipe[chromium_oxide_III].results = {{type = item, name = chromium_oxide_III, amount = 16}}
+data_recipe[chromium_oxide_III].results = {{type = item, name = chromium_oxide_III, amount = 8}}
 data_recipe[chromium_oxide_III].main_product = chromium_oxide_III
 
 data_item[chromium_sulfate_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_sulfate_III].subgroup = is_chromium_chemistry
-data_item[chromium_sulfate_III].order = h
+data_item[chromium_sulfate_III].order = e
 data_recipe[chromium_sulfate_III].categories = {angels_advanced_chemistry}
 data_recipe[chromium_sulfate_III].subgroup = is_chromium_chemistry
 data_recipe[chromium_sulfate_III].icons = FOUR_THREE_R_I(potassium_dichromate_solution, ethanol_angels, sulfuric_acid_angels, chromium_sulfate_III, acetaldehyde, water_purified_angels, potassium_sulfate_solution)
-data_recipe[chromium_sulfate_III].order = h
-data_recipe[chromium_sulfate_III].energy_required = 8 -- K₂Cr₂O₇(aq) + 3C₂H₆O + 4H₂SO₄ --> Cr₂(SO₄)₃ + 3C₂H₄O + 7H₂O + K₂SO₄(aq)
+data_recipe[chromium_sulfate_III].order = e
+data_recipe[chromium_sulfate_III].energy_required = 8 -- K₂Cr₂O₇(aq) + 3C₂H₆O(l) + 4H₂SO₄(l) --> Cr₂(SO₄)₃(s) + 3C₂H₄O(l) + 7H₂O(l) + K₂SO₄(aq)
 data_recipe[chromium_sulfate_III].ingredients =
 {
-    {type = fluid, name = potassium_dichromate_solution, amount = 240},
-    {type = fluid, name = ethanol_angels, amount = 720},
-    {type = fluid, name = sulfuric_acid_angels, amount = 960}
+    {type = fluid, name = potassium_dichromate_solution, amount = 120},
+    {type = fluid, name = ethanol_angels, amount = 360},
+    {type = fluid, name = sulfuric_acid_angels, amount = 480}
 }
 data_recipe[chromium_sulfate_III].results =
 {
-    {type = item, name = chromium_sulfate_III, amount = 16},
-    {type = fluid, name = acetaldehyde, amount = 240}, -- 720
-    {type = fluid, name = water_purified_angels, amount = 480}, -- 1680
-    {type = fluid, name = potassium_sulfate_solution, amount = 120} -- 240
+    {type = item, name = chromium_sulfate_III, amount = 8},
+    {type = fluid, name = acetaldehyde, amount = 120}, -- 360
+    {type = fluid, name = water_purified_angels, amount = 360}, -- 840
+    {type = fluid, name = potassium_sulfate_solution, amount = 60} -- 120
 }
 data_recipe[chromium_sulfate_III].main_product = chromium_sulfate_III
 
 data_item[chromium_hydroxide_III].localised_description = show_formula and {chemical_formula, "Cr(OH)[font=default-tiny-bold]3[/font]"} or nil
 data_item[chromium_hydroxide_III].subgroup = is_chromium_chemistry
-data_item[chromium_hydroxide_III].order = i
+data_item[chromium_hydroxide_III].order = f
 data_recipe[chromium_hydroxide_III].categories = {angels_chemical_smelting_4}
 data_recipe[chromium_hydroxide_III].subgroup = is_chromium_chemistry
 data_recipe[chromium_hydroxide_III].icons = THREE_D_I(chromium_sulfate_III, nil, potassium_hydroxide_solution, chromium_hydroxide_III, potassium_sulfate_solution, water_purified_angels)
-data_recipe[chromium_hydroxide_III].order = i
-data_recipe[chromium_hydroxide_III].energy_required = 4 -- Cr₂(SO₄)₃ + 6KOH(aq) --> 2Cr(OH)₃ + 3K₂SO₄(aq) + (3H₂O = aq)
+data_recipe[chromium_hydroxide_III].order = f
+data_recipe[chromium_hydroxide_III].energy_required = 8 -- Cr₂(SO₄)₃(s) + 6KOH(aq) --> 2Cr(OH)₃(s) + 3K₂SO₄(aq) + 3H₂O(l)
 data_recipe[chromium_hydroxide_III].ingredients =
 {
     {type = item, name = chromium_sulfate_III, amount = 8},
@@ -1774,9 +1774,9 @@ data_recipe[tungsten_oxide_VI_2].energy_required = 8 -- (NH₄)₁₀H₂W₁₂
 data_recipe[tungsten_oxide_VI_2].ingredients = {{type = item, name = ammonium_paratungstate, amount = 1}}
 data_recipe[tungsten_oxide_VI_2].results =
 {
-    {type = item, name = tungsten_oxide_VI, amount = 16}, -- 12
-    {type = fluid, name = ammonia_angels, amount = 120}, -- 150 / 240
-    {type = fluid, name = steam, amount = 60} -- 90 / 120
+    {type = item, name = tungsten_oxide_VI, amount = 12},
+    {type = fluid, name = ammonia_angels, amount = 30}, -- 150
+    {type = fluid, name = steam, amount = 30} -- 90
 }
 
 data_fluid[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
@@ -1806,27 +1806,27 @@ data_recipe[ammonium_paratungstate].categories = {angels_advanced_chemistry}
 data_recipe[ammonium_paratungstate].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_paratungstate].icons = FOUR_D_I(tungsten_processed, carbon_angels, ammonia_angels, water_purified_angels, ammonium_paratungstate)
 data_recipe[ammonium_paratungstate].order = c
-data_recipe[ammonium_paratungstate].energy_required = 8 -- 12W + 18O₂ + 10NH₃ + 6H₂O --> (NH₄)₁₀H₂W₁₂O₄₂
+data_recipe[ammonium_paratungstate].energy_required = 8 -- 12W(s) + 18O₂(g) + 10NH₃(g) + 6H₂O(l) --> (NH₄)₁₀H₂W₁₂O₄₂(s)
 data_recipe[ammonium_paratungstate].ingredients =
 {
-    {type = item, name = tungsten_processed, amount = 16}, -- 12
-    {type = fluid, name = oxygen_angels, amount = 360}, -- 270
-    {type = fluid, name = ammonia_angels, amount = 240}, -- 150
-    {type = fluid, name = water_purified_angels, amount = 120} -- 90
+    {type = item, name = tungsten_processed, amount = 12},
+    {type = fluid, name = oxygen_angels, amount = 270},
+    {type = fluid, name = ammonia_angels, amount = 150},
+    {type = fluid, name = water_purified_angels, amount = 90}
 }
 data_recipe[ammonium_paratungstate].results = {{type = item, name = ammonium_paratungstate, amount = 1}}
 data_recipe[ammonium_paratungstate].main_product = ammonium_paratungstate
 
 data_recipe[ammonium_paratungstate_2].subgroup = is_tungsten_chemistry
-data_recipe[ammonium_paratungstate_2].icons = THREE_D_I(ammonium_tungstate_solution, nil, nil, ammonium_paratungstate, ammonia_angels, water_purified_angels)
+data_recipe[ammonium_paratungstate_2].icons = THREE_D_I(ammonium_tungstate_solution, nil, nil, ammonium_paratungstate, steam, ammonia_angels)
 data_recipe[ammonium_paratungstate_2].order = c_a
-data_recipe[ammonium_paratungstate_2].energy_required = 8 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂ + 14NH₃ + 6H₂O + 12H₂O
-data_recipe[ammonium_paratungstate_2].ingredients = {{type = fluid, name = ammonium_tungstate_solution, amount = 240}} -- 180
+data_recipe[ammonium_paratungstate_2].energy_required = 8 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂(s) + 18H₂O(g) + 14NH₃(g)
+data_recipe[ammonium_paratungstate_2].ingredients = {{type = fluid, name = ammonium_tungstate_solution, amount = 180}}
 data_recipe[ammonium_paratungstate_2].results =
 {
     {type = item, name = ammonium_paratungstate, amount = 1},
-    {type = fluid, name = ammonia_angels, amount = 120}, -- 210 / 240
-    {type = fluid, name = water_purified_angels, amount = 120} -- 270 / 360
+    {type = fluid, name = steam, amount = 30}, -- 270
+    {type = fluid, name = ammonia_angels, amount = 90} -- 210
 }
 data_recipe[ammonium_paratungstate_2].main_product = ammonium_paratungstate
 
@@ -1838,7 +1838,7 @@ data_recipe[ammonium_tungstate_solution].categories = {angels_chemical_smelting_
 data_recipe[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_tungstate_solution].icons = THREE_D_I(tungstic_acid, ammonia_angels, water_purified_angels, ammonium_tungstate_solution)
 data_recipe[ammonium_tungstate_solution].order = f
-data_recipe[ammonium_tungstate_solution].energy_required = 8 -- H₂WO₄ + 2NH₃ + H₂O --> (NH₄)₂WO₄(aq)
+data_recipe[ammonium_tungstate_solution].energy_required = 8 -- H₂WO₄(s) + 2NH₃(g) + H₂O(l) --> (NH₄)₂WO₄(aq)
 data_recipe[ammonium_tungstate_solution].ingredients =
 {
     {type = item, name = tungstic_acid, amount = 16},
