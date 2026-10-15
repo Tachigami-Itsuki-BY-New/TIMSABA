@@ -825,24 +825,25 @@ if data_recipe[spidertron_cannon] then
 
     local spidertrons =
     {
-        {name = antron, order = a},
-        {name = tankotron, order = b},
-        {name = logitron, order = c},
-        {name = spidertron, order = d},
-        {name = heavy_spidertron, order = e}
+        {name = antron,           order = a, equipment_grid = "bob-tankotron-equipment-grid"},
+        {name = tankotron,        order = b, equipment_grid = large_equipment_grid},
+        {name = logitron,         order = c, equipment_grid = power_armor_equipment_grid_4},
+        {name = spidertron,       order = d, equipment_grid = power_armor_equipment_grid_4},
+        {name = heavy_spidertron, order = e, equipment_grid = power_armor_equipment_grid_5}
     }
     for _, ENTITES in pairs(spidertrons) do
         data_item_entity[ENTITES.name].subgroup = is_spidertron
         data_item_entity[ENTITES.name].order = ENTITES.order
-        data_item_entity[ENTITES.name].weight = 1000000
+        data_item_entity[ENTITES.name].weight = 1000000000
         data_recipe[ENTITES.name].subgroup = is_spidertron
         data_recipe[ENTITES.name].order = ENTITES.order
         data_recipe[ENTITES.name].energy_required = 4
         data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
         data_spider_vechicle[ENTITES.name].order = ENTITES.order
+        data_spider_vechicle[ENTITES.name].equipment_grid = ENTITES.equipment_grid
     end
 
-    data_spider_vechicle[antron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[antron].movement_energy_consumption = 225 .. kW
     data_spider_vechicle[antron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 
     data_recipe[tankotron].ingredients =
@@ -852,24 +853,24 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 6}
     }
-    data_spider_vechicle[tankotron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[tankotron].movement_energy_consumption = 225 .. kW
     data_spider_vechicle[tankotron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 
     data_recipe[logitron].ingredients =
     {
         {type = item, name = steel_chest, amount = 1},
-        {type = item, name = gun_turret_1, amount = 2},
         {type = item, name = mech_armor_plate, amount = 4},
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 8}
     }
-    data_spider_vechicle[logitron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[logitron].movement_energy_consumption = 225 .. kW
     data_spider_vechicle[logitron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+    data_spider_vechicle[logitron].guns = {}
 
     data_recipe[spidertron].ingredients =
     {
         {type = item, name = rtg, amount = 2},
-        {type = item, name = rocket_turret, amount = 1},
+        {type = item, name = rocket_launcher, amount = 4},
         {type = item, name = mech_armor_plate, amount = 8},
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 8}
@@ -883,6 +884,30 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 8}
     }
+
+    -- GUN
+    local spidertron_gatling_gun = "bob-" .. spidertron .. "-gatling-gun"
+    data_gun[spidertron_gatling_gun].attack_parameters.range = 32
+
+    local spidertron_cannon_1 = spidertron_cannon .. "-1"
+    data_gun[spidertron_cannon_1].attack_parameters.range = 48
+    data_gun[spidertron_cannon_1].attack_parameters.cooldown = 60
+
+    local spidertron_cannon_2 = spidertron_cannon .. "-2"
+    data_gun[spidertron_cannon_2].attack_parameters.range = 48
+    data_gun[spidertron_cannon_2].attack_parameters.cooldown = 60
+
+    local spidertron_rocket_launcher_1 = spidertron .. "-" .. rocket_launcher .. "-1"
+    data_gun[spidertron_rocket_launcher_1].attack_parameters.range = 64
+
+    local spidertron_rocket_launcher_2 = spidertron .. "-" .. rocket_launcher .. "-2"
+    data_gun[spidertron_rocket_launcher_2].attack_parameters.range = 64
+
+    local spidertron_rocket_launcher_3 = spidertron .. "-" .. rocket_launcher .. "-3"
+    data_gun[spidertron_rocket_launcher_3].attack_parameters.range = 64
+
+    local spidertron_rocket_launcher_4 = spidertron .. "-" .. rocket_launcher .. "-4"
+    data_gun[spidertron_rocket_launcher_4].attack_parameters.range = 64
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
