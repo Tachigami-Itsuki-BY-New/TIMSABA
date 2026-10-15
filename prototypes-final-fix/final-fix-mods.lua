@@ -720,6 +720,8 @@ if mods[lignumis_mods] then
     }
 
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
+
+    data.raw["tips-and-tricks-item"]["lignumis-steam"].trigger.technology = "gold-fluid-handling"
 end
 
 if mods[aegis_bellicos_mods] then
