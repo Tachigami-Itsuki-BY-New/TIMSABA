@@ -397,6 +397,12 @@ TIMSABA.functions.create_buildings
         allowed_module_categories = {speed, efficiency, pollution_clean}
     }
 })
+if mods[muluna_mods] then
+    data_recipe[electric_blast_furnace_1].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_2].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_3].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_4].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+end
 data_assembling[electric_blast_furnace_1].next_upgrade = electric_blast_furnace_2
 data_assembling[electric_blast_furnace_2].next_upgrade = electric_blast_furnace_3
 data_assembling[electric_blast_furnace_3].next_upgrade = electric_blast_furnace_4

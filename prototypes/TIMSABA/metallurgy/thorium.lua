@@ -168,7 +168,7 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = thorium_oxide_IV, amount = 240},
+            {type = item, name = thorium_oxide_IV, amount = 16},
             {type = item, name = fluorite_angels, amount = 16} -- 32
         },
         main_product = thorium_oxide_IV
@@ -217,7 +217,7 @@ TIMSABA.functions.create_recipes
         name = thorium_fluoride_IV,
         categories = {angels_chemical_smelting_4},
         subgroup = is_thorium_chemistry,
-        icons = THREE_D_I(thorium_pellet, hydrogen_fluoride_angels, thorium_fluoride_IV, hydrogen_angels),
+        icons = TWO_D_I(thorium_pellet, hydrogen_fluoride_angels, thorium_fluoride_IV, hydrogen_angels),
         order = d,
         energy_required = 8, -- Th(pellet) + 4HF(g) --> ThF₄(s) + 2H₂(g)
         ingredients =

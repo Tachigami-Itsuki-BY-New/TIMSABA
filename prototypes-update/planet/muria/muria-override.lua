@@ -54,11 +54,11 @@ if mods[muria_mods] then
     data_recipe[hydrogenated_oil_processing].subgroup = is_muria_recipe
     data_recipe[hydrogenated_oil_processing].icons = THREE_D_I(crude_oil, nil, hydrogen_angels, methane_angels, fuel_oil_angels, naphtha_angels)
     data_recipe[hydrogenated_oil_processing].order = b_c
-    data_recipe[hydrogenated_oil_processing].energy_required = 4 -- CnH₂n+₂(l) + 8H₂(g) --> 2CH₄(g) + C₂₀H₄₂(l) + C₈H₁₈(l) / n = 30
+    data_recipe[hydrogenated_oil_processing].energy_required = 8 -- 4CnH2n+2(l) + 2H₂(g) --> 2CH₄(g) + C₄₈H₉₈(l) + C₈H₁₈(l)
     data_recipe[hydrogenated_oil_processing].ingredients =
     {
-        {type = fluid, name = crude_oil, amount = 60},
-        {type = fluid, name = hydrogen_angels, amount = 480}
+        {type = fluid, name = crude_oil, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 120}
     }
     data_recipe[hydrogenated_oil_processing].results =
     {

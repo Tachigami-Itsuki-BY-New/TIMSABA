@@ -213,18 +213,18 @@ if mods[corrundum_mods] then
     data_recipe[petroleum_alkylation].subgroup = is_corrundum_recipe
     data_recipe[petroleum_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, fuel_oil_angels, methane_angels)
     data_recipe[petroleum_alkylation].order = a_b
-    data_recipe[petroleum_alkylation].energy_required = 8 -- 4C₇H₁₆ + 5H₂ -H₂SO₄-> C₂₀H₄₂ + 8CH₄
+    data_recipe[petroleum_alkylation].energy_required = 8 -- 8C₇H₁₆(l) + H₂(g) -H₂SO₄-> C₄₈H₉₈(l) + 8CH₄(g)
     data_recipe[petroleum_alkylation].ingredients =
     {
-        {type = fluid, name = condensates_angels, amount = 120},
-        {type = fluid, name = hydrogen_angels, amount = 150},
-        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+        {type = fluid, name = condensates_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
     data_recipe[petroleum_alkylation].results =
     {
         {type = fluid, name = fuel_oil_angels, amount = 30},
         {type = fluid, name = methane_angels, amount = 240},
-        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
     }
     data_recipe[petroleum_alkylation].main_product = fuel_oil_angels
     data_recipe[petroleum_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
@@ -299,18 +299,18 @@ if mods[corrundum_mods] then
     data_recipe[light_oil_alkylation].subgroup = is_corrundum_recipe
     data_recipe[light_oil_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, naphtha_angels, methane_angels)
     data_recipe[light_oil_alkylation].order = b_c
-    data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆ + H₂ -H₂SO₄-> C₈H₁₈ + 3CH₄
+    data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆(l) + 5H₂(g) -H₂SO₄-> C₈H₁₈(l) + 6CH₄(g)
     data_recipe[light_oil_alkylation].ingredients =
     {
-        {type = fluid, name = condensates_angels, amount = 60},
-        {type = fluid, name = hydrogen_angels, amount = 30},
-        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+        {type = fluid, name = condensates_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 600},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
     data_recipe[light_oil_alkylation].results =
     {
-        {type = fluid, name = naphtha_angels, amount = 30},
-        {type = fluid, name = methane_angels, amount = 90},
-        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+        {type = fluid, name = naphtha_angels, amount = 120},
+        {type = fluid, name = methane_angels, amount = 720},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
     }
     data_recipe[light_oil_alkylation].main_product = naphtha_angels
     data_recipe[light_oil_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
