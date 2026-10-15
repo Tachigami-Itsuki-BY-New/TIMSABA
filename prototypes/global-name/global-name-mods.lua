@@ -509,7 +509,6 @@ gold_storage_tank = "gold-storage-tank"
 deep_miner = "deep-miner"
 burner_agricultural_tower = "burner-agricultural-tower"
 burner_assembling_machine = "burner-" .. assembling_machine
-steam_assembling_machine = "steam-" .. assembling_machine
 burner_lumber_mill = "lumber-mill"
 wood_lab = "wood-lab"
 quality_assembler = "quality-assembler"

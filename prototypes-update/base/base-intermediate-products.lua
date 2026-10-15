@@ -385,6 +385,8 @@ data_recipe[CPU].ingredients =
 data_recipe[CPU].results[1].amount = 4
 
 data_item[wooden_board].order = a
+data_item[wooden_board].fuel_categories = {base_fuel}
+data_item[wooden_board].fuel_value = 1800 .. kJ
 if mods[muluna_mods] then
     table.insert(data_recipe[wooden_board].categories, advanced_wood_processing)
 end

@@ -55,6 +55,11 @@ for _, AMMO in pairs(firearm_magazines) do
     end
 end
 data_recipe[firearm_magazine].icons = R_P_I(firearm_magazine, nil, nil, number_1)
+data_recipe[firearm_magazine].ingredients =
+{
+    {type = item, name = iron_plate, amount = 2},
+    {type = item, name = coal, amount = 1}
+}
 
 data_recipe[piercing_rounds_magazine].icons = R_P_I(piercing_rounds_magazine, nil, nil, number_1)
 data_recipe[piercing_rounds_magazine].energy_required = 1
@@ -1721,6 +1726,7 @@ bobmods.lib.recipe.update_recycling_recipe
     submachine_gun,
     rifle,
     sniper_rifel,
+    firearm_magazine,
     piercing_rounds_magazine,
     uranium_rounds_magazine,
     shotgun,

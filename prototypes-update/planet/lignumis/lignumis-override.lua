@@ -3,7 +3,7 @@ if mods[lignumis_mods] then
     data_item[lumber].subgroup = is_lignumis_wood
     data_item[lumber].order = a
     data_item[lumber].fuel_categories = {base_fuel}
-    data_item[lumber].fuel_value = 3600 .. kJ
+    data_item[lumber].fuel_value = 900 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[lumber].categories, advanced_wood_processing)
     end
@@ -15,6 +15,8 @@ if mods[lignumis_mods] then
 
     data_item[wooden_gear_wheel].subgroup = is_lignumis_wood
     data_item[wooden_gear_wheel].order = b
+    data_item[wooden_gear_wheel].fuel_categories = {base_fuel}
+    data_item[wooden_gear_wheel].fuel_value = 450 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_gear_wheel].categories, advanced_wood_processing)
     end
@@ -381,14 +383,14 @@ if mods[lignumis_mods] then
     {
         {type = item, name = electric_engine_unit, amount = 128},
         {type = item, name = advanced_processing_unit, amount = 128},
-        {type = item, name = tantalum_tungsten_gear_wheel, amount = 256},
-        {type = item, name = tantalum_molybdenum_rhenium_plate, amount = 128},
-        {type = item, name = tantalum_niobium_plate, amount = 128}
+        {type = item, name = molybdenum_gear_wheel, amount = 256},
+        {type = item, name = rhenium_bearing, amount = 128},
+        {type = item, name = molybdenum_rhenium_plate, amount = 256}
     }
     data_mining_drill[deep_miner].subgroup = is_lignumis_mining
     data_mining_drill[deep_miner].order = a
     data_mining_drill[deep_miner].mining_speed = 8
-    data_mining_drill[deep_miner].energy_usage = 24000 .. kW
+    data_mining_drill[deep_miner].energy_usage = 30720 .. kW
 
     -- BUILDING
     data_item[burner_agricultural_tower].subgroup = is_lignumis_building
@@ -486,44 +488,6 @@ if mods[lignumis_mods] then
     }
     data_assembling[burner_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[burner_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
-
-    data_item[steam_assembling_machine].subgroup = is_lignumis_building
-    data_item[steam_assembling_machine].order = d
-    data_item[steam_assembling_machine].stack_size = 32
-    data_item[steam_assembling_machine].weight = 31250
-    data_recipe[steam_assembling_machine].subgroup = is_lignumis_building
-    data_recipe[steam_assembling_machine].order = d
-    data_recipe[steam_assembling_machine].energy_required = 1
-    data_recipe[steam_assembling_machine].ingredients =
-    {
-        {type = item, name = burner_assembling_machine, amount = 1},
-        {type = item, name = gold_pipe, amount = 4}
-    }
-    data_assembling[steam_assembling_machine].subgroup = is_lignumis_building
-    data_assembling[steam_assembling_machine].order = d
-    data_assembling[steam_assembling_machine].energy_usage = (225/8) .. kW
-    data_assembling[steam_assembling_machine].next_upgrade = nil
-    data_assembling[steam_assembling_machine].fluid_boxes =
-    {
-        {
-            production_type = input,
-            pipe_picture = assembler_pictures.assembler2pipepictures,
-            pipe_covers = pipecoverspictures(),
-            pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
-            volume = 1000,
-            secondary_draw_orders = {north = -1},
-        },
-        {
-            production_type = output,
-            pipe_picture = assembler_pictures.assembler2pipepictures,
-            pipe_covers = pipecoverspictures(),
-            pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
-            volume = 1000,
-            secondary_draw_orders = {north = -1},
-        }
-    }
-    data_assembling[steam_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
-    data_assembling[steam_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
     data_item[burner_lumber_mill].subgroup = is_lignumis_building
     data_item[burner_lumber_mill].order = e
@@ -668,6 +632,8 @@ if mods[lignumis_mods] then
     data_ammo[wood_darts_magazine].subgroup = is_lignumis_war
     data_ammo[wood_darts_magazine].order = a
     data_ammo[wood_darts_magazine].magazine_size = 30
+    data_ammo[wood_darts_magazine].fuel_categories = {base_fuel}
+    data_ammo[wood_darts_magazine].fuel_value = 3600 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wood_darts_magazine].categories, advanced_wood_processing)
     end
@@ -705,7 +671,7 @@ if mods[lignumis_mods] then
     data_item[wooden_wall].subgroup = is_lignumis_war
     data_item[wooden_wall].order = d
     data_item[wooden_wall].fuel_categories = {base_fuel}
-    data_item[wooden_wall].fuel_value = (7200 * 4) .. kJ
+    data_item[wooden_wall].fuel_value = (900 * 4) .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_wall].categories, advanced_wood_processing)
     end
@@ -719,6 +685,7 @@ if mods[lignumis_mods] then
     data_item[basic_radar].order = e
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
+    data_recipe[basic_radar].categories = {crafting, lignumis_wood_processing}
     if mods[muluna_mods] then
         table.insert(data_recipe[basic_radar].categories, advanced_wood_processing)
     end
@@ -780,7 +747,6 @@ if mods[lignumis_mods] then
         deep_miner,
         burner_agricultural_tower,
         burner_assembling_machine,
-        steam_assembling_machine,
         lumber_mill,
         wood_lab,
         quality_assembler,
@@ -796,6 +762,8 @@ if mods[lignumis_mods] then
     -- TECHNOLOGY
     table.insert(data_technology[tech_tree_seeding].effects, {type = unlock_recipe, recipe = burner_seed_extractor})
 
+    data_technology[steam_science_pack].prerequisites = {"gold-fluid-handling"}
+
     table.insert(data_technology[wood_liquefaction].effects, {type = unlock_recipe, recipe = burner_chemical_plant})
 
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
@@ -804,7 +772,6 @@ if mods[lignumis_mods] then
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = burner_ore_crusher})
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_saphirite .. "-hand"})
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_stiratite .. "-hand"})
-
 
     tech_iron_processing = "iron-processing"
     data_technology[tech_iron_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"
@@ -866,7 +833,6 @@ if mods[lignumis_mods] then
         {space_science_pack, 1}
     }
 
-    data_technology[deep_miner].prerequisites = {tech_tantalum_tungsten_processing, tech_tantalum_molybdenum_rhenium_processing, tech_tantalum_niobium_processing}
     data_technology[deep_miner].unit.ingredients =
     {
         {automation_science_pack, 1},
