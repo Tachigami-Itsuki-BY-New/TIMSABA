@@ -489,44 +489,6 @@ if mods[lignumis_mods] then
     data_assembling[burner_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[burner_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
-    data_item[steam_assembling_machine].subgroup = is_lignumis_building
-    data_item[steam_assembling_machine].order = d
-    data_item[steam_assembling_machine].stack_size = 32
-    data_item[steam_assembling_machine].weight = 31250
-    data_recipe[steam_assembling_machine].subgroup = is_lignumis_building
-    data_recipe[steam_assembling_machine].order = d
-    data_recipe[steam_assembling_machine].energy_required = 1
-    data_recipe[steam_assembling_machine].ingredients =
-    {
-        {type = item, name = burner_assembling_machine, amount = 1},
-        {type = item, name = gold_pipe, amount = 4}
-    }
-    data_assembling[steam_assembling_machine].subgroup = is_lignumis_building
-    data_assembling[steam_assembling_machine].order = d
-    data_assembling[steam_assembling_machine].energy_usage = (225/8) .. kW
-    data_assembling[steam_assembling_machine].next_upgrade = nil
-    data_assembling[steam_assembling_machine].fluid_boxes =
-    {
-        {
-            production_type = input,
-            pipe_picture = assembler_pictures.assembler2pipepictures,
-            pipe_covers = pipecoverspictures(),
-            pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
-            volume = 1000,
-            secondary_draw_orders = {north = -1},
-        },
-        {
-            production_type = output,
-            pipe_picture = assembler_pictures.assembler2pipepictures,
-            pipe_covers = pipecoverspictures(),
-            pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
-            volume = 1000,
-            secondary_draw_orders = {north = -1},
-        }
-    }
-    data_assembling[steam_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
-    data_assembling[steam_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
-
     data_item[burner_lumber_mill].subgroup = is_lignumis_building
     data_item[burner_lumber_mill].order = e
     data_item[burner_lumber_mill].stack_size = 32
@@ -785,7 +747,6 @@ if mods[lignumis_mods] then
         deep_miner,
         burner_agricultural_tower,
         burner_assembling_machine,
-        steam_assembling_machine,
         lumber_mill,
         wood_lab,
         quality_assembler,
@@ -801,6 +762,8 @@ if mods[lignumis_mods] then
     -- TECHNOLOGY
     table.insert(data_technology[tech_tree_seeding].effects, {type = unlock_recipe, recipe = burner_seed_extractor})
 
+    data_technology[steam_science_pack].prerequisites = {"gold-fluid-handling"}
+
     table.insert(data_technology[wood_liquefaction].effects, {type = unlock_recipe, recipe = burner_chemical_plant})
 
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
@@ -809,7 +772,6 @@ if mods[lignumis_mods] then
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = burner_ore_crusher})
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_saphirite .. "-hand"})
     table.insert(data_technology[planet_discovery_nauvis].effects, {type = unlock_recipe, recipe = crushed_stiratite .. "-hand"})
-
 
     tech_iron_processing = "iron-processing"
     data_technology[tech_iron_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"
