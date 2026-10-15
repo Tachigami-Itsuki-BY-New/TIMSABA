@@ -1224,11 +1224,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = chromium_cathode,
-        categories = {angels_petrochem_electrolyser},
+        categories = {industrial_electrolysis},
         subgroup = is_chromium_chemistry,
-        icons = FOUR_R_I(chromic_acid, sulfur_trioxide_gas, chromium_cathode, hydrogen_peroxide),
+        icons = FOUR_R_I(chromic_acid, hydrogen_peroxide, chromium_cathode, oxygen_angels),
         order = i,
-        energy_required = 8, -- (H₂CrO₄ + H₂O) + H₂SO₄ -electrode/electrolys-> Cr + SO₃ + 3H₂O₂
+        energy_required = 8, -- 2H₂CrO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Cr(s) + 4H₂O₂(l) + O₂(g) + 87.5% 2H₂SO₄(l) + 12.5% 2H₂O₂(l) + 2SO₂(g)
         ingredients =
         {
             {type = fluid, name = chromic_acid, amount = 240},
@@ -1238,8 +1238,11 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = chromium_cathode, amount = 16},
-            {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
-            {type = fluid, name = hydrogen_peroxide, amount = 240}, -- 720
+            {type = fluid, name = hydrogen_peroxide, amount_min = 240, amount_max = 480},
+            {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.875},
+            {type = fluid, name = hydrogen_peroxide, amount = 240, independent_probability = 0.125},
+            {type = fluid, name = sulfur_dioxide_angels, amount = 240, independent_probability = 0.125},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
