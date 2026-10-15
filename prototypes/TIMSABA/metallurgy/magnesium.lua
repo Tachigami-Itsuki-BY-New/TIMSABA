@@ -21,6 +21,7 @@ magnesium_oxide = "magnesium-oxide"
 magnesium_hydroxide = "magnesium-hydroxide"
 magnesium_sulfate = "magnesium-sulfate"
 magnesium_chloride = "magnesium-chloride"
+magnesium_fluoride = "magnesium-fluoride"
 magnesium_silicide = "magnesium-silicide"
 TIMSABA.functions.create_items
 ({
@@ -106,6 +107,13 @@ TIMSABA.functions.create_items
         order = d
     },
     {
+        localised_description = show_formula and {chemical_formula, "MgF[font=default-tiny-bold]2[/font]"} or nil,
+        name = magnesium_fluoride,
+        subgroup = is_magnesium_chemistry,
+        icon = graphics_magnesium .. magnesium_fluoride .. ".png",
+        order = f
+    },
+    {
         localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]2[/font]Si"} or nil,
         name = magnesium_silicide,
         subgroup = is_magnesium_chemistry,
@@ -142,6 +150,7 @@ TIMSABA.functions.create_fluids
 TIMSABA.barreling.add_dangerous_fluid(magnesium_chloride_solution)
 
 -- RECIPE
+magnesium_ingot_2 = "magnesium-ingot-2"
 magnesium_oxide_2 = magnesium_oxide .. "-2"
 magnesium_hydroxide_2 = magnesium_hydroxide .. "-2"
 magnesium_hydroxide_3 = magnesium_hydroxide .. "-3"
@@ -186,6 +195,27 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = magnesium_ingot, amount = 16},
             {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 240
+        },
+        main_product = magnesium_ingot
+    },
+    {
+        name = magnesium_ingot_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_magnesium,
+        icons = THREE_D_I(magnesium_fluoride, silicon_powder, steam, magnesium_ingot, silicon_oxide_IV, hydrogen_fluoride_angels),
+        order = d_a,
+        energy_required = 8, -- 2MgF₂(s) + Si(s) + 2H₂O(g) --> 2Mg(s) + SiO₂(s) + 4HF(g)
+        ingredients =
+        {
+            {type = item, name = magnesium_fluoride, amount = 16},
+            {type = item, name = silicon_powder, amount = 8},
+            {type = fluid, name = steam, amount = 240}
+        },
+        results =
+        {
+            {type = item, name = magnesium_ingot, amount = 16},
+            {type = item, name = silicon_oxide_IV, amount = 4}, -- 8
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 240} -- 480
         },
         main_product = magnesium_ingot
     },

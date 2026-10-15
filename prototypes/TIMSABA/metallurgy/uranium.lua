@@ -474,31 +474,41 @@ TIMSABA.functions.create_recipes
     },
     {
         name = uranium_235,
-        categories = {angels_centrifuging_3},
+        categories = {angels_chemical_smelting_4},
         subgroup = is_uranium,
+        icons = TWO_D_I(uranium_fluoride_VI_235_gas_80pc, magnesium_powder, uranium_235, magnesium_fluoride),
         order = e,
         allow_quality = true,
-        energy_required = 16, -- 8UF₆-235(g)(80%) --> 8U-235(s) + 24F₂(g)
-        ingredients = {{type = fluid, name = uranium_fluoride_VI_235_gas_80pc, amount = 120}},
+        energy_required = 8, -- UF₆-235(g)(80%) + 3Mg(s) --> U-235(s) + 3MgF₂(g)
+        ingredients =
+        {
+            {type = fluid, name = uranium_fluoride_VI_235_gas_80pc, amount = 240},
+            {type = item, name = magnesium_powder, amount = 48}
+        },
         results =
         {
-            {type = item, name = uranium_235, amount = 8},
-            {type = fluid, name = fluorine, amount = 120} -- 360
+            {type = item, name = uranium_235, amount = 16},
+            {type = item, name = magnesium_fluoride, amount = 12} -- 48
         },
         main_product = uranium_235
     },
     {
         name = uranium_238,
-        categories = {angels_centrifuging_3},
+        categories = {angels_chemical_smelting_4},
         subgroup = is_uranium,
+        icons = TWO_D_I(uranium_fluoride_IV_238, magnesium_powder, uranium_238, magnesium_fluoride),
         order = f,
         allow_quality = true,
-        energy_required = 16, -- 8UF₄-238(s) --> 8U-238(s) + 16F₂(g)
-        ingredients = {{type = item, name = uranium_fluoride_IV_238, amount = 8}},
+        energy_required = 8, -- UF₄-238(s) + 2Mg(s) --> U-238(s) + 2MgF₂(g)
+        ingredients =
+        {
+            {type = item, name = uranium_fluoride_IV_238, amount = 16},
+            {type = item, name = magnesium_powder, amount = 32}
+        },
         results =
         {
-            {type = item, name = uranium_238, amount = 8},
-            {type = fluid, name = fluorine, amount = 120} -- 240
+            {type = item, name = uranium_238, amount = 16},
+            {type = item, name = magnesium_fluoride, amount = 16} -- 32
         },
         main_product = uranium_238
     }

@@ -620,7 +620,7 @@ data_technology[tech_uranium_power_1].effects =
     {type = unlock_recipe, recipe = uranium_234_fuel_cell}
 }
 
-data_technology[tech_uranium_processing].prerequisites = {centrifuge_3, tech_uranium_smelting_3}
+data_technology[tech_uranium_processing].prerequisites = {centrifuge_3, tech_uranium_smelting_3, tech_magnesium_smelting_2}
 data_technology[tech_uranium_processing].effects =
 {
     {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_20pc},
@@ -632,7 +632,8 @@ data_technology[tech_uranium_processing].effects =
     {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_75pc},
     {type = unlock_recipe, recipe = uranium_fluoride_VI_235_gas_80pc},
     {type = unlock_recipe, recipe = uranium_235},
-    {type = unlock_recipe, recipe = uranium_238}
+    {type = unlock_recipe, recipe = uranium_238},
+    {type = unlock_recipe, recipe = magnesium_ingot_2}
 }
 data_technology[tech_uranium_processing].unit =
 {
