@@ -159,18 +159,9 @@ if mods[aegis_bellicos_mods] then
     local graphics_bellicos_and_aegis = "__TIMSABA__/graphics/icons/bellicos-and-aegis/"
 
     -- OTHER CHEMISTRY ITEM
-    magnesium_fluoride = "magnesium-fluoride"
     ammonium_hydrofluoride = "ammonium-hydrofluoride"
     TIMSABA.functions.create_items
     ({
-        -- MAGNESIUM
-        {
-            localised_description = show_formula and {chemical_formula, "MgF[font=default-tiny-bold]2[/font]"} or nil,
-            name = magnesium_fluoride,
-            subgroup = is_magnesium_chemistry,
-            icon = graphics_bellicos_and_aegis .. magnesium_fluoride .. ".png",
-            order = f
-        },
         -- NITROGNE
         {
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]HF[font=default-tiny-bold]2[/font]"} or nil,

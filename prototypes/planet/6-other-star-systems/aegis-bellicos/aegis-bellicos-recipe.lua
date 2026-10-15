@@ -313,18 +313,18 @@ if mods[aegis_bellicos_mods] then
     })
 
     -- OTHER CHEMISTRY
-    magnesium_ingot_2 = "magnesium-ingot-2"
     magnesium_ingot_3 = "magnesium-ingot-3"
+    magnesium_ingot_4 = "magnesium-ingot-4"
     TIMSABA.functions.create_recipes
     ({
         -- MAGNESIUM
         {
             localised_name = {"item-name." .. magnesium_ingot},
-            name = magnesium_ingot_2,
+            name = magnesium_ingot_3,
             categories = {angels_chemical_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, potassium, magnesium_ingot, potassium_fluoride),
-            order = d_a,
+            order = d_b,
             energy_required = 8, -- MgF₂(s) + 2K(s) --> Mg(s) + 2KF(s)
             ingredients =
             {
@@ -340,11 +340,11 @@ if mods[aegis_bellicos_mods] then
         },
         {
             localised_name = {"item-name." .. magnesium_ingot},
-            name = magnesium_ingot_3,
+            name = magnesium_ingot_4,
             categories = {angels_chemical_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, sodium_angels, magnesium_ingot, sodium_fluoride),
-            order = d_b,
+            order = d_c,
             energy_required = 8, -- MgF₂(s) + 2Na(s) --> Mg(s) + 2NaF(s)
             ingredients =
             {
