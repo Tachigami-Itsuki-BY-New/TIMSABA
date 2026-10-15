@@ -18,6 +18,8 @@ magnesium_pellet = "magnesium-pellet"
 magnesium_ingot = "magnesium-ingot"
 magnesium_powder = "magnesium-powder"
 magnesium_oxide = "magnesium-oxide"
+magnesium_hydroxide = "magnesium-hydroxide"
+magnesium_sulfate = "magnesium-sulfate"
 magnesium_chloride = "magnesium-chloride"
 magnesium_silicide = "magnesium-silicide"
 TIMSABA.functions.create_items
@@ -83,11 +85,25 @@ TIMSABA.functions.create_items
         order = a
     },
     {
+        localised_description = show_formula and {chemical_formula, "Mg(OH)[font=default-tiny-bold]2[/font]"} or nil,
+        name = magnesium_hydroxide,
+        subgroup = is_magnesium_chemistry,
+        icon = graphics_magnesium .. magnesium_hydroxide .. ".png",
+        order = b
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "MgSO[font=default-tiny-bold]4[/font]"} or nil,
+        name = magnesium_sulfate,
+        subgroup = is_magnesium_chemistry,
+        icon = graphics_magnesium .. magnesium_sulfate .. ".png",
+        order = c
+    },
+    {
         localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2[/font]"} or nil,
         name = magnesium_chloride,
         subgroup = is_magnesium_chemistry,
         icon = graphics_magnesium .. magnesium_chloride .. ".png",
-        order = c
+        order = d
     },
     {
         localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]2[/font]Si"} or nil,
@@ -99,38 +115,18 @@ TIMSABA.functions.create_items
 })
 
 -- FLUID
-magnesium_gas = "magnesium-gas"
-magnesium_chloride_gas = "magnesium-chloride-gas"
 magnesium_chloride_solution = "magnesium-chloride-solution"
 magnesium_molten = "magnesium-molten"
 TIMSABA.functions.create_fluids
 ({
-    {
-        localised_description = show_formula and {chemical_formula, "Mg"} or nil,
-        name = magnesium_gas,
-        subgroup = is_magnesium_chemistry,
-        icon = graphics_magnesium .. magnesium_gas .. ".png",
-        order = b,
-        base_color = TIMSABA.functions.fluid_color("MgMgMg"),
-        flow_color = TIMSABA.functions.flow_color("MgMgMg")
-    },
-    {
-        localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2[/font]"} or nil,
-        name = magnesium_chloride_gas,
-        subgroup = is_magnesium_chemistry,
-        icon = graphics_magnesium .. magnesium_chloride_gas .. ".png",
-        order = d,
-        base_color = TIMSABA.functions.fluid_color("MgCl2"),
-        flow_color = TIMSABA.functions.flow_color("MgCl2")
-    },
     {
         localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
         name = magnesium_chloride_solution,
         subgroup = is_magnesium_chemistry,
         icon = graphics_magnesium .. magnesium_chloride_solution .. ".png",
         order = e,
-        base_color = TIMSABA.functions.fluid_color("MgCl2Wd"),
-        flow_color = TIMSABA.functions.flow_color("MgCl2Wd")
+        base_color = TIMSABA.functions.fluid_color("MgCl2Wp"),
+        flow_color = TIMSABA.functions.flow_color("MgCl2Wp")
     },
     -- CASTING
     {
@@ -146,9 +142,9 @@ TIMSABA.functions.create_fluids
 TIMSABA.barreling.add_dangerous_fluid(magnesium_chloride_solution)
 
 -- RECIPE
-magnesium_oxide_2 = "magnesium-oxide-2"
-magnesium_gas_from_magnesium_chloride_gas = "magnesium-gas-from-magnesium-chloride-gas"
-magnesium_chloride_from_magnesium_chloride_solution = "magnesium-chloride-from-magnesium-chloride-solution"
+magnesium_oxide_2 = magnesium_oxide .. "-2"
+magnesium_hydroxide_2 = magnesium_hydroxide .. "-2"
+magnesium_hydroxide_3 = magnesium_hydroxide .. "-3"
 TIMSABA.functions.create_recipes
 ({
     -- SMELTING
@@ -178,18 +174,18 @@ TIMSABA.functions.create_recipes
         name = magnesium_ingot,
         categories = {angels_chemical_smelting_1},
         subgroup = is_magnesium,
-        icons = TWO_I(magnesium_gas, magnesium_ingot),
+        icons = TWO_I(magnesium_oxide, magnesium_ingot),
         order = d,
-        energy_required = 8, -- Mg(g) -H₂O-> Mg
+        energy_required = 8, -- MgO(s) + C(s) --> Mg(s) + CO(g)
         ingredients =
         {
-            {type = fluid, name = magnesium_gas, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = item, name = magnesium_oxide, amount = 16},
+            {type = item, name = coke_angels, amount = 16}
         },
         results =
         {
             {type = item, name = magnesium_ingot, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
+            {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 240
         },
         main_product = magnesium_ingot
     },
@@ -211,7 +207,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_magnesium_chemistry,
         icons = THREE_I(magnesium_ore, oxygen_angels, magnesium_oxide),
         order = a,
-        energy_required = 8, -- 2Mg + O₂ --> 2MgO
+        energy_required = 8, -- 2Mg(s) + O₂(g) --> 2MgO(s)
         ingredients =
         {
             {type = item, name = magnesium_ore, amount = 32},
@@ -221,67 +217,112 @@ TIMSABA.functions.create_recipes
         main_product = magnesium_oxide
     },
     {
+        localised_name = {"item-name." .. magnesium_oxide},
         name = magnesium_oxide_2,
-        categories = {angels_blast_smelting_2},
+        categories = {angels_chemical_smelting_1},
         subgroup = is_magnesium_chemistry,
-        icons = THREE_I(magnesium_processed, oxygen_angels, magnesium_oxide),
+        icons = THREE_D_I(magnesium_sulfate, nil, carbon_angels, magnesium_oxide, sulfur_dioxide_angels, carbon_dioxide_angels),
         order = a_a,
-        energy_required = 8, -- 2Mg + O₂ --> 2MgO
+        energy_required = 8, -- 2MgSO₄(s) + C(s) --> 2MgO(s) + 2SO₂(g) + CO₂(g)
         ingredients =
         {
-            {type = item, name = magnesium_processed, amount = 16},
-            {type = fluid, name = oxygen_angels, amount = 120}
+            {type = item, name = magnesium_sulfate, amount = 16},
+            {type = item, name = carbon_angels, amount = 8}
         },
-        results = {{type = item, name = magnesium_oxide, amount = 16}},
+        results =
+        {
+            {type = item, name = magnesium_oxide, amount = 16},
+            {type = fluid, name = sulfur_dioxide_angels, amount = 120}, -- 240
+            {type = fluid, name = carbon_dioxide_angels, amount = 60} -- 120
+        },
         main_product = magnesium_oxide
     },
     {
-        name = magnesium_gas,
-        categories = {angels_blast_smelting_1},
+        name = magnesium_hydroxide,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_magnesium_chemistry,
-        icons = TWO_D_I(magnesium_oxide, calcium, magnesium_gas, lime_angels),
+        icons = TWO_D_I(magnesium_processed, steam, magnesium_hydroxide, hydrogen_angels),
         order = b,
-        energy_required = 8, -- MgO + Ca --> Mg(g) + CaO
+        energy_required = 8, -- Mg(s) + 2H₂O(g) --> Mg(OH)₂(s) + H₂(g)
         ingredients =
         {
-            {type = item, name = magnesium_oxide, amount = 16},
-            {type = item, name = calcium, amount = 16}
+            {type = item, name = magnesium_processed, amount = 16},
+            {type = fluid, name = steam, amount = 480}
         },
         results =
         {
-            {type = fluid, name = magnesium_gas, amount = 240},
-            {type = item, name = lime_angels, amount = 8} -- 16
+            {type = item, name = magnesium_hydroxide, amount = 16},
+            {type = fluid, name = hydrogen_angels, amount = 120} -- 240
         },
-        main_product = magnesium_gas
+        main_product = magnesium_hydroxide
     },
     {
-        name = magnesium_gas_from_magnesium_chloride_gas,
-        categories = {angels_petrochem_electrolyser},
+        localised_name = {"item-name." .. magnesium_hydroxide},
+        name = magnesium_hydroxide_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_magnesium_chemistry,
-        icons = FOUR_R_I(magnesium_chloride_gas, magnesium_gas, nil, chlorine_angels),
+        icons = TWO_D_I(magnesium_chloride, sodium_hydroxide_solution_angels, magnesium_hydroxide, sodium_chloride_solution),
         order = b_a,
-        energy_required = 8, -- MgCl₂(g) -electrode/electrolys-> Mg(g) + Cl₂
+        energy_required = 8, -- MgCl₂(s) + 2NaOH(aq) --> Mg(OH)₂(s) + 2NaCl(aq)
         ingredients =
         {
-            {type = fluid, name = magnesium_chloride_gas, amount = 240},
-            {type = item, name = electrode, amount = 1}
+            {type = item, name = magnesium_chloride, amount = 16},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 480}
         },
         results =
         {
-            {type = fluid, name = magnesium_gas, amount = 240},
-            {type = fluid, name = chlorine_angels, amount = 120}, -- 240
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+            {type = item, name = magnesium_hydroxide, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 240} -- 480
         },
-        main_product = magnesium_gas
+        main_product = magnesium_hydroxide
+    },
+    {
+        localised_name = {"item-name." .. magnesium_hydroxide},
+        name = magnesium_hydroxide_3,
+        categories = {angels_chemical_smelting_1},
+        subgroup = is_magnesium_chemistry,
+        icons = THREE_D_I(magnesium_chloride_solution, sodium_hydroxide_angels, water_purified_angels, magnesium_hydroxide, nil, sodium_chloride_solution),
+        order = b_b,
+        energy_required = 8, -- MgCl₂(aq) + 2NaOH(s) + H₂O(l) --> Mg(OH)₂(s) + 2NaCl(aq)
+        ingredients =
+        {
+            {type = fluid, name = magnesium_chloride_solution, amount = 240},
+            {type = item, name = sodium_hydroxide_angels, amount = 32},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = item, name = magnesium_hydroxide, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 240} -- 480
+        },
+        main_product = magnesium_hydroxide
+    },
+    {
+        name = magnesium_sulfate,
+        categories = {angels_chemical_smelting_1},
+        subgroup = is_magnesium_chemistry,
+        icons = TWO_D_I(magnesium_hydroxide, sulfur_trioxide_gas, magnesium_sulfate, sulfuric_acid_angels),
+        order = c,
+        energy_required = 8, -- Mg(OH)₂ + 2SO₃(g) --> MgSO₄(s) + H₂SO₄(l)
+        ingredients =
+        {
+            {type = item, name = magnesium_hydroxide, amount = 16},
+            {type = fluid, name = sulfur_trioxide_gas, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = magnesium_sulfate, amount = 16},
+            {type = fluid, name = sulfuric_acid_angels, amount = 120} -- 240
+        },
+        main_product = magnesium_sulfate
     },
     {
         name = magnesium_chloride,
         categories = {angels_chemical_smelting_2},
         subgroup = is_magnesium_chemistry,
         icons = THREE_I(magnesium_pellet, chlorine_angels, magnesium_chloride),
-        order = c,
-        energy_required = 8, -- Mg + Cl₂ --> MgCl₂
+        order = d,
+        energy_required = 8, -- Mg(s) + Cl₂(g) --> MgCl₂(s)
         ingredients =
         {
             {type = item, name = magnesium_pellet, amount = 8},
@@ -291,36 +332,10 @@ TIMSABA.functions.create_recipes
         main_product = magnesium_chloride
     },
     {
-        name = magnesium_chloride_from_magnesium_chloride_solution,
-        categories = {angels_blast_smelting_2},
-        subgroup = is_magnesium_chemistry,
-        icons = THREE_R_I(magnesium_chloride_solution, magnesium_chloride, steam),
-        order = c_a,
-        energy_required = 8, -- MgCl₂(aq) --> MgCl₂ + H₂O
-        ingredients = {{type = fluid, name = magnesium_chloride_solution, amount = 240}},
-        results =
-        {
-            {type = item, name = magnesium_chloride, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
-        },
-        main_product = magnesium_chloride
-    },
-    {
-        name = magnesium_chloride_gas,
-        categories = {angels_blast_smelting_3},
-        subgroup = is_magnesium_chemistry,
-        icons = TWO_I(magnesium_chloride, magnesium_chloride_gas),
-        order = d,
-        energy_required = 8, -- MgCl₂ -electrolys-> MgCl₂(g)
-        ingredients = {{type = item, name = magnesium_chloride, amount = 16}},
-        results = {{type = fluid, name = magnesium_chloride_gas, amount = 240}},
-        main_product = magnesium_chloride_gas
-    },
-    {
         name = magnesium_silicide,
         categories = {angels_blast_smelting_4},
         subgroup = is_magnesium_chemistry,
-        icons = THREE_I(magnesium_pellet, silicon_pellet, magnesium_silicide),
+        icons = THREE_I(magnesium_powder, silicon_powder, magnesium_silicide),
         order = z,
         energy_required = 8, -- 2Mg(s) + Si(s) --> Mg₂Si(s)
         ingredients =
