@@ -22,7 +22,7 @@ tech_molybdenum_synthesis = "molybdenum-ore-synthesis"
 create_synthesis_tech
 ({
     name = tech_molybdenum_synthesis,
-    prerequisites = {tech_powellite_processing_2, tech_molybdenite_processing_2},
+    prerequisites = {tech_advanced_ore_refining_5},
     recipe = molybdenum_ore_recipe,
     ingredients =
     {
@@ -38,7 +38,7 @@ tech_rhenium_synthesis = "rhenium-ore-synthesis"
 create_synthesis_tech
 ({
     name = tech_rhenium_synthesis,
-    prerequisites = {tech_molybdenite_processing_2, tech_rheniite_processing_2},
+    prerequisites = {tech_advanced_ore_refining_6},
     recipe = rhenium_ore_recipe,
     ingredients =
     {
@@ -79,7 +79,7 @@ tech_niobium_synthesis = "niobium-ore-synthesis"
 create_synthesis_tech
 ({
     name = tech_niobium_synthesis,
-    prerequisites = {tech_wolframite_processing_2, tech_samarskite_processing_2},
+    prerequisites = {tech_advanced_ore_refining_6},
     recipe = niobium_ore_recipe,
     ingredients =
     {
@@ -96,7 +96,7 @@ tech_holmium_synthesis = "holmium-ore-synthesis"
 create_synthesis_tech
 ({
     name = tech_holmium_synthesis,
-    prerequisites = {tech_samarskite_processing_2, tech_brannerite_processing_2},
+    prerequisites = {tech_advanced_ore_refining_6},
     recipe = holmium_ore_recipe,
     ingredients =
     {
@@ -140,7 +140,7 @@ if mods[paracelsin_mods] then
     create_synthesis_tech
     ({
         name = tech_antimony_synthesis,
-        prerequisites = {tech_antimonite_processing_2, tech_tetrahedrite_processing_2},
+        prerequisites = {cryogenic_science_pack, galvanization_science_pack},
         recipe = antimony_ore_recipe,
         ingredients =
         {
@@ -162,7 +162,7 @@ if mods[corrundum_mods] then
     create_synthesis_tech
     ({
         name = tech_arsenic_synthesis,
-        prerequisites = {tech_antimonite_processing_2, tech_sperrylite_processing_2},
+        prerequisites = {cryogenic_science_pack, electrochemical_science_pack},
         recipe = arsenic_recipe,
         ingredients =
         {
@@ -184,7 +184,7 @@ if mods[paracelsin_mods] then
     create_synthesis_tech
     ({
         name = tech_germanium_synthesis,
-        prerequisites = {tech_germanite_processing_2, tech_sphalerite_processing_2},
+        prerequisites = {cryogenic_science_pack, galvanization_science_pack},
         recipe = germanium_ore_recipe,
         ingredients =
         {
@@ -206,7 +206,7 @@ if mods[secretas_frozeta_mods] then
     create_synthesis_tech
     ({
         name = tech_gallium_synthesis,
-        prerequisites = {tech_germanite_processing_2, tech_gallite_processing_2},
+        prerequisites = {cryogenic_science_pack, golden_science_pack},
         recipe = gallium_ore_recipe,
         ingredients =
         {
@@ -224,11 +224,13 @@ if mods[secretas_frozeta_mods] then
     })
 end
 if mods[moshine_mods] then
+    tech_data_processor_building = "moshine-tech-data-processor-building"
+
     tech_neodymium_synthesis = "neodymium-ore-synthesis"
     create_synthesis_tech
     ({
         name = tech_neodymium_synthesis,
-        prerequisites = {tech_monazite_processing_2, tech_aeschynite_processing_2},
+        prerequisites = {tech_data_processor_building},
         recipe = neodymium_ore_recipe,
         ingredients =
         {

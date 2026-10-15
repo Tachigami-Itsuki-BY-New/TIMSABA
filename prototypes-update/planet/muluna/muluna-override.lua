@@ -1143,7 +1143,7 @@ if mods[muluna_mods] then
     data_assembling[telescope].order = z
     data_assembling[telescope].crafting_speed = 1
     data_assembling[telescope].module_slots = 4
-    data_assembling[telescope].energy_usage = 9760 .. kW
+    data_assembling[telescope].energy_usage = 7680 .. kW
     data_assembling[telescope].energy_source.drain = 240 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
@@ -1445,14 +1445,6 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
 
-    data_technology["muluna-alumina-processing"].icons[2] =
-    {
-        icon = data_item[aluminium_oxide].icon,
-        icon_size = 32,
-        scale = 1.5,
-        shift = {45, 45}
-    }
-
     local tech_aluminium_processing = "muluna-aluminum-processing"
     data_technology[tech_aluminium_processing].icons = nil
     data_technology[tech_aluminium_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-aluminium.png"
@@ -1639,11 +1631,19 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {utility_science_pack, 1})
 
     -- METALLIC
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_2})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_3})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_4})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_5})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_6})
+    data_technology[metallic_asteroid_crushing_1].effects =
+    {
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = electric_blast_furnace_1},
+        {type = unlock_recipe, recipe = electric_blast_furnace_2},
+        {type = unlock_recipe, recipe = electric_blast_furnace_3},
+        {type = unlock_recipe, recipe = electric_blast_furnace_4}
+    }
 
     -- OXIDE
     data_technology[oxide_asteroid_crushing_1].effects =

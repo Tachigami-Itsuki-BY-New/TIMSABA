@@ -34,3 +34,15 @@ if mods[bobequipment] then
         data:extend{new_equipment_grid}
     end
 end
+
+if mods[quality_mods] then
+    local data_quality = data.raw["quality"]
+    data_quality["uncommon"].equipment_grid_width_bonus = 2
+    data_quality["uncommon"].equipment_grid_height_bonus = 2
+    data_quality["rare"].equipment_grid_width_bonus = 4
+    data_quality["rare"].equipment_grid_height_bonus = 4
+    data_quality["epic"].equipment_grid_width_bonus = 6
+    data_quality["epic"].equipment_grid_height_bonus = 6
+    data_quality["legendary"].equipment_grid_width_bonus = 10
+    data_quality["legendary"].equipment_grid_height_bonus = 10
+end
