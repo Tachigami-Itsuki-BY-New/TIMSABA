@@ -477,6 +477,7 @@ TIMSABA.functions.create_fluids
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(zinc_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_tetrahydroxozincate_II_solution)
 TIMSABA.barreling.add_dangerous_fluid(zinc_sulfate_solution)
 
 -- SILVER FLUID
