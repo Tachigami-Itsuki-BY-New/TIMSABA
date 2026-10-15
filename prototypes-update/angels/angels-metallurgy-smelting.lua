@@ -1774,9 +1774,9 @@ data_recipe[tungsten_oxide_VI_2].energy_required = 8 -- (NH₄)₁₀H₂W₁₂
 data_recipe[tungsten_oxide_VI_2].ingredients = {{type = item, name = ammonium_paratungstate, amount = 1}}
 data_recipe[tungsten_oxide_VI_2].results =
 {
-    {type = item, name = tungsten_oxide_VI, amount = 16}, -- 12
-    {type = fluid, name = ammonia_angels, amount = 120}, -- 150 / 240
-    {type = fluid, name = steam, amount = 60} -- 90 / 120
+    {type = item, name = tungsten_oxide_VI, amount = 12},
+    {type = fluid, name = ammonia_angels, amount = 30}, -- 150
+    {type = fluid, name = steam, amount = 30} -- 90
 }
 
 data_fluid[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
@@ -1806,27 +1806,27 @@ data_recipe[ammonium_paratungstate].categories = {angels_advanced_chemistry}
 data_recipe[ammonium_paratungstate].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_paratungstate].icons = FOUR_D_I(tungsten_processed, carbon_angels, ammonia_angels, water_purified_angels, ammonium_paratungstate)
 data_recipe[ammonium_paratungstate].order = c
-data_recipe[ammonium_paratungstate].energy_required = 8 -- 12W + 18O₂ + 10NH₃ + 6H₂O --> (NH₄)₁₀H₂W₁₂O₄₂
+data_recipe[ammonium_paratungstate].energy_required = 8 -- 12W(s) + 18O₂(g) + 10NH₃(g) + 6H₂O(l) --> (NH₄)₁₀H₂W₁₂O₄₂(s)
 data_recipe[ammonium_paratungstate].ingredients =
 {
-    {type = item, name = tungsten_processed, amount = 16}, -- 12
-    {type = fluid, name = oxygen_angels, amount = 360}, -- 270
-    {type = fluid, name = ammonia_angels, amount = 240}, -- 150
-    {type = fluid, name = water_purified_angels, amount = 120} -- 90
+    {type = item, name = tungsten_processed, amount = 12},
+    {type = fluid, name = oxygen_angels, amount = 270},
+    {type = fluid, name = ammonia_angels, amount = 150},
+    {type = fluid, name = water_purified_angels, amount = 90}
 }
 data_recipe[ammonium_paratungstate].results = {{type = item, name = ammonium_paratungstate, amount = 1}}
 data_recipe[ammonium_paratungstate].main_product = ammonium_paratungstate
 
 data_recipe[ammonium_paratungstate_2].subgroup = is_tungsten_chemistry
-data_recipe[ammonium_paratungstate_2].icons = THREE_D_I(ammonium_tungstate_solution, nil, nil, ammonium_paratungstate, ammonia_angels, water_purified_angels)
+data_recipe[ammonium_paratungstate_2].icons = THREE_D_I(ammonium_tungstate_solution, nil, nil, ammonium_paratungstate, steam, ammonia_angels)
 data_recipe[ammonium_paratungstate_2].order = c_a
-data_recipe[ammonium_paratungstate_2].energy_required = 8 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂ + 14NH₃ + 6H₂O + 12H₂O
-data_recipe[ammonium_paratungstate_2].ingredients = {{type = fluid, name = ammonium_tungstate_solution, amount = 240}} -- 180
+data_recipe[ammonium_paratungstate_2].energy_required = 8 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂(s) + 18H₂O(g) + 14NH₃(g)
+data_recipe[ammonium_paratungstate_2].ingredients = {{type = fluid, name = ammonium_tungstate_solution, amount = 180}}
 data_recipe[ammonium_paratungstate_2].results =
 {
     {type = item, name = ammonium_paratungstate, amount = 1},
-    {type = fluid, name = ammonia_angels, amount = 120}, -- 210 / 240
-    {type = fluid, name = water_purified_angels, amount = 120} -- 270 / 360
+    {type = fluid, name = steam, amount = 30}, -- 270
+    {type = fluid, name = ammonia_angels, amount = 90} -- 210
 }
 data_recipe[ammonium_paratungstate_2].main_product = ammonium_paratungstate
 
@@ -1838,7 +1838,7 @@ data_recipe[ammonium_tungstate_solution].categories = {angels_chemical_smelting_
 data_recipe[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_tungstate_solution].icons = THREE_D_I(tungstic_acid, ammonia_angels, water_purified_angels, ammonium_tungstate_solution)
 data_recipe[ammonium_tungstate_solution].order = f
-data_recipe[ammonium_tungstate_solution].energy_required = 8 -- H₂WO₄ + 2NH₃ + H₂O --> (NH₄)₂WO₄(aq)
+data_recipe[ammonium_tungstate_solution].energy_required = 8 -- H₂WO₄(s) + 2NH₃(g) + H₂O(l) --> (NH₄)₂WO₄(aq)
 data_recipe[ammonium_tungstate_solution].ingredients =
 {
     {type = item, name = tungstic_acid, amount = 16},
