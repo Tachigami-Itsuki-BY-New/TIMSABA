@@ -59,23 +59,26 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_cathode,
-        categories = {angels_petrochem_electrolyser},
+        categories = {industrial_electrolysis},
         subgroup = is_iron_chemistry,
-        icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, ammonia_angels),
+        icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, oxygen_angels),
         order = d,
-        energy_required = 8, -- (FeSO₄ + H₂O) + ((NH₄)₂SO₄ + H₂O) -electrode/electrolys-> Fe + 2H₂SO₄ + 2NH₃ + H₂O₂
+        energy_required = 8, -- 2FeSO₄(aq) + 2(NH₄)₂SO₄(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Fe(s) + 2H₂SO₄(l) + O₂(g) + 87.5% 2(NH₄)₂SO₄(aq) + 12.5% 2H₂SO₄(l) + 4NH₃(aq)
         ingredients =
         {
             {type = fluid, name = iron_sulfate_II_solution, amount = 240},
             {type = fluid, name = ammonium_sulfate_solution, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 30},
             {type = item, name = electrode, amount = 1}
         },
         results =
         {
             {type = item, name = iron_cathode, amount = 16},
-            {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 480
-            {type = fluid, name = ammonia_angels, amount = 240}, -- 480
-            --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
+            {type = fluid, name = sulfuric_acid_angels, amount_min = 120, amount_max = 240},
+            {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+            {type = fluid, name = ammonium_sulfate_solution, amount = 240, independent_probability = 0.875},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.125},
+            {type = fluid, name = ammonia_solution, amount = 480, independent_probability = 0.125},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
@@ -456,23 +459,26 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tin_cathode,
-        categories = {angels_petrochem_electrolyser},
+        categories = {industrial_electrolysis},
         subgroup = is_tin_chemistry,
-        icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, silicon_chloride_IV_gas, tin_cathode, hydrogen_fluoride_angels),
+        icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, hexafluorosilicic_acid, tin_cathode, oxygen_angels),
         order = d,
-        energy_required = 8, -- (SnSiF₆ + H₂O) + (H₂SiF₆ + H₂O) -electrode/electrolys-> Sn + 2SiF₄ + 4HF + H₂O₂
+        energy_required = 8, -- 2SnSiF₆(aq) + 2H₂SiF₆(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Sn(s) + 2H₂SiF₆(aq) + O₂(g) + 87.5% 2H₂SiF₆(aq) + 12.5% 2SiF₄(g) + 4HF(aq)
         ingredients =
         {
             {type = fluid, name = hexafluorosilicate_tin_II_solution, amount = 240},
             {type = fluid, name = hexafluorosilicic_acid, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 30},
             {type = item, name = electrode, amount = 1}
         },
         results =
         {
             {type = item, name = tin_cathode, amount = 16},
-            {type = fluid, name = silicon_chloride_IV_gas, amount = 240}, -- 480
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 960
-            --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
+            {type = fluid, name = hexafluorosilicic_acid, amount_min = 120, amount_max = 240},
+            {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+            {type = fluid, name = hexafluorosilicic_acid, amount = 240, independent_probability = 0.875},
+            {type = fluid, name = silicon_fluoride_IV_gas, amount = 240, independent_probability = 0.125},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 480, independent_probability = 0.125},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },

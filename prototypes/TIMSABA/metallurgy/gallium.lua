@@ -323,11 +323,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = gallium_liquid,
-        categories = {angels_petrochem_electrolyser},
+        categories = {advanced_electrolysis},
         subgroup = is_gallium_chemistry,
-        icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, gallium_liquid, sodium_hydroxide_angels), -- or FOUR_R_I(sodium_tetrahydroxogallate_III_solution, oxygen_angels, gallium_liquid, sodium_hydroxide_solution_angels),
+        icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, hydrogen_angels, gallium_liquid, oxygen_angels),
         order = d,
-        energy_required = 8, -- 4NaGa(OH)₄(aq) -electrolys/electrode-> 4Ga(l) + 3O₂(g) + 4NaOH(s) + 6H₂O(l) + 4H₂O(l)
+        energy_required = 8, -- 2NaGa(OH)₄(aq) -electrolys/electrode-> 2Ga(l) + 5H₂(g) + 4O₂(g) + 2NaOH(s)
         ingredients =
         {
             {type = fluid, name = sodium_tetrahydroxogallate_III_solution, amount = 240},
@@ -336,9 +336,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = gallium_liquid, amount = 240},
-            {type = fluid, name = oxygen_angels, amount = 60}, -- 180
-            {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16 or --{type = fluid, name = sodium_hydroxide_solution_angels, amount = 120} -- 240
-            --{type = fluid, name = water_purified_angels, amount = 120}, -- 360
+            {type = fluid, name = hydrogen_angels, amount = 120}, -- 600
+            {type = fluid, name = oxygen_angels, amount = 240}, -- 480
+            {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },

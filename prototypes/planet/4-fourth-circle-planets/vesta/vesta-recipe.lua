@@ -464,22 +464,6 @@ if mods[vesta_mods] then
             },
             results = {{type = item, name = ammonium_chloride, amount = 4}},
             main_product = ammonium_chloride
-        },
-        -- SODIUM
-        {
-            name = sodium_peroxide,
-            categories = {chemistry},
-            subgroup = is_sodium,
-            icons = THREE_I(sodium_oxide, oxygen_angels, sodium_peroxide),
-            order = l,
-            -- 2Na₂O(s) + O₂(g) --> 2Na₂O₂(s)
-            ingredients =
-            {
-                {type = item, name = sodium_oxide, amount = 8},
-                {type = fluid, name = oxygen_angels, amount = 30}
-            },
-            results = {{type = item, name = sodium_peroxide, amount = 8}},
-            main_product = sodium_peroxide
         }
     })
 end

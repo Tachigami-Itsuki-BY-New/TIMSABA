@@ -88,8 +88,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_coal,
         icons = TWO_I(raw_graphite_block, graphite_block),
         order = i,
-        allow_productivity = true,
-        -- Raw graphite block --> Graphite block
+        energy_required = 16, -- Raw graphite block --> Graphite block
         ingredients = {{type = item, name = raw_graphite_block, amount = 4}},
         results = {{type = item, name = graphite_block, amount = 4}},
         main_product = graphite_block
@@ -142,7 +141,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = carbon_nanotube, amount = 8},
-            {type = item, name = graphite_chips, amount = 16},
+            {type = item, name = graphite_chips, amount = 8},
             {type = fluid, name = argon_gas, amount = 120}, -- 240
             {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
             {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
@@ -480,6 +479,26 @@ TIMSABA.functions.create_recipes
         main_product = ammonium_sulfate_solution
     },
     {
+        name = hydrocyanic_acid,
+        categories = {angels_advanced_chemistry},
+        subgroup = is_others_fluid,
+        icons = THREE_D_I(methane_angels, ammonia_angels, oxygen_angels, hydrocyanic_acid, nil, steam),
+        order = b,
+        -- 2CH₄(g) + 2NH₃(g) + 3O₂(g) --> 2HCN + 6H₂O
+        ingredients =
+        {
+            {type = fluid, name = methane_angels, amount = 120},
+            {type = fluid, name = ammonia_angels, amount = 120},
+            {type = fluid, name = oxygen_angels, amount = 180}
+        },
+        results =
+        {
+            {type = fluid, name = hydrocyanic_acid, amount = 120},
+            {type = fluid, name = steam, amount = 240} -- 720
+        },
+        main_product = hydrocyanic_acid
+    },
+    {
         name = acrylonitrile,
         categories = {angels_advanced_chemistry},
         subgroup = is_nitrogen_fluids,
@@ -696,12 +715,27 @@ TIMSABA.functions.create_recipes
         main_product = sodium_nitrate_angels
     },
     {
+        name = sodium_peroxide,
+        categories = {chemistry},
+        subgroup = is_sodium,
+        icons = THREE_I(sodium_oxide, oxygen_angels, sodium_peroxide),
+        order = l,
+        -- 2Na₂O(s) + O₂(g) --> 2Na₂O₂(s)
+        ingredients =
+        {
+            {type = item, name = sodium_oxide, amount = 8},
+            {type = fluid, name = oxygen_angels, amount = 30}
+        },
+        results = {{type = item, name = sodium_peroxide, amount = 8}},
+        main_product = sodium_peroxide
+    },
+    {
         name = sodium_peroxide_reprocess,
         categories = {chemistry},
         subgroup = is_sodium,
         icons = TWO_D_I(sodium_peroxide, hydrocyanic_acid, sodium_cyanide_angels, hydrogen_peroxide),
         order = l_a,
-        energy_required = 2, -- Na₂O₂ + 2HCN -cat-> 2NaCN + H₂O₂
+        energy_required = 2, -- Na₂O₂(s) + 2HCN(aq) -cat-> 2NaCN(aq) + H₂O₂(l)
         ingredients =
         {
             {type = item, name = sodium_peroxide, amount = 4},
@@ -1011,7 +1045,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_sulfur_fluids,
         icons = FOUR_R_I(sulfuric_acid_angels, hydrogen_angels, peroxydisulfuric_acid, oxygen_angels),
         order = g,
-        energy_required = 8, -- 2H₂SO₄ + 2H₂O -electrode/electrolyser-> H₂S₂O₈ + 2H₂ + O₂
+        energy_required = 8, -- 2H₂SO₄(l) + 2H₂O(l) -electrode/electrolyser-> H₂S₂O₈(s) + 3H₂(g) + O₂(g)
         ingredients =
         {
             {type = fluid, name = sulfuric_acid_angels, amount = 240},
@@ -1021,8 +1055,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = peroxydisulfuric_acid, amount = 8},
-            {type = fluid, name = hydrogen_angels, amount = 120}, -- 240
-            {type = fluid, name = oxygen_angels, amount = 60}, -- 120
+            {type = fluid, name = hydrogen_angels, amount = 360},
+            {type = fluid, name = oxygen_angels, amount = 120},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
@@ -1407,7 +1441,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_lithium,
         icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
         order = f,
-        energy_required = 8, -- 2(LiCl + H₂O) -electrode/electrolys-> 2LiOH + H₂ + Cl₂
+        energy_required = 8, -- 2LiCl(aq) -electrode/electrolys-> 2LiOH(s) + H₂(g) + Cl₂(g)
         ingredients =
         {
             {type = fluid, name = lithium_chloride_solution, amount = 240},
@@ -1416,9 +1450,10 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = lithium_hydroxide, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
-            {type = fluid, name = chlorine_angels, amount = 60}, -- 120
-            {type = item, name = graphite_chips, amount = 4}
+            {type = fluid, name = hydrogen_angels, amount = 120},
+            {type = fluid, name = chlorine_angels, amount = 120},
+            {type = item, name = graphite_electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = graphite_chips, amount = 1, independent_probability = 0.125}
         },
         main_product = lithium_hydroxide
     },
