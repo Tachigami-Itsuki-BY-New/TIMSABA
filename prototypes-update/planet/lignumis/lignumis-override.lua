@@ -3,7 +3,7 @@ if mods[lignumis_mods] then
     data_item[lumber].subgroup = is_lignumis_wood
     data_item[lumber].order = a
     data_item[lumber].fuel_categories = {base_fuel}
-    data_item[lumber].fuel_value = 3600 .. kJ
+    data_item[lumber].fuel_value = 900 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[lumber].categories, advanced_wood_processing)
     end
@@ -15,6 +15,8 @@ if mods[lignumis_mods] then
 
     data_item[wooden_gear_wheel].subgroup = is_lignumis_wood
     data_item[wooden_gear_wheel].order = b
+    data_item[wooden_gear_wheel].fuel_categories = {base_fuel}
+    data_item[wooden_gear_wheel].fuel_value = 450 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_gear_wheel].categories, advanced_wood_processing)
     end
@@ -668,6 +670,8 @@ if mods[lignumis_mods] then
     data_ammo[wood_darts_magazine].subgroup = is_lignumis_war
     data_ammo[wood_darts_magazine].order = a
     data_ammo[wood_darts_magazine].magazine_size = 30
+    data_ammo[wood_darts_magazine].fuel_categories = {base_fuel}
+    data_ammo[wood_darts_magazine].fuel_value = 3600 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wood_darts_magazine].categories, advanced_wood_processing)
     end
@@ -705,7 +709,7 @@ if mods[lignumis_mods] then
     data_item[wooden_wall].subgroup = is_lignumis_war
     data_item[wooden_wall].order = d
     data_item[wooden_wall].fuel_categories = {base_fuel}
-    data_item[wooden_wall].fuel_value = (7200 * 4) .. kJ
+    data_item[wooden_wall].fuel_value = (900 * 4) .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_wall].categories, advanced_wood_processing)
     end
@@ -719,6 +723,7 @@ if mods[lignumis_mods] then
     data_item[basic_radar].order = e
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
+    data_recipe[basic_radar].categories = {crafting, lignumis_wood_processing}
     if mods[muluna_mods] then
         table.insert(data_recipe[basic_radar].categories, advanced_wood_processing)
     end
