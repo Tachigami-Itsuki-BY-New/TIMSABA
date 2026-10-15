@@ -391,6 +391,7 @@ TIMSABA.barreling.add_dangerous_fluid(lithium_tetraethoxy_aluminate_solution_eth
 local graphics_zinc = "__TIMSABA__/graphics/icons/angels/metallurgy/zinc/"
 -- ZINC ITEM
 zinc_chloride = "zinc-chloride"
+zinc_hydroxide = "zinc-hydroxide"
 TIMSABA.functions.create_items
 ({
     {
@@ -399,12 +400,19 @@ TIMSABA.functions.create_items
         subgroup = is_zinc_chemistry,
         icon = graphics_zinc .. zinc_chloride .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Zn(OH)[font=default-tiny-bold]2[/font]"} or nil,
+        name = zinc_hydroxide,
+        subgroup = is_zinc_chemistry,
+        icon = graphics_zinc .. zinc_hydroxide .. ".png",
+        order = d
     }
 })
 
 -- ZINC FLUID
 zinc_chloride_solution = "zinc-chloride-solution"
-zinc_gas = "zinc-gas"
+sodium_tetrahydroxozincate_II_solution = "sodium-tetrahydroxozincate-II-solution"
 zinc_sulfate_solution = "zinc-sulfate-solution"
 TIMSABA.functions.create_fluids
 ({
@@ -418,20 +426,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("ZnCl2Wp")
     },
     {
-        localised_description = show_formula and {chemical_formula, "Zn"} or nil,
-        name = zinc_gas,
+        localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]Zn(OH)[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = sodium_tetrahydroxozincate_II_solution,
         subgroup = is_zinc_chemistry,
-        icon = graphics_zinc .. zinc_gas .. ".png",
-        order = d,
-        base_color = TIMSABA.functions.fluid_color("ZnZnZn"),
-        flow_color = TIMSABA.functions.flow_color("ZnZnZn")
+        icon = graphics_zinc .. sodium_tetrahydroxozincate_II_solution .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("Na2ZnO4H4Wp"),
+        flow_color = TIMSABA.functions.flow_color("Na2ZnO4H4Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "ZnSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = zinc_sulfate_solution,
         subgroup = is_zinc_chemistry,
         icon = graphics_zinc .. zinc_sulfate_solution .. ".png",
-        order = e,
+        order = f,
         base_color = TIMSABA.functions.fluid_color("ZnSO4Wp"),
         flow_color = TIMSABA.functions.flow_color("ZnSO4Wp")
     }

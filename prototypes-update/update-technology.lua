@@ -1371,18 +1371,19 @@ data_technology[tech_zinc_smelting_1].effects =
     {type = unlock_recipe, recipe = zinc_plate_angels}
 }
 
-data_technology[tech_zinc_smelting_2].prerequisites = {tech_ore_processing_2, tech_zinc_smelting_1, tech_powder_metallurgy_3, tech_chlorine_processing_1}
+data_technology[tech_zinc_smelting_2].prerequisites = {tech_ore_processing_2, tech_zinc_smelting_1, tech_powder_metallurgy_3, tech_sodium_processing_1}
 data_technology[tech_zinc_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = zinc_processed},
     {type = unlock_recipe, recipe = zinc_oxide},
-    {type = unlock_recipe, recipe = zinc_gas},
+    {type = unlock_recipe, recipe = sodium_tetrahydroxozincate_II_solution},
+    {type = unlock_recipe, recipe = zinc_hydroxide},
+    {type = unlock_recipe, recipe = zinc_chloride_solution_2},
     {type = unlock_recipe, recipe = zinc_ingot_2},
-    {type = unlock_recipe, recipe = zinc_powder},
-    {type = unlock_recipe, recipe = magnesium_chloride_from_magnesium_chloride_solution}
+    {type = unlock_recipe, recipe = zinc_powder}
 }
 
-data_technology[tech_zinc_smelting_3].prerequisites = {tech_ore_processing_3, tech_zinc_smelting_2, tech_sulfur_processing_1}
+data_technology[tech_zinc_smelting_3].prerequisites = {tech_ore_processing_3, tech_zinc_smelting_2}
 data_technology[tech_zinc_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = zinc_pellet},
