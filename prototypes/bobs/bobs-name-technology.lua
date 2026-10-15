@@ -96,6 +96,7 @@ tech_uranium_ammo = "uranium-ammo"
 tech_military_2 = "military-2"
 tech_military_3 = "military-3"
 tech_military_4 = "military-4"
+tech_rocketry = "rocketry"
 
 tech_modules_2 = "bob-modules-2"
 tech_modules_3 = "bob-modules-3"
