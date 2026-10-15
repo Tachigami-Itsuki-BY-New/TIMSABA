@@ -929,7 +929,7 @@ data_item[zinc_ingot].order = d
 data_recipe[zinc_ingot].categories = {angels_chemical_smelting_1}
 data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_powder, zinc_ingot, magnesium_chloride_solution)
 data_recipe[zinc_ingot].order = d
-data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg --> Zn + MgCl₂(aq)
+data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg(s) --> Zn(s) + MgCl₂(aq)
 data_recipe[zinc_ingot].ingredients =
 {
     {type = fluid, name = zinc_chloride_solution, amount = 240},
@@ -942,23 +942,23 @@ data_recipe[zinc_ingot].results =
 }
 data_recipe[zinc_ingot].main_product = zinc_ingot
 
-data_recipe[zinc_ingot_2].icons = TWO_I(zinc_gas, zinc_ingot)
+--[[data_recipe[zinc_ingot_2].icons = TWO_D_I(zinc_chloride_solution, sodium_angels, zinc_ingot, sodium_chloride_solution)
 data_recipe[zinc_ingot_2].order = d_a
-data_recipe[zinc_ingot_2].energy_required = 8 -- Zn(g) -H₂O-> Zn
+data_recipe[zinc_ingot_2].energy_required = 8 -- ZnCl₂(aq) + Na(s) --> Zn(s) + NaCl₂(aq)
 data_recipe[zinc_ingot_2].ingredients =
 {
-    {type = fluid, name = zinc_gas, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = zinc_chloride_solution, amount = 240},
+    {type = item, name = sodium_angels, amount = 16},
 }
 data_recipe[zinc_ingot_2].results =
 {
     {type = item, name = zinc_ingot, amount = 16},
-    {type = fluid, name = steam, amount = 120} -- 240
-}
+    {type = fluid, name = sodium_chloride_solution, amount = 120} -- 240
+}]]
 
 data_recipe[zinc_ingot_3].icons = FOUR_THREE_I(zinc_cathode, lime_angels, carbon_angels, oxygen_angels, zinc_ingot, nil, limestone_angels)
 data_recipe[zinc_ingot_3].order = d_b
-data_recipe[zinc_ingot_3].energy_required = 8 -- Zn + CaO + C + O₂ --> Zn + CaCO₃
+data_recipe[zinc_ingot_3].energy_required = 8 -- Zn(s) + CaO(s) + C(s) + O₂(g) --> Zn(s) + CaCO₃(s)
 data_recipe[zinc_ingot_3].ingredients =
 {
     {type = item, name = zinc_cathode, amount = 16},
@@ -980,35 +980,35 @@ data_recipe[zinc_powder].order = e
 -- ZINC CHEMISTRY
 data_item[zinc_oxide].localised_description = show_formula and {chemical_formula, "ZnO"} or nil
 data_item[zinc_oxide].subgroup = is_zinc_chemistry
-data_item[zinc_oxide].order = c
-data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
+data_item[zinc_oxide].order = e
+--[[data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
 data_recipe[zinc_oxide].categories = {angels_blast_smelting_3}
 data_recipe[zinc_oxide].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide].icons = THREE_I(zinc_processed, oxygen_angels, zinc_oxide)
-data_recipe[zinc_oxide].order = c
-data_recipe[zinc_oxide].energy_required = 8 -- 2Zn + O₂ --> 2ZnO
+data_recipe[zinc_oxide].order = e
+data_recipe[zinc_oxide].energy_required = 8 -- 2Zn(s) + O₂(g) --> 2ZnO(s)
 data_recipe[zinc_oxide].ingredients =
 {
     {type = item, name = zinc_processed, amount = 16},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
-data_recipe[zinc_oxide].results = {{type = item, name = zinc_oxide, amount = 16}}
+data_recipe[zinc_oxide].results = {{type = item, name = zinc_oxide, amount = 16}}]]
 
 data_recipe[zinc_oxide_2].categories = {angels_blast_smelting_4}
 data_recipe[zinc_oxide_2].subgroup = is_zinc_chemistry
 data_recipe[zinc_oxide_2].icons = THREE_I(zinc_pellet, oxygen_angels, zinc_oxide)
-data_recipe[zinc_oxide_2].order = c_a
-data_recipe[zinc_oxide_2].energy_required = 8 -- 2Zn + O₂ --> 2ZnO
+data_recipe[zinc_oxide_2].order = e_a
+data_recipe[zinc_oxide_2].energy_required = 8 -- 2Zn(s) + O₂(g) --> 2ZnO(s)
 data_recipe[zinc_oxide_2].ingredients[2].amount = 120
 data_recipe[zinc_oxide_2].results = {{type = item, name = zinc_oxide, amount = 16}}
 
 data_item[zinc_cathode].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_cathode].subgroup = is_zinc_chemistry
-data_item[zinc_cathode].order = f
+data_item[zinc_cathode].order = g
 data_recipe[zinc_cathode].categories = {angels_petrochem_electrolyser}
 data_recipe[zinc_cathode].subgroup = is_zinc_chemistry
 data_recipe[zinc_cathode].icons = FOUR_R_I(zinc_sulfate_solution, sulfur_dioxide_angels, zinc_cathode, hydrogen_peroxide)
-data_recipe[zinc_cathode].order = f
+data_recipe[zinc_cathode].order = g
 data_recipe[zinc_cathode].energy_required = 8 -- 2ZnSO₄(aq) + 2H₂SO₄ -electrode/electrolys-> 2Zn + 4SO₂ + 4H₂O₂ + O₂
 data_recipe[zinc_cathode].ingredients =
 {
