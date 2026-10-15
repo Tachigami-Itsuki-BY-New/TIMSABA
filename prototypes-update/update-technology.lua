@@ -1756,17 +1756,7 @@ data_technology[tech_ore_processing_2].effects =
 
 table.insert(data_technology[tech_ore_processing_5].prerequisites, tech_stone_smelting_5)
 
-data_technology[tech_metallurgy_5].prerequisites =
-{
-    advanced_processing_unit,
-    tech_tungsten_processing,
-    utility_science_pack,
-    tech_iron_smelting_3,
-    tech_copper_smelting_3,
-    tech_aluminium_smelting_3,
-    tech_silver_smelting_3,
-    tech_stone_smelting_4
-}
+data_technology[tech_metallurgy_5].prerequisites = {advanced_processing_unit, tech_copper_tungsten_processing, tech_iron_smelting_3, tech_copper_smelting_3, tech_stone_smelting_4}
 data_technology[tech_metallurgy_5].effects =
 {
     {type = unlock_recipe, recipe = chemical_furnace_4},
