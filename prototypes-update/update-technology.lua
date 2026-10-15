@@ -1299,7 +1299,7 @@ data_technology[tech_manganese_smelting_3].effects =
 }
 
 -- SILICON
-data_technology[tech_silicon_smelting_1].prerequisites = {tech_powder_metallurgy_2, tech_ore_floatation, tech_nitrogen_processing_1}
+data_technology[tech_silicon_smelting_1].prerequisites = {tech_powder_metallurgy_2, tech_ore_floatation, tech_nitrogen_processing_1, tech_magnesium_smelting_2}
 data_technology[tech_silicon_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = silicon_oxide_IV},
@@ -1381,14 +1381,15 @@ data_technology[tech_aluminium_smelting_2].effects =
 }
 
 -- ZINC
-data_technology[tech_zinc_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1}
+data_technology[tech_zinc_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1, tech_magnesium_smelting_2}
 data_technology[tech_zinc_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = zinc_chloride},
     {type = unlock_recipe, recipe = zinc_chloride_solution},
     {type = unlock_recipe, recipe = zinc_ingot},
     {type = unlock_recipe, recipe = zinc_molten_angels},
-    {type = unlock_recipe, recipe = zinc_plate_angels}
+    {type = unlock_recipe, recipe = zinc_plate_angels},
+    {type = unlock_recipe, recipe = magnesium_hydroxide_3}
 }
 
 data_technology[tech_zinc_smelting_2].prerequisites = {tech_ore_processing_2, tech_zinc_smelting_1, tech_powder_metallurgy_3, tech_sodium_processing_1}
@@ -1431,7 +1432,7 @@ data_technology[tech_silver_smelting_3].effects =
 }
 
 -- TITANIUM
-data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_green}
+data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_green, tech_magnesium_smelting_2}
 data_technology[tech_titanium_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = titanium_pellet},
@@ -1509,7 +1510,7 @@ data_technology[tech_chromium_smelting_3].effects =
 }
 
 -- TUNGSTEN
-data_technology[tech_tungsten_smelting_1].prerequisites = {tech_powder_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining, tech_magnesium_smelting_3, tech_silicon_smelting_2}
+data_technology[tech_tungsten_smelting_1].prerequisites = {tech_powder_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining}
 data_technology[tech_tungsten_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = tungsten_oxide_VI},
@@ -1518,7 +1519,8 @@ data_technology[tech_tungsten_smelting_1].effects =
     {type = unlock_recipe, recipe = tungsten_plate_angels},
     {type = unlock_recipe, recipe = silicon_oxide_IV_from_silicon_fluoride_IV_gas},
     {type = unlock_recipe, recipe = magnesium_silicide},
-    {type = unlock_recipe, recipe = silane_gas_from_magnesium_silicide}
+    {type = unlock_recipe, recipe = silane_gas_from_magnesium_silicide},
+    {type = unlock_recipe, recipe = magnesium_hydroxide_3}
 }
 
 data_technology[tech_tungsten_smelting_2].prerequisites = {tech_metallurgy_5, tech_ore_processing_4}

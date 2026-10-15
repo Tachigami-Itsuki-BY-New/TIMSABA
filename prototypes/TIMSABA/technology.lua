@@ -276,7 +276,6 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = magnesium_oxide},
-            {type = unlock_recipe, recipe = magnesium_gas},
             {type = unlock_recipe, recipe = magnesium_ingot},
             {type = unlock_recipe, recipe = magnesium_molten}
         },
@@ -297,10 +296,12 @@ data:extend
         name = tech_magnesium_smelting_2,
         icon = graphics_magnesium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_magnesium_smelting_1, tech_ore_processing_1, tech_powder_metallurgy_2},
+        prerequisites = {tech_magnesium_smelting_1, tech_ore_processing_1, tech_powder_metallurgy_2, tech_sulfur_processing_1},
         effects =
         {
             {type = unlock_recipe, recipe = magnesium_processed},
+            {type = unlock_recipe, recipe = magnesium_hydroxide},
+            {type = unlock_recipe, recipe = magnesium_sulfate},
             {type = unlock_recipe, recipe = magnesium_oxide_2},
             {type = unlock_recipe, recipe = magnesium_powder}
         },
@@ -322,13 +323,12 @@ data:extend
         name = tech_magnesium_smelting_3,
         icon = graphics_magnesium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_magnesium_smelting_2, tech_sulfur_processing_1, tech_ore_processing_2},
+        prerequisites = {tech_magnesium_smelting_2, tech_ore_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = magnesium_pellet},
             {type = unlock_recipe, recipe = magnesium_chloride},
-            {type = unlock_recipe, recipe = magnesium_chloride_gas},
-            {type = unlock_recipe, recipe = magnesium_gas_from_magnesium_chloride_gas}
+            {type = unlock_recipe, recipe = magnesium_hydroxide_2}
         },
         unit =
         {
@@ -816,7 +816,8 @@ data:extend
             {type = unlock_recipe, recipe = potassium_hypochlorite_solution},
             {type = unlock_recipe, recipe = potassium_chlorate},
             {type = unlock_recipe, recipe = potassium_chlorate_solution},
-            {type = unlock_recipe, recipe = potassium_permanganate}
+            {type = unlock_recipe, recipe = potassium_permanganate},
+            {type = unlock_recipe, recipe = magnesium_hydroxide_3}
         },
         unit =
         {
