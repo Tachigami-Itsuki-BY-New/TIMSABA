@@ -1,8 +1,3 @@
-function TIMSABA.numeral_tier(icon_data, tier, tint)
-    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
-    return icons
-end
-
 -- STEAM POWER
 local is_boiler = "bob-energy-boiler"
 local is_steam_engine = "bob-energy-steam-engine"

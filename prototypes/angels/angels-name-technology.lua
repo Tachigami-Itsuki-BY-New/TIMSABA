@@ -148,6 +148,7 @@ tech_chlorine_processing_2 = "angels-chlorine-processing-2"
 tech_chlorine_processing_3 = "angels-chlorine-processing-3"
 tech_chlorine_processing_4 = "angels-chlorine-processing-4"
 
+tech_advanced_chemistry_1 = "angels-advanced-chemistry-1"
 tech_advanced_chemistry_2 = "angels-advanced-chemistry-2"
 tech_advanced_chemistry_3 = "angels-advanced-chemistry-3"
 tech_advanced_chemistry_4 = "angels-advanced-chemistry-4"

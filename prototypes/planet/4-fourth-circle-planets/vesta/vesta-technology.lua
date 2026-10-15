@@ -44,8 +44,7 @@ if mods[vesta_mods] then
             {
                 {type = unlock_recipe, recipe = iridium_processed},
                 {type = unlock_recipe, recipe = sodium_iridate_IV},
-                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_2},
-                {type = unlock_recipe, recipe = sodium_peroxide}
+                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_2}
             },
             unit =
             {

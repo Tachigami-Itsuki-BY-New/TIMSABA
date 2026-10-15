@@ -99,17 +99,18 @@ data_recipe[heavy_water_separation_2].results =
     {type = fluid, name = oxygen_angels, amount = 60}
 }
 
+data_recipe[water_saline_separation].categories = {advanced_electrolysis}
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a
--- 8H₂O(2(NaCl)) --> 2NaOH + 7H₂ + 4Cl₂ + 3O₂
+-- (8H₂O + 2Na + 4Cl₂ + 2OH) --> 2NaOH + 8H₂ + 4Cl₂ + 4O₂
 data_recipe[water_saline_separation].ingredients[1].amount = 120
 data_recipe[water_saline_separation].results =
 {
     {type = item, name = sodium_hydroxide_angels, amount = 2},
-    {type = fluid, name = hydrogen_angels, amount = 60}, -- 105
+    {type = fluid, name = hydrogen_angels, amount = 120},
     {type = fluid, name = chlorine_angels, amount = 60},
-    --{type = fluid, name = oxygen_angels, amount = 30} -- 45
+    {type = fluid, name = oxygen_angels, amount = 60}
 }
 
 -- BASIC PETROCHEN FLUIDS
@@ -595,7 +596,7 @@ data_item[sodium_angels].localised_description = show_formula and {chemical_form
 data_item[sodium_angels].order = a
 data_recipe[sodium_angels].icons = FOUR_R_I(sodium_hydroxide_solution_angels, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_angels].order = a
-data_recipe[sodium_angels].energy_required = 8 -- 2(NaOH + H₂O) -electrode/electrolys-> 2Na + 3H₂ + 2O₂
+data_recipe[sodium_angels].energy_required = 8 -- 2NaOH(aq) -electrode/electrolys-> 2Na(s) + 3H₂(g) + 2O₂(g)
 data_recipe[sodium_angels].ingredients =
 {
     {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240},
@@ -604,16 +605,17 @@ data_recipe[sodium_angels].ingredients =
 data_recipe[sodium_angels].results =
 {
     {type = item, name = sodium_angels, amount = 16},
-    {type = fluid, name = hydrogen_angels, amount = 120}, -- 360
-    {type = fluid, name = oxygen_angels, amount = 120}, -- 240
+    {type = fluid, name = hydrogen_angels, amount = 360},
+    {type = fluid, name = oxygen_angels, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 data_recipe[sodium_sulfate_solution_electrolysis].localised_name = {"recipe-name.sodium-sulfate-solution-electrolysis"}
-data_recipe[sodium_sulfate_solution_electrolysis].icons = FOUR_R_I(sodium_sulfate_solution, hydrogen_sulfide_angels, sodium_angels, hydrogen_peroxide)
+data_recipe[sodium_sulfate_solution_electrolysis].categories = {advanced_electrolysis}
+data_recipe[sodium_sulfate_solution_electrolysis].icons = FOUR_R_I(sodium_sulfate_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_sulfate_solution_electrolysis].order = a_a
-data_recipe[sodium_sulfate_solution_electrolysis].energy_required = 8 -- (Na₂SO₄ + H₂O) -electrode/electrolys-> 2Na + SO₃ + H₂O₂
+data_recipe[sodium_sulfate_solution_electrolysis].energy_required = 8 -- Na₂SO₄(aq) -electrode/electrolys-> 2Na(s) + H₂(g) + O₂(g) + SO₃(g)
 data_recipe[sodium_sulfate_solution_electrolysis].ingredients =
 {
     {type = fluid, name = sodium_sulfate_solution, amount = 240},
@@ -622,16 +624,18 @@ data_recipe[sodium_sulfate_solution_electrolysis].ingredients =
 data_recipe[sodium_sulfate_solution_electrolysis].results =
 {
     {type = item, name = sodium_angels, amount = 32},
-    {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
-    {type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 240},
+    {type = fluid, name = sulfur_trioxide_gas, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 data_recipe[sodium_chloride_solution_electrolysis].localised_name = {"recipe-name.sodium-chloride-solution-electrolysis"}
-data_recipe[sodium_chloride_solution_electrolysis].icons = FOUR_R_I(sodium_chloride_solution, hydrogen_chloride_angels, sodium_angels, hydrogen_peroxide)
+data_recipe[sodium_chloride_solution_electrolysis].categories = {advanced_electrolysis}
+data_recipe[sodium_chloride_solution_electrolysis].icons = FOUR_R_I(sodium_chloride_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_chloride_solution_electrolysis].order = a_b
-data_recipe[sodium_chloride_solution_electrolysis].energy_required = 8 -- 2(NaCl + H₂O) -electrode/electrolys-> 2Na + 2HCl + H₂O₂
+data_recipe[sodium_chloride_solution_electrolysis].energy_required = 8 -- 2NaCl(aq) -electrode/electrolys-> 2Na(s) + H₂(g) + O₂(g) + 2HCl(g)
 data_recipe[sodium_chloride_solution_electrolysis].ingredients =
 {
     {type = fluid, name = sodium_chloride_solution, amount = 240},
@@ -640,17 +644,19 @@ data_recipe[sodium_chloride_solution_electrolysis].ingredients =
 data_recipe[sodium_chloride_solution_electrolysis].results =
 {
     {type = item, name = sodium_angels, amount = 16},
-    {type = fluid, name = hydrogen_chloride_angels, amount = 120}, -- 240
-    {type = fluid, name = hydrogen_peroxide, amount = 60}, -- 120
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 120},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 data_recipe[sodium_carbonate_solution_electrolysis].localised_name = {"recipe-name.sodium-carbonate-solution-electrolysis"}
+data_recipe[sodium_carbonate_solution_electrolysis].categories = {advanced_electrolysis}
 data_recipe[sodium_carbonate_solution_electrolysis].subgroup = is_sodium
-data_recipe[sodium_carbonate_solution_electrolysis].icons = FOUR_R_I(sodium_carbonate_solution, carbon_dioxide_angels, sodium_angels, hydrogen_peroxide)
+data_recipe[sodium_carbonate_solution_electrolysis].icons = FOUR_R_I(sodium_carbonate_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_carbonate_solution_electrolysis].order = a_c
-data_recipe[sodium_carbonate_solution_electrolysis].energy_required = 8 -- (Na₂CO₃ + H₂O) -electrolys-> 2Na + CO₂ + H₂O₂
+data_recipe[sodium_carbonate_solution_electrolysis].energy_required = 8 -- Na₂CO₃(aq) -electrolys-> 2Na(s) + H₂(g) + O₂(g) + CO₂(g)
 data_recipe[sodium_carbonate_solution_electrolysis].ingredients =
 {
     {type = fluid, name = sodium_carbonate_solution, amount = 240},
@@ -659,8 +665,9 @@ data_recipe[sodium_carbonate_solution_electrolysis].ingredients =
 data_recipe[sodium_carbonate_solution_electrolysis].results =
 {
     {type = item, name = sodium_angels, amount = 32},
-    {type = fluid, name = carbon_dioxide_angels, amount = 120}, -- 240
-    {type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 240},
+    {type = fluid, name = carbon_dioxide_angels, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -914,10 +921,11 @@ data_recipe[sulfur_gas_calcium_sulfate].ingredients =
 }
 data_recipe[sulfur_gas_calcium_sulfate].results =
 {
-    {type = item, name = lime_angels, amount = 4},
     {type = fluid, name = sulfur_dioxide_angels, amount = 60},
-    {type = fluid, name = carbon_dioxide_angels, amount = 60}
+    {type = item, name = lime_angels, amount = 2}, -- 4
+    {type = fluid, name = carbon_dioxide_angels, amount = 30} -- 60
 }
+data_recipe[sulfur_gas_calcium_sulfate].main_product = sulfur_dioxide_angels
 
 data_fluid[sulfuric_acid_angels].subgroup = is_sulfur_fluids
 data_fluid[sulfuric_acid_angels].order = f
@@ -1092,11 +1100,11 @@ data_recipe[lithium_perchlorate_bob].main_product = lithium_perchlorate_bob
 data_item[lithium_bob].localised_description = show_formula and {chemical_formula, "Li"} or nil
 data_item[lithium_bob].subgroup = is_lithium
 data_item[lithium_bob].order = c
-data_recipe[lithium_bob].categories = {angels_petrochem_electrolyser}
+data_recipe[lithium_bob].categories = {advanced_electrolysis}
 data_recipe[lithium_bob].subgroup = is_lithium
-data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_chloride_angels, lithium_bob, hydrogen_peroxide)
+data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_bob, hydrogen_chloride_angels)
 data_recipe[lithium_bob].order = c
-data_recipe[lithium_bob].energy_required = 8 -- 2(LiCl + H₂O) -electrode/electrolys-> 2Li + 2HCl + H₂O₂
+data_recipe[lithium_bob].energy_required = 8 -- 2LiCl(aq) -electrode/electrolys-> 2Li(s) + H₂(g) + O₂(g) + 2HCl(g)
 data_recipe[lithium_bob].ingredients =
 {
     {type = fluid, name = lithium_chloride_solution, amount = 240},
@@ -1105,8 +1113,9 @@ data_recipe[lithium_bob].ingredients =
 data_recipe[lithium_bob].results =
 {
     {type = item, name = lithium_bob, amount = 16},
-    {type = fluid, name = hydrogen_chloride_angels, amount = 120}, -- 240
-    {type = fluid, name = hydrogen_peroxide, amount = 60}, -- 120
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 120},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -2132,6 +2141,8 @@ else
 end
 
 -- OTHERS
+data_item_subgroup[is_buildings_electrolyser].order = z_a
+
 data_item[electrode].subgroup = is_buildings_electrolyser
 data_item[electrode].order = e
 data_recipe[electrode].subgroup = is_buildings_electrolyser
@@ -2152,6 +2163,8 @@ data_recipe[electrode_used].results =
 
 data_item[electrode_used].subgroup = is_buildings_electrolyser
 data_item[electrode_used].order = f
+
+data_item_subgroup[is_buildings_chemical_plant].order = z_d
 
 data_item[catalyst_carrier].subgroup = is_buildings_chemical_plant
 data_item[catalyst_carrier].order = e
@@ -2196,3 +2209,9 @@ data_recipe[catalyst_yellow].ingredients[3].name = platinum_ore_angels
 data_recipe[catalyst_yellow].results[1].amount = 8
 
 bobmods.lib.recipe.update_recycling_recipe({insulated_cable})
+
+data_item_subgroup[is_buildings_gas_refinery].order = z_f
+
+data_item_subgroup[is_buildings_oil_refinery].order = z_h
+
+data_item_subgroup[is_buildings_steam].order = z_j
