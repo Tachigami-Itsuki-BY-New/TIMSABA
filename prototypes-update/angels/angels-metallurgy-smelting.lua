@@ -1149,28 +1149,25 @@ data_item[silver_cathode].subgroup = is_silver_chemistry
 data_item[silver_cathode].order = d
 data_recipe[silver_cathode].categories = {industrial_electrolysis}
 data_recipe[silver_cathode].subgroup = is_silver_chemistry
-data_recipe[silver_cathode].icons = FOUR_R_I(sodium_dicyanoargentate_I_solution, hydrocyanic_acid, silver_cathode, sodium_peroxide)
+data_recipe[silver_cathode].icons = FOUR_R_I(sodium_dicyanoargentate_I_solution, hydrogen_angels, silver_cathode, oxygen_angels)
 data_recipe[silver_cathode].order = d
-data_recipe[silver_cathode].energy_required = 8 -- 2NaAg(CN)₂(aq) + 4H₂O(l) + 2NaCN(aq) + 8/8NaOH(s) -electrode/electrolys-> 2Ag(s) + 4HCN(aq) + Na₂O₂(s) + 87.5% 2NaCN(aq) + 12.5% 2HCN(aq) + 4Na(s) + Na₂O(s) + 2Na₂O₂(s) + 3H₂O(l)
+data_recipe[silver_cathode].energy_required = 8 -- 2NaAg(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Ag(s) + H₂(g) + O₂(g) + 2HCN(g) + 2NaCN(s) + 87.5% 2NaCN(aq) + 12.5% 2NaOH(s) + 2HCN(g)
 data_recipe[silver_cathode].ingredients =
 {
     {type = fluid, name = sodium_dicyanoargentate_I_solution, amount = 240},
     {type = fluid, name = sodium_cyanide_solution, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 480},
-    {type = item, name = sodium_hydroxide_angels, amount = 8},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[silver_cathode].results =
 {
     {type = item, name = silver_cathode, amount = 16},
-    {type = fluid, name = hydrocyanic_acid, amount_min = 240, amount_max = 480},
-    {type = item, name = sodium_peroxide, amount_min = 4, amount_max = 8},
+    {type = fluid, name = hydrogen_angels, amount_min = 60, amount_max = 120},
+    {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+    {type = fluid, name = hydrogen_cyanide_gas, amount_min = 60, amount_max = 120},
+    {type = item, name = sodium_cyanide_angels, amount_min = 8, amount_max = 16},
     {type = fluid, name = sodium_cyanide_solution, amount = 240, independent_probability = 0.875},
-    {type = fluid, name = hydrocyanic_acid, amount = 240, independent_probability = 0.125},
-    {type = item, name = sodium_angels, amount = 32, independent_probability = 0.125},
-    {type = item, name = sodium_oxide, amount = 8, independent_probability = 0.125},
-    {type = item, name = sodium_peroxide, amount = 16, independent_probability = 0.125},
-    {type = fluid, name = water_purified_angels, amount = 360, independent_probability = 0.125},
+    {type = item, name = sodium_hydroxide_angels, amount = 16, independent_probability = 0.125},
+    {type = fluid, name = hydrogen_cyanide_gas, amount = 240, independent_probability = 0.125},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1416,28 +1413,25 @@ data_recipe[gold_cathode].main_product = gold_cathode
 
 data_recipe[gold_cathode_2].categories = {industrial_electrolysis}
 data_recipe[gold_cathode_2].subgroup = is_gold_chemistry
-data_recipe[gold_cathode_2].icons = FOUR_R_I(sodium_dicyanoaurate_I_solution, hydrocyanic_acid, gold_cathode, hydrogen_angels)
+data_recipe[gold_cathode_2].icons = FOUR_R_I(sodium_dicyanoaurate_I_solution, hydrogen_angels, gold_cathode, oxygen_angels)
 data_recipe[gold_cathode_2].order = d_a
-data_recipe[gold_cathode_2].energy_required = 8 -- 2NaAu(CN)₂(aq) + 4H₂O(l) + 2NaCN(aq) + 8/8NaOH(s) -electrode/electrolys-> 2Au(s) + 4HCN(aq) + Na₂O₂(s) + 87.5% 2NaCN(aq) + 12.5% 2HCN(aq) + 4Na(s) + Na₂O(s) + 2Na₂O₂(s) + 3H₂O(l)
+data_recipe[gold_cathode_2].energy_required = 8 -- 2NaAu(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Au(s) + H₂(g) + O₂(g) + 2HCN(g) + 2NaCN(s) + 87.5% 2NaCN(aq) + 12.5% 2NaOH(s) + 2HCN(g)
 data_recipe[gold_cathode_2].ingredients =
 {
     {type = fluid, name = sodium_dicyanoaurate_I_solution, amount = 240},
     {type = fluid, name = sodium_cyanide_solution, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 480},
-    {type = item, name = sodium_hydroxide_angels, amount = 8},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[gold_cathode_2].results =
 {
     {type = item, name = gold_cathode, amount = 16},
-    {type = fluid, name = hydrocyanic_acid, amount_min = 240, amount_max = 480},
-    {type = item, name = sodium_peroxide, amount_min = 4, amount_max = 8},
+    {type = fluid, name = hydrogen_angels, amount_min = 60, amount_max = 120},
+    {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+    {type = fluid, name = hydrogen_cyanide_gas, amount_min = 60, amount_max = 120},
+    {type = item, name = sodium_cyanide_angels, amount_min = 8, amount_max = 16},
     {type = fluid, name = sodium_cyanide_solution, amount = 240, independent_probability = 0.875},
-    {type = fluid, name = hydrocyanic_acid, amount = 240, independent_probability = 0.125},
-    {type = item, name = sodium_angels, amount = 32, independent_probability = 0.125},
-    {type = item, name = sodium_oxide, amount = 8, independent_probability = 0.125},
-    {type = item, name = sodium_peroxide, amount = 16, independent_probability = 0.125},
-    {type = fluid, name = water_purified_angels, amount = 360, independent_probability = 0.125},
+    {type = item, name = sodium_hydroxide_angels, amount = 16, independent_probability = 0.125},
+    {type = fluid, name = hydrogen_cyanide_gas, amount = 240, independent_probability = 0.125},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }

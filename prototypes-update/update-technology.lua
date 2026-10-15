@@ -1427,8 +1427,8 @@ data_technology[tech_silver_smelting_3].effects =
     {type = unlock_recipe, recipe = sodium_dicyanoargentate_I_solution},
     {type = unlock_recipe, recipe = silver_cathode},
     {type = unlock_recipe, recipe = silver_ingot_3},
-    {type = unlock_recipe, recipe = sodium_peroxide},
-    {type = unlock_recipe, recipe = sodium_peroxide_reprocess}
+    {type = unlock_recipe, recipe = sodium_cyanide_2},
+    {type = unlock_recipe, recipe = hydrocyanic_acid_2}
 }
 
 -- TITANIUM
@@ -1451,8 +1451,8 @@ data_technology[tech_gold_smelting_3].effects =
     {type = unlock_recipe, recipe = sodium_dicyanoaurate_I},
     {type = unlock_recipe, recipe = sodium_dicyanoaurate_I_solution},
     {type = unlock_recipe, recipe = gold_cathode_2},
-    {type = unlock_recipe, recipe = sodium_peroxide},
-    {type = unlock_recipe, recipe = sodium_peroxide_reprocess}
+    {type = unlock_recipe, recipe = sodium_cyanide_2},
+    {type = unlock_recipe, recipe = hydrocyanic_acid_2}
 }
 
 -- COBALT
@@ -1862,7 +1862,7 @@ data_technology[tech_nitrogen_processing_4].effects =
     {type = unlock_recipe, recipe = ammonium_sulfate_solution_alt},
     {type = unlock_recipe, recipe = ammonium_hydrosulfate_reprocess},
     {type = unlock_recipe, recipe = hydrocyanic_acid},
-    {type = unlock_recipe, recipe = sodium_cyanide_solution_alt},
+    {type = unlock_recipe, recipe = sodium_cyanide_solution_2},
     {type = unlock_recipe, recipe = acrylonitrile},
     {type = unlock_recipe, recipe = liquid_plastic_4},
     {type = unlock_recipe, recipe = acetone_cyanohydrin},
