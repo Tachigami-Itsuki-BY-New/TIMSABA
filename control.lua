@@ -8,6 +8,16 @@ local planet_messages = require("scripting.planet-messages")
 local dynamic_underground_belts = require("scripting.dynamic-underground-belts")
 local dynamic_pipe_to_ground = require("scripting.dynamic-pipe-to-ground")
 
+local milestones_events
+if script.active_mods["Milestones"] then
+    require("compatibility.milestones")
+    milestones_events = require("scripting.milestones-events")
+    script.on_event(defines.events.on_rocket_launch_ordered, milestones_events.on_rocket_launch_ordered)
+    script.on_event(defines.events.on_rocket_launched, milestones_events.on_rocket_launched)
+    script.on_event(defines.events.on_space_platform_changed_state, milestones_events.on_space_platform_changed_state)
+    script.on_nth_tick(60, milestones_events.poll)
+end
+
 script.on_event
 ({
     defines.events.on_built_entity,
@@ -64,6 +74,7 @@ script.on_event(defines.events.on_surface_created, function(event)
 end)
 
 script.on_event(defines.events.on_player_changed_surface, function(event)
+    if milestones_events then milestones_events.on_player_changed_surface(event) end
     if planet_messages and planet_messages.on_player_changed_surface then
         planet_messages.on_player_changed_surface(event)
     end
