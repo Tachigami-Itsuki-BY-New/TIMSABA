@@ -396,7 +396,12 @@ data_furnace[clarifier].allowed_effects = {speed, consumption, pollution}
 data_furnace[clarifier].allowed_module_categories = {speed, efficiency, pollution_clean}
 
 -- ANGELS PETROCHEM REFINING
-local electrolysers = {electrolyser_1, electrolyser_2, electrolyser_3, electrolyser_4}
+local electrolysers =
+{
+    electrolyser_1, electrolyser_2, electrolyser_3, electrolyser_4,
+    advanced_electrolyser_1, advanced_electrolyser_2, advanced_electrolyser_3, advanced_electrolyser_4,
+    industrial_electrolyser_1, industrial_electrolyser_2, industrial_electrolyser_3, industrial_electrolyser_4
+}
 for _, name in ipairs(electrolysers) do
     if mods[quality_mods] then
         data_assembling[name].allowed_effects = {speed, productivity, quality}

@@ -115,7 +115,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_ore, molybdenum_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = molybdenum_ore, amount = 4}},
         results = {{type = item, name = molybdenum_processed, amount = 4}},
         main_product = molybdenum_processed
@@ -126,7 +125,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_processed, molybdenum_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = molybdenum_processed, amount = 4}},
         results = {{type = item, name = molybdenum_pellet, amount = 4}},
         main_product = molybdenum_pellet

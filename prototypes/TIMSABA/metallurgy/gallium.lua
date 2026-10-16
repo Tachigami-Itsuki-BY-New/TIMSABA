@@ -171,7 +171,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium,
         icons = TWO_I(gallium_ore, gallium_processed),
         order = b,
-        energy_required = 2,
         ingredients =
         {
             {type = item, name = gallium_ore, amount = 4},
@@ -186,7 +185,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium,
         icons = TWO_I(gallium_processed, gallium_pellet),
         order = c,
-        energy_required = 2,
         ingredients =
         {
             {type = item, name = gallium_processed, amount = 4},
@@ -311,7 +309,7 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = gallium_pellet, amount = 8},
-            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 16},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240},
             {type = fluid, name = water_purified_angels, amount = 720}
         },
         results =

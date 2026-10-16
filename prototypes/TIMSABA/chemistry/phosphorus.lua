@@ -14,8 +14,6 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 fluorapatite = "fluorapatite"
 white_phosphorus = "white-phosphorus"
 phosphorus_chloride_V = "phosphorus-chloride-V"
-calcium_silicate = "calcium-silicate"
-metasilicic_acid = "metasilicic-acid"
 TIMSABA.functions.create_items
 ({
     {
@@ -44,21 +42,6 @@ TIMSABA.functions.create_items
         subgroup = is_phosphorus,
         icon = graphics_phosphorus .. phosphorus_chloride_V .. ".png",
         order = c
-    },
-    -- SILICON
-    {
-        localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
-        name = calcium_silicate,
-        subgroup = is_silicon_chemistry,
-        icon = graphics_silicon .. calcium_silicate .. ".png",
-        order = i
-    },
-    {
-        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
-        name = metasilicic_acid,
-        subgroup = is_silicon_chemistry,
-        icon = graphics_silicon .. metasilicic_acid .. ".png",
-        order = j
     }
 })
 
@@ -111,7 +94,6 @@ TIMSABA.barreling.add_gas(phosphorus_fluoride_V_gas)
 TIMSABA.barreling.add_dangerous_fluid(hexafluorophosphoric_acid)
 
 -- RECIPE
-silicon_oxide_IV_from_metasilicic_acid = "silicon-oxide-IV-from-metasilicic-acid"
 TIMSABA.functions.create_recipes
 ({
     -- SMELTING
@@ -219,41 +201,5 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = fluid, name = hexafluorophosphoric_acid, amount = 60}},
         main_product = hexafluorophosphoric_acid
-    },
-    -- SILICON
-    {
-        name = metasilicic_acid,
-        categories = {angels_chemical_smelting_3},
-        subgroup = is_silicon_chemistry,
-        icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
-        order = j,
-        energy_required = 8, -- CaSiO₃(s) + 2HCl(aq) --> H₂SiO₃(s) + CaCl₂(aq) + H₂O(l)
-        ingredients =
-        {
-            {type = item, name = calcium_silicate, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
-        },
-        results =
-        {
-            {type = item, name = metasilicic_acid, amount = 16},
-            {type = fluid, name = calcium_chloride_solution, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
-        },
-        main_product = metasilicic_acid
-    },
-    {
-        name = silicon_oxide_IV_from_metasilicic_acid,
-        categories = {angels_blast_smelting_4},
-        subgroup = is_silicon_chemistry,
-        icons = THREE_R_I(metasilicic_acid, silicon_oxide_IV, steam),
-        order = a_c,
-        energy_required = 8, -- H₂SiO₃(s) --> SiO₂(s) + H₂O(l)
-        ingredients = {{type = item, name = metasilicic_acid, amount = 16}},
-        results =
-        {
-            {type = item, name = silicon_oxide_IV, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
-        },
-        main_product = silicon_oxide_IV
     }
 })

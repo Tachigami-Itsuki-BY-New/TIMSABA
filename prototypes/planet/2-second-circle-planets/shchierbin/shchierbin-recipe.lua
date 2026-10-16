@@ -10,7 +10,6 @@ if mods[shchierbin_mods] then
             subgroup = is_shchierbin_vanadium,
             icons = TWO_I(vanadium_ore, vanadium_processed),
             order = b,
-            energy_required = 2,
             ingredients = {{type = item, name = vanadium_ore, amount = 4}},
             results = {{type = item, name = vanadium_processed, amount = 4}},
             main_product = vanadium_processed
@@ -21,7 +20,6 @@ if mods[shchierbin_mods] then
             subgroup = is_shchierbin_vanadium,
             icons = TWO_I(vanadium_processed, vanadium_pellet),
             order = c,
-            energy_required = 2,
             ingredients = {{type = item, name = vanadium_processed, amount = 4}},
             results = {{type = item, name = vanadium_pellet, amount = 4}},
             main_product = vanadium_pellet

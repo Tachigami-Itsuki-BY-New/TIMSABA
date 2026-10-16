@@ -78,6 +78,10 @@ data_recipe[zinc_ingot_2].hidden = true
 data_recipe[zinc_ingot_2].hidden_in_factoriopedia = true
 data_item[silver_nitrate_I].hidden = false
 data_item[silver_nitrate_I].hidden_in_factoriopedia = false
+data_recipe[titanium_ingot_2].hidden = true
+data_recipe[titanium_ingot_2].hidden_in_factoriopedia = true
+data_recipe[titanium_chloride_IV_2].hidden = true
+data_recipe[titanium_chloride_IV_2].hidden_in_factoriopedia = true
 data_item[cobalt_oxide_II_III].hidden = false
 data_item[cobalt_oxide_II_III].hidden_in_factoriopedia = false
 data_item[tungsten_powder].hidden = false
@@ -150,6 +154,8 @@ data_recipe[casting_low_density_structure].ingredients =
 }
 
 data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
+
+data_recipe[lithium_space].categories = {smelting_filtering}
 
 -- MULUNA
 if mods[muluna_mods] then
@@ -310,11 +316,11 @@ if mods[moshine_mods] then
 
     local cosmicscanner_construction_stage_3 = "moshine_cosmicscanner-construction-stage-3"
     data_assembling[cosmicscanner_construction_stage_3].energy_usage = ((960 * 256 * 3) - (drain * 256 * 3)) .. kW
-    data_assembling[cosmicscanner_construction_stage_3].energy_source.drain = (960 * 256 * 3) .. kW
+    data_assembling[cosmicscanner_construction_stage_3].energy_source.drain = (drain * 256 * 3) .. kW
 
     local cosmicscanner_construction_stage_4 = "moshine_cosmicscanner-construction-stage-4"
     data_assembling[cosmicscanner_construction_stage_4].energy_usage = ((960 * 256 * 4) - (drain * 256 * 4)) .. kW
-    data_assembling[cosmicscanner_construction_stage_4].energy_source.drain = (960 * 256 * 4) .. kW
+    data_assembling[cosmicscanner_construction_stage_4].energy_source.drain = (drain * 256 * 4) .. kW
 
     local cosmicscanner = "moshine_cosmicscanner"
     data_assembling[cosmicscanner].module_slots = 4
