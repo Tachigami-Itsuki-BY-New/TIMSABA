@@ -156,6 +156,8 @@ tech_advanced_chemistry_5 = "angels-advanced-chemistry-5"
 tech_advanced_chemistry_6 = "advanced-chemistry-6"
 tech_steam_cracking_1 = "angels-steam-cracking-1"
 
+tech_rubbers = "angels-rubbers"
+
 -- ANGELS BIOPROCESSING NAUVIS
 tech_bio_processing_brown = "angels-bio-processing-brown"
 tech_bio_processing_green = "angels-bio-processing-green"
