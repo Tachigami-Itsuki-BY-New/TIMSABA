@@ -21,7 +21,7 @@ TIMSABA.functions.create_buildings
             {type = item, name = bronze_plate_bob, amount = 16}
         },
 
-        base_prototype = data_assembling[oil_refinery_1],
+        base_prototype = data_assembling[electrolyser_1],
 
         localised_description = {"entity-description.angels-electrolyser"},
         module_slots = 1,
@@ -48,7 +48,7 @@ TIMSABA.functions.create_buildings
             {type = item, name = advanced_electrolyser_1, amount = 1}
         },
 
-        base_prototype = data_assembling[oil_refinery_1],
+        base_prototype = data_assembling[electrolyser_1],
 
         localised_description = {"entity-description.angels-electrolyser"},
         module_slots = 2,
@@ -75,7 +75,7 @@ TIMSABA.functions.create_buildings
             {type = item, name = advanced_electrolyser_2, amount = 1}
         },
 
-        base_prototype = data_assembling[oil_refinery_1],
+        base_prototype = data_assembling[electrolyser_1],
 
         localised_description = {"entity-description.angels-electrolyser"},
         module_slots = 3,
@@ -102,7 +102,7 @@ TIMSABA.functions.create_buildings
             {type = item, name = advanced_electrolyser_3, amount = 1}
         },
 
-        base_prototype = data_assembling[oil_refinery_1],
+        base_prototype = data_assembling[electrolyser_1],
 
         localised_description = {"entity-description.angels-electrolyser"},
         module_slots = 4,
@@ -116,29 +116,64 @@ TIMSABA.functions.create_buildings
     }
 })
 
+local advanced_electrolyser_fluid_boxes =
+{
+    {
+        production_type = input,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 120,
+        pipe_connections = {{flow_direction = input, position = {-1, -2}, direction = defines.direction.north}}
+    },
+    {
+        production_type = input,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 120,
+        pipe_connections = {{flow_direction = input, position = {1, -2}, direction = defines.direction.north}}
+    },
+    {
+        production_type = output,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {-2, 2}, direction = defines.direction.south}}
+    },
+    {
+        production_type = output,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {0, 2}, direction = defines.direction.south}}
+    },
+    {
+        production_type = output,
+        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {2, 2}, direction = defines.direction.south}}
+    }
+}
+
 data_assembling[advanced_electrolyser_1].crafting_categories = {advanced_electrolysis}
 data_assembling[advanced_electrolyser_1].next_upgrade = advanced_electrolyser_2
 data_assembling[advanced_electrolyser_1].graphics_set = {animation = {layers = {advanced_electrolyser_layers}}}
-data_assembling[advanced_electrolyser_1].working_sound = data_assembling[electrolyser_1].working_sound
-data_assembling[advanced_electrolyser_1].icon_draw_specification = data_assembling[electrolyser_1].icon_draw_specification
+data_assembling[advanced_electrolyser_1].fluid_boxes = advanced_electrolyser_fluid_boxes
 
 data_assembling[advanced_electrolyser_2].crafting_categories = {advanced_electrolysis}
 data_assembling[advanced_electrolyser_2].next_upgrade = advanced_electrolyser_3
 data_assembling[advanced_electrolyser_2].graphics_set = {animation = {layers = {advanced_electrolyser_layers}}}
-data_assembling[advanced_electrolyser_2].working_sound = data_assembling[electrolyser_1].working_sound
-data_assembling[advanced_electrolyser_2].icon_draw_specification = data_assembling[electrolyser_1].icon_draw_specification
+data_assembling[advanced_electrolyser_2].fluid_boxes = advanced_electrolyser_fluid_boxes
 
 data_assembling[advanced_electrolyser_3].crafting_categories = {advanced_electrolysis}
 data_assembling[advanced_electrolyser_3].next_upgrade = advanced_electrolyser_4
 data_assembling[advanced_electrolyser_3].graphics_set = {animation = {layers = {advanced_electrolyser_layers}}}
-data_assembling[advanced_electrolyser_3].working_sound = data_assembling[electrolyser_1].working_sound
-data_assembling[advanced_electrolyser_3].icon_draw_specification = data_assembling[electrolyser_1].icon_draw_specification
+data_assembling[advanced_electrolyser_3].fluid_boxes = advanced_electrolyser_fluid_boxes
 
 data_assembling[advanced_electrolyser_4].crafting_categories = {advanced_electrolysis}
 data_assembling[advanced_electrolyser_4].next_upgrade = nil
 data_assembling[advanced_electrolyser_4].graphics_set = {animation = {layers = {advanced_electrolyser_layers}}}
-data_assembling[advanced_electrolyser_4].working_sound = data_assembling[electrolyser_1].working_sound
-data_assembling[advanced_electrolyser_4].icon_draw_specification = data_assembling[electrolyser_1].icon_draw_specification
+data_assembling[advanced_electrolyser_4].fluid_boxes = advanced_electrolyser_fluid_boxes
 
 -- INDUSTRIAL ELECTROLYSER
 local industrial_electrolyser_layers = {filename = entity_error_png, width = 512, height = 512, frame_count = 1, shift = util.by_pixel(0, 0), scale = 0.5625}
@@ -265,49 +300,49 @@ local industrial_electrolyser_fluid_boxes =
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 128,
+        volume = 120,
         pipe_connections = {{flow_direction = input, position = {-2, 4}, direction = defines.direction.south}},
     },
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 128,
+        volume = 120,
         pipe_connections = {{flow_direction = input, position = {0, 4}, direction = defines.direction.south}},
     },
     {
         production_type = input,
         pipe_covers = pipecoverspictures(),
-        volume = 128,
+        volume = 120,
         pipe_connections = {{flow_direction = input, position = {2, 4}, direction = defines.direction.south}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 1024,
+        volume = 960,
         pipe_connections = {{flow_direction = output, position = {-4, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 1024,
+        volume = 960,
         pipe_connections = {{flow_direction = output, position = {-2, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 1024,
+        volume = 960,
         pipe_connections = {{flow_direction = output, position = {0, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 1024,
+        volume = 960,
         pipe_connections = {{flow_direction = output, position = {2, -4}, direction = defines.direction.north}},
     },
     {
         production_type = output,
         pipe_covers = pipecoverspictures(),
-        volume = 1024,
+        volume = 960,
         pipe_connections = {{flow_direction = output, position = {4, -4}, direction = defines.direction.north}},
     }
 }
