@@ -689,6 +689,8 @@ data_technology[tech_deuterium_power].effects =
 }
 
 -- COMBAT
+data_technology[tech_military_3].prerequisites = {chemical_science_pack, military_science_pack, tech_gunmetal_smelting_1, "flammables", tech_glass_smelting_1, tech_brass_processing, tech_aluminium_smelting_1}
+
 data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_smelting_1}
 if mods[bobwarfare] then
     data_technology[tech_uranium_ammo].effects =
