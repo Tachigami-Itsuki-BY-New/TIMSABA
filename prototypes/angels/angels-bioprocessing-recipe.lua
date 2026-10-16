@@ -1,15 +1,39 @@
+local is_algae_brown = "angels-bio-processing-brown"
 -- ANGELS BIOPROCESSING NAUVIS
+iodine_gas_2 = "iodine-gas-2"
 TIMSABA.functions.create_recipes
 ({
     {
         name = iodine_gas,
         categories = {angels_blast_smelting_4},
-        subgroup = "angels-bio-processing-brown",
+        subgroup = is_algae_brown,
         icons = TWO_I(algae_brown, iodine_gas),
         order = c,
         energy_required = 8,
         ingredients = {{type = item, name = algae_brown, amount = 16}},
         results = {{type = fluid, name = iodine_gas, amount = 120}},
+        main_product = iodine_gas
+    },
+    {
+        localised_name = {"fluid-name." .. iodine_gas},
+        name = iodine_gas_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_algae_brown,
+        icons = THREE_D_I(sodium_iodide_solution, potassium_permanganate, potassium_hydroxide, iodine_gas, potassium_manganate, sodium_hydroxide_solution_angels),
+        order = c_a,
+        energy_required = 8, -- 2NaI(aq) + 2KMnO₄(s) + 2KOH(s) --> I₂(g) + 2K₂MnO₄(s) + 2NaOH(aq)
+        ingredients =
+        {
+            {type = fluid, name = sodium_iodide_solution, amount = 480},
+            {type = item, name = potassium_permanganate, amount = 32},
+            {type = item, name = potassium_hydroxide, amount = 32}
+        },
+        results =
+        {
+            {type = fluid, name = iodine_gas, amount = 240},
+            {type = item, name = potassium_manganate, amount = 16}, -- 32
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240} -- 480
+        },
         main_product = iodine_gas
     }
 })

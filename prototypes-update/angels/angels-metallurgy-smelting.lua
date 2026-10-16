@@ -1223,15 +1223,8 @@ data_recipe[titanium_ingot].energy_required = 8 -- Ti --> Ti
 data_recipe[titanium_ingot].ingredients[1].amount = 16
 data_recipe[titanium_ingot].results[1].amount = 16
 
-data_recipe[titanium_ingot_2].icons = THREE_R_I(titanium_iodide_IV_gas, titanium_ingot, iodine_gas)
-data_recipe[titanium_ingot_2].order = d_a
-data_recipe[titanium_ingot_2].energy_required = 8 -- TiI₄ --> Ti + 2I₂
-data_recipe[titanium_ingot_2].ingredients = {{type = fluid, name = titanium_iodide_IV_gas, amount = 240}}
-data_recipe[titanium_ingot_2].results =
-{
-    {type = item, name = titanium_ingot, amount = 16},
-    {type = fluid, name = iodine_gas, amount = 240} -- 480
-}
+--[[data_recipe[titanium_ingot_2].order = d_a
+data_recipe[titanium_ingot_2].energy_required = 8]]
 
 data_item[titanium_powder].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_powder].order = e
@@ -1240,37 +1233,34 @@ data_recipe[titanium_powder].order = e
 
 -- TITANIUM CHEMISTRY
 data_fluid[titanium_chloride_IV].subgroup = is_titanium_chemistry
-data_fluid[titanium_chloride_IV].order = a
+data_fluid[titanium_chloride_IV].order = b
 TIMSABA.barreling.add_dangerous_fluid(titanium_chloride_IV)
 data_recipe[titanium_chloride_IV].subgroup = is_titanium_chemistry
-data_recipe[titanium_chloride_IV].icons = THREE_I(titanium_ore_bob, chlorine_angels, titanium_chloride_IV)
-data_recipe[titanium_chloride_IV].order = a
--- Ti + 2Cl₂ --> TiCl₄
+data_recipe[titanium_chloride_IV].icons = THREE_D_I(titanium_oxide_IV, coke_angels, chlorine_angels, titanium_chloride_IV, nil, carbon_monoxide_angels)
+data_recipe[titanium_chloride_IV].order = b
+-- TiO₂(s) + 2C(s) + 2Cl₂(g) --> TiCl₄(l) + 2CO(g)
 data_recipe[titanium_chloride_IV].ingredients =
 {
-    {type = item, name = titanium_ore_bob, amount = 32},
+    {type = item, name = titanium_oxide_IV, amount = 16},
+    {type = item, name = coke_angels, amount = 32},
     {type = fluid, name = chlorine_angels, amount = 480}
 }
-data_recipe[titanium_chloride_IV].results[1].amount = 240
-
-local titanium_chloride_IV_2 = "angels-liquid-titanium-tetrachloride-2"
-data_recipe[titanium_chloride_IV_2].subgroup = is_titanium_chemistry
-data_recipe[titanium_chloride_IV_2].icons = THREE_I(titanium_processed, chlorine_angels, titanium_chloride_IV)
-data_recipe[titanium_chloride_IV_2].order = a_a
--- Ti + 2Cl₂ --> TiCl₄
-data_recipe[titanium_chloride_IV_2].ingredients =
+data_recipe[titanium_chloride_IV].results =
 {
-    {type = item, name = titanium_processed, amount = 16},
-    {type = fluid, name = chlorine_angels, amount = 480}
+    {type = fluid, name = titanium_chloride_IV, amount = 240},
+    {type = fluid, name = carbon_monoxide_angels, amount = 240} -- 480
 }
-data_recipe[titanium_chloride_IV_2].results[1].amount = 240
+data_recipe[titanium_chloride_IV].main_product = titanium_chloride_IV
+
+--[[data_recipe[titanium_chloride_IV_2].subgroup = is_titanium_chemistry
+data_recipe[titanium_chloride_IV_2].order = a_a]]
 
 data_item[titanium_sponge].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_sponge].subgroup = is_titanium_chemistry
-data_item[titanium_sponge].order = b
+data_item[titanium_sponge].order = c
 data_recipe[titanium_sponge].subgroup = is_titanium_chemistry
 data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_powder, titanium_sponge, magnesium_chloride)
-data_recipe[titanium_sponge].order = b
+data_recipe[titanium_sponge].order = c
 data_recipe[titanium_sponge].energy_required = 8 -- TiCl₄(l) + 2Mg(s) --> Ti(s) + 2MgCl₂(s)
 data_recipe[titanium_sponge].ingredients =
 {
