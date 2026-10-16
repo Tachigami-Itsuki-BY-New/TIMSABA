@@ -311,7 +311,7 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = gallium_pellet, amount = 8},
-            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 16},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240},
             {type = fluid, name = water_purified_angels, amount = 720}
         },
         results =
