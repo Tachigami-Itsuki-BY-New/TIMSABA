@@ -711,6 +711,12 @@ table.insert(data_technology[modular_armor].prerequisites, tech_bronze_smelting_
 
 table.insert(data_technology[power_armor_1].prerequisites, tech_brass_smelting_1)
 
+for i, prerequisite in ipairs(data_technology[battery_eq_4].prerequisites) do
+    if prerequisite == electromagnetic_science_pack then
+        table.remove(data_technology[battery_eq_4].prerequisites, i) break
+    end
+end
+
 data_technology[energy_shield_eq_2].prerequisites = {energy_shield_eq_1, power_armor_1, productivity_module_1, tech_military_3}
 data_technology[energy_shield_eq_2].unit.ingredients =
 {
