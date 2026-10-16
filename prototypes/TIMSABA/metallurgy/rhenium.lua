@@ -134,7 +134,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_rhenium,
         icons = TWO_I(rhenium_ore, rhenium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = rhenium_ore, amount = 4}},
         results = {{type = item, name = rhenium_processed, amount = 4}},
         main_product = rhenium_processed
@@ -145,7 +144,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_rhenium,
         icons = TWO_I(rhenium_processed, rhenium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = rhenium_processed, amount = 4}},
         results = {{type = item, name = rhenium_pellet, amount = 4}},
         main_product = rhenium_pellet

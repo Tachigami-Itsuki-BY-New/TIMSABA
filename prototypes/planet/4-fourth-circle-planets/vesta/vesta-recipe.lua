@@ -263,7 +263,6 @@ if mods[vesta_mods] then
             subgroup = is_iridium,
             icons = TWO_I(iridium_ore, iridium_processed),
             order = b,
-            energy_required = 2,
             ingredients = {{type = item, name = iridium_ore, amount = 4}},
             results = {{type = item, name = iridium_processed, amount = 4}},
             main_product = iridium_processed
@@ -274,7 +273,6 @@ if mods[vesta_mods] then
             subgroup = is_iridium,
             icons = TWO_I(iridium_processed, iridium_pellet),
             order = c,
-            energy_required = 2,
             ingredients = {{type = item, name = iridium_processed, amount = 4}},
             results = {{type = item, name = iridium_pellet, amount = 4}},
             main_product = iridium_pellet

@@ -193,6 +193,7 @@ data_item[coke_pellet_angels].fuel_value = 28800 .. kJ
 data_recipe[coke_pellet_angels].categories = {angels_pellet_pressing_1}
 data_recipe[coke_pellet_angels].icons = TWO_I(coke_processed, coke_pellet_angels)
 data_recipe[coke_pellet_angels].order = f
+data_recipe[coke_pellet_angels].energy_required = 4
 data_recipe[coke_pellet_angels].ingredients[1].name = coke_processed
 data_recipe[coke_pellet_angels].ingredients[1].amount = 1
 
