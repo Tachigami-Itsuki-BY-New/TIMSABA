@@ -154,8 +154,8 @@ TIMSABA.barreling.add_dangerous_fluid(hexachloroantimonic_acid)
 -- RECIPE
 antimony_ingot_2 = "antimony-ingot-2"
 antimony_ingot_3 = "antimony-ingot-3"
-antimony_chloride_V_liquid_2 = "antimony-chloride-V-liquid-2"
-antimony_chloride_V_liquid_3 = "antimony-chloride-V-liquid-3"
+antimony_chloride_III_2 = antimony_chloride_III .. "-2"
+antimony_chloride_III_3 = antimony_chloride_III .. "-3"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -252,10 +252,42 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_ore, chlorine_angels, antimony_chloride_III),
         order = a,
-        energy_required = 8, -- 2Sb + 3Cl₂ --> 2SbCl₃
+        energy_required = 8, -- 2Sb(s) + 3Cl₂(g) --> 2SbCl₃(s)
         ingredients =
         {
             {type = item, name = antimony_ore, amount = 32},
+            {type = fluid, name = chlorine_angels, amount = 360}
+        },
+        results = {{type = item, name = antimony_chloride_III, amount = 16}},
+        main_product = antimony_chloride_III
+    },
+    {
+        localsied_name = {"item-name." .. antimony_chloride_III},
+        name = antimony_chloride_III_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_antimony_chemistry,
+        icons = THREE_I(antimony_processed, chlorine_angels, antimony_chloride_III),
+        order = a_a,
+        energy_required = 8, -- 2Sb(s) + 3Cl₂(g) --> 2SbCl₃(s)
+        ingredients =
+        {
+            {type = item, name = antimony_processed, amount = 16},
+            {type = fluid, name = chlorine_angels, amount = 360}
+        },
+        results = {{type = item, name = antimony_chloride_III, amount = 16}},
+        main_product = antimony_chloride_III
+    },
+    {
+        localsied_name = {"item-name." .. antimony_chloride_III},
+        name = antimony_chloride_III_3,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_antimony_chemistry,
+        icons = THREE_I(antimony_pellet, chlorine_angels, antimony_chloride_III),
+        order = a_b,
+        energy_required = 8, -- 2Sb(s) + 3Cl₂(g) --> 2SbCl₃(s)
+        ingredients =
+        {
+            {type = item, name = antimony_pellet, amount = 8},
             {type = fluid, name = chlorine_angels, amount = 360}
         },
         results = {{type = item, name = antimony_chloride_III, amount = 16}},
@@ -267,7 +299,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony_chemistry,
         icons = THREE_I(antimony_chloride_III, chlorine_angels, antimony_chloride_V_liquid),
         order = b,
-        energy_required = 8, -- SbCl₃ + Cl₂ --> SbCl₅
+        energy_required = 8, -- SbCl₃(s) + Cl₂(g) --> SbCl₅(l)
         ingredients =
         {
             {type = item, name = antimony_chloride_III, amount = 16},
@@ -277,51 +309,22 @@ TIMSABA.functions.create_recipes
         main_product = antimony_chloride_V_liquid
     },
     {
-        name = antimony_chloride_V_liquid_2,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_antimony_chemistry,
-        icons = THREE_I(antimony_processed, chlorine_angels, antimony_chloride_V_liquid),
-        order = b_a,
-        energy_required = 8, -- 2Sb + 5Cl₂ --> 2SbCl₅
-        ingredients =
-        {
-            {type = item, name = antimony_processed, amount = 16},
-            {type = fluid, name = chlorine_angels, amount = 600}
-        },
-        results = {{type = fluid, name = antimony_chloride_V_liquid, amount = 240}},
-        main_product = antimony_chloride_V_liquid
-    },
-    {
-        name = antimony_chloride_V_liquid_3,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_antimony_chemistry,
-        icons = THREE_I(antimony_pellet, chlorine_angels, antimony_chloride_V_liquid),
-        order = b_b,
-        energy_required = 8, -- 2Sb + 5Cl₂ --> 2SbCl₅
-        ingredients =
-        {
-            {type = item, name = antimony_pellet, amount = 8},
-            {type = fluid, name = chlorine_angels, amount = 600}
-        },
-        results = {{type = fluid, name = antimony_chloride_V_liquid, amount = 240}},
-        main_product = antimony_chloride_V_liquid
-    },
-    {
         name = antimony_acid,
         categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
-        icons = TWO_D_I(antimony_chloride_V_liquid, water_purified_angels, antimony_acid, hydrogen_chloride_angels),
+        icons = THREE_D_I(antimony_processed, chlorine_angels, water_purified_angels, antimony_acid, nil, hydrogen_chloride_angels),
         order = c,
-        energy_required = 8, -- SbCl₅ + 5H₂O --> H₃SbO₄(aq) + 5HCl
+        energy_required = 8, -- 2Sb(s) + 5Cl₂(g) + 10H₂O(l) --> 2H₃SbO₄(aq) + 10HCl(g)
         ingredients =
         {
-            {type = fluid, name = antimony_chloride_V_liquid, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 600}
+            {type = item, name = antimony_processed, amount = 16},
+            {type = fluid, name = chlorine_angels, amount = 600},
+            {type = fluid, name = water_purified_angels, amount = 1200}
         },
         results =
         {
             {type = fluid, name = antimony_acid, amount = 240},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 600
+            {type = fluid, name = hydrogen_chloride_angels, amount = 240} -- 1200
         },
         main_product = antimony_acid
     },
@@ -331,7 +334,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony_chemistry,
         icons = THREE_R_I(antimony_acid, antimony_oxide_III, steam),
         order = d,
-        energy_required = 8, -- 2H₃SbO₄(aq) --> Sb₂O₅ + 5H₂O(g)
+        energy_required = 8, -- 2H₃SbO₄(aq) --> Sb₂O₅(s) + 5H₂O(g)
         ingredients = {{type = fluid, name = antimony_acid, amount = 240}},
         results =
         {
@@ -344,12 +347,13 @@ TIMSABA.functions.create_recipes
         name = hexachloroantimonic_acid,
         categories = {angels_chemical_smelting_4},
         subgroup = is_antimony_chemistry,
-        icons = THREE_I(antimony_chloride_V_liquid, hydrochloric_acid_angels, hexachloroantimonic_acid),
+        icons = THREE_D_I(antimony_pellet, chlorine_angels, hydrochloric_acid_angels, hexachloroantimonic_acid),
         order = e,
-        energy_required = 8, -- SbCl₅ + HCl(aq) --> HSbCl₆(aq)
+        energy_required = 8, -- 2Sb(s) + 5Cl₂(g) + 2HCl(aq) --> 2HSbCl₆(aq)
         ingredients =
         {
-            {type = fluid, name = antimony_chloride_V_liquid, amount = 240},
+            {type = item, name = antimony_pellet, amount = 8},
+            {type = fluid, name = chlorine_angels, amount = 600},
             {type = fluid, name = hydrochloric_acid_angels, amount = 240}
         },
         results = {{type = fluid, name = hexachloroantimonic_acid, amount = 240}},
