@@ -294,7 +294,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(germanium_processed, nitric_acid_angels, hydrochloric_acid_angels, germanium_chloride_IV, nitrogen_monoxide_angels, water_purified_angels),
         order = c,
-        energy_required = 8, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
+        energy_required = 6, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
         ingredients =
         {
             {type = item, name = germanium_processed, amount = 12},
@@ -336,16 +336,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_germanium_chemistry,
         icons = TWO_D_I(sodium_metagermanate_solution, hydrogen_chloride_angels, sodium_hexachlorogermanate_IV, steam),
         order = e,
-        -- Na₂GeO₃(aq) + 6HCl(g) --> Na₂GeCl₆(s) + 4H₂O(g)
+        energy_required = 8, -- Na₂GeO₃(aq) + 6HCl(g) --> Na₂GeCl₆(s) + 4H₂O(g)
         ingredients =
         {
-            {type = fluid, name = sodium_metagermanate_solution, amount = 120},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 720}
+            {type = fluid, name = sodium_metagermanate_solution, amount = 240},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 1440}
         },
         results =
         {
-            {type = item, name = sodium_hexachlorogermanate_IV, amount = 8},
-            {type = fluid, name = steam, amount = 240} -- 480
+            {type = item, name = sodium_hexachlorogermanate_IV, amount = 16},
+            {type = fluid, name = steam, amount = 480} -- 960
         },
         main_product = sodium_hexachlorogermanate_IV
     },
