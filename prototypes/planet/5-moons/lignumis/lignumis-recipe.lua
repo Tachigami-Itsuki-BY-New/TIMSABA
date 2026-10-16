@@ -30,7 +30,6 @@ if mods[lignumis_mods] then
             subgroup = is_tantalum,
             icons = TWO_I(tantalum_ore, tantalum_processed),
             order = b,
-            energy_required = 2,
             ingredients = {{type = item, name = tantalum_ore, amount = 4}},
             results = {{type = item, name = tantalum_processed, amount = 4}},
             main_product = tantalum_processed
@@ -41,7 +40,6 @@ if mods[lignumis_mods] then
             subgroup = is_tantalum,
             icons = TWO_I(tantalum_processed, tantalum_pellet),
             order = c,
-            energy_required = 2,
             ingredients = {{type = item, name = tantalum_processed, amount = 4}},
             results = {{type = item, name = tantalum_pellet, amount = 4}},
             main_product = tantalum_pellet

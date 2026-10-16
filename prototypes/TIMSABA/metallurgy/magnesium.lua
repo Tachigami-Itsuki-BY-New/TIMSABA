@@ -163,7 +163,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_ore, magnesium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = magnesium_ore, amount = 4}},
         results = {{type = item, name = magnesium_processed, amount = 4}},
         main_product = magnesium_processed
@@ -174,7 +173,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_processed, magnesium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = magnesium_processed, amount = 4}},
         results = {{type = item, name = magnesium_pellet, amount = 4}},
         main_product = magnesium_pellet
