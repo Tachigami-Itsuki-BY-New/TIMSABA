@@ -193,8 +193,8 @@ if mods[castra_mods] then
             subgroup = is_castra_nickel,
             icons = TWO_I(nickel_ore_bob, nickel_powder),
             order = a,
-            ingredients = {{type = item, name = nickel_ore_bob, amount = 1}},
-            results = {{type = item, name = nickel_powder, amount = 1}},
+            ingredients = {{type = item, name = nickel_ore_bob, amount = 16}},
+            results = {{type = item, name = nickel_powder, amount = 16}},
             main_product = nickel_powder,
             surface_conditions = {{property = pressure, min = 2254, max = 2254}}
         },
@@ -207,9 +207,8 @@ if mods[castra_mods] then
             order = b,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = nickel_powder, amount = 1}},
-            results = {{type = item, name = nickel_plate_bob, amount = 1}},
+            ingredients = {{type = item, name = nickel_powder, amount = 16}},
+            results = {{type = item, name = nickel_plate_bob, amount = 16}},
             main_product = nickel_plate_bob,
             surface_conditions = {{property = pressure, min = 2254, max = 2254}}
         }
