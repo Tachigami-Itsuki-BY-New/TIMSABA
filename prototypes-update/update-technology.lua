@@ -996,9 +996,7 @@ data_technology[tech_ore_floatation].effects =
     {type = unlock_recipe, recipe = chunk_rubyte_processing},
     {type = unlock_recipe, recipe = chunk_bobmonium_processing},
     {type = unlock_recipe, recipe = chunk_senaite_processing},
-    {type = unlock_recipe, recipe = chunk_franckeite_processing},
-    {type = unlock_recipe, recipe = metasilicic_acid},
-    {type = unlock_recipe, recipe = silicon_oxide_IV_from_metasilicic_acid}
+    {type = unlock_recipe, recipe = chunk_franckeite_processing}
 }
 
 data_technology[tech_ore_leaching].effects =
@@ -1308,7 +1306,10 @@ data_technology[tech_silicon_smelting_1].effects =
     {type = unlock_recipe, recipe = silicon_molten_angels},
     {type = unlock_recipe, recipe = silicon_mono_seed},
     {type = unlock_recipe, recipe = silicon_mono},
-    {type = unlock_recipe, recipe = silicon_powder}
+    {type = unlock_recipe, recipe = silicon_powder},
+    {type = unlock_recipe, recipe = metasilicic_acid},
+    {type = unlock_recipe, recipe = silicon_fluoride_IV_gas},
+    {type = unlock_recipe, recipe = silicon_oxide_IV_from_silicon_fluoride_IV_gas}
 }
 
 data_technology[tech_silicon_smelting_2].prerequisites = {tech_ore_processing_2, tech_silicon_smelting_1, tech_chlorine_processing_1}
@@ -1518,7 +1519,6 @@ data_technology[tech_tungsten_smelting_1].effects =
     {type = unlock_recipe, recipe = tungsten_fluoride_VI_gas},
     {type = unlock_recipe, recipe = tungsten_powder},
     {type = unlock_recipe, recipe = tungsten_plate_angels},
-    {type = unlock_recipe, recipe = silicon_oxide_IV_from_silicon_fluoride_IV_gas},
     {type = unlock_recipe, recipe = magnesium_silicide},
     {type = unlock_recipe, recipe = silane_gas_from_magnesium_silicide},
     {type = unlock_recipe, recipe = magnesium_hydroxide_3}
