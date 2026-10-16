@@ -364,10 +364,15 @@ data_fluid[ammonia_angels].order = b
 TIMSABA.barreling.add_gas(ammonia_angels)
 data_recipe[ammonia_angels].icons = THREE_I(hydrogen_angels, nitrogen_angels, ammonia_angels)
 data_recipe[ammonia_angels].order = b
--- 3H₂ + N₂ -cat-> 2NH₃
+-- 3H₂(g) + N₂(g) -cat-> 2NH₃(g)
 data_recipe[ammonia_angels].ingredients[1].amount = 90
 data_recipe[ammonia_angels].ingredients[2].amount = 30
-data_recipe[ammonia_angels].results[1].amount = 60
+data_recipe[ammonia_angels].results =
+{
+    {type = fluid, name = ammonia_angels, amount = 60},
+    {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 data_fluid[nitrogen_monoxide_angels].order = c
 TIMSABA.barreling.add_gas(nitrogen_monoxide_angels)
@@ -480,19 +485,29 @@ data_fluid[hydrazine_angels].fuel_value = 150 .. kJ
 TIMSABA.barreling.add_dangerous_fluid(hydrazine_angels)
 data_recipe[hydrazine_angels].icons = TWO_D_I(monochloramine_angels, ammonia_angels, hydrazine_angels, hydrogen_chloride_angels)
 data_recipe[hydrazine_angels].order = j
--- NH₂Cl + NH₃ --> N₂H₄ + HCl
+-- NH₂Cl(g) + NH₃(g) --> N₂H₄(l) + HCl(g)
 data_recipe[hydrazine_angels].ingredients[1].amount = 60
 data_recipe[hydrazine_angels].ingredients[2].amount = 60
-data_recipe[hydrazine_angels].results[1].amount = 60
-data_recipe[hydrazine_angels].results[2].amount = 30 -- 60
+data_recipe[hydrazine_angels].results =
+{
+    {type = fluid, name = hydrazine_angels, amount = 60},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 30}, -- 60
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 data_fluid[dinitrogen_tetroxide_angels].order = k
 TIMSABA.barreling.add_gas(dinitrogen_tetroxide_angels)
 data_recipe[dinitrogen_tetroxide_angels].icons = TWO_I(nitrogen_dioxide_angels, dinitrogen_tetroxide_angels)
 data_recipe[dinitrogen_tetroxide_angels].order = k
--- 2NO₂ --> N₂O₄
+-- 2NO₂(g) --> N₂O₄(g)
 data_recipe[dinitrogen_tetroxide_angels].ingredients[1].amount = 60
-data_recipe[dinitrogen_tetroxide_angels].results[1].amount = 30
+data_recipe[dinitrogen_tetroxide_angels].results =
+{
+    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 30},
+    {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 data_fluid[methylamine_angels].order = l
 TIMSABA.barreling.add_gas(methylamine_angels)
@@ -749,12 +764,17 @@ data_item[sodium_cyanide_angels].localised_description = show_formula and {chemi
 data_item[sodium_cyanide_angels].order = f
 data_recipe[sodium_cyanide_angels].icons = THREE_D_I(sodium_angels, carbon_angels, ammonia_angels, sodium_cyanide_angels, nil, hydrogen_angels)
 data_recipe[sodium_cyanide_angels].order = f
-data_recipe[sodium_cyanide_angels].energy_required = 8 -- 2Na + 2C + 2NH₃ -cat-> 2NaCN + 3H₂
+data_recipe[sodium_cyanide_angels].energy_required = 8 -- 2Na(s) + 2C(s) + 2NH₃(g) -cat-> 2NaCN(s) + 3H₂(g)
 data_recipe[sodium_cyanide_angels].ingredients[1].amount = 16
 data_recipe[sodium_cyanide_angels].ingredients[2].amount = 16
 data_recipe[sodium_cyanide_angels].ingredients[3].amount = 240
-data_recipe[sodium_cyanide_angels].results[1].amount = 16
-data_recipe[sodium_cyanide_angels].results[2].amount = 120 -- 360
+data_recipe[sodium_cyanide_angels].results =
+{
+    {type = item, name = sodium_cyanide_angels, amount = 16},
+    {type = fluid, name = hydrogen_angels, amount = 120}, -- 360
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 data_item[sodium_nitrate_angels].localised_description = show_formula and {chemical_formula, "NaNO[font=default-tiny-bold]3[/font]"} or nil
 data_item[sodium_nitrate_angels].order = g
@@ -1833,13 +1853,22 @@ data_recipe[steam_cracking_butane].results[2].amount = 120
 data_fluid[butadiene_angels].subgroup = is_butane
 data_fluid[butadiene_angels].order = d
 TIMSABA.barreling.add_gas(butadiene_angels)
+data_recipe[butadiene_angels].localised_name = {"fluid-name." .. butadiene_angels}
 data_recipe[butadiene_angels].subgroup = is_butane
-data_recipe[butadiene_angels].icons = TWO_I(naphtha_angels, butadiene_angels)
+data_recipe[butadiene_angels].icons = THREE_R_I(naphtha_angels, butadiene_angels, hydrogen_angels)
 data_recipe[butadiene_angels].order = d
--- C₈H₁₈ -H₂O-> 2C₄H₆ + 3H₂
-data_recipe[butadiene_angels].results[1].amount = 60
-data_recipe[butadiene_angels].results[2].name = hydrogen_angels
-data_recipe[butadiene_angels].results[2].amount = 30
+-- C₈H₁₈(l) -H₂O-> 2C₄H₆(g) + 3H₂(g)
+data_recipe[butadiene_angels].ingredients =
+{
+    {type = fluid, name = naphtha_angels, amount = 60},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[butadiene_angels].results =
+{
+    {type = fluid, name = butadiene_angels, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 180},
+    --{type = fluid, name = steam, amount = 30}
+}
 
 data_fluid[ethylbenzene_angels].subgroup = is_butane
 data_fluid[ethylbenzene_angels].order = e
@@ -1890,14 +1919,17 @@ TIMSABA.barreling.add_dangerous_fluid(acetone_angels)
 data_recipe[cumene_process].subgroup = is_butane
 data_recipe[cumene_process].icons = FIVE_I(benzene_angels, oxygen_angels, propene_angels, phenol, acetone_angels)
 data_recipe[cumene_process].order = h_a
--- C₆H₆ + C₃H₆ + O₂ -cat-> C₆H₆O + C₃H₆O
-data_recipe[cumene_process].ingredients[1].amount = 60
-data_recipe[cumene_process].ingredients[2].amount = 60
-data_recipe[cumene_process].ingredients[3].amount = 60
-data_recipe[cumene_process].results[1].type = item
-data_recipe[cumene_process].results[1].name = phenol
-data_recipe[cumene_process].results[1].amount = 4
-data_recipe[cumene_process].results[2].amount = 60
+data_recipe[cumene_process].energy_required = 8 -- C₆H₆(g) + C₃H₆(g) + O₂(g) -cat-> C₆H₆O(s) + C₃H₆O(l)
+data_recipe[cumene_process].ingredients[1].amount = 240
+data_recipe[cumene_process].ingredients[2].amount = 240
+data_recipe[cumene_process].ingredients[3].amount = 240
+data_recipe[cumene_process].results =
+{
+    {type = item, name = phenol, amount = 16},
+    {type = fluid, name = acetone_angels, amount = 240},
+    {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 data_recipe[cumene_process].main_product = phenol
 
 -- CARBON FLUIDS 2
@@ -2100,22 +2132,45 @@ end
 data_fluid[toluene_angels].subgroup = is_explosives
 data_fluid[toluene_angels].order = e
 TIMSABA.barreling.add_dangerous_fluid(toluene_angels)
+data_recipe[toluene_angels].localised_name = {"fluid-name." .. toluene_angels}
+data_recipe[toluene_angels].categories = {angels_advanced_chemistry}
 data_recipe[toluene_angels].subgroup = is_explosives
-data_recipe[toluene_angels].icons = THREE_I(naphtha_angels, hydrogen_angels, toluene_angels)
+data_recipe[toluene_angels].icons = FOUR_R_I(naphtha_angels, methane_angels, toluene_angels, hydrogen_angels)
 data_recipe[toluene_angels].order = e
-data_recipe[toluene_angels].ingredients[1].amount = 120
-data_recipe[toluene_angels].ingredients[2].amount = 120
-data_recipe[toluene_angels].results[1].amount = 120
+data_recipe[toluene_angels].energy_required = 4 -- C₈H₁₈(l) -cat-> C₇H₈(l) + CH₄(g) + 2H₂(g)
+data_recipe[toluene_angels].ingredients =
+{
+    {type = fluid, name = naphtha_angels, amount = 120},
+    {type = item, name = catalyst_green, amount = 1}
+}
+data_recipe[toluene_angels].results =
+{
+    {type = fluid, name = toluene_angels, amount = 120},
+    {type = fluid, name = methane_angels, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 local toluene_from_benzene = "angels-liquid-toluene-from-benzene"
+data_recipe[toluene_from_benzene].localised_name = {"fluid-name." .. toluene_angels}
 data_recipe[toluene_from_benzene].subgroup = is_explosives
 data_recipe[toluene_from_benzene].icons = TWO_D_I(benzene_angels, chloromethane_angels, toluene_angels, hydrogen_chloride_angels)
 data_recipe[toluene_from_benzene].order = e_a
--- C₆H₆ + CH₃Cl -cat-> C₇H₈ + HCl
-data_recipe[toluene_from_benzene].ingredients[1].amount = 120
-data_recipe[toluene_from_benzene].ingredients[2].amount = 120
-data_recipe[toluene_from_benzene].results[1].amount = 120
-data_recipe[toluene_from_benzene].results[2].amount = 120
+-- C₆H₆(l) + CH₃Cl(g) -cat-> C₇H₈(l) + HCl(g)
+data_recipe[toluene_from_benzene].ingredients =
+{
+    {type = fluid, name = benzene_angels, amount = 60},
+    {type = fluid, name = chloromethane_angels, amount = 60},
+    {type = item, name = catalyst_green, amount = 1}
+}
+data_recipe[toluene_from_benzene].results =
+{
+    {type = fluid, name = toluene_angels, amount = 60},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 60},
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 data_capsule[cliff_explosives].subgroup = is_explosives
 data_capsule[cliff_explosives].order = f
