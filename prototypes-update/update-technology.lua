@@ -718,9 +718,12 @@ table.insert(data_technology[modular_armor].prerequisites, tech_bronze_smelting_
 
 table.insert(data_technology[power_armor_1].prerequisites, tech_brass_smelting_1)
 
-for i, prerequisite in ipairs(data_technology[battery_eq_4].prerequisites) do
-    if prerequisite == electromagnetic_science_pack then
-        table.remove(data_technology[battery_eq_4].prerequisites, i) break
+if mods[bobequipment] then
+    local tech_battery_eq_4 = "bob-battery-equipment-4"
+    for i, prerequisite in ipairs(data_technology[tech_battery_eq_4].prerequisites) do
+        if prerequisite == electromagnetic_science_pack then
+            table.remove(data_technology[tech_battery_eq_4].prerequisites, i) break
+        end
     end
 end
 
