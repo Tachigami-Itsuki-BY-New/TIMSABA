@@ -6,7 +6,7 @@ if mods[aegis_bellicos_mods] then
             type = item_group,
             name = ig_bellicos,
             order = data_space_location[bellicos_orbit].order,
-            icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/bellicos-orbit.png",
+            icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/bellicos-orbit.png",
             icon_size = 128
         }
     })

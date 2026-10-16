@@ -246,7 +246,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium,
         icons = TWO_I(niobium_ore, niobium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = niobium_ore, amount = 4}},
         results = {{type = item, name = niobium_processed, amount = 4}},
         main_product = niobium_processed
@@ -257,7 +256,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium,
         icons = TWO_I(niobium_processed, niobium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = niobium_processed, amount = 4}},
         results = {{type = item, name = niobium_pellet, amount = 4}},
         main_product = niobium_pellet

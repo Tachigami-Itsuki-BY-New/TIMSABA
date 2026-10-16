@@ -711,22 +711,23 @@ local acetic_acid_from_catalyst = "angels-liquid-acetic-acid-catalyst"
 data_recipe[acetic_acid_from_catalyst].subgroup = is_bio_processor_fermentation
 data_recipe[acetic_acid_from_catalyst].icons = THREE_I(methanol_angels, carbon_monoxide_angels, acetic_acid)
 data_recipe[acetic_acid_from_catalyst].order = b_a
--- CH₄O + CO -cat/H₂O-> C₂H₄O₂
+-- CH₄O(l) + CO(g) -cat/H₂O-> C₂H₄O₂(l)
 data_recipe[acetic_acid_from_catalyst].ingredients[1].amount = 120
 data_recipe[acetic_acid_from_catalyst].ingredients[2].amount = 120
 data_recipe[acetic_acid_from_catalyst].ingredients[3].amount = 60
 data_recipe[acetic_acid_from_catalyst].results =
 {
     {type = fluid, name = acetic_acid, amount = 120},
-    {type = fluid, name = water_purified_angels, amount = 15, ignored_by_productivity = 15},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
+    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
 
 data_fluid[acetic_anhydride].order = c
 TIMSABA.barreling.add_dangerous_fluid(acetic_anhydride)
 data_recipe[acetic_anhydride].icons = FOUR_I(acetic_acid, methanol_angels, carbon_monoxide_angels, acetic_anhydride)
 data_recipe[acetic_anhydride].order = c
--- C₂H₄O₂ + CH₄O + CO -cat-> C₄H₆O₃ + H₂O
+-- C₂H₄O₂(l) + CH₄O(l) + CO(g) -cat-> C₄H₆O₃(l) + H₂O(l)
 data_recipe[acetic_anhydride].ingredients =
 {
     {type = fluid, name = acetic_acid, amount = 60},
@@ -737,8 +738,9 @@ data_recipe[acetic_anhydride].ingredients =
 data_recipe[acetic_anhydride].results =
 {
     {type = fluid, name = acetic_anhydride, amount = 60},
-    {type = fluid, name = water_purified_angels, amount = 30, ignored_by_productivity = 30, ignored_by_stats = 30}, -- 60
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1}
+    {type = fluid, name = water_purified_angels, amount = 30}, -- 60
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
 data_recipe[acetic_anhydride].main_product = acetic_anhydride
 
@@ -761,8 +763,8 @@ data_recipe[ethylene_from_ethanol].ingredients[2].amount = 60
 data_recipe[ethylene_from_ethanol].results =
 {
     {type = fluid, name = ethylene_angels, amount = 60},
-    {type = fluid, name = steam, amount = 30, ignored_by_productivity = 30, ignored_by_stats = 30},
-    {type = fluid, name = sulfuric_acid, amount = 30, ignored_by_productivity = 30, ignored_by_stats = 30},
+    {type = fluid, name = steam, amount = 30},
+    {type = fluid, name = sulfuric_acid, amount = 30},
 }
 
 data_item_subgroup["angels-bio-plastic"].order = e_d
@@ -771,10 +773,20 @@ data_fluid[propionic_acid].order = c
 TIMSABA.barreling.add_dangerous_fluid(propionic_acid)
 data_recipe[propionic_acid].icons = FOUR_I(ethylene_angels, carbon_monoxide_angels, water_purified_angels, propionic_acid)
 data_recipe[propionic_acid].order = c
-data_recipe[propionic_acid].ingredients[1].amount = 60
-data_recipe[propionic_acid].ingredients[2].amount = 60
-data_recipe[propionic_acid].ingredients[3].amount = 60
-data_recipe[propionic_acid].results[1].amount = 60
+-- C₂H₄(g) + CO(g) + H₂O(l) -cat-> C₃H₆O₂(l)
+data_recipe[propionic_acid].ingredients =
+{
+    {type = fluid, name = ethylene_angels, amount = 120},
+    {type = fluid, name = carbon_monoxide_angels, amount = 120},
+    {type = fluid, name = water_purified_angels, amount = 120},
+    {type = item, name = catalyst_green, amount = 1}
+}
+data_recipe[propionic_acid].results =
+{
+    {type = fluid, name = propionic_acid, amount = 60},
+    {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 local bio_liquid_plastic_1 = "angels-liquid-plastic-bio-1"
 data_recipe[bio_liquid_plastic_1].icons = THREE_I(cellulose_diacetate, acetone_angels, liquid_plastic_angels)
