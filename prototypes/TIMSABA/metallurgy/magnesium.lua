@@ -150,7 +150,7 @@ TIMSABA.functions.create_fluids
 TIMSABA.barreling.add_dangerous_fluid(magnesium_chloride_solution)
 
 -- RECIPE
-magnesium_ingot_2 = "magnesium-ingot-2"
+magnesium_ingot_2 = magnesium_ingot .. "-2"
 magnesium_oxide_2 = magnesium_oxide .. "-2"
 magnesium_hydroxide_2 = magnesium_hydroxide .. "-2"
 magnesium_hydroxide_3 = magnesium_hydroxide .. "-3"
@@ -197,6 +197,7 @@ TIMSABA.functions.create_recipes
         main_product = magnesium_ingot
     },
     {
+        localised_name = {"item-name." .. magnesium_ingot},
         name = magnesium_ingot_2,
         categories = {angels_chemical_smelting_4},
         subgroup = is_magnesium,
