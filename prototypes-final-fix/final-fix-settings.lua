@@ -28,19 +28,19 @@ if settings.startup[setting_no_spoilage].value then
             }
         })
     end
-    spoil_recipe(ore_saphirite,   saphirite_bacteria, a, is_ores)
-    spoil_recipe(ore_jivolite,     jivolite_bacteria, b, is_ores)
-    spoil_recipe(ore_stiratite,   stiratite_bacteria, c, is_ores)
-    spoil_recipe(ore_crotinnium, crotinnium_bacteria, d, is_ores)
-    spoil_recipe(ore_rubyte,         rubyte_bacteria, e, is_ores)
-    spoil_recipe(ore_bobmonium,   bobmonium_bacteria, f, is_ores)
-    spoil_recipe(ore_senaite,       senaite_bacteria, g, is_ores)
-    spoil_recipe(ore_franckeite, franckeite_bacteria, h, is_ores)
+    spoil_recipe(ore_saphirite,  is_ores, a,  saphirite_bacteria)
+    spoil_recipe(ore_jivolite,   is_ores, b,   jivolite_bacteria)
+    spoil_recipe(ore_stiratite,  is_ores, c,  stiratite_bacteria)
+    spoil_recipe(ore_crotinnium, is_ores, d, crotinnium_bacteria)
+    spoil_recipe(ore_rubyte,     is_ores, e,     rubyte_bacteria)
+    spoil_recipe(ore_bobmonium,  is_ores, f,  bobmonium_bacteria)
+    spoil_recipe(ore_senaite,    is_ores, g,    senaite_bacteria)
+    spoil_recipe(ore_franckeite, is_ores, h, franckeite_bacteria)
 
-    spoil_recipe(spoilage, compost_angels, a, is_spoilage)
+    spoil_recipe(spoilage, is_spoilage, a, compost_angels)
 
     if mods[tellus_mods] then
-        spoil_recipe(magnesium_ore, magnesium_bacteria, a, is_magnesium)
+        spoil_recipe(magnesium_ore, is_magnesium, a, magnesium_bacteria)
     end
 end
 
