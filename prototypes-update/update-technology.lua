@@ -1320,7 +1320,7 @@ data_technology[tech_silicon_smelting_2].effects =
     {type = unlock_recipe, recipe = silicon_oxide_IV_from_silicon_chloride_IV_gas}
 }
 
-data_technology[tech_silicon_smelting_3].prerequisites = {tech_ore_processing_3, tech_silicon_smelting_2, tech_bio_fermentation}
+data_technology[tech_silicon_smelting_3].prerequisites = {tech_ore_processing_3, tech_silicon_smelting_2, tech_bio_fermentation, tech_aluminium_smelting_2}
 data_technology[tech_silicon_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = silicon_pellet},
@@ -1358,10 +1358,11 @@ data_technology[tech_nickel_smelting_3].effects =
 }
 
 -- ALUMINIUM
-data_technology[tech_aluminium_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1}
+data_technology[tech_aluminium_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_bio_processing_green, tech_advanced_chemistry_1}
 data_technology[tech_aluminium_smelting_1].effects =
 {
-    {type = unlock_recipe, recipe = aluminium_chloride},
+    {type = unlock_recipe, recipe = calcium_aluminate},
+    {type = unlock_recipe, recipe = aluminium_chloride_solution},
     {type = unlock_recipe, recipe = aluminium_hydroxide},
     {type = unlock_recipe, recipe = aluminium_oxide},
     {type = unlock_recipe, recipe = aluminium_ingot},
@@ -1373,12 +1374,20 @@ data_technology[tech_aluminium_smelting_2].prerequisites = {tech_ore_processing_
 data_technology[tech_aluminium_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = aluminium_processed},
-    {type = unlock_recipe, recipe = aluminium_chloride_solution},
-    {type = unlock_recipe, recipe = aluminium_chloride_2},
+    {type = unlock_recipe, recipe = aluminium_carbide},
+    {type = unlock_recipe, recipe = aluminium_sulfate},
     {type = unlock_recipe, recipe = aluminium_hydroxide_2},
     {type = unlock_recipe, recipe = aluminium_powder},
-    {type = unlock_recipe, recipe = ammonium_chloride_reprocess},
-    {type = unlock_recipe, recipe = ammonia_gas_alt}
+    {type = unlock_recipe, recipe = aluminium_chloride}
+}
+
+data_technology[tech_aluminium_smelting_3].effects =
+{
+    {type = unlock_recipe, recipe = aluminium_pellet},
+    {type = unlock_recipe, recipe = sodium_aluminate},
+    {type = unlock_recipe, recipe = aluminium_chloride_solution_2},
+    {type = unlock_recipe, recipe = aluminium_oxide_2},
+    {type = unlock_recipe, recipe = aluminium_chloride_2}
 }
 
 -- ZINC
@@ -1495,7 +1504,6 @@ data_technology[tech_chromium_smelting_2].effects =
     {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether},
     {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether_reprocess},
     {type = unlock_recipe, recipe = lithium_chloride_solution_from_lithium_hydroxide},
-    {type = unlock_recipe, recipe = aluminium_chloride_solution_from_aluminium_hydroxide},
     {type = unlock_recipe, recipe = potassium_hydroxide_from_potassium_sulfate_solution}
 }
 
@@ -1561,7 +1569,9 @@ data_technology[tech_platinum_smelting_2].effects =
     {type = unlock_recipe, recipe = platinum_ingot_2},
     {type = unlock_recipe, recipe = formic_acid},
     {type = unlock_recipe, recipe = copper_nitrate_II_solution},
-    {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_nitrate_II_solution}
+    {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_nitrate_II_solution},
+    {type = unlock_recipe, recipe = ammonium_chloride_reprocess},
+    {type = unlock_recipe, recipe = ammonia_gas_alt}
 }
 
 data_technology[tech_platinum_smelting_3].effects =
@@ -2092,6 +2102,7 @@ data_technology[tech_bio_processing_green].effects =
     {type = unlock_recipe, recipe = algae_green_simple},
     {type = unlock_recipe, recipe = methanol_from_wood},
     {type = unlock_recipe, recipe = algae_brown_sodium_carbonate},
+    {type = unlock_recipe, recipe = sodium_carbonate_solution},
     {type = unlock_recipe, recipe = water_mineralized_angels}
 }
 table.insert(data_technology[tech_bio_processing_green].unit.ingredients, {logistic_science_pack, 1})

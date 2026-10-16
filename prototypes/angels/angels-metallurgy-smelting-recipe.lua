@@ -770,80 +770,146 @@ TIMSABA.functions.create_recipes
 })
 
 -- ALUMINIUM
+aluminium_chloride_solution_2 = aluminium_chloride_solution .. "-2"
 aluminium_chloride_2 = "aluminium-chloride-2"
-aluminium_chloride_solution_from_aluminium_hydroxide = "aluminium-chloride-solution-from-aluminium-hydroxide"
 lithium_tetraethoxy_aluminate_solution_ether_reprocess = "lithium-tetraethoxy-aluminate-solution-ether-reprocess"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = aluminium_chloride,
-        categories = {angels_chemical_smelting_1},
+        name = calcium_aluminate,
+        categories = {angels_blast_smelting_2},
         subgroup = is_aluminium_chemistry,
-        icons = THREE_I(aluminium_ore_bob, chlorine_angels, aluminium_chloride),
+        icons = TWO_D_I(aluminium_ore_bob, lime_angels, calcium_aluminate, calcium),
         order = a,
-        energy_required = 8, -- 2Al + 3Cl₂ --> 2AlCl₃
+        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + Ca(s)
         ingredients =
         {
             {type = item, name = aluminium_ore_bob, amount = 32},
-            {type = fluid, name = chlorine_angels, amount = 360}
+            {type = item, name = lime_angels, amount = 32}
         },
-        results = {{type = item, name = aluminium_chloride, amount = 16}},
-        main_product = aluminium_chloride
-    },
-    {
-        name = aluminium_chloride_2,
-        categories = {angels_blast_smelting_3},
-        subgroup = is_aluminium_chemistry,
-        icons = THREE_R_I(aluminium_chloride_solution, aluminium_chloride, steam),
-        order = a_a,
-        energy_required = 8, -- AlCl₃(aq) --> AlCl₃ + H₂O
-        ingredients = {{type = fluid, name = aluminium_chloride_solution, amount = 240}},
         results =
         {
-            {type = item, name = aluminium_chloride, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 360
+            {type = item, name = calcium_aluminate, amount = 8},
+            {type = item, name = calcium, amount = 4} -- 8
         },
-        main_product = aluminium_chloride
+        main_product = calcium_aluminate
     },
     {
         name = aluminium_chloride_solution,
-        categories = {angels_chemical_smelting_2},
+        categories = {angels_chemical_smelting_1},
         subgroup = is_aluminium_chemistry,
-        icons = THREE_D_I(aluminium_processed, hydrogen_chloride_angels, water_purified_angels, aluminium_chloride_solution, nil, hydrogen_angels),
+        icons = THREE_D_I(calcium_aluminate, nil, hydrochloric_acid_angels, aluminium_chloride_solution, calcium_chloride_solution, water_purified_angels),
         order = b,
-        energy_required = 8, -- 2Al + 6HCl + 2H₂O --> 2AlCl₃(aq) + 3H₂
+        energy_required = 8, -- Ca(AlO₂)₂(s) + 8HCl(aq) --> 2AlCl₃(aq) + CaCl₂(aq) + 9H₂O(l)
         ingredients =
         {
-            {type = item, name = aluminium_processed, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 720},
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = item, name = calcium_aluminate, amount = 8},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 960}
         },
         results =
         {
             {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = calcium_chloride_solution, amount = 60}, -- 120
+            {type = fluid, name = water_purified_angels, amount = 120} -- 1080
         },
         main_product = aluminium_chloride_solution
     },
     {
-        name = aluminium_chloride_solution_from_aluminium_hydroxide,
-        categories = {angels_chemical_smelting_4},
+        localised_name = {"fluid-name." .. aluminium_chloride_solution},
+        name = aluminium_chloride_solution_2,
+        categories = {angels_advanced_chemistry},
         subgroup = is_aluminium_chemistry,
-        icons = TWO_D_I(aluminium_hydroxide, hydrochloric_acid_angels, aluminium_chloride_solution, water_purified_angels),
+        icons = THREE_D_I(sodium_aluminate, nil, hydrochloric_acid_angels, aluminium_chloride_solution, sodium_chloride_solution, water_purified_angels),
         order = b_a,
-        energy_required = 8, -- Al(OH)₃ + 3HCl(aq) --> AlCl₃(aq) + 3H₂O + (2H₂O = aq)
+        energy_required = 8, -- NaAlO₂(s) + 4HCl(aq) --> AlCl₃(aq) + NaCl(aq) + 4H₂O(l)
         ingredients =
         {
-            {type = item, name = aluminium_hydroxide, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+            {type = item, name = sodium_aluminate, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 960}
         },
         results =
         {
             {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 480} -- 1200
+            {type = fluid, name = sodium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 240} -- 960
         },
         main_product = aluminium_chloride_solution
     },
+    {
+        name = aluminium_carbide,
+        categories = {angels_blast_smelting_3},
+        subgroup = is_aluminium_chemistry,
+        icons = THREE_I(aluminium_processed, coke_angels, aluminium_carbide),
+        order = f,
+        energy_required = 8, -- 4Al(s) + 3C(s) --> Al₄C₃(s)
+        ingredients =
+        {
+            {type = item, name = aluminium_processed, amount = 16},
+            {type = item, name = coke_angels, amount = 12}
+        },
+        results = {{type = item, name = aluminium_carbide, amount = 4}},
+        main_product = aluminium_carbide
+    },
+    {
+        name = aluminium_sulfate,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_aluminium_chemistry,
+        icons = TWO_D_I(aluminium_carbide, sulfuric_acid_angels, aluminium_sulfate, methane_angels),
+        order = g,
+        energy_required = 8, -- Al₄C₃(s) + 6H₂SO₄(l) --> 2Al₂(SO₄)₃(s) + 3CH₄(g)
+        ingredients =
+        {
+            {type = item, name = aluminium_carbide, amount = 4},
+            {type = fluid, name = sulfuric_acid_angels, amount = 360}
+        },
+        results =
+        {
+            {type = item, name = aluminium_sulfate, amount = 8},
+            {type = fluid, name = methane_angels, amount = 180}
+        },
+        main_product = aluminium_sulfate
+    },
+    {
+        name = aluminium_chloride,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_aluminium_chemistry,
+        icons = TWO_D_I(aluminium_carbide, chlorine_angels, aluminium_chloride, carbon_angels),
+        order = i,
+        energy_required = 8, -- Al₄C₃(s) + 6Cl₂(g) --> 4AlCl₃(s) + 3C(s)
+        ingredients =
+        {
+            {type = item, name = aluminium_carbide, amount = 4},
+            {type = fluid, name = chlorine_angels, amount = 360}
+        },
+        results =
+        {
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = item, name = carbon_angels, amount = 4} -- 12
+        },
+        main_product = aluminium_chloride
+    },
+    {
+        localised_name = {"item-name." .. aluminium_chloride},
+        name = aluminium_chloride_2,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_aluminium_chemistry,
+        icons = THREE_D_I(aluminium_oxide, coke_angels, chlorine_angels, aluminium_chloride, nil, carbon_monoxide_angels),
+        order = i_a,
+        energy_required = 8, -- Al₂O₃(s) + 3C(s) + 3Cl₂(g) --> 2AlCl₃(s) + 3CO(g)
+        ingredients =
+        {
+            {type = item, name = aluminium_oxide, amount = 8},
+            {type = item, name = coke_angels, amount = 24},
+            {type = fluid, name = chlorine_angels, amount = 360},
+        },
+        results =
+        {
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 360
+        },
+        main_product = aluminium_chloride
+    },
+    -- ETHER
     {
         name = aluminium_chloride_solution_ether,
         categories = {angels_chemical_smelting_2},
