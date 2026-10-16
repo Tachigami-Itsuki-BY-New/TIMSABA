@@ -1257,6 +1257,7 @@ data_recipe[titanium_chloride_IV_2].order = a_a]]
 data_item[titanium_sponge].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_sponge].subgroup = is_titanium_chemistry
 data_item[titanium_sponge].order = c
+data_recipe[titanium_sponge].categories = {angels_chemical_smelting_2}
 data_recipe[titanium_sponge].subgroup = is_titanium_chemistry
 data_recipe[titanium_sponge].icons = TWO_D_I(titanium_chloride_IV, magnesium_powder, titanium_sponge, magnesium_chloride)
 data_recipe[titanium_sponge].order = c
