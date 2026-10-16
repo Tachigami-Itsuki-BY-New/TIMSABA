@@ -307,7 +307,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = antimony_processed},
-            {type = unlock_recipe, recipe = antimony_chloride_V_liquid_2},
+            {type = unlock_recipe, recipe = antimony_chloride_III_2},
             {type = unlock_recipe, recipe = antimony_acid},
             {type = unlock_recipe, recipe = antimony_oxide_III},
             {type = unlock_recipe, recipe = antimony_ingot_2}
@@ -342,7 +342,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = antimony_pellet},
-            {type = unlock_recipe, recipe = antimony_chloride_V_liquid_3},
+            {type = unlock_recipe, recipe = antimony_chloride_III_3},
             {type = unlock_recipe, recipe = hexachloroantimonic_acid},
             {type = unlock_recipe, recipe = antimony_ingot_3}
         },
