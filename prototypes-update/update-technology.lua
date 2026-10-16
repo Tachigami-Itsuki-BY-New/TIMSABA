@@ -1438,8 +1438,9 @@ data_technology[tech_titanium_smelting_1].effects =
     {type = unlock_recipe, recipe = titanium_oxide_IV},
     {type = unlock_recipe, recipe = titanium_chloride_IV},
     {type = unlock_recipe, recipe = titanium_sponge},
+    {type = unlock_recipe, recipe = titanium_ingot},
     {type = unlock_recipe, recipe = titanium_molten_angels},
-    {type = unlock_recipe, recipe = titanium_plate_bob}
+    {type = unlock_recipe, recipe = titanium_plate_angels}
 }
 
 table.insert(data_technology[tech_titanium_smelting_2].prerequisites, tech_magnesium_smelting_2)
