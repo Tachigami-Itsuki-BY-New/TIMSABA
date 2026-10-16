@@ -8,12 +8,14 @@ data_item[iron_processed].localised_description = show_formula and {chemical_for
 data_item[iron_processed].order = b
 data_recipe[iron_processed].icons = TWO_I(iron_ore, iron_processed)
 data_recipe[iron_processed].order = b
+data_recipe[iron_processed].energy_required = 4
 data_recipe[iron_processed].results[1].amount = 4
 
 data_item[iron_pellet].localised_description = show_formula and {chemical_formula, "Fe"} or nil
 data_item[iron_pellet].order = c
 data_recipe[iron_pellet].icons = TWO_I(iron_processed, iron_pellet)
 data_recipe[iron_pellet].order = c
+data_recipe[iron_pellet].energy_required = 4
 data_recipe[iron_pellet].ingredients[1].amount = 4
 
 data_item[iron_ingot].localised_description = show_formula and {chemical_formula, "Fe"} or nil
@@ -120,12 +122,14 @@ data_item[copper_processed].localised_description = show_formula and {chemical_f
 data_item[copper_processed].order = b
 data_recipe[copper_processed].icons = TWO_I(copper_ore, copper_processed)
 data_recipe[copper_processed].order = b
+data_recipe[copper_processed].energy_required = 4
 data_recipe[copper_processed].results[1].amount = 4
 
 data_item[copper_pellet].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_pellet].order = c
 data_recipe[copper_pellet].icons = TWO_I(copper_processed, copper_pellet)
 data_recipe[copper_pellet].order = c
+data_recipe[copper_pellet].energy_required = 4
 data_recipe[copper_pellet].ingredients[1].amount = 4
 
 data_item[copper_ingot].localised_description = show_formula and {chemical_formula, "Cu"} or nil
@@ -240,12 +244,14 @@ data_item[lead_processed].localised_description = show_formula and {chemical_for
 data_item[lead_processed].order = b
 data_recipe[lead_processed].icons = TWO_I(lead_ore_bob, lead_processed)
 data_recipe[lead_processed].order = b
+data_recipe[lead_processed].energy_required = 4
 data_recipe[lead_processed].results[1].amount = 4
 
 data_item[lead_pellet].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_pellet].order = c
 data_recipe[lead_pellet].icons = TWO_I(lead_processed, lead_pellet)
 data_recipe[lead_pellet].order = c
+data_recipe[lead_pellet].energy_required = 4
 data_recipe[lead_pellet].ingredients[1].amount = 4
 
 data_item[lead_ingot].localised_description = show_formula and {chemical_formula, "Pb"} or nil
@@ -352,12 +358,14 @@ data_item[tin_processed].localised_description = show_formula and {chemical_form
 data_item[tin_processed].order = b
 data_recipe[tin_processed].icons = TWO_I(tin_ore_bob, tin_processed)
 data_recipe[tin_processed].order = b
+data_recipe[tin_processed].energy_required = 4
 data_recipe[tin_processed].results[1].amount = 4
 
 data_item[tin_pellet].localised_description = show_formula and {chemical_formula, "Sn"} or nil
 data_item[tin_pellet].order = c
 data_recipe[tin_pellet].icons = TWO_I(tin_processed, tin_pellet)
 data_recipe[tin_pellet].order = c
+data_recipe[tin_pellet].energy_required = 4
 data_recipe[tin_pellet].ingredients[1].amount = 4
 
 data_item[tin_ingot].localised_description = show_formula and {chemical_formula, "Sn"} or nil
@@ -413,12 +421,14 @@ data_item[manganese_processed].localised_description = show_formula and {chemica
 data_item[manganese_processed].order = b
 data_recipe[manganese_processed].icons = TWO_I(manganese_ore_angels, manganese_processed)
 data_recipe[manganese_processed].order = b
+data_recipe[manganese_processed].energy_required = 4
 data_recipe[manganese_processed].results[1].amount = 4
 
 data_item[manganese_pellet].localised_description = show_formula and {chemical_formula, "Mn"} or nil
 data_item[manganese_pellet].order = c
 data_recipe[manganese_pellet].icons = TWO_I(manganese_processed, manganese_pellet)
 data_recipe[manganese_pellet].order = c
+data_recipe[manganese_pellet].energy_required = 4
 data_recipe[manganese_pellet].ingredients[1].amount = 4
 
 data_item[manganese_ingot].localised_description = show_formula and {chemical_formula, "Mn"} or nil
@@ -534,12 +544,14 @@ data_item[silicon_processed].localised_description = show_formula and {chemical_
 data_item[silicon_processed].order = b
 data_recipe[silicon_processed].icons = TWO_I(silicon_ore_bob, silicon_processed)
 data_recipe[silicon_processed].order = b
+data_recipe[silicon_processed].energy_required = 4
 data_recipe[silicon_processed].results[1].amount = 4
 
 data_item[silicon_pellet].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_pellet].order = c
 data_recipe[silicon_pellet].icons = TWO_I(silicon_processed, silicon_pellet)
 data_recipe[silicon_pellet].order = c
+data_recipe[silicon_pellet].energy_required = 4
 data_recipe[silicon_pellet].ingredients[1].amount = 4
 
 data_item[silicon_ingot].localised_description = show_formula and {chemical_formula, "Si"} or nil
@@ -686,12 +698,14 @@ data_item[nickel_processed].localised_description = show_formula and {chemical_f
 data_item[nickel_processed].order = b
 data_recipe[nickel_processed].icons = TWO_I(nickel_ore_bob, nickel_processed)
 data_recipe[nickel_processed].order = b
+data_recipe[nickel_processed].energy_required = 4
 data_recipe[nickel_processed].results[1].amount = 4
 
 data_item[nickel_pellet].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_pellet].order = c
 data_recipe[nickel_pellet].icons = TWO_I(nickel_processed, nickel_pellet)
 data_recipe[nickel_pellet].order = c
+data_recipe[nickel_pellet].energy_required = 4
 data_recipe[nickel_pellet].ingredients[1].amount = 4
 
 data_item[nickel_ingot].localised_description = show_formula and {chemical_formula, "Ni"} or nil
@@ -797,12 +811,14 @@ data_item[aluminium_processed].localised_description = show_formula and {chemica
 data_item[aluminium_processed].order = b
 data_recipe[aluminium_processed].icons = TWO_I(aluminium_ore_bob, aluminium_processed)
 data_recipe[aluminium_processed].order = b
+data_recipe[aluminium_processed].energy_required = 4
 data_recipe[aluminium_processed].results[1].amount = 4
 
 data_item[aluminium_pellet].localised_description = show_formula and {chemical_formula, "Al"} or nil
 data_item[aluminium_pellet].order = c
 data_recipe[aluminium_pellet].icons = TWO_I(aluminium_processed, aluminium_pellet)
 data_recipe[aluminium_pellet].order = c
+data_recipe[aluminium_pellet].energy_required = 4
 data_recipe[aluminium_pellet].ingredients[1].amount = 4
 
 data_item[aluminium_ingot].localised_description = show_formula and {chemical_formula, "Al"} or nil
@@ -928,12 +944,14 @@ data_item[zinc_processed].localised_description = show_formula and {chemical_for
 data_item[zinc_processed].order = b
 data_recipe[zinc_processed].icons = TWO_I(zinc_ore_bob, zinc_processed)
 data_recipe[zinc_processed].order = b
+data_recipe[zinc_processed].energy_required = 4
 data_recipe[zinc_processed].results[1].amount = 4
 
 data_item[zinc_pellet].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_pellet].order = c
 data_recipe[zinc_pellet].icons = TWO_I(zinc_processed, zinc_pellet)
 data_recipe[zinc_pellet].order = c
+data_recipe[zinc_pellet].energy_required = 4
 data_recipe[zinc_pellet].ingredients[1].amount = 4
 
 data_item[zinc_ingot].localised_description = show_formula and {chemical_formula, "Zn"} or nil
@@ -1051,12 +1069,14 @@ data_item[silver_processed].localised_description = show_formula and {chemical_f
 data_item[silver_processed].order = b
 data_recipe[silver_processed].icons = TWO_I(silver_ore_bob, silver_processed)
 data_recipe[silver_processed].order = b
+data_recipe[silver_processed].energy_required = 4
 data_recipe[silver_processed].results[1].amount = 4
 
 data_item[silver_pellet].localised_description = show_formula and {chemical_formula, "Ag"} or nil
 data_item[silver_pellet].order = c
 data_recipe[silver_pellet].icons = TWO_I(silver_processed, silver_pellet)
 data_recipe[silver_pellet].order = c
+data_recipe[silver_pellet].energy_required = 4
 data_recipe[silver_pellet].ingredients[1].amount = 4
 
 data_item[silver_ingot].localised_description = show_formula and {chemical_formula, "Ag"} or nil
@@ -1207,12 +1227,14 @@ data_item[titanium_processed].localised_description = show_formula and {chemical
 data_item[titanium_processed].order = b
 data_recipe[titanium_processed].icons = TWO_I(titanium_ore_bob, titanium_processed)
 data_recipe[titanium_processed].order = b
+data_recipe[titanium_processed].energy_required = 4
 data_recipe[titanium_processed].results[1].amount = 4
 
 data_item[titanium_pellet].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_pellet].order = c
 data_recipe[titanium_pellet].icons = TWO_I(titanium_processed, titanium_pellet)
 data_recipe[titanium_pellet].order = c
+data_recipe[titanium_pellet].energy_required = 4
 data_recipe[titanium_pellet].ingredients[1].amount = 4
 
 data_item[titanium_ingot].localised_description = show_formula and {chemical_formula, "Ti"} or nil
@@ -1285,12 +1307,14 @@ data_item[gold_processed].localised_description = show_formula and {chemical_for
 data_item[gold_processed].order = b
 data_recipe[gold_processed].icons = TWO_I(gold_ore_bob, gold_processed)
 data_recipe[gold_processed].order = b
+data_recipe[gold_processed].energy_required = 4
 data_recipe[gold_processed].results[1].amount = 4
 
 data_item[gold_pellet].localised_description = show_formula and {chemical_formula, "Au"} or nil
 data_item[gold_pellet].order = c
 data_recipe[gold_pellet].icons = TWO_I(gold_processed, gold_pellet)
 data_recipe[gold_pellet].order = c
+data_recipe[gold_pellet].energy_required = 4
 data_recipe[gold_pellet].ingredients[1].amount = 4
 
 data_item[gold_ingot].localised_description = show_formula and {chemical_formula, "Au"} or nil
@@ -1437,12 +1461,14 @@ data_item[cobalt_processed].localised_description = show_formula and {chemical_f
 data_item[cobalt_processed].order = b
 data_recipe[cobalt_processed].icons = TWO_I(cobalt_ore_bob, cobalt_processed)
 data_recipe[cobalt_processed].order = b
+data_recipe[cobalt_processed].energy_required = 4
 data_recipe[cobalt_processed].results[1].amount = 4
 
 data_item[cobalt_pellet].localised_description = show_formula and {chemical_formula, "Co"} or nil
 data_item[cobalt_pellet].order = c
 data_recipe[cobalt_pellet].icons = TWO_I(cobalt_processed, cobalt_pellet)
 data_recipe[cobalt_pellet].order = c
+data_recipe[cobalt_pellet].energy_required = 4
 data_recipe[cobalt_pellet].ingredients[1].amount = 4
 
 data_item[cobalt_ingot].localised_description = show_formula and {chemical_formula, "Co"} or nil
@@ -1596,12 +1622,14 @@ data_item[chromium_processed].localised_description = show_formula and {chemical
 data_item[chromium_processed].order = b
 data_recipe[chromium_processed].icons = TWO_I(chromium_ore_angels, chromium_processed)
 data_recipe[chromium_processed].order = b
+data_recipe[chromium_processed].energy_required = 4
 data_recipe[chromium_processed].results[1].amount = 4
 
 data_item[chromium_pellet].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_item[chromium_pellet].order = c
 data_recipe[chromium_pellet].icons = TWO_I(chromium_processed, chromium_pellet)
 data_recipe[chromium_pellet].order = c
+data_recipe[chromium_pellet].energy_required = 4
 data_recipe[chromium_pellet].ingredients[1].amount = 4
 
 data_item[chromium_ingot].localised_description = show_formula and {chemical_formula, "Cr"} or nil
@@ -1730,6 +1758,7 @@ data_item[tungsten_processed].localised_description = show_formula and {chemical
 data_item[tungsten_processed].order = b
 data_recipe[tungsten_processed].icons = TWO_I(tungsten_ore_bob, tungsten_processed)
 data_recipe[tungsten_processed].order = b
+data_recipe[tungsten_processed].energy_required = 4
 data_recipe[tungsten_processed].ingredients[1].name = tungsten_ore_bob
 data_recipe[tungsten_processed].results[1].amount = 4
 
@@ -1737,6 +1766,7 @@ data_item[tungsten_pellet].localised_description = show_formula and {chemical_fo
 data_item[tungsten_pellet].order = c
 data_recipe[tungsten_pellet].icons = TWO_I(tungsten_processed, tungsten_pellet)
 data_recipe[tungsten_pellet].order = c
+data_recipe[tungsten_pellet].energy_required = 4
 data_recipe[tungsten_pellet].ingredients[1].amount = 4
 
 data_item[tungsten_powder].localised_description = show_formula and {chemical_formula, "W"} or nil
