@@ -68,10 +68,11 @@ data_recipe[algae_brown].results[1].reset_freshness_on_craft = true
 
 data_recipe[algae_brown_sodium_carbonate].categories = {angels_blast_smelting_1}
 data_recipe[algae_brown_sodium_carbonate].icons = THREE_I(algae_brown, carbon_dioxide_angels, sodium_carbonate_angels)
-data_recipe[algae_brown_sodium_carbonate].energy_required = 8
-data_recipe[algae_brown_sodium_carbonate].ingredients[1].amount = 16
+data_recipe[algae_brown_sodium_carbonate].energy_required = 8 -- algae_brown + CO₂(g) --> Na₂CO₃(s)
+data_recipe[algae_brown_sodium_carbonate].ingredients[1].amount = 32
 data_recipe[algae_brown_sodium_carbonate].ingredients[2].name = carbon_dioxide_angels
-data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 60
+data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 240
+data_recipe[algae_brown_sodium_carbonate].results[1].amount = 16
 
 data_recipe[algae_brown_lithium_chloride].categories = {angels_blast_smelting_3}
 data_recipe[algae_brown_lithium_chloride].icons = TWO_I(algae_brown, lithium_chloride_angels)
