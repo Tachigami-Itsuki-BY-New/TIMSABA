@@ -259,6 +259,8 @@ TIMSABA.barreling.add_dangerous_fluid(manganese_sulfate_II_solution)
 local graphics_silicon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/"
 -- SILICON ITEM
 silicon_oxide_IV = "silicon-oxide-IV"
+calcium_silicate = "calcium-silicate"
+metasilicic_acid = "metasilicic-acid"
 TIMSABA.functions.create_items
 ({
     {
@@ -267,6 +269,20 @@ TIMSABA.functions.create_items
         subgroup = is_silicon_chemistry,
         icon = graphics_silicon .. silicon_oxide_IV .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
+        name = calcium_silicate,
+        subgroup = is_silicon_chemistry,
+        icon = graphics_silicon .. calcium_silicate .. ".png",
+        order = i
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
+        name = metasilicic_acid,
+        subgroup = is_silicon_chemistry,
+        icon = graphics_silicon .. metasilicic_acid .. ".png",
+        order = j
     }
 })
 
