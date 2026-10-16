@@ -557,7 +557,5 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[tech_wodginite_processing_3].prerequisites, galvanization_science_pack)
     end
 
-    table.insert(data_technology[tech_arsenic_processing].prerequisites, tech_tetrahedrite_processing_4)
-
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = nitric_acid_plastic, change = 0.1})
 end

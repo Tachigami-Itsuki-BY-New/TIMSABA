@@ -492,7 +492,7 @@ data:extend
         name = tech_gallium_smelting_1,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_1, cryogenic_science_pack},
+        prerequisites = {tech_germanite_processing_1},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_hydroxide_III},
@@ -515,8 +515,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -528,7 +527,7 @@ data:extend
         name = tech_gallium_smelting_2,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_gallium_smelting_1, tech_germanite_processing_2, promethium_science_pack},
+        prerequisites = {tech_gallium_smelting_1, tech_germanite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_processed},
@@ -601,7 +600,7 @@ data:extend
         type = technology,
         name = tech_arsenic_processing,
         icons = TIMSABA.functions.create_gas_tech_icon("AsAsAs"),
-        prerequisites = {tech_antimonite_processing_4, tech_germanite_processing_4},
+        prerequisites = {tech_antimonite_processing_1},
         effects = {{type = unlock_recipe, recipe = arsenic_powder}},
         unit =
         {
@@ -628,7 +627,7 @@ data:extend
         name = tech_aquilo_cryogenics,
         icon = graphics_aquilo_tech .. tech_aquilo_cryogenics .. ".png",
         icon_size = 256,
-        prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1},
+        prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_arsenide},

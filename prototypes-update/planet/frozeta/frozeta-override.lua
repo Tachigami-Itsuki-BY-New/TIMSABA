@@ -299,7 +299,6 @@ if mods[secretas_frozeta_mods] then
     end
 
     table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)
-    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_gallium_smelting_2].prerequisites, tech_gallite_processing_2)
     table.insert(data_technology[tech_gallium_smelting_3].prerequisites, tech_gallite_processing_3)
 
