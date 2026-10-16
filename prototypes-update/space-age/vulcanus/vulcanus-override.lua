@@ -222,13 +222,13 @@ data_recipe[tungsten_carbide].categories = {sintering_6}
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_carbide].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
 data_recipe[tungsten_carbide].order = b
-data_recipe[tungsten_carbide].energy_required = 1
+data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
 {
-    {type = item, name = tungsten_powder, amount = 1},
-    {type = item, name = carbon_angels, amount = 1}
+    {type = item, name = tungsten_powder, amount = 16},
+    {type = item, name = carbon_angels, amount = 16}
 }
-data_recipe[tungsten_carbide].results[1].amount = 1
+data_recipe[tungsten_carbide].results[1].amount = 16
 data_recipe[tungsten_carbide].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[tungsten_plate].localised_name = data_item[tungsten_plate_bob].localised_name
@@ -236,9 +236,9 @@ data_recipe[tungsten_plate].categories = {sintering_6}
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = c
-data_recipe[tungsten_plate].energy_required = 1
-data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 1}}
-data_recipe[tungsten_plate].results[1].amount = 1
+data_recipe[tungsten_plate].energy_required = 4
+data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 16}}
+data_recipe[tungsten_plate].results[1].amount = 16
 data_recipe[tungsten_plate].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_item[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
