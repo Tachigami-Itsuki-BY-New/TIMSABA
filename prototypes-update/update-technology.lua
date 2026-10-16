@@ -205,6 +205,11 @@ if mods[bobwarfare] then
     }
 end
 
+local tech_walking_vehicle = "bob-walking-vehicle"
+if data_technology[tech_walking_vehicle] then
+    data_technology[tech_walking_vehicle].prerequisites = {advanced_processing_unit, "electric-engine", low_density_structure, tech_nitinol_processing, tech_military_3, tech_rubbers, gun_turret_1}
+end
+
 data_technology[spidertron].prerequisites = {space_science_pack, tech_military_4, tech_rocketry}
 if data_technology[tankotron] then
     table.insert(data_technology[spidertron].prerequisites, tankotron)
