@@ -1,5 +1,5 @@
 if mods[aegis_bellicos_mods] then
-    local graphics_beryllium = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/"
+    local graphics_beryllium = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/"
 
     -- BERYLLIUM ITEM
     beryllium_processed = "beryllium-processed"
@@ -156,7 +156,7 @@ if mods[aegis_bellicos_mods] then
     })
     TIMSABA.barreling.add_dangerous_fluid(beryllium_sulfate_solution)
 
-    local graphics_bellicos_and_aegis = "__TIMSABA__/graphics/icons/bellicos-and-aegis/"
+    local graphics_aegis_and_bellicos = "__TIMSABA__/graphics/icons/aegis-and-bellicos/"
 
     -- OTHER CHEMISTRY ITEM
     ammonium_hydrofluoride = "ammonium-hydrofluoride"
@@ -167,7 +167,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]HF[font=default-tiny-bold]2[/font]"} or nil,
             name = ammonium_hydrofluoride,
             subgroup = is_nitrogen,
-            icon = graphics_bellicos_and_aegis .. ammonium_hydrofluoride .. ".png",
+            icon = graphics_aegis_and_bellicos .. ammonium_hydrofluoride .. ".png",
             order = j
         }
     })
@@ -180,7 +180,7 @@ if mods[aegis_bellicos_mods] then
                 localised_description = show_formula and {chemical_formula, "KF"} or nil,
                 name = potassium_fluoride,
                 subgroup = is_potassium,
-                icon = graphics_bellicos_and_aegis .. potassium_fluoride .. ".png",
+                icon = graphics_aegis_and_bellicos .. potassium_fluoride .. ".png",
                 order = i
             },
             -- SODIUM
@@ -188,7 +188,7 @@ if mods[aegis_bellicos_mods] then
                 localised_description = show_formula and {chemical_formula, "NaF"} or nil,
                 name = sodium_fluoride,
                 subgroup = is_sodium,
-                icon = graphics_bellicos_and_aegis .. sodium_fluoride .. ".png",
+                icon = graphics_aegis_and_bellicos .. sodium_fluoride .. ".png",
                 order = n
             }
         })
@@ -203,7 +203,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]F"} or nil,
             name = ammonium_fluoride_gas,
             subgroup = is_nitrogen_fluids,
-            icon = graphics_bellicos_and_aegis .. ammonium_fluoride_gas .. ".png",
+            icon = graphics_aegis_and_bellicos .. ammonium_fluoride_gas .. ".png",
             order = z,
             base_color = TIMSABA.functions.fluid_color("NH4F"),
             flow_color = TIMSABA.functions.flow_color("NH4F")
@@ -239,7 +239,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He"} or nil,
             name = helium_liquid,
             subgroup = is_bellicos_recipe,
-            icon = graphics_bellicos_and_aegis .. helium_liquid .. ".png",
+            icon = graphics_aegis_and_bellicos .. helium_liquid .. ".png",
             order = h,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")

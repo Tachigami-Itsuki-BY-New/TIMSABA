@@ -165,7 +165,7 @@ if mods[lignumis_mods] then
     })
     TIMSABA.barreling.add_dangerous_fluid(hexafluorotantalic_acid_solution)
 
-    local graphics_bellicos_and_aegis = "__TIMSABA__/graphics/icons/bellicos-and-aegis/"
+    local graphics_aegis_and_bellicos = "__TIMSABA__/graphics/icons/aegis-and-bellicos/"
 
     -- OTHER CHEMISTRY ITEM
     calcium_hydride = "calcium-hydride"
@@ -176,7 +176,7 @@ if mods[lignumis_mods] then
             localised_description = show_formula and {chemical_formula, "KF"} or nil,
             name = potassium_fluoride,
             subgroup = is_potassium,
-            icon = graphics_bellicos_and_aegis .. potassium_fluoride .. ".png",
+            icon = graphics_aegis_and_bellicos .. potassium_fluoride .. ".png",
             order = i
         },
         -- SODIUM
@@ -184,7 +184,7 @@ if mods[lignumis_mods] then
             localised_description = show_formula and {chemical_formula, "NaF"} or nil,
             name = sodium_fluoride,
             subgroup = is_sodium,
-            icon = graphics_bellicos_and_aegis .. sodium_fluoride .. ".png",
+            icon = graphics_aegis_and_bellicos .. sodium_fluoride .. ".png",
             order = n
         },
         -- CALCIUM

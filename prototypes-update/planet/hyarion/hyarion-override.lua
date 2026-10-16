@@ -869,7 +869,7 @@ if mods[hyarion_mods] then
     local tech_beryllium_processing = "planetaris-beryllium-processing"
     rocket_part_hyarion = "planetaris-hyarion-rocket-part"
     if mods[aegis_bellicos_mods] then
-        data_technology[tech_beryllium_processing].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
+        data_technology[tech_beryllium_processing].icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/beryllium-plate.png"
         data_technology[tech_beryllium_processing].icon_size = 64
     end
     table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = carbon_nanotube_hyarion})
