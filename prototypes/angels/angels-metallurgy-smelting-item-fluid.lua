@@ -359,15 +359,39 @@ TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
 
 local graphics_aluminium = "__TIMSABA__/graphics/icons/angels/metallurgy/aluminium/"
 -- ALUMINIUM ITEM
+calcium_aluminate = "calcium-aluminate"
+aluminium_carbide = "aluminium-carbide"
+aluminium_sulfate = "aluminium-sulfate"
 aluminium_chloride = "aluminium-chloride"
 TIMSABA.functions.create_items
 ({
+    {
+        localised_description = show_formula and {chemical_formula, "Ca(AlO[font=default-tiny-bold]2[/font])[font=default-tiny-bold]2[/font]"} or nil,
+        name = calcium_aluminate,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. calcium_aluminate .. ".png",
+        order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]4[/font]C[font=default-tiny-bold]3[/font]"} or nil,
+        name = aluminium_carbide,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. aluminium_carbide .. ".png",
+        order = f
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = aluminium_sulfate,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. aluminium_sulfate .. ".png",
+        order = g
+    },
     {
         localised_description = show_formula and {chemical_formula, "AlCl[font=default-tiny-bold]3[/font]"} or nil,
         name = aluminium_chloride,
         subgroup = is_aluminium_chemistry,
         icon = graphics_aluminium .. aluminium_chloride .. ".png",
-        order = a
+        order = i
     }
 })
 
@@ -387,6 +411,7 @@ TIMSABA.functions.create_fluids
         base_color = TIMSABA.functions.fluid_color("AlCl3Wp"),
         flow_color = TIMSABA.functions.flow_color("AlCl3Wp")
     },
+    -- ETHER
     {
         localised_description = show_formula and {chemical_formula, "AlCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
         name = aluminium_chloride_solution_ether,
