@@ -164,7 +164,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony,
         icons = TWO_I(antimony_ore, antimony_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = antimony_ore, amount = 4}},
         results = {{type = item, name = antimony_processed, amount = 4}},
         main_product = antimony_processed
@@ -175,7 +174,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony,
         icons = TWO_I(antimony_processed, antimony_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = antimony_processed, amount = 4}},
         results = {{type = item, name = antimony_pellet, amount = 4}},
         main_product = antimony_pellet
