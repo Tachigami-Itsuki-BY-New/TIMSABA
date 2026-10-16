@@ -151,6 +151,8 @@ data_recipe[casting_low_density_structure].ingredients =
 
 data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
 
+data_recipe[lithium_space].categories = {smelting_filtering}
+
 -- MULUNA
 if mods[muluna_mods] then
     data_rocket_silo[big_rocket_silo].energy_usage = (15360 - (drain * 4)) .. kW
