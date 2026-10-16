@@ -389,7 +389,7 @@ end
 if mods[bobwarfare] then
     data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
     data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
-    data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CₙH₍₂ₙ₊₂₎ + nH₂O (n = 32) petroleum_jelly (18-35)
+    data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CnH2n+2 + nH₂O (n = 32) petroleum_jelly (18-35)
     data_recipe[petroleum_jelly].ingredients =
     {
         {type = fluid, name = hydrogen_angels, amount = 975},
@@ -400,8 +400,8 @@ if mods[bobwarfare] then
     {
         {type = item, name = petroleum_jelly, amount = 1},
         {type = fluid, name = steam, amount = 480, ignored_by_productivity = 480},
-        {type = item, name = catalyst_red, amount = 1, independent_probability = 0.9, ignored_by_productivity = 1},
-        {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.1, ignored_by_productivity = 1}
+        {type = item, name = catalyst_red, amount = 1, independent_probability = 0.0875, ignored_by_productivity = 1},
+        {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125, ignored_by_productivity = 1}
     }
     data_recipe[petroleum_jelly].main_product = petroleum_jelly
 
