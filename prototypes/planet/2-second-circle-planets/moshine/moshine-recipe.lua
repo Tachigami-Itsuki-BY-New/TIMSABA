@@ -97,7 +97,6 @@ if mods[moshine_mods] then
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_ore, neodymium_processed),
             order = b,
-            energy_required = 2,
             ingredients = {{type = item, name = neodymium_ore, amount = 4}},
             results = {{type = item, name = neodymium_processed, amount = 4}},
             main_product = neodymium_processed
@@ -108,7 +107,6 @@ if mods[moshine_mods] then
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_processed, neodymium_pellet),
             order = c,
-            energy_required = 2,
             ingredients = {{type = item, name = neodymium_processed, amount = 4}},
             results = {{type = item, name = neodymium_pellet, amount = 4}},
             main_product = neodymium_pellet

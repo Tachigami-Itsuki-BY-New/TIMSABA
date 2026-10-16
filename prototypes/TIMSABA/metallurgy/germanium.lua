@@ -162,7 +162,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_germanium,
         icons = TWO_I(germanium_ore, germanium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = germanium_ore, amount = 4}},
         results = {{type = item, name = germanium_processed, amount = 4}},
         main_product = germanium_processed
@@ -173,7 +172,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_germanium,
         icons = TWO_I(germanium_processed, germanium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = germanium_processed, amount = 4}},
         results = {{type = item, name = germanium_pellet, amount = 4}},
         main_product = germanium_pellet
