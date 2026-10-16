@@ -136,9 +136,9 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_mods].subgroup = is_paracelsin_zinc
     data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
     data_recipe[zinc_plate_mods].order = b
-    data_recipe[zinc_plate_mods].energy_required = 1
-    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
-    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
+    data_recipe[zinc_plate_mods].energy_required = 4
+    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 16}}
+    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 16}}
     data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
     data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 

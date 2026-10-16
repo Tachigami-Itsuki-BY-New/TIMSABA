@@ -25,8 +25,8 @@ if mods[secretas_frozeta_mods] then
             subgroup = is_frozeta_recipe,
             icons = TWO_I(gold_ore_bob, gold_powder),
             order = b,
-            ingredients = {{type = item, name = gold_ore_bob, amount = 1}},
-            results = {{type = item, name = gold_powder, amount = 1}},
+            ingredients = {{type = item, name = gold_ore_bob, amount = 8}},
+            results = {{type = item, name = gold_powder, amount = 8}},
             main_product = gold_powder,
             surface_conditions = {{property = pressure, min = 200, max = 280}}
         },
