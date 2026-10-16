@@ -488,6 +488,7 @@ TIMSABA.functions.create_recipes
 
 -- MANGANESE
 manganese_sulfate_II_solution_from_manganese_oxide_II = "manganese-sulfate-II-solution-from-manganese-oxide-II"
+potassium_permanganate_2 = potassium_permanganate .. "-2"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -573,6 +574,28 @@ TIMSABA.functions.create_recipes
             {type = item, name = potassium_permanganate, amount = 16},
             {type = fluid, name = potassium_chloride_solution, amount = 120}, -- 240
             {type = fluid, name = water_purified_angels, amount = 240} -- 480
+        },
+        main_product = potassium_permanganate
+    },
+    {
+        localised_name = {"item-name." .. potassium_permanganate},
+        name = potassium_permanganate_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_manganese_chemistry,
+        icons = FOUR_THREE_I(potassium_manganate, nil, hydrochloric_acid_angels, potassium_permanganate, manganese_oxide_II, water_purified_angels, potassium_chloride_solution),
+        order = f_a,
+        energy_required = 8, -- 3K₂MnO₄(s) + 4HCl(aq) --> 2KMnO₄(s) + MnO₂(s) + 2H₂O(l) + 4KCl(aq)
+        ingredients =
+        {
+            {type = item, name = potassium_manganate, amount = 24},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = potassium_permanganate, amount = 16},
+            {type = item, name = manganese_oxide_II, amount = 8},
+            {type = fluid, name = water_purified_angels, amount = 120}, -- 240
+            {type = fluid, name = potassium_chloride_solution, amount = 240} -- 480
         },
         main_product = potassium_permanganate
     }
@@ -1049,41 +1072,119 @@ TIMSABA.functions.create_recipes
 })
 
 -- TITANIUM
+titanium_oxide_IV_2 = titanium_oxide_IV .. "-2"
+titanium_oxide_IV_3 = titanium_oxide_IV .. "-3"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = titanium_iodide_IV_gas,
-        categories = {angels_chemical_smelting_4},
+        name = titanium_oxide_IV,
+        categories = {angels_blast_smelting_3},
         subgroup = is_titanium_chemistry,
-        icons = THREE_I(titanium_pellet, iodine_gas, titanium_iodide_IV_gas),
-        order = c,
-        energy_required = 8, -- Ti + 2I₂ --> TiI₄
+        icons = THREE_I(titanium_ore_bob, oxygen_angels, titanium_oxide_IV),
+        order = a,
+        energy_required = 8, -- Ti(s) + O₂(g) --> TiO₂(s)
         ingredients =
         {
-            {type = item, name = titanium_pellet, amount = 8},
-            {type = fluid, name = iodine_gas, amount = 480}
+            {type = item, name = titanium_ore_bob, amount = 32},
+            {type = fluid, name = oxygen_angels, amount = 240}
         },
-        results = {{type = fluid, name = titanium_iodide_IV_gas, amount = 240}},
-        main_product = titanium_iodide_IV_gas
+        results = {{type = item, name = titanium_oxide_IV, amount = 16}},
+        main_product = titanium_oxide_IV
     },
     {
-        name = titanium_oxide_IV,
-        categories = {angels_chemical_smelting_2},
+        localised_name = {"item-name." .. titanium_oxide_IV},
+        name = titanium_oxide_IV_2,
+        categories = {angels_blast_smelting_3},
         subgroup = is_titanium_chemistry,
-        icons = TWO_D_I(titanium_chloride_IV, oxygen_angels, titanium_oxide_IV, chlorine_angels),
-        order = d,
-        energy_required = 8, -- TiCl₄ + O₂ --> TiO₂ + 2Cl₂
+        icons = THREE_I(titanium_processed, oxygen_angels, titanium_oxide_IV),
+        order = a_a,
+        energy_required = 8, -- Ti(s) + O₂(g) --> TiO₂(s)
         ingredients =
         {
-            {type = fluid, name = titanium_chloride_IV, amount = 240},
+            {type = item, name = titanium_processed, amount = 16},
             {type = fluid, name = oxygen_angels, amount = 240}
+        },
+        results = {{type = item, name = titanium_oxide_IV, amount = 16}},
+        main_product = titanium_oxide_IV
+    },
+    {
+        localised_name = {"item-name." .. titanium_oxide_IV},
+        name = titanium_oxide_IV_3,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = THREE_D_I(metatitanic_acid, nil, hydrogen_peroxide, titanium_oxide_IV, water_purified_angels, oxygen_angels),
+        order = a_b,
+        energy_required = 8, -- 2H₂TiO₃(s) + 2H₂O₂(l) --> 2TiO₂(s) + 2H₂O(l) + O₂(g)
+        ingredients =
+        {
+            {type = item, name = metatitanic_acid, amount = 16},
+            {type = fluid, name = hydrogen_peroxide, amount = 240}
         },
         results =
         {
             {type = item, name = titanium_oxide_IV, amount = 16},
-            {type = fluid, name = chlorine_angels, amount = 240} -- 480
+            {type = fluid, name = water_purified_angels, amount = 120}, -- 240
+            {type = fluid, name = oxygen_angels, amount = 60} -- 120
         },
         main_product = titanium_oxide_IV
+    },
+    {
+        name = titanium_carbide,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = TWO_D_I(titanium_pellet, methane_angels, titanium_carbide, hydrogen_angels),
+        order = d,
+        energy_required = 8, -- Ti(s) + CH₄(g) --> TiC(s) + 2H₂(g)
+        ingredients =
+        {
+            {type = item, name = titanium_pellet, amount = 8},
+            {type = fluid, name = methane_angels, amount = 240}
+        },
+        results =
+        {
+            {type = item, name = titanium_carbide, amount = 16},
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 480
+        },
+        main_product = titanium_carbide
+    },
+    {
+        name = titanium_iodide_IV_gas,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = TWO_D_I(titanium_carbide, iodine_gas, titanium_iodide_IV_gas, carbon_angels),
+        order = e,
+        energy_required = 8, -- TiC(s) + 2I₂(g) --> TiI₄(g) + C(s)
+        ingredients =
+        {
+            {type = item, name = titanium_carbide, amount = 16},
+            {type = fluid, name = iodine_gas, amount = 480}
+        },
+        results =
+        {
+            {type = fluid, name = titanium_iodide_IV_gas, amount = 240},
+            {type = item, name = carbon_angels, amount = 8} -- 16
+        },
+        main_product = titanium_iodide_IV_gas
+    },
+    {
+        name = metatitanic_acid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = THREE_D_I(titanium_iodide_IV_gas, nil, sodium_hydroxide_solution_angels, metatitanic_acid, sodium_iodide_solution, water_purified_angels),
+        order = d,
+        energy_required = 8, -- TiI₄(g) + 4NaOH(aq) --> H₂TiO₃(s) + 4NaI(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = titanium_iodide_IV_gas, amount = 240},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 960}
+        },
+        results =
+        {
+            {type = item, name = metatitanic_acid, amount = 16},
+            {type = fluid, name = sodium_iodide_solution, amount = 480}, -- 960
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = metatitanic_acid
     }
 })
 

@@ -1435,13 +1435,34 @@ data_technology[tech_silver_smelting_3].effects =
 }
 
 -- TITANIUM
-data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_green, tech_magnesium_smelting_2}
+data_technology[tech_titanium_smelting_1].effects =
+{
+    {type = unlock_recipe, recipe = titanium_oxide_IV},
+    {type = unlock_recipe, recipe = titanium_chloride_IV},
+    {type = unlock_recipe, recipe = titanium_sponge},
+    {type = unlock_recipe, recipe = titanium_molten_angels},
+    {type = unlock_recipe, recipe = titanium_plate_bob}
+}
+
+table.insert(data_technology[tech_titanium_smelting_2].prerequisites, tech_magnesium_smelting_2)
+data_technology[tech_titanium_smelting_2].effects =
+{
+    {type = unlock_recipe, recipe = titanium_processed},
+    {type = unlock_recipe, recipe = titanium_oxide_IV_2},
+    {type = unlock_recipe, recipe = titanium_chloride_IV_2},
+    {type = unlock_recipe, recipe = titanium_powder}
+}
+
+data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_blue, tech_potassium_processing}
 data_technology[tech_titanium_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = titanium_pellet},
+    {type = unlock_recipe, recipe = titanium_carbide},
     {type = unlock_recipe, recipe = titanium_iodide_IV_gas},
-    {type = unlock_recipe, recipe = titanium_ingot_2},
-    {type = unlock_recipe, recipe = iodine_gas}
+    {type = unlock_recipe, recipe = metatitanic_acid},
+    {type = unlock_recipe, recipe = titanium_oxide_IV_3},
+    {type = unlock_recipe, recipe = iodine_gas_2},
+    {type = unlock_recipe, recipe = potassium_permanganate_2}
 }
 
 -- GOLD
@@ -1713,7 +1734,6 @@ data_technology[tech_stone_smelting_2].effects =
 data_technology[tech_stone_smelting_3].prerequisites = {tech_powder_metallurgy_3, tech_iron_smelting_2, tech_titanium_smelting_1, production_science_pack}
 data_technology[tech_stone_smelting_3].effects =
 {
-    {type = unlock_recipe, recipe = titanium_oxide_IV},
     {type = unlock_recipe, recipe = cement_2},
     {type = unlock_recipe, recipe = "angels-liquid-concrete-2"},
     {type = unlock_recipe, recipe = reinforced_concrete_brick}
@@ -2103,6 +2123,7 @@ table.insert(data_technology[tech_bio_processing_red].prerequisites, tech_stone_
 table.insert(data_technology[tech_bio_processing_red].unit.ingredients, {chemical_science_pack, 1})
 
 data_technology[tech_bio_processing_blue].prerequisites = {tech_bio_processing_red, tech_titanium_processing, tech_stone_smelting_3}
+table.insert(data_technology[tech_bio_processing_blue].effects, {type = unlock_recipe, recipe = iodine_gas})
 table.insert(data_technology[tech_bio_processing_blue].unit.ingredients, {production_science_pack, 1})
 
 data_technology["angels-bio-processing-alien-1"].prerequisites = {"angels-bio-refugium-fish-1", tech_bio_processing_green, tech_chlorine_processing_1}
