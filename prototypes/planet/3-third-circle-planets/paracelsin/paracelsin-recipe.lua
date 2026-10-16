@@ -29,8 +29,8 @@ if mods[paracelsin_mods] then
             subgroup = is_paracelsin_zinc,
             icons = TWO_I(zinc_ore_bob, zinc_powder),
             order = a,
-            ingredients = {{type = item, name = zinc_ore_bob, amount = 1}},
-            results = {{type = item, name = zinc_powder, amount = 1}},
+            ingredients = {{type = item, name = zinc_ore_bob, amount = 8}},
+            results = {{type = item, name = zinc_powder, amount = 8}},
             main_product = zinc_powder,
             surface_conditions = {{property = pressure, min = 5300, max = 5300}}
         },
