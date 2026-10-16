@@ -43,8 +43,8 @@ if mods[muria_mods] then
             subgroup = is_muria_lead,
             icons = TWO_I(lead_ore_bob, lead_powder),
             order = b,
-            ingredients = {{type = item, name = lead_ore_bob, amount = 1}},
-            results = {{type = item, name = lead_powder, amount = 1}},
+            ingredients = {{type = item, name = lead_ore_bob, amount = 8}},
+            results = {{type = item, name = lead_powder, amount = 8}},
             main_product = lead_powder,
             surface_conditions = {{property = pressure, min = 2180, max = 2180}}
         },
