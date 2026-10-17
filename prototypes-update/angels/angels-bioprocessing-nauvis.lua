@@ -76,7 +76,8 @@ data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 60
 data_recipe[algae_brown_lithium_chloride].categories = {angels_blast_smelting_3}
 data_recipe[algae_brown_lithium_chloride].icons = TWO_I(algae_brown, lithium_chloride_angels)
 data_recipe[algae_brown_lithium_chloride].energy_required = 8
-data_recipe[algae_brown_lithium_chloride].ingredients[1].amount = 16
+data_recipe[algae_brown_lithium_chloride].ingredients[1].amount = 32
+data_recipe[algae_brown_lithium_chloride].results[1].amount = 16
 
 local alginic_acid = "angels-solid-alginic-acid"
 data_item[alginic_acid].localised_description = show_formula and {chemical_formula, "(C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]8[/font]O[font=default-tiny-bold]6[/font])[font=default-tiny-bold]n[/font]"} or nil
