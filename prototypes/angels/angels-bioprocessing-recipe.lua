@@ -10,8 +10,8 @@ TIMSABA.functions.create_recipes
         icons = TWO_I(algae_brown, iodine_gas),
         order = c,
         energy_required = 8,
-        ingredients = {{type = item, name = algae_brown, amount = 16}},
-        results = {{type = fluid, name = iodine_gas, amount = 120}},
+        ingredients = {{type = item, name = algae_brown, amount = 32}},
+        results = {{type = fluid, name = iodine_gas, amount = 240}},
         main_product = iodine_gas
     },
     {
