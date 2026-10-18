@@ -638,7 +638,7 @@ data_recipe[silane_gas].results =
 {
     {type = fluid, name = silane_gas, amount = 240},
     {type = fluid, name = aluminium_chloride_solution_ether, amount = 120}, -- 240
-    {type = item, name = lithium_chloride_angels, amount = 8} -- 16
+    {type = item, name = lithium_chloride_angels, amount = 16}
 }
 data_recipe[silane_gas].main_product = silane_gas
 
