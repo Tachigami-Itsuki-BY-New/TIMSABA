@@ -1,7 +1,7 @@
 data_gun[pistol].stack_size = 1
 data_gun[pistol].weight = 1000000
 data_gun[pistol].attack_parameters.range = 16
-data_gun[pistol].attack_parameters.cooldown = 16
+data_gun[pistol].attack_parameters.cooldown = 30
 
 local submachine_gun = "submachine-gun"
 data_gun[submachine_gun].stack_size = 1
@@ -22,7 +22,7 @@ if mods[bobwarfare] then
     data_gun[rifle].stack_size = 1
     data_gun[rifle].weight = 1000000
     data_gun[rifle].attack_parameters.range = 32
-    data_gun[rifle].attack_parameters.cooldown = 8
+    data_gun[rifle].attack_parameters.cooldown = 15
     data_gun[rifle].attack_parameters.damage_modifier = 8
     data_recipe[rifle].energy_required = 1
     data_recipe[rifle].ingredients =
@@ -36,7 +36,7 @@ if mods[bobwarfare] then
     data_gun[sniper_rifel].stack_size = 1
     data_gun[sniper_rifel].weight = 1000000
     data_gun[sniper_rifel].attack_parameters.range = 64
-    data_gun[sniper_rifel].attack_parameters.cooldown = 64
+    data_gun[sniper_rifel].attack_parameters.cooldown = 60
     data_gun[sniper_rifel].attack_parameters.damage_modifier = 32
     data_recipe[sniper_rifel].energy_required = 1
     data_recipe[sniper_rifel].ingredients =
@@ -96,7 +96,7 @@ data_gun[shotgun].order = a
 data_gun[shotgun].stack_size = 1
 data_gun[shotgun].weight = 1000000
 data_gun[shotgun].attack_parameters.range = 8
-data_gun[shotgun].attack_parameters.cooldown = 32
+data_gun[shotgun].attack_parameters.cooldown = 30
 data_recipe[shotgun].subgroup = is_shotgun
 data_recipe[shotgun].order = a
 data_recipe[shotgun].energy_required = 1
@@ -114,7 +114,7 @@ data_gun[combat_shotgun].order = b
 data_gun[combat_shotgun].stack_size = 1
 data_gun[combat_shotgun].weight = 1000000
 data_gun[combat_shotgun].attack_parameters.range = 16
-data_gun[combat_shotgun].attack_parameters.cooldown = 16
+data_gun[combat_shotgun].attack_parameters.cooldown = 15
 data_gun[combat_shotgun].attack_parameters.damage_modifier = 1
 data_recipe[combat_shotgun].subgroup = is_shotgun
 data_recipe[combat_shotgun].order = b
@@ -172,7 +172,7 @@ if mods[bobwarfare] then
     data_gun[laser].stack_size = 1
     data_gun[laser].weight = 1000000
     data_gun[laser].attack_parameters.range = 32
-    data_gun[laser].attack_parameters.cooldown = 8
+    data_gun[laser].attack_parameters.cooldown = 4
     data_gun[laser].attack_parameters.damage_modifier = 1
     data_recipe[laser].subgroup = is_laser
     data_recipe[laser].order = a
