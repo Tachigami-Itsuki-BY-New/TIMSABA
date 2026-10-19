@@ -901,39 +901,6 @@ if mods[bobtech] then
             table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
             table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
         end
-        if mods[arig_mods] then
-            table.insert(data_lab[lab_alien].inputs, compression_science_pack)
-        end
-        if mods[hyarion_mods] then
-            table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
-            table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
-        end
-        if mods[tellus_mods] then
-            table.insert(data_lab[lab_alien].inputs, bioengineering_science_pack)
-            table.insert(data_lab[lab_alien].inputs, pathological_science_pack)
-        end
-        if mods[paracelsin_mods] then
-            table.insert(data_lab[lab_alien].inputs, galvanization_science_pack)
-        end
-        if mods[castra_mods] then
-            table.insert(data_lab[lab_alien].inputs, battlefield_science_pack)
-        end
-        if mods[shchierbin_mods] then
-            table.insert(data_lab[lab_alien].inputs, vanadium_science_pack)
-        end
-        if mods[muria_mods] then
-            table.insert(data_lab[lab_alien].inputs, acidworking_science_pack)
-        end
-        if mods[pelagos_mods] then
-            table.insert(data_lab[lab_alien].inputs, spoilage_science_pack)
-        end
-        if mods[apia_carnova_mods] then
-            table.insert(data_lab[lab_alien].inputs, apicultural_science_pack)
-        end
-        -- УБРАТЬ или ИЗМЕНИТЬ
-        if mods[obsidiax_mods] then
-            table.insert(data_lab[lab_alien].inputs, obsidian_cube_sp)
-        end
     end
 end
 
