@@ -527,8 +527,8 @@ if mods[paracelsin_mods] then
     end
 
     if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[artillery_wagon_2].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[artillery_turret_4].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, galvanization_science_pack)
     end
 
     table.insert(data_technology[tech_powellite_processing_4].prerequisites, galvanization_science_pack)

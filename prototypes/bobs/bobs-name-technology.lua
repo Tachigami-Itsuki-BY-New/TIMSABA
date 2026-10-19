@@ -105,11 +105,15 @@ tech_modules_5 = "bob-modules-5"
 
 tech_exoskeleton_eq_2 = "bob-exoskeleton-equipment-2"
 
+tech_gun_turret_2 = "bob-turrets-2"
+tech_gun_turret_3 = "bob-turrets-3"
+tech_gun_turret_4 = "bob-turrets-4"
 tech_gun_turret_5 = "bob-turrets-5"
 
 tech_sniper_turret_1 = "bob-sniper-turrets-1"
 tech_sniper_turret_2 = "bob-sniper-turrets-2"
 tech_sniper_turret_3 = "bob-sniper-turrets-3"
+tech_sniper_turret_4 = "bob-sniper-turrets-4"
 
 tech_laser_turret_2 = "bob-laser-turrets-2"
 tech_laser_turret_3 = "bob-laser-turrets-3"

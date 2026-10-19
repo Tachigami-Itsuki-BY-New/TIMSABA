@@ -378,3 +378,39 @@ data:extend
         }
     }
 })
+
+if mods[bobwarfare] then
+    data:extend
+    ({
+        -- ARTILLERY WAGON T4
+        {
+            localised_name = {"entity-name.artillery-wagon-4"},
+            type = technology,
+            name = artillery_wagon_4,
+            icon = "__base__/graphics/technology/artillery-wagon.png",
+            icon_size = 64,
+            prerequisites = {artillery_wagon_3, cryogenic_science_pack},
+            effects = {{type = unlock_recipe, recipe = artillery_wagon_4},
+            },
+            unit =
+            {
+                count = 16000,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {military_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+end
