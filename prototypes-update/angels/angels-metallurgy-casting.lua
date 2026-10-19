@@ -848,7 +848,6 @@ data_item[titanium_plate_bob].localised_description = show_formula and {chemical
 data_item[titanium_plate_bob].order = c
 data_item[titanium_plate_bob].weight = 5000
 
-local titanium_plate_angels = "angels-plate-titanium"
 data_recipe[titanium_plate_angels].icons = TWO_I(titanium_molten_angels, titanium_plate_bob)
 data_recipe[titanium_plate_angels].order = c_a
 data_recipe[titanium_plate_angels].ingredients[1].amount = 60

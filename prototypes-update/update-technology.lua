@@ -689,6 +689,8 @@ data_technology[tech_deuterium_power].effects =
 }
 
 -- COMBAT
+data_technology[tech_military_3].prerequisites = {chemical_science_pack, military_science_pack, tech_gunmetal_smelting_1, "flammables", tech_glass_smelting_1, tech_brass_processing, tech_aluminium_smelting_1}
+
 data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_smelting_1}
 if mods[bobwarfare] then
     data_technology[tech_uranium_ammo].effects =
@@ -1320,7 +1322,7 @@ data_technology[tech_silicon_smelting_2].effects =
     {type = unlock_recipe, recipe = silicon_oxide_IV_from_silicon_chloride_IV_gas}
 }
 
-data_technology[tech_silicon_smelting_3].prerequisites = {tech_ore_processing_3, tech_silicon_smelting_2, tech_bio_fermentation}
+data_technology[tech_silicon_smelting_3].prerequisites = {tech_ore_processing_3, tech_silicon_smelting_2, tech_bio_fermentation, tech_aluminium_smelting_2}
 data_technology[tech_silicon_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = silicon_pellet},
@@ -1358,10 +1360,11 @@ data_technology[tech_nickel_smelting_3].effects =
 }
 
 -- ALUMINIUM
-data_technology[tech_aluminium_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1}
+data_technology[tech_aluminium_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_bio_processing_green, tech_advanced_chemistry_1}
 data_technology[tech_aluminium_smelting_1].effects =
 {
-    {type = unlock_recipe, recipe = aluminium_chloride},
+    {type = unlock_recipe, recipe = calcium_aluminate},
+    {type = unlock_recipe, recipe = aluminium_chloride_solution},
     {type = unlock_recipe, recipe = aluminium_hydroxide},
     {type = unlock_recipe, recipe = aluminium_oxide},
     {type = unlock_recipe, recipe = aluminium_ingot},
@@ -1373,12 +1376,20 @@ data_technology[tech_aluminium_smelting_2].prerequisites = {tech_ore_processing_
 data_technology[tech_aluminium_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = aluminium_processed},
-    {type = unlock_recipe, recipe = aluminium_chloride_solution},
-    {type = unlock_recipe, recipe = aluminium_chloride_2},
+    {type = unlock_recipe, recipe = aluminium_carbide},
+    {type = unlock_recipe, recipe = aluminium_sulfate},
     {type = unlock_recipe, recipe = aluminium_hydroxide_2},
     {type = unlock_recipe, recipe = aluminium_powder},
-    {type = unlock_recipe, recipe = ammonium_chloride_reprocess},
-    {type = unlock_recipe, recipe = ammonia_gas_alt}
+    {type = unlock_recipe, recipe = aluminium_chloride}
+}
+
+data_technology[tech_aluminium_smelting_3].effects =
+{
+    {type = unlock_recipe, recipe = aluminium_pellet},
+    {type = unlock_recipe, recipe = sodium_aluminate},
+    {type = unlock_recipe, recipe = aluminium_chloride_solution_2},
+    {type = unlock_recipe, recipe = aluminium_oxide_2},
+    {type = unlock_recipe, recipe = aluminium_chloride_2}
 }
 
 -- ZINC
@@ -1433,13 +1444,35 @@ data_technology[tech_silver_smelting_3].effects =
 }
 
 -- TITANIUM
-data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_green, tech_magnesium_smelting_2}
+data_technology[tech_titanium_smelting_1].effects =
+{
+    {type = unlock_recipe, recipe = titanium_oxide_IV},
+    {type = unlock_recipe, recipe = titanium_chloride_IV},
+    {type = unlock_recipe, recipe = titanium_sponge},
+    {type = unlock_recipe, recipe = titanium_ingot},
+    {type = unlock_recipe, recipe = titanium_molten_angels},
+    {type = unlock_recipe, recipe = titanium_plate_angels}
+}
+
+table.insert(data_technology[tech_titanium_smelting_2].prerequisites, tech_magnesium_smelting_2)
+data_technology[tech_titanium_smelting_2].effects =
+{
+    {type = unlock_recipe, recipe = titanium_processed},
+    {type = unlock_recipe, recipe = titanium_oxide_IV_2},
+    {type = unlock_recipe, recipe = titanium_chloride_IV_2},
+    {type = unlock_recipe, recipe = titanium_powder}
+}
+
+data_technology[tech_titanium_smelting_3].prerequisites = {tech_ore_processing_4, tech_titanium_smelting_2, tech_bio_processing_blue, tech_potassium_processing}
 data_technology[tech_titanium_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = titanium_pellet},
+    {type = unlock_recipe, recipe = titanium_carbide},
     {type = unlock_recipe, recipe = titanium_iodide_IV_gas},
-    {type = unlock_recipe, recipe = titanium_ingot_2},
-    {type = unlock_recipe, recipe = iodine_gas}
+    {type = unlock_recipe, recipe = metatitanic_acid},
+    {type = unlock_recipe, recipe = titanium_oxide_IV_3},
+    {type = unlock_recipe, recipe = iodine_gas_2},
+    {type = unlock_recipe, recipe = potassium_permanganate_2}
 }
 
 -- GOLD
@@ -1495,7 +1528,6 @@ data_technology[tech_chromium_smelting_2].effects =
     {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether},
     {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether_reprocess},
     {type = unlock_recipe, recipe = lithium_chloride_solution_from_lithium_hydroxide},
-    {type = unlock_recipe, recipe = aluminium_chloride_solution_from_aluminium_hydroxide},
     {type = unlock_recipe, recipe = potassium_hydroxide_from_potassium_sulfate_solution}
 }
 
@@ -1561,7 +1593,9 @@ data_technology[tech_platinum_smelting_2].effects =
     {type = unlock_recipe, recipe = platinum_ingot_2},
     {type = unlock_recipe, recipe = formic_acid},
     {type = unlock_recipe, recipe = copper_nitrate_II_solution},
-    {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_nitrate_II_solution}
+    {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_nitrate_II_solution},
+    {type = unlock_recipe, recipe = ammonium_chloride_reprocess},
+    {type = unlock_recipe, recipe = ammonia_gas_alt}
 }
 
 data_technology[tech_platinum_smelting_3].effects =
@@ -1711,7 +1745,6 @@ data_technology[tech_stone_smelting_2].effects =
 data_technology[tech_stone_smelting_3].prerequisites = {tech_powder_metallurgy_3, tech_iron_smelting_2, tech_titanium_smelting_1, production_science_pack}
 data_technology[tech_stone_smelting_3].effects =
 {
-    {type = unlock_recipe, recipe = titanium_oxide_IV},
     {type = unlock_recipe, recipe = cement_2},
     {type = unlock_recipe, recipe = "angels-liquid-concrete-2"},
     {type = unlock_recipe, recipe = reinforced_concrete_brick}
@@ -2092,6 +2125,7 @@ data_technology[tech_bio_processing_green].effects =
     {type = unlock_recipe, recipe = algae_green_simple},
     {type = unlock_recipe, recipe = methanol_from_wood},
     {type = unlock_recipe, recipe = algae_brown_sodium_carbonate},
+    {type = unlock_recipe, recipe = sodium_carbonate_solution},
     {type = unlock_recipe, recipe = water_mineralized_angels}
 }
 table.insert(data_technology[tech_bio_processing_green].unit.ingredients, {logistic_science_pack, 1})
@@ -2101,6 +2135,7 @@ table.insert(data_technology[tech_bio_processing_red].prerequisites, tech_stone_
 table.insert(data_technology[tech_bio_processing_red].unit.ingredients, {chemical_science_pack, 1})
 
 data_technology[tech_bio_processing_blue].prerequisites = {tech_bio_processing_red, tech_titanium_processing, tech_stone_smelting_3}
+table.insert(data_technology[tech_bio_processing_blue].effects, {type = unlock_recipe, recipe = iodine_gas})
 table.insert(data_technology[tech_bio_processing_blue].unit.ingredients, {production_science_pack, 1})
 
 data_technology["angels-bio-processing-alien-1"].prerequisites = {"angels-bio-refugium-fish-1", tech_bio_processing_green, tech_chlorine_processing_1}

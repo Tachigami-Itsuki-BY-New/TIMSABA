@@ -1,9 +1,13 @@
 data_gun[pistol].stack_size = 1
 data_gun[pistol].weight = 1000000
+data_gun[pistol].attack_parameters.range = 16
+data_gun[pistol].attack_parameters.cooldown = 30
 
 local submachine_gun = "submachine-gun"
 data_gun[submachine_gun].stack_size = 1
 data_gun[submachine_gun].weight = 1000000
+data_gun[submachine_gun].attack_parameters.range = 16
+data_gun[submachine_gun].attack_parameters.cooldown = 4
 data_recipe[submachine_gun].ingredients =
 {
     {type = item, name = iron_gear_wheel, amount = 8},
@@ -17,24 +21,31 @@ local sniper_rifel = "bob-sniper-rifle"
 if mods[bobwarfare] then
     data_gun[rifle].stack_size = 1
     data_gun[rifle].weight = 1000000
+    data_gun[rifle].attack_parameters.range = 32
+    data_gun[rifle].attack_parameters.cooldown = 15
+    data_gun[rifle].attack_parameters.damage_modifier = 8
     data_recipe[rifle].energy_required = 1
     data_recipe[rifle].ingredients =
     {
         {type = item, name = steel_gear_wheel, amount = 8},
         {type = item, name = submachine_gun, amount = 1},
-        {type = item, name = aluminium_plate_bob, amount = 4},
+        {type = item, name = gunmetal_plate_bob, amount = 4},
         {type = item, name = steel_plate, amount = 8}
     }
 
     data_gun[sniper_rifel].stack_size = 1
     data_gun[sniper_rifel].weight = 1000000
+    data_gun[sniper_rifel].attack_parameters.range = 64
+    data_gun[sniper_rifel].attack_parameters.cooldown = 60
+    data_gun[sniper_rifel].attack_parameters.damage_modifier = 32
     data_recipe[sniper_rifel].energy_required = 1
     data_recipe[sniper_rifel].ingredients =
     {
-        {type = item, name = steel_gear_wheel, amount = 4},
+        {type = item, name = brass_gear_wheel, amount = 8},
         {type = item, name = rifle, amount = 1},
-        {type = item, name = wood, amount = 2},
-        {type = item, name = steel_plate, amount = 4}
+        {type = item, name = aluminium_plate_bob, amount = 4},
+        {type = item, name = glass_bob, amount = 4},
+        {type = item, name = brass_plate_bob, amount = 8}
     }
 end
 
@@ -75,7 +86,7 @@ data_recipe[uranium_rounds_magazine].ingredients =
 {
     {type = item, name = piercing_rounds_magazine, amount = 1},
     {type = item, name = uranium_238_plate, amount = 2},
-    {type = item, name = brass_plate_bob, amount = 2}
+    {type = item, name = gunmetal_plate_bob, amount = 2}
 }
 data_recipe[uranium_rounds_magazine].results[1].amount = 2
 
@@ -84,6 +95,8 @@ data_gun[shotgun].subgroup = is_shotgun
 data_gun[shotgun].order = a
 data_gun[shotgun].stack_size = 1
 data_gun[shotgun].weight = 1000000
+data_gun[shotgun].attack_parameters.range = 8
+data_gun[shotgun].attack_parameters.cooldown = 30
 data_recipe[shotgun].subgroup = is_shotgun
 data_recipe[shotgun].order = a
 data_recipe[shotgun].energy_required = 1
@@ -95,11 +108,14 @@ data_recipe[shotgun].ingredients =
     {type = item, name = wood, amount = 4}
 }
 
-local combat_shotgun = "combat-shotgun"
+local combat_shotgun = "combat-" .. shotgun
 data_gun[combat_shotgun].subgroup = is_shotgun
 data_gun[combat_shotgun].order = b
 data_gun[combat_shotgun].stack_size = 1
 data_gun[combat_shotgun].weight = 1000000
+data_gun[combat_shotgun].attack_parameters.range = 16
+data_gun[combat_shotgun].attack_parameters.cooldown = 15
+data_gun[combat_shotgun].attack_parameters.damage_modifier = 1
 data_recipe[combat_shotgun].subgroup = is_shotgun
 data_recipe[combat_shotgun].order = b
 data_recipe[combat_shotgun].energy_required = 1
@@ -133,8 +149,8 @@ data_recipe[piercing_shotgun_shell].energy_required = 2
 data_recipe[piercing_shotgun_shell].ingredients =
 {
     {type = item, name = shotgun_shell, amount = 2},
-    {type = item, name = copper_plate, amount = 4},
-    {type = item, name = steel_plate, amount = 2}
+    {type = item, name = aluminium_plate_bob, amount = 4},
+    {type = item, name = brass_plate_bob, amount = 2}
 }
 data_recipe[piercing_shotgun_shell].results[1].amount = 2
 
@@ -144,7 +160,7 @@ if mods[bobwarfare] then
     {
         {type = item, name = piercing_shotgun_shell, amount = 2},
         {type = item, name = uranium_238_plate, amount = 4},
-        {type = item, name = brass_plate_bob, amount = 2}
+        {type = item, name = gunmetal_plate_bob, amount = 2}
     }
     data_recipe[uranium_shotgun_shell].results[1].amount = 2
 end
@@ -155,6 +171,9 @@ if mods[bobwarfare] then
     data_gun[laser].order = a
     data_gun[laser].stack_size = 1
     data_gun[laser].weight = 1000000
+    data_gun[laser].attack_parameters.range = 32
+    data_gun[laser].attack_parameters.cooldown = 4
+    data_gun[laser].attack_parameters.damage_modifier = 1
     data_recipe[laser].subgroup = is_laser
     data_recipe[laser].order = a
     data_recipe[laser].energy_required = 1
@@ -182,18 +201,27 @@ for _, AMMO in pairs(laser_batterys) do
     if data_ammo[AMMO.name] then
         data_ammo[AMMO.name].subgroup = is_laser
         data_ammo[AMMO.name].order = AMMO.order
-        data_ammo[AMMO.name].magazine_size = 30
+        data_ammo[AMMO.name].magazine_size = 120
         data_ammo[AMMO.name].stack_size = 200
         data_recipe[AMMO.name].subgroup = is_laser
         data_recipe[AMMO.name].order = AMMO.order
         data_recipe[AMMO.name].energy_required = 1
     end
 end
+local data_beam = data.raw["beam"]
+data_beam["bob-laser-beam-glass-ammo"].action.action_delivery.target_effects[1].damage.amount = 50
+data_beam["bob-laser-beam-ruby-ammo"].action.action_delivery.target_effects[1].damage.amount = 100
+data_beam["bob-laser-beam-sapphire-ammo"].action.action_delivery.target_effects[1].damage.amount = 125
+data_beam["bob-laser-beam-emerald-ammo"].action.action_delivery.target_effects[1].damage.amount = 150
+data_beam["bob-laser-beam-amethyst-ammo"].action.action_delivery.target_effects[1].damage.amount = 175
+data_beam["bob-laser-beam-topaz-ammo"].action.action_delivery.target_effects[1].damage.amount = 200
+data_beam["bob-laser-beam-diamond-ammo"].action.action_delivery.target_effects[1].damage.amount = 250
 
 data_gun[rocket_launcher].subgroup = is_rocket
 data_gun[rocket_launcher].order = a
 data_gun[rocket_launcher].stack_size = 1
 data_gun[rocket_launcher].weight = 1000000
+data_gun[rocket_launcher].attack_parameters.range = 64
 data_recipe[rocket_launcher].subgroup = is_rocket
 data_recipe[rocket_launcher].order = a
 data_recipe[rocket_launcher].energy_required = 1
@@ -231,6 +259,33 @@ data_recipe[atomic_rocket].ingredients =
     {type = item, name = rocket_booster_angels, amount = 1},
     {type = item, name = explosives, amount = 8}
 }
+local atomic_bomb_wave = atomic_rocket .. "-wave"
+data_projectile[atomic_bomb_wave].action[1].radius = 4
+data_projectile[atomic_bomb_wave].action[1].action_delivery.target_effects.upper_distance_threshold = 64
+
+local atomic_bomb_ground_zero = atomic_rocket .. "-ground-zero-projectile"
+data_projectile[atomic_bomb_ground_zero].action[1].radius = 4
+data_projectile[atomic_bomb_ground_zero].action[1].action_delivery.target_effects.upper_distance_threshold = 64
+
+local effects = data_projectile["atomic-rocket"].action.action_delivery.target_effects
+-- Слот 1: Уничтожение скал
+if effects[1] then effects[1].radius = 16 end
+-- Слот 10: Уничтожение декораций травы/камней
+if effects[10] then effects[10].radius = 64 end
+-- Слот 12: Волна Ground Zero
+if effects[12] and effects[12].action then effects[12].action.radius = 32 end
+-- Слот 13: Основная взрывная волна
+if effects[13] and effects[13].action then effects[13].action.radius = 64 end
+-- Слот 14: Спавн кассетных ядерных взрывов
+if effects[14] and effects[14].action then effects[14].action.radius = 32 end
+-- Слот 15: Спавн огненного дыма
+if effects[15] and effects[15].action then effects[15].action.radius = 8 end
+-- Слот 16: Спавн взрывной волны nuke-shockwave
+if effects[16] and effects[16].action then effects[16].action.radius = 16 end
+-- Слот 17: Спавн ядерного гриба/дыма по площади
+if effects[17] and effects[17].action then effects[17].action.radius = 32 end
+-- Слот 18: Спавн тлеющих углей на земле
+if effects[18] and effects[18].action then effects[18].action.radius = 16 end
 
 atomic_rocket_2 = "angels-atomic-bomb"
 data_recipe[atomic_rocket_2].order = d_a
@@ -276,6 +331,8 @@ data_gun[flamethrower].subgroup = is_flame
 data_gun[flamethrower].order = a
 data_gun[flamethrower].stack_size = 1
 data_gun[flamethrower].weight = 1000000
+data_gun[flamethrower].attack_parameters.range = 16
+data_gun[flamethrower].attack_parameters.min_range = 4
 data_recipe[flamethrower].subgroup = is_flame
 data_recipe[flamethrower].order = a
 data_recipe[flamethrower].energy_required = 8
@@ -287,7 +344,7 @@ data_recipe[flamethrower].ingredients =
 
 data_ammo[flamethrower_ammo].subgroup = is_flame
 data_ammo[flamethrower_ammo].order = b
-data_ammo[flamethrower_ammo].magazine_size = 120
+data_ammo[flamethrower_ammo].magazine_size = 960
 data_ammo[flamethrower_ammo].stack_size = 200
 data_recipe[flamethrower_ammo].subgroup = is_flame
 data_recipe[flamethrower_ammo].order = b
