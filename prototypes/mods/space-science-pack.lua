@@ -40,7 +40,7 @@ if mods[space_age_science_packs] then
                 "bob-alien-science-pack-green",
                 "bob-alien-science-pack-red",
                 "bob-alien-science-pack",
-                "bob-science-pack-gold"
+                gold_science_pack_bob
             }
             for _, pack in pairs(list_bob_tech) do
                 data_item[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"

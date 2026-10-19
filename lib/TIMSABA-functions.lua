@@ -1132,7 +1132,7 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
             return false
         end
 
-        local tech = data.raw.technology[tech_name]
+        local tech = data_technology[tech_name]
         if not tech or not tech.prerequisites then
             memo[tech_name] = false
             return false
@@ -1154,6 +1154,7 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
         if tech_name ~= technology_name and leads_to_root(tech_name, {}) then
             if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
                 local has_pack = false
+                local has_gold_pack = false
                 local has_datacell = false
                 local has_science_pack = false
                 for _, ingredient in ipairs(tech.unit.ingredients) do
@@ -1167,12 +1168,17 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
                         name = tostring(name)
 
                         if name == science_pack_name then has_pack = true end
+                        if name == gold_science_pack_bob then
+                            has_gold_pack = true
+                        else
+                            if string.find(name, "%-science%-pack") then has_science_pack = true end
+                        end
                         if string.find(name, "datacell%-") then has_datacell = true end
-                        if string.find(name, "%-science%-pack") then has_science_pack = true end
                     end
                 end
+
                 local should_exclude = has_datacell and not has_science_pack
-                if not has_pack and not should_exclude then
+                if not has_pack and not should_exclude and not has_gold_pack then
                     table.insert(tech.unit.ingredients, {science_pack_name, 1})
                 end
             end
