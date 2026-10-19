@@ -156,9 +156,9 @@ TIMSABA.functions.create_recipes
         name = potassium_hydroxide_from_potassium_sulfate_solution,
         categories = {angels_petrochem_electrolyser},
         subgroup = is_potassium,
-        icons = FOUR_R_I(potassium_sulfate_solution, potassium_hydroxide, nil, sulfur_trioxide_gas),
+        icons = FOUR_R_I(potassium_sulfate_solution, sulfur_dioxide_angels, potassium_hydroxide, oxygen_angels),
         order = c_a,
-        energy_required = 8, -- K₂SO₄(aq) -electrode/electrolys-> 2KOH(s) + SO₃(g)
+        energy_required = 8, -- 2K₂SO₄(aq) -electrode/electrolys-> 4KOH(s) + 2SO₂(g) + O₂(g)
         ingredients =
         {
             {type = fluid, name = potassium_sulfate_solution, amount = 240},
@@ -167,7 +167,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = potassium_hydroxide, amount = 32},
-            {type = fluid, name = sulfur_trioxide_gas, amount = 240},
+            {type = fluid, name = sulfur_dioxide_angels, amount = 240},
+            {type = fluid, name = oxygen_angels, amount = 120},
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
