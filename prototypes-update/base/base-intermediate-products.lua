@@ -346,6 +346,7 @@ data_recipe[rtg].energy_required = 16
 data_recipe[rtg].ingredients =
 {
     {type = item, name = aluminium_plate_bob, amount = 4},
+    {type = item, name = sodium_cobaltate_bob, amount = 4},
     {type = item, name = lead_plate_bob, amount = 2},
     {type = item, name = uranium_238_plate, amount = 2},
     {type = item, name = plastic, amount = 2},
