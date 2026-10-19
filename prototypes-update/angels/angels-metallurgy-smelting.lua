@@ -1761,7 +1761,7 @@ data_recipe[tungsten_oxide_VI_2].categories = {angels_chemical_smelting_4}
 data_recipe[tungsten_oxide_VI_2].subgroup = is_tungsten_chemistry
 data_recipe[tungsten_oxide_VI_2].icons = THREE_D_I(ammonium_paratungstate, nil, nil, tungsten_oxide_VI, ammonia_angels, steam)
 data_recipe[tungsten_oxide_VI_2].order = a_a
-data_recipe[tungsten_oxide_VI_2].energy_required = 8 -- (NH₄)₁₀H₂W₁₂O₄₂ --> 12WO₃ + 10NH₃ + 6H₂O
+data_recipe[tungsten_oxide_VI_2].energy_required = 6 -- (NH₄)₁₀H₂W₁₂O₄₂ --> 12WO₃ + 10NH₃ + 6H₂O
 data_recipe[tungsten_oxide_VI_2].ingredients = {{type = item, name = ammonium_paratungstate, amount = 1}}
 data_recipe[tungsten_oxide_VI_2].results =
 {
@@ -1797,7 +1797,7 @@ data_recipe[ammonium_paratungstate].categories = {angels_advanced_chemistry}
 data_recipe[ammonium_paratungstate].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_paratungstate].icons = FOUR_D_I(tungsten_processed, carbon_angels, ammonia_angels, water_purified_angels, ammonium_paratungstate)
 data_recipe[ammonium_paratungstate].order = c
-data_recipe[ammonium_paratungstate].energy_required = 8 -- 12W(s) + 18O₂(g) + 10NH₃(g) + 6H₂O(l) --> (NH₄)₁₀H₂W₁₂O₄₂(s)
+data_recipe[ammonium_paratungstate].energy_required = 6 -- 12W(s) + 18O₂(g) + 10NH₃(g) + 6H₂O(l) --> (NH₄)₁₀H₂W₁₂O₄₂(s)
 data_recipe[ammonium_paratungstate].ingredients =
 {
     {type = item, name = tungsten_processed, amount = 12},
@@ -1811,7 +1811,7 @@ data_recipe[ammonium_paratungstate].main_product = ammonium_paratungstate
 data_recipe[ammonium_paratungstate_2].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_paratungstate_2].icons = THREE_D_I(ammonium_tungstate_solution, nil, nil, ammonium_paratungstate, steam, ammonia_angels)
 data_recipe[ammonium_paratungstate_2].order = c_a
-data_recipe[ammonium_paratungstate_2].energy_required = 8 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂(s) + 18H₂O(g) + 14NH₃(g)
+data_recipe[ammonium_paratungstate_2].energy_required = 6 -- 12(NH₄)₂WO₄(aq) --> (NH₄)₁₀H₂W₁₂O₄₂(s) + 18H₂O(g) + 14NH₃(g)
 data_recipe[ammonium_paratungstate_2].ingredients = {{type = fluid, name = ammonium_tungstate_solution, amount = 180}}
 data_recipe[ammonium_paratungstate_2].results =
 {
