@@ -723,16 +723,16 @@ if mods[hyarion_mods] then
     data_electric_turret[ruby_laser_turret].energy_source.drain = nil
     data_electric_turret[ruby_laser_turret].attack_parameters.cooldown = 60
     data_electric_turret[ruby_laser_turret].attack_parameters.damage_modifier = 16
-    data_electric_turret[ruby_laser_turret].attack_parameters.range = 44
+    data_electric_turret[ruby_laser_turret].attack_parameters.range = 88
     data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.energy_consumption = 1920 .. kJ
     local ammo = data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type
     if ammo and ammo.action and ammo.action.action_delivery then
         local delivery = ammo.action.action_delivery
-        delivery.max_length = 44
+        delivery.max_length = 88
         delivery.duration = 60
-        delivery.min_range = 8
+        delivery.min_range = 0
     end
-    data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 8
+    data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 0
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

@@ -171,7 +171,8 @@ end
 
 if mods[bobwarfare] then
     data_technology[artillery_wagon_2].localised_name = {"entity-name.artillery-wagon-2"}
-    data_technology[artillery_wagon_2].prerequisites = {tech_artillery, cryogenic_science_pack}
+    data_technology[artillery_wagon_2].prerequisites = {tech_artillery, space_science_pack}
+    data_technology[artillery_wagon_2].unit.count = 4000
     data_technology[artillery_wagon_2].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -180,17 +181,12 @@ if mods[bobwarfare] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {cryogenic_science_pack, 1}
+        {space_science_pack, 1}
     }
 
     data_technology[artillery_wagon_3].localised_name = {"entity-name.artillery-wagon-3"}
-    if mods[vesta_mods] then
-        data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, tech_gas_manipulation_science_pack}
-    else
-        data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, promethium_science_pack}
-    end
+    data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, metallurgic_science_pack}
+    data_technology[artillery_wagon_3].unit.count = 8000
     data_technology[artillery_wagon_3].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -200,8 +196,7 @@ if mods[bobwarfare] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {cryogenic_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 end
 
@@ -795,32 +790,50 @@ if mods[bobvehicleequipment] then
 end
 
 if mods[bobwarfare] then
+    data_technology[tech_gun_turret_3].prerequisites = {tech_gun_turret_2, tech_cobalt_steel_smelting_1, military_science_pack}
+    table.insert(data_technology[tech_gun_turret_3].unit.ingredients, {chemical_science_pack, 1})
+
+    data_technology[tech_gun_turret_4].prerequisites = {tech_gun_turret_3, tech_titanium_processing, tech_military_3, production_science_pack}
+    table.insert(data_technology[tech_gun_turret_4].unit.ingredients, {production_science_pack, 1})
+
+    data_technology[tech_gun_turret_5].prerequisites = {tech_gun_turret_4, tech_nitinol_processing, tech_military_4}
+    table.insert(data_technology[tech_gun_turret_5].unit.ingredients, {utility_science_pack, 1})
+
     table.insert(data_technology[laser_turret_1].prerequisites, tech_gunmetal_smelting_1)
+
     table.insert(data_technology[tech_laser_turret_2].prerequisites, tech_invar_smelting_1)
+
     table.insert(data_technology[tech_laser_turret_3].prerequisites, tech_cobalt_steel_smelting_1)
+
     table.insert(data_technology[tech_laser_turret_4].prerequisites, battery_silver_zinc)
+
     table.insert(data_technology[tech_laser_turret_5].prerequisites, tech_battery_4)
 
     table.insert(data_technology[tech_sniper_turret_1].prerequisites, tech_gunmetal_smelting_1)
-    data_technology[tech_sniper_turret_3].prerequisites = {tech_sniper_turret_2, tech_military_4, tech_titanium_processing, tech_tungsten_smelting_1}
-end
 
-data_technology[tech_artillery].prerequisites = {metallurgic_science_pack, tech_military_4}
-data_technology[tech_artillery].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {military_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1},
-    {metallurgic_science_pack, 1},
-}
+    data_technology[tech_sniper_turret_3].prerequisites = {tech_sniper_turret_2, tech_military_3, tech_tungsten_smelting_1}
+    data_technology[tech_sniper_turret_3].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1}
+    }
 
-if mods[bobwarfare] then
+    data_technology[tech_artillery].prerequisites = {tech_tungsten_processing, tech_military_4}
+    data_technology[tech_artillery].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
+
     data_technology[artillery_turret_2].localised_name = {"entity-name.artillery-turret-2"}
-    data_technology[artillery_turret_2].prerequisites = {tech_artillery, cryogenic_science_pack}
+    data_technology[artillery_turret_2].prerequisites = {tech_artillery, space_science_pack}
     data_technology[artillery_turret_2].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -829,17 +842,11 @@ if mods[bobwarfare] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {cryogenic_science_pack, 1}
+        {space_science_pack, 1}
     }
 
     data_technology[artillery_turret_3].localised_name = {"entity-name.artillery-turret-3"}
-    if mods[vesta_mods] then
-        data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, tech_gas_manipulation_science_pack}
-    else
-        data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, promethium_science_pack}
-    end
+    data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, metallurgic_science_pack}
     data_technology[artillery_turret_3].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -849,12 +856,73 @@ if mods[bobwarfare] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology["bob-atomic-artillery-shell"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
+
+    local tech_artillery_shell_damage_1 = "artillery-shell-damage-1"
+    data_technology[tech_artillery_shell_damage_1].prerequisites = {artillery_turret_4, artillery_wagon_4}
+    data_technology[tech_artillery_shell_damage_1].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
         {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+
+    local tech_artillery_shell_range_1 = "artillery-shell-range-1"
+    data_technology[tech_artillery_shell_range_1].prerequisites = {artillery_turret_4, artillery_wagon_4}
+    data_technology[tech_artillery_shell_range_1].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+
+    local tech_artillery_shell_speed_1 = "artillery-shell-speed-1"
+    data_technology[tech_artillery_shell_speed_1].prerequisites = {artillery_turret_4, artillery_wagon_4}
+    data_technology[tech_artillery_shell_speed_1].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
         {cryogenic_science_pack, 1}
     }
 
     table.insert(data_technology[tech_plasma_turret_1].prerequisites, tech_cobalt_steel_smelting_1)
-    data_technology[tech_plasma_turret_2].prerequisites = {tech_plasma_turret_1, processing_unit, tech_titanium_processing, tech_tungsten_smelting_1}
+
+    data_technology[tech_plasma_turret_2].prerequisites = {tech_plasma_turret_1, tech_tungsten_smelting_1}
 end
 
 data_technology[atomic_rocket].prerequisites = {tech_rocketry, tech_military_4, tech_deuterium_power}
@@ -867,20 +935,6 @@ data_technology[atomic_rocket].unit.ingredients =
     {production_science_pack, 1},
     {utility_science_pack, 1}
 }
-
-if mods[bobwarfare] then
-    data_technology["bob-atomic-artillery-shell"].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {military_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1}
-    }
-end
 
 data_technology[tank_1].prerequisites = {explosives, "automobilism", tech_brass_processing, tech_invar_smelting_1, tech_military_2}
 data_technology[tank_1].unit.ingredients =
