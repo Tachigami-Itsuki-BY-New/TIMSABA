@@ -389,6 +389,26 @@ data_recipe[artillery_shell].ingredients =
 }
 
 if mods[bobwarfare] then
+    local effects = data_projectile_artillery["bob-atomic-artillery-projectile"].action.action_delivery.target_effects
+    -- Слот 1: Уничтожение скал
+    if effects[1] then effects[1].radius = 16 end
+    -- Слот 10: Уничтожение декораций травы/камней
+    if effects[10] then effects[10].radius = 64 end
+    -- Слот 12: Волна Ground Zero
+    if effects[12] and effects[12].action then effects[12].action.radius = 32 end
+    -- Слот 13: Основная взрывная волна
+    if effects[13] and effects[13].action then effects[13].action.radius = 64 end
+    -- Слот 14: Спавн кассетных ядерных взрывов
+    if effects[14] and effects[14].action then effects[14].action.radius = 32 end
+    -- Слот 15: Спавн огненного дыма
+    if effects[15] and effects[15].action then effects[15].action.radius = 8 end
+    -- Слот 16: Спавн взрывной волны nuke-shockwave
+    if effects[16] and effects[16].action then effects[16].action.radius = 16 end
+    -- Слот 17: Спавн ядерного гриба/дыма по площади
+    if effects[17] and effects[17].action then effects[17].action.radius = 32 end
+    -- Слот 18: Спавн тлеющих углей на земле
+    if effects[18] and effects[18].action then effects[18].action.radius = 16 end
+
     data_ammo[atomic_artillery_shell].stack_size = 32
     data_ammo[atomic_artillery_shell].weight = 31250
     if mods[shattered_mods] then
