@@ -199,16 +199,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_thorium_chemistry,
         icons = THREE_D_I(thorium_nitrate_IV_solution, ammonia_angels, water_purified_angels, thorium_hydroxide_IV, nil, ammonium_nitrate_solution),
         order = c,
-        -- Th(NO₃)₄(aq) + 4NH₃(g) + 8H₂O(l) --> Th(OH)₄(s) + 4NH₄NO₃(aq)
+        energy_required = 8, -- Th(NO₃)₄(aq) + 4NH₃(g) + 7H₂O(l) --> Th(OH)₄(s) + 4NH₄NO₃(aq)
         ingredients =
         {
-            {type = fluid, name = thorium_nitrate_IV_solution, amount = 120},
-            {type = fluid, name = ammonia_angels, amount = 480},
-            {type = fluid, name = water_purified_angels, amount = 960}
+            {type = fluid, name = thorium_nitrate_IV_solution, amount = 240},
+            {type = fluid, name = ammonia_angels, amount = 960},
+            {type = fluid, name = water_purified_angels, amount = 1680}
         },
         results =
         {
-            {type = item, name = thorium_hydroxide_IV, amount = 8},
+            {type = item, name = thorium_hydroxide_IV, amount = 16},
             {type = fluid, name = ammonium_nitrate_solution, amount = 480} -- 960
         },
         main_product = thorium_hydroxide_IV
