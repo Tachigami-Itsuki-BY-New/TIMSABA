@@ -1168,7 +1168,7 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
                         name = tostring(name)
 
                         if name == science_pack_name then has_pack = true end
-                        if name == "bob-science-pack-gold" then has_gold_pack = true end
+                        if name == gold_science_pack_bob then has_gold_pack = true end
                         if string.find(name, "datacell%-") then has_datacell = true end
                         if string.find(name, "%-science%-pack") then has_science_pack = true end
                     end
