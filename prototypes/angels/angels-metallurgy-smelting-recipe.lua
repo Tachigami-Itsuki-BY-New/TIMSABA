@@ -614,7 +614,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_silicon_chemistry,
         icons = THREE_I(silicon_ore_bob, oxygen_angels, silicon_oxide_IV),
         order = a,
-        energy_required = 8, -- Si + O₂ --> SiO₂
+        energy_required = 8, -- Si(s) + O₂(g) --> SiO₂(s)
         ingredients =
         {
             {type = item, name = silicon_ore_bob, amount = 32},
@@ -629,7 +629,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_chloride_IV_gas, water_purified_angels, silicon_oxide_IV, hydrogen_chloride_angels),
         order = a_a,
-        energy_required = 8, -- SiCl₄ + 2H₂O -T-> SiO₂ + 4HCl
+        energy_required = 8, -- SiCl₄(g) + 2H₂O(l) --> SiO₂(s) + 4HCl(g)
         ingredients =
         {
             {type = fluid, name = silicon_chloride_IV_gas, amount = 240},
@@ -644,11 +644,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_silicon_fluoride_IV_gas,
-        categories = {angels_chemical_smelting_3},
+        categories = {angels_chemical_smelting_1},
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_fluoride_IV_gas, lime_angels, silicon_oxide_IV, fluorite_angels),
         order = a_b,
-        energy_required = 8, -- SiF₄ + 2CaO -T-> SiO₂ + 2CaF₂
+        energy_required = 8, -- SiF₄(g) + 2CaO(s) --> SiO₂(s) + 2CaF₂(s)
         ingredients =
         {
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
@@ -667,7 +667,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_silicon_chemistry,
         icons = THREE_D_I(magnesium_silicide, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
         order = d_a,
-        energy_required = 8, -- Mg₂Si + 4HCl(aq) --> 2MgCl₂(aq) + SiH₄ + 2H₂O
+        energy_required = 8, -- Mg₂Si(s) + 4HCl(aq) --> SiH₄(g) + 2MgCl₂(aq) + 2H₂O(l)
         ingredients =
         {
             {type = item, name = magnesium_silicide, amount = 16},
@@ -682,19 +682,62 @@ TIMSABA.functions.create_recipes
         main_product = silane_gas
     },
     {
+        name = silicon_fluoride_IV_gas,
+        categories = {angels_chemical_smelting_1},
+        subgroup = is_silicon_chemistry,
+        icons = TWO_D_I(metasilicic_acid, hydrofluoric_acid_angels, silicon_fluoride_IV_gas, water_purified_angels),
+        order = g,
+        energy_required = 8, -- H₂SiO₃(s) + 4HF(aq) --> SiF₄(g) + 7H₂O(l)
+        ingredients =
+        {
+            {type = item, name = metasilicic_acid, amount = 16},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 960}
+        },
+        results =
+        {
+            {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 720} -- 1680
+        },
+        main_product = silicon_fluoride_IV_gas
+    },
+    {
         name = hexafluorosilicic_acid_from_silicon_fluoride_IV_gas,
         categories = {angels_chemical_smelting_2},
         subgroup = is_silicon_chemistry,
-        icons = THREE_I(silicon_fluoride_IV_gas, hydrofluoric_acid_angels, hexafluorosilicic_acid),
+        icons = TWO_D_I(silicon_fluoride_IV_gas, hydrofluoric_acid_angels, hexafluorosilicic_acid, water_purified_angels),
         order = h_a,
-        energy_required = 8, -- SiF₄ + 2HF(aq) --> H₂SiF₆(aq)
+        energy_required = 8, -- SiF₄(g) + 2HF(aq) --> H₂SiF₆(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
             {type = fluid, name = hydrofluoric_acid_angels, amount = 480}
         },
-        results = {{type = fluid, name = hexafluorosilicic_acid, amount = 240}},
+        results =
+        {
+            {type = fluid, name = hexafluorosilicic_acid, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
         main_product = hexafluorosilicic_acid
+    },
+    {
+        name = metasilicic_acid,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_silicon_chemistry,
+        icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
+        order = j,
+        energy_required = 8, -- CaSiO₃(s) + 2HCl(aq) --> H₂SiO₃(s) + CaCl₂(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = item, name = calcium_silicate, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = metasilicic_acid, amount = 16},
+            {type = fluid, name = calcium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = metasilicic_acid
     }
 })
 
