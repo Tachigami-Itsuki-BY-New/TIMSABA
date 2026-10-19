@@ -1168,13 +1168,17 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
                         name = tostring(name)
 
                         if name == science_pack_name then has_pack = true end
-                        if name == gold_science_pack_bob then has_gold_pack = true end
+                        if name == gold_science_pack_bob then
+                            has_gold_pack = true
+                        else
+                            if string.find(name, "%-science%-pack") then has_science_pack = true end
+                        end
                         if string.find(name, "datacell%-") then has_datacell = true end
-                        if string.find(name, "%-science%-pack") then has_science_pack = true end
                     end
                 end
-                local should_exclude = (has_datacell and not has_science_pack) or has_gold_pack
-                if not has_pack and not should_exclude then
+
+                local should_exclude = has_datacell and not has_science_pack
+                if not has_pack and not should_exclude and not has_gold_pack then
                     table.insert(tech.unit.ingredients, {science_pack_name, 1})
                 end
             end
