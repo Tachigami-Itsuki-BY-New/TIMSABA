@@ -24,7 +24,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_coal,
         icons = TWO_I(coke_angels, coke_processed),
         order = e,
-        energy_required = 1, -- C --> C
+        energy_required = 4, -- C --> C
         ingredients = {{type = item, name = coke_angels, amount = 1}},
         results = {{type = item, name = coke_processed, amount = 1}},
         main_product = coke_processed

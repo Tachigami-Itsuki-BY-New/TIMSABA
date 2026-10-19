@@ -85,7 +85,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_thorium,
         icons = TWO_I(thorium_ore_bob, thorium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = thorium_ore_bob, amount = 4}},
         results = {{type = item, name = thorium_processed, amount = 4}},
         main_product = thorium_processed
@@ -96,7 +95,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_thorium,
         icons = TWO_I(thorium_processed, thorium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = thorium_processed, amount = 4}},
         results = {{type = item, name = thorium_pellet, amount = 4}},
         main_product = thorium_pellet
