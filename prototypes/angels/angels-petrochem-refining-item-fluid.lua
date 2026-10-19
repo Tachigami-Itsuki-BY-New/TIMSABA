@@ -771,6 +771,7 @@ TIMSABA.functions.create_fluids
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(hydrogen_peroxide)
+TIMSABA.barreling.add_gas(hydrogen_cyanide_gas)
 TIMSABA.barreling.add_dangerous_fluid(hydrocyanic_acid)
 TIMSABA.barreling.add_dangerous_fluid(ionic_liquid)
 
