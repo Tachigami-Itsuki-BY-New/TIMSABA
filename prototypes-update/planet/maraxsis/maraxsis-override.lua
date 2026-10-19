@@ -821,8 +821,8 @@ if mods[maraxsis_mods] then
 
     table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)
     if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_2].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[artillery_wagon_2].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[artillery_turret_4].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, hydraulic_science_pack)
     end
 
     table.insert(data_technology[tech_powellite_processing_4].prerequisites, hydraulic_science_pack)

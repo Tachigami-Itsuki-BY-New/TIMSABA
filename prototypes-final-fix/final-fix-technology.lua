@@ -103,6 +103,10 @@ data_technology[steel_plate .. _productivity].unit.ingredients =
     {metallurgic_science_pack, 1}
 }
 
+data_technology[artillery_turret_2].unit.count = 4096
+data_technology[artillery_turret_3].unit.count = 8192
+data_technology[artillery_turret_4].unit.count = 16384
+
 data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{type = "character-logistic-trash-slots", modifier = 5}}
 
 TIMSABA.functions.auto_added_science_pack(promethium_science_pack, promethium_science_pack)
