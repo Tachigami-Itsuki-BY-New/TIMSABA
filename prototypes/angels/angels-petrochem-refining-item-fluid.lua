@@ -379,6 +379,7 @@ sodium_chlorate_solution = "sodium-chlorate-solution"
 sodium_perchlorate_solution = "sodium-perchlorate-solution"
 sodium_bicarbonate_solution = "sodium-bicarbonate-solution"
 sodium_cyanide_solution = "sodium-cyanide-solution"
+sodium_iodide_solution = "sodium-iodide-solution"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -461,6 +462,15 @@ TIMSABA.functions.create_fluids
         order = j,
         base_color = TIMSABA.functions.fluid_color("NaCNWp"),
         flow_color = TIMSABA.functions.flow_color("NaCNWp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NaI[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = sodium_iodide_solution,
+        subgroup = is_sodium_fluid,
+        icon = graphics_petrochem_sodium .. sodium_iodide_solution .. ".png",
+        order = k,
+        base_color = TIMSABA.functions.fluid_color("NaIWp"),
+        flow_color = TIMSABA.functions.flow_color("NaIWp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(sodium_chloride_solution)
