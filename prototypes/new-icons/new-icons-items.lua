@@ -345,5 +345,5 @@ end
 
 -- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
-    data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
+    data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/beryllium-plate.png"
 end
