@@ -2,12 +2,12 @@ if mods[aegis_bellicos_mods] then
     discovery_aegis_outer = "discovery-aegis-outer"
     tech_space_logistic = "space-beryllium-logistic"
 
-    local graphics_beryllium_smelting_tech = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/smelting-beryllium-tech.png"
+    local graphics_beryllium_smelting_tech = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/smelting-beryllium-tech.png"
     local tech_beryllium_smelting_1 = "beryllium-smelting-1"
     local tech_beryllium_smelting_2 = "beryllium-smelting-2"
     local tech_beryllium_smelting_3 = "beryllium-smelting-3"
 
-    local graphics_beryllium_bronze_smelting_tech = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/smelting-beryllium-bronze-tech.png"
+    local graphics_beryllium_bronze_smelting_tech = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/smelting-beryllium-bronze-tech.png"
     local tech_beryllium_bronze_smelting_1 = "beryllium-bronze-smelting-1"
     local tech_beryllium_bronze_smelting_2 = "beryllium-bronze-smelting-2"
     tech_beryllium_bronze_processing = "beryllium-bronze-processing"
@@ -161,8 +161,8 @@ if mods[aegis_bellicos_mods] then
         {
             type = technology,
             name = tech_beryllium_bronze_processing,
-            icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/" .. beryllium_bronze_plate .. ".png",
-            --icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/beryllium-bronze-processing.png",
+            icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/" .. beryllium_bronze_plate .. ".png",
+            --icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/beryllium-bronze-processing.png",
             icon_size = 64,
             --icon_size = 256,
             prerequisites = {tech_beryllium_bronze_smelting_1},
