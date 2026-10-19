@@ -1435,7 +1435,7 @@ data_recipe[cobalt_ingot].results[1].amount = 16
 local cobalt_ingot_2 = "angels-ingot-cobalt-2"
 data_recipe[cobalt_ingot_2].icons = TWO_D_I(cobalt_oxide_II_III, carbon_monoxide_angels, cobalt_ingot, carbon_dioxide_angels)
 data_recipe[cobalt_ingot_2].order = d_a
-data_recipe[cobalt_ingot_2].energy_required = 8 -- Co₃O₄ + 4CO -T-> 3Co + 4CO₂
+data_recipe[cobalt_ingot_2].energy_required = 24 -- Co₃O₄(s) + 4CO(g) --> 3Co(s) + 4CO₂(g)
 data_recipe[cobalt_ingot_2].ingredients =
 {
     {type = item, name = cobalt_oxide_II_III, amount = 16},
@@ -1462,7 +1462,7 @@ data_recipe[cobalt_oxide_II_III].categories = {angels_blast_smelting_3}
 data_recipe[cobalt_oxide_II_III].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III].icons = THREE_I(cobalt_ore_bob, oxygen_angels, cobalt_oxide_II_III)
 data_recipe[cobalt_oxide_II_III].order = a
-data_recipe[cobalt_oxide_II_III].energy_required = 8 -- 3Co + 2O₂ -T-> Co₃O₄
+data_recipe[cobalt_oxide_II_III].energy_required = 24 -- 3Co(s) + 2O₂(g) --> Co₃O₄(s)
 data_recipe[cobalt_oxide_II_III].ingredients =
 {
     {type = item, name = cobalt_ore_bob, amount = 96},
@@ -1477,7 +1477,7 @@ data_recipe[cobalt_oxide_II_III_2].categories = {angels_blast_smelting_4}
 data_recipe[cobalt_oxide_II_III_2].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III_2].icons = THREE_I(cobalt_processed, oxygen_angels, cobalt_oxide_II_III)
 data_recipe[cobalt_oxide_II_III_2].order = a_a
-data_recipe[cobalt_oxide_II_III_2].energy_required = 8 -- 3Co + 2O₂ -T-> Co₃O₄
+data_recipe[cobalt_oxide_II_III_2].energy_required = 24 -- 3Co(s) + 2O₂(g) --> Co₃O₄(s)
 data_recipe[cobalt_oxide_II_III_2].ingredients =
 {
     {type = item, name = cobalt_processed, amount = 48},
@@ -1490,7 +1490,7 @@ data_recipe[cobalt_oxide_II_III_3].categories = {angels_blast_smelting_4}
 data_recipe[cobalt_oxide_II_III_3].subgroup = is_cobalt_chemistry
 data_recipe[cobalt_oxide_II_III_3].icons = TWO_D_I(cobalt_hydroxide_II, oxygen_angels, cobalt_oxide_II_III, steam)
 data_recipe[cobalt_oxide_II_III_3].order = a_b
-data_recipe[cobalt_oxide_II_III_3].energy_required = 8 -- 6Co(OH)₂ + O₂ -T-> 2Co₃O₄ + 6H₂O
+data_recipe[cobalt_oxide_II_III_3].energy_required = 24 -- 6Co(OH)₂(s) + O₂(g) --> 2Co₃O₄(s) + 6H₂O(g)
 data_recipe[cobalt_oxide_II_III_3].ingredients =
 {
     {type = item, name = cobalt_hydroxide_II, amount = 48},
