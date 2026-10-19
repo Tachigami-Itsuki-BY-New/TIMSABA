@@ -3513,3 +3513,36 @@ do
 		::continue::
 	end
 end
+
+if mods[bobwarfare] then
+	local inputs =
+	{
+		type = "artillery-wagon",
+		icon_name = "artillery-wagon",
+		base_entity_name = "artillery-wagon",
+		mod = bobs_mod,
+		group = "warfare",
+		particles = {[big] = 4}
+	}
+
+	local tier_map = {[artillery_wagon_4] = { tier = 4, prog_tier = 6}}
+
+	for name, map in pairs(tier_map) do
+		---@type data.ArtilleryWagonPrototype
+		local entity = data.raw[inputs.type][name]
+		if not entity then
+			goto continue
+		end
+
+		local tier = reskins.lib.tiers.get_tier(map)
+		inputs.tint = reskins.lib.tiers.get_tint(tier)
+
+		reskins.lib.setup_standard_entity(name, tier, inputs)
+
+		-- TODO: Reskin remnants?
+
+		-- TODO: Reskin entity?
+
+		::continue::
+	end
+end

@@ -254,7 +254,7 @@ data_recipe[atomic_rocket].icons = R_P_I(atomic_rocket, uranium_235, nil, number
 data_recipe[atomic_rocket].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = uranium_235, amount = 16},
+    {type = item, name = uranium_235, amount = 32},
     {type = item, name = uranium_238_plate, amount = 32},
     {type = item, name = rocket_booster_angels, amount = 1},
     {type = item, name = explosives, amount = 8}
@@ -295,7 +295,7 @@ if mods[shattered_mods] then
     data_recipe[atomic_rocket_2].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 8},
-        {type = item, name = plutonium_239_shattered, amount = 32},
+        {type = item, name = plutonium_239_shattered, amount = 16},
         {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = rocket_booster_angels, amount = 1},
         {type = item, name = explosives, amount = 8}
@@ -305,7 +305,7 @@ else
     data_recipe[atomic_rocket_2].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 8},
-        {type = item, name = plutonium_239_bob, amount = 32},
+        {type = item, name = plutonium_239_bob, amount = 16},
         {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = rocket_booster_angels, amount = 1},
         {type = item, name = explosives, amount = 8}
@@ -385,7 +385,7 @@ data_recipe[artillery_shell].ingredients =
     {type = item, name = explosive_cannon_shell, amount = 4},
     {type = item, name = tungsten_plate_bob, amount = 4},
     {type = item, name = explosives, amount = 8},
-    {type = item, name = calcite, amount = 1}
+    {type = item, name = limestone_angels, amount = 4}
 }
 
 if mods[bobwarfare] then
@@ -400,10 +400,10 @@ if mods[bobwarfare] then
     data_recipe[atomic_artillery_shell].ingredients =
     {
         {type = item, name = artillery_shell, amount = 1},
-        {type = item, name = plutonium_239_bob, amount = 32},
+        {type = item, name = plutonium_239_bob, amount = 16},
         {type = item, name = uranium_238_plate, amount = 32},
         {type = item, name = tungsten_carbide_plate_bob, amount = 4},
-        {type = item, name = calcite, amount = 1}
+        {type = item, name = limestone_angels, amount = 4}
     }
 end
 
@@ -411,39 +411,26 @@ local is_ammo_parts = "bob-ammo-parts"
 if mods[bobwarfare] then
     data_item_subgroup[is_ammo_parts].group = "combat"
     data_item_subgroup[is_ammo_parts].order = b_a
-end
 
-local petroleum_jelly = "bob-petroleum-jelly"
-local gun_cotton = "bob-gun-cotton"
-local cordite = "bob-cordite"
-local bullet_casing = "bob-bullet-casing"
-local magazine = "bob-magazine"
-local shotgun_shell_casing = "bob-shotgun-shell-casing"
-shotgun_pellets = "bob-shot"
-local laser_case = "bob-laser-rifle-battery-case"
-local rocket_engine = "bob-rocket-engine"
-local rocket_body = "bob-rocket-body"
-local ammo_parts =
-{
-    {name = petroleum_jelly,      order = a},
-    {name = gun_cotton,           order = b},
-    {name = cordite,              order = c},
-    {name = bullet_casing,        order = d},
-    {name = magazine,             order = e},
-    {name = shotgun_shell_casing, order = f},
-    {name = shotgun_pellets,      order = g},
-    {name = laser_case,           order = h},
-    {name = rocket_engine,        order = i},
-    {name = rocket_body,          order = j}
-}
-for _, ITEM in pairs(ammo_parts) do
-    if data_item[ITEM.name] then
+    local ammo_parts =
+    {
+        {name = petroleum_jelly,      order = a},
+        {name = gun_cotton,           order = b},
+        {name = cordite,              order = c},
+        {name = bullet_casing,        order = d},
+        {name = magazine,             order = e},
+        {name = shotgun_shell_casing, order = f},
+        {name = shotgun_pellets,      order = g},
+        {name = laser_case,           order = h},
+        {name = rocket_engine,        order = i},
+        {name = rocket_body,          order = j}
+    }
+    for _, ITEM in pairs(ammo_parts) do
         data_item[ITEM.name].order = ITEM.order
         data_item[ITEM.name].stack_size = 200
         data_recipe[ITEM.name].order = ITEM.order
     end
-end
-if mods[bobwarfare] then
+
     data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
     data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
     data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CnH2n+2 + nH₂O (n = 32) petroleum_jelly (18-35)
@@ -498,29 +485,19 @@ if mods[bobwarfare] then
     table.insert(data_recipe[rocket_engine].ingredients, {type = item, name = engine_unit, amount = 1})
 
     data_recipe[rocket_body].ingredients[3].amount = 15
-end
 
-local bullet_projectile = "bob-bullet-projectile"
-local bullet_flame_projectile = "bob-flame-bullet-projectile"
-local bullet_he_projectile = "bob-he-bullet-projectile"
-local bullet_electric_projectile = "bob-electric-bullet-projectile"
-local bullet_ap_projectile = "bob-ap-bullet-projectile"
-local bullet_acid_projectile = "bob-acid-bullet-projectile"
-local bullet_poison_projectile = "bob-poison-bullet-projectile"
-local bullet_plasma_projectile = "bob-plasma-bullet-projectile"
-local bullet_projectiles =
-{
-    {name = bullet_projectile,          order = a},
-    {name = bullet_flame_projectile,    order = b},
-    {name = bullet_he_projectile,       order = c},
-    {name = bullet_electric_projectile, order = d},
-    {name = bullet_ap_projectile,       order = e},
-    {name = bullet_acid_projectile,     order = f},
-    {name = bullet_poison_projectile,   order = g},
-    {name = bullet_plasma_projectile,   order = h},
-}
-for _, ITEM in pairs(bullet_projectiles) do
-    if data_item[ITEM.name] then
+    local bullet_projectiles =
+    {
+        {name = bullet_projectile,          order = a},
+        {name = bullet_flame_projectile,    order = b},
+        {name = bullet_he_projectile,       order = c},
+        {name = bullet_electric_projectile, order = d},
+        {name = bullet_ap_projectile,       order = e},
+        {name = bullet_acid_projectile,     order = f},
+        {name = bullet_poison_projectile,   order = g},
+        {name = bullet_plasma_projectile,   order = h},
+    }
+    for _, ITEM in pairs(bullet_projectiles) do
         data_item[ITEM.name].subgroup = is_bullet_projectile
         data_item[ITEM.name].order = ITEM.order
         data_item[ITEM.name].stack_size = 200
@@ -532,36 +509,25 @@ for _, ITEM in pairs(bullet_projectiles) do
         end
         data_recipe[ITEM.name].results[1].amount = 2
     end
-end
-if mods[bobwarfare] then
+
     data_recipe[bullet_plasma_projectile].ingredients =
     {
         {type = item, name = copper_plate, amount = 1},
         {type = fluid, name = deuterium_angels, amount = 15}
     }
-end
 
-local bullet = "bob-bullet"
-local bullet_flame = "bob-flame-bullet"
-local bullet_he = "bob-he-bullet"
-local bullet_electric = "bob-electric-bullet"
-local bullet_ap = "bob-ap-bullet"
-local bullet_acid = "bob-acid-bullet"
-local bullet_poison = "bob-poison-bullet"
-local bullet_plasma = "bob-plasma-bullet"
-local bullets =
-{
-    {name = bullet,          order = a},
-    {name = bullet_flame,    order = b},
-    {name = bullet_he,       order = c},
-    {name = bullet_electric, order = d},
-    {name = bullet_ap,       order = e},
-    {name = bullet_acid,     order = f},
-    {name = bullet_poison,   order = g},
-    {name = bullet_plasma,   order = h}
-}
-for _, ITEM in pairs(bullets) do
-    if data_item[ITEM.name] then
+    local bullets =
+    {
+        {name = bullet,          order = a},
+        {name = bullet_flame,    order = b},
+        {name = bullet_he,       order = c},
+        {name = bullet_electric, order = d},
+        {name = bullet_ap,       order = e},
+        {name = bullet_acid,     order = f},
+        {name = bullet_poison,   order = g},
+        {name = bullet_plasma,   order = h}
+    }
+    for _, ITEM in pairs(bullets) do
         data_item[ITEM.name].subgroup = is_bullet
         data_item[ITEM.name].order = ITEM.order
         data_item[ITEM.name].stack_size = 200
@@ -569,21 +535,19 @@ for _, ITEM in pairs(bullets) do
         data_recipe[ITEM.name].order = ITEM.order
         data_recipe[ITEM.name].energy_required = 1
     end
-end
 
-local ammo_magazines =
-{
-    {name = magazine_ammo,     order = a},
-    {name = magazine_flame,    order = b},
-    {name = magazine_he,       order = c},
-    {name = magazine_electric, order = d},
-    {name = magazine_ap,       order = e},
-    {name = magazine_acid,     order = f},
-    {name = magazine_poison,   order = g},
-    {name = magazine_plasma,   order = h}
-}
-for _, AMMO in pairs(ammo_magazines) do
-    if data_ammo[AMMO.name] then
+    local ammo_magazines =
+    {
+        {name = magazine_ammo,     order = a},
+        {name = magazine_flame,    order = b},
+        {name = magazine_he,       order = c},
+        {name = magazine_electric, order = d},
+        {name = magazine_ap,       order = e},
+        {name = magazine_acid,     order = f},
+        {name = magazine_poison,   order = g},
+        {name = magazine_plasma,   order = h}
+    }
+    for _, AMMO in pairs(ammo_magazines) do
         data_ammo[AMMO.name].subgroup = is_ammo_magazine
         data_ammo[AMMO.name].order = AMMO.order
         data_ammo[AMMO.name].magazine_size = 60
@@ -593,21 +557,19 @@ for _, AMMO in pairs(ammo_magazines) do
         data_recipe[AMMO.name].energy_required = 8
         data_recipe[AMMO.name].ingredients[1].amount = 32
     end
-end
 
-local ammo_shotguns =
-{
-    {name = shotgun_shell_better,    order = a},
-    {name = shotgun_shell_flame,     order = b},
-    {name = shotgun_shell_explosive, order = c},
-    {name = shotgun_shell_electric,  order = d},
-    {name = shotgun_shell_ap,        order = e},
-    {name = shotgun_shell_acid,      order = f},
-    {name = shotgun_shell_poison,    order = g},
-    {name = shotgun_shell_plasma,    order = h}
-}
-for _, AMMO in pairs(ammo_shotguns) do
-    if data_ammo[AMMO.name] then
+    local ammo_shotguns =
+    {
+        {name = shotgun_shell_better,    order = a},
+        {name = shotgun_shell_flame,     order = b},
+        {name = shotgun_shell_explosive, order = c},
+        {name = shotgun_shell_electric,  order = d},
+        {name = shotgun_shell_ap,        order = e},
+        {name = shotgun_shell_acid,      order = f},
+        {name = shotgun_shell_poison,    order = g},
+        {name = shotgun_shell_plasma,    order = h}
+    }
+    for _, AMMO in pairs(ammo_shotguns) do
         data_ammo[AMMO.name].subgroup = is_ammo_shotgun
         data_ammo[AMMO.name].order = AMMO.order
         data_ammo[AMMO.name].magazine_size = 60
@@ -615,47 +577,44 @@ for _, AMMO in pairs(ammo_shotguns) do
         data_recipe[AMMO.name].subgroup = is_ammo_shotgun
         data_recipe[AMMO.name].order = AMMO.order
         data_recipe[AMMO.name].energy_required = 8
-        data_recipe[AMMO.name].ingredients[1].amount = 32
-        data_recipe[AMMO.name].ingredients[2].amount = 32
-        if data_recipe[AMMO.name].ingredients[3].type == item then
-            data_recipe[AMMO.name].ingredients[3].amount = 16
-        end
-        if data_recipe[AMMO.name].ingredients[3].type == fluid then
-            data_recipe[AMMO.name].ingredients[3].amount = 240
+        if AMMO.name ~= shotgun_shell_better then
+            data_recipe[AMMO.name].ingredients[1].amount = 32
+            data_recipe[AMMO.name].ingredients[2].amount = 32
+            if data_recipe[AMMO.name].ingredients[3].type == item then
+                data_recipe[AMMO.name].ingredients[3].amount = 16
+            end
+            if data_recipe[AMMO.name].ingredients[3].type == fluid then
+                data_recipe[AMMO.name].ingredients[3].amount = 240
+            end
+        elseif AMMO.name == shotgun_shell_better then
+            data_recipe[AMMO.name].ingredients =
+            {
+                {type = item, name = cordite, amount = 32},
+                {type = item, name = shotgun_shell_casing, amount = 32},
+                {type = item, name = shotgun_pellets, amount = 16}
+            }
         end
         data_recipe[AMMO.name].results[1].amount = 1
     end
-end
-if mods[bobwarfare] then
     data_recipe[shotgun_shell_plasma].ingredients =
     {
         {type = item, name = cordite, amount = 32},
         {type = item, name = shotgun_shell_casing, amount = 32},
         {type = fluid, name = deuterium_angels, amount = 240}
     }
-end
 
-local rocket_warhead = "bob-rocket-warhead"
-local rocket_flame_warhead = "bob-flame-rocket-warhead"
-local rocket_explosive_warhead = "bob-explosive-rocket-warhead"
-local rocket_electric_warhead = "bob-electric-rocket-warhead"
-local rocket_piercing_warhead = "bob-piercing-rocket-warhead"
-local rocket_acid_warhead = "bob-acid-rocket-warhead"
-local rocket_poison_warhead = "bob-poison-rocket-warhead"
-local rocket_plasma_warhead = "bob-plasma-rocket-warhead"
-local rocket_warheads =
-{
-    {name = rocket_warhead,           order = a},
-    {name = rocket_flame_warhead,     order = b},
-    {name = rocket_explosive_warhead, order = c},
-    {name = rocket_electric_warhead,  order = d},
-    {name = rocket_piercing_warhead,  order = e},
-    {name = rocket_acid_warhead,      order = f},
-    {name = rocket_poison_warhead,    order = g},
-    {name = rocket_plasma_warhead,    order = h},
-}
-for _, ITEM in pairs(rocket_warheads) do
-    if data_item[ITEM.name] then
+    local rocket_warheads =
+    {
+        {name = rocket_warhead,           order = a},
+        {name = rocket_flame_warhead,     order = b},
+        {name = rocket_explosive_warhead, order = c},
+        {name = rocket_electric_warhead,  order = d},
+        {name = rocket_piercing_warhead,  order = e},
+        {name = rocket_acid_warhead,      order = f},
+        {name = rocket_poison_warhead,    order = g},
+        {name = rocket_plasma_warhead,    order = h},
+    }
+    for _, ITEM in pairs(rocket_warheads) do
         data_item[ITEM.name].subgroup = is_rocket_warhead
         data_item[ITEM.name].order = ITEM.order
         data_item[ITEM.name].stack_size = 200
@@ -670,34 +629,33 @@ for _, ITEM in pairs(rocket_warheads) do
         end
         data_recipe[ITEM.name].results[1].amount = 1
     end
-end
-if mods[bobwarfare] then
+
     data_recipe[rocket_plasma_warhead].ingredients =
     {
         {type = item, name = steel_plate, amount = 1},
         {type = fluid, name = deuterium_angels, amount = 60}
     }
-end
 
-local ammo_rockets =
-{
-    {name = rocket_bob,       order = a},
-    {name = rocket_flame,     order = b},
-    {name = rocket_explosive, order = c},
-    {name = rocket_electric,  order = d},
-    {name = rocket_piercing,  order = e},
-    {name = rocket_acid,      order = f},
-    {name = rocket_poison,    order = g},
-    {name = rocket_plasma,    order = h},
-}
-for _, AMMO in pairs(ammo_rockets) do
-    if data_ammo[AMMO.name] then
-        data_ammo[AMMO.name].subgroup = is_ammo_rocket
-        data_ammo[AMMO.name].order = AMMO.order
-        data_ammo[AMMO.name].stack_size = 200
-        data_recipe[AMMO.name].subgroup = is_ammo_rocket
-        data_recipe[AMMO.name].order = AMMO.order
-        data_recipe[AMMO.name].energy_required = 1
+    local ammo_rockets =
+    {
+        {name = rocket_bob,       order = a},
+        {name = rocket_flame,     order = b},
+        {name = rocket_explosive, order = c},
+        {name = rocket_electric,  order = d},
+        {name = rocket_piercing,  order = e},
+        {name = rocket_acid,      order = f},
+        {name = rocket_poison,    order = g},
+        {name = rocket_plasma,    order = h},
+    }
+    for _, AMMO in pairs(ammo_rockets) do
+        if data_ammo[AMMO.name] then
+            data_ammo[AMMO.name].subgroup = is_ammo_rocket
+            data_ammo[AMMO.name].order = AMMO.order
+            data_ammo[AMMO.name].stack_size = 200
+            data_recipe[AMMO.name].subgroup = is_ammo_rocket
+            data_recipe[AMMO.name].order = AMMO.order
+            data_recipe[AMMO.name].energy_required = 1
+        end
     end
 end
 
