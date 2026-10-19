@@ -1661,12 +1661,12 @@ end
 
 local laser_defenses_eq =
 {
-    {name = laser_defense_eq_1, energy_consumption = 120, damage_modifier = 1, cooldown = 60, range = 16},
-    {name = laser_defense_eq_2, energy_consumption = 240, damage_modifier = 2, cooldown = 60, range = 20},
-    {name = laser_defense_eq_3, energy_consumption = 360, damage_modifier = 3, cooldown = 60, range = 24},
-    {name = laser_defense_eq_4, energy_consumption = 480, damage_modifier = 4, cooldown = 60, range = 28},
-    {name = laser_defense_eq_5, energy_consumption = 600, damage_modifier = 5, cooldown = 60, range = 32},
-    {name = laser_defense_eq_6, energy_consumption = 720, damage_modifier = 6, cooldown = 60, range = 36}
+    {name = laser_defense_eq_1, energy_consumption = 120, damage_modifier = 1, cooldown = 60, range = 32},
+    {name = laser_defense_eq_2, energy_consumption = 240, damage_modifier = 2, cooldown = 60, range = 40},
+    {name = laser_defense_eq_3, energy_consumption = 360, damage_modifier = 3, cooldown = 60, range = 48},
+    {name = laser_defense_eq_4, energy_consumption = 480, damage_modifier = 4, cooldown = 60, range = 56},
+    {name = laser_defense_eq_5, energy_consumption = 600, damage_modifier = 5, cooldown = 60, range = 64},
+    {name = laser_defense_eq_6, energy_consumption = 720, damage_modifier = 6, cooldown = 60, range = 72}
 }
 for _, EQUIPMENT in pairs(laser_defenses_eq) do
     if data_item[EQUIPMENT.name] then
@@ -1681,11 +1681,9 @@ for _, EQUIPMENT in pairs(laser_defenses_eq) do
         data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
         data_active_defense_eq[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
         data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
-        local action = data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action
-        local target = action[1] or action
-        if target and target.action_delivery and target.action_delivery.beam then
-            target.action_delivery.max_length = EQUIPMENT.range
-            target.action_delivery.duration = EQUIPMENT.cooldown
+        if EQUIPMENT.name ~= laser_defense_eq_1 then
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action[1].action_delivery.max_length = EQUIPMENT.range
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action[1].action_delivery.duration = EQUIPMENT.cooldown
         end
     end
 end
