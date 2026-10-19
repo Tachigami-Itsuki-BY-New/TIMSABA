@@ -142,9 +142,9 @@ if mods[corrundum_mods] then
     data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
     data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
     data_recipe[platinum_plate_mods].order = b
-    data_recipe[platinum_plate_mods].energy_required = 1
-    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
-    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
+    data_recipe[platinum_plate_mods].energy_required = 4
+    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 16}}
+    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 16}}
     data_recipe[platinum_plate_mods].main_product = platinum_plate
     data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
