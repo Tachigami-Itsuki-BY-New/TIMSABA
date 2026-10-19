@@ -1484,7 +1484,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_platinum,
         icons = TWO_I(platinum_ore_angels, platinum_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = platinum_ore_angels, amount = 4}},
         results = {{type = item, name = platinum_processed, amount = 4}},
         main_product = platinum_processed
@@ -1495,7 +1494,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_platinum,
         icons = TWO_I(platinum_processed, platinum_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = platinum_processed, amount = 4}},
         results = {{type = item, name = platinum_pellet, amount = 4}},
         main_product = platinum_pellet

@@ -134,7 +134,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_holmium,
         icons = TWO_I(holmium_ore, holmium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = holmium_ore, amount = 4}},
         results = {{type = item, name = holmium_processed, amount = 4}},
         main_product = holmium_processed
@@ -145,7 +144,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_holmium,
         icons = TWO_I(holmium_processed, holmium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = holmium_processed, amount = 2}},
         results = {{type = item, name = holmium_pellet, amount = 2}},
         main_product = holmium_pellet
