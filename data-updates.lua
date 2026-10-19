@@ -13,6 +13,8 @@ for _, proto_name in ipairs(prototypes) do
     end
 end
 
+require("prototypes-update.base.base-update-icon-building")
+require("prototypes-update.base.base-update-icon-technology")
 require("prototypes-update.angels.angels-update-icon-building")
 require("prototypes-update.angels.angels-update-icon-technology")
 require("prototypes-update.bobs.bobs-update-icon-building")

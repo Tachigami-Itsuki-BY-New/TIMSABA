@@ -294,8 +294,8 @@ if mods[secretas_frozeta_mods] then
 
     table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
     if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
-        table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
+        table.insert(data_technology[artillery_turret_4].prerequisites, golden_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, golden_science_pack)
     end
 
     table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)

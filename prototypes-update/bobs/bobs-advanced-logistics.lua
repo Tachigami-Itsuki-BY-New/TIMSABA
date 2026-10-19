@@ -247,7 +247,7 @@ for _, TRANSPORT in pairs(artillery_wagons) do
         data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
     end
 end
-local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artillery_wagon, plate)
+local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, plate, artillery_wagon)
     if not data_recipe[name] then return end
 
     data_recipe[name].ingredients =
@@ -255,13 +255,13 @@ local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artill
         {type = item, name = gear_wheel,      amount = 16},
         {type = item, name = bearing,         amount = 8},
         {type = item, name = circuit,         amount = 32},
-        {type = item, name = artillery_wagon, amount = 1},
-        {type = item, name = plate,           amount = 32}
+        {type = item, name = plate,           amount = 32},
+        {type = item, name = artillery_wagon, amount = 1}
     }
 end
-artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel,             copper_tungsten_bearing, advanced_processing_unit, artillery_turret_1, copper_tungsten_plate_bob)
-artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel,                  rhenium_bearing,         advanced_processing_unit, artillery_wagon_1,  molybdenum_rhenium_plate)
-artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing,    advanced_processing_unit, artillery_wagon_2,  niobium_tungsten_molybdenum_plate)
+artillery_wagon_recipe(artillery_wagon_1,        tungsten_gear_wheel,        tungsten_bearing,          processing_unit,           tungsten_plate_bob, artillery_turret_1)
+artillery_wagon_recipe(artillery_wagon_2, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit,    copper_tungsten_plate_bob, artillery_wagon_1)
+artillery_wagon_recipe(artillery_wagon_3,      molybdenum_gear_wheel,         rhenium_bearing, advanced_processing_unit, molybdenum_rhenium_plate,     artillery_wagon_2)
 
 local lignumobile = "lignumobile"
 if mods[lignumis_mods] then
