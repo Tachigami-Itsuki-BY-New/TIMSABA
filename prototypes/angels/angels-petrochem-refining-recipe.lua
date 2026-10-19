@@ -1227,7 +1227,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_calcium,
         icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
         order = e,
-        energy_required = 4, -- CaO + 3C --> CaC₂ + CO 
+        energy_required = 4, -- CaO(s) + 3C(s) --> CaC₂(s) + CO(g) 
         ingredients =
         {
             {type = item, name = lime_angels, amount = 4},
