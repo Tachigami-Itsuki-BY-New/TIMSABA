@@ -266,13 +266,13 @@ TIMSABA.functions.create_recipes
         name = niobium_powder,
         categories = {angels_blast_smelting_4},
         subgroup = is_niobium,
-        icons = TWO_D_I(niobium_oxide_V, aluminium_ingot, niobium_powder, aluminium_oxide),
+        icons = TWO_D_I(niobium_oxide_V, aluminium_powder, niobium_powder, aluminium_oxide),
         order = d,
         energy_required = 8, -- 3Nb₂O₅(s) + 10Al(s) --> 6Nb(s) + 5Al₂O₃(s)
         ingredients =
         {
             {type = item, name = niobium_oxide_V, amount = 12},
-            {type = item, name = aluminium_ingot, amount = 40}
+            {type = item, name = aluminium_powder, amount = 40}
         },
         results =
         {
@@ -374,18 +374,18 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(niobium_pellet, nitric_acid_angels, hydrofluoric_acid_angels, heptafluoroniobic_acid, nitrogen_monoxide_angels, water_purified_angels),
         order = c,
-        -- Nb(pellet) + 2HNO₃(l) + 7HF(aq) --> HNbF₇(aq) + 2NO(g) + 4H₂O(l) + 6H₂O(l)
+        energy_required = 8, -- Nb(pellet) + 2HNO₃(l) + 7HF(aq) --> HNbF₇(aq) + 2NO(g) + 4H₂O(l) + 6H₂O(l)
         ingredients =
         {
-            {type = item, name = niobium_pellet, amount = 4},
-            {type = fluid, name = nitric_acid_angels, amount = 240},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 840}
+            {type = item, name = niobium_pellet, amount = 8},
+            {type = fluid, name = nitric_acid_angels, amount = 480},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 1680}
         },
         results =
         {
-            {type = fluid, name = heptafluoroniobic_acid, amount = 120},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 600} -- 1200
+            {type = fluid, name = heptafluoroniobic_acid, amount = 240},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 480} -- 1440
         },
         main_product = heptafluoroniobic_acid
     },
@@ -395,17 +395,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(heptafluoroniobic_acid, ammonia_solution, water_purified_angels, niobium_hydroxide_V, nil, ammonium_fluoride_solution),
         order = d,
-        -- HNbF₇(aq) + 7NH₃(aq) + 4H₂O(l) --> Nb(OH)₅(s) + 7NH₄F(aq)
+        energy_required = 8, -- HNbF₇(aq) + 7NH₃(aq) + 4H₂O(l) --> Nb(OH)₅(s) + 7NH₄F(aq)
         ingredients =
         {
-            {type = fluid, name = heptafluoroniobic_acid, amount = 120},
-            {type = fluid, name = ammonia_solution, amount = 840},
-            {type = fluid, name = water_purified_angels, amount = 480}
+            {type = fluid, name = heptafluoroniobic_acid, amount = 240},
+            {type = fluid, name = ammonia_solution, amount = 1680},
+            {type = fluid, name = water_purified_angels, amount = 960}
         },
         results =
         {
-            {type = item, name = niobium_hydroxide_V, amount = 8},
-            {type = fluid, name = ammonium_fluoride_solution, amount = 360} -- 840
+            {type = item, name = niobium_hydroxide_V, amount = 16},
+            {type = fluid, name = ammonium_fluoride_solution, amount = 720} -- 1680
         },
         main_product = niobium_hydroxide_V
     },
