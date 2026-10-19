@@ -82,14 +82,16 @@ require("prototypes.space-age.space-age-resource")
 require("prototypes.space-age.space-age-entities")
 
 require("prototypes.base.base-recipe")
-require("prototypes.bobs.bobs-building")
+require("prototypes.base.base-combat")
 require("prototypes.bobs.bobs-recipe")
+require("prototypes.bobs.bobs-building")
+require("prototypes.bobs.bobs-advanced-logistics")
 require("prototypes.angels.angels-recipe")
 require("prototypes.angels.angels-building")
 require("prototypes.space-age.space-age-recipe")
 
 require("prototypes.TIMSABA.technology")
--- base
+require("prototypes.base.base-technology")
 require("prototypes.bobs.bobs-technology")
 require("prototypes.angels.angels-technology")
 require("prototypes.bobs-angels-technology")
