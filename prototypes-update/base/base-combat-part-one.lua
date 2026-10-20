@@ -249,6 +249,15 @@ for _, AMMO in pairs(rockets) do
 end
 data_ammo[atomic_rocket].stack_size = 32
 data_ammo[atomic_rocket].weight = 31250
+data_ammo[atomic_rocket].ammo_type.action.action_delivery =
+{
+    type = "artillery",
+    projectile = "bob-atomic-artillery-projectile",
+    starting_speed = 1,
+    direction_deviation = 0,
+    range_deviation = 0,
+    source_effects = {type = "create-explosion", entity_name = "artillery-cannon-muzzle-flash"}
+}
 data_recipe[atomic_rocket].energy_required = 64
 data_recipe[atomic_rocket].icons = R_P_I(atomic_rocket, uranium_235, nil, number_1)
 data_recipe[atomic_rocket].ingredients =
@@ -266,26 +275,6 @@ data_projectile[atomic_bomb_wave].action[1].action_delivery.target_effects.upper
 local atomic_bomb_ground_zero = atomic_rocket .. "-ground-zero-projectile"
 data_projectile[atomic_bomb_ground_zero].action[1].radius = 4
 data_projectile[atomic_bomb_ground_zero].action[1].action_delivery.target_effects.upper_distance_threshold = 64
-
-local effects = data_projectile["atomic-rocket"].action.action_delivery.target_effects
--- Слот 1: Уничтожение скал
-if effects[1] then effects[1].radius = 16 end
--- Слот 10: Уничтожение декораций травы/камней
-if effects[10] then effects[10].radius = 64 end
--- Слот 12: Волна Ground Zero
-if effects[12] and effects[12].action then effects[12].action.radius = 32 end
--- Слот 13: Основная взрывная волна
-if effects[13] and effects[13].action then effects[13].action.radius = 64 end
--- Слот 14: Спавн кассетных ядерных взрывов
-if effects[14] and effects[14].action then effects[14].action.radius = 32 end
--- Слот 15: Спавн огненного дыма
-if effects[15] and effects[15].action then effects[15].action.radius = 8 end
--- Слот 16: Спавн взрывной волны nuke-shockwave
-if effects[16] and effects[16].action then effects[16].action.radius = 16 end
--- Слот 17: Спавн ядерного гриба/дыма по площади
-if effects[17] and effects[17].action then effects[17].action.radius = 32 end
--- Слот 18: Спавн тлеющих углей на земле
-if effects[18] and effects[18].action then effects[18].action.radius = 16 end
 
 atomic_rocket_2 = "angels-atomic-bomb"
 data_recipe[atomic_rocket_2].order = d_a
@@ -401,13 +390,13 @@ if mods[bobwarfare] then
     -- Слот 14: Спавн кассетных ядерных взрывов
     if effects[14] and effects[14].action then effects[14].action.radius = 32 end
     -- Слот 15: Спавн огненного дыма
-    if effects[15] and effects[15].action then effects[15].action.radius = 8 end
+    if effects[15] and effects[15].action then effects[15].action.radius = 16 end
     -- Слот 16: Спавн взрывной волны nuke-shockwave
-    if effects[16] and effects[16].action then effects[16].action.radius = 16 end
+    if effects[16] and effects[16].action then effects[16].action.radius = 32 end
     -- Слот 17: Спавн ядерного гриба/дыма по площади
     if effects[17] and effects[17].action then effects[17].action.radius = 32 end
     -- Слот 18: Спавн тлеющих углей на земле
-    if effects[18] and effects[18].action then effects[18].action.radius = 16 end
+    if effects[18] and effects[18].action then effects[18].action.radius = 32 end
 
     data_ammo[atomic_artillery_shell].stack_size = 32
     data_ammo[atomic_artillery_shell].weight = 31250
