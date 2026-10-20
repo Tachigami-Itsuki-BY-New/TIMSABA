@@ -152,7 +152,7 @@ TIMSABA.functions.create_recipes
         name = graphene_oxide,
         categories = {chemistry},
         subgroup = is_coal,
-        icons = THREE_D_I(graphite_plate, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate_II_solution, potassium_sulfate_solution),
+        icons = THREE_D_I(graphite_plate, potassium_permanganate, sulfuric_acid_angels, graphene_oxide, manganese_sulfate_II_solution, potassium_sulfate_solution),
         order = n,
         allow_quality = true,
         -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
@@ -160,7 +160,7 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = graphite_plate, amount = 8},
             {type = item, name = potassium_permanganate, amount = 4},
-            {type = fluid, name = sulfuric_acid, amount = 90}
+            {type = fluid, name = sulfuric_acid_angels, amount = 90}
         },
         results =
         {
@@ -992,6 +992,7 @@ TIMSABA.functions.create_recipes
 -- SULFUR
 sulfur_trioxide_separation = "sulfur-trioxide-separation"
 sulfuric_acid_from_hydrogen_peroxide = "sulfuric-acid-from-hydrogen-peroxide"
+sulfuric_acid_decomposition = "sulfuric-acid-decomposition"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -1000,7 +1001,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_sulfur_fluids,
         icons = THREE_R_I(sulfur_trioxide_gas, sulfur_dioxide_angels, oxygen_angels),
         order = d_b,
-        -- 2SO₃ -cat-> 2SO₂ + O₂
+        -- 2SO₃(g) -cat-> 2SO₂(g) + O₂(g)
         ingredients =
         {
             {type = fluid, name = sulfur_trioxide_gas, amount = 120},
@@ -1021,13 +1022,13 @@ TIMSABA.functions.create_recipes
         subgroup = is_sulfur_fluids,
         icons = THREE_I(hydrogen_peroxide, sulfur_dioxide_angels, sulfuric_acid_angels),
         order = f_a,
-        -- SO₂ + H₂O₂ --> H₂SO₄
+        energy_required = 2, -- H₂O₂(l) + SO₂(g) --> H₂SO₄(l)
         ingredients =
         {
-            {type = fluid, name = hydrogen_peroxide, amount = 120},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 120}
+            {type = fluid, name = hydrogen_peroxide, amount = 60},
+            {type = fluid, name = sulfur_dioxide_angels, amount = 60}
         },
-        results = {{type = fluid, name = sulfuric_acid_angels, amount = 120}},
+        results = {{type = fluid, name = sulfuric_acid_angels, amount = 60}},
         main_product = sulfuric_acid_angels
     },
     {
@@ -1036,13 +1037,28 @@ TIMSABA.functions.create_recipes
         subgroup = is_sulfur_fluids,
         icons = THREE_I(sulfur_dioxide_angels, oxygen_angels, sulfur_trioxide_gas),
         order = e,
-        -- 2SO₂ + O₂ --> 2SO₃
+        energy_required = 2, -- 2SO₂(g) + O₂(g) --> 2SO₃(g)
         ingredients =
         {
             {type = fluid, name = sulfur_dioxide_angels, amount = 120},
             {type = fluid, name = oxygen_angels, amount = 60}
         },
         results = {{type = fluid, name = sulfur_trioxide_gas, amount = 120}},
+        main_product = sulfur_trioxide_gas
+    },
+    {
+        name = sulfuric_acid_decomposition,
+        categories = {chemistry},
+        subgroup = is_sulfur_fluids,
+        icons = THREE_R_I(sulfuric_acid_angels, sulfur_trioxide_gas, oxygen_angels),
+        order = e_a,
+        energy_required = 2, -- H₂SO₄(l) --> 2SO₃(g) + O₂(g)
+        ingredients = {{type = fluid, name = sulfuric_acid_angels, amount = 60}},
+        results =
+        {
+            {type = fluid, name = sulfur_trioxide_gas, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 30}
+        },
         main_product = sulfur_trioxide_gas
     },
     {

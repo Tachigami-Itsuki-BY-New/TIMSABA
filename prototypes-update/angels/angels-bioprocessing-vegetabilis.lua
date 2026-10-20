@@ -764,7 +764,7 @@ data_recipe[ethylene_from_ethanol].results =
 {
     {type = fluid, name = ethylene_angels, amount = 60},
     {type = fluid, name = steam, amount = 30},
-    {type = fluid, name = sulfuric_acid, amount = 30},
+    {type = fluid, name = sulfuric_acid_angels, amount = 30},
 }
 
 data_item_subgroup["angels-bio-plastic"].order = e_d
