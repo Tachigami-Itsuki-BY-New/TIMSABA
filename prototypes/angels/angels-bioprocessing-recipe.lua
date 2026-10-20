@@ -53,13 +53,13 @@ TIMSABA.functions.create_recipes
             {type = item, name = cellulose_fiber_angels, amount = 4},
             {type = fluid, name = acetic_anhydride, amount = 60},
             {type = fluid, name = acetic_acid, amount = 60},
-            {type = fluid, name = sulfuric_acid, amount = 60}
+            {type = fluid, name = sulfuric_acid_angels, amount = 60}
         },
         results =
         {
             {type = item, name = cellulose_triacetate, amount = 4},
             {type = fluid, name = acetic_acid, amount = 30}, -- 60
-            {type = fluid, name = sulfuric_acid, amount = 30} -- 60
+            {type = fluid, name = sulfuric_acid_angels, amount = 30} -- 60
         },
         main_product = cellulose_triacetate
     },
