@@ -28,6 +28,12 @@ create_recipe_category(advanced_electrolysis)
 industrial_electrolysis = "industrial-electrolysis"
 create_recipe_category(industrial_electrolysis)
 
+-- SPACE AGE
+jellynut_farming = "jellynut-farming"
+create_recipe_category(jellynut_farming)
+yumako_farming = "yumako-farming"
+create_recipe_category(yumako_farming)
+
 -- MODS
 if mods[muluna_mods] then
     advanced_wood_processing = "advanced-wood-processing"

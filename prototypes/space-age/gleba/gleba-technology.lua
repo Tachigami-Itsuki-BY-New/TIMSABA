@@ -37,11 +37,17 @@ for _, group in ipairs(tech_master_list) do
         for _, RECIPE in ipairs(group.data) do
             local tech_name = RECIPE.unlock_recipe
             local full_recipe_name = group.prefix .. RECIPE.name
-            if tech_name and data.raw.technology[tech_name] then
-                table.insert(data.raw.technology[tech_name].effects, {type = unlock_recipe, recipe = full_recipe_name})
+            if tech_name and data_technology[tech_name] then
+                table.insert(data_technology[tech_name].effects, {type = unlock_recipe, recipe = full_recipe_name})
             end
         end
     end
 end
 
 table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = nutrient_pulp_from_nutrients})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = jellynut})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = jellynut_seed})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = jelly})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = yumako})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = yumako_seed})
+table.insert(data_technology[tech_gleba_biology].effects, {type = unlock_recipe, recipe = yumako_mash})

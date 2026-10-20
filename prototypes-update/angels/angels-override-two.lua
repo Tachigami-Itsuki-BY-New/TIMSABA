@@ -293,6 +293,8 @@ for _, BUILD in pairs(algae_farms) do
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].energy_required = 4
+    table.insert(data_assembling[BUILD.name].crafting_categories, jellynut_farming)
+    table.insert(data_assembling[BUILD.name].crafting_categories, yumako_farming)
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
