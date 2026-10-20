@@ -5,112 +5,112 @@ data_item_subgroup[is_basics].order = a
 local dirt_water_separation = "angels-dirt-water-separation"
 data_recipe[dirt_water_separation].icons = FOUR_R_I(water, hydrogen_angels, slag_angels, oxygen_angels, number_1)
 data_recipe[dirt_water_separation].order = a_a
--- 2H₂O --> 2H₂ + O₂
-data_recipe[dirt_water_separation].ingredients[1].amount = 120
+data_recipe[dirt_water_separation].energy_required = 16 -- 2H₂O(l) --> 2H₂(g) + O₂(g) + Slag(s)
+data_recipe[dirt_water_separation].ingredients[1].amount = 240
 data_recipe[dirt_water_separation].results =
 {
-    {type = item, name = slag_angels, amount = 1},
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 local dirt_water_separation_2 = "angels-dirt-water-separation-2"
 data_recipe[dirt_water_separation_2].icons = FOUR_R_I(water, hydrogen_angels, slag_angels, oxygen_angels, number_2)
 data_recipe[dirt_water_separation_2].order = a_b
--- 2H₂O --> 2H₂ + O₂
+data_recipe[dirt_water_separation_2].energy_required = 8 -- 2H₂O(l) --> 2H₂(g) + O₂(g) + Slag(s)
 data_recipe[dirt_water_separation_2].ingredients =
 {
-    {type = item, name = electrode, amount = 1},
-    {type = fluid, name = water, amount = 120}
+    {type = fluid, name = water, amount = 240},
+    {type = item, name = electrode, amount = 1}
 }
 data_recipe[dirt_water_separation_2].results =
 {
-    {type = item, name = slag_angels, amount = 1},
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120},
+    {type = item, name = slag_angels, amount = 2},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125},
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
 }
 
 local water_separation = "angels-water-separation"
 data_recipe[water_separation].icons = FOUR_R_I(water_purified_angels, hydrogen_angels, nil, oxygen_angels, number_1)
 data_recipe[water_separation].order = b_a
--- 2H₂O --> 2H₂ + O₂
-data_recipe[water_separation].ingredients[1].amount = 120
+data_recipe[water_separation].energy_required = 16 -- 2H₂O(l) --> 2H₂(g) + O₂(g)
+data_recipe[water_separation].ingredients[1].amount = 240
 data_recipe[water_separation].results =
 {
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120}
 }
 
 local water_separation_2 = "angels-water-separation-2"
 data_recipe[water_separation_2].icons = FOUR_R_I(water_purified_angels, hydrogen_angels, nil, oxygen_angels, number_2)
 data_recipe[water_separation_2].order = b_b
--- 2H₂O --> 2H₂ + O₂
+data_recipe[water_separation_2].energy_required = 8 -- 2H₂O(l) --> 2H₂(g) + O₂(g)
 data_recipe[water_separation_2].ingredients =
 {
-    {type = item, name = electrode, amount = 1},
-    {type = fluid, name = water_purified_angels, amount = 120}
+    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = item, name = electrode, amount = 1}
 }
 data_recipe[water_separation_2].results =
 {
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125},
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 local water_synthesis = "angels-water-synthesis"
 data_recipe[water_synthesis].icons = THREE_I(hydrogen_angels, oxygen_angels, water_purified_angels)
 data_recipe[water_synthesis].order = b_c
-data_recipe[water_synthesis].energy_required = 8 -- 2H₂ + O₂ --> 2H₂O
+data_recipe[water_synthesis].energy_required = 2 -- 2H₂(g) + O₂(g) --> 2H₂O(l)
 data_recipe[water_synthesis].ingredients =
 {
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = oxygen_angels, amount = 30}
 }
-data_recipe[water_synthesis].results[1].amount = 120
+data_recipe[water_synthesis].results[1].amount = 60
 
 local heavy_water_separation = "angels-heavy-water-separation"
 data_recipe[heavy_water_separation].icons = FOUR_R_I(water_heavy_angels, deuterium_angels, nil, oxygen_angels, number_1)
 data_recipe[heavy_water_separation].order = c_a
--- 2D₂O --> 2D₂ + O₂
-data_recipe[heavy_water_separation].ingredients[1].amount = 120
+data_recipe[heavy_water_separation].energy_required = 16 -- 2D₂O(l) --> 2D₂(g) + O₂(g)
+data_recipe[heavy_water_separation].ingredients[1].amount = 240
 data_recipe[heavy_water_separation].results =
 {
-    {type = fluid, name = deuterium_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = fluid, name = deuterium_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120}
 }
 
 local heavy_water_separation_2 = "angels-heavy-water-separation-2"
 data_recipe[heavy_water_separation_2].icons = FOUR_R_I(water_heavy_angels, deuterium_angels, nil, oxygen_angels, number_2)
 data_recipe[heavy_water_separation_2].order = c_b
--- 2D₂O --> 2D₂ + O₂
+data_recipe[heavy_water_separation_2].energy_required = 8 -- 2D₂O(l) --> 2D₂(g) + O₂(g)
 data_recipe[heavy_water_separation_2].ingredients =
 {
-    {type = item, name = electrode, amount = 1},
-    {type = fluid, name = water_heavy_angels, amount = 120, maximum_temperature = 30}
+    {type = fluid, name = water_heavy_angels, amount = 240, maximum_temperature = 30},
+    {type = item, name = electrode, amount = 1}
 }
 data_recipe[heavy_water_separation_2].results =
 {
+    {type = fluid, name = deuterium_angels, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 120},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125},
-    {type = fluid, name = deuterium_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 data_recipe[water_saline_separation].categories = {advanced_electrolysis}
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a
--- (8H₂O + 2Na + 4Cl₂ + 2OH) --> 2NaOH + 8H₂ + 4Cl₂ + 4O₂
-data_recipe[water_saline_separation].ingredients[1].amount = 120
+data_recipe[water_saline_separation].energy_required = 8 -- (8H₂O + 2Na + 4Cl₂ + 2OH)(l) --> 2NaOH(s) + 8H₂(g) + 4Cl₂(g) + 4O₂(g)
+data_recipe[water_saline_separation].ingredients[1].amount = 240
 data_recipe[water_saline_separation].results =
 {
-    {type = item, name = sodium_hydroxide_angels, amount = 2},
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = chlorine_angels, amount = 60},
-    {type = fluid, name = oxygen_angels, amount = 60}
+    {type = item, name = sodium_hydroxide_angels, amount = 4},
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = chlorine_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 120}
 }
 
 -- BASIC PETROCHEN FLUIDS
