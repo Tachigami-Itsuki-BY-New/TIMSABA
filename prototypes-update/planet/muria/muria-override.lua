@@ -286,9 +286,9 @@ if mods[muria_mods] then
     data_recipe[lead_plate_muria].subgroup = is_muria_lead
     data_recipe[lead_plate_muria].icons = TWO_I(lead_powder, lead_plate_bob)
     data_recipe[lead_plate_muria].order = c
-    data_recipe[lead_plate_muria].energy_required = 1
-    data_recipe[lead_plate_muria].ingredients = {{type = item, name = lead_powder, amount = 1}}
-    data_recipe[lead_plate_muria].results = {{type = item, name = lead_plate_bob, amount = 1}}
+    data_recipe[lead_plate_muria].energy_required = 4
+    data_recipe[lead_plate_muria].ingredients = {{type = item, name = lead_powder, amount = 16}}
+    data_recipe[lead_plate_muria].results = {{type = item, name = lead_plate_bob, amount = 16}}
     data_recipe[lead_plate_muria].main_product = lead_plate_bob
     data_recipe[lead_plate_muria].surface_conditions = {{property = pressure, min = 2180, max = 2180}}
 

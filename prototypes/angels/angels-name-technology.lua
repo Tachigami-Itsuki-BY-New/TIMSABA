@@ -76,6 +76,7 @@ tech_tungsten_smelting_3 = "angels-tungsten-smelting-3"
 tech_platinum_smelting_1 = "angels-platinum-smelting-1"
 tech_platinum_smelting_2 = "angels-platinum-smelting-2"
 tech_platinum_smelting_3 = "angels-platinum-smelting-3"
+tech_glass_smelting_1 = "angels-glass-smelting-1"
 tech_stone_smelting_1 = "angels-stone-smelting-1"
 tech_stone_smelting_2 = "angels-stone-smelting-2"
 tech_stone_smelting_3 = "angels-stone-smelting-3"
@@ -155,6 +156,8 @@ tech_advanced_chemistry_4 = "angels-advanced-chemistry-4"
 tech_advanced_chemistry_5 = "angels-advanced-chemistry-5"
 tech_advanced_chemistry_6 = "advanced-chemistry-6"
 tech_steam_cracking_1 = "angels-steam-cracking-1"
+
+tech_rubbers = "angels-rubbers"
 
 -- ANGELS BIOPROCESSING NAUVIS
 tech_bio_processing_brown = "angels-bio-processing-brown"

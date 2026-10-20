@@ -60,8 +60,8 @@ if mods[corrundum_mods] then
             subgroup = is_corrundum_platinum,
             icons = TWO_I(platinum_ore_angels, platinum_powder),
             order = a,
-            ingredients = {{type = item, name = platinum_ore_angels, amount = 1}},
-            results = {{type = item, name = platinum_powder, amount = 1}},
+            ingredients = {{type = item, name = platinum_ore_angels, amount = 8}},
+            results = {{type = item, name = platinum_powder, amount = 8}},
             main_product = platinum_powder,
             surface_conditions = {{property = pressure, min = 6000, max = 6000}}
         }

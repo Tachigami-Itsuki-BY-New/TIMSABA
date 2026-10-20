@@ -67,9 +67,9 @@ if mods[secretas_frozeta_mods] then
     data_recipe[gold_plate_mods].icons = TWO_I(gold_powder, gold_plate_bob)
     data_recipe[gold_plate_mods].order = c
     data_recipe[gold_plate_mods].enabled = false
-    data_recipe[gold_plate_mods].energy_required = 1
-    data_recipe[gold_plate_mods].ingredients = {{type = item, name = gold_powder, amount = 1}}
-    data_recipe[gold_plate_mods].results = {{type = item, name = gold_plate_bob, amount = 1}}
+    data_recipe[gold_plate_mods].energy_required = 4
+    data_recipe[gold_plate_mods].ingredients = {{type = item, name = gold_powder, amount = 16}}
+    data_recipe[gold_plate_mods].results = {{type = item, name = gold_plate_bob, amount = 16}}
     data_recipe[gold_plate_mods].main_product = gold_plate_bob
     data_recipe[gold_plate_mods].surface_conditions = {{property = pressure, min = 200, max = 280}}
 
@@ -294,12 +294,11 @@ if mods[secretas_frozeta_mods] then
 
     table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
     if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
-        table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
+        table.insert(data_technology[artillery_turret_4].prerequisites, golden_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, golden_science_pack)
     end
 
     table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)
-    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_gallium_smelting_2].prerequisites, tech_gallite_processing_2)
     table.insert(data_technology[tech_gallium_smelting_3].prerequisites, tech_gallite_processing_3)
 

@@ -136,9 +136,9 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_mods].subgroup = is_paracelsin_zinc
     data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
     data_recipe[zinc_plate_mods].order = b
-    data_recipe[zinc_plate_mods].energy_required = 1
-    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
-    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
+    data_recipe[zinc_plate_mods].energy_required = 4
+    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 16}}
+    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 16}}
     data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
     data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
@@ -527,8 +527,8 @@ if mods[paracelsin_mods] then
     end
 
     if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[artillery_wagon_2].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[artillery_turret_4].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, galvanization_science_pack)
     end
 
     table.insert(data_technology[tech_powellite_processing_4].prerequisites, galvanization_science_pack)
@@ -556,8 +556,6 @@ if mods[paracelsin_mods] then
     if mods[lignumis_mods] then
         table.insert(data_technology[tech_wodginite_processing_3].prerequisites, galvanization_science_pack)
     end
-
-    table.insert(data_technology[tech_arsenic_processing].prerequisites, tech_tetrahedrite_processing_4)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = nitric_acid_plastic, change = 0.1})
 end
