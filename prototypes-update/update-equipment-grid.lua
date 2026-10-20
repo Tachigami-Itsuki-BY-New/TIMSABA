@@ -41,6 +41,11 @@ end
 
 -- TRANSPORT
 if mods[bobwarfare] then
+    data_equipment_grid[small_vehicle_equipment_grid].equipment_categories = {"vehicle", "armoured-vehicle"}
+    data_equipment_grid[medium_vehicle_equipment_grid].equipment_categories = {"vehicle", "armoured-vehicle"}
+    data_equipment_grid[big_vehicle_equipment_grid].equipment_categories = {"vehicle", "armoured-vehicle"}
+    data_equipment_grid[large_vehicle_equipment_grid].equipment_categories = {"vehicle", "armoured-vehicle"}
+
     local antron_equipment_grid = antron .. _equipment_grid
     data_equipment_grid[antron_equipment_grid].width = 4
     data_equipment_grid[antron_equipment_grid].height = 8
