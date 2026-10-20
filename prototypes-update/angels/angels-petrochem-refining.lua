@@ -1536,18 +1536,18 @@ local synthesis_gas_methanation = "angels-gas-synthesis-methanation"
 data_recipe[synthesis_gas_methanation].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_methanation].icons = FOUR_R_I(synthesis_angels, methane_angels, ethane_angels, butane_angels)
 data_recipe[synthesis_gas_methanation].order = a_g
-data_recipe[synthesis_gas_methanation].energy_required = 8 -- 8(H₂ + CO)(g) + 12H₂(g) -cat-> 2CH₄(g) + C₂H₆(g) + C₄H₁₀(g) + 8H₂O(g)
+data_recipe[synthesis_gas_methanation].energy_required = 8 -- 16(H₂ + CO)(g) + 27H₂(g) -cat-> 8CH₄(g) + 2C₂H₆(g) + C₄H₁₀(g) + 16H₂O(g)
 data_recipe[synthesis_gas_methanation].ingredients =
 {
     {type = fluid, name = synthesis_angels, amount = 240},
-    {type = fluid, name = hydrogen_angels, amount = 360},
+    {type = fluid, name = hydrogen_angels, amount = 405},
     {type = item, name = catalyst_blue, amount = 1}
 }
 data_recipe[synthesis_gas_methanation].results =
 {
-    {type = fluid, name = methane_angels, amount = 60},
+    {type = fluid, name = methane_angels, amount = 120},
     {type = fluid, name = ethane_angels, amount = 30},
-    {type = fluid, name = butane_angels, amount = 30},
+    {type = fluid, name = butane_angels, amount = 15},
     --{type = fluid, name = steam, amount = 240},
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
