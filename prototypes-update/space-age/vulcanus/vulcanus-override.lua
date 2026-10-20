@@ -166,20 +166,10 @@ data_recipe[acid_neutralisation].results =
 }
 data_recipe[acid_neutralisation].main_product = steam
 
-local steam_condensation = "steam-condensation"
-data_recipe[steam_condensation].categories = {angels_cooling}
-data_recipe[steam_condensation].subgroup = is_calcite
-data_recipe[steam_condensation].icons = TWO_I(steam, water)
-data_recipe[steam_condensation].order = a_b
-data_recipe[steam_condensation].energy_required = 16
-data_recipe[steam_condensation].ingredients[1].amount = 960
-data_recipe[steam_condensation].results[1].amount = 120
-data_recipe[steam_condensation].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
-
 local simple_coal_liquefaction = "simple-coal-liquefaction"
 data_recipe[simple_coal_liquefaction].subgroup = is_calcite
 data_recipe[simple_coal_liquefaction].icons = FOUR_THREE_R_I(coal, calcite, sulfuric_acid_angels, naphtha_angels, limestone_angels, sulfur_dioxide_angels, oxygen_angels)
-data_recipe[simple_coal_liquefaction].order = a_c
+data_recipe[simple_coal_liquefaction].order = a_b
 data_recipe[simple_coal_liquefaction].energy_required = 4 -- 8C + 2CaCO₃ + H₂SO₄ --> C₈H₁₈ + 2CaCO₃ + SO₂ + O₂
 data_recipe[simple_coal_liquefaction].ingredients =
 {
@@ -480,7 +470,8 @@ add_recipe_to_foundry_technology(rubyte_from_lava)
 add_recipe_to_foundry_technology(bobmonium_from_lava)
 add_recipe_to_foundry_technology(senaite_from_lava)
 add_recipe_to_foundry_technology(franckeite_from_lava)
-    -- MOLTEN
+add_recipe_to_foundry_technology(crystal_dust_from_lava)
+-- MOLTEN
 add_recipe_to_foundry_technology(molten_iron_from_lava)
 add_recipe_to_foundry_technology(molten_steel)
 add_recipe_to_foundry_technology(molten_copper_from_lava)
@@ -504,7 +495,7 @@ add_recipe_to_foundry_technology(molten_brass)
 add_recipe_to_foundry_technology(molten_invar)
 add_recipe_to_foundry_technology(molten_cobalt_steel)
 add_recipe_to_foundry_technology(molten_nitinol)
-    -- PLATE
+-- PLATE
 add_recipe_to_foundry_technology(casting_iron)
 add_recipe_to_foundry_technology(casting_steel)
 add_recipe_to_foundry_technology(casting_copper)
@@ -524,39 +515,39 @@ add_recipe_to_foundry_technology(casting_brass)
 add_recipe_to_foundry_technology(casting_invar)
 add_recipe_to_foundry_technology(casting_cobalt_steel)
 add_recipe_to_foundry_technology(casting_nitinol)
-    -- ROD
+-- ROD
 add_recipe_to_foundry_technology(casting_iron_rod)
 add_recipe_to_foundry_technology(casting_steel_rod)
 add_recipe_to_foundry_technology(casting_titanium_rod)
-    -- GEAR WHEEL
+-- GEAR WHEEL
 add_recipe_to_foundry_technology(casting_iron_gear_wheel)
 add_recipe_to_foundry_technology(casting_steel_gear_wheel)
 add_recipe_to_foundry_technology(casting_brass_gear_wheel)
 add_recipe_to_foundry_technology(casting_cobalt_steel_gear_wheel)
 add_recipe_to_foundry_technology(casting_titanium_gear_wheel)
 add_recipe_to_foundry_technology(casting_nitinol_gear_wheel)
-    -- BEARING BALL
+-- BEARING BALL
 add_recipe_to_foundry_technology(casting_iron_bearing_ball)
 add_recipe_to_foundry_technology(casting_steel_bearing_ball)
 add_recipe_to_foundry_technology(casting_brass_bearing_ball)
 add_recipe_to_foundry_technology(casting_cobalt_steel_bearing_ball)
 add_recipe_to_foundry_technology(casting_titanium_bearing_ball)
 add_recipe_to_foundry_technology(casting_nitinol_bearing_ball)
-    -- BEARING
+-- BEARING
 add_recipe_to_foundry_technology(casting_iron_bearing)
 add_recipe_to_foundry_technology(casting_steel_bearing)
 add_recipe_to_foundry_technology(casting_brass_bearing)
 add_recipe_to_foundry_technology(casting_cobalt_steel_bearing)
 add_recipe_to_foundry_technology(casting_titanium_bearing)
 add_recipe_to_foundry_technology(casting_nitinol_bearing)
-    -- CABLE
+-- CABLE
 add_recipe_to_foundry_technology(casting_copper_cable)
 add_recipe_to_foundry_technology(casting_tin_cable)
 if mods[muluna_mods] then add_recipe_to_foundry_technology(casting_aluminium_cable) end
 add_recipe_to_foundry_technology(casting_silver_cable)
 add_recipe_to_foundry_technology(casting_gold_cable)
 add_recipe_to_foundry_technology(casting_platinum_cable)
-    -- PIPE
+-- PIPE
 add_recipe_to_foundry_technology(casting_iron_pipe)
 add_recipe_to_foundry_technology(casting_copper_pipe)
 add_recipe_to_foundry_technology(casting_steel_pipe)
@@ -566,7 +557,7 @@ add_recipe_to_foundry_technology(casting_brass_pipe)
 add_recipe_to_foundry_technology(casting_titanium_pipe)
 if mods[lignumis_mods] then add_recipe_to_foundry_technology(casting_gold_pipe) end
 add_recipe_to_foundry_technology(casting_nitinol_pipe)
-    -- PIPE TO GROUND
+-- PIPE TO GROUND
 add_recipe_to_foundry_technology(casting_iron_pipe_to_ground)
 add_recipe_to_foundry_technology(casting_copper_pipe_to_ground)
 add_recipe_to_foundry_technology(casting_steel_pipe_to_ground)
@@ -576,7 +567,7 @@ add_recipe_to_foundry_technology(casting_brass_pipe_to_ground)
 add_recipe_to_foundry_technology(casting_titanium_pipe_to_ground)
 if mods[lignumis_mods] then add_recipe_to_foundry_technology(casting_gold_pipe_to_ground) end
 add_recipe_to_foundry_technology(casting_nitinol_pipe_to_ground)
-    -- OTHERS
+-- OTHERS
 add_recipe_to_foundry_technology(casting_low_density_structure)
 if mods[muluna_mods] then add_recipe_to_foundry_technology(casting_low_density_structure_muluna) end
 data_technology[foundry].research_trigger =
