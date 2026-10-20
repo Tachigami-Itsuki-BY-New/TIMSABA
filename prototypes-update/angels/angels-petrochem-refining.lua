@@ -1473,7 +1473,7 @@ data_recipe[steam_cracking_fuel_oil].ingredients =
     {type = fluid, name = fuel_oil_angels, amount = 15},
     {type = fluid, name = steam, amount = 720}
 }
-data_recipe[steam_cracking_mineral_oil].results =
+data_recipe[steam_cracking_fuel_oil].results =
 {
     {type = fluid, name = synthesis_angels, amount = 360},
     {type = fluid, name = residual_angels, amount = 180},
@@ -1485,12 +1485,12 @@ data_recipe[steam_cracking_naphtha].subgroup = is_synthesis_gas
 data_recipe[steam_cracking_naphtha].icons = THREE_R_I(naphtha_angels, synthesis_angels, residual_angels)
 data_recipe[steam_cracking_naphtha].order = a_c
 data_recipe[steam_cracking_naphtha].energy_required = 8 -- C₈H₁₈(l) + 8H₂O(g) --> 4(H₂ + CO)(synthesis gas) + 2(CH₄ + CO₂)(residual gas) + 9H₂(g)
-data_recipe[steam_cracking_fuel_oil].ingredients =
+data_recipe[steam_cracking_naphtha].ingredients =
 {
     {type = fluid, name = naphtha_angels, amount = 120},
     {type = fluid, name = steam, amount = 960}
 }
-data_recipe[steam_cracking_mineral_oil].results =
+data_recipe[steam_cracking_naphtha].results =
 {
     {type = fluid, name = synthesis_angels, amount = 480},
     {type = fluid, name = residual_angels, amount = 240},
@@ -1501,15 +1501,15 @@ local steam_cracking_gas_residual = "angels-steam-cracking-gas-residual"
 data_recipe[steam_cracking_gas_residual].subgroup = is_synthesis_gas
 data_recipe[steam_cracking_gas_residual].icons = TWO_I(residual_angels, synthesis_angels)
 data_recipe[steam_cracking_gas_residual].order = a_d
-data_recipe[steam_cracking_gas_residual].energy_required = 8 -- (CH₄ + CO₂) -cat-> 2(H₂ + CO)
+data_recipe[steam_cracking_gas_residual].energy_required = 8 -- (CH₄ + CO₂)(g) -cat-> 2(H₂ + CO)(g)
 data_recipe[steam_cracking_gas_residual].ingredients =
 {
-    {type = fluid, name = residual_angels, amount = 120},
+    {type = fluid, name = residual_angels, amount = 240},
     {type = item, name = catalyst_blue, amount = 1}
 }
 data_recipe[steam_cracking_gas_residual].results =
 {
-    {type = fluid, name = synthesis_angels, amount = 240},
+    {type = fluid, name = synthesis_angels, amount = 480},
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1536,14 +1536,19 @@ local synthesis_gas_methanation = "angels-gas-synthesis-methanation"
 data_recipe[synthesis_gas_methanation].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_methanation].icons = FOUR_R_I(synthesis_angels, methane_angels, ethane_angels, butane_angels)
 data_recipe[synthesis_gas_methanation].order = a_g
--- 8(H₂ + CO) + 4H₂ -cat-> 2CH₄ + C₂H₆ + C₄H₁₀
-data_recipe[synthesis_gas_methanation].ingredients[1].amount = 240
-data_recipe[synthesis_gas_methanation].ingredients[2].amount = 120
+data_recipe[synthesis_gas_methanation].energy_required = 8 -- 16(H₂ + CO)(g) + 27H₂(g) -cat-> 8CH₄(g) + 2C₂H₆(g) + C₄H₁₀(g) + 16H₂O(g)
+data_recipe[synthesis_gas_methanation].ingredients =
+{
+    {type = fluid, name = synthesis_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 405},
+    {type = item, name = catalyst_blue, amount = 1}
+}
 data_recipe[synthesis_gas_methanation].results =
 {
-    {type = fluid, name = methane_angels, amount = 60},
+    {type = fluid, name = methane_angels, amount = 120},
     {type = fluid, name = ethane_angels, amount = 30},
-    {type = fluid, name = butane_angels, amount = 30},
+    {type = fluid, name = butane_angels, amount = 15},
+    --{type = fluid, name = steam, amount = 240},
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1553,18 +1558,18 @@ data_recipe[synthesis_gas_methanol].categories = {angels_advanced_chemistry}
 data_recipe[synthesis_gas_methanol].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_methanol].icons = THREE_D_I(synthesis_angels, carbon_dioxide_angels, hydrogen_angels, methanol_angels, nil, steam)
 data_recipe[synthesis_gas_methanol].order = a_g
--- (H₂ + CO) + CO₂ + 4H₂ -cat-> 2CH₄O + H₂O
+data_recipe[synthesis_gas_methanol].energy_required = 8 -- (H₂ + CO)(g) + CO₂(g) + 4H₂(g) -cat-> 2CH₄O(l) + H₂O(g)
 data_recipe[synthesis_gas_methanol].ingredients =
 {
-    {type = fluid, name = synthesis_angels, amount = 30},
-    {type = fluid, name = carbon_dioxide_angels, amount = 30},
-    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = synthesis_angels, amount = 120},
+    {type = fluid, name = carbon_dioxide_angels, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 480},
     {type = item, name = catalyst_green, amount = 1}
 }
 data_recipe[synthesis_gas_methanol].results =
 {
-    {type = fluid, name = methanol_angels, amount = 60},
-    {type = fluid, name = steam, amount = 30},
+    {type = fluid, name = methanol_angels, amount = 240},
+    {type = fluid, name = steam, amount = 120},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
