@@ -1,17 +1,18 @@
--- ALL
-small_equipment_grid = "small-equipment-grid"
+local _equipment_grid = "-equipment-grid"
+
+-- PERSONAL
+small_equipment_grid = small .. _equipment_grid
 data_equipment_grid[small_equipment_grid].width = 4
 data_equipment_grid[small_equipment_grid].height = 4
 
-medium_equipment_grid = "medium-equipment-grid"
+medium_equipment_grid = medium .. _equipment_grid
 data_equipment_grid[medium_equipment_grid].width = 4
 data_equipment_grid[medium_equipment_grid].height = 8
 
-large_equipment_grid = "large-equipment-grid"
+large_equipment_grid = large .. _equipment_grid
 data_equipment_grid[large_equipment_grid].width = 8
 data_equipment_grid[large_equipment_grid].height = 8
 
--- PERSONAL
 mech_armor_equipment_grid = "mech-armor-equipment-grid"
 if mods[bobequipment] then
     power_armor_equipment_grid_3 = "power-armor-equipment-grid-mk3"
@@ -31,7 +32,7 @@ if mods[bobequipment] then
         new_equipment_grid.name = mech_armor_equipment_grid
         new_equipment_grid.width = 16
         new_equipment_grid.height = 16
-        data:extend{new_equipment_grid}
+        data:extend({new_equipment_grid})
     else
         data_equipment_grid[mech_armor_equipment_grid].width = 16
         data_equipment_grid[mech_armor_equipment_grid].height = 16
@@ -39,10 +40,9 @@ if mods[bobequipment] then
 end
 
 -- TRANSPORT
-local _equipment_grid = "-equipment-grid"
-if mods[bobvehicleequipment] then
+if mods[bobwarfare] then
     local antron_equipment_grid = antron .. _equipment_grid
-    data_equipment_grid[antron_equipment_grid].width = 6
+    data_equipment_grid[antron_equipment_grid].width = 4
     data_equipment_grid[antron_equipment_grid].height = 8
 
     local tankotron_equipment_grid = tankotron .. _equipment_grid

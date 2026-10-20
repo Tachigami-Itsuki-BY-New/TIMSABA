@@ -118,9 +118,9 @@ data_recipe[rail_chain_signal].ingredients =
 
 local locomotives =
 {
-    {name = locomotive_1, order = a, max_speed = 0.5, max_power = 450,  effectivity = 1.00, equipment_grid = small_equipment_grid},
-    {name = locomotive_2, order = b, max_speed = 1.0, max_power = 900,  effectivity = 1.00, equipment_grid = medium_equipment_grid},
-    {name = locomotive_3, order = c, max_speed = 1.5, max_power = 1350, effectivity = 1.00, equipment_grid = large_equipment_grid}
+    {name = locomotive_1, order = a, max_speed = 0.5, max_power = 450,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
+    {name = locomotive_2, order = b, max_speed = 1.0, max_power = 900,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
+    {name = locomotive_3, order = c, max_speed = 1.5, max_power = 1350, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(locomotives) do
     if data_item_entity[TRANSPORT.name] then
@@ -160,9 +160,9 @@ end
 
 local cargo_wagons =
 {
-    {name = cargo_wagon_1, order = a, inventory_size = 40,  equipment_grid = small_equipment_grid},
-    {name = cargo_wagon_2, order = b, inventory_size = 80,  equipment_grid = medium_equipment_grid},
-    {name = cargo_wagon_3, order = c, inventory_size = 120, equipment_grid = large_equipment_grid}
+    {name = cargo_wagon_1, order = a, inventory_size = 40,  equipment_grid = small_vehicle_equipment_grid},
+    {name = cargo_wagon_2, order = b, inventory_size = 80,  equipment_grid = medium_vehicle_equipment_grid},
+    {name = cargo_wagon_3, order = c, inventory_size = 120, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(cargo_wagons) do
     if data_item_entity[TRANSPORT.name] then
@@ -193,9 +193,9 @@ end
 
 local fluid_wagons =
 {
-    {name = fluid_wagon_1, order = a, capacity = 28800, equipment_grid = small_equipment_grid},
-    {name = fluid_wagon_2, order = b, capacity = 57600, equipment_grid = medium_equipment_grid},
-    {name = fluid_wagon_3, order = c, capacity = 86400, equipment_grid = large_equipment_grid}
+    {name = fluid_wagon_1, order = a, capacity = 28800, equipment_grid = small_vehicle_equipment_grid},
+    {name = fluid_wagon_2, order = b, capacity = 57600, equipment_grid = medium_vehicle_equipment_grid},
+    {name = fluid_wagon_3, order = c, capacity = 86400, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(fluid_wagons) do
     if data_item_entity[TRANSPORT.name] then
@@ -226,9 +226,9 @@ end
 
 local artillery_wagons =
 {
-    {name = artillery_wagon_1, order = a, weight = 2000, equipment_grid = small_equipment_grid,  localised_name = {"entity-name.artillery-wagon-1"}},
-    {name = artillery_wagon_2, order = b, weight = 3000, equipment_grid = medium_equipment_grid, localised_name = {"entity-name.artillery-wagon-2"}},
-    {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = large_equipment_grid,  localised_name = {"entity-name.artillery-wagon-3"}}
+    {name = artillery_wagon_1, order = a, weight = 2000, equipment_grid = small_vehicle_equipment_grid,  localised_name = {"entity-name.artillery-wagon-1"}},
+    {name = artillery_wagon_2, order = b, weight = 3000, equipment_grid = medium_vehicle_equipment_grid, localised_name = {"entity-name.artillery-wagon-2"}},
+    {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = big_vehicle_equipment_grid,  localised_name = {"entity-name.artillery-wagon-3"}}
 }
 for _, TRANSPORT in pairs(artillery_wagons) do
     if data_item_entity[TRANSPORT.name] then
@@ -295,13 +295,13 @@ if mods[lignumis_mods] then
 end
 data_car[car].consumption = 225 .. kW
 data_car[car].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-data_car[car].equipment_grid = small_equipment_grid
+data_car[car].equipment_grid = small_vehicle_equipment_grid
 
 local tanks =
 {
-    {name = tank_1, order = a, consumption = 450,  effectivity = 1.00, equipment_grid = small_equipment_grid},
-    {name = tank_2, order = b, consumption = 900,  effectivity = 1.00, equipment_grid = medium_equipment_grid},
-    {name = tank_3, order = c, consumption = 1350, effectivity = 1.00, equipment_grid = large_equipment_grid}
+    {name = tank_1, order = a, consumption = 450,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
+    {name = tank_2, order = b, consumption = 900,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
+    {name = tank_3, order = c, consumption = 1350, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(tanks) do
     if data_item_entity[TRANSPORT.name] then
