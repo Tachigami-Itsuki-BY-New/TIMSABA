@@ -55,7 +55,8 @@ local delete_prototypes =
 	holmium_solution,
 	"concrete-from-molten-iron",
 	"iron-ore-melting",
-	"copper-ore-melting"
+	"copper-ore-melting",
+	"steam-condensation"
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
