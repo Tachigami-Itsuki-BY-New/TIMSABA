@@ -127,7 +127,7 @@ TIMSABA.functions.create_items
         inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound,
         pick_sound = data_item[uranium_235_fuel_cell].pick_sound,
         fuel_categories = {nuclear_fuel_T4},
-        fuel_value = (1382400 * 4 * 2) .. kJ,
+        fuel_value = (512 * 2048 * 0.9375) .. kJ,
         consumption_glow_alternative_tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0},
         fuel_glow_color = {r = 0.72, g = 0.05, b = 1.0, a = 1.0}
     },

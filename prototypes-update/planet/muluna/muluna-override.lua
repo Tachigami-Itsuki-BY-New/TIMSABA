@@ -342,7 +342,7 @@ if mods[muluna_mods] then
     data_capsule[jellynut_seedless].order = a
     data_capsule[jellynut_seedless].stack_size = 200
     data_capsule[jellynut_seedless].fuel_categories = {base_fuel}
-    data_capsule[jellynut_seedless].fuel_value = 7200 .. kJ
+    data_capsule[jellynut_seedless].fuel_value = 7680 .. kJ
     TIMSABA.void.void_organics(jellynut_seedless)
     TIMSABA.void.freezing_organics(jellynut_seedless)
 
@@ -420,7 +420,7 @@ if mods[muluna_mods] then
     data_capsule[yumako_seedless].order = a
     data_capsule[yumako_seedless].stack_size = 200
     data_capsule[yumako_seedless].fuel_categories = {base_fuel}
-    data_capsule[yumako_seedless].fuel_value = 1800 .. kJ
+    data_capsule[yumako_seedless].fuel_value = 1920 .. kJ
     TIMSABA.void.void_organics(yumako_seedless)
     TIMSABA.void.freezing_organics(yumako_seedless)
 
@@ -791,7 +791,7 @@ if mods[muluna_mods] then
     data_assembling[advanced_boiler].subgroup = is_muluna_boiler
     data_assembling[advanced_boiler].order = z
     data_assembling[advanced_boiler].crafting_speed = 4
-    data_assembling[advanced_boiler].energy_usage = 1800 .. kW
+    data_assembling[advanced_boiler].energy_usage = 1920 .. kW
     data_assembling[advanced_boiler].energy_source.emissions_per_minute.pollution = 128
     data_assembling[advanced_boiler].energy_source.effectivity = nil
 

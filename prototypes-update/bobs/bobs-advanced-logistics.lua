@@ -118,9 +118,9 @@ data_recipe[rail_chain_signal].ingredients =
 
 local locomotives =
 {
-    {name = locomotive_1, order = a, max_speed = 0.5, max_power = 450,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
-    {name = locomotive_2, order = b, max_speed = 1.0, max_power = 900,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
-    {name = locomotive_3, order = c, max_speed = 1.5, max_power = 1350, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
+    {name = locomotive_1, order = a, max_speed = 0.5, max_power = 480,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
+    {name = locomotive_2, order = b, max_speed = 1.0, max_power = 960,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
+    {name = locomotive_3, order = c, max_speed = 1.5, max_power = 1440, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(locomotives) do
     if data_item_entity[TRANSPORT.name] then
@@ -275,6 +275,7 @@ if mods[lignumis_mods] then
         {type = item, name = lumber,  amount = 8},
         {type = item, name = iron_plate, amount = 16}
     }
+    data_car[lignumobile].consumption = 120 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe({lignumobile})
 end
@@ -293,15 +294,15 @@ data_recipe[car].ingredients =
 if mods[lignumis_mods] then
     table.insert(data_recipe[car].ingredients, {type = item, name = lignumobile, amount = 1})
 end
-data_car[car].consumption = 225 .. kW
+data_car[car].consumption = 240 .. kW
 data_car[car].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 data_car[car].equipment_grid = small_vehicle_equipment_grid
 
 local tanks =
 {
-    {name = tank_1, order = a, consumption = 450,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
-    {name = tank_2, order = b, consumption = 900,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
-    {name = tank_3, order = c, consumption = 1350, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
+    {name = tank_1, order = a, consumption = 480,  effectivity = 1.00, equipment_grid = small_vehicle_equipment_grid},
+    {name = tank_2, order = b, consumption = 960,  effectivity = 1.00, equipment_grid = medium_vehicle_equipment_grid},
+    {name = tank_3, order = c, consumption = 1440, effectivity = 1.00, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(tanks) do
     if data_item_entity[TRANSPORT.name] then
@@ -343,11 +344,11 @@ tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advan
 data_item_subgroup["bob-logistic-robots"].order = f_b
 local logistic_robots =
 {
-    {name = logistic_robot_1, MPS = 1, max_energy = 1800, EPT = 30},
-    {name = logistic_robot_2, MPS = 2, max_energy = 3600, EPT = 60},
-    {name = logistic_robot_3, MPS = 3, max_energy = 5400, EPT = 90},
-    {name = logistic_robot_4, MPS = 4, max_energy = 7200, EPT = 120},
-    {name = logistic_robot_5, MPS = 5, max_energy = 9000, EPT = 0}
+    {name = logistic_robot_1, MPS = 1, max_energy = 1920, EPT = 30},
+    {name = logistic_robot_2, MPS = 2, max_energy = 3840, EPT = 60},
+    {name = logistic_robot_3, MPS = 3, max_energy = 5760, EPT = 90},
+    {name = logistic_robot_4, MPS = 4, max_energy = 7680, EPT = 120},
+    {name = logistic_robot_5, MPS = 5, max_energy = 9600, EPT = 0}
 }
 for _, DRONE in pairs(logistic_robots) do
     if data_item[DRONE.name] then
@@ -362,11 +363,11 @@ end
 data_item_subgroup["bob-construction-robots"].order = f_c
 local construction_robots =
 {
-    {name = construction_robot_1, MPS = 1, max_energy = 1800, EPT = 30},
-    {name = construction_robot_2, MPS = 2, max_energy = 3600, EPT = 60},
-    {name = construction_robot_3, MPS = 3, max_energy = 5400, EPT = 80},
-    {name = construction_robot_4, MPS = 4, max_energy = 7200, EPT = 120},
-    {name = construction_robot_5, MPS = 5, max_energy = 9000, EPT = 0}
+    {name = construction_robot_1, MPS = 1, max_energy = 1920, EPT = 30},
+    {name = construction_robot_2, MPS = 2, max_energy = 3840, EPT = 60},
+    {name = construction_robot_3, MPS = 3, max_energy = 5760, EPT = 80},
+    {name = construction_robot_4, MPS = 4, max_energy = 7680, EPT = 120},
+    {name = construction_robot_5, MPS = 5, max_energy = 9600, EPT = 0}
 }
 for _, DRONE in pairs(construction_robots) do
     if data_item[DRONE.name] then
@@ -381,17 +382,17 @@ end
 data_item_subgroup["bob-logistic-roboport"].order = f_d
 local roboports =
 {
-    {name = roboport_1, input_flow_limit = 3600,  charging_energy = 900,  charging_station_count = 4, tier = 1},
-    {name = roboport_2, input_flow_limit = 7200,  charging_energy = 1800, charging_station_count = 4, tier = 2},
-    {name = roboport_3, input_flow_limit = 10800, charging_energy = 2700, charging_station_count = 4, tier = 3},
-    {name = roboport_4, input_flow_limit = 14400, charging_energy = 3600, charging_station_count = 4, tier = 4}
+    {name = roboport_1, input_flow_limit = 3840,  charging_energy = 960,  charging_station_count = 4, tier = 1},
+    {name = roboport_2, input_flow_limit = 7680,  charging_energy = 1920, charging_station_count = 4, tier = 2},
+    {name = roboport_3, input_flow_limit = 11520, charging_energy = 2880, charging_station_count = 4, tier = 3},
+    {name = roboport_4, input_flow_limit = 15360, charging_energy = 3840, charging_station_count = 4, tier = 4}
 }
 for _, BUILD in pairs(roboports) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].stack_size = 16
         data_item[BUILD.name].weight = 125000
         data_recipe[BUILD.name].energy_required = 4
-        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 100) .. kJ -- 200MJ
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 128) .. kJ -- 200MJ
         data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 12.5MW
         data_roboport[BUILD.name].energy_usage = (BUILD.tier * 60) .. kW -- 100kW
         data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 2500kW
@@ -399,7 +400,7 @@ for _, BUILD in pairs(roboports) do
         data_roboport[BUILD.name].logistics_radius = 16 * BUILD.charging_station_count
         data_roboport[BUILD.name].construction_radius = 32 * BUILD.charging_station_count
         data_roboport[BUILD.name].radar_range = BUILD.tier * 2
-        data_roboport[BUILD.name].recharge_minimum = 36000 .. kJ -- 40000kJ
+        data_roboport[BUILD.name].recharge_minimum = 30720 .. kJ -- 40000kJ
     end
 end
 local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
@@ -425,24 +426,24 @@ roboport_recipe(roboport_4, roboport_antenna_4, roboport_door_4, roboport_charge
 data_item_subgroup["bob-logistic-roboport-zone"].order = f_e
 local logistic_zone =
 {
-    {name = logistic_zone_expander_1, input_flow_limit = 600,  charging_energy = 1200, charging_station_count = 1},
-    {name = logistic_zone_expander_2, input_flow_limit = 1200, charging_energy = 2400, charging_station_count = 2},
-    {name = logistic_zone_expander_3, input_flow_limit = 1800, charging_energy = 3600, charging_station_count = 3},
-    {name = logistic_zone_expander_4, input_flow_limit = 2400, charging_energy = 4800, charging_station_count = 4}
+    {name = logistic_zone_expander_1, input_flow_limit = 480,  charging_energy = 960,  charging_station_count = 1},
+    {name = logistic_zone_expander_2, input_flow_limit = 960,  charging_energy = 1920, charging_station_count = 2},
+    {name = logistic_zone_expander_3, input_flow_limit = 1440, charging_energy = 2880, charging_station_count = 3},
+    {name = logistic_zone_expander_4, input_flow_limit = 1920, charging_energy = 3840, charging_station_count = 4}
 }
 for _, BUILD in pairs(logistic_zone) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 62500
         data_recipe[BUILD.name].energy_required = 4
-        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 20) .. kJ -- 10MJ * charging_station_count
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 16) .. kJ -- 10MJ * charging_station_count
         data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 500kW * charging_station_count
-        data_roboport[BUILD.name].energy_usage = (BUILD.charging_station_count * 30) .. kW -- 25kW * charging_station_count
+        data_roboport[BUILD.name].energy_usage = (BUILD.charging_station_count * 32) .. kW -- 25kW * charging_station_count
         data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 1000kW * charging_station_count
         data_roboport[BUILD.name].logistics_radius = 8 * BUILD.charging_station_count
         data_roboport[BUILD.name].construction_radius = 16 * BUILD.charging_station_count
         data_roboport[BUILD.name].radar_range = BUILD.charging_station_count
-        data_roboport[BUILD.name].recharge_minimum = 6000 .. kJ -- 5000kJ
+        data_roboport[BUILD.name].recharge_minimum = 7680 .. kJ -- 5000kJ
     end
 end
 local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander)
@@ -466,21 +467,21 @@ logistic_zone_expander_recipe(logistic_zone_expander_4, roboport_antenna_4, niti
 data_item_subgroup["bob-logistic-roboport-chest"].order = f_f
 local robochests =
 {
-    {name = robochest_1, energy = 900},
-    {name = robochest_2, energy = 1800},
-    {name = robochest_3, energy = 2700},
-    {name = robochest_4, energy = 3600}
+    {name = robochest_1, energy = 960},
+    {name = robochest_2, energy = 1920},
+    {name = robochest_3, energy = 2880},
+    {name = robochest_4, energy = 3840}
 }
 for _, BUILD in pairs(robochests) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].stack_size = 16
         data_item[BUILD.name].weight = 125000
         data_recipe[BUILD.name].energy_required = 4
-        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 20) .. kJ -- 20000kJ
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 16) .. kJ -- 20000kJ
         data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.energy .. kW -- 1200kW
         data_roboport[BUILD.name].energy_usage = 15 .. kW -- 5kW
         data_roboport[BUILD.name].charging_energy = (BUILD.energy * 2) .. kW -- 1000kW
-        data_roboport[BUILD.name].recharge_minimum = 4500 .. kJ -- 5000kJ
+        data_roboport[BUILD.name].recharge_minimum = 3840 .. kJ -- 5000kJ
     end
 end
 if data_recipe[robochest_1] then
@@ -496,10 +497,10 @@ end
 data_item_subgroup["bob-logistic-roboport-charge"].order = f_g
 local robo_port =
 {
-    {name = robo_charge_port_1, energy = 1800, energy_usage = 30},
-    {name = robo_charge_port_2, energy = 3600, energy_usage = 60},
-    {name = robo_charge_port_3, energy = 5400, energy_usage = 90},
-    {name = robo_charge_port_4, energy = 7200, energy_usage = 120}
+    {name = robo_charge_port_1, energy = 1920, energy_usage = 30},
+    {name = robo_charge_port_2, energy = 3840, energy_usage = 60},
+    {name = robo_charge_port_3, energy = 5760, energy_usage = 90},
+    {name = robo_charge_port_4, energy = 7680, energy_usage = 120}
 }
 for _, BUILD in pairs(robo_port) do
     if data_item[BUILD.name] then
@@ -510,7 +511,7 @@ for _, BUILD in pairs(robo_port) do
         data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 4) .. kW -- 6250kW
         data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
         data_roboport[BUILD.name].charging_energy = (BUILD.energy * 4) .. kW -- 1250kW
-        data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 64) * 0.1) .. kJ -- 20000kJ
+        data_roboport[BUILD.name].recharge_minimum = (BUILD.energy * 8) .. kJ -- 20000kJ
     end
 end
 local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
@@ -533,10 +534,10 @@ robo_charge_port_recipe(robo_charge_port_4, roboport_chargepad_4, nitinol_plate_
 
 local robo_port_large =
 {
-    {name = robo_charge_port_large_1, order = a, energy = 1800, energy_usage = 67.5},
-    {name = robo_charge_port_large_2, order = b, energy = 3600, energy_usage = 135},
-    {name = robo_charge_port_large_3, order = c, energy = 5400, energy_usage = 202.5},
-    {name = robo_charge_port_large_4, order = d, energy = 7200, energy_usage = 270}
+    {name = robo_charge_port_large_1, order = a, energy = 1920, energy_usage = 67.5},
+    {name = robo_charge_port_large_2, order = b, energy = 3840, energy_usage = 135},
+    {name = robo_charge_port_large_3, order = c, energy = 5760, energy_usage = 202.5},
+    {name = robo_charge_port_large_4, order = d, energy = 7680, energy_usage = 270}
 }
 for _, BUILD in pairs(robo_port_large) do
     if data_item[BUILD.name] then
@@ -553,7 +554,7 @@ for _, BUILD in pairs(robo_port_large) do
         data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 9) .. kW -- 12500kW
         data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
         data_roboport[BUILD.name].charging_energy = (BUILD.energy * 9) .. kW -- 1250kW
-        data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 144) * 0.1) .. kJ -- 20000kJ
+        data_roboport[BUILD.name].recharge_minimum = (BUILD.energy * 9) .. kJ -- 20000kJ
     end
 end
 local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port_large)
@@ -841,7 +842,7 @@ if mods[bobwarfare] then
         data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
         data_spider_vechicle[ENTITES.name].order = ENTITES.order
         if ENTITES.name == antron and ENTITES.name == tankotron and ENTITES.name == logitron then
-            data_spider_vechicle[ENTITES.name].movement_energy_consumption = 225 .. kW
+            data_spider_vechicle[ENTITES.name].movement_energy_consumption = 240 .. kW
             data_spider_vechicle[ENTITES.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
         end
         if ENTITES.name == logitron then

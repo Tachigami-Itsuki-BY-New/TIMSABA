@@ -50,31 +50,6 @@ if settings.startup[setting_bobmods_power_steam].value then
                 },
                 time = 30
             }
-        },
-        -- STEAM TURBINE
-        {
-            localised_name = {"technology-name.steam-turbine-4"},
-            localised_description = {"technology-description.bob-steam-turbine"},
-            type = technology,
-            name = steam_turbine_4,
-            icon = "__bobpower__/graphics/icons/technology/steam-turbine.png",
-            icon_size = 256,
-            prerequisites = {steam_turbine_3, space_science_pack},
-            effects = {{type = unlock_recipe, recipe = steam_turbine_4}},
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1}
-                },
-                time = 30
-            }
         }
     })
 end
@@ -262,6 +237,37 @@ data:extend
         }
     }
 })
+
+-- STEAM TURBINE
+if settings.startup[setting_bobmods_power_steam].value then
+    data:extend
+    ({
+        {
+            localised_name = {"technology-name.steam-turbine-4"},
+            localised_description = {"technology-description.bob-steam-turbine"},
+            type = technology,
+            name = steam_turbine_4,
+            icon = "__bobpower__/graphics/icons/technology/steam-turbine.png",
+            icon_size = 256,
+            prerequisites = {steam_turbine_3, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = steam_turbine_4}},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+end
 
 -- FURNACES
 data:extend

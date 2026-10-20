@@ -12,7 +12,7 @@ if mods[tellus_mods] then
                 icon = graphics_tellus .. orange_dye .. ".png",
                 order = a,
                 fuel_categories = {base_fuel},
-                fuel_value = 1800 .. kJ
+                fuel_value = 1920 .. kJ
             },
             {
                 name = black_dye,
@@ -20,7 +20,7 @@ if mods[tellus_mods] then
                 icon = graphics_tellus .. black_dye .. ".png",
                 order = z,
                 fuel_categories = {base_fuel},
-                fuel_value = 1800 .. kJ
+                fuel_value = 1920 .. kJ
             }
         })
 

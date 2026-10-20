@@ -1086,10 +1086,10 @@ end
 
 local fission_reactors =
 {
-    {name = fission_reactor_eq_1, power = 600},
-    {name = fission_reactor_eq_2, power = 1200},
-    {name = fission_reactor_eq_3, power = 1800},
-    {name = fission_reactor_eq_4, power = 2400}
+    {name = fission_reactor_eq_1, power = 960},
+    {name = fission_reactor_eq_2, power = 1920},
+    {name = fission_reactor_eq_3, power = 2880},
+    {name = fission_reactor_eq_4, power = 3840}
 }
 for _, EQUIPMENT in pairs(fission_reactors) do
     if data_item[EQUIPMENT.name] then
@@ -1244,12 +1244,12 @@ end
 
 local batterys_eq =
 {
-    {name = battery_eq_1, buffer_capacity = 30000},
-    {name = battery_eq_2, buffer_capacity = 60000},
-    {name = battery_eq_3, buffer_capacity = 120000},
-    {name = battery_eq_4, buffer_capacity = 240000},
-    {name = battery_eq_5, buffer_capacity = 480000},
-    {name = battery_eq_6, buffer_capacity = 960000}
+    {name = battery_eq_1, buffer_capacity = 30720},
+    {name = battery_eq_2, buffer_capacity = 61440},
+    {name = battery_eq_3, buffer_capacity = 92160},
+    {name = battery_eq_4, buffer_capacity = 122880},
+    {name = battery_eq_5, buffer_capacity = 153600},
+    {name = battery_eq_6, buffer_capacity = 184320}
 }
 for _, EQUIPMENT in pairs(batterys_eq) do
     if data_item[EQUIPMENT.name] then
@@ -1413,7 +1413,9 @@ if mods[bobequipment] then
     for _, EQUIPMENT in pairs(roboport_areas_eq) do
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
+        data_recipe[EQUIPMENT.name].energy_required = 8
         data_roboport_eq[EQUIPMENT.name].construction_radius = EQUIPMENT.construction_radius
+        data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = 15 .. kW
     end
     local function rp_area_expander_eq_recipe(name, antenna, plate, roboport_area)
         local ingredients =
@@ -1437,17 +1439,18 @@ if mods[bobequipment] then
     local chargepad_eq_4 = "bob-personal-roboport-chargepad-equipment-4"
     local chargepads_eq =
     {
-        {name = chargepad_eq_1, input_flow_limit = 1800,  charging_energy = 900,  charging_station_count = 8},
-        {name = chargepad_eq_2, input_flow_limit = 7200,  charging_energy = 1800, charging_station_count = 8},
-        {name = chargepad_eq_3, input_flow_limit = 16200, charging_energy = 2700, charging_station_count = 8},
-        {name = chargepad_eq_4, input_flow_limit = 28800, charging_energy = 3600, charging_station_count = 8}
+        {name = chargepad_eq_1, input_flow_limit = 1920,  charging_energy = 960,  charging_station_count = 8},
+        {name = chargepad_eq_2, input_flow_limit = 7680,  charging_energy = 1920, charging_station_count = 8},
+        {name = chargepad_eq_3, input_flow_limit = 17280, charging_energy = 2880, charging_station_count = 8},
+        {name = chargepad_eq_4, input_flow_limit = 30720, charging_energy = 3840, charging_station_count = 8}
     }
     for _, EQUIPMENT in pairs(chargepads_eq) do
         data_item[EQUIPMENT.name].subgroup = is_utility_equipment_2
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_2
-        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 10) .. kJ
+        data_recipe[EQUIPMENT.name].energy_required = 8
+        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 8) .. kJ
         data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
         data_roboport_eq[EQUIPMENT.name].charging_energy = EQUIPMENT.charging_energy .. kW
         data_roboport_eq[EQUIPMENT.name].charging_station_count = EQUIPMENT.charging_station_count
@@ -1484,7 +1487,9 @@ if mods[bobequipment] then
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_3
+        data_recipe[EQUIPMENT.name].energy_required = 8
         data_roboport_eq[EQUIPMENT.name].robot_limit = EQUIPMENT.robot_limit
+        data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = 15 .. kW
     end
     local function robot_control_eq_recipe(name, circuit, robot_control_eq)
         local ingredients = {}
@@ -1532,10 +1537,10 @@ end
 
 local roboports_eq =
 {
-    {name = roboport_eq_1, robot_limit = 8,  input_flow_limit = 1800,  charging_energy = 900,  charging_station_count = 8},
-    {name = roboport_eq_2, robot_limit = 16, input_flow_limit = 7200,  charging_energy = 1800, charging_station_count = 8},
-    {name = roboport_eq_3, robot_limit = 24, input_flow_limit = 16200, charging_energy = 2700, charging_station_count = 8},
-    {name = roboport_eq_4, robot_limit = 32, input_flow_limit = 28800, charging_energy = 3600, charging_station_count = 8}
+    {name = roboport_eq_1, robot_limit = 8,  input_flow_limit = 1920,  charging_energy = 960,  charging_station_count = 8},
+    {name = roboport_eq_2, robot_limit = 16, input_flow_limit = 7680,  charging_energy = 1920, charging_station_count = 8},
+    {name = roboport_eq_3, robot_limit = 24, input_flow_limit = 17280, charging_energy = 2880, charging_station_count = 8},
+    {name = roboport_eq_4, robot_limit = 32, input_flow_limit = 30720, charging_energy = 3840, charging_station_count = 8}
 }
 for _, EQUIPMENT in pairs(roboports_eq) do
     if data_item[EQUIPMENT.name] then
@@ -1543,7 +1548,8 @@ for _, EQUIPMENT in pairs(roboports_eq) do
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_4
-        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 10) .. kJ
+        data_recipe[EQUIPMENT.name].energy_required = 16
+        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 8) .. kJ
         data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
         data_roboport_eq[EQUIPMENT.name].robot_limit = EQUIPMENT.robot_limit
         data_roboport_eq[EQUIPMENT.name].construction_radius = EQUIPMENT.robot_limit
@@ -1741,6 +1747,8 @@ data_recipe[discharge_defense_eq].ingredients =
 }
 data_active_defense_eq[discharge_defense_eq].attack_parameters.cooldown = 120
 data_active_defense_eq[discharge_defense_eq].attack_parameters.range = 8
+data_active_defense_eq[discharge_defense_eq].attack_parameters.ammo_type.energy_consumption = 1920 .. kJ
+data_active_defense_eq[discharge_defense_eq].energy_source.buffer_capacity = 3840 .. kJ
 
 bobmods.lib.recipe.update_recycling_recipe
 ({
