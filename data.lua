@@ -7,6 +7,7 @@ require("prototypes.global-name.global-name-setting")
 
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")
+require("prototypes.equipment-grid")
 
 require("lib.TIMSABA-functions")
 require("lib.barreling-and-void")
