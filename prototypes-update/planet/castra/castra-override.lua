@@ -311,9 +311,9 @@ if mods[castra_mods] then
     }
     data_assembling[jammed_data_collector].subgroup = is_castra_building
     data_assembling[jammed_data_collector].order = c
-    data_assembling[jammed_data_collector].energy_usage = 900 .. kW
+    data_assembling[jammed_data_collector].energy_usage = 960 .. kW
 
-    data_assembling["player-" .. jammed_data_collector].energy_usage = 900 .. kW
+    data_assembling["player-" .. jammed_data_collector].energy_usage = 960 .. kW
     data_assembling["player-" .. jammed_data_collector].surface_conditions = {{property = pressure, max = 2254, min = 2254}}
 
     -- WAR

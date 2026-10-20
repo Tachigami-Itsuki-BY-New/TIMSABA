@@ -28,7 +28,7 @@ end
 data_assembling[burner_ore_crusher].subgroup = is_ore_crusher
 data_assembling[burner_ore_crusher].order = a
 data_assembling[burner_ore_crusher].crafting_speed = 0.5
-data_assembling[burner_ore_crusher].energy_usage = 225 .. kW
+data_assembling[burner_ore_crusher].energy_usage = 240 .. kW
 data_assembling[burner_ore_crusher].energy_source.emissions_per_minute.pollution = 4
 
 data_item_subgroup["angels-ore-crusher"].order = z_a
@@ -529,10 +529,10 @@ powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_titan
 data_item_subgroup["angels-blast-furnace"].order = z_d
 local blast_furnaces =
 {
-    {name = blast_furnace_1, crafting_speed = 1, energy_usage = 450},
-    {name = blast_furnace_2, crafting_speed = 2, energy_usage = 900},
-    {name = blast_furnace_3, crafting_speed = 3, energy_usage = 1350},
-    {name = blast_furnace_4, crafting_speed = 4, energy_usage = 1800}
+    {name = blast_furnace_1, crafting_speed = 1, energy_usage = 480},
+    {name = blast_furnace_2, crafting_speed = 2, energy_usage = 960},
+    {name = blast_furnace_3, crafting_speed = 3, energy_usage = 1440},
+    {name = blast_furnace_4, crafting_speed = 4, energy_usage = 1920}
 }
 for _, BUILD in pairs(blast_furnaces) do
     data_item[BUILD.name].stack_size = 32

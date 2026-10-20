@@ -13,21 +13,21 @@ TIMSABA.functions.create_subgroups("logistics",
 
 -- PRODUCTION
 ig_production = "production"
-is_energy_steam_turbine = "is-energy-steam-turbine"
 is_solar_panel_small = "solar-panel-small"
 is_solar_panel_large = "solar-panel-large"
 is_extraction_machine_mining = "is-extraction-machine-mining"
 is_extraction_machine_muluna = "is-extraction-machine-muluna"
 is_extraction_machine_maraxsis = "is-extraction-machine-maraxsis"
 is_extraction_machine_pumpjack = "is-extraction-machine-pumpjack"
+is_energy_steam_turbine = "is-energy-steam-turbine"
 is_lab = "is-lab"
 TIMSABA.functions.create_subgroups(ig_production,
 {
-    {name = is_energy_steam_turbine,        order = b_b},
     {name = is_solar_panel_small,           order = b_d},
     {name = is_solar_panel_large,           order = b_f},
     {name = is_extraction_machine_mining,   order = c_a},
     {name = is_extraction_machine_pumpjack, order = c_d},
+    {name = is_energy_steam_turbine,        order = c_h},
     {name = is_lab,                         order = e_b}
 })
 

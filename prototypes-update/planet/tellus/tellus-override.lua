@@ -4,7 +4,7 @@ if mods[tellus_mods] then
     data_capsule[chloroplast_fruit].order = a
     data_capsule[chloroplast_fruit].stack_size = 200
     data_capsule[chloroplast_fruit].fuel_categories = {base_fuel}
-    data_capsule[chloroplast_fruit].fuel_value = 1800 .. kJ
+    data_capsule[chloroplast_fruit].fuel_value = 1920 .. kJ
     TIMSABA.void.void_organics(chloroplast_fruit)
     TIMSABA.void.freezing_organics(chloroplast_fruit)
 
@@ -13,13 +13,13 @@ if mods[tellus_mods] then
     data_item[chloroplast_seed].order = b
     data_item[chloroplast_seed].stack_size = 200
     data_item[chloroplast_seed].fuel_categories = {base_fuel}
-    data_item[chloroplast_seed].fuel_value = 3600 .. kJ
+    data_item[chloroplast_seed].fuel_value = 3840 .. kJ
 
     data_capsule[chloroplast_mash].subgroup = is_chloroplast
     data_capsule[chloroplast_mash].order = c
     data_capsule[chloroplast_mash].stack_size = 200
     data_capsule[chloroplast_mash].fuel_categories = {base_fuel}
-    data_capsule[chloroplast_mash].fuel_value = 900 .. kJ
+    data_capsule[chloroplast_mash].fuel_value = 960 .. kJ
     TIMSABA.void.void_organics(chloroplast_mash)
     TIMSABA.void.freezing_organics(chloroplast_mash)
 
@@ -189,7 +189,7 @@ if mods[tellus_mods] then
     data_item[mushroom_cap].order = a
     data_item[mushroom_cap].stack_size = 200
     data_item[mushroom_cap].fuel_categories = {base_fuel}
-    data_item[mushroom_cap].fuel_value = 1800 .. kJ
+    data_item[mushroom_cap].fuel_value = 1920 .. kJ
     TIMSABA.void.void_organics(mushroom_cap)
     TIMSABA.void.freezing_organics(mushroom_cap)
 
@@ -198,13 +198,13 @@ if mods[tellus_mods] then
     data_item[mycelia_seed].order = b
     data_item[mycelia_seed].stack_size = 200
     data_item[mycelia_seed].fuel_categories = {base_fuel}
-    data_item[mycelia_seed].fuel_value = 3600 .. kJ
+    data_item[mycelia_seed].fuel_value = 3840 .. kJ
 
     data_item[mycelia].subgroup = is_mycelia
     data_item[mycelia].order = c
     data_item[mycelia].stack_size = 200
     data_item[mycelia].fuel_categories = {base_fuel}
-    data_item[mycelia].fuel_value = 1800 .. kJ
+    data_item[mycelia].fuel_value = 1920 .. kJ
     TIMSABA.void.void_organics(mycelia)
     TIMSABA.void.freezing_organics(mycelia)
 
@@ -291,7 +291,7 @@ if mods[tellus_mods] then
     data_item[carbolyte_pod].order = b
     data_item[carbolyte_pod].stack_size = 200
     data_item[carbolyte_pod].fuel_categories = {base_fuel}
-    data_item[carbolyte_pod].fuel_value = 900 .. kJ
+    data_item[carbolyte_pod].fuel_value = 960 .. kJ
 
     local carbolyte_bacteria = "planetaris-carbolyte-bacteria"
     data_item[carbolyte_bacteria].subgroup = is_carbolyte
@@ -345,7 +345,7 @@ if mods[tellus_mods] then
     data_item[holmiumnite_pod].order = b
     data_item[holmiumnite_pod].stack_size = 200
     data_item[holmiumnite_pod].fuel_categories = {base_fuel}
-    data_item[holmiumnite_pod].fuel_value = 3600 .. kJ
+    data_item[holmiumnite_pod].fuel_value = 3840 .. kJ
     data_recipe[holmiumnite_pod].subgroup = is_holmiumnite
     data_recipe[holmiumnite_pod].order = b
     data_recipe[holmiumnite_pod].ingredients =
@@ -553,7 +553,7 @@ if mods[tellus_mods] then
     data_item[mushell_seed].order = c
     data_item[mushell_seed].stack_size = 200
     data_item[mushell_seed].fuel_categories = {base_fuel}
-    data_item[mushell_seed].fuel_value = 3600 .. kJ
+    data_item[mushell_seed].fuel_value = 3840 .. kJ
 
     data_item[pesticide].subgroup = is_tellus_recipe
     data_item[pesticide].order = e
@@ -626,7 +626,7 @@ if mods[tellus_mods] then
     data_item[root].order = a
     data_item[root].stack_size = 200
     data_item[root].fuel_categories = {base_fuel}
-    data_item[root].fuel_value = 1800 .. kJ
+    data_item[root].fuel_value = 1920 .. kJ
     data_recipe[root].subgroup = is_tellus_logistic
     data_recipe[root].order = a
     data_pipe[root].subgroup = is_tellus_logistic
@@ -849,7 +849,7 @@ if mods[tellus_mods] then
             data_item[prototypes.name].order = prototypes.order
             data_item[prototypes.name].stack_size = 200
             data_item[prototypes.name].fuel_categories = {base_fuel}
-            data_item[prototypes.name].fuel_value = 1800 .. kJ
+            data_item[prototypes.name].fuel_value = 1920 .. kJ
             data_recipe[prototypes.name].categories = {centrifuging_4}
             data_recipe[prototypes.name].subgroup = is_dyes
             data_recipe[prototypes.name].order = prototypes.order
