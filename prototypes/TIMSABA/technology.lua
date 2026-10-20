@@ -303,7 +303,8 @@ data:extend
             {type = unlock_recipe, recipe = magnesium_hydroxide},
             {type = unlock_recipe, recipe = magnesium_sulfate},
             {type = unlock_recipe, recipe = magnesium_oxide_2},
-            {type = unlock_recipe, recipe = magnesium_powder}
+            {type = unlock_recipe, recipe = magnesium_powder},
+            {type = unlock_recipe, recipe = sulfuric_acid_decomposition}
         },
         unit =
         {

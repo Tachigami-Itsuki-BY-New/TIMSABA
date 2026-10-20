@@ -1040,9 +1040,9 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
+            {type = fluid, name = ethanol_angels, amount = 960},
             {type = item, name = lithium_hydroxide, amount = 8}, -- 16
             {type = item, name = aluminium_hydroxide, amount = 8}, -- 16
-            {type = fluid, name = ethanol_angels, amount = 480}, -- 960
             {type = fluid, name = diethyl_ether, amount = 120} -- 240
         },
         main_product = ethanol_angels
