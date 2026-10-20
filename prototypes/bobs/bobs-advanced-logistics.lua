@@ -65,7 +65,7 @@ if mods[bobwarfare] then
     T4_artillery_wagon.turret_rotation_speed = 0.004
     T4_artillery_wagon.turn_after_shooting_cooldown = 20
     T4_artillery_wagon.cannon_parking_speed = 0.4
-    --T4_artillery_wagon.equipment_grid = large_vehicle_equipment_grid
+    T4_artillery_wagon.equipment_grid = large_vehicle_equipment_grid
     data:extend({T4_artillery_wagon})
 
     data_wagon_artillery[artillery_wagon_3].next_upgrade = artillery_wagon_4
