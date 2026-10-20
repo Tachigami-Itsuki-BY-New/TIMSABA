@@ -1050,14 +1050,14 @@ TIMSABA.functions.create_recipes
         name = sulfuric_acid_decomposition,
         categories = {chemistry},
         subgroup = is_sulfur_fluids,
-        icons = THREE_R_I(sulfuric_acid_angels, sulfur_trioxide_gas, oxygen_angels),
+        icons = THREE_R_I(sulfuric_acid_angels, sulfur_trioxide_gas, steam),
         order = e_a,
-        energy_required = 2, -- H₂SO₄(l) --> 2SO₃(g) + O₂(g)
+        energy_required = 2, -- H₂SO₄(l) --> SO₃(g) + H₂O(g)
         ingredients = {{type = fluid, name = sulfuric_acid_angels, amount = 60}},
         results =
         {
             {type = fluid, name = sulfur_trioxide_gas, amount = 60},
-            {type = fluid, name = oxygen_angels, amount = 30}
+            {type = fluid, name = steam, amount = 30}
         },
         main_product = sulfur_trioxide_gas
     },
