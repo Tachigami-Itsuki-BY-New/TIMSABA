@@ -247,7 +247,7 @@ for _, TRANSPORT in pairs(artillery_wagons) do
         data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
     end
 end
-local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artillery_wagon, plate)
+local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, plate, artillery_wagon)
     if not data_recipe[name] then return end
 
     data_recipe[name].ingredients =
@@ -255,13 +255,13 @@ local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artill
         {type = item, name = gear_wheel,      amount = 16},
         {type = item, name = bearing,         amount = 8},
         {type = item, name = circuit,         amount = 32},
-        {type = item, name = artillery_wagon, amount = 1},
-        {type = item, name = plate,           amount = 32}
+        {type = item, name = plate,           amount = 32},
+        {type = item, name = artillery_wagon, amount = 1}
     }
 end
-artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel,             copper_tungsten_bearing, advanced_processing_unit, artillery_turret_1, copper_tungsten_plate_bob)
-artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel,                  rhenium_bearing,         advanced_processing_unit, artillery_wagon_1,  molybdenum_rhenium_plate)
-artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing,    advanced_processing_unit, artillery_wagon_2,  niobium_tungsten_molybdenum_plate)
+artillery_wagon_recipe(artillery_wagon_1,        tungsten_gear_wheel,        tungsten_bearing,          processing_unit,           tungsten_plate_bob, artillery_turret_1)
+artillery_wagon_recipe(artillery_wagon_2, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit,    copper_tungsten_plate_bob, artillery_wagon_1)
+artillery_wagon_recipe(artillery_wagon_3,      molybdenum_gear_wheel,         rhenium_bearing, advanced_processing_unit, molybdenum_rhenium_plate,     artillery_wagon_2)
 
 local lignumobile = "lignumobile"
 if mods[lignumis_mods] then
@@ -764,12 +764,12 @@ for _, name in pairs(materials) do
     end
 end
 
-if data_recipe[spidertron_cannon] then
+if mods[bobwarfare] then
     data_recipe[spidertron_cannon].energy_required = 8
     data_recipe[spidertron_cannon].ingredients =
     {
-        {type = item, name = iron_gear_wheel, amount = 4},
-        {type = item, name = steel_plate, amount = 16}
+        {type = item, name = tungsten_gear_wheel, amount = 4},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 16}
     }
 
     data_recipe[mech_armor_plate].ingredients =
@@ -803,16 +803,16 @@ if data_recipe[spidertron_cannon] then
 
     data_recipe[mech_hip].ingredients =
     {
-        {type = item, name = titanium_gear_wheel, amount = 4},
-        {type = item, name = titanium_bearing, amount = 4},
+        {type = item, name = nitinol_gear_wheel, amount = 4},
+        {type = item, name = nitinol_bearing, amount = 4},
         {type = item, name = electric_engine_unit, amount = 4},
         {type = item, name = low_density_structure, amount = 2}
     }
 
     data_recipe[mech_knee].ingredients =
     {
-        {type = item, name = titanium_gear_wheel, amount = 8},
-        {type = item, name = titanium_bearing, amount = 2},
+        {type = item, name = nitinol_gear_wheel, amount = 8},
+        {type = item, name = nitinol_bearing, amount = 2},
         {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = low_density_structure, amount = 2}
     }
@@ -825,11 +825,11 @@ if data_recipe[spidertron_cannon] then
 
     local spidertrons =
     {
-        {name = antron,           order = a, equipment_grid = "bob-tankotron-equipment-grid"},
-        {name = tankotron,        order = b, equipment_grid = large_equipment_grid},
-        {name = logitron,         order = c, equipment_grid = power_armor_equipment_grid_4},
-        {name = spidertron,       order = d, equipment_grid = power_armor_equipment_grid_4},
-        {name = heavy_spidertron, order = e, equipment_grid = power_armor_equipment_grid_5}
+        {name = antron,           order = a},
+        {name = tankotron,        order = b},
+        {name = logitron,         order = c},
+        {name = spidertron,       order = d},
+        {name = heavy_spidertron, order = e}
     }
     for _, ENTITES in pairs(spidertrons) do
         data_item_entity[ENTITES.name].subgroup = is_spidertron
@@ -840,11 +840,14 @@ if data_recipe[spidertron_cannon] then
         data_recipe[ENTITES.name].energy_required = 4
         data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
         data_spider_vechicle[ENTITES.name].order = ENTITES.order
-        data_spider_vechicle[ENTITES.name].equipment_grid = ENTITES.equipment_grid
+        if ENTITES.name == antron and ENTITES.name == tankotron and ENTITES.name == logitron then
+            data_spider_vechicle[ENTITES.name].movement_energy_consumption = 225 .. kW
+            data_spider_vechicle[ENTITES.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+        end
+        if ENTITES.name == logitron then
+            data_spider_vechicle[logitron].guns = {}
+        end
     end
-
-    data_spider_vechicle[antron].movement_energy_consumption = 225 .. kW
-    data_spider_vechicle[antron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 
     data_recipe[tankotron].ingredients =
     {
@@ -853,8 +856,6 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 6}
     }
-    data_spider_vechicle[tankotron].movement_energy_consumption = 225 .. kW
-    data_spider_vechicle[tankotron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 
     data_recipe[logitron].ingredients =
     {
@@ -863,9 +864,6 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = mech_frame, amount = 1},
         {type = item, name = mech_leg, amount = 8}
     }
-    data_spider_vechicle[logitron].movement_energy_consumption = 225 .. kW
-    data_spider_vechicle[logitron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-    data_spider_vechicle[logitron].guns = {}
 
     data_recipe[spidertron].ingredients =
     {
@@ -923,34 +921,6 @@ if data_recipe[spidertron_cannon] then
         spidertron,
         heavy_spidertron
     })
-end
-
-if mods[maraxsis_mods] then
-    local spiderling = "sp-spiderling"
-    if data_item_entity[spiderling] then
-        data_item_entity[spiderling].subgroup = is_spidertron
-        data_item_entity[spiderling].weight = 1000000
-        data_recipe[spiderling].subgroup = is_spidertron
-        data_recipe[spiderling].energy_required = 4
-        data_recipe[spiderling].ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 32},
-            {type = item, name = rocket_launcher, amount = 1},
-            {type = item, name = exoskeleton_eq_1, amount = 4},
-            {type = item, name = radar_1, amount = 1},
-            {type = item, name = factorian_fish, amount = 1}
-        }
-
-        bobmods.lib.recipe.update_recycling_recipe({spiderling})
-
-        data_technology[spiderling].unit.ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {military_science_pack, 1},
-            {chemical_science_pack, 1}
-        }
-    end
 end
 
 bobmods.lib.recipe.update_recycling_recipe

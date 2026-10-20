@@ -103,7 +103,79 @@ data_technology[steel_plate .. _productivity].unit.ingredients =
     {metallurgic_science_pack, 1}
 }
 
+data_technology[artillery_turret_2].unit.count = 4096
+data_technology[artillery_turret_3].unit.count = 8192
+data_technology[artillery_turret_4].unit.count = 16384
+
 data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{type = "character-logistic-trash-slots", modifier = 5}}
+
+if settings.startup[setting_horogon_extra_science_packs].value == false then
+    for tech_name, tech in pairs(data_technology) do
+        if tech and tech.unit and tech.unit.ingredients then
+            local has_gold_pack = false
+            for _, ingredient in pairs(tech.unit.ingredients) do
+                if ingredient[1] == gold_science_pack_bob or ingredient.name == gold_science_pack_bob then
+                    has_gold_pack = true
+                    break
+                end
+            end
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == space_science_pack or ing.name == space_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+            -- LIGNUMIS
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == wood_science_pack or ing.name == wood_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == steam_science_pack or ing.name == steam_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+        end
+    end
+    local lab_inputs = data_lab[lab_alien].inputs
+    for i = #lab_inputs, 1, -1 do
+        if lab_inputs[i] == space_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- MULUNA
+        if lab_inputs[i] == interstellar_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- CORRUNDUM
+        if lab_inputs[i] == electrochemical_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- FROZETA
+        if lab_inputs[i] == golden_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- VESTA
+        if lab_inputs[i] == gas_manipulation_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- LIGNUMIS
+        if lab_inputs[i] == wood_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        if lab_inputs[i] == steam_science_pack then
+            table.remove(lab_inputs, i)
+        end
+    end
+end
 
 TIMSABA.functions.auto_added_science_pack(promethium_science_pack, promethium_science_pack)
 

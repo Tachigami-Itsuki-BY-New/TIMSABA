@@ -136,7 +136,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_uranium,
         icons = TWO_I(uranium_ore, uranium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = uranium_ore, amount = 4}},
         results = {{type = item, name = uranium_processed, amount = 4}},
         main_product = uranium_processed
@@ -147,7 +146,6 @@ TIMSABA.functions.create_recipes
         subgroup = is_uranium,
         icons = TWO_I(uranium_processed, uranium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = uranium_processed, amount = 4}},
         results = {{type = item, name = uranium_pellet, amount = 4}},
         main_product = uranium_pellet
@@ -213,16 +211,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_uranium_chemistry,
         icons = TWO_D_I(uranium_oxide_VI, hydrogen_fluoride_angels, uranium_fluoride_VI_gas, water_purified_angels),
         order = c_a,
-        -- UO₃(s) + 6HF(g) --> UF₆(g)(234/235/238) + 3H₂O(l)
+        energy_required = 8, -- UO₃(s) + 6HF(g) --> UF₆(g)(234/235/238) + 3H₂O(l)
         ingredients =
         {
-            {type = item, name = uranium_oxide_VI, amount = 8},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 720}
+            {type = item, name = uranium_oxide_VI, amount = 16},
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 1440}
         },
         results =
         {
-            {type = fluid, name = uranium_fluoride_VI_gas, amount = 120},
-            {type = fluid, name = water_purified_angels, amount = 120} -- 360
+            {type = fluid, name = uranium_fluoride_VI_gas, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240} -- 720
         },
         main_product = uranium_fluoride_VI_gas
     },

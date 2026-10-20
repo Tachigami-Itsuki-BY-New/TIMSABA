@@ -24,7 +24,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_coal,
         icons = TWO_I(coke_angels, coke_processed),
         order = e,
-        energy_required = 1, -- C --> C
+        energy_required = 4, -- C --> C
         ingredients = {{type = item, name = coke_angels, amount = 1}},
         results = {{type = item, name = coke_processed, amount = 1}},
         main_product = coke_processed
@@ -1208,35 +1208,35 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lime_from_calcium_hydroxide,
-        categories = {angels_blast_smelting_4},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = THREE_R_I(calcium_hydroxide, lime_angels, steam),
         order = c_a,
-        energy_required = 8, -- Ca(OH)₂ --> CaO + H₂O
-        ingredients = {{type = item, name = calcium_hydroxide, amount = 16}},
+        energy_required = 4, -- Ca(OH)₂(s) --> CaO(s) + H₂O(g)
+        ingredients = {{type = item, name = calcium_hydroxide, amount = 4}},
         results =
         {
-            {type = item, name = lime_angels, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
+            {type = item, name = lime_angels, amount = 4},
+            {type = fluid, name = steam, amount = 30} -- 60
         },
         main_product = lime_angels
     },
     {
         name = calcium_carbide,
-        categories = {smelting_filtering},
+        categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
         order = e,
-        energy_required = 8, -- CaO + 3C --> CaC₂ + CO 
+        energy_required = 4, -- CaO(s) + 3C(s) --> CaC₂(s) + CO(g) 
         ingredients =
         {
-            {type = item, name = lime_angels, amount = 16},
-            {type = item, name = carbon_angels, amount = 48}
+            {type = item, name = lime_angels, amount = 4},
+            {type = item, name = carbon_angels, amount = 12}
         },
         results =
         {
-            {type = item, name = calcium_carbide, amount = 16},
-            {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 240
+            {type = item, name = calcium_carbide, amount = 4},
+            {type = fluid, name = carbon_monoxide_angels, amount = 30} -- 60
         },
         main_product = calcium_carbide
     },

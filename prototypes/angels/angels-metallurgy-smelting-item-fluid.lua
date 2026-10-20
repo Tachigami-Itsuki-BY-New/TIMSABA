@@ -215,6 +215,7 @@ local graphics_manganese = "__TIMSABA__/graphics/icons/angels/metallurgy/mangane
 manganese_oxide_IV = "manganese-oxide-IV"
 manganese_sulfate_II = "manganese-sulfate-II"
 potassium_permanganate = "potassium-permanganate"
+potassium_manganate = "potassium-manganate"
 TIMSABA.functions.create_items
 ({
     {
@@ -237,6 +238,13 @@ TIMSABA.functions.create_items
         subgroup = is_manganese_chemistry,
         icon = graphics_manganese .. potassium_permanganate .. ".png",
         order = f
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]MnO[font=default-tiny-bold]4[/font]"} or nil,
+        name = potassium_manganate,
+        subgroup = is_manganese_chemistry,
+        icon = graphics_manganese .. potassium_manganate .. ".png",
+        order = g
     }
 })
 
@@ -259,6 +267,8 @@ TIMSABA.barreling.add_dangerous_fluid(manganese_sulfate_II_solution)
 local graphics_silicon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/"
 -- SILICON ITEM
 silicon_oxide_IV = "silicon-oxide-IV"
+calcium_silicate = "calcium-silicate"
+metasilicic_acid = "metasilicic-acid"
 TIMSABA.functions.create_items
 ({
     {
@@ -267,6 +277,20 @@ TIMSABA.functions.create_items
         subgroup = is_silicon_chemistry,
         icon = graphics_silicon .. silicon_oxide_IV .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
+        name = calcium_silicate,
+        subgroup = is_silicon_chemistry,
+        icon = graphics_silicon .. calcium_silicate .. ".png",
+        order = i
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
+        name = metasilicic_acid,
+        subgroup = is_silicon_chemistry,
+        icon = graphics_silicon .. metasilicic_acid .. ".png",
+        order = j
     }
 })
 
@@ -359,15 +383,39 @@ TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
 
 local graphics_aluminium = "__TIMSABA__/graphics/icons/angels/metallurgy/aluminium/"
 -- ALUMINIUM ITEM
+calcium_aluminate = "calcium-aluminate"
+aluminium_carbide = "aluminium-carbide"
+aluminium_sulfate = "aluminium-sulfate"
 aluminium_chloride = "aluminium-chloride"
 TIMSABA.functions.create_items
 ({
+    {
+        localised_description = show_formula and {chemical_formula, "Ca(AlO[font=default-tiny-bold]2[/font])[font=default-tiny-bold]2[/font]"} or nil,
+        name = calcium_aluminate,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. calcium_aluminate .. ".png",
+        order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]4[/font]C[font=default-tiny-bold]3[/font]"} or nil,
+        name = aluminium_carbide,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. aluminium_carbide .. ".png",
+        order = f
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = aluminium_sulfate,
+        subgroup = is_aluminium_chemistry,
+        icon = graphics_aluminium .. aluminium_sulfate .. ".png",
+        order = g
+    },
     {
         localised_description = show_formula and {chemical_formula, "AlCl[font=default-tiny-bold]3[/font]"} or nil,
         name = aluminium_chloride,
         subgroup = is_aluminium_chemistry,
         icon = graphics_aluminium .. aluminium_chloride .. ".png",
-        order = a
+        order = i
     }
 })
 
@@ -387,6 +435,7 @@ TIMSABA.functions.create_fluids
         base_color = TIMSABA.functions.fluid_color("AlCl3Wp"),
         flow_color = TIMSABA.functions.flow_color("AlCl3Wp")
     },
+    -- ETHER
     {
         localised_description = show_formula and {chemical_formula, "AlCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
         name = aluminium_chloride_solution_ether,
@@ -504,6 +553,8 @@ TIMSABA.barreling.add_dangerous_fluid(sodium_dicyanoargentate_I_solution)
 local graphics_titanium = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/"
 -- TITANIUM ITEM
 titanium_oxide_IV = "titanium-oxide-IV"
+titanium_carbide = "titanium-carbide"
+metatitanic_acid = "metatitanic-acid"
 TIMSABA.functions.create_items
 ({
     {
@@ -511,7 +562,21 @@ TIMSABA.functions.create_items
         name = titanium_oxide_IV,
         subgroup = is_titanium_chemistry,
         icon = graphics_titanium .. titanium_oxide_IV .. ".png",
+        order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "TiC"} or nil,
+        name = titanium_carbide,
+        subgroup = is_titanium_chemistry,
+        icon = graphics_titanium .. titanium_carbide .. ".png",
         order = d
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]TiO[font=default-tiny-bold]3[/font]"} or nil,
+        name = metatitanic_acid,
+        subgroup = is_titanium_chemistry,
+        icon = graphics_titanium .. metatitanic_acid .. ".png",
+        order = f
     }
 })
 
@@ -524,7 +589,7 @@ TIMSABA.functions.create_fluids
         name = titanium_iodide_IV_gas,
         subgroup = is_titanium_chemistry,
         icon = graphics_titanium .. titanium_iodide_IV_gas .. ".png",
-        order = c,
+        order = e,
         base_color = TIMSABA.functions.fluid_color("TiI4"),
         flow_color = TIMSABA.functions.flow_color("TiI4")
     }
