@@ -245,35 +245,6 @@ local sub = string.sub
 local find = string.find
 local remove = table.remove
 
---[[local function prototype_exists(product)
-    if not product then return false end
-
-    local p_name = product.name
-    local p_type = product.type
-
-    if not p_name or type(p_name) ~= "string" then return false end
-
-    if find(p_name, "par%-") then
-        return true
-    end
-
-    if p_type == "fluid" then
-        return data_fluid[p_name] ~= nil
-    end
-
-    return data_item[p_name] ~= nil
-    or data_capsule[p_name] ~= nil
-    or data_tool[p_name] ~= nil
-    or data_ammo[p_name] ~= nil
-    or data_armor[p_name] ~= nil
-    or data_gun[p_name] ~= nil
-    or data_module[p_name] ~= nil
-    or data_spidertron_remote[p_name] ~= nil
-    or data_repair_tool[p_name] ~= nil
-    or data_rail_planner[p_name] ~= nil
-    or data_item_entity[p_name] ~= nil
-    or data_SP_starter_pack[p_name] ~= nil
-end]]
 local function prototype_exists(product)
     if not product then return false end
 
