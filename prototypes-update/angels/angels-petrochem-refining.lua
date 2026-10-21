@@ -2043,16 +2043,6 @@ data_recipe[rubber_angels].icons = TWO_I(liquid_rubber_angels, rubber_bob)
 data_recipe[rubber_angels].order = b_b
 data_recipe[rubber_angels].ingredients[1].amount = 60
 
-data_item[insulated_cable].subgroup = is_rubber
-data_item[insulated_cable].order = c
-data_recipe[insulated_cable].subgroup = is_rubber
-data_recipe[insulated_cable].icons = THREE_I(copper_cable, rubber_bob, insulated_cable)
-data_recipe[insulated_cable].order = c
-data_recipe[insulated_cable].ingredients[1].amount = 4
-data_recipe[insulated_cable].ingredients[2].name = copper_cable
-data_recipe[insulated_cable].ingredients[2].amount = 1
-data_recipe[insulated_cable].results[1].amount = 1
-
 -- EXPLOSIVES
 data_item[explosives].subgroup = is_explosives
 data_item[explosives].order = a
@@ -2268,8 +2258,6 @@ data_recipe[catalyst_yellow].ingredients[1].amount = 8
 data_recipe[catalyst_yellow].ingredients[2].name = tungsten_ore_bob
 data_recipe[catalyst_yellow].ingredients[3].name = platinum_ore_angels
 data_recipe[catalyst_yellow].results[1].amount = 8
-
-bobmods.lib.recipe.update_recycling_recipe({insulated_cable})
 
 data_item_subgroup[is_buildings_gas_refinery].order = z_f
 

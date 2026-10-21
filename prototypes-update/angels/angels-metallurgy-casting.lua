@@ -241,6 +241,18 @@ data_recipe[copper_wire_2].icons = TWO_I(copper_wire_coil, copper_cable)
 data_recipe[copper_wire_2].order = e_a
 data_recipe[copper_wire_2].energy_required = 8
 
+data_item[copper_insulated_cable].subgroup = is_copper_casting
+data_item[copper_insulated_cable].order = f
+data_recipe[copper_insulated_cable].subgroup = is_copper_casting
+data_recipe[copper_insulated_cable].icons = THREE_I(copper_cable, rubber_bob, copper_insulated_cable)
+data_recipe[copper_insulated_cable].order = f
+data_recipe[copper_insulated_cable].allow_productivity = false
+data_recipe[copper_insulated_cable].energy_required = 4
+data_recipe[copper_insulated_cable].ingredients[1].amount = 4
+data_recipe[copper_insulated_cable].ingredients[2].name = copper_cable
+data_recipe[copper_insulated_cable].ingredients[2].amount = 8
+data_recipe[copper_insulated_cable].results[1].amount = 8
+
 -- LEAD
 data_item_subgroup["angels-lead-casting"].order = c
 
@@ -352,7 +364,7 @@ data_item[tin_plate_bob].localised_description = show_formula and {chemical_form
 data_item[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].localised_name = data_item[tin_plate_bob].localised_name
 data_recipe[tin_plate_bob].categories = {smelting}
-data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
+data_recipe[tin_plate_bob].subgroup = is_tin_casting
 data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].main_product = tin_plate_bob
@@ -896,7 +908,7 @@ data_item[gold_plate_bob].order = c
 data_item[gold_plate_bob].weight = 5000
 if mods[secretas_frozeta_mods] then
     data_recipe[gold_plate_bob].localised_name = data_item[gold_plate_bob].localised_name
-    data_recipe[gold_plate_bob].subgroup = "angels-gold-casting"
+    data_recipe[gold_plate_bob].subgroup = is_gold_casting
     data_recipe[gold_plate_bob].icons = TWO_I(sylvanite_crushed, gold_plate_bob)
     data_recipe[gold_plate_bob].order = c
     data_recipe[gold_plate_bob].enabled = false
@@ -1520,6 +1532,7 @@ data_recipe[nitinol_plate_angels].ingredients[1].amount = 60
 bobmods.lib.recipe.update_recycling_recipe
 ({
     copper_cable,
+    copper_insulated_cable,
     tin_cable,
     silver_cable,
     gold_cable,

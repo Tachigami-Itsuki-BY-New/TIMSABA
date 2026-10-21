@@ -7,10 +7,9 @@ data_item[beacon_1].weight = 31250
 data_recipe[beacon_1].energy_required = 16
 data_recipe[beacon_1].ingredients =
 {
-    {type = item, name = basic_circuit_board,       amount = 16},
-    {type = item, name = electronic_circuit,        amount = 16},
-    {type = item, name = steel_plate,               amount = 8},
-    {type = item, name = copper_cable,              amount = 8},
+    {type = item, name = electronic_circuit, amount = 16},
+    {type = item, name = steel_plate, amount = 8},
+    {type = item, name = tin_insulated_cable, amount = 8},
     {type = item, name = crystal_splinter_harmonic, amount = 1}
 }
 
