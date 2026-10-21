@@ -319,6 +319,108 @@ TIMSABA.functions.create_recipes
     }
 })
 
+-- JELLYNUT
+TIMSABA.functions.create_recipes
+({
+    {
+        name = jellynut,
+        categories = {jellynut_farming},
+        subgroup = is_jellynut,
+        icons = FOUR_THREE_I(jellynut_seed, artificial_jellynut_soil, fertilizer_angels, nutrient_pulp, jellynut),
+        order = a,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 32,
+        ingredients =
+        {
+            {type = item, name = jellynut_seed, amount = 4},
+            {type = item, name = artificial_jellynut_soil, amount = 4},
+            {type = item, name = fertilizer_angels, amount = 4},
+            {type = fluid, name = nutrient_pulp, amount = 60}
+        },
+        results = {{type = item, name = jellynut, amount = 16}},
+        main_product = jellynut
+    },
+    {
+        name = jellynut_seed,
+        categories = {angels_seed_extractor},
+        subgroup = is_jellynut,
+        icons = TWO_I(jellynut, jellynut_seed),
+        order = b,
+        allow_quality = true,
+        energy_required = 0.5,
+        ingredients = {{type = item, name = jellynut, amount = 4}},
+        results = {{type = item, name = jellynut_seed, amount = 8}},
+        main_product = jellynut_seed
+    },
+    {
+        name = jelly,
+        categories = {angels_bio_processor},
+        subgroup = is_jellynut,
+        icons = THREE_R_I(jellynut, jelly, crystal_dust),
+        order = c,
+        allow_quality = true,
+        ingredients = {{type = item, name = jellynut, amount = 16}},
+        results =
+        {
+            {type = item, name = jelly, amount = 16},
+            {type = item, name = crystal_dust, amount = 8}
+        },
+        main_product = jelly
+    }
+})
+
+-- YUMAKO
+TIMSABA.functions.create_recipes
+({
+    {
+        name = yumako,
+        categories = {yumako_farming},
+        subgroup = is_yumako,
+        icons = FOUR_THREE_I(yumako_seed, artificial_yumako_soil, fertilizer_angels, nutrient_pulp, yumako),
+        order = a,
+        allow_productivity = true,
+        allow_quality = true,
+        energy_required = 32,
+        ingredients =
+        {
+            {type = item, name = yumako_seed, amount = 4},
+            {type = item, name = artificial_yumako_soil, amount = 4},
+            {type = item, name = fertilizer_angels, amount = 4},
+            {type = fluid, name = nutrient_pulp, amount = 60}
+        },
+        results = {{type = item, name = yumako, amount = 16}},
+        main_product = yumako
+    },
+    {
+        name = yumako_seed,
+        categories = {angels_seed_extractor},
+        subgroup = is_yumako,
+        icons = TWO_I(yumako, yumako_seed),
+        order = b,
+        allow_quality = true,
+        energy_required = 0.5,
+        ingredients = {{type = item, name = yumako, amount = 4}},
+        results = {{type = item, name = yumako_seed, amount = 8}},
+        main_product = yumako_seed
+    },
+    {
+        name = yumako_mash,
+        categories = {angels_bio_processor},
+        subgroup = is_yumako,
+        icons = THREE_R_I(yumako, yumako_mash, crystal_dust),
+        order = c,
+        allow_quality = true,
+        ingredients = {{type = item, name = yumako, amount = 16}},
+        results =
+        {
+            {type = item, name = yumako_mash, amount = 16},
+            {type = item, name = crystal_dust, amount = 8}
+        },
+        main_product = yumako_mash
+    }
+})
+
 -- BREEDING
 recipe_breeding_fish =
 {

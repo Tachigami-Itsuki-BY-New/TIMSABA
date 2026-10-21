@@ -1799,9 +1799,20 @@ TIMSABA.functions.create_buildings
         allowed_module_categories = {speed, efficiency, pollution_create}
     }
 })
+table.insert(data_assembling[basic_farm_1].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_1].crafting_categories, yumako_farming)
 data_assembling[basic_farm_1].next_upgrade = basic_farm_2
+
+table.insert(data_assembling[basic_farm_2].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_2].crafting_categories, yumako_farming)
 data_assembling[basic_farm_2].next_upgrade = basic_farm_3
+
+table.insert(data_assembling[basic_farm_3].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_3].crafting_categories, yumako_farming)
 data_assembling[basic_farm_3].next_upgrade = basic_farm_4
+
+table.insert(data_assembling[basic_farm_4].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_4].crafting_categories, yumako_farming)
 data_assembling[basic_farm_4].next_upgrade = nil
 
 data_assembling[temperate_farm_1].next_upgrade = temperate_farm_2
