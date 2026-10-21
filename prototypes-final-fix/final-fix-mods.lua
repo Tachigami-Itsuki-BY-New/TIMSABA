@@ -70,10 +70,6 @@ data_recipe[nickel_powder].hidden = true
 data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_item[aluminium_oxide].hidden = false
 data_item[aluminium_oxide].hidden_in_factoriopedia = false
---data_item[aluminium_powder].hidden = true
---data_item[aluminium_powder].hidden_in_factoriopedia = true
---data_recipe[aluminium_powder].hidden = true
---data_recipe[aluminium_powder].hidden_in_factoriopedia = true
 data_recipe[zinc_ingot_2].hidden = true
 data_recipe[zinc_ingot_2].hidden_in_factoriopedia = true
 data_item[silver_nitrate_I].hidden = false
@@ -120,7 +116,7 @@ data_recipe[gold_cable].hidden = false
 data_recipe[gold_cable].hidden_in_factoriopedia = false
 data_fluid[cobalt_molten_angels].hidden = false
 data_fluid[cobalt_molten_angels].hidden_in_factoriopedia = false
-data_recipe[platinum_plate].categories = {smelting}
+if mods[corrundum_mods] then data_recipe[platinum_plate].categories = {smelting} end
 data_recipe[glass_bob].hidden = false
 data_recipe[glass_bob].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].hidden = false
@@ -537,11 +533,6 @@ if mods[paracelsin_mods] then
         {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
-    data_technology[tech_concrete_productivity].PlanetsLib_recipe_productivity_effects.effects =
-    {
-        {type = item, name = concrete, change = 0.1},
-        {type = item, name = reinforced_concrete, change = 0.1}
-    }
 end
 
 -- CASTRA
@@ -553,25 +544,29 @@ end
 if mods[maraxsis_mods] then
     local maraxsis_mining_machine = {{name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120}}
     for _, BUILD in pairs(maraxsis_mining_machine) do
-        data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
-        data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
-        data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
-        data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
-        data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
-        data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
-        data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
-        data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
-        data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        if data_assembling[BUILD.name .. _sand_extractor] then
+            data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
+            data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
+            data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
+            data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+            data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        end
     end
 
-    data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
-    data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
-    data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
-    data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
-    data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
-    data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
-    data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
-    data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    if data_assembling[big_mining_drill .. _sand_extractor] then
+        data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
+        data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
+        data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
+        data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
 end
 
 -- PELAGOS

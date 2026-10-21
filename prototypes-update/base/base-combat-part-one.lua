@@ -1037,10 +1037,6 @@ if mods[bobwarfare] then
     end
 end
 
-local solar_panel_eq_1 = "solar-panel-equipment"
-local solar_panel_eq_2 = "bob-solar-panel-equipment-2"
-local solar_panel_eq_3 = "bob-solar-panel-equipment-3"
-local solar_panel_eq_4 = "bob-solar-panel-equipment-4"
 local solar_panels_eq =
 {
     {name = solar_panel_eq_1, power = 30},
@@ -1073,15 +1069,11 @@ local function solar_panel_eq_recipe(name, circuit, plate_1, plate_2, cable, sol
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_eq_recipe(solar_panel_eq_1, electronic_circuit, copper_plate, steel_plate, copper_cable, nil, glass_bob)
+solar_panel_eq_recipe(solar_panel_eq_1, electronic_circuit, tin_plate_bob, steel_plate, tin_insulated_cable, nil, glass_bob)
 if mods[bobequipment] then
-    solar_panel_eq_recipe(solar_panel_eq_2, advanced_circuit, aluminium_plate_bob, silver_plate_bob, tin_cable, solar_panel_eq_1)
-    solar_panel_eq_recipe(solar_panel_eq_3, processing_unit, gold_plate_bob, titanium_plate_bob, gold_cable, solar_panel_eq_2)
-    if data_item[alien_artifact] then
-        solar_panel_eq_recipe(solar_panel_eq_4, advanced_processing_unit, tungsten_plate_bob, nitinol_plate_bob, alien_artifact, solar_panel_eq_3)
-    else
-        solar_panel_eq_recipe(solar_panel_eq_4, advanced_processing_unit, tungsten_plate_bob, nitinol_plate_bob, platinum_cable, solar_panel_eq_3)
-    end
+    solar_panel_eq_recipe(solar_panel_eq_2,         advanced_circuit,   silver_plate_bob, aluminium_plate_bob,   silver_insulated_cable, solar_panel_eq_1)
+    solar_panel_eq_recipe(solar_panel_eq_3,          processing_unit,     gold_plate_bob,  titanium_plate_bob,     gold_insulated_cable, solar_panel_eq_2)
+    solar_panel_eq_recipe(solar_panel_eq_4, advanced_processing_unit, platinum_plate,       nitinol_plate_bob, platinum_insulated_cable, solar_panel_eq_3)
 end
 
 local fission_reactors =

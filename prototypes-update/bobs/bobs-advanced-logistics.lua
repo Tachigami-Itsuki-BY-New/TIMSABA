@@ -19,9 +19,9 @@ data.raw[combinator_selector][combinator_selector].active_energy_usage = (drain 
 data_recipe[small_lamp].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 1},
-    {type = item, name = copper_cable,        amount = 4},
-    {type = item, name = iron_plate,          amount = 1},
-    {type = item, name = glass_bob,           amount = 4}
+    {type = item, name = copper_insulated_cable, amount = 4},
+    {type = item, name = iron_plate, amount = 4},
+    {type = item, name = glass_bob, amount = 4}
 }
 
 local function combinator_recipe(name, circuit, cable)
@@ -31,10 +31,10 @@ local function combinator_recipe(name, circuit, cable)
        {type = item, name = cable,   amount = 4}
     }
 end
-combinator_recipe(combinator_arithmetic, electronic_circuit, tin_cable)
-combinator_recipe(combinator_decider,    electronic_circuit, tin_cable)
-combinator_recipe(combinator_selector,   advanced_circuit,   silver_cable)
-combinator_recipe(combinator_constant,   electronic_circuit, tin_cable)
+combinator_recipe(combinator_arithmetic, electronic_circuit,    tin_insulated_cable)
+combinator_recipe(combinator_decider,    electronic_circuit,    tin_insulated_cable)
+combinator_recipe(combinator_selector,     advanced_circuit, silver_insulated_cable)
+combinator_recipe(combinator_constant,   electronic_circuit,    tin_insulated_cable)
 
 local circuit_networks_2 =
 {
@@ -52,16 +52,16 @@ end
 data_recipe[power_switch].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 2},
-    {type = item, name = copper_cable,       amount = 4},
-    {type = item, name = iron_plate,         amount = 4}
+    {type = item, name = copper_insulated_cable, amount = 4},
+    {type = item, name = iron_plate, amount = 4}
 }
 
 data_recipe[programmable_speaker].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 2},
-    {type = item, name = copper_cable,       amount = 4},
-    {type = item, name = iron_plate,         amount = 4},
-    {type = item, name = iron_rod,           amount = 4}
+    {type = item, name = copper_insulated_cable, amount = 4},
+    {type = item, name = iron_plate, amount = 4},
+    {type = item, name = iron_rod, amount = 4}
 }
 
 data_rail_planner[rail].stack_size = 200

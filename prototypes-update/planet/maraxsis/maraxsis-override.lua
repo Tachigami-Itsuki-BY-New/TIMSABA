@@ -424,10 +424,9 @@ if mods[maraxsis_mods] then
         {type = item, name = niobium_iron_plate, amount = 32},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 128}
     }
-    data_generator_fusion[oversized_steam_turbine].subgroup = is_maraxsis_building_energy
-    data_generator_fusion[oversized_steam_turbine].order = b
-    data_generator_fusion[oversized_steam_turbine].max_fluid_usage = 240/60
-    data_generator_fusion[oversized_steam_turbine].energy_source.output_flow_limit = 40000 .. kW
+    data_generator[oversized_steam_turbine].subgroup = is_maraxsis_building_energy
+    data_generator[oversized_steam_turbine].order = b
+    data_generator[oversized_steam_turbine].fluid_usage_per_tick = 240/60
 
     data_fluid[supercritical_steam_maraxsis].subgroup = is_maraxsis_building_energy
     data_fluid[supercritical_steam_maraxsis].order = c
