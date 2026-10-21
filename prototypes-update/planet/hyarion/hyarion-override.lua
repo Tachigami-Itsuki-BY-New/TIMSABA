@@ -681,14 +681,10 @@ if mods[hyarion_mods] then
     data_active_defense_eq[personal_ruby_laser_defense_eq].energy_source.input_flow_limit = (960 * 1.5) .. kW
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.cooldown = 60
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.damage_modifier = 8
-    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.range = 44
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.range = 88
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.energy_consumption = 960 .. kJ
-    local action = data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action
-    local target = action[1] or action
-    if target and target.action_delivery and target.action_delivery.beam then
-        target.action_delivery.max_length = 44
-        target.action_delivery.duration = 60
-    end
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action.action_delivery.max_length = 88
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action.action_delivery.duration = 60
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.min_range = 0
 
     local ruby_laser_turret = "planetaris-ruby-laser-turret"
@@ -725,14 +721,11 @@ if mods[hyarion_mods] then
     data_electric_turret[ruby_laser_turret].attack_parameters.damage_modifier = 16
     data_electric_turret[ruby_laser_turret].attack_parameters.range = 88
     data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.energy_consumption = 1920 .. kJ
-    local ammo = data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type
-    if ammo and ammo.action and ammo.action.action_delivery then
-        local delivery = ammo.action.action_delivery
-        delivery.max_length = 88
-        delivery.duration = 60
-        delivery.min_range = 0
-    end
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.max_length = 88
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.duration = 60
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.min_range = 0
     data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 0
+    data_electric_turret[ruby_laser_turret].prepare_range = 92
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
