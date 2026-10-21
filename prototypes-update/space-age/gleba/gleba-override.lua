@@ -320,7 +320,7 @@ data_recipe[coal_synthesis].ingredients[1].amount = 4
 data_recipe[coal_synthesis].ingredients[3].amount = 15
 
 data_recipe[tree_seed].localised_name = {"item-name." .. tree_seed_angels}
-data_recipe[tree_seed].categories = {"angels-seed-extractor", hand_crafting}
+data_recipe[tree_seed].categories = {angels_seed_extractor, hand_crafting}
 data_recipe[tree_seed].subgroup = is_gleba_recipe
 data_recipe[tree_seed].icons = TWO_I(wood, tree_seed_angels)
 data_recipe[tree_seed].order = c_a
