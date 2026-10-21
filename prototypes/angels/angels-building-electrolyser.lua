@@ -120,35 +120,30 @@ local advanced_electrolyser_fluid_boxes =
 {
     {
         production_type = input,
-        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
         pipe_covers = pipecoverspictures(),
         volume = 120,
         pipe_connections = {{flow_direction = input, position = {-1, -2}, direction = defines.direction.north}}
     },
     {
         production_type = input,
-        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
         pipe_covers = pipecoverspictures(),
         volume = 120,
         pipe_connections = {{flow_direction = input, position = {1, -2}, direction = defines.direction.north}}
     },
     {
         production_type = output,
-        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
         pipe_covers = pipecoverspictures(),
         volume = 960,
         pipe_connections = {{flow_direction = output, position = {-2, 2}, direction = defines.direction.south}}
     },
     {
         production_type = output,
-        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
         pipe_covers = pipecoverspictures(),
         volume = 960,
         pipe_connections = {{flow_direction = output, position = {0, 2}, direction = defines.direction.south}}
     },
     {
         production_type = output,
-        pipe_picture = angelsmods.petrochem.electrolyserpictures(),
         pipe_covers = pipecoverspictures(),
         volume = 960,
         pipe_connections = {{flow_direction = output, position = {2, 2}, direction = defines.direction.south}}

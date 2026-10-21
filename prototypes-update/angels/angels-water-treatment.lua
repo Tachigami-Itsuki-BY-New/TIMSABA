@@ -78,7 +78,7 @@ data_recipe[water_heavy_mud].energy_required = 4
 data_recipe[water_heavy_mud].ingredients[1].amount = 240
 data_recipe[water_heavy_mud].ingredients[2].amount = 60
 data_recipe[water_heavy_mud].results[1].amount = 240
-data_recipe[water_heavy_mud].results[2].amount_max = 4
+data_recipe[water_heavy_mud].results[2].amount_max = 16
 
 data_fluid[water_concentrated_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]9[/font])"} or nil
 TIMSABA.barreling.add_simple_fluid(water_concentrated_mud)
