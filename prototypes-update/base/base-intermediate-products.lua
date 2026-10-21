@@ -369,7 +369,7 @@ data_recipe[integrated_circuit].energy_required = 4
 data_recipe[integrated_circuit].ingredients =
 {
     {type = item, name = silicon_wafer, amount = 4},
-    {type = item, name = insulated_cable, amount = 4},
+    {type = item, name = gold_cable, amount = 4},
     {type = item, name = plastic, amount = 1},
     {type = fluid, name = sulfuric_acid_angels, amount = 15}
 }

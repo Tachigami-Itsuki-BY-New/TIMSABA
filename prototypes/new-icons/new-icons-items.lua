@@ -20,6 +20,9 @@ data_item[iron_rod].icon_size = 64
 data_item[copper_cable].icons = nil
 data_item[copper_cable].icon = "__base__/graphics/icons/copper-wire.png"
 
+data_item[copper_insulated_cable].icons = nil
+data_item[copper_insulated_cable].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/" .. copper_insulated_cable .. ".png"
+
 data_item[lead_plate_bob].icons = nil
 data_item[lead_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
 

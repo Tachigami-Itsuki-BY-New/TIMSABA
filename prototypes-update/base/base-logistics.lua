@@ -720,10 +720,14 @@ end
 
 data_recipe[medium_electric_pole_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 2},
-    {type = item, name = copper_cable, amount = 2},
+    {type = item, name = iron_rod, amount = 4},
+    {type = item, name = tin_insulated_cable, amount = 2},
     {type = item, name = steel_plate, amount = 2}
 }
+
+data_recipe[medium_electric_pole_2].ingredients[2].name = silver_insulated_cable
+data_recipe[medium_electric_pole_3].ingredients[2].name = gold_insulated_cable
+data_recipe[medium_electric_pole_4].ingredients[2].name = platinum_insulated_cable
 
 local big_poles =
 {
@@ -758,14 +762,14 @@ local function big_electric_pole_recipe(name, electric_pole, cable, plate)
 end
 data_recipe[big_electric_pole_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 4},
-    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = iron_rod, amount = 8},
+    {type = item, name = tin_insulated_cable, amount = 4},
     {type = item, name = steel_plate, amount = 4}
 }
 if data_recipe[big_electric_pole_2] then
-    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1,       tin_cable, aluminium_plate_bob)
-    big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
-    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3,      gold_cable, nitinol_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1,   silver_insulated_cable, aluminium_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2,     gold_insulated_cable, titanium_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, platinum_insulated_cable, nitinol_plate_bob)
 end
 
 local substations =
@@ -805,15 +809,15 @@ local function substation_recipe(name, circuit, electric_pole, cable, plate)
 end
 data_recipe[substation_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 8},
-    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = iron_rod, amount = 16},
+    {type = item, name = tin_insulated_cable, amount = 4},
     {type = item, name = steel_plate, amount = 8},
     {type = item, name = electronic_circuit, amount = 4}
 }
 if data_recipe[substation_2] then
-    substation_recipe(substation_2,         advanced_circuit, substation_1,       tin_cable, aluminium_plate_bob)
-    substation_recipe(substation_3,          processing_unit, substation_2, insulated_cable, titanium_plate_bob)
-    substation_recipe(substation_4, advanced_processing_unit, substation_3,      gold_cable, nitinol_plate_bob)
+    substation_recipe(substation_2,         advanced_circuit, substation_1,   silver_insulated_cable, aluminium_plate_bob)
+    substation_recipe(substation_3,          processing_unit, substation_2,     gold_insulated_cable, titanium_plate_bob)
+    substation_recipe(substation_4, advanced_processing_unit, substation_3, platinum_insulated_cable, nitinol_plate_bob)
 end
 
 data_item_subgroup[is_pipe].order = e
@@ -972,6 +976,9 @@ bobmods.lib.recipe.update_recycling_recipe
     T5_bulk_inserter,
     small_electric_pole,
     medium_electric_pole_1,
+    medium_electric_pole_2,
+    medium_electric_pole_3,
+    medium_electric_pole_4,
     big_electric_pole_1,
     big_electric_pole_2,
     big_electric_pole_3,
