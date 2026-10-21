@@ -725,9 +725,26 @@ data_recipe[medium_electric_pole_1].ingredients =
     {type = item, name = steel_plate, amount = 2}
 }
 
-data_recipe[medium_electric_pole_2].ingredients[2].name = silver_insulated_cable
-data_recipe[medium_electric_pole_3].ingredients[2].name = gold_insulated_cable
-data_recipe[medium_electric_pole_4].ingredients[2].name = platinum_insulated_cable
+data_recipe[medium_electric_pole_2].ingredients =
+{
+    {type = item, name = medium_electric_pole_1, amount = 1},
+    {type = item, name = silver_insulated_cable, amount = 2},
+    {type = item, name = aluminium_plate_bob, amount = 2}
+}
+
+data_recipe[medium_electric_pole_3].ingredients =
+{
+    {type = item, name = medium_electric_pole_2, amount = 1},
+    {type = item, name = gold_insulated_cable, amount = 2},
+    {type = item, name = titanium_plate_bob, amount = 2}
+}
+
+data_recipe[medium_electric_pole_4].ingredients =
+{
+    {type = item, name = medium_electric_pole_3, amount = 1},
+    {type = item, name = platinum_insulated_cable, amount = 2},
+    {type = item, name = nitinol_plate_bob, amount = 2}
+}
 
 local big_poles =
 {
@@ -803,14 +820,14 @@ local function substation_recipe(name, circuit, electric_pole, cable, plate)
     {
         {type = item, name = circuit, amount = 4},
         {type = item, name = electric_pole, amount = 1},
-        {type = item, name = cable, amount = 4},
+        {type = item, name = cable, amount = 8},
         {type = item, name = plate, amount = 8}
     }
 end
 data_recipe[substation_1].ingredients =
 {
     {type = item, name = iron_rod, amount = 16},
-    {type = item, name = tin_insulated_cable, amount = 4},
+    {type = item, name = tin_insulated_cable, amount = 8},
     {type = item, name = steel_plate, amount = 8},
     {type = item, name = electronic_circuit, amount = 4}
 }

@@ -277,15 +277,15 @@ if mods[paracelsin_mods] then
     data_furnace[elevated_pipe].order = z
 
     -- ENERGY
-    local cryovolcanic_turbine = "cryovolcanic-turbine"
-    data_item[cryovolcanic_turbine].subgroup = is_paracelsin_energy
-    data_item[cryovolcanic_turbine].order = a
-    data_item[cryovolcanic_turbine].stack_size = 32
-    data_item[cryovolcanic_turbine].weight = 31250
-    data_recipe[cryovolcanic_turbine].subgroup = is_paracelsin_energy
-    data_recipe[cryovolcanic_turbine].order = a
-    data_recipe[cryovolcanic_turbine].energy_required = 16
-    data_recipe[cryovolcanic_turbine].ingredients =
+    local pressure_turbine = "pressure-turbine"
+    data_item[pressure_turbine].subgroup = is_paracelsin_energy
+    data_item[pressure_turbine].order = a
+    data_item[pressure_turbine].stack_size = 32
+    data_item[pressure_turbine].weight = 31250
+    data_recipe[pressure_turbine].subgroup = is_paracelsin_energy
+    data_recipe[pressure_turbine].order = a
+    data_recipe[pressure_turbine].energy_required = 16
+    data_recipe[pressure_turbine].ingredients =
     {
         {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
         {type = item, name = niobium_iron_bearing, amount = 8},
@@ -293,11 +293,12 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8}
     }
     if mods[lignumis_mods] then
-        table.insert(data_recipe[cryovolcanic_turbine].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
+        table.insert(data_recipe[pressure_turbine].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
     end
-    data_generator[cryovolcanic_turbine].subgroup = is_paracelsin_energy
-    data_generator[cryovolcanic_turbine].order = a
-    data_generator[cryovolcanic_turbine].max_power_output = 225 .. kW
+    data_mining_drill[pressure_turbine].subgroup = is_paracelsin_energy
+    data_mining_drill[pressure_turbine].order = a
+    data_mining_drill[pressure_turbine].mining_speed = 0.25
+    data_mining_drill[pressure_turbine].energy_usage = 3840 .. kW
 
     -- BUILDING
     data_item[electrochemical_plant].subgroup = is_paracelsin_building
@@ -359,7 +360,7 @@ if mods[paracelsin_mods] then
         galvanized_storage_tank,
         galvanized_pump,
         elevated_pipe,
-        cryovolcanic_turbine,
+        pressure_turbine,
         electrochemical_plant,
         mechanical_plant
     })

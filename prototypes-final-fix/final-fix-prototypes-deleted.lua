@@ -248,8 +248,8 @@ local remove = table.remove
 local function prototype_exists(product)
     if not product then return false end
 
-    local p_name = product.name
-    local p_type = product.type
+    local p_name = product.name or product[1] or product
+    local p_type = product.type or "item"
 
     if not p_name or type(p_name) ~= "string" then return false end
 
@@ -257,22 +257,30 @@ local function prototype_exists(product)
         return true
     end
 
-    if p_type == "fluid" then
-        return data_fluid[p_name] ~= nil
+    if data.raw[p_type] and data.raw[p_type][p_name] then
+        return true
     end
 
-    return data_item[p_name] ~= nil
-    or data_capsule[p_name] ~= nil
-    or data_tool[p_name] ~= nil
-    or data_ammo[p_name] ~= nil
-    or data_armor[p_name] ~= nil
-    or data_gun[p_name] ~= nil
-    or data_module[p_name] ~= nil
-    or data_spidertron_remote[p_name] ~= nil
-    or data_repair_tool[p_name] ~= nil
-    or data_rail_planner[p_name] ~= nil
-    or data_item_entity[p_name] ~= nil
-    or data_SP_starter_pack[p_name] ~= nil
+    if p_type == "item" then
+        local item_subtypes =
+        {
+            "capsule", "tool", "ammo", "armor", "gun", "module",
+            "spidertron-remote", "repair-tool", "rail-planner",
+            "item-entity", "selection-tool", "blueprint", "copy-paste-tool"
+        }
+        for i = 1, #item_subtypes do
+            local sub_type = item_subtypes[i]
+            if data.raw[sub_type] and data.raw[sub_type][p_name] then
+                return true
+            end
+        end
+    end
+
+    if data_SP_starter_pack and data_SP_starter_pack[p_name] then
+        return true
+    end
+
+    return false
 end
 
 for tech_name, technology in pairs(data_technology) do

@@ -870,9 +870,9 @@ end
 if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
-    local water_cryovolcan = "water-cryovolcano"
-    data_resource[water_cryovolcan].minable.results[1].amount_min = 30
-    data_resource[water_cryovolcan].minable.results[1].amount_max = 30
+    local cryovolcanic_vent = "cryovolcanic-vent"
+    data_resource[cryovolcanic_vent].minable.results[1].amount_min = 30
+    data_resource[cryovolcanic_vent].minable.results[1].amount_max = 30
 
     data_entity["big-metallic-rock"].minable.results =
     {
