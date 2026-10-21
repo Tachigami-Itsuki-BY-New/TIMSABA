@@ -81,6 +81,19 @@ if data_technology[transport_science_pack] then
     table.insert(data_technology[inserter .. _capacity_bonus_ .. "5"].prerequisites, transport_science_pack)
 end
 
+data_technology[tech_electric_pole_1].prerequisites = {tech_rubbers}
+
+table.insert(data_technology[tech_electric_pole_3].prerequisitesm, processing_unit)
+
+data_technology[tech_electric_substation_1].prerequisites = {tech_electric_pole_1}
+data_technology[tech_electric_substation_1].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1}
+}
+
+data_technology[tech_electric_substation_2].prerequisites = {tech_electric_substation_1, chemical_science_pack, tech_aluminium_smelting_1}
+
 -- ADVANCED LOGISTICS
 if data_technology[tech_robotics_1] then
     if mods[bobmodules] then
@@ -107,7 +120,7 @@ if data_technology[tech_robotics_3] then
     table.insert(data_technology[tech_robotics_3].prerequisites, battery_silver_zinc)
 
     local already_has_pack = false
-    for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
+    for _, ingredient in ipairs(data_technology[tech_robotics_3].unit.ingredients) do -- tech_robots_2
         if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
             already_has_pack = true
             break
@@ -116,21 +129,6 @@ if data_technology[tech_robotics_3] then
 
     if not already_has_pack then
         table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_science_pack, 1})
-    end
-end
-
-if data_technology[tech_robots_2] then
-    local already_has_pack = false
-
-    for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
-        if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
-            already_has_pack = true
-            break
-        end
-    end
-
-    if not already_has_pack then
-        table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
     end
 end
 
@@ -155,19 +153,34 @@ if data_technology[tech_robotics_4] then
     end
 end
 
-if data_technology[tech_robo_modular_1] then
-    data_technology[tech_robo_modular_1].effects =
-    {
-        {type = unlock_recipe, recipe = roboport_1},
-        {type = unlock_recipe, recipe = robochest_1},
-        {type = unlock_recipe, recipe = logistic_zone_expander_1},
-        {type = unlock_recipe, recipe = robo_charge_port_1},
-        {type = unlock_recipe, recipe = robo_charge_port_large_1},
-        {type = unlock_recipe, recipe = roboport_antenna_1},
-        {type = unlock_recipe, recipe = roboport_chargepad_1},
-        {type = unlock_recipe, recipe = roboport_door_1}
-    }
+table.insert(data_technology[tech_robots_2].prerequisites, processing_unit)
+local already_has_pack = false
+
+for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
+    if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
+        already_has_pack = true
+        break
+    end
 end
+
+if not already_has_pack then
+    table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
+end
+
+table.insert(data_technology[tech_robots_3].prerequisites, advanced_processing_unit)
+
+table.insert(data_technology[tech_robo_modular_1].prerequisites, tech_rubbers)
+data_technology[tech_robo_modular_1].effects =
+{
+    {type = unlock_recipe, recipe = roboport_1},
+    {type = unlock_recipe, recipe = robochest_1},
+    {type = unlock_recipe, recipe = logistic_zone_expander_1},
+    {type = unlock_recipe, recipe = robo_charge_port_1},
+    {type = unlock_recipe, recipe = robo_charge_port_large_1},
+    {type = unlock_recipe, recipe = roboport_antenna_1},
+    {type = unlock_recipe, recipe = roboport_chargepad_1},
+    {type = unlock_recipe, recipe = roboport_door_1}
+}
 
 if mods[bobwarfare] then
     data_technology[artillery_wagon_2].localised_name = {"entity-name.artillery-wagon-2"}
@@ -416,13 +429,19 @@ replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_
 
 -- INTERMEDIATE PRODUCTS
 table.insert(data_technology[advanced_circuit].prerequisites, tech_iron_smelting_2)
+table.insert(data_technology[advanced_circuit].prerequisites, tech_rubbers)
 data_technology[advanced_circuit].effects =
 {
     {type = unlock_recipe, recipe = phenolic_board},
     {type = unlock_recipe, recipe = circuit_board},
     {type = unlock_recipe, recipe = transistor},
-    {type = unlock_recipe, recipe = advanced_circuit}
+    {type = unlock_recipe, recipe = advanced_circuit},
+    {type = unlock_recipe, recipe = silver_insulated_cable}
 }
+
+table.insert(data_technology[processing_unit].effects, {type = unlock_recipe, recipe = gold_insulated_cable})
+
+table.insert(data_technology[advanced_circuit].prerequisites, {type = unlock_recipe, recipe = platinum_insulated_cable})
 
 data_technology[tech_bronze_processing].icons = nil
 data_technology[tech_bronze_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-bronze-alloy.png"
@@ -732,6 +751,8 @@ data_technology[energy_shield_eq_2].unit.ingredients =
 }
 data_technology[energy_shield_eq_2].unit.count = 200
 
+table.insert(data_technology[roboport_eq_1].prerequisites, tech_rubbers)
+
 if mods[bobequipment] then
     table.insert(data_technology[fission_reactor_eq_4].prerequisites, tech_deuterium_power)
 
@@ -746,6 +767,7 @@ if mods[bobequipment] then
     table.insert(data_technology[roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[roboport_eq_4].prerequisites, tech_battery_4)
+    table.insert(data_technology[roboport_eq_4].prerequisites, advanced_processing_unit)
     if mods[bobtech] then
         table.insert(data_technology[roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
@@ -757,12 +779,15 @@ if mods[bobequipment] then
 end
 
 if mods[bobvehicleequipment] then
+    table.insert(data_technology[vehicle_roboport_eq_1].prerequisites, tech_rubbers)
+
     data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
     table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, battery_silver_zinc)
     table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
+    table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, advanced_processing_unit)
     if mods[bobtech] then
         table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
@@ -2163,6 +2188,8 @@ data_technology[tech_lithium_processing].effects =
 }
 
 data_technology[plutonium_fuel_angels].prerequisites = {tech_deuterium_power, rocket_fuel}
+
+table.insert(data_technology[tech_rubbers].effects, {type = unlock_recipe, recipe = tin_insulated_cable})
 
 -- BARRALING
 data_technology[tech_fluid_handling_1].effects =

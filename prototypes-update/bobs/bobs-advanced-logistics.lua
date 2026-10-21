@@ -587,10 +587,10 @@ local function rp_antenna_recipe(name, circuit, cable, plate)
         {type = item, name = plate,   amount = 1}
     }
 end
-rp_antenna_recipe(roboport_antenna_1, electronic_circuit,       copper_cable,    iron_plate)
-rp_antenna_recipe(roboport_antenna_2, advanced_circuit,         tin_cable,       aluminium_plate_bob)
-rp_antenna_recipe(roboport_antenna_3, processing_unit,          insulated_cable, nickel_plate_bob)
-rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, gold_cable,      gold_plate_bob)
+rp_antenna_recipe(roboport_antenna_1,       electronic_circuit,      tin_insulated_cable,      tin_plate_bob)
+rp_antenna_recipe(roboport_antenna_2,         advanced_circuit,   silver_insulated_cable,   silver_plate_bob)
+rp_antenna_recipe(roboport_antenna_3,          processing_unit,     gold_insulated_cable,     gold_plate_bob)
+rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, platinum_insulated_cable, platinum_plate)
 
 local function rp_door_recipe(name, gear_wheel, bearing, plate)
     if not data_recipe[name] or not data_item[gear_wheel] or not data_item[bearing] or not data_item[plate] then return end
@@ -698,14 +698,15 @@ local function robot_tool_recipe(name, gear_wheel, bearing, cable, plate)
         {type = item, name = plate,      amount = 1}
     }
 end
-robot_tool_recipe(robot_tool_c_1, steel_gear_wheel,        steel_bearing,        copper_cable,    steel_plate)
-robot_tool_recipe(robot_tool_c_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable,       cobalt_steel_plate_bob)
-robot_tool_recipe(robot_tool_c_3, titanium_gear_wheel,     titanium_bearing,     insulated_cable, titanium_plate_bob)
-robot_tool_recipe(robot_tool_c_4, nitinol_gear_wheel,      nitinol_bearing,      gold_cable,      nitinol_plate_bob)
-robot_tool_recipe(robot_tool_l_1, steel_gear_wheel,        steel_bearing,        copper_cable,    steel_plate)
-robot_tool_recipe(robot_tool_l_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable,       cobalt_steel_plate_bob)
-robot_tool_recipe(robot_tool_l_3, titanium_gear_wheel,     titanium_bearing,     insulated_cable, titanium_plate_bob)
-robot_tool_recipe(robot_tool_l_4, nitinol_gear_wheel,      nitinol_bearing,      gold_cable,      nitinol_plate_bob)
+robot_tool_recipe(robot_tool_c_1,        steel_gear_wheel,        steel_bearing,      tin_insulated_cable,        steel_plate)
+robot_tool_recipe(robot_tool_c_2, cobalt_steel_gear_wheel, cobalt_steel_bearing,   silver_insulated_cable, cobalt_steel_plate_bob)
+robot_tool_recipe(robot_tool_c_3,     titanium_gear_wheel,     titanium_bearing,     gold_insulated_cable,     titanium_plate_bob)
+robot_tool_recipe(robot_tool_c_4,      nitinol_gear_wheel,      nitinol_bearing, platinum_insulated_cable,      nitinol_plate_bob)
+
+robot_tool_recipe(robot_tool_l_1,        steel_gear_wheel,        steel_bearing,      tin_insulated_cable,        steel_plate)
+robot_tool_recipe(robot_tool_l_2, cobalt_steel_gear_wheel, cobalt_steel_bearing,   silver_insulated_cable, cobalt_steel_plate_bob)
+robot_tool_recipe(robot_tool_l_3,     titanium_gear_wheel,     titanium_bearing,     gold_insulated_cable,     titanium_plate_bob)
+robot_tool_recipe(robot_tool_l_4,      nitinol_gear_wheel,      nitinol_bearing, platinum_insulated_cable,      nitinol_plate_bob)
 
 local roboport_materials =
 {
@@ -800,6 +801,15 @@ if mods[bobwarfare] then
     {
         {type = item, name = low_density_structure, amount = 64},
         {type = item, name = mech_brain, amount = 1}
+    }
+
+    data_recipe[mech_leg].ingredients =
+    {
+        {type = item, name = mech_foot, amount = 1},
+        {type = item, name = mech_hip, amount = 1},
+        {type = item, name = mech_knee, amount = 1},
+        {type = item, name = mech_leg_segment, amount = 1},
+        {type = item, name = platinum_insulated_cable, amount = 4}
     }
 
     data_recipe[mech_hip].ingredients =
@@ -914,6 +924,7 @@ if mods[bobwarfare] then
         mech_armor_plate,
         mech_brain,
         mech_frame,
+        mech_leg,
         mech_hip,
         mech_knee,
         mech_leg_segment,

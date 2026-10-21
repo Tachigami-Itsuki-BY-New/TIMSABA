@@ -308,12 +308,13 @@ for _, BUILD in pairs(accumulators) do
         data_accumulator[BUILD.name].energy_source.output_flow_limit = BUILD.flow_limit .. kW
     end
 end
-local function accumulator_recipe(name, battery, circuit, accumulator, plate)
+local function accumulator_recipe(name, battery, insulated_cable, circuit, accumulator, plate)
     if not data_recipe[name] then return end
 
     local ingredients =
     {
         {type = item, name = battery, amount = 8},
+        {type = item, name = insulated_cable, amount = 4},
         {type = item, name = circuit, amount = 2},
         {type = item, name = plate,   amount = 2}
     }
@@ -322,9 +323,9 @@ local function accumulator_recipe(name, battery, circuit, accumulator, plate)
     end
     data_recipe[name].ingredients = ingredients
 end
-accumulator_recipe(accumulator_1, battery_lead_acid,   electronic_circuit, nil,           iron_plate)
-accumulator_recipe(accumulator_2, battery_lithium_ion, advanced_circuit,   accumulator_1, steel_plate)
-accumulator_recipe(accumulator_3, battery_silver_zinc, processing_unit,    accumulator_2, titanium_plate_bob)
+accumulator_recipe(accumulator_1, battery_lead_acid,      tin_insulated_cable, electronic_circuit,           nil,     steel_plate)
+accumulator_recipe(accumulator_2, battery_lithium_ion, silver_insulated_cable,   advanced_circuit, accumulator_1, aluminium_plate_bob)
+accumulator_recipe(accumulator_3, battery_silver_zinc,   gold_insulated_cable,    processing_unit, accumulator_2,  titanium_plate_bob)
 
 data_item[burner_mining_drill].stack_size = 32
 data_item[burner_mining_drill].weight = 31250
