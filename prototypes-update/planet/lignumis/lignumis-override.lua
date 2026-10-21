@@ -3,7 +3,7 @@ if mods[lignumis_mods] then
     data_item[lumber].subgroup = is_lignumis_wood
     data_item[lumber].order = a
     data_item[lumber].fuel_categories = {base_fuel}
-    data_item[lumber].fuel_value = 900 .. kJ
+    data_item[lumber].fuel_value = 960 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[lumber].categories, advanced_wood_processing)
     end
@@ -16,7 +16,7 @@ if mods[lignumis_mods] then
     data_item[wooden_gear_wheel].subgroup = is_lignumis_wood
     data_item[wooden_gear_wheel].order = b
     data_item[wooden_gear_wheel].fuel_categories = {base_fuel}
-    data_item[wooden_gear_wheel].fuel_value = 450 .. kJ
+    data_item[wooden_gear_wheel].fuel_value = 480 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wooden_gear_wheel].categories, advanced_wood_processing)
     end
@@ -56,7 +56,7 @@ if mods[lignumis_mods] then
     data_item[peat].subgroup = is_lignumis_wood
     data_item[peat].order = e
     data_item[peat].fuel_categories = {base_fuel}
-    data_item[peat].fuel_value = 7200 .. kJ
+    data_item[peat].fuel_value = 7680 .. kJ
     data_resource[peat].subgroup = is_lignumis_wood
     data_resource[peat].order = e
 
@@ -163,7 +163,7 @@ if mods[lignumis_mods] then
     local gold_quality_catalyst = "gold-quality-catalyst"
     data_item[gold_quality_catalyst].subgroup = is_lignumis_gold
     data_item[gold_quality_catalyst].order = f
-    data_item[gold_quality_catalyst].fuel_value = 1800 .. kJ
+    data_item[gold_quality_catalyst].fuel_value = 1920 .. kJ
     data_recipe[gold_quality_catalyst].subgroup = is_lignumis_gold
     data_recipe[gold_quality_catalyst].order = f
     data_recipe[gold_quality_catalyst].energy_required = 64
@@ -413,7 +413,7 @@ if mods[lignumis_mods] then
     }
     data_agricultural_tower[burner_agricultural_tower].subgroup = is_lignumis_building
     data_agricultural_tower[burner_agricultural_tower].order = b
-    data_agricultural_tower[burner_agricultural_tower].energy_usage = 225 .. kW
+    data_agricultural_tower[burner_agricultural_tower].energy_usage = 240 .. kW
 
     local burner_agricultural_tower_copper = burner_agricultural_tower .. "-copper"
     if mods[muluna_mods] then
@@ -442,7 +442,7 @@ if mods[lignumis_mods] then
     data_recipe[desiccation_furnace].energy_required = 1
     data_furnace[desiccation_furnace].subgroup = is_lignumis_building
     data_furnace[desiccation_furnace].order = b
-    data_furnace[desiccation_furnace].energy_usage = 225 .. kW
+    data_furnace[desiccation_furnace].energy_usage = 240 .. kW
     data_furnace[desiccation_furnace].fluid_boxes[1].volume = 480
 
     local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
@@ -465,7 +465,7 @@ if mods[lignumis_mods] then
     data_assembling[burner_assembling_machine].subgroup = is_lignumis_building
     data_assembling[burner_assembling_machine].order = c
     data_assembling[burner_assembling_machine].crafting_speed = 0.5
-    data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
+    data_assembling[burner_assembling_machine].energy_usage = 240 .. kW
     data_assembling[burner_assembling_machine].next_upgrade = assembling_machine_1
     data_assembling[burner_assembling_machine].fluid_boxes =
     {
@@ -512,7 +512,7 @@ if mods[lignumis_mods] then
     data_assembling[burner_lumber_mill].order = e
     data_assembling[burner_lumber_mill].crafting_speed = 1
     data_assembling[burner_lumber_mill].module_slots = 2
-    data_assembling[burner_lumber_mill].energy_usage = 900 .. kW
+    data_assembling[burner_lumber_mill].energy_usage = 960 .. kW
     data_assembling[burner_lumber_mill].energy_source.emissions_per_minute.pollution = 8
     if mods[muluna_mods] then
         data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
@@ -554,7 +554,7 @@ if mods[lignumis_mods] then
     }
     data_lab[wood_lab].subgroup = is_lignumis_building
     data_lab[wood_lab].order = h
-    data_lab[wood_lab].energy_usage = 225 .. kW
+    data_lab[wood_lab].energy_usage = 240 .. kW
     data_lab[wood_lab].energy_source.emissions_per_minute.pollution = 4
 
     if mods[quality] then
@@ -606,7 +606,7 @@ if mods[lignumis_mods] then
     }
     data_rocket_silo[provisional_rocket_silo].subgroup = is_lignumis_building
     data_rocket_silo[provisional_rocket_silo].order = j
-    data_rocket_silo[provisional_rocket_silo].energy_usage = 3600 .. kW
+    data_rocket_silo[provisional_rocket_silo].energy_usage = 3840 .. kW
 
     local active_noise_cancelling_tower = "active-noise-cancelling-tower"
     data_item[active_noise_cancelling_tower].subgroup = is_lignumis_building
@@ -633,7 +633,7 @@ if mods[lignumis_mods] then
     data_ammo[wood_darts_magazine].order = a
     data_ammo[wood_darts_magazine].magazine_size = 30
     data_ammo[wood_darts_magazine].fuel_categories = {base_fuel}
-    data_ammo[wood_darts_magazine].fuel_value = 3600 .. kJ
+    data_ammo[wood_darts_magazine].fuel_value = 3840 .. kJ
     if mods[muluna_mods] then
         table.insert(data_recipe[wood_darts_magazine].categories, advanced_wood_processing)
     end

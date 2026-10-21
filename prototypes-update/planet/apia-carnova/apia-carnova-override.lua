@@ -4,7 +4,7 @@ if mods[apia_carnova_mods] then
     data_item[raw_larvae].subgroup = is_apia_recipe
     data_item[raw_larvae].order = a
     data_item[raw_larvae].fuel_categories = {base_fuel}
-    data_item[raw_larvae].fuel_value = 1800 .. kJ
+    data_item[raw_larvae].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(raw_larvae)
 
     data_recipe[larvae_cultivation].subgroup = is_apia_recipe
@@ -114,7 +114,7 @@ if mods[apia_carnova_mods] then
     data_item[wax].subgroup = is_apia_recipe
     data_item[wax].order = g
     data_item[wax].fuel_categories = {base_fuel}
-    data_item[wax].fuel_value = 1800 .. kJ
+    data_item[wax].fuel_value = 1920 .. kJ
 
     data_item[honey].subgroup = is_apia_recipe
     data_item[honey].order = h
@@ -303,7 +303,7 @@ if mods[apia_carnova_mods] then
     data_item[lipids].subgroup = is_carnova_recipe
     data_item[lipids].order = g
     data_item[lipids].fuel_categories = {base_fuel}
-    data_item[lipids].fuel_value = 1800 .. kJ
+    data_item[lipids].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(lipids)
 
     local nutrients_from_lipids = "nutrients-from-lipids"
@@ -532,7 +532,7 @@ if mods[apia_carnova_mods] then
     data_assembling[biosynthesizer].order = a
     data_assembling[biosynthesizer].module_slots = 8
     data_assembling[biosynthesizer].energy_source.emissions_per_minute.pollution = -4
-    data_assembling[biosynthesizer].energy_usage = 900 .. kW
+    data_assembling[biosynthesizer].energy_usage = 960 .. kW
     data_assembling[biosynthesizer].effect_receiver.base_effect.productivity = 1
 
     local biosynthesizer_apia = "biosynthesizer-apia"
@@ -578,7 +578,7 @@ if mods[apia_carnova_mods] then
     }
     data_assembling[artificial_hive].subgroup = is_apia_carnova_building
     data_assembling[artificial_hive].order = b
-    data_assembling[artificial_hive].energy_usage = 225 .. kW
+    data_assembling[artificial_hive].energy_usage = 240 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

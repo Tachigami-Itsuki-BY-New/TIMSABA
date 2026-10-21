@@ -202,7 +202,7 @@ if mods[hyarion_mods] then
         data_item[unstable_crystallizer].order = p
         data_item[unstable_crystallizer].stack_size = 200
         data_item[unstable_crystallizer].fuel_categories = {base_fuel}
-        data_item[unstable_crystallizer].fuel_value = 900 .. kJ
+        data_item[unstable_crystallizer].fuel_value = 960 .. kJ
         data_recipe[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
         data_recipe[unstable_crystallizer].icons = THREE_I(unstable_shard, lava, unstable_crystallizer)
         data_recipe[unstable_crystallizer].order = p
@@ -507,7 +507,7 @@ if mods[hyarion_mods] then
     data_recipe[quartz_furnace].ingredients = {{type = item, name = raw_quartz_arig, amount = 4}}
     data_furnace[quartz_furnace].subgroup = is_hyarion_building
     data_furnace[quartz_furnace].order = a
-    data_furnace[quartz_furnace].energy_usage = 225 .. kW
+    data_furnace[quartz_furnace].energy_usage = 240 .. kW
 
     data_item[refraction_ray_collector].subgroup = is_hyarion_building
     data_item[refraction_ray_collector].order = b

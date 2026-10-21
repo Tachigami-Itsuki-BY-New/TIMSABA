@@ -301,12 +301,13 @@ if mods[vesta_mods] then
     data_item[algea_nutrient_clump].subgroup = is_vesta_recipe
     data_item[algea_nutrient_clump].order = i
     data_item[algea_nutrient_clump].stack_size = 200
+    data_item[algea_nutrient_clump].fuel_value = 1920 .. kJ
 
     data_item[algea_petrite_clump].subgroup = is_vesta_recipe
     data_item[algea_petrite_clump].order = j
     data_item[algea_petrite_clump].stack_size = 200
     data_item[algea_petrite_clump].fuel_categories = {base_fuel}
-    data_item[algea_petrite_clump].fuel_value = 28800 .. kJ
+    data_item[algea_petrite_clump].fuel_value = 30720 .. kJ
 
     -- IRIDIUM
     data_item[iridium_plate_mods].localised_description = show_formula and {chemical_formula, "Ir"} or nil

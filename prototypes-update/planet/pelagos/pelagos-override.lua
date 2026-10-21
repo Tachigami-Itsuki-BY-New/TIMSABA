@@ -3,7 +3,7 @@ if mods[pelagos_mods] then
     data_item[coconut].subgroup = is_coconut
     data_item[coconut].order = a
     data_item[coconut].fuel_categories = {base_fuel}
-    data_item[coconut].fuel_value = 3600 .. kJ
+    data_item[coconut].fuel_value = 3840 .. kJ
     TIMSABA.void.freezing_organics(coconut)
 
     local coconut_seed = "coconut-seed"
@@ -11,14 +11,14 @@ if mods[pelagos_mods] then
     data_item[coconut_seed].order = b
     data_item[coconut_seed].stack_size = 200
     data_item[coconut_seed].fuel_categories = {base_fuel}
-    data_item[coconut_seed].fuel_value = 1800 .. kJ
+    data_item[coconut_seed].fuel_value = 1920 .. kJ
 
     local coconut_meat = "coconut-meat"
     data_capsule[coconut_meat].subgroup = is_coconut
     data_capsule[coconut_meat].order = c
     data_capsule[coconut_meat].stack_size = 200
     data_capsule[coconut_meat].fuel_categories = {base_fuel}
-    data_capsule[coconut_meat].fuel_value = 900 .. kJ
+    data_capsule[coconut_meat].fuel_value = 960 .. kJ
     TIMSABA.void.freezing_organics(coconut_meat)
 
     local nutrients_from_coconut_meat = "nutrients-from-coconut-meat"
@@ -32,7 +32,7 @@ if mods[pelagos_mods] then
     data_item[coconut_husk].order = d
     data_item[coconut_husk].stack_size = 200
     data_item[coconut_husk].fuel_categories = {base_fuel}
-    data_item[coconut_husk].fuel_value = 900 .. kJ
+    data_item[coconut_husk].fuel_value = 960 .. kJ
 
     data_recipe[coconut_processing].subgroup = is_coconut
     data_recipe[coconut_processing].icons = FOUR_R_I(coconut, coconut_meat, coconut_seed, coconut_husk)
@@ -129,7 +129,7 @@ if mods[pelagos_mods] then
     data_item[fermented_fish].subgroup = is_pelagos_titanium
     data_item[fermented_fish].order = b
     data_item[fermented_fish].stack_size = 200
-    data_item[fermented_fish].fuel_value = 3600 .. kJ
+    data_item[fermented_fish].fuel_value = 3840 .. kJ
     data_recipe[fermented_fish].subgroup = is_pelagos_titanium
     data_recipe[fermented_fish].icons = THREE_D_I(factorian_fish, coconut_meat, fermentation_bacteria, fermented_fish)
     data_recipe[fermented_fish].order = b
@@ -237,7 +237,7 @@ if mods[pelagos_mods] then
     data_item[activated_carbon].order = c
     data_item[activated_carbon].stack_size = 200
     data_item[activated_carbon].fuel_categories = {base_fuel}
-    data_item[activated_carbon].fuel_value = 7200 .. kJ
+    data_item[activated_carbon].fuel_value = 7680 .. kJ
     data_recipe[activated_carbon].subgroup = is_pelagos_coal
     data_recipe[activated_carbon].icons = TWO_I(carbon_angels, activated_carbon)
     data_recipe[activated_carbon].order = c
@@ -261,7 +261,7 @@ if mods[pelagos_mods] then
     data_item[copper_biter_egg].order = b
     data_item[copper_biter_egg].stack_size = 200
     data_item[copper_biter_egg].fuel_categories = {base_fuel}
-    data_item[copper_biter_egg].fuel_value = 7200 .. kJ
+    data_item[copper_biter_egg].fuel_value = 7680 .. kJ
     TIMSABA.void.freezing_organics(copper_biter_egg)
     data_recipe[copper_biter_egg].subgroup = is_pelagos_recipe
     data_recipe[copper_biter_egg].order = b
@@ -548,7 +548,7 @@ if mods[pelagos_mods] then
     }
     data_assembling[captive_copper_biter_spawner].subgroup = is_pelagos_building
     data_assembling[captive_copper_biter_spawner].order = e
-    data_assembling[captive_copper_biter_spawner].energy_usage = 225 .. kW
+    data_assembling[captive_copper_biter_spawner].energy_usage = 240 .. kW
 
     -- WATER VEHICLES
     local pirateship = "pirateship"
@@ -590,7 +590,7 @@ if mods[pelagos_mods] then
     local indep_boat = "indep-boat"
     data_car[indep_boat].subgroup = is_water_vechicles
     data_car[indep_boat].order = d
-    data_car[indep_boat].consumption = 225 .. kW
+    data_car[indep_boat].consumption = 240 .. kW
 
     -- WATER RAILS
     local waterway = "waterway"
@@ -820,7 +820,7 @@ if mods[pelagos_mods] then
     data_mining_drill[excavator].order = a
     data_mining_drill[excavator].mining_speed = 4
     data_mining_drill[excavator].module_slots = 8
-    data_mining_drill[excavator].energy_usage = 450 .. kW
+    data_mining_drill[excavator].energy_usage = 480 .. kW
 
     local canex_digable = "canex-digable"
     data_item[canex_digable].subgroup = is_excavator
