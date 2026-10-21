@@ -206,11 +206,6 @@ if mods[bobvehicleequipment] then
     vehicle_roboport_eq_recipe(vehicle_roboport_eq_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob, vehicle_roboport_eq_2)
     vehicle_roboport_eq_recipe(vehicle_roboport_eq_4, roboport_antenna_4, roboport_door_4, roboport_chargepad_4, nitinol_plate_bob, vehicle_roboport_eq_3)
 
-    local vehicle_solar_panel_eq_1 = "bob-vehicle-solar-panel-equipment-1"
-    local vehicle_solar_panel_eq_2 = "bob-vehicle-solar-panel-equipment-2"
-    local vehicle_solar_panel_eq_3 = "bob-vehicle-solar-panel-equipment-3"
-    local vehicle_solar_panel_eq_4 = "bob-vehicle-solar-panel-equipment-4"
-    local vehicle_solar_panel_eq_5 = "bob-vehicle-solar-panel-equipment-5"
     local vehicle_solar_panels_eq =
     {
         {name = vehicle_solar_panel_eq_1, power = 120},
@@ -246,12 +241,38 @@ if mods[bobvehicleequipment] then
         end
         data_recipe[name].ingredients = ingredients
     end
-    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_1, electronic_circuit, copper_plate, steel_plate, copper_cable, nil, glass_bob)
-    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_2, advanced_circuit, aluminium_plate_bob, silver_plate_bob, tin_cable, vehicle_solar_panel_eq_1)
-    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_3, processing_unit, gold_plate_bob, titanium_plate_bob, gold_cable, vehicle_solar_panel_eq_2)
+    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_1,       electronic_circuit,      tin_plate_bob,     steel_plate,          tin_insulated_cable, nil, glass_bob)
+    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_2,         advanced_circuit,   silver_plate_bob, aluminium_plate_bob,   silver_insulated_cable, vehicle_solar_panel_eq_1)
+    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_3,          processing_unit,     gold_plate_bob,  titanium_plate_bob,     gold_insulated_cable, vehicle_solar_panel_eq_2)
+    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_4, advanced_processing_unit, platinum_plate,       nitinol_plate_bob, platinum_insulated_cable, vehicle_solar_panel_eq_3)
     if data_item[alien_artifact] then
-        vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_4, advanced_processing_unit, tungsten_plate_bob, nitinol_plate_bob, alien_artifact, vehicle_solar_panel_eq_3)
-        vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_5, advanced_processing_unit, tungsten_carbide_plate_bob, orange_alloy, platinum_cable, vehicle_solar_panel_eq_4)
+        data_recipe[vehicle_solar_panel_eq_5].ingredients =
+        {
+            {type = item, name = polished_ruby_bob, amount = 4},
+            {type = item, name = polished_sapphire_bob, amount = 4},
+            {type = item, name = polished_emerald_bob, amount = 4},
+            {type = item, name = polished_amethyst_bob, amount = 4},
+            {type = item, name = polished_topaz_bob, amount = 4},
+            {type = item, name = polished_diamond_bob, amount = 4},
+            {type = item, name = vehicle_solar_panel_eq_4, amount = 1},
+            {type = item, name = silicon_wafer, amount = 32},
+            {type = item, name = orange_alloy, amount = 16},
+            {type = fluid, name = purple_fluid, amount = 240}
+        }
+    else
+        data_recipe[vehicle_solar_panel_eq_5].ingredients =
+        {
+            {type = item, name = polished_ruby_bob, amount = 4},
+            {type = item, name = polished_sapphire_bob, amount = 4},
+            {type = item, name = polished_emerald_bob, amount = 4},
+            {type = item, name = polished_amethyst_bob, amount = 4},
+            {type = item, name = polished_topaz_bob, amount = 4},
+            {type = item, name = polished_diamond_bob, amount = 4},
+            {type = item, name = vehicle_solar_panel_eq_4, amount = 1},
+            {type = item, name = silicon_wafer, amount = 32},
+            {type = item, name = molybdenum_plate, amount = 16},
+            {type = item, name = rhenium_plate, amount = 16}
+        }
     end
 
     local vehicle_fission_cells_eq =
