@@ -441,7 +441,7 @@ data_technology[advanced_circuit].effects =
 
 table.insert(data_technology[processing_unit].effects, {type = unlock_recipe, recipe = gold_insulated_cable})
 
-table.insert(data_technology[advanced_circuit].prerequisites, {type = unlock_recipe, recipe = platinum_insulated_cable})
+table.insert(data_technology[advanced_processing_unit].effects, {type = unlock_recipe, recipe = platinum_insulated_cable})
 
 data_technology[tech_bronze_processing].icons = nil
 data_technology[tech_bronze_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-bronze-alloy.png"
