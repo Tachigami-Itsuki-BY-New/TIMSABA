@@ -85,7 +85,7 @@ if mods["Flare Stack"] then
         }
         data_furnace[incinerator].subgroup = is_flare_stack
         data_furnace[incinerator].order = a
-        data_furnace[incinerator].energy_usage = 450 .. kW
+        data_furnace[incinerator].energy_usage = 480 .. kW
         data_furnace[incinerator].energy_source.fuel_categories = {base_fuel}
         data_furnace[incinerator].energy_source.emissions_per_minute.pollution = 16
 

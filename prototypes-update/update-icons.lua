@@ -1,3 +1,5 @@
+data_fluid[water].heat_capacity = (200 / 0.9375) .. "J"
+
 data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
 
 local graphics_bobs = "__TIMSABA__/graphics/icons/bobs/"

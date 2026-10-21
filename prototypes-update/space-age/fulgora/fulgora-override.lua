@@ -132,7 +132,7 @@ data_recipe[recycler].ingredients =
 }
 data_furnace[recycler].subgroup = is_fulgora_building
 data_furnace[recycler].order = a
-data_furnace[recycler].energy_usage = 225 .. kW
+data_furnace[recycler].energy_usage = (240 - 15) .. kW
 data_furnace[recycler].energy_source.drain = 15 .. kW
 data_furnace[recycler].energy_source.emissions_per_minute.pollution = 4
 data_furnace[recycler].result_inventory_size = 80

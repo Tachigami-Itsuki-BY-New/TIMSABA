@@ -31,7 +31,7 @@ data_recipe[algae_green_simple].results = {{type = item, name = algae_green, amo
 data_item[cellulose_fiber_angels].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
 data_item[cellulose_fiber_angels].subgroup = is_bio_green
 data_item[cellulose_fiber_angels].order = b
-data_item[cellulose_fiber_angels].fuel_value = 900 .. kJ
+data_item[cellulose_fiber_angels].fuel_value = 960 .. kJ
 data_item[cellulose_fiber_angels].fuel_categories = {base_fuel}
 data_recipe[cellulose_fiber_angels].subgroup = is_bio_green
 data_recipe[cellulose_fiber_angels].icons = TWO_I(algae_green, cellulose_fiber_angels)
@@ -183,7 +183,7 @@ data_recipe[saw_crystal_full].results[1].amount = 8
 data_item_subgroup[is_bio_processing_wood].order = f
 
 data_item[wood].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
-data_item[wood].fuel_value = 1800 .. kJ
+data_item[wood].fuel_value = 1920 .. kJ
 data_item[wood].order = a
 data_item[wood].fuel_categories = {base_fuel}
 
@@ -239,7 +239,7 @@ data_recipe[cellulose_fiber_raw_wood].results[1].amount = 8
 local wood_pellets = "angels-wood-pellets"
 data_item[wood_pellets].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
 data_item[wood_pellets].order = c
-data_item[wood_pellets].fuel_value = 7200 .. kJ
+data_item[wood_pellets].fuel_value = 7680 .. kJ
 data_item[wood_pellets].fuel_categories = {base_fuel}
 if mods[muluna_mods] then
     table.insert(data_recipe[wood_pellets].categories, advanced_wood_processing)
@@ -260,7 +260,7 @@ data_recipe[carbon_dioxide_from_wood].results[1].amount = 60
 local wood_bricks = "angels-wood-bricks"
 data_item[wood_bricks].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
 data_item[wood_bricks].order = d
-data_item[wood_bricks].fuel_value = 28800 .. kJ
+data_item[wood_bricks].fuel_value = 30720 .. kJ
 data_item[wood_bricks].fuel_categories = {base_fuel}
 if mods[muluna_mods] then
     table.insert(data_recipe[wood_bricks].categories, advanced_wood_processing)
@@ -274,7 +274,7 @@ data_recipe[wood_bricks].order = d
 local wood_charcoal = "angels-wood-charcoal"
 data_item[wood_charcoal].localised_description = show_formula and {chemical_formula, "C"} or nil
 data_item[wood_charcoal].order = e
-data_item[wood_charcoal].fuel_value = 3600 .. kJ
+data_item[wood_charcoal].fuel_value = 3840 .. kJ
 data_item[wood_charcoal].fuel_categories = {base_fuel}
 data_recipe[wood_charcoal].icons = TWO_I(wood_pellets, wood_charcoal)
 data_recipe[wood_charcoal].order = e
@@ -291,7 +291,7 @@ local is_bio_arboretum = "angels-bio-arboretum"
 data_item[tree_seed_angels].subgroup = is_bio_arboretum
 data_item[tree_seed_angels].order = a
 data_item[tree_seed_angels].stack_size = 200
-data_item[tree_seed_angels].fuel_value = 225 .. kJ
+data_item[tree_seed_angels].fuel_value = 240 .. kJ
 data_item[tree_seed_angels].fuel_categories = {base_fuel}
 data_item[tree_seed_angels].plant_result = "tree-plant"
 data_item[tree_seed_angels].place_result = "tree-plant"

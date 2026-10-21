@@ -109,7 +109,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_refinery_2],
 
         localised_description = {"entity-description.angels-ore-refinery"},
-        energy_usage = 900 .. kW,
+        energy_usage = (960 - 60) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -208,7 +208,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[electro_whinning_cell_2],
 
         localised_description = {"entity-description.angels-electro-whinning-cell"},
-        energy_usage = 900 .. kW,
+        energy_usage = (960 - 60) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -315,7 +315,7 @@ TIMSABA.functions.create_buildings
         crafting_speed = 1,
         pollution = 1,
         drain = 15 .. kW,
-        energy_usage = 225 .. kW,
+        energy_usage = (240 - 15) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -342,7 +342,7 @@ TIMSABA.functions.create_buildings
         crafting_speed = 2,
         pollution = 2,
         drain = 30 .. kW,
-        energy_usage = 450 .. kW,
+        energy_usage = (480 - 30) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -391,7 +391,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[blast_furnace_4],
 
         localised_description = {"entity-description.angels-blast-furnace"},
-        energy_usage = 900 .. kW,
+        energy_usage = (960 - 60) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -746,7 +746,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[advanced_chemical_plant_1],
 
         localised_description = {"entity-description.angels-advanced-chemical-plant"},
-        energy_usage = 900 .. kW,
+        energy_usage = (960 - 60) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, productivity, pollution},
         allowed_module_categories = {speed, efficiency, productivity, pollution_clean}

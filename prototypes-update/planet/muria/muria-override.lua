@@ -146,14 +146,14 @@ if mods[muria_mods] then
     data_item[eschatotaxite_sprout].order = a
     data_item[eschatotaxite_sprout].stack_size = 200
     data_item[eschatotaxite_sprout].fuel_categories = {base_fuel}
-    data_item[eschatotaxite_sprout].fuel_value = 225 .. kJ
+    data_item[eschatotaxite_sprout].fuel_value = 240 .. kJ
     TIMSABA.void.freezing_organics(eschatotaxite_sprout)
 
     local eschatotaxite_paste = "eschatotaxite-paste"
     data_capsule[eschatotaxite_paste].subgroup = is_eschatotaxite
     data_capsule[eschatotaxite_paste].order = b
     data_capsule[eschatotaxite_paste].fuel_categories = {base_fuel}
-    data_capsule[eschatotaxite_paste].fuel_value = 225 .. kJ
+    data_capsule[eschatotaxite_paste].fuel_value = 240 .. kJ
     TIMSABA.void.freezing_organics(eschatotaxite_paste)
     data_recipe[eschatotaxite_paste].subgroup = is_eschatotaxite
     data_recipe[eschatotaxite_paste].icons = THREE_I(eschatotaxite_sprout, water_purified_angels, eschatotaxite_paste)
@@ -249,7 +249,7 @@ if mods[muria_mods] then
     data_item[chloric_fuel].order = d
     data_item[chloric_fuel].stack_size = 200
     data_item[chloric_fuel].fuel_categories = {advanced_fuel}
-    data_item[chloric_fuel].fuel_value = 7200 .. kJ
+    data_item[chloric_fuel].fuel_value = 7680 .. kJ
     TIMSABA.void.freezing_organics(chloric_fuel)
     data_recipe[chloric_fuel].subgroup = is_acidophile
     data_recipe[chloric_fuel].order = d
@@ -376,7 +376,7 @@ if mods[muria_mods] then
     }
     data_assembling[biovat].subgroup = is_muria_building
     data_assembling[biovat].order = b
-    data_assembling[biovat].energy_usage = 1000 .. kW
+    data_assembling[biovat].energy_usage = 960 .. kW
 
     data_item[acidworking_plant].subgroup = is_muria_building
     data_item[acidworking_plant].order = c
@@ -395,7 +395,7 @@ if mods[muria_mods] then
     }
     data_assembling[acidworking_plant].subgroup = is_muria_building
     data_assembling[acidworking_plant].order = c
-    data_assembling[acidworking_plant].energy_usage = 900 .. kW
+    data_assembling[acidworking_plant].energy_usage = 960 .. kW
 
     data_item[smelting_plant].subgroup = is_muria_building
     data_item[smelting_plant].order = d
@@ -415,7 +415,7 @@ if mods[muria_mods] then
     data_assembling[smelting_plant].subgroup = is_muria_building
     data_assembling[smelting_plant].order = d
     data_assembling[smelting_plant].crafting_speed = 2
-    data_assembling[smelting_plant].energy_usage = 900 .. kW
+    data_assembling[smelting_plant].energy_usage = 960 .. kW
 
     -- WAR
     local toxic_rounds_magazine = "toxic-rounds-magazine"

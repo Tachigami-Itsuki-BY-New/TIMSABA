@@ -4,14 +4,13 @@ data_fluid[water].base_color = {r = 076 / 255, g = 177 / 255, b = 205 / 255}
 data_fluid[water].flow_color = {r = 100 / 255, g = 192 / 255, b = 218 / 255}
 data_fluid[water].default_temperature = 15
 data_fluid[water].max_temperature = 100
-data_fluid[water].heat_capacity = "200J"
 
 data_fluid[steam].icon = "__TIMSABA__/graphics/icons/base/steam.png"
 data_fluid[steam].base_color = {r = 097 / 255, g = 097 / 255, b = 097 / 255}
 data_fluid[steam].flow_color = {r = 128 / 255, g = 128 / 255, b = 128 / 255}
 data_fluid[steam].default_temperature = 15
 data_fluid[steam].max_temperature = 5000
-data_fluid[steam].heat_capacity = "200J"
+data_fluid[steam].heat_capacity = (200 / 0.9375) .. "J"
 
 data_fluid[crude_oil].icons = nil
 data_fluid[crude_oil].icon = "__TIMSABA__/graphics/icons/base/crude-oil.png"

@@ -249,6 +249,15 @@ for _, AMMO in pairs(rockets) do
 end
 data_ammo[atomic_rocket].stack_size = 32
 data_ammo[atomic_rocket].weight = 31250
+data_ammo[atomic_rocket].ammo_type.action.action_delivery =
+{
+    type = "artillery",
+    projectile = "bob-atomic-artillery-projectile",
+    starting_speed = 1,
+    direction_deviation = 0,
+    range_deviation = 0,
+    source_effects = {type = "create-explosion", entity_name = "artillery-cannon-muzzle-flash"}
+}
 data_recipe[atomic_rocket].energy_required = 64
 data_recipe[atomic_rocket].icons = R_P_I(atomic_rocket, uranium_235, nil, number_1)
 data_recipe[atomic_rocket].ingredients =
@@ -266,26 +275,6 @@ data_projectile[atomic_bomb_wave].action[1].action_delivery.target_effects.upper
 local atomic_bomb_ground_zero = atomic_rocket .. "-ground-zero-projectile"
 data_projectile[atomic_bomb_ground_zero].action[1].radius = 4
 data_projectile[atomic_bomb_ground_zero].action[1].action_delivery.target_effects.upper_distance_threshold = 64
-
-local effects = data_projectile["atomic-rocket"].action.action_delivery.target_effects
--- Слот 1: Уничтожение скал
-if effects[1] then effects[1].radius = 16 end
--- Слот 10: Уничтожение декораций травы/камней
-if effects[10] then effects[10].radius = 64 end
--- Слот 12: Волна Ground Zero
-if effects[12] and effects[12].action then effects[12].action.radius = 32 end
--- Слот 13: Основная взрывная волна
-if effects[13] and effects[13].action then effects[13].action.radius = 64 end
--- Слот 14: Спавн кассетных ядерных взрывов
-if effects[14] and effects[14].action then effects[14].action.radius = 32 end
--- Слот 15: Спавн огненного дыма
-if effects[15] and effects[15].action then effects[15].action.radius = 8 end
--- Слот 16: Спавн взрывной волны nuke-shockwave
-if effects[16] and effects[16].action then effects[16].action.radius = 16 end
--- Слот 17: Спавн ядерного гриба/дыма по площади
-if effects[17] and effects[17].action then effects[17].action.radius = 32 end
--- Слот 18: Спавн тлеющих углей на земле
-if effects[18] and effects[18].action then effects[18].action.radius = 16 end
 
 atomic_rocket_2 = "angels-atomic-bomb"
 data_recipe[atomic_rocket_2].order = d_a
@@ -389,6 +378,26 @@ data_recipe[artillery_shell].ingredients =
 }
 
 if mods[bobwarfare] then
+    local effects = data_projectile_artillery["bob-atomic-artillery-projectile"].action.action_delivery.target_effects
+    -- Слот 1: Уничтожение скал
+    if effects[1] then effects[1].radius = 16 end
+    -- Слот 10: Уничтожение декораций травы/камней
+    if effects[10] then effects[10].radius = 64 end
+    -- Слот 12: Волна Ground Zero
+    if effects[12] and effects[12].action then effects[12].action.radius = 32 end
+    -- Слот 13: Основная взрывная волна
+    if effects[13] and effects[13].action then effects[13].action.radius = 64 end
+    -- Слот 14: Спавн кассетных ядерных взрывов
+    if effects[14] and effects[14].action then effects[14].action.radius = 32 end
+    -- Слот 15: Спавн огненного дыма
+    if effects[15] and effects[15].action then effects[15].action.radius = 16 end
+    -- Слот 16: Спавн взрывной волны nuke-shockwave
+    if effects[16] and effects[16].action then effects[16].action.radius = 32 end
+    -- Слот 17: Спавн ядерного гриба/дыма по площади
+    if effects[17] and effects[17].action then effects[17].action.radius = 32 end
+    -- Слот 18: Спавн тлеющих углей на земле
+    if effects[18] and effects[18].action then effects[18].action.radius = 32 end
+
     data_ammo[atomic_artillery_shell].stack_size = 32
     data_ammo[atomic_artillery_shell].weight = 31250
     if mods[shattered_mods] then
@@ -1077,10 +1086,10 @@ end
 
 local fission_reactors =
 {
-    {name = fission_reactor_eq_1, power = 600},
-    {name = fission_reactor_eq_2, power = 1200},
-    {name = fission_reactor_eq_3, power = 1800},
-    {name = fission_reactor_eq_4, power = 2400}
+    {name = fission_reactor_eq_1, power = 960},
+    {name = fission_reactor_eq_2, power = 1920},
+    {name = fission_reactor_eq_3, power = 2880},
+    {name = fission_reactor_eq_4, power = 3840}
 }
 for _, EQUIPMENT in pairs(fission_reactors) do
     if data_item[EQUIPMENT.name] then
@@ -1235,12 +1244,12 @@ end
 
 local batterys_eq =
 {
-    {name = battery_eq_1, buffer_capacity = 30000},
-    {name = battery_eq_2, buffer_capacity = 60000},
-    {name = battery_eq_3, buffer_capacity = 120000},
-    {name = battery_eq_4, buffer_capacity = 240000},
-    {name = battery_eq_5, buffer_capacity = 480000},
-    {name = battery_eq_6, buffer_capacity = 960000}
+    {name = battery_eq_1, buffer_capacity = 30720},
+    {name = battery_eq_2, buffer_capacity = 61440},
+    {name = battery_eq_3, buffer_capacity = 92160},
+    {name = battery_eq_4, buffer_capacity = 122880},
+    {name = battery_eq_5, buffer_capacity = 153600},
+    {name = battery_eq_6, buffer_capacity = 184320}
 }
 for _, EQUIPMENT in pairs(batterys_eq) do
     if data_item[EQUIPMENT.name] then
@@ -1404,7 +1413,9 @@ if mods[bobequipment] then
     for _, EQUIPMENT in pairs(roboport_areas_eq) do
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
+        data_recipe[EQUIPMENT.name].energy_required = 8
         data_roboport_eq[EQUIPMENT.name].construction_radius = EQUIPMENT.construction_radius
+        data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = 15 .. kW
     end
     local function rp_area_expander_eq_recipe(name, antenna, plate, roboport_area)
         local ingredients =
@@ -1428,17 +1439,18 @@ if mods[bobequipment] then
     local chargepad_eq_4 = "bob-personal-roboport-chargepad-equipment-4"
     local chargepads_eq =
     {
-        {name = chargepad_eq_1, input_flow_limit = 1800,  charging_energy = 900,  charging_station_count = 8},
-        {name = chargepad_eq_2, input_flow_limit = 7200,  charging_energy = 1800, charging_station_count = 8},
-        {name = chargepad_eq_3, input_flow_limit = 16200, charging_energy = 2700, charging_station_count = 8},
-        {name = chargepad_eq_4, input_flow_limit = 28800, charging_energy = 3600, charging_station_count = 8}
+        {name = chargepad_eq_1, input_flow_limit = 1920,  charging_energy = 960,  charging_station_count = 8},
+        {name = chargepad_eq_2, input_flow_limit = 7680,  charging_energy = 1920, charging_station_count = 8},
+        {name = chargepad_eq_3, input_flow_limit = 17280, charging_energy = 2880, charging_station_count = 8},
+        {name = chargepad_eq_4, input_flow_limit = 30720, charging_energy = 3840, charging_station_count = 8}
     }
     for _, EQUIPMENT in pairs(chargepads_eq) do
         data_item[EQUIPMENT.name].subgroup = is_utility_equipment_2
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_2
-        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 10) .. kJ
+        data_recipe[EQUIPMENT.name].energy_required = 8
+        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 8) .. kJ
         data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
         data_roboport_eq[EQUIPMENT.name].charging_energy = EQUIPMENT.charging_energy .. kW
         data_roboport_eq[EQUIPMENT.name].charging_station_count = EQUIPMENT.charging_station_count
@@ -1475,7 +1487,9 @@ if mods[bobequipment] then
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_3
+        data_recipe[EQUIPMENT.name].energy_required = 8
         data_roboport_eq[EQUIPMENT.name].robot_limit = EQUIPMENT.robot_limit
+        data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = 15 .. kW
     end
     local function robot_control_eq_recipe(name, circuit, robot_control_eq)
         local ingredients = {}
@@ -1523,10 +1537,10 @@ end
 
 local roboports_eq =
 {
-    {name = roboport_eq_1, robot_limit = 8,  input_flow_limit = 1800,  charging_energy = 900,  charging_station_count = 8},
-    {name = roboport_eq_2, robot_limit = 16, input_flow_limit = 7200,  charging_energy = 1800, charging_station_count = 8},
-    {name = roboport_eq_3, robot_limit = 24, input_flow_limit = 16200, charging_energy = 2700, charging_station_count = 8},
-    {name = roboport_eq_4, robot_limit = 32, input_flow_limit = 28800, charging_energy = 3600, charging_station_count = 8}
+    {name = roboport_eq_1, robot_limit = 8,  input_flow_limit = 1920,  charging_energy = 960,  charging_station_count = 8},
+    {name = roboport_eq_2, robot_limit = 16, input_flow_limit = 7680,  charging_energy = 1920, charging_station_count = 8},
+    {name = roboport_eq_3, robot_limit = 24, input_flow_limit = 17280, charging_energy = 2880, charging_station_count = 8},
+    {name = roboport_eq_4, robot_limit = 32, input_flow_limit = 30720, charging_energy = 3840, charging_station_count = 8}
 }
 for _, EQUIPMENT in pairs(roboports_eq) do
     if data_item[EQUIPMENT.name] then
@@ -1534,7 +1548,8 @@ for _, EQUIPMENT in pairs(roboports_eq) do
         data_item[EQUIPMENT.name].stack_size = 16
         data_item[EQUIPMENT.name].weight = 62500
         data_recipe[EQUIPMENT.name].subgroup = is_utility_equipment_4
-        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 10) .. kJ
+        data_recipe[EQUIPMENT.name].energy_required = 16
+        data_roboport_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.input_flow_limit * 8) .. kJ
         data_roboport_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
         data_roboport_eq[EQUIPMENT.name].robot_limit = EQUIPMENT.robot_limit
         data_roboport_eq[EQUIPMENT.name].construction_radius = EQUIPMENT.robot_limit
@@ -1732,6 +1747,8 @@ data_recipe[discharge_defense_eq].ingredients =
 }
 data_active_defense_eq[discharge_defense_eq].attack_parameters.cooldown = 120
 data_active_defense_eq[discharge_defense_eq].attack_parameters.range = 8
+data_active_defense_eq[discharge_defense_eq].attack_parameters.ammo_type.energy_consumption = 1920 .. kJ
+data_active_defense_eq[discharge_defense_eq].energy_source.buffer_capacity = 3840 .. kJ
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

@@ -95,7 +95,7 @@ if mods[secretas_frozeta_mods] then
     data_item[golden_biter_egg].order = e
     data_item[golden_biter_egg].stack_size = 200
     data_item[golden_biter_egg].fuel_categories = {base_fuel}
-    data_item[golden_biter_egg].fuel_value = 14400 .. kJ
+    data_item[golden_biter_egg].fuel_value = 15360 .. kJ
 
     data_item[golden_science_pack].subgroup = is_frozeta_recipe
     data_item[golden_science_pack].order = f
@@ -168,7 +168,7 @@ if mods[secretas_frozeta_mods] then
     data_furnace[steam_recycler].crafting_categories = {recycling}
     data_furnace[steam_recycler].module_slots = 4
     data_furnace[steam_recycler].crafting_speed = 1
-    data_furnace[steam_recycler].energy_usage = 450 .. kW
+    data_furnace[steam_recycler].energy_usage = 480 .. kW
     data_furnace[steam_recycler].result_inventory_size = 80
 
     bobmods.lib.recipe.update_recycling_recipe({steam_recycler})

@@ -502,11 +502,11 @@ if mods[maraxsis_mods] then
     local regulator = "maraxsis-regulator"
     data_roboport[regulator].subgroup = is_maraxsis_building
     data_roboport[regulator].order = c
-    data_roboport[regulator].energy_source.buffer_capacity = (14400 * 100) .. kJ -- 200MJ
-    data_roboport[regulator].energy_source.input_flow_limit = 14400 .. kW -- 12.5MW
+    data_roboport[regulator].energy_source.buffer_capacity = (15360 * 128) .. kJ -- 200MJ
+    data_roboport[regulator].energy_source.input_flow_limit = 15360 .. kW -- 12.5MW
     data_roboport[regulator].energy_usage = (4 * 60) .. kW -- 100kW
-    data_roboport[regulator].charging_energy = 3600 .. kW -- 2500kW
-    data_roboport[regulator].recharge_minimum = 36000 .. kJ -- 40000kJ
+    data_roboport[regulator].charging_energy = 3840 .. kW -- 2500kW
+    data_roboport[regulator].recharge_minimum = 30720 .. kJ -- 40000kJ
 
     local fishing_tower = "maraxsis-fishing-tower"
     data_item[fishing_tower].subgroup = is_maraxsis_building
@@ -542,7 +542,7 @@ if mods[maraxsis_mods] then
     }
     data_spider_vechicle[diesel_submarine].subgroup = is_maraxsis_war
     data_spider_vechicle[diesel_submarine].order = a
-    data_spider_vechicle[diesel_submarine].movement_energy_consumption = 14400 .. kW
+    data_spider_vechicle[diesel_submarine].movement_energy_consumption = 15360 .. kW
 
     local sonar = "maraxsis-sonar"
     data_item[sonar].subgroup = is_maraxsis_war
@@ -586,7 +586,7 @@ if mods[maraxsis_mods] then
     }
     data_spider_vechicle[nuclear_submarine].subgroup = is_maraxsis_war
     data_spider_vechicle[nuclear_submarine].order = c
-    data_spider_vechicle[nuclear_submarine].movement_energy_consumption = 7200 .. kW
+    data_spider_vechicle[nuclear_submarine].movement_energy_consumption = 7680 .. kW
 
     local big_cliff_explosives = "maraxsis-big-cliff-explosives"
     data_capsule[big_cliff_explosives].subgroup = is_maraxsis_war

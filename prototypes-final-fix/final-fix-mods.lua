@@ -674,7 +674,7 @@ if mods[lignumis_mods] then
     end
 
     data_item[sulfur].fuel_categories = {base_fuel}
-    data_item[sulfur].fuel_value = 14400 .. kJ
+    data_item[sulfur].fuel_value = 15360 .. kJ
 
     data_item[rocket_fuel].fuel_categories = {transport_fuel}
 

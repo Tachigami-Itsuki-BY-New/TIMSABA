@@ -4,7 +4,7 @@ if mods[arig_mods] then
     data_capsule[cactus_arig].order = a
     data_capsule[cactus_arig].stack_size = 200
     data_capsule[cactus_arig].fuel_categories = {base_fuel}
-    data_capsule[cactus_arig].fuel_value = 1800 .. kJ
+    data_capsule[cactus_arig].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(cactus_arig)
 
     local cactus_seeds = "planetaris-cactus-seeds"
@@ -12,14 +12,14 @@ if mods[arig_mods] then
     data_item[cactus_seeds].order = b
     data_item[cactus_seeds].stack_size = 200
     data_item[cactus_seeds].fuel_categories = {base_fuel}
-    data_item[cactus_seeds].fuel_value = 3600 .. kJ
+    data_item[cactus_seeds].fuel_value = 3840 .. kJ
 
     if mods[tellus_mods] then
         data_item[cactus_mash].subgroup = is_cactus
         data_item[cactus_mash].order = c
         data_item[cactus_mash].stack_size = 200
         data_item[cactus_mash].fuel_categories = {base_fuel}
-        data_item[cactus_mash].fuel_value = 900 .. kJ
+        data_item[cactus_mash].fuel_value = 960 .. kJ
         TIMSABA.void.freezing_organics(cactus_mash)
         data_recipe[cactus_mash].subgroup = is_cactus
         data_recipe[cactus_mash].icons = TWO_D_I(cactus_arig, water, cactus_mash, cactus_seeds)
@@ -315,7 +315,7 @@ if mods[arig_mods] then
     data_item[rocket_biofuel].order = l
     data_item[rocket_biofuel].stack_size = 50
     data_item[rocket_biofuel].fuel_categories = {transport_fuel}
-    data_item[rocket_biofuel].fuel_value = 460800 .. kJ
+    data_item[rocket_biofuel].fuel_value = 491520 .. kJ
     data_item[rocket_biofuel].fuel_acceleration_multiplier = 2.5
     data_item[rocket_biofuel].fuel_top_speed_multiplier = 1.25
     data_recipe[rocket_biofuel].subgroup = is_arig_recipe

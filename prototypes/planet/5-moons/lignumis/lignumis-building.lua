@@ -24,7 +24,7 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.angels-ore-sorting-facility"},
             crafting_speed = 0.5,
-            energy_usage = 450 .. kW
+            energy_usage = 480 .. kW
         },
         -- CHEMICAL PLANT
         {
@@ -45,7 +45,7 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.chemical-plant"},
             crafting_speed = 0.5,
-            energy_usage = 225 .. kW
+            energy_usage = 240 .. kW
         },
         -- SEED EXTRACTOR
         {
@@ -66,7 +66,7 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.angels-seed-extractor"},
             crafting_speed = 0.5,
-            energy_usage = 225 .. kW
+            energy_usage = 240 .. kW
         }
     })
     table.insert(data_recipe[burner_ore_sorting_facility].categories, lignumis_wood_processing)
