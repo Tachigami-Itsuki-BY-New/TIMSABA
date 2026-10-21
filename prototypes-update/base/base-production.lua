@@ -197,9 +197,9 @@ local function solar_panel_s_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_s_recipe(solar_panel_small_1, electronic_circuit,     steel_plate,     copper_insulated_cable, glass_bob,                 nil, silicon_wafer, copper_plate)
+solar_panel_s_recipe(solar_panel_small_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,                 nil, silicon_wafer,    tin_plate_bob)
 solar_panel_s_recipe(solar_panel_small_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_small_1, silicon_wafer, silver_plate_bob)
-solar_panel_s_recipe(solar_panel_small_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_small_2, silicon_wafer, gold_plate_bob)
+solar_panel_s_recipe(solar_panel_small_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_small_2, silicon_wafer,   gold_plate_bob)
 
 data_item_subgroup["bob-energy-solar-panel"].order = b_e
 local solar_panels =
@@ -239,9 +239,9 @@ local function solar_panel_m_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_m_recipe(solar_panel_1, electronic_circuit,     steel_plate,     copper_insulated_cable, glass_bob,           nil, silicon_wafer, copper_plate)
+solar_panel_m_recipe(solar_panel_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,           nil, silicon_wafer,    tin_plate_bob)
 solar_panel_m_recipe(solar_panel_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_1, silicon_wafer, silver_plate_bob)
-solar_panel_m_recipe(solar_panel_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_2, silicon_wafer, gold_plate_bob)
+solar_panel_m_recipe(solar_panel_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_2, silicon_wafer,   gold_plate_bob)
 
 local solar_panels_large =
 {
@@ -283,9 +283,9 @@ local function solar_panel_l_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_l_recipe(solar_panel_large_1, electronic_circuit,     steel_plate,     copper_insulated_cable, glass_bob,                 nil, silicon_wafer, copper_plate)
+solar_panel_l_recipe(solar_panel_large_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,                 nil, silicon_wafer,    tin_plate_bob)
 solar_panel_l_recipe(solar_panel_large_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_large_1, silicon_wafer, silver_plate_bob)
-solar_panel_l_recipe(solar_panel_large_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_large_2, silicon_wafer, gold_plate_bob)
+solar_panel_l_recipe(solar_panel_large_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_large_2, silicon_wafer,   gold_plate_bob)
 
 data_item_subgroup["bob-energy-accumulator"].order = b_g
 local accumulators =
