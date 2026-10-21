@@ -80,6 +80,7 @@
         "+ Redrawn-Space-Connections",
         "+ secretas-orbit-patch",
         "+ visible-planets",
+        "+ CargoBayLimitResearch",
 
         "! foliax",
         "! obsidiax",
@@ -124,7 +125,11 @@
         "! electricboiler",
         "! Flow Control",
         "! rigor-module",
-        "! khaosbioprocessinggroup"
+        "! khaosbioprocessinggroup",
+        "! valves",
+        "! valves-lib",
+        "! Return-Inserter",
+        "! TwoMoreTurrets"
     ],
     "expansion_required": true,
     "quality_required": true,
