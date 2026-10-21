@@ -148,7 +148,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 8},
                 {type = item, name = nitinol_plate_bob, amount = 4},
-                {type = item, name = platinum_cable, amount = 4},
+                {type = item, name = platinum_insulated_cable, amount = 4},
                 {type = item, name = solar_panel_small_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 4},
                 {type = item, name = platinum_plate, amount = 8}
@@ -199,7 +199,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 16},
                 {type = item, name = nitinol_plate_bob, amount = 8},
-                {type = item, name = platinum_cable, amount = 8},
+                {type = item, name = platinum_insulated_cable, amount = 8},
                 {type = item, name = solar_panel_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 8},
                 {type = item, name = platinum_plate, amount = 16}
@@ -250,7 +250,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 32},
                 {type = item, name = nitinol_plate_bob, amount = 16},
-                {type = item, name = platinum_cable, amount = 16},
+                {type = item, name = platinum_insulated_cable, amount = 16},
                 {type = item, name = solar_panel_large_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 16},
                 {type = item, name = platinum_plate, amount = 32}

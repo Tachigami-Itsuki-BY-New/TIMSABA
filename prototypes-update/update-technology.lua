@@ -95,6 +95,12 @@ data_technology[tech_electric_substation_1].unit.ingredients =
 data_technology[tech_electric_substation_2].prerequisites = {tech_electric_substation_1, chemical_science_pack, tech_aluminium_smelting_1}
 
 -- ADVANCED LOGISTICS
+data_technology[tech_lamp].prerequisites = {tech_rubbers}
+
+table.insert(data_technology[tech_lamp].unit.ingredients, {logistic_science_pack, 1})
+
+data_technology["circuit-network"].prerequisites = {tech_rubbers}
+
 if data_technology[tech_robotics_1] then
     if mods[bobmodules] then
         data_technology[tech_robotics_1].effects =
@@ -243,13 +249,7 @@ local tech_robo_modular_2 = "bob-robo-modular-2"
 data_technology[tech_robo_modular_2].prerequisites = {"bob-robo-modular-1", tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
 -- PRODUCTION
-data_technology[logistic_science_pack].prerequisites = {tech_electronics, tech_logistics_1, tech_steel_processing}
-
-if mods[bobtech] then
-    data_technology[transport_science_pack].prerequisites = {tech_robots_1, "bob-bulk-inserter-2", roboport_eq_2, vehicle_roboport_eq_2, tech_robo_modular_2, tech_fluid_handling_2, "bob-railway-2", tech_electric_substation_2, tech_electric_pole_2}
-end
-
-data_technology[production_science_pack].prerequisites = {"railway", tech_advanced_material_processing_2, productivity_module_1}
+table.insert(data_technology[tech_solar_energy_1].prerequisites, tech_rubbers)
 
 data_technology[tech_electronics_0].effects =
 {
@@ -281,6 +281,7 @@ if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_technology[fluid_generator_3].prerequisites = {tech_tungsten_processing, fluid_generator_2}
 end
 
+table.insert(data_technology[tech_solar_energy_1].prerequisites, tech_rubbers)
 data_technology[tech_solar_energy_3].prerequisites = {processing_unit, tech_solar_energy_2, production_science_pack}
 
 data_technology[tech_electric_energy_accumulators_1].effects = {{type = unlock_recipe, recipe = accumulator_1}}
@@ -428,6 +429,14 @@ replace_prerequisites(tech_strand_casting_4, tech_tungsten_processing, tech_copp
 replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_copper_tungsten_processing)
 
 -- INTERMEDIATE PRODUCTS
+data_technology[logistic_science_pack].prerequisites = {tech_electronics, tech_logistics_1, tech_steel_processing}
+
+if mods[bobtech] then
+    data_technology[transport_science_pack].prerequisites = {tech_robots_1, "bob-bulk-inserter-2", roboport_eq_2, vehicle_roboport_eq_2, tech_robo_modular_2, tech_fluid_handling_2, "bob-railway-2", tech_electric_substation_2, tech_electric_pole_2}
+end
+
+data_technology[production_science_pack].prerequisites = {"railway", tech_advanced_material_processing_2, productivity_module_1}
+
 table.insert(data_technology[advanced_circuit].prerequisites, tech_iron_smelting_2)
 table.insert(data_technology[advanced_circuit].prerequisites, tech_rubbers)
 data_technology[advanced_circuit].effects =
@@ -1008,9 +1017,29 @@ for _, tech_name in ipairs(technologies) do
     end
 end
 
-data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+if mods[bobequipment] then
+    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
-data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+
+    for i, prerequisite in ipairs(data_technology[solar_panel_eq_3].prerequisites) do
+        if prerequisite == advanced_processing_unit then
+            table.remove(data_technology[solar_panel_eq_3].prerequisites, i) break
+        end
+    end
+
+    for i, prerequisite in ipairs(data_technology[solar_panel_eq_3].prerequisites) do
+        if prerequisite == advanced_processing_unit then
+            table.remove(data_technology[solar_panel_eq_3].prerequisites, i) break
+        end
+    end
+end
+
+if mods[bobvehicleequipment] then
+    if not mods[bobtech] then
+        table.insert(data_technology[vehicle_solar_panel_eq_5].prerequisites, tech_molybdenum_processing, tech_rhenium_processing)
+    end
+end
 
 -- ANGELS RESOURCE REFINING
 if mods[lignumis_mods] then

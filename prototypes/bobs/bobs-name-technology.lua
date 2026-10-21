@@ -1,5 +1,6 @@
 tech_electronics_0 = "electronics"
 tech_steam_power = "steam-power"
+tech_lamp = "lamp"
 
 tech_electric_pole_1 = "electric-energy-distribution-1"
 tech_electric_pole_2 = "bob-electric-pole-2"
