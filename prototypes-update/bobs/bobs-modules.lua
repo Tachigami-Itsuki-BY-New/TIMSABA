@@ -361,13 +361,12 @@ if mods[bobmodules] then
     data_recipe[beacon_2].energy_required = 16
     data_recipe[beacon_2].ingredients =
     {
-        {type = item, name = electronic_circuit,     amount = 16},
-        {type = item, name = advanced_circuit,       amount = 16},
-        {type = item, name = processing_unit,        amount = 16},
-        {type = item, name = tin_cable,              amount = 8},
-        {type = item, name = aluminium_plate_bob,    amount = 8},
+        {type = item, name = advanced_circuit, amount = 16},
+        {type = item, name = silver_insulated_cable, amount = 16},
+        {type = item, name = aluminium_plate_bob, amount = 8},
+        {type = item, name = silver_plate_bob, amount = 8},
         {type = item, name = crystal_shard_harmonic, amount = 1},
-        {type = item, name = beacon_1,               amount = 1}
+        {type = item, name = beacon_1, amount = 1}
     }
 
     data_item[beacon_3].stack_size = 32
@@ -375,14 +374,12 @@ if mods[bobmodules] then
     data_recipe[beacon_3].energy_required = 16
     data_recipe[beacon_3].ingredients =
     {
-        {type = item, name = advanced_circuit,         amount = 16},
-        {type = item, name = processing_unit,          amount = 16},
-        {type = item, name = advanced_processing_unit, amount = 16},
-        {type = item, name = insulated_cable,          amount = 8},
-        {type = item, name = titanium_plate_bob,       amount = 8},
-        {type = item, name = gold_plate_bob,           amount = 8},
-        {type = item, name = crystal_full_harmonic,    amount = 1},
-        {type = item, name = beacon_2,                 amount = 1}
+        {type = item, name = processing_unit, amount = 16},
+        {type = item, name = gold_insulated_cable, amount = 16},
+        {type = item, name = titanium_plate_bob, amount = 8},
+        {type = item, name = gold_plate_bob, amount = 8},
+        {type = item, name = crystal_full_harmonic, amount = 1},
+        {type = item, name = beacon_2, amount = 1}
     }
 
     bobmods.lib.recipe.update_recycling_recipe

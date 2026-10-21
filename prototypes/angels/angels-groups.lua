@@ -106,7 +106,11 @@ TIMSABA.functions.create_subgroups(ig_smelting,
 
 -- ANGELS METTALURGY CASTING
 ig_casting = "angels-casting"
+is_copper_casting = "angels-copper-casting"
+is_tin_casting = "angels-tin-casting"
+is_silver_casting = "angels-silver-casting"
 is_titanium_casting = "angels-titanium-casting"
+is_gold_casting = "angels-gold-casting"
 is_platinum_casting = "angels-platinum-casting"
 is_tungsten_casting = "angels-tungsten-casting"
 is_stone_casting = "angels-stone-casting"

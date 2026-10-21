@@ -1,3 +1,45 @@
+-- TIN
+TIMSABA.functions.create_recipes
+({
+    {
+        name = tin_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_tin_casting,
+        icons = THREE_I(tin_cable, rubber_bob, tin_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = tin_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = tin_insulated_cable, amount = 8}},
+        main_product = tin_insulated_cable
+    }
+})
+
+-- SILVER
+TIMSABA.functions.create_recipes
+({
+    {
+        name = silver_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_silver_casting,
+        icons = THREE_I(silver_cable, rubber_bob, silver_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = silver_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = silver_insulated_cable, amount = 8}},
+        main_product = silver_insulated_cable
+    }
+})
+
 -- TITANIUM
 TIMSABA.functions.create_recipes
 ({
@@ -13,6 +55,27 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = titanium_plate_bob, amount = 1}},
         results = {{type = item, name = titanium_rod, amount = 2}},
         main_product = titanium_rod
+    }
+})
+
+-- GOLD
+TIMSABA.functions.create_recipes
+({
+    {
+        name = gold_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_gold_casting,
+        icons = THREE_I(gold_cable, rubber_bob, gold_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = gold_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = gold_insulated_cable, amount = 8}},
+        main_product = gold_insulated_cable
     }
 })
 
@@ -32,6 +95,22 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = fluid, name = platinum_molten_angels, amount = 60}},
         results = {{type = item, name = platinum_plate, amount = 4}},
         main_product = platinum_plate
+    },
+    {
+        name = platinum_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_platinum_casting,
+        icons = THREE_I(platinum_cable, rubber_bob, platinum_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = platinum_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = platinum_insulated_cable, amount = 8}},
+        main_product = platinum_insulated_cable
     }
 })
 
