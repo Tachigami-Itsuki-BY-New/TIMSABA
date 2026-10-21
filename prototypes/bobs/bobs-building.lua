@@ -366,6 +366,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
             ingredients =
             {
                 {type = item, name = battery_graphene, amount = 8},
+                {type = item, name = platinum_insulated_cable, amount = 4},
                 {type = item, name = advanced_processing_unit, amount = 2},
                 {type = item, name = nitinol_plate_bob, amount = 2},
                 {type = item, name = accumulator_3, amount = 1}
