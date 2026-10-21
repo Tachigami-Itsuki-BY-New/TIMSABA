@@ -533,11 +533,6 @@ if mods[paracelsin_mods] then
         {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
-    data_technology[tech_concrete_productivity].PlanetsLib_recipe_productivity_effects.effects =
-    {
-        {type = item, name = concrete, change = 0.1},
-        {type = item, name = reinforced_concrete, change = 0.1}
-    }
 end
 
 -- CASTRA
@@ -549,25 +544,29 @@ end
 if mods[maraxsis_mods] then
     local maraxsis_mining_machine = {{name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120}}
     for _, BUILD in pairs(maraxsis_mining_machine) do
-        data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
-        data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
-        data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
-        data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
-        data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
-        data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
-        data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
-        data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
-        data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        if data_assembling[BUILD.name .. _sand_extractor] then
+            data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
+            data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
+            data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
+            data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+            data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+        end
     end
 
-    data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
-    data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
-    data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
-    data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
-    data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
-    data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
-    data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
-    data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    if data_assembling[big_mining_drill .. _sand_extractor] then
+        data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
+        data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
+        data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
+        data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
+    end
 end
 
 -- PELAGOS
