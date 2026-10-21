@@ -728,10 +728,10 @@ if mods[bobvehicleequipment] then
 
     local vehicle_plasma_cannon_eq =
     {
-        {name = vehicle_plasma_cannon_eq_1, range = 32, cooldown = 240, damage_modifier = 4,  energy_consumption = 12000},
-        {name = vehicle_plasma_cannon_eq_2, range = 40, cooldown = 240, damage_modifier = 8,  energy_consumption = 24000},
-        {name = vehicle_plasma_cannon_eq_3, range = 48, cooldown = 240, damage_modifier = 12, energy_consumption = 36000},
-        {name = vehicle_plasma_cannon_eq_4, range = 56, cooldown = 240, damage_modifier = 16, energy_consumption = 48000}
+        {name = vehicle_plasma_cannon_eq_1, range = 64,  cooldown = 240, damage_modifier = 8,  energy_consumption = 15360},
+        {name = vehicle_plasma_cannon_eq_2, range = 128, cooldown = 240, damage_modifier = 16, energy_consumption = 30720},
+        {name = vehicle_plasma_cannon_eq_3, range = 192, cooldown = 240, damage_modifier = 24, energy_consumption = 46080},
+        {name = vehicle_plasma_cannon_eq_4, range = 256, cooldown = 240, damage_modifier = 32, energy_consumption = 61400}
     }
     for _, EQUIPMENT in pairs(vehicle_plasma_cannon_eq) do
         if data_item[EQUIPMENT.name] then
@@ -748,12 +748,7 @@ if mods[bobvehicleequipment] then
             data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
             data_active_defense_eq[EQUIPMENT.name].attack_parameters.min_range = 16
             data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
-            local ammo_type = data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type
-            local action = ammo_type.action[1] or ammo_type.action
-            local delivery = action.action_delivery[1] or action.action_delivery
-            if delivery then
-                delivery.max_range = EQUIPMENT.range * 1.5
-            end
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action[1].action_delivery[1].max_range = (EQUIPMENT.range * 2)
         end
     end
     if data_item[alien_artifact] then
@@ -924,12 +919,12 @@ if mods[bobvehicleequipment] then
 
     local vehicle_laser_defenses_eq =
     {
-        {name = vehicle_laser_defense_eq_1, energy_consumption = 120, damage_modifier = 1, cooldown = 60, range = 16},
-        {name = vehicle_laser_defense_eq_2, energy_consumption = 240, damage_modifier = 2, cooldown = 60, range = 20},
-        {name = vehicle_laser_defense_eq_3, energy_consumption = 360, damage_modifier = 3, cooldown = 60, range = 24},
-        {name = vehicle_laser_defense_eq_4, energy_consumption = 480, damage_modifier = 4, cooldown = 60, range = 28},
-        {name = vehicle_laser_defense_eq_5, energy_consumption = 600, damage_modifier = 5, cooldown = 60, range = 32},
-        {name = vehicle_laser_defense_eq_6, energy_consumption = 720, damage_modifier = 6, cooldown = 60, range = 36}
+        {name = vehicle_laser_defense_eq_1, energy_consumption = 120, damage_modifier = 1, cooldown = 60, range = 32},
+        {name = vehicle_laser_defense_eq_2, energy_consumption = 240, damage_modifier = 2, cooldown = 60, range = 40},
+        {name = vehicle_laser_defense_eq_3, energy_consumption = 360, damage_modifier = 3, cooldown = 60, range = 48},
+        {name = vehicle_laser_defense_eq_4, energy_consumption = 480, damage_modifier = 4, cooldown = 60, range = 56},
+        {name = vehicle_laser_defense_eq_5, energy_consumption = 600, damage_modifier = 5, cooldown = 60, range = 64},
+        {name = vehicle_laser_defense_eq_6, energy_consumption = 720, damage_modifier = 6, cooldown = 60, range = 72}
     }
     for _, EQUIPMENT in pairs(vehicle_laser_defenses_eq) do
         if data_item[EQUIPMENT.name] then
@@ -1157,7 +1152,7 @@ for _, BUILD in pairs(gun_turrets) do
         data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
         data_ammo_turret[BUILD.name].attack_parameters.cooldown = 7.5
         data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-        data_ammo_turret[BUILD.name].attack_parameters.prepare_range = (BUILD.range + 4)
+        data_ammo_turret[BUILD.name].prepare_range = (BUILD.range + 4)
     end
 end
 local function gun_turret_recipe(name, gear_wheel, plate, gun_turret, bearing)
@@ -1205,13 +1200,11 @@ for _, BUILD in pairs(laser_turrets) do
         data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
         data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
         data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
-        local ammo = data_electric_turret[BUILD.name].attack_parameters.ammo_type
-        if ammo and ammo.action and ammo.action.action_delivery then
-            local delivery = ammo.action.action_delivery
-            delivery.max_length = BUILD.range
-            delivery.duration = BUILD.cooldown
+        if BUILD.name ~= laser_turret_1 then
+            data_electric_turret[BUILD.name].prepare_range = (BUILD.range + 4)
+            data_electric_turret[BUILD.name].attack_parameters.ammo_type.action.action_delivery.max_length = BUILD.range
+            data_electric_turret[BUILD.name].attack_parameters.ammo_type.action.action_delivery.duration = BUILD.cooldown
         end
-        data_electric_turret[BUILD.name].attack_parameters.prepare_range = (BUILD.range + 4)
     end
 end
 local function laser_turret_recipe(name, battery, circuit, plate, laser_turret, polished)
@@ -1256,7 +1249,7 @@ for _, BUILD in pairs(sniper_turrets) do
         data_ammo_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
         data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
         data_ammo_turret[BUILD.name].attack_parameters.ammo_consumption_modifier = 0
-        data_ammo_turret[BUILD.name].attack_parameters.prepare_range = (BUILD.range + 4)
+        data_ammo_turret[BUILD.name].prepare_range = (BUILD.range + 4)
     end
 end
 local function sniper_turret_recipe(name, gear_wheel, plate_1, plate_2, sniper_turret, bearing)
@@ -1337,10 +1330,10 @@ local plasma_turret_3 = "bob-plasma-turret-3"
 local plasma_turret_4 = "bob-plasma-turret-4"
 local plasma_turrets =
 {
-    {name = plasma_turret_1, range = 64,  cooldown = 240, damage_modifier = 8,  energy_consumption = 15360, dispersion_range = 32},
-    {name = plasma_turret_2, range = 128, cooldown = 240, damage_modifier = 16, energy_consumption = 30720, dispersion_range = 32},
-    {name = plasma_turret_3, range = 192, cooldown = 240, damage_modifier = 24, energy_consumption = 46080, dispersion_range = 32},
-    {name = plasma_turret_4, range = 256, cooldown = 240, damage_modifier = 32, energy_consumption = 61400, dispersion_range = 32}
+    {name = plasma_turret_1, range = 64,  cooldown = 240, damage_modifier = 8,  energy_consumption = 15360},
+    {name = plasma_turret_2, range = 128, cooldown = 240, damage_modifier = 16, energy_consumption = 30720},
+    {name = plasma_turret_3, range = 192, cooldown = 240, damage_modifier = 24, energy_consumption = 46080},
+    {name = plasma_turret_4, range = 256, cooldown = 240, damage_modifier = 32, energy_consumption = 61400}
 }
 for _, BUILD in pairs(plasma_turrets) do
     if data_item[BUILD.name] then
@@ -1359,13 +1352,8 @@ for _, BUILD in pairs(plasma_turrets) do
         data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
         data_electric_turret[BUILD.name].attack_parameters.min_range = 16
         data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
-        local ammo_type = data_electric_turret[BUILD.name].attack_parameters.ammo_type
-        local action = ammo_type.action[1] or ammo_type.action
-        local delivery = action.action_delivery[1] or action.action_delivery
-        if delivery then
-            delivery.max_range = BUILD.range * BUILD.dispersion_range
-        end
-        data_electric_turret[BUILD.name].attack_parameters.prepare_range = (BUILD.range + 4)
+        data_electric_turret[BUILD.name].prepare_range = (BUILD.range + 8)
+        data_electric_turret[BUILD.name].attack_parameters.ammo_type.action.action_delivery[1].max_range = (BUILD.range * 2)
     end
 end
 if mods[bobwarfare] then

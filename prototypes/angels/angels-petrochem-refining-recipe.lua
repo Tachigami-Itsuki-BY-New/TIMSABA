@@ -1228,7 +1228,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_calcium,
         icons = THREE_R_I(calcium_hydroxide, lime_angels, steam),
         order = c_a,
-        energy_required = 4, -- Ca(OH)₂(s) --> CaO(s) + H₂O(g)
+        -- Ca(OH)₂(s) --> CaO(s) + H₂O(g)
         ingredients = {{type = item, name = calcium_hydroxide, amount = 4}},
         results =
         {
@@ -1243,7 +1243,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_calcium,
         icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
         order = e,
-        energy_required = 4, -- CaO(s) + 3C(s) --> CaC₂(s) + CO(g) 
+        -- CaO(s) + 3C(s) --> CaC₂(s) + CO(g)
         ingredients =
         {
             {type = item, name = lime_angels, amount = 4},

@@ -87,6 +87,7 @@ data_unit = data.raw["unit"]
 data_unit_spawner = data.raw["unit-spawner"]
 data_combat_robot = data.raw["combat-robot"]
 data_projectile = data.raw["projectile"]
+data_beam = data.raw["beam"]
 data_equipment_grid = data.raw["equipment-grid"]
 data_solar_panel_eq = data.raw["solar-panel-equipment"]
 data_generator_eq = data.raw["generator-equipment"]
@@ -171,6 +172,7 @@ resource = "resource"
 autoplace_control = "autoplace-control"
 
 projectile = "projectile"
+beam = "beam"
 corpse = "corpse"
 minable = "minable"
 unlock_recipe = "unlock-recipe"
