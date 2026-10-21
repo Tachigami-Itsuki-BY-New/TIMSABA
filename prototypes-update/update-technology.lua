@@ -767,7 +767,6 @@ if mods[bobequipment] then
     table.insert(data_technology[roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[roboport_eq_4].prerequisites, tech_battery_4)
-    table.insert(data_technology[roboport_eq_4].prerequisites, advanced_processing_unit)
     if mods[bobtech] then
         table.insert(data_technology[roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
@@ -787,7 +786,6 @@ if mods[bobvehicleequipment] then
     table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
-    table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, advanced_processing_unit)
     if mods[bobtech] then
         table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
