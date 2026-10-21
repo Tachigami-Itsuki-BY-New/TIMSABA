@@ -122,7 +122,8 @@
         "! NoTimedSpoilage",
         "! modular-buildings-redux",
         "! electricboiler",
-        "! Flow Control"
+        "! Flow Control",
+        "! rigor-module"
     ],
     "expansion_required": true,
     "quality_required": true,

@@ -245,7 +245,7 @@ local sub = string.sub
 local find = string.find
 local remove = table.remove
 
-local function prototype_exists(product)
+--[[local function prototype_exists(product)
     if not product then return false end
 
     local p_name = product.name
@@ -273,6 +273,43 @@ local function prototype_exists(product)
     or data_rail_planner[p_name] ~= nil
     or data_item_entity[p_name] ~= nil
     or data_SP_starter_pack[p_name] ~= nil
+end]]
+local function prototype_exists(product)
+    if not product then return false end
+
+    local p_name = product.name or product[1] or product
+    local p_type = product.type or "item"
+
+    if not p_name or type(p_name) ~= "string" then return false end
+
+    if find(p_name, "par%-") then
+        return true
+    end
+
+    if data.raw[p_type] and data.raw[p_type][p_name] then
+        return true
+    end
+
+    if p_type == "item" then
+        local item_subtypes =
+        {
+            "capsule", "tool", "ammo", "armor", "gun", "module",
+            "spidertron-remote", "repair-tool", "rail-planner",
+            "item-entity", "selection-tool", "blueprint", "copy-paste-tool"
+        }
+        for i = 1, #item_subtypes do
+            local sub_type = item_subtypes[i]
+            if data.raw[sub_type] and data.raw[sub_type][p_name] then
+                return true
+            end
+        end
+    end
+
+    if data_SP_starter_pack and data_SP_starter_pack[p_name] then
+        return true
+    end
+
+    return false
 end
 
 for tech_name, technology in pairs(data_technology) do
