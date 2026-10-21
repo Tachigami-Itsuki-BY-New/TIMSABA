@@ -83,7 +83,7 @@ end
 
 data_technology[tech_electric_pole_1].prerequisites = {tech_rubbers}
 
-table.insert(data_technology[tech_electric_pole_3].prerequisitesm, processing_unit)
+table.insert(data_technology[tech_electric_pole_3].prerequisites, processing_unit)
 
 data_technology[tech_electric_substation_1].prerequisites = {tech_electric_pole_1}
 data_technology[tech_electric_substation_1].unit.ingredients =
