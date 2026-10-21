@@ -97,6 +97,7 @@ rubyte_from_lava = "rubyte-from-lava"
 bobmonium_from_lava = "bobmonium-from-lava"
 senaite_from_lava = "senaite-from-lava"
 franckeite_from_lava = "franckeite-from-lava"
+crystal_dust_from_lava = "crystal-dust-from-lava"
 local function create_recipe_from_lava(name, order, result)
     TIMSABA.functions.create_recipes
     ({
@@ -124,14 +125,15 @@ local function create_recipe_from_lava(name, order, result)
         }
     })
 end
-create_recipe_from_lava(saphirite_from_lava,  a_a, ore_saphirite)
-create_recipe_from_lava(jivolite_from_lava,   a_b, ore_jivolite)
-create_recipe_from_lava(stiratite_from_lava,  a_c, ore_stiratite)
-create_recipe_from_lava(crotinnium_from_lava, a_d, ore_crotinnium)
-create_recipe_from_lava(rubyte_from_lava,     a_e, ore_rubyte)
-create_recipe_from_lava(bobmonium_from_lava,  a_f, ore_bobmonium)
-create_recipe_from_lava(senaite_from_lava,    a_g, ore_senaite)
-create_recipe_from_lava(franckeite_from_lava, a_h, ore_franckeite)
+create_recipe_from_lava(saphirite_from_lava,    a_a, ore_saphirite)
+create_recipe_from_lava(jivolite_from_lava,     a_b, ore_jivolite)
+create_recipe_from_lava(stiratite_from_lava,    a_c, ore_stiratite)
+create_recipe_from_lava(crotinnium_from_lava,   a_d, ore_crotinnium)
+create_recipe_from_lava(rubyte_from_lava,       a_e, ore_rubyte)
+create_recipe_from_lava(bobmonium_from_lava,    a_f, ore_bobmonium)
+create_recipe_from_lava(senaite_from_lava,      a_g, ore_senaite)
+create_recipe_from_lava(franckeite_from_lava,   a_h, ore_franckeite)
+create_recipe_from_lava(crystal_dust_from_lava, a_i, crystal_dust)
 
 -- MOLTEN
 molten_steel = "molten-steel"
