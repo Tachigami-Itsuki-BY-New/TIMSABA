@@ -249,8 +249,6 @@ local tech_robo_modular_2 = "bob-robo-modular-2"
 data_technology[tech_robo_modular_2].prerequisites = {"bob-robo-modular-1", tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
 -- PRODUCTION
-table.insert(data_technology[tech_solar_energy_1].prerequisites, tech_rubbers)
-
 data_technology[tech_electronics_0].effects =
 {
     {type = unlock_recipe, recipe = copper_cable},
