@@ -382,12 +382,14 @@ data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrif
 
 data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
 
-data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1}
-data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, tech_advanced_material_processing_2}
+data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, tech_advanced_material_processing_1}
+data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, tech_advanced_material_processing_2}
+data_technology[tech_advanced_material_processing_4].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_advanced_material_processing_3}
 
 data_technology[steel_mixing_furnace].prerequisites = {logistic_science_pack, tech_steel_processing}
-data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, steel_mixing_furnace}
-data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, electric_mixing_furnace_1}
+data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, steel_mixing_furnace}
+data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, electric_mixing_furnace_1}
+data_technology[tech_multi_purpose_furnace_2].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_multi_purpose_furnace_1}
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
