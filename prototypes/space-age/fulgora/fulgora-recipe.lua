@@ -15,7 +15,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = fulgora_air_separation,
-        categories = {angels_advanced_chemistry},
+        categories = {angels_gas_refining},
         subgroup = is_fulgora_air,
         icons = FOUR_R_I(fulgora_air, nitrogen_angels, condensates_angels, hydrogen_sulfide_angels),
         order = a_a,

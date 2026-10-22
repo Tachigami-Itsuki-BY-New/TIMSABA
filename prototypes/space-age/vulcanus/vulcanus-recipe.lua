@@ -15,7 +15,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = vulcanus_air_separation,
-        categories = {angels_advanced_chemistry},
+        categories = {angels_gas_refining},
         subgroup = is_vulcanus_air,
         icons = FOUR_R_I(vulcanus_air, nitrogen_angels, carbon_dioxide_angels, hydrogen_sulfide_angels),
         order = a_a,

@@ -15,7 +15,7 @@ if mods[hyarion_mods] then
         },
         {
             name = hyarion_air_separation,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_hyarion_air,
             icons = FOUR_R_I(hyarion_air, nitrogen_angels, methane_angels, silane_gas),
             order = a_a,

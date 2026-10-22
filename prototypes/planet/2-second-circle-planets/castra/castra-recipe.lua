@@ -18,7 +18,7 @@ if mods[castra_mods] then
         },
         {
             name = castra_air_separation,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_castra_air,
             icons = FOUR_R_I(castra_air, nitrogen_angels, carbon_dioxide_angels, condensates_angels),
             order = a_a,
