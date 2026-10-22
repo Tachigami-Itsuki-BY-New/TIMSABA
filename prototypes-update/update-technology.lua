@@ -291,6 +291,12 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
 end
 
+for i, prerequisite in ipairs(data_technology[tech_pumpjacks_4].prerequisites) do
+    if prerequisite == tech_tungsten_processing then
+        table.remove(data_technology[tech_pumpjacks_4].prerequisites, i) break
+    end
+end
+
 data_technology[tech_heat_pipe_1].prerequisites = {tech_nickel_smelting_1, tech_aluminium_smelting_1, chemical_science_pack}
 data_technology[tech_heat_pipe_1].unit.ingredients =
 {
