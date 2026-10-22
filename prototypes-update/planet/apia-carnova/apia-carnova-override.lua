@@ -595,7 +595,6 @@ if mods[apia_carnova_mods] then
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_apia_carnova].prerequisites, interstellar_science_pack)
     end
-    table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = hydrogen_apia_carnova})
     table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = nitrogen_apia_carnova})
     table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = oxygen_apia_carnova})
     data_technology[planet_discovery_apia_carnova].unit.ingredients =
