@@ -1519,6 +1519,39 @@ for _, BUILD in pairs(steam_crackers) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {-1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {0, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {2, -2}, direction = defines.direction.north}}
+        }
+    }
 end
 local function steam_cracker_recipe(name, circuit, pipe, plate, brick, steam_cracker)
     local ingredients =
