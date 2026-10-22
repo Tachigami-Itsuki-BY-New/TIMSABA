@@ -198,6 +198,7 @@ data_recipe[coke_pellet_angels].ingredients[1].name = coke_processed
 data_recipe[coke_pellet_angels].ingredients[1].amount = 1
 
 local coal_cracking_1 = "angels-coal-cracking-1"
+data_recipe[coal_cracking_1].categories = {angels_gas_refining}
 data_recipe[coal_cracking_1].icons = FOUR_R_I(coal, methane_angels, ethane_angels, butane_angels)
 data_recipe[coal_cracking_1].order = f_a
 -- Coal -cat-> Coke + CH₄ + C₂H₆ + C₄H₁₀
@@ -211,6 +212,7 @@ data_recipe[coal_cracking_1].results =
 }
 
 local coal_cracking_2 = "angels-coal-cracking-2"
+data_recipe[coal_cracking_2].categories = {oil_processing}
 data_recipe[coal_cracking_2].icons = FOUR_R_I(coal, mineral_oil_angels, fuel_oil_angels, naphtha_angels)
 data_recipe[coal_cracking_2].order = f_b
 -- Coal(s) + 16H₂(g) -cat-> C₃₂H₆₆(l) + C₄₈H₉₈(l) + C₈H₁₈(l)
@@ -230,6 +232,7 @@ data_recipe[coal_cracking_2].results =
 }
 
 local coal_cracking_3 = "angels-coal-cracking-3"
+data_recipe[coal_cracking_3].categories = {angels_gas_refining}
 data_recipe[coal_cracking_3].icons = FOUR_R_I(coal, synthesis_angels, residual_angels, hydrogen_sulfide_angels)
 data_recipe[coal_cracking_3].order = f_c
 -- Coal + H₂O + O₂ -cat-> (H₂ + CO) + (CH₄ + CO₂) + H₂S

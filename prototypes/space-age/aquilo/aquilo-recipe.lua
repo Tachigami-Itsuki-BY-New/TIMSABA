@@ -16,7 +16,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aquilo_air_separation,
-        categories = {angels_advanced_chemistry},
+        categories = {angels_gas_refining},
         subgroup = is_aquilo_air,
         icons = FOUR_R_I(aquilo_air, nitrogen_angels, ammonia_angels, tetrafluorohydrazine_gas),
         order = a_a,
