@@ -63,4 +63,10 @@ if mods[paracelsin_mods] then
 
 	data_corpse["accumulatorv2-remnants"] = nil
 	data_corpse["solar-matrix-remnants"] = nil
+
+	for i, prerequisite in ipairs(data_technology[planet_discovery_paracelsin].prerequisites) do
+        if prerequisite == "coal-liquefaction" then
+            table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
+        end
+    end
 end
