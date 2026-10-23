@@ -228,7 +228,6 @@ for _, tree in pairs(data_tree) do
     end
 end
 
-local tree_plant = "tree-plant"
 data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
 
 local yumako_tree = "yumako-tree"
@@ -637,11 +636,28 @@ data_tree[garden_desert].minable.results =
     {type = item, name = arumbiphila, amount = 4, independent_probability = 0.0625}
 }
 data_tree[tree_temperate].order = z_d
-data_tree[tree_temperate].minable.results[1].amount = 128
+data_tree[tree_temperate].minable.results =
+{
+    {type = item, name = tree_temperate, amount = 1},
+    {type = item, name = tree_temperate_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_resin, amount = 16}
+}
+
 data_tree[tree_swamp].order = z_e
-data_tree[tree_swamp].minable.results[1].amount = 128
+data_tree[tree_swamp].minable.results =
+{
+    {type = item, name = tree_swamp, amount = 1},
+    {type = item, name = tree_swamp_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_plastic, amount = 16}
+}
+
 data_tree[tree_desert].order = z_f
-data_tree[tree_desert].minable.results[1].amount = 128
+data_tree[tree_desert].minable.results =
+{
+    {type = item, name = tree_desert, amount = 1},
+    {type = item, name = tree_desert_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_rubber, amount = 16}
+}
 
 local crystal_rock = "angels-crystal-rock"
 data_entity[crystal_rock].loot = nil
