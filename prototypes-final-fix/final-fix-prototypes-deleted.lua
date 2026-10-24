@@ -266,7 +266,8 @@ local function prototype_exists(product)
         {
             "capsule", "tool", "ammo", "armor", "gun", "module",
             "spidertron-remote", "repair-tool", "rail-planner",
-            "item-entity", "selection-tool", "blueprint", "copy-paste-tool"
+            "item-with-entity-data", "selection-tool", "blueprint", "copy-paste-tool",
+            "space-platform-starter-pack"
         }
         for i = 1, #item_subtypes do
             local sub_type = item_subtypes[i]
