@@ -270,6 +270,7 @@ if mods[lignumis_mods] then
 end
 data_recipe[wood_bricks].icons = TWO_I(wood_pellets, wood_bricks)
 data_recipe[wood_bricks].order = d
+data_recipe[wood_bricks].energy_required = 4
 
 local wood_charcoal = "angels-wood-charcoal"
 data_item[wood_charcoal].localised_description = show_formula and {chemical_formula, "C"} or nil
