@@ -517,6 +517,7 @@ if mods[lignumis_mods] then
     if mods[muluna_mods] then
         data_assembling[burner_lumber_mill].next_upgrade = lumber_mill
     end
+    data_assembling[burner_lumber_mill].energy_source.fuel_inventory_size = 1
 
     local burner_lumber_mill_copper = burner_lumber_mill .. "-copper"
     if mods[muluna_mods] then
