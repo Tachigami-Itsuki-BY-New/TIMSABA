@@ -68,29 +68,24 @@ data_tile[bio_tile].order = z
 -- TEMPERATE GARDEN
 data_item_subgroup["angels-farming-temperate-seed"].order = b_a
 
-local seed_wheaton = "angels-temperate-1-seed"
 data_recipe[seed_wheaton].icons = TWO_I(wheaton, seed_wheaton)
 data_recipe[seed_wheaton].ingredients[1].amount = 4
 data_recipe[seed_wheaton].results[1].amount = 8
 
-local seed_tianaton = "angels-temperate-2-seed"
 data_recipe[seed_tianaton].icons = TWO_I(tianaton, seed_tianaton)
 data_recipe[seed_tianaton].ingredients[1].amount = 4
 data_recipe[seed_tianaton].results[1].amount = 8
 
-local seed_okarinome = "angels-temperate-3-seed"
 data_recipe[seed_okarinome].icons = TWO_I(okarinome, seed_okarinome)
 data_recipe[seed_okarinome].ingredients[1].name = okarinome
 data_recipe[seed_okarinome].ingredients[1].amount = 4
 data_recipe[seed_okarinome].results = {{type = item, name = seed_okarinome, amount = 8}}
 
-local seed_quillnoa = "angels-temperate-4-seed"
 data_recipe[seed_quillnoa].icons = TWO_I(quillnoa, seed_quillnoa)
 data_recipe[seed_quillnoa].ingredients[1].name = quillnoa
 data_recipe[seed_quillnoa].ingredients[1].amount = 4
 data_recipe[seed_quillnoa].results = {{type = item, name = seed_quillnoa, amount = 8}}
 
-local seed_kendallion = "angels-temperate-5-seed"
 data_recipe[seed_kendallion].icons = TWO_I(kendallion, seed_kendallion)
 data_recipe[seed_kendallion].ingredients[1].name = kendallion
 data_recipe[seed_kendallion].ingredients[1].amount = 4
@@ -219,29 +214,24 @@ data_recipe[sorting_kendallion].results[1].reset_freshness_on_craft = true
 -- SWAMP GARDEN
 data_item_subgroup["angels-farming-swamp-seed"].order = c_a
 
-local seed_elendilomone = "angels-swamp-1-seed"
 data_recipe[seed_elendilomone].icons = TWO_I(elendilomone, seed_elendilomone)
 data_recipe[seed_elendilomone].ingredients[1].amount = 4
 data_recipe[seed_elendilomone].results[1].amount = 8
 
-local seed_zombieecalyptus = "angels-swamp-2-seed"
 data_recipe[seed_zombieecalyptus].icons = TWO_I(zombieecalyptus, seed_zombieecalyptus)
 data_recipe[seed_zombieecalyptus].ingredients[1].amount = 4
 data_recipe[seed_zombieecalyptus].results[1].amount = 8
 
-local seed_saundsrcress = "angels-swamp-3-seed"
 data_recipe[seed_saundsrcress].icons = TWO_I(saundsrcress, seed_saundsrcress)
 data_recipe[seed_saundsrcress].ingredients[1].name = saundsrcress
 data_recipe[seed_saundsrcress].ingredients[1].amount = 4
 data_recipe[seed_saundsrcress].results = {{type = item, name = seed_saundsrcress, amount = 8}}
 
-local seed_nexeflax = "angels-swamp-4-seed"
 data_recipe[seed_nexeflax].icons = TWO_I(nexeflax, seed_nexeflax)
 data_recipe[seed_nexeflax].ingredients[1].name = nexeflax
 data_recipe[seed_nexeflax].ingredients[1].amount = 4
 data_recipe[seed_nexeflax].results = {{type = item, name = seed_nexeflax, amount = 8}}
 
-local seed_mushredtato = "angels-swamp-5-seed"
 data_recipe[seed_mushredtato].icons = TWO_I(mushredtato, seed_mushredtato)
 data_recipe[seed_mushredtato].ingredients[1].name = mushredtato
 data_recipe[seed_mushredtato].ingredients[1].amount = 4
@@ -373,29 +363,24 @@ data_recipe[sorting_mushredtato].results[3].reset_freshness_on_craft = true
 -- DESERT GARDEN
 data_item_subgroup["angels-farming-desert-seed"].order = d_a
 
-local seed_binafran = "angels-desert-1-seed"
 data_recipe[seed_binafran].icons = TWO_I(binafran, seed_binafran)
 data_recipe[seed_binafran].ingredients[1].amount = 4
 data_recipe[seed_binafran].results[1].amount = 8
 
-local seed_primedeadelion = "angels-desert-2-seed"
 data_recipe[seed_primedeadelion].icons = TWO_I(primedeadelion, seed_primedeadelion)
 data_recipe[seed_primedeadelion].ingredients[1].amount = 4
 data_recipe[seed_primedeadelion].results[1].amount = 8
 
-local seed_nilaubergine = "angels-desert-3-seed"
 data_recipe[seed_nilaubergine].icons = TWO_I(nilaubergine, seed_nilaubergine)
 data_recipe[seed_nilaubergine].ingredients[1].name = nilaubergine
 data_recipe[seed_nilaubergine].ingredients[1].amount = 4
 data_recipe[seed_nilaubergine].results = {{type = item, name = seed_nilaubergine, amount = 8}}
 
-local seed_zelosquash = "angels-desert-4-seed"
 data_recipe[seed_zelosquash].icons = TWO_I(zelosquash, seed_zelosquash)
 data_recipe[seed_zelosquash].ingredients[1].name = zelosquash
 data_recipe[seed_zelosquash].ingredients[1].amount = 4
 data_recipe[seed_zelosquash].results = {{type = item, name = seed_zelosquash, amount = 8}}
 
-local seed_arumbiphila = "angels-desert-5-seed"
 data_recipe[seed_arumbiphila].icons = TWO_I(arumbiphila, seed_arumbiphila)
 data_recipe[seed_arumbiphila].ingredients[1].name = arumbiphila
 data_recipe[seed_arumbiphila].ingredients[1].amount = 4
