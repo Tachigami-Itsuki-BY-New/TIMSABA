@@ -17,7 +17,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, nitrogen_angels, carbon_dioxide_angels, steam),
             order = a_a,
@@ -33,7 +33,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation_2,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, hydrogen_sulfide_angels, hydrogen_fluoride_angels, sulfur_dioxide_angels),
             order = a_a,

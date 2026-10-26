@@ -17,7 +17,7 @@ if mods[corrundum_mods] then
         },
         {
             name = corrundum_air_separation,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_corrundum_air,
             icons = FOUR_R_I(corrundum_air, nitrogen_angels, oxygen_angels, carbon_dioxide_angels),
             order = a_a,
@@ -33,7 +33,7 @@ if mods[corrundum_mods] then
         },
         {
             name = corrundum_air_separation_2,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_corrundum_air,
             icons = FOUR_R_I(corrundum_air, condensates_angels, hydrogen_sulfide_angels, sulfur_dioxide_angels),
             order = a_a,
