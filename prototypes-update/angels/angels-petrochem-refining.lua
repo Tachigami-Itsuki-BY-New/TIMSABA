@@ -1174,8 +1174,11 @@ local natural_gas_separation = "angels-gas-separation"
 data_recipe[natural_gas_separation].subgroup = is_natural_gas
 data_recipe[natural_gas_separation].icons = FOUR_R_I(natural_gas_angels, raw_gas_angels, condensates_angels, water_yellow_waste)
 data_recipe[natural_gas_separation].order = a_a
+data_recipe[natural_gas_separation].energy_required = 4
 data_recipe[natural_gas_separation].ingredients[1].amount = 120
-data_recipe[natural_gas_separation].results[3].amount = 15
+data_recipe[natural_gas_separation].results[1].amount = 120
+data_recipe[natural_gas_separation].results[2].amount = 60
+data_recipe[natural_gas_separation].results[3].amount = 30
 
 data_fluid[raw_gas_angels].subgroup = is_natural_gas
 data_fluid[raw_gas_angels].order = b
@@ -1187,8 +1190,8 @@ data_recipe[raw_gas_refining].icons = FOUR_R_I(raw_gas_angels, NGL_angels, nil, 
 data_recipe[raw_gas_refining].order = b_a
 data_recipe[raw_gas_refining].energy_required = 4
 data_recipe[raw_gas_refining].ingredients[1].amount = 120
-data_recipe[raw_gas_refining].results[1].amount = 60
-data_recipe[raw_gas_refining].results[2].amount = 60
+data_recipe[raw_gas_refining].results[1].amount = 120
+data_recipe[raw_gas_refining].results[2].amount = 120
 
 data_fluid[NGL_angels].subgroup = is_natural_gas
 data_fluid[NGL_angels].order = c
@@ -1200,8 +1203,9 @@ data_recipe[NGL_fractioning].icons = FOUR_R_I(NGL_angels, methane_angels, ethane
 data_recipe[NGL_fractioning].order = c_a
 data_recipe[NGL_fractioning].energy_required = 4
 data_recipe[NGL_fractioning].ingredients[1].amount = 120
-data_recipe[NGL_fractioning].results[1].amount = 30
-data_recipe[NGL_fractioning].results[3].amount = 30
+data_recipe[NGL_fractioning].results[1].amount = 60
+data_recipe[NGL_fractioning].results[2].amount = 60
+data_recipe[NGL_fractioning].results[3].amount = 60
 
 local NGL_fractioning_synthesis = "angels-gas-fractioning-synthesis"
 data_recipe[NGL_fractioning_synthesis].subgroup = is_natural_gas
@@ -1210,8 +1214,9 @@ data_recipe[NGL_fractioning_synthesis].order = c_b
 data_recipe[NGL_fractioning_synthesis].energy_required = 4
 data_recipe[NGL_fractioning_synthesis].ingredients[1].amount = 120
 data_recipe[NGL_fractioning_synthesis].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_synthesis].results[1].amount = 60
-data_recipe[NGL_fractioning_synthesis].results[3].amount = 30
+data_recipe[NGL_fractioning_synthesis].results[1].amount = 120
+data_recipe[NGL_fractioning_synthesis].results[2].amount = 60
+data_recipe[NGL_fractioning_synthesis].results[3].amount = 60
 data_recipe[NGL_fractioning_synthesis].results[4].amount = 30
 
 local NGL_fractioning_condensates = "angels-gas-fractioning-condensates"
@@ -1221,8 +1226,9 @@ data_recipe[NGL_fractioning_condensates].order = c_c
 data_recipe[NGL_fractioning_condensates].energy_required = 4
 data_recipe[NGL_fractioning_condensates].ingredients[1].amount = 120
 data_recipe[NGL_fractioning_condensates].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_condensates].results[1].amount = 30
-data_recipe[NGL_fractioning_condensates].results[3].amount = 60
+data_recipe[NGL_fractioning_condensates].results[1].amount = 60
+data_recipe[NGL_fractioning_condensates].results[2].amount = 60
+data_recipe[NGL_fractioning_condensates].results[3].amount = 120
 data_recipe[NGL_fractioning_condensates].results[4].amount = 30
 
 local NGL_fractioning_residual = "angels-gas-fractioning-residual"
@@ -1232,9 +1238,9 @@ data_recipe[NGL_fractioning_residual].order = c_d
 data_recipe[NGL_fractioning_residual].energy_required = 4
 data_recipe[NGL_fractioning_residual].ingredients[1].amount = 120
 data_recipe[NGL_fractioning_residual].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_residual].results[1].amount = 30
-data_recipe[NGL_fractioning_residual].results[2].amount = 60
-data_recipe[NGL_fractioning_residual].results[3].amount = 30
+data_recipe[NGL_fractioning_residual].results[1].amount = 60
+data_recipe[NGL_fractioning_residual].results[2].amount = 120
+data_recipe[NGL_fractioning_residual].results[3].amount = 60
 data_recipe[NGL_fractioning_residual].results[4].amount = 30
 
 data_fluid[condensates_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]16[/font]"} or nil
@@ -1268,10 +1274,11 @@ local oil_separation = "angels-oil-separation"
 data_recipe[oil_separation].subgroup = is_multi_phase_oil
 data_recipe[oil_separation].icons = FOUR_R_I(multi_phase_oil_angels, raw_gas_angels, crude_oil, water_yellow_waste)
 data_recipe[oil_separation].order = a_a
+data_recipe[oil_separation].energy_required = 4
 data_recipe[oil_separation].ingredients[1].amount = 120
-data_recipe[oil_separation].results[1].amount = 30
-data_recipe[oil_separation].results[2].amount = 60
-data_recipe[oil_separation].results[3].amount = 15
+data_recipe[oil_separation].results[1].amount = 60
+data_recipe[oil_separation].results[2].amount = 120
+data_recipe[oil_separation].results[3].amount = 30
 
 data_fluid[crude_oil].subgroup = is_multi_phase_oil
 data_fluid[crude_oil].order = b
@@ -1283,8 +1290,13 @@ data_recipe[crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, 
 data_recipe[crude_oil_refining].order = b_a
 data_recipe[crude_oil_refining].energy_required = 4
 data_recipe[crude_oil_refining].ingredients[1].amount = 120
-data_recipe[crude_oil_refining].results[1].amount = 30
-data_recipe[crude_oil_refining].results[3].amount = 30
+data_recipe[crude_oil_refining].results =
+{
+    {type = item, name = oil_residual_angels, amount = 1},
+    {type = fluid, name = mineral_oil_angels, amount = 60},
+    {type = fluid, name = fuel_oil_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 60}
+}
 
 local advanced_crude_oil_refining = "angels-advanced-oil-refining"
 data_recipe[advanced_crude_oil_refining].subgroup = is_multi_phase_oil
@@ -1296,9 +1308,9 @@ data_recipe[advanced_crude_oil_refining].ingredients[2].amount = 30
 data_recipe[advanced_crude_oil_refining].results =
 {
     {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 60},
-    {type = fluid, name = fuel_oil_angels, amount = 30},
-    {type = fluid, name = naphtha_angels, amount = 30}
+    {type = fluid, name = mineral_oil_angels, amount = 120},
+    {type = fluid, name = fuel_oil_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 60}
 }
 
 local condensates_crude_oil_refining = "angels-condensates-oil-refining"
@@ -1311,9 +1323,9 @@ data_recipe[condensates_crude_oil_refining].ingredients[2].amount = 30
 data_recipe[condensates_crude_oil_refining].results =
 {
     {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 30},
-    {type = fluid, name = fuel_oil_angels, amount = 30},
-    {type = fluid, name = naphtha_angels, amount = 60}
+    {type = fluid, name = mineral_oil_angels, amount = 60},
+    {type = fluid, name = fuel_oil_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 120}
 }
 
 local residual_crude_oil_refining = "angels-residual-oil-refining"
@@ -1326,9 +1338,9 @@ data_recipe[residual_crude_oil_refining].ingredients[2].amount = 30
 data_recipe[residual_crude_oil_refining].results =
 {
     {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 30},
-    {type = fluid, name = fuel_oil_angels, amount = 60},
-    {type = fluid, name = naphtha_angels, amount = 30}
+    {type = fluid, name = mineral_oil_angels, amount = 60},
+    {type = fluid, name = fuel_oil_angels, amount = 120},
+    {type = fluid, name = naphtha_angels, amount = 60}
 }
 
 data_item[oil_residual_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]n[/font]H[font=default-tiny-bold]2n+2[/font]"} or nil
@@ -2028,9 +2040,9 @@ TIMSABA.barreling.add_simple_fluid(liquid_rubber_angels)
 data_recipe[liquid_rubber_angels].subgroup = is_rubber
 data_recipe[liquid_rubber_angels].icons = THREE_I(styrene_angels, butadiene_angels, liquid_rubber_angels)
 data_recipe[liquid_rubber_angels].order = a
-data_recipe[liquid_rubber_angels].ingredients[1].amount = 30
-data_recipe[liquid_rubber_angels].ingredients[2].amount = 30
-data_recipe[liquid_rubber_angels].results[1].amount = 15
+data_recipe[liquid_rubber_angels].ingredients[1].amount = 60
+data_recipe[liquid_rubber_angels].ingredients[2].amount = 60
+data_recipe[liquid_rubber_angels].results[1].amount = 30
 
 data_item[rubber_bob].subgroup = is_rubber
 data_item[rubber_bob].order = b
