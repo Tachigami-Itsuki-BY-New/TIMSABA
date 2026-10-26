@@ -250,6 +250,7 @@ end
 data_recipe[wood_pellets].icons = TWO_I(cellulose_fiber_angels, wood_pellets)
 data_recipe[wood_pellets].order = c
 data_recipe[wood_pellets].ingredients[1].amount = 8
+data_recipe[wood_pellets].results[1].amount = 4
 
 local carbon_dioxide_from_wood = "angels-gas-carbon-dioxide-from-wood"
 data_recipe[carbon_dioxide_from_wood].icons = TWO_I(wood_pellets, carbon_dioxide_angels)
@@ -270,6 +271,7 @@ if mods[lignumis_mods] then
 end
 data_recipe[wood_bricks].icons = TWO_I(wood_pellets, wood_bricks)
 data_recipe[wood_bricks].order = d
+data_recipe[wood_bricks].energy_required = 4
 
 local wood_charcoal = "angels-wood-charcoal"
 data_item[wood_charcoal].localised_description = show_formula and {chemical_formula, "C"} or nil
