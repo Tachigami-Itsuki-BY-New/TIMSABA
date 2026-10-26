@@ -38,6 +38,7 @@ require("prototypes.new-icons.new-icons-technology")
 
 require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
+require("prototypes.angels.angels-bioprocessing-plant")
 
 require("compatibility.angels-mods.angelspetrochem")
 

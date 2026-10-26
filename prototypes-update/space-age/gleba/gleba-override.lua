@@ -320,13 +320,6 @@ data_recipe[coal_synthesis].order = b_a
 data_recipe[coal_synthesis].ingredients[1].amount = 4
 data_recipe[coal_synthesis].ingredients[3].amount = 15
 
-data_recipe[tree_seed].localised_name = {"item-name." .. tree_seed_angels}
-data_recipe[tree_seed].categories = {angels_seed_extractor, hand_crafting}
-data_recipe[tree_seed].subgroup = is_gleba_recipe
-data_recipe[tree_seed].icons = TWO_I(wood, tree_seed_angels)
-data_recipe[tree_seed].order = c_a
-data_recipe[tree_seed].surface_conditions = nil
-
 factorian_fish_breeding = "fish-breeding"
 data_recipe[factorian_fish_breeding].categories  = {"angels-bio-refugium-fish"}
 data_recipe[factorian_fish_breeding].localised_name = {"recipe-name.breeding-factorian-fish"}
