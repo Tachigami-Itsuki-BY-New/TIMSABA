@@ -167,18 +167,19 @@ if mods[arig_mods] then
     local advanced_heavy_oil_cracking = "planetaris-advanced-heavy-oil-cracking"
     data_recipe[advanced_heavy_oil_cracking].categories = {angels_steam_cracking}
     data_recipe[advanced_heavy_oil_cracking].subgroup = is_arig_recipe
-    data_recipe[advanced_heavy_oil_cracking].icons = TWO_D_I(heavy_oil_timsaba, steam, fuel_oil_angels, methane_angels)
+    data_recipe[advanced_heavy_oil_cracking].icons = THREE_R_I(heavy_oil_timsaba, crude_oil, raw_gas_angels)
     data_recipe[advanced_heavy_oil_cracking].order = f_a
-    data_recipe[advanced_heavy_oil_cracking].energy_required = 4
+    data_recipe[advanced_heavy_oil_cracking].energy_required = 4 -- heavy oil(l) -H₂O/steam cracking-> crude oil(l) + raw gas(g)
     data_recipe[advanced_heavy_oil_cracking].ingredients =
     {
-        {type = fluid, name = heavy_oil_timsaba, amount = 30},
-        {type = fluid, name = steam, amount = 30}
+        {type = fluid, name = heavy_oil_timsaba, amount = 60},
+        {type = fluid, name = steam, amount = 60}
     }
     data_recipe[advanced_heavy_oil_cracking].results =
     {
-        {type = fluid, name = fuel_oil_angels, amount = 30},
-        {type = fluid, name = methane_angels, amount = 30}
+        {type = fluid, name = crude_oil, amount = 60},
+        {type = fluid, name = raw_gas_angels, amount = 30},
+        {type = fluid, name = steam, amount = 30} -- 60
     }
     data_recipe[advanced_heavy_oil_cracking].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
