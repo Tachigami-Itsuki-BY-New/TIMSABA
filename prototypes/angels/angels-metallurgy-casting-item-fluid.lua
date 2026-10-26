@@ -110,6 +110,7 @@ aluminium_lithium_plate = "aluminium-lithium-plate"
 TIMSABA.functions.create_items
 ({
     {
+        localised_description = show_formula and {chemical_formula, "AlLi"} or nil,
         name = aluminium_lithium_plate,
         subgroup = is_alloys_casting_7,
         icon = graphics_alloys .. aluminium_lithium_plate .. ".png",
@@ -122,6 +123,7 @@ aluminium_lithium_molten = "aluminium-lithium-molten"
 TIMSABA.functions.create_fluids
 ({
     {
+        localised_description = show_formula and {chemical_formula, "AlLi"} or nil,
         name = aluminium_lithium_molten,
         subgroup = is_alloys_casting_7,
         icon = graphics_alloys .. aluminium_lithium_molten .. ".png",
