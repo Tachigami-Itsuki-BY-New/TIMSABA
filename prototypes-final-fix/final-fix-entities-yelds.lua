@@ -609,31 +609,31 @@ data_tree[garden_temperate].order = z_a
 data_tree[garden_temperate].minable.results =
 {
     {type = item, name = garden_temperate, amount = 1},
-    {type = item, name = wheaton, amount = 4, independent_probability = 0.125},
-    {type = item, name = tianaton, amount = 4, independent_probability = 0.125},
-    {type = item, name = okarinome, amount = 4, independent_probability = 0.125},
-    {type = item, name = quillnoa, amount = 4, independent_probability = 0.0625},
-    {type = item, name = kendallion, amount = 4, independent_probability = 0.0625}
+    {type = item, name = seed_wheaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_tianaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_okarinome, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_quillnoa, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_kendallion, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_swamp].order = z_b
 data_tree[garden_swamp].minable.results =
 {
     {type = item, name = garden_swamp, amount = 1},
-    {type = item, name = elendilomone, amount = 4, independent_probability = 0.125},
-    {type = item, name = zombieecalyptus, amount = 4, independent_probability = 0.125},
-    {type = item, name = saundsrcress, amount = 4, independent_probability = 0.125},
-    {type = item, name = nexeflax, amount = 4, independent_probability = 0.0625},
-    {type = item, name = mushredtato, amount = 4, independent_probability = 0.0625}
+    {type = item, name = seed_elendilomone, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zombieecalyptus, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_saundsrcress, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nexeflax, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_mushredtato, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_desert].order = z_c
 data_tree[garden_desert].minable.results =
 {
     {type = item, name = garden_desert, amount = 1},
-    {type = item, name = binafran, amount = 4, independent_probability = 0.125},
-    {type = item, name = primedeadelion, amount = 4, independent_probability = 0.125},
-    {type = item, name = nilaubergine, amount = 4, independent_probability = 0.125},
-    {type = item, name = zelosquash, amount = 4, independent_probability = 0.0625},
-    {type = item, name = arumbiphila, amount = 4, independent_probability = 0.0625}
+    {type = item, name = seed_binafran, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_primedeadelion, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nilaubergine, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zelosquash, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_arumbiphila, amount = 4, independent_probability = 0.0625}
 }
 data_tree[tree_temperate].order = z_d
 data_tree[tree_temperate].minable.results =
