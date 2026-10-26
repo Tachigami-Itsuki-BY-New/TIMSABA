@@ -706,10 +706,11 @@ local function furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     data_recipe[name].ingredients = ingredients
 end
 data_recipe[stone_furnace].ingredients[1].amount = 4
-furnace_recipe(steel_furnace,      nil,                      stone_furnace,      stone_brick,     steel_plate)
-furnace_recipe(electric_furnace_1, advanced_circuit,         steel_furnace,      steel_plate,     brass_plate_bob)
-furnace_recipe(electric_furnace_2, processing_unit,          electric_furnace_1, invar_plate_bob, tungsten_plate_bob)
-furnace_recipe(electric_furnace_3, advanced_processing_unit, electric_furnace_2, tungsten_carbide_plate_bob, copper_tungsten_plate_bob)
+furnace_recipe(steel_furnace,                           nil,    stone_furnace,          stone_brick,           steel_plate)
+furnace_recipe(electric_furnace_1,         advanced_circuit,    steel_furnace,  aluminium_plate_bob,           brass_plate_bob)
+furnace_recipe(electric_furnace_2,          processing_unit, electric_furnace_1, titanium_plate_bob,        tungsten_plate_bob)
+furnace_recipe(electric_furnace_3, advanced_processing_unit, electric_furnace_2,  nitinol_plate_bob, copper_tungsten_plate_bob)
+
 local function mixing_furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     local ingredients =
     {
@@ -723,10 +724,10 @@ local function mixing_furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     data_recipe[name].ingredients = ingredients
 end
 data_recipe[stone_mixing_furnace].ingredients = {{type = item, name = stone, amount = 4}}
-mixing_furnace_recipe(steel_mixing_furnace,      nil,                      stone_mixing_furnace,      stone_brick,     steel_plate)
-mixing_furnace_recipe(electric_mixing_furnace_1, advanced_circuit,         steel_mixing_furnace,      steel_plate,     brass_plate_bob)
-mixing_furnace_recipe(electric_mixing_furnace_2, processing_unit,          electric_mixing_furnace_1, invar_plate_bob, tungsten_plate_bob)
-mixing_furnace_recipe(electric_mixing_furnace_3, advanced_processing_unit, electric_mixing_furnace_2, tungsten_carbide_plate_bob, copper_tungsten_plate_bob)
+mixing_furnace_recipe(steel_mixing_furnace,                           nil,    stone_mixing_furnace,          stone_brick,           steel_plate)
+mixing_furnace_recipe(electric_mixing_furnace_1,         advanced_circuit,    steel_mixing_furnace,  aluminium_plate_bob,           brass_plate_bob)
+mixing_furnace_recipe(electric_mixing_furnace_2,          processing_unit, electric_mixing_furnace_1, titanium_plate_bob,        tungsten_plate_bob)
+mixing_furnace_recipe(electric_mixing_furnace_3, advanced_processing_unit, electric_mixing_furnace_2,  nitinol_plate_bob, copper_tungsten_plate_bob)
 
 local centrifuges =
 {

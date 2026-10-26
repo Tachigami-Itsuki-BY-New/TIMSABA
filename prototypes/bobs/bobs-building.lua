@@ -689,7 +689,7 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = molybdenum_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_furnace_3, amount = 1}
         },
@@ -716,7 +716,7 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = molybdenum_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_mixing_furnace_3, amount = 1}
         },
