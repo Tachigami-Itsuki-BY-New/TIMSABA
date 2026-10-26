@@ -16,7 +16,7 @@ if mods[muria_mods] then
         },
         {
             name = muria_air_separation,
-            categories = {angels_advanced_chemistry},
+            categories = {angels_gas_refining},
             subgroup = is_muria_air,
             icons = FOUR_R_I(muria_air, nitrogen_angels, hydrogen_chloride_angels, hydrogen_sulfide_angels),
             order = a_a,
