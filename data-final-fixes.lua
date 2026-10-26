@@ -88,6 +88,8 @@ require("prototypes-final-fix.multi-building.entities")
 require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
 
+require("compatibility.alien-biomes")
+
 --require("prototypes-final-fix.final-fix-lingumis-plants-boost")
 
 -- Register travel counters after the final planet/prototype changes.
