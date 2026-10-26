@@ -1356,13 +1356,13 @@ local steam_cracking_oil_residual = "angels-steam-cracking-oil-residual"
 data_recipe[steam_cracking_oil_residual].subgroup = is_multi_phase_oil
 data_recipe[steam_cracking_oil_residual].icons = TWO_D_I(oil_residual_angels, steam, residual_angels, hydrogen_angels)
 data_recipe[steam_cracking_oil_residual].order = d_a
--- 2CnH2n+2(oil_residual) + 2H₂O(g) --> (CH₄ + CO₂)(residual gas) + 4H₂(g)
+-- 2oil residual + 2H₂O(g) --> (CH₄ + CO₂)(residual gas) + 4H₂(g)
 data_recipe[steam_cracking_oil_residual].ingredients[1].amount = 4
 data_recipe[steam_cracking_oil_residual].ingredients[2].amount = 60
 data_recipe[steam_cracking_oil_residual].results =
 {
     {type = fluid, name = residual_angels, amount = 30},
-    {type = fluid, name = hydrogen_angels, amount = 60} -- 120
+    {type = fluid, name = hydrogen_angels, amount = 120}
 }
 
 data_fluid[mineral_oil_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
@@ -1472,7 +1472,7 @@ data_recipe[steam_cracking_mineral_oil].results =
 {
     {type = fluid, name = synthesis_angels, amount = 480},
     {type = fluid, name = residual_angels, amount = 240},
-    --{type = fluid, name = hydrogen_angels, amount = 510} -- 990
+    {type = fluid, name = hydrogen_angels, amount = 510} -- 990
 }
 
 local steam_cracking_fuel_oil = "angels-steam-cracking-fuel-oil"
@@ -1489,14 +1489,14 @@ data_recipe[steam_cracking_fuel_oil].results =
 {
     {type = fluid, name = synthesis_angels, amount = 360},
     {type = fluid, name = residual_angels, amount = 180},
-    --{type = fluid, name = hydrogen_angels, amount = 255} -- 735
+    {type = fluid, name = hydrogen_angels, amount = 255} -- 735
 }
 
 local steam_cracking_naphtha = "angels-steam-cracking-naphtha"
 data_recipe[steam_cracking_naphtha].subgroup = is_synthesis_gas
 data_recipe[steam_cracking_naphtha].icons = THREE_R_I(naphtha_angels, synthesis_angels, residual_angels)
 data_recipe[steam_cracking_naphtha].order = a_c
-data_recipe[steam_cracking_naphtha].energy_required = 8 -- C₈H₁₈(l) + 8H₂O(g) --> 4(H₂ + CO)(synthesis gas) + 2(CH₄ + CO₂)(residual gas) + 9H₂(g)
+data_recipe[steam_cracking_naphtha].energy_required = 8 -- C₈H₁₈(l) + 8H₂O(g) -steam cracking-> 4(H₂ + CO)(synthesis gas) + 2(CH₄ + CO₂)(residual gas) + 9H₂(g)
 data_recipe[steam_cracking_naphtha].ingredients =
 {
     {type = fluid, name = naphtha_angels, amount = 120},
@@ -1506,14 +1506,14 @@ data_recipe[steam_cracking_naphtha].results =
 {
     {type = fluid, name = synthesis_angels, amount = 480},
     {type = fluid, name = residual_angels, amount = 240},
-    --{type = fluid, name = hydrogen_angels, amount = 600} -- 1080
+    {type = fluid, name = hydrogen_angels, amount = 600} -- 1080
 }
 
 local steam_cracking_gas_residual = "angels-steam-cracking-gas-residual"
 data_recipe[steam_cracking_gas_residual].subgroup = is_synthesis_gas
 data_recipe[steam_cracking_gas_residual].icons = TWO_I(residual_angels, synthesis_angels)
 data_recipe[steam_cracking_gas_residual].order = a_d
-data_recipe[steam_cracking_gas_residual].energy_required = 8 -- (CH₄ + CO₂)(g) -cat-> 2(H₂ + CO)(g)
+data_recipe[steam_cracking_gas_residual].energy_required = 8 -- (CH₄ + CO₂)(g) -cat/steam cracking-> 2(H₂ + CO)(g)
 data_recipe[steam_cracking_gas_residual].ingredients =
 {
     {type = fluid, name = residual_angels, amount = 240},
@@ -1545,6 +1545,7 @@ data_recipe[synthesis_gas_separation].results[1].amount = 60
 data_recipe[synthesis_gas_separation].results[2].amount = 60
 
 local synthesis_gas_methanation = "angels-gas-synthesis-methanation"
+data_recipe[synthesis_gas_methanation].categories = {angels_advanced_gas_refining}
 data_recipe[synthesis_gas_methanation].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_methanation].icons = FOUR_R_I(synthesis_angels, methane_angels, ethane_angels, butane_angels)
 data_recipe[synthesis_gas_methanation].order = a_g
@@ -1560,7 +1561,7 @@ data_recipe[synthesis_gas_methanation].results =
     {type = fluid, name = methane_angels, amount = 120},
     {type = fluid, name = ethane_angels, amount = 30},
     {type = fluid, name = butane_angels, amount = 15},
-    --{type = fluid, name = steam, amount = 240},
+    {type = fluid, name = steam, amount = 240},
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1752,14 +1753,19 @@ data_recipe[methanol_angels].results =
 }
 
 data_recipe[steam_cracking_methane].subgroup = is_methane
-data_recipe[steam_cracking_methane].icons = TWO_I(methane_angels, methanol_angels)
+data_recipe[steam_cracking_methane].icons = THREE_R_I(methane_angels, methanol_angels, hydrogen_angels)
 data_recipe[steam_cracking_methane].order = b_a
-data_recipe[steam_cracking_methane].ingredients[2].amount = 120
--- CH₄ + H₂O -H₂O-> CH₄O + H₂
+-- CH₄(g) + H₂O(g) -H₂O/steam cracking-> CH₄O(l) + H₂(g)
+data_recipe[steam_cracking_methane].ingredients =
+{
+    {type = fluid, name = methane_angels, amount = 60},
+    {type = fluid, name = steam, amount = 120}
+}
 data_recipe[steam_cracking_methane].results =
 {
     {type = fluid, name = methanol_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 60}
+    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 
 data_fluid[formaldehyde_angels].subgroup = is_methane
@@ -1792,12 +1798,20 @@ data_fluid[ethylene_angels].subgroup = is_ethane
 data_fluid[ethylene_angels].order = b
 TIMSABA.barreling.add_gas(ethylene_angels)
 data_recipe[ethylene_angels].subgroup = is_ethane
-data_recipe[ethylene_angels].icons = TWO_I(ethane_angels, ethylene_angels)
+data_recipe[ethylene_angels].icons = THREE_R_I(ethane_angels, ethylene_angels, hydrogen_angels)
 data_recipe[ethylene_angels].order = b
--- C₂H₆ -H₂O-> C₂H₄ + H₂
-data_recipe[ethylene_angels].results[1].amount = 60
-data_recipe[ethylene_angels].results[2].name = hydrogen_angels
-data_recipe[ethylene_angels].results[2].amount = 15
+-- C₂H₆(g) -H₂O/steam cracking-> C₂H₄(g) + H₂(g)
+data_recipe[ethylene_angels].ingredients =
+{
+    {type = fluid, name = ethane_angels, amount = 60},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[ethylene_angels].results =
+{
+    {type = fluid, name = ethylene_angels, amount = 60},
+    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = steam, amount = 30} -- 60
+}
 
 data_fluid[propene_angels].subgroup = is_ethane
 data_fluid[propene_angels].order = c
@@ -1824,13 +1838,18 @@ data_recipe[propene_angels].results =
 data_recipe[catalyst_steam_cracking_naphtha].subgroup = is_ethane
 data_recipe[catalyst_steam_cracking_naphtha].icons = THREE_R_I(naphtha_angels, propene_angels, ethane_angels)
 data_recipe[catalyst_steam_cracking_naphtha].order = c_a
--- C₈H₁₈ -H₂O-> 2C₃H₆ + C₂H₆
-data_recipe[catalyst_steam_cracking_naphtha].ingredients[1].amount = 60
-data_recipe[catalyst_steam_cracking_naphtha].ingredients[2].amount = 60
+-- C₈H₁₈(l) -H₂O/steam cracking-> 2C₃H₆(g) + C₂H₆(g)
+data_recipe[catalyst_steam_cracking_naphtha].ingredients =
+{
+    {type = fluid, name = naphtha_angels, amount = 60},
+    {type = fluid, name = steam, amount = 60},
+    {type = item, name = catalyst_red, amount = 1}
+}
 data_recipe[catalyst_steam_cracking_naphtha].results =
 {
     {type = fluid, name = propene_angels, amount = 120},
     {type = fluid, name = ethane_angels, amount = 60},
+    {type = fluid, name = steam, amount = 30}, -- 60
     {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1859,14 +1878,20 @@ data_recipe[benzene_angels].results =
 data_recipe[benzene_angels].main_product = benzene_angels
 
 data_recipe[steam_cracking_butane].subgroup = is_butane
-data_recipe[steam_cracking_butane].icons = TWO_I(butane_angels, benzene_angels)
+data_recipe[steam_cracking_butane].icons = THREE_R_I(butane_angels, benzene_angels, hydrogen_angels)
 data_recipe[steam_cracking_butane].order = c_a
--- 4C₄H₁₀ -H₂O-> 2C₆H₆ + 4H₂
-data_recipe[steam_cracking_butane].ingredients[1].amount = 120
-data_recipe[steam_cracking_butane].ingredients[2].amount = 60
-data_recipe[steam_cracking_butane].results[1].amount = 60
-data_recipe[steam_cracking_butane].results[2].name = hydrogen_angels
-data_recipe[steam_cracking_butane].results[2].amount = 120
+-- 4C₄H₁₀(g) -H₂O/steam cracking-> 2C₆H₆(l) + 4H₂(g)
+data_recipe[steam_cracking_butane].ingredients =
+{
+    {type = fluid, name = butane_angels, amount = 120},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[steam_cracking_butane].results =
+{
+    {type = fluid, name = benzene_angels, amount = 60},
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = steam, amount = 30} -- 60
+}
 
 data_fluid[butadiene_angels].subgroup = is_butane
 data_fluid[butadiene_angels].order = d
@@ -1875,7 +1900,7 @@ data_recipe[butadiene_angels].localised_name = {"fluid-name." .. butadiene_angel
 data_recipe[butadiene_angels].subgroup = is_butane
 data_recipe[butadiene_angels].icons = THREE_R_I(naphtha_angels, butadiene_angels, hydrogen_angels)
 data_recipe[butadiene_angels].order = d
--- C₈H₁₈(l) -H₂O-> 2C₄H₆(g) + 3H₂(g)
+-- C₈H₁₈(l) -H₂O/steam cracking-> 2C₄H₆(g) + 3H₂(g)
 data_recipe[butadiene_angels].ingredients =
 {
     {type = fluid, name = naphtha_angels, amount = 60},
@@ -1885,7 +1910,7 @@ data_recipe[butadiene_angels].results =
 {
     {type = fluid, name = butadiene_angels, amount = 120},
     {type = fluid, name = hydrogen_angels, amount = 180},
-    --{type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 
 data_fluid[ethylbenzene_angels].subgroup = is_butane
@@ -1915,18 +1940,19 @@ data_fluid[styrene_angels].order = f
 TIMSABA.barreling.add_dangerous_fluid(styrene_angels)
 data_recipe[styrene_angels].categories = {angels_steam_cracking}
 data_recipe[styrene_angels].subgroup = is_butane
-data_recipe[styrene_angels].icons = TWO_I(ethylbenzene_angels, styrene_angels)
+data_recipe[styrene_angels].icons = THREE_R_I(ethylbenzene_angels, styrene_angels, hydrogen_angels)
 data_recipe[styrene_angels].order = f
--- C₈H₁₀ -H₂O-> C₈H₈ + H₂
+data_recipe[styrene_angels].energy_required = 4 -- C₈H₁₀(l) -H₂O/steam cracking-> C₈H₈(l) + H₂(g)
 data_recipe[styrene_angels].ingredients =
 {
-    {type = fluid, name = ethylbenzene_angels, amount = 120},
+    {type = fluid, name = ethylbenzene_angels, amount = 60},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[styrene_angels].results =
 {
-    {type = fluid, name = styrene_angels, amount = 120},
-    {type = fluid, name = hydrogen_angels, amount = 120}
+    {type = fluid, name = styrene_angels, amount = 60},
+    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 
 data_fluid[acetone_angels].localised_name = {"fluid-name.acetone-liquid"}
