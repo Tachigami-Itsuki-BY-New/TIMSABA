@@ -221,10 +221,8 @@ end
 
 local nauvis_tree = data_tree["tree-08"]
 
--- 1. Делаем глубокую копию существующего дерева
 local temperate_plant = table.deepcopy(data_tree[tree_temperate])
 
--- 2. Меняем тип прототипа и его имя
 tree_temperate_plant = tree_temperate .. "-" .. plant
 temperate_plant.type = plant
 temperate_plant.localised_name = {"entity-name." .. tree_temperate}
@@ -241,7 +239,6 @@ temperate_plant.minable =
     }
 }
 
--- 3. Добавляем обязательные для plant параметры (настройки роста)
 temperate_plant.flags = plant_flags
 temperate_plant.growth_ticks = 20 * minute
 temperate_plant.impact_category = "tree"
@@ -257,8 +254,6 @@ temperate_plant.autoplace =
     }
 }
 
--- 4. Опционально: задаем фазы отрисовки или сбор урожая, если нужно
--- (у plant структура спрайтов может отличаться, если вы хотите сделать динамический рост)
 temperate_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
 temperate_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
 temperate_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
@@ -269,17 +264,14 @@ temperate_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining
 temperate_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 temperate_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil
 
--- 5. Регистрируем новый прототип в игре
 data:extend({temperate_plant})
 
 if mods[arig_mods] then
     table.insert(data_plant[tree_temperate_plant].minable.results, {type = fluid, name = liquid_resin_angels, amount = 3840})
 end
 
--- 1. Делаем глубокую копию существующего дерева
 local swamp_plant = table.deepcopy(data_tree[tree_swamp])
 
--- 2. Меняем тип прототипа и его имя
 tree_swamp_plant = tree_swamp .. "-" .. plant
 swamp_plant.type = plant
 swamp_plant.localised_name = {"entity-name." .. tree_swamp}
@@ -296,7 +288,6 @@ swamp_plant.minable =
     }
 }
 
--- 3. Добавляем обязательные для plant параметры (настройки роста)
 swamp_plant.flags = plant_flags
 swamp_plant.growth_ticks = 20 * minute
 swamp_plant.impact_category = "tree"
@@ -312,8 +303,6 @@ swamp_plant.autoplace =
     }
 }
 
--- 4. Опционально: задаем фазы отрисовки или сбор урожая, если нужно
--- (у plant структура спрайтов может отличаться, если вы хотите сделать динамический рост)
 swamp_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
 swamp_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
 swamp_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
@@ -324,17 +313,14 @@ swamp_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining_sou
 swamp_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 swamp_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil
 
--- 5. Регистрируем новый прототип в игре
 data:extend({swamp_plant})
 
 if mods[arig_mods] then
     table.insert(data_plant[tree_swamp_plant].minable.results, {type = fluid, name = liquid_plastic_angels, amount = 3840})
 end
 
--- 1. Делаем глубокую копию существующего дерева
 local desert_plant = table.deepcopy(data_tree[tree_desert])
 
--- 2. Меняем тип прототипа и его имя
 tree_desert_plant = tree_desert .. "-" .. plant
 desert_plant.type = plant
 desert_plant.localised_name = {"entity-name." .. tree_desert}
@@ -351,7 +337,6 @@ desert_plant.minable =
     }
 }
 
--- 3. Добавляем обязательные для plant параметры (настройки роста)
 desert_plant.flags = plant_flags
 desert_plant.growth_ticks = 20 * minute
 desert_plant.impact_category = "tree"
@@ -367,8 +352,6 @@ desert_plant.autoplace =
     }
 }
 
--- 4. Опционально: задаем фазы отрисовки или сбор урожая, если нужно
--- (у plant структура спрайтов может отличаться, если вы хотите сделать динамический рост)
 desert_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
 desert_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
 desert_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
@@ -379,7 +362,6 @@ desert_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining_so
 desert_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 desert_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil
 
--- 5. Регистрируем новый прототип в игре
 data:extend({desert_plant})
 
 if mods[arig_mods] then
