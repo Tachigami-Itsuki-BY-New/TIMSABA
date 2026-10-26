@@ -353,6 +353,10 @@ local function tech_prerequisites(name, tech)
         data_technology[name].prerequisites = {}
     end
 
+    for _, existing_tech in ipairs(data_technology[name].prerequisites) do
+        if existing_tech == tech then return end
+    end
+
     table.insert(data_technology[name].prerequisites, tech)
 end
 -- COPPER-TUNGSTEN PROCESSING
