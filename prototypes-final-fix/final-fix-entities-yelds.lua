@@ -234,7 +234,7 @@ local yumako_tree = "yumako-tree"
 data_plant[yumako_tree].minable.results[1].amount = 64
 
 local jellystem = "jellystem"
-data_plant["jellystem"].minable.results[1].amount = 64
+data_plant[jellystem].minable.results[1].amount = 64
 
 data_tree["slipstack"].minable.results[1].amount = 8
 
