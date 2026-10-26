@@ -291,13 +291,7 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
 end
 
-for i, prerequisite in ipairs(data_technology[tech_pumpjacks_4].prerequisites) do
-    if prerequisite == tech_tungsten_processing then
-        table.remove(data_technology[tech_pumpjacks_4].prerequisites, i) break
-    end
-end
-
-data_technology[tech_heat_pipe_1].prerequisites = {tech_nickel_smelting_1, tech_aluminium_smelting_1, chemical_science_pack}
+data_technology[tech_heat_pipe_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1}
 data_technology[tech_heat_pipe_1].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -306,7 +300,7 @@ data_technology[tech_heat_pipe_1].unit.ingredients =
     {chemical_science_pack, 1}
 }
 
-data_technology[tech_heat_exchanger_1].prerequisites = {tech_heat_pipe_1, tech_brass_processing, chemical_science_pack}
+data_technology[tech_heat_exchanger_1].prerequisites = {tech_heat_pipe_1, tech_brass_processing}
 data_technology[tech_heat_exchanger_1].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -315,7 +309,7 @@ data_technology[tech_heat_exchanger_1].unit.ingredients =
     {chemical_science_pack, 1}
 }
 
-data_technology[heat_pipe_2].prerequisites = {tech_heat_pipe_1, tech_cobalt_steel_smelting_1, tech_silver_smelting_1, production_science_pack}
+data_technology[heat_pipe_2].prerequisites = {tech_heat_pipe_1, tech_tungsten_smelting_1}
 data_technology[heat_pipe_2].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -325,7 +319,7 @@ data_technology[heat_pipe_2].unit.ingredients =
     {production_science_pack, 1}
 }
 
-data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_tungsten_processing, production_science_pack}
+data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_tungsten_processing}
 data_technology[heat_exchanger_2].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -335,7 +329,7 @@ data_technology[heat_exchanger_2].unit.ingredients =
     {production_science_pack, 1}
 }
 
-data_technology[heat_pipe_3].prerequisites = {heat_pipe_2, tech_tungsten_smelting_1, tech_gold_smelting_1, utility_science_pack}
+data_technology[heat_pipe_3].prerequisites = {heat_pipe_2, tech_copper_tungsten_processing, tech_platinum_smelting_1}
 data_technology[heat_pipe_3].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -346,7 +340,7 @@ data_technology[heat_pipe_3].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_copper_tungsten_processing, utility_science_pack}
+data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3}
 data_technology[heat_exchanger_3].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -357,7 +351,7 @@ data_technology[heat_exchanger_3].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-data_technology[heat_pipe_4].prerequisites = {heat_pipe_3, tech_molybdenum_smelting_1, tech_platinum_smelting_1, space_science_pack}
+data_technology[heat_pipe_4].prerequisites = {heat_pipe_3, space_science_pack}
 data_technology[heat_pipe_4].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -369,7 +363,7 @@ data_technology[heat_pipe_4].unit.ingredients =
     {space_science_pack, 1}
 }
 
-data_technology[heat_exchanger_4].prerequisites = {heat_exchanger_3, heat_pipe_4, tech_molybdenum_rhenium_processing, space_science_pack}
+data_technology[heat_exchanger_4].prerequisites = {heat_exchanger_3, heat_pipe_4}
 data_technology[heat_exchanger_4].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -388,12 +382,14 @@ data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrif
 
 data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
 
-data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1}
-data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, tech_advanced_material_processing_2}
+data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, tech_advanced_material_processing_1}
+data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, tech_advanced_material_processing_2}
+data_technology[tech_advanced_material_processing_4].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_advanced_material_processing_3}
 
 data_technology[steel_mixing_furnace].prerequisites = {logistic_science_pack, tech_steel_processing}
-data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, steel_mixing_furnace}
-data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, processing_unit, tech_invar_smelting_1, tech_tungsten_smelting_1, electric_mixing_furnace_1}
+data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, steel_mixing_furnace}
+data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, electric_mixing_furnace_1}
+data_technology[tech_multi_purpose_furnace_2].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_multi_purpose_furnace_1}
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]

@@ -362,6 +362,7 @@ data:extend
         }
     },
     {
+        localised_name = {"technology-name." .. centrifuge_4},
         type = technology,
         name = centrifuge_4,
         icon = "__bobassembly__/graphics/icons/technology/centrifuge.png",

@@ -190,7 +190,7 @@ if mods[muluna_mods] then
     }
     for _, BUILD in pairs(muluna_mining_machine) do
         data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith, nil, nil, sand_angels)
         data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
         data_assembling[BUILD.name .. _ground_digger].module_slots = BUILD.tier
         data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
@@ -200,7 +200,7 @@ if mods[muluna_mods] then
         data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 
-    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
+    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith, nil, nil, sand_angels)
     data_assembling[big_mining_drill .. _ground_digger].module_slots = 8
     data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
     data_assembling[big_mining_drill .. _ground_digger].energy_source.emissions_per_minute.pollution = 32
@@ -218,7 +218,7 @@ if mods[muluna_mods] then
         }
         for _, BUILD in pairs(muluna_large_area_mining_machine) do
             data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith, nil, nil, sand_angels)
             data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
             data_assembling[BUILD.name .. _ground_digger].module_slots = (BUILD.tier * 2)
             data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
@@ -226,18 +226,7 @@ if mods[muluna_mods] then
             data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
             data_assembling[BUILD.name .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
             data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
-            data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
         end
-    end
-
-    if mods[hyarion_mods] then
-        data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
-        data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].energy_source.emissions_per_minute.pollution = nil
-        data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].allowed_effects = {speed, consumption, productivity}
-        data_assembling[geode_mining_drill .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity}
-        data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
     end
 
     data_assembling[vacuum_heating_tower].subgroup = is_muluna_heating
