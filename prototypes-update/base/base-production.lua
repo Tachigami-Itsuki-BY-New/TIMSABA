@@ -529,9 +529,9 @@ local function nuclear_reactor_recipe(name, circuit, heat_pipe, material, reacto
     end
     data_recipe[name].ingredients = ingredients
 end
-nuclear_reactor_recipe(uranium_reactor,           advanced_circuit, heat_pipe_1,                     concrete_brick,             nil, steel_plate)
-nuclear_reactor_recipe(thorium_reactor,            processing_unit, heat_pipe_2,          reinforced_concrete_brick, uranium_reactor, tungsten_plate_bob)
-nuclear_reactor_recipe(deuterium_reactor, advanced_processing_unit, heat_pipe_3, reinforced_titanium_concrete_brick, thorium_reactor, tungsten_carbide_plate_bob)
+nuclear_reactor_recipe(uranium_reactor,           advanced_circuit, heat_pipe_1,                     concrete_brick,             nil,           brass_plate_bob)
+nuclear_reactor_recipe(thorium_reactor,            processing_unit, heat_pipe_2,          reinforced_concrete_brick, uranium_reactor,        tungsten_plate_bob)
+nuclear_reactor_recipe(deuterium_reactor, advanced_processing_unit, heat_pipe_3, reinforced_titanium_concrete_brick, thorium_reactor, copper_tungsten_plate_bob)
 
 data_item_subgroup["angels-power-nuclear-heat-pipe"].order = c_f
 
@@ -554,14 +554,14 @@ end
 local function heat_exchanger_recipe(name, plate_1, plate_2)
     data_recipe[name].ingredients =
     {
-        {type = item, name = plate_1, amount = 1},
+        {type = item, name = plate_1, amount = 2},
         {type = item, name = plate_2, amount = 1}
     }
 end
-heat_exchanger_recipe(heat_pipe_1, nickel_plate_bob, aluminium_plate_bob)
-heat_exchanger_recipe(heat_pipe_2, cobalt_steel_plate_bob, silver_plate_bob)
-heat_exchanger_recipe(heat_pipe_3, tungsten_plate_bob, gold_plate_bob)
-heat_exchanger_recipe(heat_pipe_4, molybdenum_plate, platinum_plate)
+heat_exchanger_recipe(heat_pipe_1,           brass_plate_bob,   silver_plate_bob)
+heat_exchanger_recipe(heat_pipe_2,        tungsten_plate_bob,     gold_plate_bob)
+heat_exchanger_recipe(heat_pipe_3, copper_tungsten_plate_bob, platinum_plate)
+heat_exchanger_recipe(heat_pipe_4,      molybdenum_plate,      rhenium_plate)
 
 data_item_subgroup["angels-power-nuclear-heat-exchanger"].order = c_g
 
