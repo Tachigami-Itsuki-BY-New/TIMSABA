@@ -22,6 +22,12 @@ end
 
 if settings.startup[setting_bobmods_logistics_beltoverhaulspeed].value then
     if settings.startup[setting_bobmods_logistics_beltoverhaul].value then
+        if mods[lignumis_mods] then
+            bobmods.logistics.set_belt_speed(splitter,         wood_splitter,         0.5)
+            bobmods.logistics.set_belt_speed(transport_belt,   wood_transport_belt,   0.5)
+            bobmods.logistics.set_belt_speed(underground_belt, wood_underground_belt, 0.5)
+        end
+
         bobmods.logistics.set_belt_speed(splitter,         T0_splitter,         1)
         bobmods.logistics.set_belt_speed(transport_belt,   T0_transport_belt,   1)
         bobmods.logistics.set_belt_speed(underground_belt, T0_underground_belt, 1)
@@ -68,6 +74,12 @@ if settings.startup[setting_bobmods_logistics_beltoverhaulspeed].value then
             bobmods.logistics.set_belt_speed(underground_belt, hyper_underground_belt_arig, 9)
         end
     else
+        if mods[lignumis_mods] then
+            bobmods.logistics.set_belt_speed(splitter,         wood_splitter,         0.5)
+            bobmods.logistics.set_belt_speed(transport_belt,   wood_transport_belt,   0.5)
+            bobmods.logistics.set_belt_speed(underground_belt, wood_underground_belt, 0.5)
+        end
+
         bobmods.logistics.set_belt_speed(splitter,         T1_splitter,         1)
         bobmods.logistics.set_belt_speed(transport_belt,   T1_transport_belt,   1)
         bobmods.logistics.set_belt_speed(underground_belt, T1_underground_belt, 1)
@@ -115,6 +127,9 @@ end
 if settings.startup[setting_rebalance_belts_and_pipes].value == false then
     if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value then
         if settings.startup[setting_bobmods_logistics_beltoverhaul].value then
+            if mods[lignumis_mods] then
+                bobmods.logistics.set_belt_distance(wood_underground_belt, 0.5)
+            end
             bobmods.logistics.set_belt_distance(T0_underground_belt, 1)
             bobmods.logistics.set_belt_distance(T1_underground_belt, 2)
             bobmods.logistics.set_belt_distance(T2_underground_belt, 3)
@@ -124,13 +139,17 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
             end
             bobmods.logistics.set_belt_distance(T4_underground_belt, 5)
             bobmods.logistics.set_belt_distance(T5_underground_belt, 6)
+            bobmods.logistics.set_belt_distance(vulcanus_underground_belt, 7)
             if mods[aegis_bellicos_mods] then
-                bobmods.logistics.set_belt_distance(space_underground_belt, 7)
+                bobmods.logistics.set_belt_distance(space_underground_belt, 8)
             end
             if mods[arig_mods] then
-                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 8)
+                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 9)
             end
         else
+            if mods[lignumis_mods] then
+                bobmods.logistics.set_belt_distance(wood_underground_belt, 0.5)
+            end
             bobmods.logistics.set_belt_distance(T1_underground_belt, 1)
             bobmods.logistics.set_belt_distance(T2_underground_belt, 2)
             bobmods.logistics.set_belt_distance(T3_underground_belt, 3)
@@ -139,11 +158,12 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
             end
             bobmods.logistics.set_belt_distance(T4_underground_belt, 4)
             bobmods.logistics.set_belt_distance(T5_underground_belt, 5)
+            bobmods.logistics.set_belt_distance(vulcanus_underground_belt, 6)
             if mods[aegis_bellicos_mods] then
-                bobmods.logistics.set_belt_distance(space_underground_belt, 6)
+                bobmods.logistics.set_belt_distance(space_underground_belt, 7)
             end
             if mods[arig_mods] then
-                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 7)
+                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 8)
             end
         end
     else
