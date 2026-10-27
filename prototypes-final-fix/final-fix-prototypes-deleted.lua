@@ -83,10 +83,6 @@ local delete_prototypes =
     "bob-water-miner-3",
     "bob-water-miner-4",
 
-    "bob-electronics-machine-1",
-    "bob-electronics-machine-2",
-    "bob-electronics-machine-3",
-
     -- COMBAT
     "bob-distractor-artillery-shell", "bob-distractor-artillery-shells",
     "bob-explosive-artillery-shell", "bob-explosive-artillery-shells",
