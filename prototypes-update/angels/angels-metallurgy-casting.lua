@@ -1149,158 +1149,9 @@ data_recipe[platinum_cable_2].icons = TWO_I(platinum_wire_coil, platinum_cable)
 data_recipe[platinum_cable_2].order = e_a
 data_recipe[platinum_cable_2].energy_required = 8
 
--- GLASS
-data_item_subgroup["angels-glass-casting"].order = t
-
-data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
-data_recipe[glass_molten_angels].energy_required = 8
-data_recipe[glass_molten_angels].ingredients[1].amount = 16
-data_recipe[glass_molten_angels].results[1].amount = 240
-
-data_recipe[glass_coil_fiber].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_1)
-data_recipe[glass_coil_fiber].energy_required = 8
-data_recipe[glass_coil_fiber].ingredients[1].amount = 240
-data_recipe[glass_coil_fiber].ingredients[2].name = water_purified_angels
-data_recipe[glass_coil_fiber].ingredients[2].amount = 120
-data_recipe[glass_coil_fiber].results =
-{
-    {type = item, name = glass_coil_fiber, amount = 8},
-    {type = fluid, name = steam, amount = 60}
-}
-data_recipe[glass_coil_fiber].main_product = glass_coil_fiber
-
-data_recipe[glass_coil_fiber_2].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_2)
-data_recipe[glass_coil_fiber_2].energy_required = 4
-data_recipe[glass_coil_fiber_2].ingredients[1].amount = 240
-data_recipe[glass_coil_fiber_2].ingredients[2].amount = 120
-data_recipe[glass_coil_fiber_2].results[1].amount = 16
-data_recipe[glass_coil_fiber_2].results[2].amount = 60
-
-data_item[glass_bob].stack_size = 200
-data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
-data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
-data_recipe[glass_bob].energy_required = 4
-data_recipe[glass_bob].ingredients[1].name = sand_angels
-data_recipe[glass_bob].ingredients[1].amount = 8
-
-glass_angels = "angels-plate-glass"
-data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
-data_recipe[glass_angels].ingredients[1].amount = 60
-data_recipe[glass_angels].results[1].amount = 4
-
--- BRICK
-local clay_brick_raw = "angels-clay-brick-raw"
-data_item[clay_brick_raw].subgroup = is_bricks_casting
-data_item[clay_brick_raw].order = a
-data_recipe[clay_brick_raw].subgroup = is_bricks_casting
-data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
-data_recipe[clay_brick_raw].order = a
-
-data_item[clay_brick].subgroup = is_bricks_casting
-data_item[clay_brick].order = b
-data_recipe[clay_brick].subgroup = is_bricks_casting
-data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
-data_recipe[clay_brick].order = b
-
-data_item[stone_brick].subgroup = is_bricks_casting
-data_item[stone_brick].order = c
-data_recipe[stone_brick].subgroup = is_bricks_casting
-data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
-data_recipe[stone_brick].order = c
-data_recipe[stone_brick].energy_required = 4
-
-data_item[concrete_brick].subgroup = is_bricks_casting
-data_item[concrete_brick].order = d
-data_recipe[concrete_brick].subgroup = is_bricks_casting
-data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
-data_recipe[concrete_brick].order = d
-data_recipe[concrete_brick].ingredients[1].amount = 60
-
-data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_item[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
-data_recipe[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
-data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
-
--- STONE
-data_item_subgroup[is_stone_casting].order = u_a
-
-data_item[concrete].order = a
-data_recipe[concrete].icons = R_P_I(concrete, nil, nil, number_1)
-data_recipe[concrete].order = a
-data_recipe[concrete].energy_required = 8
-data_recipe[concrete].ingredients =
-{
-    {type = item, name = lime_angels, amount = 8},
-    {type = item, name = stone_crushed_angels, amount = 4},
-    {type = item, name = sand_angels, amount = 4},
-    {type = fluid, name = water, amount = 120}
-}
-data_recipe[concrete].results[1].amount = 8
-
-data_recipe[concrete_2].icons = R_P_I(concrete, nil, nil, number_2)
-data_recipe[concrete_2].order = a_a
-data_recipe[concrete_2].ingredients[1].amount = 60
-
-data_item[hazard_concrete].order = b
-data_recipe[hazard_concrete].icons = TWO_I(concrete, hazard_concrete)
-data_recipe[hazard_concrete].order = b
-data_recipe[hazard_concrete].energy_required = 0.25
-data_recipe[hazard_concrete].ingredients[1].amount = 1
-data_recipe[hazard_concrete].results[1].amount = 1
-
-data_item[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
-data_item[reinforced_concrete].order = c
-data_recipe[reinforced_concrete].localised_name = data_item[reinforced_concrete].localised_name
-data_recipe[reinforced_concrete].icons = R_P_I(reinforced_concrete, nil, nil, number_1)
-data_recipe[reinforced_concrete].order = c
-data_recipe[reinforced_concrete].energy_required = 8
-data_recipe[reinforced_concrete].ingredients =
-{
-    {type = item, name = lime_angels, amount = 8},
-    {type = item, name = stone_crushed_angels, amount = 4},
-    {type = item, name = sand_angels, amount = 4},
-    {type = item, name = iron_rod, amount = 8},
-    {type = fluid, name = water, amount = 120}
-}
-data_recipe[reinforced_concrete].results[1].amount = 8
-
-data_item[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
-data_item[reinforced_hazard_concrete].order = d
-data_recipe[reinforced_hazard_concrete].localised_name = data_item[reinforced_hazard_concrete].localised_name
-data_recipe[reinforced_hazard_concrete].icons = TWO_I(reinforced_concrete, reinforced_hazard_concrete)
-data_recipe[reinforced_hazard_concrete].energy_required = 0.25
-data_recipe[reinforced_hazard_concrete].ingredients[1].amount = 1
-data_recipe[reinforced_hazard_concrete].results[1].amount = 1
-
-data_fluid[concrete_liquid].order = e
-data_recipe[concrete_liquid].icons = THREE_D_I(cement, sand_angels, water, concrete_liquid, nil, nil, number_1)
-data_recipe[concrete_liquid].order = e
-data_recipe[concrete_liquid].ingredients =
-{
-    {type = item, name = cement, amount = 1},
-    {type = item, name = sand_angels, amount = 4},
-    {type = fluid, name = water, amount = 60}
-}
-data_recipe[concrete_liquid].results[1].amount = 120
-
-local concrete_liquid_2 = "angels-liquid-concrete-2"
-data_recipe[concrete_liquid_2].icons = FOUR_D_I(cement, stone_crushed_angels, sand_angels, water, concrete_liquid, nil, nil, nil, number_2)
-data_recipe[concrete_liquid_2].order = e_a
-data_recipe[concrete_liquid_2].ingredients =
-{
-    {type = item, name = cement, amount = 4},
-    {type = item, name = stone_crushed_angels, amount = 8},
-    {type = item, name = sand_angels, amount = 8},
-    {type = fluid, name = water, amount = 240}
-}
-data_recipe[concrete_liquid_2].results[1].amount = 480
-
 -- ALLOYS
 -- SOLDER
-data_item_subgroup["angels-solder-casting"].order = v
+data_item_subgroup["angels-solder-casting"].order = u
 
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
@@ -1379,7 +1230,7 @@ data_recipe[solder_2].energy_required = 8
 data_recipe[solder_2].results[1].amount = 16
 
 -- BRONZE
-data_item_subgroup["angels-alloys-casting"].order = v_a
+data_item_subgroup["angels-alloys-casting"].order = u_a
 
 data_fluid[bronze_molten_angels].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_recipe[bronze_molten_angels].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_1)
@@ -1528,6 +1379,155 @@ local nitinol_plate_angels = "angels-plate-nitinol"
 data_recipe[nitinol_plate_angels].subgroup = is_alloys_casting_6
 data_recipe[nitinol_plate_angels].icons = TWO_I(nitinol_molten_angels, nitinol_plate_bob)
 data_recipe[nitinol_plate_angels].ingredients[1].amount = 60
+
+-- GLASS
+data_item_subgroup["angels-glass-casting"].order = w
+
+data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
+data_recipe[glass_molten_angels].energy_required = 8
+data_recipe[glass_molten_angels].ingredients[1].amount = 16
+data_recipe[glass_molten_angels].results[1].amount = 240
+
+data_recipe[glass_coil_fiber].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_1)
+data_recipe[glass_coil_fiber].energy_required = 8
+data_recipe[glass_coil_fiber].ingredients[1].amount = 240
+data_recipe[glass_coil_fiber].ingredients[2].name = water_purified_angels
+data_recipe[glass_coil_fiber].ingredients[2].amount = 120
+data_recipe[glass_coil_fiber].results =
+{
+    {type = item, name = glass_coil_fiber, amount = 8},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[glass_coil_fiber].main_product = glass_coil_fiber
+
+data_recipe[glass_coil_fiber_2].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_2)
+data_recipe[glass_coil_fiber_2].energy_required = 4
+data_recipe[glass_coil_fiber_2].ingredients[1].amount = 240
+data_recipe[glass_coil_fiber_2].ingredients[2].amount = 120
+data_recipe[glass_coil_fiber_2].results[1].amount = 16
+data_recipe[glass_coil_fiber_2].results[2].amount = 60
+
+data_item[glass_bob].stack_size = 200
+data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
+data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
+data_recipe[glass_bob].energy_required = 4
+data_recipe[glass_bob].ingredients[1].name = sand_angels
+data_recipe[glass_bob].ingredients[1].amount = 8
+
+glass_angels = "angels-plate-glass"
+data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
+data_recipe[glass_angels].ingredients[1].amount = 60
+data_recipe[glass_angels].results[1].amount = 4
+
+-- BRICK
+local clay_brick_raw = "angels-clay-brick-raw"
+data_item[clay_brick_raw].subgroup = is_bricks_casting
+data_item[clay_brick_raw].order = a
+data_recipe[clay_brick_raw].subgroup = is_bricks_casting
+data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
+data_recipe[clay_brick_raw].order = a
+
+data_item[clay_brick].subgroup = is_bricks_casting
+data_item[clay_brick].order = b
+data_recipe[clay_brick].subgroup = is_bricks_casting
+data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
+data_recipe[clay_brick].order = b
+
+data_item[stone_brick].subgroup = is_bricks_casting
+data_item[stone_brick].order = c
+data_recipe[stone_brick].subgroup = is_bricks_casting
+data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
+data_recipe[stone_brick].order = c
+data_recipe[stone_brick].energy_required = 4
+
+data_item[concrete_brick].subgroup = is_bricks_casting
+data_item[concrete_brick].order = d
+data_recipe[concrete_brick].subgroup = is_bricks_casting
+data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
+data_recipe[concrete_brick].order = d
+data_recipe[concrete_brick].ingredients[1].amount = 60
+
+data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_item[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
+data_recipe[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
+data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
+
+-- STONE
+data_item_subgroup[is_stone_casting].order = x
+
+data_item[concrete].order = a
+data_recipe[concrete].icons = R_P_I(concrete, nil, nil, number_1)
+data_recipe[concrete].order = a
+data_recipe[concrete].energy_required = 8
+data_recipe[concrete].ingredients =
+{
+    {type = item, name = lime_angels, amount = 8},
+    {type = item, name = stone_crushed_angels, amount = 4},
+    {type = item, name = sand_angels, amount = 4},
+    {type = fluid, name = water, amount = 120}
+}
+data_recipe[concrete].results[1].amount = 8
+
+data_recipe[concrete_2].icons = R_P_I(concrete, nil, nil, number_2)
+data_recipe[concrete_2].order = a_a
+data_recipe[concrete_2].ingredients[1].amount = 60
+
+data_item[hazard_concrete].order = b
+data_recipe[hazard_concrete].icons = TWO_I(concrete, hazard_concrete)
+data_recipe[hazard_concrete].order = b
+data_recipe[hazard_concrete].energy_required = 0.25
+data_recipe[hazard_concrete].ingredients[1].amount = 1
+data_recipe[hazard_concrete].results[1].amount = 1
+
+data_item[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
+data_item[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].localised_name = data_item[reinforced_concrete].localised_name
+data_recipe[reinforced_concrete].icons = R_P_I(reinforced_concrete, nil, nil, number_1)
+data_recipe[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].energy_required = 8
+data_recipe[reinforced_concrete].ingredients =
+{
+    {type = item, name = lime_angels, amount = 8},
+    {type = item, name = stone_crushed_angels, amount = 4},
+    {type = item, name = sand_angels, amount = 4},
+    {type = item, name = iron_rod, amount = 8},
+    {type = fluid, name = water, amount = 120}
+}
+data_recipe[reinforced_concrete].results[1].amount = 8
+
+data_item[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
+data_item[reinforced_hazard_concrete].order = d
+data_recipe[reinforced_hazard_concrete].localised_name = data_item[reinforced_hazard_concrete].localised_name
+data_recipe[reinforced_hazard_concrete].icons = TWO_I(reinforced_concrete, reinforced_hazard_concrete)
+data_recipe[reinforced_hazard_concrete].energy_required = 0.25
+data_recipe[reinforced_hazard_concrete].ingredients[1].amount = 1
+data_recipe[reinforced_hazard_concrete].results[1].amount = 1
+
+data_fluid[concrete_liquid].order = e
+data_recipe[concrete_liquid].icons = THREE_D_I(cement, sand_angels, water, concrete_liquid, nil, nil, number_1)
+data_recipe[concrete_liquid].order = e
+data_recipe[concrete_liquid].ingredients =
+{
+    {type = item, name = cement, amount = 1},
+    {type = item, name = sand_angels, amount = 4},
+    {type = fluid, name = water, amount = 60}
+}
+data_recipe[concrete_liquid].results[1].amount = 120
+
+local concrete_liquid_2 = "angels-liquid-concrete-2"
+data_recipe[concrete_liquid_2].icons = FOUR_D_I(cement, stone_crushed_angels, sand_angels, water, concrete_liquid, nil, nil, nil, number_2)
+data_recipe[concrete_liquid_2].order = e_a
+data_recipe[concrete_liquid_2].ingredients =
+{
+    {type = item, name = cement, amount = 4},
+    {type = item, name = stone_crushed_angels, amount = 8},
+    {type = item, name = sand_angels, amount = 8},
+    {type = fluid, name = water, amount = 240}
+}
+data_recipe[concrete_liquid_2].results[1].amount = 480
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

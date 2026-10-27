@@ -36,7 +36,7 @@ if mods[lignumis_mods] then
         "burner-lamp",
         "burner-lamp-copper",
         "basic-storage-chest",
-        "basic-" .. roboport_1,
+        "basic-roboport",
         "basic-repair-pack-copper",
         "wood-lab-copper",
         electronic_circuit .. "-iron",

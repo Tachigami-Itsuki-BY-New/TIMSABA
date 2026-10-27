@@ -77,7 +77,6 @@ data_recipe[promethium_science_pack].ingredients =
 data_recipe[promethium_science_pack].results[1].amount = 8
 
 if mods[bobtech] and mods[bobenemies] then
-    local alien_science_pack_orange = "bob-alien-science-pack-orange"
     data_item[alien_science_pack_orange].subgroup = is_alien_science_pack
     data_item[alien_science_pack_orange].order = a
     data_recipe[alien_science_pack_orange].subgroup = is_alien_science_pack
@@ -85,7 +84,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_orange].energy_required = 8
     data_recipe[alien_science_pack_orange].results[1].amount = 8
 
-    local alien_science_pack_blue = "bob-alien-science-pack-blue"
     data_item[alien_science_pack_blue].subgroup = is_alien_science_pack
     data_item[alien_science_pack_blue].order = b
     data_recipe[alien_science_pack_blue].subgroup = is_alien_science_pack
@@ -93,7 +91,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_blue].energy_required = 8
     data_recipe[alien_science_pack_blue].results[1].amount = 8
 
-    local alien_science_pack_yellow = "bob-alien-science-pack-yellow"
     data_item[alien_science_pack_yellow].subgroup = is_alien_science_pack
     data_item[alien_science_pack_yellow].order = c
     data_recipe[alien_science_pack_yellow].subgroup = is_alien_science_pack
@@ -101,7 +98,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_yellow].energy_required = 8
     data_recipe[alien_science_pack_yellow].results[1].amount = 8
 
-    local alien_science_pack_purple = "bob-alien-science-pack-purple"
     data_item[alien_science_pack_purple].subgroup = is_alien_science_pack
     data_item[alien_science_pack_purple].order = d
     data_recipe[alien_science_pack_purple].subgroup = is_alien_science_pack
@@ -109,7 +105,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_purple].energy_required = 8
     data_recipe[alien_science_pack_purple].results[1].amount = 8
 
-    local alien_science_pack_green = "bob-alien-science-pack-green"
     data_item[alien_science_pack_green].subgroup = is_alien_science_pack
     data_item[alien_science_pack_green].order = e
     data_recipe[alien_science_pack_green].subgroup = is_alien_science_pack
@@ -117,7 +112,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_green].energy_required = 8
     data_recipe[alien_science_pack_green].results[1].amount = 8
 
-    local alien_science_pack_red = "bob-alien-science-pack-red"
     data_item[alien_science_pack_red].subgroup = is_alien_science_pack
     data_item[alien_science_pack_red].order = f
     data_recipe[alien_science_pack_red].subgroup = is_alien_science_pack
@@ -125,7 +119,6 @@ if mods[bobtech] and mods[bobenemies] then
     data_recipe[alien_science_pack_red].energy_required = 8
     data_recipe[alien_science_pack_red].results[1].amount = 8
 
-    local alien_science_pack = "bob-alien-science-pack"
     data_item[alien_science_pack].subgroup = is_alien_science_pack
     data_item[alien_science_pack].order = g
     data_recipe[alien_science_pack].subgroup = is_alien_science_pack
