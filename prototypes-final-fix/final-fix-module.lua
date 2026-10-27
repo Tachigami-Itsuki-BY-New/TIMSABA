@@ -284,6 +284,19 @@ for _, name in ipairs(assembling_machines) do
     end
 end
 
+local electronics_machine = {electronics_machine_1, electronics_machine_2, electronics_machine_3}
+for _, name in ipairs(electronics_machine) do
+    if data_assembling[name] then
+        if mods[quality_mods] then
+            data_assembling[name].allowed_effects = {speed, consumption, productivity, quality}
+            data_assembling[name].allowed_module_categories = {speed, efficiency, productivity, quality}
+        else
+            data_assembling[name].allowed_effects = {speed, consumption, productivity}
+            data_assembling[name].allowed_module_categories = {speed, efficiency, productivity}
+        end
+    end
+end
+
 local labs = {lab_1, lab_2, lab_alien}
 for _, name in ipairs(labs) do
     if data_lab[name] then
