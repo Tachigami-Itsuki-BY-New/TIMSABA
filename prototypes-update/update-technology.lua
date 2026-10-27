@@ -269,10 +269,6 @@ data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_proc
 data_technology[steam_engine_4].prerequisites = {steam_engine_3, tech_tungsten_processing}
 data_technology[steam_engine_5].prerequisites = {steam_engine_4, tech_copper_tungsten_processing}
 
-data_technology[tech_steam_turbine_1].prerequisites = {tech_brass_processing, chemical_science_pack}
-data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
-data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_copper_tungsten_processing}
-
 if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_brass_processing, tech_aluminium_smelting_1, chemical_science_pack}
 
@@ -375,12 +371,9 @@ data_technology[heat_exchanger_4].unit.ingredients =
     {space_science_pack, 1}
 }
 
-data_technology[centrifuge_2].localised_name = {"technology-name." .. centrifuge_2}
-data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_processing}
-data_technology[centrifuge_3].localised_name = {"technology-name." .. centrifuge_3}
-data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_copper_tungsten_processing}
-
-data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
+data_technology[tech_steam_turbine_1].prerequisites = {tech_brass_processing, chemical_science_pack}
+data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
+data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_copper_tungsten_processing}
 
 data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, tech_advanced_material_processing_1}
 data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, tech_advanced_material_processing_2}
@@ -390,6 +383,22 @@ data_technology[steel_mixing_furnace].prerequisites = {logistic_science_pack, te
 data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, steel_mixing_furnace}
 data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, electric_mixing_furnace_1}
 data_technology[tech_multi_purpose_furnace_2].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_multi_purpose_furnace_1}
+
+data_technology[centrifuge_2].localised_name = {"technology-name." .. centrifuge_2}
+data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_processing}
+
+data_technology[centrifuge_3].localised_name = {"technology-name." .. centrifuge_3}
+data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_copper_tungsten_processing}
+
+data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
+
+if data_technology[electronics_machine_2] then
+    data_technology[electronics_machine_2].prerequisites = {tech_automation_4}
+end
+
+if data_technology[electronics_machine_3] then
+    data_technology[electronics_machine_3].prerequisites = {tech_automation_6}
+end
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]

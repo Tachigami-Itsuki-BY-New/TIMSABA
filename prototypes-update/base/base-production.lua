@@ -787,13 +787,6 @@ for _, BUILD in pairs(assembling_machines) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
-    if mods[quality_mods] then
-        data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity, quality}
-        data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity, quality}
-    else
-        data_assembling[BUILD.name].allowed_effects = {speed, consumption, productivity}
-        data_assembling[BUILD.name].allowed_module_categories = {speed, efficiency, productivity}
-    end
 end
 local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, plate, bearing)
     local ingredients =
@@ -814,11 +807,52 @@ if mods[lignumis_mods] then
 else
     assembling_recipe(assembling_machine_1, iron_gear_wheel, basic_circuit_board, iron_pipe,                       nil, iron_plate, iron_bearing)
 end
-assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
-assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
-assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
-assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_processing_unit, nitinol_pipe,            assembling_machine_4, nitinol_plate_bob,         nitinol_bearing)
-assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
+assembling_recipe(assembling_machine_2,      steel_gear_wheel,       electronic_circuit,              steel_pipe, assembling_machine_1,              steel_plate,        steel_bearing)
+assembling_recipe(assembling_machine_3,      brass_gear_wheel,         advanced_circuit,              brass_pipe, assembling_machine_2,              brass_plate_bob,    brass_bearing)
+assembling_recipe(assembling_machine_4,   titanium_gear_wheel,          processing_unit,           titanium_pipe, assembling_machine_3,           titanium_plate_bob, titanium_bearing)
+assembling_recipe(assembling_machine_5,    nitinol_gear_wheel, advanced_processing_unit,            nitinol_pipe, assembling_machine_4,            nitinol_plate_bob,  nitinol_bearing)
+assembling_recipe(assembling_machine_6, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,      rhenium_bearing)
+
+local electronics_machines =
+{
+    {name = electronics_machine_1, crafting_speed = 2, energy_usage = 120},
+    {name = electronics_machine_2, crafting_speed = 4, energy_usage = 240},
+    {name = electronics_machine_3, crafting_speed = 6, energy_usage = 360}
+}
+for _, BUILD in pairs(electronics_machines) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_electronics_machine
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_electronics_machine
+        data_recipe[BUILD.name].energy_required = 1
+        data_assembling[BUILD.name].subgroup = is_electronics_machine
+        data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
+        data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+        data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    end
+end
+local function electronics_recipe(name, gear_wheel, circuit, pipe, electronics, plate, bearing)
+    if not data_recipe[name] then return end
+
+    local ingredients =
+    {
+        {type = item, name = gear_wheel, amount = 2},
+        {type = item, name = circuit,    amount = 2},
+        {type = item, name = pipe,       amount = 2},
+        {type = item, name = plate,      amount = 4},
+        {type = item, name = bearing,    amount = 4}
+    }
+    if electronics then
+        table.insert(ingredients, {type = item, name = electronics, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
+end
+electronics_recipe(electronics_machine_1,      steel_gear_wheel,       electronic_circuit,              steel_pipe,                   nil,              steel_plate,        steel_bearing)
+electronics_recipe(electronics_machine_2,   titanium_gear_wheel,          processing_unit,           titanium_pipe, electronics_machine_1,           titanium_plate_bob, titanium_bearing)
+electronics_recipe(electronics_machine_3, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_pipe, electronics_machine_2, molybdenum_rhenium_plate,      rhenium_bearing)
 
 if mods[lignumis_mods] then
     local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
@@ -982,5 +1016,8 @@ bobmods.lib.recipe.update_recycling_recipe
     assembling_machine_4,
     assembling_machine_5,
     assembling_machine_6,
+    electronics_machine_1,
+    electronics_machine_2,
+    electronics_machine_3,
     lab_1
 })
