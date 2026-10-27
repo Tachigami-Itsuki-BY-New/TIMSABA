@@ -10,7 +10,7 @@ local dynamic_pipe_to_ground = require("scripting.dynamic-pipe-to-ground")
 
 local milestones_events
 if script.active_mods["Milestones"] then
-    require("compatibility.milestones")
+    require("compatibility.milestones.milestones")
     milestones_events = require("scripting.milestones-events")
     script.on_event(defines.events.on_rocket_launch_ordered, milestones_events.on_rocket_launch_ordered)
     script.on_event(defines.events.on_rocket_launched, milestones_events.on_rocket_launched)

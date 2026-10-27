@@ -21,7 +21,6 @@ uranium_oxide_IV = "uranium-oxide-IV"
 uranium_fluoride_IV = "uranium-fluoride-IV"
 ammonium_diuranate = "ammonium-diuranate"
 uranium_oxide_VI = "uranium-oxide-VI"
-uranium_238_plate = "uranium-238-plate"
 uranium_fluoride_IV_238 = "uranium-fluoride-IV-238"
 TIMSABA.functions.create_items
 ({

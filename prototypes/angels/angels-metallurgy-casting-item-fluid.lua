@@ -106,7 +106,6 @@ TIMSABA.functions.create_items
 local graphics_alloys = "__TIMSABA__/graphics/icons/angels/metallurgy/alloys/"
 
 -- ALLOYS ITEM
-aluminium_lithium_plate = "aluminium-lithium-plate"
 TIMSABA.functions.create_items
 ({
     {

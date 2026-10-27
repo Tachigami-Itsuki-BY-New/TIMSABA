@@ -346,7 +346,6 @@ if mods[lignumis_mods] then
     data_storage_tank[gold_storage_tank].order = f
     data_storage_tank[gold_storage_tank].fluid_box.volume = 7200
 
-    local basic_construction_robot_gold = "basic-construction-robot-gold"
     data_item[basic_construction_robot_gold].subgroup = is_lignumis_logistic
     data_item[basic_construction_robot_gold].order = g
     data_recipe[basic_construction_robot_gold].subgroup = is_lignumis_logistic

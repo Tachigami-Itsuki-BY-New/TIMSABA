@@ -33,13 +33,13 @@ if mods[space_age_science_packs] then
             local list_bob_tech =
             {
                 transport_science_pack,
-                "bob-alien-science-pack-orange",
-                "bob-alien-science-pack-blue",
-                "bob-alien-science-pack-yellow",
-                "bob-alien-science-pack-purple",
-                "bob-alien-science-pack-green",
-                "bob-alien-science-pack-red",
-                "bob-alien-science-pack",
+                alien_science_pack_orange,
+                alien_science_pack_blue,
+                alien_science_pack_yellow,
+                alien_science_pack_purple,
+                alien_science_pack_green,
+                alien_science_pack_red,
+                alien_science_pack,
                 gold_science_pack_bob
             }
             for _, pack in pairs(list_bob_tech) do

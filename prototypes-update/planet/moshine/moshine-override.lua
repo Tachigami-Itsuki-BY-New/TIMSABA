@@ -516,7 +516,6 @@ if mods[moshine_mods] then
     }
 
     -- TRAINS
-    space_locomotive = "space-locomotive"
     data_item_entity[space_locomotive].subgroup = is_moshine_train
     data_item_entity[space_locomotive].order = a
     data_item_entity[space_locomotive].stack_size = 4
@@ -540,7 +539,6 @@ if mods[moshine_mods] then
     data_locomotive[space_locomotive].energy_source.effectivity = 1
     data_locomotive[space_locomotive].equipment_grid = power_armor_equipment_grid_3
 
-    local space_cargo_wagon = "space-cargo-wagon"
     data_item_entity[space_cargo_wagon].subgroup = is_moshine_train
     data_item_entity[space_cargo_wagon].order = b
     data_item_entity[space_cargo_wagon].stack_size = 4
@@ -561,7 +559,6 @@ if mods[moshine_mods] then
     data_wagon_cargo[space_cargo_wagon].inventory_size = 160
     data_wagon_cargo[space_cargo_wagon].equipment_grid = power_armor_equipment_grid_3
 
-    local space_fluid_wagon = "space-fluid-wagon"
     data_item_entity[space_fluid_wagon].subgroup = is_moshine_train
     data_item_entity[space_fluid_wagon].order = c
     data_item_entity[space_fluid_wagon].stack_size = 4

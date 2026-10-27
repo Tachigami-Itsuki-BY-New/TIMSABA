@@ -277,7 +277,7 @@ if mods[paracelsin_mods] then
     data_furnace[elevated_pipe].order = z
 
     -- ENERGY
-    local pressure_turbine = data_item["pressure-turbine"] and "pressure-turbine" or "cryovolcanic-turbine"
+    local pressure_turbine = "pressure-turbine"
     data_item[pressure_turbine].subgroup = is_paracelsin_energy
     data_item[pressure_turbine].order = a
     data_item[pressure_turbine].stack_size = 32
@@ -295,14 +295,10 @@ if mods[paracelsin_mods] then
     if mods[lignumis_mods] then
         table.insert(data_recipe[pressure_turbine].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
     end
-    -- Older Paracelsin uses a mining drill; newer versions use a generator.
-    local turbine = data_mining_drill[pressure_turbine] or data.raw.generator[pressure_turbine]
-    turbine.subgroup = is_paracelsin_energy
-    turbine.order = a
-    if data_mining_drill[pressure_turbine] then
-        turbine.mining_speed = 0.25
-        turbine.energy_usage = 3840 .. kW
-    end
+    data_mining_drill[pressure_turbine].subgroup = is_paracelsin_energy
+    data_mining_drill[pressure_turbine].order = a
+    data_mining_drill[pressure_turbine].mining_speed = 0.25
+    data_mining_drill[pressure_turbine].energy_usage = 3840 .. kW
 
     -- BUILDING
     data_item[electrochemical_plant].subgroup = is_paracelsin_building

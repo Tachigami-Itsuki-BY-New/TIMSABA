@@ -113,24 +113,24 @@ is_titanium_casting = "angels-titanium-casting"
 is_gold_casting = "angels-gold-casting"
 is_platinum_casting = "angels-platinum-casting"
 is_tungsten_casting = "angels-tungsten-casting"
-is_stone_casting = "angels-stone-casting"
-is_bricks_casting = "is-bricks-casting"
 is_alloys_casting_2 = "is-alloys-casting-2"
 is_alloys_casting_3 = "is-alloys-casting-3"
 is_alloys_casting_4 = "is-alloys-casting-4"
 is_alloys_casting_5 = "is-alloys-casting-5"
 is_alloys_casting_6 = "is-alloys-casting-6"
 is_alloys_casting_7 = "is-alloys-casting-7"
+is_stone_casting = "angels-stone-casting"
+is_bricks_casting = "is-bricks-casting"
 is_sintering_oven = "angels-sintering-oven"
 TIMSABA.functions.create_subgroups(ig_casting,
 {
-    {name = is_bricks_casting,   order = u},
-    {name = is_alloys_casting_2, order = v_b},
-    {name = is_alloys_casting_3, order = v_c},
-    {name = is_alloys_casting_4, order = v_d},
-    {name = is_alloys_casting_5, order = v_e},
-    {name = is_alloys_casting_6, order = v_f},
-    {name = is_alloys_casting_7, order = v_g}
+    {name = is_alloys_casting_2, order = u_b},
+    {name = is_alloys_casting_3, order = u_c},
+    {name = is_alloys_casting_4, order = u_d},
+    {name = is_alloys_casting_5, order = u_e},
+    {name = is_alloys_casting_6, order = u_f},
+    {name = is_alloys_casting_7, order = u_g},
+    {name = is_bricks_casting,   order = x_a},
 })
 
 -- ANGELS WATER TREATMENT

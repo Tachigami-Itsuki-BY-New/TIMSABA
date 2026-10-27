@@ -424,13 +424,10 @@ if mods[maraxsis_mods] then
         {type = item, name = niobium_iron_plate, amount = 32},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 128}
     }
-    local oversized_turbine = data_generator[oversized_steam_turbine]
-        or data.raw["fusion-generator"][oversized_steam_turbine]
-    oversized_turbine.subgroup = is_maraxsis_building_energy
-    oversized_turbine.order = b
-    if data_generator[oversized_steam_turbine] then
-        oversized_turbine.fluid_usage_per_tick = 240/60
-    end
+    data_generator[oversized_steam_turbine].subgroup = is_maraxsis_building_energy
+    data_generator[oversized_steam_turbine].order = b
+    data_generator[oversized_steam_turbine].fluid_usage_per_tick = 240/60
+    data_generator[oversized_steam_turbine].spent_fluid.amount = 0.5
 
     data_fluid[supercritical_steam_maraxsis].subgroup = is_maraxsis_building_energy
     data_fluid[supercritical_steam_maraxsis].order = c

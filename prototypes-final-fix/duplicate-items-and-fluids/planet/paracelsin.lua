@@ -32,7 +32,8 @@ if mods[paracelsin_mods] then
 		"batteries-from-nitric-acid",
 		"advanced-repair-device",
 		"vaterite-processing-productivity",
-		"burner-pumpjack"
+		"burner-pumpjack",
+		"concrete-from-calcium-sulfate"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
