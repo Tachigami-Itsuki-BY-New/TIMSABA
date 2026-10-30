@@ -1,4 +1,14 @@
 -- SPACE AGE
+planet_nauvis = "nauvis"
+planet_vulcanus = "vulcanus"
+planet_gleba = "gleba"
+planet_fulgora = "fulgora"
+planet_aquilo = "aquilo"
+solar_system_edge = "solar-system-edge"
+shattered_planet = "shattered-planet"
+space_platform =  "space-platform"
+rocket_part =  "rocket-part"
+
 quality_mods = "quality"
 
 -- MULUNA
@@ -464,6 +474,7 @@ pumpplatform = "oil_rig"
 
 -- APIA and CARNOVA
 apia_carnova_mods = "apia"
+apia_carnova_orbit = "apia-carnova-orbit"
 planet_apia = "apia"
 planet_carnova = "carnova"
 phosphoric_acid = "phosphoric-acid"
@@ -615,7 +626,7 @@ reskins_bobs = "reskins-bobs"
 solar_productivity = "solar-productivity"
 
 -- ASTEROID BETL
-asteroid_belt_mods = "AsteroidBelt"
+asteroid_belt_mods = "kry-asteroid-belt"
 
 -- TELOGISTICS
 telogistics_mods = "Telogistics"

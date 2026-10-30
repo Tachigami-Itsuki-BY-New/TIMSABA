@@ -543,7 +543,6 @@ if mods[hyarion_mods] then
     })
 end
 
-local metallic_asteroid_reprocessing = "metallic-asteroid-reprocessing"
 local metallic_asteroids =
 {
     {type = data_asteroid, name = "small-metallic-asteroid",             order = a},
@@ -553,8 +552,7 @@ local metallic_asteroids =
     {type = data_asteroid, name = metallic_asteroid_chunk,               order = e},
     {type = data_item,     name = metallic_asteroid_chunk,               order = e},
     {type = data_recipe,   name = metallic_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_metallic_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = metallic_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_metallic_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(metallic_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -575,14 +573,6 @@ data_recipe[advanced_metallic_asteroid_crushing_1].icons = TWO_I(metallic_astero
 data_recipe[advanced_metallic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_metallic_asteroid_crushing_1].results = {{type = item, name = nickel_ore_bob, amount = 8}}
 
-data_recipe[metallic_asteroid_reprocessing].icons = THREE_R_I(metallic_asteroid_chunk, carbonic_asteroid_chunk, oxide_asteroid_chunk)
-data_recipe[metallic_asteroid_reprocessing].results =
-{
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, independent_probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, independent_probability = 0.5}
-}
-
-local carbonic_asteroid_reprocessing = "carbonic-asteroid-reprocessing"
 local carbonic_asteroids =
 {
     {type = data_asteroid, name = "small-carbonic-asteroid",             order = a},
@@ -592,8 +582,7 @@ local carbonic_asteroids =
     {type = data_asteroid, name = carbonic_asteroid_chunk,               order = e},
     {type = data_item,     name = carbonic_asteroid_chunk,               order = e},
     {type = data_recipe,   name = carbonic_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_carbonic_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = carbonic_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_carbonic_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(carbonic_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -614,14 +603,6 @@ data_recipe[advanced_carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_astero
 data_recipe[advanced_carbonic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_carbonic_asteroid_crushing_1].results = {{type = item, name = sulfur, amount = 8}}
 
-data_recipe[carbonic_asteroid_reprocessing].icons = THREE_R_I(carbonic_asteroid_chunk, metallic_asteroid_chunk, oxide_asteroid_chunk)
-data_recipe[carbonic_asteroid_reprocessing].results =
-{
-    {type = item, name = metallic_asteroid_chunk, amount = 1, independent_probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, independent_probability = 0.5}
-}
-
-local oxide_asteroid_reprocessing = "oxide-asteroid-reprocessing"
 local oxide_asteroids =
 {
     {type = data_asteroid, name = "small-oxide-asteroid",             order = a},
@@ -631,8 +612,7 @@ local oxide_asteroids =
     {type = data_asteroid, name = oxide_asteroid_chunk,               order = e},
     {type = data_item,     name = oxide_asteroid_chunk,               order = e},
     {type = data_recipe,   name = oxide_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_oxide_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = oxide_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_oxide_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(oxide_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -654,13 +634,6 @@ data_recipe[advanced_oxide_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = item, name = sodium_oxide, amount = 8}}
 data_recipe[advanced_oxide_asteroid_crushing_1].hidden = true
 data_recipe[advanced_oxide_asteroid_crushing_1].hidden_in_factoriopedia = true
-
-data_recipe[oxide_asteroid_reprocessing].icons = THREE_R_I(oxide_asteroid_chunk, carbonic_asteroid_chunk, metallic_asteroid_chunk)
-data_recipe[oxide_asteroid_reprocessing].results =
-{
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, independent_probability = 0.5},
-    {type = item, name = metallic_asteroid_chunk, amount = 1, independent_probability = 0.5}
-}
 
 local promethium_asteroids =
 {

@@ -387,10 +387,11 @@ if mods[paracelsin_mods] then
     end
 
     -- TECHNOLOGY
-    if mods[asteroid_belt_mods] then
-        table.insert(data_technology[planet_discovery_paracelsin].prerequisites, "space-discovery-asteroid-belt")
-    end
-    table.insert(data_technology[planet_discovery_paracelsin].effects, {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air})
+    data_technology[planet_discovery_paracelsin].effects =
+    {
+        {type = unlock_space_location, space_location = planet_paracelsin},
+        {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air}
+    }
 
     table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = zinc_plate_bob})
 

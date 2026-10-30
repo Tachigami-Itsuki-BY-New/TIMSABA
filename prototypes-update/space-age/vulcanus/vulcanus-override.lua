@@ -336,27 +336,9 @@ if mods[loaders_modernized_integrations] then
 end
 
 if mods[arig_mods] then
-    if mods[aegis_bellicos_mods] then
-        data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
-        data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
-        data_splitter[vulcanus_splitter].next_upgrade = space_splitter
-    else
-        data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
-        data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
-        data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
-    end
-    if mods[loaders_modernized_integrations] then
-        data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
-    end
-else
-    if mods[aegis_bellicos_mods] then
-        data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
-        data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
-        data_splitter[vulcanus_splitter].next_upgrade = space_splitter
-    end
-    if mods[loaders_modernized_integrations] then
-        data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
-    end
+    data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
+    data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
+    data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
 end
 
 -- BUILDING
