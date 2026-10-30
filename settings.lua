@@ -32,6 +32,7 @@ create_bool_setting(setting_infinite_research)
 create_bool_setting(setting_early_quality)
 create_bool_setting(setting_loot_from_spaceship)
 create_bool_setting(setting_space_connection_use_line, true)
+create_bool_setting(setting_space_connection_all)
 
 data:extend
 ({
