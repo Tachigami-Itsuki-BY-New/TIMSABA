@@ -107,6 +107,7 @@ require("prototypes.planet.planet-resource")
 require("prototypes.planet.planet-recipe")
 require("prototypes.planet.planet-building")
 require("prototypes.planet.planet-technology")
+require("prototypes.planet.asteroid-belt-inner-outer-edge")
 
 require("prototypes.TIMSABA.resource.synthesis")
 

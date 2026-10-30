@@ -522,6 +522,27 @@ if mods[corrundum_mods] then
         sulfur_poison_capsule
     })
 
+    if mods[bobmodules] then
+        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        if mods[quality_mods] then
+            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = dry_ice, amount = 16})
+        end
+
+        bobmods.lib.recipe.update_recycling_recipe
+        ({
+            speed_module_7,
+            efficiency_module_7,
+            productivity_module_7,
+            pollution_clean_module_7,
+            pollution_create_module_7,
+            quality_module_7
+        })
+    end
+
     -- TECHNOLOGY
     data_technology[planet_discovery_corrundum].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
@@ -704,10 +725,6 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    if mods[hyarion_mods] then
-        table.insert(data_technology[tech_selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
-    end
-
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, electrochemical_science_pack)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic, change = 0.1})
@@ -789,5 +806,47 @@ if mods[corrundum_mods] then
             data_recipe[recipe].ingredients[1].amount = 16
             data_recipe[recipe].results[1].amount = 16
         end
+    end
+
+    if mods[bobmodules] then
+        table.insert(data_technology[speed_module_7].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[efficiency_module_7].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[productivity_module_7].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[pollution_clean_module_7].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[pollution_create_module_7].prerequisites, electrochemical_science_pack)
+        if mods[quality_mods] then
+            table.insert(data_technology[quality_module_7].prerequisites, electrochemical_science_pack)
+        end
+    end
+
+    if mods[bobwarfare] then
+        table.insert(data_technology[artillery_turret_4].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[artillery_wagon_4].prerequisites, electrochemical_science_pack)
+    end
+
+    table.insert(data_technology[tech_powellite_processing_4].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_samarskite_processing_3].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_rheniite_processing_3].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, electrochemical_science_pack)
+    table.insert(data_technology[tech_germanite_processing_2].prerequisites, electrochemical_science_pack)
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_millerite_processing_3].prerequisites, electrochemical_science_pack)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, electrochemical_science_pack)
+    end
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_monazite_processing_3].prerequisites, electrochemical_science_pack)
+        table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, electrochemical_science_pack)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, electrochemical_science_pack)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, electrochemical_science_pack)
     end
 end

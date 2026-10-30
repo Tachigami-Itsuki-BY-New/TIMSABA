@@ -9,7 +9,6 @@ require("prototypes.planet.2-second-circle-planets.moshine.moshine-technology")
 require("prototypes.planet.2-second-circle-planets.arig.arig-technology")
 require("prototypes.planet.2-second-circle-planets.hyarion.hyarion-technology")
 require("prototypes.planet.2-second-circle-planets.tellus.tellus-colored-prototypes")
-require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-technology")
 require("prototypes.planet.2-second-circle-planets.castra.castra-technology")
 require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-technology")
 -- muria
@@ -19,6 +18,7 @@ require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-technol
 -- THIRD CIRCLE PLANETS
 -- aquilo
 require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-technology")
+require("prototypes.planet.3-third-circle-planets.corrundum.corrundum-technology")
 -- maraxsis
 
 -- FOURTH CIRCLE PLANETS

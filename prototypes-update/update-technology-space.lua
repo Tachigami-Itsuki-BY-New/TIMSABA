@@ -267,7 +267,7 @@ if mods[quality_mods] then
 end
 
 -- MODS
-if mods["AsteroidBelt"] then
+if mods[asteroid_belt_mods] then
     local space_discovery_asteroid_belt = "space-discovery-asteroid-belt"
     table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, tech_advanced_ore_refining_6)
     table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, tech_water_treatment_6)
