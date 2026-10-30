@@ -43,7 +43,7 @@
         "reskins-angels",
         "reskins-compatibility",
 
-        "+ AsteroidBelt",
+        "+ kry-asteroid-belt",
         "+ planet-muluna",
         "+ Moshine",
         "+ panglia_planet",
@@ -82,6 +82,7 @@
         "+ visible-planets",
         "+ CargoBayLimitResearch",
 
+        "! AsteroidBelt",
         "! foliax",
         "! obsidiax",
         "! planet-crucible",
@@ -130,7 +131,9 @@
         "! valves",
         "! valves-lib",
         "! Return-Inserter",
-        "! TwoMoreTurrets"
+        "! TwoMoreTurrets",
+        "! Redrawn-Space-Connections",
+        "! redrawn-space-compat-fixes"
     ],
     "expansion_required": true,
     "quality_required": true,

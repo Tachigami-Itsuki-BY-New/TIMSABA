@@ -31,6 +31,7 @@ create_bool_setting(setting_flow_control_new)
 create_bool_setting(setting_infinite_research)
 create_bool_setting(setting_early_quality)
 create_bool_setting(setting_loot_from_spaceship)
+create_bool_setting(setting_space_connection_use_line, true)
 
 data:extend
 ({
@@ -48,6 +49,14 @@ data:extend
         setting_type = startup,
         default_value = normal,
         allowed_values = {easy, normal, hard}
+    },
+    {
+        type = double_setting,
+        name = setting_space_connection_multiplier_length,
+        setting_type = startup,
+        default_value = 1,
+        minimum_value = 0.001,
+        maximum_value = 1000
     }
 })
 

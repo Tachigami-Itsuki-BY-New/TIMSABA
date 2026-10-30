@@ -10,8 +10,6 @@ require("prototypes.planet.2-second-circle-planets.moshine.moshine-aeschynite")
 -- arig
 -- hyarion
 -- tellus
-require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-chalcopyrite")
-require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-sperrylite")
 require("prototypes.planet.2-second-circle-planets.castra.castra-millerite")
 require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-vanadinite")
 -- muria
@@ -22,6 +20,8 @@ require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-vanadin
 -- aquilo
 require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-sphalerite")
 require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-tetrahedrite")
+require("prototypes.planet.3-third-circle-planets.corrundum.corrundum-chalcopyrite")
+require("prototypes.planet.3-third-circle-planets.corrundum.corrundum-sperrylite")
 -- maraxsis
 
 -- FOURTH CIRCLE PLANETS

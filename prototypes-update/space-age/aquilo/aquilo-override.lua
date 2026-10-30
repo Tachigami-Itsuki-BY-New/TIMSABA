@@ -362,7 +362,7 @@ bobmods.lib.recipe.update_recycling_recipe
 })
 
 -- TECHNOLOGY
-table.insert(data_technology[planet_discovery_aquilo].prerequisites, tech_advanced_ore_refining_6)
+data_technology[planet_discovery_aquilo].prerequisites = {tech_advanced_asteroid_processing, heating_tower, tech_advanced_ore_refining_6}
 data_technology[planet_discovery_aquilo].effects =
 {
     {type = unlock_space_location, space_location = planet_aquilo, use_icon_overlay_constant = true},

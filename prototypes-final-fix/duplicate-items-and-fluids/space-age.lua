@@ -50,13 +50,18 @@ end
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
 
+tech_asteroid_reprocessing = "asteroid-reprocessing"
 local delete_prototypes =
 {
 	holmium_solution,
 	"concrete-from-molten-iron",
 	"iron-ore-melting",
 	"copper-ore-melting",
-	"steam-condensation"
+	"steam-condensation",
+	tech_asteroid_reprocessing,
+	"metallic-" .. tech_asteroid_reprocessing,
+	"carbonic-" .. tech_asteroid_reprocessing,
+	"oxide-" .. tech_asteroid_reprocessing
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
@@ -95,4 +100,19 @@ for i, prerequisite in ipairs(data_technology[battery_silver_zinc].prerequisites
     if prerequisite == cryogenic_science_pack then
         table.remove(data_technology[battery_silver_zinc].prerequisites, i) break
     end
+end
+
+for i, prerequisite in ipairs(data_technology[planet_discovery_aquilo].prerequisites) do
+	if prerequisite == tech_asteroid_reprocessing then
+		table.remove(data_technology[planet_discovery_aquilo].prerequisites, i) break
+	end
+end
+
+local tech_cargo_bay_limit_4 = "cargo-bay-limit-4"
+if data_technology[tech_cargo_bay_limit_4] then
+	for i, prerequisite in ipairs(data_technology[tech_cargo_bay_limit_4].prerequisites) do
+		if prerequisite == tech_asteroid_reprocessing then
+			table.remove(data_technology[tech_cargo_bay_limit_4].prerequisites, i) break
+		end
+	end
 end

@@ -77,6 +77,7 @@ data_spider_vechicle = data.raw["spider-vehicle"]
 data_item_group = data.raw["item-group"]
 data_repair_tool = data.raw["repair-tool"]
 data_space_location = data.raw["space-location"]
+data_space_connection = data.raw["space-connection"]
 data_lamp = data.raw["lamp"]
 data_electric_energy_interface = data.raw["electric-energy-interface"]
 data_construction_robot = data.raw["construction-robot"]
@@ -390,15 +391,6 @@ He_icon = "__TIMSABA__/graphics/icons/vesta/vesta_helium.png"
 tech_error_png = "__TIMSABA__/graphics/icons/tech-error.png"
 
 entity_error_png = "__TIMSABA__/graphics/icons/entity-error.png"
-
--- SPACE
-planet_nauvis = "nauvis"
-planet_vulcanus = "vulcanus"
-planet_gleba = "gleba"
-planet_fulgora = "fulgora"
-planet_aquilo = "aquilo"
-space_platform =  "space-platform"
-rocket_part =  "rocket-part"
 
 -- OTHERS
 _recycling = "-recycling"
