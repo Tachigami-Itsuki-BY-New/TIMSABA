@@ -14,6 +14,7 @@ setting_early_quality = "setting-early-quality"
 setting_loot_from_spaceship = "setting-loot-from-spaceship"
 setting_space_connection_multiplier_length = "setting-space-connection-multiplier-length"
 setting_space_connection_use_line = "setting-space-connection-use-line"
+setting_space_connection_all = "setting-space-connection-all"
 
 easy = "easy"
 normal = "normal"

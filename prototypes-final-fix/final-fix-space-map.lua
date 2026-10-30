@@ -136,18 +136,44 @@ if mods[asteroid_belt_mods] then
 
     update_space_connection(planet_nauvis, 16, planet_vulcanus, 8)
 
-    update_space_connection(planet_nauvis, 16, planet_gleba, 20, 90)
+    if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
+        update_space_connection(planet_nauvis, 16, planet_gleba, 21, 90)
+    else
+        remove_space_connection(planet_nauvis, planet_gleba)
+    end
 
-    update_space_connection(planet_nauvis, 16, planet_fulgora, 24, 90)
+    if settings.startup[setting_space_connection_all].value or (not mods[arig_mods] and not mods[castra_mods]) then
+        update_space_connection(planet_nauvis, 16, planet_fulgora, 25, 90)
+    else
+        remove_space_connection(planet_nauvis, planet_fulgora)
+    end
 
-    if mods[arig_mods] then
-        Planet(planet_nauvis):create_space_connection(Planet(planet_arig))
-        update_space_connection(planet_nauvis, 16, planet_arig, 16, 45)
+    if settings.startup[setting_space_connection_all].value or (not mods[arig_mods] and not mods[castra_mods]) then
+        if mods[moshine_mods] then
+            update_space_connection(planet_nauvis, 16, planet_moshine, 6, 67.5)
+        end
+    else
+        remove_space_connection(planet_nauvis, planet_moshine)
+    end
+
+    if settings.startup[setting_space_connection_all].value or not mods[castra_mods] then
+        if mods[arig_mods] then
+            update_space_connection(planet_nauvis, 16, planet_arig, 14, 45)
+        end
+    else
+        remove_space_connection(planet_nauvis, planet_arig)
+    end
+
+    if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
+        if mods[tellus_mods] then
+            Planet(planet_nauvis):create_space_connection(Planet(planet_tellus))
+            update_space_connection(planet_nauvis, 16, planet_tellus, 17, 112.5)
+        end
     end
 
     if mods[castra_mods] then
         Planet(planet_nauvis):create_space_connection(Planet(planet_castra))
-        update_space_connection(planet_nauvis, 16, planet_castra, 20, 45)
+        update_space_connection(planet_nauvis, 16, planet_castra, 22, 22.5)
     end
 
     if mods[muria_mods] then
@@ -155,8 +181,6 @@ if mods[asteroid_belt_mods] then
         update_space_connection(planet_nauvis, 16, planet_muria, 20, 45)
     end
 
-    remove_space_connection(planet_nauvis, planet_moshine)
-    remove_space_connection(planet_nauvis, planet_arig)
     remove_space_connection(planet_nauvis, planet_corrundum)
     remove_space_connection(planet_nauvis, planet_shchierbin)
     remove_space_connection(planet_nauvis, calidus_stargate)
@@ -164,7 +188,7 @@ if mods[asteroid_belt_mods] then
 
     -- MULUNA
     if mods[muluna_mods] then
-        update_planet_or_space_location(planet_muluna, 200, 200, {-16, 0}, 4, 0.625, 0.375)
+        update_planet_or_space_location(planet_muluna, 200, 200, {-16, 0}, 4, 0.75, 0.375)
     end
 
     -- LIGNUMIS
@@ -175,17 +199,33 @@ if mods[asteroid_belt_mods] then
     -- VULCANUS
     update_planet_or_space_location(planet_vulcanus, nil, 800, nil, 8, 0.75, 0.25)
 
+    if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
+        update_space_connection(planet_vulcanus, 8, planet_gleba, 21, 90)
+    else
+        remove_space_connection(planet_vulcanus, planet_gleba)
+    end
+
+    if settings.startup[setting_space_connection_all].value or (not mods[moshine_mods] and mods[arig_mods] and mods[castra_mods]) then
+        Planet(planet_vulcanus):create_space_connection(Planet(planet_fulgora))
+        update_space_connection(planet_vulcanus, 8, planet_fulgora, 25, 90)
+    end
+
     if mods[moshine_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_moshine, 6, 90)
+        update_space_connection(planet_vulcanus, 8, planet_moshine, 6, 67.5)
     end
 
     if mods[arig_mods] then
         Planet(planet_vulcanus):create_space_connection(Planet(planet_arig))
-        update_space_connection(planet_vulcanus, 8, planet_arig, 16, 45)
+        update_space_connection(planet_vulcanus, 8, planet_arig, 14, 45)
+    end
+
+    if mods[tellus_mods] then
+        Planet(planet_vulcanus):create_space_connection(Planet(planet_tellus))
+        update_space_connection(planet_vulcanus, 8, planet_tellus, 17, 112.5)
     end
 
     if mods[castra_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_castra, 20, 45)
+        update_space_connection(planet_vulcanus, 8, planet_castra, 22, 22.5)
     end
 
     if mods[muria_mods] then
@@ -193,11 +233,10 @@ if mods[asteroid_belt_mods] then
         update_space_connection(planet_vulcanus, 8, planet_muria, 20, 45)
     end
 
-    remove_space_connection(planet_vulcanus, planet_gleba)
     remove_space_connection(planet_vulcanus, planet_corrundum)
 
     -- GLEBA
-    update_planet_or_space_location(planet_gleba, nil, 100, nil, 20, 0, 0.5)
+    update_planet_or_space_location(planet_gleba, nil, 100, nil, 21, 0, 0.5)
 
     if mods[panglia_mods] then
         update_space_connection(planet_gleba, 0, planet_panglia, 4)
@@ -205,70 +244,83 @@ if mods[asteroid_belt_mods] then
 
     if mods[hyarion_mods] and mods[tellus_mods] then
         Planet(planet_gleba):create_space_connection(Planet(planet_tellus))
-        update_space_connection(planet_gleba, 20, planet_tellus, 16, 90)
+        update_space_connection(planet_gleba, 21, planet_tellus, 17, 22.5)
     end
 
-    if mods[shchierbin_mods] then
-        Planet(planet_gleba):create_space_connection(Planet(planet_shchierbin))
-        update_space_connection(planet_gleba, 20, planet_shchierbin, 20, 90)
+    if settings.startup[setting_space_connection_all].value or not mods[tellus_mods] then
+        if mods[shchierbin_mods] then
+            update_space_connection(planet_gleba, 21, planet_shchierbin, 20, 90)
+        end
+    else
+        remove_space_connection(planet_gleba, planet_shchierbin)
     end
 
     if mods[muria_mods] then
         Planet(planet_gleba):create_space_connection(Planet(planet_muria))
-        update_space_connection(planet_gleba, 20, planet_muria, 20, 45)
+        update_space_connection(planet_gleba, 21, planet_muria, 20, 45)
     end
 
     if mods[apia_carnova_mods] then
-        update_space_connection(planet_gleba, 20, apia_carnova_orbit, 24, 45)
+        update_space_connection(planet_gleba, 21, apia_carnova_orbit, 24, 45)
     end
 
     Planet(planet_gleba):create_space_connection(Location(northeast_asteroid_belt_inner_edge))
-    update_space_connection(planet_gleba, 20, northeast_asteroid_belt_inner_edge, 28, 45)
+    update_space_connection(planet_gleba, 21, northeast_asteroid_belt_inner_edge, 28, 45)
 
     remove_space_connection(planet_gleba, planet_vulcanus)
     remove_space_connection(planet_gleba, planet_fulgora)
     remove_space_connection(planet_gleba, planet_castra)
     remove_space_connection(planet_gleba, planet_corrundum)
-    remove_space_connection(planet_gleba, east_asteroid_belt_inner_edge)
 
     -- FULGORA
-    update_planet_or_space_location(planet_fulgora, 25, 100, nil, 24, 0.5, 0)
+    update_planet_or_space_location(planet_fulgora, 25, 100, nil, 25, 0.5, 0)
+
+    if settings.startup[setting_space_connection_all].value or (not mods[arig_mods] and not mods[castra_mods]) then
+        if mods[moshine_mods] then
+            Planet(planet_fulgora):create_space_connection(Planet(planet_moshine))
+            update_space_connection(planet_fulgora, 25, planet_moshine, 6, 22.5)
+        end
+    end
 
     if mods[hyarion_mods] then
         Planet(planet_fulgora):create_space_connection(Planet(planet_hyarion))
-        update_space_connection(planet_fulgora, 24, planet_hyarion, 12, 45)
+        update_space_connection(planet_fulgora, 25, planet_hyarion, 12, 45)
     end
 
-    if mods[shchierbin_mods] then
-        Planet(planet_fulgora):create_space_connection(Planet(planet_shchierbin))
-        update_space_connection(planet_fulgora, 24, planet_shchierbin, 20, 90)
+    if settings.startup[setting_space_connection_all].value or not mods[tellus_mods] then
+        if mods[shchierbin_mods] then
+            update_space_connection(planet_fulgora, 25, planet_shchierbin, 20, 90)
+        end
+    else
+        remove_space_connection(planet_fulgora, planet_shchierbin)
     end
 
     if mods[castra_mods] then
         Planet(planet_fulgora):create_space_connection(Planet(planet_castra))
-        update_space_connection(planet_fulgora, 24, planet_castra, 20, 45)
+        update_space_connection(planet_fulgora, 25, planet_castra, 22, 67.5)
     end
 
     Planet(planet_fulgora):create_space_connection(Location(southeast_asteroid_belt_inner_edge))
-    update_space_connection(planet_fulgora, 24, southeast_asteroid_belt_inner_edge, 28, 45)
+    update_space_connection(planet_fulgora, 25, southeast_asteroid_belt_inner_edge, 28, 45)
 
     remove_space_connection(planet_fulgora, planet_arig)
     remove_space_connection(planet_fulgora, planet_muria)
-    remove_space_connection(planet_fulgora, east_asteroid_belt_inner_edge)
     remove_space_connection(planet_fulgora, "stargate-connection")
 
     -- MOSHINE
     if mods[moshine_mods] then
-        update_planet_or_space_location(planet_moshine, 1600, 3200, nil, 6, 0.5, 0)
+        update_planet_or_space_location(planet_moshine, 1600, 3200, nil, 6, 0.5625, 0.0625)
 
         if mods[hyarion_mods] then
             Planet(planet_moshine):create_space_connection(Planet(planet_hyarion))
-            update_space_connection(planet_moshine, 6, planet_hyarion, 12, 45)
+            update_space_connection(planet_moshine, 6, planet_hyarion, 12, 67.5)
         end
 
-        if mods[shchierbin_mods] then
-            Planet(planet_moshine):create_space_connection(Planet(planet_shchierbin))
-            update_space_connection(planet_moshine, 6, planet_shchierbin, 20, 90)
+        if settings.startup[setting_space_connection_all].value or not mods[tellus_mods] then
+            if mods[shchierbin_mods] then
+                Planet(planet_moshine):create_space_connection(Planet(planet_shchierbin))
+                update_space_connection(planet_moshine, 6, planet_shchierbin, 20, 112.5)
+            end
         end
 
         remove_space_connection(planet_moshine, planet_corrundum)
@@ -276,28 +328,23 @@ if mods[asteroid_belt_mods] then
 
     -- PANGLIA
     if mods[panglia_mods] then
-        update_planet_or_space_location(planet_panglia, 100, 200, {0, -20}, 4, 0, 0.5)
+        update_planet_or_space_location(planet_panglia, 100, 200, {0, -21}, 4, 0, 0.5)
     end
 
     -- ARIG
     if mods[arig_mods] then
-        update_planet_or_space_location(planet_arig, 50, 200, nil, 16, 0.625, 0.125)
+        update_planet_or_space_location(planet_arig, 50, 200, nil, 14, 0.625, 0.125)
 
         Planet(planet_arig):create_space_connection(Planet(planet_fulgora))
-        update_space_connection(planet_arig, 16, planet_fulgora, 24, 45)
+        update_space_connection(planet_arig, 14, planet_fulgora, 25, 45)
 
         if mods[moshine_mods] then
             Planet(planet_arig):create_space_connection(Planet(planet_moshine))
-            update_space_connection(planet_arig, 16, planet_moshine, 6, 45)
+            update_space_connection(planet_arig, 14, planet_moshine, 6, 22.5)
         end
 
         if mods[hyarion_mods] then
-            update_space_connection(planet_arig, 16, planet_hyarion, 12, 90)
-        end
-
-        if mods[hyarion_mods] then
-            Planet(planet_arig):create_space_connection(Planet(planet_castra))
-            update_space_connection(planet_arig, 16, planet_castra, 20)
+            update_space_connection(planet_arig, 14, planet_hyarion, 12, 90)
         end
 
         remove_space_connection(planet_arig, planet_vulcanus)
@@ -311,7 +358,7 @@ if mods[asteroid_belt_mods] then
 
         if mods[tellus_mods] then
             Planet(planet_hyarion):create_space_connection(Planet(planet_tellus))
-            update_space_connection(planet_hyarion, 12, planet_tellus, 16, 90)
+            update_space_connection(planet_hyarion, 12, planet_tellus, 17, 112.5)
 
             Planet(planet_hyarion):create_space_connection(Location(southeast_asteroid_belt_inner_edge))
             update_space_connection(planet_hyarion, 12, southeast_asteroid_belt_inner_edge, 28)
@@ -319,24 +366,29 @@ if mods[asteroid_belt_mods] then
             Planet(planet_hyarion):create_space_connection(Location(east_asteroid_belt_inner_edge))
             update_space_connection(planet_hyarion, 12, east_asteroid_belt_inner_edge, 28, 45)
         end
+
+        if mods[shchierbin_mods] then
+            Planet(planet_hyarion):create_space_connection(Planet(planet_shchierbin))
+            update_space_connection(planet_hyarion, 12, planet_shchierbin, 20, 45)
+        end
     end
 
     -- TELLUS
     if mods[tellus_mods] then
-        update_planet_or_space_location(planet_tellus, 100, 200, nil, 16, 0.125, 0.625)
+        update_planet_or_space_location(planet_tellus, 100, 200, nil, 17, 0.0625, 0.5625)
 
         if mods[shchierbin_mods] then
             Planet(planet_tellus):create_space_connection(Planet(planet_shchierbin))
-            update_space_connection(planet_tellus, 16, planet_shchierbin, 20, 45)
+            update_space_connection(planet_tellus, 17, planet_shchierbin, 20, 67.5)
         end
 
         if mods[apia_carnova_mods] then
             Planet(planet_tellus):create_space_connection(Location(apia_carnova_orbit))
-            update_space_connection(planet_tellus, 16, apia_carnova_orbit, 24)
+            update_space_connection(planet_tellus, 17, apia_carnova_orbit, 24, 22.5)
         end
 
         Planet(planet_tellus):create_space_connection(Location(east_asteroid_belt_inner_edge))
-        update_space_connection(planet_tellus, 16, east_asteroid_belt_inner_edge, 28, 45)
+        update_space_connection(planet_tellus, 17, east_asteroid_belt_inner_edge, 28, 67.5)
 
         remove_space_connection(planet_tellus, planet_hyarion)
     end
@@ -345,14 +397,18 @@ if mods[asteroid_belt_mods] then
     if mods[shchierbin_mods] then
         update_planet_or_space_location(planet_shchierbin, 100, 200, nil, 20, 0.25, 0.5)
 
+        if settings.startup[setting_space_connection_all].value or not mods[tellus_mods] then
+            Planet(planet_shchierbin):create_space_connection(Location(northeast_asteroid_belt_inner_edge))
+            update_space_connection(planet_shchierbin, 20, northeast_asteroid_belt_inner_edge, 28, 45)
+        end
+
         Planet(planet_shchierbin):create_space_connection(Location(east_asteroid_belt_inner_edge))
         update_space_connection(planet_shchierbin, 20, east_asteroid_belt_inner_edge, 28)
 
-        Planet(planet_shchierbin):create_space_connection(Location(southeast_asteroid_belt_inner_edge))
-        update_space_connection(planet_shchierbin, 20, southeast_asteroid_belt_inner_edge, 28, 45)
-
-        Planet(planet_shchierbin):create_space_connection(Location(northeast_asteroid_belt_inner_edge))
-        update_space_connection(planet_shchierbin, 20, northeast_asteroid_belt_inner_edge, 28, 45)
+        if settings.startup[setting_space_connection_all].value or not mods[hyarion_mods] then
+            Planet(planet_shchierbin):create_space_connection(Location(southeast_asteroid_belt_inner_edge))
+            update_space_connection(planet_shchierbin, 20, southeast_asteroid_belt_inner_edge, 28, 45)
+        end
 
         remove_space_connection(planet_shchierbin, planet_gleba)
         remove_space_connection(planet_shchierbin, planet_fulgora)
@@ -360,11 +416,18 @@ if mods[asteroid_belt_mods] then
 
     -- CASTRA
     if mods[castra_mods] then
-        update_planet_or_space_location(planet_castra, 100, 200, nil, 20, 0.625, 0.125)
+        update_planet_or_space_location(planet_castra, 100, 200, nil, 22, 0.6875, 0.1875)
 
-        if mods[hyarion_mods] then
-            Planet(planet_castra):create_space_connection(Planet(planet_hyarion))
-            update_space_connection(planet_castra, 20, planet_hyarion, 12, 90)
+        if mods[arig_mods] then
+            Planet(planet_castra):create_space_connection(Planet(planet_arig))
+            update_space_connection(planet_castra, 22, planet_arig, 14)
+        end
+
+        if settings.startup[setting_space_connection_all].value or (not mods[moshine_mods] and not mods[arig_mods]) then
+            if mods[hyarion_mods] then
+                Planet(planet_castra):create_space_connection(Planet(planet_hyarion))
+                update_space_connection(planet_castra, 22, planet_hyarion, 12, 112.5)
+            end
         end
 
         remove_space_connection(planet_castra, planet_corrundum)
@@ -372,11 +435,11 @@ if mods[asteroid_belt_mods] then
 
     -- MURIA
     if mods[muria_mods] then
-        update_planet_or_space_location(planet_muria, 100, 200, nil, 20, 0.875, 0.5)
+        update_planet_or_space_location(planet_muria, 100, 200, nil, 19, 0.875, 0.5)
 
         if mods[tellus_mods] then
             Planet(planet_muria):create_space_connection(Planet(planet_tellus))
-            update_space_connection(planet_muria, 20, planet_tellus, 16, 90)
+            update_space_connection(planet_muria, 19, planet_tellus, 17, 67.5)
         end
 
         remove_space_connection(planet_muria, planet_hyarion)
@@ -391,8 +454,18 @@ if mods[asteroid_belt_mods] then
 
         update_space_connection(apia_carnova_orbit, 0, planet_carnova, 2)
 
+        if settings.startup[setting_space_connection_all].value or not mods[tellus_mods] then
+            if mods[shchierbin_mods] then
+                Location(apia_carnova_orbit):create_space_connection(Planet(planet_shchierbin))
+                update_space_connection(apia_carnova_orbit, 24, planet_shchierbin, 20, 45)
+            end
+        end
+
         Location(apia_carnova_orbit):create_space_connection(Location(northeast_asteroid_belt_inner_edge))
         update_space_connection(apia_carnova_orbit, 24, northeast_asteroid_belt_inner_edge, 28)
+
+        Location(apia_carnova_orbit):create_space_connection(Location(east_asteroid_belt_inner_edge))
+        update_space_connection(apia_carnova_orbit, 24, east_asteroid_belt_inner_edge, 28, 45)
 
         remove_space_connection(apia_carnova_orbit, planet_castra)
 
@@ -485,6 +558,9 @@ if mods[asteroid_belt_mods] then
 
     if mods[paracelsin_mods] then
         update_space_connection(southeast_asteroid_belt_outer_edge, 32, planet_paracelsin, 48)
+    elseif data_space_connection[southeast_kuiper_belt_outer_edge] then
+        Location(southeast_asteroid_belt_outer_edge):create_space_connection(Location(southeast_kuiper_belt_outer_edge))
+        update_space_connection(southeast_asteroid_belt_outer_edge, 32, southeast_kuiper_belt_outer_edge, 60)
     end
 
     if mods[corrundum_mods] then
@@ -535,9 +611,11 @@ if mods[asteroid_belt_mods] then
             update_space_connection(planet_corrundum, 40, east_kuiper_belt_inner_edge, 60, 22.5)
         end
 
-        if data_space_location[southeast_kuiper_belt_inner_edge] then
-            Planet(planet_corrundum):create_space_connection(Location(southeast_kuiper_belt_inner_edge))
-            update_space_connection(planet_corrundum, 40, southeast_kuiper_belt_inner_edge, 60, 22.5)
+        if settings.startup[setting_space_connection_all].value or not mods[paracelsin_mods] then
+            if data_space_location[southeast_kuiper_belt_inner_edge] then
+                Planet(planet_corrundum):create_space_connection(Location(southeast_kuiper_belt_inner_edge))
+                update_space_connection(planet_corrundum, 40, southeast_kuiper_belt_inner_edge, 60, 22.5)
+            end
         end
     end
 
@@ -680,4 +758,54 @@ if mods[asteroid_belt_mods] then
 
     -- SHATTERED PLANET
     update_planet_or_space_location(shattered_planet, nil, 1, nil, 256, 0.25, 0.75)
+
+    -- IF NOT ALL PLANET T3 (Moshine - Apia-Carnova)
+    if not mods[moshine_mods] and not mods[arig_mods] and not mods[hyarion_mods] and not mods[tellus_mods] and not mods[castra_mods] and not mods[shchierbin_mods] and not mods[muria_mods] and not mods[apia_carnova_mods] then
+        update_planet_or_space_location(planet_nauvis, nil, 200, nil, 16, 0.25, 0.75)
+
+        update_space_connection(planet_nauvis, 16, planet_vulcanus, 8)
+        update_space_connection(planet_nauvis, 16, planet_gleba, 21, 45)
+        update_space_connection(planet_nauvis, 16, planet_fulgora, 25, 45)
+
+        Planet(planet_nauvis):create_space_connection(Location(east_asteroid_belt_inner_edge))
+        update_space_connection(planet_nauvis, 16, east_asteroid_belt_inner_edge, 28)
+
+        -- MULUNA
+        if mods[muluna_mods] then
+            update_planet_or_space_location(planet_muluna, 200, 200, {16, 0}, 4, 0.375, 0.875)
+        end
+
+        -- LIGNUMIS
+        if mods[lignumis_mods] then
+            update_planet_or_space_location(planet_lignumis, 100, 200, {16, 0}, 2, 0.125, 0.875)
+        end
+
+        -- VULCANUS
+        update_planet_or_space_location(planet_vulcanus, nil, 800, nil, 8, 0.25, 0.75)
+
+        update_space_connection(planet_vulcanus, 8, planet_gleba, 21, 45)
+        update_space_connection(planet_vulcanus, 8, planet_fulgora, 25, 45)
+
+        -- GLEBA
+        update_planet_or_space_location(planet_gleba, nil, 100, nil, 21, 0.125, 0.625)
+
+        Planet(planet_gleba):create_space_connection(Location(northeast_asteroid_belt_inner_edge))
+        update_space_connection(planet_gleba, 21, northeast_asteroid_belt_inner_edge, 28)
+
+        update_space_connection(planet_gleba, 21, east_asteroid_belt_inner_edge, 28, 45)
+
+        remove_space_connection(planet_gleba, planet_vulcanus)
+        remove_space_connection(planet_gleba, planet_fulgora)
+
+        -- FULGORA
+        update_planet_or_space_location(planet_fulgora, 25, 100, nil, 25, 0.375, 0.875)
+
+        update_space_connection(planet_fulgora, 25, east_asteroid_belt_inner_edge, 28, 45)
+
+        Planet(planet_fulgora):create_space_connection(Location(southeast_asteroid_belt_inner_edge))
+        update_space_connection(planet_fulgora, 25, southeast_asteroid_belt_inner_edge, 28)
+    else
+        remove_space_connection(planet_gleba, east_asteroid_belt_inner_edge)
+        remove_space_connection(planet_fulgora, east_asteroid_belt_inner_edge)
+    end
 end
