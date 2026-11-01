@@ -5,10 +5,11 @@ if mods[castra_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
+	local lithium_battery = "lithium-battery"
 	local delete_prototypes =
 	{
 		nickel_plate_mods,
-		"lithium-battery",
+		lithium_battery,
 		"carbon-fiber-wall",
 		"energy-shield-mk3-equipment",
 		"hydrogen-sulfide-carbon-extraction",
@@ -50,22 +51,30 @@ if mods[castra_mods] then
 	data_recipe[jammed_data_collector_process] = nil
 
 	for i, prerequisite in ipairs(data_technology[battery_eq_3].prerequisites) do
-        if prerequisite == "lithium-battery" then
+        if prerequisite == lithium_battery then
             table.remove(data_technology[battery_eq_3].prerequisites, i) break
         end
     end
 	for i, prerequisite in ipairs(data_technology[railgun].prerequisites) do
-        if prerequisite == "lithium-battery" then
+        if prerequisite == lithium_battery then
             table.remove(data_technology[railgun].prerequisites, i) break
         end
     end
 	for i, prerequisite in ipairs(data_technology["jammed-data-collector"].prerequisites) do
-        if prerequisite == "lithium-battery" then
+        if prerequisite == lithium_battery then
             table.remove(data_technology["jammed-data-collector"].prerequisites, i) break
         end
     end
+	local tech_cargo_bay_limit_6 = "cargo-bay-limit-6"
+	if data_technology[tech_cargo_bay_limit_6] then
+		for i, prerequisite in ipairs(data_technology[tech_cargo_bay_limit_6].prerequisites) do
+			if prerequisite == lithium_battery then
+				table.remove(data_technology[tech_cargo_bay_limit_6].prerequisites, i) break
+			end
+		end
+	end
 	for i, prerequisite in ipairs(data_technology[promethium_science_pack].prerequisites) do
-        if prerequisite == "lithium-battery" then
+        if prerequisite == lithium_battery then
             table.remove(data_technology[promethium_science_pack].prerequisites, i) break
         end
     end

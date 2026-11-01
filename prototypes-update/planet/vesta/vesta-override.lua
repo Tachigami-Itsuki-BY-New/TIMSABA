@@ -551,9 +551,7 @@ if mods[vesta_mods] then
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
     table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_full_asteroid_processing)
-    if mods[aegis_bellicos_mods] then
-        table.insert(data_technology[planet_discovery_vesta].prerequisites, pulsar_science_pack)
-    end
+    table.insert(data_technology[planet_discovery_vesta].prerequisites, railgun)
     data_technology[planet_discovery_vesta].effects =
     {
         {type = unlock_space_location, space_location = planet_vesta, use_icon_overlay_constant = true},
@@ -782,8 +780,10 @@ if mods[vesta_mods] then
     end
 
     if mods[corrundum_mods] then
-        data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, tech_gas_manipulation_science_pack}
-        data_technology[tech_sperrylite_processing_4].prerequisites = {tech_sperrylite_processing_3, tech_gas_manipulation_science_pack}
+        data_technology[tech_chalcopyrite_processing_3].prerequisites = {tech_chalcopyrite_processing_2, tech_gas_manipulation_science_pack}
+        data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, promethium_science_pack}
+        data_technology[tech_sperrylite_processing_3].prerequisites = {tech_sperrylite_processing_2, tech_gas_manipulation_science_pack}
+        data_technology[tech_sperrylite_processing_4].prerequisites = {tech_sperrylite_processing_3, promethium_science_pack}
     end
 
     if mods[castra_mods] then
@@ -806,40 +806,6 @@ if mods[vesta_mods] then
     end
 
     data_technology[tech_aquilo_cryogenics].prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1, tech_gas_manipulation_science_pack}
-
-    data_technology[promethium_science_pack].prerequisites =
-    {
-        tech_wolframite_processing_4,
-        tech_samarskite_processing_4,
-        tech_brannerite_processing_4,
-        tech_rheniite_processing_4,
-        tech_antimonite_processing_3,
-        tech_germanite_processing_3,
-    }
-    if mods[moshine_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_monazite_processing_4)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_aeschynite_processing_4)
-    end
-    if mods[paracelsin_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_sphalerite_processing_3)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_tetrahedrite_processing_3)
-    end
-    if mods[corrundum_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_chalcopyrite_processing_4)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_sperrylite_processing_4)
-    end
-    if mods[castra_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)
-    end
-    if mods[shchierbin_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_vanadinite_processing_4)
-    end
-    if mods[secretas_frozeta_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_gallite_processing_3)
-    end
-    if mods[lignumis_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_wodginite_processing_4)
-    end
 
     if mods[bobmodules] then
         table.insert(data_technology[speed_module_8].prerequisites, tech_gas_manipulation_science_pack)

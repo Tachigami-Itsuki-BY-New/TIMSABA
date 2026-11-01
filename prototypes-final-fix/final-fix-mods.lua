@@ -374,6 +374,10 @@ if mods[arig_mods] then
             data_loader_1x1[hyper_loader_arig].order = k
         end
     end
+else
+    if mods[loaders_modernized_integrations] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
+    end
 end
 
 -- HYARION
@@ -558,6 +562,48 @@ if mods[maraxsis_mods] then
     end
 end
 
+if mods [vesta_mods] then
+    local stellar_discovery_solar_system_edge = "stellar-discovery-solar-system-edge"
+    data_technology[stellar_discovery_solar_system_edge].prerequisites =
+    {
+        tech_wolframite_processing_4,
+        tech_samarskite_processing_4,
+        tech_brannerite_processing_4,
+        tech_rheniite_processing_4,
+        tech_antimonite_processing_3,
+        tech_germanite_processing_3
+    }
+    if mods[moshine_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_monazite_processing_4)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_aeschynite_processing_4)
+    end
+    if mods[paracelsin_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_sphalerite_processing_3)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_tetrahedrite_processing_3)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_chalcopyrite_processing_3)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_sperrylite_processing_3)
+    end
+    if mods[castra_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_millerite_processing_4)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_vanadinite_processing_4)
+    end
+    if mods[secretas_frozeta_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_gallite_processing_3)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_wodginite_processing_4)
+    end
+    if mods[aegis_bellicos_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, pulsar_science_pack)
+    end
+
+    data_technology[promethium_science_pack].prerequisites = {stellar_discovery_solar_system_edge}
+end
+
 -- PELAGOS
 if mods[pelagos_mods] then
     for name in pairs(data_item) do
@@ -715,13 +761,13 @@ if mods[lignumis_mods] then
 end
 
 if mods[aegis_bellicos_mods] then
-    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, vulcanus_transport_belt}
+    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, stack_inserter}
 
     if mods[arig_mods] then
         if mods[hyarion_mods] then
-            data_technology[hyper_transport_belt_arig].prerequisites = {simulating_unit, tech_space_logistic}
+            data_technology[hyper_transport_belt_arig].prerequisites = {simulating_unit, vulcanus_transport_belt}
         else
-            data_technology[hyper_transport_belt_arig].prerequisites = {silica_arig .. _processing, tech_space_logistic}
+            data_technology[hyper_transport_belt_arig].prerequisites = {silica_arig .. _processing, vulcanus_transport_belt}
         end
     end
 
@@ -793,6 +839,16 @@ elseif mods[aegis_bellicos_mods] and not mods[muluna_mods] then
         {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
     }
+end
+
+-- AEGIS
+if mods[aegis_bellicos_mods] then
+    if mods[asteroid_belt_mods] and data_technology[space_discovery_kuiper_belt] then
+        data_technology[discovery_aegis_outer].prerequisites = {space_discovery_kuiper_belt}
+    end
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, tech_full_asteroid_processing)
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, railgun)
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, fusion_reactor)
 end
 
 -- MODS
