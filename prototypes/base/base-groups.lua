@@ -20,6 +20,7 @@ is_extraction_machine_muluna = "is-extraction-machine-muluna"
 is_extraction_machine_maraxsis = "is-extraction-machine-maraxsis"
 is_extraction_machine_pumpjack = "is-extraction-machine-pumpjack"
 is_energy_steam_turbine = "is-energy-steam-turbine"
+is_electronics_machine = "is-electronics-machine"
 is_lab = "is-lab"
 TIMSABA.functions.create_subgroups(ig_production,
 {
@@ -28,7 +29,8 @@ TIMSABA.functions.create_subgroups(ig_production,
     {name = is_extraction_machine_mining,   order = c_a},
     {name = is_extraction_machine_pumpjack, order = c_d},
     {name = is_energy_steam_turbine,        order = c_h},
-    {name = is_lab,                         order = e_b}
+    {name = is_electronics_machine,         order = e_b},
+    {name = is_lab,                         order = e_c}
 })
 
 if mods[muluna_mods] then
