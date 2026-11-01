@@ -70,4 +70,10 @@ if mods[paracelsin_mods] then
             table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
         end
     end
+
+	for i, prerequisite in ipairs(data_technology[planet_discovery_paracelsin].prerequisites) do
+		if prerequisite == tech_asteroid_reprocessing then
+			table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
+		end
+	end
 end

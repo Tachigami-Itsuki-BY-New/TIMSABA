@@ -81,6 +81,7 @@ require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-entities")
 require("prototypes-final-fix.final-fix-fuel-categories")
 require("prototypes-final-fix.final-fix-prototypes-deleted")
+require("prototypes-final-fix.final-fix-space-map")
 
 require("prototypes-final-fix.multi-building.scripting")
 require("prototypes-final-fix.multi-building.entities")

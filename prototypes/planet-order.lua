@@ -45,6 +45,7 @@ if mods[apia_carnova_mods] then
     data_planet[planet_apia].order = x .. "-" .. planet_apia
 
     data_planet[planet_carnova].order = x .. "-" .. planet_carnova
+    data_planet[planet_carnova].orbit = nil
 end
 
 -- THIRD CIRCLE PLANETS
@@ -68,9 +69,8 @@ if mods[vesta_mods] then
 end
 
 -- FINAL CIRCLE PLANET
-local shattered_planet = "shattered-planet"
 if mods[shattered_mods] then
-    data_planet[planet_shattered].order = x .. "-" .. shattered_planet
+    data_planet[planet_shattered].order = x .. "-" .. planet_shattered
 end
 
 -- MOONS
@@ -80,6 +80,7 @@ end
 
 if mods[panglia_mods] then
     data_planet[planet_panglia].order = y .. "-" .. planet_panglia
+    data_planet[planet_panglia].orbit = nil
 end
 
 if mods[secretas_frozeta_mods] then
@@ -99,7 +100,6 @@ ig_space = "space"
 is_others_space = "is-others-space"
 TIMSABA.functions.create_subgroups(ig_space, {{name = is_others_space, order = j_b}})
 
-local solar_system_edge = "solar-system-edge"
 data_space_location[solar_system_edge].subgroup = is_others_space
 data_space_location[solar_system_edge].order = z .. "-" .. solar_system_edge
 
@@ -109,18 +109,7 @@ data_space_location[shattered_planet].order = z .. "-" .. shattered_planet
 data_surface[space_platform].subgroup = is_others_space
 data_surface[space_platform].order = z .. "-" .. space_platform
 
-if mods["AsteroidBelt"] then
-    local asteroid_belt_inner_edge = "asteroid-belt-inner-edge"
-    data_space_location[asteroid_belt_inner_edge].subgroup = is_others_space
-    data_space_location[asteroid_belt_inner_edge].order = z .. "-" .. asteroid_belt_inner_edge
-
-    local asteroid_belt_outer_edge = "asteroid-belt-outer-edge"
-    data_space_location[asteroid_belt_outer_edge].subgroup = is_others_space
-    data_space_location[asteroid_belt_outer_edge].order = z .. "-" .. asteroid_belt_outer_edge
-end
-
 if mods[apia_carnova_mods] then
-    local apia_carnova_orbit = "apia-carnova-orbit"
     data_space_location[apia_carnova_orbit].subgroup = is_others_space
     data_space_location[apia_carnova_orbit].order = z .. "-" .. apia_carnova_orbit
 end
@@ -128,6 +117,11 @@ end
 -- OTHER STAR SYSTEMS
 if mods[aegis_bellicos_mods] then
     data_item_subgroup["B-A-space-locations"].order = j_c
+
+    -- Star
+    local pulsar = "pulsar"
+    data_space_location[pulsar].distance = 256
+    data_space_location[pulsar].orientation = 0.375
 
     data_space_location[bellicos_orbit].order = z .. "-" .. bellicos_orbit
 end

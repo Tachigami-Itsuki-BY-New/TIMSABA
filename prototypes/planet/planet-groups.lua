@@ -9,7 +9,6 @@ require("prototypes.planet.2-second-circle-planets.moshine.moshine-groups")
 require("prototypes.planet.2-second-circle-planets.arig.arig-groups")
 require("prototypes.planet.2-second-circle-planets.hyarion.hyarion-groups")
 require("prototypes.planet.2-second-circle-planets.tellus.tellus-groups")
-require("prototypes.planet.2-second-circle-planets.corrundum.corrundum-groups")
 require("prototypes.planet.2-second-circle-planets.castra.castra-groups")
 require("prototypes.planet.2-second-circle-planets.shchierbin.shchierbin-groups")
 require("prototypes.planet.2-second-circle-planets.muria.muria-groups")
@@ -19,6 +18,7 @@ require("prototypes.planet.2-second-circle-planets.apia-carnova.apia-carnova-gro
 -- THIRD CIRCLE PLANETS
 -- aquilo
 require("prototypes.planet.3-third-circle-planets.paracelsin.paracelsin-groups")
+require("prototypes.planet.3-third-circle-planets.corrundum.corrundum-groups")
 require("prototypes.planet.3-third-circle-planets.maraxsis.maraxsis-groups")
 
 -- FOURTH CIRCLE PLANETS
