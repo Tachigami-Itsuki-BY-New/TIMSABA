@@ -61,6 +61,7 @@ data_item[storage_tank_A1].order = c
 data_item[storage_tank_A1].stack_size = 32
 data_item[storage_tank_A1].weight = 31250
 data_recipe[storage_tank_A1].order = c
+data_recipe[storage_tank_A1].energy_required = 4
 data_recipe[storage_tank_A1].ingredients =
 {
     {type = item, name = steel_pipe, amount = 32},
@@ -75,6 +76,7 @@ data_item[storage_tank_A2].order = d
 data_item[storage_tank_A2].stack_size = 32
 data_item[storage_tank_A2].weight = 31250
 data_recipe[storage_tank_A2].order = d
+data_recipe[storage_tank_A2].energy_required = 4
 data_recipe[storage_tank_A2].ingredients =
 {
     {type = item, name = steel_pipe, amount = 32},
@@ -89,6 +91,7 @@ data_item[storage_tank_A3].order = e
 data_item[storage_tank_A3].stack_size = 32
 data_item[storage_tank_A3].weight = 31250
 data_recipe[storage_tank_A3].order = e
+data_recipe[storage_tank_A3].energy_required = 4
 data_recipe[storage_tank_A3].ingredients =
 {
     {type = item, name = iron_pipe, amount = 4},
@@ -103,6 +106,7 @@ data_item[pressure_tank_A1].order = f
 data_item[pressure_tank_A1].stack_size = 32
 data_item[pressure_tank_A1].weight = 31250
 data_recipe[pressure_tank_A1].order = f
+data_recipe[pressure_tank_A1].energy_required = 8
 data_recipe[pressure_tank_A1].ingredients =
 {
     {type = item, name = iron_pipe, amount = 64},
@@ -169,6 +173,7 @@ for _, BUILD in pairs(storage_tanks_2x) do
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].subgroup = is_storage_tanks_2x
     data_recipe[BUILD.name].order = BUILD.order
+    data_recipe[BUILD.name].energy_required = 4
     data_storage_tank[BUILD.name].subgroup = is_storage_tanks_2x
     data_storage_tank[BUILD.name].order = BUILD.order
     data_storage_tank[BUILD.name].fluid_box.volume = BUILD.volume
@@ -181,7 +186,7 @@ local function storage_tanks_2x_recipe(name, plate, pipe, storage_tank)
         {type = item, name = storage_tank, amount = 1}
     }
 end
-storage_tanks_2x_recipe(storage_tank_1,        steel_plate,   bronze_pipe, small_storage_tank_inline)
+storage_tanks_2x_recipe(storage_tank_1,   bronze_plate_bob,   bronze_pipe, small_storage_tank_inline)
 storage_tanks_2x_recipe(storage_tank_2,    brass_plate_bob,    brass_pipe, storage_tank_1)
 storage_tanks_2x_recipe(storage_tank_3, titanium_plate_bob, titanium_pipe, storage_tank_2)
 storage_tanks_2x_recipe(storage_tank_4,  nitinol_plate_bob,  nitinol_pipe, storage_tank_3)
@@ -200,6 +205,7 @@ for _, BUILD in pairs(storage_tanks_4x) do
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].subgroup = is_storage_tanks_4x
     data_recipe[BUILD.name].order = BUILD.order
+    data_recipe[BUILD.name].energy_required = 4
     data_storage_tank[BUILD.name].subgroup = is_storage_tanks_4x
     data_storage_tank[BUILD.name].order = BUILD.order
     data_storage_tank[BUILD.name].fluid_box.volume = BUILD.volume
@@ -212,7 +218,7 @@ local function storage_tanks_4x_recipe(name, plate, pipe, storage_tank)
         {type = item, name = storage_tank, amount = 1}
     }
 end
-storage_tanks_4x_recipe(storage_tank_1_alt,        steel_plate,   bronze_pipe, small_storage_tank)
+storage_tanks_4x_recipe(storage_tank_1_alt,   bronze_plate_bob,   bronze_pipe, small_storage_tank)
 storage_tanks_4x_recipe(storage_tank_2_alt,    brass_plate_bob,    brass_pipe, storage_tank_1_alt)
 storage_tanks_4x_recipe(storage_tank_3_alt, titanium_plate_bob, titanium_pipe, storage_tank_2_alt)
 storage_tanks_4x_recipe(storage_tank_4_alt,  nitinol_plate_bob,  nitinol_pipe, storage_tank_3_alt)
