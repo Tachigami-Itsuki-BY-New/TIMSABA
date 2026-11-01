@@ -280,6 +280,7 @@ data_item[wood_charcoal].fuel_value = 3840 .. kJ
 data_item[wood_charcoal].fuel_categories = {base_fuel}
 data_recipe[wood_charcoal].icons = TWO_I(wood_pellets, wood_charcoal)
 data_recipe[wood_charcoal].order = e
+data_recipe[wood_charcoal].energy_required = 4
 data_recipe[wood_charcoal].results[1].amount = 4
 
 local carbon_from_charcoal = "angels-carbon-from-charcoal"
