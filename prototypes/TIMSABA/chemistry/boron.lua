@@ -2,7 +2,7 @@ local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
 
 -- GROUPS
 is_boron = "is-boron"
-is_boron_fluid = "is-boron-fluid"
+local is_boron_fluid = "is-boron-fluid"
 TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
     {name = is_boron, order = j},
@@ -11,6 +11,8 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 
 -- ITEM
 borax = "borax"
+boron_oxide_III = "boron-oxide-III"
+magnesium_boride = "magnesium-boride"
 TIMSABA.functions.create_items
 ({
     {
@@ -19,12 +21,27 @@ TIMSABA.functions.create_items
         subgroup = is_boron,
         icon = graphics_boron .. borax .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "B[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
+        name = boron_oxide_III,
+        subgroup = is_boron,
+        icon = graphics_boron .. boron_oxide_III .. ".png",
+        order = b
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]3[/font]B[font=default-tiny-bold]2[/font]"} or nil,
+        name = magnesium_boride,
+        subgroup = is_boron,
+        icon = graphics_boron .. magnesium_boride .. ".png",
+        order = e
     }
 })
 
 -- FLUID
 boric_acid_solution = "boric-acid-solution"
 diborane_gas = "diborane-gas"
+pentaborane_liquid = "pentaborane-liquid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -44,17 +61,47 @@ TIMSABA.functions.create_fluids
         order = b,
         base_color = TIMSABA.functions.fluid_color("B2H6"),
         flow_color = TIMSABA.functions.flow_color("B2H6")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "B[font=default-tiny-bold]5[/font]H[font=default-tiny-bold]9[/font]"} or nil,
+        name = pentaborane_liquid,
+        subgroup = is_boron_fluid,
+        icon = graphics_boron .. pentaborane_liquid .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("B5H9"),
+        flow_color = TIMSABA.functions.flow_color("B5H9")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(boric_acid_solution)
 TIMSABA.barreling.add_gas(diborane_gas)
+TIMSABA.barreling.add_dangerous_fluid(pentaborane_liquid)
 
 -- RECIPE
 boric_acid_from_diborane_gas = "boric-acid-from-diborane-gas"
 boric_acid_from_hydrochloric_acid = "boric-acid-from-hydrochloric-acid"
 TIMSABA.functions.create_recipes
 ({
-    -- SMELTING
+    -- ITEM
+    {
+        name = magnesium_boride,
+        categories = {smelting_filtering},
+        subgroup = is_boron,
+        icons = TWO_D_I(boron_oxide_III, magnesium_powder, magnesium_boride, magnesium_oxide),
+        order = e,
+        -- B₂O₃(s) + 6Mg(s) --> Mg₃B₂(s) + 3MgO(s)
+        ingredients =
+        {
+            {type = item, name = boron_oxide_III, amount = 4},
+            {type = item, name = magnesium_powder, amount = 24}
+        },
+        results =
+        {
+            {type = item, name = magnesium_boride, amount = 4},
+            {type = item, name = magnesium_oxide, amount = 4} -- 12
+        },
+        main_product = magnesium_boride
+    },
+    -- FLUID
     {
         name = boric_acid_solution,
         categories = {chemistry},
@@ -110,5 +157,40 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = boric_acid_solution, amount = 240},
             {type = fluid, name = hydrogen_angels, amount = 240} -- 720
         }
+    },
+    {
+        name = diborane_gas,
+        categories = {angels_advanced_chemistry},
+        subgroup = is_boron_fluid,
+        icons = THREE_D_I(magnesium_boride, hydrogen_chloride_angels, water_purified_angels, diborane_gas, nil, magnesium_chloride_solution),
+        order = b,
+        -- Mg₃B₂(s) + 6HCl(g) + 3H₂O(l) --> B₂H₃(g) + 3MgCl₂(aq)
+        ingredients =
+        {
+            {type = item, name = magnesium_boride, amount = 4},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 360},
+            {type = fluid, name = water_purified_angels, amount = 180}
+        },
+        results =
+        {
+            {type = fluid, name = diborane_gas, amount = 60},
+            {type = fluid, name = magnesium_chloride_solution, amount = 60} -- 180
+        },
+        main_product = diborane_gas
+    },
+    {
+        name = pentaborane_liquid,
+        categories = {chemistry},
+        subgroup = is_boron_fluid,
+        icons = THREE_R_I(diborane_gas, pentaborane_liquid, hydrogen_angels),
+        order = c,
+        -- 5B₂H₆(g) --> 2B₅H₉(l) + 6H₂(g)
+        ingredients = {{type = fluid, name = diborane_gas, amount = 150}},
+        results =
+        {
+            {type = fluid, name = pentaborane_liquid, amount = 60},
+            {type = fluid, name = hydrogen_angels, amount = 60} -- 180
+        },
+        main_product = pentaborane_liquid
     }
 })

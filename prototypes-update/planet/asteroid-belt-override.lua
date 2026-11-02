@@ -1,5 +1,4 @@
 if mods[asteroid_belt_mods] then
-    space_discovery_asteroid_belt = "space-discovery-asteroid-belt"
     if mods[tellus_mods] then
         table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, pathological_science_pack)
     end
@@ -19,7 +18,6 @@ if mods[asteroid_belt_mods] then
         table.insert(data_technology[space_discovery_asteroid_belt].prerequisites, apicultural_science_pack)
     end
 
-    space_discovery_kuiper_belt = "space-discovery-kuiper-belt"
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, space_discovery_asteroid_belt)
     if mods[paracelsin_mods] then
         table.insert(data_technology[planet_discovery_paracelsin].prerequisites, space_discovery_asteroid_belt)

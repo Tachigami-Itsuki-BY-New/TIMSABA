@@ -67,31 +67,43 @@ data_recipe[ice_platform].ingredients[2].amount = 64
 
 data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
-data_recipe[lithium].icons = BUILDING_R_I(lithium_chloride_angels, planet_aquilo)
+data_recipe[lithium].icons = THREE_D_I(water_thermal_angels, ammonia_angels, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_peroxide)
 data_recipe[lithium].order = d
-data_recipe[lithium].energy_required = 8 -- 2Ho + 16H₂O(LiCl/Hg) + 6NH₃ + 16F₂ --> 4LiCl + 2Ho(NO₃)₃(aq) + 4H₂O + 32HF - 5H₂
+data_recipe[lithium].energy_required = 8 -- 16H₂O(8LiCl)(l) + 8NH₃(g) + 4F₂(g) --> 8LiCl(s) + 8NH₄F(aq) + 4H₂O₂(l)
 data_recipe[lithium].ingredients =
 {
     {type = fluid, name = water_thermal_angels, amount = 240},
-    {type = item, name = holmium_powder, amount = 2},
-    {type = fluid, name = ammonia_angels, amount = 90},
-    {type = fluid, name = fluorine, amount = 240}
+    {type = fluid, name = ammonia_angels, amount = 120},
+    {type = fluid, name = fluorine, amount = 60}
 }
 data_recipe[lithium].results =
 {
-    {type = item, name = lithium_chloride_angels, amount = 4},
-    {type = item, name = ice, amount = 4},
-    {type = fluid, name = holmium_nitrate_III_solution, amount = 15}, -- 30
-    {type = fluid, name = hydrogen_fluoride_angels, amount = 240}, -- 480
-    {type = fluid, name = hydrogen_angels, amount = 15} -- 75
+    {type = item, name = lithium_chloride_angels, amount = 8},
+    {type = fluid, name = ammonium_fluoride_solution, amount = 120},
+    {type = fluid, name = hydrogen_peroxide, amount = 60}
 }
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
+data_recipe[lithium_plate].categories = {chemistry}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
-data_recipe[lithium_plate].icons = TWO_I(lithium_chloride_angels, lithium_bob)
+data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, hydrogen_fluoride_angels, ammonium_chloride, oxygen_angels)
 data_recipe[lithium_plate].order = e
-data_recipe[lithium_plate].energy_required = 8
+data_recipe[lithium_plate].energy_required = 4 -- 2LiCl(s) + 2NH₃(aq) + F₂(g) --> 2Li(s) + 2NH₄Cl(s) + 2HF(g) + O₂(g)
+data_recipe[lithium_plate].ingredients =
+{
+    {type = item, name = lithium_chloride_angels, amount = 60},
+    {type = fluid, name = ammonia_solution, amount = 60},
+    {type = fluid, name = fluorine, amount = 30}
+}
+data_recipe[lithium_plate].results =
+{
+    {type = item, name = lithium_bob, amount = 4},
+    {type = item, name = ammonium_chloride, amount = 4},
+    {type = fluid, name = hydrogen_fluoride_angels, amount = 60},
+    {type = fluid, name = oxygen_angels, amount = 30}
+}
+data_recipe[lithium_plate].main_product = lithium_bob
 data_recipe[lithium_plate].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
 data_item[cryogenic_science_pack].subgroup = is_aquilo_recipe
@@ -362,7 +374,7 @@ bobmods.lib.recipe.update_recycling_recipe
 })
 
 -- TECHNOLOGY
-data_technology[planet_discovery_aquilo].prerequisites = {tech_advanced_asteroid_processing, heating_tower, tech_advanced_ore_refining_6}
+data_technology[planet_discovery_aquilo].prerequisites = {tech_full_asteroid_processing, heating_tower, tech_advanced_ore_refining_6}
 data_technology[planet_discovery_aquilo].effects =
 {
     {type = unlock_space_location, space_location = planet_aquilo, use_icon_overlay_constant = true},

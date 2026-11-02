@@ -1236,9 +1236,9 @@ if mods[tellus_mods] then
     end
 
     -- TECHNOLOGY
-    local tech_discovery_tellus = "planet-discovery-tellus"
-    table.insert(data_technology[tech_discovery_tellus].prerequisites, tech_advanced_asteroid_processing)
-    data_technology[tech_discovery_tellus].unit.ingredients =
+    planet_discovery_tellus = "planet-discovery-tellus"
+    table.insert(data_technology[planet_discovery_tellus].prerequisites, tech_advanced_asteroid_processing)
+    data_technology[planet_discovery_tellus].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},

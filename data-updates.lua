@@ -85,7 +85,7 @@ require("prototypes-update.planet.eneas.eneas-override")
 --require("prototypes-update.planet.cubium.cubium-override")
 --require("prototypes-update.planet.nexus.nexus-override")
 
-require("prototypes-update.planet.asteroid-belt")
+require("prototypes-update.planet.asteroid-belt-override")
 
 require("prototypes-update.mods.mods-override")
 require("prototypes-update.mods.freezing")

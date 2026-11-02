@@ -1125,11 +1125,6 @@ if mods[moshine_mods] then
     -- SPACE
     table.insert(data_technology[promethium_science_pack].effects, {type = unlock_recipe, recipe = promethium_asteroid_crushing_1})
 
-    table.insert(data_technology[tech_advanced_full_asteroid_processing].effects, {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10})
-    table.insert(data_technology[tech_advanced_full_asteroid_processing].effects, {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11})
-    table.insert(data_technology[tech_advanced_full_asteroid_productivity].effects, {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1})
-    table.insert(data_technology[tech_advanced_full_asteroid_productivity].effects, {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1})
-
     tech_cosmicscanner_construction_1 = "moshine-tech-cosmicscanner-construction1"
     table.insert(data_technology[tech_cosmicscanner_construction_1].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[tech_cosmicscanner_construction_1].unit.ingredients, {utility_science_pack, 1})

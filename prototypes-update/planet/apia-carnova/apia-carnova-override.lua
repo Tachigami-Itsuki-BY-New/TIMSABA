@@ -208,17 +208,15 @@ if mods[apia_carnova_mods] then
         -- ORGANICS
         --{type = item, name = collagen, amount_min = 0, amount_max = 1, independent_probability = 0.25}
         -- WATER
-        --{type = fluid, name = water, amount_min = 0, amount_max = 15, independent_probability = 0.125}
+        --{type = fluid, name = water, amount_min = 0,   amount_max = 15, independent_probability = 0.125}
         -- METALS
         {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, independent_probability = 0.015625},
         {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, independent_probability = 0.015625},
         {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, independent_probability = 0.015625},
         {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, independent_probability = 0.015625},
         {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = boron,                    amount_min = 0, amount_max = 1, independent_probability = 0.015625},
     }
-    if mods[moshine_mods] then
-        table.insert(data_recipe[bone_meal_sieving].results, {type = item, name = boron, amount_min = 0, amount_max = 1, independent_probability = 0.015625})
-    end
 
     data_item[flesh].subgroup = is_carnova_recipe
     data_item[flesh].order = c
@@ -590,7 +588,7 @@ if mods[apia_carnova_mods] then
     })
 
     -- TECHNOLOGY
-    local planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
+    planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
     data_technology[planet_discovery_apia_carnova].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_apia_carnova].prerequisites, interstellar_science_pack)

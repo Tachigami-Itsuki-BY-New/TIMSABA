@@ -103,12 +103,12 @@ data_recipe[water_saline_separation].categories = {advanced_electrolysis}
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a
-data_recipe[water_saline_separation].energy_required = 8 -- (8H₂O + 2Na + 4Cl₂ + 2OH)(l) --> 2NaOH(s) + 8H₂(g) + 4Cl₂(g) + 4O₂(g)
+data_recipe[water_saline_separation].energy_required = 8 -- 16H₂O(8NaCl)(l) --> 8NaOH(s) + 12H₂(g) + 4Cl₂(g) + 4O₂(g)
 data_recipe[water_saline_separation].ingredients[1].amount = 240
 data_recipe[water_saline_separation].results =
 {
-    {type = item, name = sodium_hydroxide_angels, amount = 4},
-    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = item, name = sodium_hydroxide_angels, amount = 8},
+    {type = fluid, name = hydrogen_angels, amount = 360},
     {type = fluid, name = chlorine_angels, amount = 120},
     {type = fluid, name = oxygen_angels, amount = 120}
 }
@@ -387,7 +387,7 @@ data_recipe[nitrogen_monoxide_angels].ingredients[1].amount = 60
 data_recipe[nitrogen_monoxide_angels].ingredients[2].amount = 75
 data_recipe[nitrogen_monoxide_angels].results =
 {
-    {type = fluid, name = nitrogen_monoxide_angels, amount = 30}, -- 60
+    {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
     {type = fluid, name = steam, amount = 30}, -- 90
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
@@ -977,6 +977,23 @@ data_recipe[hydrogen_chloride_angels].ingredients[1].amount = 60
 data_recipe[hydrogen_chloride_angels].ingredients[2].amount = 60
 data_recipe[hydrogen_chloride_angels].results[1].amount = 120
 
+data_recipe[hydrogen_chloride_separation].categories = {angels_petrochem_electrolyser}
+data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
+data_recipe[hydrogen_chloride_separation].order = a_a
+data_recipe[hydrogen_chloride_separation].energy_required = 8 -- 2HCl -electrode/electrolys-> H₂ + Cl₂
+data_recipe[hydrogen_chloride_separation].ingredients =
+{
+    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
+    {type = item, name = electrode, amount = 1}
+}
+data_recipe[hydrogen_chloride_separation].results =
+{
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = chlorine_angels, amount = 120},
+    {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+}
+
 data_fluid[hydrochloric_acid_angels].order = b
 TIMSABA.barreling.add_dangerous_fluid(hydrochloric_acid_angels)
 data_recipe[hydrochloric_acid_angels].icons = THREE_I(hydrogen_chloride_angels, water_purified_angels, hydrochloric_acid_angels)
@@ -986,12 +1003,12 @@ data_recipe[hydrochloric_acid_angels].ingredients[1].amount = 60
 data_recipe[hydrochloric_acid_angels].ingredients[2].amount = 60
 data_recipe[hydrochloric_acid_angels].results[1].amount = 60
 
-data_recipe[hydrochloric_acid_from_sodium_chloride].localised_name = {"recipe-name.hydrochloric-from-sodium-chlroide"}
+data_recipe[hydrochloric_acid_from_sodium_chloride].localised_name = {"fluid-name." .. hydrochloric_acid_angels}
 data_recipe[hydrochloric_acid_from_sodium_chloride].categories = {chemistry}
 data_recipe[hydrochloric_acid_from_sodium_chloride].subgroup = is_chlorine_fluids
 data_recipe[hydrochloric_acid_from_sodium_chloride].icons = TWO_D_I(sodium_chloride_solution, sulfuric_acid_angels, hydrochloric_acid_angels, sodium_sulfate_angels)
 data_recipe[hydrochloric_acid_from_sodium_chloride].order = b_a
--- 2NaCl(aq) + H₂SO₄ --> 2HCl(aq) + Na₂SO₄
+-- 2NaCl(aq) + H₂SO₄(l) --> 2HCl(aq) + Na₂SO₄(s)
 data_recipe[hydrochloric_acid_from_sodium_chloride].ingredients =
 {
     {type = fluid, name = sodium_chloride_solution, amount = 60},
@@ -1665,15 +1682,24 @@ data_recipe[oxidizer_capsule_angels].order = c
 data_recipe[oxidizer_capsule_angels].energy_required = 4
 data_recipe[oxidizer_capsule_angels].ingredients =
 {
+    {type = item, name = plastic, amount = 4},
     {type = fluid, name = nitric_acid_angels, amount = 30},
     {type = fluid, name = dinitrogen_tetroxide_angels, amount = 30}
 }
+data_recipe[oxidizer_capsule_angels].results[1].amount = 4
 
 data_item[fuel_capsule_angels].order = d
 data_item[fuel_capsule_angels].stack_size = 200
-data_recipe[fuel_capsule_angels].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, fuel_capsule_angels)
+data_recipe[fuel_capsule_angels].icons = THREE_I(hydrazine_angels, dimethylhydrazine_angels, fuel_capsule_angels)
 data_recipe[fuel_capsule_angels].order = d
 data_recipe[fuel_capsule_angels].energy_required = 4
+data_recipe[fuel_capsule_angels].ingredients =
+{
+    {type = item, name = plastic, amount = 4},
+    {type = fluid, name = hydrazine_angels, amount = 30},
+    {type = fluid, name = dimethylhydrazine_angels, amount = 30}
+}
+data_recipe[fuel_capsule_angels].results[1].amount = 4
 
 data_item[rocket_fuel].order = e
 data_item[rocket_fuel].stack_size = 50

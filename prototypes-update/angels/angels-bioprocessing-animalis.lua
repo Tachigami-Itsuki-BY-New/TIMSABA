@@ -970,11 +970,11 @@ data_item_subgroup["angels-bio-processing-alien-intermediate"].order = f
 
 data_recipe[alien_spores].icons = FOUR_R_I(polluted_water_for_fish, alien_spores, nil, water_yellow_waste)
 data_recipe[alien_spores].energy_required = 8
-data_recipe[alien_spores].ingredients[1].amount = 120
+data_recipe[alien_spores].ingredients[1].amount = 240
 data_recipe[alien_spores].results =
 {
-    {type = fluid, name = alien_spores, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 60}
+    {type = fluid, name = alien_spores, amount = 120},
+    {type = fluid, name = water_yellow_waste, amount = 120}
 }
 
 data_recipe[alien_bacteria].icons = FOUR_I(limestone_angels, alien_spores, hydrochloric_acid_angels, alien_bacteria)

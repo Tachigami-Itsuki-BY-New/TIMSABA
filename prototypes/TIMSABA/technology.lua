@@ -475,7 +475,7 @@ data:extend
             {type = unlock_recipe, recipe = thorium_nitrate_IV_solution},
             {type = unlock_recipe, recipe = thorium_hydroxide_IV},
             {type = unlock_recipe, recipe = thorium_oxide_IV_2},
-            {type = unlock_recipe, recipe = ammonium_nitrate_alt},
+            {type = unlock_recipe, recipe = ammonium_nitrate_2},
             {type = unlock_recipe, recipe = gaseous_nitric_acid},
             {type = unlock_recipe, recipe = gaseous_nitric_acid_cooling}
         },

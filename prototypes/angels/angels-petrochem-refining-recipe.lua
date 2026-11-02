@@ -11,6 +11,44 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = fluid, name = compressed_air, amount = 960}},
         results = {{type = fluid, name = argon_gas, amount = (15 / 2)}},
         main_product = argon_gas
+    },
+    {
+        name = hydrogen_liquid,
+        categories = {angels_cooling},
+        subgroup = is_basic_fluids,
+        icons = TWO_I(hydrogen_angels, hydrogen_liquid, number_1),
+        order = i,
+        energy_required = 8,
+        ingredients =
+        {
+            {type = fluid, name = hydrogen_angels, amount = 240},
+            {type = fluid, name = coolant, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = hydrogen_liquid, amount = 240},
+            {type = fluid, name = coolant_used, amount = 30, temperature = 300} -- 60
+        },
+        main_product = hydrogen_liquid
+    },
+    {
+        name = oxygen_liquid,
+        categories = {angels_cooling},
+        subgroup = is_basic_fluids,
+        icons = TWO_I(oxygen_angels, oxygen_liquid, number_1),
+        order = j,
+        energy_required = 8,
+        ingredients =
+        {
+            {type = fluid, name = oxygen_angels, amount = 240},
+            {type = fluid, name = coolant, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = oxygen_liquid, amount = 240},
+            {type = fluid, name = coolant_used, amount = 30, temperature = 300} -- 60
+        },
+        main_product = oxygen_liquid
     }
 })
 
@@ -231,19 +269,18 @@ TIMSABA.functions.create_recipes
 })
 
 -- NITROGEN
-ammonium_nitrate_alt = "ammonium-nitrate-alt"
-ammonia_gas_alt = "ammonia-gas-alt"
-nitrogen_monoxide_2 = "nitrogen-monoxide-2"
+ammonium_nitrate_2 = "ammonium-nitrate-2"
+ammonia_gas_2 = "ammonia-gas-2"
 ammonium_chloride_reprocess = "ammonium-chloride-reprocess"
 melamine_solution_from_dicyandiamide_solution = "melamine-solution-from-dicyandiamide-solution"
-ammonium_chloride_solution_alt = "ammonium-chloride-solution-alt"
-ammonium_sulfate_solution_alt = "ammonium-sulfate-solution-alt"
+ammonium_chloride_solution_2 = "ammonium-chloride-solution-2"
+ammonium_sulfate_solution_2 = "ammonium-sulfate-solution-2"
 ammonium_hydrosulfate_reprocess = "ammonium-hydrosulfate-reprocess"
 TIMSABA.functions.create_recipes
 ({
     {
         localised_name = {"item-name." .. ammonium_nitrate_angels},
-        name = ammonium_nitrate_alt,
+        name = ammonium_nitrate_2,
         categories = {chemistry},
         subgroup = is_nitrogen,
         icons = THREE_R_I(ammonium_nitrate_solution, ammonium_nitrate_angels, steam),
@@ -359,7 +396,8 @@ TIMSABA.functions.create_recipes
     },
     -- FLUID
     {
-        name = ammonia_gas_alt,
+        localised_name = {"fluid-name." .. ammonia_angels},
+        name = ammonia_gas_2,
         categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_R_I(ammonia_solution, ammonia_angels, steam),
@@ -375,28 +413,6 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = steam, amount = 60},
         },
         main_product = ammonia_angels
-    },
-    {
-        name = nitrogen_monoxide_2,
-        categories = {chemistry},
-        subgroup = is_nitrogen_fluids,
-        icons = TWO_D_I(ammonia_angels, oxygen_angels, nitrogen_monoxide_angels, steam, number_2),
-        order = c_a,
-        energy_required = 2, -- 4NH₃ + 5O₂ -cat-> 4NO + 6H₂O
-        ingredients =
-        {
-            {type = fluid, name = ammonia_angels, amount = 60},
-            {type = fluid, name = oxygen_angels, amount = 75},
-            {type = item, name = catalyst_yellow, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
-            {type = fluid, name = steam, amount = 30}, -- 90
-            {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = nitrogen_monoxide_angels
     },
     {
         name = melamine_solution_from_dicyandiamide_solution,
@@ -419,7 +435,8 @@ TIMSABA.functions.create_recipes
         main_product = melamine_solution_angels
     },
     {
-        name = ammonium_chloride_solution_alt,
+        localised_name = {"fluid-name." .. ammonium_chloride_solution_angels},
+        name = ammonium_chloride_solution_2,
         categories = {angels_liquifying},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(ammonium_chloride, water_purified_angels, ammonium_chloride_solution_angels),
@@ -464,7 +481,8 @@ TIMSABA.functions.create_recipes
         main_product = ammonium_sulfate_solution
     },
     {
-        name = ammonium_sulfate_solution_alt,
+        localised_name = {"fluid-name." .. ammonium_sulfate_solution},
+        name = ammonium_sulfate_solution_2,
         categories = {chemistry},
         subgroup = is_nitrogen_fluids,
         icons = THREE_I(ammonium_hydrosulfate, ammonia_solution, ammonium_sulfate_solution),
@@ -579,18 +597,18 @@ TIMSABA.functions.create_recipes
         name = gaseous_nitric_acid_cooling,
         categories = {angels_cooling},
         subgroup = is_nitrogen_fluids_2,
-        -- HNO₃(g) -coolant-> HNO₃(l)
+        energy_required = 8, -- HNO₃(g) -coolant-> HNO₃(l)
         icons = TWO_I(gaseous_nitric_acid, nitric_acid_angels),
         order = a_a,
         ingredients =
         {
-            {type = fluid, name = gaseous_nitric_acid, amount = 120},
-            {type = fluid, name = coolant, amount = 120}
+            {type = fluid, name = gaseous_nitric_acid, amount = 240},
+            {type = fluid, name = coolant, amount = 60}
         },
         results =
         {
             {type = fluid, name = nitric_acid_angels, amount = 120},
-            {type = fluid, name = coolant_used, amount = 60} -- 120
+            {type = fluid, name = coolant_used, amount = 30, temperature = 300} -- 60
         },
         main_product = nitric_acid_angels
     }
@@ -605,16 +623,16 @@ TIMSABA.functions.create_recipes
         subgroup = is_fluorine_fluid,
         icons = TWO_I(hydrogen_fluoride_angels, hydrogen_fluoride_liquefied),
         order = c,
-        -- HF(g) -Coolant-> HF(liquefied)
+        energy_required = 8, -- HF(g) -Coolant-> HF(liquefied)
         ingredients =
         {
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 120},
-            {type = fluid, name = coolant, amount = 120}
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 240},
+            {type = fluid, name = coolant, amount = 60}
         },
         results =
         {
-            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 120},
-            {type = fluid, name = coolant_used, amount = 60} -- 120
+            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 240},
+            {type = fluid, name = coolant_used, amount = 30, temperature = 300} -- 60
         },
         main_product = hydrogen_fluoride_liquefied
     }
@@ -626,13 +644,13 @@ sodium_sulfate = "sodium-sulfate"
 sodium_carbonate = "sodium-carbonate"
 sodium_cyanide_2 = "sodium-cyanide-2"
 sodium_nitrate = "sodium-nitrate"
-sodium_peroxide_reprocess = "sodium-peroxide-reprocess"
 sodium_hypochlorite_solution_from_sodium_hydroxide_solution = "sodium-hypochlorite-solution-from-sodium-hydroxide-solution"
 sodium_chlorate_solution_from_sodium_hypochlorite_solution = "sodium-chlorate-solution-from-sodium-hypochlorite-solution"
 sodium_perchlorate_solution_from_sodium_chlorate_solution = "sodium-perchlorate-solution-from-sodium-chlorate-solution"
 sodium_chloride_solution_from_sodium_bicarbonate_solution = "sodium-chloride-solution-from-sodium-bicarbonate-solution"
 sodium_sulfate_from_sodium_bicarbonate_solution = "sodium-sulfate-from-sodium-bicarbonate-solution"
 sodium_cyanide_solution_2 = sodium_cyanide_solution .. "-2"
+sodium_cyanide_solution_3 = sodium_cyanide_solution .. "-3"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -729,28 +747,6 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = sodium_peroxide, amount = 8}},
         main_product = sodium_peroxide
-    },
-    {
-        name = sodium_peroxide_reprocess,
-        categories = {chemistry},
-        subgroup = is_sodium,
-        icons = TWO_D_I(sodium_peroxide, hydrocyanic_acid, sodium_cyanide_angels, hydrogen_peroxide),
-        order = l_a,
-        energy_required = 2, -- Na₂O₂(s) + 2HCN(aq) -cat-> 2NaCN(aq) + H₂O₂(l)
-        ingredients =
-        {
-            {type = item, name = sodium_peroxide, amount = 4},
-            {type = fluid, name = hydrocyanic_acid, amount = 120},
-            {type = item, name = catalyst_green, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = sodium_cyanide_angels, amount = 8},
-            {type = fluid, name = hydrogen_peroxide, amount = 60},
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = sodium_cyanide_angels
     },
     {
         name = sodium_chloride_solution,
@@ -984,6 +980,29 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = sodium_cyanide_solution, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 30} -- 60
+        },
+        main_product = sodium_cyanide_solution
+    },
+    {
+        localised_name = {"fluid-name." .. sodium_cyanide_solution},
+        name = sodium_cyanide_solution_3,
+        categories = {chemistry},
+        subgroup = is_sodium_fluid,
+        icons = TWO_D_I(sodium_peroxide, hydrocyanic_acid, sodium_cyanide_solution, hydrogen_peroxide),
+        order = j_b,
+        -- Na₂O₂(s) + 2HCN(aq) -cat-> 2NaCN(aq) + H₂O₂(l)
+        ingredients =
+        {
+            {type = item, name = sodium_peroxide, amount = 2},
+            {type = fluid, name = hydrocyanic_acid, amount = 60},
+            {type = item, name = catalyst_green, amount = 1}
+        },
+        results =
+        {
+            {type = fluid, name = sodium_cyanide_solution, amount = 60},
+            {type = fluid, name = hydrogen_peroxide, amount = 30},
+            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
+            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = sodium_cyanide_solution
     }
