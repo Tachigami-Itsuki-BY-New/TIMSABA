@@ -134,7 +134,7 @@ if mods[asteroid_belt_mods] then
         update_space_connection(planet_nauvis, 0, planet_lignumis, 2)
     end
 
-    update_space_connection(planet_nauvis, 16, planet_vulcanus, 8)
+    update_space_connection(planet_nauvis, 16, planet_vulcanus, 8, 22.5)
 
     if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
         update_space_connection(planet_nauvis, 16, planet_gleba, 21, 90)
@@ -197,40 +197,40 @@ if mods[asteroid_belt_mods] then
     end
 
     -- VULCANUS
-    update_planet_or_space_location(planet_vulcanus, nil, 800, nil, 8, 0.75, 0.25)
+    update_planet_or_space_location(planet_vulcanus, nil, 800, nil, 8, 0.8125, 0.25)
 
     if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_gleba, 21, 90)
+        update_space_connection(planet_vulcanus, 8, planet_gleba, 21, 67.5)
     else
         remove_space_connection(planet_vulcanus, planet_gleba)
     end
 
     if settings.startup[setting_space_connection_all].value or (not mods[moshine_mods] and mods[arig_mods] and mods[castra_mods]) then
         Planet(planet_vulcanus):create_space_connection(Planet(planet_fulgora))
-        update_space_connection(planet_vulcanus, 8, planet_fulgora, 25, 90)
+        update_space_connection(planet_vulcanus, 8, planet_fulgora, 25, 112.5)
     end
 
     if mods[moshine_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_moshine, 6, 67.5)
+        update_space_connection(planet_vulcanus, 8, planet_moshine, 6, 90)
     end
 
     if mods[arig_mods] then
         Planet(planet_vulcanus):create_space_connection(Planet(planet_arig))
-        update_space_connection(planet_vulcanus, 8, planet_arig, 14, 45)
+        update_space_connection(planet_vulcanus, 8, planet_arig, 14, 67.5)
     end
 
     if mods[tellus_mods] then
         Planet(planet_vulcanus):create_space_connection(Planet(planet_tellus))
-        update_space_connection(planet_vulcanus, 8, planet_tellus, 17, 112.5)
+        update_space_connection(planet_vulcanus, 8, planet_tellus, 17, 90)
     end
 
     if mods[castra_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_castra, 22, 22.5)
+        update_space_connection(planet_vulcanus, 8, planet_castra, 22, 45)
     end
 
     if mods[muria_mods] then
         Planet(planet_vulcanus):create_space_connection(Planet(planet_muria))
-        update_space_connection(planet_vulcanus, 8, planet_muria, 20, 45)
+        update_space_connection(planet_vulcanus, 8, planet_muria, 20, 22.5)
     end
 
     remove_space_connection(planet_vulcanus, planet_corrundum)

@@ -1046,7 +1046,8 @@ end
 
 if mods[bobvehicleequipment] then
     if not mods[bobtech] then
-        table.insert(data_technology[vehicle_solar_panel_eq_5].prerequisites, tech_molybdenum_processing, tech_rhenium_processing)
+        table.insert(data_technology[vehicle_solar_panel_eq_5].prerequisites, tech_molybdenum_processing)
+        table.insert(data_technology[vehicle_solar_panel_eq_5].prerequisites, tech_rhenium_processing)
     end
 end
 
@@ -1726,7 +1727,7 @@ data_technology[tech_platinum_smelting_2].effects =
     {type = unlock_recipe, recipe = copper_nitrate_II_solution},
     {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_nitrate_II_solution},
     {type = unlock_recipe, recipe = ammonium_chloride_reprocess},
-    {type = unlock_recipe, recipe = ammonia_gas_alt}
+    {type = unlock_recipe, recipe = ammonia_gas_2}
 }
 
 data_technology[tech_platinum_smelting_3].effects =
@@ -1956,7 +1957,7 @@ data_technology[tech_metallurgy_5].effects =
     {type = unlock_recipe, recipe = copper_chloride_II_solution_angels},
     {type = unlock_recipe, recipe = copper_chloride_I},
     {type = unlock_recipe, recipe = copper_chloride_I_alt},
-    {type = unlock_recipe, recipe = ammonium_chloride_solution_alt},
+    {type = unlock_recipe, recipe = ammonium_chloride_solution_2},
     {type = unlock_recipe, recipe = ammonium_dichlorocuprate_I_solution}
 }
 
@@ -2024,7 +2025,7 @@ data_technology[tech_nitrogen_processing_4].effects =
     {type = unlock_recipe, recipe = ammonium_chloride_solution_angels},
     {type = unlock_recipe, recipe = dicyandiamide_solution},
     {type = unlock_recipe, recipe = melamine_solution_from_dicyandiamide_solution},
-    {type = unlock_recipe, recipe = ammonium_sulfate_solution_alt},
+    {type = unlock_recipe, recipe = ammonium_sulfate_solution_2},
     {type = unlock_recipe, recipe = ammonium_hydrosulfate_reprocess},
     {type = unlock_recipe, recipe = hydrocyanic_acid},
     {type = unlock_recipe, recipe = sodium_cyanide_solution_2},
@@ -2087,7 +2088,11 @@ table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock
 table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock_recipe, recipe = chloroethane_gas})
 table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock_recipe, recipe = butane_angels})
 
-data_technology[tech_chlorine_processing_3].effects = {{type = unlock_recipe, recipe = hydrochloric_acid_from_sodium_chloride}}
+data_technology[tech_chlorine_processing_3].effects =
+{
+    {type = unlock_recipe, recipe = hydrochloric_acid_from_sodium_chloride},
+    {type = unlock_recipe, recipe = hydrogen_chloride_separation},
+}
 
 data_technology[tech_chlorine_processing_4].effects =
 {
@@ -2182,7 +2187,6 @@ data_technology[tech_advanced_chemistry_5].effects =
     {type = unlock_recipe, recipe = acetone_angels},
     {type = unlock_recipe, recipe = cumene_process},
     {type = unlock_recipe, recipe = bisphenol_a},
-    {type = unlock_recipe, recipe = nitrogen_monoxide_2},
     {type = unlock_recipe, recipe = calcium_sulfate_angels},
     {type = unlock_recipe, recipe = lime_from_calcium_hydroxide},
     {type = unlock_recipe, recipe = calcium_carbide},

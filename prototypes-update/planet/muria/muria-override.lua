@@ -522,7 +522,7 @@ if mods[muria_mods] then
     })
 
     -- TECHNOLOGY
-    local planet_discovery_muria = "planet-discovery-muria"
+    planet_discovery_muria = "planet-discovery-muria"
     data_technology[planet_discovery_muria].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_muria].prerequisites, interstellar_science_pack)

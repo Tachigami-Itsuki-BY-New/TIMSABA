@@ -175,7 +175,7 @@ if mods[secretas_frozeta_mods] then
 
     -- TECHNOLOGY
     planet_discovery_secretas = "planet-discovery-secretas"
-    data_technology[planet_discovery_secretas].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_secretas].prerequisites = {tech_full_asteroid_processing, heating_tower}
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = auric_asteroid_crushing})
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = ammonia_from_frozeta_air})
     data_technology[planet_discovery_secretas].unit.ingredients =

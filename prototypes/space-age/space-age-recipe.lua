@@ -52,11 +52,12 @@ advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-cr
 advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Germanium ore
 advanced_full_metallic_asteroid_crushing_9 = "advanced-full-metallic-asteroid-crushing-9" -- Gallium ore
 --advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10" -- Neodymium ore / Moshine
---advanced_full_metallic_asteroid_crushing_11 = "advanced-full-metallic-asteroid-crushing-10" -- Cerium ore / Moshine
+--advanced_full_metallic_asteroid_crushing_11 = "advanced-full-metallic-asteroid-crushing-11" -- Cerium ore / Moshine
 local function metallic_asteroid_crushing(name, order, result)
     TIMSABA.functions.create_recipes
     ({
         {
+            localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. result}},
             name = name,
             categories = {crushing},
             subgroup = is_space_environment_1,
@@ -102,6 +103,7 @@ advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"
 TIMSABA.functions.create_recipes
 ({
     {
+        localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. calcite}},
         name = advanced_carbonic_asteroid_crushing_2,
         categories = {crushing},
         subgroup = is_space_environment_2,
@@ -120,180 +122,40 @@ oxide_asteroid_crushing_2 = "timsaba-oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
 oxide_asteroid_crushing_4 = "oxide-asteroid-crushing-4"
 oxide_asteroid_crushing_5 = "oxide-asteroid-crushing-5"
-advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"
+advanced_full_oxide_asteroid_crushing_1 = "advanced-full-oxide-asteroid-crushing-1"
+advanced_full_oxide_asteroid_crushing_2 = "advanced-full-oxide-asteroid-crushing-2"
 local function oxide_asteroid_crushing(name, categories, order, type_results, result, amount)
-    TIMSABA.functions.create_recipes
-    ({
-        {
-            name = name,
-            categories = categories,
-            subgroup = is_space_environment_3,
-            icons = TWO_I(oxide_asteroid_chunk, result),
-            order = order,
-            allow_productivity = true,
-            ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-            results = {{type = type_results, name = result, amount = amount}},
-            main_product = result
-        }
-    })
+    local recipe =
+    {
+        name = name,
+        categories = categories,
+        subgroup = is_space_environment_3,
+        icons = TWO_I(oxide_asteroid_chunk, result),
+        order = order,
+        allow_productivity = true,
+        ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
+        results = {{type = type_results, name = result, amount = amount}},
+        main_product = result
+    }
+    if type_results == item then
+        recipe.localised_name = {"recipe-name.oxide-asteroid-crushing", {"item-name." .. result}}
+    end
+    if type_results == fluid then
+        recipe.localised_name = {"recipe-name.oxide-asteroid-crushing", {"fluid-name." .. result}}
+    end
+
+    TIMSABA.functions.create_recipes({recipe})
 end
-oxide_asteroid_crushing(oxide_asteroid_crushing_2,          {chemistry}, e_b, fluid,          nitrogen_oxide, 120)
-oxide_asteroid_crushing(oxide_asteroid_crushing_3,          {chemistry}, e_c, fluid,      chlorine_oxide_gas, 120)
-oxide_asteroid_crushing(oxide_asteroid_crushing_4,           {crushing}, e_d,  item,            sodium_oxide, 8)
-oxide_asteroid_crushing(oxide_asteroid_crushing_5,           {crushing}, e_e,  item,           lithium_oxide, 8)
-oxide_asteroid_crushing(advanced_oxide_asteroid_crushing_2, {chemistry}, f_b, fluid, nitrogen_dioxide_angels, 120)
-oxide_asteroid_crushing(full_oxide_asteroid_crushing_1,     {chemistry}, g_a, fluid,     oxygen_fluoride_gas, 120)
+oxide_asteroid_crushing(oxide_asteroid_crushing_2,               {chemistry}, e_b, fluid,              nitrogen_oxide, 120)
+oxide_asteroid_crushing(oxide_asteroid_crushing_3,               {chemistry}, e_c, fluid,          chlorine_oxide_gas, 120)
+oxide_asteroid_crushing(oxide_asteroid_crushing_4,                {crushing}, e_d,  item,                sodium_oxide, 8)
+oxide_asteroid_crushing(oxide_asteroid_crushing_5,                {crushing}, e_e,  item,               lithium_oxide, 8)
+oxide_asteroid_crushing(full_oxide_asteroid_crushing_1,          {chemistry}, g_a, fluid, dinitrogen_tetroxide_angels, 120)
+oxide_asteroid_crushing(advanced_full_oxide_asteroid_crushing_1, {chemistry}, h_a, fluid,         oxygen_fluoride_gas, 120)
+oxide_asteroid_crushing(advanced_full_oxide_asteroid_crushing_2,  {crushing}, h_b,  item,             boron_oxide_III, 8)
 
 -- SPACE PROCESSING
-nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
-chlorine_oxide_separation = "chlorine-oxide-gas-separation"
-nitrogen_monoxide_space = "nitrogen-monoxide-gas-space"
-hydrazine_space = "hydrazine-liquid-space"
-dinitrogen_tetroxide_space = "dinitrogen-tetroxide-gas-space"
-oxygen_fluoride_space = "oxygen-fluoride-gas-space"
-fluoroketone_liquid = "fluoroketone-liquid"
-TIMSABA.functions.create_recipes
-({
-    {
-        name = nitrogen_oxide_separation,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = THREE_R_I(nitrogen_oxide, nitrogen_angels, oxygen_angels),
-        order = b,
-        energy_required = 2, -- 2N₂O --> 2N₂ + O₂
-        ingredients =
-        {
-            {type = fluid, name = nitrogen_oxide, amount = 60},
-        },
-        results =
-        {
-            {type = fluid, name = nitrogen_angels, amount = 60},
-            {type = fluid, name = oxygen_angels, amount = 30}
-        },
-        main_product = nitrogen_angels
-    },
-    {
-        name = chlorine_oxide_separation,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = THREE_R_I(chlorine_oxide_gas, chlorine_angels, oxygen_angels),
-        order = c,
-        energy_required = 2, -- 2Cl₂O --> 2Cl₂ + O₂
-        ingredients = {{type = fluid, name = chlorine_oxide_gas, amount = 60}},
-        results =
-        {
-            {type = fluid, name = chlorine_angels, amount = 60},
-            {type = fluid, name = oxygen_angels, amount = 30}
-        },
-        main_product = chlorine_angels
-    },
-    {
-        name = nitrogen_monoxide_space,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = BUILDING_R_I(nitrogen_monoxide_angels, space_platform),
-        order = e,
-        energy_required = 2, -- 4NH₃ + 5O₂ -cat-> 4NO + 6H₂O
-        ingredients =
-        {
-            {type = fluid, name = ammonia_angels, amount = 60},
-            {type = fluid, name = oxygen_angels, amount = 75},
-            {type = item, name = catalyst_red, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 15}, -- 60
-            {type = fluid, name = steam, amount = 30}, -- 90
-            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = nitrogen_monoxide_angels,
-        surface_conditions = {{property = gravity, min = 0, max = 0}}
-    },
-    {
-        name = hydrazine_space,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = BUILDING_R_I(hydrazine_angels, space_platform),
-        order = f,
-        -- NH₂Cl + NH₃ -cat-> N₂H₄ + HCl
-        ingredients =
-        {
-            {type = fluid, name = monochloramine_angels, amount = 60},
-            {type = fluid, name = ammonia_angels, amount = 60},
-            {type = item, name = catalyst_red, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = hydrazine_angels, amount = 30}, -- 60
-            {type = fluid, name = hydrogen_chloride_angels, amount = 30}, -- 60
-            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = hydrazine_angels,
-        surface_conditions = {{property = gravity, min = 0, max = 0}}
-    },
-    {
-        name = dinitrogen_tetroxide_space,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = BUILDING_R_I(nitrogen_dioxide_angels, space_platform),
-        order = g,
-        energy_required = 2, -- 2NO₂ -cat-> N₂O₄
-        ingredients =
-        {
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 60},
-            {type = item, name = catalyst_red, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = dinitrogen_tetroxide_angels, amount = 15}, -- 30
-            {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = dinitrogen_tetroxide_angels,
-        surface_conditions = {{property = gravity, min = 0, max = 0}}
-    },
-    {
-        name = oxygen_fluoride_space,
-        categories = {cryogenics},
-        subgroup = is_space_processing,
-        icons = BUILDING_R_I(oxygen_fluoride_gas, space_platform),
-        order = h,
-        -- 2F₂ + O₂ --> OF₂
-        ingredients =
-        {
-            {type = fluid, name = fluorine, amount = 120},
-            {type = fluid, name = oxygen_angels, amount = 60}
-        },
-        results = {{type = fluid, name = oxygen_fluoride_gas, amount = 60}},
-        main_product = oxygen_fluoride_gas,
-        surface_conditions = {{property = pressure, min = 0, max = 0}}
-    },
-    {
-        name = fluoroketone_liquid,
-        categories = {cryogenics},
-        subgroup = is_space_processing,
-        icons = BUILDING_R_I(fluoroketone_hot, space_platform),
-        order = i,
-        energy_required = 8, -- 2C₃F₆ + OF₂ --> C₆F₁₂O + F₂
-        ingredients =
-        {
-            {type = fluid, name = hexafluoropropylene_gas, amount = 120},
-            {type = fluid, name = oxygen_fluoride_gas, amount = 60}
-        },
-        results =
-        {
-            {type = fluid, name = fluoroketone_hot, amount = 60},
-            {type = fluid, name = fluorine, amount = 30} -- 60
-        },
-        main_product = fluoroketone_hot,
-        surface_conditions = {{property = pressure, min = 0, max = 0}}
-    }
-})
-
--- SPACE PROCESSING 2
 sodium_hydroxide_space = "sodium-hydroxide-space"
 lithium_space = "lithium-space"
 lime_space = "lime-space"
@@ -302,11 +164,11 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_hydroxide_space,
         categories = {chemistry},
-        subgroup = is_space_processing_2,
+        subgroup = is_space_processing,
         icons = THREE_I(sodium_oxide, water_purified_angels, sodium_hydroxide_angels),
         order = a,
         allow_quality = true,
-        -- Na₂O + H₂O --> 2NaOH 
+        -- Na₂O(s) + H₂O(l) --> 2NaOH(s)
         ingredients =
         {
             {type = item, name = sodium_oxide, amount = 4},
@@ -318,11 +180,11 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_space,
         categories = {smelting_filtering},
-        subgroup = is_space_processing_2,
+        subgroup = is_space_processing,
         icons = TWO_D_I(lithium_oxide, silicon_powder, lithium_bob, silicon_oxide_IV),
         order = b,
         allow_quality = true,
-        -- 2Li₂O + Si -electrolys-> 4Li + SiO₂
+        -- 2Li₂O(s) + Si(s) --> 4Li(s) + SiO₂(s)
         ingredients =
         {
             {type = item, name = lithium_oxide, amount = 8},
@@ -338,17 +200,143 @@ TIMSABA.functions.create_recipes
     {
         name = lime_space,
         categories = {chemistry},
-        subgroup = is_space_processing_2,
+        subgroup = is_space_processing,
         icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
         order = c,
-        energy_required = 8, -- CaCO₃ --> CaO + CO₂
-        ingredients = {{type = item, name = calcite, amount = 16}},
+        -- CaCO₃(s) --> CaO(s) + CO₂(g)
+        ingredients = {{type = item, name = calcite, amount = 4}},
         results =
         {
-            {type = item, name = lime_angels, amount = 16},
-            {type = fluid, name = carbon_dioxide_angels, amount = 120} -- 240
+            {type = item, name = lime_angels, amount = 4},
+            {type = fluid, name = carbon_dioxide_angels, amount = 30} -- 60
         },
         main_product = lime_angels
+    }
+})
+
+-- SPACE PROCESSING 2
+nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
+chlorine_oxide_separation = "chlorine-oxide-gas-separation"
+fluoroketone_liquid = "fluoroketone-liquid"
+oxygen_fluoride_gas_2 = oxygen_fluoride_gas .. "-2"
+thruster_fuel_3 = thruster_fuel .. "-3"
+thruster_fuel_4 = thruster_fuel .. "-4"
+thruster_oxidizer_3 = thruster_oxidizer .. "-3"
+thruster_oxidizer_4 = thruster_oxidizer .. "-4"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = nitrogen_oxide_separation,
+        categories = {chemistry},
+        subgroup = is_space_processing_2,
+        icons = THREE_R_I(nitrogen_oxide, nitrogen_angels, oxygen_angels),
+        order = b,
+        -- 2N₂O(g) --> 2N₂(g) + O₂(g)
+        ingredients =
+        {
+            {type = fluid, name = nitrogen_oxide, amount = 60},
+        },
+        results =
+        {
+            {type = fluid, name = nitrogen_angels, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 30}
+        },
+        main_product = nitrogen_angels
+    },
+    {
+        name = chlorine_oxide_separation,
+        categories = {chemistry},
+        subgroup = is_space_processing_2,
+        icons = THREE_R_I(chlorine_oxide_gas, chlorine_angels, oxygen_angels),
+        order = c,
+        -- 2Cl₂O(g) --> 2Cl₂(g) + O₂(g)
+        ingredients = {{type = fluid, name = chlorine_oxide_gas, amount = 60}},
+        results =
+        {
+            {type = fluid, name = chlorine_angels, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 30}
+        },
+        main_product = chlorine_angels
+    },
+    {
+        localised_name = {"fluid-name." .. fluoroketone_hot},
+        name = fluoroketone_liquid,
+        categories = {cryogenics},
+        subgroup = is_space_processing_2,
+        icons = THREE_I(hexafluoropropylene_gas, oxygen_fluoride_gas, _C6F12O_),
+        order = d,
+        -- 2C₃F₆(g) + OF₂(g) --> C₆F₁₂O(l) + F₂(g)
+        ingredients =
+        {
+            {type = fluid, name = hexafluoropropylene_gas, amount = 120},
+            {type = fluid, name = oxygen_fluoride_gas, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = fluoroketone_hot, amount = 60},
+            {type = fluid, name = fluorine, amount = 30} -- 60
+        },
+        main_product = fluoroketone_hot
+    },
+    {
+        localised_name = {"fluid-name." .. oxygen_fluoride_gas},
+        categories = {chemistry},
+        name = oxygen_fluoride_gas_2,
+        subgroup = is_space_processing_2,
+        icons = THREE_I(fluorine, oxygen_angels, oxygen_fluoride_gas),
+        order = e,
+        -- 2F₂(g) + O₂(g) --> 2OF₂(g)
+        ingredients =
+        {
+            {type = fluid, name = fluorine, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 30}
+        },
+        results = {{type = fluid, name = oxygen_fluoride_gas, amount = 60}},
+        main_product = oxygen_fluoride_gas
+    },
+    {
+        localised_name = {"fluid-name." .. thruster_fuel},
+        categories = {chemistry},
+        name = thruster_fuel_3,
+        subgroup = is_space_processing_2,
+        icons = TWO_I(dimethylhydrazine_angels, thruster_fuel, number_3),
+        order = y_b,
+        ingredients = {{type = fluid, name = dimethylhydrazine_angels, amount = 60}},
+        results = {{type = fluid, name = thruster_fuel, amount = 480}},
+        main_product = thruster_fuel
+    },
+    {
+        localised_name = {"fluid-name." .. thruster_oxidizer},
+        categories = {chemistry},
+        name = thruster_oxidizer_3,
+        subgroup = is_space_processing_2,
+        icons = TWO_I(dinitrogen_tetroxide_angels, thruster_oxidizer, number_3),
+        order = z_b,
+        ingredients = {{type = fluid, name = dinitrogen_tetroxide_angels, amount = 60}},
+        results = {{type = fluid, name = thruster_oxidizer, amount = 480}},
+        main_product = thruster_oxidizer
+    },
+    {
+        localised_name = {"fluid-name." .. thruster_fuel},
+        categories = {chemistry},
+        name = thruster_fuel_4,
+        subgroup = is_space_processing_2,
+        icons = TWO_I(pentaborane_liquid, thruster_fuel, number_4),
+        order = y_b,
+        ingredients = {{type = fluid, name = pentaborane_liquid, amount = 60}},
+        results = {{type = fluid, name = thruster_fuel, amount = 960}},
+        main_product = thruster_fuel
+    },
+    {
+        localised_name = {"fluid-name." .. thruster_oxidizer},
+        categories = {chemistry},
+        name = thruster_oxidizer_4,
+        subgroup = is_space_processing_2,
+        icons = TWO_I(oxygen_fluoride_gas, thruster_oxidizer, number_4),
+        order = z_b,
+        ingredients = {{type = fluid, name = oxygen_fluoride_gas, amount = 60}},
+        results = {{type = fluid, name = thruster_oxidizer, amount = 960}},
+        main_product = thruster_oxidizer
     }
 })
 

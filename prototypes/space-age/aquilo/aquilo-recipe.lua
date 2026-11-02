@@ -206,7 +206,7 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = hexafluoropropylene_oxide_gas, amount = 60},
             {type = fluid, name = hexafluoropropylene_gas, amount = 60}
         },
-        results = {{type = fluid, name = fluoroketone_hot, amount = 60, temperature = 180}},
+        results = {{type = fluid, name = fluoroketone_hot, amount = 60}},
         main_product = fluoroketone_hot
     },
     {

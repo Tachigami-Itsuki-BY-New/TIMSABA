@@ -384,7 +384,8 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = boron_oxide_III},
-                {type = unlock_recipe, recipe = boron}
+                {type = unlock_recipe, recipe = boron},
+                {type = unlock_recipe, recipe = boron_powder}
             },
             unit =
             {

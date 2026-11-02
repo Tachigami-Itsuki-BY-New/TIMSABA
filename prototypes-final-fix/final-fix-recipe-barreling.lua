@@ -221,7 +221,7 @@ local function create_container_recipes(fluids, info)
             ingredients =
             {
                 {type = item, name = info.item, amount = 1},
-                {type = fluid, name = fluids.name, amount = 60}
+                {type = fluid, name = fluids.name, amount = 240}
             },
             results = {{type = item, name = fluids.name .. "-" .. info.name, amount = 1}}
         },
@@ -243,7 +243,7 @@ local function create_container_recipes(fluids, info)
             results =
             {
                 {type = item, name = info.item, amount = 1},
-                {type = fluid, name = fluids.name, amount = 60}
+                {type = fluid, name = fluids.name, amount = 240}
             }
         }
     })
@@ -389,7 +389,7 @@ if mods[pelagos_mods] then
             ingredients =
             {
                 {type = item, name = titanium_barrel, amount = 1},
-                {type = fluid, name = fluids.name, amount = 240}
+                {type = fluid, name = fluids.name, amount = 480}
             },
             results = {{type = item, name = items.name, amount = 1}},
             --hidden = true,
@@ -420,7 +420,7 @@ if mods[pelagos_mods] then
             results =
             {
                 {type = item, name = titanium_barrel, amount = 1},
-                {type = fluid, name = fluids.name, amount = 240},
+                {type = fluid, name = fluids.name, amount = 480},
             },
             --hidden = true,
             hidden_in_factoriopedia = false

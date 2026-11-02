@@ -47,12 +47,12 @@ if settings.startup[setting_no_spoilage].value == false then
                     ingredients =
                     {
                         {type = item, name = organic_name, amount = 16},
-                        {type = fluid, name = fluoroketone_cold, amount = 120}
+                        {type = fluid, name = fluoroketone_cold, amount = 60}
                     },
                     results =
                     {
                         {type = item, name = organic_name .. "-freezed", amount = 16},
-                        {type = fluid, name = fluoroketone_hot, amount = 60}
+                        {type = fluid, name = fluoroketone_hot, amount = 30}
                     },
                     main_product = organic_name .. "-freezed"
                 },
@@ -71,16 +71,8 @@ if settings.startup[setting_no_spoilage].value == false then
                     allow_decomposition = false,
                     hide_from_player_crafting = true,
                     energy_required = 8,
-                    ingredients =
-                    {
-                        {type = item, name = organic_name .. "-freezed", amount = 16},
-                        --{type = fluid, name = fluoroketone_hot, amount = 120}
-                    },
-                    results =
-                    {
-                        {type = item, name = organic_name, amount = 16},
-                        --{type = fluid, name = fluoroketone_cold, amount = 120}
-                    },
+                    ingredients = {{type = item, name = organic_name .. "-freezed", amount = 16}},
+                    results = {{type = item, name = organic_name, amount = 16}},
                     main_product = organic_name
                 }
             })
