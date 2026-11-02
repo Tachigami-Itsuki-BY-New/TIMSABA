@@ -745,7 +745,7 @@ if mods[hyarion_mods] then
     })
 
     -- TECHNOLOGY
-    local planet_discovery_hyarion = "planet-discovery-hyarion"
+    planet_discovery_hyarion = "planet-discovery-hyarion"
     table.insert(data_technology[planet_discovery_hyarion].prerequisites, tech_advanced_asteroid_processing)
     data_technology[planet_discovery_hyarion].effects =
     {

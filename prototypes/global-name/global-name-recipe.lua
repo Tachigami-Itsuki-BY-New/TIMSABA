@@ -130,6 +130,7 @@ solid_salt_from_saline = "angels-solid-salt-from-saline"
 -- ANGELS PETROCHEM REFINING
 water_saline_separation = "angels-water-saline-separation"
 coke_purification_2 = "angels-coke-purification-2"
+hydrogen_chloride_separation = "angels-gas-hydrogen-chloride-separation"
 sodium_nitrate_processing = "angels-solid-sodium-nitrate-processing"
 sodium_nitrate_acid_processing = "angels-sodium-nitrate-acid-processing"
 solid_fuel_hydrazine = "angels-solid-fuel-hydrazine"
@@ -165,6 +166,18 @@ crystal_shard_1 = "angels-crystal-shard-crystalization-1"
 crystal_full_blue_powder = "angels-crystal-powder-full-blue"
 crystal_full_green_powder = "angels-crystal-powder-full-green"
 crystal_full_red_powder = "angels-crystal-powder-full-red"
+
+-- SPACE AGE
+metallic_asteroid_crushing_1 = "metallic-asteroid-crushing"
+carbonic_asteroid_crushing_1 = "carbonic-asteroid-crushing"
+oxide_asteroid_crushing_1 = "oxide-asteroid-crushing"
+
+advanced_metallic_asteroid_crushing_1 = "advanced-metallic-asteroid-crushing"
+advanced_carbonic_asteroid_crushing_1 = "advanced-carbonic-asteroid-crushing"
+advanced_oxide_asteroid_crushing_1 = "advanced-oxide-asteroid-crushing"
+
+advanced_thruster_fuel = "advanced-thruster-fuel"
+advanced_thruster_oxidizer = "advanced-thruster-oxidizer"
 
 -- GLEBA
 jellynut_processing = "jellynut-processing"

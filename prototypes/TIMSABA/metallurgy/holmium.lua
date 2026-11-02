@@ -84,6 +84,8 @@ TIMSABA.functions.create_items
         order = e
     }
 })
+data_item[holmium_powder].hidden = true
+data_item[holmium_powder].hidden_in_factoriopedia = true
 
 -- FLUID
 holmium_chloride_III_solution = "holmium-chloride-III-solution"

@@ -544,7 +544,7 @@ if mods[corrundum_mods] then
     end
 
     -- TECHNOLOGY
-    data_technology[planet_discovery_corrundum].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
+    data_technology[planet_discovery_corrundum].prerequisites = {tech_full_asteroid_processing}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_corrundum].prerequisites, interstellar_science_pack)
     end
@@ -819,6 +819,7 @@ if mods[corrundum_mods] then
         end
     end
 
+    table.insert(data_technology[quantum_processor].prerequisites, electrochemical_science_pack)
     if mods[bobwarfare] then
         table.insert(data_technology[artillery_turret_4].prerequisites, electrochemical_science_pack)
         table.insert(data_technology[artillery_wagon_4].prerequisites, electrochemical_science_pack)

@@ -2,6 +2,8 @@ local graphics_petrochem_basics = "__TIMSABA__/graphics/icons/angels/petrochem/b
 -- BASIC PETROCHEN FLUIDS
 tritium_gas = "tritium-gas"
 argon_gas = "argon-gas"
+hydrogen_liquid = "hydrogen-liquid"
+oxygen_liquid = "oxygen-liquid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -21,10 +23,30 @@ TIMSABA.functions.create_fluids
         order = h,
         base_color = TIMSABA.functions.fluid_color("ArArAr"),
         flow_color = TIMSABA.functions.flow_color("ArArAr")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]"} or nil,
+        name = hydrogen_liquid,
+        subgroup = is_basic_fluids,
+        icon = graphics_petrochem_basics .. hydrogen_liquid .. ".png",
+        order = i,
+        base_color = TIMSABA.functions.fluid_color("HHH"),
+        flow_color = TIMSABA.functions.flow_color("HHH")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "O[font=default-tiny-bold]2[/font]"} or nil,
+        name = oxygen_liquid,
+        subgroup = is_basic_fluids,
+        icon = graphics_petrochem_basics .. oxygen_liquid .. ".png",
+        order = j,
+        base_color = TIMSABA.functions.fluid_color("OOO"),
+        flow_color = TIMSABA.functions.flow_color("OOO")
     }
 })
 TIMSABA.barreling.add_gas(tritium_gas)
 TIMSABA.barreling.add_gas(argon_gas)
+TIMSABA.barreling.add_gas(hydrogen_liquid)
+TIMSABA.barreling.add_gas(oxygen_liquid)
 
 -- COAL ITEM
 coke_processed = "coke-processed"

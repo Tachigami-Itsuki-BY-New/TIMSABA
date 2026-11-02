@@ -742,7 +742,7 @@ if mods[maraxsis_mods] then
 
     -- TECHNOLOGY
     planet_discovery_maraxsis = "planet-discovery-maraxsis"
-    data_technology[planet_discovery_maraxsis].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_maraxsis].prerequisites = {tech_full_asteroid_processing}
     table.insert(data_technology[planet_discovery_maraxsis].effects, {type = unlock_recipe, recipe = spidertron_dock})
 
     data_technology[hydro_plant].effects =

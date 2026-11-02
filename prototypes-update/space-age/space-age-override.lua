@@ -563,12 +563,12 @@ end
 
 data_item[metallic_asteroid_chunk].stack_size = 50
 
-data_recipe[metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing-1"}
+data_recipe[metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. iron_ore}}
 data_recipe[metallic_asteroid_crushing_1].icons = TWO_I(metallic_asteroid_chunk, iron_ore)
 data_recipe[metallic_asteroid_crushing_1].energy_required = 4
 data_recipe[metallic_asteroid_crushing_1].results = {{type = item, name = iron_ore, amount = 8}}
 
-data_recipe[advanced_metallic_asteroid_crushing_1].localised_name = {"recipe-name.advanced-metallic-asteroid-crushing-1"}
+data_recipe[advanced_metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. nickel_ore_bob}}
 data_recipe[advanced_metallic_asteroid_crushing_1].icons = TWO_I(metallic_asteroid_chunk, nickel_ore_bob)
 data_recipe[advanced_metallic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_metallic_asteroid_crushing_1].results = {{type = item, name = nickel_ore_bob, amount = 8}}
@@ -593,12 +593,12 @@ end
 
 data_item[carbonic_asteroid_chunk].stack_size = 50
 
-data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing-1"}
+data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. coal}}
 data_recipe[carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, coal)
 data_recipe[carbonic_asteroid_crushing_1].energy_required = 4
 data_recipe[carbonic_asteroid_crushing_1].results = {{type = item, name = coal, amount = 8}}
 
-data_recipe[advanced_carbonic_asteroid_crushing_1].localised_name = {"recipe-name.advanced-carbonic-asteroid-crushing-1"}
+data_recipe[advanced_carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. sulfur}}
 data_recipe[advanced_carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, sulfur)
 data_recipe[advanced_carbonic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_carbonic_asteroid_crushing_1].results = {{type = item, name = sulfur, amount = 8}}
@@ -623,17 +623,16 @@ end
 
 data_item[oxide_asteroid_chunk].stack_size = 50
 
-data_recipe[oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing-1"}
+data_recipe[oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"item-name." .. ice}}
 data_recipe[oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, ice)
 data_recipe[oxide_asteroid_crushing_1].energy_required = 4
 data_recipe[oxide_asteroid_crushing_1].results = {{type = item, name = ice, amount = 8}}
 
-data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.advanced-oxide-asteroid-crushing-1"}
-data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, sodium_oxide)
+data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"fluid-name." .. nitric_acid_angels}}
+data_recipe[advanced_oxide_asteroid_crushing_1].categories = {chemistry}
+data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, nitric_acid_angels)
 data_recipe[advanced_oxide_asteroid_crushing_1].energy_required = 4
-data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = item, name = sodium_oxide, amount = 8}}
-data_recipe[advanced_oxide_asteroid_crushing_1].hidden = true
-data_recipe[advanced_oxide_asteroid_crushing_1].hidden_in_factoriopedia = true
+data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = fluid, name = nitric_acid_angels, amount = 120}}
 
 local promethium_asteroids =
 {
@@ -896,91 +895,57 @@ if mods[hyarion_mods] then
 end
 
 ice_melting = "ice-melting"
-data_recipe[ice_melting].subgroup = is_space_processing
+data_recipe[ice_melting].subgroup = is_space_processing_2
 data_recipe[ice_melting].icons = TWO_I(ice, water)
 data_recipe[ice_melting].order = a
-data_recipe[ice_melting].results[1].amount = 15
+data_recipe[ice_melting].energy_required = 4
+data_recipe[ice_melting].ingredients[1].amount = 4
+data_recipe[ice_melting].results[1].amount = 60
 
-data_recipe[hydrogen_chloride_separation].categories = {angels_petrochem_electrolyser}
-data_recipe[hydrogen_chloride_separation].subgroup = is_space_processing
-data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
-data_recipe[hydrogen_chloride_separation].order = d
-data_recipe[hydrogen_chloride_separation].energy_required = 8 -- 2HCl -electrode/electrolys-> H₂ + Cl₂
-data_recipe[hydrogen_chloride_separation].ingredients =
-{
-    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
-    {type = item, name = electrode, amount = 1}
-}
-data_recipe[hydrogen_chloride_separation].results =
-{
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = chlorine_angels, amount = 120},
-    {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-}
-
-data_fluid[thruster_fuel].subgroup = is_space_processing
+data_fluid[thruster_fuel].subgroup = is_space_processing_2
 data_fluid[thruster_fuel].order = y
-
-data_recipe[thruster_fuel].subgroup = is_space_processing
-data_recipe[thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_1)
-data_recipe[thruster_fuel].order = y
-data_recipe[thruster_fuel].energy_required = 4
-data_recipe[thruster_fuel].ingredients =
-{
-    {type = fluid, name = dimethylhydrazine_angels, amount = 60},
-    {type = fluid, name = hydrazine_angels, amount = 60}
-}
-data_recipe[thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 120}}
-data_recipe[thruster_fuel].main_product = thruster_fuel
 TIMSABA.barreling.add_dangerous_fluid(thruster_fuel)
-data_recipe[advanced_thruster_fuel].subgroup = is_space_processing
-data_recipe[advanced_thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_2)
-data_recipe[advanced_thruster_fuel].order = y_a
-data_recipe[advanced_thruster_fuel].energy_required = 4
-data_recipe[advanced_thruster_fuel].ingredients =
-{
-    {type = fluid, name = dimethylhydrazine_angels, amount = 60},
-    {type = fluid, name = hydrazine_angels, amount = 60},
-    {type = item, name = catalyst_yellow, amount = 1}
-}
-data_recipe[advanced_thruster_fuel].results =
-{
-    {type = fluid, name = thruster_fuel, amount = 480},
-    {type = item, name = catalyst_yellow, amount = 1, ignored_by_productivity = 1, independent_probability = 0.875},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, independent_probability = 0.125}
-}
+data_recipe[thruster_fuel].subgroup = is_space_processing
+data_recipe[thruster_fuel].icons = TWO_I(hydrogen_liquid, thruster_fuel, number_1)
+data_recipe[thruster_fuel].order = y
+data_recipe[thruster_fuel].allow_quality = false
+data_recipe[thruster_fuel].allow_productivity = false
+data_recipe[thruster_fuel].energy_required = 4
+data_recipe[thruster_fuel].ingredients = {{type = fluid, name = hydrogen_liquid, amount = 240}}
+data_recipe[thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 60}}
+data_recipe[thruster_fuel].main_product = thruster_fuel
 
-data_fluid[thruster_oxidizer].subgroup = is_space_processing
+data_recipe[advanced_thruster_fuel].localised_name = {"fluid-name." .. thruster_fuel}
+data_recipe[advanced_thruster_fuel].subgroup = is_space_processing_2
+data_recipe[advanced_thruster_fuel].icons = TWO_I(hydrazine_angels, thruster_fuel, number_2)
+data_recipe[advanced_thruster_fuel].order = y_a
+data_recipe[advanced_thruster_fuel].allow_quality = false
+data_recipe[advanced_thruster_fuel].allow_productivity = false
+data_recipe[advanced_thruster_fuel].energy_required = 4
+data_recipe[advanced_thruster_fuel].ingredients = {{type = fluid, name = hydrazine_angels, amount = 60}}
+data_recipe[advanced_thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 240}}
+
+data_fluid[thruster_oxidizer].subgroup = is_space_processing_2
 data_fluid[thruster_oxidizer].order = z
 TIMSABA.barreling.add_dangerous_fluid(thruster_oxidizer)
-data_recipe[thruster_oxidizer].subgroup = is_space_processing
-data_recipe[thruster_oxidizer].icons = THREE_I(nitric_acid_angels, dinitrogen_tetroxide_angels, thruster_oxidizer, number_1)
+data_recipe[thruster_oxidizer].subgroup = is_space_processing_2
+data_recipe[thruster_oxidizer].icons = TWO_I(oxygen_liquid, thruster_oxidizer, number_1)
 data_recipe[thruster_oxidizer].order = z
+data_recipe[thruster_oxidizer].allow_quality = false
+data_recipe[thruster_oxidizer].allow_productivity = false
 data_recipe[thruster_oxidizer].energy_required = 4
-data_recipe[thruster_oxidizer].ingredients =
-{
-    {type = fluid, name = nitric_acid_angels, amount = 60},
-    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 60}
-}
-data_recipe[thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 120}}
+data_recipe[thruster_oxidizer].ingredients = {{type = fluid, name = oxygen_liquid, amount = 60}}
+data_recipe[thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 60}}
 data_recipe[thruster_oxidizer].main_product = thruster_oxidizer
 
-data_recipe[advanced_thruster_oxidizer].subgroup = is_space_processing
-data_recipe[advanced_thruster_oxidizer].icons = THREE_I(nitric_acid_angels, dinitrogen_tetroxide_angels, thruster_oxidizer, number_2)
+data_recipe[advanced_thruster_oxidizer].localised_name = {"fluid-name." .. thruster_oxidizer}
+data_recipe[advanced_thruster_oxidizer].subgroup = is_space_processing_2
+data_recipe[advanced_thruster_oxidizer].icons = TWO_I(nitric_acid_angels, thruster_oxidizer, number_2)
 data_recipe[advanced_thruster_oxidizer].order = z_a
+data_recipe[advanced_thruster_oxidizer].allow_quality = false
+data_recipe[advanced_thruster_oxidizer].allow_productivity = false
 data_recipe[advanced_thruster_oxidizer].energy_required = 4
-data_recipe[advanced_thruster_oxidizer].ingredients =
-{
-    {type = fluid, name = nitric_acid_angels, amount = 60},
-    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 60},
-    {type = item, name = catalyst_yellow, amount = 1}
-}
-data_recipe[advanced_thruster_oxidizer].results =
-{
-    {type = fluid, name = thruster_oxidizer, amount = 480},
-    {type = item, name = catalyst_yellow, amount = 1, ignored_by_productivity = 1, independent_probability = 0.875},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1, independent_probability = 0.125}
-}
+data_recipe[advanced_thruster_oxidizer].ingredients = {{type = fluid, name = nitric_acid_angels, amount = 60}}
+data_recipe[advanced_thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 240}}
 
 bobmods.lib.recipe.update_recycling_recipe({crusher})

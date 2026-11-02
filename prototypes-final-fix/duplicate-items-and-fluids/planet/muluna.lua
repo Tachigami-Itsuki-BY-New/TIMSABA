@@ -48,7 +48,10 @@ if mods[muluna_mods] then
 		"muluna-" .. carbonic_asteroid_chunk .. "-upcycling",
 		"muluna-" .. oxide_asteroid_chunk .. "-upcycling",
 		"muluna-" .. anorthite_asteroid_chunk .. "-upcycling",
-		"muluna-asteroid-upcycling"
+		"muluna-asteroid-upcycling",
+		thruster_fuel .. _productivity,
+		"muluna-oxygen-from-oxidizer",
+		"muluna-oxygen"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
@@ -94,7 +97,17 @@ if mods[muluna_mods] then
 	data_recipe[copper_cable .. _recycling].surface_conditions = nil
 	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil
 
-	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
+	data_technology[thruster_oxidizer].effects =
+	{
+		{type = unlock_recipe, recipe = oxygen_liquid},
+		{type = unlock_recipe, recipe = thruster_oxidizer}
+	}
+
+	data_technology[thruster_fuel].effects =
+	{
+		{type = unlock_recipe, recipe = hydrogen_liquid},
+		{type = unlock_recipe, recipe = thruster_fuel}
+	}
 
 	data_technology[carbonic_asteroid_crushing_1].effects =
 	{

@@ -591,20 +591,6 @@ if mods[muluna_mods] then
     data_recipe[electric_engine_unit_from_carbon].icons = BUILDING_R_I(electric_engine_unit, carbon_angels)
     data_recipe[electric_engine_unit_from_carbon].order = a
 
-    local muluna_oxygen_from_oxidizer = "muluna-oxygen-from-oxidizer"
-    data_recipe[muluna_oxygen_from_oxidizer].categories = {angels_advanced_chemistry}
-    data_recipe[muluna_oxygen_from_oxidizer].subgroup = is_muluna_recipe
-    data_recipe[muluna_oxygen_from_oxidizer].icons = FOUR_R_I(thruster_oxidizer, nitrogen_angels, oxygen_angels, water)
-    data_recipe[muluna_oxygen_from_oxidizer].order = b
-    data_recipe[muluna_oxygen_from_oxidizer].energy_required = 1 -- 4(HNO₃ + N₂O₄) --> (2H₂O + 13O₂ + 6N₂) / 4
-    data_recipe[muluna_oxygen_from_oxidizer].ingredients[1].amount = 120
-    data_recipe[muluna_oxygen_from_oxidizer].results =
-    {
-        {type = fluid, name = oxygen_angels, amount = 90},
-        {type = fluid, name = nitrogen_angels, amount = 45},
-        {type = fluid, name = water, amount = 15}
-    }
-
     local rocket_fuel_aluminum = "rocket-fuel-aluminum"
     data_recipe[rocket_fuel_aluminum].subgroup = is_muluna_recipe
     data_recipe[rocket_fuel_aluminum].icons = BUILDING_R_I(rocket_fuel, planet_muluna)
@@ -844,9 +830,9 @@ if mods[muluna_mods] then
     data_recipe[steam_condensation].subgroup = is_muluna_turbine
     data_recipe[steam_condensation].icons = TWO_I(cooled_steam, water)
     data_recipe[steam_condensation].order = a_a
-    data_recipe[steam_condensation].energy_required = 16
-    data_recipe[steam_condensation].ingredients[1].amount = 960
-    data_recipe[steam_condensation].results[1].amount = 120
+    data_recipe[steam_condensation].energy_required = 8
+    data_recipe[steam_condensation].ingredients[1].amount = 240
+    data_recipe[steam_condensation].results[1].amount = 30
 
     local cycling_steam_turbine = "muluna-cycling-steam-turbine"
     data_item[cycling_steam_turbine].subgroup = is_muluna_turbine
@@ -1396,21 +1382,16 @@ if mods[muluna_mods] then
     data_technology[thruster_fuel].icon = "__TIMSABA__/graphics/icons/muluna/technology/thruster-fuel-technology.png"
     data_technology[thruster_fuel].icon_size = 256
 
-    local tech_oxygen = "muluna-oxygen"
-    data_technology[tech_oxygen].icons =
+    data_technology[advanced_boiler].prerequisites = {metallic_asteroid_crushing_1, carbonic_asteroid_crushing_1, oxide_asteroid_crushing_1}
+    data_technology[advanced_boiler].effects =
     {
-        {
-            icon = "__TIMSABA__/graphics/icons/muluna/technology/molecule-oxygen.png",
-            icon_size = 256
-        },
-        {
-            icon = data_fluid[thruster_oxidizer].icon,
-            icon_size = data_fluid[thruster_oxidizer].icon_size,
-            shift = {45,-45},
-            scale = 0.75
-        }
+        {type = unlock_recipe, recipe = advanced_water_melting_oxygen},
+        {type = unlock_recipe, recipe = advanced_water_melting_compressed_air},
+        {type = unlock_recipe, recipe = advanced_water_boiling},
+        {type = unlock_recipe, recipe = advanced_water_boiling_compressed_air},
+        {type = unlock_recipe, recipe = controlled_combustion},
+        {type = unlock_recipe, recipe = controlled_combustion_compressed_air}
     }
-    data_technology[tech_oxygen].effects = {{type = unlock_recipe, recipe = muluna_oxygen_from_oxidizer}}
 
     local tech_greenhouses = "muluna-greenhouses"
     data_technology[tech_greenhouses].effects ={{type = unlock_recipe, recipe = greenhouse_wood}}
@@ -1631,6 +1612,7 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {utility_science_pack, 1})
 
     -- METALLIC
+    data_technology[metallic_asteroid_crushing_1].localised_name = {"technology-name.metallic-asteroid-processing"}
     data_technology[metallic_asteroid_crushing_1].effects =
     {
         {type = unlock_recipe, recipe = metallic_asteroid_crushing_1},
@@ -1645,7 +1627,11 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = electric_blast_furnace_4}
     }
 
+    -- CARBONIC
+    data_technology[carbonic_asteroid_crushing_1].localised_name = {"technology-name.carbonic-asteroid-processing"}
+
     -- OXIDE
+    data_technology[oxide_asteroid_crushing_1].localised_name = {"technology-name.oxide-asteroid-processing"}
     data_technology[oxide_asteroid_crushing_1].effects =
     {
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
@@ -1656,41 +1642,10 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = ice_melting},
         {type = unlock_recipe, recipe = nitrogen_oxide_separation},
         {type = unlock_recipe, recipe = chlorine_oxide_separation},
-        {type = unlock_recipe, recipe = hydrogen_chloride_separation},
-        {type = unlock_recipe, recipe = nitrogen_monoxide_space},
-        {type = unlock_recipe, recipe = hydrazine_space},
-        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space},
         {type = unlock_recipe, recipe = sodium_hydroxide_space},
         {type = unlock_recipe, recipe = sodium_peroxide},
-        {type = unlock_recipe, recipe = sodium_peroxide_reprocess},
+        {type = unlock_recipe, recipe = sodium_cyanide_solution_3},
         {type = unlock_recipe, recipe = lithium_space}
-    }
-
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}
     }
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_from_wood, change = 0.1})
