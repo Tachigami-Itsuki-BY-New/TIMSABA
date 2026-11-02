@@ -391,6 +391,7 @@ if mods[lignumis_mods] then
     TIMSABA.functions.create_recipes
     ({
         {
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. tantalum_ore}},
             name = advanced_full_metallic_asteroid_crushing_3,
             categories = {crushing},
             subgroup = is_space_environment_1,

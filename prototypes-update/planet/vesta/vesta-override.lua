@@ -550,7 +550,7 @@ if mods[vesta_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
-    table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_full_asteroid_processing)
+    table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_advanced_full_asteroid_processing)
     table.insert(data_technology[planet_discovery_vesta].prerequisites, railgun)
     data_technology[planet_discovery_vesta].effects =
     {

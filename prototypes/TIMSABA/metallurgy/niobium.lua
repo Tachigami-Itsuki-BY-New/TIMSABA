@@ -568,13 +568,13 @@ TIMSABA.functions.create_recipes
         order = e,
         ingredients =
         {
-            {type = fluid, name = nitrogen_angels, amount = 60},
-            {type = fluid, name = fluoroketone_cold, amount = 120}
+            {type = fluid, name = nitrogen_angels, amount = 240},
+            {type = fluid, name = fluoroketone_cold, amount = 60}
         },
         results =
         {
-            {type = fluid, name = nitrogen_liquid, amount = 60},
-            {type = fluid, name = fluoroketone_hot, amount = 60} -- 120
+            {type = fluid, name = nitrogen_liquid, amount = 240},
+            {type = fluid, name = fluoroketone_hot, amount = 30} -- 60
         },
         main_product = nitrogen_liquid
     },

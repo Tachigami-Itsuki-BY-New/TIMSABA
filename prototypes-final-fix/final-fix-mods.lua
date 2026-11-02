@@ -124,6 +124,9 @@ data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 
 data_item[nuclear_fuel].fuel_categories = {transport_fuel}
 
+data_recipe[boron].categories = {smelting_filtering}
+data_recipe[magnesium_boride].categories = {smelting_filtering}
+
 -- SPACE AGE
 data_armor[mech_armor].resistances =
 {
@@ -152,6 +155,185 @@ data_recipe[casting_low_density_structure].ingredients =
 data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
 
 data_recipe[lithium_space].categories = {smelting_filtering}
+
+data_technology[tech_asteroid_productivity].prerequisites = {tech_advanced_asteroid_processing}
+
+if mods[muluna_mods] then
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}, -- Muluna
+    }
+else
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1}
+    }
+end
+
+if mods[moshine_mods] and not mods[lignumis_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+elseif mods[lignumis_mods] and not mods[moshine_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+elseif mods[moshine_mods] and mods[lignumis_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+end
 
 -- MULUNA
 if mods[muluna_mods] then
@@ -293,8 +475,6 @@ end
 
 -- MOSHINE
 if mods[moshine_mods] then
-    data_recipe[boron].categories = {smelting_filtering}
-
     local cosmicscanner_construction_stage_2 = "moshine_cosmicscanner-construction-stage-2"
     data_assembling[cosmicscanner_construction_stage_2].energy_usage = ((960 * 256 * 2) - (drain * 256 * 2)) .. kW
     data_assembling[cosmicscanner_construction_stage_2].energy_source.drain = (drain * 256 * 2) .. kW
@@ -785,68 +965,12 @@ if mods[aegis_bellicos_mods] then
     }
 end
 
-if mods[aegis_bellicos_mods] and mods[muluna_mods] then
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
-    }
-elseif mods[aegis_bellicos_mods] and not mods[muluna_mods] then
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
-    }
-end
-
 -- AEGIS
 if mods[aegis_bellicos_mods] then
     if mods[asteroid_belt_mods] and data_technology[space_discovery_kuiper_belt] then
         data_technology[discovery_aegis_outer].prerequisites = {space_discovery_kuiper_belt}
     end
-    table.insert(data_technology[discovery_aegis_outer].prerequisites, tech_full_asteroid_processing)
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, tech_advanced_full_asteroid_processing)
     table.insert(data_technology[discovery_aegis_outer].prerequisites, railgun)
     table.insert(data_technology[discovery_aegis_outer].prerequisites, fusion_reactor)
 end

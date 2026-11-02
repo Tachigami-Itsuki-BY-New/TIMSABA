@@ -160,4 +160,7 @@ if mods[asteroid_belt_mods] then
             }
         })
     end
+
+    space_discovery_asteroid_belt = "space-discovery-asteroid-belt"
+    space_discovery_kuiper_belt = "space-discovery-kuiper-belt"
 end

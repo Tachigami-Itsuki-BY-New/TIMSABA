@@ -221,14 +221,14 @@ if mods[moshine_mods] then
             name = neodymium_iron_boron_molten,
             categories = {metallurgy},
             subgroup = is_neodymium_casting,
-            icons = THREE_D_I(neodymium_ingot, iron_ingot, boron, neodymium_iron_boron_molten),
+            icons = THREE_D_I(neodymium_ingot, iron_ingot, boron_powder, neodymium_iron_boron_molten),
             order = a,
             energy_required = 8, -- Nd(s) + Fe(s) + B(s) -Ar-> NdFeB(molten)
             ingredients =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
                 {type = item, name = iron_ingot, amount = 16},
-                {type = item, name = boron, amount = 16}
+                {type = item, name = boron_powder, amount = 16}
             },
             results = {{type = fluid, name = neodymium_iron_boron_molten, amount = 240}},
             main_product = neodymium_iron_boron_molten
@@ -269,17 +269,16 @@ if mods[moshine_mods] then
             name = water_orange_waste_purification,
             categories = {angels_water_treatment},
             subgroup = is_water_cleaning,
-            icons = FOUR_R_I(water_orange_waste, water_mineralized_angels, calcium_phosphate, water_purified_angels),
+            icons = FOUR_R_I(water_orange_waste, water_purified_angels, calcium_phosphate, water_mineralized_angels),
             order = e,
-            energy_required = 1,
-            ingredients = {{type = fluid, name = water_orange_waste, amount = 120}},
+            energy_required = 8,
+            ingredients = {{type = fluid, name = water_orange_waste, amount = 240}},
             results =
             {
-                {type = item, name = calcium_phosphate, amount = 2},
-                {type = fluid, name = water_mineralized_angels, amount = 30},
-                {type = fluid, name = water_purified_angels, amount = 60}
-            },
-            main_product = calcium_phosphate
+                {type = fluid, name = water_purified_angels, amount = 120},
+                {type = fluid, name = water_mineralized_angels, amount = 60},
+                {type = item, name = calcium_phosphate, amount = 4}
+            }
         }
     })
 
@@ -295,11 +294,11 @@ if mods[moshine_mods] then
             icons = THREE_R_I(boric_acid_solution, boron_oxide_III, steam),
             order = b,
             -- 2H₃BO₃(aq) --> B₂O₃(s) + 5H₂O(g)
-            ingredients = {{type = fluid, name = boric_acid_solution, amount = 120}},
+            ingredients = {{type = fluid, name = boric_acid_solution, amount = 60}},
             results =
             {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = fluid, name = steam, amount = 120} -- 300
+                {type = item, name = boron_oxide_III, amount = 2},
+                {type = fluid, name = steam, amount = 60} -- 300
             },
             main_product = boron_oxide_III
         },
@@ -321,6 +320,17 @@ if mods[moshine_mods] then
                 {type = item, name = magnesium_oxide, amount = 4} -- 12
             },
             main_product = boron
+        },
+        {
+            name = boron_powder,
+            categories = {powderizing_4},
+            subgroup = is_boron,
+            icons = TWO_I(boron, boron_powder),
+            order = d,
+            energy_required = 0.5, -- B(s) --> B(s)
+            ingredients = {{type = item, name = boron, amount = 1}},
+            results = {{type = item, name = boron_powder, amount = 1}},
+            main_product = boron_powder
         },
         -- PHOSPHORUS
         {
@@ -429,6 +439,7 @@ if mods[moshine_mods] then
     TIMSABA.functions.create_recipes
     ({
         {
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. neodymium_ore}},
             name = advanced_full_metallic_asteroid_crushing_10,
             categories = {crushing},
             subgroup = is_space_environment_1,
@@ -440,6 +451,7 @@ if mods[moshine_mods] then
             main_product = neodymium_ore
         },
         {
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. cerium_ore}},
             name = advanced_full_metallic_asteroid_crushing_11,
             categories = {crushing},
             subgroup = is_space_environment_1,

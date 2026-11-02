@@ -12,7 +12,7 @@ require("prototypes.equipment-grid")
 require("lib.TIMSABA-functions")
 require("lib.barreling-and-void")
 
-require("prototypes.planet-order")
+require("prototypes.planet-and-space-location")
 
 require("prototypes.angels.angels-setting")
 

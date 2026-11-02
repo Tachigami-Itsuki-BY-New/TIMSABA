@@ -180,24 +180,25 @@ if mods[moshine_mods] then
     })
     TIMSABA.barreling.add_simple_fluid(water_orange_waste)
 
+    local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
     -- BORON
-    boron_oxide_III = "boron-oxide-III"
     boron = "boron"
+    boron_powder = "boron-powder"
     TIMSABA.functions.create_items
     ({
-        {
-            localised_description = show_formula and {chemical_formula, "B[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
-            name = boron_oxide_III,
-            subgroup = is_boron,
-            icon = graphics_moshine .. boron_oxide_III .. ".png",
-            order = b
-        },
         {
             localised_description = show_formula and {chemical_formula, "B"} or nil,
             name = boron,
             subgroup = is_boron,
-            icon = graphics_moshine .. boron .. ".png",
+            icon = graphics_boron .. boron .. ".png",
             order = c
+        },
+        {
+            localised_description = show_formula and {chemical_formula, "B"} or nil,
+            name = boron_powder,
+            subgroup = is_boron,
+            icon = graphics_boron .. boron_powder .. ".png",
+            order = d
         }
     })
 

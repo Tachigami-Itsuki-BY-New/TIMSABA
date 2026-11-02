@@ -387,6 +387,7 @@ if mods[paracelsin_mods] then
     end
 
     -- TECHNOLOGY
+    table.insert(data_technology[planet_discovery_paracelsin].prerequisites, tech_full_asteroid_processing)
     data_technology[planet_discovery_paracelsin].effects =
     {
         {type = unlock_space_location, space_location = planet_paracelsin},
