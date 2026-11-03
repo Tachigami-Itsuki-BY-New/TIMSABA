@@ -16,14 +16,12 @@ if mods[panglia_mods] then
     is_panglia_universe_planets = "is-panglia-universe-planets"
     is_panglia_universe_moons = "is-panglia-universe-moons"
     is_panglia_building = "is-panglia-building"
-    is_panglia_war = "is-panglia-war"
     TIMSABA.functions.create_subgroups(ig_panglia,
     {
         {name = is_panglia_recipe,            order = a},
         {name = is_panglia_universe_volcanic, order = b},
         {name = is_panglia_universe_planets,  order = b_a},
         {name = is_panglia_universe_moons,    order = b_b},
-        {name = is_panglia_building,          order = c},
-        {name = is_panglia_war,               order = d}
+        {name = is_panglia_building,          order = c}
     })
 end

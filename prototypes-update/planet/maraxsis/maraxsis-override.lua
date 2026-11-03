@@ -831,8 +831,6 @@ if mods[maraxsis_mods] then
     table.insert(data_technology[tech_samarskite_processing_3].prerequisites, hydraulic_science_pack)
     table.insert(data_technology[tech_brannerite_processing_3].prerequisites, hydraulic_science_pack)
     table.insert(data_technology[tech_rheniite_processing_3].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_germanite_processing_2].prerequisites, hydraulic_science_pack)
     if mods[castra_mods] then
         table.insert(data_technology[tech_millerite_processing_3].prerequisites, hydraulic_science_pack)
     end
@@ -841,6 +839,7 @@ if mods[maraxsis_mods] then
         table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, hydraulic_science_pack)
     end
     if mods[moshine_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, hydraulic_science_pack)
         table.insert(data_technology[tech_monazite_processing_3].prerequisites, hydraulic_science_pack)
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, hydraulic_science_pack)
     end

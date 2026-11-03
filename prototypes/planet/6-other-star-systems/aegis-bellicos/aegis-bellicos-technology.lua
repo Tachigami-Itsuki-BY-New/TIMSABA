@@ -29,12 +29,7 @@ if mods[aegis_bellicos_mods] then
                 {type = unlock_recipe, recipe = beryllium_molten},
                 {type = unlock_recipe, recipe = beryllium_plate}
             },
-            research_trigger =
-            {
-                type = craft_item,
-                item = beryllium_ore,
-                count = 256
-            }
+            research_trigger = {type = craft_item, item = beryllium_ore}
         },
         {
             localised_name = {"technology-name." .. tech_beryllium_smelting_2},

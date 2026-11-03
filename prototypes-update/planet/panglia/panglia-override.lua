@@ -126,34 +126,46 @@ if mods[panglia_mods] then
         {type = fluid, name = steam, amount = 15}
     }
 
-    data_item[cloned_specimen_body_0].subgroup = is_panglia_recipe
-    data_item[cloned_specimen_body_0].order = i
-    data_item[cloned_specimen_body_0].stack_size = 200
-    TIMSABA.void.freezing_organics(cloned_specimen_body_0)
-    data_recipe[cloned_specimen_body_0].subgroup = is_panglia_recipe
-    data_recipe[cloned_specimen_body_0].icons = FOUR_THREE_R_I(bioflux, uranium_235, datacell_dna_sequenced, cloned_specimen_body_0, uranium_238, mutated_monster_egg, datacell_dna_raw)
-    data_recipe[cloned_specimen_body_0].order = i
-    data_recipe[cloned_specimen_body_0].energy_required = 1024
+    data_item[embryo_untested].subgroup = is_panglia_recipe
+    data_item[embryo_untested].order = i
+    data_item[embryo_untested].stack_size = 200
+    TIMSABA.void.freezing_organics(embryo_untested)
+    data_recipe[embryo_untested].subgroup = is_panglia_recipe
+    data_recipe[embryo_untested].icons = TWO_I(dna_sequenced_data, embryo_untested)
+    data_recipe[embryo_untested].order = i
+    data_recipe[embryo_untested].energy_required = 8
+    data_recipe[embryo_untested].ingredients[1].amount = (15/4)
 
-    data_item[mutated_monster_egg].subgroup = is_panglia_recipe
-    data_item[mutated_monster_egg].order = j
-    TIMSABA.void.freezing_organics(mutated_monster_egg)
+    data_item[embryo_validated].subgroup = is_panglia_recipe
+    data_item[embryo_validated].order = j
+    data_item[embryo_validated].stack_size = 200
+    TIMSABA.void.freezing_organics(embryo_validated)
+    data_recipe[embryo_validated].subgroup = is_panglia_recipe
+    data_recipe[embryo_validated].icons = TWO_I(branbalite_slurry, embryo_validated)
+    data_recipe[embryo_validated].order = j
+    data_recipe[embryo_validated].energy_required = 8
 
     data_item[cloned_specimen_body_1].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_1].order = k
     data_item[cloned_specimen_body_1].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_1)
     data_recipe[cloned_specimen_body_1].subgroup = is_panglia_recipe
-    data_recipe[cloned_specimen_body_1].icons = THREE_R_I(cloned_specimen_body_0, cloned_specimen_body_1, spoilage)
+    data_recipe[cloned_specimen_body_1].icons = TWO_I(embryo_validated, cloned_specimen_body_1)
     data_recipe[cloned_specimen_body_1].order = k
     data_recipe[cloned_specimen_body_1].energy_required = 2048
+
+    local cloned_specimen_body_1_candidate = cloned_specimen_body_1 .. "_candidate"
+    data_recipe[cloned_specimen_body_1_candidate].subgroup = is_panglia_recipe
+    data_recipe[cloned_specimen_body_1_candidate].icons = TWO_I(embryo_untested, cloned_specimen_body_1)
+    data_recipe[cloned_specimen_body_1_candidate].order = k_a
+    data_recipe[cloned_specimen_body_1_candidate].energy_required = 32
 
     data_item[cloned_specimen_body_2].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_2].order = l
     data_item[cloned_specimen_body_2].stack_size = 200
     TIMSABA.void.freezing_organics(cloned_specimen_body_2)
     data_recipe[cloned_specimen_body_2].subgroup = is_panglia_recipe
-    data_recipe[cloned_specimen_body_2].icons = THREE_R_I(cloned_specimen_body_1, cloned_specimen_body_2, spoilage)
+    data_recipe[cloned_specimen_body_2].icons = TWO_I(cloned_specimen_body_1, cloned_specimen_body_2)
     data_recipe[cloned_specimen_body_2].order = l
     data_recipe[cloned_specimen_body_2].energy_required = 4096
 
@@ -184,6 +196,20 @@ if mods[panglia_mods] then
         {type = item, name = panglite, amount = 4},
         {type = item, name = cloned_specimen_body_3, amount = 1}
     }
+
+    local dna_validated = "panglia_dna_validated"
+    data_item[dna_validated].subgroup = is_panglia_recipe
+    data_item[dna_validated].order = p
+
+    local preparing_viable_embryos_batch = "panglia_dna_builder_make_phasetwo"
+    data_recipe[preparing_viable_embryos_batch].subgroup = is_panglia_recipe
+    data_recipe[preparing_viable_embryos_batch].icons = TWO_I(dna_validated, "panglia_dummy_dna_builder_phase2")
+    data_recipe[preparing_viable_embryos_batch].order = q
+    data_recipe[preparing_viable_embryos_batch].energy_required = 8
+
+    data_item[mutated_monster_egg].subgroup = is_panglia_recipe
+    data_item[mutated_monster_egg].order = z
+    TIMSABA.void.freezing_organics(mutated_monster_egg)
 
     -- UNIVERSE VOLCANIC
     local universe_precursor_volcanic = "panglia_universe_precursor_volcanic"
@@ -854,39 +880,62 @@ if mods[panglia_mods] then
     else
         table.insert(data_recipe[dna_scanner].ingredients, {type = item, name = laser_turret_1, amount = 1})
     end
-    data_assembling[dna_scanner].subgroup = is_panglia_building
-    data_assembling[dna_scanner].order = b
-    data_assembling[dna_scanner].energy_usage = (30 - (15 / 8)) .. kW
-    data_assembling[dna_scanner].energy_source.drain = (15 / 8) .. kW
+    data_furnace[dna_scanner].subgroup = is_panglia_building
+    data_furnace[dna_scanner].order = b
+    data_furnace[dna_scanner].energy_usage = (30 - (15 / 8)) .. kW
+    data_furnace[dna_scanner].energy_source.drain = (15 / 8) .. kW
 
-    data_item[cloning_vat].subgroup = is_panglia_building
-    data_item[cloning_vat].order = c
-    data_item[cloning_vat].stack_size = 32
-    data_item[cloning_vat].weight = 31250
-    data_recipe[cloning_vat].subgroup = is_panglia_building
-    data_recipe[cloning_vat].order = c
-    data_recipe[cloning_vat].energy_required = 4
-    data_recipe[cloning_vat].ingredients =
+    if mods[cloning_vat_mods] then
+        data_item[cloning_vat].subgroup = is_panglia_building
+        data_item[cloning_vat].order = c
+        data_item[cloning_vat].stack_size = 32
+        data_item[cloning_vat].weight = 31250
+        data_recipe[cloning_vat].subgroup = is_panglia_building
+        data_recipe[cloning_vat].order = c
+        data_recipe[cloning_vat].energy_required = 4
+        data_recipe[cloning_vat].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 1},
+            {type = item, name = carbon_fiber, amount = 4},
+            {type = item, name = biochamber, amount = 1},
+            {type = fluid, name = branbalite_slurry, amount = 120}
+        }
+        data_assembling[cloning_vat].subgroup = is_panglia_building
+        data_assembling[cloning_vat].order = c
+        data_assembling[cloning_vat].crafting_speed = 2
+        data_assembling[cloning_vat].module_slots = 4
+        data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
+        data_assembling[cloning_vat].energy_source.emissions_per_minute.pollution = -1
+        data_assembling[cloning_vat].energy_source.drain = drain .. kW
+    end
+
+    data_item[embryo_forge].subgroup = is_panglia_building
+    data_item[embryo_forge].order = d
+    data_item[embryo_forge].stack_size = 32
+    data_item[embryo_forge].weight = 31250
+    data_recipe[embryo_forge].subgroup = is_panglia_building
+    data_recipe[embryo_forge].order = d
+    data_recipe[embryo_forge].energy_required = 8
+    data_recipe[embryo_forge].ingredients =
     {
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = carbon_fiber, amount = 4},
         {type = item, name = biochamber, amount = 1},
-        {type = fluid, name = branbalite_slurry, amount = 120}
+        {type = item, name = dna_scanner, amount = 1},
+        {type = item, name = ai_tier_3, amount = 8},
+        {type = item, name = datacell_dna_raw, amount = 128},
+        {type = fluid, name = branbalite_slurry, amount = 240}
     }
-    data_assembling[cloning_vat].subgroup = is_panglia_building
-    data_assembling[cloning_vat].order = c
-    data_assembling[cloning_vat].crafting_speed = 2
-    data_assembling[cloning_vat].module_slots = 4
-    data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
-    data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
-    data_assembling[cloning_vat].energy_source.drain = drain .. kW
+    data_furnace[embryo_forge].subgroup = is_panglia_building
+    data_furnace[embryo_forge].order = d
+    data_furnace[embryo_forge].module_slots = 4
+    data_furnace[embryo_forge].energy_usage = (30 - (15/4)) .. kW
+    data_furnace[embryo_forge].energy_source.drain = (15/4) .. kW
 
     data_item[matter_printer_entity].subgroup = is_panglia_building
-    data_item[matter_printer_entity].order = d
+    data_item[matter_printer_entity].order = e
     data_item[matter_printer_entity].stack_size = 32
     data_item[matter_printer_entity].weight = 31250
     data_recipe[matter_printer_entity].subgroup = is_panglia_building
-    data_recipe[matter_printer_entity].order = d
+    data_recipe[matter_printer_entity].order = e
     data_recipe[matter_printer_entity].energy_required = 8
     data_recipe[matter_printer_entity].ingredients =
     {
@@ -897,7 +946,7 @@ if mods[panglia_mods] then
         {type = item, name = panglite, amount = 8}
     }
     data_furnace[matter_printer_entity].subgroup = is_panglia_building
-    data_furnace[matter_printer_entity].order = d
+    data_furnace[matter_printer_entity].order = e
     data_furnace[matter_printer_entity].crafting_speed = 1
     data_furnace[matter_printer_entity].module_slots = 4
     data_furnace[matter_printer_entity].energy_usage = (61440 - 3840) .. kW
@@ -906,11 +955,11 @@ if mods[panglia_mods] then
 
     local panglia_crusher = "panglia_crusher"
     data_item[panglia_crusher].subgroup = is_panglia_building
-    data_item[panglia_crusher].order = e
+    data_item[panglia_crusher].order = f
     data_item[panglia_crusher].stack_size = 32
     data_item[panglia_crusher].weight = 31250
     data_recipe[panglia_crusher].subgroup = is_panglia_building
-    data_recipe[panglia_crusher].order = e
+    data_recipe[panglia_crusher].order = f
     data_recipe[panglia_crusher].energy_required = 8
     data_recipe[panglia_crusher].ingredients =
     {
@@ -921,30 +970,30 @@ if mods[panglia_mods] then
         {type = item, name = panglite_fiber, amount = 8}
     }
     data_furnace[panglia_crusher].subgroup = is_panglia_building
-    data_furnace[panglia_crusher].order = e
+    data_furnace[panglia_crusher].order = f
     data_furnace[panglia_crusher].energy_usage = (240 - drain) .. kW
     data_furnace[panglia_crusher].energy_source.emissions_per_minute = {pollution = 16}
     data_furnace[panglia_crusher].energy_source.drain = drain .. kW
 
     local simulation_chamber = "simulation_chamber"
     data_item[simulation_chamber].subgroup = is_panglia_building
-    data_item[simulation_chamber].order = f
+    data_item[simulation_chamber].order = g
     data_item[simulation_chamber].stack_size = 32
     data_item[simulation_chamber].weight = 31250
     data_recipe[simulation_chamber].subgroup = is_panglia_building
-    data_recipe[simulation_chamber].order = f
+    data_recipe[simulation_chamber].order = g
     data_furnace[simulation_chamber].subgroup = is_panglia_building
-    data_furnace[simulation_chamber].order = f
+    data_furnace[simulation_chamber].order = g
     data_furnace[simulation_chamber].crafting_speed = 0.125
     data_furnace[simulation_chamber].energy_usage = (240 - drain) .. kW
     data_furnace[simulation_chamber].energy_source.drain = drain .. kW
 
     data_item[thinking_brain].subgroup = is_panglia_building
-    data_item[thinking_brain].order = g
+    data_item[thinking_brain].order = h
     data_item[thinking_brain].stack_size = 32
     data_item[thinking_brain].weight = 31250
     data_recipe[thinking_brain].subgroup = is_panglia_building
-    data_recipe[thinking_brain].order = g
+    data_recipe[thinking_brain].order = h
     data_recipe[thinking_brain].energy_required = 8
     data_recipe[thinking_brain].ingredients =
     {
@@ -955,50 +1004,21 @@ if mods[panglia_mods] then
         {type = fluid, name = branbalite_slurry, amount = 120}
     }
     data_assembling[thinking_brain].subgroup = is_panglia_building
-    data_assembling[thinking_brain].order = g
+    data_assembling[thinking_brain].order = h
+    data_assembling[thinking_brain].crafting_categories = {crafting, advanced_crafting}
     data_assembling[thinking_brain].effect_receiver.base_effect.productivity = 1
     data_assembling[thinking_brain].energy_usage = (4000 - 120) .. kW
     data_assembling[thinking_brain].energy_source.drain = 120 .. kW
-
-    -- WAR
-    local snouz_long_electric_gun_turret = "snouz_long_electric_gun_turret"
-    data_item[snouz_long_electric_gun_turret].subgroup = is_panglia_war
-    data_item[snouz_long_electric_gun_turret].stack_size = 32
-    data_item[snouz_long_electric_gun_turret].weight = 31250
-    data_recipe[snouz_long_electric_gun_turret].subgroup = is_panglia_war
-    if mods[bobwarfare] then
-        data_recipe[snouz_long_electric_gun_turret].ingredients =
-        {
-            {type = item, name = radar_5, amount = 1},
-            {type = item, name = gun_turret_5, amount = 1},
-            {type = item, name = supercapacitor, amount = 4},
-            {type = item, name = panglite_fiber, amount = 4}
-        }
-    else
-        data_recipe[snouz_long_electric_gun_turret].ingredients =
-        {
-            {type = item, name = radar_1, amount = 1},
-            {type = item, name = gun_turret_1, amount = 1},
-            {type = item, name = supercapacitor, amount = 4},
-            {type = item, name = panglite_fiber, amount = 4}
-        }
-    end
-    data_ammo_turret[snouz_long_electric_gun_turret].subgroup = is_panglia_war
-    data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.range = 32
-    data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.cooldown = 3.75
-    data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.damage_modifier = 2.25
-    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.input_flow_limit = 1200 .. kW
-    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.drain = 60 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
         timewarp_analyser,
         dna_scanner,
         cloning_vat,
+        embryo_forge,
         matter_printer_entity,
         panglia_crusher,
-        thinking_brain,
-        snouz_long_electric_gun_turret
+        thinking_brain
     })
 
     -- TECHNOLOGY
@@ -1025,37 +1045,21 @@ if mods[panglia_mods] then
         data_technology[tech_advanced_optics_nanotech].prerequisites = {panglite_glass, tech_3d_data_storage, tech_laser_turret_5}
     end
 
-    data_technology[cloning_vat .. _technology].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
-    }
+    if mods[cloning_vat_mods] then
+        data_technology[cloning_vat .. _technology].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1}
+        }
+    end
 
     data_technology[matter_printer_entity .. _technology].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
-    }
-
-    if mods[bobwarfare] then
-        data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, tech_gun_turret_5, radar_5}
-    else
-        data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, gun_turret_1, radar_1}
-    end
-    data_technology[snouz_long_electric_gun_turret].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},

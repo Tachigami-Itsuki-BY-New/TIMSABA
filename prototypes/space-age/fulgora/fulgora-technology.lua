@@ -23,12 +23,7 @@ data:extend
             {type = unlock_recipe, recipe = brannerite_crushed},
             {type = unlock_recipe, recipe = brannerite_crushed_sorting}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = brannerite_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = brannerite_ore}
     },
     {
         localised_name = {"technology-name." .. tech_brannerite_processing_2},
@@ -147,12 +142,7 @@ data:extend
             {type = unlock_recipe, recipe = rheniite_crushed},
             {type = unlock_recipe, recipe = rheniite_crushed_sorting}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = rheniite_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = rheniite_ore}
     },
     {
         localised_name = {"technology-name." .. tech_rheniite_processing_2},
@@ -278,12 +268,7 @@ data:extend
             {type = unlock_recipe, recipe = holmium_molten},
             {type = unlock_recipe, recipe = holmium_plate}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = holmium_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = holmium_ore}
     },
     {
         localised_name = {"technology-name." .. tech_holmium_smelting_2},

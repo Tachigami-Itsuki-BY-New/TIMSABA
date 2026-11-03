@@ -297,7 +297,8 @@ if mods[shchierbin_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["calcium-processing"].icons = TIMSABA.functions.create_gas_tech_icon("CaCaCa")
@@ -338,7 +339,8 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     table.insert(data_technology[vanadium_crusher].prerequisites, tech_niobium_titanium_processing)
@@ -361,7 +363,8 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["alt-vanad-artil"].unit.ingredients =
@@ -374,7 +377,8 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, vanadium_science_pack)
@@ -382,6 +386,7 @@ if mods[shchierbin_mods] then
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_vinylchloride, change = 0.1})
 
     if mods[moshine_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].unit.ingredients, {agricultural_science_pack, 1})
         table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, tech_phosphorus_processing_2)
     end
 end

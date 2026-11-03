@@ -5,7 +5,6 @@ local function get_item_data(item_name)
         return nil, nil
     end
 
-    -- 1. ИСПРАВЛЕНО ДЛЯ 2.0+: Добавлены новые типы прототипов, куда переехали ванильные предметы
     local types =
     {
         "item", "fluid", "tool", "surface", "planet", "resource", "capsule", "module", "ammo", "item-with-entity-data",
@@ -21,7 +20,6 @@ local function get_item_data(item_name)
         end
     end
 
-    -- 2. РЕЗЕРВНЫЙ АВАРИЙНЫЙ ПОИСК: Если предмета нет в списке выше, ищем по всей базе data.raw
     if not item_type then
         for raw_type, prototypes_table in pairs(data.raw) do
             if prototypes_table[item_name] then
@@ -31,16 +29,12 @@ local function get_item_data(item_name)
         end
     end
 
-    -- 3. Возвращаем прототип, если он найден
     if item_type and data.raw[item_type][item_name] then
         return data.raw[item_type][item_name], item_type
     else
-        -- Фиксируем в лог только реальные аномалии
         log("Item data absolutely not found for: " .. tostring(item_name))
-
-        -- ИСПРАВЛЕНО: Создаем фейковый пустой прототип-заглушку, чтобы вызывающая функция 
-        -- не упала и не ушла в бесконечный цикл из-за отсутствия иконки!
-        local dummy_prototype = {
+        local dummy_prototype =
+        {
             icon = "__core__/graphics/empty.png",
             icon_size = 64,
             icons = nil
@@ -55,7 +49,6 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
     end
     local entries = {}
 
-    -- Если передана прямая строка-путь
     if type(prototype_data_or_path) == "string" and item_type == "path" then
         table.insert(entries,
         {
@@ -66,18 +59,15 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
         return entries
     end
 
-    -- 1. ИСПРАВЛЕНО ДЛЯ 2.0+: Извлекаем иконки из новой структуры icon_draw_specification
     local raw_icons = prototype_data_or_path.icons
     if not raw_icons and prototype_data_or_path.icon_draw_specification then
-        -- Проверяем сначала icons внутри спецификации, затем слои layers
-        raw_icons = prototype_data_or_path.icon_draw_specification.icons
-                 or prototype_data_or_path.icon_draw_specification.layers
+        raw_icons = prototype_data_or_path.icon_draw_specification.icons or prototype_data_or_path.icon_draw_specification.layers
     end
 
-    -- Обработка многослойных иконок (таблицы/массивы)
     if raw_icons then
         for _, icon_data in ipairs(raw_icons) do
-            local icon_properties = {
+            local icon_properties =
+            {
                 icon = icon_data.icon,
                 icon_size = icon_data.icon_size or prototype_data_or_path.icon_size or 64,
                 scale = scale_base,
@@ -97,17 +87,14 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
             end
         end
     else
-        -- 2. Обработка одиночных классических иконок
         local icon_path = prototype_data_or_path.icon
         local icon_size = prototype_data_or_path.icon_size or 64
 
-        -- Аварийный подхват одиночной иконки из icon_draw_specification
         if not icon_path and prototype_data_or_path.icon_draw_specification then
             icon_path = prototype_data_or_path.icon_draw_specification.icon
             icon_size = prototype_data_or_path.icon_draw_specification.icon_size or icon_size
         end
 
-        -- ХАК ДЛЯ 2.0+: Подхват путей из альтернативных графических структур (picture, sprites)
         if not icon_path then
             local pic = prototype_data_or_path.picture or prototype_data_or_path.sprites
             if pic then
@@ -116,7 +103,8 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
             end
         end
 
-        local icon_properties = {
+        local icon_properties =
+        {
             icon = icon_path,
             icon_size = icon_size,
             scale = scale_base,
@@ -132,8 +120,6 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
         if icon_properties.icon then
             table.insert(entries, icon_properties)
         else
-            -- 3. БЕЗОПАСНАЯ ЗАГЛУШКА: Убираем пугающий текст CRITICAL, так как пустая иконка — штатное поведение для некоторых скрытых объектов 2.0
-            -- log("CRITICAL FALLBACK in create_icon_entries: Missing icon property for: " .. (item_name or tostring(prototype_data_or_path)))
             table.insert(entries,
             {
                 icon = "__core__/graphics/empty.png",
@@ -143,6 +129,7 @@ local function create_icon_entries(prototype_data_or_path, item_name, item_type,
             })
         end
     end
+
     return entries
 end
 
@@ -150,7 +137,8 @@ local function add_optional_icon(icons, item_name_or_path, scale, shift)
     if not item_name_or_path then return end
     local data, type
     if string.find(item_name_or_path, "%.") or string.find(item_name_or_path, "[/\\]") then
-        table.insert(icons, {
+        table.insert(icons,
+        {
             icon = item_name_or_path,
             scale = scale,
             shift = shift
@@ -175,14 +163,16 @@ local function build_icons(entries)
 end
 
 function Public.building_recipe_icons(name_1, name_2)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {-4,4}},
         {name_2, 0.250000, {8,-8}},
     }
 end
 
 function Public.double_icons(name_1, name_2, number)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {12,-12}}, -- Up right corner (верхний правый угол)
         {name_2, 0.437500, {-10,10}}, -- Down left corner (нижний левый угол)
         {number, 0.750000, {0,0}},    -- number (номер)
@@ -190,7 +180,8 @@ function Public.double_icons(name_1, name_2, number)
 end
 
 function Public.quintuple_double_icons(name_1, name_2, name_3, name_4, name_5, name_6, name_7, number, name_8)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {12,-12}}, -- Up right corner (верхний правый угол)
         {name_2, 0.125000, {4,-4}},   -- Left down from center first ingredient (слева внизу от центра первого ингредиента)
         {name_3, 0.125000, {12,-4}},  -- Center down from center first ingredient (по центру внизу от центра первого ингредиента)
@@ -204,7 +195,8 @@ function Public.quintuple_double_icons(name_1, name_2, name_3, name_4, name_5, n
 end
 
 function Public.triple_icons(name_1, name_2, name_3, number)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.315000, {0,-14}},  -- Up (сверху)
         {name_2, 0.315000, {14,0}},   -- Right (справо)
         {name_3, 0.437500, {-10,10}}, -- Down left corner (нижний левый угол)
@@ -213,7 +205,8 @@ function Public.triple_icons(name_1, name_2, name_3, number)
 end
 
 function Public.reversed_triple_icons(name_1, name_2, name_3, number)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {12,-12}}, -- Up right corner (верхний правый угол)
         {name_2, 0.312500, {-14,0}},  -- Left (слево)
         {name_3, 0.312500, {0,14}},   -- Down (снизу)
@@ -222,7 +215,8 @@ function Public.reversed_triple_icons(name_1, name_2, name_3, number)
 end
 
 function Public.triple_to_triple_icons(name_1, name_2, name_3, name_4, name_5, name_6, number)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {12,-12}}, -- Up right corner (верхний правый угол)
         {name_2, 0.187500, {6,-6}},   -- Left down from center first ingredient (слева внизу от центра первого ингредиента)
         {name_3, 0.187500, {18,-6}},  -- Right down from center first ingredient (справа внизу от центра первого ингредиента)
@@ -234,7 +228,8 @@ function Public.triple_to_triple_icons(name_1, name_2, name_3, name_4, name_5, n
 end
 
 function Public.quadruple_to_quadruple_icons(name_1, name_2, name_3, name_4, name_5, name_6, name_7, name_8, number)
-    return build_icons{
+    return build_icons
+    {
         {name_1, 0.375000, {12,-12}}, -- Up right corner (верхний правый угол)
         {name_2, 0.125000, {4,-4}},   -- Left down from center first ingredient (слева внизу от центра первого ингредиента)
         {name_3, 0.125000, {12,-4}},  -- Center down from center first ingredient (по центру внизу от центра первого ингредиента)

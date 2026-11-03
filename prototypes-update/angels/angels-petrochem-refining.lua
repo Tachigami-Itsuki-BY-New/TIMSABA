@@ -1269,6 +1269,7 @@ data_fluid[condensates_angels].order = d
 TIMSABA.barreling.add_simple_fluid(condensates_angels)
 
 local condensates_refining = "angels-condensates-refining"
+data_recipe[condensates_refining].categories = {angels_gas_refining}
 data_recipe[condensates_refining].subgroup = is_natural_gas
 data_recipe[condensates_refining].icons = FOUR_R_I(condensates_angels, methane_angels, ethane_angels, butane_angels)
 data_recipe[condensates_refining].order = d_a

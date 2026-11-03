@@ -426,12 +426,7 @@ data_technology[cryogenic_plant].effects =
     {type = unlock_recipe, recipe = fluoroketone_cold},
     {type = unlock_recipe, recipe = nitrogen_liquid}
 }
-data_technology[cryogenic_plant].research_trigger =
-{
-    type = craft_item,
-    item = lithium_bob,
-    count = 256
-}
+data_technology[cryogenic_plant].research_trigger = {type = craft_item, item = lithium_bob}
 
 table.insert(data_technology[cryogenic_science_pack].effects, {type = unlock_recipe, recipe = aquilo_slag_processing})
 
