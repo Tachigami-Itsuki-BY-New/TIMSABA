@@ -42,7 +42,8 @@ if mods[lignumis_mods] then
         electronic_circuit .. "-iron",
         "experienced-quality-assembling-3",
         steam .. "-" .. assembling_machine,
-        steam .. "-" .. tech_automation_1
+        steam .. "-" .. tech_automation_1,
+        "big-wooden-pole"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

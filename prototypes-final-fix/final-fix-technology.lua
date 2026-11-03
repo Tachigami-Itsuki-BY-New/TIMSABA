@@ -55,17 +55,13 @@ end
 for _, tech in pairs(data_technology) do
     if tech.research_trigger then
         if tech.research_trigger.count then
-            tech.research_trigger.count = 256
+            tech.research_trigger.count = 1
         end
         if tech.research_trigger.amount then
-            tech.research_trigger.amount = 960
+            tech.research_trigger.amount = 1
         end
     end
 end
-
-data_technology[tech_steam_power].research_trigger.count = 32
-
-data_technology[tech_electronics_0].research_trigger.count = 16
 
 data_technology[tech_logistics_1].effects =
 {
@@ -80,10 +76,6 @@ end
 data_technology[tech_automation_1].effects = {{type = unlock_recipe, recipe = assembling_machine_1}}
 
 data_technology[logistic_science_pack].unit.time = 16
-
-if data_technology[tech_logistics_0] then
-    data_technology[tech_logistics_0].research_trigger.count = 32
-end
 
 data_technology[steel_plate .. _productivity].prerequisites = {metallurgic_science_pack}
 data_technology[steel_plate .. _productivity].effects =
@@ -185,14 +177,6 @@ if mods[muluna_mods] then
 end
 
 -- MOSHINE
-if mods[moshine_mods] then
-    data_technology["moshine-tech-neural_computer"].research_trigger =
-    {
-        type = craft_item,
-        item = neural_computer,
-        count = 4
-    }
-end
 
 -- ARIG
 if mods[arig_mods] then
@@ -218,8 +202,6 @@ end
 
 -- CORRUNDUM
 if mods[corrundum_mods] then
-    data_technology[electrochemical_science_pack].research_trigger.count = 1
-
     TIMSABA.functions.auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
 end
 
@@ -245,12 +227,6 @@ end
 
 -- VESTA
 if mods[vesta_mods] then
-    if data_technology[tech_algea_extracting] then
-       data_technology[tech_algea_extracting].research_trigger.count = 1
-    end
-
-    data_technology[tech_gas_manipulation_science_pack].research_trigger.count = 1
-
     TIMSABA.functions.auto_added_science_pack(gas_manipulation_science_pack, tech_gas_manipulation_science_pack)
 end
 
@@ -279,20 +255,4 @@ end
 if mods[aegis_bellicos_mods] then
     TIMSABA.functions.auto_added_science_pack(lightweight_science_pack, lightweight_science_pack)
     TIMSABA.functions.auto_added_science_pack(pulsar_science_pack, pulsar_science_pack)
-end
-
--- OBSIDIAX
-if mods[obsidiax_mods] then
-    -- УБРАТЬ или ИЗМЕНИТЬ после корректировки технологий
-    table.insert(data_lab[lab].inputs, obsidian_cube_sp)
-end
-
--- LINOX
-if mods[linox_mods] then
-    -- УБРАТЬ или ИЗМЕНИТЬ после корректировки технологий
-    table.insert(data_lab[lab].inputs, lava_data_card)
-    table.insert(data_lab[lab].inputs, rare_data_card)
-    table.insert(data_lab[lab].inputs, samarium_data_card)
-    table.insert(data_lab[lab].inputs, dysprosium_data_card)
-    table.insert(data_lab[lab].inputs, neodymium_data_card)
 end

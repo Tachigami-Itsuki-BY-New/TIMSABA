@@ -24,23 +24,7 @@ if mods[castra_mods] then
                 {type = unlock_recipe, recipe = millerite_crushed_sorting},
                 {type = unlock_recipe, recipe = nickel_plate_bob}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {military_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {millerite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_millerite_processing_2},

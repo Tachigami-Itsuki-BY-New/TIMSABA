@@ -23,23 +23,7 @@ if mods[paracelsin_mods] then
                 {type = unlock_recipe, recipe = sphalerite_crushed},
                 {type = unlock_recipe, recipe = sphalerite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {sphalerite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_sphalerite_processing_2},
@@ -160,23 +144,7 @@ if mods[paracelsin_mods] then
                 {type = unlock_recipe, recipe = tetrahedrite_crushed},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {tetrahedrite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_tetrahedrite_processing_2},

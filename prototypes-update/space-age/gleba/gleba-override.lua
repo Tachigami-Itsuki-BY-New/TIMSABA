@@ -300,7 +300,7 @@ data_recipe[biter_egg].order = a
 data_recipe[biter_egg].energy_required = 8
 data_recipe[biter_egg].results[1].amount = 4
 
-if mods[panglia_mods] then
+if mods[cloning_vat_mods] then
     cloning_biter_egg = "cloning-biter-egg"
     data_recipe[cloning_biter_egg].subgroup = is_gleba_recipe
     data_recipe[cloning_biter_egg].icons = STONKS_I(stonks_png, biter_egg)
@@ -557,12 +557,7 @@ data_technology[tech_bacteria_cultivation].effects =
     {type = unlock_recipe, recipe = senaite_bacteria_cultivation},
     {type = unlock_recipe, recipe = franckeite_bacteria_cultivation}
 }
-data_technology[tech_bacteria_cultivation].research_trigger =
-{
-    type = craft_item,
-    item = bioflux,
-    count = 256
-}
+data_technology[tech_bacteria_cultivation].research_trigger = {type = craft_item, item = bioflux}
 
 data_technology[toolbelt_eq].prerequisites = {carbon_fiber}
 

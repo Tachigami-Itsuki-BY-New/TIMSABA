@@ -16,10 +16,7 @@ if mods[moshine_mods] then
 		"concrete-from-molten-iron-and-sand",
 		"petroleum-from-sand-sulfur-steam-carbon",
 		"moshine-concrete-from-molten-iron-and-sand",
-		"moshine-petroleum-from-sand-sulfur-steam-carbon",
-		"snouz_better_substation",
-		"snouz_better_substation_tech",
-		"long-stack-inserter"
+		"moshine-petroleum-from-sand-sulfur-steam-carbon"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

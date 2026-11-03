@@ -1502,12 +1502,7 @@ if mods[muluna_mods] then
     local tech_wood_gas_processing = "wood-gas-processing"
     data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/technology/wood-gas-processing.png"
     data_technology[tech_wood_gas_processing].icon_size = 256
-    data_technology[tech_wood_gas_processing].research_trigger =
-    {
-        type = craft_item,
-        item = cellulose_fiber_angels,
-        count = 256
-    }
+    data_technology[tech_wood_gas_processing].research_trigger = {type = craft_item, item = cellulose_fiber_angels}
 
     local tech_alice_propellant = "muluna-alice-propellant"
     data_technology[tech_alice_propellant].icons =

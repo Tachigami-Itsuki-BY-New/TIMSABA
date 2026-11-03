@@ -685,17 +685,6 @@ data_recipe[small_electric_pole].ingredients[1].amount = 2
 data_electric_pole[small_electric_pole].maximum_wire_distance = 10.5
 data_electric_pole[small_electric_pole].supply_area_distance = 3.5
 
-if mods[lignumis_mods] then
-    data_item[big_wooden_pole].stack_size = 32
-    data_item[big_wooden_pole].weight = 31250
-    data_recipe[big_wooden_pole].categories = util.table.deepcopy(data_recipe[small_electric_pole].categories)
-    data_recipe[big_wooden_pole].ingredients[1].amount = 8
-    data_recipe[big_wooden_pole].ingredients[2].amount = 8
-    data_electric_pole[big_wooden_pole].maximum_wire_distance = 42
-
-    bobmods.lib.recipe.update_recycling_recipe({big_wooden_pole})
-end
-
 local medium_poles =
 {
     {name = medium_electric_pole_1, order = a, max_wire = 13,   supply_area = 4.5},
