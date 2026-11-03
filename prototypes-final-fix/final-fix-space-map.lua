@@ -19,8 +19,8 @@ local function update_planet_or_space_location(name, solar_power, solar_power_in
         data_planet[name].label_orientation = 0.875
 
         -- Местоположение на Карте
-        if origin then data_planet[name].origin = origin end -- Дистанция от Центра (Nauvis, Gleba and ...)
-        data_planet[name].distance = distance -- Дистанция от Центра (Calidus)
+        if origin then data_planet[name].origin = origin end -- Дистанция от Центра (Nauvis, Gleba и т.д.)
+        data_planet[name].distance = distance -- Дистанция от Центра (Calidus, Bellicos и т.д.)
         data_planet[name].orientation = orientation -- Направление по орбите: 0 - север(верх) / 0.25 - восток(право) / 0.5 юг(низ) / 0.75 - запад(лево)
         data_planet[name].starmap_icon_orientation = starmap_icon_orientation
         data_planet[name].parked_platforms_orientation = 0.25
@@ -31,8 +31,8 @@ local function update_planet_or_space_location(name, solar_power, solar_power_in
         if order then data_space_location[name].order = order end
 
         -- Местоположение на Карте
-        if origin then data_space_location[name].origin = origin end -- Дистанция от Центра (Nauvis, Gleba and ...)
-        data_space_location[name].distance = distance -- Дистанция от Центра (Calidus)
+        if origin then data_space_location[name].origin = origin end -- Дистанция от Центра (Nauvis, Gleba и т.д.)
+        data_space_location[name].distance = distance -- Дистанция от Центра (Calidus, Bellicos и т.д.)
         data_space_location[name].orientation = orientation -- Направление по орбите: 0 - север(верх) / 0.25 - восток(право) / 0.5 юг(низ) / 0.75 - запад(лево)
         data_space_location[name].starmap_icon_orientation = starmap_icon_orientation
         data_space_location[name].parked_platforms_orientation = 0.25
@@ -54,17 +54,17 @@ local arc = "arc"
 local multiplier_length = settings.startup[setting_space_connection_multiplier_length].value
 
 local function update_space_connection(planet_A, dist_A, planet_B, dist_B, angle_deg)
-    local distance = 0
+    if not data_planet[planet_A] or not data_space_location[planet_A] or not data_planet[planet_B] or not data_space_location[planet_B] then return end
+
+    local distance = 10000
     if angle_deg then
         local multiplied = 10
+        local angle_rad = math.rad(angle_deg)
+        local dist_C_squared = (dist_A^2) + (dist_B^2) - (2 * dist_A * dist_B * math.cos(angle_rad))
         if settings.startup[setting_space_connection_use_line].value then
-            local angle_rad = math.rad(angle_deg)
-            local dist_C_squared = (dist_A^2) + (dist_B^2) - (2 * dist_A * dist_B * math.cos(angle_rad))
             local dist_C = math.sqrt(dist_C_squared)
             multiplied = dist_C * 1000
         else
-            local angle_rad = math.rad(angle_deg)
-            local dist_C_squared = (dist_A^2) + (dist_B^2) - (2 * dist_A * dist_B * math.cos(angle_rad))
             local straight_line = math.sqrt(dist_C_squared)
             local orbit_diff = math.abs(dist_A - dist_B)
             local arc_length = straight_line + (orbit_diff * 0.25) * angle_rad
