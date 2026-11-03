@@ -1068,8 +1068,9 @@ if mods[pelagos_mods] then
     local tech_cultivation = "cultivation"
     local breeding_ = "breeding-"
     data_technology[tech_cultivation .. _productivity].effects = {}
-    local function add_recipe_for_cultivation(recipe)
-        table.insert(data_technology[tech_cultivation .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
+    local function add_recipe_for_cultivation(name)
+        if not data_recipe[name] then return end
+        table.insert(data_technology[tech_cultivation .. _productivity].effects, {type = change_recipe_productivity, recipe = name, change = 0.1})
     end
     if mods[vulcanus_sulfuric_bacteria_mods] then
         add_recipe_for_cultivation(sulfuric_bacteria_cultivation)
@@ -1081,9 +1082,7 @@ if mods[pelagos_mods] then
     add_recipe_for_cultivation(rubyte_bacteria_cultivation)
     add_recipe_for_cultivation(bobmonium_bacteria_cultivation)
     add_recipe_for_cultivation(pentapod_egg)
-    if mods[panglia_mods] then
-        add_recipe_for_cultivation(cloning_biter_egg)
-    end
+    add_recipe_for_cultivation(cloning_biter_egg)
     add_recipe_for_cultivation(factorian_fish_breeding)
     add_recipe_for_cultivation(breeding_ .. levac_fish)
     add_recipe_for_cultivation(breeding_ .. dorflurp_jellyfish)
@@ -1093,24 +1092,16 @@ if mods[pelagos_mods] then
     add_recipe_for_cultivation(breeding_ .. blazing_puffer)
     add_recipe_for_cultivation(breeding_ .. acidic_puffer)
     add_recipe_for_cultivation(breeding_ .. corrosive_puffer)
-    if mods[tellus_mods] then
-        add_recipe_for_cultivation(magnesium_bacteria_cultivation)
-        add_recipe_for_cultivation(nauvis_parasite_reproduction)
-        add_recipe_for_cultivation(gleba_parasite_reproduction)
-    end
-    if mods[muria_mods] then
-        add_recipe_for_cultivation(acidophile_lichen_cultivation)
-    end
+    add_recipe_for_cultivation(magnesium_bacteria_cultivation)
+    add_recipe_for_cultivation(nauvis_parasite_reproduction)
+    add_recipe_for_cultivation(gleba_parasite_reproduction)
+    add_recipe_for_cultivation(acidophile_lichen_cultivation)
     add_recipe_for_cultivation(fermentation_bacteria_cultivation)
     add_recipe_for_cultivation(fermentation_bacteria_cultivation_fermented_fish)
-    if mods[apia_carnova_mods] then
-        add_recipe_for_cultivation(larvae_cultivation)
-        add_recipe_for_cultivation(flesh_reproduction)
-        add_recipe_for_cultivation(roe_reproduction)
-    end
-    if mods[lignumis_mods] then
-        add_recipe_for_cultivation(cupriavidus_necator)
-    end
+    add_recipe_for_cultivation(larvae_cultivation)
+    add_recipe_for_cultivation(flesh_reproduction)
+    add_recipe_for_cultivation(roe_reproduction)
+    add_recipe_for_cultivation(cupriavidus_necator)
     data_technology[tech_cultivation .. _productivity].unit.ingredients =
     {
         {automation_science_pack, 1},

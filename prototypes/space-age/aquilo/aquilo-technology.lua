@@ -22,12 +22,7 @@ data:extend
             {type = unlock_recipe, recipe = antimonite_crushed},
             {type = unlock_recipe, recipe = antimonite_crushed_sorting}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = antimonite_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = antimonite_ore}
     },
     {
         localised_name = {"technology-name." .. tech_antimonite_processing_2},
@@ -149,12 +144,7 @@ data:extend
             {type = unlock_recipe, recipe = germanite_crushed},
             {type = unlock_recipe, recipe = germanite_crushed_sorting}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = germanite_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = germanite_ore}
     },
     {
         localised_name = {"technology-name." .. tech_germanite_processing_2},
@@ -449,7 +439,7 @@ data:extend
         name = tech_germanium_smelting_3,
         icon = graphics_germanium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_3, tech_germanium_smelting_2, promethium_science_pack},
+        prerequisites = {tech_germanite_processing_3, tech_germanium_smelting_2},
         effects =
         {
             {type = unlock_recipe, recipe = germanium_pellet},

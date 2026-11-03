@@ -1,6 +1,8 @@
 if mods[lignumis_mods] then
     local graphics_wodginite = "__TIMSABA__/graphics/icons/lignumis/wodginite/"
 
+    wodginite_patch = "gold-patch"
+
     -- Wodginite ore / Ta + Sn + Fe + Mn + Li + Nb
     wodginite_ore = "wodginite-ore"
     wodginite_crushed = "wodginite-crushed"

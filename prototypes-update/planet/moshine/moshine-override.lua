@@ -312,7 +312,6 @@ if mods[moshine_mods] then
             {type = fluid, name = dna_raw_data, amount = 120}
         }
 
-        local dna_sequenced_data = "dna_sequenced_data"
         data_fluid[dna_sequenced_data].subgroup = is_moshine_datacell
         data_fluid[dna_sequenced_data].order = p
 
@@ -722,95 +721,24 @@ if mods[moshine_mods] then
     data_storage_tank[opticalfiber_storage_tank].fluid_box.volume = 115200
 
     -- ENERGY BUILDING
-    local big_solar_panel = "big-solar-panel"
-    data_item[big_solar_panel].subgroup = is_moshine_building_energy
-    data_item[big_solar_panel].order = a
-    data_item[big_solar_panel].stack_size = 32
-    data_item[big_solar_panel].weight = 31250
-    data_recipe[big_solar_panel].categories = {electromagnetics}
-    data_recipe[big_solar_panel].subgroup = is_moshine_building_energy
-    data_recipe[big_solar_panel].order = a
-    data_recipe[big_solar_panel].energy_required = 8
-    if settings.startup[setting_bobmods_power_solar].value then
-        data_recipe[big_solar_panel].ingredients =
-        {
-            {type = item, name = solar_panel_large_4, amount = 4},
-            {type = item, name = reinforced_concrete, amount = 64},
-            {type = item, name = supercapacitor, amount = 8},
-            {type = item, name = silicon_cell_mods, amount = 8}
-        }
-    else
-        data_recipe[big_solar_panel].ingredients =
-    {
-        {type = item, name = solar_panel_1, amount = 4},
-        {type = item, name = reinforced_concrete, amount = 64},
-        {type = item, name = supercapacitor, amount = 8},
-        {type = item, name = silicon_cell_mods, amount = 8}
-    }
-    end
-    data_solar_panel[big_solar_panel].subgroup = is_moshine_building_energy
-    data_solar_panel[big_solar_panel].order = a
-    data_solar_panel[big_solar_panel].production = (240 * 16) .. kW
-
-    local big_accumulator = "big-accumulator"
-    data_item[big_accumulator].subgroup = is_moshine_building_energy
-    data_item[big_accumulator].order = b
-    data_item[big_accumulator].stack_size = 32
-    data_item[big_accumulator].weight = 31250
-    data_recipe[big_accumulator].categories = {electromagnetics}
-    data_recipe[big_accumulator].subgroup = is_moshine_building_energy
-    data_recipe[big_accumulator].order = b
-    data_recipe[big_accumulator].energy_required = 8
-    if settings.startup[setting_bobmods_power_accumulators].value then
-        data_recipe[big_accumulator].ingredients =
-        {
-            {type = item, name = substation_4, amount = 1},
-            {type = item, name = accumulator_4, amount = 4},
-            {type = item, name = niobium_titanium_cable, amount = 32},
-            {type = item, name = reinforced_concrete, amount = 32},
-            {type = item, name = supercapacitor, amount = 8},
-            {type = item, name = neodymium_magnet, amount = 8}
-        }
-    else
-        data_recipe[big_accumulator].ingredients =
-        {
-            {type = item, name = substation_4, amount = 1},
-            {type = item, name = accumulator_1, amount = 4},
-            {type = item, name = niobium_titanium_cable, amount = 32},
-            {type = item, name = reinforced_concrete, amount = 32},
-            {type = item, name = supercapacitor, amount = 8},
-            {type = item, name = neodymium_magnet, amount = 8}
-        }
-    end
-    data_accumulator[big_accumulator].subgroup = is_moshine_building_energy
-    data_accumulator[big_accumulator].order = b
-    data_accumulator[big_accumulator].energy_source =
-    {
-        type = electric,
-        buffer_capacity = (38400 * 16) .. kJ,
-        usage_priority = tertiary,
-        input_flow_limit = (2400 * 16) .. kW,
-        output_flow_limit = (2400 * 16) .. kW
-    }
-
     local water_cooling_device = "sun_heat_cooler_1"
     data_item[water_cooling_device].subgroup = is_moshine_building_energy
-    data_item[water_cooling_device].order = c
+    data_item[water_cooling_device].order = a
     data_recipe[water_cooling_device].subgroup = is_moshine_building_energy
-    data_recipe[water_cooling_device].order = c
+    data_recipe[water_cooling_device].order = a
     data_recipe[water_cooling_device].ingredients =
     {
         {type = item, name = ice, amount = 8},
         {type = item, name = ground_water_pump, amount = 1}
     }
     data_lightning_attractor[water_cooling_device].subgroup = is_moshine_building_energy
-    data_lightning_attractor[water_cooling_device].order = c
+    data_lightning_attractor[water_cooling_device].order = a
 
     local cryogenic_cooling_device = "sun_heat_cooler_2"
     data_item[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_item[cryogenic_cooling_device].order = d
+    data_item[cryogenic_cooling_device].order = b
     data_recipe[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_recipe[cryogenic_cooling_device].order = d
+    data_recipe[cryogenic_cooling_device].order = b
     data_recipe[cryogenic_cooling_device].ingredients =
     {
         {type = item, name = silicon_carbide_bob, amount = 8},
@@ -819,7 +747,7 @@ if mods[moshine_mods] then
         {type = fluid, name = nitrogen_liquid, amount = 15},
     }
     data_lightning_attractor[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_lightning_attractor[cryogenic_cooling_device].order = d
+    data_lightning_attractor[cryogenic_cooling_device].order = b
 
     -- BUILDING
     data_item[data_processor].subgroup = is_moshine_building
@@ -956,8 +884,6 @@ if mods[moshine_mods] then
         rail_ramp_minimal,
         optical_cable,
         opticalfiber_storage_tank,
-        big_solar_panel,
-        big_accumulator,
         water_cooling_device,
         cryogenic_cooling_device,
         data_processor,
@@ -1027,19 +953,9 @@ if mods[moshine_mods] then
         {type = unlock_recipe, recipe = neodymium_iron_boron_molten},
         {type = unlock_recipe, recipe = neodymium_magnet}
     }
-    data_technology[tech_magnet_moshine].research_trigger =
-    {
-        type = craft_item,
-        item = neodymium_ingot,
-        count = 256
-    }
+    data_technology[tech_magnet_moshine].research_trigger = {type = craft_item,item = neodymium_ingot}
 
-    data_technology["moshine-tech-silicon"].research_trigger =
-    {
-        type = craft_item,
-        item = sand_angels,
-        count = 256
-    }
+    data_technology["moshine-tech-silicon"].research_trigger = {type = craft_item, item = sand_angels}
 
     table.insert(data_technology["minimalist-rails"].prerequisites, tech_neodymium_smelting_1)
 
@@ -1110,14 +1026,6 @@ if mods[moshine_mods] then
 
     local tech_neural_computer = "moshine-tech-" .. neural_computer
     table.insert(data_technology[tech_neural_computer].effects, {type = unlock_recipe, recipe = moshine_slag_processing})
-
-    if settings.startup[setting_bobmods_power_solar].value then
-        data_technology["big-solar-energy"].prerequisites = {"moshine-tech-ai-tier-2", tech_solar_energy_4}
-    end
-
-    if settings.startup[setting_bobmods_power_accumulators].value then
-        data_technology["electric-energy-big-accumulators"].prerequisites = {"moshine-tech-ai-tier-6", tech_electric_substation_4, tech_electric_energy_accumulators_4}
-    end
 
     data_recipe[promethium_science_pack].ingredients[1].name = promethium_ore
     data_recipe[promethium_science_pack].ingredients[1].amount = 128

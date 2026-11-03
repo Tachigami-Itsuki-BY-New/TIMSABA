@@ -5,17 +5,20 @@
 
 -- BASE
 local crash_site_spaceship = "crash-site-spaceship"
-local css_wreck_small_1 = crash_site_spaceship .. "-wreck-small-1"
-local css_wreck_small_2 = crash_site_spaceship .. "-wreck-small-2"
-local css_wreck_small_3 = crash_site_spaceship .. "-wreck-small-3"
-local css_wreck_small_4 = crash_site_spaceship .. "-wreck-small-4"
-local css_wreck_small_5 = crash_site_spaceship .. "-wreck-small-5"
-local css_wreck_small_6 = crash_site_spaceship .. "-wreck-small-6"
-local css_wreck_medium_1 = crash_site_spaceship .. "-wreck-medium-1"
-local css_wreck_medium_2 = crash_site_spaceship .. "-wreck-medium-2"
-local css_wreck_medium_3 = crash_site_spaceship .. "-wreck-medium-3"
-local css_wreck_big_1 = crash_site_spaceship .. "-wreck-big-1"
-local css_wreck_big_2 = crash_site_spaceship .. "-wreck-big-2"
+local _wreck_small_ = "-wreck-small-"
+local css_wreck_small_1 = crash_site_spaceship .. _wreck_small_ .. "1"
+local css_wreck_small_2 = crash_site_spaceship .. _wreck_small_ .. "2"
+local css_wreck_small_3 = crash_site_spaceship .. _wreck_small_ .. "3"
+local css_wreck_small_4 = crash_site_spaceship .. _wreck_small_ .. "4"
+local css_wreck_small_5 = crash_site_spaceship .. _wreck_small_ .. "5"
+local css_wreck_small_6 = crash_site_spaceship .. _wreck_small_ .. "6"
+local _wreck_medium_ = "-wreck-medium-"
+local css_wreck_medium_1 = crash_site_spaceship .. _wreck_medium_ .. "1"
+local css_wreck_medium_2 = crash_site_spaceship .. _wreck_medium_ .. "2"
+local css_wreck_medium_3 = crash_site_spaceship .. _wreck_medium_ .. "3"
+local _wreck_big_ = "-wreck-big-"
+local css_wreck_big_1 = crash_site_spaceship .. _wreck_big_ .. "1"
+local css_wreck_big_2 = crash_site_spaceship .. _wreck_big_ .. "2"
 if settings.startup[setting_loot_from_spaceship].value then
     if mods[lignumis_mods] then
         data_container[crash_site_spaceship].minable = {mining_time = data_container[crash_site_spaceship].minable.mining_time, results = {}}
@@ -886,9 +889,11 @@ end
 if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
-    local cryovolcanic_vent = "cryovolcanic-vent"
-    data_resource[cryovolcanic_vent].minable.results[1].amount_min = 30
-    data_resource[cryovolcanic_vent].minable.results[1].amount_max = 30
+    local nitrogen_vent = "cryovolcanic-vent"
+    data_resource[nitrogen_vent].localised_name = {"entity-name.nitrogen-vent"}
+    data_resource[nitrogen_vent].localised_description = {"entity-description.nitrogen-vent"}
+    data_resource[nitrogen_vent].minable.results[1].amount_min = 30
+    data_resource[nitrogen_vent].minable.results[1].amount_max = 30
 
     data_entity["big-metallic-rock"].minable.results =
     {
@@ -1221,7 +1226,6 @@ if mods[lignumis_mods] then
         {type = item, name = gold_stromatolite_seed, amount = 1, independent_probability = 0.25}
     }
 
-    local wodginite_patch = "gold-patch"
     data_resource[wodginite_patch].localised_name = {"entity-name.wodginite-patch"}
     data_resource[wodginite_patch].subgroup = "mineable-fluids"
     data_resource[wodginite_patch].icon = "__TIMSABA__/graphics/icons/lignumis/wodginite/wodginite-patch.png"

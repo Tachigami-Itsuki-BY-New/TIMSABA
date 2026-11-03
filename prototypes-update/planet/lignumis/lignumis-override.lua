@@ -785,12 +785,7 @@ if mods[lignumis_mods] then
         {type = unlock_recipe, recipe = iron_bearing},
         {type = unlock_recipe, recipe = iron_chest}
     }
-    data_technology[tech_iron_processing].research_trigger =
-    {
-        type = craft_item,
-        item = crushed_saphirite,
-        count = 200
-    }
+    data_technology[tech_iron_processing].research_trigger = {type = craft_item, item = crushed_saphirite}
 
     tech_copper_processing = "copper-processing"
     data_technology[tech_copper_processing].effects =
@@ -801,12 +796,7 @@ if mods[lignumis_mods] then
         {type = unlock_recipe, recipe = burner_lumber_mill_copper},
         {type = unlock_recipe, recipe = basic_gun_turret_copper}
     }
-    data_technology[tech_copper_processing].research_trigger =
-    {
-        type = craft_item,
-        item = crushed_stiratite,
-        count = 200
-    }
+    data_technology[tech_copper_processing].research_trigger = {type = craft_item, item = crushed_stiratite}
 
     local planet_discovery_lignumis = "planet-discovery-lignumis"
     if mods[muluna_mods] then

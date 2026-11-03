@@ -332,12 +332,7 @@ data_technology[electromagnetic_plant].prerequisites = {tech_holmium_smelting_1}
 data_technology[electromagnetic_science_pack].prerequisites = {electromagnetic_plant}
 table.insert(data_technology[electromagnetic_science_pack].effects, {type = unlock_recipe, recipe = fulgora_slag_processing})
 table.insert(data_technology[electromagnetic_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
-data_technology[electromagnetic_science_pack].research_trigger =
-{
-    type = craft_item,
-    item = supercapacitor,
-    count = 256
-}
+data_technology[electromagnetic_science_pack].research_trigger = {type = craft_item, item = supercapacitor}
 
 data_technology[tech_holmium_processing].icon = "__space-age__/graphics/icons/holmium-plate.png"
 data_technology[tech_holmium_processing].icon_size = 64

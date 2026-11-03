@@ -549,12 +549,7 @@ if mods[muria_mods] then
     data_technology[tech_advanced_lead_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
     data_technology[tech_advanced_lead_processing].icon_size = 64
 
-    data_technology[acidworking_science_pack].research_trigger =
-    {
-        type = craft_item,
-        item = leaded_fuel,
-        count = 256
-    }
+    data_technology[acidworking_science_pack].research_trigger = {type = craft_item, item = leaded_fuel}
 
     local battery = "battery"
     data_technology[battery .. _productivity].prerequisites = {acidworking_science_pack}

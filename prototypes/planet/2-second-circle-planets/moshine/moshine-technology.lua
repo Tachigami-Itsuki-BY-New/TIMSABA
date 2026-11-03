@@ -25,22 +25,7 @@ if mods[moshine_mods] then
                 {type = unlock_recipe, recipe = monazite_crushed},
                 {type = unlock_recipe, recipe = monazite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = craft_item, item = monazite_ore}
         },
         {
             localised_name = {"technology-name." .. tech_monazite_processing_2},
@@ -160,22 +145,7 @@ if mods[moshine_mods] then
                 {type = unlock_recipe, recipe = aeschynite_crushed},
                 {type = unlock_recipe, recipe = aeschynite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = craft_item, item = aeschynite_ore}
         },
         {
             localised_name = {"technology-name." .. tech_aeschynite_processing_2},
@@ -339,8 +309,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -408,7 +377,7 @@ if mods[moshine_mods] then
             type = technology,
             name = tech_phosphorus_processing_2,
             icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-            prerequisites = {tech_phosphorus_processing, tech_monazite_processing_2},
+            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = water_orange_waste_purification},

@@ -1,9 +1,11 @@
 if mods[paracelsin_mods] then
+	local cryovolcanic_mixture = "cryovolcanic-mixture"
     local replace_prototypes =
     {
 		[zinc_mods] = zinc_ore_bob,
         [zinc_plate_mods] = zinc_plate_bob,
-        [nitric_acid_mods] = nitric_acid_angels
+        [nitric_acid_mods] = nitric_acid_angels,
+		[cryovolcanic_mixture] = nitrogen_angels
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -33,7 +35,9 @@ if mods[paracelsin_mods] then
 		"advanced-repair-device",
 		"vaterite-processing-productivity",
 		"burner-pumpjack",
-		"concrete-from-calcium-sulfate"
+		"concrete-from-calcium-sulfate",
+		cryovolcanic_mixture,
+		cryovolcanic_mixture .. "-separation"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

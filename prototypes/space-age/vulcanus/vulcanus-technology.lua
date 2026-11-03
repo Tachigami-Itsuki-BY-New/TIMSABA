@@ -23,11 +23,7 @@ data:extend
             {type = unlock_recipe, recipe = wolframite_crushed_sorting},
             {type = unlock_recipe, recipe = tungsten_plate_bob}
         },
-        research_trigger =
-        {
-            type = mine_entity,
-            entities = {"big-volcanic-rock", "huge-volcanic-rock"}
-        }
+        research_trigger = {type = mine_entity, entities = {"big-volcanic-rock", "huge-volcanic-rock"}}
     },
     {
         localised_name = {"technology-name." .. tech_wolframite_processing_2},
@@ -146,11 +142,7 @@ data:extend
             {type = unlock_recipe, recipe = samarskite_crushed},
             {type = unlock_recipe, recipe = samarskite_crushed_sorting}
         },
-        research_trigger =
-        {
-            type = mine_entity,
-            entities = {"big-volcanic-rock", "huge-volcanic-rock"}
-        }
+        research_trigger = {type = mine_entity, entities = {"big-volcanic-rock", "huge-volcanic-rock"}}
     },
     {
         localised_name = {"technology-name." .. tech_samarskite_processing_2},
