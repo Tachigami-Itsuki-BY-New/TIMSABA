@@ -298,9 +298,9 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[artillery_wagon_4].prerequisites, golden_science_pack)
     end
 
-    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)
-    table.insert(data_technology[tech_gallium_smelting_2].prerequisites, tech_gallite_processing_2)
-    table.insert(data_technology[tech_gallium_smelting_3].prerequisites, tech_gallite_processing_3)
+    data_technology[tech_gallium_smelting_1].prerequisites = {tech_gallite_processing_1}
+    data_technology[tech_gallium_smelting_2].prerequisites = {tech_gallite_processing_2, tech_gallium_smelting_1}
+    data_technology[tech_gallium_smelting_3].prerequisites = {tech_gallite_processing_3, tech_gallium_smelting_2}
 
     table.insert(data_technology[tech_powellite_processing_4].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, golden_science_pack)
@@ -308,8 +308,6 @@ if mods[secretas_frozeta_mods] then
     table.insert(data_technology[tech_samarskite_processing_3].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_brannerite_processing_3].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_rheniite_processing_3].prerequisites, golden_science_pack)
-    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, golden_science_pack)
-    table.insert(data_technology[tech_germanite_processing_2].prerequisites, golden_science_pack)
     if mods[castra_mods] then
         table.insert(data_technology[tech_millerite_processing_3].prerequisites, golden_science_pack)
     end
@@ -318,6 +316,7 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, golden_science_pack)
     end
     if mods[moshine_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, golden_science_pack)
         table.insert(data_technology[tech_monazite_processing_3].prerequisites, golden_science_pack)
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, golden_science_pack)
     end

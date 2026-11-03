@@ -335,12 +335,7 @@ if mods[aegis_bellicos_mods] then
     }
 
     data_technology[lightweight_science_pack].prerequisites = {tech_beryllium_bronze_processing}
-    data_technology[lightweight_science_pack].research_trigger =
-    {
-        type = craft_item,
-        item = beryllium_bronze_plate,
-        count = 256
-    }
+    data_technology[lightweight_science_pack].research_trigger = {type = craft_item, item = beryllium_bronze_plate}
 
     data_technology[tech_space_logistic].unit.ingredients =
     {
@@ -538,4 +533,8 @@ if mods[aegis_bellicos_mods] then
     added_prerequisites(pollution_clean_module_8)
     added_prerequisites(pollution_create_module_8)
     added_prerequisites(quality_module_8)
+
+    if mods[vesta_mods] then
+        table.insert(data_technology[tech_iridium_smelting_2].prerequisites, pulsar_science_pack)
+    end
 end

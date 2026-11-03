@@ -37,8 +37,6 @@ if mods[muluna_mods] then
     }
     data_rocket_silo[big_rocket_silo].order = b
     data_rocket_silo[big_rocket_silo].crafting_speed = 4
-
-    bobmods.lib.recipe.update_recycling_recipe({big_rocket_silo})
 end
 
 data_recipe[rocket_part].order = c
@@ -304,7 +302,6 @@ if mods[panglia_mods] then
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
 
-    local asteroid_collector_2 = "snouz_better_asteroid_collector"
     data_item[asteroid_collector_2].subgroup = space_platform
     data_item[asteroid_collector_2].order = e
     data_item[asteroid_collector_2].stack_size = 8
@@ -333,8 +330,6 @@ if mods[panglia_mods] then
     data_asteroid_collector[asteroid_collector_2].passive_energy_usage = 500 .. J
     data_asteroid_collector[asteroid_collector_2].arm_energy_usage = 1000 .. J
     data_asteroid_collector[asteroid_collector_2].arm_slow_energy_usage = 1500 .. J
-
-    bobmods.lib.recipe.update_recycling_recipe({asteroid_collector_2})
 end
 
 data_item[crusher].order = f
@@ -393,19 +388,7 @@ if mods[corrundum_mods] then
     data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
 end
 
-bobmods.lib.recipe.update_recycling_recipe
-({
-    rocket_silo,
-    cargo_landing_pad,
-    space_platform_foundation,
-    cargo_bay,
-    landing_pad_unloading_bay,
-    asteroid_collector,
-    thruster
-})
-
 if mods[panglia_mods] then
-    local spaceship_wall = "snouz_wall_hull"
     data_item[spaceship_wall].subgroup = is_space_platform_mods
     data_item[spaceship_wall].order = a
     data_item[spaceship_wall].stack_size = 200
@@ -420,8 +403,6 @@ if mods[panglia_mods] then
     }
     data_wall[spaceship_wall].subgroup = is_space_platform_mods
     data_wall[spaceship_wall].order = a
-
-    bobmods.lib.recipe.update_recycling_recipe({spaceship_wall})
 
     data_technology[spaceship_wall].unit.ingredients =
     {
@@ -464,11 +445,9 @@ if mods[muluna_mods] then
             {type = item, name = telescope, amount = 64}
         }
     end
-    data_accumulator[satellite_radar].localised_name = {"entity-name.satellite-radar"}
-    data_accumulator[satellite_radar].subgroup = is_space_platform_mods
-    data_accumulator[satellite_radar].order = b
-
-    bobmods.lib.recipe.update_recycling_recipe({satellite_radar})
+    data_radar[satellite_radar].localised_name = {"entity-name.satellite-radar"}
+    data_radar[satellite_radar].subgroup = is_space_platform_mods
+    data_radar[satellite_radar].order = b
 end
 
 if mods[hyarion_mods] then
@@ -534,13 +513,6 @@ if mods[hyarion_mods] then
     data_radar[electromagnetic_radar].energy_usage = 1200 .. kW
     data_radar[electromagnetic_radar].max_distance_of_nearby_sector_revealed = 13
     data_radar[electromagnetic_radar].max_distance_of_sector_revealed = 29
-
-    bobmods.lib.recipe.update_recycling_recipe
-    ({
-        space_manufactorer,
-        zero_grav_accumulator,
-        electromagnetic_radar
-    })
 end
 
 local metallic_asteroids =
@@ -628,11 +600,11 @@ data_recipe[oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, ice)
 data_recipe[oxide_asteroid_crushing_1].energy_required = 4
 data_recipe[oxide_asteroid_crushing_1].results = {{type = item, name = ice, amount = 8}}
 
-data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"fluid-name." .. nitric_acid_angels}}
+data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"fluid-name." .. gaseous_nitric_acid}}
 data_recipe[advanced_oxide_asteroid_crushing_1].categories = {chemistry}
-data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, nitric_acid_angels)
+data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, gaseous_nitric_acid)
 data_recipe[advanced_oxide_asteroid_crushing_1].energy_required = 4
-data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = fluid, name = nitric_acid_angels, amount = 120}}
+data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = fluid, name = gaseous_nitric_acid, amount = 120}}
 
 local promethium_asteroids =
 {
@@ -745,8 +717,6 @@ if mods[hyarion_mods] then
         {type = item, name = plastic, amount = 4},
         {type = fluid, name = photoresist_liquid, amount = 30}
     }
-
-    bobmods.lib.recipe.update_recycling_recipe({bismuth_transistor})
 end
 
 if mods[secretas_frozeta_mods] then
@@ -948,4 +918,22 @@ data_recipe[advanced_thruster_oxidizer].energy_required = 4
 data_recipe[advanced_thruster_oxidizer].ingredients = {{type = fluid, name = nitric_acid_angels, amount = 60}}
 data_recipe[advanced_thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 240}}
 
-bobmods.lib.recipe.update_recycling_recipe({crusher})
+bobmods.lib.recipe.update_recycling_recipe
+({
+    rocket_silo,
+    big_rocket_silo,
+    cargo_landing_pad,
+    space_platform_foundation,
+    cargo_bay,
+    landing_pad_unloading_bay,
+    asteroid_collector,
+    asteroid_collector_2,
+    crusher,
+    thruster,
+    spaceship_wall,
+    satellite_radar,
+    space_manufactorer,
+    zero_grav_accumulator,
+    electromagnetic_radar,
+    bismuth_transistor
+})

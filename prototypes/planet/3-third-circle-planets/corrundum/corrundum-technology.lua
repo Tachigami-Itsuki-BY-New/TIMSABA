@@ -23,23 +23,7 @@ if mods[corrundum_mods] then
                 {type = unlock_recipe, recipe = chalcopyrite_crushed},
                 {type = unlock_recipe, recipe = chalcopyrite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {chalcopyrite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_chalcopyrite_processing_2},
@@ -161,23 +145,7 @@ if mods[corrundum_mods] then
                 {type = unlock_recipe, recipe = sperrylite_crushed_sorting},
                 {type = unlock_recipe, recipe = platinum_plate}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {sperrylite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_sperrylite_processing_2},

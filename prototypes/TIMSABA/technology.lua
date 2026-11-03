@@ -21,19 +21,7 @@ data:extend
             {type = unlock_recipe, recipe = powellite_crushed},
             {type = unlock_recipe, recipe = powellite_crushed_sorting}
         },
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1}
-            },
-            time = 30
-        }
+        research_trigger = {type = mine_entity, entities = {powellite_ore}}
     },
     {
         localised_name = {"technology-name." .. tech_powellite_processing_2},
@@ -150,19 +138,7 @@ data:extend
             {type = unlock_recipe, recipe = molybdenite_crushed},
             {type = unlock_recipe, recipe = molybdenite_crushed_sorting}
         },
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1}
-            },
-            time = 30
-        }
+        research_trigger = {type = mine_entity, entities = {molybdenite_ore}}
     },
     {
         localised_name = {"technology-name." .. tech_molybdenite_processing_2},
@@ -368,12 +344,7 @@ data:extend
             {type = unlock_recipe, recipe = uranium_238_molten},
             {type = unlock_recipe, recipe = uranium_238_plate}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = uranium_ore,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = uranium_ore}
     },
     {
         localised_name = {"technology-name." .. tech_uranium_smelting_2},
@@ -454,12 +425,7 @@ data:extend
             {type = unlock_recipe, recipe = thorium_oxide_IV},
             {type = unlock_recipe, recipe = thorium_232_bob}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = thorium_ore_bob,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = thorium_ore_bob}
     },
     {
         localised_name = {"technology-name." .. tech_thorium_smelting_2},
@@ -630,12 +596,7 @@ data:extend
         --icon_size = 256,
         prerequisites = {tech_molybdenum_smelting_1},
         effects = {{type = unlock_recipe, recipe = molybdenum_gear_wheel}},
-        research_trigger =
-        {
-            type = craft_item,
-            item = molybdenum_plate,
-            count = 256
-        }
+        research_trigger = {type = craft_item, item = molybdenum_plate}
     }
 })
 
@@ -751,12 +712,7 @@ data:extend
             {type = unlock_recipe, recipe = rhenium_bearing_ball},
             {type = unlock_recipe, recipe = rhenium_bearing}
         },
-        research_trigger =
-        {
-            type = craft_item,
-            item = rhenium_plate,
-            count = 256
-        }
+        research_trigger = {type = craft_item,item = rhenium_plate}
     }
 })
 

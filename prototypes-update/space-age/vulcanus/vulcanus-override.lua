@@ -429,12 +429,7 @@ data_technology[tungsten_carbide].effects =
     {type = unlock_recipe, recipe = tungsten_powder_vulcanus},
     {type = unlock_recipe, recipe = tungsten_carbide}
 }
-data_technology[tungsten_carbide].research_trigger =
-{
-    type = craft_item,
-    item = wolframite_crushed,
-    count = 256
-}
+data_technology[tungsten_carbide].research_trigger = {type = craft_item, item = wolframite_crushed}
 
 data_technology[foundry].effects = {}
 local function add_recipe_to_foundry_technology(recipe)
@@ -552,12 +547,7 @@ add_recipe_to_foundry_technology(casting_nitinol_pipe_to_ground)
 -- OTHERS
 add_recipe_to_foundry_technology(casting_low_density_structure)
 if mods[muluna_mods] then add_recipe_to_foundry_technology(casting_low_density_structure_muluna) end
-data_technology[foundry].research_trigger =
-{
-    type = craft_item,
-    item = tungsten_carbide_plate_bob,
-    count = 256
-}
+data_technology[foundry].research_trigger = {type = craft_item, item = tungsten_carbide_plate_bob}
 
 if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[big_mining_drill].prerequisites = {foundry, tech_drills_6}
@@ -569,12 +559,7 @@ data_technology[tech_tungsten_steel].icon_size = 64
 
 table.insert(data_technology[metallurgic_science_pack].effects, {type = unlock_recipe, recipe = vulcanus_slag_processing})
 table.insert(data_technology[metallurgic_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
-data_technology[metallurgic_science_pack].research_trigger =
-{
-    type = craft_item,
-    item = tungsten_plate_bob,
-    count = 256
-}
+data_technology[metallurgic_science_pack].research_trigger = {type = craft_item, item = tungsten_plate_bob}
 
 data_technology[vulcanus_transport_belt].localised_name = {"technology-name.vulcanus-transport-belt"}
 data_technology[vulcanus_transport_belt].prerequisites = {metallurgic_science_pack, tech_logistics_5}

@@ -24,21 +24,7 @@ if mods[shchierbin_mods] then
                 {type = unlock_recipe, recipe = vanadinite_crushed},
                 {type = unlock_recipe, recipe = vanadinite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {agricultural_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = mine_entity, entities = {vanadinite_ore}}
         },
         {
             localised_name = {"technology-name." .. tech_vanadinite_processing_2},
@@ -64,7 +50,8 @@ if mods[shchierbin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {agricultural_science_pack, 1}
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -159,12 +146,7 @@ if mods[shchierbin_mods] then
                 {type = unlock_recipe, recipe = vanadium_plate},
                 {type = unlock_recipe, recipe = vanadium_powder}
             },
-            research_trigger =
-            {
-                type = craft_item,
-                item = vanadium_ore,
-                count = 256
-            }
+            research_trigger = {type = craft_item, item = vanadium_ore}
         },
         {
             localised_name = {"technology-name." .. tech_vanadium_smelting_2},
@@ -191,7 +173,8 @@ if mods[shchierbin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {agricultural_science_pack, 1}
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -256,7 +239,8 @@ if mods[shchierbin_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1}
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }

@@ -21,23 +21,7 @@ if mods[secretas_frozeta_mods] then
                 {type = unlock_recipe, recipe = gallite_crushed},
                 {type = unlock_recipe, recipe = gallite_crushed_sorting}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = craft_item, item = gallite_ore}
         },
         {
             localised_name = {"technology-name." .. tech_gallite_processing_2},
@@ -46,7 +30,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_gallite_processing_2,
             icon = graphics_gallite_tech,
             icon_size = 256,
-            prerequisites = {tech_gallite_processing_1, cryogenic_science_pack},
+            prerequisites = {tech_gallite_processing_1, golden_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_chunks},
@@ -160,23 +144,7 @@ if mods[secretas_frozeta_mods] then
                 {type = unlock_recipe, recipe = sylvanite_crushed_sorting},
                 {type = unlock_recipe, recipe = gold_plate_bob}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger = {type = craft_item, item = sylvanite_ore}
         },
         {
             localised_name = {"technology-name." .. tech_sylvanite_processing_2},
@@ -185,7 +153,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_sylvanite_processing_2,
             icon = graphics_sylvanite_tech,
             icon_size = 256,
-            prerequisites = {tech_sylvanite_processing_1, cryogenic_science_pack},
+            prerequisites = {tech_sylvanite_processing_1, golden_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_chunks},

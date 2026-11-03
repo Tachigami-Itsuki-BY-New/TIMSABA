@@ -649,16 +649,21 @@ end
 
 -- PANGLIA
 if mods[panglia_mods] then
-    data_assembling[dna_scanner].allowed_effects = {speed, consumption, productivity}
-    data_assembling[dna_scanner].allowed_module_categories = {speed, efficiency, productivity}
+    data_furnace[dna_scanner].allowed_effects = {speed, consumption, productivity}
+    data_furnace[dna_scanner].allowed_module_categories = {speed, efficiency, productivity}
 
-    if mods[quality_mods] then
-        data_assembling[cloning_vat].allowed_effects = {speed, consumption, quality}
-        data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency, quality}
-    else
-        data_assembling[cloning_vat].allowed_effects = {speed, consumption}
-        data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency}
+    if mods[cloning_vat_mods] then
+        if mods[quality_mods] then
+            data_assembling[cloning_vat].allowed_effects = {speed, consumption, quality}
+            data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency, quality}
+        else
+            data_assembling[cloning_vat].allowed_effects = {speed, consumption}
+            data_assembling[cloning_vat].allowed_module_categories = {speed, efficiency}
+        end
     end
+
+    data_furnace[embryo_forge].allowed_effects = {speed, consumption, productivity}
+    data_furnace[embryo_forge].allowed_module_categories = {speed, efficiency, productivity}
 
     data_furnace[matter_printer_entity].allowed_effects = {speed, pollution}
     data_furnace[matter_printer_entity].allowed_module_categories = {speed, pollution_clean}

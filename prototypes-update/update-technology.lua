@@ -260,8 +260,6 @@ data_technology[tech_electronics_0].effects =
     {type = unlock_recipe, recipe = small_electric_pole}
 }
 
-table.insert(data_technology[tech_electronics_0].effects, {type = unlock_recipe, recipe = big_wooden_pole})
-
 data_technology[boiler_3].prerequisites = {boiler_2, tech_brass_processing}
 data_technology[boiler_4].prerequisites = {boiler_3, tech_tungsten_processing}
 

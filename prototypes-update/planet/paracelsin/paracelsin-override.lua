@@ -404,6 +404,8 @@ if mods[paracelsin_mods] then
         {type = unlock_recipe, recipe = nitric_acid_plastic}
     }
 
+    data_technology["pressure-power"].effects = {{type = unlock_recipe, recipe = pressure_turbine}}
+
     local tech_zinc_extraction = "zinc-extraction"
     data_technology[tech_zinc_extraction].prerequisites = {tech_sphalerite_processing_1, tech_tetrahedrite_processing_1}
     data_technology[tech_zinc_extraction].effects =
@@ -411,12 +413,7 @@ if mods[paracelsin_mods] then
         {type = unlock_recipe, recipe = zinc_cable},
         {type = unlock_recipe, recipe = zinc_rivets}
     }
-    data_technology[tech_zinc_extraction].research_trigger =
-    {
-        type = craft_item,
-        item = zinc_ore_bob,
-        count = 256
-    }
+    data_technology[tech_zinc_extraction].research_trigger = {type = craft_item, item = zinc_ore_bob}
 
     data_technology[electrochemical_plant].effects = {{type = unlock_recipe, recipe = electrochemical_plant}}
 
@@ -540,8 +537,6 @@ if mods[paracelsin_mods] then
     table.insert(data_technology[tech_samarskite_processing_3].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_rheniite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_germanite_processing_2].prerequisites, galvanization_science_pack)
     if mods[castra_mods] then
         table.insert(data_technology[tech_millerite_processing_3].prerequisites, galvanization_science_pack)
     end
@@ -550,6 +545,7 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, galvanization_science_pack)
     end
     if mods[moshine_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, galvanization_science_pack)
         table.insert(data_technology[tech_monazite_processing_3].prerequisites, galvanization_science_pack)
         table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, galvanization_science_pack)
     end
