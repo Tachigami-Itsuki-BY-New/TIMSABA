@@ -131,13 +131,13 @@ if mods[castra_mods] then
             icons = RECYCLING_I(recycling_png, millerite_crushed),
             order = g,
             allow_productivity = true,
-            energy_required = 1, -- Millerite crushed (Sorting) / Ni + Co + S
-            ingredients = {{type = item, name = millerite_crushed, amount = 4}},
+            energy_required = 2, -- Millerite crushed (Sorting) / Ni + Co + S
+            ingredients = {{type = item, name = millerite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = nickel_ore_bob, amount = 2},
-                {type = item, name = cobalt_ore_bob, amount = 1},
-                {type = item, name = sulfur, amount = 1}
+                {type = item, name = nickel_ore_bob, amount = 4},
+                {type = item, name = cobalt_ore_bob, amount = 2},
+                {type = item, name = sulfur, amount = 2}
             },
             main_product = nickel_ore_bob
         },
@@ -176,7 +176,7 @@ if mods[castra_mods] then
                 {type = item, name = iron_ore, amount = 1},
                 {type = item, name = copper_ore, amount = 1},
                 {type = item, name = chromium_ore_angels, amount = 1},
-                {type = item, name = sulfur, amount = 1}
+                {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
             },
             main_product = nickel_ore_bob
         },

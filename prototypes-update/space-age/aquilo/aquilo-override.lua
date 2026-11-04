@@ -85,14 +85,13 @@ data_recipe[lithium].results =
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
-data_recipe[lithium_plate].categories = {chemistry}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
 data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, hydrogen_fluoride_angels, ammonium_chloride, oxygen_angels)
 data_recipe[lithium_plate].order = e
 data_recipe[lithium_plate].energy_required = 4 -- 2LiCl(s) + 2NH₃(aq) + F₂(g) --> 2Li(s) + 2NH₄Cl(s) + 2HF(g) + O₂(g)
 data_recipe[lithium_plate].ingredients =
 {
-    {type = item, name = lithium_chloride_angels, amount = 60},
+    {type = item, name = lithium_chloride_angels, amount = 4},
     {type = fluid, name = ammonia_solution, amount = 60},
     {type = fluid, name = fluorine, amount = 30}
 }

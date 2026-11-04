@@ -1,5 +1,5 @@
 if mods[secretas_frozeta_mods] then
-    local ig_frozeta = "frozeta"
+    ig_frozeta = "frozeta"
     data:extend
     ({
         {
@@ -22,6 +22,6 @@ if mods[secretas_frozeta_mods] then
         {name = is_frozeta_recipe,   order = b},
         {name = is_gallite,          order = c},
         {name = is_sylvanite,        order = d},
-        {name = is_frozeta_building, order = e}
+        {name = is_frozeta_building, order = j}
     })
 end

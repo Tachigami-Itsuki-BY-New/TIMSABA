@@ -143,13 +143,13 @@ if mods[secretas_frozeta_mods] then
             icons = RECYCLING_I(recycling_png, sylvanite_crushed),
             order = g,
             allow_productivity = true,
-            energy_required = 1, -- Sylvanite crushed (Sorting) / Au + Ag + NaCl
-            ingredients = {{type = item, name = sylvanite_crushed, amount = 4}},
+            energy_required = 2, -- Sylvanite crushed (Sorting) / Au + Ag + NaCl
+            ingredients = {{type = item, name = sylvanite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = gold_ore_bob, amount = 2},
-                {type = item, name = silver_ore_bob, amount = 1},
-                {type = item, name = salt_angels, amount = 1}
+                {type = item, name = gold_ore_bob, amount = 4},
+                {type = item, name = silver_ore_bob, amount = 2},
+                {type = item, name = salt_angels, amount = 2}
             },
             main_product = gold_ore_bob
         },
@@ -188,7 +188,7 @@ if mods[secretas_frozeta_mods] then
                 {type = item, name = lead_ore_bob, amount = 1},
                 {type = item, name = copper_ore, amount = 1},
                 {type = item, name = nickel_ore_bob, amount = 1},
-                {type = item, name = salt_angels, amount = 1}
+                {type = item, name = salt_angels, amount = 1, independent_probability = 0.5}
             },
             main_product = gold_ore_bob
         },

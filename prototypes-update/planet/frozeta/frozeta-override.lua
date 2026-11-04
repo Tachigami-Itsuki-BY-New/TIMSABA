@@ -144,6 +144,11 @@ if mods[secretas_frozeta_mods] then
         })
     end
 
+    -- GALLIUM
+    data_item_subgroup[is_gallium].group = ig_frozeta
+
+    data_item_subgroup[is_gallium_chemistry].group = ig_frozeta
+
     -- BUILDING
     data_item[steam_recycler].subgroup = is_frozeta_building
     data_item[steam_recycler].order = a

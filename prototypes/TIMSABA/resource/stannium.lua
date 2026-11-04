@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_stannium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 1, -- Stannium crushed (Sorting) / Sn + Mg
-        ingredients = {{type = item, name = crushed_stannium, amount = 4}},
+        energy_required = 2, -- Stannium crushed (Sorting) / Sn + Mg
+        ingredients = {{type = item, name = crushed_stannium, amount = 8}},
         results =
         {
-            {type = item, name = tin_ore_bob, amount = 2},
-            {type = item, name = magnesium_ore, amount = 2}
+            {type = item, name = tin_ore_bob, amount = 4},
+            {type = item, name = magnesium_ore, amount = 4}
         },
         main_product = tin_ore_bob
     },
@@ -185,9 +185,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1}
+            {type = item, name = magnesium_ore, amount = 4},
+            {type = item, name = aluminium_ore_bob, amount = 2},
+            {type = item, name = silver_ore_bob, amount = 2}
         },
         main_product = tin_ore_bob
     },
@@ -203,10 +203,10 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = uranium_ore, amount = 1}
+            {type = item, name = magnesium_ore, amount = 4},
+            {type = item, name = aluminium_ore_bob, amount = 2},
+            {type = item, name = silver_ore_bob, amount = 2},
+            {type = item, name = uranium_ore, amount = 2}
         },
         main_product = tin_ore_bob
     },
@@ -222,11 +222,11 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = thorium_ore_bob, amount = 1}
+            {type = item, name = magnesium_ore, amount = 4},
+            {type = item, name = aluminium_ore_bob, amount = 2},
+            {type = item, name = silver_ore_bob, amount = 2},
+            {type = item, name = uranium_ore, amount = 2},
+            {type = item, name = thorium_ore_bob, amount = 2}
         },
         main_product = tin_ore_bob
     },

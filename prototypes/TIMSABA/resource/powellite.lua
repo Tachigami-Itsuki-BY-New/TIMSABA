@@ -145,13 +145,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powellite_crushed),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Powellite crushed (Sorting) / Ca + Mo + Calcium silicate
-        ingredients = {{type = item, name = powellite_crushed, amount = 4}},
+        energy_required = 2, -- Powellite crushed (Sorting) / Ca + Mo + Calcium silicate
+        ingredients = {{type = item, name = powellite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = calcium, amount = 2},
-            {type = item, name = molybdenum_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
+            {type = item, name = calcium, amount = 4},
+            {type = item, name = molybdenum_ore, amount = 2},
+            {type = item, name = calcium_silicate, amount = 2}
         },
         main_product = calcium
     },
@@ -190,7 +190,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = copper_ore, amount = 1},
             {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = tungsten_ore_bob, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
         },
         main_product = calcium
     },
