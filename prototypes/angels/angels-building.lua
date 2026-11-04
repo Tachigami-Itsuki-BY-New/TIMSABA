@@ -314,8 +314,8 @@ TIMSABA.functions.create_buildings
         module_slots = 1,
         crafting_speed = 1,
         pollution = 1,
-        drain = 15 .. kW,
-        energy_usage = (240 - 15) .. kW,
+        drain = drain .. kW,
+        energy_usage = (240 - drain) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_clean}
@@ -1504,8 +1504,8 @@ TIMSABA.functions.create_buildings
         module_slots = 2,
         crafting_speed = 2,
         pollution = -2,
-        drain = 15 .. kW,
-        energy_usage = 45 .. kW,
+        drain = drain .. kW,
+        energy_usage = (60 - drain) .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy,
         allowed_effects = {speed, consumption, pollution},
         allowed_module_categories = {speed, efficiency, pollution_create}
