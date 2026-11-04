@@ -127,13 +127,13 @@ if mods[corrundum_mods] then
             icons = RECYCLING_I(recycling_png, sperrylite_crushed),
             order = g,
             allow_productivity = true,
-            energy_required = 1, -- Sperrylite crushed (Sorting) / Pt + As + CaSiO₃
-            ingredients = {{type = item, name = sperrylite_crushed, amount = 4}},
+            energy_required = 2, -- Sperrylite crushed (Sorting) / Pt + As + CaSiO₃
+            ingredients = {{type = item, name = sperrylite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = platinum_ore_angels, amount = 2},
-                {type = item, name = arsenic, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
+                {type = item, name = platinum_ore_angels, amount = 4},
+                {type = item, name = arsenic, amount = 2},
+                {type = item, name = calcium_silicate, amount = 2}
             },
             main_product = platinum_ore_angels
         },
@@ -172,7 +172,7 @@ if mods[corrundum_mods] then
                 {type = item, name = tin_ore_bob, amount = 1},
                 {type = item, name = copper_ore, amount = 1},
                 {type = item, name = iron_ore, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
+                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
             },
             main_product = platinum_ore_angels
         },

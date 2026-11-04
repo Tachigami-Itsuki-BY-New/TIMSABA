@@ -146,13 +146,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, molybdenite_crushed),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Molybdenite crushed (Sorting) / Mo + Re + S
-        ingredients = {{type = item, name = molybdenite_crushed, amount = 4}},
+        energy_required = 2, -- Molybdenite crushed (Sorting) / Mo + Re + S
+        ingredients = {{type = item, name = molybdenite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = molybdenum_ore, amount = 2},
-            {type = item, name = rhenium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = molybdenum_ore, amount = 4},
+            {type = item, name = rhenium_ore, amount = 2},
+            {type = item, name = sulfur, amount = 2}
         },
         main_product = molybdenum_ore
     },
@@ -191,7 +191,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = gold_ore_bob, amount = 1},
             {type = item, name = tungsten_ore_bob, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
         },
         main_product = molybdenum_ore
     },

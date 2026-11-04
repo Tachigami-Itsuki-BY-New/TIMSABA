@@ -1059,10 +1059,10 @@ TIMSABA.functions.create_recipes
         energy_required = 2, -- 2SO₂(g) + O₂(g) --> 2SO₃(g)
         ingredients =
         {
-            {type = fluid, name = sulfur_dioxide_angels, amount = 120},
-            {type = fluid, name = oxygen_angels, amount = 60}
+            {type = fluid, name = sulfur_dioxide_angels, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 30}
         },
-        results = {{type = fluid, name = sulfur_trioxide_gas, amount = 120}},
+        results = {{type = fluid, name = sulfur_trioxide_gas, amount = 60}},
         main_product = sulfur_trioxide_gas
     },
     {

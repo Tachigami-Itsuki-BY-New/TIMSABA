@@ -211,51 +211,63 @@ data_item_subgroup["angels-ore-sorting-t1"].order = c_a
 data_item_subgroup["angels-ore-sorting-t2"].order = c_b
 
 data_recipe[crushed_saphirite_processing].icons = RECYCLING_I(recycling_png, crushed_saphirite)
+data_recipe[crushed_saphirite_processing].energy_required = 2
+data_recipe[crushed_saphirite_processing].ingredients[1].amount = 8
 data_recipe[crushed_saphirite_processing].results =
 {
-    {type = item, name = iron_ore, amount = 2},
-    {type = item, name = copper_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = copper_ore, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[crushed_jivolite_processing].icons = RECYCLING_I(recycling_png, crushed_jivolite)
+data_recipe[crushed_jivolite_processing].energy_required = 2
+data_recipe[crushed_jivolite_processing].ingredients[1].amount = 8
 data_recipe[crushed_jivolite_processing].results =
 {
-    {type = item, name = iron_ore, amount = 2},
-    {type = item, name = copper_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = copper_ore, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[crushed_stiratite_processing].icons = RECYCLING_I(recycling_png, crushed_stiratite)
+data_recipe[crushed_stiratite_processing].energy_required = 2
+data_recipe[crushed_stiratite_processing].ingredients[1].amount = 8
 data_recipe[crushed_stiratite_processing].results =
 {
-    {type = item, name = copper_ore, amount = 2},
-    {type = item, name = iron_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = iron_ore, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[crushed_crotinnium_processing].icons = RECYCLING_I(recycling_png, crushed_crotinnium)
+data_recipe[crushed_crotinnium_processing].energy_required = 2
+data_recipe[crushed_crotinnium_processing].ingredients[1].amount = 8
 data_recipe[crushed_crotinnium_processing].results =
 {
-    {type = item, name = copper_ore, amount = 2},
-    {type = item, name = iron_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = iron_ore, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[crushed_rubyte_processing].icons = RECYCLING_I(recycling_png, crushed_rubyte)
+data_recipe[crushed_rubyte_processing].energy_required = 2
+data_recipe[crushed_rubyte_processing].ingredients[1].amount = 8
 data_recipe[crushed_rubyte_processing].results =
 {
-    {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = tin_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = lead_ore_bob, amount = 4},
+    {type = item, name = tin_ore_bob, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[crushed_bobmonium_processing].icons = RECYCLING_I(recycling_png, crushed_bobmonium)
+data_recipe[crushed_bobmonium_processing].energy_required = 2
+data_recipe[crushed_bobmonium_processing].ingredients[1].amount = 8
 data_recipe[crushed_bobmonium_processing].results =
 {
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = lead_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = tin_ore_bob, amount = 4},
+    {type = item, name = lead_ore_bob, amount = 2},
+    {type = item, name = slag_angels, amount = 2}
 }
 
 data_recipe[chunk_saphirite_processing].icons = RECYCLING_I(recycling_png, chunk_saphirite)
@@ -340,7 +352,7 @@ data_recipe[crystal_saphirite_processing].results =
     {type = item, name = silicon_ore_bob, amount = 1},
     {type = item, name = nickel_ore_bob, amount = 1},
     {type = item, name = titanium_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_recipe[crystal_jivolite_processing].icons = RECYCLING_I(recycling_png, crystal_jivolite)
@@ -351,7 +363,7 @@ data_recipe[crystal_jivolite_processing].results =
     {type = item, name = nickel_ore_bob, amount = 1},
     {type = item, name = zinc_ore_bob, amount = 1},
     {type = item, name = cobalt_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_recipe[crystal_stiratite_processing].icons = RECYCLING_I(recycling_png, crystal_stiratite)
@@ -362,7 +374,7 @@ data_recipe[crystal_stiratite_processing].results =
     {type = item, name = silicon_ore_bob, amount = 1},
     {type = item, name = aluminium_ore_bob, amount = 1},
     {type = item, name = gold_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_recipe[crystal_crotinnium_processing].icons = RECYCLING_I(recycling_png, crystal_crotinnium)
@@ -373,7 +385,7 @@ data_recipe[crystal_crotinnium_processing].results =
     {type = item, name = aluminium_ore_bob, amount = 1},
     {type = item, name = silver_ore_bob, amount = 1},
     {type = item, name = uranium_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_recipe[crystal_rubyte_processing].icons = RECYCLING_I(recycling_png, crystal_rubyte)
@@ -384,7 +396,7 @@ data_recipe[crystal_rubyte_processing].results =
     {type = item, name = calcium, amount = 1},
     {type = item, name = zinc_ore_bob, amount = 1},
     {type = item, name = cobalt_ore_bob, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_recipe[crystal_bobmonium_processing].icons = RECYCLING_I(recycling_png, crystal_bobmonium)
@@ -395,7 +407,7 @@ data_recipe[crystal_bobmonium_processing].results =
     {type = item, name = calcium, amount = 1},
     {type = item, name = silver_ore_bob, amount = 1},
     {type = item, name = uranium_ore, amount = 1},
-    {type = item, name = slag_angels, amount = 1}
+    {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
 }
 
 data_item_subgroup["angels-ore-sorting-t4"].order = c_d
@@ -531,10 +543,12 @@ data_recipe[crystal_ferrium].results[1].amount = 4
 data_recipe[crushed_ferrium_processing].subgroup = is_iron_item
 data_recipe[crushed_ferrium_processing].icons = RECYCLING_I(recycling_png, crushed_ferrium)
 data_recipe[crushed_ferrium_processing].order = d_a
+data_recipe[crushed_ferrium_processing].energy_required = 2
+data_recipe[crushed_ferrium_processing].ingredients[1].amount = 8
 data_recipe[crushed_ferrium_processing].results =
 {
-    {type = item, name = iron_ore, amount = 2},
-    {type = item, name = manganese_ore_angels, amount = 2}
+    {type = item, name = iron_ore, amount = 4},
+    {type = item, name = manganese_ore_angels, amount = 4}
 }
 
 data_recipe[powder_ferrium_processing].subgroup = is_iron_item
@@ -545,9 +559,9 @@ data_recipe[powder_ferrium_processing].ingredients[1].amount = 8
 data_recipe[powder_ferrium_processing].results =
 {
     {type = item, name = iron_ore, amount = 4},
-    {type = item, name = manganese_ore_angels, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1}
+    {type = item, name = manganese_ore_angels, amount = 4},
+    {type = item, name = nickel_ore_bob, amount = 2},
+    {type = item, name = zinc_ore_bob, amount = 2}
 }
 
 data_recipe[dust_ferrium_processing].subgroup = is_iron_item
@@ -557,10 +571,10 @@ data_recipe[dust_ferrium_processing].energy_required = 2
 data_recipe[dust_ferrium_processing].results =
 {
     {type = item, name = iron_ore, amount = 4},
-    {type = item, name = manganese_ore_angels, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1},
-    {type = item, name = titanium_ore_bob, amount = 1}
+    {type = item, name = manganese_ore_angels, amount = 4},
+    {type = item, name = nickel_ore_bob, amount = 2},
+    {type = item, name = zinc_ore_bob, amount = 2},
+    {type = item, name = titanium_ore_bob, amount = 2}
 }
 
 data_recipe[crystal_ferrium_processing].subgroup = is_iron_item
@@ -571,11 +585,11 @@ data_recipe[crystal_ferrium_processing].ingredients[1].amount = 8
 data_recipe[crystal_ferrium_processing].results =
 {
     {type = item, name = iron_ore, amount = 4},
-    {type = item, name = manganese_ore_angels, amount = 2},
-    {type = item, name = nickel_ore_bob, amount = 1},
-    {type = item, name = zinc_ore_bob, amount = 1},
-    {type = item, name = titanium_ore_bob, amount = 1},
-    {type = item, name = chromium_ore_angels, amount = 1}
+    {type = item, name = manganese_ore_angels, amount = 4},
+    {type = item, name = nickel_ore_bob, amount = 2},
+    {type = item, name = zinc_ore_bob, amount = 2},
+    {type = item, name = titanium_ore_bob, amount = 2},
+    {type = item, name = chromium_ore_angels, amount = 2}
 }
 
 -- IRON FLUID
@@ -684,10 +698,12 @@ data_recipe[crystal_cuprium].results[1].amount = 4
 data_recipe[crushed_cuprium_processing].subgroup = is_copper_item
 data_recipe[crushed_cuprium_processing].icons = RECYCLING_I(recycling_png, crushed_cuprium)
 data_recipe[crushed_cuprium_processing].order = d_a
+data_recipe[crushed_cuprium_processing].energy_required = 2
+data_recipe[crushed_cuprium_processing].ingredients[1].amount = 8
 data_recipe[crushed_cuprium_processing].results =
 {
-    {type = item, name = copper_ore, amount = 2},
-    {type = item, name = tin_ore_bob, amount = 2}
+    {type = item, name = copper_ore, amount = 4},
+    {type = item, name = tin_ore_bob, amount = 4}
 }
 
 data_recipe[powder_cuprium_processing].subgroup = is_copper_item
@@ -698,9 +714,9 @@ data_recipe[powder_cuprium_processing].ingredients[1].amount = 8
 data_recipe[powder_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1}
+    {type = item, name = tin_ore_bob, amount = 4},
+    {type = item, name = aluminium_ore_bob, amount = 2},
+    {type = item, name = silver_ore_bob, amount = 2}
 }
 
 data_recipe[dust_cuprium_processing].subgroup = is_copper_item
@@ -710,10 +726,10 @@ data_recipe[dust_cuprium_processing].energy_required = 2
 data_recipe[dust_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1},
-    {type = item, name = gold_ore_bob, amount = 1}
+    {type = item, name = tin_ore_bob, amount = 4},
+    {type = item, name = aluminium_ore_bob, amount = 2},
+    {type = item, name = silver_ore_bob, amount = 2},
+    {type = item, name = gold_ore_bob, amount = 2}
 }
 
 data_recipe[crystal_cuprium_processing].subgroup = is_copper_item
@@ -724,11 +740,11 @@ data_recipe[crystal_cuprium_processing].ingredients[1].amount = 8
 data_recipe[crystal_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 4},
-    {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = aluminium_ore_bob, amount = 1},
-    {type = item, name = silver_ore_bob, amount = 1},
-    {type = item, name = gold_ore_bob, amount = 1},
-    {type = item, name = platinum_ore_angels, amount = 1}
+    {type = item, name = tin_ore_bob, amount = 4},
+    {type = item, name = aluminium_ore_bob, amount = 2},
+    {type = item, name = silver_ore_bob, amount = 2},
+    {type = item, name = gold_ore_bob, amount = 2},
+    {type = item, name = platinum_ore_angels, amount = 2}
 }
 
 -- COPPER FLUID

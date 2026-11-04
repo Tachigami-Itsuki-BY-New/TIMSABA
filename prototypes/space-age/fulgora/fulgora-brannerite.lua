@@ -142,13 +142,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, brannerite_crushed),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Brannerite crushed (Sorting) / Ho + Ca + Calcium silicate
-        ingredients = {{type = item, name = brannerite_crushed, amount = 4}},
+        energy_required = 2, -- Brannerite crushed (Sorting) / Ho + Ca + Calcium silicate
+        ingredients = {{type = item, name = brannerite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = holmium_ore, amount = 2},
-            {type = item, name = calcium, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
+            {type = item, name = holmium_ore, amount = 4},
+            {type = item, name = calcium, amount = 2},
+            {type = item, name = calcium_silicate, amount = 2}
         },
         main_product = holmium_ore
     },
@@ -187,7 +187,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = uranium_ore, amount = 1},
             {type = item, name = thorium_ore_bob, amount = 1},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
+            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
         },
         main_product = holmium_ore
     },

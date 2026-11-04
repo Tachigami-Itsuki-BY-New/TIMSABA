@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_plumbium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 1, -- Plumbium crushed (Sorting) / Pb + Fe
-        ingredients = {{type = item, name = crushed_plumbium, amount = 4}},
+        energy_required = 2, -- Plumbium crushed (Sorting) / Pb + Fe
+        ingredients = {{type = item, name = crushed_plumbium, amount = 8}},
         results =
         {
-            {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = iron_ore, amount = 2}
+            {type = item, name = lead_ore_bob, amount = 4},
+            {type = item, name = iron_ore, amount = 4}
         },
         main_product = lead_ore_bob
     },
@@ -185,9 +185,9 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 2},
-            {type = item, name = nickel_ore_bob, amount = 1},
-            {type = item, name = zinc_ore_bob, amount = 1}
+            {type = item, name = iron_ore, amount = 4},
+            {type = item, name = nickel_ore_bob, amount = 2},
+            {type = item, name = zinc_ore_bob, amount = 2}
         },
         main_product = lead_ore_bob
     },
@@ -203,10 +203,10 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 2},
-            {type = item, name = nickel_ore_bob, amount = 1},
-            {type = item, name = zinc_ore_bob, amount = 1},
-            {type = item, name = cobalt_ore_bob, amount = 1}
+            {type = item, name = iron_ore, amount = 4},
+            {type = item, name = nickel_ore_bob, amount = 2},
+            {type = item, name = zinc_ore_bob, amount = 2},
+            {type = item, name = cobalt_ore_bob, amount = 2}
         },
         main_product = lead_ore_bob
     },
@@ -222,11 +222,11 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 2},
-            {type = item, name = nickel_ore_bob, amount = 1},
-            {type = item, name = zinc_ore_bob, amount = 1},
-            {type = item, name = cobalt_ore_bob, amount = 1},
-            {type = item, name = tungsten_ore_bob, amount = 1}
+            {type = item, name = iron_ore, amount = 4},
+            {type = item, name = nickel_ore_bob, amount = 2},
+            {type = item, name = zinc_ore_bob, amount = 2},
+            {type = item, name = cobalt_ore_bob, amount = 2},
+            {type = item, name = tungsten_ore_bob, amount = 2}
         },
         main_product = lead_ore_bob
     },

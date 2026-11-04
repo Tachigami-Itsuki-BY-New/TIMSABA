@@ -144,13 +144,13 @@ if mods[moshine_mods] then
             icons = RECYCLING_I(recycling_png, monazite_crushed),
             order = g,
             allow_productivity = true,
-            energy_required = 1, -- Monazite crushed (Sorting) / Nd + Ho + Ca₃(PO₄)₂
-            ingredients = {{type = item, name = monazite_crushed, amount = 4}},
+            energy_required = 2, -- Monazite crushed (Sorting) / Nd + Ho + Ca₃(PO₄)₂
+            ingredients = {{type = item, name = monazite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = neodymium_ore, amount = 2},
-                {type = item, name = holmium_ore, amount = 1},
-                {type = item, name = calcium_phosphate, amount = 1}
+                {type = item, name = neodymium_ore, amount = 4},
+                {type = item, name = holmium_ore, amount = 2},
+                {type = item, name = calcium_phosphate, amount = 2}
             },
             main_product = neodymium_ore
         },
@@ -189,7 +189,7 @@ if mods[moshine_mods] then
                 {type = item, name = uranium_ore, amount = 1},
                 {type = item, name = thorium_ore_bob, amount = 1},
                 {type = item, name = cerium_ore, amount = 1},
-                {type = item, name = calcium_phosphate, amount = 1}
+                {type = item, name = calcium_phosphate, amount = 1, independent_probability = 0.5}
             },
             main_product = neodymium_ore
         },

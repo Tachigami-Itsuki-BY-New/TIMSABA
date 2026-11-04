@@ -1,8 +1,8 @@
 local graphics_gallium = "__TIMSABA__/graphics/icons/space-age/aquilo/gallium/"
 
 -- GROUPS
-local is_gallium = "is-gallium"
-local is_gallium_chemistry = "is-gallium-chemistry"
+is_gallium = "is-gallium"
+is_gallium_chemistry = "is-gallium-chemistry"
 TIMSABA.functions.create_subgroups(ig_aquilo,
 {
     {name = is_gallium,           order = g},

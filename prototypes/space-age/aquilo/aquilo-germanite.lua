@@ -147,13 +147,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, germanite_crushed),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Germanite crushed (Sorting) / Ge + Ga + S
-        ingredients = {{type = item, name = germanite_crushed, amount = 4}},
+        energy_required = 2, -- Germanite crushed (Sorting) / Ge + Ga + S
+        ingredients = {{type = item, name = germanite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = germanium_ore, amount = 2},
-            {type = item, name = gallium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = germanium_ore, amount = 4},
+            {type = item, name = gallium_ore, amount = 2},
+            {type = item, name = sulfur, amount = 2}
         },
         main_product = germanium_ore
     },
@@ -192,7 +192,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = iron_ore, amount = 1},
             {type = item, name = copper_ore, amount = 1},
             {type = item, name = vanadium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
         },
         main_product = germanium_ore
     },

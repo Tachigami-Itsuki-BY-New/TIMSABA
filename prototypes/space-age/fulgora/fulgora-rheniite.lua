@@ -146,13 +146,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, rheniite_crushed),
         order = g,
         allow_productivity = true,
-        energy_required = 1, -- Rheniite crushed (Sorting) / Re + Nb + S
-        ingredients = {{type = item, name = rheniite_crushed, amount = 4}},
+        energy_required = 2, -- Rheniite crushed (Sorting) / Re + Nb + S
+        ingredients = {{type = item, name = rheniite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = rhenium_ore, amount = 2},
-            {type = item, name = niobium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = rhenium_ore, amount = 4},
+            {type = item, name = niobium_ore, amount = 2},
+            {type = item, name = sulfur, amount = 2}
         },
         main_product = rhenium_ore
     },
@@ -191,7 +191,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = chromium_ore_angels, amount = 1},
             {type = item, name = tungsten_ore_bob, amount = 1},
             {type = item, name = molybdenum_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
         },
         main_product = rhenium_ore
     },

@@ -149,13 +149,13 @@ if mods[lignumis_mods] then
             icons = RECYCLING_I(recycling_png, wodginite_crushed),
             order = g,
             allow_productivity = true,
-            energy_required = 1, -- Wodginite crushed (Sorting) / Ta + Sn + CaSiO₃
-            ingredients = {{type = item, name = wodginite_crushed, amount = 4}},
+            energy_required = 2, -- Wodginite crushed (Sorting) / Ta + Sn + CaSiO₃
+            ingredients = {{type = item, name = wodginite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = tantalum_ore, amount = 2},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
+                {type = item, name = tantalum_ore, amount = 4},
+                {type = item, name = tin_ore_bob, amount = 2},
+                {type = item, name = calcium_silicate, amount = 2}
             },
             main_product = tantalum_ore
         },
@@ -194,7 +194,7 @@ if mods[lignumis_mods] then
                 {type = item, name = iron_ore, amount = 1},
                 {type = item, name = manganese_ore_angels, amount = 1},
                 {type = item, name = lithium_bob, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
+                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
             },
             main_product = tantalum_ore
         },
