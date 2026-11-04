@@ -1381,7 +1381,8 @@ data_technology[tech_tin_smelting_2].effects =
     {type = unlock_recipe, recipe = tin_processed},
     {type = unlock_recipe, recipe = tin_chloride_IV},
     {type = unlock_recipe, recipe = tin_ingot_2},
-    {type = unlock_recipe, recipe = tin_powder}
+    {type = unlock_recipe, recipe = tin_powder},
+    {type = unlock_recipe, recipe = hydrogen_chloride_separation}
 }
 
 data_technology[tech_tin_smelting_3].prerequisites = {tech_ore_processing_2, tech_tin_smelting_2, tech_sulfur_processing_1, tech_advanced_chemistry_2}
@@ -2086,11 +2087,7 @@ table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock
 table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock_recipe, recipe = chloroethane_gas})
 table.insert(data_technology[tech_chlorine_processing_2].effects, {type = unlock_recipe, recipe = butane_angels})
 
-data_technology[tech_chlorine_processing_3].effects =
-{
-    {type = unlock_recipe, recipe = hydrochloric_acid_from_sodium_chloride},
-    {type = unlock_recipe, recipe = hydrogen_chloride_separation},
-}
+data_technology[tech_chlorine_processing_3].effects = {{type = unlock_recipe, recipe = hydrochloric_acid_from_sodium_chloride}}
 
 data_technology[tech_chlorine_processing_4].effects =
 {
