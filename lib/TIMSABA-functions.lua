@@ -663,7 +663,7 @@ function TIMSABA.functions.create_resource(resource_parameters, autoplace_parame
             mining_time = 1,
             result = resource_parameters.name
         },
-        flags = {"placeable-neutral"},
+        flags = {flag_placeable_neutral},
         tree_removal_probability = 0.8,
         tree_removal_max_distance = 32 * 32,
         walking_sound = base_tile_sounds.walking.ore,

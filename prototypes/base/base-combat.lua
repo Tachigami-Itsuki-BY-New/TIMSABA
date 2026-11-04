@@ -336,7 +336,7 @@ if mods[bobwarfare] then
             name = inputs.name,
             icon = "__base__/graphics/icons/gun-turret.png",
             icon_size = 64,
-            flags = {"placeable-player", "player-creation"},
+            flags = {flag_placeable_player, flag_player_creation},
             minable = {mining_time = 0.5, result = inputs.name},
             max_health = inputs.health,
             next_upgrade = inputs.next_upgrade,

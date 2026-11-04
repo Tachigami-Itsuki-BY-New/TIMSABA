@@ -48,7 +48,7 @@ if mods[muluna_mods] then
             icon = "__TIMSABA__/graphics/icons/muluna/lumber-mill.png",
             order = z_a,
             minable = {mining_time = 1, result = lumber_mill},
-            flags = {"placeable-neutral", "placeable-player", "player-creation"},
+            flags = {flag_placeable_neutral, flag_placeable_player, flag_player_creation},
             fast_replaceable_group = burner_lumber_mill,
             max_health = 1000,
             corpse = "big-remnants",

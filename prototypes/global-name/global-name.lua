@@ -221,6 +221,8 @@ oxygen = "oxygen"
 tertiary = "tertiary"
 
 flag_placeable_neutral = "placeable-neutral"
+flag_placeable_player = "placeable-player"
+flag_placeable_off_grid = "placeable-off-grid"
 flag_player_creation = "player-creation"
 flag_not_on_map = "not-on-map"
 
