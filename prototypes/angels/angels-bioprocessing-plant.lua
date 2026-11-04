@@ -1,6 +1,6 @@
 tree_plant = "tree-plant"
 
-local plant_flags = {"placeable-neutral", "placeable-off-grid", "breaths-air"}
+local plant_flags = {flag_placeable_neutral, flag_placeable_off_grid, "breaths-air"}
 
 local gleba_tree_underwater_things = {}
 
