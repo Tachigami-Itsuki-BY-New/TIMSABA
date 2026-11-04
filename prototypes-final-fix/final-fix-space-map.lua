@@ -54,8 +54,6 @@ local arc = "arc"
 local multiplier_length = settings.startup[setting_space_connection_multiplier_length].value
 
 local function update_space_connection(planet_A, dist_A, planet_B, dist_B, angle_deg)
-    if not data_planet[planet_A] or not data_space_location[planet_A] or not data_planet[planet_B] or not data_space_location[planet_B] then return end
-
     local distance = 10000
     if angle_deg then
         local multiplied = 10
@@ -156,12 +154,8 @@ if mods[asteroid_belt_mods] then
         remove_space_connection(planet_nauvis, planet_moshine)
     end
 
-    if settings.startup[setting_space_connection_all].value or not mods[castra_mods] then
-        if mods[arig_mods] then
-            update_space_connection(planet_nauvis, 16, planet_arig, 14, 45)
-        end
-    else
-        remove_space_connection(planet_nauvis, planet_arig)
+    if mods[arig_mods] then
+        update_space_connection(planet_nauvis, 16, planet_arig, 14, 45)
     end
 
     if settings.startup[setting_space_connection_all].value or not mods[muria_mods] then
@@ -224,8 +218,12 @@ if mods[asteroid_belt_mods] then
         update_space_connection(planet_vulcanus, 8, planet_tellus, 17, 90)
     end
 
-    if mods[castra_mods] then
-        update_space_connection(planet_vulcanus, 8, planet_castra, 22, 45)
+    if settings.startup[setting_space_connection_all].value or not mods[castra_mods] then
+        if mods[castra_mods] then
+            update_space_connection(planet_vulcanus, 8, planet_castra, 22, 45)
+        end
+    else
+        remove_space_connection(planet_vulcanus, planet_castra)
     end
 
     if mods[muria_mods] then
