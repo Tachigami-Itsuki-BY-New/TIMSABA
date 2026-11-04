@@ -12,11 +12,11 @@ local function get_item_from_name(item_name, item_type, before)
     }
 end
 local one = {""}
-table.insert(one, get_item_from_name("plastic-bar"))
-table.insert(one, get_item_from_name("explosives"))
-table.insert(one, get_item_from_name(data.raw.item["bob-resin"] and "bob-resin" or "angels-solid-resin"))
-table.insert(one, get_item_from_name(data.raw.item["bob-rubber"] and "bob-rubber" or "angels-solid-rubber"))
-table.insert(one, get_item_from_name("angels-liquid-sulfuric-acid", "fluid"))
+table.insert(one, get_item_from_name(plastic))
+table.insert(one, get_item_from_name(explosives))
+table.insert(one, get_item_from_name(data_item[resin_bob] and resin_bob))
+table.insert(one, get_item_from_name(data_item[rubber_bob] and rubber_bob))
+table.insert(one, get_item_from_name(sulfuric_acid_angels, fluid))
 table.insert(one, {"tips-and-tricks-description.various-fuels"})
 table.insert(description, one)
 

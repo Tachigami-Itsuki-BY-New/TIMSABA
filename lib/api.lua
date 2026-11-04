@@ -145,7 +145,7 @@ local presets =
 }
 
 ---@global
----@type table Неизвестно что
+---@type table
 belt_reader_gfx = belt_reader_gfx
 meld(presets[api_timsaba.defines.belt_presets.turbo].belt_animation_set, belt_reader_gfx)
 
@@ -196,7 +196,7 @@ function api_timsaba.get_transport_belt_technology_icon(inputs)
 			icon = "__prismatic-belts__/graphics/technology/standard/logistics-technology-mask-belts.png",
 			icon_size = 256,
 			tint = inputs.mask_tint
-		},
+		}
 	}
 
 	if inputs.arrow_tint then
@@ -229,7 +229,7 @@ local function get_aai_loader_technology_icon_belt_layers(inputs)
 		{
 			icon = "__prismatic-belts__/graphics/technology/aai-loaders/" .. icon_type .. "-technology-icon-base.png",
 			icon_size = 256,
-			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1) -- Ensure non-transparent.
+			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1)
 		},
 		{
 			icon = "__prismatic-belts__/graphics/technology/aai-loaders/" .. icon_type .. "-technology-icon-mask.png",
@@ -273,7 +273,7 @@ function api_timsaba.get_transport_belt_icon(inputs)
 		{
 			icon = "__prismatic-belts__/graphics/icons/standard/" .. icon_type .. "-icon-base.png",
 			icon_size = 64,
-			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1) -- Ensure non-transparent.
+			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1)
 		},
 		{
 			icon = "__prismatic-belts__/graphics/icons/standard/" .. icon_type .. "-icon-mask.png",
@@ -310,7 +310,7 @@ local function get_aai_loader_icon_belt_layers(inputs)
 		{
 			icon = "__prismatic-belts__/graphics/icons/aai-loaders/" .. icon_type .. "-icon-base.png",
 			icon_size = 64,
-			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1) -- Ensure non-transparent.
+			tint = inputs.base_tint and adjust_alpha(inputs.base_tint, 1)
 		},
 		{
 			icon = "__prismatic-belts__/graphics/icons/aai-loaders/" .. icon_type .. "-icon-mask.png",
@@ -441,29 +441,26 @@ function api_timsaba.get_transport_belt_animation_set(inputs)
 		)
 	end
 
-	-- Add belt reader sprites.
 	meld(transport_belt_animation_set, belt_reader_gfx)
 
 	return transport_belt_animation_set
 end
 
 local function create_or_update_remnants_core(transport_belt_name, animation)
-	-- Fetch remnant
-	local remnants = data.raw["corpse"][transport_belt_name .. "-remnants"]
+	local remnants = data_corpse[transport_belt_name .. _remnants]
 
-	-- If there is no existing remnant, create one
 	if not remnants then
 		remnants =
         {
-			type = "corpse",
-			name = "prismatic-belts-" .. transport_belt_name .. "-remnants",
-			localised_name = {"", (data.raw["transport-belt"][transport_belt_name].localised_name or { "entity-name." .. transport_belt_name }), " (remnant)"},
-			icons = data.raw["transport-belt"][transport_belt_name].icons,
-			icon = data.raw["transport-belt"][transport_belt_name].icon,
-			icon_size = data.raw["transport-belt"][transport_belt_name].icon_size,
-			flags = {"placeable-neutral", "not-on-map"},
-			subgroup = "belt-remnants",
-			order = (data.raw.item[transport_belt_name] and data.raw.item[transport_belt_name].order) and data.raw.item[transport_belt_name].order .. "-a[" .. transport_belt_name .. "-remnants]" or "a-a-a",
+			type = corpse,
+			name = "prismatic-belts-" .. transport_belt_name .. _remnants,
+			localised_name = {"", (data_transport_belt[transport_belt_name].localised_name or {"entity-name." .. transport_belt_name}), " (remnant)"},
+			icons = data_transport_belt[transport_belt_name].icons,
+			icon = data_transport_belt[transport_belt_name].icon,
+			icon_size = data_transport_belt[transport_belt_name].icon_size,
+			flags = {flag_placeable_neutral, flag_not_on_map},
+			subgroup = "belt" .. _remnants,
+			order = (data_item[transport_belt_name] and data_item[transport_belt_name].order) and data_item[transport_belt_name].order .. "-a[" .. transport_belt_name .. _remnants .."]" or "a-a-a",
 			selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 			tile_width = 1,
 			tile_height = 1,
@@ -475,12 +472,11 @@ local function create_or_update_remnants_core(transport_belt_name, animation)
 
 		data:extend({remnants})
 
-		-- Assign the corpse
-		data.raw["transport-belt"][transport_belt_name].corpse = "prismatic-belts-" .. transport_belt_name .. "-remnants"
+		data_transport_belt[transport_belt_name].corpse = "prismatic-belts-" .. transport_belt_name .. _remnants
 	else
-		remnants.icons = data.raw["transport-belt"][transport_belt_name].icons
-		remnants.icon = data.raw["transport-belt"][transport_belt_name].icon
-		remnants.icon_size = data.raw["transport-belt"][transport_belt_name].icon_size
+		remnants.icons = data_transport_belt[transport_belt_name].icons
+		remnants.icon = data_transport_belt[transport_belt_name].icon
+		remnants.icon_size = data_transport_belt[transport_belt_name].icon_size
 		remnants.animation = animation
 	end
 end
@@ -635,7 +631,6 @@ local supported_types =
 ---@param animation_set data.TransportBeltAnimationSetWithCorners
 ---@param icon_inputs TIMSABA.TransportBeltIconInputs?
 function api_timsaba.apply_belt_animation_set_and_update_related_connectables(transport_belt, animation_set, icon_inputs)
-	-- The hashed identifier of the belt animation set to be replaced
 	---@type any
 	local belt_any = transport_belt
 	---@type data.TransportBeltConnectablePrototype
@@ -646,10 +641,8 @@ function api_timsaba.apply_belt_animation_set_and_update_related_connectables(tr
 		error("Unable to resolve transport belt animation set identity for belt '" .. transport_belt.name .. "'.")
 	end
 
-	-- Replace the animation set after we have the identity.
 	transport_belt.belt_animation_set = animation_set
 
-	-- Find all entities sharing the old animation set and update the animation set.
 	for _, type_name in pairs(supported_types) do
 		for _, entity in pairs(data.raw[type_name]) do
 			---@cast entity data.TransportBeltConnectablePrototype
@@ -664,7 +657,6 @@ function api_timsaba.apply_belt_animation_set_and_update_related_connectables(tr
 				goto continue
 			end
 
-			-- stylua: ignore start
 			if entity.name == "aai-loader"
 				or entity.name:find("^aai%-.+%-loader$")
 				or entity.name:find("^aai%-.+%-lane%-filtering$")
@@ -679,18 +671,13 @@ function api_timsaba.apply_belt_animation_set_and_update_related_connectables(tr
 					icon_data = sprite_utils.icons.compose_icons("default", entity_icon[1], patch_layers, table.unpack(entity_icon, 2)),
 				})
 
-				-- TODO: rework this process to single scan for icons in certain target entities
-				-- that have icons that contain the two-layer AAI Loader sprites and insert the patch.
-				-- Basically: confirm the icon we're updating is a valid target rather than assuming
-				-- that it is as we currently do.
-
-				local recipe = data.raw["recipe"][entity.name]
+				local recipe = data_recipe[entity.name]
 				if recipe and not recipe.main_product then
 					recipe.icons = entity.icons
 				end
 
 				local function try_patch_tech_icon(technology_name)
-					local technology = data.raw["technology"][technology_name]
+					local technology = data_technology[technology_name]
 					if not technology then
 						return
 					end
@@ -719,7 +706,6 @@ function api_timsaba.apply_belt_animation_set_and_update_related_connectables(tr
 				try_patch_tech_icon(entity.name)
 				try_patch_tech_icon(entity.name .. "-stacking")
 			end
-			-- stylua: ignore end
 
 			::continue::
 		end
@@ -743,7 +729,7 @@ local function transform_belt_and_related_connectables_preset(entity, inputs)
 		sprite_utils.icons.assign_deferrable_icon
         ({
 			name = inputs.logistics_technology_name,
-			type_name = "technology",
+			type_name = technology,
 			icon_datum = preset.technology_icon
 		})
 	end
@@ -795,7 +781,7 @@ local function transform_belt_and_related_connectables_layered(entity, inputs)
 		sprite_utils.icons.assign_deferrable_icon
         ({
 			name = logistics_technology_inputs.name,
-			type_name = "technology",
+			type_name = technology,
 			icon_data = api_timsaba.get_transport_belt_technology_icon
             ({
 				base_tint = logistics_technology_inputs.base_tint or animation_set_inputs.base_tint,
@@ -807,7 +793,6 @@ local function transform_belt_and_related_connectables_layered(entity, inputs)
 	end
 
 	if not animation_set_inputs.belt_sprites then
-		-- Determine the appropriate set of sprites to use based on the configured belt speed.
 		if entity.speed < (30 / 480) then
 			animation_set_inputs.belt_sprites = api_timsaba.defines.belt_sprites.standard
 		elseif entity.speed < (60 / 480) then
@@ -886,15 +871,12 @@ function api_timsaba.transform_belt_and_related_connectables(name, inputs)
 		return
 	end
 
-	-- Принудительно кастим inputs к типу с пресетом для проверки
 	local preset_inputs = ---@type TIMSABA.PresetTransformBeltInputs?
 	inputs
 
 	if preset_inputs and preset_inputs.preset then
 		transform_belt_and_related_connectables_preset(entity, preset_inputs)
 	else
-		-- Сюда попадет либо TransformBeltInputs, либо nil
-		-- Кастим к TransformBeltInputs, так как layered-функция ждет его
 		local layered_inputs = ---@type TIMSABA.TransformBeltInputs?
 		inputs
 		transform_belt_and_related_connectables_layered(entity, layered_inputs)

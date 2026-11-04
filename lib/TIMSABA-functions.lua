@@ -227,7 +227,7 @@ local function HSVtoRGB(color)
 end
 
 function TIMSABA.functions.fluid_color(chemical_formula)
-    chemical_formula = chemical_formula:gsub("%s+", "") -- ???
+    chemical_formula = chemical_formula:gsub("%s+", "")
     local codes = get_molecule_codes(chemical_formula)
     local rgb = rgb_fetch(chemical_formula)
     local red, green, blue, comb = 0, 0, 0, 0
@@ -239,7 +239,7 @@ function TIMSABA.functions.fluid_color(chemical_formula)
         blue = blue + ((colour[3] / 255) ^ 2 * amt * alpha)
         comb = comb + (amt * alpha)
     end
-    local res = { r = math.sqrt(red / comb), g = math.sqrt(green / comb), b = math.sqrt(blue / comb) }
+    local res = {r = math.sqrt(red / comb), g = math.sqrt(green / comb), b = math.sqrt(blue / comb)}
     local hsv = RGBtoHSV(res)
     if hsv.s > 0.02 then
         hsv.v = 0.8 * hsv.v
@@ -853,7 +853,7 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
                 local target_fluid = current_fluid
 
                 if replace then
-                    if data.raw.fluid[replace] then
+                    if data_fluid[replace] then
                         target_fluid = replace
                     else
                         should_remove = true
@@ -870,7 +870,7 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
         end
     end
     -- Achievement
-    for _, achievement in pairs(data.raw["produce-per-hour-achievement"] or {}) do
+    for _, achievement in pairs(data_produce_per_hour_achievement or {}) do
         if achievement.item_product then
             local replace = replacements[achievement.item_product]
             if replace then
@@ -878,7 +878,7 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
             end
         end
     end
-    for _, achievement in pairs(data.raw["produce-achievement"] or {}) do
+    for _, achievement in pairs(data_produce_achievement or {}) do
         if achievement.item_product then
             local replace = replacements[achievement.item_product]
             if replace then
@@ -889,7 +889,8 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Spoil Results
     local proto_types = {item, capsule, tool}
     for _, proto_type in ipairs(proto_types) do
-        for _, type in pairs(data.raw[proto_type] or {}) do
+        local data_proto_type = data.raw[proto_type]
+        for _, type in pairs(data_proto_type or {}) do
             if type.spoil_result then
                 local replace = replacements[type.spoil_result]
                 if replace then
@@ -901,7 +902,8 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Loot
     local entities_with_loot = {"spider-vehicle"}
     for _, proto_type in ipairs(entities_with_loot) do
-        for _, entity in pairs(data.raw[proto_type] or {}) do
+        local data_proto_type = data.raw[proto_type]
+        for _, entity in pairs(data_proto_type or {}) do
             if entity.loot then
                 for _, entry in pairs(entity.loot) do
                     local replace = replacements[entry.item]
@@ -915,7 +917,8 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Projectiles and Streams
     local projectile_types = {"stream", "projectile"}
     for _, proto_type in ipairs(projectile_types) do
-        for _, proj in pairs(data.raw[proto_type] or {}) do
+        local data_proto_type = data.raw[proto_type]
+        for _, proj in pairs(data_proto_type or {}) do
             if proj.action then
                 local function check_action_effects(effects)
                     if not effects then return end
@@ -977,17 +980,18 @@ function TIMSABA.functions.delete_prototypes(replacements)
         assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator, fusion_reactor, generator,
         inserter, heat_pipe, container, logistic_container, logistic_robot, construction_robot, roboport, pipe_to_ground,
         repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
-        projectile, "ammo-category"
+        projectile, ammo_category
     }
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
-            if data.raw[proto_type] then
-                data.raw[proto_type][name] = nil
-                data.raw[proto_type][tiny_ .. name] = nil
+            local data_proto_type = data.raw[proto_type]
+            if data_proto_type then
+                data_proto_type[name] = nil
+                data_proto_type[tiny_ .. name] = nil
                 for i = 25, 2400, 25 do
-                    data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil
+                    data_proto_type[name .. __rigor_module_mod__ .. i] = nil
                 end
-                data.raw[proto_type][harene_infused_ .. name] = nil
+                data_proto_type[harene_infused_ .. name] = nil
             end
         end
         data_item[RTThrower_ .. name .. _Item] = nil
@@ -1038,8 +1042,9 @@ function TIMSABA.functions.delete_prototypes(replacements)
             data_accumulator[sp_ .. i .. "-" .. name] = nil
         end
         for _, container_type in ipairs({container, logistic_container}) do
-            if data.raw[container_type] then
-                for _, chest in pairs(data.raw[container_type]) do
+            local data_container_type = data.raw[container_type]
+            if data_container_type then
+                for _, chest in pairs(data_container_type) do
                     if chest.next_upgrade == name then
                         chest.next_upgrade = nil
                     end
@@ -1187,6 +1192,5 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
 end
 
 function TIMSABA.numeral_tier(icon_data, tier, tint)
-    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
-    return icons
+    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint) return icons
 end

@@ -116,6 +116,8 @@ data_string_setting = data.raw["string-setting"]
 data_double_setting = data.raw["double-setting"]
 data_color_setting = data.raw["color-setting"]
 data_entity_owner = data.raw["simple-entity-with-owner"]
+data_produce_per_hour_achievement = data.raw["produce-per-hour-achievement"]
+data_produce_achievement = data.raw["produce-achievement"]
 
 -- GLOBAL NAME
 item = "item"
@@ -172,6 +174,7 @@ valve = "valve"
 thruster = "thruster"
 resource = "resource"
 autoplace_control = "autoplace-control"
+ammo_category = "ammo-category"
 
 projectile = "projectile"
 beam = "beam"
