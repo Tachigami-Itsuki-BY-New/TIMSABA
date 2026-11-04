@@ -465,7 +465,7 @@ local function create_or_update_remnants_core(transport_belt_name, animation)
 			tile_width = 1,
 			tile_height = 1,
 			selectable_in_game = false,
-			time_before_removed = 60 * 60 * 15, -- 15 minutes
+			time_before_removed = 15 * minute,
 			final_render_layer = "remnants",
 			animation = animation
 		}

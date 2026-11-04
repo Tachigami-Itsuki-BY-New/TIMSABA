@@ -342,9 +342,9 @@ for _, BUILD in pairs(bio_generators) do
     data_assembling[BUILD.name].order = a
     data_assembling[BUILD.name].crafting_speed = 1
     data_assembling[BUILD.name].module_slots = 1
-    data_assembling[BUILD.name].energy_usage = 105 .. kW
+    data_assembling[BUILD.name].energy_usage = (120 - drain) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = -16
-    data_assembling[BUILD.name].energy_source.drain = 15 .. kW
+    data_assembling[BUILD.name].energy_source.drain = drain .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function bio_generator_recipe(name, circuit, pipe, plate, brick, tree)
@@ -379,9 +379,9 @@ data_assembling[bio_arboretum_1].subgroup = is_bio_arboretum
 data_assembling[bio_arboretum_1].order = a
 data_assembling[bio_arboretum_1].crafting_speed = 1
 data_assembling[bio_arboretum_1].module_slots = 1
-data_assembling[bio_arboretum_1].energy_usage = 105 .. kW
+data_assembling[bio_arboretum_1].energy_usage = (120 - drain) .. kW
 data_assembling[bio_arboretum_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[bio_arboretum_1].energy_source.drain = 15 .. kW
+data_assembling[bio_arboretum_1].energy_source.drain = drain .. kW
 data_assembling[bio_arboretum_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS BIOPROCESSING VEGETABLES
@@ -403,9 +403,9 @@ data_assembling[basic_farm_1].subgroup = is_basic_farm
 data_assembling[basic_farm_1].order = a
 data_assembling[basic_farm_1].crafting_speed = 0.5
 data_assembling[basic_farm_1].module_slots = 1
-data_assembling[basic_farm_1].energy_usage = 45 .. kW
+data_assembling[basic_farm_1].energy_usage = (60 - drain) .. kW
 data_assembling[basic_farm_1].energy_source.emissions_per_minute.pollution = -8
-data_assembling[basic_farm_1].energy_source.drain = 15 .. kW
+data_assembling[basic_farm_1].energy_source.drain = drain .. kW
 data_assembling[basic_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[temperate_farm_1].subgroup = is_temperate_farm
@@ -428,9 +428,9 @@ data_assembling[temperate_farm_1].subgroup = is_temperate_farm
 data_assembling[temperate_farm_1].order = a
 data_assembling[temperate_farm_1].crafting_speed = 1
 data_assembling[temperate_farm_1].module_slots = 1
-data_assembling[temperate_farm_1].energy_usage = 105 .. kW
+data_assembling[temperate_farm_1].energy_usage = (120 - drain) .. kW
 data_assembling[temperate_farm_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[temperate_farm_1].energy_source.drain = 15 .. kW
+data_assembling[temperate_farm_1].energy_source.drain = drain .. kW
 data_assembling[temperate_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[swamp_farm_1].subgroup = is_swamp_farm
@@ -453,9 +453,9 @@ data_assembling[swamp_farm_1].subgroup = is_swamp_farm
 data_assembling[swamp_farm_1].order = a
 data_assembling[swamp_farm_1].crafting_speed = 1
 data_assembling[swamp_farm_1].module_slots = 1
-data_assembling[swamp_farm_1].energy_usage = 105 .. kW
+data_assembling[swamp_farm_1].energy_usage = (120 - drain) .. kW
 data_assembling[swamp_farm_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[swamp_farm_1].energy_source.drain = 15 .. kW
+data_assembling[swamp_farm_1].energy_source.drain = drain .. kW
 data_assembling[swamp_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[desert_farm_1].subgroup = is_desert_farm
@@ -478,9 +478,9 @@ data_assembling[desert_farm_1].subgroup = is_desert_farm
 data_assembling[desert_farm_1].order = a
 data_assembling[desert_farm_1].crafting_speed = 1
 data_assembling[desert_farm_1].module_slots = 1
-data_assembling[desert_farm_1].energy_usage = 105 .. kW
+data_assembling[desert_farm_1].energy_usage = (120 - drain) .. kW
 data_assembling[desert_farm_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[desert_farm_1].energy_source.drain = 15 .. kW
+data_assembling[desert_farm_1].energy_source.drain = drain .. kW
 data_assembling[desert_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[seed_extractor_1].subgroup = is_seed_extractor
@@ -504,9 +504,9 @@ data_assembling[seed_extractor_1].subgroup = is_seed_extractor
 data_assembling[seed_extractor_1].order = a
 data_assembling[seed_extractor_1].crafting_speed = 1
 data_assembling[seed_extractor_1].module_slots = 1
-data_assembling[seed_extractor_1].energy_usage = 105 .. kW
+data_assembling[seed_extractor_1].energy_usage = (120 - drain) .. kW
 data_assembling[seed_extractor_1].energy_source.emissions_per_minute.pollution = -1
-data_assembling[seed_extractor_1].energy_source.drain = 15 .. kW
+data_assembling[seed_extractor_1].energy_source.drain = drain .. kW
 data_assembling[seed_extractor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[composter_1].subgroup = is_composter
@@ -551,9 +551,9 @@ data_assembling[bio_processor_1].subgroup = is_bio_processor
 data_assembling[bio_processor_1].order = a
 data_assembling[bio_processor_1].crafting_speed = 1
 data_assembling[bio_processor_1].module_slots = 1
-data_assembling[bio_processor_1].energy_usage = 105 .. kW
+data_assembling[bio_processor_1].energy_usage = (120 - drain) .. kW
 data_assembling[bio_processor_1].energy_source.emissions_per_minute.pollution = -1
-data_assembling[bio_processor_1].energy_source.drain = 15 .. kW
+data_assembling[bio_processor_1].energy_source.drain = drain .. kW
 data_assembling[bio_processor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[bio_press_1].subgroup = is_bio_press
@@ -575,9 +575,9 @@ data_assembling[bio_press_1].subgroup = is_bio_press
 data_assembling[bio_press_1].order = a
 data_assembling[bio_press_1].crafting_speed = 1
 data_assembling[bio_press_1].module_slots = 1
-data_assembling[bio_press_1].energy_usage = 105 .. kW
+data_assembling[bio_press_1].energy_usage = (120 - drain) .. kW
 data_assembling[bio_press_1].energy_source.emissions_per_minute.pollution = -1
-data_assembling[bio_press_1].energy_source.drain = 15 .. kW
+data_assembling[bio_press_1].energy_source.drain = drain .. kW
 data_assembling[bio_press_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[nutrient_extractor_1].subgroup = is_nutrient_extractor
@@ -599,9 +599,9 @@ data_assembling[nutrient_extractor_1].subgroup = is_nutrient_extractor
 data_assembling[nutrient_extractor_1].order = a
 data_assembling[nutrient_extractor_1].crafting_speed = 1
 data_assembling[nutrient_extractor_1].module_slots = 1
-data_assembling[nutrient_extractor_1].energy_usage = 105 .. kW
+data_assembling[nutrient_extractor_1].energy_usage = (120 - drain) .. kW
 data_assembling[nutrient_extractor_1].energy_source.emissions_per_minute.pollution = -1
-data_assembling[nutrient_extractor_1].energy_source.drain = 15 .. kW
+data_assembling[nutrient_extractor_1].energy_source.drain = drain .. kW
 data_assembling[nutrient_extractor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS BIOPROCESSING ANIMALIS
@@ -624,9 +624,9 @@ data_assembling[fish_refugium_1].subgroup = is_fish_refugium
 data_assembling[fish_refugium_1].order = a
 data_assembling[fish_refugium_1].crafting_speed = 1
 data_assembling[fish_refugium_1].module_slots = 1
-data_assembling[fish_refugium_1].energy_usage = 105 .. kW
+data_assembling[fish_refugium_1].energy_usage = (120 - drain) .. kW
 data_assembling[fish_refugium_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[fish_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[fish_refugium_1].energy_source.drain = drain .. kW
 data_assembling[fish_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[butchery_1].subgroup = is_butchery
@@ -647,9 +647,9 @@ data_furnace[butchery_1].subgroup = is_butchery
 data_furnace[butchery_1].order = a
 data_furnace[butchery_1].crafting_speed = 1
 data_furnace[butchery_1].module_slots = 1
-data_furnace[butchery_1].energy_usage = 105 .. kW
+data_furnace[butchery_1].energy_usage = (120 - drain) .. kW
 data_furnace[butchery_1].energy_source.emissions_per_minute.pollution = -1
-data_furnace[butchery_1].energy_source.drain = 15 .. kW
+data_furnace[butchery_1].energy_source.drain = drain .. kW
 data_furnace[butchery_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[hatchery_1].subgroup = is_hatchery
@@ -670,9 +670,9 @@ data_furnace[hatchery_1].subgroup = is_hatchery
 data_furnace[hatchery_1].order = a
 data_furnace[hatchery_1].crafting_speed = 1
 data_furnace[hatchery_1].module_slots = 1
-data_furnace[hatchery_1].energy_usage = 105 .. kW
+data_furnace[hatchery_1].energy_usage = (120 - drain) .. kW
 data_furnace[hatchery_1].energy_source.emissions_per_minute.pollution = -1
-data_furnace[hatchery_1].energy_source.drain = 15 .. kW
+data_furnace[hatchery_1].energy_source.drain = drain .. kW
 data_furnace[hatchery_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[puffer_refugium_1].subgroup = is_puffer_refugium
@@ -694,9 +694,9 @@ data_assembling[puffer_refugium_1].subgroup = is_puffer_refugium
 data_assembling[puffer_refugium_1].order = a
 data_assembling[puffer_refugium_1].crafting_speed = 1
 data_assembling[puffer_refugium_1].module_slots = 1
-data_assembling[puffer_refugium_1].energy_usage = 105 .. kW
+data_assembling[puffer_refugium_1].energy_usage = (120 - drain) .. kW
 data_assembling[puffer_refugium_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[puffer_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[puffer_refugium_1].energy_source.drain = drain .. kW
 data_assembling[puffer_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 data_item[biter_refugium_1].subgroup = is_biter_refugium
@@ -718,9 +718,9 @@ data_assembling[biter_refugium_1].subgroup = is_biter_refugium
 data_assembling[biter_refugium_1].order = a
 data_assembling[biter_refugium_1].crafting_speed = 1
 data_assembling[biter_refugium_1].module_slots = 1
-data_assembling[biter_refugium_1].energy_usage = 105 .. kW
+data_assembling[biter_refugium_1].energy_usage = (120 - drain) .. kW
 data_assembling[biter_refugium_1].energy_source.emissions_per_minute.pollution = -16
-data_assembling[biter_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[biter_refugium_1].energy_source.drain = drain .. kW
 data_assembling[biter_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 bobmods.lib.recipe.update_recycling_recipe

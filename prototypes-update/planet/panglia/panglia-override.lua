@@ -896,9 +896,9 @@ if mods[panglia_mods] then
         data_recipe[cloning_vat].ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 1},
+            {type = item, name = bioflux, amount = 2},
             {type = item, name = carbon_fiber, amount = 4},
-            {type = item, name = biochamber, amount = 1},
-            {type = fluid, name = branbalite_slurry, amount = 120}
+            {type = item, name = biochamber, amount = 1}
         }
         data_assembling[cloning_vat].subgroup = is_panglia_building
         data_assembling[cloning_vat].order = c
@@ -1054,7 +1054,6 @@ if mods[panglia_mods] then
             {production_science_pack, 1},
             {utility_science_pack, 1},
             {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
             {agricultural_science_pack, 1}
         }
     end

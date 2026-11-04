@@ -102,8 +102,8 @@ if mods["Flare Stack"] then
         }
         data_furnace[electric_incinerator].subgroup = is_flare_stack
         data_furnace[electric_incinerator].order = b
-        data_furnace[electric_incinerator].energy_usage = (240 - 15) .. kW
-        data_furnace[electric_incinerator].energy_source.drain = 15 .. kW
+        data_furnace[electric_incinerator].energy_usage = (240 - drain) .. kW
+        data_furnace[electric_incinerator].energy_source.drain = drain .. kW
         data_furnace[electric_incinerator].energy_source.emissions_per_minute.pollution = 16
 
         bobmods.lib.recipe.update_recycling_recipe({incinerator, electric_incinerator})
