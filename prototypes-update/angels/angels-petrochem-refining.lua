@@ -103,14 +103,20 @@ data_recipe[water_saline_separation].categories = {advanced_electrolysis}
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a
-data_recipe[water_saline_separation].energy_required = 8 -- 16H₂O(8NaCl)(l) --> 8NaOH(s) + 12H₂(g) + 4Cl₂(g) + 4O₂(g)
-data_recipe[water_saline_separation].ingredients[1].amount = 240
+data_recipe[water_saline_separation].energy_required = 8 -- 16H₂O(8NaCl + nMeCln)(l) --> 8NaOH(s) + 12H₂(g) + 4Cl₂(g) + 4O₂(g) / NaCl and KCl and CaCl₂ and MgCl₂
+data_recipe[water_saline_separation].ingredients =
+{
+    {type = fluid, name = water_saline_angels, amount = 240},
+    {type = item, name = electrode, amount = 1}
+}
 data_recipe[water_saline_separation].results =
 {
     {type = item, name = sodium_hydroxide_angels, amount = 8},
     {type = fluid, name = hydrogen_angels, amount = 360},
-    {type = fluid, name = chlorine_angels, amount = 120},
-    {type = fluid, name = oxygen_angels, amount = 120}
+    {type = fluid, name = chlorine_angels, amount = 240}, -- 120 (+120 from NaCl and KCl and CaCl₂ and MgCl₂)
+    {type = fluid, name = oxygen_angels, amount = 120},
+    {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
 -- BASIC PETROCHEN FLUIDS
