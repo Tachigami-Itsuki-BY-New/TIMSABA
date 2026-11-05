@@ -62,7 +62,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_gallite_processing_3,
             icon = graphics_gallite_tech,
             icon_size = 256,
-            prerequisites = {tech_gallite_processing_2, promethium_science_pack},
+            prerequisites = {tech_gallite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_crystals},
@@ -94,7 +94,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_gallite_processing_4,
             icon = graphics_gallite_tech,
             icon_size = 256,
-            prerequisites = {tech_gallite_processing_3},
+            prerequisites = {tech_gallite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_purified},
@@ -185,7 +185,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_sylvanite_processing_3,
             icon = graphics_sylvanite_tech,
             icon_size = 256,
-            prerequisites = {tech_sylvanite_processing_2, promethium_science_pack},
+            prerequisites = {tech_sylvanite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_crystals},
@@ -217,7 +217,7 @@ if mods[secretas_frozeta_mods] then
             name = tech_sylvanite_processing_4,
             icon = graphics_sylvanite_tech,
             icon_size = 256,
-            prerequisites = {tech_sylvanite_processing_3},
+            prerequisites = {tech_sylvanite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_purified},

@@ -847,7 +847,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_aluminium_chemistry,
         icons = TWO_D_I(aluminium_ore_bob, lime_angels, calcium_aluminate, calcium),
         order = a,
-        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + Ca(s)
+        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + 3Ca(s)
         ingredients =
         {
             {type = item, name = aluminium_ore_bob, amount = 32},
@@ -856,7 +856,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = calcium_aluminate, amount = 8},
-            {type = item, name = calcium, amount = 4} -- 8
+            {type = item, name = calcium, amount = 24}
         },
         main_product = calcium_aluminate
     },
@@ -875,8 +875,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = calcium_chloride_solution, amount = 60}, -- 120
-            {type = fluid, name = water_purified_angels, amount = 120} -- 1080
+            {type = fluid, name = calcium_chloride_solution, amount = 120},
+            {type = fluid, name = water_purified_angels, amount = 480} -- 1080
         },
         main_product = aluminium_chloride_solution
     },

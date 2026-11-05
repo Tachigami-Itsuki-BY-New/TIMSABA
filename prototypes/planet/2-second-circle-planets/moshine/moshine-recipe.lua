@@ -523,7 +523,7 @@ if mods[moshine_mods] then
             localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. monazite_ore}, {"item-name." .. aeschynite_ore}},
             name = moshine_slag_processing,
             categories = {crystallizing_4},
-            subgroup = slag_processing_1,
+            subgroup = is_slag_processing_2,
             icons = THREE_R_I(sludge_mineral, monazite_ore, aeschynite_ore),
             order = c .. "-" .. data_planet[planet_moshine].order,
             allow_productivity = true,

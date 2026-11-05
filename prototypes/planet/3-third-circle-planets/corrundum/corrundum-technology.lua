@@ -63,7 +63,7 @@ if mods[corrundum_mods] then
             name = tech_chalcopyrite_processing_3,
             icon = graphics_chalcopyrite_tech,
             icon_size = 256,
-            prerequisites = {tech_chalcopyrite_processing_2, promethium_science_pack},
+            prerequisites = {tech_chalcopyrite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_crystals},
@@ -95,7 +95,7 @@ if mods[corrundum_mods] then
             name = tech_chalcopyrite_processing_4,
             icon = graphics_chalcopyrite_tech,
             icon_size = 256,
-            prerequisites = {tech_chalcopyrite_processing_3},
+            prerequisites = {tech_chalcopyrite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_purified},
@@ -185,7 +185,7 @@ if mods[corrundum_mods] then
             name = tech_sperrylite_processing_3,
             icon = graphics_sperrylite_tech,
             icon_size = 256,
-            prerequisites = {tech_sperrylite_processing_2, promethium_science_pack},
+            prerequisites = {tech_sperrylite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = sperrylite_crystals},
@@ -217,7 +217,7 @@ if mods[corrundum_mods] then
             name = tech_sperrylite_processing_4,
             icon = graphics_sperrylite_tech,
             icon_size = 256,
-            prerequisites = {tech_sperrylite_processing_3},
+            prerequisites = {tech_sperrylite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = sperrylite_purified},

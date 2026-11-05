@@ -197,7 +197,7 @@ TIMSABA.functions.create_recipes
         localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. brannerite_ore}, {"item-name." .. rheniite_ore}},
         name = fulgora_slag_processing,
         categories = {crystallizing_4},
-        subgroup = slag_processing_1,
+        subgroup = is_slag_processing_2,
         icons = THREE_R_I(sludge_mineral, brannerite_ore, rheniite_ore),
         order = c .. "-" .. data_planet[planet_fulgora].order,
         allow_productivity = true,

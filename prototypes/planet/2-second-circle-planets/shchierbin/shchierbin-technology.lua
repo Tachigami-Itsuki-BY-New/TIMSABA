@@ -95,7 +95,7 @@ if mods[shchierbin_mods] then
             name = tech_vanadinite_processing_4,
             icon = graphics_vanadinite_tech,
             icon_size = 256,
-            prerequisites = {tech_vanadinite_processing_3, promethium_science_pack},
+            prerequisites = {tech_vanadinite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = vanadinite_purified},

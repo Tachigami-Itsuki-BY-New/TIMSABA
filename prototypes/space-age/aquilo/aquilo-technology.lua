@@ -63,7 +63,7 @@ data:extend
         name = tech_antimonite_processing_3,
         icon = graphics_antimonite_tech,
         icon_size = 256,
-        prerequisites = {tech_antimonite_processing_2, promethium_science_pack},
+        prerequisites = {tech_antimonite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_crystals},
@@ -95,7 +95,7 @@ data:extend
         name = tech_antimonite_processing_4,
         icon = graphics_antimonite_tech,
         icon_size = 256,
-        prerequisites = {tech_antimonite_processing_3},
+        prerequisites = {tech_antimonite_processing_3, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_purified},
@@ -185,7 +185,7 @@ data:extend
         name = tech_germanite_processing_3,
         icon = graphics_germanite_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_2, promethium_science_pack},
+        prerequisites = {tech_germanite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = germanite_crystals},
@@ -217,7 +217,7 @@ data:extend
         name = tech_germanite_processing_4,
         icon = graphics_germanite_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_3},
+        prerequisites = {tech_germanite_processing_3, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = germanite_purified},
@@ -617,7 +617,7 @@ data:extend
         name = tech_aquilo_cryogenics,
         icon = graphics_aquilo_tech .. tech_aquilo_cryogenics .. ".png",
         icon_size = 256,
-        prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1, promethium_science_pack},
+        prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_arsenide},

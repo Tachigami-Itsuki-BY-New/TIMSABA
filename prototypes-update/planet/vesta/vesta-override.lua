@@ -391,9 +391,7 @@ if mods[vesta_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
         {type = item, name = iridium_plate_mods, amount = 4}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[electrolyzer_vesta].ingredients, {type = item, name = tantalum_niobium_plate, amount = 8})
-    end
+
     data_assembling[electrolyzer_vesta].subgroup = is_vesta_building
     data_assembling[electrolyzer_vesta].order = a
     data_assembling[electrolyzer_vesta].crafting_speed = 1
@@ -419,9 +417,7 @@ if mods[vesta_mods] then
     if mods[moshine_mods] then
         table.insert(data_recipe[supermagnet].ingredients, {type = item, name = neodymium_magnet, amount = 8})
     end
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[supermagnet].ingredients, {type = item, name = tantalum_niobium_plate, amount = 8})
-    end
+
     data_assembling[supermagnet].subgroup = is_vesta_building
     data_assembling[supermagnet].order = b
     data_assembling[supermagnet].energy_usage = 4680 .. kW
@@ -441,9 +437,7 @@ if mods[vesta_mods] then
         {type = item, name = niobium_titanium_cable, amount = 4},
         {type = item, name = iridium_plate_mods, amount = 4}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[combustion_furnace].ingredients, {type = item, name = tantalum_niobium_plate, amount = 8})
-    end
+
     data_assembling[combustion_furnace].subgroup = is_vesta_building
     data_assembling[combustion_furnace].order = c
     data_assembling[combustion_furnace].energy_usage = 52.5 .. kW
@@ -476,9 +470,7 @@ if mods[vesta_mods] then
     if mods[moshine_mods] then
         table.insert(data_recipe[fusion_thruster].ingredients, {type = item, name = neodymium_magnet, amount = 64})
     end
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[fusion_thruster].ingredients, {type = item, name = tantalum_niobium_plate, amount = 64})
-    end
+
     data_recipe[fusion_thruster].results =
     {
         {type = item, name = fusion_thruster, amount = 1},
@@ -526,27 +518,6 @@ if mods[vesta_mods] then
         combustion_furnace,
         fusion_thruster
     })
-
-    if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[efficiency_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[productivity_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[pollution_clean_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[pollution_create_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        if mods[quality_mods] then
-            table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        end
-
-        bobmods.lib.recipe.update_recycling_recipe
-        ({
-            speed_module_8,
-            efficiency_module_8,
-            productivity_module_8,
-            pollution_clean_module_8,
-            pollution_create_module_8,
-            quality_module_8
-        })
-    end
 
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
@@ -751,69 +722,22 @@ if mods[vesta_mods] then
         }
     end
 
-    data_technology[tech_wolframite_processing_4].prerequisites = {tech_wolframite_processing_3, tech_gas_manipulation_science_pack}
-    data_technology[tech_samarskite_processing_4].prerequisites = {tech_samarskite_processing_3, tech_gas_manipulation_science_pack}
-
-    data_technology[tech_brannerite_processing_4].prerequisites = {tech_brannerite_processing_3, tech_gas_manipulation_science_pack}
-    data_technology[tech_rheniite_processing_4].prerequisites = {tech_rheniite_processing_3, tech_gas_manipulation_science_pack}
-
-    data_technology[tech_antimonite_processing_3].prerequisites = {tech_antimonite_processing_2, tech_gas_manipulation_science_pack}
-    data_technology[tech_antimonite_processing_4].prerequisites = {tech_antimonite_processing_3, promethium_science_pack}
-    table.insert(data_technology[tech_antimony_smelting_3].prerequisites, tech_gas_manipulation_science_pack)
-
-    data_technology[tech_germanite_processing_3].prerequisites = {tech_germanite_processing_2, tech_gas_manipulation_science_pack}
-    data_technology[tech_germanite_processing_4].prerequisites = {tech_germanite_processing_3, promethium_science_pack}
-    table.insert(data_technology[tech_germanium_smelting_3].prerequisites, tech_gas_manipulation_science_pack)
-
-    if mods[moshine_mods] then
-        data_technology[tech_monazite_processing_4].prerequisites = {tech_monazite_processing_3, tech_gas_manipulation_science_pack}
-        data_technology[tech_aeschynite_processing_4].prerequisites = {tech_aeschynite_processing_3, tech_gas_manipulation_science_pack}
+    -- ADD
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, tech_gas_manipulation_science_pack)
     end
+    add_prerequisites(tech_antimonite_processing_3)
+    add_prerequisites(tech_germanite_processing_3)
 
-    if mods[paracelsin_mods] then
-        data_technology[tech_sphalerite_processing_3].prerequisites = {tech_sphalerite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_sphalerite_processing_4].prerequisites = {tech_sphalerite_processing_3, promethium_science_pack}
+    add_prerequisites(tech_sphalerite_processing_3)
+    add_prerequisites(tech_tetrahedrite_processing_3)
 
-        data_technology[tech_tetrahedrite_processing_3].prerequisites = {tech_tetrahedrite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_tetrahedrite_processing_4].prerequisites = {tech_tetrahedrite_processing_3, promethium_science_pack}
-    end
+    add_prerequisites(tech_chalcopyrite_processing_3)
+    add_prerequisites(tech_sperrylite_processing_3)
 
-    if mods[corrundum_mods] then
-        data_technology[tech_chalcopyrite_processing_3].prerequisites = {tech_chalcopyrite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, promethium_science_pack}
-        data_technology[tech_sperrylite_processing_3].prerequisites = {tech_sperrylite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_sperrylite_processing_4].prerequisites = {tech_sperrylite_processing_3, promethium_science_pack}
-    end
+    add_prerequisites(tech_gallite_processing_3)
+    add_prerequisites(tech_sylvanite_processing_3)
 
-    if mods[castra_mods] then
-        data_technology[tech_millerite_processing_4].prerequisites = {tech_millerite_processing_3, tech_gas_manipulation_science_pack}
-    end
-
-    if mods[shchierbin_mods] then
-        data_technology[tech_vanadinite_processing_4].prerequisites = {tech_vanadinite_processing_3, tech_gas_manipulation_science_pack}
-    end
-
-    if mods[secretas_frozeta_mods] then
-        data_technology[tech_gallite_processing_3].prerequisites = {tech_gallite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_gallite_processing_4].prerequisites = {tech_gallite_processing_3, promethium_science_pack}
-        data_technology[tech_sylvanite_processing_3].prerequisites = {tech_sylvanite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_sylvanite_processing_4].prerequisites = {tech_sylvanite_processing_3, promethium_science_pack}
-    end
-
-    if mods[lignumis_mods] then
-        data_technology[tech_wodginite_processing_4].prerequisites = {tech_wodginite_processing_3, tech_gas_manipulation_science_pack}
-    end
-
-    data_technology[tech_aquilo_cryogenics].prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1, tech_gas_manipulation_science_pack}
-
-    if mods[bobmodules] then
-        table.insert(data_technology[speed_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[efficiency_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[productivity_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[pollution_clean_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[pollution_create_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        if mods[quality_mods] then
-            table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        end
-    end
+    add_prerequisites(tech_aquilo_cryogenics)
 end

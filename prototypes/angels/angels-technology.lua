@@ -2,7 +2,6 @@ data:extend
 ({
     -- ANGELS RESOURCE REFINING
     {
-        localised_name = {"technology-name.advanced-ore-refining-5"},
         localised_description = {"technology-description.angels-advanced-ore-refining"},
         type = technology,
         name = tech_advanced_ore_refining_5,
@@ -33,7 +32,6 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.advanced-ore-refining-6"},
         localised_description = {"technology-description.angels-advanced-ore-refining"},
         type = technology,
         name = tech_advanced_ore_refining_6,

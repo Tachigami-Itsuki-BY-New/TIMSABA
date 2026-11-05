@@ -144,7 +144,7 @@ if mods[lignumis_mods] then
         },
         {
             name = wodginite_crushed_sorting,
-            categories = {ore_sorting_6},
+            categories = {angels_ore_sorting_5},
             subgroup = is_wodginite,
             icons = RECYCLING_I(recycling_png, wodginite_crushed),
             order = g,
