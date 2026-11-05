@@ -39,7 +39,11 @@
         "angelssmelting",
 
         "reskins-library",
+        "reskins-assets-base",
+        "reskins-assets-assorted",
+        "reskins-sprite-utils",
         "reskins-bobs",
+        "reskins-assets-bobs",
         "reskins-angels",
         "reskins-compatibility",
 
