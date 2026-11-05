@@ -51,7 +51,8 @@ if mods[muluna_mods] then
 		"muluna-asteroid-upcycling",
 		thruster_fuel .. _productivity,
 		"muluna-oxygen-from-oxidizer",
-		"muluna-oxygen"
+		"muluna-oxygen",
+		"bob-steam-mining-drill-ground-digger"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
