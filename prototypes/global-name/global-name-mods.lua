@@ -79,6 +79,10 @@ neural_computer = "neural_computer"
 data_extractor = "data-extractor"
 space_train_battery_pack = "space-train-battery-pack"
 
+sun_heat_and_cooling_mods = "sun_heat_and_cooling"
+water_cooling_device = "sun_heat_cooler_1"
+cryogenic_cooling_device = "sun_heat_cooler_2"
+
 -- PANGLIA
 panglia_mods = "panglia_planet"
 planet_panglia = "panglia"

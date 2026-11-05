@@ -399,22 +399,43 @@ if mods[apia_carnova_mods] then
     }
     data_recipe[explosives_from_nitroglycerine].results[1].amount = 4
 
-    data_recipe[phosphoric_acid].localised_name = {"fluid-name." .. orthophosphoric_acid}
-    data_recipe[phosphoric_acid].subgroup = is_apia_carnova_recipe
-    data_recipe[phosphoric_acid].icons = THREE_D_I(white_phosphorus, water_purified_angels, oxygen_angels, orthophosphoric_acid, nil, hydrogen_angels)
-    data_recipe[phosphoric_acid].order = b
-    -- P₄(s) + 8H₂O(l) + 4O₂(g) --> 4H₃PO₄(l) + 2H₂(g)
-    data_recipe[phosphoric_acid].ingredients =
-    {
-        {type = item, name = white_phosphorus, amount = 1},
-        {type = fluid, name = water_purified_angels, amount = 120},
-        {type = fluid, name = oxygen_angels, amount = 60}
-    }
-    data_recipe[phosphoric_acid].results =
-    {
-        {type = fluid, name = orthophosphoric_acid, amount = 120},
-        {type = fluid, name = hydrogen_angels, amount = 30}
-    }
+    if data_fluid[orthophosphoric_acid] then
+        data_recipe[phosphoric_acid].localised_name = {"fluid-name." .. orthophosphoric_acid}
+        data_recipe[phosphoric_acid].subgroup = is_apia_carnova_recipe
+        data_recipe[phosphoric_acid].icons = THREE_D_I(white_phosphorus, water_purified_angels, oxygen_angels, orthophosphoric_acid, nil, hydrogen_angels)
+        data_recipe[phosphoric_acid].order = b
+        -- P₄(s) + 8H₂O(l) + 4O₂(g) --> 4H₃PO₄(l) + 2H₂(g)
+        data_recipe[phosphoric_acid].ingredients =
+        {
+            {type = item, name = white_phosphorus, amount = 1},
+            {type = fluid, name = water_purified_angels, amount = 120},
+            {type = fluid, name = oxygen_angels, amount = 60}
+        }
+        data_recipe[phosphoric_acid].results =
+        {
+            {type = fluid, name = orthophosphoric_acid, amount = 120},
+            {type = fluid, name = hydrogen_angels, amount = 30}
+        }
+    else
+        data_fluid[phosphoric_acid].subgroup = is_apia_carnova_recipe
+        data_fluid[phosphoric_acid].order = b
+        TIMSABA.barreling.add_dangerous_fluid(phosphoric_acid)
+        data_recipe[phosphoric_acid].subgroup = is_apia_carnova_recipe
+        data_recipe[phosphoric_acid].icons = THREE_D_I(white_phosphorus, water_purified_angels, oxygen_angels, phosphoric_acid, nil, hydrogen_angels)
+        data_recipe[phosphoric_acid].order = b
+        -- P₄(s) + 8H₂O(l) + 4O₂(g) --> 4H₃PO₄(l) + 2H₂(g)
+        data_recipe[phosphoric_acid].ingredients =
+        {
+            {type = item, name = white_phosphorus, amount = 1},
+            {type = fluid, name = water_purified_angels, amount = 120},
+            {type = fluid, name = oxygen_angels, amount = 60}
+        }
+        data_recipe[phosphoric_acid].results =
+        {
+            {type = fluid, name = phosphoric_acid, amount = 120},
+            {type = fluid, name = hydrogen_angels, amount = 30}
+        }
+    end
 
     local rocket_fuel_from_phosphoric_acid = "rocket-fuel-from-phosphoric-acid"
     data_recipe[rocket_fuel_from_phosphoric_acid].subgroup = is_apia_carnova_recipe
