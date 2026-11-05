@@ -18,10 +18,15 @@ is_lead_item = "is-lead-item"
 is_lead_fluid = "is-lead-fluid"
 is_tin_item = "is-tin-item"
 is_tin_fluid = "is-tin-fluid"
-is_ore_sorting_advanced_1 = "angels-ore-sorting-advanced"
+is_ore_sorting_advanced_0 = "angels-ore-sorting-advanced"
+is_ore_sorting_advanced_1 = "is-ore-sorting-advanced-1"
 is_ore_sorting_advanced_2 = "is-ore-sorting-advanced-2"
 is_ore_sorting_advanced_3 = "is-ore-sorting-advanced-3"
 is_ore_sorting_advanced_4 = "is-ore-sorting-advanced-4"
+is_ore_sorting_advanced_5 = "is-ore-sorting-advanced-5"
+is_ore_sorting_advanced_6 = "is-ore-sorting-advanced-6"
+is_ore_sorting_advanced_7 = "is-ore-sorting-advanced-7"
+is_slag_processing_2 = "is-slag-processing-2"
 is_powellite = "is-powellite"
 is_molybdenite = "is-molybdenite"
 is_ore_crusher = "is-ore-crusher"
@@ -36,23 +41,28 @@ is_filtration_unit = "is-filtration-unit"
 is_crystallizer = "is-crystallizer"
 TIMSABA.functions.create_subgroups("angels-resource-refining",
 {
-    {name = is_ore_sorting,            order = c},
-    {name = is_iron_item,              order = c_e},
-    {name = is_iron_fluid,             order = c_e .. "-" .. a},
-    {name = is_copper_item,            order = c_f},
-    {name = is_copper_fluid,           order = c_f .. "-" .. a},
-    {name = is_lead_item,              order = c_g},
-    {name = is_lead_fluid,             order = c_g .. "-" .. a},
-    {name = is_tin_item,               order = c_h},
-    {name = is_tin_fluid,              order = c_h .. "-" .. a},
-    {name = is_ore_sorting_advanced_2, order = i},
-    {name = is_ore_sorting_advanced_3, order = j},
-    {name = is_ore_sorting_advanced_4, order = k},
-    {name = is_powellite,              order = l},
-    {name = is_molybdenite,            order = m},
-    {name = is_ore_crusher,            order = z},
-    {name = is_filtration_unit,        order = z_i},
-    {name = is_crystallizer,           order = z_j}
+    {name = is_ore_sorting,             order = c},
+    {name = is_iron_item,               order = c_e},
+    {name = is_iron_fluid,              order = c_e .. "-" .. a},
+    {name = is_copper_item,             order = c_f},
+    {name = is_copper_fluid,            order = c_f .. "-" .. a},
+    {name = is_lead_item,               order = c_g},
+    {name = is_lead_fluid,              order = c_g .. "-" .. a},
+    {name = is_tin_item,                order = c_h},
+    {name = is_tin_fluid,               order = c_h .. "-" .. a},
+    {name = is_ore_sorting_advanced_1,  order = d_a},
+    {name = is_ore_sorting_advanced_2,  order = d_b},
+    {name = is_ore_sorting_advanced_3,  order = d_c},
+    {name = is_ore_sorting_advanced_4,  order = d_d},
+    {name = is_ore_sorting_advanced_5,  order = d_e},
+    {name = is_ore_sorting_advanced_6,  order = d_f},
+    {name = is_ore_sorting_advanced_7,  order = d_g},
+    {name = is_powellite,               order = e},
+    {name = is_molybdenite,             order = f},
+    {name = is_slag_processing_2,       order = i_d},
+    {name = is_ore_crusher,             order = z},
+    {name = is_filtration_unit,         order = z_i},
+    {name = is_crystallizer,            order = z_j}
 })
 
 -- ANGELS METTALURGY SMELTING

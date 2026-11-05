@@ -823,6 +823,10 @@ if mods[lignumis_mods] then
         {space_science_pack, 1}
     }
 
+    table.insert(data_technology[deep_miner].prerequisites, tech_molybdenum_processing)
+    table.insert(data_technology[deep_miner].prerequisites, tech_rhenium_processing)
+    table.insert(data_technology[deep_miner].prerequisites, tech_molybdenum_rhenium_processing)
+    table.insert(data_technology[deep_miner].prerequisites, planet_discovery_lignumis)
     data_technology[deep_miner].unit.ingredients =
     {
         {automation_science_pack, 1},

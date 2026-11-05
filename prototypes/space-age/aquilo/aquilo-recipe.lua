@@ -474,7 +474,7 @@ TIMSABA.functions.create_recipes
         localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. antimonite_ore}, {"item-name." .. germanite_ore}},
         name = aquilo_slag_processing,
         categories = {crystallizing_4},
-        subgroup = slag_processing_1,
+        subgroup = is_slag_processing_2,
         icons = THREE_R_I(sludge_mineral, antimonite_ore, germanite_ore),
         order = c .. "-" .. data_planet[planet_aquilo].order,
         allow_productivity = true,

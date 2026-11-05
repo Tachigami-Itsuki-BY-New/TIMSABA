@@ -558,7 +558,6 @@ data_technology[tech_tungsten_steel].icon = "__reskins-angels__/graphics/icons/s
 data_technology[tech_tungsten_steel].icon_size = 64
 
 table.insert(data_technology[metallurgic_science_pack].effects, {type = unlock_recipe, recipe = vulcanus_slag_processing})
-table.insert(data_technology[metallurgic_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
 data_technology[metallurgic_science_pack].research_trigger = {type = craft_item, item = tungsten_plate_bob}
 
 data_technology[vulcanus_transport_belt].localised_name = {"technology-name.vulcanus-transport-belt"}

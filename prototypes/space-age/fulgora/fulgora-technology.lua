@@ -61,7 +61,7 @@ data:extend
         name = tech_brannerite_processing_3,
         icon = graphics_brannerite_tech,
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_brannerite_processing_2},
+        prerequisites = {tech_brannerite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_crystals},
@@ -80,8 +80,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -93,7 +92,7 @@ data:extend
         name = tech_brannerite_processing_4,
         icon = graphics_brannerite_tech,
         icon_size = 256,
-        prerequisites = {promethium_science_pack, tech_brannerite_processing_3},
+        prerequisites = {cryogenic_science_pack, tech_brannerite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_purified},
@@ -180,7 +179,7 @@ data:extend
         name = tech_rheniite_processing_3,
         icon = graphics_rheniite_tech,
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_rheniite_processing_2},
+        prerequisites = {tech_rheniite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = rheniite_crystals},
@@ -199,8 +198,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -212,7 +210,7 @@ data:extend
         name = tech_rheniite_processing_4,
         icon = graphics_rheniite_tech,
         icon_size = 256,
-        prerequisites = {promethium_science_pack, tech_rheniite_processing_3},
+        prerequisites = {cryogenic_science_pack, tech_rheniite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = rheniite_purified},
@@ -258,11 +256,8 @@ data:extend
         prerequisites = {tech_brannerite_processing_1},
         effects =
         {
-            {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
-            {type = unlock_recipe, recipe = calcium},
             {type = unlock_recipe, recipe = holmium_chloride_III_solution},
             {type = unlock_recipe, recipe = holmium_fluoride_III},
-            {type = unlock_recipe, recipe = holmium_cathode},
             {type = unlock_recipe, recipe = holmium_ingot},
             {type = unlock_recipe, recipe = holmium_powder},
             {type = unlock_recipe, recipe = holmium_molten},

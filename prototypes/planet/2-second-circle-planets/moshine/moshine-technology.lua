@@ -96,7 +96,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_4,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_monazite_processing_3},
+            prerequisites = {tech_monazite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_purified},
@@ -216,7 +216,7 @@ if mods[moshine_mods] then
             name = tech_aeschynite_processing_4,
             icon = graphics_aeschynite_tech,
             icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_aeschynite_processing_3},
+            prerequisites = {tech_aeschynite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = aeschynite_purified},

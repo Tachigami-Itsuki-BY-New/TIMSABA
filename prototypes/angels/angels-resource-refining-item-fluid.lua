@@ -3,9 +3,9 @@ TIMSABA.functions.create_items
 ({
     {
         name = purified_catalyst,
-        subgroup = is_ore_sorting_advanced_4,
+        subgroup = is_ore_sorting_advanced_0,
         icon = "__angelsrefininggraphics__/graphics/icons/catalysator-yellow.png",
         icon_size = 32,
-        order = a,
+        order = d,
     }
 })

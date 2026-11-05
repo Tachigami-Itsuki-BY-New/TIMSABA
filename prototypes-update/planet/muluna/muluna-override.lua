@@ -1571,6 +1571,7 @@ if mods[muluna_mods] then
         }
     }
 
+    table.insert(data_technology[crusher].prerequisites, tech_molybdenum_rhenium_processing)
     table.insert(data_technology[crusher].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[crusher].unit.ingredients, {utility_science_pack, 1})
 
@@ -1650,4 +1651,6 @@ if mods[muluna_mods] then
     local tech_advanced_space_research = "advanced-space-science-pack"
     data_technology[tech_advanced_space_research].prerequisites = {tech_advanced_asteroid_processing, interstellar_science_pack}
     table.insert(data_technology[tech_advanced_space_research].unit.ingredients, {metallurgic_science_pack, 1})
+
+    table.insert(data_technology[telescope].prerequisites, tech_molybdenum_rhenium_processing)
 end

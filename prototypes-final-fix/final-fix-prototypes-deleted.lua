@@ -137,9 +137,6 @@ for _, t_type in ipairs(train_types) do
     end
 end
 
--- ANGELS RESOURCE REFINING
-data_technology["angels-thermal-water-processing"] = nil
-
 -- ANGELS METALLURGY SMELTING and CASTING
 data_recipe["angels-solid-iron-hydroxide-smelting"] = nil
 
@@ -157,10 +154,6 @@ data_technology["angels-steel-smelting-4"] = nil
 
 data_recipe["angels-liquid-molten-titanium-4"] = nil
 data_recipe["angels-liquid-molten-titanium-5"] = nil
-
--- ANGELS WATER TREATMENT
-data_recipe["angels-thermal-water-filtering-1"] = nil
-data_recipe["angels-thermal-water-filtering-2"] = nil
 
 -- ANGELS BIOPROCESSING
 local delete_prototypes = {}

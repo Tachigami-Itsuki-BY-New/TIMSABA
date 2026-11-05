@@ -24,7 +24,6 @@ crushed_stone_sorting_2 = "crushed-stone-sorting-2"
 crushed_stone_sorting_3 = "crushed-stone-sorting-3"
 crushed_stone_sorting_4 = "crushed-stone-sorting-4"
 sand_from_crushed_stone = "sand-from-crushed-stone"
-calcium_from_crushed_stone = "calcium-from-crushed-stone"
 crystal_dust_sorting = "crystal-dust-sorting"
 TIMSABA.functions.create_recipes
 ({
@@ -134,18 +133,6 @@ TIMSABA.functions.create_recipes
         ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
         results = {{type = item, name = sand_angels, amount = 2}},
         main_product = sand_angels
-    },
-    {
-        localised_name = {"item-name." .. calcium},
-        name = calcium_from_crushed_stone,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_processing_crafting,
-        icons = TWO_I(stone_crushed_angels, calcium),
-        order = g,
-        energy_required = 1,
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
-        results = {{type = item, name = calcium, amount = 1}},
-        main_product = calcium
     },
     -- CRYSTAL SORTING
     {

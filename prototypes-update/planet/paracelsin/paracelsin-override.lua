@@ -292,9 +292,7 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_titanium_cable, amount = 8},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[pressure_turbine].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-    end
+
     data_mining_drill[pressure_turbine].subgroup = is_paracelsin_energy
     data_mining_drill[pressure_turbine].order = a
     data_mining_drill[pressure_turbine].mining_speed = 0.25
@@ -315,9 +313,7 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_iron_plate, amount = 32},
         {type = item, name = zinc_cable, amount = 16}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[electrochemical_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-    end
+
     data_assembling[electrochemical_plant].subgroup = is_paracelsin_building
     data_assembling[electrochemical_plant].order = a
     data_assembling[electrochemical_plant].crafting_speed = 4
@@ -340,9 +336,7 @@ if mods[paracelsin_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
         {type = item, name = zinc_rivets, amount = 16}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[mechanical_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-    end
+
     data_assembling[mechanical_plant].subgroup = is_paracelsin_building
     data_assembling[mechanical_plant].order = b
     data_assembling[mechanical_plant].crafting_speed = 4
@@ -364,27 +358,6 @@ if mods[paracelsin_mods] then
         electrochemical_plant,
         mechanical_plant
     })
-
-    if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        if mods[quality_mods] then
-            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
-        end
-
-        bobmods.lib.recipe.update_recycling_recipe
-        ({
-            speed_module_7,
-            efficiency_module_7,
-            productivity_module_7,
-            pollution_clean_module_7,
-            pollution_create_module_7,
-            quality_module_7
-        })
-    end
 
     -- TECHNOLOGY
     table.insert(data_technology[planet_discovery_paracelsin].prerequisites, tech_full_asteroid_processing)
@@ -515,46 +488,49 @@ if mods[paracelsin_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    if mods[bobmodules] then
-        table.insert(data_technology[speed_module_7].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[efficiency_module_7].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[productivity_module_7].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[pollution_clean_module_7].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[pollution_create_module_7].prerequisites, galvanization_science_pack)
-        if mods[quality_mods] then
-            table.insert(data_technology[quality_module_7].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = nitric_acid_plastic, change = 0.1})
+
+    -- UPDATE
+    local function update_prerequisites(tech_name, prerequisite_1, prerequisite_2)
+        if not data_technology[tech_name] then return end
+        data_technology[tech_name].prerequisites = {prerequisite_1}
+        if prerequisite_2 then
+            table.insert(data_technology[tech_name].prerequisites, prerequisite_2)
         end
     end
+    update_prerequisites(tech_wolframite_processing_4, tech_wolframite_processing_3, cryogenic_science_pack)
+    update_prerequisites(tech_samarskite_processing_4, tech_samarskite_processing_3, cryogenic_science_pack)
 
-    if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_4].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[artillery_wagon_4].prerequisites, galvanization_science_pack)
-    end
+    update_prerequisites(tech_brannerite_processing_4, tech_brannerite_processing_3, cryogenic_science_pack)
+    update_prerequisites(tech_rheniite_processing_4, tech_rheniite_processing_3, cryogenic_science_pack)
 
-    table.insert(data_technology[tech_powellite_processing_4].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_samarskite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)
-    table.insert(data_technology[tech_rheniite_processing_3].prerequisites, galvanization_science_pack)
-    if mods[castra_mods] then
-        table.insert(data_technology[tech_millerite_processing_3].prerequisites, galvanization_science_pack)
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = electric_coil, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
     end
-    if mods[corrundum_mods] then
-        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, galvanization_science_pack)
-    end
-    if mods[moshine_mods] then
-        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[tech_monazite_processing_3].prerequisites, galvanization_science_pack)
-        table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, galvanization_science_pack)
-    end
-    if mods[shchierbin_mods] then
-        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, galvanization_science_pack)
-    end
-    if mods[lignumis_mods] then
-        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, galvanization_science_pack)
-    end
+    add_ingredients(speed_module_8)
+    add_ingredients(efficiency_module_8)
+    add_ingredients(productivity_module_8)
+    add_ingredients(pollution_clean_module_8)
+    add_ingredients(pollution_create_module_8)
+    add_ingredients(quality_module_8)
 
-    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = nitric_acid_plastic, change = 0.1})
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, galvanization_science_pack)
+    end
+    add_prerequisites(tech_wolframite_processing_4)
+    add_prerequisites(tech_samarskite_processing_4)
+
+    add_prerequisites(tech_brannerite_processing_4)
+    add_prerequisites(tech_rheniite_processing_4)
+
+    add_prerequisites(speed_module_8)
+    add_prerequisites(efficiency_module_8)
+    add_prerequisites(productivity_module_8)
+    add_prerequisites(pollution_clean_module_8)
+    add_prerequisites(pollution_create_module_8)
+    add_prerequisites(quality_module_8)
 end

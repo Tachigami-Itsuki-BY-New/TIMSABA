@@ -1009,6 +1009,7 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
+    local tech_data_processor_building = "moshine-tech-data-processor-building"
     if mods[bobmodules] then
         table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_6)
     end
@@ -1046,4 +1047,33 @@ if mods[moshine_mods] then
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, tech_vanadinite_processing_2)
     end
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = neodymium_magnet, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(speed_module_7)
+    add_ingredients(productivity_module_7)
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, tech_machine_learning)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(speed_module_7)
+    add_prerequisites(productivity_module_7)
+    add_prerequisites(quality_module_7)
 end
