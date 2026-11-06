@@ -100,14 +100,14 @@ TIMSABA.functions.create_recipes
         name = purified_catalyst,
         categories = {crystallizing_4},
         subgroup = is_ore_sorting_advanced_4,
-        icons = THREE_I(hybride_catalyst, water_purified_angels, purified_catalyst),
-        order = a,
+        icons = THREE_I(hybride_catalyst, liquid_chlorine_bleach, purified_catalyst),
+        order = d,
         allow_productivity = true,
         energy_required = 0.5,
         ingredients =
         {
             {type = item, name = hybride_catalyst, amount = 2},
-            {type = fluid, name = water_purified_angels, amount = 60}
+            {type = fluid, name = liquid_chlorine_bleach, amount = 60}
         },
         results = {{type = item, name = purified_catalyst, amount = 2}},
         main_product = purified_catalyst

@@ -14,7 +14,7 @@ data:extend
         name = tech_powellite_processing_1,
         icon = graphics_powellite_tech,
         icon_size = 256,
-        prerequisites = {tech_advanced_ore_refining_4, space_science_pack},
+        prerequisites = {tech_advanced_ore_refining_4},
         effects =
         {
             {type = unlock_recipe, recipe = powellite_ore .. _sorting},
@@ -130,7 +130,7 @@ data:extend
         name = tech_molybdenite_processing_1,
         icon = graphics_molybdenite_tech,
         icon_size = 256,
-        prerequisites = {tech_advanced_ore_refining_4, space_science_pack},
+        prerequisites = {tech_advanced_ore_refining_4},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_ore .. _sorting},
@@ -521,8 +521,7 @@ data:extend
                 {logistic_science_pack, 1},
                 {chemical_science_pack, 1},
                 {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
+                {utility_science_pack, 1}
             },
             time = 30
         }
@@ -632,8 +631,7 @@ data:extend
                 {logistic_science_pack, 1},
                 {chemical_science_pack, 1},
                 {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
+                {utility_science_pack, 1}
             },
             time = 30
         }
@@ -746,8 +744,7 @@ data:extend
                 {logistic_science_pack, 1},
                 {chemical_science_pack, 1},
                 {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
+                {utility_science_pack, 1}
             },
             time = 30
         }

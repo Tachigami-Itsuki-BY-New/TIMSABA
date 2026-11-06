@@ -314,7 +314,7 @@ data:extend
         name = tech_niobium_smelting_3,
         icon = graphics_niobium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_niobium_smelting_2, cryogenic_science_pack, tech_wolframite_processing_3, tech_samarskite_processing_3},
+        prerequisites = {tech_niobium_smelting_2, tech_wolframite_processing_3, tech_samarskite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_pellet},
@@ -336,8 +336,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }

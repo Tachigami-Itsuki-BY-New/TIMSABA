@@ -16,7 +16,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = coke_purification_2,
-        categories = {angels_liquifying},
+        categories = {chemistry},
         subgroup = is_coal,
         icons = TWO_D_I(coke_angels, water_purified_angels, carbon_angels, water_yellow_waste, number_2),
         order = d_a,

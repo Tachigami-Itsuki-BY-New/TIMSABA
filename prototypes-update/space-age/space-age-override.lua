@@ -297,7 +297,7 @@ data_asteroid_collector[asteroid_collector].passive_energy_usage = 250 .. J
 data_asteroid_collector[asteroid_collector].arm_energy_usage = 500 .. J
 data_asteroid_collector[asteroid_collector].arm_slow_energy_usage = 750 .. J
 
-if mods[panglia_mods] then
+if mods["snouz_better_asteroid_collector"] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}

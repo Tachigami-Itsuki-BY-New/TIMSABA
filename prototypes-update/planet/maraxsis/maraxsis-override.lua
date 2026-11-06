@@ -814,4 +814,6 @@ if mods[maraxsis_mods] then
     add_prerequisites(pollution_clean_module_8)
     add_prerequisites(pollution_create_module_8)
     add_prerequisites(quality_module_8)
+
+    add_prerequisites(quantum_processor)
 end

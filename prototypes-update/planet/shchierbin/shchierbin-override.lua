@@ -9,7 +9,6 @@ if mods[shchierbin_mods] then
 
     -- RECIPE
     data_recipe[slaked_lime_mods].localised_name = {"item-name." .. calcium_hydroxide}
-    data_recipe[slaked_lime_mods].categories = {angels_liquifying}
     data_recipe[slaked_lime_mods].subgroup = is_shchierbin_recipe
     data_recipe[slaked_lime_mods].icons = THREE_I(lime_angels, water_purified_angels, calcium_hydroxide)
     data_recipe[slaked_lime_mods].order = a
@@ -24,7 +23,6 @@ if mods[shchierbin_mods] then
     data_recipe[slaked_lime_mods].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
     data_recipe[calcium_mods].localised_name = {"item-name." .. calcium}
-    data_recipe[calcium_mods].categories = {angels_liquifying}
     data_recipe[calcium_mods].subgroup = is_shchierbin_recipe
     data_recipe[calcium_mods].icons = THREE_R_I(calcium_hydroxide, calcium, hydrogen_peroxide)
     data_recipe[calcium_mods].order = b

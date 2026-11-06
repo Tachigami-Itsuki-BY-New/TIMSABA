@@ -117,10 +117,15 @@ TIMSABA.functions.create_recipes
         name = purified_franckeite,
         categories = {angels_ore_refining_T4},
         subgroup = is_ore_processing_d,
-        icons = TWO_I(crystal_franckeite, purified_franckeite),
+        icons = THREE_D_I(crystal_franckeite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_franckeite),
         order = h,
         energy_required = 2, -- Franckeite crystals -refinery-> Franckeite purified
-        ingredients = {{type = item, name = crystal_franckeite, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = crystal_franckeite, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = purified_franckeite, amount = 4}},
         main_product = purified_franckeite
     },

@@ -1653,4 +1653,8 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_advanced_space_research].unit.ingredients, {metallurgic_science_pack, 1})
 
     table.insert(data_technology[telescope].prerequisites, tech_molybdenum_rhenium_processing)
+
+    if mods[lignumis_mods] then
+        data_technology[space_science_pack].prerequisites = {deep_miner, steam_crusher, tech_alice_propellant}
+    end
 end

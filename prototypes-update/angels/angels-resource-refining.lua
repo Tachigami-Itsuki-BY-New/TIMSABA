@@ -189,22 +189,58 @@ data_recipe[crystal_bobmonium].ingredients[2].amount = 15
 data_recipe[crystal_bobmonium].results[1].amount = 4
 
 data_item[purified_saphirite].localised_description = {"item-description.saphirite-purified"}
-data_recipe[purified_saphirite].icons = TWO_I(crystal_saphirite, purified_saphirite)
+data_recipe[purified_saphirite].icons = THREE_D_I(crystal_saphirite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_saphirite)
+data_recipe[purified_saphirite].ingredients =
+{
+    {type = item, name = crystal_saphirite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_jivolite].localised_description = {"item-description.jivolite-purified"}
-data_recipe[purified_jivolite].icons = TWO_I(crystal_jivolite, purified_jivolite)
+data_recipe[purified_jivolite].icons = THREE_D_I(crystal_jivolite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_jivolite)
+data_recipe[purified_jivolite].ingredients =
+{
+    {type = item, name = crystal_jivolite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_stiratite].localised_description = {"item-description.stiratite-purified"}
-data_recipe[purified_stiratite].icons = TWO_I(crystal_stiratite, purified_stiratite)
+data_recipe[purified_stiratite].icons = THREE_D_I(crystal_stiratite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_stiratite)
+data_recipe[purified_stiratite].ingredients =
+{
+    {type = item, name = crystal_stiratite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_crotinnium].localised_description = {"item-description.crotinnium-purified"}
-data_recipe[purified_crotinnium].icons = TWO_I(crystal_crotinnium, purified_crotinnium)
+data_recipe[purified_crotinnium].icons = THREE_D_I(crystal_crotinnium, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_crotinnium)
+data_recipe[purified_crotinnium].ingredients =
+{
+    {type = item, name = crystal_crotinnium, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_rubyte].localised_description = {"item-description.rubyte-purified"}
-data_recipe[purified_rubyte].icons = TWO_I(crystal_rubyte, purified_rubyte)
+data_recipe[purified_rubyte].icons = THREE_D_I(crystal_rubyte, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_rubyte)
+data_recipe[purified_rubyte].ingredients =
+{
+    {type = item, name = crystal_rubyte, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_bobmonium].localised_description = {"item-description.bobmonium-purified"}
-data_recipe[purified_bobmonium].icons = TWO_I(crystal_bobmonium, purified_bobmonium)
+data_recipe[purified_bobmonium].icons = THREE_D_I(crystal_bobmonium, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_bobmonium)
+data_recipe[purified_bobmonium].ingredients =
+{
+    {type = item, name = crystal_bobmonium, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item_subgroup["angels-ore-sorting-t1"].order = c_a
 
@@ -1104,7 +1140,7 @@ data_recipe[sulfur_air_scrubbing].results =
 }
 data_recipe[sulfur_air_scrubbing].main_product = acid_angels
 
-data_item_subgroup["angels-ore-sorting-fluid"].order = h
+data_item_subgroup[is_ore_sorting_fluid].order = h_a
 
 TIMSABA.barreling.add_simple_fluid(slurry_slag)
 
@@ -1114,7 +1150,6 @@ TIMSABA.barreling.add_simple_fluid(slurry_crystal)
 
 TIMSABA.barreling.add_simple_fluid(seedling_crystal)
 
-local is_geode_processing_1 = "angels-geode-processing-1"
 data_item_subgroup[is_geode_processing_1].order = i
 
 data_item[slag_angels].subgroup = is_geode_processing_1
@@ -1132,7 +1167,7 @@ if not mods[lignumis_mods] then
 end
 data_recipe[stone_crushed_angels].ingredients[1].name = stone
 
-data_item_subgroup["angels-geode-processing-2"].order = i_a
+data_item_subgroup[is_geode_processing_2].order = i_a
 
 data_recipe["angels-geode-blue-processing"].icons = THREE_R_I(geode_blue, crystal_dust, stone_crushed_angels)
 

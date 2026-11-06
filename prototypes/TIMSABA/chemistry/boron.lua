@@ -34,7 +34,7 @@ TIMSABA.functions.create_items
         name = magnesium_boride,
         subgroup = is_boron,
         icon = graphics_boron .. magnesium_boride .. ".png",
-        order = e
+        order = d
     }
 })
 
@@ -87,7 +87,7 @@ TIMSABA.functions.create_recipes
         categories = {smelting_filtering},
         subgroup = is_boron,
         icons = TWO_D_I(boron_oxide_III, magnesium_powder, magnesium_boride, magnesium_oxide),
-        order = e,
+        order = d,
         -- B₂O₃(s) + 6Mg(s) --> Mg₃B₂(s) + 3MgO(s)
         ingredients =
         {
