@@ -971,8 +971,11 @@ data_recipe[sulfuric_acid_angels].ingredients =
 }
 data_recipe[sulfuric_acid_angels].results = {{type = fluid, name = sulfuric_acid_angels, amount = 60}}
 
+-- CHLORINE
+data_item_subgroup["angels-petrochem-chlorine"].order = g
+
 -- CHLORINE FLUIDS
-data_item_subgroup[is_chlorine_fluids].order = g
+data_item_subgroup[is_chlorine_fluids].order = g_a
 
 data_fluid[hydrogen_chloride_angels].order = a
 TIMSABA.barreling.add_gas(hydrogen_chloride_angels)
@@ -984,6 +987,7 @@ data_recipe[hydrogen_chloride_angels].ingredients[2].amount = 60
 data_recipe[hydrogen_chloride_angels].results[1].amount = 120
 
 data_recipe[hydrogen_chloride_separation].categories = {angels_petrochem_electrolyser}
+data_recipe[hydrogen_chloride_separation].subgroup = is_chlorine_fluids
 data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
 data_recipe[hydrogen_chloride_separation].order = a_a
 data_recipe[hydrogen_chloride_separation].energy_required = 8 -- 2HCl -electrode/electrolys-> H₂ + Cl₂
