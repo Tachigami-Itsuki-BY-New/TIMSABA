@@ -381,8 +381,8 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = water_orange_waste_purification},
-                {type = unlock_recipe, recipe = orthophosphoric_acid},
-                {type = unlock_recipe, recipe = orthophosphoric_acid_from_phosphate_ore}
+                {type = unlock_recipe, recipe = orthophosphoric_acid_2},
+                {type = unlock_recipe, recipe = orthophosphoric_acid_3}
             },
             unit =
             {

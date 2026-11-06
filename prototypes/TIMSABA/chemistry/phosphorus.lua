@@ -50,6 +50,7 @@ white_phosphorus_gas = "white-phosphorus-gas"
 phosphorus_chloride_III_liquid = "phosphorus-chloride-III-liquid"
 phosphorus_fluoride_V_gas = "phosphorus-fluoride-V-gas"
 hexafluorophosphoric_acid = "hexafluorophosphoric-acid-solution"
+orthophosphoric_acid = "orthophosphoric-acid-solution"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -87,11 +88,21 @@ TIMSABA.functions.create_fluids
         order = d,
         base_color = angelsmods.functions.fluid_color("HPF6Wp"),
         flow_color = angelsmods.functions.flow_color("HPF6Wp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]PO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = orthophosphoric_acid,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. orthophosphoric_acid .. ".png",
+        order = e,
+        base_color = TIMSABA.functions.fluid_color("H3PO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("H3PO4Wp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(phosphorus_chloride_III_liquid)
 TIMSABA.barreling.add_gas(phosphorus_fluoride_V_gas)
 TIMSABA.barreling.add_dangerous_fluid(hexafluorophosphoric_acid)
+TIMSABA.barreling.add_dangerous_fluid(orthophosphoric_acid)
 
 -- RECIPE
 TIMSABA.functions.create_recipes

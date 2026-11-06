@@ -283,7 +283,8 @@ if mods[moshine_mods] then
     })
 
     -- CHEMISTRY
-    orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
+    orthophosphoric_acid_2 = orthophosphoric_acid .. "-2"
+    orthophosphoric_acid_3 = orthophosphoric_acid .. "-3"
     TIMSABA.functions.create_recipes
     ({
         -- BORON
@@ -334,11 +335,11 @@ if mods[moshine_mods] then
         },
         -- PHOSPHORUS
         {
-            name = orthophosphoric_acid,
+            name = orthophosphoric_acid_2,
             categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
-            order = e,
+            order = e_a,
             -- Ca₃(PO₄)₂(s) + 3H₂SO₄(l) + H₂O(l) --> H₃PO₄(aq) + 3CaSO₄(s)
             ingredients =
             {
@@ -354,11 +355,11 @@ if mods[moshine_mods] then
             main_product = orthophosphoric_acid
         },
         {
-            name = orthophosphoric_acid_from_phosphate_ore,
+            name = orthophosphoric_acid_3,
             categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
-            order = e_a,
+            order = e_b,
             -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
             ingredients =
             {
