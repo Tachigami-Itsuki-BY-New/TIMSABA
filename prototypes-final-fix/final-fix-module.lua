@@ -860,7 +860,7 @@ if mods[vesta_mods] then
 end
 
 -- MURIA
-if mods[vesta_mods] then
+if mods[muria_mods] then
     if mods[quality_mods] then
         data_assembling[biovat].allowed_effects = {speed, productivity, pollution, quality}
         data_assembling[biovat].allowed_module_categories = {speed, pollution_create, quality, agricultural}

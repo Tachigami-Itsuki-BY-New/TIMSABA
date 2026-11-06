@@ -1,6 +1,9 @@
 data_item[wooden_chest].stack_size = 32
 data_item[wooden_chest].weight = 31250
 if mods[muluna_mods] then
+    if not mods[lignumis_mods] then
+        data_recipe[wooden_chest].categories = {crafting}
+    end
     table.insert(data_recipe[wooden_chest].categories, advanced_wood_processing)
 end
 if mods[lignumis_mods] then

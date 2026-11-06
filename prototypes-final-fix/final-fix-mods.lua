@@ -124,7 +124,6 @@ data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 
 data_item[nuclear_fuel].fuel_categories = {transport_fuel}
 
-data_recipe[boron].categories = {smelting_filtering}
 data_recipe[magnesium_boride].categories = {smelting_filtering}
 
 -- SPACE AGE
@@ -475,6 +474,8 @@ end
 
 -- MOSHINE
 if mods[moshine_mods] then
+    data_recipe[boron].categories = {smelting_filtering}
+
     local cosmicscanner_construction_stage_2 = "moshine_cosmicscanner-construction-stage-2"
     data_assembling[cosmicscanner_construction_stage_2].energy_usage = ((960 * 256 * 2) - (drain * 256 * 2)) .. kW
     data_assembling[cosmicscanner_construction_stage_2].energy_source.drain = (drain * 256 * 2) .. kW
