@@ -215,22 +215,6 @@ if mods[moshine_mods] then
         }
     })
 
-    -- PHOSPHORUS
-    orthophosphoric_acid = "orthophosphoric-acid-solution"
-    TIMSABA.functions.create_fluids
-    ({
-        {
-            localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]PO[font=default-tiny-bold]4[/font]"} or nil,
-            name = orthophosphoric_acid,
-            subgroup = is_phosphorus_fluid,
-            icon = graphics_moshine .. orthophosphoric_acid .. ".png",
-            order = e,
-            base_color = TIMSABA.functions.fluid_color("H3PO4Wp"),
-            flow_color = TIMSABA.functions.flow_color("H3PO4Wp")
-        }
-    })
-    TIMSABA.barreling.add_dangerous_fluid(orthophosphoric_acid)
-
     -- BARITE
     barite = "barite"
     barium_sulfate = "barium-sulfate"
