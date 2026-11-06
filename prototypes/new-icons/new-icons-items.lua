@@ -139,18 +139,23 @@ data_item[powder_cuprium].icon = graphics_resource .. powder_cuprium .. ".png"
 data_item[dust_cuprium].icon = graphics_resource .. dust_cuprium .. ".png"
 data_item[crystal_cuprium].icon = graphics_resource .. crystal_cuprium .. ".png"
 
+-- ANGELS PETROCHEM REFINING
+data_item[sodium_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/" .. sodium_angels .. ".png"
+data_item[sodium_angels].icon_size = 64
+
 -- ANGELS BIOPROCESSING
-data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
-data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
-data_item[crystal_splinter_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-red-cut.png"
+local graphics_bioprocessing = "__TIMSABA__/graphics/icons/angels/bioprocessing/"
+data_item[crystal_splinter_blue_cut].icon = graphics_bioprocessing .. crystal_splinter_blue_cut .. ".png"
+data_item[crystal_splinter_green_cut].icon = graphics_bioprocessing .. crystal_splinter_green_cut .. ".png"
+data_item[crystal_splinter_red_cut].icon = graphics_bioprocessing .. crystal_splinter_red_cut .. ".png"
 
-data_item[crystal_shard_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-blue-cut.png"
-data_item[crystal_shard_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-green-cut.png"
-data_item[crystal_shard_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-red-cut.png"
+data_item[crystal_shard_blue_cut].icon = graphics_bioprocessing .. crystal_shard_blue_cut .. ".png"
+data_item[crystal_shard_green_cut].icon = graphics_bioprocessing .. crystal_shard_green_cut .. ".png"
+data_item[crystal_shard_red_cut].icon = graphics_bioprocessing .. crystal_shard_red_cut .. ".png"
 
-data_item[crystal_full_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-blue-cut.png"
-data_item[crystal_full_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-green-cut.png"
-data_item[crystal_full_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-red-cut.png"
+data_item[crystal_full_blue_cut].icon = graphics_bioprocessing .. crystal_full_blue_cut .. ".png"
+data_item[crystal_full_green_cut].icon = graphics_bioprocessing .. crystal_full_green_cut .. ".png"
+data_item[crystal_full_red_cut].icon = graphics_bioprocessing .. crystal_full_red_cut .. ".png"
 
 -- MODULES
 if mods[bobmodules] then

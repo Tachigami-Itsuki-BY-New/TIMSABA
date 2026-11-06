@@ -16,7 +16,7 @@ TIMSABA.functions.create_items
     {
         name = lithium_bob,
         subgroup = is_lithium,
-        icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-lithium-plate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/lithium/" .. lithium_bob .. ".png",
         order = c
     }
 })
