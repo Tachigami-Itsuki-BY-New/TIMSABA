@@ -1070,6 +1070,7 @@ TIMSABA.functions.create_recipes
         main_product = triethylaluminium_liquid
     },
     {
+        localised_name = {"fluid-name." .. triethylaluminium_liquid},
         type = recipe,
         name = triethylaluminium_liquid_2,
         categories = {angels_chemical_smelting_4},

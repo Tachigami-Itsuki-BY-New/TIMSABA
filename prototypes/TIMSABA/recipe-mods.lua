@@ -107,7 +107,7 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = hybride_catalyst, amount = 2},
-            {type = fluid, name = liquid_chlorine_bleach, amount = 60}
+            {type = fluid, name = liquid_chlorine_bleach, amount = 30}
         },
         results = {{type = item, name = purified_catalyst, amount = 2}},
         main_product = purified_catalyst

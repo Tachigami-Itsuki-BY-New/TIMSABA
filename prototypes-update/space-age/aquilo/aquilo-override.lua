@@ -65,6 +65,7 @@ data_recipe[ice_platform].energy_required = 32
 data_recipe[ice_platform].ingredients[1].amount = 480
 data_recipe[ice_platform].ingredients[2].amount = 64
 
+data_recipe[lithium].localised_name = {"item-name." .. lithium_chloride_angels}
 data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
 data_recipe[lithium].icons = THREE_D_I(water_thermal_angels, ammonia_angels, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_peroxide)
@@ -85,6 +86,7 @@ data_recipe[lithium].results =
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
+data_recipe[lithium_plate].localised_name = {"item-name." .. lithium_bob}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
 data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, hydrogen_fluoride_angels, ammonium_chloride, oxygen_angels)
 data_recipe[lithium_plate].order = e
