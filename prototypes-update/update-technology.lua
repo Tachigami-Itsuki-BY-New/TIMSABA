@@ -1176,10 +1176,18 @@ data_technology[tech_ore_leaching].effects =
     {type = unlock_recipe, recipe = crystal_franckeite_processing}
 }
 
+table.insert(data_technology[tech_ore_refining].prerequisites, tech_phosphorus_processing)
 data_technology[tech_ore_refining].effects =
 {
     {type = unlock_recipe, recipe = ore_refinery_1},
     {type = unlock_recipe, recipe = crushed_stone_sorting_4},
+    {type = unlock_recipe, recipe = calcium_carbide},
+    {type = unlock_recipe, recipe = calcium_hydroxide},
+    {type = unlock_recipe, recipe = calcium_chloride_solution},
+    {type = unlock_recipe, recipe = calcium_hydroxide_solution},
+    {type = unlock_recipe, recipe = calcium_hypochlorite_solution},
+    {type = unlock_recipe, recipe = powdered_chlorine_bleach},
+    {type = unlock_recipe, recipe = powdered_oxygen_bleach},
     {type = unlock_recipe, recipe = purified_saphirite},
     {type = unlock_recipe, recipe = purified_jivolite},
     {type = unlock_recipe, recipe = purified_stiratite},
@@ -1307,10 +1315,11 @@ data_technology[tech_advanced_ore_refining_4].effects =
 
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_molybdenum_processing)
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_molybdenum_rhenium_processing)
-table.insert(data_technology[tech_advanced_ore_refining_5].effects, {type = unlock_recipe, recipe = molybdenum_crushed_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_advanced_chemistry_6)
 if mods[lignumis_mods] then
     table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_wodginite_processing_1)
 end
+table.insert(data_technology[tech_advanced_ore_refining_5].effects, {type = unlock_recipe, recipe = molybdenum_crushed_recipe})
 
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_powellite_processing_2)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_molybdenite_processing_2)
@@ -2236,20 +2245,18 @@ data_technology[tech_advanced_chemistry_5].effects =
     {type = unlock_recipe, recipe = bisphenol_a},
     {type = unlock_recipe, recipe = calcium_sulfate_angels},
     {type = unlock_recipe, recipe = lime_from_calcium_hydroxide},
-    {type = unlock_recipe, recipe = calcium_carbide},
     {type = unlock_recipe, recipe = calcium_cyanamide},
-    {type = unlock_recipe, recipe = calcium_hydroxide},
     {type = unlock_recipe, recipe = calcium_hydroxide_from_calcium_cyanamide},
     {type = unlock_recipe, recipe = limestone_from_calcium_cyanamide},
     {type = unlock_recipe, recipe = limestone_from_calcium_hydroxide_solution},
-    {type = unlock_recipe, recipe = calcium_chloride_solution},
-    {type = unlock_recipe, recipe = calcium_hydroxide_solution},
     {type = unlock_recipe, recipe = methane_from_acetylene_gas},
     {type = unlock_recipe, recipe = ethane_from_acetylene_gas},
     {type = unlock_recipe, recipe = chloroethane_from_acetylene_gas}
 }
 
 table.insert(data_technology[tech_advanced_chemistry_6].prerequisites, tech_molybdenum_rhenium_processing)
+
+table.insert(data_technology[tech_advanced_chemistry_7].prerequisites, tech_advanced_ore_refining_7)
 
 local tech_explosives_2 = "angels-explosives-2"
 data_technology[tech_explosives_2].prerequisites = {explosives, tech_sodium_processing_2, military_science_pack}

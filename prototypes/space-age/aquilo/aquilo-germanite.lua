@@ -119,10 +119,15 @@ TIMSABA.functions.create_recipes
         name = germanite_purified,
         categories = {angels_ore_refining_T4},
         subgroup = is_germanite,
-        icons = TWO_I(germanite_crystals, germanite_purified),
+        icons = THREE_D_I(germanite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, germanite_purified),
         order = e,
         energy_required = 2, -- Germanite crystals -refinery-> Germanite purified
-        ingredients = {{type = item, name = germanite_crystals, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = germanite_crystals, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = germanite_purified, amount = 4}},
         main_product = germanite_purified
     },

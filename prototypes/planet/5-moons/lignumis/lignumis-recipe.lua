@@ -374,7 +374,7 @@ if mods[lignumis_mods] then
             categories = {chemistry},
             subgroup = is_calcium,
             icons = THREE_I(calcium, hydrogen_angels, calcium_hydride),
-            order = j,
+            order = k,
             -- Ca(s) + H₂(g) --> CaH₂(s)
             ingredients =
             {

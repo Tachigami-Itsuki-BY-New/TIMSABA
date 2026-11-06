@@ -181,7 +181,7 @@ TIMSABA.functions.create_recipes
         icons = THREE_R_I(potassium_chlorate_solution, potassium_chlorate, steam),
         order = e,
         -- KClO₃(aq) --> KClO₃ + H₂O(g)
-        ingredients = {{type = fluid, name = potassium_chlorate_solution, amount = 4}},
+        ingredients = {{type = fluid, name = potassium_chlorate_solution, amount = 60}},
         results =
         {
             {type = item, name = potassium_chlorate, amount = 4},

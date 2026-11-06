@@ -183,7 +183,6 @@ if mods[moshine_mods] then
     local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
     -- BORON
     boron = "boron"
-    boron_powder = "boron-powder"
     TIMSABA.functions.create_items
     ({
         {
@@ -192,13 +191,6 @@ if mods[moshine_mods] then
             subgroup = is_boron,
             icon = graphics_boron .. boron .. ".png",
             order = c
-        },
-        {
-            localised_description = show_formula and {chemical_formula, "B"} or nil,
-            name = boron_powder,
-            subgroup = is_boron,
-            icon = graphics_boron .. boron_powder .. ".png",
-            order = d
         }
     })
 
@@ -211,7 +203,7 @@ if mods[moshine_mods] then
             name = calcium_phosphate,
             subgroup = is_calcium,
             icon = graphics_moshine .. calcium_phosphate .. ".png",
-            order = i
+            order = j
         }
     })
 

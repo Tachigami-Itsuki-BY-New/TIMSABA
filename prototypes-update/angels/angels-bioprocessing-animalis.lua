@@ -989,7 +989,7 @@ data_recipe[alien_goo].results = {{type = fluid, name = alien_goo, amount = 15}}
 data_item[alien_meat].spoil_ticks = 1 * hour
 data_item[alien_meat].spoil_result = alien_bacteria
 TIMSABA.void.freezing_organics(alien_meat)
-data_recipe[alien_meat].categories = {angels_liquifying}
+data_recipe[alien_meat].categories = {chemistry}
 data_recipe[alien_meat].icons = THREE_I(raw_meat, alien_goo, alien_meat)
 data_recipe[alien_meat].ingredients[1].amount = 15
 data_recipe[alien_meat].results[1].reset_freshness_on_craft = true

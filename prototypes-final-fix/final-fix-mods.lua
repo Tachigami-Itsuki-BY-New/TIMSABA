@@ -26,8 +26,6 @@ if mods[bobwarfare] then
     }
 end
 
-data_recipe[lithium_perchlorate_bob].categories = {angels_liquifying}
-
 data_inserter[T2_inserter].rotation_speed = (720/21600)
 data_inserter[T2_inserter].extension_speed = 0.08
 

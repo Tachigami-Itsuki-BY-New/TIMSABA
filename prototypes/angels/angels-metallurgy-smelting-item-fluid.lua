@@ -387,6 +387,8 @@ calcium_aluminate = "calcium-aluminate"
 aluminium_carbide = "aluminium-carbide"
 aluminium_sulfate = "aluminium-sulfate"
 aluminium_chloride = "aluminium-chloride"
+tridodecylaluminium = "tridodecylaluminium"
+tridodecylaluminium_oxide = "tridodecylaluminium-oxide"
 TIMSABA.functions.create_items
 ({
     {
@@ -416,6 +418,21 @@ TIMSABA.functions.create_items
         subgroup = is_aluminium_chemistry,
         icon = graphics_aluminium .. aluminium_chloride .. ".png",
         order = i
+    },
+    -- ADVACNED
+    {
+        localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = tridodecylaluminium,
+        subgroup = is_aluminium_advanced_chemistry,
+        icon = graphics_aluminium .. tridodecylaluminium .. ".png",
+        order = e
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al(OC[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = tridodecylaluminium_oxide,
+        subgroup = is_aluminium_advanced_chemistry,
+        icon = graphics_aluminium .. tridodecylaluminium_oxide .. ".png",
+        order = f
     }
 })
 
@@ -424,6 +441,7 @@ aluminium_chloride_solution = "aluminium-chloride-solution"
 aluminium_chloride_solution_ether = "aluminium-chloride-solution-ether"
 lithium_aluminium_hydride_solution_ether = "lithium-aluminium-hydride-solution-ether"
 lithium_tetraethoxy_aluminate_solution_ether = "lithium-tetraethoxy-aluminate-solution-ether"
+triethylaluminium_liquid = "triethylaluminium-liquid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -435,11 +453,11 @@ TIMSABA.functions.create_fluids
         base_color = TIMSABA.functions.fluid_color("AlCl3Wp"),
         flow_color = TIMSABA.functions.flow_color("AlCl3Wp")
     },
-    -- ETHER
+    -- ADVACNED
     {
         localised_description = show_formula and {chemical_formula, "AlCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
         name = aluminium_chloride_solution_ether,
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. aluminium_chloride_solution_ether .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("AlCl3De"),
@@ -448,7 +466,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "LiAlH[font=default-tiny-bold]4(ether)[/font]"} or nil,
         name = lithium_aluminium_hydride_solution_ether,
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. lithium_aluminium_hydride_solution_ether .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("LiAlH4De"),
@@ -457,11 +475,20 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "LiAl(C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font]O)[font=default-tiny-bold]4(ether)[/font]"} or nil,
         name = lithium_tetraethoxy_aluminate_solution_ether,
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. lithium_tetraethoxy_aluminate_solution_ether .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("LiAlC8H20O4De"),
         flow_color = TIMSABA.functions.flow_color("LiAlC8H20O4De")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = triethylaluminium_liquid,
+        subgroup = is_aluminium_advanced_chemistry,
+        icon = graphics_aluminium .. triethylaluminium_liquid .. ".png",
+        order = d,
+        base_color = TIMSABA.functions.fluid_color("AlC6H15"),
+        flow_color = TIMSABA.functions.flow_color("AlC6H15")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(aluminium_chloride_solution)

@@ -160,6 +160,7 @@ tech_advanced_chemistry_3 = "angels-advanced-chemistry-3"
 tech_advanced_chemistry_4 = "angels-advanced-chemistry-4"
 tech_advanced_chemistry_5 = "angels-advanced-chemistry-5"
 tech_advanced_chemistry_6 = "advanced-chemistry-6"
+tech_advanced_chemistry_7 = "advanced-chemistry-7"
 tech_steam_cracking_1 = "angels-steam-cracking-1"
 
 tech_rubbers = "angels-rubbers"

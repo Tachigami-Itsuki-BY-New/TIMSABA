@@ -905,7 +905,8 @@ if mods[hyarion_mods] then
     }
 
     local planetaris_bismuth_processing = "planetaris-bismuth-processing"
-    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
+    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_molybdenite_processing_4)
+    --table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
     data_technology[planetaris_bismuth_processing].effects =
     {
         {type = unlock_recipe, recipe = bismuth_asteroid_crushing},

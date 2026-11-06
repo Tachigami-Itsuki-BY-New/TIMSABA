@@ -353,8 +353,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = boron_oxide_III},
-                {type = unlock_recipe, recipe = boron},
-                {type = unlock_recipe, recipe = boron_powder}
+                {type = unlock_recipe, recipe = boron}
             },
             unit =
             {
@@ -377,7 +376,7 @@ if mods[moshine_mods] then
             type = technology,
             name = tech_phosphorus_processing_2,
             icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
+            prerequisites = {tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = water_orange_waste_purification},
@@ -396,8 +395,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }

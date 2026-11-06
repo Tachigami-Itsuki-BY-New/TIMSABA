@@ -304,7 +304,7 @@ data:extend
         name = tech_holmium_smelting_3,
         icon = graphics_holmium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_holmium_smelting_2, cryogenic_science_pack, tech_vulcanus_metallurgic, tech_brannerite_processing_3},
+        prerequisites = {tech_holmium_smelting_2, tech_vulcanus_metallurgic, tech_brannerite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = holmium_fluoride_III_3}
@@ -322,8 +322,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }

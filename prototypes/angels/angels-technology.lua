@@ -314,7 +314,15 @@ data:extend
         prerequisites = {tech_advanced_chemistry_5, space_science_pack, tech_stone_smelting_5},
         effects =
         {
-            {type = unlock_recipe, recipe = advanced_gas_refinery_4}
+            {type = unlock_recipe, recipe = advanced_gas_refinery_4},
+            {type = unlock_recipe, recipe = sodium_hydride},
+            {type = unlock_recipe, recipe = triethylaluminium_liquid},
+            {type = unlock_recipe, recipe = tridodecylaluminium},
+            {type = unlock_recipe, recipe = tridodecylaluminium_oxide},
+            {type = unlock_recipe, recipe = dodecanol},
+            {type = unlock_recipe, recipe = lauryl_dimethylamine_solution},
+            {type = unlock_recipe, recipe = lauryl_dimethylamine_oxide_solution},
+            {type = unlock_recipe, recipe = liquid_chlorine_bleach}
         },
         unit =
         {
@@ -327,6 +335,42 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        localised_name = {"technology-name.advanced-chemistry-7"},
+        localised_description = {"technology-description.angels-advanced-chemistry"},
+        type = technology,
+        name = tech_advanced_chemistry_7,
+        icon = data_technology[tech_advanced_chemistry_5].icon,
+        icon_size = data_technology[tech_advanced_chemistry_5].icon_size,
+        prerequisites = {},
+        effects =
+        {
+            {type = unlock_recipe, recipe = triethylaluminium_liquid_2},
+            {type = unlock_recipe, recipe = chlorosulfonic_acid},
+            {type = unlock_recipe, recipe = lauryl_sulfate},
+            {type = unlock_recipe, recipe = sodium_lauryl_sulfate_solution},
+            {type = unlock_recipe, recipe = liquid_chlorine_bleach_2},
+            {type = unlock_recipe, recipe = phosphorus_oxychloride_liquid},
+            {type = unlock_recipe, recipe = orthophosphoric_acid}
+        },
+        unit =
+        {
+            count = 50,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1}
             },
             time = 15
         }
@@ -1298,5 +1342,3 @@ data:extend
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_stone_smelting_5)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_stone_smelting_6)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_water_treatment_6)
-
-table.insert(data_technology[tech_stone_smelting_6].prerequisites, tech_advanced_chemistry_6)
