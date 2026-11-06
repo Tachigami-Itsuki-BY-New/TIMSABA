@@ -721,33 +721,33 @@ if mods[moshine_mods] then
     data_storage_tank[opticalfiber_storage_tank].fluid_box.volume = 115200
 
     -- ENERGY BUILDING
-    local water_cooling_device = "sun_heat_cooler_1"
-    data_item[water_cooling_device].subgroup = is_moshine_building_energy
-    data_item[water_cooling_device].order = a
-    data_recipe[water_cooling_device].subgroup = is_moshine_building_energy
-    data_recipe[water_cooling_device].order = a
-    data_recipe[water_cooling_device].ingredients =
-    {
-        {type = item, name = ice, amount = 8},
-        {type = item, name = ground_water_pump, amount = 1}
-    }
-    data_lightning_attractor[water_cooling_device].subgroup = is_moshine_building_energy
-    data_lightning_attractor[water_cooling_device].order = a
+    if mods[sun_heat_and_cooling_mods] then
+        data_item[water_cooling_device].subgroup = is_moshine_building_energy
+        data_item[water_cooling_device].order = a
+        data_recipe[water_cooling_device].subgroup = is_moshine_building_energy
+        data_recipe[water_cooling_device].order = a
+        data_recipe[water_cooling_device].ingredients =
+        {
+            {type = item, name = ice, amount = 8},
+            {type = item, name = ground_water_pump, amount = 1}
+        }
+        data_lightning_attractor[water_cooling_device].subgroup = is_moshine_building_energy
+        data_lightning_attractor[water_cooling_device].order = a
 
-    local cryogenic_cooling_device = "sun_heat_cooler_2"
-    data_item[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_item[cryogenic_cooling_device].order = b
-    data_recipe[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_recipe[cryogenic_cooling_device].order = b
-    data_recipe[cryogenic_cooling_device].ingredients =
-    {
-        {type = item, name = silicon_carbide_bob, amount = 8},
-        {type = item, name = electric_engine_unit, amount = 4},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-        {type = fluid, name = nitrogen_liquid, amount = 15},
-    }
-    data_lightning_attractor[cryogenic_cooling_device].subgroup = is_moshine_building_energy
-    data_lightning_attractor[cryogenic_cooling_device].order = b
+        data_item[cryogenic_cooling_device].subgroup = is_moshine_building_energy
+        data_item[cryogenic_cooling_device].order = b
+        data_recipe[cryogenic_cooling_device].subgroup = is_moshine_building_energy
+        data_recipe[cryogenic_cooling_device].order = b
+        data_recipe[cryogenic_cooling_device].ingredients =
+        {
+            {type = item, name = silicon_carbide_bob, amount = 8},
+            {type = item, name = electric_engine_unit, amount = 4},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+            {type = fluid, name = nitrogen_liquid, amount = 15},
+        }
+        data_lightning_attractor[cryogenic_cooling_device].subgroup = is_moshine_building_energy
+        data_lightning_attractor[cryogenic_cooling_device].order = b
+    end
 
     -- BUILDING
     data_item[data_processor].subgroup = is_moshine_building
@@ -924,15 +924,17 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    local tech_water_cooling_device = water_cooling_device .. "_tech"
-    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {production_science_pack, 1})
-    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
+    if mods[sun_heat_and_cooling_mods] then
+        local tech_water_cooling_device = water_cooling_device .. "_tech"
+        table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {production_science_pack, 1})
+        table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {utility_science_pack, 1})
+        table.insert(data_technology[tech_water_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
 
-    local tech_cryogenic_cooling_device = cryogenic_cooling_device .. "_tech"
-    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {production_science_pack, 1})
-    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
+        local tech_cryogenic_cooling_device = cryogenic_cooling_device .. "_tech"
+        table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {production_science_pack, 1})
+        table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {utility_science_pack, 1})
+        table.insert(data_technology[tech_cryogenic_cooling_device].unit.ingredients, {electromagnetic_science_pack, 1})
+    end
 
     data_technology["moshine-tech-glass"].unit.ingredients =
     {
