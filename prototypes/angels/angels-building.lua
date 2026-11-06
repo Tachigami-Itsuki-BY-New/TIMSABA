@@ -507,6 +507,8 @@ else
 end
 
 -- ANGELS WATER TREATMENT
+require("prototypes.angels.angels-building-pump")
+
 TIMSABA.functions.create_buildings
 ({
     -- HYDRO PLANT
