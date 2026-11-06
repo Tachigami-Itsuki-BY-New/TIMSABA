@@ -791,21 +791,19 @@ end
 -- ANGELS WATER TREATMENT
 local water_treatments =
 {
-    {name = seafloor_pump,               pumping_speed = 4},
-    {name = offshore_pump,               pumping_speed = 8},
-    {name = ground_water_pump,           pumping_speed = 1},
-    {name = heavy_offshore_pump},
-    {name = "angels-sea-pump-placeable", pumping_speed = 32}
+    {name = seafloor_pump,       pumping_speed = 4,  volume = 480},
+    {name = offshore_pump,       pumping_speed = 8,  volume = 960},
+    {name = ground_water_pump},
+    {name = heavy_offshore_pump, pumping_speed = 32, volume = 3840}
 }
 for _, BUILD in pairs(water_treatments) do
-    if data_item[BUILD.name] then
-        data_item[BUILD.name].subgroup = is_water_treatment_building
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].subgroup = is_water_treatment_building
-        data_recipe[BUILD.name].energy_required = 1
-    end
-    if data_pump_offshore[BUILD.name] then
+    data_item[BUILD.name].subgroup = is_water_treatment_building
+    data_item[BUILD.name].stack_size = 32
+    data_item[BUILD.name].weight = 31250
+    data_recipe[BUILD.name].subgroup = is_water_treatment_building
+    data_recipe[BUILD.name].energy_required = 1
+    if data_pump_offshore[BUILD.name] and BUILD.pumping_speed then
+        data_pump_offshore[BUILD.name].fluid_box.volume = BUILD.volume
         data_pump_offshore[BUILD.name].pumping_speed = BUILD.pumping_speed
     end
 end
@@ -827,6 +825,7 @@ data_recipe[ground_water_pump].ingredients =
     {type = item, name = iron_pipe, amount = 8},
     {type = item, name = stone_brick, amount = 4}
 }
+data_item[heavy_offshore_pump].place_result = heavy_offshore_pump
 data_recipe[heavy_offshore_pump].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
@@ -841,72 +840,6 @@ data_pump_offshore[seafloor_pump].surface_conditions =
     {property = gravity, min = 4, max = 25},
     {property = pressure, min = 900, max = 2000}
 }
-
-local pump_1 = data_pump_offshore[ground_water_pump]
-if pump_1 then
-    pump_1.type = assembling_machine
-    pump_1.crafting_speed = 1
-    pump_1.fixed_recipe = nil
-    pump_1.show_recipe_icon = false
-    pump_1.crafting_categories = {extract_ground}
-    pump_1.fluid_boxes =
-    {
-        {
-            production_type = output,
-            pipe_covers = pipecoverspictures(),
-            volume = 100,
-            base_area = 1,
-            base_level = 1,
-            pipe_connections = pump_1.fluid_box.pipe_connections
-        }
-    }
-    pump_1.fluid_box = nil
-    pump_1.graphics_set = {animation = pump_1.graphics_set.animation}
-    pump_1.energy_source = {type = "void"}
-    pump_1.energy_usage = 15 .. kW
-    pump_1.surface_conditions = {{property = gravity, min = 1, max = 100}}
-    pump_1.active_components_only = true
-    data_assembling[ground_water_pump] = pump_1
-    data_pump_offshore[ground_water_pump] = nil
-end
-
-local pump_2 = data_mining_drill[heavy_offshore_pump]
-if pump_2 then
-    pump_2.type = offshore_pump
-    pump_2.adjacent_tile_collision_mask = {layers = {water_tile = true}}
-    pump_2.adjacent_resources_required = true
-    pump_2.fluid_source_offset = {0, -3}
-    pump_2.fluid_box = pump_2.output_fluid_box
-    if pump_2.fluid_box then
-        pump_2.fluid_box.filter = nil
-        pump_2.fluid_box.production_type = output
-    end
-    pump_2.output_fluid_box = nil
-    pump_2.pumping_speed = 32
-    pump_2.always_draw_fluid = true
-    pump_2.graphics_set = {base_pictures = pump_2.base_picture}
-    pump_2.base_picture = nil
-    pump_2.resource_categories = nil
-    pump_2.mining_speed = nil
-    pump_2.resource_searching_radius = nil
-    pump_2.vector_to_place_result = nil
-    pump_2.module_slots = nil
-    pump_2.allowed_effects = nil
-    pump_2.energy_source = {type = "void"}
-    pump_2.energy_usage = 15 .. kW
-    pump_2.emissions_per_minute = nil
-    data_pump_offshore[heavy_offshore_pump] = pump_2
-    data_mining_drill[heavy_offshore_pump] = nil
-end
-local sea_pump_placeable = "angels-sea-pump-placeable"
-if data_pump_offshore[sea_pump_placeable] then
-    data_pump_offshore[sea_pump_placeable].hidden = true
-end
-local sea_pump_resource = "angels-sea-pump-resource"
-if data_resource[sea_pump_resource] then
-    data_resource[sea_pump_resource].autoplace = nil
-    data_resource[sea_pump_resource].hidden = true
-end
 
 local hydro_plants =
 {
