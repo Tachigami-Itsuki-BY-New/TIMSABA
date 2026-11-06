@@ -3,20 +3,15 @@ if mods[apia_carnova_mods] then
     local replace_prototypes =
     {
         [phosphorus] = white_phosphorus,
+        [phosphoric_acid] = orthophosphoric_acid,
         [glycerine] = glycerol_angels
     }
-    if data_fluid[orthophosphoric_acid] then
-        replace_prototypes[phosphoric_acid] = orthophosphoric_acid
-    end
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     local delete_item = {phosphorus}
 	TIMSABA.functions.delete_duplicated_items(delete_item)
 
-    local delete_fluid = {glycerine}
-    if data_fluid[orthophosphoric_acid] then
-        table.insert(delete_fluid, phosphoric_acid)
-    end
+    local delete_fluid = {phosphoric_acid, glycerine}
     TIMSABA.functions.delete_duplicated_fluids(delete_fluid)
 
     local delete_prototypes =
