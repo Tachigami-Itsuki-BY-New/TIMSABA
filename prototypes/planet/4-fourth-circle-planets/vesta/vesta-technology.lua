@@ -18,7 +18,7 @@ if mods[vesta_mods] then
             prerequisites = {tech_deuterium},
             effects =
             {
-                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV},
+                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_solution},
                 {type = unlock_recipe, recipe = ammonium_hexachloroiridate_IV},
                 {type = unlock_recipe, recipe = iridium_powder},
                 {type = unlock_recipe, recipe = iridium_plate_mods},
@@ -39,7 +39,8 @@ if mods[vesta_mods] then
             {
                 {type = unlock_recipe, recipe = iridium_processed},
                 {type = unlock_recipe, recipe = sodium_iridate_IV},
-                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_2}
+                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_solution_2},
+                {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV_solution_3}
             },
             unit =
             {
@@ -73,7 +74,7 @@ if mods[vesta_mods] then
                 {type = unlock_recipe, recipe = iridium_pellet},
                 {type = unlock_recipe, recipe = iridium_fluoride_VI},
                 {type = unlock_recipe, recipe = iridium_hydroxide_IV},
-                {type = unlock_recipe, recipe = hexachloroiridic_acid},
+                {type = unlock_recipe, recipe = hexachloroiridic_acid_solution},
                 {type = unlock_recipe, recipe = iridium_powder_2}
             },
             unit =

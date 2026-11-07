@@ -713,7 +713,7 @@ if mods[corrundum_mods] then
         table.insert(data_technology[concrete .. _productivity].effects, {type = change_recipe_productivity, recipe = concrete_production_from_asphalt, change = 0.1})
     end
 
-    table.insert(data_technology[tech_arsenic_processing].prerequisites, tech_sperrylite_processing_1)
+    table.insert(data_technology[tech_aquilo_cryogenics].prerequisites, tech_sperrylite_processing_1)
 
     -- MODS
     if mods[asphalt_roads_patched_mods] then

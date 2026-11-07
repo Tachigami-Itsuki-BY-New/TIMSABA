@@ -99,10 +99,15 @@ if mods[corrundum_mods] then
             name = sperrylite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_sperrylite,
-            icons = TWO_I(sperrylite_crystals, sperrylite_purified),
+            icons = THREE_D_I(sperrylite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, sperrylite_purified),
             order = e,
             energy_required = 2, -- Sperrylite crystals -refinery-> Sperrylite purified
-            ingredients = {{type = item, name = sperrylite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = sperrylite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = sperrylite_purified, amount = 4}},
             main_product = sperrylite_purified
         },

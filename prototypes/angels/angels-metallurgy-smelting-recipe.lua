@@ -350,17 +350,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
         order = i,
-        energy_required = 8, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
+        energy_required = 8, -- Cu₂O(s) + 6HNO₃(l) --> 2Cu(NO₃)₂(aq) + 2NO₂(g) + H₂O(l)
         ingredients =
         {
-            {type = item, name = copper_oxide_I, amount = 16},
-            {type = fluid, name = nitric_acid_angels, amount = 1440}
+            {type = item, name = copper_oxide_I, amount = 8},
+            {type = fluid, name = nitric_acid_angels, amount = 720}
         },
         results =
         {
-            {type = fluid, name = copper_nitrate_II_solution, amount = 480},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 240}, -- 480
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+            {type = fluid, name = copper_nitrate_II_solution, amount = 240},
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = copper_nitrate_II_solution
     }
@@ -1110,7 +1110,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_aluminium_advanced_chemistry,
         icons = THREE_I(tridodecylaluminium, oxygen_angels, tridodecylaluminium_oxide),
         order = f,
-        energy_required = 8, -- 2Al(C₁₂H₂₅)₃(s) + 3O₂(g) --> 2Al(OC₁₂H₂₅)₃(s)
+        energy_required = 8, -- 2Al(C₁₂H₂₅)₃(s) + 3O₂(g) --> 2Al(C₁₂H₂₅O)₃(s)
         ingredients =
         {
             {type = item, name = tridodecylaluminium, amount = 16},

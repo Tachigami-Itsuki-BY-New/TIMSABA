@@ -202,20 +202,16 @@ TIMSABA.functions.create_recipes
         name = liquid_chlorine_bleach,
         categories = {angels_ore_refining_T3_5},
         subgroup = is_ore_sorting_fluid,
-        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_solution, lauryl_dimethylamine_oxide_solution, liquid_chlorine_bleach, nil, water_purified_angels),
+        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, lauryl_dimethylamine_oxide_solution, liquid_chlorine_bleach),
         order = e,
-        -- NaOH(s) + NaOCl(aq) + С₁₄H₃₁NO(aq) --> NaOCl*NaOH*SAC(aq) + H₂O(l)
+        -- NaOH(s) + NaOCl(s) + С₁₄H₃₁NO(aq) --> NaOCl*NaOH*SAC(aq)
         ingredients =
         {
             {type = item, name = sodium_hydroxide_angels, amount = 4},
-            {type = fluid, name = sodium_hypochlorite_solution, amount = 60},
+            {type = item, name = sodium_hypochlorite_angels, amount = 4},
             {type = fluid, name = lauryl_dimethylamine_oxide_solution, amount = 60}
         },
-        results =
-        {
-            {type = fluid, name = liquid_chlorine_bleach, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 30} -- 60
-        },
+        results = {{type = fluid, name = liquid_chlorine_bleach, amount = 60}},
         main_product = liquid_chlorine_bleach
     },
     {
@@ -223,20 +219,16 @@ TIMSABA.functions.create_recipes
         name = liquid_chlorine_bleach_2,
         categories = {angels_ore_refining_T3_5},
         subgroup = is_ore_sorting_fluid,
-        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_solution, sodium_lauryl_sulfate_solution, liquid_chlorine_bleach, nil, water_purified_angels),
+        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, sodium_lauryl_sulfate_solution, liquid_chlorine_bleach),
         order = e_a,
-        -- NaOH(s) + NaOCl(aq) + NaC₁₂H₂₅SO₄(aq) --> NaOCl*NaOH*SAC(aq) + H₂O(l)
+        -- NaOH(s) + NaOCl(s) + NaC₁₂H₂₅SO₄(aq) --> NaOCl*NaOH*SAC(aq)
         ingredients =
         {
             {type = item, name = sodium_hydroxide_angels, amount = 4},
-            {type = fluid, name = sodium_hypochlorite_solution, amount = 60},
+            {type = item, name = sodium_hypochlorite_angels, amount = 4},
             {type = fluid, name = sodium_lauryl_sulfate_solution, amount = 60}
         },
-        results =
-        {
-            {type = fluid, name = liquid_chlorine_bleach, amount = 120},
-            {type = fluid, name = water_purified_angels, amount = 30} -- 60
-        },
+        results = {{type = fluid, name = liquid_chlorine_bleach, amount = 240}},
         main_product = liquid_chlorine_bleach
     }
 })

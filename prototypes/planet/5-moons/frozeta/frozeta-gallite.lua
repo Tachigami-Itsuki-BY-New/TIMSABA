@@ -119,10 +119,15 @@ if mods[secretas_frozeta_mods] then
             name = gallite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_gallite,
-            icons = TWO_I(gallite_crystals, gallite_purified),
+            icons = THREE_D_I(gallite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, gallite_purified),
             order = e,
             energy_required = 2, -- Gallite crystals -refinery-> Gallite purified
-            ingredients = {{type = item, name = gallite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = gallite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = gallite_purified, amount = 4}},
             main_product = gallite_purified
         },

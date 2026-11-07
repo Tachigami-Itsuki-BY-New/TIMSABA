@@ -103,10 +103,15 @@ if mods[paracelsin_mods] then
             name = tetrahedrite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_tetrahedrite,
-            icons = TWO_I(tetrahedrite_crystals, tetrahedrite_purified),
+            icons = THREE_D_I(tetrahedrite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, tetrahedrite_purified),
             order = e,
             energy_required = 2, -- Tetrahedrite crystals -refinery-> Tetrahedrite purified
-            ingredients = {{type = item, name = tetrahedrite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = tetrahedrite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = tetrahedrite_purified, amount = 4}},
             main_product = tetrahedrite_purified
         },

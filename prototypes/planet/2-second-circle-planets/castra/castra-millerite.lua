@@ -103,10 +103,15 @@ if mods[castra_mods] then
             name = millerite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_millerite,
-            icons = TWO_I(millerite_crystals, millerite_purified),
+            icons = THREE_D_I(millerite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, millerite_purified),
             order = e,
             energy_required = 2, -- Millerite crystals -refinery-> Millerite purified
-            ingredients = {{type = item, name = millerite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = millerite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = millerite_purified, amount = 4}},
             main_product = millerite_purified
         },

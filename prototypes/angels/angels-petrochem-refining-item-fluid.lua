@@ -342,22 +342,22 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("HNO3")
     },
     {
-        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]N[font=default-tiny-bold](aq)[/font]"} or nil,
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]13[/font]H[font=default-tiny-bold]31[/font]N[font=default-tiny-bold](aq)[/font]"} or nil,
         name = lauryl_dimethylamine_solution,
         subgroup = is_nitrogen_fluids_2,
         icon = graphics_petrochem_nitrogen .. lauryl_dimethylamine_solution .. ".png",
         order = c,
-        base_color = TIMSABA.functions.fluid_color("C14H25NWp"),
-        flow_color = TIMSABA.functions.flow_color("C14H25NWp")
+        base_color = TIMSABA.functions.fluid_color("C14H31NWp"),
+        flow_color = TIMSABA.functions.flow_color("C14H31NWp")
     },
     {
-        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]NO[font=default-tiny-bold](aq)[/font]"} or nil,
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]14[/font]H[font=default-tiny-bold]31[/font]NO[font=default-tiny-bold](aq)[/font]"} or nil,
         name = lauryl_dimethylamine_oxide_solution,
         subgroup = is_nitrogen_fluids_2,
         icon = graphics_petrochem_nitrogen .. lauryl_dimethylamine_oxide_solution .. ".png",
         order = d,
-        base_color = TIMSABA.functions.fluid_color("C14H25NOWp"),
-        flow_color = TIMSABA.functions.flow_color("C14H25NOWp")
+        base_color = TIMSABA.functions.fluid_color("C14H31NOWp"),
+        flow_color = TIMSABA.functions.flow_color("C14H31NOWp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(ammonium_nitrate_solution)
@@ -816,7 +816,7 @@ lauryl_sulfate = "lauryl-sulfate"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]OH"} or nil,
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]26[/font]O"} or nil,
         name = dodecanol,
         subgroup = is_others,
         icon = graphics_petrochem_basics .. dodecanol .. ".png",

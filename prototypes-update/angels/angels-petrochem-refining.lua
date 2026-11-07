@@ -747,6 +747,19 @@ data_recipe[sodium_nitrate_processing].results =
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
 
+data_recipe[sodium_hypochlorite_decomposition].categories = {chemistry}
+data_recipe[sodium_hypochlorite_decomposition].subgroup = is_sodium
+data_recipe[sodium_hypochlorite_decomposition].icons = THREE_R_I(sodium_hypochlorite_angels, salt_angels, oxygen_angels)
+data_recipe[sodium_hypochlorite_decomposition].order = c_b
+data_recipe[sodium_hypochlorite_decomposition].energy_required = 4 -- 2NaClO(s) --> 2NaCl(s) + O₂(g)
+data_recipe[sodium_hypochlorite_decomposition].ingredients = {{type = item, name = sodium_hypochlorite_angels, amount = 4}}
+data_recipe[sodium_hypochlorite_decomposition].results =
+{
+    {type = item, name = salt_angels, amount = 4},
+    {type = fluid, name = oxygen_angels, amount = 30}
+}
+data_recipe[sodium_hypochlorite_decomposition].main_product = salt_angels
+
 data_item[sodium_sulfate_angels].localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4[/font]"} or nil
 data_item[sodium_sulfate_angels].order = d
 data_item[sodium_sulfate_angels].weight = 5000
@@ -778,14 +791,14 @@ data_item[sodium_cyanide_angels].localised_description = show_formula and {chemi
 data_item[sodium_cyanide_angels].order = f
 data_recipe[sodium_cyanide_angels].icons = THREE_D_I(sodium_angels, carbon_angels, ammonia_angels, sodium_cyanide_angels, nil, hydrogen_angels)
 data_recipe[sodium_cyanide_angels].order = f
-data_recipe[sodium_cyanide_angels].energy_required = 8 -- 2Na(s) + 2C(s) + 2NH₃(g) -cat-> 2NaCN(s) + 3H₂(g)
-data_recipe[sodium_cyanide_angels].ingredients[1].amount = 16
-data_recipe[sodium_cyanide_angels].ingredients[2].amount = 16
-data_recipe[sodium_cyanide_angels].ingredients[3].amount = 240
+data_recipe[sodium_cyanide_angels].energy_required = 4 -- 2Na(s) + 2C(s) + 2NH₃(g) -cat-> 2NaCN(s) + 3H₂(g)
+data_recipe[sodium_cyanide_angels].ingredients[1].amount = 4
+data_recipe[sodium_cyanide_angels].ingredients[2].amount = 4
+data_recipe[sodium_cyanide_angels].ingredients[3].amount = 60
 data_recipe[sodium_cyanide_angels].results =
 {
-    {type = item, name = sodium_cyanide_angels, amount = 16},
-    {type = fluid, name = hydrogen_angels, amount = 120}, -- 360
+    {type = item, name = sodium_cyanide_angels, amount = 4},
+    {type = fluid, name = hydrogen_angels, amount = 60}, -- 180
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -798,7 +811,7 @@ data_item[sodium_hypochlorite_angels].order = h
 data_recipe[sodium_hypochlorite_angels].categories = {chemistry}
 data_recipe[sodium_hypochlorite_angels].icons = THREE_R_I(sodium_hypochlorite_solution, sodium_hypochlorite_angels, steam)
 data_recipe[sodium_hypochlorite_angels].order = h
--- NaClO(aq) --> NaClO + H₂O
+data_recipe[sodium_hypochlorite_angels].energy_required = 4 -- NaClO(aq) --> NaClO(s) + H₂O(g)
 data_recipe[sodium_hypochlorite_angels].ingredients = {{type = fluid, name = sodium_hypochlorite_solution, amount = 60}}
 data_recipe[sodium_hypochlorite_angels].results =
 {
@@ -867,19 +880,6 @@ data_recipe[sodium_hydroxide_solution_angels].order = a
 data_recipe[sodium_hydroxide_solution_angels].ingredients[1].amount = 4
 data_recipe[sodium_hydroxide_solution_angels].ingredients[2].amount = 60
 data_recipe[sodium_hydroxide_solution_angels].results[1].amount = 60
-
-data_recipe[sodium_hypochlorite_decomposition].categories = {chemistry}
-data_recipe[sodium_hypochlorite_decomposition].subgroup = is_sodium_fluid
-data_recipe[sodium_hypochlorite_decomposition].icons = THREE_R_I(sodium_hypochlorite_solution, sodium_chloride_solution, oxygen_angels)
-data_recipe[sodium_hypochlorite_decomposition].order = f_b
--- 2NaClO(aq) --> 2NaCl(aq) + O₂
-data_recipe[sodium_hypochlorite_decomposition].ingredients = {{type = fluid, name = sodium_hypochlorite_solution, amount = 60}}
-data_recipe[sodium_hypochlorite_decomposition].results =
-{
-    {type = fluid, name = sodium_chloride_solution, amount = 60},
-    {type = fluid, name = oxygen_angels, amount = 30}
-}
-data_recipe[sodium_hypochlorite_decomposition].main_product = sodium_chloride_solution
 
 -- SULFUR
 data_item_subgroup["angels-petrochem-sulfur"].order = f
@@ -1158,9 +1158,9 @@ data_item[lithium_bob].subgroup = is_lithium
 data_item[lithium_bob].order = c
 data_recipe[lithium_bob].categories = {advanced_electrolysis}
 data_recipe[lithium_bob].subgroup = is_lithium
-data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_bob, hydrogen_chloride_angels)
+data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_bob, chlorine_angels)
 data_recipe[lithium_bob].order = c
-data_recipe[lithium_bob].energy_required = 8 -- 2LiCl(aq) -electrode/electrolys-> 2Li(s) + H₂(g) + O₂(g) + 2HCl(g)
+data_recipe[lithium_bob].energy_required = 8 -- 2LiCl(aq) -electrode/electrolys-> 2Li(s) + 2H₂(g) + Cl₂(g) + O₂(g)
 data_recipe[lithium_bob].ingredients =
 {
     {type = fluid, name = lithium_chloride_solution, amount = 240},
@@ -1169,9 +1169,9 @@ data_recipe[lithium_bob].ingredients =
 data_recipe[lithium_bob].results =
 {
     {type = item, name = lithium_bob, amount = 16},
-    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = chlorine_angels, amount = 120},
     {type = fluid, name = oxygen_angels, amount = 120},
-    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }

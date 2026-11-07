@@ -354,7 +354,7 @@ if mods[lignumis_mods] then
             categories = {chemistry},
             subgroup = is_sodium_fluid,
             icons = THREE_D_I(sodium_fluoride, water_purified_angels, sulfuric_acid_angels, sodium_sulfate_solution, hydrogen_fluoride_angels),
-            order = g_a,
+            order = c_a,
             -- 2NaF(s) + H₂O(l) + H₂SO₄(l) --> Na₂SO₄(aq) + HF(g)
             ingredients =
             {

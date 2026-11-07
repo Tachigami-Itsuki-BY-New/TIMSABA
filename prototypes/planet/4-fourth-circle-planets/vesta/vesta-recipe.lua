@@ -223,8 +223,9 @@ if mods[vesta_mods] then
     end
 
     -- IRIDIUM
-    sodium_hexachloroiridate_IV_2 = "sodium-hexachloroiridate-IV-2"
-    iridium_powder_2 = "iridium-powder-2"
+    sodium_hexachloroiridate_IV_solution_2 = sodium_hexachloroiridate_IV_solution .. "-2"
+    sodium_hexachloroiridate_IV_solution_3 = sodium_hexachloroiridate_IV_solution .. "-3"
+    iridium_powder_2 = iridium_powder .. "-2"
     TIMSABA.functions.create_recipes
     ({
         {
@@ -300,68 +301,102 @@ if mods[vesta_mods] then
         {
             localised_name = {"item-name." .. iridium_powder},
             name = iridium_powder_2,
-            categories = {angels_chemical_smelting_4},
+            categories = {advanced_electrolysis},
             subgroup = is_iridium,
-            icons = THREE_D_I(hexachloroiridic_acid, nil, nil, iridium_powder, chlorine_angels, hydrogen_chloride_angels),
+            icons = FOUR_R_I(hexachloroiridic_acid_solution, hydrogen_angels, iridium_powder, chlorine_angels),
             order = e_a,
-            energy_required = 8, -- H₂IrCl₆(s) --> Ir(s) + 2Cl₂(g) + 2HCl(g)
-            ingredients = {{type = item, name = hexachloroiridic_acid, amount = 16}},
+            energy_required = 8, -- 2H₂IrCl₆(aq) -electrode/electrolys-> 2Ir(s) + 4H₂(g) + 6Cl₂(g) + O₂(g)
+            ingredients =
+            {
+                {type = fluid, name = hexachloroiridic_acid_solution, amount = 240},
+                {type = item, name = electrode, amount = 1}
+            },
             results =
             {
                 {type = item, name = iridium_powder, amount = 16},
-                {type = fluid, name = chlorine_angels, amount = 240}, -- 480
-                {type = fluid, name = hydrogen_chloride_angels, amount = 240} -- 480
+                {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
+                {type = fluid, name = chlorine_angels, amount = 240}, -- 720
+                {type = fluid, name = oxygen_angels, amount = 60}, -- 120
+                {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+                {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
             },
             main_product = iridium_powder
         },
         -- CHEMISTRY
         {
-            name = sodium_hexachloroiridate_IV,
+            name = sodium_hexachloroiridate_IV_solution,
             categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
-            icons = THREE_D_I(iridium_ore, salt_angels, chlorine_angels, sodium_hexachloroiridate_IV),
+            icons = FOUR_THREE_I(iridium_ore, salt_angels, chlorine_angels, water_purified_angels, sodium_hexachloroiridate_IV_solution),
             order = a,
-            energy_required = 8, -- Ir(s) + 2NaCl₂(s) + Cl₂(g) --> Na₂IrCl₆(s)
+            energy_required = 8, -- Ir(s) + 2NaCl₂(s) + Cl₂(g) + H₂O(l) --> Na₂IrCl₆(aq)
             ingredients =
             {
                 {type = item, name = iridium_ore, amount = 32},
                 {type = item, name = salt_angels, amount = 32},
-                {type = fluid, name = chlorine_angels, amount = 240}
+                {type = fluid, name = chlorine_angels, amount = 240},
+                {type = fluid, name = water_purified_angels, amount = 240}
             },
-            results = {{type = item, name = sodium_hexachloroiridate_IV, amount = 16}},
-            main_product = sodium_hexachloroiridate_IV
+            results = {{type = fluid, name = sodium_hexachloroiridate_IV_solution, amount = 240}},
+            main_product = sodium_hexachloroiridate_IV_solution
         },
         {
-            localised_name = {"item-name." .. sodium_hexachloroiridate_IV},
-            name = sodium_hexachloroiridate_IV_2,
-            categories = {angels_chemical_smelting_4},
+            localised_name = {"fluid-name." .. sodium_hexachloroiridate_IV_solution},
+            name = sodium_hexachloroiridate_IV_solution_2,
+            categories = {angels_advanced_chemistry},
             subgroup = is_iridium_chemistry,
-            icons = TWO_D_I(sodium_iridate_IV, hydrogen_chloride_angels, sodium_hexachloroiridate_IV, water_purified_angels),
+            icons = FOUR_THREE_R_I(sodium_iridate_IV, sodium_angels, hydrogen_chloride_angels, sodium_hexachloroiridate_IV_solution, sodium_chloride_solution, iridium_chloride_III, water_purified_angels),
             order = a_a,
-            -- Na₂IrO₃(s) + 6HCl(g) --> Na₂IrCl₆(s) + 3H₂O(l)
+            energy_required = 8, -- 4Na₂IrO₃(s) + 24HCl(g) + 2Na(s) --> 2Na₂IrCl₆(aq) + 6NaCl(aq) + 2IrCl₃(s) + 4H₂O(l)
             ingredients =
             {
-                {type = item, name = sodium_iridate_IV, amount = 8},
-                {type = fluid, name = hydrogen_chloride_angels, amount = 720}
+                {type = item, name = sodium_iridate_IV, amount = 16},
+                {type = fluid, name = hydrogen_chloride_angels, amount = 1440},
+                {type = item, name = sodium_angels, amount = 8}
             },
             results =
             {
-                {type = item, name = sodium_hexachloroiridate_IV, amount = 8},
-                {type = fluid, name = water_purified_angels, amount = 120} -- 360
+                {type = fluid, name = sodium_hexachloroiridate_IV_solution, amount = 120},
+                {type = fluid, name = sodium_chloride_solution, amount = 120}, -- 360
+                {type = item, name = iridium_chloride_III, amount = 8},
+                {type = fluid, name = water_purified_angels, amount = 120} -- 240
             },
-            main_product = sodium_hexachloroiridate_IV
+            main_product = sodium_hexachloroiridate_IV_solution
+        },
+        {
+            localised_name = {"fluid-name." .. sodium_hexachloroiridate_IV_solution},
+            name = sodium_hexachloroiridate_IV_solution_3,
+            categories = {angels_chemical_smelting_4},
+            subgroup = is_iridium_chemistry,
+            icons = FOUR_THREE_I(iridium_chloride_III, sodium_chloride_solution, sodium_hypochlorite_angels, hydrogen_chloride_angels, sodium_hexachloroiridate_IV_solution, nil, water_purified_angels),
+            order = a_b,
+            energy_required = 8, -- 2IrCl₃(s) + 3NaCl(aq) + NaClO(s) + 2HCl(g) --> 2Na₂IrCl₆(aq) + H₂O(l)
+            ingredients =
+            {
+                {type = item, name = iridium_chloride_III, amount = 16},
+                {type = fluid, name = sodium_chloride_solution, amount = 360},
+                {type = item, name = sodium_hypochlorite_angels, amount = 8},
+                {type = fluid, name = hydrogen_chloride_angels, amount = 240}
+            },
+            results =
+            {
+                {type = fluid, name = sodium_hexachloroiridate_IV_solution, amount = 240},
+                {type = fluid, name = water_purified_angels, amount = 60} -- 120
+            },
+            main_product = sodium_hexachloroiridate_IV_solution
         },
         {
             name = ammonium_hexachloroiridate_IV,
             categories = {angels_chemical_smelting_4},
             subgroup = is_iridium_chemistry,
-            icons = TWO_D_I(sodium_hexachloroiridate_IV, ammonium_chloride_solution_angels, ammonium_hexachloroiridate_IV, sodium_chloride_solution),
+            icons = THREE_D_I(sodium_hexachloroiridate_IV_solution, ammonium_chloride_solution_angels, water_purified_angels, ammonium_hexachloroiridate_IV, nil, sodium_chloride_solution),
             order = b,
-            energy_required = 8, -- Na₂IrCl₆(s) + 2NH₄Cl(aq) --> (NH₄)₂IrCl₆(s) + 2NaCl(aq)
+            energy_required = 8, -- Na₂IrCl₆(aq) + 2NH₄Cl(s) + H₂O(l) --> (NH₄)₂IrCl₆(s) + 2NaCl(aq)
             ingredients =
             {
-                {type = item, name = sodium_hexachloroiridate_IV, amount = 16},
-                {type = fluid, name = ammonium_chloride_solution_angels, amount = 480}
+                {type = fluid, name = sodium_hexachloroiridate_IV_solution, amount = 240},
+                {type = item, name = ammonium_chloride, amount = 32},
+                {type = fluid, name = water_purified_angels, amount = 240}
             },
             results =
             {
@@ -372,7 +407,7 @@ if mods[vesta_mods] then
         },
         {
             name = sodium_iridate_IV,
-            categories = {angels_chemical_smelting_4},
+            categories = {angels_blast_smelting_4},
             subgroup = is_iridium_chemistry,
             icons = TWO_D_I(iridium_processed, sodium_peroxide, sodium_iridate_IV, sodium_oxide),
             order = c,
@@ -395,7 +430,7 @@ if mods[vesta_mods] then
             subgroup = is_iridium_chemistry,
             icons = THREE_I(iridium_pellet, fluorine, iridium_fluoride_VI),
             order = d,
-            energy_required = 8, -- Ir(s) + 3F₂(g) --> IrF6(s)
+            energy_required = 8, -- Ir(s) + 3F₂(g) --> IrF₆(s)
             ingredients =
             {
                 {type = item, name = iridium_pellet, amount = 8},
@@ -410,38 +445,39 @@ if mods[vesta_mods] then
             subgroup = is_iridium_chemistry,
             icons = THREE_D_I(iridium_fluoride_VI, nil, water_purified_angels, iridium_hydroxide_IV, hydrogen_fluoride_angels, oxygen_angels),
             order = e,
-            -- 2IrF₆(s) + 10H₂O(l) --> 2Ir(OH)₄(s) + 12HF(g) + O₂(g)
+            energy_required = 8, -- 2IrF₆(s) + 10H₂O(l) --> 2Ir(OH)₄(s) + 12HF(g) + O₂(g)
             ingredients =
             {
-                {type = item, name = iridium_fluoride_VI, amount = 8},
-                {type = fluid, name = water_purified_angels, amount = 600}
+                {type = item, name = iridium_fluoride_VI, amount = 16},
+                {type = fluid, name = water_purified_angels, amount = 1200}
             },
             results =
             {
-                {type = item, name = iridium_hydroxide_IV, amount = 8},
-                {type = fluid, name = hydrogen_fluoride_angels, amount = 240}, -- 720
-                {type = fluid, name = oxygen_angels, amount = 30} -- 60
+                {type = item, name = iridium_hydroxide_IV, amount = 16},
+                {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 1440
+                {type = fluid, name = oxygen_angels, amount = 60} -- 120
             },
             main_product = iridium_hydroxide_IV
         },
         {
-            name = hexachloroiridic_acid,
-            categories = {angels_chemical_smelting_4},
+            name = hexachloroiridic_acid_solution,
+            categories = {angels_advanced_chemistry},
             subgroup = is_iridium_chemistry,
-            icons = TWO_D_I(iridium_hydroxide_IV, hydrogen_chloride_angels, hexachloroiridic_acid, water_purified_angels),
+            icons = THREE_D_I(iridium_hydroxide_IV, nil, hydrochloric_acid_angels, hexachloroiridic_acid_solution, hydrogen_angels, water_purified_angels),
             order = f,
-            -- Ir(OH)₄(s) + 6HCl(g) --> H₂IrCl₆(s) + 4H₂O(l)
+            energy_required = 8, -- Ir(OH)₄(s) + 6HCl(aq) --> H₂IrCl₆(aq) + 2H₂(g) + 9H₂O(l)
             ingredients =
             {
-                {type = item, name = iridium_hydroxide_IV, amount = 8},
-                {type = fluid, name = hydrogen_chloride_angels, amount = 720}
+                {type = item, name = iridium_hydroxide_IV, amount = 16},
+                {type = fluid, name = hydrochloric_acid_angels, amount = 1440}
             },
             results =
             {
-                {type = item, name = hexachloroiridic_acid, amount = 8},
-                {type = fluid, name = water_purified_angels, amount = 240} -- 480
+                {type = fluid, name = hexachloroiridic_acid_solution, amount = 240},
+                {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
+                {type = fluid, name = water_purified_angels, amount = 1200} -- 2160
             },
-            main_product = hexachloroiridic_acid
+            main_product = hexachloroiridic_acid_solution
         }
     })
 
