@@ -618,7 +618,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_nitrogen_fluids_2,
         icons = THREE_I(dodecanol, dimethylamine_angels, lauryl_dimethylamine_solution),
         order = c,
-        -- C₁₂H₂₅OH(s) + C₂H₇N(l) --> С₁₄H₃₁N(aq)
+        -- C₁₂H₂₆O(s) + C₂H₇N(l) --> С₁₄H₃₁N(aq)
         ingredients =
         {
             {type = item, name = dodecanol, amount = 4},
@@ -692,7 +692,7 @@ TIMSABA.functions.create_recipes
         categories = {chemistry},
         subgroup = is_sodium,
         icons = THREE_R_I(sodium_chloride_solution, salt_angels, steam),
-        order = c,
+        order = c_a,
         -- NaCl(aq) --> NaCl(s) + H₂O(g)
         ingredients = {{type = fluid, name = sodium_chloride_solution, amount = 60}},
         results =
@@ -879,17 +879,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_sodium_fluid,
         icons = THREE_D_I(sodium_hydroxide_solution_angels, nil, chlorine_angels, sodium_hypochlorite_solution, sodium_chloride_solution, water_purified_angels),
         order = f_a,
-        -- 2NaOH(aq) + Cl₂(g) --> NaClO(aq) + NaCl(aq) + H₂O(l)
+        energy_required = 8, -- 2NaOH(aq) + Cl₂(g) --> NaClO(aq) + NaCl(aq) + H₂O(l)
         ingredients =
         {
-            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60},
-            {type = fluid, name = chlorine_angels, amount = 30},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240},
+            {type = fluid, name = chlorine_angels, amount = 120},
         },
         results =
         {
-            {type = fluid, name = sodium_hypochlorite_solution, amount = 30},
-            {type = fluid, name = sodium_chloride_solution, amount = 15}, -- 30
-            {type = fluid, name = water_purified_angels, amount = 15} -- 30
+            {type = fluid, name = sodium_hypochlorite_solution, amount = 120},
+            {type = fluid, name = sodium_chloride_solution, amount = 120},
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = sodium_hypochlorite_solution
     },
@@ -1678,7 +1678,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_others,
         icons = TWO_D_I(tridodecylaluminium_oxide, water_purified_angels, dodecanol, aluminium_hydroxide),
         order = a,
-        -- Al(OC₁₂H₂₅)₃(s) + 3H₂O(l) --> 3C₁₂H₂₅OH(s) + Al(OH)₃(s)
+        -- Al(C₁₂H₂₅O)₃(s) + 3H₂O(l) --> 3C₁₂H₂₆O(s) + Al(OH)₃(s)
         ingredients =
         {
             {type = item, name = tridodecylaluminium_oxide, amount = 4},
@@ -1697,7 +1697,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_others,
         icons = TWO_D_I(dodecanol, chlorosulfonic_acid, lauryl_sulfate, hydrogen_chloride_angels),
         order = b,
-        -- C₁₂H₂₅OH(s) + HSO₃Cl(l) --> C₁₂H₂₆SO₄(s) + HCl(g)
+        -- C₁₂H₂₆O(s) + HSO₃Cl(l) --> C₁₂H₂₆SO₄(s) + HCl(g)
         ingredients =
         {
             {type = item, name = dodecanol, amount = 4},

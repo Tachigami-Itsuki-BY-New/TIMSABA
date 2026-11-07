@@ -428,7 +428,7 @@ TIMSABA.functions.create_items
         order = e
     },
     {
-        localised_description = show_formula and {chemical_formula, "Al(OC[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]O)[font=default-tiny-bold]3[/font]"} or nil,
         name = tridodecylaluminium_oxide,
         subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. tridodecylaluminium_oxide .. ".png",

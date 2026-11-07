@@ -318,7 +318,6 @@ if mods[hyarion_mods] then
     }
     data_recipe[beryllium_plate_hyarion].main_product = beryllium_plate_hyarion
 
-    local beryllium_nitride = "planetaris-beryllium-nitride"
     data_item[beryllium_nitride].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]2[/font]"} or nil
     data_item[beryllium_nitride].subgroup = is_hyarion_recipe_other
     data_item[beryllium_nitride].order = g

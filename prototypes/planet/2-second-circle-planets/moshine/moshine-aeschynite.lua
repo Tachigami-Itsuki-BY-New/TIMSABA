@@ -118,10 +118,15 @@ if mods[moshine_mods] then
             name = aeschynite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_aeschynite,
-            icons = TWO_I(aeschynite_crystals, aeschynite_purified),
+            icons = THREE_D_I(aeschynite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, aeschynite_purified),
             order = e,
             energy_required = 2, -- Aeschynite crystals -refinery-> Aeschynite purified
-            ingredients = {{type = item, name = aeschynite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = aeschynite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = aeschynite_purified, amount = 4}},
             main_product = aeschynite_purified
         },

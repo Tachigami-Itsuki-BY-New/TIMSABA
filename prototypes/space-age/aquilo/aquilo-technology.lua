@@ -581,43 +581,16 @@ data:extend
 
 -- OTHERS
 local graphics_aquilo_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/"
-tech_arsenic_processing = "arsenic-processing"
 tech_aquilo_cryogenics = "aquilo-cryogenics"
 data:extend
 ({
-    -- ARSENIC
-    {
-        type = technology,
-        name = tech_arsenic_processing,
-        icons = TIMSABA.functions.create_gas_tech_icon("AsAsAs"),
-        prerequisites = {tech_antimonite_processing_1},
-        effects = {{type = unlock_recipe, recipe = arsenic_powder}},
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1},
-                {metallurgic_science_pack, 1},
-                {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
-            },
-            time = 30
-        }
-    },
     -- AQUILO
     {
         type = technology,
         name = tech_aquilo_cryogenics,
         icon = graphics_aquilo_tech .. tech_aquilo_cryogenics .. ".png",
         icon_size = 256,
-        prerequisites = {tech_arsenic_processing, tech_gallium_smelting_1},
+        prerequisites = {tech_antimonite_processing_1, tech_gallium_smelting_1},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_arsenide},
