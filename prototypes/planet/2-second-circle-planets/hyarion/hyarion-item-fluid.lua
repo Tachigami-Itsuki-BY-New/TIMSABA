@@ -15,7 +15,6 @@ if mods[hyarion_mods] then
     })
     TIMSABA.barreling.add_gas(hyarion_air)
 
-    selenium_powder = "selenium-powder"
     bismuth_oxyselenide = "bismuth-oxyselenide"
     TIMSABA.functions.create_items
     ({
@@ -27,14 +26,6 @@ if mods[hyarion_mods] then
             subgroup = is_hyarion_recipe_ore,
             icon = "__planetaris-hyarion__/graphics/icons/" .. quartz_ore .. ".png",
             order = c
-        },
-        -- SELENIUM
-        {
-            localised_description = show_formula and {chemical_formula, "Se"} or nil,
-            name = selenium_powder,
-            subgroup = is_selenium,
-            icon = graphics_hyarion .. selenium_powder .. ".png",
-            order = b
         },
         -- SPACE
         {

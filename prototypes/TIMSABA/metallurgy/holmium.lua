@@ -69,19 +69,11 @@ TIMSABA.functions.create_items
         order = b
     },
     {
-        localised_description = show_formula and {chemical_formula, "Ho"} or nil,
-        name = holmium_cathode,
-        subgroup = is_holmium_chemistry,
-        icon = graphics_holmium .. holmium_cathode .. ".png",
-        icon_size = 32,
-        order = c
-    },
-    {
         localised_description = show_formula and {chemical_formula, "Ho[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = holmium_oxide_III,
         subgroup = is_holmium_chemistry,
         icon = graphics_holmium .. holmium_oxide_III .. ".png",
-        order = e
+        order = d
     }
 })
 data_item[holmium_powder].hidden = true
@@ -107,7 +99,7 @@ TIMSABA.functions.create_fluids
         name = holmium_nitrate_III_solution,
         subgroup = is_holmium_chemistry,
         icon = graphics_holmium .. holmium_nitrate_III_solution .. ".png",
-        order = d,
+        order = c,
         base_color = TIMSABA.functions.fluid_color("HoN2O6Wp"),
         flow_color = TIMSABA.functions.flow_color("HoN2O6Wp")
     },
@@ -126,8 +118,8 @@ TIMSABA.barreling.add_dangerous_fluid(holmium_chloride_III_solution)
 TIMSABA.barreling.add_dangerous_fluid(holmium_nitrate_III_solution)
 
 -- RECIPE
-holmium_fluoride_III_2 = "holmium-fluoride-III-2"
-holmium_fluoride_III_3 = "holmium-fluoride-III-3"
+holmium_fluoride_III_2 = holmium_fluoride_III .. "-2"
+holmium_fluoride_III_3 = holmium_fluoride_III .. "-3"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -154,20 +146,18 @@ TIMSABA.functions.create_recipes
         name = holmium_ingot,
         categories = {angels_blast_smelting_4},
         subgroup = is_holmium,
-        icons = FOUR_THREE_I(holmium_cathode, lime_angels, carbon_angels, oxygen_angels, holmium_ingot, nil, limestone_angels),
+        icons = TWO_D_I(holmium_fluoride_III, calcium, holmium_ingot, fluorite_angels),
         order = d,
-        energy_required = 8, -- Ho + CaO + C + O₂  --> Ho + CaCO₃
+        energy_required = 8, -- 2HoF₃(s) + 3Ca(s) --> 2Ho(s) + 3CaF₂(s)
         ingredients =
         {
-            {type = item, name = holmium_cathode, amount = 16},
-            {type = item, name = lime_angels, amount = 8},
-            {type = item, name = carbon_angels, amount = 8},
-            {type = fluid, name = oxygen_angels, amount = 120}
+            {type = item, name = holmium_fluoride_III, amount = 16},
+            {type = item, name = calcium, amount = 24}
         },
         results =
         {
             {type = item, name = holmium_ingot, amount = 16},
-            {type = item, name = limestone_angels, amount = 4} -- 8
+            {type = item, name = fluorite_angels, amount = 8} -- 24
         },
         main_product = holmium_ingot
     },
@@ -185,21 +175,21 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = holmium_chloride_III_solution,
-        categories = {angels_advanced_chemistry},
+        categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
-        icons = THREE_D_I(holmium_ore, nil, hydrochloric_acid_angels, holmium_chloride_III_solution, hydrogen_angels, water_purified_angels),
+        icons = THREE_D_I(holmium_ore, hydrogen_chloride_angels, water_purified_angels, holmium_chloride_III_solution, nil, hydrogen_angels),
         order = a,
-        energy_required = 8, -- 2Ho + 6HCl(aq) --> 2HoCl₃(aq) + 3H₂ + 4H₂O
+        energy_required = 8, -- 2Ho(s) + 6HCl(g) + 2H₂O(l) --> 2HoCl₃(aq) + 3H₂(g)
         ingredients =
         {
             {type = item, name = holmium_ore, amount = 32},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+            {type = fluid, name = hydrogen_chloride_angels, amount = 720},
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
             {type = fluid, name = holmium_chloride_III_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120}, -- 360
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
+            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
         },
         main_product = holmium_chloride_III_solution
     },
@@ -209,7 +199,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_holmium_chemistry,
         icons = THREE_D_I(holmium_chloride_III_solution, nil, hydrofluoric_acid_angels, holmium_fluoride_III, hydrochloric_acid_angels, water_purified_angels),
         order = b,
-        energy_required = 8, -- HoCl₃(aq) + 3HF(aq) --> HoF₃ + 3HCl(aq) + H₂O
+        energy_required = 8, -- HoCl₃(aq) + 3HF(aq) --> HoF₃(s) + 3HCl(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = holmium_chloride_III_solution, amount = 240},
@@ -219,7 +209,7 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = holmium_fluoride_III, amount = 16},
             {type = fluid, name = hydrochloric_acid_angels, amount = 240}, -- 720
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = holmium_fluoride_III
     },
@@ -229,7 +219,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_holmium_chemistry,
         icons = TWO_D_I(holmium_oxide_III, hydrogen_fluoride_angels, holmium_fluoride_III, water_purified_angels),
         order = b_a,
-        energy_required = 8, -- Ho₂O₃ + 6HF --> 2HoF₃ + 3H₂O
+        energy_required = 8, -- Ho₂O₃(s) + 6HF(g) --> 2HoF₃(s) + 3H₂O(l)
         ingredients =
         {
             {type = item, name = holmium_oxide_III, amount = 8},
@@ -248,7 +238,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_holmium_chemistry,
         icons = THREE_I(holmium_pellet, fluorine, holmium_fluoride_III),
         order = b_b,
-        energy_required = 8, -- 2Ho + 3F₂ --> 2HoF₃
+        energy_required = 8, -- 2Ho(s) + 3F₂(g) --> 2HoF₃(s)
         ingredients =
         {
             {type = item, name = holmium_pellet, amount = 8},
@@ -258,34 +248,12 @@ TIMSABA.functions.create_recipes
         main_product = holmium_fluoride_III
     },
     {
-        name = holmium_cathode,
-        categories = {angels_petrochem_electrolyser},
-        subgroup = is_holmium_chemistry,
-        icons = FOUR_R_I(holmium_fluoride_III, holmium_cathode, nil, fluorite_angels),
-        order = c,
-        energy_required = 8, -- 2HoF₃ + 3Ca -electrode/electrolyser-> 2Ho + 3CaF₂
-        ingredients =
-        {
-            {type = item, name = holmium_fluoride_III, amount = 16},
-            {type = item, name = calcium, amount = 24},
-            {type = item, name = electrode, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = holmium_cathode, amount = 16},
-            {type = item, name = fluorite_angels, amount = 8}, -- 24
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-        },
-        main_product = holmium_cathode
-    },
-    {
         name = holmium_nitrate_III_solution,
         categories = {angels_chemical_smelting_4},
         subgroup = is_holmium_chemistry,
         icons = THREE_D_I(holmium_processed, dinitrogen_tetroxide_angels, water_purified_angels, holmium_nitrate_III_solution, nil, nitrogen_monoxide_angels),
-        order = d,
-        energy_required = 8, -- Ho + 3N₂O₄ + H₂O --> Ho(NO₃)₃(aq) + 3NO
+        order = c,
+        energy_required = 8, -- Ho(s) + 3N₂O₄(g) + H₂O(l) --> Ho(NO₃)₃(aq) + 3NO(g)
         ingredients =
         {
             {type = item, name = holmium_processed, amount = 16},
@@ -304,8 +272,8 @@ TIMSABA.functions.create_recipes
         categories = {angels_advanced_chemistry},
         subgroup = is_holmium_chemistry,
         icons = FOUR_D_I(holmium_nitrate_III_solution, nil, nil, nil, holmium_oxide_III, nitrogen_dioxide_angels, oxygen_angels, steam),
-        order = e,
-        energy_required = 8, -- 4Ho(NO₃)₃(aq) --> 2Ho₂O₃ + 12NO₂ + 3O₂ + 4H₂O(g)
+        order = d,
+        energy_required = 8, -- 4Ho(NO₃)₃(aq) --> 2Ho₂O₃(s) + 12NO₂(g) + 3O₂(g) + 4H₂O(g)
         ingredients = {{type = fluid, name = holmium_nitrate_III_solution, amount = 240}},
         results =
         {
@@ -329,3 +297,5 @@ TIMSABA.functions.create_recipes
         main_product = holmium_molten
     }
 })
+data_recipe[holmium_powder].hidden = true
+data_recipe[holmium_powder].hidden_in_factoriopedia = true

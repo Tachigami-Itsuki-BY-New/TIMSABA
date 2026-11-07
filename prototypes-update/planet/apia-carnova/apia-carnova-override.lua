@@ -420,6 +420,12 @@ if mods[apia_carnova_mods] then
     data_recipe[rocket_fuel_from_phosphoric_acid].subgroup = is_apia_carnova_recipe
     data_recipe[rocket_fuel_from_phosphoric_acid].icons = PLANET_D_IS(rocket_fuel, planet_apia, planet_carnova)
     data_recipe[rocket_fuel_from_phosphoric_acid].order = b_a
+    data_recipe[rocket_fuel_from_phosphoric_acid].energy_required = 8
+    data_recipe[rocket_fuel_from_phosphoric_acid].ingredients =
+    {
+        {type = item, name = rocket_fuel, amount = 8},
+        {type = fluid, name = orthophosphoric_acid, amount = 30}
+    }
     data_recipe[rocket_fuel_from_phosphoric_acid].surface_conditions = {{property = pressure, min = 2525, max = 2525}}
 
     local bioplastic_from_wax = "bioplastic-from-wax"
@@ -732,4 +738,34 @@ if mods[apia_carnova_mods] then
         time = 30
     }
     data_technology[tech_refreshment].research_trigger = nil
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = wax, amount = 8})
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = polysaccharides, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(efficiency_module_7)
+    add_ingredients(pollution_clean_module_7)
+    add_ingredients(pollution_create_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, apicultural_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(efficiency_module_7)
+    add_prerequisites(pollution_clean_module_7)
+    add_prerequisites(pollution_create_module_7)
 end

@@ -823,14 +823,14 @@ if mods[lignumis_mods] then
         {space_science_pack, 1}
     }
 
+    data_technology[deep_miner].prerequisites = {planet_discovery_lignumis, tech_molybdenum_processing, tech_rhenium_processing, tech_molybdenum_rhenium_processing}
     data_technology[deep_miner].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
         {chemical_science_pack, 1},
         {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {utility_science_pack, 1}
     }
 
     data_technology[tree_seed .. _productivity .. "-5"].unit.ingredients =

@@ -117,10 +117,15 @@ TIMSABA.functions.create_recipes
         name = powellite_purified,
         categories = {angels_ore_refining_T4},
         subgroup = is_powellite,
-        icons = TWO_I(powellite_crystals, powellite_purified),
+        icons = THREE_D_I(powellite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, powellite_purified),
         order = e,
         energy_required = 2, -- Powellite crystals -refinery-> Powellite purified
-        ingredients = {{type = item, name = powellite_crystals, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = powellite_crystals, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = powellite_purified, amount = 4}},
         main_product = powellite_purified
     },

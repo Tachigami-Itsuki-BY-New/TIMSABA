@@ -26,8 +26,6 @@ if mods[bobwarfare] then
     }
 end
 
-data_recipe[lithium_perchlorate_bob].categories = {angels_liquifying}
-
 data_inserter[T2_inserter].rotation_speed = (720/21600)
 data_inserter[T2_inserter].extension_speed = 0.08
 
@@ -127,6 +125,8 @@ data_item[nuclear_fuel].fuel_categories = {transport_fuel}
 data_recipe[magnesium_boride].categories = {smelting_filtering}
 
 -- SPACE AGE
+data_recipe[lithium_plate].categories = {chemistry}
+
 data_armor[mech_armor].resistances =
 {
     {type = "physical", decrease = 20, percent = 50 },
@@ -747,6 +747,8 @@ if mods [vesta_mods] then
     local stellar_discovery_solar_system_edge = "stellar-discovery-solar-system-edge"
     data_technology[stellar_discovery_solar_system_edge].prerequisites =
     {
+        tech_molybdenite_processing_4,
+        tech_powellite_processing_4,
         tech_wolframite_processing_4,
         tech_samarskite_processing_4,
         tech_brannerite_processing_4,
@@ -932,8 +934,7 @@ if mods[lignumis_mods] then
     data_technology[rocket_silo].prerequisites =
     {
         rocket_fuel, low_density_structure,
-        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4, tech_multi_purpose_furnace_2,
-        tech_molybdenum_processing, tech_rhenium_processing, tech_molybdenum_rhenium_processing
+        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4, tech_multi_purpose_furnace_2
     }
 
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}

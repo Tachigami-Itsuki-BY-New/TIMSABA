@@ -89,7 +89,7 @@ data:extend
         name = tech_powellite_processing_4,
         icon = graphics_powellite_tech,
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_powellite_processing_3},
+        prerequisites = {tech_powellite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = powellite_purified},
@@ -108,8 +108,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -206,7 +205,7 @@ data:extend
         name = tech_molybdenite_processing_4,
         icon = graphics_molybdenite_tech,
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_molybdenite_processing_3},
+        prerequisites = {tech_molybdenite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_purified},
@@ -225,8 +224,7 @@ data:extend
                 {space_science_pack, 1},
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -422,6 +420,8 @@ data:extend
         prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining},
         effects =
         {
+            {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
+            {type = unlock_recipe, recipe = calcium},
             {type = unlock_recipe, recipe = thorium_oxide_IV},
             {type = unlock_recipe, recipe = thorium_232_bob}
         },

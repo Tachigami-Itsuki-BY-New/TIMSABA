@@ -117,10 +117,15 @@ TIMSABA.functions.create_recipes
         name = purified_senaite,
         categories = {angels_ore_refining_T4},
         subgroup = is_ore_processing_d,
-        icons = TWO_I(crystal_senaite, purified_senaite),
+        icons = THREE_D_I(crystal_senaite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_senaite),
         order = g,
         energy_required = 2, -- Senaite crystals -refinery-> Senaite purified
-        ingredients = {{type = item, name = crystal_senaite, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = crystal_senaite, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = purified_senaite, amount = 4}},
         main_product = purified_senaite
     },

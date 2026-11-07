@@ -485,10 +485,10 @@ local function pellet_press_recipe(name, gear_wheel, brick, plate, pellet_press)
     end
     data_recipe[name].ingredients = ingredients
 end
-pellet_press_recipe(pellet_press_1, brass_gear_wheel, concrete_brick, aluminium_plate_bob)
-pellet_press_recipe(pellet_press_2, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, pellet_press_1)
+pellet_press_recipe(pellet_press_1,           brass_gear_wheel,                     concrete_brick,       aluminium_plate_bob)
+pellet_press_recipe(pellet_press_2,        titanium_gear_wheel,          reinforced_concrete_brick,        titanium_plate_bob, pellet_press_1)
 pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
-pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, carbon_concrete_brick, nitinol_plate_bob, pellet_press_3)
+pellet_press_recipe(pellet_press_4,      molybdenum_gear_wheel,              carbon_concrete_brick,      molybdenum_plate,     pellet_press_3)
 
 data_item_subgroup["angels-powder-mixer"].order = z_c
 local powder_mixers =

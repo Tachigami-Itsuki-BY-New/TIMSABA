@@ -584,6 +584,9 @@ local thermal_geyser = "lithium-brine"
 data_resource[thermal_geyser].order = e
 data_resource[thermal_geyser].localised_name = {"entity-name.thermal-water-geyser"}
 data_resource[thermal_geyser].minable.results[1].amount = 30
+data_resource[thermal_geyser].minimum = 20000
+data_resource[thermal_geyser].normal = 100000
+data_resource[thermal_geyser].infinite = true
 
 local fluorine_vent = "fluorine-vent"
 data_resource[fluorine_vent].order = f

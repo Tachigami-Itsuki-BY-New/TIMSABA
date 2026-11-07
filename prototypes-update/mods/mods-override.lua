@@ -117,6 +117,7 @@ if mods[telogistics_mods] then
 
     if data_technology[tech_electric_energy_accumulators_4] then
         table.insert(data_technology[logistic_teleporter].prerequisites, tech_electric_energy_accumulators_4)
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_molybdenum_rhenium_processing)
     end
 
     if settings.startup["s6x-telo-science"].value == "space" then
@@ -150,6 +151,8 @@ if mods[telogistics_mods] then
             table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
         end
     elseif settings.startup["s6x-telo-science"].value == "cryo" then
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+
         if settings.startup[setting_bobmods_power_accumulators].value then
             data_recipe[logistic_teleporter].ingredients =
             {
@@ -184,6 +187,8 @@ if mods[telogistics_mods] then
             table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
         end
     elseif settings.startup["s6x-telo-science"].value == "prom" then
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+
         if settings.startup[setting_bobmods_power_accumulators].value then
             data_recipe[logistic_teleporter].ingredients =
             {

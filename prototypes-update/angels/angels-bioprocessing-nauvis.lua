@@ -42,11 +42,12 @@ data_recipe[cellulose_fiber_angels].results[1].amount = 4
 
 data_recipe[methanol_from_wood].icons = TWO_I(cellulose_fiber_angels, methanol_angels)
 data_recipe[methanol_from_wood].order = b_a
-data_recipe[methanol_from_wood].energy_required = 32 -- (C₆H₁₀O₅)n --> CH₄O
+data_recipe[methanol_from_wood].energy_required = 4 -- (C₆H₁₀O₅)n --> CH₄O
 data_recipe[methanol_from_wood].ingredients[1].amount = 16
-data_recipe[methanol_from_wood].results[1].amount = 120
+data_recipe[methanol_from_wood].results[1].amount = 60
 
 data_item[paste_cellulose].order = c
+data_recipe[paste_cellulose].categories = {chemistry}
 data_recipe[paste_cellulose].icons = THREE_D_I(sodium_hydroxide_angels, cellulose_fiber_angels, chloromethane_angels, paste_cellulose)
 data_recipe[paste_cellulose].order = c
 data_recipe[paste_cellulose].ingredients[1].amount = 4
@@ -66,25 +67,24 @@ data_recipe[algae_brown].ingredients[1].amount = 120
 data_recipe[algae_brown].results[1].amount = 16
 data_recipe[algae_brown].results[1].reset_freshness_on_craft = true
 
-data_recipe[algae_brown_sodium_carbonate].categories = {angels_blast_smelting_1}
+data_recipe[algae_brown_sodium_carbonate].categories = {chemistry}
 data_recipe[algae_brown_sodium_carbonate].icons = THREE_I(algae_brown, carbon_dioxide_angels, sodium_carbonate_angels)
-data_recipe[algae_brown_sodium_carbonate].energy_required = 8 -- algae_brown + CO₂(g) --> Na₂CO₃(s)
-data_recipe[algae_brown_sodium_carbonate].ingredients[1].amount = 32
+data_recipe[algae_brown_sodium_carbonate].energy_required = 4 -- algae_brown + CO₂(g) --> Na₂CO₃(s)
+data_recipe[algae_brown_sodium_carbonate].ingredients[1].amount = 8
 data_recipe[algae_brown_sodium_carbonate].ingredients[2].name = carbon_dioxide_angels
-data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 240
-data_recipe[algae_brown_sodium_carbonate].results[1].amount = 16
+data_recipe[algae_brown_sodium_carbonate].ingredients[2].amount = 60
+data_recipe[algae_brown_sodium_carbonate].results[1].amount = 4
 
-data_recipe[algae_brown_lithium_chloride].categories = {angels_blast_smelting_3}
 data_recipe[algae_brown_lithium_chloride].icons = TWO_I(algae_brown, lithium_chloride_angels)
-data_recipe[algae_brown_lithium_chloride].energy_required = 8
-data_recipe[algae_brown_lithium_chloride].ingredients[1].amount = 32
-data_recipe[algae_brown_lithium_chloride].results[1].amount = 16
+data_recipe[algae_brown_lithium_chloride].energy_required = 4
+data_recipe[algae_brown_lithium_chloride].ingredients[1].amount = 8
+data_recipe[algae_brown_lithium_chloride].results[1].amount = 4
 
 local alginic_acid = "angels-solid-alginic-acid"
 data_item[alginic_acid].localised_description = show_formula and {chemical_formula, "(C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]8[/font]O[font=default-tiny-bold]6[/font])[font=default-tiny-bold]n[/font]"} or nil
-data_recipe[alginic_acid].categories = {angels_liquifying}
+data_recipe[alginic_acid].categories = {smelting}
 data_recipe[alginic_acid].icons = TWO_I(algae_brown, alginic_acid)
-data_recipe[alginic_acid].energy_required = 8
+data_recipe[alginic_acid].energy_required = 4
 data_recipe[alginic_acid].ingredients[1].amount = 8
 
 -- RED
@@ -102,11 +102,12 @@ data_recipe[algae_red].results[1].reset_freshness_on_craft = true
 local cellulose_fiber_red = "angels-red-cellulose-fiber"
 data_recipe[cellulose_fiber_red].icons = TWO_I(algae_red, cellulose_fiber_red)
 data_recipe[cellulose_fiber_red].energy_required = 4
-data_recipe[cellulose_fiber_red].ingredients[1].amount = 16
+data_recipe[cellulose_fiber_red].ingredients[1].amount = 8
 data_recipe[cellulose_fiber_red].results[1].amount = 4
 
+data_recipe[calcium_carbonate].categories = {smelting}
 data_recipe[calcium_carbonate].icons = TWO_I(cellulose_fiber_red, limestone_angels)
-data_recipe[calcium_carbonate].energy_required = 32
+data_recipe[calcium_carbonate].energy_required = 4
 data_recipe[calcium_carbonate].ingredients[1].amount = 8
 data_recipe[calcium_carbonate].results[1].amount = 4
 
@@ -130,9 +131,9 @@ data_recipe[cellulose_fiber_blue].results[1].amount = 4
 
 local ammonia_from_cellulose_fiber_blue = "angels-gas-ammonia-from-blue-fiber"
 data_recipe[ammonia_from_cellulose_fiber_blue].icons = TWO_I(cellulose_fiber_blue, ammonia_angels)
-data_recipe[ammonia_from_cellulose_fiber_blue].energy_required = 32
+data_recipe[ammonia_from_cellulose_fiber_blue].energy_required = 4
 data_recipe[ammonia_from_cellulose_fiber_blue].ingredients[1].amount = 16
-data_recipe[ammonia_from_cellulose_fiber_blue].results[1].amount = 120
+data_recipe[ammonia_from_cellulose_fiber_blue].results[1].amount = 60
 
 -- OTHERS
 data_item_subgroup["angels-bio-wood"].order = e
@@ -284,6 +285,7 @@ data_recipe[wood_charcoal].energy_required = 4
 data_recipe[wood_charcoal].results[1].amount = 4
 
 local carbon_from_charcoal = "angels-carbon-from-charcoal"
+data_recipe[carbon_from_charcoal].categories = {chemistry}
 data_recipe[carbon_from_charcoal].icons = THREE_I(wood_charcoal, oxygen_angels, carbon_angels)
 data_recipe[carbon_from_charcoal].order = e_a
 data_recipe[carbon_from_charcoal].ingredients[2].amount = 30
@@ -724,6 +726,7 @@ local brown_liquor = "angels-liquid-brown-liquor"
 data_fluid[brown_liquor].order = b
 
 local brown_liquor_recovery = "angels-brown-liquor-recovery"
+data_recipe[brown_liquor_recovery].categories = {chemistry}
 data_recipe[brown_liquor_recovery].icons = TWO_D_I(sodium_hydroxide_angels, brown_liquor, sodium_sulfate_angels, nitrogen_angels)
 data_recipe[brown_liquor_recovery].order = b_a
 data_recipe[brown_liquor_recovery].ingredients[1].amount = 60
@@ -732,7 +735,7 @@ data_recipe[brown_liquor_recovery].results[2].amount = 60
 
 local white_liquor = "angels-liquid-white-liquor"
 data_fluid[white_liquor].order = c
-data_recipe[white_liquor].icons = FOUR_I(sodium_hydroxide_angels, water, sodium_sulfate_angels, white_liquor)
+data_recipe[white_liquor].icons = THREE_D_I(water, sodium_hydroxide_angels, sodium_sulfate_angels, white_liquor)
 data_recipe[white_liquor].order = c
 data_recipe[white_liquor].ingredients[3].amount = 30
 data_recipe[white_liquor].results[1].amount = 30
@@ -754,6 +757,7 @@ data_recipe[kraft_process].energy_required = 4
 data_recipe[kraft_process].results[1].amount = 60
 
 -- CELLULOSE PULP and PAPER
+data_recipe[cellulose_pulp].categories = {chemistry}
 data_recipe[cellulose_pulp].icons = THREE_D_I(cellulose_fiber_angels, alginic_acid, water, cellulose_pulp, nil, nil, number_1)
 data_recipe[cellulose_pulp].energy_required = 16
 data_recipe[cellulose_pulp].ingredients[1].amount = 16
@@ -772,6 +776,7 @@ data_recipe[cellulose_pulp_2].results[1].amount = 16
 data_recipe[cellulose_pulp_2].results[2].amount = 60
 
 local cellulose_pulp_3 = "angels-kraft-cooking-washing"
+data_recipe[cellulose_pulp_3].categories = {chemistry}
 data_recipe[cellulose_pulp_3].icons = TWO_D_I(cellulose_fiber_angels, white_liquor, cellulose_pulp, black_liquor, number_3)
 data_recipe[cellulose_pulp_3].energy_required = 8
 data_recipe[cellulose_pulp_3].ingredients[1].amount = 16

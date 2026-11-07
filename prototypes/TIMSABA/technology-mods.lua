@@ -1,250 +1,187 @@
-local function create_synthesis_tech(parameters)
+local function create_tech(name, count)
     data:extend
     ({
         {
+            localised_description = {"technology-description.angels-advanced-ore-refining"},
             type = technology,
-            name = parameters.name,
-            icon = "__TIMSABA__/graphics/icons/technology/synthesis/" .. parameters.name .. ".png",
+            name = name,
+            icon = "__TIMSABA__/graphics/icons/technology/synthesis/" .. name .. ".png",
             icon_size = 256,
-            prerequisites = parameters.prerequisites,
-            effects = {{type = unlock_recipe, recipe = parameters.recipe}},
+            prerequisites = {},
+            effects = {},
             unit =
             {
-                count = 2000,
-                ingredients = parameters.ingredients,
+                count = count,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {metallurgic_science_pack, 1}
+                },
                 time = 30
             }
         }
     })
 end
 
-tech_molybdenum_synthesis = "molybdenum-ore-synthesis"
-create_synthesis_tech
-({
-    name = tech_molybdenum_synthesis,
-    prerequisites = {tech_advanced_ore_refining_5},
-    recipe = molybdenum_ore_recipe,
-    ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1}
-    }
-})
-tech_rhenium_synthesis = "rhenium-ore-synthesis"
-create_synthesis_tech
-({
-    name = tech_rhenium_synthesis,
-    prerequisites = {tech_advanced_ore_refining_6},
-    recipe = rhenium_ore_recipe,
-    ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1}
-    }
-})
-if mods[corrundum_mods] then
-    tech_selenium_synthesis = "selenium-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_selenium_synthesis,
-        prerequisites = {tech_molybdenite_processing_4, tech_chalcopyrite_processing_4},
-        recipe = selenium_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-
-    data_technology[tech_selenium_synthesis].hidden = true
-    data_technology[tech_selenium_synthesis].hidden_in_factoriopedia = true
+create_tech(tech_advanced_ore_refining_7, 450)
+data_technology[tech_advanced_ore_refining_7].prerequisites =
+{
+    tech_advanced_ore_refining_6,
+    tech_powellite_processing_3, tech_molybdenite_processing_3,
+    tech_wolframite_processing_2, tech_samarskite_processing_2,
+    tech_brannerite_processing_2, tech_rheniite_processing_2
+}
+if mods[moshine_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_7].prerequisites, tech_monazite_processing_1)
+    table.insert(data_technology[tech_advanced_ore_refining_7].prerequisites, tech_aeschynite_processing_1)
+    table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = neodymium_crushed_recipe})
 end
-tech_niobium_synthesis = "niobium-ore-synthesis"
-create_synthesis_tech
-({
-    name = tech_niobium_synthesis,
-    prerequisites = {tech_advanced_ore_refining_6},
-    recipe = niobium_ore_recipe,
-    ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1}
-    }
-})
-tech_holmium_synthesis = "holmium-ore-synthesis"
-create_synthesis_tech
-({
-    name = tech_holmium_synthesis,
-    prerequisites = {tech_advanced_ore_refining_6},
-    recipe = holmium_ore_recipe,
-    ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {electromagnetic_science_pack, 1}
-    }
-})
-if mods[castra_mods] then
-    tech_vanadium_synthesis = "vanadium-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_vanadium_synthesis,
-        prerequisites = {tech_rheniite_processing_4, tech_millerite_processing_4},
-        recipe = vanadium_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {military_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-
-    data_technology[tech_vanadium_synthesis].hidden = true
-    data_technology[tech_vanadium_synthesis].hidden_in_factoriopedia = true
+if mods[shchierbin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_7].prerequisites, vanadium_science_pack)
+    --table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = vanadium_crushed_recipe})
 end
+table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = calcium_chunks_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = rhenium_chunks_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = niobium_chunks_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = holmium_chunks_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = molybdenum_crystals_recipe})
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_7].prerequisites, tech_wodginite_processing_3)
+    --table.insert(data_technology[tech_advanced_ore_refining_7].effects, {type = unlock_recipe, recipe = tantalum_crystals_recipe})
+end
+
+create_tech(tech_advanced_ore_refining_8, 600)
+data_technology[tech_advanced_ore_refining_8].prerequisites =
+{
+    tech_advanced_ore_refining_7,
+    tech_powellite_processing_4, tech_molybdenite_processing_4,
+    tech_wolframite_processing_3, tech_samarskite_processing_3,
+    tech_brannerite_processing_3, tech_rheniite_processing_3
+}
+table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, cryogenic_science_pack)
 if mods[paracelsin_mods] then
-    tech_antimony_synthesis = "antimony-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_antimony_synthesis,
-        prerequisites = {cryogenic_science_pack, galvanization_science_pack},
-        recipe = antimony_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = antimony_crushed_recipe})
+    table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = germanium_crushed_recipe})
 end
 if mods[corrundum_mods] then
-    tech_arsenic_synthesis = "arsenic-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_arsenic_synthesis,
-        prerequisites = {cryogenic_science_pack, electrochemical_science_pack},
-        recipe = arsenic_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
-end
-if mods[paracelsin_mods] then
-    tech_germanium_synthesis = "germanium-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_germanium_synthesis,
-        prerequisites = {cryogenic_science_pack, galvanization_science_pack},
-        recipe = germanium_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, electrochemical_science_pack)
+    --table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = arsenic_crushed_recipe})
 end
 if mods[secretas_frozeta_mods] then
-    tech_gallium_synthesis = "gallium-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_gallium_synthesis,
-        prerequisites = {cryogenic_science_pack, golden_science_pack},
-        recipe = gallium_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {agricultural_science_pack, 1},
-            {electromagnetic_science_pack, 1},
-            {cryogenic_science_pack, 1}
-        }
-    })
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = gallium_crushed_recipe})
 end
 if mods[moshine_mods] then
-    tech_data_processor_building = "moshine-tech-data-processor-building"
-
-    tech_neodymium_synthesis = "neodymium-ore-synthesis"
-    create_synthesis_tech
-    ({
-        name = tech_neodymium_synthesis,
-        prerequisites = {tech_data_processor_building},
-        recipe = neodymium_ore_recipe,
-        ingredients =
-        {
-            {automation_science_pack, 1},
-            {logistic_science_pack, 1},
-            {chemical_science_pack, 1},
-            {production_science_pack, 1},
-            {utility_science_pack, 1},
-            {space_science_pack, 1},
-            {metallurgic_science_pack, 1},
-            {electromagnetic_science_pack, 1}
-        }
-    })
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, tech_monazite_processing_2)
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, tech_aeschynite_processing_2)
+    table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = neodymium_chunks_recipe})
 end
--- tech_cerium_synthesis
--- tech_promethium_synthesis
--- tech_iridium_synthesis
+if mods[shchierbin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, tech_vanadinite_processing_2)
+    --table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = vanadium_chunks_recipe})
+end
+table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = calcium_crystals_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = rhenium_crystals_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = niobium_crystals_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = holmium_crystals_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = molybdenum_purified_recipe})
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_8].prerequisites, tech_wodginite_processing_4)
+    --table.insert(data_technology[tech_advanced_ore_refining_8].effects, {type = unlock_recipe, recipe = tantalum_purified_recipe})
+end
+table.insert(data_technology[tech_advanced_ore_refining_8].unit.ingredients, {cryogenic_science_pack, 1})
+
+create_tech(tech_advanced_ore_refining_9, 750)
+data_technology[tech_advanced_ore_refining_9].prerequisites =
+{
+    tech_advanced_ore_refining_8,
+    tech_wolframite_processing_4, tech_samarskite_processing_4,
+    tech_brannerite_processing_4, tech_rheniite_processing_4
+}
+table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_antimonite_processing_2)
+table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_germanite_processing_2)
+if mods[paracelsin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_tetrahedrite_processing_2)
+    table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = antimony_chunks_recipe})
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_sphalerite_processing_2)
+    table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = germanium_chunks_recipe})
+end
+if mods[corrundum_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_sperrylite_processing_2)
+    --table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = arsenic_chunks_recipe})
+end
+if mods[secretas_frozeta_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_gallite_processing_2)
+    table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = gallium_chunks_recipe})
+end
+if mods[moshine_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_monazite_processing_3)
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_aeschynite_processing_3)
+    table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = neodymium_crystals_recipe})
+end
+if mods[shchierbin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_9].prerequisites, tech_vanadinite_processing_3)
+    --table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = vanadium_crystals_recipe})
+end
+table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = calcium_purified_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = rhenium_purified_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = niobium_purified_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_9].effects, {type = unlock_recipe, recipe = holmium_purified_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_9].unit.ingredients, {cryogenic_science_pack, 1})
+
+create_tech(tech_advanced_ore_refining_10, 900)
+data_technology[tech_advanced_ore_refining_10].prerequisites = {tech_advanced_ore_refining_9}
+table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_antimonite_processing_3)
+table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_germanite_processing_3)
+if mods[paracelsin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_tetrahedrite_processing_3)
+    table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = antimony_crystals_recipe})
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_sphalerite_processing_3)
+    table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = germanium_crystals_recipe})
+end
+if mods[corrundum_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_sperrylite_processing_3)
+    --table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = arsenic_crystals_recipe})
+end
+if mods[secretas_frozeta_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_gallite_processing_3)
+    table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = gallium_crystals_recipe})
+end
+if mods[moshine_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_monazite_processing_4)
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_aeschynite_processing_4)
+    table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = neodymium_purified_recipe})
+end
+if mods[shchierbin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_10].prerequisites, tech_vanadinite_processing_4)
+    --table.insert(data_technology[tech_advanced_ore_refining_10].effects, {type = unlock_recipe, recipe = vanadium_purified_recipe})
+end
+table.insert(data_technology[tech_advanced_ore_refining_10].unit.ingredients, {cryogenic_science_pack, 1})
+
+create_tech(tech_advanced_ore_refining_11, 1050)
+data_technology[tech_advanced_ore_refining_11].prerequisites = {tech_advanced_ore_refining_10}
+table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_antimonite_processing_4)
+table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_germanite_processing_4)
+if mods[paracelsin_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_tetrahedrite_processing_4)
+    table.insert(data_technology[tech_advanced_ore_refining_11].effects, {type = unlock_recipe, recipe = antimony_purified_recipe})
+    table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_sphalerite_processing_4)
+    table.insert(data_technology[tech_advanced_ore_refining_11].effects, {type = unlock_recipe, recipe = germanium_purified_recipe})
+end
+if mods[corrundum_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_sperrylite_processing_4)
+    --table.insert(data_technology[tech_advanced_ore_refining_11].effects, {type = unlock_recipe, recipe = arsenic_purified_recipe})
+end
+if mods[secretas_frozeta_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_11].prerequisites, tech_gallite_processing_4)
+    table.insert(data_technology[tech_advanced_ore_refining_11].effects, {type = unlock_recipe, recipe = gallium_purified_recipe})
+end
+table.insert(data_technology[tech_advanced_ore_refining_11].unit.ingredients, {cryogenic_science_pack, 1})

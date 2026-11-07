@@ -221,14 +221,14 @@ if mods[moshine_mods] then
             name = neodymium_iron_boron_molten,
             categories = {metallurgy},
             subgroup = is_neodymium_casting,
-            icons = THREE_D_I(neodymium_ingot, iron_ingot, boron_powder, neodymium_iron_boron_molten),
+            icons = THREE_D_I(neodymium_ingot, iron_ingot, boron, neodymium_iron_boron_molten),
             order = a,
             energy_required = 8, -- Nd(s) + Fe(s) + B(s) -Ar-> NdFeB(molten)
             ingredients =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
                 {type = item, name = iron_ingot, amount = 16},
-                {type = item, name = boron_powder, amount = 16}
+                {type = item, name = boron, amount = 16}
             },
             results = {{type = fluid, name = neodymium_iron_boron_molten, amount = 240}},
             main_product = neodymium_iron_boron_molten
@@ -283,7 +283,8 @@ if mods[moshine_mods] then
     })
 
     -- CHEMISTRY
-    orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
+    orthophosphoric_acid_2 = orthophosphoric_acid .. "-2"
+    orthophosphoric_acid_3 = orthophosphoric_acid .. "-3"
     TIMSABA.functions.create_recipes
     ({
         -- BORON
@@ -321,24 +322,14 @@ if mods[moshine_mods] then
             },
             main_product = boron
         },
-        {
-            name = boron_powder,
-            categories = {powderizing_4},
-            subgroup = is_boron,
-            icons = TWO_I(boron, boron_powder),
-            order = d,
-            energy_required = 0.5, -- B(s) --> B(s)
-            ingredients = {{type = item, name = boron, amount = 1}},
-            results = {{type = item, name = boron_powder, amount = 1}},
-            main_product = boron_powder
-        },
         -- PHOSPHORUS
         {
-            name = orthophosphoric_acid,
+            localised_name = {"fluid-name." .. orthophosphoric_acid},
+            name = orthophosphoric_acid_2,
             categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
-            order = e,
+            order = e_a,
             -- Ca₃(PO₄)₂(s) + 3H₂SO₄(l) + H₂O(l) --> H₃PO₄(aq) + 3CaSO₄(s)
             ingredients =
             {
@@ -354,11 +345,12 @@ if mods[moshine_mods] then
             main_product = orthophosphoric_acid
         },
         {
-            name = orthophosphoric_acid_from_phosphate_ore,
+            localised_name = {"fluid-name." .. orthophosphoric_acid},
+            name = orthophosphoric_acid_3,
             categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
-            order = e_a,
+            order = e_b,
             -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
             ingredients =
             {
@@ -523,7 +515,7 @@ if mods[moshine_mods] then
             localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. monazite_ore}, {"item-name." .. aeschynite_ore}},
             name = moshine_slag_processing,
             categories = {crystallizing_4},
-            subgroup = slag_processing_1,
+            subgroup = is_slag_processing_2,
             icons = THREE_R_I(sludge_mineral, monazite_ore, aeschynite_ore),
             order = c .. "-" .. data_planet[planet_moshine].order,
             allow_productivity = true,

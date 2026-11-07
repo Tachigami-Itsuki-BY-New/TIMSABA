@@ -75,7 +75,7 @@ if mods[corrundum_mods] then
             localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. chalcopyrite_ore}, {"item-name.sperrylite-ore"}},
             name = corrundum_slag_processing,
             categories = {crystallizing_4},
-            subgroup = slag_processing_1,
+            subgroup = is_slag_processing_2,
             icons = THREE_R_I(sludge_mineral, chalcopyrite_ore, sperrylite_ore),
             order = c .. "-" .. data_planet[planet_corrundum].order,
             allow_productivity = true,

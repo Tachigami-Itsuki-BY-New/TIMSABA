@@ -30,11 +30,39 @@ if mods[lignumis_mods] then
             name = tech_wodginite_processing_2,
             icon = graphics_wodginite_tech,
             icon_size = 256,
-            prerequisites = {tech_wodginite_processing_1, metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack},
+            prerequisites = {tech_wodginite_processing_1, tech_advanced_ore_refining_5},
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_chunks},
                 {type = unlock_recipe, recipe = wodginite_chunks_sorting}
+            },
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            localised_name = {"technology-name." .. tech_wodginite_processing_3},
+            localised_description = {"technology-description.angels-ore-leaching"},
+            type = technology,
+            name = tech_wodginite_processing_3,
+            icon = graphics_wodginite_tech,
+            icon_size = 256,
+            prerequisites = {tech_wodginite_processing_2, metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack},
+            effects =
+            {
+                {type = unlock_recipe, recipe = wodginite_crystals},
+                {type = unlock_recipe, recipe = wodginite_crystals_sorting}
             },
             unit =
             {
@@ -55,45 +83,13 @@ if mods[lignumis_mods] then
             }
         },
         {
-            localised_name = {"technology-name." .. tech_wodginite_processing_3},
-            localised_description = {"technology-description.angels-ore-leaching"},
-            type = technology,
-            name = tech_wodginite_processing_3,
-            icon = graphics_wodginite_tech,
-            icon_size = 256,
-            prerequisites = {tech_wodginite_processing_2, cryogenic_science_pack},
-            effects =
-            {
-                {type = unlock_recipe, recipe = wodginite_crystals},
-                {type = unlock_recipe, recipe = wodginite_crystals_sorting}
-            },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
-                },
-                time = 30
-            }
-        },
-        {
             localised_name = {"technology-name." .. tech_wodginite_processing_4},
             localised_description = {"technology-description.angels-ore-refining"},
             type = technology,
             name = tech_wodginite_processing_4,
             icon = graphics_wodginite_tech,
             icon_size = 256,
-            prerequisites = {tech_wodginite_processing_3, promethium_science_pack},
+            prerequisites = {tech_wodginite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_purified},
@@ -112,8 +108,7 @@ if mods[lignumis_mods] then
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -211,8 +206,7 @@ if mods[lignumis_mods] then
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -306,8 +300,4 @@ if mods[lignumis_mods] then
             }
         }
     })
-
-    table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_tantalum_tungsten_processing)
-    table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_tantalum_molybdenum_rhenium_processing)
-    table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_tantalum_niobium_processing)
 end

@@ -183,7 +183,6 @@ if mods[moshine_mods] then
     local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
     -- BORON
     boron = "boron"
-    boron_powder = "boron-powder"
     TIMSABA.functions.create_items
     ({
         {
@@ -192,13 +191,6 @@ if mods[moshine_mods] then
             subgroup = is_boron,
             icon = graphics_boron .. boron .. ".png",
             order = c
-        },
-        {
-            localised_description = show_formula and {chemical_formula, "B"} or nil,
-            name = boron_powder,
-            subgroup = is_boron,
-            icon = graphics_boron .. boron_powder .. ".png",
-            order = d
         }
     })
 
@@ -211,25 +203,9 @@ if mods[moshine_mods] then
             name = calcium_phosphate,
             subgroup = is_calcium,
             icon = graphics_moshine .. calcium_phosphate .. ".png",
-            order = i
+            order = j
         }
     })
-
-    -- PHOSPHORUS
-    orthophosphoric_acid = "orthophosphoric-acid-solution"
-    TIMSABA.functions.create_fluids
-    ({
-        {
-            localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]PO[font=default-tiny-bold]4[/font]"} or nil,
-            name = orthophosphoric_acid,
-            subgroup = is_phosphorus_fluid,
-            icon = graphics_moshine .. orthophosphoric_acid .. ".png",
-            order = e,
-            base_color = TIMSABA.functions.fluid_color("H3PO4Wp"),
-            flow_color = TIMSABA.functions.flow_color("H3PO4Wp")
-        }
-    })
-    TIMSABA.barreling.add_dangerous_fluid(orthophosphoric_acid)
 
     -- BARITE
     barite = "barite"

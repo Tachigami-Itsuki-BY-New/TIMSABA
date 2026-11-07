@@ -262,10 +262,14 @@ data_technology[tech_electronics_0].effects =
 
 data_technology[boiler_3].prerequisites = {boiler_2, tech_brass_processing}
 data_technology[boiler_4].prerequisites = {boiler_3, tech_tungsten_processing}
+table.insert(data_technology[boiler_5].prerequisites, tech_molybdenum_rhenium_processing)
 
 data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_processing}
 data_technology[steam_engine_4].prerequisites = {steam_engine_3, tech_tungsten_processing}
 data_technology[steam_engine_5].prerequisites = {steam_engine_4, tech_copper_tungsten_processing}
+table.insert(data_technology[steam_engine_6].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[steam_engine_6].prerequisites, tech_rhenium_processing)
+table.insert(data_technology[steam_engine_6].prerequisites, tech_molybdenum_rhenium_processing)
 
 if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_brass_processing, tech_aluminium_smelting_1, chemical_science_pack}
@@ -345,7 +349,7 @@ data_technology[heat_exchanger_3].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-data_technology[heat_pipe_4].prerequisites = {heat_pipe_3, space_science_pack}
+data_technology[heat_pipe_4].prerequisites = {heat_pipe_3, space_science_pack, tech_molybdenum_processing, tech_rhenium_processing}
 data_technology[heat_pipe_4].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -357,7 +361,7 @@ data_technology[heat_pipe_4].unit.ingredients =
     {space_science_pack, 1}
 }
 
-data_technology[heat_exchanger_4].prerequisites = {heat_exchanger_3, heat_pipe_4}
+data_technology[heat_exchanger_4].prerequisites = {heat_exchanger_3, heat_pipe_4, tech_molybdenum_rhenium_processing}
 data_technology[heat_exchanger_4].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -372,15 +376,22 @@ data_technology[heat_exchanger_4].unit.ingredients =
 data_technology[tech_steam_turbine_1].prerequisites = {tech_brass_processing, chemical_science_pack}
 data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
 data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_copper_tungsten_processing}
+table.insert(data_technology[steam_turbine_4].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[steam_turbine_4].prerequisites, tech_rhenium_processing)
+table.insert(data_technology[steam_turbine_4].prerequisites, tech_molybdenum_rhenium_processing)
 
 data_technology[tech_advanced_material_processing_2].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, tech_advanced_material_processing_1}
 data_technology[tech_advanced_material_processing_3].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, tech_advanced_material_processing_2}
 data_technology[tech_advanced_material_processing_4].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_advanced_material_processing_3}
+table.insert(data_technology[tech_advanced_material_processing_5].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[tech_advanced_material_processing_5].prerequisites, tech_rhenium_processing)
 
 data_technology[steel_mixing_furnace].prerequisites = {logistic_science_pack, tech_steel_processing}
 data_technology[electric_mixing_furnace_1].prerequisites = {chemical_science_pack, tech_brass_smelting_1, tech_aluminium_smelting_1, steel_mixing_furnace}
 data_technology[tech_multi_purpose_furnace_1].prerequisites = {production_science_pack, tech_tungsten_smelting_1, tech_titanium_smelting_1, electric_mixing_furnace_1}
 data_technology[tech_multi_purpose_furnace_2].prerequisites = {utility_science_pack, tech_copper_tungsten_processing, tech_nitinol_processing, tech_multi_purpose_furnace_1}
+table.insert(data_technology[tech_multi_purpose_furnace_3].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[tech_multi_purpose_furnace_3].prerequisites, tech_rhenium_processing)
 
 data_technology[centrifuge_2].localised_name = {"technology-name." .. centrifuge_2}
 data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_processing}
@@ -388,7 +399,14 @@ data_technology[centrifuge_2].prerequisites = {centrifuge_1, tech_tungsten_proce
 data_technology[centrifuge_3].localised_name = {"technology-name." .. centrifuge_3}
 data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_copper_tungsten_processing}
 
+table.insert(data_technology[centrifuge_4].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[centrifuge_4].prerequisites, tech_rhenium_processing)
+table.insert(data_technology[centrifuge_4].prerequisites, tech_molybdenum_rhenium_processing)
+
 data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
+table.insert(data_technology[tech_automation_6].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[tech_automation_6].prerequisites, tech_rhenium_processing)
+table.insert(data_technology[tech_automation_6].prerequisites, tech_molybdenum_rhenium_processing)
 
 if data_technology[electronics_machine_2] then
     data_technology[electronics_machine_2].prerequisites = {tech_automation_4}
@@ -397,6 +415,14 @@ end
 if data_technology[electronics_machine_3] then
     data_technology[electronics_machine_3].prerequisites = {tech_automation_6}
 end
+
+table.insert(data_technology[tech_drills_6].prerequisites, tech_molybdenum_processing)
+
+table.insert(data_technology[tech_pumpjacks_5].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[tech_pumpjacks_5].prerequisites, tech_molybdenum_rhenium_processing)
+
+table.insert(data_technology[tech_pumpjacks_6].prerequisites, tech_niobium_iron_processing)
+table.insert(data_technology[tech_pumpjacks_6].prerequisites, tech_niobium_tungsten_molybdenum_processing)
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
@@ -1062,7 +1088,6 @@ if mods[lignumis_mods] then
         {type = unlock_recipe, recipe = ore_senaite .. _sorting},
         {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
         {type = unlock_recipe, recipe = crushed_stone_sorting_1},
-        {type = unlock_recipe, recipe = calcium_from_crushed_stone},
         {type = unlock_recipe, recipe = crushed_jivolite},
         {type = unlock_recipe, recipe = crushed_crotinnium},
         {type = unlock_recipe, recipe = crushed_senaite},
@@ -1089,7 +1114,6 @@ else
         {type = unlock_recipe, recipe = ore_franckeite .. _sorting},
         {type = unlock_recipe, recipe = slag_sorting_1},
         {type = unlock_recipe, recipe = crushed_stone_sorting_1},
-        {type = unlock_recipe, recipe = calcium_from_crushed_stone},
         {type = unlock_recipe, recipe = crushed_jivolite},
         {type = unlock_recipe, recipe = crushed_crotinnium},
         {type = unlock_recipe, recipe = crushed_senaite},
@@ -1152,10 +1176,18 @@ data_technology[tech_ore_leaching].effects =
     {type = unlock_recipe, recipe = crystal_franckeite_processing}
 }
 
+table.insert(data_technology[tech_ore_refining].prerequisites, tech_phosphorus_processing)
 data_technology[tech_ore_refining].effects =
 {
     {type = unlock_recipe, recipe = ore_refinery_1},
     {type = unlock_recipe, recipe = crushed_stone_sorting_4},
+    {type = unlock_recipe, recipe = calcium_carbide},
+    {type = unlock_recipe, recipe = calcium_hydroxide},
+    {type = unlock_recipe, recipe = calcium_chloride_solution},
+    {type = unlock_recipe, recipe = calcium_hydroxide_solution},
+    {type = unlock_recipe, recipe = calcium_hypochlorite_solution},
+    {type = unlock_recipe, recipe = powdered_chlorine_bleach},
+    {type = unlock_recipe, recipe = powdered_oxygen_bleach},
     {type = unlock_recipe, recipe = purified_saphirite},
     {type = unlock_recipe, recipe = purified_jivolite},
     {type = unlock_recipe, recipe = purified_stiratite},
@@ -1247,7 +1279,7 @@ data_technology[tech_ore_electro_whinning_cell].effects =
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
 
-table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = calcium_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = sodium_recipe})
 
 data_technology[tech_advanced_ore_refining_3].effects =
 {
@@ -1280,6 +1312,27 @@ data_technology[tech_advanced_ore_refining_4].effects =
     {type = unlock_recipe, recipe = platinum_ore_recipe},
     {type = unlock_recipe, recipe = crystal_dust_sorting}
 }
+
+table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_molybdenum_processing)
+table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_molybdenum_rhenium_processing)
+table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_advanced_chemistry_6)
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_wodginite_processing_1)
+end
+table.insert(data_technology[tech_advanced_ore_refining_5].effects, {type = unlock_recipe, recipe = molybdenum_crushed_recipe})
+
+table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_powellite_processing_2)
+table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_molybdenite_processing_2)
+table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = calcium_crushed_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = rhenium_crushed_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = niobium_crushed_recipe})
+table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = holmium_crushed_recipe})
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_wodginite_processing_2)
+    --table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = tantalum_crushed_recipe})
+end
+
+table.insert(data_technology[tech_advanced_ore_refining_6].effects, {type = unlock_recipe, recipe = molybdenum_chunks_recipe})
 
 data_technology[tech_slag_processing_1].effects =
 {
@@ -1738,6 +1791,9 @@ data_technology[tech_platinum_smelting_3].effects =
     {type = unlock_recipe, recipe = platinum_ingot_3}
 }
 
+-- MOLYBDENUM RHENIUM
+table.insert(data_technology[tech_molybdenum_rhenium_processing].effects, {type = unlock_recipe, recipe = rocket_part_nauvis})
+
 -- ANGELS METALLURGY CASTING
 -- IRON and STEEL
 local tech_iron_casting_2 = "angels-iron-casting-2"
@@ -1924,12 +1980,6 @@ data_technology[tech_cobalt_steel_smelting_1].prerequisites = {tech_steel_smelti
 -- NITINOL
 data_technology[tech_nitinol_smelting_1].prerequisites = {tech_titanium_smelting_1, tech_nickel_smelting_2, tech_metallurgy_4}
 
-if settings.startup[setting_early_sintering_oven].value then
-    data_technology[tech_powder_metallurgy_1].prerequisites = {tech_metallurgy_1}
-    table.insert(data_technology[tech_powder_metallurgy_1].effects, {type = unlock_recipe, recipe = stone})
-    data_technology[tech_powder_metallurgy_1].unit.ingredients = {{automation_science_pack, 1}}
-end
-
 data_technology[tech_ore_processing_1].effects =
 {
     {type = unlock_recipe, recipe = ore_processing_machine_1},
@@ -1944,7 +1994,16 @@ data_technology[tech_ore_processing_2].effects =
     {type = unlock_recipe, recipe = coke_pellet_angels}
 }
 
+table.insert(data_technology[tech_ore_processing_5].prerequisites, tech_molybdenum_processing)
 table.insert(data_technology[tech_ore_processing_5].prerequisites, tech_stone_smelting_5)
+
+if settings.startup[setting_early_sintering_oven].value then
+    data_technology[tech_powder_metallurgy_1].prerequisites = {tech_metallurgy_1}
+    table.insert(data_technology[tech_powder_metallurgy_1].effects, {type = unlock_recipe, recipe = stone})
+    data_technology[tech_powder_metallurgy_1].unit.ingredients = {{automation_science_pack, 1}}
+end
+
+table.insert(data_technology[tech_powder_metallurgy_6].prerequisites, tech_molybdenum_rhenium_processing)
 
 data_technology[tech_metallurgy_5].prerequisites = {advanced_processing_unit, tech_copper_tungsten_processing, tech_iron_smelting_3, tech_copper_smelting_3, tech_stone_smelting_4}
 data_technology[tech_metallurgy_5].effects =
@@ -1979,6 +2038,8 @@ data_technology[tech_water_treatment_4].effects =
     {type = unlock_recipe, recipe = salination_plant_2},
     {type = unlock_recipe, recipe = solid_salt_from_saline}
 }
+
+table.insert(data_technology[tech_water_treatment_6].prerequisites, tech_molybdenum_rhenium_processing)
 
 data_technology[electric_boiler_3].prerequisites = {electric_boiler_2, tech_advanced_chemistry_4, tech_tungsten_processing}
 
@@ -2184,18 +2245,18 @@ data_technology[tech_advanced_chemistry_5].effects =
     {type = unlock_recipe, recipe = bisphenol_a},
     {type = unlock_recipe, recipe = calcium_sulfate_angels},
     {type = unlock_recipe, recipe = lime_from_calcium_hydroxide},
-    {type = unlock_recipe, recipe = calcium_carbide},
     {type = unlock_recipe, recipe = calcium_cyanamide},
-    {type = unlock_recipe, recipe = calcium_hydroxide},
     {type = unlock_recipe, recipe = calcium_hydroxide_from_calcium_cyanamide},
     {type = unlock_recipe, recipe = limestone_from_calcium_cyanamide},
     {type = unlock_recipe, recipe = limestone_from_calcium_hydroxide_solution},
-    {type = unlock_recipe, recipe = calcium_chloride_solution},
-    {type = unlock_recipe, recipe = calcium_hydroxide_solution},
     {type = unlock_recipe, recipe = methane_from_acetylene_gas},
     {type = unlock_recipe, recipe = ethane_from_acetylene_gas},
     {type = unlock_recipe, recipe = chloroethane_from_acetylene_gas}
 }
+
+table.insert(data_technology[tech_advanced_chemistry_6].prerequisites, tech_molybdenum_rhenium_processing)
+
+table.insert(data_technology[tech_advanced_chemistry_7].prerequisites, tech_advanced_ore_refining_7)
 
 local tech_explosives_2 = "angels-explosives-2"
 data_technology[tech_explosives_2].prerequisites = {explosives, tech_sodium_processing_2, military_science_pack}
@@ -2304,6 +2365,10 @@ table.insert(data_technology[tech_gardens_3].effects, {type = unlock_recipe, rec
 
 table.insert(data_technology[tech_bio_pressing_2].effects, {type = unlock_recipe, recipe = bio_press_2})
 
+table.insert(data_technology[tech_bio_temperate_farming_5].prerequisites, tech_molybdenum_rhenium_processing)
+table.insert(data_technology[tech_bio_swamp_farming_5].prerequisites, tech_molybdenum_rhenium_processing)
+table.insert(data_technology[tech_bio_desert_farming_5].prerequisites, tech_molybdenum_rhenium_processing)
+
 -- ANGELS BIOPROCESSING ANIMALIS
 data_technology[tech_bio_refugium_fish_2].effects =
 {
@@ -2365,6 +2430,10 @@ data_technology[tech_bio_processing_crystal_full].effects =
     {type = unlock_recipe, recipe = crystal_full_harmonic}
 }
 
+table.insert(data_technology[tech_bio_refugium_hatchery_4].prerequisites, tech_molybdenum_rhenium_processing)
+table.insert(data_technology[tech_bio_refugium_puffer_7].prerequisites, tech_molybdenum_rhenium_processing)
+table.insert(data_technology[tech_bio_refugium_biter_5].prerequisites, tech_molybdenum_rhenium_processing)
+
 -- MODULE
 if mods[bobmodules] then
     -- SPEED
@@ -2395,7 +2464,7 @@ if mods[bobmodules] then
         {utility_science_pack, 1}
     }
 
-    data_technology[speed_module_5].prerequisites = {speed_module_4, tech_modules_5}
+    data_technology[speed_module_5].prerequisites = {speed_module_4, tech_modules_5, tech_molybdenum_rhenium_processing}
     data_technology[speed_module_5].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -2434,7 +2503,7 @@ if mods[bobmodules] then
         {utility_science_pack, 1}
     }
 
-    data_technology[efficiency_module_5].prerequisites = {efficiency_module_4, tech_modules_5}
+    data_technology[efficiency_module_5].prerequisites = {efficiency_module_4, tech_modules_5, tech_molybdenum_rhenium_processing}
     data_technology[efficiency_module_5].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -2473,7 +2542,7 @@ if mods[bobmodules] then
         {utility_science_pack, 1}
     }
 
-    data_technology[productivity_module_5].prerequisites = {productivity_module_4, tech_modules_5}
+    data_technology[productivity_module_5].prerequisites = {productivity_module_4, tech_modules_5, tech_molybdenum_rhenium_processing}
     data_technology[productivity_module_5].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -2513,7 +2582,7 @@ if mods[bobmodules] then
             {utility_science_pack, 1}
         }
 
-        data_technology[quality_module_5].prerequisites = {quality_module_4, tech_modules_5}
+        data_technology[quality_module_5].prerequisites = {quality_module_4, tech_modules_5, tech_molybdenum_rhenium_processing}
         data_technology[quality_module_5].unit.ingredients =
         {
             {automation_science_pack, 1},
@@ -2524,6 +2593,9 @@ if mods[bobmodules] then
             {space_science_pack, 1}
         }
     end
+
+    table.insert(data_technology[pollution_clean_module_5].prerequisites, tech_molybdenum_rhenium_processing)
+    table.insert(data_technology[pollution_create_module_5].prerequisites, tech_molybdenum_rhenium_processing)
 end
 
 -- OTHERS

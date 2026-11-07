@@ -121,10 +121,15 @@ if mods[lignumis_mods] then
             name = wodginite_purified,
             categories = {angels_ore_refining_T4},
             subgroup = is_wodginite,
-            icons = TWO_I(wodginite_crystals, wodginite_purified),
+            icons = THREE_D_I(wodginite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, wodginite_purified),
             order = e,
             energy_required = 2, -- Wodginite crystals -refinery-> Wodginite purified
-            ingredients = {{type = item, name = wodginite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = wodginite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = wodginite_purified, amount = 4}},
             main_product = wodginite_purified
         },
@@ -144,7 +149,7 @@ if mods[lignumis_mods] then
         },
         {
             name = wodginite_crushed_sorting,
-            categories = {ore_sorting_6},
+            categories = {angels_ore_sorting_5},
             subgroup = is_wodginite,
             icons = RECYCLING_I(recycling_png, wodginite_crushed),
             order = g,
