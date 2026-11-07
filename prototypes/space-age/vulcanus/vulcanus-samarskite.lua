@@ -117,10 +117,15 @@ TIMSABA.functions.create_recipes
         name = samarskite_purified,
         categories = {angels_ore_refining_T4},
         subgroup = is_samarskite,
-        icons = TWO_I(samarskite_crystals, samarskite_purified),
+        icons = THREE_D_I(samarskite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, samarskite_purified),
         order = e,
         energy_required = 2, -- Samarskite crystals -refinery-> Samarskite purified
-        ingredients = {{type = item, name = samarskite_crystals, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = samarskite_crystals, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = samarskite_purified, amount = 4}},
         main_product = samarskite_purified
     },

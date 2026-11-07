@@ -193,7 +193,7 @@ if mods[lignumis_mods] then
             name = calcium_hydride,
             subgroup = is_calcium,
             icon = "__TIMSABA__/graphics/icons/lignumis/" .. calcium_hydride .. ".png",
-            order = j
+            order = k
         }
     })
 end

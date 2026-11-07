@@ -325,7 +325,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium_chemistry,
         icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, hydrogen_angels, gallium_liquid, oxygen_angels),
         order = d,
-        energy_required = 8, -- 2NaGa(OH)₄(aq) -electrolys/electrode-> 2Ga(l) + 5H₂(g) + 4O₂(g) + 2NaOH(s)
+        energy_required = 8, -- 2NaGa(OH)₄(aq) -electrode/electrolys-> 2Ga(l) + 5H₂(g) + 4O₂(g) + 2NaOH(s)
         ingredients =
         {
             {type = fluid, name = sodium_tetrahydroxogallate_III_solution, amount = 240},
@@ -386,7 +386,7 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = fluid, name = gallium_chloride_III_solution_ether, amount = 240},
-            {type = item, name = lithium_hydride, amount = 960}
+            {type = item, name = lithium_hydride, amount = 64}
         },
         results =
         {
@@ -397,15 +397,15 @@ TIMSABA.functions.create_recipes
     },
     {
         name = gallium_arsenide,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_gallium_chemistry,
-        icons = THREE_I(gallium_powder, arsenic_powder, gallium_arsenide),
+        icons = THREE_I(gallium_powder, arsenic, gallium_arsenide),
         order = h,
-        energy_required = 8, -- Ga(powder) + As(powder) --> GaAs(s)
+        energy_required = 8, -- Ga(powder) + As(s) --> GaAs(s)
         ingredients =
         {
             {type = item, name = gallium_powder, amount = 16},
-            {type = item, name = arsenic_powder, amount = 16}
+            {type = item, name = arsenic, amount = 16}
         },
         results = {{type = item, name = gallium_arsenide, amount = 16}},
         main_product = gallium_arsenide

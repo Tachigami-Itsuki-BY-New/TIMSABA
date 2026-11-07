@@ -63,7 +63,7 @@ if mods[paracelsin_mods] then
             name = tech_sphalerite_processing_3,
             icon = graphics_sphalerite_tech,
             icon_size = 256,
-            prerequisites = {tech_sphalerite_processing_2, promethium_science_pack},
+            prerequisites = {tech_sphalerite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = sphalerite_crystals},
@@ -95,7 +95,7 @@ if mods[paracelsin_mods] then
             name = tech_sphalerite_processing_4,
             icon = graphics_sphalerite_tech,
             icon_size = 256,
-            prerequisites = {tech_sphalerite_processing_3},
+            prerequisites = {tech_sphalerite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = sphalerite_purified},
@@ -184,7 +184,7 @@ if mods[paracelsin_mods] then
             name = tech_tetrahedrite_processing_3,
             icon = graphics_tetrahedrite_tech,
             icon_size = 256,
-            prerequisites = {tech_tetrahedrite_processing_2, promethium_science_pack},
+            prerequisites = {tech_tetrahedrite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = tetrahedrite_crystals},
@@ -216,7 +216,7 @@ if mods[paracelsin_mods] then
             name = tech_tetrahedrite_processing_4,
             icon = graphics_tetrahedrite_tech,
             icon_size = 256,
-            prerequisites = {tech_tetrahedrite_processing_3},
+            prerequisites = {tech_tetrahedrite_processing_3, promethium_science_pack},
             effects =
             {
                 {type = unlock_recipe, recipe = tetrahedrite_purified},

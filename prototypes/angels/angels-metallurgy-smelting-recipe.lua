@@ -350,17 +350,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
         order = i,
-        energy_required = 8, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
+        energy_required = 8, -- Cu₂O(s) + 6HNO₃(l) --> 2Cu(NO₃)₂(aq) + 2NO₂(g) + H₂O(l)
         ingredients =
         {
-            {type = item, name = copper_oxide_I, amount = 16},
-            {type = fluid, name = nitric_acid_angels, amount = 1440}
+            {type = item, name = copper_oxide_I, amount = 8},
+            {type = fluid, name = nitric_acid_angels, amount = 720}
         },
         results =
         {
-            {type = fluid, name = copper_nitrate_II_solution, amount = 480},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 240}, -- 480
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+            {type = fluid, name = copper_nitrate_II_solution, amount = 240},
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = copper_nitrate_II_solution
     }
@@ -837,8 +837,9 @@ TIMSABA.functions.create_recipes
 
 -- ALUMINIUM
 aluminium_chloride_solution_2 = aluminium_chloride_solution .. "-2"
-aluminium_chloride_2 = "aluminium-chloride-2"
-lithium_tetraethoxy_aluminate_solution_ether_reprocess = "lithium-tetraethoxy-aluminate-solution-ether-reprocess"
+aluminium_chloride_2 = aluminium_chloride .. "-2"
+lithium_tetraethoxy_aluminate_solution_ether_reprocess =  lithium_tetraethoxy_aluminate_solution_ether .. "-reprocess"
+triethylaluminium_liquid_2 = triethylaluminium_liquid .. "-2"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -847,7 +848,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_aluminium_chemistry,
         icons = TWO_D_I(aluminium_ore_bob, lime_angels, calcium_aluminate, calcium),
         order = a,
-        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + Ca(s)
+        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + 3Ca(s)
         ingredients =
         {
             {type = item, name = aluminium_ore_bob, amount = 32},
@@ -856,7 +857,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = calcium_aluminate, amount = 8},
-            {type = item, name = calcium, amount = 4} -- 8
+            {type = item, name = calcium, amount = 24}
         },
         main_product = calcium_aluminate
     },
@@ -875,8 +876,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = calcium_chloride_solution, amount = 60}, -- 120
-            {type = fluid, name = water_purified_angels, amount = 120} -- 1080
+            {type = fluid, name = calcium_chloride_solution, amount = 120},
+            {type = fluid, name = water_purified_angels, amount = 480} -- 1080
         },
         main_product = aluminium_chloride_solution
     },
@@ -979,7 +980,7 @@ TIMSABA.functions.create_recipes
     {
         name = aluminium_chloride_solution_ether,
         categories = {angels_chemical_smelting_2},
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icons = THREE_I(aluminium_chloride, diethyl_ether, aluminium_chloride_solution_ether),
         order = a,
         energy_required = 8, -- AlCl₃ + (C₂H₅)₂O --> AlCl₃(ether)
@@ -994,7 +995,7 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_aluminium_hydride_solution_ether,
         categories = {angels_chemical_smelting_2},
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icons = TWO_D_I(lithium_hydride, aluminium_chloride_solution_ether, lithium_aluminium_hydride_solution_ether, lithium_chloride_angels),
         order = b,
         energy_required = 8, -- 4LiH + AlCl₃(ether) --> LiAlH₄(ether) + 3LiCl
@@ -1013,7 +1014,7 @@ TIMSABA.functions.create_recipes
     {
         name = lithium_tetraethoxy_aluminate_solution_ether,
         categories = {angels_chemical_smelting_4},
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icons = THREE_I(acetaldehyde, lithium_aluminium_hydride_solution_ether, lithium_tetraethoxy_aluminate_solution_ether),
         order = c,
         energy_required = 8, -- 4C₂H₄O + LiAlH₄(ether) --> LiAl(C₂H₅O)₄(ether)
@@ -1029,7 +1030,7 @@ TIMSABA.functions.create_recipes
         type = recipe,
         name = lithium_tetraethoxy_aluminate_solution_ether_reprocess,
         categories = {angels_chemical_smelting_4},
-        subgroup = is_aluminium_chemistry_ether,
+        subgroup = is_aluminium_advanced_chemistry,
         icons = FOUR_THREE_R_I(lithium_tetraethoxy_aluminate_solution_ether, nil, water_purified_angels, ethanol_angels, lithium_hydroxide, aluminium_hydroxide, diethyl_ether),
         order = c_a,
         energy_required = 8, -- LiAl(C₂H₅O)₄(ether) + 4H₂O --> 4C₂H₆O + LiOH + Al(OH)₃ + (C₂H₅)₂O
@@ -1046,6 +1047,77 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = diethyl_ether, amount = 120} -- 240
         },
         main_product = ethanol_angels
+    },
+    {
+        type = recipe,
+        name = triethylaluminium_liquid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_D_I(aluminium_chloride, sodium_hydride, ethylene_angels, triethylaluminium_liquid, nil, salt_angels),
+        order = d,
+        energy_required = 8, -- AlCl₃(s) + 3NaH(s) + 3C₂H₄(g) --> Al(C₂H₅)₃(l) + 3NaCl(s)
+        ingredients =
+        {
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = item, name = sodium_hydride, amount = 48},
+            {type = fluid, name = ethylene_angels, amount = 720}
+        },
+        results =
+        {
+            {type = fluid, name = triethylaluminium_liquid, amount = 240},
+            {type = item, name = salt_angels, amount = 16} -- 48
+        },
+        main_product = triethylaluminium_liquid
+    },
+    {
+        localised_name = {"fluid-name." .. triethylaluminium_liquid},
+        type = recipe,
+        name = triethylaluminium_liquid_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_D_I(aluminium_powder, ethylene_angels, hydrogen_angels, triethylaluminium_liquid),
+        order = d_a,
+        energy_required = 8, -- 2Al(s) + 6C₂H₄(g) + 3H₂(g) --> 2Al(C₂H₅)₃(l)
+        ingredients =
+        {
+            {type = item, name = aluminium_powder, amount = 16},
+            {type = fluid, name = ethylene_angels, amount = 720},
+            {type = fluid, name = hydrogen_angels, amount = 360}
+        },
+        results = {{type = fluid, name = triethylaluminium_liquid, amount = 240}},
+        main_product = triethylaluminium_liquid
+    },
+    {
+        type = recipe,
+        name = tridodecylaluminium,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_I(triethylaluminium_liquid, ethylene_angels, tridodecylaluminium),
+        order = e,
+        energy_required = 8, -- Al(C₂H₅)₃(s) + 15C₂H₄(g) --> Al(C₁₂H₂₅)₃(s)
+        ingredients =
+        {
+            {type = fluid, name = triethylaluminium_liquid, amount = 240},
+            {type = fluid, name = ethylene_angels, amount = 3600}
+        },
+        results = {{type = item, name = tridodecylaluminium, amount = 16}},
+        main_product = tridodecylaluminium
+    },
+    {
+        type = recipe,
+        name = tridodecylaluminium_oxide,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_I(tridodecylaluminium, oxygen_angels, tridodecylaluminium_oxide),
+        order = f,
+        energy_required = 8, -- 2Al(C₁₂H₂₅)₃(s) + 3O₂(g) --> 2Al(C₁₂H₂₅O)₃(s)
+        ingredients =
+        {
+            {type = item, name = tridodecylaluminium, amount = 16},
+            {type = fluid, name = oxygen_angels, amount = 360}
+        },
+        results = {{type = item, name = tridodecylaluminium_oxide, amount = 16}},
+        main_product = tridodecylaluminium_oxide
     }
 })
 

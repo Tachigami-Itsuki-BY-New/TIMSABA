@@ -96,7 +96,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_4,
             icon = graphics_monazite_tech,
             icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_monazite_processing_3},
+            prerequisites = {tech_monazite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_purified},
@@ -216,7 +216,7 @@ if mods[moshine_mods] then
             name = tech_aeschynite_processing_4,
             icon = graphics_aeschynite_tech,
             icon_size = 256,
-            prerequisites = {promethium_science_pack, tech_aeschynite_processing_3},
+            prerequisites = {tech_aeschynite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = aeschynite_purified},
@@ -353,8 +353,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = boron_oxide_III},
-                {type = unlock_recipe, recipe = boron},
-                {type = unlock_recipe, recipe = boron_powder}
+                {type = unlock_recipe, recipe = boron}
             },
             unit =
             {
@@ -377,12 +376,12 @@ if mods[moshine_mods] then
             type = technology,
             name = tech_phosphorus_processing_2,
             icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-            prerequisites = {cryogenic_science_pack, tech_monazite_processing_2},
+            prerequisites = {tech_monazite_processing_2},
             effects =
             {
                 {type = unlock_recipe, recipe = water_orange_waste_purification},
-                {type = unlock_recipe, recipe = orthophosphoric_acid},
-                {type = unlock_recipe, recipe = orthophosphoric_acid_from_phosphate_ore}
+                {type = unlock_recipe, recipe = orthophosphoric_acid_2},
+                {type = unlock_recipe, recipe = orthophosphoric_acid_3}
             },
             unit =
             {
@@ -396,8 +395,7 @@ if mods[moshine_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }

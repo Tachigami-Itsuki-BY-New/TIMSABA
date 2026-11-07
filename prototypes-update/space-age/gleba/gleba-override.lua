@@ -543,8 +543,6 @@ data_technology[biochamber].effects =
     {type = unlock_recipe, recipe = pentapod_egg}
 }
 
-table.insert(data_technology[agricultural_science_pack].effects, {type = unlock_recipe, recipe = rocket_part})
-
 local tech_bacteria_cultivation = "bacteria-cultivation"
 data_technology[tech_bacteria_cultivation].effects =
 {

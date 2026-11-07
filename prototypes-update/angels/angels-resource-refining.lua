@@ -189,22 +189,58 @@ data_recipe[crystal_bobmonium].ingredients[2].amount = 15
 data_recipe[crystal_bobmonium].results[1].amount = 4
 
 data_item[purified_saphirite].localised_description = {"item-description.saphirite-purified"}
-data_recipe[purified_saphirite].icons = TWO_I(crystal_saphirite, purified_saphirite)
+data_recipe[purified_saphirite].icons = THREE_D_I(crystal_saphirite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_saphirite)
+data_recipe[purified_saphirite].ingredients =
+{
+    {type = item, name = crystal_saphirite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_jivolite].localised_description = {"item-description.jivolite-purified"}
-data_recipe[purified_jivolite].icons = TWO_I(crystal_jivolite, purified_jivolite)
+data_recipe[purified_jivolite].icons = THREE_D_I(crystal_jivolite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_jivolite)
+data_recipe[purified_jivolite].ingredients =
+{
+    {type = item, name = crystal_jivolite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_stiratite].localised_description = {"item-description.stiratite-purified"}
-data_recipe[purified_stiratite].icons = TWO_I(crystal_stiratite, purified_stiratite)
+data_recipe[purified_stiratite].icons = THREE_D_I(crystal_stiratite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_stiratite)
+data_recipe[purified_stiratite].ingredients =
+{
+    {type = item, name = crystal_stiratite, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_crotinnium].localised_description = {"item-description.crotinnium-purified"}
-data_recipe[purified_crotinnium].icons = TWO_I(crystal_crotinnium, purified_crotinnium)
+data_recipe[purified_crotinnium].icons = THREE_D_I(crystal_crotinnium, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_crotinnium)
+data_recipe[purified_crotinnium].ingredients =
+{
+    {type = item, name = crystal_crotinnium, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_rubyte].localised_description = {"item-description.rubyte-purified"}
-data_recipe[purified_rubyte].icons = TWO_I(crystal_rubyte, purified_rubyte)
+data_recipe[purified_rubyte].icons = THREE_D_I(crystal_rubyte, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_rubyte)
+data_recipe[purified_rubyte].ingredients =
+{
+    {type = item, name = crystal_rubyte, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item[purified_bobmonium].localised_description = {"item-description.bobmonium-purified"}
-data_recipe[purified_bobmonium].icons = TWO_I(crystal_bobmonium, purified_bobmonium)
+data_recipe[purified_bobmonium].icons = THREE_D_I(crystal_bobmonium, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_bobmonium)
+data_recipe[purified_bobmonium].ingredients =
+{
+    {type = item, name = crystal_bobmonium, amount = 4},
+    {type = item, name = powdered_chlorine_bleach, amount = 1},
+    {type = item, name = powdered_oxygen_bleach, amount = 1}
+}
 
 data_item_subgroup["angels-ore-sorting-t1"].order = c_a
 
@@ -325,7 +361,7 @@ data_recipe[chunk_rubyte_processing].results =
 {
     {type = item, name = lead_ore_bob, amount = 4},
     {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = zinc_ore_bob, amount = 1},
     {type = item, name = slag_angels, amount = 1}
 }
@@ -337,7 +373,7 @@ data_recipe[chunk_bobmonium_processing].results =
 {
     {type = item, name = tin_ore_bob, amount = 4},
     {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = silver_ore_bob, amount = 1},
     {type = item, name = slag_angels, amount = 1}
 }
@@ -393,7 +429,7 @@ data_recipe[crystal_rubyte_processing].results =
 {
     {type = item, name = lead_ore_bob, amount = 4},
     {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = zinc_ore_bob, amount = 1},
     {type = item, name = cobalt_ore_bob, amount = 1},
     {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
@@ -404,7 +440,7 @@ data_recipe[crystal_bobmonium_processing].results =
 {
     {type = item, name = tin_ore_bob, amount = 4},
     {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = silver_ore_bob, amount = 1},
     {type = item, name = uranium_ore, amount = 1},
     {type = item, name = slag_angels, amount = 1, independent_probability = 0.5}
@@ -471,7 +507,7 @@ data_recipe[purified_rubyte_processing].results =
 {
     {type = item, name = lead_ore_bob, amount = 4},
     {type = item, name = tin_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = zinc_ore_bob, amount = 1},
     {type = item, name = cobalt_ore_bob, amount = 1},
     {type = item, name = tungsten_ore_bob, amount = 1}
@@ -484,7 +520,7 @@ data_recipe[purified_bobmonium_processing].results =
 {
     {type = item, name = tin_ore_bob, amount = 4},
     {type = item, name = lead_ore_bob, amount = 2},
-    {type = item, name = calcium, amount = 1},
+    {type = item, name = sodium_angels, amount = 1},
     {type = item, name = silver_ore_bob, amount = 1},
     {type = item, name = uranium_ore, amount = 1},
     {type = item, name = thorium_ore_bob, amount = 1}
@@ -802,28 +838,31 @@ data_recipe[concentrate_anodized_cuprium].ingredients[2].amount = 60
 data_recipe[concentrate_anodized_cuprium].results[2].name = water_greenyellow_waste
 data_recipe[concentrate_anodized_cuprium].results[2].amount = 30
 
-data_item_subgroup[is_ore_sorting_advanced_1].order = h
+data_item_subgroup[is_ore_sorting_advanced_0].order = d
 
-data_item[mineral_catalyst].subgroup = is_ore_sorting_advanced_1
+data_item[mineral_catalyst].subgroup = is_ore_sorting_advanced_0
 data_item[mineral_catalyst].order = a
-data_recipe[mineral_catalyst].subgroup = is_ore_sorting_advanced_1
+data_recipe[mineral_catalyst].subgroup = is_ore_sorting_advanced_0
 data_recipe[mineral_catalyst].icons = TWO_I(sludge_mineral, mineral_catalyst)
 data_recipe[mineral_catalyst].order = a
 data_recipe[mineral_catalyst].ingredients[1].amount = 30
 
 local iron_ore_recipe = "angels-ore-crushed-mix1-processing"
+data_recipe[iron_ore_recipe].subgroup = is_ore_sorting_advanced_1
 data_recipe[iron_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_saphirite, crushed_jivolite, iron_ore)
-data_recipe[iron_ore_recipe].order = a_a
+data_recipe[iron_ore_recipe].order = a
 data_recipe[iron_ore_recipe].energy_required = 2
 
 local copper_ore_recipe = "angels-ore-crushed-mix2-processing"
+data_recipe[copper_ore_recipe].subgroup = is_ore_sorting_advanced_1
 data_recipe[copper_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_stiratite, crushed_crotinnium, copper_ore)
-data_recipe[copper_ore_recipe].order = a_b
+data_recipe[copper_ore_recipe].order = b
 data_recipe[copper_ore_recipe].energy_required = 2
 
 local lead_ore_recipe = "angels-ore-crushed-mix3-processing"
+data_recipe[lead_ore_recipe].subgroup = is_ore_sorting_advanced_1
 data_recipe[lead_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_rubyte, crushed_senaite, lead_ore_bob)
-data_recipe[lead_ore_recipe].order = a_c
+data_recipe[lead_ore_recipe].order = c
 data_recipe[lead_ore_recipe].energy_required = 2
 data_recipe[lead_ore_recipe].ingredients =
 {
@@ -833,8 +872,9 @@ data_recipe[lead_ore_recipe].ingredients =
 }
 
 local tin_ore_recipe = "angels-ore-crushed-mix4-processing"
+data_recipe[tin_ore_recipe].subgroup = is_ore_sorting_advanced_1
 data_recipe[tin_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_bobmonium, crushed_franckeite, tin_ore_bob)
-data_recipe[tin_ore_recipe].order = a_d
+data_recipe[tin_ore_recipe].order = d
 data_recipe[tin_ore_recipe].energy_required = 2
 data_recipe[tin_ore_recipe].ingredients =
 {
@@ -843,18 +883,18 @@ data_recipe[tin_ore_recipe].ingredients =
     {type = item, name = crushed_franckeite, amount = 2}
 }
 
-data_item[crystal_catalyst].subgroup = is_ore_sorting_advanced_2
-data_item[crystal_catalyst].order = a
-data_recipe[crystal_catalyst].subgroup = is_ore_sorting_advanced_2
+data_item[crystal_catalyst].subgroup = is_ore_sorting_advanced_0
+data_item[crystal_catalyst].order = b
+data_recipe[crystal_catalyst].subgroup = is_ore_sorting_advanced_0
 data_recipe[crystal_catalyst].icons = TWO_I(seedling_crystal, crystal_catalyst)
-data_recipe[crystal_catalyst].order = a
+data_recipe[crystal_catalyst].order = b
 data_recipe[crystal_catalyst].ingredients[1].amount = 30
 
 local silicon_ore_recipe = "angels-ore-chunk-mix1-processing"
 data_recipe[silicon_ore_recipe].localised_name = {"item-name." .. silicon_ore_bob}
 data_recipe[silicon_ore_recipe].subgroup = is_ore_sorting_advanced_2
 data_recipe[silicon_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_stiratite, silicon_ore_bob)
-data_recipe[silicon_ore_recipe].order = a_a
+data_recipe[silicon_ore_recipe].order = a
 data_recipe[silicon_ore_recipe].energy_required = 2
 data_recipe[silicon_ore_recipe].ingredients =
 {
@@ -866,7 +906,7 @@ data_recipe[silicon_ore_recipe].ingredients =
 local nickel_ore_recipe = "angels-ore-chunk-mix2-processing"
 data_recipe[nickel_ore_recipe].subgroup = is_ore_sorting_advanced_2
 data_recipe[nickel_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_senaite, nickel_ore_bob)
-data_recipe[nickel_ore_recipe].order = a_b
+data_recipe[nickel_ore_recipe].order = b
 data_recipe[nickel_ore_recipe].energy_required = 2
 data_recipe[nickel_ore_recipe].ingredients =
 {
@@ -879,7 +919,7 @@ local aluminium_ore_recipe = "angels-ore-chunk-mix3-processing"
 data_recipe[aluminium_ore_recipe].localised_name = {"item-name." .. aluminium_ore_bob}
 data_recipe[aluminium_ore_recipe].subgroup = is_ore_sorting_advanced_2
 data_recipe[aluminium_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_crotinnium, chunk_franckeite, aluminium_ore_bob)
-data_recipe[aluminium_ore_recipe].order = a_c
+data_recipe[aluminium_ore_recipe].order = c
 data_recipe[aluminium_ore_recipe].energy_required = 2
 data_recipe[aluminium_ore_recipe].ingredients =
 {
@@ -891,7 +931,7 @@ data_recipe[aluminium_ore_recipe].ingredients =
 local zinc_ore_recipe = "angels-ore-chunk-mix4-processing"
 data_recipe[zinc_ore_recipe].subgroup = is_ore_sorting_advanced_2
 data_recipe[zinc_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_rubyte, zinc_ore_bob)
-data_recipe[zinc_ore_recipe].order = a_d
+data_recipe[zinc_ore_recipe].order = d
 data_recipe[zinc_ore_recipe].energy_required = 2
 data_recipe[zinc_ore_recipe].ingredients =
 {
@@ -903,7 +943,7 @@ data_recipe[zinc_ore_recipe].ingredients =
 local silver_ore_recipe = "angels-ore-chunk-mix5-processing"
 data_recipe[silver_ore_recipe].subgroup = is_ore_sorting_advanced_2
 data_recipe[silver_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_crotinnium, chunk_bobmonium, silver_ore_bob)
-data_recipe[silver_ore_recipe].order = a_e
+data_recipe[silver_ore_recipe].order = e
 data_recipe[silver_ore_recipe].energy_required = 2
 data_recipe[silver_ore_recipe].ingredients =
 {
@@ -912,16 +952,16 @@ data_recipe[silver_ore_recipe].ingredients =
     {type = item, name = chunk_bobmonium, amount = 2}
 }
 
-data_item[hybride_catalyst].subgroup = is_ore_sorting_advanced_3
-data_item[hybride_catalyst].order = a
-data_recipe[hybride_catalyst].subgroup = is_ore_sorting_advanced_3
+data_item[hybride_catalyst].subgroup = is_ore_sorting_advanced_0
+data_item[hybride_catalyst].order = c
+data_recipe[hybride_catalyst].subgroup = is_ore_sorting_advanced_0
 data_recipe[hybride_catalyst].icons = THREE_I(mineral_catalyst, crystal_catalyst, hybride_catalyst)
-data_recipe[hybride_catalyst].order = a
+data_recipe[hybride_catalyst].order = c
 
 data_recipe[titanium_ore_recipe].localised_name = {"item-name." .. titanium_ore_bob}
 data_recipe[titanium_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[titanium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_senaite, titanium_ore_bob)
-data_recipe[titanium_ore_recipe].order = a_a
+data_recipe[titanium_ore_recipe].order = a
 data_recipe[titanium_ore_recipe].energy_required = 2
 data_recipe[titanium_ore_recipe].ingredients =
 {
@@ -933,7 +973,7 @@ data_recipe[titanium_ore_recipe].results[1].amount = 4
 
 data_recipe[gold_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[gold_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_stiratite, crystal_franckeite, gold_ore_bob)
-data_recipe[gold_ore_recipe].order = a_b
+data_recipe[gold_ore_recipe].order = b
 data_recipe[gold_ore_recipe].energy_required = 2
 data_recipe[gold_ore_recipe].ingredients =
 {
@@ -946,7 +986,7 @@ data_recipe[gold_ore_recipe].results[1].amount = 4
 data_recipe[cobalt_ore_recipe].localised_name = {"item-name." .. cobalt_ore_bob}
 data_recipe[cobalt_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[cobalt_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_jivolite, crystal_rubyte, cobalt_ore_bob)
-data_recipe[cobalt_ore_recipe].order = a_c
+data_recipe[cobalt_ore_recipe].order = c
 data_recipe[cobalt_ore_recipe].energy_required = 2
 data_recipe[cobalt_ore_recipe].ingredients =
 {
@@ -956,12 +996,13 @@ data_recipe[cobalt_ore_recipe].ingredients =
 }
 data_recipe[cobalt_ore_recipe].results[1].amount = 4
 
+--data_recipe["angels-ore-crystal-mix4-processing"].subgroup = is_ore_sorting_advanced_3
 --data_recipe["angels-ore-crystal-mix4-processing"].icons = AR_FOUR_I(hybride_catalyst, , , , )
---data_recipe["angels-ore-crystal-mix4-processing"].order = e
+--data_recipe["angels-ore-crystal-mix4-processing"].order = d
 
 data_recipe[uranium_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[uranium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_crotinnium, crystal_bobmonium, uranium_ore)
-data_recipe[uranium_ore_recipe].order = a_d
+data_recipe[uranium_ore_recipe].order = d
 data_recipe[uranium_ore_recipe].energy_required = 2
 data_recipe[uranium_ore_recipe].ingredients =
 {
@@ -974,7 +1015,7 @@ data_recipe[uranium_ore_recipe].results = {{type = item, name = uranium_ore, amo
 data_recipe[thorium_ore_recipe].categories = {angels_ore_sorting_5}
 data_recipe[thorium_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[thorium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, purified_crotinnium, purified_bobmonium, thorium_ore_bob)
-data_recipe[thorium_ore_recipe].order = a_f
+data_recipe[thorium_ore_recipe].order = e
 data_recipe[thorium_ore_recipe].energy_required = 2
 data_recipe[thorium_ore_recipe].ingredients =
 {
@@ -986,7 +1027,7 @@ data_recipe[thorium_ore_recipe].results = {{type = item, name = thorium_ore_bob,
 
 data_recipe[tungsten_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[tungsten_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, purified_jivolite, purified_rubyte, tungsten_ore_bob)
-data_recipe[tungsten_ore_recipe].order = a_h
+data_recipe[tungsten_ore_recipe].order = g
 data_recipe[tungsten_ore_recipe].energy_required = 2
 data_recipe[tungsten_ore_recipe].ingredients =
 {
@@ -998,7 +1039,7 @@ data_recipe[tungsten_ore_recipe].results = {{type = item, name = tungsten_ore_bo
 
 data_recipe[platinum_ore_recipe].subgroup = is_ore_sorting_advanced_3
 data_recipe[platinum_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, purified_stiratite, purified_franckeite, platinum_ore_angels)
-data_recipe[platinum_ore_recipe].order = a_i
+data_recipe[platinum_ore_recipe].order = h
 data_recipe[platinum_ore_recipe].energy_required = 2
 data_recipe[platinum_ore_recipe].ingredients =
 {
@@ -1008,272 +1049,9 @@ data_recipe[platinum_ore_recipe].ingredients =
 }
 data_recipe[platinum_ore_recipe].results[1].amount = 4
 
-data_item_subgroup["angels-geode-processing-1"].order = d
-
-data_item_subgroup["angels-geode-processing-2"].order = d_a
-
-data_recipe["angels-geode-blue-processing"].icons = THREE_R_I(geode_blue, crystal_dust, stone_crushed_angels)
-
-local geode_purple_processing = "angels-geode-purple-processing"
-data_recipe[geode_purple_processing].icons = THREE_R_I(geode_purple, crystal_dust, stone_crushed_angels)
-data_recipe[geode_purple_processing].results[2].amount = 4
-
-data_recipe["angels-geode-yellow-processing"].icons = THREE_R_I(geode_yellow, crystal_dust, stone_crushed_angels)
-
-local geode_lightgreen_processing = "angels-geode-lightgreen-processing"
-data_recipe[geode_lightgreen_processing].icons = THREE_R_I(geode_lightgreen, crystal_dust, stone_crushed_angels)
-data_recipe[geode_lightgreen_processing].results[1].amount = 4
-
-local geode_cyan_processing = "angels-geode-cyan-processing"
-data_recipe[geode_cyan_processing].icons = THREE_R_I(geode_cyan, crystal_dust, stone_crushed_angels)
-data_recipe[geode_cyan_processing].results[1].amount = 4
-
-data_recipe["angels-geode-red-processing"].icons = THREE_R_I(geode_red, crystal_dust, stone_crushed_angels)
-
-local is_geode_processing_1 = "angels-geode-processing-1"
-data_item[slag_angels].subgroup = is_geode_processing_1
-data_item[slag_angels].order = h
-
-data_item[stone_crushed_angels].localised_description = show_formula and {chemical_formula, "(Na,K.Ca)[font=default-tiny-bold]1-2[/font](Fe,Al,Mg)[font=default-tiny-bold]2-3[/font][SiO[font=default-tiny-bold]4[/font]][font=default-tiny-bold]2[/font]"} or nil
-data_item[stone_crushed_angels].subgroup = is_geode_processing_1
-data_item[stone_crushed_angels].order = i
-data_recipe[stone_crushed_angels].categories = {angels_ore_refining_T1, hand_crafting}
-data_recipe[stone_crushed_angels].subgroup = is_geode_processing_1
-data_recipe[stone_crushed_angels].icons = TWO_I(stone, stone_crushed_angels)
-data_recipe[stone_crushed_angels].order = i
-if not mods[lignumis_mods] then
-    data_recipe[stone_crushed_angels].enabled = true
-end
-data_recipe[stone_crushed_angels].ingredients[1].name = stone
-
-local geode_blue_liquify = "angels-geode-blue-liquify"
-data_recipe[geode_blue_liquify].icons = THREE_I(geode_blue, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_blue_liquify].energy_required = 4
-data_recipe[geode_blue_liquify].ingredients[1].amount = 4
-data_recipe[geode_blue_liquify].results[1].amount = 30
-
-local geode_purple_liquify = "angels-geode-purple-liquify"
-data_recipe[geode_purple_liquify].icons = THREE_I(geode_purple, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_purple_liquify].energy_required = 4
-data_recipe[geode_purple_liquify].ingredients[1].amount = 4
-data_recipe[geode_purple_liquify].results[1].amount = 30
-
-local geode_yellow_liquify = "angels-geode-yellow-liquify"
-data_recipe[geode_yellow_liquify].icons = THREE_I(geode_yellow, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_yellow_liquify].energy_required = 4
-data_recipe[geode_yellow_liquify].ingredients[1].amount = 4
-data_recipe[geode_yellow_liquify].results[1].amount = 60
-
-local geode_lightgreen_liquify = "angels-geode-lightgreen-liquify"
-data_recipe[geode_lightgreen_liquify].icons = THREE_I(geode_lightgreen, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_lightgreen_liquify].energy_required = 4
-data_recipe[geode_lightgreen_liquify].ingredients[1].amount = 4
-data_recipe[geode_lightgreen_liquify].results[1].amount = 60
-
-local geode_cyan_liquify = "angels-geode-cyan-liquify"
-data_recipe[geode_cyan_liquify].icons = THREE_I(geode_cyan, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_cyan_liquify].energy_required = 4
-data_recipe[geode_cyan_liquify].ingredients[1].amount = 4
-data_recipe[geode_cyan_liquify].results[1].amount = 60
-
-local geode_red_liquify = "angels-geode-red-liquify"
-data_recipe[geode_red_liquify].icons = THREE_I(geode_red, sulfuric_acid_angels, slurry_crystal)
-data_recipe[geode_red_liquify].energy_required = 4
-data_recipe[geode_red_liquify].ingredients[1].amount = 4
-data_recipe[geode_red_liquify].results[1].amount = 30
-
-local crystal_dust_liquify = "angels-crystal-dust-liquify"
-data_recipe[crystal_dust_liquify].localised_name = {"recipe-name.angels-crystal-dust-liquify"}
-data_recipe[crystal_dust_liquify].icons = THREE_I(crystal_dust, sulfuric_acid_angels, slurry_crystal)
-data_recipe[crystal_dust_liquify].energy_required = 4
-data_recipe[crystal_dust_liquify].ingredients[1].amount = 8
-data_recipe[crystal_dust_liquify].results[1].amount = 60
-
-data_recipe[slag_processing_dissolution].icons = THREE_I(slag_angels, sulfuric_acid_angels, slurry_slag)
-data_recipe[slag_processing_dissolution].energy_required = 4
-data_recipe[slag_processing_dissolution].ingredients[1].amount = 4
-data_recipe[slag_processing_dissolution].results[1].amount = 60
-
-data_recipe[stone_crushed_dissolution].icons = THREE_I(stone_crushed_angels, sulfuric_acid_angels, slurry_slag)
-data_recipe[stone_crushed_dissolution].energy_required = 4
-data_recipe[stone_crushed_dissolution].ingredients[1].amount = 16
-data_recipe[stone_crushed_dissolution].results[1].amount = 60
-
-local is_slag_processing_1 = "angels-slag-processing-1"
-
-data_recipe[slag_processing_filtering_1].subgroup = is_slag_processing_1
-data_recipe[slag_processing_filtering_1].icons = TWO_I(slurry_slag, sludge_mineral, number_1)
-data_recipe[slag_processing_filtering_1].order = a_a
-data_recipe[slag_processing_filtering_1].ingredients =
-{
-    {type = fluid, name = slurry_slag, amount = 60},
-    {type = fluid, name = water_purified_angels, amount = 60},
-    {type = item, name = filter_coal, amount = 1}
-}
-data_recipe[slag_processing_filtering_1].results =
-{
-    {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
-}
-
-local slag_processing_filtering_2 = "angels-slag-processing-filtering-2"
-data_recipe[slag_processing_filtering_2].subgroup = is_slag_processing_1
-data_recipe[slag_processing_filtering_2].icons = TWO_I(slurry_slag, sludge_mineral, number_2)
-data_recipe[slag_processing_filtering_2].order = a_b
-data_recipe[slag_processing_filtering_2].ingredients =
-{
-    {type = fluid, name = slurry_slag, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 30},
-    {type = item, name = filter_ceramic, amount = 1}
-}
-data_recipe[slag_processing_filtering_2].results =
-{
-    {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
-}
-
-local crystal_slurry_filtering_conversion_1 = "angels-crystal-slurry-filtering-conversion-1"
-data_recipe[crystal_slurry_filtering_conversion_1].subgroup = is_slag_processing_1
-data_recipe[crystal_slurry_filtering_conversion_1].icons = TWO_I(slurry_crystal, sludge_mineral, number_1)
-data_recipe[crystal_slurry_filtering_conversion_1].order = a_c
-data_recipe[crystal_slurry_filtering_conversion_1].energy_required = 4
-data_recipe[crystal_slurry_filtering_conversion_1].ingredients =
-{
-    {type = fluid, name = slurry_crystal, amount = 60},
-    {type = fluid, name = water_mineralized_angels, amount = 120},
-    {type = item, name = filter_coal, amount = 1}
-}
-data_recipe[crystal_slurry_filtering_conversion_1].results =
-{
-    {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
-}
-
-local crystal_slurry_filtering_conversion_2 = "angels-crystal-slurry-filtering-conversion-2"
-data_recipe[crystal_slurry_filtering_conversion_2].subgroup = is_slag_processing_1
-data_recipe[crystal_slurry_filtering_conversion_2].icons = TWO_I(slurry_crystal, sludge_mineral, number_2)
-data_recipe[crystal_slurry_filtering_conversion_2].order = a_d
-data_recipe[crystal_slurry_filtering_conversion_2].energy_required = 2
-data_recipe[crystal_slurry_filtering_conversion_2].ingredients =
-{
-    {type = fluid, name = slurry_crystal, amount = 30},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
-    {type = item, name = filter_ceramic, amount = 1}
-}
-data_recipe[crystal_slurry_filtering_conversion_2].results =
-{
-    {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
-}
-
-data_recipe[slag_processing_1].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_saphirite}, {"item-name." .. ore_jivolite}}
-data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, ore_saphirite, ore_jivolite)
-data_recipe[slag_processing_1].order = b_a
-data_recipe[slag_processing_1].ingredients[1].amount = 120
-data_recipe[slag_processing_1].results =
-{
-    {type = item, name = ore_saphirite, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_jivolite, amount = 1, independent_probability = 0.5}
-}
-
-data_recipe[slag_processing_2].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_stiratite}, {"item-name." .. ore_crotinnium}}
-data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, ore_stiratite, ore_crotinnium)
-data_recipe[slag_processing_2].order = b_b
-data_recipe[slag_processing_2].ingredients[1].amount = 120
-data_recipe[slag_processing_2].results =
-{
-    {type = item, name = ore_stiratite, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.5}
-}
-
-data_recipe[slag_processing_3].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_rubyte}, {"item-name." .. ore_senaite}}
-data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, ore_rubyte, ore_senaite)
-data_recipe[slag_processing_3].order = b_c
-data_recipe[slag_processing_3].ingredients[1].amount = 120
-data_recipe[slag_processing_3].results =
-{
-    {type = item, name = ore_rubyte, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_senaite, amount = 1, independent_probability = 0.5}
-}
-
-local is_geode_crystallization = "angels-geode-crystallization"
-local crystal_slurry_filtering_1 = "angels-crystal-slurry-filtering-1"
-data_recipe[crystal_slurry_filtering_1].subgroup = is_geode_crystallization
-data_recipe[crystal_slurry_filtering_1].icons = TWO_I(slurry_crystal, seedling_crystal, number_1)
-data_recipe[crystal_slurry_filtering_1].order = a
-data_recipe[crystal_slurry_filtering_1].energy_required = 4
-data_recipe[crystal_slurry_filtering_1].ingredients =
-{
-    {type = fluid, name = slurry_crystal, amount = 60},
-    {type = fluid, name = water_purified_angels, amount = 60},
-    {type = item, name = filter_coal, amount = 1}
-}
-data_recipe[crystal_slurry_filtering_1].results =
-{
-    {type = fluid, name = seedling_crystal, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
-    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
-}
-
-local crystal_slurry_filtering_2 = "angels-crystal-slurry-filtering-2"
-data_recipe[crystal_slurry_filtering_2].subgroup = is_geode_crystallization
-data_recipe[crystal_slurry_filtering_2].icons = TWO_I(slurry_crystal, seedling_crystal, number_2)
-data_recipe[crystal_slurry_filtering_2].order = b
-data_recipe[crystal_slurry_filtering_2].energy_required = 2
-data_recipe[crystal_slurry_filtering_2].ingredients =
-{
-    {type = fluid, name = slurry_crystal, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 30},
-    {type = item, name = filter_ceramic, amount = 1}
-}
-data_recipe[crystal_slurry_filtering_2].results =
-{
-    {type = fluid, name = seedling_crystal, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
-    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
-    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
-}
-
-local ruby_crystallization = "angels-ore7-crystallization-3"
-data_recipe[ruby_crystallization].icons = TWO_I(seedling_crystal, ruby_bob)
-data_recipe[ruby_crystallization].order = c
-data_recipe[ruby_crystallization].ingredients[1].amount = 60
-
-local sapphire_crystallization = "angels-ore7-crystallization-1"
-data_recipe[sapphire_crystallization].icons = TWO_I(seedling_crystal, sapphire_bob)
-data_recipe[sapphire_crystallization].order = d
-data_recipe[sapphire_crystallization].ingredients[1].amount = 60
-
-local emerald_crystallization = "angels-ore7-crystallization-4"
-data_recipe[emerald_crystallization].icons = TWO_I(seedling_crystal, emerald_bob)
-data_recipe[emerald_crystallization].order = e
-data_recipe[emerald_crystallization].ingredients[1].amount = 60
-
-local amethyst_crystallization = "angels-ore7-crystallization-5"
-data_recipe[amethyst_crystallization].icons = TWO_I(seedling_crystal, amethyst_bob)
-data_recipe[amethyst_crystallization].order = f
-data_recipe[amethyst_crystallization].ingredients[1].amount = 60
-
-local topaz_crystallization = "angels-ore7-crystallization-2"
-data_recipe[topaz_crystallization].icons = TWO_I(seedling_crystal, topaz_bob)
-data_recipe[topaz_crystallization].order = g
-data_recipe[topaz_crystallization].ingredients[1].amount = 60
-
-local diamond_crystallization = "angels-ore7-crystallization-6"
-data_recipe[diamond_crystallization].icons = TWO_I(seedling_crystal, diamond_bob)
-data_recipe[diamond_crystallization].order = h
-data_recipe[diamond_crystallization].ingredients[1].amount = 60
-
 local is_catalysts_filters = "angels-catalysts-filters"
+data_item_subgroup[is_catalysts_filters].order = g
+
 data_item[filter_frame].subgroup = is_catalysts_filters
 data_item[filter_frame].order = a
 data_recipe[filter_frame].subgroup = is_catalysts_filters
@@ -1362,7 +1140,7 @@ data_recipe[sulfur_air_scrubbing].results =
 }
 data_recipe[sulfur_air_scrubbing].main_product = acid_angels
 
-data_item_subgroup["angels-ore-sorting-fluid"].order = y
+data_item_subgroup[is_ore_sorting_fluid].order = h_a
 
 TIMSABA.barreling.add_simple_fluid(slurry_slag)
 
@@ -1371,6 +1149,307 @@ TIMSABA.barreling.add_simple_fluid(sludge_mineral)
 TIMSABA.barreling.add_simple_fluid(slurry_crystal)
 
 TIMSABA.barreling.add_simple_fluid(seedling_crystal)
+
+data_item_subgroup[is_geode_processing_1].order = i
+
+data_item[slag_angels].subgroup = is_geode_processing_1
+data_item[slag_angels].order = h
+
+data_item[stone_crushed_angels].localised_description = show_formula and {chemical_formula, "(Na,K.Ca)[font=default-tiny-bold]1-2[/font](Fe,Al,Mg)[font=default-tiny-bold]2-3[/font][SiO[font=default-tiny-bold]4[/font]][font=default-tiny-bold]2[/font]"} or nil
+data_item[stone_crushed_angels].subgroup = is_geode_processing_1
+data_item[stone_crushed_angels].order = i
+data_recipe[stone_crushed_angels].categories = {angels_ore_refining_T1, hand_crafting}
+data_recipe[stone_crushed_angels].subgroup = is_geode_processing_1
+data_recipe[stone_crushed_angels].icons = TWO_I(stone, stone_crushed_angels)
+data_recipe[stone_crushed_angels].order = i
+if not mods[lignumis_mods] then
+    data_recipe[stone_crushed_angels].enabled = true
+end
+data_recipe[stone_crushed_angels].ingredients[1].name = stone
+
+data_item_subgroup[is_geode_processing_2].order = i_a
+
+data_recipe["angels-geode-blue-processing"].icons = THREE_R_I(geode_blue, crystal_dust, stone_crushed_angels)
+
+local geode_purple_processing = "angels-geode-purple-processing"
+data_recipe[geode_purple_processing].icons = THREE_R_I(geode_purple, crystal_dust, stone_crushed_angels)
+data_recipe[geode_purple_processing].results[2].amount = 4
+
+data_recipe["angels-geode-yellow-processing"].icons = THREE_R_I(geode_yellow, crystal_dust, stone_crushed_angels)
+
+local geode_lightgreen_processing = "angels-geode-lightgreen-processing"
+data_recipe[geode_lightgreen_processing].icons = THREE_R_I(geode_lightgreen, crystal_dust, stone_crushed_angels)
+data_recipe[geode_lightgreen_processing].results[1].amount = 4
+
+local geode_cyan_processing = "angels-geode-cyan-processing"
+data_recipe[geode_cyan_processing].icons = THREE_R_I(geode_cyan, crystal_dust, stone_crushed_angels)
+data_recipe[geode_cyan_processing].results[1].amount = 4
+
+data_recipe["angels-geode-red-processing"].icons = THREE_R_I(geode_red, crystal_dust, stone_crushed_angels)
+
+data_item_subgroup["angels-liquifying"].order = i_b
+
+local geode_blue_liquify = "angels-geode-blue-liquify"
+data_recipe[geode_blue_liquify].icons = THREE_I(geode_blue, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_blue_liquify].energy_required = 4
+data_recipe[geode_blue_liquify].ingredients[1].amount = 4
+data_recipe[geode_blue_liquify].results[1].amount = 30
+
+local geode_purple_liquify = "angels-geode-purple-liquify"
+data_recipe[geode_purple_liquify].icons = THREE_I(geode_purple, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_purple_liquify].energy_required = 4
+data_recipe[geode_purple_liquify].ingredients[1].amount = 4
+data_recipe[geode_purple_liquify].results[1].amount = 30
+
+local geode_yellow_liquify = "angels-geode-yellow-liquify"
+data_recipe[geode_yellow_liquify].icons = THREE_I(geode_yellow, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_yellow_liquify].energy_required = 4
+data_recipe[geode_yellow_liquify].ingredients[1].amount = 4
+data_recipe[geode_yellow_liquify].results[1].amount = 60
+
+local geode_lightgreen_liquify = "angels-geode-lightgreen-liquify"
+data_recipe[geode_lightgreen_liquify].icons = THREE_I(geode_lightgreen, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_lightgreen_liquify].energy_required = 4
+data_recipe[geode_lightgreen_liquify].ingredients[1].amount = 4
+data_recipe[geode_lightgreen_liquify].results[1].amount = 60
+
+local geode_cyan_liquify = "angels-geode-cyan-liquify"
+data_recipe[geode_cyan_liquify].icons = THREE_I(geode_cyan, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_cyan_liquify].energy_required = 4
+data_recipe[geode_cyan_liquify].ingredients[1].amount = 4
+data_recipe[geode_cyan_liquify].results[1].amount = 60
+
+local geode_red_liquify = "angels-geode-red-liquify"
+data_recipe[geode_red_liquify].icons = THREE_I(geode_red, sulfuric_acid_angels, slurry_crystal)
+data_recipe[geode_red_liquify].energy_required = 4
+data_recipe[geode_red_liquify].ingredients[1].amount = 4
+data_recipe[geode_red_liquify].results[1].amount = 30
+
+local crystal_dust_liquify = "angels-crystal-dust-liquify"
+data_recipe[crystal_dust_liquify].localised_name = {"recipe-name.angels-crystal-dust-liquify"}
+data_recipe[crystal_dust_liquify].icons = THREE_I(crystal_dust, sulfuric_acid_angels, slurry_crystal)
+data_recipe[crystal_dust_liquify].energy_required = 4
+data_recipe[crystal_dust_liquify].ingredients[1].amount = 8
+data_recipe[crystal_dust_liquify].results[1].amount = 60
+
+data_recipe[slag_processing_dissolution].icons = THREE_I(slag_angels, sulfuric_acid_angels, slurry_slag)
+data_recipe[slag_processing_dissolution].energy_required = 4
+data_recipe[slag_processing_dissolution].ingredients[1].amount = 4
+data_recipe[slag_processing_dissolution].results[1].amount = 60
+
+data_recipe[stone_crushed_dissolution].icons = THREE_I(stone_crushed_angels, sulfuric_acid_angels, slurry_slag)
+data_recipe[stone_crushed_dissolution].energy_required = 4
+data_recipe[stone_crushed_dissolution].ingredients[1].amount = 16
+data_recipe[stone_crushed_dissolution].results[1].amount = 60
+
+local is_slag_processing_1 = "angels-slag-processing-1"
+data_item_subgroup[is_slag_processing_1].order = i_c
+
+data_recipe[slag_processing_filtering_1].subgroup = is_slag_processing_1
+data_recipe[slag_processing_filtering_1].icons = TWO_I(slurry_slag, sludge_mineral, number_1)
+data_recipe[slag_processing_filtering_1].order = a_a
+data_recipe[slag_processing_filtering_1].ingredients =
+{
+    {type = fluid, name = slurry_slag, amount = 60},
+    {type = fluid, name = water_purified_angels, amount = 60},
+    {type = item, name = filter_coal, amount = 1}
+}
+data_recipe[slag_processing_filtering_1].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
+}
+
+local slag_processing_filtering_2 = "angels-slag-processing-filtering-2"
+data_recipe[slag_processing_filtering_2].subgroup = is_slag_processing_1
+data_recipe[slag_processing_filtering_2].icons = TWO_I(slurry_slag, sludge_mineral, number_2)
+data_recipe[slag_processing_filtering_2].order = a_b
+data_recipe[slag_processing_filtering_2].ingredients =
+{
+    {type = fluid, name = slurry_slag, amount = 30},
+    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = item, name = filter_ceramic, amount = 1}
+}
+data_recipe[slag_processing_filtering_2].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+local crystal_slurry_filtering_conversion_1 = "angels-crystal-slurry-filtering-conversion-1"
+data_recipe[crystal_slurry_filtering_conversion_1].subgroup = is_slag_processing_1
+data_recipe[crystal_slurry_filtering_conversion_1].icons = TWO_I(slurry_crystal, sludge_mineral, number_1)
+data_recipe[crystal_slurry_filtering_conversion_1].order = a_c
+data_recipe[crystal_slurry_filtering_conversion_1].energy_required = 4
+data_recipe[crystal_slurry_filtering_conversion_1].ingredients =
+{
+    {type = fluid, name = slurry_crystal, amount = 60},
+    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = item, name = filter_coal, amount = 1}
+}
+data_recipe[crystal_slurry_filtering_conversion_1].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
+}
+
+local crystal_slurry_filtering_conversion_2 = "angels-crystal-slurry-filtering-conversion-2"
+data_recipe[crystal_slurry_filtering_conversion_2].subgroup = is_slag_processing_1
+data_recipe[crystal_slurry_filtering_conversion_2].icons = TWO_I(slurry_crystal, sludge_mineral, number_2)
+data_recipe[crystal_slurry_filtering_conversion_2].order = a_d
+data_recipe[crystal_slurry_filtering_conversion_2].energy_required = 2
+data_recipe[crystal_slurry_filtering_conversion_2].ingredients =
+{
+    {type = fluid, name = slurry_crystal, amount = 30},
+    {type = fluid, name = water_mineralized_angels, amount = 60},
+    {type = item, name = filter_ceramic, amount = 1}
+}
+data_recipe[crystal_slurry_filtering_conversion_2].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+local thermal_water_filtering_1 = "angels-thermal-water-filtering-1"
+data_recipe[thermal_water_filtering_1].subgroup = is_slag_processing_1
+data_recipe[thermal_water_filtering_1].icons = TWO_I(water_thermal_angels, sludge_mineral, number_2)
+data_recipe[thermal_water_filtering_1].order = a_e
+data_recipe[thermal_water_filtering_1].ingredients =
+{
+    {type = fluid, name = water_thermal_angels, amount = 60},
+    {type = item, name = filter_coal, amount = 1}
+}
+data_recipe[thermal_water_filtering_1].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 60},
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
+}
+
+local thermal_water_filtering_2 = "angels-thermal-water-filtering-2"
+data_recipe[thermal_water_filtering_2].subgroup = is_slag_processing_1
+data_recipe[thermal_water_filtering_2].icons = TWO_I(water_thermal_angels, sludge_mineral, number_2)
+data_recipe[thermal_water_filtering_2].order = a_e
+data_recipe[thermal_water_filtering_2].ingredients =
+{
+    {type = fluid, name = water_thermal_angels, amount = 30},
+    {type = item, name = filter_ceramic, amount = 1}
+}
+data_recipe[thermal_water_filtering_2].results =
+{
+    {type = fluid, name = sludge_mineral, amount = 30},
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+data_recipe[slag_processing_1].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_saphirite}, {"item-name." .. ore_jivolite}}
+data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, ore_saphirite, ore_jivolite)
+data_recipe[slag_processing_1].order = b_a
+data_recipe[slag_processing_1].ingredients[1].amount = 120
+data_recipe[slag_processing_1].results =
+{
+    {type = item, name = ore_saphirite, amount = 1, independent_probability = 0.5},
+    {type = item, name = ore_jivolite, amount = 1, independent_probability = 0.5}
+}
+
+data_recipe[slag_processing_2].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_stiratite}, {"item-name." .. ore_crotinnium}}
+data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, ore_stiratite, ore_crotinnium)
+data_recipe[slag_processing_2].order = b_b
+data_recipe[slag_processing_2].ingredients[1].amount = 120
+data_recipe[slag_processing_2].results =
+{
+    {type = item, name = ore_stiratite, amount = 1, independent_probability = 0.5},
+    {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.5}
+}
+
+data_recipe[slag_processing_3].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_rubyte}, {"item-name." .. ore_senaite}}
+data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, ore_rubyte, ore_senaite)
+data_recipe[slag_processing_3].order = b_c
+data_recipe[slag_processing_3].ingredients[1].amount = 120
+data_recipe[slag_processing_3].results =
+{
+    {type = item, name = ore_rubyte, amount = 1, independent_probability = 0.5},
+    {type = item, name = ore_senaite, amount = 1, independent_probability = 0.5}
+}
+
+local is_geode_crystallization = "angels-geode-crystallization"
+data_item_subgroup[is_geode_crystallization].order = i_e
+
+local crystal_slurry_filtering_1 = "angels-crystal-slurry-filtering-1"
+data_recipe[crystal_slurry_filtering_1].subgroup = is_geode_crystallization
+data_recipe[crystal_slurry_filtering_1].icons = TWO_I(slurry_crystal, seedling_crystal, number_1)
+data_recipe[crystal_slurry_filtering_1].order = a
+data_recipe[crystal_slurry_filtering_1].energy_required = 4
+data_recipe[crystal_slurry_filtering_1].ingredients =
+{
+    {type = fluid, name = slurry_crystal, amount = 60},
+    {type = fluid, name = water_purified_angels, amount = 60},
+    {type = item, name = filter_coal, amount = 1}
+}
+data_recipe[crystal_slurry_filtering_1].results =
+{
+    {type = fluid, name = seedling_crystal, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
+}
+
+local crystal_slurry_filtering_2 = "angels-crystal-slurry-filtering-2"
+data_recipe[crystal_slurry_filtering_2].subgroup = is_geode_crystallization
+data_recipe[crystal_slurry_filtering_2].icons = TWO_I(slurry_crystal, seedling_crystal, number_2)
+data_recipe[crystal_slurry_filtering_2].order = b
+data_recipe[crystal_slurry_filtering_2].energy_required = 2
+data_recipe[crystal_slurry_filtering_2].ingredients =
+{
+    {type = fluid, name = slurry_crystal, amount = 30},
+    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = item, name = filter_ceramic, amount = 1}
+}
+data_recipe[crystal_slurry_filtering_2].results =
+{
+    {type = fluid, name = seedling_crystal, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
+    {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
+    {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
+}
+
+local ruby_crystallization = "angels-ore7-crystallization-3"
+data_recipe[ruby_crystallization].icons = TWO_I(seedling_crystal, ruby_bob)
+data_recipe[ruby_crystallization].order = c
+data_recipe[ruby_crystallization].ingredients[1].amount = 60
+
+local sapphire_crystallization = "angels-ore7-crystallization-1"
+data_recipe[sapphire_crystallization].icons = TWO_I(seedling_crystal, sapphire_bob)
+data_recipe[sapphire_crystallization].order = d
+data_recipe[sapphire_crystallization].ingredients[1].amount = 60
+
+local emerald_crystallization = "angels-ore7-crystallization-4"
+data_recipe[emerald_crystallization].icons = TWO_I(seedling_crystal, emerald_bob)
+data_recipe[emerald_crystallization].order = e
+data_recipe[emerald_crystallization].ingredients[1].amount = 60
+
+local amethyst_crystallization = "angels-ore7-crystallization-5"
+data_recipe[amethyst_crystallization].icons = TWO_I(seedling_crystal, amethyst_bob)
+data_recipe[amethyst_crystallization].order = f
+data_recipe[amethyst_crystallization].ingredients[1].amount = 60
+
+local topaz_crystallization = "angels-ore7-crystallization-2"
+data_recipe[topaz_crystallization].icons = TWO_I(seedling_crystal, topaz_bob)
+data_recipe[topaz_crystallization].order = g
+data_recipe[topaz_crystallization].ingredients[1].amount = 60
+
+local diamond_crystallization = "angels-ore7-crystallization-6"
+data_recipe[diamond_crystallization].icons = TWO_I(seedling_crystal, diamond_bob)
+data_recipe[diamond_crystallization].order = h
+data_recipe[diamond_crystallization].ingredients[1].amount = 60
 
 -- BUILDING
 data_recipe[milling_drum].icons = TWO_I(steel_plate, milling_drum)

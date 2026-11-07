@@ -9,7 +9,6 @@ if mods[shchierbin_mods] then
 
     -- RECIPE
     data_recipe[slaked_lime_mods].localised_name = {"item-name." .. calcium_hydroxide}
-    data_recipe[slaked_lime_mods].categories = {angels_liquifying}
     data_recipe[slaked_lime_mods].subgroup = is_shchierbin_recipe
     data_recipe[slaked_lime_mods].icons = THREE_I(lime_angels, water_purified_angels, calcium_hydroxide)
     data_recipe[slaked_lime_mods].order = a
@@ -24,7 +23,6 @@ if mods[shchierbin_mods] then
     data_recipe[slaked_lime_mods].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
     data_recipe[calcium_mods].localised_name = {"item-name." .. calcium}
-    data_recipe[calcium_mods].categories = {angels_liquifying}
     data_recipe[calcium_mods].subgroup = is_shchierbin_recipe
     data_recipe[calcium_mods].icons = THREE_R_I(calcium_hydroxide, calcium, hydrogen_peroxide)
     data_recipe[calcium_mods].order = b
@@ -389,4 +387,35 @@ if mods[shchierbin_mods] then
         table.insert(data_technology[tech_phosphorus_processing_2].unit.ingredients, {agricultural_science_pack, 1})
         table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, tech_phosphorus_processing_2)
     end
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = vanadium_plate, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(efficiency_module_7)
+    add_ingredients(pollution_clean_module_7)
+    add_ingredients(pollution_create_module_7)
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, vanadium_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(efficiency_module_7)
+    add_prerequisites(pollution_clean_module_7)
+    add_prerequisites(pollution_create_module_7)
+    add_prerequisites(quality_module_7)
 end

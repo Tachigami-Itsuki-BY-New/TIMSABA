@@ -566,6 +566,7 @@ if mods[tellus_mods] then
         {type = item, name = nutrients, amount = 1},
         {type = item, name = magnesium_dust, amount = 4}
     }
+    data_recipe[pesticide].results[1].amount = 2
 
     data_item[polimer_skin].subgroup = is_tellus_recipe
     data_item[polimer_skin].order = f
@@ -1351,4 +1352,33 @@ if mods[tellus_mods] then
     data_technology["planetaris-tellus-rocket-silo"].effects = {{type = unlock_recipe, recipe = rocket_part_tellus}}
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = mycelia_plastic, change = 0.1})
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = artificial_heart, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(efficiency_module_7)
+    add_ingredients(pollution_clean_module_7)
+    add_ingredients(pollution_create_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, pathological_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(efficiency_module_7)
+    add_prerequisites(pollution_clean_module_7)
+    add_prerequisites(pollution_create_module_7)
 end

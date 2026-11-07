@@ -118,10 +118,15 @@ TIMSABA.functions.create_recipes
         name = molybdenite_purified,
         categories = {angels_ore_refining_T4},
         subgroup = is_molybdenite,
-        icons = TWO_I(molybdenite_crystals, molybdenite_purified),
+        icons = THREE_D_I(molybdenite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, molybdenite_purified),
         order = e,
         energy_required = 2, -- Molybdenite crystals -refinery-> Molybdenite purified
-        ingredients = {{type = item, name = molybdenite_crystals, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = molybdenite_crystals, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = molybdenite_purified, amount = 4}},
         main_product = molybdenite_purified
     },

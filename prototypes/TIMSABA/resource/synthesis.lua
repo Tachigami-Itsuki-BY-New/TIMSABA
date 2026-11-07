@@ -1,7 +1,7 @@
 -- SYNTHESIS
 manganese_ore_recipe = "ore-crushed-mix5-processing"
 magnesium_ore_recipe = "magnesium-ore-crushed-mix-processing"
-calcium_recipe = "calcium-ore-crushed-mix-processing"
+sodium_recipe = "sodium-ore-crushed-mix-processing"
 chromium_ore_recipe = "ore-crystal-mix7-processing"
 TIMSABA.functions.create_recipes
 ({
@@ -12,7 +12,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_ferrium, crushed_plumbium, manganese_ore_angels),
-        order = a_e,
+        order = e,
         allow_productivity = true,
         energy_required = 2,
         ingredients =
@@ -30,7 +30,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_sorting_2},
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_cuprium, crushed_stannium, magnesium_ore),
-        order = a_f,
+        order = f,
         allow_productivity = true,
         energy_required = 2,
         ingredients =
@@ -43,12 +43,12 @@ TIMSABA.functions.create_recipes
     },
     -- T2
     {
-        localised_name = {"item-name." .. calcium},
-        name = calcium_recipe,
+        localised_name = {"item-name." .. sodium_angels},
+        name = sodium_recipe,
         categories = {angels_ore_sorting_3},
         subgroup = is_ore_sorting_advanced_2,
-        icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, calcium),
-        order = a_f,
+        icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, sodium_angels),
+        order = f,
         allow_productivity = true,
         energy_required = 2,
         ingredients =
@@ -57,8 +57,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = chunk_rubyte, amount = 2},
             {type = item, name = chunk_bobmonium, amount = 2}
         },
-        results = {{type = item, name = calcium, amount = 4}},
-        main_product = calcium
+        results = {{type = item, name = sodium_angels, amount = 4}},
+        main_product = sodium_angels
     },
     -- T4
     {
@@ -67,7 +67,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_ore_sorting_5},
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, purified_saphirite, purified_senaite, chromium_ore_angels),
-        order = a_g,
+        order = f,
         allow_productivity = true,
         energy_required = 2,
         ingredients =

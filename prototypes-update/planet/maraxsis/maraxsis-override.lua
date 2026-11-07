@@ -557,9 +557,6 @@ if mods[maraxsis_mods] then
         {type = item, name = niobium_titanium_cable, amount = 16},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4}
     }
-    if mods[lignumis_mods] then
-        table.insert(data_recipe[sonar].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-    end
     if data_item[radar_5] then
         table.insert(data_recipe[sonar].ingredients, {type = item, name = radar_5, amount = 1})
     else
@@ -719,27 +716,6 @@ if mods[maraxsis_mods] then
         abyssal_diving_gear
     })
 
-    if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        if mods[quality_mods] then
-            table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
-        end
-
-        bobmods.lib.recipe.update_recycling_recipe
-        ({
-            speed_module_7,
-            efficiency_module_7,
-            productivity_module_7,
-            pollution_clean_module_7,
-            pollution_create_module_7,
-            quality_module_7
-        })
-    end
-
     -- TECHNOLOGY
     planet_discovery_maraxsis = "planet-discovery-maraxsis"
     data_technology[planet_discovery_maraxsis].prerequisites = {tech_full_asteroid_processing}
@@ -798,57 +774,46 @@ if mods[maraxsis_mods] then
 
     local tech_glass = "maraxsis-glass"
     data_technology[tech_glass .. _productivity].effects = {}
-    local function add_recipe_for_glass_productivity(recipe)
-        table.insert(data_technology[tech_glass .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
+    local function add_recipe_for_glass_productivity(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_technology[tech_glass .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe_name, change = 0.1})
     end
     add_recipe_for_glass_productivity(glass_bob)
     add_recipe_for_glass_productivity(glass_angels)
     add_recipe_for_glass_productivity(casting_glass)
-    if mods[moshine_mods] then
-        add_recipe_for_glass_productivity(glass_mods)
-    end
-
-    if mods[bobmodules] then
-        table.insert(data_technology[speed_module_7].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[efficiency_module_7].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[productivity_module_7].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[pollution_clean_module_7].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[pollution_create_module_7].prerequisites, hydraulic_science_pack)
-        if mods[quality_mods] then
-            table.insert(data_technology[quality_module_7].prerequisites, hydraulic_science_pack)
-        end
-    end
-
-    table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)
-    if mods[bobwarfare] then
-        table.insert(data_technology[artillery_turret_4].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[artillery_wagon_4].prerequisites, hydraulic_science_pack)
-    end
-
-    table.insert(data_technology[tech_powellite_processing_4].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_samarskite_processing_3].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, hydraulic_science_pack)
-    table.insert(data_technology[tech_rheniite_processing_3].prerequisites, hydraulic_science_pack)
-    if mods[castra_mods] then
-        table.insert(data_technology[tech_millerite_processing_3].prerequisites, hydraulic_science_pack)
-    end
-    if mods[corrundum_mods] then
-        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[tech_sperrylite_processing_3].prerequisites, hydraulic_science_pack)
-    end
-    if mods[moshine_mods] then
-        table.insert(data_technology[tech_phosphorus_processing_2].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[tech_monazite_processing_3].prerequisites, hydraulic_science_pack)
-        table.insert(data_technology[tech_aeschynite_processing_3].prerequisites, hydraulic_science_pack)
-    end
-    if mods[shchierbin_mods] then
-        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, hydraulic_science_pack)
-    end
-    if mods[lignumis_mods] then
-        table.insert(data_technology[tech_wodginite_processing_3].prerequisites, hydraulic_science_pack)
-    end
+    add_recipe_for_glass_productivity(glass_mods)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = smelt_microplastics, change = 0.1})
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = wyrm_specimen, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(speed_module_8)
+    add_ingredients(efficiency_module_8)
+    add_ingredients(productivity_module_8)
+    add_ingredients(pollution_clean_module_8)
+    add_ingredients(pollution_create_module_8)
+    add_ingredients(quality_module_8)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, hydraulic_science_pack)
+    end
+    add_prerequisites(tech_wolframite_processing_4)
+    add_prerequisites(tech_samarskite_processing_4)
+
+    add_prerequisites(tech_brannerite_processing_4)
+    add_prerequisites(tech_rheniite_processing_4)
+
+    add_prerequisites(speed_module_8)
+    add_prerequisites(efficiency_module_8)
+    add_prerequisites(productivity_module_8)
+    add_prerequisites(pollution_clean_module_8)
+    add_prerequisites(pollution_create_module_8)
+    add_prerequisites(quality_module_8)
+
+    add_prerequisites(quantum_processor)
 end

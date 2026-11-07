@@ -164,13 +164,9 @@ TIMSABA.functions.create_recipes
         subgroup = is_stone_casting,
         icons = THREE_R_I(concrete_liquid, refined_concrete_liquid, slag_angels),
         order = f,
-        energy_required = 32, -- Liquid Concrete --> Refined liquid concrete + Slag
+        energy_required = 32, -- Liquid Concrete --> Refined liquid concrete
         ingredients = {{type = fluid, name = concrete_liquid, amount = 960}},
-        results =
-        {
-            {type = fluid, name = refined_concrete_liquid, amount = 480},
-            {type = item, name = slag_angels, amount = 32}
-        },
+        results = {{type = fluid, name = refined_concrete_liquid, amount = 480}},
         main_product = refined_concrete_liquid
     }
 })

@@ -57,7 +57,7 @@ if mods[secretas_frozeta_mods] then
             localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. gallite_ore}, {"item-name." .. sylvanite_ore}},
             name = frozeta_slag_processing,
             categories = {crystallizing_4},
-            subgroup = slag_processing_1,
+            subgroup = is_slag_processing_2,
             icons = THREE_R_I(sludge_mineral, gallite_ore, sylvanite_ore),
             order = d .. "-" .. data_planet[planet_frozeta].order,
             allow_productivity = true,

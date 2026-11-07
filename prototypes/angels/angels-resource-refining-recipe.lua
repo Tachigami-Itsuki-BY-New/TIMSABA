@@ -24,7 +24,6 @@ crushed_stone_sorting_2 = "crushed-stone-sorting-2"
 crushed_stone_sorting_3 = "crushed-stone-sorting-3"
 crushed_stone_sorting_4 = "crushed-stone-sorting-4"
 sand_from_crushed_stone = "sand-from-crushed-stone"
-calcium_from_crushed_stone = "calcium-from-crushed-stone"
 crystal_dust_sorting = "crystal-dust-sorting"
 TIMSABA.functions.create_recipes
 ({
@@ -135,23 +134,11 @@ TIMSABA.functions.create_recipes
         results = {{type = item, name = sand_angels, amount = 2}},
         main_product = sand_angels
     },
-    {
-        localised_name = {"item-name." .. calcium},
-        name = calcium_from_crushed_stone,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_processing_crafting,
-        icons = TWO_I(stone_crushed_angels, calcium),
-        order = g,
-        energy_required = 1,
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
-        results = {{type = item, name = calcium, amount = 1}},
-        main_product = calcium
-    },
     -- CRYSTAL SORTING
     {
         name = crystal_dust_sorting,
         categories = {angels_ore_sorting_5},
-        subgroup = "angels-geode-processing-2",
+        subgroup = is_geode_processing_2,
         icons = RECYCLING_I(recycling_png, crystal_dust),
         order = g,
         allow_productivity = true,
@@ -176,3 +163,72 @@ end
 if not mods[lignumis_mods] then
     data_recipe[sand_from_crushed_stone].enabled = true
 end
+
+liquid_chlorine_bleach_2 = liquid_chlorine_bleach .. "-2"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = powdered_chlorine_bleach,
+        categories = {angels_ore_refining_T3_5},
+        subgroup = is_ore_sorting_item,
+        icons = THREE_D_I(calcium_hydroxide, calcium_chloride_solution, calcium_hypochlorite_solution, powdered_chlorine_bleach),
+        order = a,
+        energy_required = 2, -- Ca(OH)₂(s) + CaCl₂(aq) + Ca(ClO)₂(aq) = Ca(ClO)₂*CaCl₂*Ca(OH)₂*2H₂O(s)
+        ingredients =
+        {
+            {type = item, name = calcium_hydroxide, amount = 4},
+            {type = fluid, name = calcium_chloride_solution, amount = 60},
+            {type = fluid, name = calcium_hypochlorite_solution, amount = 60}
+        },
+        results = {{type = item, name = powdered_chlorine_bleach, amount = 4}},
+        main_product = powdered_chlorine_bleach
+    },
+    {
+        name = powdered_oxygen_bleach,
+        categories = {angels_ore_refining_T3_5},
+        subgroup = is_ore_sorting_item,
+        icons = THREE_I(sodium_carbonate_angels, hydrogen_peroxide, powdered_oxygen_bleach),
+        order = b,
+        energy_required = 2, -- Na₂CO₃(s) + H₂O₂(l) --> Na₂CO₃*1.5H₂O₂(s)
+        ingredients =
+        {
+            {type = item, name = sodium_carbonate_angels, amount = 4},
+            {type = fluid, name = hydrogen_peroxide, amount = 60}
+        },
+        results = {{type = item, name = powdered_oxygen_bleach, amount = 4}},
+        main_product = powdered_oxygen_bleach
+    },
+    {
+        name = liquid_chlorine_bleach,
+        categories = {angels_ore_refining_T3_5},
+        subgroup = is_ore_sorting_fluid,
+        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, lauryl_dimethylamine_oxide_solution, liquid_chlorine_bleach),
+        order = e,
+        -- NaOH(s) + NaOCl(s) + С₁₄H₃₁NO(aq) --> NaOCl*NaOH*SAC(aq)
+        ingredients =
+        {
+            {type = item, name = sodium_hydroxide_angels, amount = 4},
+            {type = item, name = sodium_hypochlorite_angels, amount = 4},
+            {type = fluid, name = lauryl_dimethylamine_oxide_solution, amount = 60}
+        },
+        results = {{type = fluid, name = liquid_chlorine_bleach, amount = 60}},
+        main_product = liquid_chlorine_bleach
+    },
+    {
+        localised_name = {"fluid-name." .. liquid_chlorine_bleach},
+        name = liquid_chlorine_bleach_2,
+        categories = {angels_ore_refining_T3_5},
+        subgroup = is_ore_sorting_fluid,
+        icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, sodium_lauryl_sulfate_solution, liquid_chlorine_bleach),
+        order = e_a,
+        -- NaOH(s) + NaOCl(s) + NaC₁₂H₂₅SO₄(aq) --> NaOCl*NaOH*SAC(aq)
+        ingredients =
+        {
+            {type = item, name = sodium_hydroxide_angels, amount = 4},
+            {type = item, name = sodium_hypochlorite_angels, amount = 4},
+            {type = fluid, name = sodium_lauryl_sulfate_solution, amount = 60}
+        },
+        results = {{type = fluid, name = liquid_chlorine_bleach, amount = 240}},
+        main_product = liquid_chlorine_bleach
+    }
+})

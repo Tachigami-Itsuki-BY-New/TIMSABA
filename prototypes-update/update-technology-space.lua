@@ -1,15 +1,11 @@
 -- SPACE
-table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_processing)
-table.insert(data_technology[rocket_silo].prerequisites, tech_rhenium_processing)
-table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_rhenium_processing)
-table.insert(data_technology[rocket_silo].prerequisites, tech_robots_4)
 if mods[rocket_silo_construction_mods] then
     data_technology[rocket_silo].effects =
     {
         {type = unlock_recipe, recipe = aluminium_lithium_molten},
         {type = unlock_recipe, recipe = aluminium_lithium_plate_2},
         {type = unlock_recipe, recipe = excavation_site},
-        {type = unlock_recipe, recipe = rocket_part_nauvis},
+        {type = unlock_recipe, recipe = rocket_part},
         {type = unlock_recipe, recipe = space_platform_foundation},
         {type = unlock_recipe, recipe = space_platform_starter_pack},
         {type = unlock_recipe, recipe = cargo_landing_pad}
@@ -20,7 +16,7 @@ else
         {type = unlock_recipe, recipe = aluminium_lithium_molten},
         {type = unlock_recipe, recipe = aluminium_lithium_plate_2},
         {type = unlock_recipe, recipe = rocket_silo},
-        {type = unlock_recipe, recipe = rocket_part_nauvis},
+        {type = unlock_recipe, recipe = rocket_part},
         {type = unlock_recipe, recipe = space_platform_foundation},
         {type = unlock_recipe, recipe = space_platform_starter_pack},
         {type = unlock_recipe, recipe = cargo_landing_pad}

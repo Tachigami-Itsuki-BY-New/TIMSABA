@@ -256,6 +256,12 @@ for i, prerequisite in ipairs(data_technology[tech_sulfur_processing_1].prerequi
     end
 end
 
+for i, prerequisite in ipairs(data_technology[tech_chromium_smelting_2].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[tech_chromium_smelting_2].prerequisites, i) break
+    end
+end
+
 if not mods[corrundum_mods] then
     data_recipe[platinum_plate] = nil
 end

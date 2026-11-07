@@ -318,7 +318,6 @@ if mods[hyarion_mods] then
     }
     data_recipe[beryllium_plate_hyarion].main_product = beryllium_plate_hyarion
 
-    local beryllium_nitride = "planetaris-beryllium-nitride"
     data_item[beryllium_nitride].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]2[/font]"} or nil
     data_item[beryllium_nitride].subgroup = is_hyarion_recipe_other
     data_item[beryllium_nitride].order = g
@@ -905,7 +904,8 @@ if mods[hyarion_mods] then
     }
 
     local planetaris_bismuth_processing = "planetaris-bismuth-processing"
-    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
+    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_molybdenite_processing_4)
+    --table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
     data_technology[planetaris_bismuth_processing].effects =
     {
         {type = unlock_recipe, recipe = bismuth_asteroid_crushing},
@@ -926,4 +926,29 @@ if mods[hyarion_mods] then
     data_assembling[assembling_machine_4].next_upgrade = assembling_machine_5
     data_assembling[assembling_machine_5].next_upgrade = assembling_machine_6
     data_assembling[assembling_machine_6].next_upgrade = hyper_assembling_machine
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = simulating_unit, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, refraction_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(quality_module_7)
 end

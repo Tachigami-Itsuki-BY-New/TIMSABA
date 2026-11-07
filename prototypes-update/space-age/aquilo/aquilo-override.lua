@@ -65,6 +65,7 @@ data_recipe[ice_platform].energy_required = 32
 data_recipe[ice_platform].ingredients[1].amount = 480
 data_recipe[ice_platform].ingredients[2].amount = 64
 
+data_recipe[lithium].localised_name = {"item-name." .. lithium_chloride_angels}
 data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
 data_recipe[lithium].icons = THREE_D_I(water_thermal_angels, ammonia_angels, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_peroxide)
@@ -85,6 +86,7 @@ data_recipe[lithium].results =
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
+data_recipe[lithium_plate].localised_name = {"item-name." .. lithium_bob}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
 data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, hydrogen_fluoride_angels, ammonium_chloride, oxygen_angels)
 data_recipe[lithium_plate].order = e
@@ -163,9 +165,7 @@ data_recipe[cryogenic_plant].ingredients =
     {type = item, name = superconductor, amount = 16},
     {type = item, name = semiconductor, amount = 16}
 }
-if mods[lignumis_mods] then
-    table.insert(data_recipe[cryogenic_plant].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-end
+
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
 data_assembling[cryogenic_plant].order = a
 data_assembling[cryogenic_plant].crafting_speed = 4
@@ -192,9 +192,7 @@ data_recipe[fusion_reactor].ingredients =
     {type = item, name = semiconductor, amount = 256},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 256}
 }
-if mods[lignumis_mods] then
-    table.insert(data_recipe[fusion_reactor].ingredients, {type = item, name = tantalum_niobium_plate, amount = 256})
-end
+
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
 data_reactor_fusion[fusion_reactor].neighbour_bonus = 1.5
@@ -220,9 +218,7 @@ data_recipe[fusion_generator].ingredients =
     {type = item, name = semiconductor, amount = 128},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 128}
 }
-if mods[lignumis_mods] then
-    table.insert(data_recipe[fusion_generator].ingredients, {type = item, name = tantalum_niobium_plate, amount = 128})
-end
+
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
 data_generator_fusion[fusion_generator].max_fluid_usage = 7.5/60
@@ -270,9 +266,7 @@ data_recipe[railgun].ingredients =
     {type = item, name = quantum_processor, amount = 4},
     {type = fluid, name = fluoroketone_cold, amount = 15}
 }
-if mods[lignumis_mods] then
-    table.insert(data_recipe[railgun].ingredients, {type = item, name = tantalum_niobium_plate, amount = 4})
-end
+
 
 data_item[railgun_turret].subgroup = is_aquilo_war
 data_item[railgun_turret].order = b
@@ -291,9 +285,7 @@ data_recipe[railgun_turret].ingredients =
     {type = item, name = carbon_fiber, amount = 32},
     {type = fluid, name = fluoroketone_cold, amount = 120}
 }
-if mods[lignumis_mods] then
-    table.insert(data_recipe[railgun_turret].ingredients, {type = item, name = tantalum_niobium_plate, amount = 16})
-end
+
 data_ammo_turret[railgun_turret].subgroup = is_aquilo_war
 data_ammo_turret[railgun_turret].order = b
 data_ammo_turret[railgun_turret].attack_parameters.min_range = 8

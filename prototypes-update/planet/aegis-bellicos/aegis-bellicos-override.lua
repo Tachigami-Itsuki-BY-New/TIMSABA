@@ -298,27 +298,6 @@ if mods[aegis_bellicos_mods] then
         tritium_RTG
     })
 
-    if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        table.insert(data_recipe[efficiency_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        table.insert(data_recipe[productivity_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        table.insert(data_recipe[pollution_clean_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        table.insert(data_recipe[pollution_create_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        if mods[quality_mods] then
-            table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = beryllium_bronze_plate, amount = 16})
-        end
-
-        bobmods.lib.recipe.update_recycling_recipe
-        ({
-            speed_module_8,
-            efficiency_module_8,
-            productivity_module_8,
-            pollution_clean_module_8,
-            pollution_create_module_8,
-            quality_module_8
-        })
-    end
-
     -- TECHNOLOGY
     data_technology[discovery_aegis_outer].unit.ingredients =
     {
@@ -494,47 +473,22 @@ if mods[aegis_bellicos_mods] then
 
     data_technology[railgun .. "-damage-1"].prerequisites = {railgun}
 
-    local function added_prerequisites(tech_name)
+    -- ADD
+    local function add_prerequisites(tech_name)
         if not data_technology[tech_name] then return end
         table.insert(data_technology[tech_name].prerequisites, pulsar_science_pack)
     end
-    added_prerequisites(tech_wolframite_processing_4)
-    added_prerequisites(tech_samarskite_processing_4)
+    add_prerequisites(tech_antimonite_processing_3)
+    add_prerequisites(tech_germanite_processing_3)
 
-    added_prerequisites(tech_brannerite_processing_4)
-    added_prerequisites(tech_rheniite_processing_4)
+    add_prerequisites(tech_sphalerite_processing_3)
+    add_prerequisites(tech_tetrahedrite_processing_3)
 
-    added_prerequisites(tech_antimonite_processing_3)
-    added_prerequisites(tech_germanite_processing_3)
+    add_prerequisites(tech_chalcopyrite_processing_3)
+    add_prerequisites(tech_sperrylite_processing_3)
 
-    added_prerequisites(tech_monazite_processing_4)
-    added_prerequisites(tech_aeschynite_processing_4)
+    add_prerequisites(tech_gallite_processing_3)
+    add_prerequisites(tech_sylvanite_processing_3)
 
-    added_prerequisites(tech_sphalerite_processing_3)
-    added_prerequisites(tech_tetrahedrite_processing_3)
-
-    added_prerequisites(tech_chalcopyrite_processing_3)
-    added_prerequisites(tech_sperrylite_processing_3)
-
-    added_prerequisites(tech_millerite_processing_4)
-
-    added_prerequisites(tech_vanadinite_processing_4)
-
-    added_prerequisites(tech_gallite_processing_3)
-    added_prerequisites(tech_sylvanite_processing_3)
-
-    added_prerequisites(tech_wodginite_processing_4)
-
-    added_prerequisites(tech_aquilo_cryogenics)
-
-    added_prerequisites(speed_module_8)
-    added_prerequisites(efficiency_module_8)
-    added_prerequisites(productivity_module_8)
-    added_prerequisites(pollution_clean_module_8)
-    added_prerequisites(pollution_create_module_8)
-    added_prerequisites(quality_module_8)
-
-    if mods[vesta_mods] then
-        table.insert(data_technology[tech_iridium_smelting_2].prerequisites, pulsar_science_pack)
-    end
+    add_prerequisites(tech_aquilo_cryogenics)
 end

@@ -3,7 +3,7 @@ if mods[castra_mods] then
 
     local graphics_millerite_tech = "__TIMSABA__/graphics/icons/castra/technology/millerite-processing.png"
     tech_millerite_processing_1 = "millerite-processing-1"
-    local tech_millerite_processing_2 = "millerite-processing-2"
+    tech_millerite_processing_2 = "millerite-processing-2"
     tech_millerite_processing_3 = "millerite-processing-3"
     tech_millerite_processing_4 = "millerite-processing-4"
     tech_nickel_processing = "nickel-processing"
@@ -97,7 +97,7 @@ if mods[castra_mods] then
             name = tech_millerite_processing_4,
             icon = graphics_millerite_tech,
             icon_size = 256,
-            prerequisites = {tech_millerite_processing_3, promethium_science_pack},
+            prerequisites = {tech_millerite_processing_3},
             effects =
             {
                 {type = unlock_recipe, recipe = millerite_purified},

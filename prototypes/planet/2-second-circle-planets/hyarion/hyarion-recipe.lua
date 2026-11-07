@@ -120,33 +120,21 @@ if mods[hyarion_mods] then
             results = {{type = item, name = polished_topaz_bob, amount = 1}},
             main_product = polished_topaz_bob
         },
-        -- SELENIUM
-        {
-            name = selenium_powder,
-            categories = {powderizing_4},
-            subgroup = is_selenium,
-            icons = TWO_I(selenium, selenium_powder),
-            order = b,
-            energy_required = 0.5,
-            ingredients = {{type = item, name = selenium, amount = 1}},
-            results = {{type = item, name = selenium_powder, amount = 1}},
-            main_product = selenium_powder
-        },
         -- SPACE
         {
             name = bismuth_oxyselenide,
             categories = {chemistry},
             subgroup = is_space_environment_8,
-            icons = THREE_D_I(raw_bismuth, selenium_powder, oxygen_angels, bismuth_oxyselenide),
+            icons = THREE_D_I(raw_bismuth, selenium, oxygen_angels, bismuth_oxyselenide),
             order = h,
-            -- 2Bi + Se + O₂ --> Bi₂O₂Se
+            -- 2Bi(s) + Se(s) + O₂(g) --> Bi₂O₂Se(s)
             ingredients =
             {
-                {type = item, name = polished_bismuth, amount = 4},
-                {type = item, name = selenium_powder, amount = 2},
-                {type = fluid, name = oxygen_angels, amount = 30}
+                {type = item, name = polished_bismuth, amount = 8},
+                {type = item, name = selenium, amount = 4},
+                {type = fluid, name = oxygen_angels, amount = 60}
             },
-            results = {{type = item, name = bismuth_oxyselenide, amount = 2}},
+            results = {{type = item, name = bismuth_oxyselenide, amount = 4}},
             main_product = bismuth_oxyselenide
         }
     })
