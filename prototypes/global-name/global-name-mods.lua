@@ -113,8 +113,10 @@ galaxy_png = "__matter_printer__/graphics/icons/galaxy.png"
 cloning_vat_mods = "Cloning-vat-building"
 cloning_vat = "cloning-vat"
 
+asteroid_collector_mods = "snouz_better_asteroid_collector"
 asteroid_collector_2 = "snouz_better_asteroid_collector"
 
+spaceship_wall_mods = "snouz_space_platform_hull"
 spaceship_wall = "snouz_wall_hull"
 
 -- ARIG
