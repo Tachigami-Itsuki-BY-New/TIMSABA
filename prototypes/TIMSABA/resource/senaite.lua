@@ -1,4 +1,6 @@
 local graphics_senaite = "__TIMSABA__/graphics/icons/angels/resource/senaite-ore/"
+local graphics_crushed = "__angelsrefininggraphics__/graphics/icons/crushed/"
+local tint = {r = 206 / 255, g = 095 / 255, b = 000 / 255}
 
 -- Senaite ore / Pb + Sn + Ni + Zn + Ti + Cr
 ore_senaite = "senaite-ore"
@@ -25,6 +27,17 @@ TIMSABA.functions.create_items
         subgroup = is_ore_processing_a,
         icon = graphics_senaite .. crushed_senaite .. ".png",
         icon_size = 32,
+        pictures =
+        {
+            {size = 64, filename = graphics_crushed .. "crushed-1.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-2.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-3.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-4.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-5.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-6.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-7.png", scale = 0.5, tint = tint},
+            {size = 64, filename = graphics_crushed .. "crushed-8.png", scale = 0.5, tint = tint}
+        },
         order = g
     },
     {
