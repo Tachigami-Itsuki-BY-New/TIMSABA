@@ -8,7 +8,14 @@ if settings.startup[setting_no_spoilage].value == false then
     })
 
     for _, organic_name in pairs(TIMSABA.void.freezing) do
-        if data_item[organic_name] or data_capsule[organic_name] or data_tool[organic_name] then
+        local spoil_ticks =
+        (
+            (data_item[organic_name] and data_item[organic_name].spoil_ticks)
+            or (data_capsule[organic_name] and data_capsule[organic_name].spoil_ticks)
+            or (data_tool[organic_name] and data_tool[organic_name].spoil_ticks)
+        )
+
+        if spoil_ticks then
             -- ITEM
             data:extend
             ({
@@ -21,7 +28,7 @@ if settings.startup[setting_no_spoilage].value == false then
                     order = organic_name .. "-freezed",
                     stack_size = 200,
                     hide_from_player_crafting = true,
-                    spoil_ticks = ((data_item[organic_name] and data_item[organic_name].spoil_ticks) or (data_capsule[organic_name] and data_capsule[organic_name].spoil_ticks) or (data_tool[organic_name] and data_tool[organic_name].spoil_ticks)) * settings.startup[setting_defrost_multiplier].value,
+                    spoil_ticks = spoil_ticks * settings.startup[setting_defrost_multiplier].value,
                     spoil_result = organic_name
                 }
             })

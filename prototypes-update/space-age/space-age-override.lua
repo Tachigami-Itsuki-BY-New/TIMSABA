@@ -297,7 +297,7 @@ data_asteroid_collector[asteroid_collector].passive_energy_usage = 250 .. J
 data_asteroid_collector[asteroid_collector].arm_energy_usage = 500 .. J
 data_asteroid_collector[asteroid_collector].arm_slow_energy_usage = 750 .. J
 
-if mods["snouz_better_asteroid_collector"] then
+if mods[asteroid_collector_mods] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
@@ -388,7 +388,7 @@ if mods[corrundum_mods] then
     data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
 end
 
-if mods[panglia_mods] then
+if mods[spaceship_wall_mods] then
     data_item[spaceship_wall].subgroup = is_space_platform_mods
     data_item[spaceship_wall].order = a
     data_item[spaceship_wall].stack_size = 200
