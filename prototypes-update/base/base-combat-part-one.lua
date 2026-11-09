@@ -63,6 +63,7 @@ for _, AMMO in pairs(firearm_magazines) do
         data_ammo[AMMO.name].stack_size = 200
         data_recipe[AMMO.name].subgroup = is_gun
         data_recipe[AMMO.name].order = AMMO.order
+        data_recipe[AMMO.name].result[1].amount = 2
     end
 end
 data_recipe[firearm_magazine].icons = R_P_I(firearm_magazine, nil, nil, number_1)
@@ -76,7 +77,7 @@ data_recipe[piercing_rounds_magazine].icons = R_P_I(piercing_rounds_magazine, ni
 data_recipe[piercing_rounds_magazine].energy_required = 1
 data_recipe[piercing_rounds_magazine].ingredients =
 {
-    {type = item, name = firearm_magazine, amount = 1},
+    {type = item, name = firearm_magazine, amount = 2},
     {type = item, name = steel_plate, amount = 2},
     {type = item, name = lead_plate_bob, amount = 2}
 }
@@ -84,11 +85,10 @@ data_recipe[piercing_rounds_magazine].ingredients =
 data_recipe[uranium_rounds_magazine].energy_required = 1
 data_recipe[uranium_rounds_magazine].ingredients =
 {
-    {type = item, name = piercing_rounds_magazine, amount = 1},
+    {type = item, name = piercing_rounds_magazine, amount = 2},
     {type = item, name = uranium_238_plate, amount = 2},
     {type = item, name = gunmetal_plate_bob, amount = 2}
 }
-data_recipe[uranium_rounds_magazine].results[1].amount = 2
 
 local shotgun = "shotgun"
 data_gun[shotgun].subgroup = is_shotgun
