@@ -368,7 +368,8 @@ local air_separation = "angels-air-separation"
 data_recipe[air_separation].subgroup = is_nitrogen_fluids
 data_recipe[air_separation].icons = THREE_R_I(compressed_air, nitrogen_angels, oxygen_angels)
 data_recipe[air_separation].order = a
-data_recipe[air_separation].ingredients[1].amount = 120
+data_recipe[air_separation].energy_required = 4
+data_recipe[air_separation].ingredients[1].amount = 60
 data_recipe[air_separation].results[1].amount = 60
 data_recipe[air_separation].results[2].amount = 30
 
