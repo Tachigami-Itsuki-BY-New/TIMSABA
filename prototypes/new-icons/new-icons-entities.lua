@@ -10,7 +10,8 @@ if mods[muluna_mods] then
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(3, aluminium_pipe, pipe)
 
     data_pipe[aluminium_pipe].pictures = TIMSABA_pipepictures("aluminium")
-    data_corpse[aluminium_pipe .. _remnants].animation = make_rotated_animation_variations_from_sheet(2,
+    local corpse_name_aluminium_pipe = data_pipe[aluminium_pipe].corpse
+    data_corpse[corpse_name_aluminium_pipe].animation = make_rotated_animation_variations_from_sheet(2,
     {
         filename = "__TIMSABA__/graphics/entity/pipes/aluminium/" .. pipe .. "/remnants/pipe-remnants.png",
         width = 122,
@@ -28,7 +29,8 @@ if mods[muluna_mods] then
     data_pipe_to_ground[aluminium_pipe_to_ground].pictures = TIMSABA_pipetogroundpictures("aluminium")
     data_pipe_to_ground[aluminium_pipe_to_ground].visualization = TIMSABA_pipetoground_visualization()
     data_pipe_to_ground[aluminium_pipe_to_ground].disabled_visualization = TIMSABA_pipetoground_disabled_visualizaton()
-    data_corpse[aluminium_pipe_to_ground .. _remnants].animation =
+    local corpse_name_aluminium_pipe_to_ground = data_pipe_to_ground[aluminium_pipe_to_ground].corpse
+    data_corpse[corpse_name_aluminium_pipe_to_ground].animation =
     {
         filename = "__TIMSABA__/graphics/entity/pipes/aluminium/" .. pipe_to_ground .. "/remnants/pipe-to-ground-remnants.png",
         width = 90,
