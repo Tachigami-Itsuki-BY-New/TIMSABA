@@ -63,7 +63,7 @@ for _, AMMO in pairs(firearm_magazines) do
         data_ammo[AMMO.name].stack_size = 200
         data_recipe[AMMO.name].subgroup = is_gun
         data_recipe[AMMO.name].order = AMMO.order
-        data_recipe[AMMO.name].result[1].amount = 2
+        data_recipe[AMMO.name].results[1].amount = 2
     end
 end
 data_recipe[firearm_magazine].icons = R_P_I(firearm_magazine, nil, nil, number_1)
