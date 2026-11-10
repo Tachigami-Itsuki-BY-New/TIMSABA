@@ -15,6 +15,7 @@ data_recipe[water_purified_angels].results[2].amount = 120
 data_fluid[steam].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
 data_fluid[steam].subgroup = is_water_treatment_fluid
 data_fluid[steam].order = c
+TIMSABA.void.void_gases(steam)
 
 local steam_water = "angels-steam-water"
 data_recipe[steam_water].subgroup = is_water_treatment_fluid
