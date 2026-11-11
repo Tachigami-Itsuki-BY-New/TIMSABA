@@ -169,11 +169,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = powdered_chlorine_bleach,
-        categories = {angels_ore_refining_T3_5},
+        categories = {chemistry},
         subgroup = is_ore_sorting_item,
         icons = THREE_D_I(calcium_hydroxide, calcium_chloride_solution, calcium_hypochlorite_solution, powdered_chlorine_bleach),
         order = a,
-        energy_required = 2, -- Ca(OH)₂(s) + CaCl₂(aq) + Ca(ClO)₂(aq) = Ca(ClO)₂*CaCl₂*Ca(OH)₂*2H₂O(s)
+        -- Ca(OH)₂(s) + CaCl₂(aq) + Ca(ClO)₂(aq) = Ca(ClO)₂*CaCl₂*Ca(OH)₂*2H₂O(s)
         ingredients =
         {
             {type = item, name = calcium_hydroxide, amount = 4},
@@ -185,22 +185,22 @@ TIMSABA.functions.create_recipes
     },
     {
         name = powdered_oxygen_bleach,
-        categories = {angels_ore_refining_T3_5},
+        categories = {chemistry},
         subgroup = is_ore_sorting_item,
         icons = THREE_I(sodium_carbonate_angels, hydrogen_peroxide, powdered_oxygen_bleach),
         order = b,
-        energy_required = 2, -- Na₂CO₃(s) + H₂O₂(l) --> Na₂CO₃*1.5H₂O₂(s)
+        -- 2Na₂CO₃(s) + 3H₂O₂(l) --> 2Na₂CO₃*1.5H₂O₂(s)
         ingredients =
         {
             {type = item, name = sodium_carbonate_angels, amount = 4},
-            {type = fluid, name = hydrogen_peroxide, amount = 60}
+            {type = fluid, name = hydrogen_peroxide, amount = 90}
         },
         results = {{type = item, name = powdered_oxygen_bleach, amount = 4}},
         main_product = powdered_oxygen_bleach
     },
     {
         name = liquid_chlorine_bleach,
-        categories = {angels_ore_refining_T3_5},
+        categories = {chemistry},
         subgroup = is_ore_sorting_fluid,
         icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, lauryl_dimethylamine_oxide_solution, liquid_chlorine_bleach),
         order = e,
@@ -217,7 +217,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"fluid-name." .. liquid_chlorine_bleach},
         name = liquid_chlorine_bleach_2,
-        categories = {angels_ore_refining_T3_5},
+        categories = {chemistry},
         subgroup = is_ore_sorting_fluid,
         icons = THREE_D_I(sodium_hydroxide_angels, sodium_hypochlorite_angels, sodium_lauryl_sulfate_solution, liquid_chlorine_bleach),
         order = e_a,

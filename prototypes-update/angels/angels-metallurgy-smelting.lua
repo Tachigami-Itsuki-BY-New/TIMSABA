@@ -191,7 +191,7 @@ data_recipe[copper_cathode].categories = {industrial_electrolysis}
 data_recipe[copper_cathode].subgroup = is_copper_chemistry
 data_recipe[copper_cathode].icons = FOUR_R_I(copper_sulfate_II_solution, sulfuric_acid_angels, copper_cathode, oxygen_angels)
 data_recipe[copper_cathode].order = d
-data_recipe[copper_cathode].energy_required = 8 -- 2CuSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Cu(s) + 2H₂SO₄(l) + O₂(g) + 87.5% 2H₂SO₄(l) + 12.5% 2H₂O₂(l) + 2SO₂(g)
+data_recipe[copper_cathode].energy_required = 8 -- 2CuSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Cu(s) + 2H₂SO₄(l) + O₂(g) + 7/8(2H₂SO₄(l)) + 1/8(2H₂O(l) + 2SO₃(g))
 data_recipe[copper_cathode].ingredients =
 {
     {type = fluid, name = copper_sulfate_II_solution, amount = 240},
@@ -204,8 +204,8 @@ data_recipe[copper_cathode].results =
     {type = fluid, name = sulfuric_acid_angels, amount_min = 120, amount_max = 240},
     {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
     {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.875},
-    {type = fluid, name = hydrogen_peroxide, amount = 240, independent_probability = 0.125},
-    {type = fluid, name = sulfur_dioxide_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = water_purified_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = sulfur_trioxide_gas, amount = 240, independent_probability = 0.125},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -327,12 +327,12 @@ data_recipe[lead_cathode].categories = {industrial_electrolysis}
 data_recipe[lead_cathode].subgroup = is_lead_chemistry
 data_recipe[lead_cathode].icons = FOUR_R_I(hexafluorosilicate_lead_II_solution, hexafluorosilicic_acid, lead_cathode, oxygen_angels)
 data_recipe[lead_cathode].order = d
-data_recipe[lead_cathode].energy_required = 8 -- 2PbSiF₆(aq) + 2H₂SiF₆(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Pb(s) + 2H₂SiF₆(aq) + O₂(g) + 87.5% 2H₂SiF₆(aq) + 12.5% 2SiF₄(g) + 4HF(aq)
+data_recipe[lead_cathode].energy_required = 8 -- 2PbSiF₆(aq) + 2H₂O(l) + 2H₂SiF₆(aq) + 1/8(2H₂O(l)) -electrode/electrolys-> 2Pb(s) + 2H₂SiF₆(aq) + O₂(g) + 7/8(2H₂SiF₆(aq)) + 1/8(2SiF₄(g) + 4HF(aq))
 data_recipe[lead_cathode].ingredients =
 {
     {type = fluid, name = hexafluorosilicate_lead_II_solution, amount = 240},
     {type = fluid, name = hexafluorosilicic_acid, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = fluid, name = water_purified_angels, amount = 300}, -- 240 + 60
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[lead_cathode].results =
@@ -488,9 +488,9 @@ data_item[manganese_cathode].subgroup = is_manganese_chemistry
 data_item[manganese_cathode].order = e
 data_recipe[manganese_cathode].categories = {industrial_electrolysis}
 data_recipe[manganese_cathode].subgroup = is_manganese_chemistry
-data_recipe[manganese_cathode].icons = FOUR_R_I(manganese_sulfate_II_solution, sulfuric_acid_angels, manganese_cathode, manganese_oxide_II)
+data_recipe[manganese_cathode].icons = FOUR_R_I(manganese_sulfate_II_solution, manganese_oxide_IV, manganese_cathode, sulfuric_acid_angels)
 data_recipe[manganese_cathode].order = e
-data_recipe[manganese_cathode].energy_required = 8 -- 2MnSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> Mn(s) + MnO₂(s) + 2H₂SO₄(l) + 87.5% 2H₂SO₄(l) + 12.5% 2H₂O₂(l) + 2SO₂(g)
+data_recipe[manganese_cathode].energy_required = 8 -- 2MnSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> Mn(s) + MnO₂(s) + 2H₂SO₄(l) + 7/8(2H₂SO₄(l)) + 1/8(2H₂O(l) + 2SO₃(g))
 data_recipe[manganese_cathode].ingredients =
 {
     {type = fluid, name = manganese_sulfate_II_solution, amount = 240},
@@ -500,11 +500,11 @@ data_recipe[manganese_cathode].ingredients =
 data_recipe[manganese_cathode].results =
 {
     {type = item, name = manganese_cathode, amount = 8},
+    {type = item, name = manganese_oxide_IV, amount = 8},
     {type = fluid, name = sulfuric_acid_angels, amount_min = 120, amount_max = 240},
-    {type = item, name = manganese_oxide_II, amount = 8},
     {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.875},
-    {type = fluid, name = hydrogen_peroxide, amount = 240, independent_probability = 0.125},
-    {type = fluid, name = sulfur_dioxide_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = water_purified_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = sulfur_trioxide_gas, amount = 240, independent_probability = 0.125},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -514,19 +514,19 @@ data_recipe[manganese_cathode_2].categories = {industrial_electrolysis}
 data_recipe[manganese_cathode_2].subgroup = is_manganese_chemistry
 data_recipe[manganese_cathode_2].icons = FOUR_R_I(manganese_sulfate_II_solution, sulfuric_acid_angels, manganese_cathode, oxygen_angels)
 data_recipe[manganese_cathode_2].order = e_a
-data_recipe[manganese_cathode_2].energy_required = 8 -- 2MnSO₄(aq) + 2(NH₄)₂SO₄(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Mn(s) + 2H₂SO₄(l) + O₂(g) + 87.5% 2(NH₄)₂SO₄(aq) + 12.5% 2H₂SO₄(l) + 4NH₃(aq)
+data_recipe[manganese_cathode_2].energy_required = 8 -- 2MnSO₄(aq) + 2(NH₄)₂SO₄(aq) + 1/8(2H₂O(l)) -electrode/electrolys-> 2Mn(s) + 2H₂SO₄(l) + O₂(g) + 7/8(2(NH₄)₂SO₄(aq)) + 1/8(2H₂SO₄(l) + 4NH₃(aq))
 data_recipe[manganese_cathode_2].ingredients =
 {
     {type = fluid, name = manganese_sulfate_II_solution, amount = 240},
     {type = fluid, name = ammonium_sulfate_solution, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = fluid, name = water_purified_angels, amount = 60},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[manganese_cathode_2].results =
 {
     {type = item, name = manganese_cathode, amount = 16},
-    {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
-    {type = fluid, name = oxygen_angels, amount = 60}, -- 120
+    {type = fluid, name = sulfuric_acid_angels, amount_min = 120, amount_max = 240},
+    {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
     {type = fluid, name = ammonium_sulfate_solution, amount = 240, independent_probability = 0.875},
     {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.125},
     {type = fluid, name = ammonia_solution, amount = 480, independent_probability = 0.125},
@@ -780,12 +780,12 @@ data_recipe[nickel_cathode].categories = {industrial_electrolysis}
 data_recipe[nickel_cathode].subgroup = is_nickel_chemistry
 data_recipe[nickel_cathode].icons = FOUR_R_I(nickel_sulfate_II_solution, sulfuric_acid_angels, nickel_cathode, oxygen_angels)
 data_recipe[nickel_cathode].order = g
-data_recipe[nickel_cathode].energy_required = 8 -- 2NiSO₄(aq) + 2H₃BO₃(aq) + 2/8H₂(g) -electrode/electrolys-> 2Ni(s) + 2H₂SO₄(l) + O₂(g) + 87.5 2H₃BO₃(aq) + 12.5% B₂H₆(g) + 4H₂O₂(l)
+data_recipe[nickel_cathode].energy_required = 8 -- 2NiSO₄(aq) + 2H₃BO₃(aq) + 1/8(2H₂(g)) -electrode/electrolys-> 2Ni(s) + 2H₂SO₄(l) + O₂(g) + 7/8(2H₃BO₃(aq)) + 1/8(B₂H₆(g) + 4H₂O₂(l))
 data_recipe[nickel_cathode].ingredients =
 {
     {type = fluid, name = nickel_sulfate_II_solution, amount = 240},
     {type = fluid, name = boric_acid_solution, amount = 240},
-    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = fluid, name = hydrogen_angels, amount = 60},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[nickel_cathode].results =
@@ -1016,7 +1016,7 @@ data_recipe[zinc_cathode].categories = {industrial_electrolysis}
 data_recipe[zinc_cathode].subgroup = is_zinc_chemistry
 data_recipe[zinc_cathode].icons = FOUR_R_I(zinc_sulfate_solution, sulfuric_acid_angels, zinc_cathode, oxygen_angels)
 data_recipe[zinc_cathode].order = g
-data_recipe[zinc_cathode].energy_required = 8 -- 2ZnSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Zn(s) + 2H₂SO₄(l) + O₂(g) + 87.5% 2H₂SO₄(l) + 12.5% 2H₂O₂(l) + 2SO₂(g)
+data_recipe[zinc_cathode].energy_required = 8 -- 2ZnSO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Zn(s) + 2H₂SO₄(l) + O₂(g) + 7/8(2H₂SO₄(l)) + 1/8(2H₂O(l) + 2SO₃(g))
 data_recipe[zinc_cathode].ingredients =
 {
     {type = fluid, name = zinc_sulfate_solution, amount = 240},
@@ -1029,8 +1029,8 @@ data_recipe[zinc_cathode].results =
     {type = fluid, name = sulfuric_acid_angels, amount_min = 120, amount_max = 240},
     {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
     {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.875},
-    {type = fluid, name = hydrogen_peroxide, amount = 240, independent_probability = 0.125},
-    {type = fluid, name = sulfur_dioxide_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = water_purified_angels, amount = 240, independent_probability = 0.125},
+    {type = fluid, name = sulfur_trioxide_gas, amount = 240, independent_probability = 0.125},
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1148,7 +1148,7 @@ data_recipe[silver_cathode].categories = {industrial_electrolysis}
 data_recipe[silver_cathode].subgroup = is_silver_chemistry
 data_recipe[silver_cathode].icons = FOUR_R_I(sodium_dicyanoargentate_I_solution, hydrogen_angels, silver_cathode, oxygen_angels)
 data_recipe[silver_cathode].order = d
-data_recipe[silver_cathode].energy_required = 8 -- 2NaAg(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Ag(s) + H₂(g) + O₂(g) + 2HCN(g) + 2NaCN(s) + 87.5% 2NaCN(aq) + 12.5% 2NaOH(s) + 2HCN(g)
+data_recipe[silver_cathode].energy_required = 8 -- 2NaAg(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Ag(s) + H₂(g) + O₂(g) + 2HCN(g) + 2NaCN(s) + 7/8(2NaCN(aq)) + 1/8(2NaOH(s) + 2HCN(g))
 data_recipe[silver_cathode].ingredients =
 {
     {type = fluid, name = sodium_dicyanoargentate_I_solution, amount = 240},
@@ -1178,19 +1178,19 @@ data_item[silver_oxide_I_bob].stack_size = 200
 data_recipe[silver_oxide_I_bob].localised_name = {"item-name.silver-oxide-I"}
 data_recipe[silver_oxide_I_bob].categories = {angels_chemical_smelting_3}
 data_recipe[silver_oxide_I_bob].subgroup = is_silver_chemistry
-data_recipe[silver_oxide_I_bob].icons = THREE_D_I(silver_nitrate_I, nil, sodium_hydroxide_angels, silver_oxide_I_bob, sodium_nitrate_angels, water_purified_angels)
+data_recipe[silver_oxide_I_bob].icons = THREE_D_I(silver_nitrate_I, sodium_hydroxide_angels, water_purified_angels, silver_oxide_I_bob, nil, sodium_nitrate_solution)
 data_recipe[silver_oxide_I_bob].order = e
-data_recipe[silver_oxide_I_bob].energy_required = 8 -- 2AgNO₃ + 2NaOH(aq) --> Ag₂O + 2NaNO₃(aq) + H₂O
+data_recipe[silver_oxide_I_bob].energy_required = 8 -- 2AgNO₃(s) + 2NaOH(s) + H₂O(l) --> Ag₂O(s) + 2NaNO₃(aq)
 data_recipe[silver_oxide_I_bob].ingredients =
 {
     {type = item, name = silver_nitrate_I, amount = 16},
-    {type = fluid, name = sodium_hydroxide_solution_angels, amount = 240}
+    {type = item, name = sodium_hydroxide_angels, amount = 16},
+    {type = fluid, name = water_purified_angels, amount = 120}
 }
 data_recipe[silver_oxide_I_bob].results =
 {
     {type = item, name = silver_oxide_I_bob, amount = 8},
-    {type = fluid, name = sodium_nitrate_solution, amount = 120}, -- 240
-    {type = fluid, name = water_purified_angels, amount = 60} -- 120
+    {type = fluid, name = sodium_nitrate_solution, amount = 120} -- 240
 }
 data_recipe[silver_oxide_I_bob].main_product = silver_oxide_I_bob
 
@@ -1339,7 +1339,7 @@ data_recipe[chlorauric_acid].categories = {angels_advanced_chemistry}
 data_recipe[chlorauric_acid].subgroup = is_gold_chemistry
 data_recipe[chlorauric_acid].icons = THREE_D_I(gold_processed, nitric_acid_angels, hydrochloric_acid_angels, chlorauric_acid, nitrogen_dioxide_angels, water_purified_angels)
 data_recipe[chlorauric_acid].order = a
-data_recipe[chlorauric_acid].energy_required = 8 -- Au + HNO₃ + 4HCl(aq) --> HAuCl₄(aq) + NO₂ + 5H₂O
+data_recipe[chlorauric_acid].energy_required = 8 -- Au(s) + HNO₃(l) + 4HCl(aq) --> HAuCl₄(aq) + NO₂(g) + 5H₂O(l)
 data_recipe[chlorauric_acid].ingredients =
 {
     {type = item, name = gold_processed, amount = 16},
@@ -1383,7 +1383,7 @@ data_recipe[gold_cathode].categories = {industrial_electrolysis}
 data_recipe[gold_cathode].subgroup = is_gold_chemistry
 data_recipe[gold_cathode].icons = FOUR_R_I(chlorauric_acid, hydrochloric_acid_angels, gold_cathode, chlorine_angels)
 data_recipe[gold_cathode].order = d
-data_recipe[gold_cathode].energy_required = 8 -- 2HAuCl₄(aq) + 2HCl(aq) -electrode/electrolys-> 2Au(s) + 2HCl(aq) + 3Cl₂(g) + 87.5% 2HCl(aq) + 12.5% 2HCl(g) + 2H₂O(l)
+data_recipe[gold_cathode].energy_required = 8 -- 2HAuCl₄(aq) + 2HCl(aq) -electrode/electrolys-> 2Au(s) + 2HCl(aq) + 3Cl₂(g) + 7/8(2HCl(aq)) + 1/8(2HCl(g) + 2H₂O(l))
 data_recipe[gold_cathode].ingredients =
 {
     {type = fluid, name = chlorauric_acid, amount = 240},
@@ -1407,7 +1407,7 @@ data_recipe[gold_cathode_2].categories = {industrial_electrolysis}
 data_recipe[gold_cathode_2].subgroup = is_gold_chemistry
 data_recipe[gold_cathode_2].icons = FOUR_R_I(sodium_dicyanoaurate_I_solution, hydrogen_angels, gold_cathode, oxygen_angels)
 data_recipe[gold_cathode_2].order = d_a
-data_recipe[gold_cathode_2].energy_required = 8 -- 2NaAu(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Au(s) + H₂(g) + O₂(g) + 2HCN(g) + 2NaCN(s) + 87.5% 2NaCN(aq) + 12.5% 2NaOH(s) + 2HCN(g)
+data_recipe[gold_cathode_2].energy_required = 8 -- 2NaAu(CN)₂(aq) + 2NaCN(aq) -electrode/electrolys-> 2Au(s) + 2NaCN(s) + H₂(g) + O₂(g) + 2HCN(g) + 7/8(2NaCN(aq)) + 1/8(2NaOH(s) + 2HCN(g))
 data_recipe[gold_cathode_2].ingredients =
 {
     {type = fluid, name = sodium_dicyanoaurate_I_solution, amount = 240},

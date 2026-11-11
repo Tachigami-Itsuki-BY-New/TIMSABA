@@ -68,27 +68,28 @@ data_recipe[ice_platform].ingredients[2].amount = 64
 data_recipe[lithium].localised_name = {"item-name." .. lithium_chloride_angels}
 data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
-data_recipe[lithium].icons = THREE_D_I(water_thermal_angels, ammonia_angels, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_peroxide)
+data_recipe[lithium].icons = FOUR_THREE_R_I(water_thermal_angels, ammonia_solution, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_angels, oxygen_angels)
 data_recipe[lithium].order = d
-data_recipe[lithium].energy_required = 8 -- 16H₂O(8LiCl)(l) + 8NH₃(g) + 4F₂(g) --> 8LiCl(s) + 8NH₄F(aq) + 4H₂O₂(l)
+data_recipe[lithium].energy_required = 8 -- 16H₂O(8LiCl)(l) + 8NH₃(aq) + 4F₂(g) --> 8LiCl(s) + 8NH₄F(aq) + 8H₂(g) + 4O₂(g)
 data_recipe[lithium].ingredients =
 {
     {type = fluid, name = water_thermal_angels, amount = 240},
-    {type = fluid, name = ammonia_angels, amount = 120},
+    {type = fluid, name = ammonia_solution, amount = 120},
     {type = fluid, name = fluorine, amount = 60}
 }
 data_recipe[lithium].results =
 {
     {type = item, name = lithium_chloride_angels, amount = 8},
     {type = fluid, name = ammonium_fluoride_solution, amount = 120},
-    {type = fluid, name = hydrogen_peroxide, amount = 60}
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 60}
 }
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
 data_recipe[lithium_plate].localised_name = {"item-name." .. lithium_bob}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
-data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, hydrogen_fluoride_angels, ammonium_chloride, oxygen_angels)
+data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, ammonium_chloride, hydrogen_fluoride_angels, oxygen_angels)
 data_recipe[lithium_plate].order = e
 data_recipe[lithium_plate].energy_required = 4 -- 2LiCl(s) + 2NH₃(aq) + F₂(g) --> 2Li(s) + 2NH₄Cl(s) + 2HF(g) + O₂(g)
 data_recipe[lithium_plate].ingredients =

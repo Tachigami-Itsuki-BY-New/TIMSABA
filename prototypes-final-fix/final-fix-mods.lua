@@ -38,6 +38,8 @@ else
     data_inserter[T2_inserter].energy_source.drain = ((drain * 4) / 8) .. kW
 end
 
+data_recipe[lithium_perchlorate_bob].categories = {chemistry}
+
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
 data_item[oil_refinery_1].order = a

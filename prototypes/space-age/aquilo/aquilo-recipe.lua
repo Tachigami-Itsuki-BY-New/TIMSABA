@@ -283,18 +283,18 @@ TIMSABA.functions.create_recipes
         subgroup = is_aquilo_recipe,
         icons = THREE_D_I(sodium_carbonate_solution, nitrogen_monoxide_angels, nitrogen_dioxide_angels, sodium_nitrite, carbon_dioxide_angels, water_purified_angels),
         order = i,
-        -- Na₂CO₃(aq) + NO(g) + NO₂(g) --> 2NaNO₂(s) + CO₂(g) + H₂O(l)
+        energy_required = 8, -- Na₂CO₃(aq) + NO(g) + NO₂(g) --> 2NaNO₂(s) + CO₂(g) + H₂O(l)
         ingredients =
         {
-            {type = fluid, name = sodium_carbonate_solution, amount = 120},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 120}
+            {type = fluid, name = sodium_carbonate_solution, amount = 240},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 240},
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 240}
         },
         results =
         {
-            {type = item, name = sodium_nitrite, amount = 16},
-            {type = fluid, name = carbon_dioxide_angels, amount = 60}, -- 120
-            {type = fluid, name = water_purified_angels, amount = 60} -- 120
+            {type = item, name = sodium_nitrite, amount = 32},
+            {type = fluid, name = carbon_dioxide_angels, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = sodium_nitrite
     },

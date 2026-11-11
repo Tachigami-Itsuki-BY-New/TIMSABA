@@ -1079,7 +1079,6 @@ TIMSABA.functions.create_recipes
 
 -- SULFUR
 sulfur_trioxide_separation = "sulfur-trioxide-separation"
-sulfuric_acid_from_hydrogen_peroxide = "sulfuric-acid-from-hydrogen-peroxide"
 sulfuric_acid_decomposition = "sulfuric-acid-decomposition"
 TIMSABA.functions.create_recipes
 ({
@@ -1103,21 +1102,6 @@ TIMSABA.functions.create_recipes
             {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
         },
         main_product = sulfur_dioxide_angels
-    },
-    {
-        name = sulfuric_acid_from_hydrogen_peroxide,
-        categories = {chemistry},
-        subgroup = is_sulfur_fluids,
-        icons = THREE_I(hydrogen_peroxide, sulfur_dioxide_angels, sulfuric_acid_angels),
-        order = f_a,
-        energy_required = 2, -- H₂O₂(l) + SO₂(g) --> H₂SO₄(l)
-        ingredients =
-        {
-            {type = fluid, name = hydrogen_peroxide, amount = 60},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 60}
-        },
-        results = {{type = fluid, name = sulfuric_acid_angels, amount = 60}},
-        main_product = sulfuric_acid_angels
     },
     {
         name = sulfur_trioxide_gas,
