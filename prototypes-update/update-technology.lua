@@ -2130,8 +2130,6 @@ data_technology[tech_sulfur_processing_1].effects =
     {type = unlock_recipe, recipe = sulfuric_acid_angels}
 }
 
-table.insert(data_technology[tech_sulfur_processing_2].effects, {type = unlock_recipe, recipe = sulfuric_acid_from_hydrogen_peroxide})
-
 table.insert(data_technology[tech_sulfur_processing_3].effects, {type = unlock_recipe, recipe = peroxydisulfuric_acid})
 table.insert(data_technology[tech_sulfur_processing_3].effects, {type = unlock_recipe, recipe = hydrogen_peroxide})
 

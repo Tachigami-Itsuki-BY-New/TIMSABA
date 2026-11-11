@@ -63,12 +63,12 @@ TIMSABA.functions.create_recipes
         subgroup = is_iron_chemistry,
         icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, oxygen_angels),
         order = d,
-        energy_required = 8, -- 2FeSO₄(aq) + 2(NH₄)₂SO₄(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Fe(s) + 2H₂SO₄(l) + O₂(g) + 87.5% 2(NH₄)₂SO₄(aq) + 12.5% 2H₂SO₄(l) + 4NH₃(aq)
+        energy_required = 8, -- 2FeSO₄(aq) + 2(NH₄)₂SO₄(aq) + 1/8(2H₂O(l)) -electrode/electrolys-> 2Fe(s) + 2H₂SO₄(l) + O₂(g) + 7/8(2(NH₄)₂SO₄(aq)) + 1/8(2H₂SO₄(l) + 4NH₃(aq))
         ingredients =
         {
             {type = fluid, name = iron_sulfate_II_solution, amount = 240},
             {type = fluid, name = ammonium_sulfate_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 30},
+            {type = fluid, name = water_purified_angels, amount = 60},
             {type = item, name = electrode, amount = 1}
         },
         results =
@@ -463,12 +463,12 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_chemistry,
         icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, hexafluorosilicic_acid, tin_cathode, oxygen_angels),
         order = d,
-        energy_required = 8, -- 2SnSiF₆(aq) + 2H₂SiF₆(aq) + 2/8H₂O(l) -electrode/electrolys-> 2Sn(s) + 2H₂SiF₆(aq) + O₂(g) + 87.5% 2H₂SiF₆(aq) + 12.5% 2SiF₄(g) + 4HF(aq)
+        energy_required = 8, -- 2SnSiF₆(aq) + 2H₂O(l) + 2H₂SiF₆(aq) + 1/8(2H₂O(l)) -electrode/electrolys-> 2Sn(s) + 2H₂SiF₆(aq) + O₂(g) + 7/8(2H₂SiF₆(aq)) + 1/8(2SiF₄(g) + 4HF(aq))
         ingredients =
         {
             {type = fluid, name = hexafluorosilicate_tin_II_solution, amount = 240},
             {type = fluid, name = hexafluorosilicic_acid, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 30},
+            {type = fluid, name = water_purified_angels, amount = 300}, -- 240 + 60
             {type = item, name = electrode, amount = 1}
         },
         results =
@@ -1508,9 +1508,9 @@ TIMSABA.functions.create_recipes
         name = chromium_cathode,
         categories = {industrial_electrolysis},
         subgroup = is_chromium_chemistry,
-        icons = FOUR_R_I(chromic_acid, hydrogen_peroxide, chromium_cathode, oxygen_angels),
+        icons = FOUR_R_I(chromic_acid, water_purified_angels, chromium_cathode, oxygen_angels),
         order = i,
-        energy_required = 8, -- 2H₂CrO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Cr(s) + 4H₂O₂(l) + O₂(g) + 87.5% 2H₂SO₄(l) + 12.5% 2H₂O₂(l) + 2SO₂(g)
+        energy_required = 8, -- 2H₂CrO₄(aq) + 2H₂SO₄(l) -electrode/electrolys-> 2Cr(s) + 4H₂O(l) + 3O₂(g) + 7/8(2H₂SO₄(l)) + 1/8(2H₂O(l) + 2SO₃(g))
         ingredients =
         {
             {type = fluid, name = chromic_acid, amount = 240},
@@ -1520,8 +1520,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = chromium_cathode, amount = 16},
-            {type = fluid, name = hydrogen_peroxide, amount_min = 240, amount_max = 480},
-            {type = fluid, name = oxygen_angels, amount_min = 60, amount_max = 120},
+            {type = fluid, name = water_purified_angels, amount_min = 240, amount_max = 480},
+            {type = fluid, name = oxygen_angels, amount_min = 180, amount_max = 360},
             {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.875},
             {type = fluid, name = hydrogen_peroxide, amount = 240, independent_probability = 0.125},
             {type = fluid, name = sulfur_dioxide_angels, amount = 240, independent_probability = 0.125},
