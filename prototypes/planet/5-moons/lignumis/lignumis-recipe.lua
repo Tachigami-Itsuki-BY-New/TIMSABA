@@ -59,7 +59,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = tantalum_powder, amount = 16},
-                {type = item, name = magnesium_oxide, amount = 8} -- 40
+                {type = item, name = magnesium_oxide, amount = 24} -- 40
             },
             main_product = tantalum_powder
         },
@@ -80,7 +80,7 @@ if mods[lignumis_mods] then
             {
                 {type = item, name = tantalum_powder, amount = 16},
                 {type = item, name = potassium_fluoride, amount = 16}, -- 32
-                {type = item, name = sodium_fluoride, amount = 16} -- 80
+                {type = item, name = sodium_fluoride, amount = 48} -- 80
             },
             main_product = tantalum_powder
         },
@@ -100,9 +100,9 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = tantalum_powder, amount = 16},
-                {type = item, name = lime_angels, amount = 8}, -- 40
+                {type = item, name = lime_angels, amount = 24}, -- 40
                 {type = item, name = sodium_oxide, amount = 4}, -- 8
-                {type = fluid, name = hydrogen_angels, amount = 120} -- 600
+                {type = fluid, name = hydrogen_angels, amount = 360} -- 600
             },
             main_product = tantalum_powder
         },
@@ -169,7 +169,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = fluid, name = hexafluorotantalic_acid_solution, amount = 240},
-                {type = fluid, name = sulfur_dioxide_angels, amount = 120}, -- 600
+                {type = fluid, name = sulfur_dioxide_angels, amount = 360}, -- 600
                 {type = fluid, name = water_purified_angels, amount = 480} -- 960
             },
             main_product = hexafluorotantalic_acid_solution
@@ -190,7 +190,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = tantalum_hydroxide_V, amount = 16},
-                {type = fluid, name = ammonium_fluoride_solution, amount = 480} -- 1440
+                {type = fluid, name = ammonium_fluoride_solution, amount = 960} -- 1440
             },
             main_product = tantalum_hydroxide_V
         },
@@ -205,7 +205,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = tantalum_oxide_V, amount = 8},
-                {type = fluid, name = steam, amount = 120} -- 600
+                {type = fluid, name = steam, amount = 360} -- 600
             },
             main_product = tantalum_oxide_V
         },
@@ -226,7 +226,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = potassium_heptafluorotantalate, amount = 16},
-                {type = fluid, name = hydrogen_angels, amount = 120}, -- 600
+                {type = fluid, name = hydrogen_angels, amount = 360}, -- 600
                 {type = fluid, name = hydrochloric_acid_angels, amount = 240} -- 480
             },
             main_product = potassium_heptafluorotantalate
@@ -261,7 +261,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = sodium_tantalate, amount = 16},
-                {type = fluid, name = sodium_chloride_solution, amount = 480}, -- 1200
+                {type = fluid, name = sodium_chloride_solution, amount = 720}, -- 1200
                 {type = fluid, name = water_purified_angels, amount = 480} -- 960
             },
             main_product = sodium_tantalate

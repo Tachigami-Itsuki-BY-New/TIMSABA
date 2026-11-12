@@ -3,7 +3,7 @@ if mods[arig_mods] then
     ({
         {
             name = sand_arig,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_arig_recipe,
             order = a,
             energy_required = 8,
@@ -14,7 +14,7 @@ if mods[arig_mods] then
         },
         {
             name = pure_sand_arig,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_arig_recipe,
             icons = TWO_I(sand_arig, pure_sand_arig),
             order = b,

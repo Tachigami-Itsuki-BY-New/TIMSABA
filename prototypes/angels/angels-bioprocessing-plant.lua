@@ -1,19 +1,20 @@
 tree_plant = "tree-plant"
 
-local plant_flags = {flag_placeable_neutral, flag_placeable_off_grid, "breaths-air"}
+local temperate_tree = "temperate-tree"
+local swamp_tree = "swamp-tree"
+local desert_tree = "desert-tree"
 
 local gleba_tree_underwater_things = {}
 
 local gleba_tree_particle_effects =
 {
-    ["planted-tree"] = {crop_2 = "leaf-particle", trunk_2 = "branch-particle"}
-    -- temperate-tree
-    -- swamp-tree
-    -- desert-tree
+    [temperate_tree] = {crop_2 = "leaf-particle", trunk_2 = "branch-particle"},
+    [swamp_tree] = {crop_2 = "leaf-particle", trunk_2 = "branch-particle"},
+    [desert_tree] = {crop_2 = "leaf-particle", trunk_2 = "branch-particle"}
 }
 
 local function gleba_tree_variation_progression_frames(name, suffix, progression_frames, width, height, x, y, shift, scale_multiplier, surface, flags)
-    local partial_path = "__space-age__/graphics/entity/plant/" .. name .. "/" .. name .. "-" .. suffix
+    local partial_path = "__TIMSABA__/graphics/entity/plant/" .. name .. "/" .. name .. "-" .. suffix
     local filenames = {}
     for i = 1, progression_frames do
         filenames[i] = (i == 1 and partial_path or partial_path .. "-" .. i) .. ".png"
@@ -57,7 +58,7 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
         {
             trunk =
             {
-                filename = "__space-age__/graphics/entity/plant/" .. name .. "/" .. name .. "-trunk.png",
+                filename = "__TIMSABA__/graphics/entity/plant/" .. name .. "/" .. name .. "-trunk.png",
                 flags = {"mipmap"},
                 surface = "gleba",
                 width = width,
@@ -78,7 +79,7 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
             {
                 pictures =
                 {
-                    filename = "__space-age__/graphics/entity/plant/" .. name .. "/" .. name .. "-effect-map.png",
+                    filename = "__TIMSABA__/graphics/entity/plant/" .. name .. "/" .. name .. "-effect-map.png",
                     surface = surface,
                     width = width,
                     height = height,
@@ -101,7 +102,7 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
             branches_when_mined_manually = 15,
             branches_when_mined_automatically = 8
         }
-        table.insert(variation.shadow.filenames, "__space-age__/graphics/entity/plant/" .. name .. "/" .. name .. "-shadow.png")
+        table.insert(variation.shadow.filenames, "__TIMSABA__/graphics/entity/plant/" .. name .. "/" .. name .. "-shadow.png")
         variation.shadow.frame_count = variation.shadow.frame_count + 1
 
         if crop_particle_2 then -- yumako
@@ -174,13 +175,13 @@ local function gleba_tree_growth_variations(name, variation_count, per_row, scal
         end
         local growth_variation =
         {
-            growth_warp = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-growth-warp.png", name, name)),
-            trunk_warp = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-trunk-warp.png", name, name)),
-            shadow_warp = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-shadow-warp.png", name, name)),
-            harvest_warp = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-harvest-warp.png", name, name)),
-            trunk_alpha = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-trunk-alpha.png", name, name)),
-            shadow_alpha = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-shadow-alpha.png", name, name)),
-            harvest_alpha = make_variation_sprite(string.format("__space-age__/graphics/entity/plant/%s/%s-harvest-alpha.png", name, name)),
+            growth_warp = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-growth-warp.png", name, name)),
+            trunk_warp = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-trunk-warp.png", name, name)),
+            shadow_warp = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-shadow-warp.png", name, name)),
+            harvest_warp = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-harvest-warp.png", name, name)),
+            trunk_alpha = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-trunk-alpha.png", name, name)),
+            shadow_alpha = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-shadow-alpha.png", name, name)),
+            harvest_alpha = make_variation_sprite(string.format("__TIMSABA__/graphics/entity/plant/%s/%s-harvest-alpha.png", name, name)),
             progress_exponent = 1.0,
         }
         table.insert(growth_variations, growth_variation)
@@ -195,7 +196,7 @@ local function gleba_tree_growth_mounds(name, variation_count, scale_multiplier)
     for i = 1, variation_count do
         table.insert(growth_mounds,
         {
-            filename = string.format("__space-age__/graphics/entity/plant/%s/%s-mound.png", name, name),
+            filename = string.format("__TIMSABA__/graphics/entity/plant/%s/%s-mound.png", name, name),
             x = 0,
             y = 0,
             width = 100,
@@ -221,12 +222,13 @@ end
 
 local nauvis_tree = data_tree["tree-08"]
 
-local temperate_plant = table.deepcopy(data_tree[tree_temperate])
+local temperate_plant = table.deepcopy(data_plant[tree_plant])
 
 tree_temperate_plant = tree_temperate .. "-" .. plant
-temperate_plant.type = plant
 temperate_plant.localised_name = {"entity-name." .. tree_temperate}
 temperate_plant.name = tree_temperate_plant
+temperate_plant.subgroup = data_tree[tree_temperate].subgroup
+temperate_plant.icon = data_tree[tree_temperate].icon
 temperate_plant.order = z_d .. "-" .. plant
 temperate_plant.minable =
 {
@@ -239,8 +241,7 @@ temperate_plant.minable =
     }
 }
 
-temperate_plant.flags = plant_flags
-temperate_plant.growth_ticks = 20 * minute
+temperate_plant.growth_ticks = 5 * minute
 temperate_plant.impact_category = "tree"
 temperate_plant.autoplace =
 {
@@ -255,11 +256,11 @@ temperate_plant.autoplace =
 }
 
 temperate_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
-temperate_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
-temperate_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
-temperate_plant.growth_mounds = gleba_tree_growth_mounds("planted-tree", 8, 1.3)
+temperate_plant.variations = gleba_tree_variations(temperate_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
+temperate_plant.growth_variations = gleba_tree_growth_variations(temperate_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
+temperate_plant.growth_mounds = gleba_tree_growth_mounds(temperate_tree, 8, 1.3)
 temperate_plant.colors = minor_tints()
---temperate_plant.agricultural_tower_tint = {primary = {r = 0.7, g = 1.0, b = 0.2, a = 1}, secondary = {r = 0.561, g = 0.613, b = 0.308, a = 1.000}}
+temperate_plant.agricultural_tower_tint = {primary = {r = 0.9, g = 0.8, b = 0.6, a = 1}, secondary = {r = 0.784, g = 0.706, b = 0.471, a = 1.000}}
 temperate_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining_sound) or nil
 temperate_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 temperate_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil
@@ -270,12 +271,13 @@ if mods[arig_mods] then
     table.insert(data_plant[tree_temperate_plant].minable.results, {type = fluid, name = liquid_resin_angels, amount = 3840})
 end
 
-local swamp_plant = table.deepcopy(data_tree[tree_swamp])
+local swamp_plant = table.deepcopy(data_plant[tree_plant])
 
 tree_swamp_plant = tree_swamp .. "-" .. plant
-swamp_plant.type = plant
 swamp_plant.localised_name = {"entity-name." .. tree_swamp}
 swamp_plant.name = tree_swamp_plant
+swamp_plant.subgroup = data_tree[tree_swamp].subgroup
+swamp_plant.icon = data_tree[tree_swamp].icon
 swamp_plant.order = z_e .. "-" .. plant
 swamp_plant.minable =
 {
@@ -288,8 +290,7 @@ swamp_plant.minable =
     }
 }
 
-swamp_plant.flags = plant_flags
-swamp_plant.growth_ticks = 20 * minute
+swamp_plant.growth_ticks = 5 * minute
 swamp_plant.impact_category = "tree"
 swamp_plant.autoplace =
 {
@@ -304,11 +305,11 @@ swamp_plant.autoplace =
 }
 
 swamp_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
-swamp_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
-swamp_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
-swamp_plant.growth_mounds = gleba_tree_growth_mounds("planted-tree", 8, 1.3)
+swamp_plant.variations = gleba_tree_variations(swamp_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
+swamp_plant.growth_variations = gleba_tree_growth_variations(swamp_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
+swamp_plant.growth_mounds = gleba_tree_growth_mounds(swamp_tree, 8, 1.3)
 swamp_plant.colors = minor_tints()
---swamp_plant.agricultural_tower_tint = {primary = {r = 0.7, g = 1.0, b = 0.2, a = 1}, secondary = {r = 0.561, g = 0.613, b = 0.308, a = 1.000}}
+swamp_plant.agricultural_tower_tint = {primary = {r = 0.9, g = 0.9, b = 0.9, a = 1}, secondary = {r = 0.784, g = 0.784, b = 0.784, a = 1.000}}
 swamp_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining_sound) or nil
 swamp_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 swamp_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil
@@ -319,12 +320,13 @@ if mods[arig_mods] then
     table.insert(data_plant[tree_swamp_plant].minable.results, {type = fluid, name = liquid_plastic_angels, amount = 3840})
 end
 
-local desert_plant = table.deepcopy(data_tree[tree_desert])
+local desert_plant = table.deepcopy(data_plant[tree_plant])
 
 tree_desert_plant = tree_desert .. "-" .. plant
-desert_plant.type = plant
 desert_plant.localised_name = {"entity-name." .. tree_desert}
 desert_plant.name = tree_desert_plant
+desert_plant.subgroup = data_tree[tree_desert].subgroup
+desert_plant.icon = data_tree[tree_desert].icon
 desert_plant.order = z_f .. "-" .. plant
 desert_plant.minable =
 {
@@ -337,8 +339,7 @@ desert_plant.minable =
     }
 }
 
-desert_plant.flags = plant_flags
-desert_plant.growth_ticks = 20 * minute
+desert_plant.growth_ticks = 5 * minute
 desert_plant.impact_category = "tree"
 desert_plant.autoplace =
 {
@@ -353,11 +354,11 @@ desert_plant.autoplace =
 }
 
 desert_plant.surface_conditions = {{property = pressure, min = 1000, max = 1000}}
-desert_plant.variations = gleba_tree_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
-desert_plant.growth_variations = gleba_tree_growth_variations("planted-tree", 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
-desert_plant.growth_mounds = gleba_tree_growth_mounds("planted-tree", 8, 1.3)
+desert_plant.variations = gleba_tree_variations(desert_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40), util.by_pixel(50, 0), "nauvis", 3)
+desert_plant.growth_variations = gleba_tree_growth_variations(desert_tree, 8, 4, 1.3, 640, 560, util.by_pixel(70, -40))
+desert_plant.growth_mounds = gleba_tree_growth_mounds(desert_tree, 8, 1.3)
 desert_plant.colors = minor_tints()
---desert_plant.agricultural_tower_tint = {primary = {r = 0.7, g = 1.0, b = 0.2, a = 1}, secondary = {r = 0.561, g = 0.613, b = 0.308, a = 1.000}}
+desert_plant.agricultural_tower_tint = {primary = {r = 0.6, g = 0.7, b = 0.9, a = 1}, secondary = {r = 0.529, g = 0.568, b = 0.784, a = 1.000}}
 desert_plant.mining_sound = nauvis_tree and table.deepcopy(nauvis_tree.mining_sound) or nil
 desert_plant.mined_sound = nauvis_tree and table.deepcopy(nauvis_tree.mined_sound) or nil
 desert_plant.ambient_sounds = nauvis_tree and table.deepcopy(nauvis_tree.ambient_sounds) or nil

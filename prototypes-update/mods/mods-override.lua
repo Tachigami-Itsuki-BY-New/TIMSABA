@@ -53,7 +53,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = wolframite_ore, amount = 1, independent_probability = 0.25},
         {type = item, name = coal, amount = 1, independent_probability = 0.125},
         {type = item, name = carbon_angels, amount = 1, independent_probability = 0.0625},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 1, independent_probability = 0.03125},
+        {type = item, name = tungsten_carbide_bob, amount = 1, independent_probability = 0.03125},
         {type = item, name = stone, amount = 1, independent_probability = 0.5}
     }
     data_recipe[sulfuric_bacteria_melting].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
@@ -67,7 +67,7 @@ if mods[moshine_mods] or mods[muluna_mods] then
     data_recipe[silicon_cell_mods].icons = TWO_I(silicon_boule_mods, silicon_cell_mods)
     data_recipe[silicon_cell_mods].ingredients = {{type = item, name = silicon_boule_mods, amount = 4}}
 
-    data_recipe[silicon_carbide_mods].categories = {angels_chemical_smelting_4}
+    data_recipe[silicon_carbide_mods].categories = {angels_blast_smelting_4}
     data_recipe[silicon_carbide_mods].icons = THREE_I(silicon_boule_mods, carbon_angels, silicon_carbide_bob)
     data_recipe[silicon_carbide_mods].ingredients =
     {

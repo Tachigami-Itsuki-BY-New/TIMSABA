@@ -273,4 +273,8 @@ if mods[secretas_frozeta_mods] then
     add_prerequisites(quality_module_8)
 
     add_prerequisites(quantum_processor)
+
+    table.insert(data_technology[tech_gallium_smelting_1].prerequisites, tech_gallite_processing_1)
+    table.insert(data_technology[tech_gallium_smelting_2].prerequisites, tech_gallite_processing_2)
+    table.insert(data_technology[tech_gallium_smelting_3].prerequisites, tech_gallite_processing_3)
 end

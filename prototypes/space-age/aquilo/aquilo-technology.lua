@@ -482,7 +482,7 @@ data:extend
         name = tech_gallium_smelting_1,
         icon = graphics_gallium_smelting_tech,
         icon_size = 256,
-        prerequisites = {tech_germanite_processing_1},
+        prerequisites = {cryogenic_plant},
         effects =
         {
             {type = unlock_recipe, recipe = gallium_hydroxide_III},

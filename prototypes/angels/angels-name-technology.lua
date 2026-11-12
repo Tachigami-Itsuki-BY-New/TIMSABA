@@ -163,7 +163,20 @@ tech_advanced_chemistry_6 = "advanced-chemistry-6"
 tech_advanced_chemistry_7 = "advanced-chemistry-7"
 tech_steam_cracking_1 = "angels-steam-cracking-1"
 
+tech_plastic_1 = "angels-plastic-1"
+tech_plastic_2 = "angels-plastic-2"
+tech_plastic_3 = "angels-plastic-3"
+tech_plastic_4 = "angels-plastic-4"
+
+tech_resin_1 = "angels-resin-1"
+tech_resin_2 = "angels-resin-2"
+tech_resin_3 = "angels-resin-3"
+
 tech_rubbers = "angels-rubbers"
+tech_rubber_1 = "rubber-1"
+tech_rubber_2 = "rubber-2"
+tech_rubber_3 = "rubber-3"
+tech_rubber_4 = "rubber-4"
 
 -- ANGELS BIOPROCESSING NAUVIS
 tech_bio_processing_brown = "angels-bio-processing-brown"

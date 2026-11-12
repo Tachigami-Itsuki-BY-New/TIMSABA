@@ -403,7 +403,7 @@ data_technology[cryogenic_plant].effects =
     {type = unlock_recipe, recipe = sodium_nitrite},
     {type = unlock_recipe, recipe = benzenediazonium_chloride_solution},
     {type = unlock_recipe, recipe = lactic_acid},
-    {type = unlock_recipe, recipe = ethanol_from_chloroethane_gas},
+    {type = unlock_recipe, recipe = ethanol_liquid_3},
     {type = unlock_recipe, recipe = ethyl_lactate_liquid},
     {type = unlock_recipe, recipe = photoresist_liquid},
     {type = unlock_recipe, recipe = semiconductor},

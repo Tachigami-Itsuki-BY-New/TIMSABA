@@ -339,7 +339,7 @@ local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
 end
 tank_recipe(tank_1,           brass_gear_wheel,         brass_bearing,             advanced_circuit,    car, invar_plate_bob)
 tank_recipe(tank_2,        titanium_gear_wheel,         titanium_bearing,           processing_unit, tank_1, titanium_plate_bob)
-tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
+tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_bob)
 
 data_item_subgroup["bob-logistic-robots"].order = f_b
 local logistic_robots =
@@ -771,13 +771,13 @@ if mods[bobwarfare] then
     data_recipe[spidertron_cannon].ingredients =
     {
         {type = item, name = tungsten_gear_wheel, amount = 4},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 16}
+        {type = item, name = tungsten_carbide_bob, amount = 16}
     }
 
     data_recipe[mech_armor_plate].ingredients =
     {
         {type = item, name = low_density_structure, amount = 4},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 2}
+        {type = item, name = tungsten_carbide_bob, amount = 2}
     }
 
     if mods[bobmodules] then

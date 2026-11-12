@@ -5,7 +5,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = aquilo_air,
-        categories = {angels_petrochem_air_filtering},
+        categories = {angels_air_filtering},
         subgroup = is_aquilo_air,
         order = a,
         energy_required = 8,
@@ -66,7 +66,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = nitrogen_trifluoride_liquefied_elecrolysis,
-        categories = {angels_petrochem_electrolyser},
+        categories = {angels_electrolysis},
         subgroup = is_aquilo_air,
         icons = FOUR_R_I(nitrogen_trifluoride_liquefied, fluorine, nil, nitrogen_angels),
         order = d_a,
@@ -414,55 +414,6 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = semiconductor, amount = 4}},
         main_product = semiconductor
-    }
-})
-
--- OTHERS
-ethanol_from_chloroethane_gas = "ethanol-from-chloroethane-gas"
-TIMSABA.functions.create_recipes
-({
-    {
-        type = recipe,
-        name = ethanol_from_chloroethane_gas,
-        categories = {chemistry},
-        subgroup = "angels-bio-processor-fermentation",
-        icons = TWO_D_I(chloroethane_gas, sodium_hydroxide_solution_angels, ethanol_angels, sodium_chloride_solution),
-        order = d_a,
-        allow_productivity = false,
-        -- C₂H₅Cl(g) + NaOH(aq) --> C₂H₅OH(l) + NaCl(aq)
-        ingredients =
-        {
-            {type = fluid, name = chloroethane_gas, amount = 60},
-            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60}
-        },
-        results =
-        {
-            {type = fluid, name = ethanol_angels, amount = 60},
-            {type = fluid, name = sodium_chloride_solution, amount = 30} -- 60
-        },
-        main_product = ethanol_angels
-    },
-    {
-        name = acetaldehyde,
-        categories = {chemistry},
-        subgroup = is_carbon_fluids_2,
-        icons = THREE_R_I(ethanol_angels, acetaldehyde, hydrogen_angels),
-        order = c,
-        allow_productivity = false,
-        -- C₂H₅OH(l) -cat(Cu/Ag)-> C₂H₄O(l) + H₂(g)
-        ingredients =
-        {
-            {type = fluid, name = ethanol_angels, amount = 60},
-            {type = item, name = catalyst_green, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = acetaldehyde, amount = 60},
-            {type = fluid, name = hydrogen_angels, amount = 30}, -- 60
-            {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
-            {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
-        },
-        main_product = acetaldehyde
     }
 })
 

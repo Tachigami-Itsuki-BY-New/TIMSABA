@@ -272,3 +272,5 @@ data_pump_offshore["angels-sea-pump-placeable"] = nil
 local sea_pump_resource = "angels-sea-pump-resource"
 data_resource[sea_pump_resource].autoplace = nil
 data_resource[sea_pump_resource].hidden = true
+
+data_technology["angels-rubber"] = nil

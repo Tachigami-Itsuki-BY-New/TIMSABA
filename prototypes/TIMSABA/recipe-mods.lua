@@ -252,7 +252,7 @@ local function ore_crystals_recipe(name, order, ingredient_1, ingredient_2, resu
             icons = AR_FOUR_I(purified_catalyst, ingredient_1, ingredient_2, result),
             order = order,
             allow_productivity = true,
-            energy_required = 8,
+            energy_required = 4,
             ingredients =
             {
                 {type = item, name = purified_catalyst, amount = 2},
@@ -314,7 +314,7 @@ local function ore_purified_recipe(name, order, ingredient_1, ingredient_2, resu
             icons = AR_FOUR_I(purified_catalyst, ingredient_1, ingredient_2, result),
             order = order,
             allow_productivity = true,
-            energy_required = 8,
+            energy_required = 2,
             ingredients =
             {
                 {type = item, name = purified_catalyst, amount = 1},

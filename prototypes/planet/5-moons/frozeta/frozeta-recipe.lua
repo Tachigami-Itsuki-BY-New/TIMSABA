@@ -7,7 +7,7 @@ if mods[secretas_frozeta_mods] then
         {
             localised_name = {"fluid-name." .. ammonia_angels},
             name = ammonia_from_frozeta_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_frozeta_air,
             icons = BUILDING_R_I(ammonia_angels, planet_frozeta),
             order = a,

@@ -542,6 +542,27 @@ for _, BUILD in pairs(blast_furnaces) do
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 4
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {0, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {1, 2}, direction = defines.direction.south}}
+        }
+    }
 end
 local function blast_furnace_recipe(name, circuit, pipe, brick, plate, blast_furnace)
     local ingredients =
@@ -1067,6 +1088,39 @@ for _, BUILD in pairs(electrolysers) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 8)) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {-2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-2, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {0, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {2, 2}, direction = defines.direction.south}}
+        }
+    }
 end
 local function electrolyser_recipe(name, circuit, pipe, plate, brick, electrolyser)
     local ingredients =

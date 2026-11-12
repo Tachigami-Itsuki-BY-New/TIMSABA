@@ -153,11 +153,7 @@ data:extend
         circuit_wire_max_distance = default_circuit_wire_max_distance,
         center_collision_mask = {layers = {water_tile = true}},
         adjacent_resources_required = true,
-        --fluid_source_offset = {0, -3},
-        -- Корректируем смещение водозабора под габариты 3х3
         fluid_source_offset = {0, -2},
-
-        -- Добавляем отображение зеленого индикатора на воде при установке
         placeable_position_visualization =
         {
             filename = "__core__/graphics/cursor-boxes-32x32.png",
@@ -167,8 +163,6 @@ data:extend
             scale = 0.5,
             x = 3 * 64
         },
-        
-        -- Позволяет визуализировать поток воды в трубе, если графика это поддерживает
         always_draw_fluid = true
     }
 })

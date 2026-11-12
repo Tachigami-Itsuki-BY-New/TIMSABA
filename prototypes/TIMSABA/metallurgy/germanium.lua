@@ -178,7 +178,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_ingot,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_germanium,
         icons = TWO_D_I(germanium_oxide_IV, hydrogen_angels, germanium_ingot, steam),
         order = d,
@@ -292,18 +292,18 @@ TIMSABA.functions.create_recipes
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(germanium_processed, nitric_acid_angels, hydrochloric_acid_angels, germanium_chloride_IV, nitrogen_monoxide_angels, water_purified_angels),
         order = c,
-        energy_required = 6, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
+        energy_required = 12, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
         ingredients =
         {
-            {type = item, name = germanium_processed, amount = 12},
-            {type = fluid, name = nitric_acid_angels, amount = 240},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+            {type = item, name = germanium_processed, amount = 24},
+            {type = fluid, name = nitric_acid_angels, amount = 480},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 1440}
         },
         results =
         {
-            {type = fluid, name = germanium_chloride_IV, amount = 180},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
+            {type = fluid, name = germanium_chloride_IV, amount = 360},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 480} -- 960
         },
         main_product = germanium_chloride_IV
     },
