@@ -863,7 +863,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = aluminium_chloride_solution,
-        categories = {angels_chemical_smelting_1},
+        categories = {angels_advanced_chemistry},
         subgroup = is_aluminium_chemistry,
         icons = THREE_D_I(calcium_aluminate, nil, hydrochloric_acid_angels, aluminium_chloride_solution, calcium_chloride_solution, water_purified_angels),
         order = b,
