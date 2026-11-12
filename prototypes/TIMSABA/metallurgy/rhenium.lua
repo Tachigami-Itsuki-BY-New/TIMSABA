@@ -150,7 +150,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = rhenium_powder,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium,
         icons = TWO_D_I(rhenium_oxide_VI, hydrogen_angels, rhenium_powder, steam),
         order = d,
@@ -163,13 +163,13 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = rhenium_powder, amount = 16},
-            {type = fluid, name = steam, amount = 240} -- 720
+            {type = fluid, name = steam, amount = 480} -- 720
         },
         main_product = rhenium_powder
     },
     {
         name = rhenium_powder_2,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium,
         icons = THREE_D_I(potassium_perrhenate, nil, hydrogen_angels, rhenium_powder, potassium_hydroxide, steam),
         order = d_a,
@@ -183,13 +183,13 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = rhenium_powder, amount = 16},
             {type = item, name = potassium_hydroxide, amount = 8}, -- 16
-            {type = fluid, name = steam, amount = 360} -- 720
+            {type = fluid, name = steam, amount = 480} -- 720
         },
         main_product = rhenium_powder
     },
     {
         name = rhenium_powder_3,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_rhenium,
         icons = THREE_D_I(ammonium_perrhenate, nil, hydrogen_angels, rhenium_powder, nitrogen_angels, steam),
         order = d_b,
@@ -259,18 +259,18 @@ TIMSABA.functions.create_recipes
         subgroup = is_rhenium_chemistry,
         icons = FOUR_THREE_R_I(rhenium_chloride_V, nil, potassium_hydroxide_solution, rhenium_oxide_IV, potassium_perrhenate_solution, potassium_chloride_solution, water_purified_angels),
         order = c,
-        -- 3ReCl₅(s) + 16KOH(aq) --> ReO₂(s) + 2KReO₄(aq) + 15KCl(aq) + 8H₂O(l)
+        energy_required = 12, -- 3ReCl₅(s) + 16KOH(aq) --> 2ReO₂(s) + KReO₄(aq) + 15KCl(aq) + 8H₂O(l)
         ingredients =
         {
-            {type = item, name = rhenium_chloride_V, amount = 12},
-            {type = fluid, name = potassium_hydroxide_solution, amount = 960}
+            {type = item, name = rhenium_chloride_V, amount = 24},
+            {type = fluid, name = potassium_hydroxide_solution, amount = 1920}
         },
         results =
         {
-            {type = item, name = rhenium_oxide_IV, amount = 4},
+            {type = item, name = rhenium_oxide_IV, amount = 16},
             {type = fluid, name = potassium_perrhenate_solution, amount = 120},
-            {type = fluid, name = potassium_chloride_solution, amount = 480}, -- 900
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
+            {type = fluid, name = potassium_chloride_solution, amount = 960}, -- 1800
+            {type = fluid, name = water_purified_angels, amount = 480} -- 840
         },
         main_product = rhenium_oxide_IV
     },
@@ -295,17 +295,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_rhenium_chemistry,
         icons = THREE_D_I(rhenium_pellet, nil, nitric_acid_angels, rhenium_acid, nitrogen_dioxide_angels, water_purified_angels),
         order = f,
-        -- Re(s) + 7HNO₃(l) --> HReO₄(aq) + 7NO₂(g) + 3H₂O(l)
+        energy_required = 8, -- Re(s) + 7HNO₃(l) --> HReO₄(aq) + 7NO₂(g) + 3H₂O(l)
         ingredients =
         {
-            {type = item, name = rhenium_pellet, amount = 4},
-            {type = fluid, name = nitric_acid_angels, amount = 840}
+            {type = item, name = rhenium_pellet, amount = 8},
+            {type = fluid, name = nitric_acid_angels, amount = 1680}
         },
         results =
         {
-            {type = fluid, name = rhenium_acid, amount = 120},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 360}, -- 840
-            {type = fluid, name = water_purified_angels, amount = 120} -- 360
+            {type = fluid, name = rhenium_acid, amount = 240},
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 960}, -- 1680
+            {type = fluid, name = water_purified_angels, amount = 480} -- 720
         },
         main_product = rhenium_acid
     },

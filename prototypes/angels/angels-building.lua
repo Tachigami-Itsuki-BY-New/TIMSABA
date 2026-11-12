@@ -408,6 +408,33 @@ data_assembling[electric_blast_furnace_2].next_upgrade = electric_blast_furnace_
 data_assembling[electric_blast_furnace_3].next_upgrade = electric_blast_furnace_4
 data_assembling[electric_blast_furnace_4].next_upgrade = nil
 
+local electric_blast_furnace_fluid_boxes =
+{
+    {
+        production_type = input,
+        pipe_covers = pipecoverspictures(),
+        volume = 120,
+        pipe_connections = {{flow_direction = input, position = {0, -2}, direction = defines.direction.north}}
+    },
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {-1, 2}, direction = defines.direction.south}}
+    },
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {1, 2}, direction = defines.direction.south}}
+    }
+}
+
+data_assembling[electric_blast_furnace_1].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_2].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_3].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_4].fluid_boxes = electric_blast_furnace_fluid_boxes
+
 -- ANGELS METALLURGY CASTING
 if settings.startup[setting_early_sintering_oven].value then
     TIMSABA.functions.create_buildings
@@ -676,8 +703,6 @@ data_assembling[electric_boiler_3].next_upgrade = electric_boiler_4
 data_assembling[electric_boiler_4].next_upgrade = nil
 
 -- ANGELS PETROCHEM REFINING
-require("prototypes.angels.angels-building-electrolyser")
-
 TIMSABA.functions.create_buildings
 ({
     -- AIR FILTER

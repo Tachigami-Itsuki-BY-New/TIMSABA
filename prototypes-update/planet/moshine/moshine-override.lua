@@ -21,7 +21,7 @@ if mods[moshine_mods] then
     }
 
     -- data_item[silicon_boule_mods] --> "mods-update/mods/mods-override"
-    data_recipe[silicon_boule_mods].categories = {angels_chemical_smelting_4}
+    data_recipe[silicon_boule_mods].categories = {angels_blast_smelting_4}
     data_recipe[silicon_boule_mods].subgroup = is_moshine_recipe
     data_recipe[silicon_boule_mods].icons = THREE_D_I(sand_angels, nil, steam, silicon_boule_mods, hydrogen_angels, oxygen_angels)
     data_recipe[silicon_boule_mods].order = g

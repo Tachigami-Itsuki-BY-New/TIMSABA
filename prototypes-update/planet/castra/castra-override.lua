@@ -113,7 +113,7 @@ if mods[castra_mods] then
     data_recipe[processing_unit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local hydrogen_sulfide_electrolysis = "hydrogen-sulfide-electrolysis"
-    data_recipe[hydrogen_sulfide_electrolysis].categories = {angels_petrochem_electrolyser}
+    data_recipe[hydrogen_sulfide_electrolysis].categories = {angels_electrolysis}
     data_recipe[hydrogen_sulfide_electrolysis].subgroup = is_castra_recipe
     data_recipe[hydrogen_sulfide_electrolysis].icons = FOUR_R_I(hydrogen_sulfide_angels, hydrogen_angels, sulfur, oxygen_angels)
     data_recipe[hydrogen_sulfide_electrolysis].order = b_a

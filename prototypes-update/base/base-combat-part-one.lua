@@ -411,7 +411,7 @@ if mods[bobwarfare] then
         {type = item, name = artillery_shell, amount = 1},
         {type = item, name = plutonium_239_bob, amount = 16},
         {type = item, name = uranium_238_plate, amount = 32},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 4},
+        {type = item, name = tungsten_carbide_bob, amount = 4},
         {type = item, name = limestone_angels, amount = 4}
     }
 end
@@ -442,7 +442,7 @@ if mods[bobwarfare] then
 
     data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
     data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
-    data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CnH2n+2 + nH₂O (n = 32) petroleum_jelly (18-35)
+    data_recipe[petroleum_jelly].energy_required = 4 -- (2n+1)H₂ + nCO --> CnH2n+2 + nH₂O (n = 32) petroleum_jelly (18-35)
     data_recipe[petroleum_jelly].ingredients =
     {
         {type = fluid, name = hydrogen_angels, amount = 975},
@@ -461,7 +461,7 @@ if mods[bobwarfare] then
     data_item[gun_cotton].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]7[/font]N[font=default-tiny-bold]3[/font]O[font=default-tiny-bold]11[/font]"} or nil
     data_recipe[gun_cotton].categories = {chemistry}
     data_recipe[gun_cotton].icons = TWO_D_I(cellulose_fiber_angels, nitric_acid_angels, gun_cotton, water_purified_angels)
-    data_recipe[gun_cotton].energy_required = 2 -- (C₆H₁₀O₅)n + HNO₃ -H₂SO₄-> C₆H₇N₃O₁₁ + H₂O / n = 1
+    data_recipe[gun_cotton].energy_required = 4 -- (C₆H₁₀O₅)n + HNO₃ -H₂SO₄-> C₆H₇N₃O₁₁ + H₂O / n = 1
     -- data_recipe[gun_cotton].ingredients --> "mods-final-fix/final-fix-mods"
     data_recipe[gun_cotton].results =
     {
@@ -476,7 +476,7 @@ if mods[bobwarfare] then
 
     data_recipe[cordite].categories = {chemistry}
     data_recipe[cordite].icons = THREE_D_I(gun_cotton, petroleum_jelly, nitroglycerin_bob, cordite)
-    data_recipe[cordite].energy_required = 8 -- 18C₆H₇N₃O₁₁ + C₃₀H₆₂ + 11C₃H₅N₃O₉ -aceton-> cordite ???
+    data_recipe[cordite].energy_required = 4 -- 18C₆H₇N₃O₁₁ + C₃₀H₆₂ + 11C₃H₅N₃O₉ -aceton-> cordite ???
     data_recipe[cordite].ingredients =
     {
         {type = item, name = gun_cotton, amount = 16},
@@ -1124,7 +1124,7 @@ if mods[bobequipment] then
                 {type = item, name = thorium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = tungsten_carbide_bob, amount = 64},
                 {type = item, name = lead_plate_bob, amount = 128},
                 {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = alien_artifact_yellow, amount = 64},
@@ -1151,7 +1151,7 @@ if mods[bobequipment] then
                 {type = item, name = thorium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = tungsten_carbide_bob, amount = 64},
                 {type = item, name = lead_plate_bob, amount = 128},
                 {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = alien_artifact_yellow, amount = 64},
@@ -1191,7 +1191,7 @@ if mods[bobequipment] then
                 {type = item, name = thorium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = tungsten_carbide_bob, amount = 64},
                 {type = item, name = lead_plate_bob, amount = 128},
                 {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_4, amount = 1},
@@ -1214,7 +1214,7 @@ if mods[bobequipment] then
                 {type = item, name = thorium_fuel_cell, amount = 16},
                 {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+                {type = item, name = tungsten_carbide_bob, amount = 64},
                 {type = item, name = lead_plate_bob, amount = 128},
                 {type = item, name = uranium_238_plate, amount = 128},
                 {type = item, name = speed_module_3, amount = 1},

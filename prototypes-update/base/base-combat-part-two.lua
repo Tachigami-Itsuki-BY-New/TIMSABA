@@ -333,7 +333,7 @@ if mods[bobvehicleequipment] then
             {type = item, name = lead_plate_bob, amount = 64},
             {type = item, name = uranium_238_plate, amount = 64},
             {type = item, name = lithium_bob, amount = 32},
-            {type = item, name = tungsten_carbide_plate_bob, amount = 32},
+            {type = item, name = tungsten_carbide_bob, amount = 32},
             {type = item, name = alien_artifact_yellow, amount = 16},
             {type = item, name = alien_artifact_green, amount = 16},
             {type = item, name = speed_module_3, amount = 1}
@@ -382,7 +382,7 @@ if mods[bobvehicleequipment] then
             {type = item, name = lead_plate_bob, amount = 64},
             {type = item, name = uranium_238_plate, amount = 64},
             {type = item, name = lithium_bob, amount = 32},
-            {type = item, name = tungsten_carbide_plate_bob, amount = 32},
+            {type = item, name = tungsten_carbide_bob, amount = 32},
             {type = item, name = speed_module_3, amount = 1}
         }
         if mods[bobmodules] then
@@ -494,7 +494,7 @@ if mods[bobvehicleequipment] then
             {type = item, name = lead_plate_bob, amount = 128},
             {type = item, name = uranium_238_plate, amount = 128},
             {type = item, name = lithium_bob, amount = 64},
-            {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+            {type = item, name = tungsten_carbide_bob, amount = 64},
             {type = item, name = alien_artifact_yellow, amount = 32},
             {type = item, name = alien_artifact_green, amount = 32},
             {type = item, name = speed_module_3, amount = 1},
@@ -546,7 +546,7 @@ if mods[bobvehicleequipment] then
             {type = item, name = lead_plate_bob, amount = 128},
             {type = item, name = uranium_238_plate, amount = 128},
             {type = item, name = lithium_bob, amount = 64},
-            {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+            {type = item, name = tungsten_carbide_bob, amount = 64},
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }

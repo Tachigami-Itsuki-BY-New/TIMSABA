@@ -25,7 +25,7 @@ if mods[rocket_silo_construction_mods] then
         {type = item, name = copper_tungsten_pipe, amount = 64},
         {type = item, name = reinforced_concrete, amount = 256},
         {type = item, name = tungsten_plate_bob, amount = 256},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 128},
+        {type = item, name = tungsten_carbide_bob, amount = 128},
         {type = item, name = copper_tungsten_plate_bob, amount = 512}
     }
 

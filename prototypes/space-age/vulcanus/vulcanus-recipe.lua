@@ -4,7 +4,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = vulcanus_air,
-        categories = {angels_petrochem_air_filtering},
+        categories = {angels_air_filtering},
         subgroup = is_vulcanus_air,
         order = a,
         energy_required = 8,

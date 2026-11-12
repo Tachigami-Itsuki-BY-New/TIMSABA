@@ -8,10 +8,10 @@ TIMSABA.functions.create_items
         order = a
     },
     {
-        name = tungsten_carbide_plate_bob,
-        subgroup = is_tungsten_casting,
-        icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-tungsten-carbide.png",
-        order = b
+        name = tungsten_carbide_bob,
+        subgroup = is_tungsten_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/" .. tungsten_carbide_bob .. ".png",
+        order = g
     },
     {
         name = lithium_bob,
@@ -23,25 +23,25 @@ TIMSABA.functions.create_items
 
 TIMSABA.functions.create_recipes
 ({
-    -- CASTING
+    -- CHEMISTRY
     {
-        name = tungsten_carbide_plate_bob,
+        name = tungsten_carbide_bob,
         categories = {angels_sintering_4},
-        subgroup = is_tungsten_casting,
-        order = b,
-        allow_productivity = true,
+        subgroup = is_tungsten_chemistry,
+        order = g,
         energy_required = 8,
         ingredients =
         {
             {type = item, name = tungsten_powder, amount = 16},
             {type = item, name = carbon_angels, amount = 16}
         },
-        results = {{type = item, name = tungsten_carbide_plate_bob, amount = 16}},
-        main_product = tungsten_carbide_plate_bob
+        results = {{type = item, name = tungsten_carbide_bob, amount = 16}},
+        main_product = tungsten_carbide_bob
     },
+    -- CASTING
     {
         name = lithium_bob,
-        categories = {angels_petrochem_electrolyser},
+        categories = {angels_electrolysis},
         subgroup = is_lithium,
         order = c,
         energy_required = 8,

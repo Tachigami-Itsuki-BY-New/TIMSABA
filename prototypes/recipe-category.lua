@@ -22,12 +22,6 @@ create_recipe_category(sintering_6)
 extract_ground = "extract-ground"
 create_recipe_category(extract_ground)
 
--- ANGELS PETROCHEM REFINING
-advanced_electrolysis = "advanced-electrolysis"
-create_recipe_category(advanced_electrolysis)
-industrial_electrolysis = "industrial-electrolysis"
-create_recipe_category(industrial_electrolysis)
-
 -- SPACE AGE
 jellynut_farming = "jellynut-farming"
 create_recipe_category(jellynut_farming)

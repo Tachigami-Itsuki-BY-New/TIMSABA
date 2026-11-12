@@ -379,7 +379,7 @@ if mods [shattered_mods] then
 
     local tungsten_carbide_shattered = "ske_carbide"
     data_recipe[tungsten_carbide_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_plate_bob)
+    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_bob)
     data_recipe[tungsten_carbide_shattered].order = a_e
 
     data_fluid[brine_shattered].subgroup = is_shattered_recipe_transformation

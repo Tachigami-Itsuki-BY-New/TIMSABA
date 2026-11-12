@@ -266,7 +266,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium,
         icons = TWO_D_I(niobium_oxide_V, aluminium_powder, niobium_powder, aluminium_oxide),
         order = d,
-        energy_required = 8, -- 3Nb₂O₅(s) + 10Al(s) --> 6Nb(s) + 5Al₂O₃(s)
+        energy_required = 12, -- 3Nb₂O₅(s) + 10Al(s) --> 6Nb(s) + 5Al₂O₃(s)
         ingredients =
         {
             {type = item, name = niobium_oxide_V, amount = 12},
@@ -275,7 +275,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = niobium_powder, amount = 24},
-            {type = item, name = aluminium_oxide, amount = 4} -- 20
+            {type = item, name = aluminium_oxide, amount = 12} -- 20
         },
         main_product = niobium_powder
     },
@@ -341,7 +341,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = niobium_oxide_V, amount = 8},
-            {type = fluid, name = steam, amount = 120} -- 600
+            {type = fluid, name = steam, amount = 360} -- 600
         },
         main_product = niobium_oxide_V
     },
@@ -351,7 +351,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(niobium_processed, potassium_hydroxide, potassium_chlorate, potassium_niobate, potassium_chloride, steam),
         order = b,
-        energy_required = 8, -- 6Nb(prcessed) + 6KOH(s) + 5KClO₃(s) --> 6KNbO₃(s) + 5KCl(s) + 3H₂O(g)
+        energy_required = 12, -- 6Nb(prcessed) + 6KOH(s) + 5KClO₃(s) --> 6KNbO₃(s) + 5KCl(s) + 3H₂O(g)
         ingredients =
         {
             {type = item, name = niobium_processed, amount = 24},
@@ -361,8 +361,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = potassium_niobate, amount = 24},
-            {type = item, name = potassium_chloride, amount = 4}, -- 20
-            {type = fluid, name = steam, amount = 60} -- 180
+            {type = item, name = potassium_chloride, amount = 12}, -- 20
+            {type = fluid, name = steam, amount = 120} -- 180
         },
         main_product = potassium_niobate
     },
@@ -383,7 +383,7 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = heptafluoroniobic_acid, amount = 240},
             {type = fluid, name = nitrogen_monoxide_angels, amount = 240}, -- 480
-            {type = fluid, name = water_purified_angels, amount = 480} -- 1440
+            {type = fluid, name = water_purified_angels, amount = 960} -- 1440
         },
         main_product = heptafluoroniobic_acid
     },
@@ -403,7 +403,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = niobium_hydroxide_V, amount = 16},
-            {type = fluid, name = ammonium_fluoride_solution, amount = 720} -- 1680
+            {type = fluid, name = ammonium_fluoride_solution, amount = 960} -- 1680
         },
         main_product = niobium_hydroxide_V
     },
@@ -543,19 +543,19 @@ TIMSABA.functions.create_recipes
         name = fluorite_angels,
         categories = {chemistry},
         subgroup = is_calcium,
-        icons = THREE_D_I(ammonium_fluoride_solution, nil, calcium_hydroxide, fluorite_angels, ammonia_solution, water_purified_angels),
+        icons = THREE_D_I(calcium_hydroxide, nil, ammonium_fluoride_solution, fluorite_angels, ammonia_solution, water_purified_angels),
         order = b,
-        -- 2NH₄F(aq) + Ca(OH)₂(s) --> CaF₂(s) + 2NH₃(aq) + 2H₂O(l)
+        -- Ca(OH)₂(s) + 2NH₄F(aq) --> CaF₂(s) + 2NH₃(aq) + 2H₂O(l)
         ingredients =
         {
-            {type = fluid, name = ammonium_fluoride_solution, amount = 120},
-            {type = item, name = calcium_hydroxide, amount = 4}
+            {type = item, name = calcium_hydroxide, amount = 4},
+            {type = fluid, name = ammonium_fluoride_solution, amount = 120}
         },
         results =
         {
             {type = item, name = fluorite_angels, amount = 4},
-            {type = fluid, name = ammonia_solution, amount = 120},
-            {type = fluid, name = water_purified_angels, amount = 120}
+            {type = fluid, name = ammonia_solution, amount = 60}, -- 120
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = fluorite_angels
     },

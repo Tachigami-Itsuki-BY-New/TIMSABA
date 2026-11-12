@@ -443,7 +443,7 @@ data:extend
             {type = unlock_recipe, recipe = thorium_oxide_IV_2},
             {type = unlock_recipe, recipe = ammonium_nitrate_2},
             {type = unlock_recipe, recipe = gaseous_nitric_acid},
-            {type = unlock_recipe, recipe = gaseous_nitric_acid_cooling}
+            {type = unlock_recipe, recipe = nitric_acid_2}
         },
         unit =
         {
@@ -798,7 +798,6 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = boric_acid_solution},
-            {type = unlock_recipe, recipe = boric_acid_from_diborane_gas},
             {type = unlock_recipe, recipe = boric_acid_from_hydrochloric_acid}
         },
         unit =

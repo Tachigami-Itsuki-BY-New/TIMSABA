@@ -205,7 +205,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 300
+            {type = fluid, name = hydrogen_chloride_angels, amount = 180} -- 300
         },
         main_product = phosphorus_fluoride_V_gas
     },
@@ -224,7 +224,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = orthophosphoric_acid, amount = 60},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 60} -- 180
+            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 180
         },
         main_product = orthophosphoric_acid
     },

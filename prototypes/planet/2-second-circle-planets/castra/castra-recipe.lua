@@ -7,7 +7,7 @@ if mods[castra_mods] then
     ({
         {
             name = castra_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_castra_air,
             order = a,
             energy_required = 8,
@@ -76,7 +76,7 @@ if mods[castra_mods] then
                 {type = item, name = advanced_processing_unit, amount = 1, independent_probability = 0.25},
                 {type = item, name = copper_tungsten_pipe, amount = 1, independent_probability = 0.25},
                 {type = item, name = tungsten_plate_bob, amount = 1, independent_probability = 0.25},
-                {type = item, name = tungsten_carbide_plate_bob, amount = 1, independent_probability = 0.25},
+                {type = item, name = tungsten_carbide_bob, amount = 1, independent_probability = 0.25},
                 {type = item, name = copper_tungsten_plate_bob, amount = 1, independent_probability = 0.25},
                 {type = item, name = reinforced_concrete, amount = 1, independent_probability = 0.25},
                 {type = item, name = castra_data, amount = 1, independent_probability = 0.5}

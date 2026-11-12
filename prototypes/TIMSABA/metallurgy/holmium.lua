@@ -157,7 +157,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = holmium_ingot, amount = 16},
-            {type = item, name = fluorite_angels, amount = 8} -- 24
+            {type = item, name = fluorite_angels, amount = 16} -- 24
         },
         main_product = holmium_ingot
     },
@@ -189,7 +189,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = holmium_chloride_III_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 360
         },
         main_product = holmium_chloride_III_solution
     },
@@ -208,7 +208,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = holmium_fluoride_III, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 240}, -- 720
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}, -- 720
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = holmium_fluoride_III
@@ -228,7 +228,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = holmium_fluoride_III, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 120} -- 360
+            {type = fluid, name = water_purified_angels, amount = 240} -- 360
         },
         main_product = holmium_fluoride_III
     },
@@ -263,7 +263,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = holmium_nitrate_III_solution, amount = 240},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 240} -- 720
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 480} -- 720
         },
         main_product = holmium_nitrate_III_solution
     },
@@ -278,8 +278,8 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = holmium_oxide_III, amount = 8},
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 240}, -- 720
-            {type = fluid, name = oxygen_angels, amount = 60}, -- 180
+            {type = fluid, name = nitrogen_dioxide_angels, amount = 480}, -- 720
+            {type = fluid, name = oxygen_angels, amount = 120}, -- 180
             {type = fluid, name = steam, amount = 120} -- 240
         },
         main_product = holmium_oxide_III
