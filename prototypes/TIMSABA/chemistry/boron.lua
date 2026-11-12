@@ -77,7 +77,6 @@ TIMSABA.barreling.add_gas(diborane_gas)
 TIMSABA.barreling.add_dangerous_fluid(pentaborane_liquid)
 
 -- RECIPE
-boric_acid_from_diborane_gas = "boric-acid-from-diborane-gas"
 boric_acid_from_hydrochloric_acid = "boric-acid-from-hydrochloric-acid"
 TIMSABA.functions.create_recipes
 ({
@@ -97,7 +96,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = magnesium_boride, amount = 4},
-            {type = item, name = magnesium_oxide, amount = 4} -- 12
+            {type = item, name = magnesium_oxide, amount = 8} -- 12
         },
         main_product = magnesium_boride
     },
@@ -141,24 +140,6 @@ TIMSABA.functions.create_recipes
         }
     },
     {
-        name = boric_acid_from_diborane_gas,
-        categories = {chemistry},
-        subgroup = is_boron_fluid,
-        icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid_solution, hydrogen_angels),
-        order = a_b,
-        -- B₂H₆(g) + 8H₂O(l) --> 2H₃BO₃(aq) + 6H₂(g)
-        ingredients =
-        {
-            {type = fluid, name = diborane_gas, amount = 120},
-            {type = fluid, name = water_purified_angels, amount = 960}
-        },
-        results =
-        {
-            {type = fluid, name = boric_acid_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 240} -- 720
-        }
-    },
-    {
         name = diborane_gas,
         categories = {angels_advanced_chemistry},
         subgroup = is_boron_fluid,
@@ -174,7 +155,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = diborane_gas, amount = 60},
-            {type = fluid, name = magnesium_chloride_solution, amount = 60} -- 180
+            {type = fluid, name = magnesium_chloride_solution, amount = 120} -- 180
         },
         main_product = diborane_gas
     },
@@ -189,7 +170,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = pentaborane_liquid, amount = 60},
-            {type = fluid, name = hydrogen_angels, amount = 60} -- 180
+            {type = fluid, name = hydrogen_angels, amount = 120} -- 180
         },
         main_product = pentaborane_liquid
     }

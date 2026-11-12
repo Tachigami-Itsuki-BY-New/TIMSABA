@@ -5,7 +5,7 @@ if mods[muria_mods] then
     ({
         {
             name = muria_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_muria_air,
             order = a,
             energy_required = 8,

@@ -4,7 +4,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. hydrogen_angels},
             name = hydrogen_vesta,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(hydrogen_angels, planet_vesta),
             order = a,
@@ -17,7 +17,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_vesta,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(nitrogen_angels, planet_vesta),
             order = b,
@@ -30,7 +30,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. carbon_dioxide_angels},
             name = carbon_dioxide_vesta,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(carbon_dioxide_angels, planet_vesta),
             order = c,
@@ -43,7 +43,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. hydrogen_sulfide_angels},
             name = hydrogen_sulfide_vesta,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(hydrogen_sulfide_angels, planet_vesta),
             order = d,
@@ -56,7 +56,7 @@ if mods[vesta_mods] then
         {
             localised_name = {"fluid-name." .. methane_angels},
             name = methane_vesta,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_vesta_air,
             icons = BUILDING_R_I(methane_angels, planet_vesta),
             order = e,
@@ -73,7 +73,7 @@ if mods[vesta_mods] then
         ({
             {
                 name = helium_vesta,
-                categories = {angels_petrochem_air_filtering},
+                categories = {angels_air_filtering},
                 subgroup = is_vesta_air,
                 icons = BUILDING_R_I(helium_vesta, planet_vesta),
                 order = f,
@@ -91,7 +91,7 @@ if mods[vesta_mods] then
             {
                 localised_name = {"fluid-name." .. helium_vesta},
                 name = helium_vesta_alt,
-                categories = {angels_petrochem_air_filtering},
+                categories = {angels_air_filtering},
                 subgroup = is_vesta_air,
                 icons = BUILDING_R_I(helium, planet_vesta),
                 order = f,
@@ -294,14 +294,14 @@ if mods[vesta_mods] then
             {
                 {type = item, name = iridium_powder, amount = 16},
                 {type = fluid, name = ammonia_angels, amount = 240}, -- 480
-                {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 1440
+                {type = fluid, name = hydrogen_chloride_angels, amount = 960} -- 1440
             },
             main_product = iridium_powder
         },
         {
             localised_name = {"item-name." .. iridium_powder},
             name = iridium_powder_2,
-            categories = {advanced_electrolysis},
+            categories = {angels_electrolysis},
             subgroup = is_iridium,
             icons = FOUR_R_I(hexachloroiridic_acid_solution, hydrogen_angels, iridium_powder, chlorine_angels),
             order = e_a,
@@ -315,7 +315,7 @@ if mods[vesta_mods] then
             {
                 {type = item, name = iridium_powder, amount = 16},
                 {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
-                {type = fluid, name = chlorine_angels, amount = 240}, -- 720
+                {type = fluid, name = chlorine_angels, amount = 480}, -- 720
                 {type = fluid, name = oxygen_angels, amount = 60}, -- 120
                 {type = item, name = electrode, amount = 1, independent_probability = 0.875},
                 {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
@@ -357,7 +357,7 @@ if mods[vesta_mods] then
             results =
             {
                 {type = fluid, name = sodium_hexachloroiridate_IV_solution, amount = 120},
-                {type = fluid, name = sodium_chloride_solution, amount = 120}, -- 360
+                {type = fluid, name = sodium_chloride_solution, amount = 240}, -- 360
                 {type = item, name = iridium_chloride_III, amount = 8},
                 {type = fluid, name = water_purified_angels, amount = 120} -- 240
             },
@@ -454,7 +454,7 @@ if mods[vesta_mods] then
             results =
             {
                 {type = item, name = iridium_hydroxide_IV, amount = 16},
-                {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 1440
+                {type = fluid, name = hydrogen_fluoride_angels, amount = 960}, -- 1440
                 {type = fluid, name = oxygen_angels, amount = 60} -- 120
             },
             main_product = iridium_hydroxide_IV
@@ -475,7 +475,7 @@ if mods[vesta_mods] then
             {
                 {type = fluid, name = hexachloroiridic_acid_solution, amount = 240},
                 {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
-                {type = fluid, name = water_purified_angels, amount = 1200} -- 2160
+                {type = fluid, name = water_purified_angels, amount = 1440} -- 2160
             },
             main_product = hexachloroiridic_acid_solution
         }

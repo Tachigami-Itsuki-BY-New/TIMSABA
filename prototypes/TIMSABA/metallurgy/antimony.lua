@@ -184,7 +184,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony,
         icons = THREE_I(antimony_ore, carbon_angels, antimony_ingot),
         order = d,
-        energy_required = 8, -- Sb -C-> Sb
+        energy_required = 8, -- Sb(s) -C-> Sb(s)
         ingredients =
         {
             {type = item, name = antimony_ore, amount = 32},
@@ -199,7 +199,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony,
         icons = TWO_D_I(antimony_oxide_III, carbon, antimony_ingot, carbon_monoxide_angels),
         order = d_a,
-        energy_required = 8, -- Sb₂O₅ + 5C --> 2Sb + 5CO 
+        energy_required = 8, -- Sb₂O₅(s) + 5C(s) --> 2Sb(s) + 5CO(g)
         ingredients =
         {
             {type = item, name = antimony_oxide_III, amount = 8},
@@ -208,7 +208,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = antimony_ingot, amount = 16},
-            {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 600
+            {type = fluid, name = carbon_monoxide_angels, amount = 360} -- 600
         },
         main_product = antimony_ingot
     },
@@ -218,7 +218,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_antimony,
         icons = THREE_D_I(hexachloroantimonic_acid, nil, zinc_powder, antimony_ingot, zinc_chloride, hydrochloric_acid_angels),
         order = d_b,
-        energy_required = 8, -- 2HSbCl₆(aq) + 5Zn --> 2Sb + 5ZnCl₂ + 2HCl(aq)
+        energy_required = 8, -- 2HSbCl₆(aq) + 5Zn(s) --> 2Sb(s) + 5ZnCl₂(s) + 2HCl(aq)
         ingredients =
         {
             {type = fluid, name = hexachloroantimonic_acid, amount = 240},
@@ -227,7 +227,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = antimony_ingot, amount = 16},
-            {type = item, name = zinc_chloride, amount = 120}, -- 600
+            {type = item, name = zinc_chloride, amount = 360}, -- 600
             {type = fluid, name = hydrochloric_acid_angels, amount = 120} -- 240
         },
         main_product = antimony_ingot
@@ -322,13 +322,13 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = antimony_acid, amount = 240},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 240} -- 1200
+            {type = fluid, name = hydrogen_chloride_angels, amount = 720} -- 1200
         },
         main_product = antimony_acid
     },
     {
         name = antimony_oxide_III,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_antimony_chemistry,
         icons = THREE_R_I(antimony_acid, antimony_oxide_III, steam),
         order = d,
@@ -337,7 +337,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = antimony_oxide_III, amount = 8},
-            {type = fluid, name = steam, amount = 120} -- 600
+            {type = fluid, name = steam, amount = 360} -- 600
         },
         main_product = antimony_oxide_III
     },

@@ -169,16 +169,16 @@ if mods[arig_mods] then
     data_recipe[advanced_heavy_oil_cracking].subgroup = is_arig_recipe
     data_recipe[advanced_heavy_oil_cracking].icons = THREE_R_I(heavy_oil_timsaba, crude_oil, raw_gas_angels)
     data_recipe[advanced_heavy_oil_cracking].order = f_a
-    data_recipe[advanced_heavy_oil_cracking].energy_required = 4 -- heavy oil(l) -H₂O/steam cracking-> crude oil(l) + raw gas(g)
+    data_recipe[advanced_heavy_oil_cracking].energy_required = 8 -- heavy oil(l) -H₂O/steam cracking-> crude oil(l) + raw gas(g)
     data_recipe[advanced_heavy_oil_cracking].ingredients =
     {
-        {type = fluid, name = heavy_oil_timsaba, amount = 60},
+        {type = fluid, name = heavy_oil_timsaba, amount = 240},
         {type = fluid, name = steam, amount = 60}
     }
     data_recipe[advanced_heavy_oil_cracking].results =
     {
-        {type = fluid, name = crude_oil, amount = 60},
-        {type = fluid, name = raw_gas_angels, amount = 30},
+        {type = fluid, name = crude_oil, amount = 240},
+        {type = fluid, name = raw_gas_angels, amount = 240},
         {type = fluid, name = steam, amount = 30} -- 60
     }
     data_recipe[advanced_heavy_oil_cracking].surface_conditions = {{property = pressure, min = 600, max = 600}}

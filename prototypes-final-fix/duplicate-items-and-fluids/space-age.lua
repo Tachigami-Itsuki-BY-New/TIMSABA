@@ -4,7 +4,7 @@ local holmium_solution = "holmium-solution"
 local replace_prototypes =
 {
 	[carbon] = carbon_angels,
-	[tungsten_carbide] = tungsten_carbide_plate_bob,
+	[tungsten_carbide] = tungsten_carbide_bob,
 	[tungsten_plate] = tungsten_plate_bob,
 	[lithium_plate] = lithium_bob,
 	[lithium] = lithium_chloride_angels,

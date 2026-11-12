@@ -598,7 +598,7 @@ if settings.startup[setting_flow_control_new].value then
     table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_pipe .. _elbow})
     table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_pipe .. _junction})
 end
-table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_carbide_plate_bob})
+table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_carbide_bob})
 
 data_technology[tech_nitinol_processing].icons = nil
 data_technology[tech_nitinol_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-nitinol-alloy.png"
@@ -1584,14 +1584,14 @@ data_technology[tech_zinc_smelting_1].effects =
     {type = unlock_recipe, recipe = zinc_ingot},
     {type = unlock_recipe, recipe = zinc_molten_angels},
     {type = unlock_recipe, recipe = zinc_plate_angels},
-    {type = unlock_recipe, recipe = magnesium_hydroxide_3}
+    {type = unlock_recipe, recipe = magnesium_hydroxide_3},
+    {type = unlock_recipe, recipe = zinc_oxide}
 }
 
 data_technology[tech_zinc_smelting_2].prerequisites = {tech_ore_processing_2, tech_zinc_smelting_1, tech_powder_metallurgy_3, tech_sodium_processing_1}
 data_technology[tech_zinc_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = zinc_processed},
-    {type = unlock_recipe, recipe = zinc_oxide},
     {type = unlock_recipe, recipe = sodium_tetrahydroxozincate_II_solution},
     {type = unlock_recipe, recipe = zinc_hydroxide},
     {type = unlock_recipe, recipe = zinc_chloride_solution_2},
@@ -1623,7 +1623,8 @@ data_technology[tech_silver_smelting_3].effects =
     {type = unlock_recipe, recipe = silver_cathode},
     {type = unlock_recipe, recipe = silver_ingot_3},
     {type = unlock_recipe, recipe = sodium_cyanide_2},
-    {type = unlock_recipe, recipe = hydrocyanic_acid_2}
+    {type = unlock_recipe, recipe = hydrocyanic_acid_2},
+    {type = unlock_recipe, recipe = sodium_hydroxide_2}
 }
 
 -- TITANIUM
@@ -1669,7 +1670,8 @@ data_technology[tech_gold_smelting_3].effects =
     {type = unlock_recipe, recipe = sodium_dicyanoaurate_I_solution},
     {type = unlock_recipe, recipe = gold_cathode_2},
     {type = unlock_recipe, recipe = sodium_cyanide_2},
-    {type = unlock_recipe, recipe = hydrocyanic_acid_2}
+    {type = unlock_recipe, recipe = hydrocyanic_acid_2},
+    {type = unlock_recipe, recipe = sodium_hydroxide_2}
 }
 
 -- COBALT
@@ -1710,9 +1712,9 @@ data_technology[tech_chromium_smelting_2].effects =
     {type = unlock_recipe, recipe = chromium_ingot_3},
     {type = unlock_recipe, recipe = acetaldehyde},
     {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether},
-    {type = unlock_recipe, recipe = lithium_tetraethoxy_aluminate_solution_ether_reprocess},
+    {type = unlock_recipe, recipe = ethanol_liquid_2},
     {type = unlock_recipe, recipe = lithium_chloride_solution_from_lithium_hydroxide},
-    {type = unlock_recipe, recipe = potassium_hydroxide_from_potassium_sulfate_solution}
+    {type = unlock_recipe, recipe = fertilizer_2}
 }
 
 data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2, tech_sulfur_processing_3}
@@ -2084,16 +2086,12 @@ data_technology[tech_nitrogen_processing_4].effects =
     {type = unlock_recipe, recipe = dimethylhydrazine_angels},
     {type = unlock_recipe, recipe = ammonium_chloride_solution_angels},
     {type = unlock_recipe, recipe = dicyandiamide_solution},
-    {type = unlock_recipe, recipe = melamine_solution_from_dicyandiamide_solution},
+    {type = unlock_recipe, recipe = melamine_solution_2},
     {type = unlock_recipe, recipe = ammonium_sulfate_solution_2},
     {type = unlock_recipe, recipe = ammonium_hydrosulfate_reprocess},
     {type = unlock_recipe, recipe = hydrocyanic_acid},
     {type = unlock_recipe, recipe = sodium_cyanide_solution_2},
-    {type = unlock_recipe, recipe = acrylonitrile},
-    {type = unlock_recipe, recipe = liquid_plastic_4},
-    {type = unlock_recipe, recipe = acetone_cyanohydrin},
-    {type = unlock_recipe, recipe = methyl_methacrylate},
-    {type = unlock_recipe, recipe = liquid_plastic_5}
+    {type = unlock_recipe, recipe = acrylonitrile}
 }
 
 data_technology[tech_sodium_processing_1].icons = TIMSABA.functions.create_gas_tech_icon("NaNaNa")
@@ -2135,7 +2133,6 @@ table.insert(data_technology[tech_sulfur_processing_3].effects, {type = unlock_r
 
 data_technology[tech_chlorine_processing_1].effects =
 {
-    {type = unlock_recipe, recipe = advanced_electrolyser_1},
     {type = unlock_recipe, recipe = water_saline_separation},
     {type = unlock_recipe, recipe = hydrogen_chloride_angels},
     {type = unlock_recipe, recipe = hydrochloric_acid_angels}
@@ -2175,7 +2172,6 @@ data_technology[tech_steam_cracking_1].effects =
 data_technology[tech_advanced_chemistry_1].effects =
 {
     {type = unlock_recipe, recipe = electrolyser_2},
-    {type = unlock_recipe, recipe = industrial_electrolyser_1},
     {type = unlock_recipe, recipe = liquifier_2},
     {type = unlock_recipe, recipe = chemical_plant_2},
     {type = unlock_recipe, recipe = advanced_chemical_plant_1},
@@ -2187,8 +2183,6 @@ data_technology[tech_advanced_chemistry_1].effects =
 data_technology[tech_advanced_chemistry_2].effects =
 {
     {type = unlock_recipe, recipe = electrolyser_3},
-    {type = unlock_recipe, recipe = advanced_electrolyser_2},
-    {type = unlock_recipe, recipe = industrial_electrolyser_2},
     {type = unlock_recipe, recipe = liquifier_3},
     {type = unlock_recipe, recipe = chemical_plant_3},
     {type = unlock_recipe, recipe = advanced_chemical_plant_2},
@@ -2211,8 +2205,6 @@ data_technology[tech_advanced_chemistry_4].prerequisites = {tech_titanium_proces
 data_technology[tech_advanced_chemistry_4].effects =
 {
     {type = unlock_recipe, recipe = electrolyser_4},
-    {type = unlock_recipe, recipe = advanced_electrolyser_3},
-    {type = unlock_recipe, recipe = industrial_electrolyser_3},
     {type = unlock_recipe, recipe = air_filter_4},
     {type = unlock_recipe, recipe = liquifier_4},
     {type = unlock_recipe, recipe = chemical_plant_4},
@@ -2223,13 +2215,10 @@ data_technology[tech_advanced_chemistry_4].effects =
     {type = unlock_recipe, recipe = separator_3},
     {type = unlock_recipe, recipe = steam_cracker_3}
 }
-table.insert(data_technology[tech_advanced_chemistry_4].effects, {type = unlock_recipe, recipe = sulfur_trioxide_separation})
 
 table.insert(data_technology[tech_advanced_chemistry_5].prerequisites, tech_stone_smelting_4)
 data_technology[tech_advanced_chemistry_5].effects =
 {
-    {type = unlock_recipe, recipe = advanced_electrolyser_4},
-    {type = unlock_recipe, recipe = industrial_electrolyser_4},
     {type = unlock_recipe, recipe = advanced_chemical_plant_4},
     {type = unlock_recipe, recipe = gas_refinery_4},
     {type = unlock_recipe, recipe = advanced_gas_refinery_3},
@@ -2282,6 +2271,14 @@ data_technology[tech_lithium_processing].effects =
 }
 
 data_technology[plutonium_fuel_angels].prerequisites = {tech_deuterium_power, rocket_fuel}
+
+data_technology[tech_plastic_1].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 255, 255}, {230, 230, 230}, {200, 200, 200}})
+data_technology[tech_plastic_2].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 255, 255}, {230, 230, 230}, {200, 200, 200}})
+data_technology[tech_plastic_3].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 255, 255}, {230, 230, 230}, {200, 200, 200}})
+
+data_technology[tech_resin_1].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 225, 155}, {230, 205, 140}, {200, 180, 120}})
+data_technology[tech_resin_2].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 225, 155}, {230, 205, 140}, {200, 180, 120}})
+data_technology[tech_resin_3].icons = TIMSABA.functions.create_fluid_tech_icon({{255, 225, 155}, {230, 205, 140}, {200, 180, 120}})
 
 table.insert(data_technology[tech_rubbers].effects, {type = unlock_recipe, recipe = tin_insulated_cable})
 

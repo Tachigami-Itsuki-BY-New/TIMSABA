@@ -8,7 +8,7 @@ if mods[vesta_mods] then
     end
 
     data_recipe[deuterium_mods].localised_name = {"fluid-name." .. deuterium_angels}
-    data_recipe[deuterium_mods].categories = {angels_petrochem_air_filtering}
+    data_recipe[deuterium_mods].categories = {angels_air_filtering}
     data_recipe[deuterium_mods].subgroup = is_vesta_air
     data_recipe[deuterium_mods].icons = BUILDING_R_I(deuterium_angels, planet_vesta)
     data_recipe[deuterium_mods].order = g
@@ -19,7 +19,7 @@ if mods[vesta_mods] then
     data_recipe[deuterium_mods].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     data_recipe[tritium_mods].localised_name = {"fluid-name." .. tritium_gas}
-    data_recipe[tritium_mods].categories = {angels_petrochem_air_filtering}
+    data_recipe[tritium_mods].categories = {angels_air_filtering}
     data_recipe[tritium_mods].subgroup = is_vesta_air
     data_recipe[tritium_mods].icons = BUILDING_R_I(tritium_gas, planet_vesta)
     data_recipe[tritium_mods].order = h
@@ -216,7 +216,7 @@ if mods[vesta_mods] then
     data_recipe[algea_clump_stonite].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local algea_stone_electrolysis = "ske-algea-stone-electrolysis"
-    data_recipe[algea_stone_electrolysis].categories = {vesta_electrolyser}
+    data_recipe[algea_stone_electrolysis].categories = {vesta_electrolysis}
     data_recipe[algea_stone_electrolysis].subgroup = is_vesta_recipe
     data_recipe[algea_stone_electrolysis].icons = FOUR_R_I(algea_clump_stonite, stone, nil, stone)
     data_recipe[algea_stone_electrolysis].order = e_a
@@ -232,7 +232,7 @@ if mods[vesta_mods] then
     data_recipe[algea_stone_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     if data_recipe[lithium_brine] then
-        data_recipe[lithium_brine].categories = {angels_petrochem_air_filtering}
+        data_recipe[lithium_brine].categories = {angels_air_filtering}
         data_recipe[lithium_brine].subgroup = is_vesta_recipe
         data_recipe[lithium_brine].icons = TWO_I(water, water_thermal_angels)
         data_recipe[lithium_brine].order = f

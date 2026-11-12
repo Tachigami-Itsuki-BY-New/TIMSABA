@@ -319,7 +319,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. magnesium_ingot},
             name = magnesium_ingot_3,
-            categories = {angels_chemical_smelting_4},
+            categories = {angels_blast_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, potassium, magnesium_ingot, potassium_fluoride),
             order = d_b,
@@ -339,7 +339,7 @@ if mods[aegis_bellicos_mods] then
         {
             localised_name = {"item-name." .. magnesium_ingot},
             name = magnesium_ingot_4,
-            categories = {angels_chemical_smelting_4},
+            categories = {angels_blast_smelting_4},
             subgroup = is_magnesium,
             icons = TWO_D_I(magnesium_fluoride, sodium_angels, magnesium_ingot, sodium_fluoride),
             order = d_c,
@@ -363,7 +363,7 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_nitrogen,
             icons = THREE_I(ammonium_fluoride_gas, water_purified_angels, ammonium_fluoride_solution),
             order = v,
-            energy_required = 2, -- NH₄F(g) + H₂O(l) -H₂O-> NH₄F(aq)
+            -- NH₄F(g) + H₂O(l) -H₂O-> NH₄F(aq)
             ingredients =
             {
                 {type = fluid, name = ammonium_fluoride_gas, amount = 60},
@@ -382,7 +382,7 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_nitrogen,
             icons = TWO_D_I(ammonium_fluoride_solution, sulfuric_acid_angels, ammonium_hydrosulfate, hydrofluoric_acid_angels),
             order = f,
-            energy_required = 2, -- NH₄F(aq) + H₂SO₄(l) --> NH₄HSO₄(s) + HF(aq)
+            -- NH₄F(aq) + H₂SO₄(l) --> NH₄HSO₄(s) + HF(aq)
             ingredients =
             {
                 {type = fluid, name = ammonium_fluoride_solution, amount = 60},
@@ -401,7 +401,7 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_nitrogen,
             icons = THREE_I(ammonia_angels, hydrogen_fluoride_angels, ammonium_hydrofluoride),
             order = j,
-            energy_required = 2, -- NH₃(g) + 2HF(g) --> NH₄HF₂(s)
+            -- NH₃(g) + 2HF(g) --> NH₄HF₂(s)
             ingredients =
             {
                 {type = fluid, name = ammonia_angels, amount = 60},

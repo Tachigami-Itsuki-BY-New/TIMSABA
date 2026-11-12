@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
-Date: ??.??.2026
+Date: 12.11.2026
   Features:
     - [All] Added new mineable resources.
     - [All] Added new items, fluids, recipes and technologies.

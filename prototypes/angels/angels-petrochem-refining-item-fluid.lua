@@ -883,6 +883,7 @@ TIMSABA.barreling.add_dangerous_fluid(ionic_liquid)
 local graphics_petrochem_carbons = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/"
 -- CARBON FLUIDS 2
 acetylene_gas = "acetylene-gas"
+vinyl_acetate_liquid = "vinyl-acetate-liquid"
 diethyl_ether = "diethyl-ether-liquid"
 methyl_methacrylate = "methyl-methacrylate-liquid"
 acetaldehyde = "acetaldehyde-liquid"
@@ -899,11 +900,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C2H2")
     },
     {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]2[/font]"} or nil,
+        name = vinyl_acetate_liquid,
+        subgroup = is_carbon_fluids_2,
+        icon = graphics_petrochem_carbons .. vinyl_acetate_liquid .. ".png",
+        order = b,
+        base_color = TIMSABA.functions.fluid_color("C2H4O2"),
+        flow_color = TIMSABA.functions.flow_color("C2H4O2")
+    },
+    {
         localised_description = show_formula and {chemical_formula, "(C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font])[font=default-tiny-bold]2[/font]O"} or nil,
         name = diethyl_ether,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. diethyl_ether .. ".png",
-        order = b,
+        order = c,
         base_color = TIMSABA.functions.fluid_color("C4H10O"),
         flow_color = TIMSABA.functions.flow_color("C4H10O")
     },
@@ -912,7 +922,7 @@ TIMSABA.functions.create_fluids
         name = methyl_methacrylate,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. methyl_methacrylate .. ".png",
-        order = c,
+        order = d,
         base_color = TIMSABA.functions.fluid_color("C5H8O2"),
         flow_color = TIMSABA.functions.flow_color("C5H8O2")
     },
@@ -921,7 +931,7 @@ TIMSABA.functions.create_fluids
         name = acetaldehyde,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. acetaldehyde .. ".png",
-        order = d,
+        order = e,
         base_color = TIMSABA.functions.fluid_color("C2H4O"),
         flow_color = TIMSABA.functions.flow_color("C2H4O")
     },
@@ -930,12 +940,13 @@ TIMSABA.functions.create_fluids
         name = formic_acid,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. formic_acid .. ".png",
-        order = e,
+        order = f,
         base_color = TIMSABA.functions.fluid_color("CH2O2"),
         flow_color = TIMSABA.functions.flow_color("CH2O2")
     }
 })
 TIMSABA.barreling.add_gas(acetylene_gas)
+TIMSABA.barreling.add_dangerous_fluid(vinyl_acetate_liquid)
 TIMSABA.barreling.add_dangerous_fluid(diethyl_ether)
 TIMSABA.barreling.add_dangerous_fluid(methyl_methacrylate)
 TIMSABA.barreling.add_dangerous_fluid(acetaldehyde)
@@ -973,6 +984,7 @@ TIMSABA.functions.create_items
 -- ETHANE FLUID
 ethylene_oxide = "ethylene-oxide-gas"
 ethylene_carbonate = "ethylene-carbonate-liquid"
+isoprene_liquid = "isoprene-liquid"
 ethylene_glycol_liquid = "ethylene-glycol-liquid"
 glyoxal_liquid = "glyoxal-liquid"
 TIMSABA.functions.create_fluids
@@ -996,11 +1008,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3H4O3")
     },
     {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]5[/font]H[font=default-tiny-bold]8[/font]"} or nil,
+        name = isoprene_liquid,
+        subgroup = is_ethane,
+        icon = graphics_petrochem_carbons .. isoprene_liquid .. ".png",
+        order = g,
+        base_color = TIMSABA.functions.fluid_color("C5H8"),
+        flow_color = TIMSABA.functions.flow_color("C5H8")
+    },
+    {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]2[/font]"} or nil,
         name = ethylene_glycol_liquid,
         subgroup = is_ethane,
         icon = graphics_petrochem_carbons .. ethylene_glycol_liquid .. ".png",
-        order = g,
+        order = h,
         base_color = TIMSABA.functions.fluid_color("C2H6O2"),
         flow_color = TIMSABA.functions.flow_color("C2H6O2")
     },
@@ -1009,7 +1030,7 @@ TIMSABA.functions.create_fluids
         name = glyoxal_liquid,
         subgroup = is_ethane,
         icon = graphics_petrochem_carbons .. glyoxal_liquid .. ".png",
-        order = h,
+        order = i,
         base_color = TIMSABA.functions.fluid_color("C2H2O2"),
         flow_color = TIMSABA.functions.flow_color("C2H2O2")
     }

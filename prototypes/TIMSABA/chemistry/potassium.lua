@@ -18,7 +18,7 @@ potassium = "potassium"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = show_formula and {chemical_formula, "KCl*MgCl[font=default-tiny-bold]2[/font]*6H[font=default-tiny-bold]2[/font]O"} or nil,
+        localised_description = show_formula and {chemical_formula, "KCl*MgCl[font=default-tiny-bold]2[/font]"} or nil,
         name = carnallite,
         subgroup = is_potassium,
         icon = graphics_potassium .. carnallite .. ".png",
@@ -126,17 +126,16 @@ TIMSABA.barreling.add_dangerous_fluid(potassium_sulfate_solution)
 
 -- RECIPE
 carnallite_reprocessing = "carnallite-reprocessing"
-potassium_hydroxide_from_potassium_sulfate_solution = "potassium-hydroxide-from-potassium-sulfate-solution"
 potassium_chloride_solution_2 = "potassium-chloride-solution-2"
 TIMSABA.functions.create_recipes
 ({
     {
         name = potassium_hydroxide,
-        categories = {angels_petrochem_electrolyser},
+        categories = {angels_electrolysis},
         subgroup = is_potassium,
         icons = FOUR_R_I(potassium_chloride_solution, hydrogen_angels, potassium_hydroxide, chlorine_angels),
         order = c,
-        energy_required = 8, -- 2KCl(aq) -electrode/electrolys-> 2KOH(s) + Cl₂(g) + H₂(g)
+        energy_required = 8, -- 2KCl(aq) -electrode/electrolys-> 2KOH(s) + H₂(g) + Cl₂(g)
         ingredients =
         {
             {type = fluid, name = potassium_chloride_solution, amount = 240},
@@ -153,34 +152,12 @@ TIMSABA.functions.create_recipes
         main_product = potassium_hydroxide
     },
     {
-        name = potassium_hydroxide_from_potassium_sulfate_solution,
-        categories = {angels_petrochem_electrolyser},
-        subgroup = is_potassium,
-        icons = FOUR_R_I(potassium_sulfate_solution, sulfur_dioxide_angels, potassium_hydroxide, oxygen_angels),
-        order = c_a,
-        energy_required = 8, -- 2K₂SO₄(aq) -electrode/electrolys-> 4KOH(s) + 2SO₂(g) + O₂(g)
-        ingredients =
-        {
-            {type = fluid, name = potassium_sulfate_solution, amount = 240},
-            {type = item, name = electrode, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = potassium_hydroxide, amount = 32},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 240},
-            {type = fluid, name = oxygen_angels, amount = 120},
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-        },
-        main_product = potassium_hydroxide
-    },
-    {
         name = potassium_chlorate,
         categories = {chemistry},
         subgroup = is_potassium,
         icons = THREE_R_I(potassium_chlorate_solution, potassium_chlorate, steam),
         order = e,
-        -- KClO₃(aq) --> KClO₃ + H₂O(g)
+        -- KClO₃(aq) --> KClO₃(s) + H₂O(g)
         ingredients = {{type = fluid, name = potassium_chlorate_solution, amount = 60}},
         results =
         {
@@ -192,11 +169,11 @@ TIMSABA.functions.create_recipes
     -- FLUID
     {
         name = carnallite_reprocessing,
-        categories = {angels_advanced_chemistry},
+        categories = {chemistry},
         subgroup = is_potassium_fluid,
-        icons = THREE_D_I(carnallite, nil, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution, water),
+        icons = TWO_D_I(carnallite, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution),
         order = a,
-        -- (KCl * MgCl₂ * 6H₂O) + 2H₂O --> KCl(aq) + MgCl₂(aq) + 6H₂O
+        -- (KCl * MgCl₂)(s) + 2H₂O(l) --> KCl(aq) + MgCl₂(aq)
         ingredients =
         {
             {type = item, name = carnallite, amount = 4},
@@ -205,8 +182,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = potassium_chloride_solution, amount = 60},
-            {type = fluid, name = magnesium_chloride_solution, amount = 60},
-            {type = fluid, name = water, amount = 360}
+            {type = fluid, name = magnesium_chloride_solution, amount = 60}
         },
         main_product = potassium_chloride_solution
     },
@@ -250,6 +226,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_potassium_fluid,
         icons = THREE_I(potassium_hydroxide, water_purified_angels, potassium_hydroxide_solution),
         order = c,
+        -- KOH(s) + H₂O(l) --> KOH(aq)
         ingredients =
         {
             {type = item, name = potassium_hydroxide, amount = 4},
@@ -264,7 +241,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_potassium_fluid,
         icons = TWO_D_I(potassium_hydroxide_solution, chlorine_angels, potassium_hypochlorite_solution, potassium_chloride_solution),
         order = d,
-        energy_required = 8, -- 2KOH(aq) + Cl₂ --> KClO(aq) + KCl(aq) + H₂O
+        energy_required = 8, -- 2KOH(aq) + Cl₂(g) --> KClO(aq) + KCl(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = potassium_hydroxide_solution, amount = 240},

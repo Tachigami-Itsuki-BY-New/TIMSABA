@@ -32,6 +32,9 @@ data_item[tin_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plat
 data_item[tin_cable].icon = "__reskins-angels__/graphics/icons/smelting/intermediates/angels-wire-tin.png"
 data_item[tin_cable].icon_size = 64
 
+data_item[silicon_carbide_bob].icons = nil
+data_item[silicon_carbide_bob].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/" .. silicon_carbide_bob .. ".png"
+
 data_item[nickel_plate_bob].icons = nil
 data_item[nickel_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-nickel.png"
 

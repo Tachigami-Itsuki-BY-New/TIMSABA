@@ -6,7 +6,7 @@ if mods[paracelsin_mods] then
         {
             localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_from_paracelsin_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_paracelsin_air,
             icons = BUILDING_R_I(nitrogen_angels, planet_paracelsin),
             order = a,

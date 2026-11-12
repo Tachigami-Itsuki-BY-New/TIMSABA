@@ -219,7 +219,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = uranium_fluoride_VI_gas, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240} -- 720
+            {type = fluid, name = water_purified_angels, amount = 480} -- 720
         },
         main_product = uranium_fluoride_VI_gas
     },
@@ -485,7 +485,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = uranium_235, amount = 16},
-            {type = item, name = magnesium_fluoride, amount = 12} -- 48
+            {type = item, name = magnesium_fluoride, amount = 32} -- 48
         },
         main_product = uranium_235
     },

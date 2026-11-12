@@ -3,7 +3,7 @@ if mods[maraxsis_mods] then
     data_fluid[maraxsis_air].subgroup = is_maraxsis_air
     data_fluid[maraxsis_air].order = a
     TIMSABA.barreling.add_gas(maraxsis_air)
-    data_recipe[maraxsis_air].categories = {angels_petrochem_air_filtering}
+    data_recipe[maraxsis_air].categories = {angels_air_filtering}
     data_recipe[maraxsis_air].subgroup = is_maraxsis_air
     data_recipe[maraxsis_air].order = a
     data_recipe[maraxsis_air].energy_required = 8
@@ -63,7 +63,7 @@ if mods[maraxsis_mods] then
 
     local maraxsis_salt = "maraxsis-salt"
     if data_recipe[maraxsis_salt] then
-        data_recipe[maraxsis_salt].categories = {angels_petrochem_electrolyser}
+        data_recipe[maraxsis_salt].categories = {angels_electrolysis}
         data_recipe[maraxsis_salt].subgroup = is_maraxsis_recipe
         data_recipe[maraxsis_salt].icons = FOUR_R_I(water_brackish_maraxsis, oxygen_angels, salt_angels, hydrogen_angels)
         data_recipe[maraxsis_salt].order = c_a

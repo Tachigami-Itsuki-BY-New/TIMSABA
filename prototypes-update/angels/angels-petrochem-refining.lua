@@ -63,7 +63,7 @@ data_recipe[water_separation_2].results =
 local water_synthesis = "angels-water-synthesis"
 data_recipe[water_synthesis].icons = THREE_I(hydrogen_angels, oxygen_angels, water_purified_angels)
 data_recipe[water_synthesis].order = b_c
-data_recipe[water_synthesis].energy_required = 2 -- 2H₂(g) + O₂(g) --> 2H₂O(l)
+data_recipe[water_synthesis].energy_required = 4 -- 2H₂(g) + O₂(g) --> 2H₂O(l)
 data_recipe[water_synthesis].ingredients =
 {
     {type = fluid, name = hydrogen_angels, amount = 60},
@@ -99,7 +99,6 @@ data_recipe[heavy_water_separation_2].results =
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
 
-data_recipe[water_saline_separation].categories = {advanced_electrolysis}
 data_recipe[water_saline_separation].subgroup = is_basics
 data_recipe[water_saline_separation].icons = FOUR_R_I(water_saline_angels, hydrogen_angels, sodium_hydroxide_angels, chlorine_angels)
 data_recipe[water_saline_separation].order = d_a
@@ -202,27 +201,28 @@ data_recipe[coke_pellet_angels].icons = TWO_I(coke_processed, coke_pellet_angels
 data_recipe[coke_pellet_angels].order = f
 data_recipe[coke_pellet_angels].energy_required = 4
 data_recipe[coke_pellet_angels].ingredients[1].name = coke_processed
-data_recipe[coke_pellet_angels].ingredients[1].amount = 1
+data_recipe[coke_pellet_angels].ingredients[1].amount = 4
+data_recipe[coke_pellet_angels].results[1].amount = 4
 
 local coal_cracking_1 = "angels-coal-cracking-1"
 data_recipe[coal_cracking_1].categories = {angels_gas_refining}
 data_recipe[coal_cracking_1].icons = FOUR_R_I(coal, methane_angels, ethane_angels, butane_angels)
 data_recipe[coal_cracking_1].order = f_a
--- Coal -cat-> Coke + CH₄ + C₂H₆ + C₄H₁₀
-data_recipe[coal_cracking_1].ingredients[1].amount = 8
+data_recipe[coal_cracking_1].energy_required = 8 -- Coal -cat-> Coke + CH₄ + C₂H₆ + C₄H₁₀
+data_recipe[coal_cracking_1].ingredients[1].amount = 16
 data_recipe[coal_cracking_1].results =
 {
-    {type = item, name = coke_angels, amount = 4},
-    {type = fluid, name = methane_angels, amount = 60},
-    {type = fluid, name = ethane_angels, amount = 60},
-    {type = fluid, name = butane_angels, amount = 60}
+    {type = item, name = coke_angels, amount = 8},
+    {type = fluid, name = methane_angels, amount = 120},
+    {type = fluid, name = ethane_angels, amount = 120},
+    {type = fluid, name = butane_angels, amount = 120}
 }
 
 local coal_cracking_2 = "angels-coal-cracking-2"
 data_recipe[coal_cracking_2].categories = {oil_processing}
 data_recipe[coal_cracking_2].icons = FOUR_R_I(coal, mineral_oil_angels, fuel_oil_angels, naphtha_angels)
 data_recipe[coal_cracking_2].order = f_b
--- Coal(s) + 16H₂(g) -cat-> C₃₂H₆₆(l) + C₄₈H₉₈(l) + C₈H₁₈(l)
+data_recipe[coal_cracking_2].energy_required = 8 -- Coal(s) + 16H₂(g) -cat-> C₃₂H₆₆(l) + C₄₈H₉₈(l) + C₈H₁₈(l)
 data_recipe[coal_cracking_2].ingredients =
 {
     {type = item, name = coal, amount = 16},
@@ -242,35 +242,60 @@ local coal_cracking_3 = "angels-coal-cracking-3"
 data_recipe[coal_cracking_3].categories = {angels_gas_refining}
 data_recipe[coal_cracking_3].icons = FOUR_R_I(coal, synthesis_angels, residual_angels, hydrogen_sulfide_angels)
 data_recipe[coal_cracking_3].order = f_c
--- Coal + H₂O + O₂ -cat-> (H₂ + CO) + (CH₄ + CO₂) + H₂S
+data_recipe[coal_cracking_2].energy_required = 8 -- Coal + H₂O + O₂ -cat-> (H₂ + CO) + (CH₄ + CO₂) + H₂S
 data_recipe[coal_cracking_3].ingredients =
 {
-    {type = item, name = coal, amount = 8},
-    {type = fluid, name = steam, amount = 60},
-    {type = fluid, name = oxygen_angels, amount = 60},
+    {type = item, name = coal, amount = 16},
+    {type = fluid, name = steam, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 120},
     {type = item, name = catalyst_blue, amount = 1}
 }
 data_recipe[coal_cracking_3].results =
 {
-    {type = fluid, name = synthesis_angels, amount = 60},
-    {type = fluid, name = residual_angels, amount = 60},
-    {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
+    {type = fluid, name = synthesis_angels, amount = 120},
+    {type = fluid, name = residual_angels, amount = 120},
+    {type = fluid, name = hydrogen_sulfide_angels, amount = 120},
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
 
 -- CARBON FLUIDS ONE
+data_fluid[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
+data_fluid[carbon_dioxide_angels].order = a
+TIMSABA.barreling.add_gas(carbon_dioxide_angels)
+data_recipe[carbon_dioxide_angels].categories = {chemistry}
+data_recipe[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
+data_recipe[carbon_dioxide_angels].icons = THREE_I(coal, oxygen_angels, carbon_dioxide_angels)
+data_recipe[carbon_dioxide_angels].order = a
+data_recipe[carbon_dioxide_angels].energy_required = 4 -- C(s) + O₂(g) --> CO₂(g)
+data_recipe[carbon_dioxide_angels].ingredients =
+{
+    {type = item, name = coal, amount = 4},
+    {type = fluid, name = oxygen_angels, amount = 60}
+}
+data_recipe[carbon_dioxide_angels].results[1].amount = 60
+
+local water_gas_shift_1 = "angels-water-gas-shift-1"
+data_recipe[water_gas_shift_1].subgroup = is_carbon_fluid_1
+data_recipe[water_gas_shift_1].icons = TWO_D_I(carbon_monoxide_angels, steam, carbon_dioxide_angels, hydrogen_angels)
+data_recipe[water_gas_shift_1].order = a_a
+data_recipe[water_gas_shift_1].energy_required = 4 -- CO(g) + H₂O(g) --> CO₂(g) + H₂(g)
+data_recipe[water_gas_shift_1].ingredients[1].amount = 60
+data_recipe[water_gas_shift_1].ingredients[2].amount = 60
+data_recipe[water_gas_shift_1].results[1].amount = 60
+data_recipe[water_gas_shift_1].results[2].amount = 60
+
 data_fluid[carbon_monoxide_angels].subgroup = is_carbon_fluid_1
-data_fluid[carbon_monoxide_angels].order = a
+data_fluid[carbon_monoxide_angels].order = b
 TIMSABA.barreling.add_gas(carbon_monoxide_angels)
 data_recipe[carbon_monoxide_angels].categories = {chemistry}
 data_recipe[carbon_monoxide_angels].subgroup = is_carbon_fluid_1
 data_recipe[carbon_monoxide_angels].icons = TWO_D_I(carbon_angels, water_purified_angels, carbon_monoxide_angels, hydrogen_angels)
-data_recipe[carbon_monoxide_angels].order = a
--- C + H₂O --> CO + H₂
+data_recipe[carbon_monoxide_angels].order = b
+data_recipe[carbon_monoxide_angels].energy_required = 4 -- C(s) + H₂O(l) --> CO(g) + H₂(g)
 data_recipe[carbon_monoxide_angels].ingredients =
 {
-    {type = item, name = carbon_angels, amount = 2},
+    {type = item, name = carbon_angels, amount = 4},
     {type = fluid, name = water_purified_angels, amount = 60}
 }
 data_recipe[carbon_monoxide_angels].results =
@@ -280,40 +305,19 @@ data_recipe[carbon_monoxide_angels].results =
 }
 data_recipe[carbon_monoxide_angels].main_product = carbon_monoxide_angels
 
-local water_gas_shift_1 = "angels-water-gas-shift-1"
-data_recipe[water_gas_shift_1].subgroup = is_carbon_fluid_1
-data_recipe[water_gas_shift_1].icons = TWO_D_I(carbon_monoxide_angels, steam, carbon_dioxide_angels, hydrogen_angels)
-data_recipe[water_gas_shift_1].order = a_a
--- CO + H₂O --> CO₂ + H₂
-data_recipe[water_gas_shift_1].ingredients[1].amount = 60
-data_recipe[water_gas_shift_1].ingredients[2].amount = 60
-data_recipe[water_gas_shift_1].results[1].amount = 60
-data_recipe[water_gas_shift_1].results[2].amount = 60
-
-data_fluid[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
-data_fluid[carbon_dioxide_angels].order = b
-TIMSABA.barreling.add_gas(carbon_dioxide_angels)
-data_recipe[carbon_dioxide_angels].categories = {chemistry}
-data_recipe[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
-data_recipe[carbon_dioxide_angels].icons = THREE_I(coal, oxygen_angels, carbon_dioxide_angels)
-data_recipe[carbon_dioxide_angels].order = b
--- C(s) + O₂(g) --> CO₂(g)
-data_recipe[carbon_dioxide_angels].ingredients =
-{
-    {type = item, name = coal, amount = 2},
-    {type = fluid, name = oxygen_angels, amount = 60}
-}
-data_recipe[carbon_dioxide_angels].results[1].amount = 60
-
 local water_gas_shift_2 = "angels-water-gas-shift-2"
 data_recipe[water_gas_shift_2].subgroup = is_carbon_fluid_1
-data_recipe[water_gas_shift_2].icons = TWO_D_I(carbon_dioxide_angels, hydrogen_angels, carbon_monoxide_angels, water_purified_angels)
+data_recipe[water_gas_shift_2].icons = TWO_D_I(carbon_dioxide_angels, hydrogen_angels, carbon_monoxide_angels, steam)
 data_recipe[water_gas_shift_2].order = b_a
-data_recipe[water_gas_shift_2].energy_required = 8 -- CO₂ + H₂ --> CO + H₂O
+data_recipe[water_gas_shift_2].energy_required = 8 -- CO₂(g) + H₂(g) --> CO(g) + H₂O(g)
 data_recipe[water_gas_shift_2].ingredients[1].amount = 60
 data_recipe[water_gas_shift_2].ingredients[2].amount = 60
-data_recipe[water_gas_shift_2].results[1].amount = 60
-data_recipe[water_gas_shift_2].results[2].amount = 60
+data_recipe[water_gas_shift_2].results =
+{
+    {type = fluid, name = carbon_monoxide_angels, amount = 60},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[water_gas_shift_2].main_product = carbon_monoxide_angels
 
 -- NITROGEN
 local is_nitrogen = "angels-petrochem-nitrogen"
@@ -323,7 +327,7 @@ data_item[ammonium_nitrate_angels].localised_description = show_formula and {che
 data_item[ammonium_nitrate_angels].order = a
 data_recipe[ammonium_nitrate_angels].icons = THREE_I(ammonia_angels, nitric_acid_angels, ammonium_nitrate_angels)
 data_recipe[ammonium_nitrate_angels].order = a
--- NH₃ + NHO₃ --> NH₄NO₃
+data_recipe[ammonium_nitrate_angels].energy_required = 4-- NH₃ + NHO₃ --> NH₄NO₃
 data_recipe[ammonium_nitrate_angels].ingredients[1].amount = 60
 data_recipe[ammonium_nitrate_angels].ingredients[2].amount = 60
 data_recipe[ammonium_nitrate_angels].results[1].amount = 4
@@ -332,32 +336,35 @@ data_item[ammonium_perchlorate_angels].localised_description = show_formula and 
 data_item[ammonium_perchlorate_angels].order = b
 data_recipe[ammonium_perchlorate_angels].icons = THREE_I(ammonia_angels, perchloric_acid_angels, ammonium_perchlorate_angels)
 data_recipe[ammonium_perchlorate_angels].order = b
--- NH₃ + HClO₄ --> NH₄ClO₄
+data_recipe[ammonium_perchlorate_angels].energy_required = 4 -- NH₃ + HClO₄ --> NH₄ClO₄
 data_recipe[ammonium_perchlorate_angels].ingredients[1].amount = 60
 data_recipe[ammonium_perchlorate_angels].ingredients[2].amount = 60
 data_recipe[ammonium_perchlorate_angels].results = {{type = item, name = ammonium_perchlorate_angels, amount = 4}}
 
 data_item[rocket_booster_angels].subgroup = is_nitrogen
-data_item[rocket_booster_angels].order = c
+data_item[rocket_booster_angels].order = z
 data_item[rocket_booster_angels].fuel_categories = {transport_fuel}
 data_item[rocket_booster_angels].fuel_value = 7680 .. kJ
 data_item[rocket_booster_angels].fuel_acceleration_multiplier = 1.75
 data_recipe[rocket_booster_angels].subgroup = is_nitrogen
 data_recipe[rocket_booster_angels].icons = THREE_I(iron_plate, ammonium_nitrate_angels, rocket_booster_angels)
-data_recipe[rocket_booster_angels].order = c
+data_recipe[rocket_booster_angels].order = z
+data_recipe[rocket_booster_angels].energy_required = 4
 data_recipe[rocket_booster_angels].ingredients =
 {
-    {type = item, name = iron_plate, amount = 1},
+    {type = item, name = steel_plate, amount = 4},
     {type = item, name = ammonium_nitrate_angels, amount = 4}
 }
+data_recipe[rocket_booster_angels].results[1].amount = 4
 
 local rocket_booster_2 = "angels-rocket-booster-2"
 data_recipe[rocket_booster_2].subgroup = is_nitrogen
 data_recipe[rocket_booster_2].icons = THREE_I(iron_plate, ammonium_perchlorate_angels, rocket_booster_angels)
-data_recipe[rocket_booster_2].order = c_a
+data_recipe[rocket_booster_2].order = z_a
+data_recipe[rocket_booster_2].energy_required = 4
 data_recipe[rocket_booster_2].ingredients =
 {
-    {type = item, name = iron_plate, amount = 1},
+    {type = item, name = steel_plate, amount = 4},
     {type = item, name = ammonium_perchlorate_angels, amount = 4}
 }
 data_recipe[rocket_booster_2].results[1].amount = 4
@@ -377,7 +384,7 @@ data_fluid[ammonia_angels].order = b
 TIMSABA.barreling.add_gas(ammonia_angels)
 data_recipe[ammonia_angels].icons = THREE_I(hydrogen_angels, nitrogen_angels, ammonia_angels)
 data_recipe[ammonia_angels].order = b
--- 3H₂(g) + N₂(g) -cat-> 2NH₃(g)
+data_recipe[ammonia_angels].energy_required = 4 -- 3H₂(g) + N₂(g) -cat-> 2NH₃(g)
 data_recipe[ammonia_angels].ingredients[1].amount = 90
 data_recipe[ammonia_angels].ingredients[2].amount = 30
 data_recipe[ammonia_angels].results =
@@ -391,13 +398,13 @@ data_fluid[nitrogen_monoxide_angels].order = c
 TIMSABA.barreling.add_gas(nitrogen_monoxide_angels)
 data_recipe[nitrogen_monoxide_angels].icons = TWO_D_I(ammonia_angels, oxygen_angels, nitrogen_monoxide_angels, steam, number_1)
 data_recipe[nitrogen_monoxide_angels].order = c
--- 4NH₃ + 5O₂ -cat-> 4NO + 6H₂O
+data_recipe[nitrogen_monoxide_angels].energy_required = 4 -- 4NH₃(g) + 5O₂(g) -cat-> 4NO(g) + 6H₂O(g)
 data_recipe[nitrogen_monoxide_angels].ingredients[1].amount = 60
 data_recipe[nitrogen_monoxide_angels].ingredients[2].amount = 75
 data_recipe[nitrogen_monoxide_angels].results =
 {
     {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
-    {type = fluid, name = steam, amount = 30}, -- 90
+    {type = fluid, name = steam, amount = 60}, -- 90
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -407,7 +414,7 @@ data_fluid[nitrogen_dioxide_angels].order = d
 TIMSABA.barreling.add_gas(nitrogen_dioxide_angels)
 data_recipe[nitrogen_dioxide_angels].icons = THREE_I(oxygen_angels, nitrogen_monoxide_angels, nitrogen_dioxide_angels)
 data_recipe[nitrogen_dioxide_angels].order = d
--- 2NO + O₂ --> 2NO₂
+data_recipe[nitrogen_dioxide_angels].energy_required = 4 -- 2NO(g) + O₂(g) --> 2NO₂(g)
 data_recipe[nitrogen_dioxide_angels].ingredients[1].amount = 30
 data_recipe[nitrogen_dioxide_angels].ingredients[2].amount = 60
 data_recipe[nitrogen_dioxide_angels].results[1].amount = 60
@@ -418,36 +425,36 @@ data_fluid[urea_solution_angels].order = e
 TIMSABA.barreling.add_dangerous_fluid(urea_solution_angels)
 data_recipe[urea_solution_angels].icons = THREE_I(ammonia_angels, carbon_dioxide_angels, urea_solution_angels)
 data_recipe[urea_solution_angels].order = e
--- 2NH₃ + CO₂ --> N₂H₄CO(aq)
-data_recipe[urea_solution_angels].ingredients[1].amount = 60
-data_recipe[urea_solution_angels].ingredients[2].amount = 30
-data_recipe[urea_solution_angels].results = {{type = fluid, name = urea_solution_angels, amount = 30}}
+data_recipe[urea_solution_angels].energy_required = 4 -- 2NH₃(g) + CO₂(g) --> (NH₂)₂CO(aq)
+data_recipe[urea_solution_angels].ingredients[1].amount = 120
+data_recipe[urea_solution_angels].ingredients[2].amount = 60
+data_recipe[urea_solution_angels].results = {{type = fluid, name = urea_solution_angels, amount = 60}}
 
 data_fluid[nitric_acid_angels].order = f
 TIMSABA.barreling.add_dangerous_fluid(nitric_acid_angels)
 data_recipe[nitric_acid_angels].categories = {angels_advanced_chemistry}
-data_recipe[nitric_acid_angels].icons = THREE_D_I(nitrogen_dioxide_angels, oxygen_angels, water_purified_angels, nitric_acid_angels)
+data_recipe[nitric_acid_angels].icons = THREE_D_I(nitrogen_dioxide_angels, water_purified_angels, oxygen_angels, nitric_acid_angels)
 data_recipe[nitric_acid_angels].order = f
--- 4NO₂ + O₂ + 2H₂O --> 4HNO₃
+data_recipe[nitric_acid_angels].energy_required = 8 -- 4NO₂(g) + 2H₂O(l) + O₂(g) --> 4HNO₃(l)
 data_recipe[nitric_acid_angels].ingredients =
 {
-    {type = fluid, name = nitrogen_dioxide_angels, amount = 60},
-    {type = fluid, name = oxygen_angels, amount = 15},
-    {type = fluid, name = water_purified_angels, amount = 30}
+    {type = fluid, name = nitrogen_dioxide_angels, amount = 240},
+    {type = fluid, name = water_purified_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 60}
 }
-data_recipe[nitric_acid_angels].results[1].amount = 60
+data_recipe[nitric_acid_angels].results[1].amount = 240
 
 data_recipe[sodium_nitrate_acid_processing].categories = {chemistry}
 data_recipe[sodium_nitrate_acid_processing].subgroup = is_nitrogen_fluids
 data_recipe[sodium_nitrate_acid_processing].icons = TWO_D_I(sodium_nitrate_angels, sulfuric_acid_angels, nitric_acid_angels, sodium_sulfate_angels)
 data_recipe[sodium_nitrate_acid_processing].order = f_a
--- 2NaNO₃(s) + H₂SO₄(l) --> Na₂SO₄(s) + 2HNO₃(l)
+data_recipe[sodium_nitrate_acid_processing].energy_required = 4 -- 2NaNO₃(s) + H₂SO₄(l) --> Na₂SO₄(s) + 2HNO₃(l)
 data_recipe[sodium_nitrate_acid_processing].ingredients[1].amount = 4
 data_recipe[sodium_nitrate_acid_processing].ingredients[2].amount = 30
 data_recipe[sodium_nitrate_acid_processing].results =
 {
-    {type = item, name = sodium_sulfate_angels, amount = 2},
-    {type = fluid, name = nitric_acid_angels, amount = 60}
+    {type = fluid, name = nitric_acid_angels, amount = 60},
+    {type = item, name = sodium_sulfate_angels, amount = 2}
 }
 
 data_fluid[melamine_solution_angels].localised_name = {"fluid-name.melamine-solution"}
@@ -457,18 +464,18 @@ TIMSABA.barreling.add_dangerous_fluid(melamine_solution_angels)
 data_recipe[melamine_solution_angels].categories = {angels_advanced_chemistry}
 data_recipe[melamine_solution_angels].icons = FOUR_R_I(urea_solution_angels, ammonia_solution, melamine_solution_angels, carbon_dioxide_angels)
 data_recipe[melamine_solution_angels].order = g
--- 6N₂H₄CO(aq) + H₂O -cat-> C₃H₆N₆(aq) + 6NH₃(aq) + 3CO₂
+data_recipe[melamine_solution_angels].energy_required = 8 -- 6(NH₂)₂CO(aq) + H₂O(l) -cat-> C₃H₆N₆(aq) + 6NH₃(aq) + 3CO₂(g)
 data_recipe[melamine_solution_angels].ingredients =
 {
-    {type = fluid, name = urea_solution_angels, amount = 90},
-    {type = fluid, name = water_purified_angels, amount = 15},
+    {type = fluid, name = urea_solution_angels, amount = 360},
+    {type = fluid, name = water_purified_angels, amount = 60},
     {type = item, name = catalyst_blue, amount = 1, ignored_by_stats = 1}
 }
 data_recipe[melamine_solution_angels].results =
 {
-    {type = fluid, name = ammonia_solution, amount = 30}, -- 90
-    {type = fluid, name = melamine_solution_angels, amount = 15},
-    {type = fluid, name = carbon_dioxide_angels, amount = 15}, -- 45
+    {type = fluid, name = melamine_solution_angels, amount = 60},
+    {type = fluid, name = ammonia_solution, amount = 240}, -- 360
+    {type = fluid, name = carbon_dioxide_angels, amount = 120}, -- 180
     {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -514,11 +521,11 @@ data_fluid[dinitrogen_tetroxide_angels].order = k
 TIMSABA.barreling.add_gas(dinitrogen_tetroxide_angels)
 data_recipe[dinitrogen_tetroxide_angels].icons = TWO_I(nitrogen_dioxide_angels, dinitrogen_tetroxide_angels)
 data_recipe[dinitrogen_tetroxide_angels].order = k
--- 2NO₂(g) --> N₂O₄(g)
-data_recipe[dinitrogen_tetroxide_angels].ingredients[1].amount = 60
+data_recipe[dinitrogen_tetroxide_angels].energy_required = 4 -- 2NO₂(g) --> N₂O₄(g)
+data_recipe[dinitrogen_tetroxide_angels].ingredients[1].amount = 120
 data_recipe[dinitrogen_tetroxide_angels].results =
 {
-    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 30},
+    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 60},
     {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -562,21 +569,20 @@ data_fluid[ammonium_chloride_solution_angels].order = o
 TIMSABA.barreling.add_dangerous_fluid(ammonium_chloride_solution_angels)
 data_recipe[ammonium_chloride_solution_angels].icons = THREE_I(ammonia_angels, hydrochloric_acid_angels, ammonium_chloride_solution_angels)
 data_recipe[ammonium_chloride_solution_angels].order = o
--- NH₃ + HCl(aq) --> NH₄Cl(aq)
-data_recipe[ammonium_chloride_solution_angels].ingredients[1].amount = 30
+data_recipe[ammonium_chloride_solution_angels].energy_required = 4 -- NH₃ + HCl(aq) --> NH₄Cl(aq)
+data_recipe[ammonium_chloride_solution_angels].ingredients[1].amount = 60
 data_recipe[ammonium_chloride_solution_angels].ingredients[2].name = hydrochloric_acid_angels
-data_recipe[ammonium_chloride_solution_angels].ingredients[2].amount = 30
-data_recipe[ammonium_chloride_solution_angels].results[1].amount = 30
+data_recipe[ammonium_chloride_solution_angels].ingredients[2].amount = 60
+data_recipe[ammonium_chloride_solution_angels].results[1].amount = 60
 
 -- FLUORINE FLUIDS
 data_fluid[hydrogen_fluoride_angels].subgroup = is_fluorine_fluid
 data_fluid[hydrogen_fluoride_angels].order = a
 TIMSABA.barreling.add_gas(hydrogen_fluoride_angels)
---data_recipe[hydrogen_fluoride_angels].categories = {angels_liquifying}
 data_recipe[hydrogen_fluoride_angels].subgroup = is_fluorine_fluid
 data_recipe[hydrogen_fluoride_angels].icons = TWO_D_I(fluorite_angels, sulfuric_acid_angels, hydrogen_fluoride_angels, calcium_sulfate_angels)
 data_recipe[hydrogen_fluoride_angels].order = a
--- CaF₂(s) + H₂SO₄(l) --> CaSO₄(s) + 2HF(g)
+data_recipe[hydrogen_fluoride_angels].energy_required = 4 -- CaF₂(s) + H₂SO₄(l) --> 2HF(g) + CaSO₄(s)
 data_recipe[hydrogen_fluoride_angels].ingredients =
 {
     {type = item, name = fluorite_angels, amount = 4},
@@ -596,7 +602,7 @@ data_recipe[hydrofluoric_acid_angels].categories = {chemistry}
 data_recipe[hydrofluoric_acid_angels].subgroup = is_fluorine_fluid
 data_recipe[hydrofluoric_acid_angels].icons = THREE_I(hydrogen_fluoride_angels, water_purified_angels, hydrofluoric_acid_angels)
 data_recipe[hydrofluoric_acid_angels].order = b
--- HF + H₂O --> HF(aq)
+data_recipe[hydrofluoric_acid_angels].energy_required = 4 -- HF + H₂O --> HF(aq)
 data_recipe[hydrofluoric_acid_angels].ingredients =
 {
     {type = fluid, name = hydrogen_fluoride_angels, amount = 60},
@@ -609,12 +615,12 @@ local hydrogen_fluoride_dissolving = "angels-hydrogen-fluoride-dissolving"
 data_recipe[hydrogen_fluoride_dissolving].subgroup = is_fluorine_fluid
 data_recipe[hydrogen_fluoride_dissolving].icons = THREE_R_I(hydrofluoric_acid_angels, hydrogen_fluoride_angels, steam)
 data_recipe[hydrogen_fluoride_dissolving].order = b_a
--- HF(aq) --> HF + H₂O
+data_recipe[hydrogen_fluoride_dissolving].energy_required = 4 -- HF(aq) --> HF + H₂O
 data_recipe[hydrogen_fluoride_dissolving].ingredients = {{type = fluid, name = hydrofluoric_acid_angels, amount = 60}}
 data_recipe[hydrogen_fluoride_dissolving].results =
 {
     {type = fluid, name = hydrogen_fluoride_angels, amount = 60},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[hydrogen_fluoride_dissolving].main_product = hydrogen_fluoride_angels
 
@@ -641,7 +647,7 @@ data_recipe[sodium_angels].results =
 }
 
 data_recipe[sodium_sulfate_solution_electrolysis].localised_name = {"recipe-name.sodium-sulfate-solution-electrolysis"}
-data_recipe[sodium_sulfate_solution_electrolysis].categories = {advanced_electrolysis}
+data_recipe[sodium_sulfate_solution_electrolysis].categories = {angels_electrolysis}
 data_recipe[sodium_sulfate_solution_electrolysis].icons = FOUR_R_I(sodium_sulfate_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_sulfate_solution_electrolysis].order = a_a
 data_recipe[sodium_sulfate_solution_electrolysis].energy_required = 8 -- Na₂SO₄(aq) -electrode/electrolys-> 2Na(s) + H₂(g) + O₂(g) + SO₃(g)
@@ -661,7 +667,7 @@ data_recipe[sodium_sulfate_solution_electrolysis].results =
 }
 
 data_recipe[sodium_chloride_solution_electrolysis].localised_name = {"recipe-name.sodium-chloride-solution-electrolysis"}
-data_recipe[sodium_chloride_solution_electrolysis].categories = {advanced_electrolysis}
+data_recipe[sodium_chloride_solution_electrolysis].categories = {angels_electrolysis}
 data_recipe[sodium_chloride_solution_electrolysis].icons = FOUR_R_I(sodium_chloride_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_chloride_solution_electrolysis].order = a_b
 data_recipe[sodium_chloride_solution_electrolysis].energy_required = 8 -- 2NaCl(aq) -electrode/electrolys-> 2Na(s) + H₂(g) + O₂(g) + 2HCl(g)
@@ -681,7 +687,7 @@ data_recipe[sodium_chloride_solution_electrolysis].results =
 }
 
 data_recipe[sodium_carbonate_solution_electrolysis].localised_name = {"recipe-name.sodium-carbonate-solution-electrolysis"}
-data_recipe[sodium_carbonate_solution_electrolysis].categories = {advanced_electrolysis}
+data_recipe[sodium_carbonate_solution_electrolysis].categories = {angels_electrolysis}
 data_recipe[sodium_carbonate_solution_electrolysis].subgroup = is_sodium
 data_recipe[sodium_carbonate_solution_electrolysis].icons = FOUR_R_I(sodium_carbonate_solution, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_carbonate_solution_electrolysis].order = a_c
@@ -707,7 +713,7 @@ data_item[sodium_hydroxide_angels].order = b
 data_recipe[sodium_hydroxide_angels].categories = {chemistry}
 data_recipe[sodium_hydroxide_angels].icons = TWO_D_I(sodium_angels, water_purified_angels, sodium_hydroxide_angels, hydrogen_angels)
 data_recipe[sodium_hydroxide_angels].order = b
--- 2Na(s) + 2H₂O(l) --> 2NaOH(s) + H₂(g)
+data_recipe[sodium_hydroxide_angels].energy_required = 4 -- 2Na(s) + 2H₂O(l) --> 2NaOH(s) + H₂(g)
 data_recipe[sodium_hydroxide_angels].ingredients[1].amount = 4
 data_recipe[sodium_hydroxide_angels].ingredients[2].amount = 60
 data_recipe[sodium_hydroxide_angels].results =
@@ -720,30 +726,30 @@ data_recipe[sodium_hydroxide_angels].main_product = sodium_hydroxide_angels
 data_recipe[sodium_hydroxide_solution_reverse].categories = {chemistry}
 data_recipe[sodium_hydroxide_solution_reverse].icons = THREE_R_I(sodium_hydroxide_solution_angels, sodium_hydroxide_angels, steam)
 data_recipe[sodium_hydroxide_solution_reverse].order = b_a
--- NaOH(aq) --> NaOH + H₂O
+data_recipe[sodium_hydroxide_solution_reverse].energy_required = 4 -- NaOH(aq) --> NaOH + H₂O
 data_recipe[sodium_hydroxide_solution_reverse].ingredients[1].amount = 60
 data_recipe[sodium_hydroxide_solution_reverse].results[1].amount = 4
 data_recipe[sodium_hydroxide_solution_reverse].results[2].name = steam
-data_recipe[sodium_hydroxide_solution_reverse].results[2].amount = 60
+data_recipe[sodium_hydroxide_solution_reverse].results[2].amount = 30 -- 60
 
 data_recipe[sodium_nitrate_processing].localised_name = {"recipe-name.nitric-gasses-from-sodium-nitrate-solution"}
 data_recipe[sodium_nitrate_processing].categories = {angels_advanced_chemistry}
 data_recipe[sodium_nitrate_processing].subgroup = is_sodium
 data_recipe[sodium_nitrate_processing].icons = FOUR_R_I(sodium_nitrate_solution, nitrogen_monoxide_angels, sodium_hydroxide_angels, nitrogen_dioxide_angels)
 data_recipe[sodium_nitrate_processing].order = b_b
--- 2(NaNO₃ + H₂O) + N₂ -cat-> 2NaOH + 2NO + 2NO₂ + H₂
+data_recipe[sodium_nitrate_processing].energy_required = 8 -- 2NaNO₃(aq) + N₂ -cat-> 2NaOH + 2NO + 2NO₂ + H₂
 data_recipe[sodium_nitrate_processing].ingredients =
 {
-    {type = fluid, name = sodium_nitrate_solution, amount = 60},
-    {type = fluid, name = nitrogen_angels, amount = 30},
+    {type = fluid, name = sodium_nitrate_solution, amount = 240},
+    {type = fluid, name = nitrogen_angels, amount = 120},
     {type = item, name = catalyst_green, amount = 1}
 }
 data_recipe[sodium_nitrate_processing].results =
 {
-    {type = item, name = sodium_hydroxide_angels, amount = 4},
-    {type = fluid, name = nitrogen_monoxide_angels, amount = 60},
-    {type = fluid, name = nitrogen_dioxide_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 30},
+    {type = item, name = sodium_hydroxide_angels, amount = 16},
+    {type = fluid, name = nitrogen_monoxide_angels, amount = 240},
+    {type = fluid, name = nitrogen_dioxide_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 120},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -766,7 +772,7 @@ data_item[sodium_sulfate_angels].order = d
 data_item[sodium_sulfate_angels].weight = 5000
 data_recipe[sodium_sulfate_angels].icons = TWO_D_I(sodium_hydroxide_angels, sulfuric_acid_angels, sodium_sulfate_angels, steam)
 data_recipe[sodium_sulfate_angels].order = d
--- 2NaOH + H₂SO₄ --> Na₂SO₄ + 2H₂O
+data_recipe[sodium_sulfate_angels].energy_required = 4 -- 2NaOH + H₂SO₄ --> Na₂SO₄ + 2H₂O
 data_recipe[sodium_sulfate_angels].ingredients[1].amount = 4
 data_recipe[sodium_sulfate_angels].ingredients[2].amount = 30
 data_recipe[sodium_sulfate_angels].results[1].amount = 2
@@ -778,7 +784,7 @@ data_item[sodium_carbonate_angels].order = e
 data_recipe[sodium_carbonate_angels].categories = {chemistry}
 data_recipe[sodium_carbonate_angels].icons = TWO_D_I(sodium_angels, carbon_dioxide_angels, sodium_carbonate_angels, carbon_angels)
 data_recipe[sodium_carbonate_angels].order = e
--- 4Na + 3CO₂ --> 2Na₂CO₃ + C
+data_recipe[sodium_carbonate_angels].energy_required = 4 -- 4Na + 3CO₂ --> 2Na₂CO₃ + C
 data_recipe[sodium_carbonate_angels].ingredients[1].amount = 4
 data_recipe[sodium_carbonate_angels].ingredients[2].amount = 60
 data_recipe[sodium_carbonate_angels].results =
@@ -817,7 +823,7 @@ data_recipe[sodium_hypochlorite_angels].ingredients = {{type = fluid, name = sod
 data_recipe[sodium_hypochlorite_angels].results =
 {
     {type = item, name = sodium_hypochlorite_angels, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[sodium_hypochlorite_angels].main_product = sodium_hypochlorite_angels
 
@@ -831,7 +837,7 @@ data_recipe[sodium_chlorate_angels].ingredients = {{type = fluid, name = sodium_
 data_recipe[sodium_chlorate_angels].results =
 {
     {type = item, name = sodium_chlorate_angels, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[sodium_chlorate_angels].main_product = sodium_chlorate_angels
 
@@ -845,7 +851,7 @@ data_recipe[sodium_perchlorate_angels].ingredients = {{type = fluid, name = sodi
 data_recipe[sodium_perchlorate_angels].results =
 {
     {type = item, name = sodium_perchlorate_angels, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[sodium_perchlorate_angels].main_product = sodium_perchlorate_angels
 
@@ -854,7 +860,7 @@ data_item[sodium_cobaltate_bob].order = k
 data_item[sodium_cobaltate_bob].stack_size = 200
 data_recipe[sodium_cobaltate_bob].icons = THREE_I(cobalt_oxide_II_III, sodium_carbonate_angels, sodium_cobaltate_bob)
 data_recipe[sodium_cobaltate_bob].order = k
-data_recipe[sodium_cobaltate_bob].energy_required = 8 -- 4Co₃O₄ + 6Na₂CO₃ + O₂ --> 12NaCoCO₂ + 6CO₂
+data_recipe[sodium_cobaltate_bob].energy_required = 4 -- 4Co₃O₄ + 6Na₂CO₃ + O₂ --> 12NaCoCO₂ + 6CO₂
 data_recipe[sodium_cobaltate_bob].ingredients =
 {
     {type = item, name = cobalt_oxide_II_III, amount = 4},
@@ -877,7 +883,7 @@ TIMSABA.barreling.add_dangerous_fluid(sodium_hydroxide_solution_angels)
 data_recipe[sodium_hydroxide_solution_angels].subgroup = is_sodium_fluid
 data_recipe[sodium_hydroxide_solution_angels].icons = THREE_I(sodium_hydroxide_angels, water_purified_angels, sodium_hydroxide_solution_angels)
 data_recipe[sodium_hydroxide_solution_angels].order = a
--- NaOH + H₂O --> NaOH(aq)
+data_recipe[sodium_hydroxide_solution_angels].energy_required = 4 -- NaOH + H₂O --> NaOH(aq)
 data_recipe[sodium_hydroxide_solution_angels].ingredients[1].amount = 4
 data_recipe[sodium_hydroxide_solution_angels].ingredients[2].amount = 60
 data_recipe[sodium_hydroxide_solution_angels].results[1].amount = 60
@@ -891,7 +897,7 @@ data_item[sulfur].order = a
 local sulfur_angels = "angels-solid-sulfur"
 data_recipe[sulfur_angels].icons = TWO_D_I(hydrogen_sulfide_angels, oxygen_angels, sulfur, steam)
 data_recipe[sulfur_angels].order = a_a
--- 2H₂S + O₂ --> 2S + 2H₂O
+data_recipe[sulfur_angels].energy_required = 4 -- 2H₂S + O₂ --> 2S + 2H₂O
 data_recipe[sulfur_angels].ingredients[1].amount = 60
 data_recipe[sulfur_angels].ingredients[2].amount = 30
 data_recipe[sulfur_angels].results =
@@ -910,13 +916,13 @@ local acid_gas_catalyst = "angels-gas-acid-catalyst"
 data_recipe[acid_gas_catalyst].subgroup = is_sulfur_fluids
 data_recipe[acid_gas_catalyst].icons = FOUR_R_I(acid_angels, methane_angels, hydrogen_sulfide_angels, carbon_dioxide_angels)
 data_recipe[acid_gas_catalyst].order = a_a
-data_recipe[acid_gas_catalyst].energy_required = 16 -- CH₄(70-90%)/H₂S(0.1-30%)/CO₂(2-15%)
-data_recipe[acid_gas_catalyst].ingredients[1].amount = 960
+data_recipe[acid_gas_catalyst].energy_required = 8 -- CH₄(70-90%) + H₂S(0.1-30%) + CO₂(2-15%)
+data_recipe[acid_gas_catalyst].ingredients[1].amount = 240
 data_recipe[acid_gas_catalyst].results =
 {
-    {type = fluid, name = methane_angels, amount = 480},
-    {type = fluid, name = hydrogen_sulfide_angels, amount = 240},
-    {type = fluid, name = carbon_dioxide_angels, amount = 120},
+    {type = fluid, name = methane_angels, amount = 180},
+    {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
+    {type = fluid, name = carbon_dioxide_angels, amount = 30},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -941,7 +947,7 @@ data_recipe[sulfur_dioxide_angels].categories = {chemistry}
 data_recipe[sulfur_dioxide_angels].subgroup = is_sulfur_fluids
 data_recipe[sulfur_dioxide_angels].icons = THREE_I(sulfur, oxygen_angels, sulfur_dioxide_angels)
 data_recipe[sulfur_dioxide_angels].order = d
--- S + O₂ --> SO₂
+data_recipe[sulfur_dioxide_angels].energy_required = 4 -- S + O₂ --> SO₂
 data_recipe[sulfur_dioxide_angels].ingredients[1].amount = 4
 data_recipe[sulfur_dioxide_angels].ingredients[2].amount = 60
 
@@ -949,7 +955,7 @@ data_recipe[sulfur_gas_calcium_sulfate].categories = {chemistry}
 data_recipe[sulfur_gas_calcium_sulfate].subgroup = is_sulfur_fluids
 data_recipe[sulfur_gas_calcium_sulfate].icons = THREE_D_I(calcium_sulfate_angels, nil, coal, sulfur_dioxide_angels, lime_angels, carbon_dioxide_angels)
 data_recipe[sulfur_gas_calcium_sulfate].order = d_a
--- 2CaSO₄ + С --> 2SO₂ + 2CaO + CO₂
+data_recipe[sulfur_gas_calcium_sulfate].energy_required = 4 -- 2CaSO₄ + С --> 2SO₂ + 2CaO + CO₂
 data_recipe[sulfur_gas_calcium_sulfate].ingredients =
 {
     {type = item, name = calcium_sulfate_angels, amount = 4},
@@ -969,7 +975,7 @@ TIMSABA.barreling.add_dangerous_fluid(sulfuric_acid_angels)
 data_recipe[sulfuric_acid_angels].subgroup = is_sulfur_fluids
 data_recipe[sulfuric_acid_angels].icons = THREE_I(sulfur_trioxide_gas, water_purified_angels, sulfuric_acid_angels)
 data_recipe[sulfuric_acid_angels].order = f
--- SO₃ + H₂O --> H₂SO₄
+data_recipe[sulfuric_acid_angels].energy_required = 4 -- SO₃ + H₂O --> H₂SO₄
 data_recipe[sulfuric_acid_angels].ingredients =
 {
     {type = fluid, name = sulfur_trioxide_gas, amount = 60},
@@ -987,12 +993,12 @@ data_fluid[hydrogen_chloride_angels].order = a
 TIMSABA.barreling.add_gas(hydrogen_chloride_angels)
 data_recipe[hydrogen_chloride_angels].icons = THREE_I(chlorine_angels, hydrogen_angels, hydrogen_chloride_angels)
 data_recipe[hydrogen_chloride_angels].order = a
--- H₂ + Cl₂ --> 2HCl
-data_recipe[hydrogen_chloride_angels].ingredients[1].amount = 60
-data_recipe[hydrogen_chloride_angels].ingredients[2].amount = 60
-data_recipe[hydrogen_chloride_angels].results[1].amount = 120
+data_recipe[hydrogen_chloride_angels].energy_required = 4 -- H₂ + Cl₂ --> 2HCl
+data_recipe[hydrogen_chloride_angels].ingredients[1].amount = 30
+data_recipe[hydrogen_chloride_angels].ingredients[2].amount = 30
+data_recipe[hydrogen_chloride_angels].results[1].amount = 60
 
-data_recipe[hydrogen_chloride_separation].categories = {angels_petrochem_electrolyser}
+data_recipe[hydrogen_chloride_separation].categories = {angels_electrolysis}
 data_recipe[hydrogen_chloride_separation].subgroup = is_chlorine_fluids
 data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
 data_recipe[hydrogen_chloride_separation].order = a_a
@@ -1014,7 +1020,7 @@ data_fluid[hydrochloric_acid_angels].order = b
 TIMSABA.barreling.add_dangerous_fluid(hydrochloric_acid_angels)
 data_recipe[hydrochloric_acid_angels].icons = THREE_I(hydrogen_chloride_angels, water_purified_angels, hydrochloric_acid_angels)
 data_recipe[hydrochloric_acid_angels].order = b
--- HCl + H₂O --> HCl(aq)
+data_recipe[hydrochloric_acid_angels].energy_required = 4 -- HCl + H₂O --> HCl(aq)
 data_recipe[hydrochloric_acid_angels].ingredients[1].amount = 60
 data_recipe[hydrochloric_acid_angels].ingredients[2].amount = 60
 data_recipe[hydrochloric_acid_angels].results[1].amount = 60
@@ -1024,7 +1030,7 @@ data_recipe[hydrochloric_acid_from_sodium_chloride].categories = {chemistry}
 data_recipe[hydrochloric_acid_from_sodium_chloride].subgroup = is_chlorine_fluids
 data_recipe[hydrochloric_acid_from_sodium_chloride].icons = TWO_D_I(sodium_chloride_solution, sulfuric_acid_angels, hydrochloric_acid_angels, sodium_sulfate_angels)
 data_recipe[hydrochloric_acid_from_sodium_chloride].order = b_a
--- 2NaCl(aq) + H₂SO₄(l) --> 2HCl(aq) + Na₂SO₄(s)
+data_recipe[hydrochloric_acid_from_sodium_chloride].energy_required = 4 -- 2NaCl(aq) + H₂SO₄(l) --> 2HCl(aq) + Na₂SO₄(s)
 data_recipe[hydrochloric_acid_from_sodium_chloride].ingredients =
 {
     {type = fluid, name = sodium_chloride_solution, amount = 60},
@@ -1033,7 +1039,7 @@ data_recipe[hydrochloric_acid_from_sodium_chloride].ingredients =
 data_recipe[hydrochloric_acid_from_sodium_chloride].results =
 {
     {type = fluid, name = hydrochloric_acid_angels, amount = 60},
-    {type = item, name = sodium_sulfate_angels, amount = 2},
+    {type = item, name = sodium_sulfate_angels, amount = 2}
 }
 data_recipe[hydrochloric_acid_from_sodium_chloride].main_product = hydrochloric_acid_angels
 
@@ -1043,11 +1049,11 @@ data_fluid[allyl_chloride_angels].order = c
 TIMSABA.barreling.add_dangerous_fluid(allyl_chloride_angels)
 data_recipe[allyl_chloride_angels].icons = TWO_D_I(propene_angels, chlorine_angels, allyl_chloride_angels, hydrogen_chloride_angels)
 data_recipe[allyl_chloride_angels].order = c
--- C₃H₆ + Cl₂ --> C₃H₅Cl + HCl
+data_recipe[allyl_chloride_angels].energy_required = 4 -- C₃H₆ + Cl₂ --> C₃H₅Cl + HCl
 data_recipe[allyl_chloride_angels].ingredients[1].amount = 60
 data_recipe[allyl_chloride_angels].ingredients[2].amount = 60
 data_recipe[allyl_chloride_angels].results[1].amount = 60
-data_recipe[allyl_chloride_angels].results[2].amount = 60
+data_recipe[allyl_chloride_angels].results[2].amount = 30 -- 60
 
 data_fluid[epichlorohydrin_angels].localised_name = {"fluid-name.epichlorohydrin-liquid"}
 data_fluid[epichlorohydrin_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font]ClO"} or nil
@@ -1056,18 +1062,18 @@ TIMSABA.barreling.add_dangerous_fluid(epichlorohydrin_angels)
 data_recipe[epichlorohydrin_angels].categories = {angels_advanced_chemistry}
 data_recipe[epichlorohydrin_angels].icons = THREE_D_I(allyl_chloride_angels, sodium_hydroxide_solution_angels, chlorine_angels, epichlorohydrin_angels, sodium_chlorate_solution, water_purified_angels)
 data_recipe[epichlorohydrin_angels].order = d
--- C₃H₅Cl + 2NaOH(aq) + Cl₂ --> C₃H₅ClO + 2NaCl(aq) + H₂O
+data_recipe[epichlorohydrin_angels].energy_required = 8 -- C₃H₅Cl + 2NaOH(aq) + Cl₂ --> C₃H₅ClO + 2NaCl(aq) + H₂O
 data_recipe[epichlorohydrin_angels].ingredients =
 {
-    {type = fluid, name = allyl_chloride_angels, amount = 30},
-    {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60},
-    {type = fluid, name = chlorine_angels, amount = 30}
+    {type = fluid, name = allyl_chloride_angels, amount = 240},
+    {type = fluid, name = sodium_hydroxide_solution_angels, amount = 480},
+    {type = fluid, name = chlorine_angels, amount = 240}
 }
 data_recipe[epichlorohydrin_angels].results =
 {
-    {type = fluid, name = epichlorohydrin_angels, amount = 30},
-    {type = fluid, name = sodium_chlorate_solution, amount = 60},
-    {type = fluid, name = water_purified_angels, amount = 30}
+    {type = fluid, name = epichlorohydrin_angels, amount = 240},
+    {type = fluid, name = sodium_chlorate_solution, amount = 240}, -- 480
+    {type = fluid, name = water_purified_angels, amount = 120} -- 240
 }
 data_recipe[epichlorohydrin_angels].main_product = epichlorohydrin_angels
 
@@ -1075,13 +1081,13 @@ data_fluid[chloromethane_angels].order = e
 TIMSABA.barreling.add_gas(chloromethane_angels)
 data_recipe[chloromethane_angels].icons = TWO_D_I(chlorine_angels, methane_angels, chloromethane_angels, hydrogen_chloride_angels)
 data_recipe[chloromethane_angels].order = e
--- CH₄ + Cl₂ --> CH₃Cl + HCl
+data_recipe[chloromethane_angels].energy_required = 4 -- CH₄ + Cl₂ --> CH₃Cl + HCl
 data_recipe[chloromethane_angels].ingredients[1].amount = 60
 data_recipe[chloromethane_angels].ingredients[2].amount = 60
 data_recipe[chloromethane_angels].results =
 {
     {type = fluid, name = chloromethane_angels, amount = 60},
-    {type = fluid, name = hydrogen_chloride_angels, amount = 60}
+    {type = fluid, name = hydrogen_chloride_angels, amount = 30} -- 60
 }
 data_recipe[chloromethane_angels].main_product = chloromethane_angels
 
@@ -1090,13 +1096,13 @@ TIMSABA.barreling.add_dangerous_fluid(perchloric_acid_angels)
 data_recipe[perchloric_acid_angels].categories = {chemistry}
 data_recipe[perchloric_acid_angels].icons = TWO_D_I(sodium_perchlorate_angels, hydrochloric_acid_angels, perchloric_acid_angels, sodium_chloride_solution)
 data_recipe[perchloric_acid_angels].order = f
--- NaClO₄ + HCl --> HClO₄ + NaCl(aq)
+data_recipe[perchloric_acid_angels].energy_required = 4 -- NaClO₄ + HCl --> HClO₄ + NaCl(aq)
 data_recipe[perchloric_acid_angels].ingredients[1].amount = 4
 data_recipe[perchloric_acid_angels].ingredients[2].amount = 60
 data_recipe[perchloric_acid_angels].results =
 {
     {type = fluid, name = perchloric_acid_angels, amount = 60},
-    {type = fluid, name = sodium_chloride_solution, amount = 60}
+    {type = fluid, name = sodium_chloride_solution, amount = 30} -- 60
 }
 data_recipe[perchloric_acid_angels].main_product = perchloric_acid_angels
 
@@ -1117,7 +1123,7 @@ data_recipe[lime_angels].categories = {chemistry}
 data_recipe[lime_angels].subgroup = is_calcium
 data_recipe[lime_angels].icons = THREE_R_I(limestone_angels, lime_angels, carbon_monoxide_angels)
 data_recipe[lime_angels].order = d
-data_recipe[lime_angels].energy_required = 8 -- CaCO₃ --> CaO + CO₂
+data_recipe[lime_angels].energy_required = 4 -- CaCO₃ --> CaO + CO₂
 data_recipe[lime_angels].ingredients[1].amount = 4
 data_recipe[lime_angels].results[1].amount = 4
 data_recipe[lime_angels].results[2].amount = 30 -- 60
@@ -1128,7 +1134,7 @@ data_item[calcium_chloride_angels].order = e
 data_recipe[calcium_chloride_angels].subgroup = is_calcium
 data_recipe[calcium_chloride_angels].icons = THREE_R_I(calcium_chloride_solution, calcium_chloride_angels, steam)
 data_recipe[calcium_chloride_angels].order = e
--- CaCl₂(aq) --> CaCl₂ + H₂O
+data_recipe[calcium_chloride_angels].energy_required = 4 -- CaCl₂(aq) --> CaCl₂ + H₂O
 data_recipe[calcium_chloride_angels].ingredients = {{type = fluid, name = calcium_chloride_solution, amount = 60}}
 data_recipe[calcium_chloride_angels].results =
 {
@@ -1157,7 +1163,7 @@ data_recipe[lithium_perchlorate_bob].main_product = lithium_perchlorate_bob
 data_item[lithium_bob].localised_description = show_formula and {chemical_formula, "Li"} or nil
 data_item[lithium_bob].subgroup = is_lithium
 data_item[lithium_bob].order = c
-data_recipe[lithium_bob].categories = {advanced_electrolysis}
+data_recipe[lithium_bob].categories = {angels_electrolysis}
 data_recipe[lithium_bob].subgroup = is_lithium
 data_recipe[lithium_bob].icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_bob, chlorine_angels)
 data_recipe[lithium_bob].order = c
@@ -1210,11 +1216,11 @@ local natural_gas_separation = "angels-gas-separation"
 data_recipe[natural_gas_separation].subgroup = is_natural_gas
 data_recipe[natural_gas_separation].icons = FOUR_R_I(natural_gas_angels, raw_gas_angels, condensates_angels, water_yellow_waste)
 data_recipe[natural_gas_separation].order = a_a
-data_recipe[natural_gas_separation].energy_required = 4
-data_recipe[natural_gas_separation].ingredients[1].amount = 120
-data_recipe[natural_gas_separation].results[1].amount = 120
-data_recipe[natural_gas_separation].results[2].amount = 60
-data_recipe[natural_gas_separation].results[3].amount = 30
+data_recipe[natural_gas_separation].energy_required = 48
+data_recipe[natural_gas_separation].ingredients[1].amount = 240
+data_recipe[natural_gas_separation].results[1].amount = 240
+data_recipe[natural_gas_separation].results[2].amount = 120
+data_recipe[natural_gas_separation].results[3].amount = 60
 
 data_fluid[raw_gas_angels].subgroup = is_natural_gas
 data_fluid[raw_gas_angels].order = b
@@ -1224,10 +1230,10 @@ local raw_gas_refining = "angels-gas-refining"
 data_recipe[raw_gas_refining].subgroup = is_natural_gas
 data_recipe[raw_gas_refining].icons = FOUR_R_I(raw_gas_angels, NGL_angels, nil, acid_angels)
 data_recipe[raw_gas_refining].order = b_a
-data_recipe[raw_gas_refining].energy_required = 4
-data_recipe[raw_gas_refining].ingredients[1].amount = 120
-data_recipe[raw_gas_refining].results[1].amount = 120
-data_recipe[raw_gas_refining].results[2].amount = 120
+data_recipe[raw_gas_refining].energy_required = 8
+data_recipe[raw_gas_refining].ingredients[1].amount = 240
+data_recipe[raw_gas_refining].results[1].amount = 240
+data_recipe[raw_gas_refining].results[2].amount = 240
 
 data_fluid[NGL_angels].subgroup = is_natural_gas
 data_fluid[NGL_angels].order = c
@@ -1237,47 +1243,47 @@ local NGL_fractioning = "angels-gas-fractioning"
 data_recipe[NGL_fractioning].subgroup = is_natural_gas
 data_recipe[NGL_fractioning].icons = FOUR_R_I(NGL_angels, methane_angels, ethane_angels, butane_angels, number_1)
 data_recipe[NGL_fractioning].order = c_a
-data_recipe[NGL_fractioning].energy_required = 4
-data_recipe[NGL_fractioning].ingredients[1].amount = 120
-data_recipe[NGL_fractioning].results[1].amount = 60
-data_recipe[NGL_fractioning].results[2].amount = 60
-data_recipe[NGL_fractioning].results[3].amount = 60
+data_recipe[NGL_fractioning].energy_required = 8
+data_recipe[NGL_fractioning].ingredients[1].amount = 240
+data_recipe[NGL_fractioning].results[1].amount = 120
+data_recipe[NGL_fractioning].results[2].amount = 120
+data_recipe[NGL_fractioning].results[3].amount = 120
 
 local NGL_fractioning_synthesis = "angels-gas-fractioning-synthesis"
 data_recipe[NGL_fractioning_synthesis].subgroup = is_natural_gas
 data_recipe[NGL_fractioning_synthesis].icons = FOUR_R_I(NGL_angels, methane_angels, ethane_angels, butane_angels, number_2)
 data_recipe[NGL_fractioning_synthesis].order = c_b
-data_recipe[NGL_fractioning_synthesis].energy_required = 4
-data_recipe[NGL_fractioning_synthesis].ingredients[1].amount = 120
-data_recipe[NGL_fractioning_synthesis].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_synthesis].results[1].amount = 120
-data_recipe[NGL_fractioning_synthesis].results[2].amount = 60
-data_recipe[NGL_fractioning_synthesis].results[3].amount = 60
-data_recipe[NGL_fractioning_synthesis].results[4].amount = 30
+data_recipe[NGL_fractioning_synthesis].energy_required = 8
+data_recipe[NGL_fractioning_synthesis].ingredients[1].amount = 240
+data_recipe[NGL_fractioning_synthesis].ingredients[2].amount = 60
+data_recipe[NGL_fractioning_synthesis].results[1].amount = 240
+data_recipe[NGL_fractioning_synthesis].results[2].amount = 120
+data_recipe[NGL_fractioning_synthesis].results[3].amount = 120
+data_recipe[NGL_fractioning_synthesis].results[4].amount = 60
 
 local NGL_fractioning_condensates = "angels-gas-fractioning-condensates"
 data_recipe[NGL_fractioning_condensates].subgroup = is_natural_gas
 data_recipe[NGL_fractioning_condensates].icons = FOUR_R_I(NGL_angels, methane_angels, ethane_angels, butane_angels, number_3)
 data_recipe[NGL_fractioning_condensates].order = c_c
-data_recipe[NGL_fractioning_condensates].energy_required = 4
-data_recipe[NGL_fractioning_condensates].ingredients[1].amount = 120
-data_recipe[NGL_fractioning_condensates].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_condensates].results[1].amount = 60
-data_recipe[NGL_fractioning_condensates].results[2].amount = 60
-data_recipe[NGL_fractioning_condensates].results[3].amount = 120
-data_recipe[NGL_fractioning_condensates].results[4].amount = 30
+data_recipe[NGL_fractioning_condensates].energy_required = 8
+data_recipe[NGL_fractioning_condensates].ingredients[1].amount = 240
+data_recipe[NGL_fractioning_condensates].ingredients[2].amount = 60
+data_recipe[NGL_fractioning_condensates].results[1].amount = 120
+data_recipe[NGL_fractioning_condensates].results[2].amount = 120
+data_recipe[NGL_fractioning_condensates].results[3].amount = 240
+data_recipe[NGL_fractioning_condensates].results[4].amount = 60
 
 local NGL_fractioning_residual = "angels-gas-fractioning-residual"
 data_recipe[NGL_fractioning_residual].subgroup = is_natural_gas
 data_recipe[NGL_fractioning_residual].icons = FOUR_R_I(NGL_angels, methane_angels, ethane_angels, butane_angels, number_4)
 data_recipe[NGL_fractioning_residual].order = c_d
-data_recipe[NGL_fractioning_residual].energy_required = 4
-data_recipe[NGL_fractioning_residual].ingredients[1].amount = 120
-data_recipe[NGL_fractioning_residual].ingredients[2].amount = 30
-data_recipe[NGL_fractioning_residual].results[1].amount = 60
-data_recipe[NGL_fractioning_residual].results[2].amount = 120
-data_recipe[NGL_fractioning_residual].results[3].amount = 60
-data_recipe[NGL_fractioning_residual].results[4].amount = 30
+data_recipe[NGL_fractioning_residual].energy_required = 8
+data_recipe[NGL_fractioning_residual].ingredients[1].amount = 240
+data_recipe[NGL_fractioning_residual].ingredients[2].amount = 60
+data_recipe[NGL_fractioning_residual].results[1].amount = 120
+data_recipe[NGL_fractioning_residual].results[2].amount = 240
+data_recipe[NGL_fractioning_residual].results[3].amount = 120
+data_recipe[NGL_fractioning_residual].results[4].amount = 60
 
 data_fluid[condensates_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]16[/font]"} or nil
 data_fluid[condensates_angels].subgroup = is_natural_gas
@@ -1285,21 +1291,20 @@ data_fluid[condensates_angels].order = d
 TIMSABA.barreling.add_simple_fluid(condensates_angels)
 
 local condensates_refining = "angels-condensates-refining"
-data_recipe[condensates_refining].categories = {angels_gas_refining}
 data_recipe[condensates_refining].subgroup = is_natural_gas
 data_recipe[condensates_refining].icons = FOUR_R_I(condensates_angels, methane_angels, ethane_angels, butane_angels)
 data_recipe[condensates_refining].order = d_a
-data_recipe[condensates_refining].energy_required = 4 -- C₇H₁₆ + 2H₂ --> CH₄ + C₂H₆ + C₄H₁₀
+data_recipe[condensates_refining].energy_required = 8 -- C₇H₁₆ + 2H₂ --> CH₄ + C₂H₆ + C₄H₁₀
 data_recipe[condensates_refining].ingredients =
 {
-    {type = fluid, name = condensates_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 120}
+    {type = fluid, name = condensates_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 480}
 }
 data_recipe[condensates_refining].results =
 {
-    {type = fluid, name = methane_angels, amount = 60},
-    {type = fluid, name = ethane_angels, amount = 60},
-    {type = fluid, name = butane_angels, amount = 60}
+    {type = fluid, name = methane_angels, amount = 240},
+    {type = fluid, name = ethane_angels, amount = 240},
+    {type = fluid, name = butane_angels, amount = 240}
 }
 
 -- MULTI-PHASE OIL
@@ -1311,11 +1316,11 @@ local oil_separation = "angels-oil-separation"
 data_recipe[oil_separation].subgroup = is_multi_phase_oil
 data_recipe[oil_separation].icons = FOUR_R_I(multi_phase_oil_angels, raw_gas_angels, crude_oil, water_yellow_waste)
 data_recipe[oil_separation].order = a_a
-data_recipe[oil_separation].energy_required = 4
-data_recipe[oil_separation].ingredients[1].amount = 120
-data_recipe[oil_separation].results[1].amount = 60
-data_recipe[oil_separation].results[2].amount = 120
-data_recipe[oil_separation].results[3].amount = 30
+data_recipe[oil_separation].energy_required = 8
+data_recipe[oil_separation].ingredients[1].amount = 240
+data_recipe[oil_separation].results[1].amount = 120
+data_recipe[oil_separation].results[2].amount = 240
+data_recipe[oil_separation].results[3].amount = 60
 
 data_fluid[crude_oil].subgroup = is_multi_phase_oil
 data_fluid[crude_oil].order = b
@@ -1325,59 +1330,59 @@ local crude_oil_refining = "angels-oil-refining"
 data_recipe[crude_oil_refining].subgroup = is_multi_phase_oil
 data_recipe[crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, fuel_oil_angels, naphtha_angels, number_1)
 data_recipe[crude_oil_refining].order = b_a
-data_recipe[crude_oil_refining].energy_required = 4
-data_recipe[crude_oil_refining].ingredients[1].amount = 120
+data_recipe[crude_oil_refining].energy_required = 8
+data_recipe[crude_oil_refining].ingredients[1].amount = 240
 data_recipe[crude_oil_refining].results =
 {
-    {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 60},
-    {type = fluid, name = fuel_oil_angels, amount = 60},
-    {type = fluid, name = naphtha_angels, amount = 60}
+    {type = item, name = oil_residual_angels, amount = 2},
+    {type = fluid, name = mineral_oil_angels, amount = 120},
+    {type = fluid, name = fuel_oil_angels, amount = 120},
+    {type = fluid, name = naphtha_angels, amount = 120}
 }
 
 local advanced_crude_oil_refining = "angels-advanced-oil-refining"
 data_recipe[advanced_crude_oil_refining].subgroup = is_multi_phase_oil
 data_recipe[advanced_crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, fuel_oil_angels, naphtha_angels, number_2)
 data_recipe[advanced_crude_oil_refining].order = b_b
-data_recipe[advanced_crude_oil_refining].energy_required = 4
-data_recipe[advanced_crude_oil_refining].ingredients[1].amount = 120
-data_recipe[advanced_crude_oil_refining].ingredients[2].amount = 30
+data_recipe[advanced_crude_oil_refining].energy_required = 8
+data_recipe[advanced_crude_oil_refining].ingredients[1].amount = 240
+data_recipe[advanced_crude_oil_refining].ingredients[2].amount = 60
 data_recipe[advanced_crude_oil_refining].results =
 {
-    {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 120},
-    {type = fluid, name = fuel_oil_angels, amount = 60},
-    {type = fluid, name = naphtha_angels, amount = 60}
+    {type = item, name = oil_residual_angels, amount = 2},
+    {type = fluid, name = mineral_oil_angels, amount = 240},
+    {type = fluid, name = fuel_oil_angels, amount = 120},
+    {type = fluid, name = naphtha_angels, amount = 120}
 }
 
 local condensates_crude_oil_refining = "angels-condensates-oil-refining"
 data_recipe[condensates_crude_oil_refining].subgroup = is_multi_phase_oil
 data_recipe[condensates_crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, fuel_oil_angels, naphtha_angels, number_3)
 data_recipe[condensates_crude_oil_refining].order = b_c
-data_recipe[condensates_crude_oil_refining].energy_required = 4
-data_recipe[condensates_crude_oil_refining].ingredients[1].amount = 120
-data_recipe[condensates_crude_oil_refining].ingredients[2].amount = 30
+data_recipe[condensates_crude_oil_refining].energy_required = 8
+data_recipe[condensates_crude_oil_refining].ingredients[1].amount = 240
+data_recipe[condensates_crude_oil_refining].ingredients[2].amount = 60
 data_recipe[condensates_crude_oil_refining].results =
 {
-    {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 60},
-    {type = fluid, name = fuel_oil_angels, amount = 60},
-    {type = fluid, name = naphtha_angels, amount = 120}
+    {type = item, name = oil_residual_angels, amount = 2},
+    {type = fluid, name = mineral_oil_angels, amount = 120},
+    {type = fluid, name = fuel_oil_angels, amount = 120},
+    {type = fluid, name = naphtha_angels, amount = 240}
 }
 
 local residual_crude_oil_refining = "angels-residual-oil-refining"
 data_recipe[residual_crude_oil_refining].subgroup = is_multi_phase_oil
 data_recipe[residual_crude_oil_refining].icons = FOUR_R_I(crude_oil, mineral_oil_angels, fuel_oil_angels, naphtha_angels, number_4)
 data_recipe[residual_crude_oil_refining].order = b_d
-data_recipe[residual_crude_oil_refining].energy_required = 4
-data_recipe[residual_crude_oil_refining].ingredients[1].amount = 120
-data_recipe[residual_crude_oil_refining].ingredients[2].amount = 30
+data_recipe[residual_crude_oil_refining].energy_required = 8
+data_recipe[residual_crude_oil_refining].ingredients[1].amount = 240
+data_recipe[residual_crude_oil_refining].ingredients[2].amount = 60
 data_recipe[residual_crude_oil_refining].results =
 {
-    {type = item, name = oil_residual_angels, amount = 1},
-    {type = fluid, name = mineral_oil_angels, amount = 60},
-    {type = fluid, name = fuel_oil_angels, amount = 120},
-    {type = fluid, name = naphtha_angels, amount = 60}
+    {type = item, name = oil_residual_angels, amount = 2},
+    {type = fluid, name = mineral_oil_angels, amount = 120},
+    {type = fluid, name = fuel_oil_angels, amount = 240},
+    {type = fluid, name = naphtha_angels, amount = 120}
 }
 
 data_item[oil_residual_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]n[/font]H[font=default-tiny-bold]2n+2[/font]"} or nil
@@ -1432,14 +1437,30 @@ data_fluid[lubricant].localised_description = show_formula and {chemical_formula
 data_fluid[lubricant].subgroup = is_multi_phase_oil
 data_fluid[lubricant].order = f
 TIMSABA.barreling.add_simple_fluid(lubricant)
+data_recipe[lubricant].categories = {chemistry}
+data_recipe[lubricant].subgroup = is_multi_phase_oil
+data_recipe[lubricant].icons = THREE_R_I(fuel_oil_angels, lubricant, hydrogen_angels)
+data_recipe[lubricant].order = f
+data_recipe[lubricant].energy_required = 4 -- 2C₂₀H₄₂(l) -cat-> C₄₀H₈₂(l) + H₂(g)
+data_recipe[lubricant].ingredients =
+{
+    {type = fluid, name = fuel_oil_angels, amount = 60},
+    {type = item, name = catalyst_blue, amount = 1}
+}
+data_recipe[lubricant].results =
+{
+    {type = fluid, name = lubricant, amount = 30},
+    {type = fluid, name = hydrogen_angels, amount = 30},
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
+}
 
 local mineral_oil_lubricant = "angels-mineral-oil-lubricant"
 data_recipe[mineral_oil_lubricant].categories = {angels_advanced_chemistry}
 data_recipe[mineral_oil_lubricant].subgroup = is_multi_phase_oil
 data_recipe[mineral_oil_lubricant].icons = THREE_D_I(mineral_oil_angels, residual_angels, hydrogen_angels, lubricant, nil, steam)
 data_recipe[mineral_oil_lubricant].order = f_a
-data_recipe[mineral_oil_lubricant].energy_required = 8
--- C₃₂H₆₆(l) + 8(CH₄ + CO₂)(residual gas) + 8H₂(g) -cat-> C₄₈H₉₈(l) + 8H₂O(g)
+data_recipe[mineral_oil_lubricant].energy_required = 8 -- C₃₂H₆₆(l) + 8(CH₄ + CO₂)(residual gas) + 8H₂(g) -cat-> C₄₈H₉₈(l) + 8H₂O(g)
 data_recipe[mineral_oil_lubricant].ingredients =
 {
     {type = fluid, name = mineral_oil_angels, amount = 120},
@@ -1468,8 +1489,7 @@ data_recipe[liquid_fuel_bob].categories = {chemistry}
 data_recipe[liquid_fuel_bob].subgroup = is_multi_phase_oil
 data_recipe[liquid_fuel_bob].icons = THREE_D_I(fuel_oil_angels, residual_angels, hydrogen_angels, liquid_fuel_bob, nil, steam)
 data_recipe[liquid_fuel_bob].order = h
-data_recipe[liquid_fuel_bob].energy_required = 4
--- C₄₈H₉₈(l) + H₂(g) -cat-> 2C₂₄H₅₀(l)
+data_recipe[liquid_fuel_bob].energy_required = 4 -- C₄₈H₉₈(l) + H₂(g) -cat-> 2C₂₄H₅₀(l)
 data_recipe[liquid_fuel_bob].ingredients =
 {
     {type = fluid, name = fuel_oil_angels, amount = 60},
@@ -1509,7 +1529,7 @@ data_recipe[steam_cracking_mineral_oil].results =
 {
     {type = fluid, name = synthesis_angels, amount = 480},
     {type = fluid, name = residual_angels, amount = 240},
-    {type = fluid, name = hydrogen_angels, amount = 510} -- 990
+    {type = fluid, name = hydrogen_angels, amount = 960} -- 990
 }
 
 local steam_cracking_fuel_oil = "angels-steam-cracking-fuel-oil"
@@ -1526,7 +1546,7 @@ data_recipe[steam_cracking_fuel_oil].results =
 {
     {type = fluid, name = synthesis_angels, amount = 360},
     {type = fluid, name = residual_angels, amount = 180},
-    {type = fluid, name = hydrogen_angels, amount = 255} -- 735
+    {type = fluid, name = hydrogen_angels, amount = 720} -- 735
 }
 
 local steam_cracking_naphtha = "angels-steam-cracking-naphtha"
@@ -1543,7 +1563,7 @@ data_recipe[steam_cracking_naphtha].results =
 {
     {type = fluid, name = synthesis_angels, amount = 480},
     {type = fluid, name = residual_angels, amount = 240},
-    {type = fluid, name = hydrogen_angels, amount = 600} -- 1080
+    {type = fluid, name = hydrogen_angels, amount = 960} -- 1080
 }
 
 local steam_cracking_gas_residual = "angels-steam-cracking-gas-residual"
@@ -1567,7 +1587,7 @@ local synthesis_gas_reforming = "angels-gas-synthesis-reforming"
 data_recipe[synthesis_gas_reforming].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_reforming].icons = THREE_I(carbon_monoxide_angels, hydrogen_angels, synthesis_angels)
 data_recipe[synthesis_gas_reforming].order = a_e
--- CO + H₂ --> (H₂ + CO)
+data_recipe[synthesis_gas_reforming].energy_required = 4 -- CO + H₂ --> (H₂ + CO)
 data_recipe[synthesis_gas_reforming].ingredients[1].amount = 60
 data_recipe[synthesis_gas_reforming].ingredients[2].amount = 60
 data_recipe[synthesis_gas_reforming].results[1].amount = 60
@@ -1576,7 +1596,7 @@ local synthesis_gas_separation = "angels-gas-synthesis-separation"
 data_recipe[synthesis_gas_separation].subgroup = is_synthesis_gas
 data_recipe[synthesis_gas_separation].icons = THREE_R_I(synthesis_angels, carbon_monoxide_angels, hydrogen_angels)
 data_recipe[synthesis_gas_separation].order = a_f
--- (H₂ + CO) --> CO + H₂
+data_recipe[synthesis_gas_separation].energy_required = 4 -- (H₂ + CO) --> CO + H₂
 data_recipe[synthesis_gas_separation].ingredients[1].amount = 60
 data_recipe[synthesis_gas_separation].results[1].amount = 60
 data_recipe[synthesis_gas_separation].results[2].amount = 60
@@ -1725,9 +1745,10 @@ data_item[rocket_fuel].fuel_value = 122880 .. kJ
 data_item[rocket_fuel].fuel_acceleration_multiplier = 1.75
 data_item[rocket_fuel].fuel_top_speed_multiplier = 1.25
 data_item[rocket_fuel].fuel_emissions_multiplier = 1.25
+data_recipe[rocket_fuel].categories = {crafting}
 data_recipe[rocket_fuel].icons = THREE_I(oxidizer_capsule_angels, fuel_capsule_angels, rocket_fuel)
 data_recipe[rocket_fuel].order = e
-data_recipe[rocket_fuel].energy_required = 16
+data_recipe[rocket_fuel].energy_required = 4
 data_recipe[rocket_fuel].ingredients[1].amount = 4
 data_recipe[rocket_fuel].ingredients[2].amount = 4
 data_recipe[rocket_fuel].results[1].amount = 4
@@ -1741,7 +1762,7 @@ data_item[nuclear_fuel].fuel_top_speed_multiplier = 1.25
 data_item[nuclear_fuel].fuel_emissions_multiplier = nil
 data_recipe[nuclear_fuel].icons = THREE_I(rocket_fuel, uranium_235, nuclear_fuel)
 data_recipe[nuclear_fuel].order = f
-data_recipe[nuclear_fuel].energy_required = 128
+data_recipe[nuclear_fuel].energy_required = 32
 data_recipe[nuclear_fuel].ingredients[1].name = rocket_fuel
 data_recipe[nuclear_fuel].ingredients[2].name = uranium_235
 
@@ -1756,7 +1777,7 @@ else
     data_recipe[plutonium_fuel_angels].icons = THREE_I(rocket_fuel, plutonium_239_bob, plutonium_fuel_angels)
 end
 data_recipe[plutonium_fuel_angels].order = g
-data_recipe[plutonium_fuel_angels].energy_required = 128
+data_recipe[plutonium_fuel_angels].energy_required = 32
 data_recipe[plutonium_fuel_angels].ingredients[1].name = rocket_fuel
 data_recipe[plutonium_fuel_angels].ingredients[2].name = plutonium_239_bob
 
@@ -1781,14 +1802,14 @@ data_fluid[methane_angels].order = a
 TIMSABA.barreling.add_gas(methane_angels)
 
 data_fluid[methanol_angels].localised_name = {"fluid-name.methanol-liquid"}
-data_fluid[methanol_angels].localised_description = show_formula and {chemical_formula, "CH[font=default-tiny-bold]3[/font]OH"} or nil
+data_fluid[methanol_angels].localised_description = show_formula and {chemical_formula, "CH[font=default-tiny-bold]4[/font]O"} or nil
 data_fluid[methanol_angels].subgroup = is_methane
 data_fluid[methanol_angels].order = b
 TIMSABA.barreling.add_dangerous_fluid(methanol_angels)
 data_recipe[methanol_angels].subgroup = is_methane
 data_recipe[methanol_angels].icons = THREE_I(carbon_dioxide_angels, hydrogen_angels, methanol_angels)
 data_recipe[methanol_angels].order = b
--- CO₂ + 2H₂ -cat-> CH₄O
+data_recipe[methanol_angels].energy_required = 4 -- CO₂ + 2H₂ -cat-> CH₄O
 data_recipe[methanol_angels].ingredients[1].amount = 60
 data_recipe[methanol_angels].ingredients[2].amount = 120
 data_recipe[methanol_angels].results =
@@ -1801,16 +1822,16 @@ data_recipe[methanol_angels].results =
 data_recipe[steam_cracking_methane].subgroup = is_methane
 data_recipe[steam_cracking_methane].icons = THREE_R_I(methane_angels, methanol_angels, hydrogen_angels)
 data_recipe[steam_cracking_methane].order = b_a
--- CH₄(g) + H₂O(g) -H₂O/steam cracking-> CH₄O(l) + H₂(g)
+data_recipe[steam_cracking_methane].energy_required = 8 -- CH₄(g) + H₂O(g) -H₂O/steam cracking-> CH₄O(l) + H₂(g)
 data_recipe[steam_cracking_methane].ingredients =
 {
-    {type = fluid, name = methane_angels, amount = 60},
-    {type = fluid, name = steam, amount = 120}
+    {type = fluid, name = methane_angels, amount = 240},
+    {type = fluid, name = steam, amount = 300} -- 240 + 60
 }
 data_recipe[steam_cracking_methane].results =
 {
-    {type = fluid, name = methanol_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = methanol_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 240},
     {type = fluid, name = steam, amount = 30} -- 60
 }
 
@@ -1820,7 +1841,7 @@ TIMSABA.barreling.add_gas(formaldehyde_angels)
 data_recipe[formaldehyde_angels].subgroup = is_methane
 data_recipe[formaldehyde_angels].icons = TWO_I(methanol_angels, formaldehyde_angels)
 data_recipe[formaldehyde_angels].order = c
--- 2CH₄O + O₂ -cat-> 2CH₂O + 2H₂O
+data_recipe[formaldehyde_angels].energy_required = 4 -- 2CH₄O + O₂ -cat-> 2CH₂O + 2H₂O
 data_recipe[formaldehyde_angels].ingredients =
 {
     {type = fluid, name = methanol_angels, amount = 60},
@@ -1846,16 +1867,16 @@ TIMSABA.barreling.add_gas(ethylene_angels)
 data_recipe[ethylene_angels].subgroup = is_ethane
 data_recipe[ethylene_angels].icons = THREE_R_I(ethane_angels, ethylene_angels, hydrogen_angels)
 data_recipe[ethylene_angels].order = b
--- C₂H₆(g) -H₂O/steam cracking-> C₂H₄(g) + H₂(g)
+data_recipe[ethylene_angels].energy_required = 8 -- C₂H₆(g) -H₂O/steam cracking-> C₂H₄(g) + H₂(g)
 data_recipe[ethylene_angels].ingredients =
 {
-    {type = fluid, name = ethane_angels, amount = 60},
+    {type = fluid, name = ethane_angels, amount = 240},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[ethylene_angels].results =
 {
-    {type = fluid, name = ethylene_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = ethylene_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 240},
     {type = fluid, name = steam, amount = 30} -- 60
 }
 
@@ -1866,7 +1887,7 @@ data_recipe[propene_angels].categories = {chemistry}
 data_recipe[propene_angels].subgroup = is_ethane
 data_recipe[propene_angels].icons = THREE_I(ethane_angels, butene_gas, propene_angels)
 data_recipe[propene_angels].order = c
--- C₂H₆ + C₄H₈ -cat-> 2C₃H₆ + H₂
+data_recipe[propene_angels].energy_required = 4 -- C₂H₆ + C₄H₈ -cat-> 2C₃H₆ + H₂
 data_recipe[propene_angels].ingredients =
 {
     {type = fluid, name = ethane_angels, amount = 60},
@@ -1884,17 +1905,17 @@ data_recipe[propene_angels].results =
 data_recipe[catalyst_steam_cracking_naphtha].subgroup = is_ethane
 data_recipe[catalyst_steam_cracking_naphtha].icons = THREE_R_I(naphtha_angels, propene_angels, ethane_angels)
 data_recipe[catalyst_steam_cracking_naphtha].order = c_a
--- C₈H₁₈(l) -H₂O/steam cracking-> 2C₃H₆(g) + C₂H₆(g)
+data_recipe[catalyst_steam_cracking_naphtha].energy_required = 8 -- C₈H₁₈(l) -H₂O/steam cracking-> 2C₃H₆(g) + C₂H₆(g)
 data_recipe[catalyst_steam_cracking_naphtha].ingredients =
 {
-    {type = fluid, name = naphtha_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 240},
     {type = fluid, name = steam, amount = 60},
     {type = item, name = catalyst_red, amount = 1}
 }
 data_recipe[catalyst_steam_cracking_naphtha].results =
 {
-    {type = fluid, name = propene_angels, amount = 120},
-    {type = fluid, name = ethane_angels, amount = 60},
+    {type = fluid, name = propene_angels, amount = 480},
+    {type = fluid, name = ethane_angels, amount = 240},
     {type = fluid, name = steam, amount = 30}, -- 60
     {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
@@ -1912,12 +1933,12 @@ TIMSABA.barreling.add_dangerous_fluid(benzene_angels)
 data_recipe[benzene_angels].subgroup = is_butane
 data_recipe[benzene_angels].icons = THREE_R_I(methane_angels, benzene_angels, ethane_angels)
 data_recipe[benzene_angels].order = c
--- 8CH₄ -cat-> C₆H₆ + C₂H₆
-data_recipe[benzene_angels].ingredients[1].amount = 120
+data_recipe[benzene_angels].energy_required = 4 -- 8CH₄ -cat-> C₆H₆ + C₂H₆
+data_recipe[benzene_angels].ingredients[1].amount = 480
 data_recipe[benzene_angels].results =
 {
-    {type = fluid, name = benzene_angels, amount = 15},
-    {type = fluid, name = ethane_angels, amount = 15},
+    {type = fluid, name = benzene_angels, amount = 60},
+    {type = fluid, name = ethane_angels, amount = 60},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1926,16 +1947,16 @@ data_recipe[benzene_angels].main_product = benzene_angels
 data_recipe[steam_cracking_butane].subgroup = is_butane
 data_recipe[steam_cracking_butane].icons = THREE_R_I(butane_angels, benzene_angels, hydrogen_angels)
 data_recipe[steam_cracking_butane].order = c_a
--- 4C₄H₁₀(g) -H₂O/steam cracking-> 2C₆H₆(l) + 4H₂(g)
+data_recipe[steam_cracking_butane].energy_required = 8 -- 4C₄H₁₀(g) -H₂O/steam cracking-> 2C₆H₆(l) + 4H₂(g)
 data_recipe[steam_cracking_butane].ingredients =
 {
-    {type = fluid, name = butane_angels, amount = 120},
+    {type = fluid, name = butane_angels, amount = 240},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[steam_cracking_butane].results =
 {
-    {type = fluid, name = benzene_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = benzene_angels, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 240},
     {type = fluid, name = steam, amount = 30} -- 60
 }
 
@@ -1946,16 +1967,16 @@ data_recipe[butadiene_angels].localised_name = {"fluid-name." .. butadiene_angel
 data_recipe[butadiene_angels].subgroup = is_butane
 data_recipe[butadiene_angels].icons = THREE_R_I(naphtha_angels, butadiene_angels, hydrogen_angels)
 data_recipe[butadiene_angels].order = d
--- C₈H₁₈(l) -H₂O/steam cracking-> 2C₄H₆(g) + 3H₂(g)
+data_recipe[butadiene_angels].energy_required = 8 -- C₈H₁₈(l) -H₂O/steam cracking-> 2C₄H₆(g) + 3H₂(g)
 data_recipe[butadiene_angels].ingredients =
 {
-    {type = fluid, name = naphtha_angels, amount = 60},
+    {type = fluid, name = naphtha_angels, amount = 120},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[butadiene_angels].results =
 {
-    {type = fluid, name = butadiene_angels, amount = 120},
-    {type = fluid, name = hydrogen_angels, amount = 180},
+    {type = fluid, name = butadiene_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 360},
     {type = fluid, name = steam, amount = 30} -- 60
 }
 
@@ -1969,13 +1990,13 @@ data_recipe[ethylbenzene_angels].order = e
 -- C₂H₄ + C₆H₆ -cat-> C₈H₁₀
 data_recipe[ethylbenzene_angels].ingredients =
 {
-    {type = fluid, name = benzene_angels, amount = 120},
-    {type = fluid, name = ethylene_angels, amount = 120},
+    {type = fluid, name = benzene_angels, amount = 60},
+    {type = fluid, name = ethylene_angels, amount = 60},
     {type = item, name = catalyst_green, amount = 1}
 }
 data_recipe[ethylbenzene_angels].results =
 {
-    {type = fluid, name = ethylbenzene_angels, amount = 120},
+    {type = fluid, name = ethylbenzene_angels, amount = 60},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -1988,16 +2009,16 @@ data_recipe[styrene_angels].categories = {angels_steam_cracking}
 data_recipe[styrene_angels].subgroup = is_butane
 data_recipe[styrene_angels].icons = THREE_R_I(ethylbenzene_angels, styrene_angels, hydrogen_angels)
 data_recipe[styrene_angels].order = f
-data_recipe[styrene_angels].energy_required = 4 -- C₈H₁₀(l) -H₂O/steam cracking-> C₈H₈(l) + H₂(g)
+data_recipe[styrene_angels].energy_required = 8 -- C₈H₁₀(l) -H₂O/steam cracking-> C₈H₈(l) + H₂(g)
 data_recipe[styrene_angels].ingredients =
 {
-    {type = fluid, name = ethylbenzene_angels, amount = 60},
+    {type = fluid, name = ethylbenzene_angels, amount = 240},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[styrene_angels].results =
 {
-    {type = fluid, name = styrene_angels, amount = 60},
-    {type = fluid, name = hydrogen_angels, amount = 60},
+    {type = fluid, name = styrene_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 240},
     {type = fluid, name = steam, amount = 30} -- 60
 }
 
@@ -2017,7 +2038,7 @@ data_recipe[cumene_process].results =
 {
     {type = item, name = phenol, amount = 16},
     {type = fluid, name = acetone_angels, amount = 240},
-    {type = item, name = catalyst_yellow, amount = 1, independent_probability = 0.875},
+    {type = item, name = catalyst_blue, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
 data_recipe[cumene_process].main_product = phenol
@@ -2033,6 +2054,7 @@ data_recipe[liquid_plastic_angels].categories = {chemistry}
 data_recipe[liquid_plastic_angels].subgroup = is_plastic
 data_recipe[liquid_plastic_angels].icons = TWO_I(propene_angels, liquid_plastic_angels)
 data_recipe[liquid_plastic_angels].order = a
+data_recipe[liquid_plastic_angels].energy_required = 4
 data_recipe[liquid_plastic_angels].ingredients[1].amount = 60
 data_recipe[liquid_plastic_angels].results[1].amount = 15
 
@@ -2040,21 +2062,23 @@ local liquid_plastic_2 = "angels-liquid-plastic-2"
 data_recipe[liquid_plastic_2].subgroup = is_plastic
 data_recipe[liquid_plastic_2].icons = THREE_I(naphtha_angels, polyethylene, liquid_plastic_angels)
 data_recipe[liquid_plastic_2].order = a_a
-data_recipe[liquid_plastic_2].ingredients[1].amount = 30
+data_recipe[liquid_plastic_2].energy_required = 4
+data_recipe[liquid_plastic_2].ingredients[1].amount = 60
 data_recipe[liquid_plastic_2].ingredients[2].type = item
 data_recipe[liquid_plastic_2].ingredients[2].name = polyethylene
-data_recipe[liquid_plastic_2].ingredients[2].amount = 2
-data_recipe[liquid_plastic_2].results[1].amount = 30
+data_recipe[liquid_plastic_2].ingredients[2].amount = 4
+data_recipe[liquid_plastic_2].results[1].amount = 60
 
 local liquid_plastic_3 = "angels-liquid-plastic-3"
 data_recipe[liquid_plastic_3].subgroup = is_plastic
 data_recipe[liquid_plastic_3].icons = THREE_I(formaldehyde_angels, phenol, liquid_plastic_angels)
 data_recipe[liquid_plastic_3].order = a_b
-data_recipe[liquid_plastic_3].ingredients[1].amount = 30
+data_recipe[liquid_plastic_3].energy_required = 4
+data_recipe[liquid_plastic_3].ingredients[1].amount = 60
 data_recipe[liquid_plastic_3].ingredients[2].type = item
 data_recipe[liquid_plastic_3].ingredients[2].name = phenol
-data_recipe[liquid_plastic_3].ingredients[2].amount = 2
-data_recipe[liquid_plastic_3].results[1].amount = 60
+data_recipe[liquid_plastic_3].ingredients[2].amount = 4
+data_recipe[liquid_plastic_3].results[1].amount = 120
 
 data_item[plastic].subgroup = is_plastic
 data_item[plastic].order = b
@@ -2064,6 +2088,7 @@ data_recipe[plastic_angels].categories = {angels_liquifying}
 data_recipe[plastic_angels].subgroup = is_plastic
 data_recipe[plastic_angels].icons = TWO_I(liquid_plastic_angels, plastic)
 data_recipe[plastic_angels].order = b_b
+data_recipe[plastic_angels].energy_required = 4
 data_recipe[plastic_angels].ingredients[1].amount = 60
 
 -- RESIN
@@ -2073,27 +2098,30 @@ TIMSABA.barreling.add_simple_fluid(liquid_resin_angels)
 data_recipe[liquid_resin_angels].subgroup = is_resin
 data_recipe[liquid_resin_angels].icons = THREE_I(urea_solution_angels, formaldehyde_angels, liquid_resin_angels)
 data_recipe[liquid_resin_angels].order = a
-data_recipe[liquid_resin_angels].ingredients[1].amount = 30
-data_recipe[liquid_resin_angels].ingredients[2].amount = 30
-data_recipe[liquid_resin_angels].results[1].amount = 15
+data_recipe[liquid_resin_angels].energy_required = 4
+data_recipe[liquid_resin_angels].ingredients[1].amount = 60
+data_recipe[liquid_resin_angels].ingredients[2].amount = 60
+data_recipe[liquid_resin_angels].results[1].amount = 30
 
 local liquid_resin_2 = "angels-liquid-resin-2"
 data_recipe[liquid_resin_2].subgroup = is_resin
 data_recipe[liquid_resin_2].icons = THREE_I(melamine_solution_angels, formaldehyde_angels, liquid_resin_angels)
 data_recipe[liquid_resin_2].order = a_a
-data_recipe[liquid_resin_2].ingredients[1].amount = 30
-data_recipe[liquid_resin_2].ingredients[2].amount = 30
-data_recipe[liquid_resin_2].results[1].amount = 30
+data_recipe[liquid_resin_2].energy_required = 4
+data_recipe[liquid_resin_2].ingredients[1].amount = 60
+data_recipe[liquid_resin_2].ingredients[2].amount = 60
+data_recipe[liquid_resin_2].results[1].amount = 60
 
 local liquid_resin_3 = "angels-liquid-resin-3"
 data_recipe[liquid_resin_3].subgroup = is_resin
 data_recipe[liquid_resin_3].icons = THREE_I(bisphenol_a, epichlorohydrin_angels, liquid_resin_angels)
 data_recipe[liquid_resin_3].order = a_b
+data_recipe[liquid_resin_3].energy_required = 4
 data_recipe[liquid_resin_3].ingredients[1].type = item
 data_recipe[liquid_resin_3].ingredients[1].name = bisphenol_a
-data_recipe[liquid_resin_3].ingredients[1].amount = 2
-data_recipe[liquid_resin_3].ingredients[2].amount = 30
-data_recipe[liquid_resin_3].results[1].amount = 60
+data_recipe[liquid_resin_3].ingredients[1].amount = 4
+data_recipe[liquid_resin_3].ingredients[2].amount = 60
+data_recipe[liquid_resin_3].results[1].amount = 120
 
 data_item[resin_bob].subgroup = is_resin
 data_item[resin_bob].order = b
@@ -2104,6 +2132,7 @@ data_recipe[resin_angels].categories = {angels_liquifying}
 data_recipe[resin_angels].subgroup = is_resin
 data_recipe[resin_angels].icons = TWO_I(liquid_resin_angels, resin_bob)
 data_recipe[resin_angels].order = b_b
+data_recipe[resin_angels].energy_required = 4
 data_recipe[resin_angels].ingredients[1].amount = 60
 
 -- RUBBER
@@ -2111,10 +2140,14 @@ data_fluid[liquid_rubber_angels].subgroup = is_rubber
 data_fluid[liquid_rubber_angels].order = a
 TIMSABA.barreling.add_simple_fluid(liquid_rubber_angels)
 data_recipe[liquid_rubber_angels].subgroup = is_rubber
-data_recipe[liquid_rubber_angels].icons = THREE_I(styrene_angels, butadiene_angels, liquid_rubber_angels)
+data_recipe[liquid_rubber_angels].icons = THREE_I(vinyl_acetate_liquid, ethylene_angels, liquid_rubber_angels)
 data_recipe[liquid_rubber_angels].order = a
-data_recipe[liquid_rubber_angels].ingredients[1].amount = 60
-data_recipe[liquid_rubber_angels].ingredients[2].amount = 60
+data_recipe[liquid_rubber_angels].energy_required = 4 -- C₄H₆O₂(l) + C₂H₄(g) = liquid_rubber_angels
+data_recipe[liquid_rubber_angels].ingredients =
+{
+    {type = fluid, name = vinyl_acetate_liquid, amount = 60},
+    {type = fluid, name = ethylene_angels, amount = 60}
+}
 data_recipe[liquid_rubber_angels].results[1].amount = 30
 
 data_item[rubber_bob].subgroup = is_rubber
@@ -2126,6 +2159,7 @@ data_recipe[rubber_angels].categories = {angels_liquifying}
 data_recipe[rubber_angels].subgroup = is_rubber
 data_recipe[rubber_angels].icons = TWO_I(liquid_rubber_angels, rubber_bob)
 data_recipe[rubber_angels].order = b_b
+data_recipe[rubber_angels].energy_required = 4
 data_recipe[rubber_angels].ingredients[1].amount = 60
 
 -- EXPLOSIVES
@@ -2146,45 +2180,46 @@ data_recipe[explosives].results[1].amount = 1
 data_recipe[explosives_nitroglycerin].subgroup = is_explosives
 data_recipe[explosives_nitroglycerin].icons = R_P_I(explosives, nil, nil, number_2)
 data_recipe[explosives_nitroglycerin].order = a_a
+data_recipe[explosives_nitroglycerin].energy_required = 8
 data_recipe[explosives_nitroglycerin].ingredients =
 {
-    {type = item, name = coal, amount = 2},
-    {type = fluid, name = glycerol_angels, amount = 60},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30},
-    {type = fluid, name = nitric_acid_angels, amount = 30}
+    {type = item, name = coal, amount = 8},
+    {type = fluid, name = glycerol_angels, amount = 240},
+    {type = fluid, name = sulfuric_acid_angels, amount = 120},
+    {type = fluid, name = nitric_acid_angels, amount = 120}
 }
-data_recipe[explosives_nitroglycerin].results[1].amount = 2
+data_recipe[explosives_nitroglycerin].results[1].amount = 8
 
 local explosives_trinitrotoluene = "angels-solid-trinitrotoluene"
 data_recipe[explosives_trinitrotoluene].subgroup = is_explosives
 data_recipe[explosives_trinitrotoluene].icons = R_P_I(explosives, nil, nil, number_3)
 data_recipe[explosives_trinitrotoluene].order = a_b
+data_recipe[explosives_trinitrotoluene].energy_required = 8
 data_recipe[explosives_trinitrotoluene].ingredients =
 {
-    {type = fluid, name = toluene_angels, amount = 60},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30},
-    {type = fluid, name = nitric_acid_angels, amount = 30}
+    {type = fluid, name = toluene_angels, amount = 240},
+    {type = fluid, name = sulfuric_acid_angels, amount = 120},
+    {type = fluid, name = nitric_acid_angels, amount = 120}
 }
-data_recipe[explosives_trinitrotoluene].results = {{type = item, name = explosives, amount = 4}}
+data_recipe[explosives_trinitrotoluene].results = {{type = item, name = explosives, amount = 16}}
 
 data_fluid[glycerol_angels].subgroup = is_explosives
 data_fluid[glycerol_angels].order = c
 TIMSABA.barreling.add_dangerous_fluid(glycerol_angels)
-data_recipe[glycerol_angels].categories = {angels_advanced_chemistry}
+data_recipe[glycerol_angels].categories = {chemistry}
 data_recipe[glycerol_angels].subgroup = is_explosives
-data_recipe[glycerol_angels].icons = THREE_D_I(glycerol_dichlorohydrin, water_purified_angels, sodium_hydroxide_solution_angels, glycerol_angels, nil, sodium_chloride_solution)
+data_recipe[glycerol_angels].icons = TWO_D_I(glycerol_dichlorohydrin, sodium_hydroxide_solution_angels, glycerol_angels, sodium_chloride_solution)
 data_recipe[glycerol_angels].order = c
--- C₃H₆Cl₂O + H₂O + 2NaOH --> C₃H₈O₃ + 2NaCl
+data_recipe[glycerol_angels].energy_required = 4 -- C₃H₆Cl₂O(l) + 2NaOH(aq) --> C₃H₈O₃(l) + 2NaCl(aq)
 data_recipe[glycerol_angels].ingredients =
 {
-    {type = fluid, name = glycerol_dichlorohydrin, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 30},
-    {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60}
+    {type = fluid, name = glycerol_dichlorohydrin, amount = 60},
+    {type = fluid, name = sodium_hydroxide_solution_angels, amount = 120}
 }
 data_recipe[glycerol_angels].results =
 {
-    {type = fluid, name = glycerol_angels, amount = 30},
-    {type = fluid, name = sodium_chloride_solution, amount = 60}
+    {type = fluid, name = glycerol_angels, amount = 60},
+    {type = fluid, name = sodium_chloride_solution, amount = 60} -- 120
 }
 data_recipe[glycerol_angels].main_product = glycerol_angels
 
@@ -2194,17 +2229,17 @@ if mods[bobwarfare] then
     TIMSABA.barreling.add_dangerous_fluid(nitroglycerin_bob)
     data_recipe[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
     data_recipe[nitroglycerin_bob].icons = TWO_D_I(glycerol_angels, nitric_acid_angels, nitroglycerin_bob, water_purified_angels)
-    data_recipe[nitroglycerin_bob].energy_required = 2 -- C₃H₈O₃ + HNO₃ -H₂SO₄-> C₃H₅N₃O₉ + H₂O
+    data_recipe[nitroglycerin_bob].energy_required = 8 -- C₃H₈O₃ + HNO₃ -H₂SO₄-> C₃H₅N₃O₉ + H₂O
     data_recipe[nitroglycerin_bob].ingredients =
     {
-        {type = fluid, name = glycerol_angels, amount = 30},
-        {type = fluid, name = nitric_acid_angels, amount = 30},
-        {type = fluid, name = sulfuric_acid_angels, amount = 30}
+        {type = fluid, name = glycerol_angels, amount = 240},
+        {type = fluid, name = nitric_acid_angels, amount = 240},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
     data_recipe[nitroglycerin_bob].results =
     {
-        {type = fluid, name = nitroglycerin_bob, amount = 30},
-        {type = fluid, name = water_purified_angels, amount = 30},
+        {type = fluid, name = nitroglycerin_bob, amount = 240},
+        {type = fluid, name = water_purified_angels, amount = 240},
         {type = fluid, name = sulfuric_acid_angels, amount = 15}
     }
     data_recipe[nitroglycerin_bob].main_product = nitroglycerin_bob
@@ -2218,17 +2253,17 @@ data_recipe[toluene_angels].categories = {angels_advanced_chemistry}
 data_recipe[toluene_angels].subgroup = is_explosives
 data_recipe[toluene_angels].icons = FOUR_R_I(naphtha_angels, methane_angels, toluene_angels, hydrogen_angels)
 data_recipe[toluene_angels].order = e
-data_recipe[toluene_angels].energy_required = 4 -- C₈H₁₈(l) -cat-> C₇H₈(l) + CH₄(g) + 2H₂(g)
+data_recipe[toluene_angels].energy_required = 8 -- C₈H₁₈(l) -cat-> C₇H₈(l) + CH₄(g) + 2H₂(g)
 data_recipe[toluene_angels].ingredients =
 {
-    {type = fluid, name = naphtha_angels, amount = 120},
+    {type = fluid, name = naphtha_angels, amount = 240},
     {type = item, name = catalyst_green, amount = 1}
 }
 data_recipe[toluene_angels].results =
 {
-    {type = fluid, name = toluene_angels, amount = 120},
-    {type = fluid, name = methane_angels, amount = 120},
-    {type = fluid, name = hydrogen_angels, amount = 240},
+    {type = fluid, name = toluene_angels, amount = 240},
+    {type = fluid, name = methane_angels, amount = 240},
+    {type = fluid, name = hydrogen_angels, amount = 480},
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }
@@ -2238,7 +2273,7 @@ data_recipe[toluene_from_benzene].localised_name = {"fluid-name." .. toluene_ang
 data_recipe[toluene_from_benzene].subgroup = is_explosives
 data_recipe[toluene_from_benzene].icons = TWO_D_I(benzene_angels, chloromethane_angels, toluene_angels, hydrogen_chloride_angels)
 data_recipe[toluene_from_benzene].order = e_a
--- C₆H₆(l) + CH₃Cl(g) -cat-> C₇H₈(l) + HCl(g)
+data_recipe[toluene_from_benzene].energy_required = 4 -- C₆H₆(l) + CH₃Cl(g) -cat-> C₇H₈(l) + HCl(g)
 data_recipe[toluene_from_benzene].ingredients =
 {
     {type = fluid, name = benzene_angels, amount = 60},
@@ -2248,7 +2283,7 @@ data_recipe[toluene_from_benzene].ingredients =
 data_recipe[toluene_from_benzene].results =
 {
     {type = fluid, name = toluene_angels, amount = 60},
-    {type = fluid, name = hydrogen_chloride_angels, amount = 60},
+    {type = fluid, name = hydrogen_chloride_angels, amount = 30}, -- 60 
     {type = item, name = catalyst_green, amount = 1, independent_probability = 0.875},
     {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
 }

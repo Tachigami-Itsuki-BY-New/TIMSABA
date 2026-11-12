@@ -6,7 +6,7 @@ if mods[corrundum_mods] then
     ({
         {
             name = corrundum_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_corrundum_air,
             order = a,
             energy_required = 8,
