@@ -6,7 +6,7 @@ if mods[moshine_mods] then
     ({
         {
             name = moshine_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_moshine_air,
             order = a,
             energy_required = 8,
@@ -126,7 +126,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = calcium_chloride_angels, amount = 8} -- 24
+                {type = item, name = calcium_chloride_angels, amount = 16} -- 24
             },
             main_product = neodymium_ingot
         },
@@ -146,8 +146,8 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = lime_angels, amount = 8}, -- 24
-                {type = item, name = salt_angels, amount = 16} -- 48
+                {type = item, name = lime_angels, amount = 16}, -- 24
+                {type = item, name = salt_angels, amount = 32} -- 48
             },
             main_product = neodymium_ingot
         },
@@ -182,7 +182,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_hydroxide_III, amount = 16},
-                {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+                {type = fluid, name = hydrogen_angels, amount = 240} -- 360
             },
             main_product = neodymium_hydroxide_III
         },
@@ -197,7 +197,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_oxide_III, amount = 8},
-                {type = fluid, name = steam, amount = 120} -- 360
+                {type = fluid, name = steam, amount = 240} -- 360
             },
             main_product = neodymium_oxide_III
         },
@@ -241,7 +241,7 @@ if mods[moshine_mods] then
     ({
         {
             name = lead_ingot_4,
-            categories = {angels_chemical_smelting_4},
+            categories = {angels_blast_smelting_4},
             subgroup = is_lead,
             icons = THREE_D_I(lead_sulfate_II, nil, coal, lead_ingot, sulfur_dioxide_angels, carbon_dioxide_angels),
             order = d_e,
@@ -299,7 +299,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = boron_oxide_III, amount = 2},
-                {type = fluid, name = steam, amount = 60} -- 300
+                {type = fluid, name = steam, amount = 180} -- 300
             },
             main_product = boron_oxide_III
         },
@@ -312,13 +312,13 @@ if mods[moshine_mods] then
             -- B₂O₃(s) + 3Mg(s) --> 2B(s) + 3MgO(s)
             ingredients =
             {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = item, name = magnesium_powder, amount = 12}
+                {type = item, name = boron_oxide_III, amount = 2},
+                {type = item, name = magnesium_powder, amount = 6}
             },
             results =
             {
-                {type = item, name = boron, amount = 8},
-                {type = item, name = magnesium_oxide, amount = 4} -- 12
+                {type = item, name = boron, amount = 4},
+                {type = item, name = magnesium_oxide, amount = 4} -- 6
             },
             main_product = boron
         },
@@ -340,7 +340,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = fluid, name = orthophosphoric_acid, amount = 60},
-                {type = item, name = calcium_sulfate_angels, amount = 4} -- 12
+                {type = item, name = calcium_sulfate_angels, amount = 8} -- 12
             },
             main_product = orthophosphoric_acid
         },
@@ -362,7 +362,7 @@ if mods[moshine_mods] then
             {
                 {type = fluid, name = orthophosphoric_acid, amount = 180},
                 {type = fluid, name = hydrofluoric_acid_angels, amount = 30}, -- 60
-                {type = item, name = calcium_sulfate_angels, amount = 8} -- 20
+                {type = item, name = calcium_sulfate_angels, amount = 12} -- 20
             },
             main_product = orthophosphoric_acid
         }

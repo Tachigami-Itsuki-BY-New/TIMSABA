@@ -4,7 +4,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = fulgora_air,
-        categories = {angels_petrochem_air_filtering},
+        categories = {angels_air_filtering},
         subgroup = is_fulgora_air,
         order = a,
         energy_required = 8,
@@ -60,7 +60,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = titanium_plate_bob,                 amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
             {type = item, name = gold_plate_bob,                     amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
             {type = item, name = tungsten_plate_bob,                 amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
-            {type = item, name = tungsten_carbide_plate_bob,         amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = tungsten_carbide_bob,         amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
             {type = item, name = copper_tungsten_plate_bob,          amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
             {type = item, name = platinum_plate,                     amount = 1, independent_probability = 0.015625, show_details_in_recipe_tooltip = false},
             {type = item, name = bronze_plate_bob,                   amount = 1, independent_probability = 0.031250, show_details_in_recipe_tooltip = false},
@@ -148,7 +148,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = calcium,
-        categories = {angels_petrochem_electrolyser},
+        categories = {angels_electrolysis},
         subgroup = is_calcium,
         icons = FOUR_R_I(calcium_chloride_solution, hydrogen_chloride_angels, calcium, oxygen_angels),
         order = a,

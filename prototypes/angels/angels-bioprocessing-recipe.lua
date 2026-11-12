@@ -1,6 +1,7 @@
 local is_algae_brown = "angels-bio-processing-brown"
 -- ANGELS BIOPROCESSING NAUVIS
 iodine_gas_2 = "iodine-gas-2"
+fertilizer_2 = "fertilizer-2"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -34,31 +35,92 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = sodium_hydroxide_solution_angels, amount = 30} -- 60
         },
         main_product = iodine_gas
+    },
+    {
+        name = fertilizer_2,
+        categories = {chemistry},
+        subgroup = "angels-bio-wood",
+        icons = THREE_I(compost_angels, potassium_sulfate_solution, fertilizer_angels),
+        order = b_a,
+        -- Compost + K₂SO₄(aq) --> Fertilizer
+        ingredients =
+        {
+            {type = item, name = compost_angels, amount = 4},
+            {type = fluid, name = potassium_sulfate_solution, amount = 60}
+        },
+        results = {{type = item, name = fertilizer_angels, amount = 2}},
+        main_product = fertilizer_angels
     }
 })
 
 -- ANGELS BIOPROCESSING VEGETABLES
+ethanol_liquid_2 = "ethanol-liquid-2"
+ethanol_liquid_3 = "ethanol-liquid-3"
 TIMSABA.functions.create_recipes
 ({
+    {
+        localised_name = {"fluid-name." .. ethanol_angels},
+        type = recipe,
+        name = ethanol_liquid_2,
+        categories = {chemistry},
+        subgroup = "angels-bio-processor-fermentation",
+        icons = FOUR_THREE_R_I(lithium_tetraethoxy_aluminate_solution_ether, nil, water_purified_angels, ethanol_angels, lithium_hydroxide, aluminium_hydroxide, diethyl_ether),
+        order = d_a,
+        -- LiAl(C₂H₅O)₄(ether) + 4H₂O(l) --> 4C₂H₆O(l) + LiOH(s) + Al(OH)₃(s) + (C₂H₅)₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = lithium_tetraethoxy_aluminate_solution_ether, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = fluid, name = ethanol_angels, amount = 240},
+            {type = item, name = lithium_hydroxide, amount = 2}, -- 4
+            {type = item, name = aluminium_hydroxide, amount = 2}, -- 4
+            {type = fluid, name = diethyl_ether, amount = 30} -- 60
+        },
+        main_product = ethanol_angels
+    },
+    {
+        localised_name = {"fluid-name." .. ethanol_angels},
+        type = recipe,
+        name = ethanol_liquid_3,
+        categories = {chemistry},
+        subgroup = "angels-bio-processor-fermentation",
+        icons = TWO_D_I(chloroethane_gas, sodium_hydroxide_solution_angels, ethanol_angels, sodium_chloride_solution),
+        order = d_b,
+        -- C₂H₅Cl(g) + NaOH(aq) --> C₂H₅OH(l) + NaCl(aq)
+        ingredients =
+        {
+            {type = fluid, name = chloroethane_gas, amount = 60},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = ethanol_angels, amount = 60},
+            {type = fluid, name = sodium_chloride_solution, amount = 30} -- 60
+        },
+        main_product = ethanol_angels
+    },
     {
         name = cellulose_triacetate,
         categories = {angels_advanced_chemistry},
         subgroup = is_bio_plastic,
         icons = THREE_I(cellulose_fiber_angels, acetic_anhydride, cellulose_triacetate),
         order = a,
-        -- (C₆H₁₀O₅)n + C₄H₆O₃ -H₂SO₄/C₂H₄O₂-> (C₁₂H₁₆O₈)n
+        energy_requred = 8, -- (C₆H₁₀O₅)n(s) + C₄H₆O₃(l) -H₂SO₄(l)/C₂H₄O₂(l)-> (C₁₂H₁₆O₈)n(s)
         ingredients =
         {
-            {type = item, name = cellulose_fiber_angels, amount = 4},
-            {type = fluid, name = acetic_anhydride, amount = 60},
-            {type = fluid, name = acetic_acid, amount = 60},
-            {type = fluid, name = sulfuric_acid_angels, amount = 60}
+            {type = item, name = cellulose_fiber_angels, amount = 16},
+            {type = fluid, name = acetic_anhydride, amount = 240},
+            {type = fluid, name = acetic_acid, amount = 240},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240}
         },
         results =
         {
-            {type = item, name = cellulose_triacetate, amount = 4},
-            {type = fluid, name = acetic_acid, amount = 30}, -- 60
-            {type = fluid, name = sulfuric_acid_angels, amount = 30} -- 60
+            {type = item, name = cellulose_triacetate, amount = 16},
+            {type = fluid, name = acetic_acid, amount = 120}, -- 240
+            {type = fluid, name = sulfuric_acid_angels, amount = 120} -- 240
         },
         main_product = cellulose_triacetate
     },
@@ -68,7 +130,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_bio_plastic,
         icons = TWO_D_I(cellulose_triacetate, water_purified_angels, cellulose_diacetate, acetic_acid),
         order = b,
-        -- (C₁₂H₁₆O₈)n + H₂O --> (C₁₀H₁₄O₇)n + C₂H₄O₂
+        -- (C₁₂H₁₆O₈)n(s) + H₂O(l) --> (C₁₀H₁₄O₇)n(s) + C₂H₄O₂(l)
         ingredients =
         {
             {type = item, name = cellulose_triacetate, amount = 4},

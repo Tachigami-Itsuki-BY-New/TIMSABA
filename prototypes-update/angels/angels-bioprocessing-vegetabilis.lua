@@ -688,7 +688,7 @@ data_recipe[fermentation_fluid_from_fruits].results[1].amount = 120
 data_fluid[acetic_acid].order = b
 data_recipe[acetic_acid].icons = TWO_D_I(fermentation_fluid, nil, acetic_acid, compost_angels)
 data_recipe[acetic_acid].order = b
-data_recipe[acetic_acid].ingredients[1].amount = 120
+data_recipe[acetic_acid].ingredients[1].amount = 60
 data_recipe[acetic_acid].results[1].amount = 60
 TIMSABA.barreling.add_dangerous_fluid(acetic_acid)
 
@@ -735,7 +735,7 @@ data_fluid[ethanol_angels].order = d
 TIMSABA.barreling.add_dangerous_fluid(ethanol_angels)
 data_recipe[ethanol_angels].icons = TWO_D_I(fermentation_fluid, nil, ethanol_angels, compost_angels)
 data_recipe[ethanol_angels].order = d
-data_recipe[ethanol_angels].ingredients[1].amount = 120
+data_recipe[ethanol_angels].ingredients[1].amount = 60
 data_recipe[ethanol_angels].results[1].amount = 60
 
 local ethylene_from_ethanol = "angels-ethanol-to-ethylene-synthesis"

@@ -153,7 +153,7 @@ local function make_preset()
     family("Sintering ovens", {sintering_oven_1, sintering_oven_2, sintering_oven_3, sintering_oven_4, sintering_oven_5, sintering_oven_6})
     family("Metals", {iron_plate, copper_plate, tin_plate_bob, lead_plate_bob, nickel_plate_bob, aluminium_plate_bob, zinc_plate_bob, silver_plate_bob, titanium_plate_bob, gold_plate_bob, uranium_238_plate, tungsten_plate_bob, platinum_plate, molybdenum_plate, rhenium_plate})
     --family("Planetary metals", {}) -- Доделать
-    family("Alloys", {solder, steel_plate, bronze_plate_bob, brass_plate_bob, gunmetal_plate_bob, invar_plate_bob, cobalt_steel_plate_bob, tungsten_carbide_plate_bob, nitinol_plate_bob, copper_tungsten_plate_bob, molybdenum_rhenium_plate, aluminium_lithium_plate})
+    family("Alloys", {solder, steel_plate, bronze_plate_bob, brass_plate_bob, gunmetal_plate_bob, invar_plate_bob, cobalt_steel_plate_bob, tungsten_carbide_bob, nitinol_plate_bob, copper_tungsten_plate_bob, molybdenum_rhenium_plate, aluminium_lithium_plate})
     --family("Planetary alloys", {}) -- Доделать
     --family("", {})
     local spiders = {antron, tankotron, logitron, spidertron, heavy_spidertron}

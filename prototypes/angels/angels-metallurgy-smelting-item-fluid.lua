@@ -387,6 +387,7 @@ calcium_aluminate = "calcium-aluminate"
 aluminium_carbide = "aluminium-carbide"
 aluminium_sulfate = "aluminium-sulfate"
 aluminium_chloride = "aluminium-chloride"
+tripropylaluminium = "tripropylaluminium"
 tridodecylaluminium = "tridodecylaluminium"
 tridodecylaluminium_oxide = "tridodecylaluminium-oxide"
 TIMSABA.functions.create_items
@@ -421,18 +422,25 @@ TIMSABA.functions.create_items
     },
     -- ADVACNED
     {
+        localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]7[/font])[font=default-tiny-bold]3[/font]"} or nil,
+        name = tripropylaluminium,
+        subgroup = is_aluminium_advanced_chemistry,
+        icon = graphics_aluminium .. tripropylaluminium .. ".png",
+        order = a
+    },
+    {
         localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font])[font=default-tiny-bold]3[/font]"} or nil,
         name = tridodecylaluminium,
         subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. tridodecylaluminium .. ".png",
-        order = e
+        order = f
     },
     {
         localised_description = show_formula and {chemical_formula, "Al(C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]O)[font=default-tiny-bold]3[/font]"} or nil,
         name = tridodecylaluminium_oxide,
         subgroup = is_aluminium_advanced_chemistry,
         icon = graphics_aluminium .. tridodecylaluminium_oxide .. ".png",
-        order = f
+        order = g
     }
 })
 
@@ -500,6 +508,7 @@ local graphics_zinc = "__TIMSABA__/graphics/icons/angels/metallurgy/zinc/"
 -- ZINC ITEM
 zinc_chloride = "zinc-chloride"
 zinc_hydroxide = "zinc-hydroxide"
+zinc_acetate = "zinc-acetate"
 TIMSABA.functions.create_items
 ({
     {
@@ -515,6 +524,13 @@ TIMSABA.functions.create_items
         subgroup = is_zinc_chemistry,
         icon = graphics_zinc .. zinc_hydroxide .. ".png",
         order = d
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "ZnC[font=default-tiny-bold]4[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]4[/font]"} or nil,
+        name = zinc_acetate,
+        subgroup = is_zinc_chemistry,
+        icon = graphics_zinc .. zinc_acetate .. ".png",
+        order = h
     }
 })
 

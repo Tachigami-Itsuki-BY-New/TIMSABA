@@ -75,7 +75,7 @@ if mods[shchierbin_mods] then
         {
             localised_name = {"item-name." .. vanadium_oxide_V},
             name = vanadium_oxide_V_3,
-            categories = {angels_chemical_smelting_4},
+            categories = {angels_blast_smelting_4},
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(ammonium_metavanadate, nil, oxygen_angels, vanadium_oxide_V, nitrogen_angels, steam),
             order = a_b,
@@ -99,17 +99,17 @@ if mods[shchierbin_mods] then
             subgroup = is_shchierbin_vanadium_chemistry,
             icons = THREE_D_I(vanadium_processed, nil, nitric_acid_angels, dioxovanadium_nitrate_V, nitrogen_dioxide_angels, oxygen_angels),
             order = b,
-            -- V(processed) + 6HNO₃(l) --> VO₂NO₃(s) + 5NO₂(g) + O₂(g)
+            energy_required = 8, -- V(processed) + 6HNO₃(l) --> VO₂NO₃(s) + 5NO₂(g) + O₂(g)
             ingredients =
             {
-                {type = item, name = vanadium_processed, amount = 8},
-                {type = fluid, name = nitric_acid_angels, amount = 720}
+                {type = item, name = vanadium_processed, amount = 16},
+                {type = fluid, name = nitric_acid_angels, amount = 1440}
             },
             results =
             {
-                {type = item, name = dioxovanadium_nitrate_V, amount = 8},
-                {type = fluid, name = nitrogen_dioxide_angels, amount = 120}, -- 600
-                {type = fluid, name = steam, amount = 60} -- 120
+                {type = item, name = dioxovanadium_nitrate_V, amount = 16},
+                {type = fluid, name = nitrogen_dioxide_angels, amount = 720}, -- 1200
+                {type = fluid, name = steam, amount = 120} -- 240
             },
             main_product = dioxovanadium_nitrate_V
         },

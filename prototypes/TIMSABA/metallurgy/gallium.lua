@@ -171,11 +171,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium,
         icons = TWO_I(gallium_ore, gallium_processed),
         order = b,
-        ingredients =
-        {
-            {type = item, name = gallium_ore, amount = 4},
-            {type = item, name = ice, amount = 4}
-        },
+        ingredients = {{type = item, name = gallium_ore, amount = 4}},
         results = {{type = item, name = gallium_processed, amount = 4}},
         main_product = gallium_processed
     },
@@ -185,11 +181,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium,
         icons = TWO_I(gallium_processed, gallium_pellet),
         order = c,
-        ingredients =
-        {
-            {type = item, name = gallium_processed, amount = 4},
-            {type = item, name = ice, amount = 4}
-        },
+        ingredients = {{type = item, name = gallium_processed, amount = 4}},
         results = {{type = item, name = gallium_pellet, amount = 4}},
         main_product = gallium_pellet
     },
@@ -219,11 +211,7 @@ TIMSABA.functions.create_recipes
         icons = TWO_I(gallium_ingot, gallium_powder),
         order = e,
         energy_required = 0.5,
-        ingredients =
-        {
-            {type = item, name = gallium_ingot, amount = 1},
-            {type = item, name = ice, amount = 1}
-        },
+        ingredients = {{type = item, name = gallium_ingot, amount = 1}},
         results = {{type = item, name = gallium_powder, amount = 1}},
         main_product = gallium_powder
     },
@@ -243,7 +231,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = gallium_hydroxide_III, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 360
         },
         main_product = gallium_hydroxide_III
     },
@@ -253,7 +241,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_gallium_chemistry,
         icons = FOUR_THREE_R_I(lithium_gallium_hydride_solution_ether, nil, water_purified_angels, gallium_hydroxide_III, lithium_hydroxide, hydrogen_angels, diethyl_ether),
         order = a_a,
-        energy_required = 8, -- LiGaH₄(ether) + 4H₂O(l) --> Ga(OH)₃(s) + LiOH(s) + 4H₂(g) + (C₂H₅)₂O
+        energy_required = 8, -- LiGaH₄(ether) + 4H₂O(l) --> Ga(OH)₃(s) + LiOH(s) + 4H₂(g) + (C₂H₅)₂O(l)
         ingredients =
         {
             {type = fluid, name = lithium_gallium_hydride_solution_ether, amount = 240},
@@ -279,7 +267,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = gallium_oxide_III, amount = 16},
-            {type = fluid, name = steam, amount = 240} -- 720
+            {type = fluid, name = steam, amount = 480} -- 720
         },
         main_product = gallium_oxide_III
     },
@@ -315,13 +303,13 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = sodium_tetrahydroxogallate_III_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 360
         },
         main_product = sodium_tetrahydroxogallate_III_solution
     },
     {
         name = gallium_liquid,
-        categories = {advanced_electrolysis},
+        categories = {angels_electrolysis},
         subgroup = is_gallium_chemistry,
         icons = FOUR_R_I(sodium_tetrahydroxogallate_III_solution, hydrogen_angels, gallium_liquid, oxygen_angels),
         order = d,
@@ -334,7 +322,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = gallium_liquid, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120}, -- 600
+            {type = fluid, name = hydrogen_angels, amount = 360}, -- 600
             {type = fluid, name = oxygen_angels, amount = 240}, -- 480
             {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
@@ -357,7 +345,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = gallium_chloride_III, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 360
         },
         main_product = gallium_chloride_III
     },
@@ -391,7 +379,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = lithium_gallium_hydride_solution_ether, amount = 240},
-            {type = item, name = salt_angels, amount = 8} -- 24
+            {type = item, name = salt_angels, amount = 16} -- 24
         },
         main_product = lithium_gallium_hydride_solution_ether
     },
@@ -425,7 +413,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = gallium_nitride, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 360
         },
         main_product = gallium_nitride
     }

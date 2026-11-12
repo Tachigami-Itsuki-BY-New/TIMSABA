@@ -131,7 +131,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_powder,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_molybdenum,
         icons = TWO_D_I(molybdenum_oxide_VI, hydrogen_angels, molybdenum_powder, steam),
         order = d,
@@ -144,7 +144,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = molybdenum_powder, amount = 16},
-            {type = fluid, name = steam, amount = 240} -- 720
+            {type = fluid, name = steam, amount = 480} -- 720
         },
         main_product = molybdenum_powder
     },
@@ -163,7 +163,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = molybdenum_powder, amount = 16},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 480} -- 1440
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 960} -- 1440
         },
         main_product = molybdenum_powder
     },
@@ -221,23 +221,22 @@ TIMSABA.functions.create_recipes
     },
     {
         name = molybdenum_chloride_III_solution,
-        categories = {angels_advanced_chemistry},
+        categories = {angels_chemical_smelting_4},
         subgroup = is_molybdenum_chemistry,
         icons = FOUR_THREE_R_I(potassium_molybdate, zinc_powder, hydrochloric_acid_angels, molybdenum_chloride_III_solution, potassium_chloride_solution, zinc_chloride, water_purified_angels),
         order = c,
-        -- 2K₂MoO₄(s) + 3Zn(s) + 16HCl(aq) --> 2MoCl₃(aq) + 3ZnCl₂(s) + 4KCl(aq) + 8H₂O(l) + 10H₂O(l)
+        energy_required = 8, -- 2K₂MoO₄(s) + 3Zn(s) + 16HCl(aq) --> 2MoCl₃(aq + 10H₂O(l)) + 3ZnCl₂(s) + 4KCl(aq)
         ingredients =
         {
-            {type = item, name = potassium_molybdate, amount = 8},
-            {type = item, name = zinc_powder, amount = 12},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 960}
+            {type = item, name = potassium_molybdate, amount = 16},
+            {type = item, name = zinc_powder, amount = 24},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 1920}
         },
         results =
         {
-            {type = fluid, name = molybdenum_chloride_III_solution, amount = 120},
-            {type = item, name = zinc_chloride, amount = 4}, -- 12
-            {type = fluid, name = potassium_chloride_solution, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 480} -- 1080
+            {type = fluid, name = molybdenum_chloride_III_solution, amount = 240},
+            {type = item, name = zinc_chloride, amount = 16}, -- 24
+            {type = fluid, name = potassium_chloride_solution, amount = 240} -- 480
         },
         main_product = molybdenum_chloride_III_solution
     },
@@ -247,18 +246,18 @@ TIMSABA.functions.create_recipes
         subgroup = is_molybdenum_chemistry,
         icons = THREE_D_I(molybdenum_chloride_III_solution, nitrogen_monoxide_angels, water_purified_angels, molybdic_acid, ammonium_chloride_solution_angels, hydrochloric_acid_angels),
         order = d,
-        -- 5MoCl₃(aq) + 3NO(g) + 17H₂O(l) + 10H₂O(l) --> 5H₂MoO₄(s) + 3NH₄Cl(aq) + 12HCl(aq)
+        energy_required = 10, -- 5MoCl₃(aq + 25H₂O(l)) + 3NO(g) + 2H₂O(l) --> 5H₂MoO₄(s) + 3NH₄Cl(aq) + 12HCl(aq)
         ingredients =
         {
-            {type = fluid, name = molybdenum_chloride_III_solution, amount = 120}, -- 75
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120}, -- 45
-            {type = fluid, name = water_purified_angels, amount = 960} -- 405
+            {type = fluid, name = molybdenum_chloride_III_solution, amount = 300},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 180},
+            {type = fluid, name = water_purified_angels, amount = 120}
         },
         results =
         {
-            {type = item, name = molybdic_acid, amount = 8}, -- 5
-            {type = fluid, name = ammonium_chloride_solution_angels, amount = 60}, -- 45 / 120
-            {type = fluid, name = hydrochloric_acid_angels, amount = 120} -- 180 / 360
+            {type = item, name = molybdic_acid, amount = 20},
+            {type = fluid, name = ammonium_chloride_solution_angels, amount = 120}, -- 180
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480} -- 720
         },
         main_product = molybdic_acid
     },

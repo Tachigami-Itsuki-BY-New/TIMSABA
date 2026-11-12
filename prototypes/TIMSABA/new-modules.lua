@@ -140,7 +140,7 @@ if mods[bobmodules] then
         })
     end
     -- SPEED
-    create_module_recipe(speed_module_6, is_speed_module, f, tungsten_carbide_plate_bob, processor_speed_circuit_board, speed_module_5)
+    create_module_recipe(speed_module_6, is_speed_module, f, tungsten_carbide_bob, processor_speed_circuit_board, speed_module_5)
     create_module_recipe(speed_module_7, is_speed_module, g, semiconductor,              processor_speed_circuit_board, speed_module_6)
     create_module_recipe(speed_module_8, is_speed_module, h, quantum_processor,          processor_speed_circuit_board, speed_module_7)
     -- EFFICIENCY
@@ -148,7 +148,7 @@ if mods[bobmodules] then
     create_module_recipe(efficiency_module_7, is_efficiency_module, g, semiconductor,     processor_efficiency_circuit_board, efficiency_module_6)
     create_module_recipe(efficiency_module_8, is_efficiency_module, h, quantum_processor, processor_efficiency_circuit_board, efficiency_module_7)
     -- PRODUCTIVITY
-    create_module_recipe(productivity_module_6, is_productivity_module, f, tungsten_carbide_plate_bob, processor_productivity_circuit_board, productivity_module_5)
+    create_module_recipe(productivity_module_6, is_productivity_module, f, tungsten_carbide_bob, processor_productivity_circuit_board, productivity_module_5)
     create_module_recipe(productivity_module_7, is_productivity_module, g, semiconductor,              processor_productivity_circuit_board, productivity_module_6)
     create_module_recipe(productivity_module_8, is_productivity_module, h, quantum_processor,          processor_productivity_circuit_board, productivity_module_7)
     -- POLLUTION CLEANING and PRODUCING

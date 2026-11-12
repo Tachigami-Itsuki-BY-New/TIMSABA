@@ -179,7 +179,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = magnesium_ingot,
-        categories = {angels_chemical_smelting_1},
+        categories = {angels_blast_smelting_1},
         subgroup = is_magnesium,
         icons = TWO_I(magnesium_oxide, magnesium_ingot),
         order = d,
@@ -199,7 +199,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. magnesium_ingot},
         name = magnesium_ingot_2,
-        categories = {angels_chemical_smelting_4},
+        categories = {angels_blast_smelting_4},
         subgroup = is_magnesium,
         icons = THREE_D_I(magnesium_fluoride, silicon_powder, steam, magnesium_ingot, silicon_oxide_IV, hydrogen_fluoride_angels),
         order = d_a,
@@ -248,7 +248,7 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name." .. magnesium_oxide},
         name = magnesium_oxide_2,
-        categories = {angels_chemical_smelting_1},
+        categories = {angels_blast_smelting_2},
         subgroup = is_magnesium_chemistry,
         icons = THREE_D_I(magnesium_sulfate, nil, carbon_angels, magnesium_oxide, sulfur_dioxide_angels, carbon_dioxide_angels),
         order = a_a,

@@ -208,9 +208,9 @@ data_recipe[carbon].results =
 data_recipe[carbon].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 -- TUNGSTEN
-data_recipe[tungsten_carbide].categories = {sintering_6}
+data_recipe[tungsten_carbide].categories = {angels_blast_smelting_4}
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
-data_recipe[tungsten_carbide].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
+data_recipe[tungsten_carbide].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_bob)
 data_recipe[tungsten_carbide].order = b
 data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
@@ -239,7 +239,7 @@ data_recipe[metallurgic_science_pack].energy_required = 8
 data_recipe[metallurgic_science_pack].ingredients =
 {
     {type = item, name = tungsten_plate_bob, amount = 2},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 4},
+    {type = item, name = tungsten_carbide_bob, amount = 4},
     {type = fluid, name = lava, amount = 240}
 }
 
@@ -353,7 +353,7 @@ data_recipe[foundry].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 32},
     {type = item, name = molybdenum_rhenium_plate, amount = 64},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+    {type = item, name = tungsten_carbide_bob, amount = 64},
     {type = item, name = reinforced_concrete, amount = 16}
 }
 data_assembling[foundry].subgroup = is_vulcanus_building
@@ -377,7 +377,7 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
         {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = electric_mining_drill_6, amount = 1},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 16},
+        {type = item, name = tungsten_carbide_bob, amount = 16},
         {type = item, name = molybdenum_rhenium_plate, amount = 16}
     }
 else
@@ -386,7 +386,7 @@ else
         {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = electric_mining_drill_1, amount = 1},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 16},
+        {type = item, name = tungsten_carbide_bob, amount = 16},
         {type = item, name = molybdenum_rhenium_plate, amount = 16}
     }
 end
@@ -547,7 +547,7 @@ add_recipe_to_foundry_technology(casting_nitinol_pipe_to_ground)
 -- OTHERS
 add_recipe_to_foundry_technology(casting_low_density_structure)
 if mods[muluna_mods] then add_recipe_to_foundry_technology(casting_low_density_structure_muluna) end
-data_technology[foundry].research_trigger = {type = craft_item, item = tungsten_carbide_plate_bob}
+data_technology[foundry].research_trigger = {type = craft_item, item = tungsten_carbide_bob}
 
 if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[big_mining_drill].prerequisites = {foundry, tech_drills_6}

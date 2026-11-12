@@ -12,6 +12,9 @@ if mods[bobwarfare] then
     }
 end
 
+data_recipe[lubricant].hidden = false
+data_recipe[lubricant].hidden_in_factoriopedia = false
+
 -- BOBS FIX
 if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].subgroup = is_explosives
@@ -64,14 +67,22 @@ data_item[silicon_powder].hidden = false
 data_item[silicon_powder].hidden_in_factoriopedia = false
 data_recipe[silicon_powder].hidden = false
 data_recipe[silicon_powder].hidden_in_factoriopedia = false
-data_item[nickel_powder].hidden = true
-data_item[nickel_powder].hidden_in_factoriopedia = true
+if not mods[castra_mods] then
+    data_item[nickel_powder].hidden = true
+    data_item[nickel_powder].hidden_in_factoriopedia = true
+end
 data_recipe[nickel_powder].hidden = true
 data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_item[aluminium_oxide].hidden = false
 data_item[aluminium_oxide].hidden_in_factoriopedia = false
+data_item[aluminium_powder].hidden = false
+data_item[aluminium_powder].hidden_in_factoriopedia = false
+data_recipe[aluminium_powder].hidden = false
+data_recipe[aluminium_powder].hidden_in_factoriopedia = false
 data_recipe[zinc_ingot_2].hidden = true
 data_recipe[zinc_ingot_2].hidden_in_factoriopedia = true
+data_recipe[zinc_oxide].hidden = false
+data_recipe[zinc_oxide].hidden_in_factoriopedia = false
 data_item[silver_nitrate_I].hidden = false
 data_item[silver_nitrate_I].hidden_in_factoriopedia = false
 data_recipe[titanium_ingot_2].hidden = true

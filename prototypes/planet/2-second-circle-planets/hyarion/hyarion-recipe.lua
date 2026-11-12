@@ -4,7 +4,7 @@ if mods[hyarion_mods] then
     ({
         {
             name = hyarion_air,
-            categories = {angels_petrochem_air_filtering},
+            categories = {angels_air_filtering},
             subgroup = is_hyarion_air,
             order = a,
             energy_required = 8,
