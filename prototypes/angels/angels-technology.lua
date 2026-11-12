@@ -2,7 +2,6 @@ data:extend
 ({
     -- ANGELS RESOURCE REFINING
     {
-        localised_name = {"technology-name.advanced-ore-refining-5"},
         localised_description = {"technology-description.angels-advanced-ore-refining"},
         type = technology,
         name = tech_advanced_ore_refining_5,
@@ -14,7 +13,8 @@ data:extend
             {type = unlock_recipe, recipe = ore_leaching_plant_4},
             {type = unlock_recipe, recipe = ore_refinery_3},
             {type = unlock_recipe, recipe = ore_sorting_facility_6},
-            {type = unlock_recipe, recipe = electro_whinning_cell_3}
+            {type = unlock_recipe, recipe = electro_whinning_cell_3},
+            {type = unlock_recipe, recipe = purified_catalyst}
         },
         unit =
         {
@@ -32,7 +32,6 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.advanced-ore-refining-6"},
         localised_description = {"technology-description.angels-advanced-ore-refining"},
         type = technology,
         name = tech_advanced_ore_refining_6,
@@ -305,6 +304,124 @@ data:extend
         }
     },
     -- ANGELS PETROCHEM REFINING
+    -- PLASTIC
+    {
+        localised_description = {"technology-description.angels-plastic"},
+        type = technology,
+        name = tech_plastic_4,
+        icons = TIMSABA.functions.create_fluid_tech_icon({{255, 255, 255}, {230, 230, 230}, {200, 200, 200}}),
+        prerequisites = {tech_nitrogen_processing_4, tech_plastic_3},
+        effects =
+        {
+            {type = unlock_recipe, recipe = acetone_cyanohydrin},
+            {type = unlock_recipe, recipe = methyl_methacrylate},
+            {type = unlock_recipe, recipe = liquid_plastic_4}
+        },
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    -- RUBBER
+    {
+        localised_description = {"technology-description.rubber"},
+        type = technology,
+        name = tech_rubber_1,
+        icons = TIMSABA.functions.create_fluid_tech_icon({{190, 200, 255}, {165, 175, 230}, {135, 145, 200}}),
+        prerequisites = {tech_rubbers, tech_steam_cracking_1, tech_zinc_smelting_1, tech_bio_fermentation},
+        effects =
+        {
+            {type = unlock_recipe, recipe = zinc_acetate},
+            {type = unlock_recipe, recipe = acetylene_gas},
+            {type = unlock_recipe, recipe = vinyl_acetate_liquid},
+            {type = unlock_recipe, recipe = liquid_rubber_angels}
+        },
+        unit =
+        {
+            count = 50,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        localised_description = {"technology-description.rubber"},
+        type = technology,
+        name = tech_rubber_2,
+        icons = TIMSABA.functions.create_fluid_tech_icon({{190, 200, 255}, {165, 175, 230}, {135, 145, 200}}),
+        prerequisites = {tech_rubber_1, tech_advanced_chemistry_2},
+        effects = {{type = unlock_recipe, recipe = liquid_rubber_2}},
+        unit =
+        {
+            count = 100,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        localised_description = {"technology-description.rubber"},
+        type = technology,
+        name = tech_rubber_3,
+        icons = TIMSABA.functions.create_fluid_tech_icon({{190, 200, 255}, {165, 175, 230}, {135, 145, 200}}),
+        prerequisites = {tech_rubber_2, tech_advanced_chemistry_4},
+        effects =
+        {
+            {type = unlock_recipe, recipe = tripropylaluminium},
+            {type = unlock_recipe, recipe = isoprene_liquid},
+            {type = unlock_recipe, recipe = liquid_rubber_3}
+        },
+        unit =
+        {
+            count = 150,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        localised_description = {"technology-description.rubber"},
+        type = technology,
+        name = tech_rubber_4,
+        icons = TIMSABA.functions.create_fluid_tech_icon({{190, 200, 255}, {165, 175, 230}, {135, 145, 200}}),
+        prerequisites = {tech_rubber_3, tech_nitrogen_processing_4},
+        effects = {{type = unlock_recipe, recipe = liquid_rubber_4}},
+        unit =
+        {
+            count = 200,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    -- OTHER
     {
         localised_name = {"technology-name.advanced-chemistry-6"},
         localised_description = {"technology-description.angels-advanced-chemistry"},
@@ -315,8 +432,15 @@ data:extend
         prerequisites = {tech_advanced_chemistry_5, space_science_pack, tech_stone_smelting_5},
         effects =
         {
-            {type = unlock_recipe, recipe = advanced_chemical_plant_4},
-            {type = unlock_recipe, recipe = advanced_gas_refinery_4}
+            {type = unlock_recipe, recipe = advanced_gas_refinery_4},
+            {type = unlock_recipe, recipe = sodium_hydride},
+            {type = unlock_recipe, recipe = triethylaluminium_liquid},
+            {type = unlock_recipe, recipe = tridodecylaluminium},
+            {type = unlock_recipe, recipe = tridodecylaluminium_oxide},
+            {type = unlock_recipe, recipe = dodecanol},
+            {type = unlock_recipe, recipe = lauryl_dimethylamine_solution},
+            {type = unlock_recipe, recipe = lauryl_dimethylamine_oxide_solution},
+            {type = unlock_recipe, recipe = liquid_chlorine_bleach}
         },
         unit =
         {
@@ -329,6 +453,42 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        localised_name = {"technology-name.advanced-chemistry-7"},
+        localised_description = {"technology-description.angels-advanced-chemistry"},
+        type = technology,
+        name = tech_advanced_chemistry_7,
+        icon = data_technology[tech_advanced_chemistry_5].icon,
+        icon_size = data_technology[tech_advanced_chemistry_5].icon_size,
+        prerequisites = {},
+        effects =
+        {
+            {type = unlock_recipe, recipe = triethylaluminium_liquid_2},
+            {type = unlock_recipe, recipe = chlorosulfonic_acid},
+            {type = unlock_recipe, recipe = lauryl_sulfate},
+            {type = unlock_recipe, recipe = sodium_lauryl_sulfate_solution},
+            {type = unlock_recipe, recipe = liquid_chlorine_bleach_2},
+            {type = unlock_recipe, recipe = phosphorus_oxychloride_liquid},
+            {type = unlock_recipe, recipe = orthophosphoric_acid}
+        },
+        unit =
+        {
+            count = 50,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1}
             },
             time = 15
         }
@@ -1299,5 +1459,4 @@ data:extend
 
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_stone_smelting_5)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_stone_smelting_6)
-
-table.insert(data_technology[tech_stone_smelting_6].prerequisites, tech_advanced_chemistry_6)
+table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_water_treatment_6)

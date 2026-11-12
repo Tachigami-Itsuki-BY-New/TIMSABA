@@ -1,6 +1,6 @@
 data_item[rocket_silo].order = a
 data_item[rocket_silo].stack_size = 1
-data_item[rocket_silo].weight = 100000000
+data_item[rocket_silo].weight = 1000000000
 data_recipe[rocket_silo].order = a
 data_recipe[rocket_silo].energy_required = 32
 data_recipe[rocket_silo].ingredients =
@@ -12,14 +12,34 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = copper_tungsten_pipe, amount = 64},
     {type = item, name = reinforced_concrete, amount = 256},
     {type = item, name = tungsten_plate_bob, amount = 256},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 128},
+    {type = item, name = tungsten_carbide_bob, amount = 128},
     {type = item, name = copper_tungsten_plate_bob, amount = 512}
 }
 data_rocket_silo[rocket_silo].order = a
-data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
-data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
-data_recipe[rocket_part].order = b
+if mods[muluna_mods] then
+    data_item[big_rocket_silo].order = b
+    data_item[big_rocket_silo].stack_size = 1
+    data_item[big_rocket_silo].weight = 1000000000
+    data_recipe[big_rocket_silo].order = b
+    data_recipe[big_rocket_silo].energy_required = 32
+    data_recipe[big_rocket_silo].ingredients =
+    {
+        {type = item, name = electric_engine_unit, amount = 512},
+        {type = item, name = low_density_structure, amount = 256},
+        {type = item, name = heat_shielding_tile, amount = 512},
+        {type = item, name = quantum_processor, amount = 256},
+        {type = item, name = molybdenum_rhenium_pipe, amount = 256},
+        {type = item, name = reinforced_graphene_concrete_brick, amount = 1024},
+        {type = item, name = niobium_titanium_plate, amount = 1024},
+        {type = item, name = niobium_iron_plate, amount = 512},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 2048}
+    }
+    data_rocket_silo[big_rocket_silo].order = b
+    data_rocket_silo[big_rocket_silo].crafting_speed = 4
+end
+
+data_recipe[rocket_part].order = c
 data_recipe[rocket_part].energy_required = 4
 data_recipe[rocket_part].ingredients =
 {
@@ -30,24 +50,9 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = rocket_fuel, amount = 2}
 }
 
-if mods[muluna_mods] then
-    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
-    data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_muluna].order
-    data_recipe[rocket_part_muluna].energy_required = 4
-    data_recipe[rocket_part_muluna].ingredients =
-    {
-        {type = item, name = low_density_structure, amount = 1},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = copper_tungsten_pipe, amount = 16},
-        {type = item, name = rocket_fuel, amount = 1}
-    }
-    data_recipe[rocket_part_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
-end
-
 if mods[arig_mods] then
     data_recipe[rocket_part_arig].icons = R_P_I(rocket_part, planet_arig)
-    data_recipe[rocket_part_arig].order = b .. "-" .. data_planet[planet_arig].order
+    data_recipe[rocket_part_arig].order = c .. "-" .. data_planet[planet_arig].order
     data_recipe[rocket_part_arig].energy_required = 4
     data_recipe[rocket_part_arig].ingredients =
     {
@@ -62,7 +67,7 @@ end
 
 if mods[tellus_mods] then
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
-    data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_tellus].order
+    data_recipe[rocket_part_tellus].order = c .. "-" .. data_planet[planet_tellus].order
     data_recipe[rocket_part_tellus].energy_required = 4
     data_recipe[rocket_part_tellus].ingredients =
     {
@@ -76,7 +81,7 @@ end
 
 if mods[maraxsis_mods] then
     data_recipe[rocket_part_maraxsis].icons = R_P_I(rocket_part, planet_maraxsis)
-    data_recipe[rocket_part_maraxsis].order = b .. "-" .. data_planet[planet_maraxsis].order
+    data_recipe[rocket_part_maraxsis].order = c .. "-" .. data_planet[planet_maraxsis].order
     data_recipe[rocket_part_maraxsis].energy_required = 4
     data_recipe[rocket_part_maraxsis].ingredients =
     {
@@ -89,7 +94,7 @@ end
 
 if mods[muria_mods] then
     data_recipe[rocket_part_muria].icons = R_P_I(rocket_part, planet_muria)
-    data_recipe[rocket_part_muria].order = b .. "-" .. data_planet[planet_muria].order
+    data_recipe[rocket_part_muria].order = c .. "-" .. data_planet[planet_muria].order
     data_recipe[rocket_part_muria].energy_required = 4
     data_recipe[rocket_part_muria].ingredients =
     {
@@ -101,7 +106,7 @@ end
 
 if mods[pelagos_mods] then
     data_recipe[rocket_part_pelagos].icons = R_P_I(rocket_part, planet_pelagos)
-    data_recipe[rocket_part_pelagos].order = b .. "-" .. data_planet[planet_pelagos].order
+    data_recipe[rocket_part_pelagos].order = c .. "-" .. data_planet[planet_pelagos].order
     data_recipe[rocket_part_pelagos].energy_required = 4
     data_recipe[rocket_part_pelagos].ingredients =
     {
@@ -114,7 +119,7 @@ end
 
 if mods[lignumis_mods] then
     data_recipe[rocket_part_lignumis].icons = R_P_I(rocket_part, planet_lignumis)
-    data_recipe[rocket_part_lignumis].order = b .. "-" .. data_planet[planet_lignumis].order
+    data_recipe[rocket_part_lignumis].order = c .. "-" .. data_planet[planet_lignumis].order
     data_recipe[rocket_part_lignumis].energy_required = 4
     data_recipe[rocket_part_lignumis].ingredients =
     {
@@ -126,32 +131,90 @@ if mods[lignumis_mods] then
     }
 end
 
-data_item[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
-data_recipe[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
-data_recipe[cargo_landing_pad].energy_required = 32
-data_recipe[cargo_landing_pad].ingredients =
-{
-    {type = item, name = electric_engine_unit, amount = 32},
-    {type = item, name = heat_shielding_tile, amount = 128},
-    {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = reinforced_concrete, amount = 128},
-    {type = item, name = molybdenum_rhenium_plate, amount = 32}
-}
-data.raw[cargo_landing_pad][cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
-
 local cargo_pod = "cargo-pod"
-data.raw[cargo_pod][cargo_pod].order =  e .. "[" .. cargo_pod .. "]"
+data_cargo_pod[cargo_pod].order =  e
+
+data_cargo_pod["muluna-big-" .. cargo_pod].order =  f
+
+local cargo_pod_container = "cargo-pod-container"
+data_temporary_container[cargo_pod_container].order = g
+
+data_temporary_container["fulgoran-" .. cargo_pod_container].order = h
 
 data_item_subgroup[space_platform].order = b
+
+if mods[moshine_mods] then
+    local cosmicscanner_construction_stage_1 = "moshine_cosmicscanner-construction-stage-1"
+    data_item[cosmicscanner_construction_stage_1].weight = 1000000000
+    data_recipe[cosmicscanner_construction_stage_1].energy_required = 128
+    data_recipe[cosmicscanner_construction_stage_1].ingredients =
+    {
+        {type = item, name = silicon_boule_mods, amount = 64},
+        {type = item, name = space_platform_foundation, amount = 512},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 512},
+        {type = item, name = reinforced_graphene_concrete_brick, amount = 1024}
+    }
+    data_assembling[cosmicscanner_construction_stage_1].energy_usage = ((960 * 256) - (drain * 256)) .. kW
+    data_assembling[cosmicscanner_construction_stage_1].energy_source.drain = (drain * 256) .. kW
+
+    local cosmicscanner_construct_2 = "moshine_cosmicscanner-construct-1"
+    data_recipe[cosmicscanner_construct_2].energy_required = 8
+    data_recipe[cosmicscanner_construct_2].ingredients =
+    {
+        {type = item, name = silicon_carbide_bob, amount = 128},
+        {type = item, name = engine_unit, amount = 64},
+        {type = item, name = niobium_titanium_cable, amount = 32},
+        {type = item, name = neodymium_magnet, amount = 256}
+    }
+
+    local cosmicscanner_construct_3 = "moshine_cosmicscanner-construct-2"
+    data_recipe[cosmicscanner_construct_3].energy_required = 8
+    data_recipe[cosmicscanner_construct_3].ingredients =
+    {
+        {type = item, name = data_processor, amount = 1},
+        {type = item, name = silicon_cell_mods, amount = 1},
+        {type = item, name = glass_bob, amount = 64},
+        {type = item, name = holmium_plate, amount = 64}
+    }
+
+    local cosmicscanner_construct_4 = "moshine_cosmicscanner-construct-3"
+    data_recipe[cosmicscanner_construct_4].energy_required = 16
+    data_recipe[cosmicscanner_construct_4].ingredients =
+    {
+        {type = item, name = data_extractor, amount = 1},
+        {type = item, name = tesla_turret, amount = 1},
+        {type = item, name = electric_engine_unit, amount = 32},
+        {type = item, name = low_density_structure, amount = 256}
+    }
+
+    local cosmicscanner_construct_5 = "moshine_cosmicscanner-construct-4"
+    data_recipe[cosmicscanner_construct_5].energy_required = 16
+    data_recipe[cosmicscanner_construct_5].ingredients =
+    {
+        {type = item, name = ai_tier_1, amount = 1},
+        {type = item, name = glass_bob, amount = 128},
+        {type = item, name = electric_engine_unit, amount = 32}
+    }
+    if data_item[lab_2] then
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = lab_2, amount = 1})
+    else
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = lab_1, amount = 1})
+    end
+    if data_item[radar_5] then
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = radar_5, amount = 1})
+    else
+        table.insert(data_recipe[cosmicscanner_construct_5].ingredients, {type = item, name = radar_1, amount = 1})
+    end
+end
 
 data_item[space_platform_foundation].stack_size = 200
 data_item[space_platform_foundation].weight = 5000
 data_recipe[space_platform_foundation].energy_required = 8
 data_recipe[space_platform_foundation].ingredients =
 {
-    {type = item, name = molybdenum_plate, amount = 16},
-    {type = item, name = rhenium_plate, amount = 8},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
 
 local space_platform_starter_pack = "space-platform-starter-pack"
@@ -164,18 +227,54 @@ data_recipe[space_platform_starter_pack].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 16},
     {type = item, name = space_platform_foundation, amount = 64},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 32},
+    {type = item, name = nitinol_plate_bob, amount = 16},
+    {type = item, name = aluminium_lithium_plate, amount = 16}
 }
 
+data_item[cargo_landing_pad].subgroup = space_platform
+data_item[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
+data_recipe[cargo_landing_pad].subgroup = space_platform
+data_recipe[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
+data_recipe[cargo_landing_pad].energy_required = 32
+data_recipe[cargo_landing_pad].ingredients =
+{
+    {type = item, name = electric_engine_unit, amount = 32},
+    {type = item, name = heat_shielding_tile, amount = 128},
+    {type = item, name = advanced_processing_unit, amount = 8},
+    {type = item, name = reinforced_concrete, amount = 128},
+    {type = item, name = molybdenum_rhenium_plate, amount = 32}
+}
+data_cargo_landing_pad[cargo_landing_pad].subgroup = space_platform
+data_cargo_landing_pad[cargo_landing_pad].order = c_a .. "[" .. cargo_landing_pad .. "]"
+
+data_item[cargo_bay].subgroup = space_platform
 data_item[cargo_bay].stack_size = 8
 data_item[cargo_bay].weight = 125000
+data_recipe[cargo_bay].subgroup = space_platform
 data_recipe[cargo_bay].energy_required = 8
 data_recipe[cargo_bay].ingredients =
 {
     {type = item, name = low_density_structure, amount = 16},
     {type = item, name = advanced_processing_unit, amount = 4},
-    {type = item, name = nitinol_plate_bob, amount = 16}
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
+data_cargo_bay[cargo_bay].subgroup = space_platform
+
+data_item[landing_pad_unloading_bay].subgroup = space_platform
+data_item[landing_pad_unloading_bay].stack_size = 8
+data_item[landing_pad_unloading_bay].weight = 125000
+data_recipe[landing_pad_unloading_bay].subgroup = space_platform
+data_recipe[landing_pad_unloading_bay].energy_required = 8
+data_recipe[landing_pad_unloading_bay].ingredients =
+{
+    {type = item, name = electric_engine_unit, amount = 16},
+    {type = item, name = advanced_processing_unit, amount = 8},
+    {type = item, name = cargo_bay, amount = 1}
+}
+data_cargo_bay[landing_pad_unloading_bay].subgroup = space_platform
 
 data_item[asteroid_collector].order = d
 data_item[asteroid_collector].stack_size = 8
@@ -187,7 +286,10 @@ data_recipe[asteroid_collector].ingredients =
     {type = item, name = electric_engine_unit, amount = 8},
     {type = item, name = low_density_structure, amount = 8},
     {type = item, name = heat_shielding_tile, amount = 16},
-    {type = item, name = advanced_processing_unit, amount = 4}
+    {type = item, name = advanced_processing_unit, amount = 4},
+    {type = item, name = invar_plate_bob, amount = 16},
+    {type = item, name = nitinol_plate_bob, amount = 8},
+    {type = item, name = aluminium_lithium_plate, amount = 8}
 }
 data_asteroid_collector[asteroid_collector].order = d
 data_asteroid_collector[asteroid_collector].inventory_size = 40
@@ -195,12 +297,11 @@ data_asteroid_collector[asteroid_collector].passive_energy_usage = 250 .. J
 data_asteroid_collector[asteroid_collector].arm_energy_usage = 500 .. J
 data_asteroid_collector[asteroid_collector].arm_slow_energy_usage = 750 .. J
 
-if mods[panglia_mods] then
+if mods[asteroid_collector_mods] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
 
-    local asteroid_collector_2 = "snouz_better_asteroid_collector"
     data_item[asteroid_collector_2].subgroup = space_platform
     data_item[asteroid_collector_2].order = e
     data_item[asteroid_collector_2].stack_size = 8
@@ -210,9 +311,11 @@ if mods[panglia_mods] then
     data_recipe[asteroid_collector_2].energy_required = 8
     data_recipe[asteroid_collector_2].ingredients =
     {
-        {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = asteroid_collector, amount = 1},
         {type = item, name = sentient_processor, amount = 1},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
+        {type = item, name = niobium_titanium_plate, amount = 8},
+        {type = item, name = niobium_iron_plate, amount = 8},
         {type = fluid, name = fluoroketone_cold, amount = 60}
     }
     data_recipe[asteroid_collector_2].results =
@@ -227,8 +330,6 @@ if mods[panglia_mods] then
     data_asteroid_collector[asteroid_collector_2].passive_energy_usage = 500 .. J
     data_asteroid_collector[asteroid_collector_2].arm_energy_usage = 1000 .. J
     data_asteroid_collector[asteroid_collector_2].arm_slow_energy_usage = 1500 .. J
-
-    bobmods.lib.recipe.update_recycling_recipe({asteroid_collector_2})
 end
 
 data_item[crusher].order = f
@@ -287,18 +388,7 @@ if mods[corrundum_mods] then
     data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
 end
 
-bobmods.lib.recipe.update_recycling_recipe
-({
-    rocket_silo,
-    cargo_landing_pad,
-    space_platform_foundation,
-    cargo_bay,
-    asteroid_collector,
-    thruster,
-})
-
-if mods[panglia_mods] then
-    local spaceship_wall = "snouz_wall_hull"
+if mods[spaceship_wall_mods] then
     data_item[spaceship_wall].subgroup = is_space_platform_mods
     data_item[spaceship_wall].order = a
     data_item[spaceship_wall].stack_size = 200
@@ -313,8 +403,6 @@ if mods[panglia_mods] then
     }
     data_wall[spaceship_wall].subgroup = is_space_platform_mods
     data_wall[spaceship_wall].order = a
-
-    bobmods.lib.recipe.update_recycling_recipe({spaceship_wall})
 
     data_technology[spaceship_wall].unit.ingredients =
     {
@@ -357,11 +445,9 @@ if mods[muluna_mods] then
             {type = item, name = telescope, amount = 64}
         }
     end
-    data_accumulator[satellite_radar].localised_name = {"entity-name.satellite-radar"}
-    data_accumulator[satellite_radar].subgroup = is_space_platform_mods
-    data_accumulator[satellite_radar].order = b
-
-    bobmods.lib.recipe.update_recycling_recipe({satellite_radar})
+    data_radar[satellite_radar].localised_name = {"entity-name.satellite-radar"}
+    data_radar[satellite_radar].subgroup = is_space_platform_mods
+    data_radar[satellite_radar].order = b
 end
 
 if mods[hyarion_mods] then
@@ -385,6 +471,7 @@ if mods[hyarion_mods] then
     data_assembling[space_manufactorer].energy_usage = (240 - drain) .. kW
     data_assembling[space_manufactorer].energy_source.emissions_per_minute.pollution = 0
     data_assembling[space_manufactorer].energy_source.drain = drain .. kW
+    data_assembling[space_manufactorer].effect_receiver.base_effect.productivity = 1
 
     data_item[zero_grav_accumulator].subgroup = is_space_platform_mods
     data_item[zero_grav_accumulator].order = e
@@ -426,16 +513,8 @@ if mods[hyarion_mods] then
     data_radar[electromagnetic_radar].energy_usage = 1200 .. kW
     data_radar[electromagnetic_radar].max_distance_of_nearby_sector_revealed = 13
     data_radar[electromagnetic_radar].max_distance_of_sector_revealed = 29
-
-    bobmods.lib.recipe.update_recycling_recipe
-    ({
-        space_manufactorer,
-        zero_grav_accumulator,
-        electromagnetic_radar
-    })
 end
 
-local metallic_asteroid_reprocessing = "metallic-asteroid-reprocessing"
 local metallic_asteroids =
 {
     {type = data_asteroid, name = "small-metallic-asteroid",             order = a},
@@ -445,8 +524,7 @@ local metallic_asteroids =
     {type = data_asteroid, name = metallic_asteroid_chunk,               order = e},
     {type = data_item,     name = metallic_asteroid_chunk,               order = e},
     {type = data_recipe,   name = metallic_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_metallic_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = metallic_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_metallic_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(metallic_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -457,24 +535,16 @@ end
 
 data_item[metallic_asteroid_chunk].stack_size = 50
 
-data_recipe[metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing-1"}
+data_recipe[metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. iron_ore}}
 data_recipe[metallic_asteroid_crushing_1].icons = TWO_I(metallic_asteroid_chunk, iron_ore)
 data_recipe[metallic_asteroid_crushing_1].energy_required = 4
 data_recipe[metallic_asteroid_crushing_1].results = {{type = item, name = iron_ore, amount = 8}}
 
-data_recipe[advanced_metallic_asteroid_crushing_1].localised_name = {"recipe-name.advanced-metallic-asteroid-crushing-1"}
+data_recipe[advanced_metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. nickel_ore_bob}}
 data_recipe[advanced_metallic_asteroid_crushing_1].icons = TWO_I(metallic_asteroid_chunk, nickel_ore_bob)
 data_recipe[advanced_metallic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_metallic_asteroid_crushing_1].results = {{type = item, name = nickel_ore_bob, amount = 8}}
 
-data_recipe[metallic_asteroid_reprocessing].icons = THREE_R_I(metallic_asteroid_chunk, carbonic_asteroid_chunk, oxide_asteroid_chunk)
-data_recipe[metallic_asteroid_reprocessing].results =
-{
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, probability = 0.5}
-}
-
-local carbonic_asteroid_reprocessing = "carbonic-asteroid-reprocessing"
 local carbonic_asteroids =
 {
     {type = data_asteroid, name = "small-carbonic-asteroid",             order = a},
@@ -484,8 +554,7 @@ local carbonic_asteroids =
     {type = data_asteroid, name = carbonic_asteroid_chunk,               order = e},
     {type = data_item,     name = carbonic_asteroid_chunk,               order = e},
     {type = data_recipe,   name = carbonic_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_carbonic_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = carbonic_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_carbonic_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(carbonic_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -496,24 +565,16 @@ end
 
 data_item[carbonic_asteroid_chunk].stack_size = 50
 
-data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing-1"}
+data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. coal}}
 data_recipe[carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, coal)
 data_recipe[carbonic_asteroid_crushing_1].energy_required = 4
 data_recipe[carbonic_asteroid_crushing_1].results = {{type = item, name = coal, amount = 8}}
 
-data_recipe[advanced_carbonic_asteroid_crushing_1].localised_name = {"recipe-name.advanced-carbonic-asteroid-crushing-1"}
+data_recipe[advanced_carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. sulfur}}
 data_recipe[advanced_carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, sulfur)
 data_recipe[advanced_carbonic_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_carbonic_asteroid_crushing_1].results = {{type = item, name = sulfur, amount = 8}}
 
-data_recipe[carbonic_asteroid_reprocessing].icons = THREE_R_I(carbonic_asteroid_chunk, metallic_asteroid_chunk, oxide_asteroid_chunk)
-data_recipe[carbonic_asteroid_reprocessing].results =
-{
-    {type = item, name = metallic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = oxide_asteroid_chunk, amount = 1, probability = 0.5}
-}
-
-local oxide_asteroid_reprocessing = "oxide-asteroid-reprocessing"
 local oxide_asteroids =
 {
     {type = data_asteroid, name = "small-oxide-asteroid",             order = a},
@@ -523,8 +584,7 @@ local oxide_asteroids =
     {type = data_asteroid, name = oxide_asteroid_chunk,               order = e},
     {type = data_item,     name = oxide_asteroid_chunk,               order = e},
     {type = data_recipe,   name = oxide_asteroid_crushing_1,          order = e_a},
-    {type = data_recipe,   name = advanced_oxide_asteroid_crushing_1, order = f_a},
-    {type = data_recipe,   name = oxide_asteroid_reprocessing,        order = z}
+    {type = data_recipe,   name = advanced_oxide_asteroid_crushing_1, order = f_a}
 }
 for _, ASTEROID in pairs(oxide_asteroids) do
     if ASTEROID.type[ASTEROID.name] then
@@ -535,24 +595,16 @@ end
 
 data_item[oxide_asteroid_chunk].stack_size = 50
 
-data_recipe[oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing-1"}
+data_recipe[oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"item-name." .. ice}}
 data_recipe[oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, ice)
 data_recipe[oxide_asteroid_crushing_1].energy_required = 4
 data_recipe[oxide_asteroid_crushing_1].results = {{type = item, name = ice, amount = 8}}
 
-data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.advanced-oxide-asteroid-crushing-1"}
-data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, sodium_oxide)
+data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing", {"fluid-name." .. gaseous_nitric_acid}}
+data_recipe[advanced_oxide_asteroid_crushing_1].categories = {chemistry}
+data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, gaseous_nitric_acid)
 data_recipe[advanced_oxide_asteroid_crushing_1].energy_required = 4
-data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = item, name = sodium_oxide, amount = 8}}
-data_recipe[advanced_oxide_asteroid_crushing_1].hidden = true
-data_recipe[advanced_oxide_asteroid_crushing_1].hidden_in_factoriopedia = true
-
-data_recipe[oxide_asteroid_reprocessing].icons = THREE_R_I(oxide_asteroid_chunk, carbonic_asteroid_chunk, metallic_asteroid_chunk)
-data_recipe[oxide_asteroid_reprocessing].results =
-{
-    {type = item, name = carbonic_asteroid_chunk, amount = 1, probability = 0.5},
-    {type = item, name = metallic_asteroid_chunk, amount = 1, probability = 0.5}
-}
+data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = fluid, name = gaseous_nitric_acid, amount = 120}}
 
 local promethium_asteroids =
 {
@@ -582,8 +634,8 @@ if mods[muluna_mods] then
         {type = data_asteroid, name = "medium-anorthite-asteroid",   order = b},
         {type = data_asteroid, name = "big-anorthite-asteroid",      order = c},
         {type = data_asteroid, name = "huge-anorthite-asteroid",     order = d},
-        {type = data_asteroid, name = anorthite_chunk,               order = e},
-        {type = data_item,     name = anorthite_chunk,               order = e},
+        {type = data_asteroid, name = anorthite_asteroid_chunk,      order = e},
+        {type = data_item,     name = anorthite_asteroid_chunk,      order = e},
         {type = data_recipe,   name = anorthite_crushing_1,          order = e_a},
         {type = data_recipe,   name = advanced_anorthite_crushing_1, order = f_a}
     }
@@ -594,15 +646,15 @@ if mods[muluna_mods] then
         end
     end
 
-    data_item[anorthite_chunk].localised_description = show_formula and {chemical_formula, "CaAl[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]8[/font]"} or nil
-    data_item[anorthite_chunk].stack_size = 50
-    data_item[anorthite_chunk].weight = 20000
+    data_item[anorthite_asteroid_chunk].localised_description = show_formula and {chemical_formula, "CaAl[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]8[/font]"} or nil
+    data_item[anorthite_asteroid_chunk].stack_size = 50
+    data_item[anorthite_asteroid_chunk].weight = 20000
 
-    data_recipe[anorthite_crushing_1].icons = TWO_I(anorthite_chunk, aluminium_oxide)
+    data_recipe[anorthite_crushing_1].icons = TWO_I(anorthite_asteroid_chunk, aluminium_oxide)
     data_recipe[anorthite_crushing_1].energy_required = 4
     data_recipe[anorthite_crushing_1].results = {{type = item, name = aluminium_oxide, amount = 8}}
 
-    data_recipe[advanced_anorthite_crushing_1].icons = TWO_I(anorthite_chunk, silicon_boule_mods)
+    data_recipe[advanced_anorthite_crushing_1].icons = TWO_I(anorthite_asteroid_chunk, silicon_boule_mods)
     data_recipe[advanced_anorthite_crushing_1].energy_required = 4
     data_recipe[advanced_anorthite_crushing_1].results = {{type = item, name = silicon_boule_mods, amount = 8}}
 
@@ -665,8 +717,6 @@ if mods[hyarion_mods] then
         {type = item, name = plastic, amount = 4},
         {type = fluid, name = photoresist_liquid, amount = 30}
     }
-
-    bobmods.lib.recipe.update_recycling_recipe({bismuth_transistor})
 end
 
 if mods[secretas_frozeta_mods] then
@@ -753,35 +803,36 @@ end
 
 if mods[hyarion_mods] then
     local is_space_facilities = "space-facilities"
-    data_tool[space_science_pack].subgroup = is_space_facilities
-    data_tool[space_science_pack].order = a
+    data_item[space_science_pack].subgroup = is_space_facilities
+    data_item[space_science_pack].order = a
     data_recipe[space_science_pack].subgroup = is_space_facilities
     data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform, nil, number_1)
     data_recipe[space_science_pack].order = a
     data_recipe[space_science_pack].energy_required = 16
     data_recipe[space_science_pack].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 2},
-        {type = item, name = carbon_angels, amount = 4},
-        {type = item, name = ice, amount = 4}
+        {type = item, name = ice, amount = 8},
+        {type = item, name = aluminium_lithium_plate, amount = 4},
+        {type = item, name = graphite_plate, amount = 4}
     }
     data_recipe[space_science_pack].results[1].amount = 4
 
     space_science_pack_hyarion = "planetaris-space-science-pack"
+    data_recipe[space_science_pack_hyarion].localised_description = {"item-description.science-pack"}
     data_recipe[space_science_pack_hyarion].subgroup = is_space_facilities
     data_recipe[space_science_pack_hyarion].icons = R_P_I(space_science_pack, space_platform, nil, number_2)
     data_recipe[space_science_pack_hyarion].order = a_a
     data_recipe[space_science_pack_hyarion].energy_required = 32
     data_recipe[space_science_pack_hyarion].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 8},
-        {type = item, name = carbon_angels, amount = 16},
-        {type = item, name = ice, amount = 16}
+        {type = item, name = ice, amount = 16},
+        {type = item, name = aluminium_lithium_plate, amount = 8},
+        {type = item, name = graphite_plate, amount = 8}
     }
     data_recipe[space_science_pack_hyarion].results[1].amount = 32
 
-    data_tool[promethium_science_pack].subgroup = is_space_facilities
-    data_tool[promethium_science_pack].order = b
+    data_item[promethium_science_pack].subgroup = is_space_facilities
+    data_item[promethium_science_pack].order = b
     data_recipe[promethium_science_pack].subgroup = is_space_facilities
     data_recipe[promethium_science_pack].icons = R_P_I(promethium_science_pack, space_platform, nil, number_1)
     data_recipe[promethium_science_pack].order = b
@@ -814,88 +865,75 @@ if mods[hyarion_mods] then
 end
 
 ice_melting = "ice-melting"
-data_recipe[ice_melting].subgroup = is_space_processing
+data_recipe[ice_melting].subgroup = is_space_processing_2
 data_recipe[ice_melting].icons = TWO_I(ice, water)
 data_recipe[ice_melting].order = a
-data_recipe[ice_melting].results[1].amount = 15
+data_recipe[ice_melting].energy_required = 4
+data_recipe[ice_melting].ingredients[1].amount = 4
+data_recipe[ice_melting].results[1].amount = 60
 
-data_recipe[hydrogen_chloride_separation].category = angels_petrochem_electrolyser
-data_recipe[hydrogen_chloride_separation].subgroup = is_space_processing
-data_recipe[hydrogen_chloride_separation].icons = FOUR_R_I(hydrogen_chloride_angels, hydrogen_angels, nil, chlorine_angels)
-data_recipe[hydrogen_chloride_separation].order = d
-data_recipe[hydrogen_chloride_separation].energy_required = 8 -- 2HCl -electrode/electrolys-> H₂ + Cl₂
-data_recipe[hydrogen_chloride_separation].ingredients =
-{
-    {type = fluid, name = hydrogen_chloride_angels, amount = 240},
-    {type = item, name = electrode, amount = 1}
-}
-data_recipe[hydrogen_chloride_separation].results =
-{
-    {type = fluid, name = hydrogen_angels, amount = 120},
-    {type = fluid, name = chlorine_angels, amount = 120},
-    {type = item, name = electrode_used, amount = 1}
-}
-
-data_fluid[thruster_fuel].subgroup = is_space_processing
+data_fluid[thruster_fuel].subgroup = is_space_processing_2
 data_fluid[thruster_fuel].order = y
-
-data_recipe[thruster_fuel].subgroup = is_space_processing
-data_recipe[thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_1)
-data_recipe[thruster_fuel].order = y
-data_recipe[thruster_fuel].energy_required = 4
-data_recipe[thruster_fuel].ingredients =
-{
-    {type = fluid, name = dimethylhydrazine_angels, amount = 60},
-    {type = fluid, name = hydrazine_angels, amount = 60}
-}
-data_recipe[thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 120}}
-data_recipe[thruster_fuel].main_product = thruster_fuel
 TIMSABA.barreling.add_dangerous_fluid(thruster_fuel)
-data_recipe[advanced_thruster_fuel].subgroup = is_space_processing
-data_recipe[advanced_thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_2)
-data_recipe[advanced_thruster_fuel].order = y_a
-data_recipe[advanced_thruster_fuel].energy_required = 4
-data_recipe[advanced_thruster_fuel].ingredients =
-{
-    {type = fluid, name = dimethylhydrazine_angels, amount = 60},
-    {type = fluid, name = hydrazine_angels, amount = 60},
-    {type = item, name = catalyst_yellow, amount = 1}
-}
-data_recipe[advanced_thruster_fuel].results =
-{
-    {type = fluid, name = thruster_fuel, amount = 480},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
-}
+data_recipe[thruster_fuel].subgroup = is_space_processing
+data_recipe[thruster_fuel].icons = TWO_I(hydrogen_liquid, thruster_fuel, number_1)
+data_recipe[thruster_fuel].order = y
+data_recipe[thruster_fuel].allow_quality = false
+data_recipe[thruster_fuel].allow_productivity = false
+data_recipe[thruster_fuel].energy_required = 4
+data_recipe[thruster_fuel].ingredients = {{type = fluid, name = hydrogen_liquid, amount = 240}}
+data_recipe[thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 60}}
+data_recipe[thruster_fuel].main_product = thruster_fuel
 
-data_fluid[thruster_oxidizer].subgroup = is_space_processing
+data_recipe[advanced_thruster_fuel].localised_name = {"fluid-name." .. thruster_fuel}
+data_recipe[advanced_thruster_fuel].subgroup = is_space_processing_2
+data_recipe[advanced_thruster_fuel].icons = TWO_I(hydrazine_angels, thruster_fuel, number_2)
+data_recipe[advanced_thruster_fuel].order = y_a
+data_recipe[advanced_thruster_fuel].allow_quality = false
+data_recipe[advanced_thruster_fuel].allow_productivity = false
+data_recipe[advanced_thruster_fuel].energy_required = 4
+data_recipe[advanced_thruster_fuel].ingredients = {{type = fluid, name = hydrazine_angels, amount = 60}}
+data_recipe[advanced_thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 240}}
+
+data_fluid[thruster_oxidizer].subgroup = is_space_processing_2
 data_fluid[thruster_oxidizer].order = z
 TIMSABA.barreling.add_dangerous_fluid(thruster_oxidizer)
-data_recipe[thruster_oxidizer].subgroup = is_space_processing
-data_recipe[thruster_oxidizer].icons = THREE_I(nitric_acid_angels, dinitrogen_tetroxide_angels, thruster_oxidizer, number_1)
+data_recipe[thruster_oxidizer].subgroup = is_space_processing_2
+data_recipe[thruster_oxidizer].icons = TWO_I(oxygen_liquid, thruster_oxidizer, number_1)
 data_recipe[thruster_oxidizer].order = z
+data_recipe[thruster_oxidizer].allow_quality = false
+data_recipe[thruster_oxidizer].allow_productivity = false
 data_recipe[thruster_oxidizer].energy_required = 4
-data_recipe[thruster_oxidizer].ingredients =
-{
-    {type = fluid, name = nitric_acid_angels, amount = 60},
-    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 60}
-}
-data_recipe[thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 120}}
+data_recipe[thruster_oxidizer].ingredients = {{type = fluid, name = oxygen_liquid, amount = 60}}
+data_recipe[thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 60}}
 data_recipe[thruster_oxidizer].main_product = thruster_oxidizer
 
-data_recipe[advanced_thruster_oxidizer].subgroup = is_space_processing
-data_recipe[advanced_thruster_oxidizer].icons = THREE_I(nitric_acid_angels, dinitrogen_tetroxide_angels, thruster_oxidizer, number_2)
+data_recipe[advanced_thruster_oxidizer].localised_name = {"fluid-name." .. thruster_oxidizer}
+data_recipe[advanced_thruster_oxidizer].subgroup = is_space_processing_2
+data_recipe[advanced_thruster_oxidizer].icons = TWO_I(nitric_acid_angels, thruster_oxidizer, number_2)
 data_recipe[advanced_thruster_oxidizer].order = z_a
+data_recipe[advanced_thruster_oxidizer].allow_quality = false
+data_recipe[advanced_thruster_oxidizer].allow_productivity = false
 data_recipe[advanced_thruster_oxidizer].energy_required = 4
-data_recipe[advanced_thruster_oxidizer].ingredients =
-{
-    {type = fluid, name = nitric_acid_angels, amount = 60},
-    {type = fluid, name = dinitrogen_tetroxide_angels, amount = 60},
-    {type = item, name = catalyst_yellow, amount = 1}
-}
-data_recipe[advanced_thruster_oxidizer].results =
-{
-    {type = fluid, name = thruster_oxidizer, amount = 480},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
-}
+data_recipe[advanced_thruster_oxidizer].ingredients = {{type = fluid, name = nitric_acid_angels, amount = 60}}
+data_recipe[advanced_thruster_oxidizer].results = {{type = fluid, name = thruster_oxidizer, amount = 240}}
 
-bobmods.lib.recipe.update_recycling_recipe({crusher})
+bobmods.lib.recipe.update_recycling_recipe
+({
+    rocket_silo,
+    big_rocket_silo,
+    cargo_landing_pad,
+    space_platform_foundation,
+    cargo_bay,
+    landing_pad_unloading_bay,
+    asteroid_collector,
+    asteroid_collector_2,
+    crusher,
+    thruster,
+    spaceship_wall,
+    satellite_radar,
+    space_manufactorer,
+    zero_grav_accumulator,
+    electromagnetic_radar,
+    bismuth_transistor
+})

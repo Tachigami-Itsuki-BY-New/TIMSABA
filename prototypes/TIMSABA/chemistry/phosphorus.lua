@@ -4,18 +4,16 @@ local graphics_silicon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/"
 -- GROUPS
 is_phosphorus = "is-phosphorus"
 is_phosphorus_fluid = "is-phosphorus-fluid"
-TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
+TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
-    {name = is_phosphorus, order = w}, -- l
-    {name = is_phosphorus_fluid, order = w_a} -- l_a
+    {name = is_phosphorus, order = l},
+    {name = is_phosphorus_fluid, order = l_a}
 })
 
 -- ITEM
 fluorapatite = "fluorapatite"
 white_phosphorus = "white-phosphorus"
 phosphorus_chloride_V = "phosphorus-chloride-V"
-calcium_silicate = "calcium-silicate"
-metasilicic_acid = "metasilicic-acid"
 TIMSABA.functions.create_items
 ({
     {
@@ -44,21 +42,6 @@ TIMSABA.functions.create_items
         subgroup = is_phosphorus,
         icon = graphics_phosphorus .. phosphorus_chloride_V .. ".png",
         order = c
-    },
-    -- SILICON
-    {
-        localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
-        name = calcium_silicate,
-        subgroup = is_silicon_chemistry,
-        icon = graphics_silicon .. calcium_silicate .. ".png",
-        order = i
-    },
-    {
-        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
-        name = metasilicic_acid,
-        subgroup = is_silicon_chemistry,
-        icon = graphics_silicon .. metasilicic_acid .. ".png",
-        order = j
     }
 })
 
@@ -66,6 +49,8 @@ TIMSABA.functions.create_items
 white_phosphorus_gas = "white-phosphorus-gas"
 phosphorus_chloride_III_liquid = "phosphorus-chloride-III-liquid"
 phosphorus_fluoride_V_gas = "phosphorus-fluoride-V-gas"
+phosphorus_oxychloride_liquid = "phosphorus-oxychloride-liquid"
+orthophosphoric_acid = "orthophosphoric-acid-solution"
 hexafluorophosphoric_acid = "hexafluorophosphoric-acid-solution"
 TIMSABA.functions.create_fluids
 ({
@@ -97,67 +82,68 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("PF5")
     },
     {
+        localised_description = show_formula and {chemical_formula, "POCl[font=default-tiny-bold]3[/font]"} or nil,
+        name = phosphorus_oxychloride_liquid,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. phosphorus_oxychloride_liquid .. ".png",
+        order = d,
+        base_color = TIMSABA.functions.fluid_color("POCl3"),
+        flow_color = TIMSABA.functions.flow_color("POCl3")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]PO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = orthophosphoric_acid,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. orthophosphoric_acid .. ".png",
+        order = e,
+        base_color = TIMSABA.functions.fluid_color("H3PO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("H3PO4Wp")
+    },
+    {
         localised_description = show_formula and {chemical_formula, "HPF[font=default-tiny-bold]6(aq)[/font]"} or nil,
         name = hexafluorophosphoric_acid,
         subgroup = is_phosphorus_fluid,
         icon = graphics_phosphorus .. hexafluorophosphoric_acid .. ".png",
-        order = d,
+        order = f,
         base_color = angelsmods.functions.fluid_color("HPF6Wp"),
         flow_color = angelsmods.functions.flow_color("HPF6Wp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(phosphorus_chloride_III_liquid)
 TIMSABA.barreling.add_gas(phosphorus_fluoride_V_gas)
+TIMSABA.barreling.add_dangerous_fluid(phosphorus_oxychloride_liquid)
+TIMSABA.barreling.add_dangerous_fluid(orthophosphoric_acid)
 TIMSABA.barreling.add_dangerous_fluid(hexafluorophosphoric_acid)
 
 -- RECIPE
-fluorapatite_recipe = "phosphate-ore-crystal-mix-processing"
-silicon_oxide_IV_from_metasilicic_acid = "silicon-oxide-IV-from-metasilicic-acid"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = fluorapatite_recipe,
-        category = angels_ore_sorting_4,
-        subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, fluorapatite),
-        order = a_e,
-        allow_productivity = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = crystal_saphirite, amount = 2},
-            {type = item, name = crystal_jivolite, amount = 2}
-        },
-        results = {{type = item, name = fluorapatite, amount = 4}},
-        main_product = fluorapatite
-    },
     -- SMELTING
     {
         name = white_phosphorus_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = FOUR_THREE_R_I(fluorapatite, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
         order = a,
-        energy_required = 16, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
+        -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
-            {type = item, name = fluorapatite, amount = 8},
-            {type = item, name = sand_angels, amount = 36},
-            {type = item, name = coke_angels, amount = 60}
+            {type = item, name = fluorapatite, amount = 4},
+            {type = item, name = sand_angels, amount = 18},
+            {type = item, name = coke_angels, amount = 30}
         },
         results =
         {
-            {type = fluid, name = white_phosphorus_gas, amount = 90},
-            {type = item, name = calcium_silicate, amount = 72},
-            {type = item, name = fluorite_angels, amount = 8},
-            {type = fluid, name = carbon_dioxide_angels, amount = 900}
+            {type = fluid, name = white_phosphorus_gas, amount = 45},
+            {type = item, name = calcium_silicate, amount = 18},
+            {type = item, name = fluorite_angels, amount = 2},
+            {type = fluid, name = carbon_dioxide_angels, amount = 450}
         },
         main_product = white_phosphorus_gas
     },
     {
         name = white_phosphorus,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = TWO_I(white_phosphorus_gas, white_phosphorus),
         order = b,
@@ -176,7 +162,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_chloride_III_liquid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = THREE_I(white_phosphorus, chlorine_angels, phosphorus_chloride_III_liquid),
         order = b,
@@ -191,7 +177,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_chloride_V,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_chloride_III_liquid, chlorine_angels, phosphorus_chloride_V),
         order = c,
@@ -206,7 +192,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = phosphorus_fluoride_V_gas,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus_fluid,
         icons = TWO_D_I(phosphorus_chloride_V, hydrogen_fluoride_angels, phosphorus_fluoride_V_gas, hydrogen_chloride_angels),
         order = c,
@@ -219,16 +205,35 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 300
+            {type = fluid, name = hydrogen_chloride_angels, amount = 180} -- 300
         },
         main_product = phosphorus_fluoride_V_gas
     },
     {
+        name = orthophosphoric_acid,
+        categories = {chemistry},
+        subgroup = is_phosphorus,
+        icons = TWO_D_I(phosphorus_oxychloride_liquid, water_purified_angels, orthophosphoric_acid, hydrogen_chloride_angels),
+        order = e,
+        -- POCl₃(l) + 4H₂O(g) --> H₃PO₄(aq) + 3HCl(g)
+        ingredients =
+        {
+            {type = fluid, name = phosphorus_oxychloride_liquid, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = fluid, name = orthophosphoric_acid, amount = 60},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 180
+        },
+        main_product = orthophosphoric_acid
+    },
+    {
         name = hexafluorophosphoric_acid,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_fluoride_V_gas, hydrofluoric_acid_angels, hexafluorophosphoric_acid),
-        order = d,
+        order = f,
         -- PF₅(g) + HF(aq) --> HPF₆(aq)
         ingredients =
         {
@@ -237,41 +242,5 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = fluid, name = hexafluorophosphoric_acid, amount = 60}},
         main_product = hexafluorophosphoric_acid
-    },
-    -- SILICON
-    {
-        name = metasilicic_acid,
-        category = angels_chemical_smelting_3,
-        subgroup = is_silicon_chemistry,
-        icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
-        order = j,
-        energy_required = 8, -- CaSiO₃(s) + 2HCl(aq) --> H₂SiO₃(s) + CaCl₂(aq) + H₂O(l)
-        ingredients =
-        {
-            {type = item, name = calcium_silicate, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
-        },
-        results =
-        {
-            {type = item, name = metasilicic_acid, amount = 16},
-            {type = fluid, name = calcium_chloride_solution, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
-        },
-        main_product = metasilicic_acid
-    },
-    {
-        name = silicon_oxide_IV_from_metasilicic_acid,
-        category = angels_blast_smelting_4,
-        subgroup = is_silicon_chemistry,
-        icons = THREE_R_I(metasilicic_acid, silicon_oxide_IV, steam),
-        order = a_c,
-        energy_required = 8, -- H₂SiO₃(s) --> SiO₂(s) + H₂O(l)
-        ingredients = {{type = item, name = metasilicic_acid, amount = 16}},
-        results =
-        {
-            {type = item, name = silicon_oxide_IV, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
-        },
-        main_product = silicon_oxide_IV
     }
 })

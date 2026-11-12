@@ -1,7 +1,8 @@
 local map_settings = data.raw["map-settings"]["map-settings"]
-map_settings.pollution.enabled = true
-map_settings.enemy_evolution.enabled = true
 map_settings.enemy_expansion.enabled = true
+map_settings.enemy_evolution.enabled = true
+map_settings.enemy_evolution.time_factor = 0
+map_settings.pollution.enabled = true
 
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
@@ -52,11 +53,11 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.foliax")
 -- obsidiax
 -- crucible
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.ribbonia")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.eneas")
 -- rubia
 -- cubium
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")
 
-require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 
 require("prototypes-final-fix.mods-final-fix.flare-stack")
@@ -80,9 +81,14 @@ require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-entities")
 require("prototypes-final-fix.final-fix-fuel-categories")
 require("prototypes-final-fix.final-fix-prototypes-deleted")
+require("prototypes-final-fix.final-fix-space-map")
 
 require("prototypes-final-fix.multi-building.scripting")
 require("prototypes-final-fix.multi-building.entities")
 
-require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
+
+--require("prototypes-final-fix.final-fix-lingumis-plants-boost")
+
+require("compatibility.milestones.milestones-data") -- Register travel counters after the final planet/prototype changes.
+require("compatibility.alien-biomes.alien-biomes-tile-restriction")

@@ -7,63 +7,8 @@ if mods[shchierbin_mods] then
     data_resource[carbon_ore].order = a
     data_resource[carbon_ore].minable.mining_time = 1
 
-    -- VANADIUM
-    data_item[vanadium_ore].localised_description = show_formula and {chemical_formula, "V"} or nil
-    data_item[vanadium_ore].subgroup = is_shchierbin_vanadium
-    data_item[vanadium_ore].order = a
-    data_item[vanadium_ore].stack_size = 200
-    data_resource[vanadium_ore].subgroup = is_shchierbin_vanadium
-    data_resource[vanadium_ore].icon = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore.png"
-    data_resource[vanadium_ore].icon_size = 64
-    data_resource[vanadium_ore].order = a
-
-    -- VANADIUM CHEMISTRY
-    data_item[vanadium_oxide_V].localised_description = show_formula and {chemical_formula, "V[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]5[/font]"} or nil
-    data_item[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
-    data_item[vanadium_oxide_V].order = a
-    data_item[vanadium_oxide_V].stack_size = 200
-    data_recipe[vanadium_oxide_V].category = angels_blast_smelting_4
-    data_recipe[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
-    data_recipe[vanadium_oxide_V].icons = THREE_I(vanadium_ore, oxygen_angels, vanadium_oxide_V)
-    data_recipe[vanadium_oxide_V].order = a
-    data_recipe[vanadium_oxide_V].energy_required = 8 -- 4V + 5O₂ --> 2V₂O₅
-    data_recipe[vanadium_oxide_V].ingredients =
-    {
-        {type = item, name = vanadium_ore, amount = 32},
-        {type = fluid, name = oxygen_angels, amount = 300}
-    }
-    data_recipe[vanadium_oxide_V].results = {{type = item, name = vanadium_oxide_V, amount = 8}}
-    data_recipe[vanadium_oxide_V].main_product = vanadium_oxide_V
-
-    -- VANADIUM CASTING
-    data_item[vanadium_plate].localised_description = show_formula and {chemical_formula, "V"} or nil
-    data_item[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
-    data_item[vanadium_plate].order = b
-    data_item[vanadium_plate].stack_size = 200
-    data_recipe[vanadium_plate].category = angels_casting_4
-    data_recipe[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
-    data_recipe[vanadium_plate].icons = TWO_I(vanadium_molten, vanadium_plate)
-    data_recipe[vanadium_plate].order = b
-    data_recipe[vanadium_plate].energy_required = 4
-    data_recipe[vanadium_plate].ingredients = {{type = fluid, name = vanadium_molten, amount = 60}}
-    data_recipe[vanadium_plate].results[1].amount = 4
-    data_recipe[vanadium_plate].main_product = vanadium_plate
-
-    -- VANADIUM CASTING FeC-V
-    data_item[vanadium_steel_plate].localised_description = show_formula and {chemical_formula, "FeCV"} or nil
-    data_item[vanadium_steel_plate].subgroup = is_shchierbin_vanadium_steel
-    data_item[vanadium_steel_plate].order = b
-    data_item[vanadium_steel_plate].stack_size = 200
-    data_recipe[vanadium_steel_plate].subgroup = is_shchierbin_vanadium_steel
-    data_recipe[vanadium_steel_plate].icons = TWO_I(vanadium_steel_molten, vanadium_steel_plate)
-    data_recipe[vanadium_steel_plate].order = b
-    data_recipe[vanadium_steel_plate].energy_required = 4
-    data_recipe[vanadium_steel_plate].ingredients = {{type = fluid, name = vanadium_steel_molten, amount = 60}}
-    data_recipe[vanadium_steel_plate].results[1].amount = 4
-
     -- RECIPE
     data_recipe[slaked_lime_mods].localised_name = {"item-name." .. calcium_hydroxide}
-    data_recipe[slaked_lime_mods].category = angels_liquifying
     data_recipe[slaked_lime_mods].subgroup = is_shchierbin_recipe
     data_recipe[slaked_lime_mods].icons = THREE_I(lime_angels, water_purified_angels, calcium_hydroxide)
     data_recipe[slaked_lime_mods].order = a
@@ -73,11 +18,11 @@ if mods[shchierbin_mods] then
         {type = item, name = lime_angels, amount = 4},
         {type = fluid, name = water_purified_angels, amount = 60}
     }
+    data_recipe[slaked_lime_mods].results[1].amount = 4
     data_recipe[slaked_lime_mods].main_product = calcium_hydroxide
     data_recipe[slaked_lime_mods].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
     data_recipe[calcium_mods].localised_name = {"item-name." .. calcium}
-    data_recipe[calcium_mods].category = angels_liquifying
     data_recipe[calcium_mods].subgroup = is_shchierbin_recipe
     data_recipe[calcium_mods].icons = THREE_R_I(calcium_hydroxide, calcium, hydrogen_peroxide)
     data_recipe[calcium_mods].order = b
@@ -181,8 +126,8 @@ if mods[shchierbin_mods] then
     data_recipe[plastic_vinylchloride].ingredients[1].amount = 60
     data_recipe[plastic_vinylchloride].surface_conditions = {{property = pressure, max = 1500, min = 1500}}
 
-    data_tool[vanadium_science_pack].subgroup = is_shchierbin_recipe
-    data_tool[vanadium_science_pack].order = h
+    data_item[vanadium_science_pack].subgroup = is_shchierbin_recipe
+    data_item[vanadium_science_pack].order = h
     data_recipe[vanadium_science_pack].subgroup = is_shchierbin_recipe
     data_recipe[vanadium_science_pack].order = h
     data_recipe[vanadium_science_pack].energy_required = 8
@@ -219,6 +164,83 @@ if mods[shchierbin_mods] then
         {type = item, name = calcite, amount = 1}
     }
 
+    -- VANADINITE
+    data_item[vanadinite_ore].localised_name = {"entity-name.vanadinite-ore"}
+    data_item[vanadinite_ore].localised_description = {"item-description.vanadinite-ore"}
+    data_item[vanadinite_ore].subgroup = is_vanadinite
+    data_item[vanadinite_ore].order = a
+    data_item[vanadinite_ore].stack_size = 200
+    data_resource[vanadinite_ore].localised_name = {"entity-name.vanadinite-ore"}
+    data_resource[vanadinite_ore].localised_description = {"entity-description.vanadinite-ore"}
+    data_resource[vanadinite_ore].factoriopedia_description = ""
+    data_resource[vanadinite_ore].subgroup = is_vanadinite
+    data_resource[vanadinite_ore].order = a
+    data_resource[vanadinite_ore].minable.mining_time = 1
+    data_resource[vanadinite_ore].factoriopedia_simulation = nil
+
+    if mods[moshine_mods] then
+        data_recipe[vanadinite_chunks].icons = THREE_D_I(vanadinite_crushed, nil, water_purified_angels, vanadinite_chunks, calcium_phosphate, water_orange_waste)
+        data_recipe[vanadinite_chunks].results[2].name = calcium_phosphate
+        data_recipe[vanadinite_chunks].results[3].name = water_orange_waste
+
+        data_recipe[vanadinite_crystals].icons = THREE_I(vanadinite_chunks, orthophosphoric_acid, vanadinite_crystals)
+        data_recipe[vanadinite_crystals].ingredients[2].name = orthophosphoric_acid
+
+        data_recipe[vanadinite_crushed_sorting].results[3].name = calcium_phosphate
+
+        data_recipe[vanadinite_chunks_sorting].results[5].name = calcium_phosphate
+
+        data_recipe[vanadinite_crystals_sorting].results[6].name = calcium_phosphate
+    end
+
+    -- VANADIUM
+    data_item[vanadium_ore].subgroup = is_shchierbin_vanadium
+
+    -- VANADIUM CHEMISTRY
+    data_item[vanadium_oxide_V].localised_description = show_formula and {chemical_formula, "V[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]5[/font]"} or nil
+    data_item[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
+    data_item[vanadium_oxide_V].order = a
+    data_item[vanadium_oxide_V].stack_size = 200
+    data_recipe[vanadium_oxide_V].categories = {angels_blast_smelting_4}
+    data_recipe[vanadium_oxide_V].subgroup = is_shchierbin_vanadium_chemistry
+    data_recipe[vanadium_oxide_V].icons = THREE_I(vanadium_ore, oxygen_angels, vanadium_oxide_V)
+    data_recipe[vanadium_oxide_V].order = a
+    data_recipe[vanadium_oxide_V].energy_required = 8 -- 4V + 5O₂ --> 2V₂O₅
+    data_recipe[vanadium_oxide_V].ingredients =
+    {
+        {type = item, name = vanadium_ore, amount = 32},
+        {type = fluid, name = oxygen_angels, amount = 300}
+    }
+    data_recipe[vanadium_oxide_V].results = {{type = item, name = vanadium_oxide_V, amount = 8}}
+    data_recipe[vanadium_oxide_V].main_product = vanadium_oxide_V
+
+    -- VANADIUM CASTING
+    data_item[vanadium_plate].localised_description = show_formula and {chemical_formula, "V"} or nil
+    data_item[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
+    data_item[vanadium_plate].order = b
+    data_item[vanadium_plate].stack_size = 200
+    data_recipe[vanadium_plate].categories = {angels_casting_4}
+    data_recipe[vanadium_plate].subgroup = is_shchierbin_vanadium_casting
+    data_recipe[vanadium_plate].icons = TWO_I(vanadium_molten, vanadium_plate)
+    data_recipe[vanadium_plate].order = b
+    data_recipe[vanadium_plate].energy_required = 4
+    data_recipe[vanadium_plate].ingredients = {{type = fluid, name = vanadium_molten, amount = 60}}
+    data_recipe[vanadium_plate].results[1].amount = 4
+    data_recipe[vanadium_plate].main_product = vanadium_plate
+
+    -- VANADIUM CASTING FeC-V
+    data_item[vanadium_steel_plate].localised_description = show_formula and {chemical_formula, "FeCV"} or nil
+    data_item[vanadium_steel_plate].subgroup = is_shchierbin_vanadium_steel
+    data_item[vanadium_steel_plate].order = b
+    data_item[vanadium_steel_plate].stack_size = 200
+    data_recipe[vanadium_steel_plate].subgroup = is_shchierbin_vanadium_steel
+    data_recipe[vanadium_steel_plate].icons = TWO_I(vanadium_steel_molten, vanadium_steel_plate)
+    data_recipe[vanadium_steel_plate].order = b
+    data_recipe[vanadium_steel_plate].energy_required = 4
+    data_recipe[vanadium_steel_plate].ingredients = {{type = fluid, name = vanadium_steel_molten, amount = 60}}
+    data_recipe[vanadium_steel_plate].results[1].amount = 4
+
+    -- BUILDING
     if mods[muluna_mods] then
         data_item[vanadium_crusher].subgroup = is_muluna_building
         data_recipe[vanadium_crusher].subgroup = is_muluna_building
@@ -249,9 +271,10 @@ if mods[shchierbin_mods] then
     data_recipe[vanadium_crusher].energy_required = 8
     data_assembling[vanadium_crusher].order = f
     data_assembling[vanadium_crusher].crafting_speed = 2
-    data_assembling[vanadium_crusher].energy_usage = 960 .. kW
+    data_assembling[vanadium_crusher].energy_usage = 930 .. kW
+    data_assembling[vanadium_crusher].energy_source.emissions_per_minute.pollution = 4
     data_assembling[vanadium_crusher].energy_source.drain = 30 .. kW
-    data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 1
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
@@ -260,7 +283,7 @@ if mods[shchierbin_mods] then
     })
 
     -- TECHNOLOGY
-    table.insert(data_technology[planet_discovery_shchierbin].prerequisites, tech_advanced_asteroid_processing)
+    data_technology[planet_discovery_shchierbin].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_shchierbin].prerequisites, interstellar_science_pack)
     end
@@ -272,7 +295,8 @@ if mods[shchierbin_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["calcium-processing"].icons = TIMSABA.functions.create_gas_tech_icon("CaCaCa")
@@ -313,7 +337,8 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     table.insert(data_technology[vanadium_crusher].prerequisites, tech_niobium_titanium_processing)
@@ -336,7 +361,8 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["alt-vanad-artil"].unit.ingredients =
@@ -349,14 +375,47 @@ if mods[shchierbin_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
-
-    if mods[castra_mods] then
-        table.insert(data_technology[tech_vanadium_synthesis].prerequisites, tech_vanadium_smelting_3)
-    end
 
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, vanadium_science_pack)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_vinylchloride, change = 0.1})
+
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_phosphorus_processing_2].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[tech_vanadinite_processing_3].prerequisites, tech_phosphorus_processing_2)
+    end
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = vanadium_plate, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(efficiency_module_7)
+    add_ingredients(pollution_clean_module_7)
+    add_ingredients(pollution_create_module_7)
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, vanadium_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(efficiency_module_7)
+    add_prerequisites(pollution_clean_module_7)
+    add_prerequisites(pollution_create_module_7)
+    add_prerequisites(quality_module_7)
 end

@@ -1,8 +1,3 @@
-function TIMSABA.numeral_tier(icon_data, tier, tint)
-    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
-    return icons
-end
-
 -- ANGELS RESOURCE REFINING
 TIMSABA.functions.create_buildings
 ({
@@ -23,7 +18,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_crusher_3],
 
         localised_description = {"entity-description.angels-ore-crusher"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- ORE FLOATATION CELL
     {
@@ -43,7 +40,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_floatation_cell_3],
 
         localised_description = {"entity-description.angels-ore-floatation-cell"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- ORE LEACHING PLANT
     {
@@ -63,7 +62,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_leaching_plant_3],
 
         localised_description = {"entity-description.angels-ore-leaching-plant"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- ORE REFINERY
     {
@@ -88,7 +89,9 @@ TIMSABA.functions.create_buildings
         pollution = 3,
         drain = 45 .. kW,
         energy_usage = 675 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     {
         name = ore_refinery_4,
@@ -106,8 +109,10 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_refinery_2],
 
         localised_description = {"entity-description.angels-ore-refinery"},
-        energy_usage = 900 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        energy_usage = (960 - 60) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- ORE SORTING FACILITY
     {
@@ -133,7 +138,9 @@ TIMSABA.functions.create_buildings
         pollution = 6,
         drain = 90 .. kW,
         energy_usage = 630 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     -- POWDERIZER
     {
@@ -152,7 +159,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[powderizer_3],
 
         localised_description = {"entity-description.angels-powderizer"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- ELECTROWINNING CELL
     {
@@ -178,7 +187,9 @@ TIMSABA.functions.create_buildings
         pollution = 3,
         drain = 45 .. kW,
         energy_usage = 675 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     {
         name = electro_whinning_cell_4,
@@ -197,8 +208,10 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[electro_whinning_cell_2],
 
         localised_description = {"entity-description.angels-electro-whinning-cell"},
-        energy_usage = 900 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        energy_usage = (960 - 60) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- FILTRATION UNIT
     {
@@ -218,7 +231,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[filtration_unit_3],
 
         localised_description = {"entity-description.angels-filtration-unit"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     -- CRYSTALLIZER
     {
@@ -238,7 +253,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[crystallizer_3],
 
         localised_description = {"entity-description.angels-crystallizer"},
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     }
 })
 data_assembling[ore_crusher_3].next_upgrade = ore_crusher_4
@@ -271,6 +288,7 @@ data_assembling[filtration_unit_4].next_upgrade = nil
 
 data_assembling[crystallizer_3].next_upgrade = crystallizer_4
 data_assembling[crystallizer_4].next_upgrade = nil
+table.insert(data_assembling[crystallizer_4].crafting_categories, crystallizing_4)
 
 -- ANGELS METALLURGY SMELTING
 TIMSABA.functions.create_buildings
@@ -296,9 +314,11 @@ TIMSABA.functions.create_buildings
         module_slots = 1,
         crafting_speed = 1,
         pollution = 1,
-        drain = 15 .. kW,
-        energy_usage = 225 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        drain = drain .. kW,
+        energy_usage = (240 - drain) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     {
         name = electric_blast_furnace_2,
@@ -322,8 +342,10 @@ TIMSABA.functions.create_buildings
         crafting_speed = 2,
         pollution = 2,
         drain = 30 .. kW,
-        energy_usage = 450 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        energy_usage = (480 - 30) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     {
         name = electric_blast_furnace_3,
@@ -348,7 +370,9 @@ TIMSABA.functions.create_buildings
         pollution = 3,
         drain = 45 .. kW,
         energy_usage = 675 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     },
     {
         name = electric_blast_furnace_4,
@@ -367,10 +391,49 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[blast_furnace_4],
 
         localised_description = {"entity-description.angels-blast-furnace"},
-        energy_usage = 900 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        energy_usage = (960 - 60) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_clean}
     }
 })
+if mods[muluna_mods] then
+    data_recipe[electric_blast_furnace_1].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_2].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_3].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[electric_blast_furnace_4].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
+end
+data_assembling[electric_blast_furnace_1].next_upgrade = electric_blast_furnace_2
+data_assembling[electric_blast_furnace_2].next_upgrade = electric_blast_furnace_3
+data_assembling[electric_blast_furnace_3].next_upgrade = electric_blast_furnace_4
+data_assembling[electric_blast_furnace_4].next_upgrade = nil
+
+local electric_blast_furnace_fluid_boxes =
+{
+    {
+        production_type = input,
+        pipe_covers = pipecoverspictures(),
+        volume = 120,
+        pipe_connections = {{flow_direction = input, position = {0, -2}, direction = defines.direction.north}}
+    },
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {-1, 2}, direction = defines.direction.south}}
+    },
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {1, 2}, direction = defines.direction.south}}
+    }
+}
+
+data_assembling[electric_blast_furnace_1].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_2].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_3].fluid_boxes = electric_blast_furnace_fluid_boxes
+data_assembling[electric_blast_furnace_4].fluid_boxes = electric_blast_furnace_fluid_boxes
 
 -- ANGELS METALLURGY CASTING
 if settings.startup[setting_early_sintering_oven].value then
@@ -399,7 +462,9 @@ if settings.startup[setting_early_sintering_oven].value then
             pollution = 6,
             drain = 90 .. kW,
             energy_usage = 2790 .. kW,
-            heating_energy = data_assembling[assembling_machine_1].heating_energy
+            heating_energy = data_assembling[assembling_machine_1].heating_energy,
+            allowed_effects = {speed, consumption, productivity, pollution, quality},
+            allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
         }
     })
 else
@@ -428,7 +493,9 @@ else
             pollution = 3,
             drain = 45 .. kW,
             energy_usage = 1395 .. kW,
-            heating_energy = data_assembling[assembling_machine_1].heating_energy
+            heating_energy = data_assembling[assembling_machine_1].heating_energy,
+            allowed_effects = {speed, consumption, productivity, pollution, quality},
+            allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
         },
         {
             localised_name = {"entity-name.sintering-oven-7-4"},
@@ -448,7 +515,9 @@ else
 
             localised_description = {"entity-description.angels-sintering-oven"},
             energy_usage = 1860 .. kW,
-            heating_energy = data_assembling[assembling_machine_1].heating_energy
+            heating_energy = data_assembling[assembling_machine_1].heating_energy,
+            allowed_effects = {speed, consumption, productivity, pollution, quality},
+            allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
         }
     })
 end
@@ -465,6 +534,8 @@ else
 end
 
 -- ANGELS WATER TREATMENT
+require("prototypes.angels.angels-building-pump")
+
 TIMSABA.functions.create_buildings
 ({
     -- HYDRO PLANT
@@ -486,7 +557,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-hydro-plant"},
         pollution = 0,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     -- WASHING PLANT
     {
@@ -512,7 +585,9 @@ TIMSABA.functions.create_buildings
         pollution = 0,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     {
         name = washing_plant_4,
@@ -532,7 +607,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-washing-plant"},
         pollution = 0,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     -- SALINATION PLANT
     {
@@ -558,7 +635,9 @@ TIMSABA.functions.create_buildings
         pollution = 0,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     {
         name = salination_plant_4,
@@ -578,7 +657,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-salination-plant"},
         pollution = 0,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     -- ELECTRIC BOILER
     {
@@ -599,9 +680,12 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-electric-boiler"},
         pollution = 0,
-        energy_usage = 4740 .. kW,
+        drain = 480 .. kW,
+        energy_usage = (3840 - 480) .. kW,
         max_health = 800,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed},
+        allowed_module_categories = {speed}
     }
 })
 data_assembling[hydro_plant_3].next_upgrade = hydro_plant_4
@@ -640,7 +724,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-air-filter"},
         pollution = 0,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption},
+        allowed_module_categories = {speed, efficiency}
     },
     -- ADVANCED CHEMICAL PLANT
     {
@@ -651,10 +737,10 @@ TIMSABA.functions.create_buildings
 
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 16},
-            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
+            {type = item, name = processing_unit, amount = 4},
+            {type = item, name = titanium_pipe, amount = 16},
+            {type = item, name = titanium_plate_bob, amount = 16},
+            {type = item, name = reinforced_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_2, amount = 1}
         },
 
@@ -666,7 +752,9 @@ TIMSABA.functions.create_buildings
         pollution = 3,
         drain = 45 .. kW,
         energy_usage = 675 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     {
         name = advanced_chemical_plant_4,
@@ -676,17 +764,19 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
-            {type = item, name = molybdenum_rhenium_plate, amount = 16},
-            {type = item, name = carbon_concrete_brick, amount = 8},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_3, amount = 1}
         },
 
         base_prototype = data_assembling[advanced_chemical_plant_1],
 
         localised_description = {"entity-description.angels-advanced-chemical-plant"},
-        energy_usage = 900 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        energy_usage = (960 - 60) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     }
 })
 data_assembling[air_filter_3].next_upgrade = air_filter_4
@@ -724,7 +814,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_t_3,
@@ -749,7 +841,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_t_4,
@@ -769,7 +863,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-generator-temperate-1"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- SWAMP
     {
@@ -795,7 +891,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_s_3,
@@ -820,7 +918,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_s_4,
@@ -840,7 +940,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-generator-swamp-1"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- DESERT
     {
@@ -866,7 +968,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_d_3,
@@ -891,7 +995,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_generator_d_4,
@@ -911,7 +1017,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-generator-desert-1"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- BIO ARBORETUM
     {
@@ -937,7 +1045,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = bio_arboretum_3,
@@ -962,7 +1072,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = bio_arboretum_4,
@@ -982,7 +1094,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-arboretum-1"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     }
 })
 data_assembling[bio_generator_t_1].next_upgrade = bio_generator_t_2
@@ -1032,7 +1146,9 @@ TIMSABA.functions.create_buildings
         pollution = -16,
         drain = 30 .. kW,
         energy_usage = 90 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = basic_farm_3,
@@ -1057,7 +1173,9 @@ TIMSABA.functions.create_buildings
         pollution = -24,
         drain = 45 .. kW,
         energy_usage = 135 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = basic_farm_4,
@@ -1079,7 +1197,9 @@ TIMSABA.functions.create_buildings
         crafting_speed = 2,
         pollution = -32,
         energy_usage = 180 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- TEMPERATE FARM
     {
@@ -1105,7 +1225,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = temperate_farm_3,
@@ -1130,7 +1252,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = temperate_farm_4,
@@ -1150,7 +1274,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-temperate-farm"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- SWAMP FARM
     {
@@ -1176,7 +1302,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = swamp_farm_3,
@@ -1201,7 +1329,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = swamp_farm_4,
@@ -1221,7 +1351,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-swamp-farm"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- DESERT FARM
     {
@@ -1247,7 +1379,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = desert_farm_3,
@@ -1272,7 +1406,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = desert_farm_4,
@@ -1292,7 +1428,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-desert-farm"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- SEED EXTRACTOR
     {
@@ -1318,7 +1456,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = seed_extractor_3,
@@ -1343,7 +1483,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = seed_extractor_4,
@@ -1363,7 +1505,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-seed-extractor"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- COMPOSTER
     {
@@ -1387,9 +1531,11 @@ TIMSABA.functions.create_buildings
         module_slots = 2,
         crafting_speed = 2,
         pollution = -2,
-        drain = 15 .. kW,
-        energy_usage = 45 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        drain = drain .. kW,
+        energy_usage = (60 - drain) .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = composter_3,
@@ -1414,7 +1560,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 22.5 .. kW,
         energy_usage = 67.5 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = composter_4,
@@ -1436,7 +1584,9 @@ TIMSABA.functions.create_buildings
         pollution = -4,
         drain = 30 .. kW,
         energy_usage = 90 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- BIO PROCESSOR
     {
@@ -1462,7 +1612,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_processor_3,
@@ -1487,7 +1639,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_processor_4,
@@ -1507,7 +1661,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-processor"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- BIO PRESS
     {
@@ -1534,7 +1690,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_press_3,
@@ -1560,7 +1718,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = bio_press_4,
@@ -1581,7 +1741,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-press"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- NUTRIENT EXTRACTOR
     {
@@ -1608,7 +1770,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = nutrient_extractor_3,
@@ -1634,7 +1798,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = nutrient_extractor_4,
@@ -1655,12 +1821,25 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-nutrient-extractor"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     }
 })
+table.insert(data_assembling[basic_farm_1].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_1].crafting_categories, yumako_farming)
 data_assembling[basic_farm_1].next_upgrade = basic_farm_2
+
+table.insert(data_assembling[basic_farm_2].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_2].crafting_categories, yumako_farming)
 data_assembling[basic_farm_2].next_upgrade = basic_farm_3
+
+table.insert(data_assembling[basic_farm_3].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_3].crafting_categories, yumako_farming)
 data_assembling[basic_farm_3].next_upgrade = basic_farm_4
+
+table.insert(data_assembling[basic_farm_4].crafting_categories, jellynut_farming)
+table.insert(data_assembling[basic_farm_4].crafting_categories, yumako_farming)
 data_assembling[basic_farm_4].next_upgrade = nil
 
 data_assembling[temperate_farm_1].next_upgrade = temperate_farm_2
@@ -1717,7 +1896,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = advanced_circuit, amount = 4},
             {type = item, name = brass_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = concrete_brick, amount = 16},
             {type = item, name = brass_plate_bob, amount = 4},
             {type = item, name = fish_refugium_1, amount = 1}
@@ -1731,7 +1909,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = fish_refugium_3,
@@ -1743,7 +1923,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = processing_unit, amount = 4},
             {type = item, name = titanium_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = reinforced_concrete_brick, amount = 16},
             {type = item, name = titanium_plate_bob, amount = 4},
             {type = item, name = fish_refugium_2, amount = 1}
@@ -1757,7 +1936,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = fish_refugium_4,
@@ -1768,7 +1949,6 @@ TIMSABA.functions.create_buildings
         {
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = nitinol_pipe, amount = 64},
-            {type = item, name = glass_bob, amount = 8},
             {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
             {type = item, name = nitinol_plate_bob, amount = 4},
             {type = item, name = fish_refugium_3, amount = 1}
@@ -1778,7 +1958,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-refugium-fish"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- BUTCHERY
     {
@@ -1804,7 +1986,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = butchery_3,
@@ -1829,7 +2013,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = butchery_4,
@@ -1849,7 +2035,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-butchery"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- HUTCHERY
     {
@@ -1875,7 +2063,9 @@ TIMSABA.functions.create_buildings
         pollution = -2,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = hatchery_3,
@@ -1900,7 +2090,9 @@ TIMSABA.functions.create_buildings
         pollution = -3,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     {
         name = hatchery_4,
@@ -1920,7 +2112,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-hatchery"},
         pollution = -4,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create}
     },
     -- PUFFER REFUGIUM
     {
@@ -1934,7 +2128,6 @@ TIMSABA.functions.create_buildings
             {type = item, name = processing_unit, amount = 4},
             {type = item, name = titanium_pipe, amount = 32},
             {type = item, name = titanium_plate_bob, amount = 16},
-            {type = item, name = glass_bob, amount = 4},
             {type = item, name = reinforced_concrete_brick, amount = 16},
             {type = item, name = puffer_refugium_1, amount = 1}
         },
@@ -1947,7 +2140,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = puffer_refugium_3,
@@ -1960,7 +2155,6 @@ TIMSABA.functions.create_buildings
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = nitinol_pipe, amount = 32},
             {type = item, name = nitinol_plate_bob, amount = 16},
-            {type = item, name = glass_bob, amount = 4},
             {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
             {type = item, name = puffer_refugium_2, amount = 1}
         },
@@ -1973,7 +2167,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = puffer_refugium_4,
@@ -1985,7 +2181,6 @@ TIMSABA.functions.create_buildings
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = molybdenum_rhenium_pipe, amount = 32},
             {type = item, name = molybdenum_rhenium_plate, amount = 16},
-            {type = item, name = glass_bob, amount = 4},
             {type = item, name = carbon_concrete_brick, amount = 16},
             {type = item, name = puffer_refugium_3, amount = 1}
         },
@@ -1994,7 +2189,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-refugium-puffer"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     -- BITER REFUGIUM
     {
@@ -2021,7 +2218,9 @@ TIMSABA.functions.create_buildings
         pollution = -32,
         drain = 30 .. kW,
         energy_usage = 210 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = biter_refugium_3,
@@ -2047,7 +2246,9 @@ TIMSABA.functions.create_buildings
         pollution = -48,
         drain = 45 .. kW,
         energy_usage = 315 .. kW,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     },
     {
         name = biter_refugium_4,
@@ -2068,7 +2269,9 @@ TIMSABA.functions.create_buildings
 
         localised_description = {"entity-description.angels-bio-refugium-biter"},
         pollution = -64,
-        heating_energy = data_assembling[assembling_machine_1].heating_energy
+        heating_energy = data_assembling[assembling_machine_1].heating_energy,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, pollution_create, agricultural}
     }
 })
 

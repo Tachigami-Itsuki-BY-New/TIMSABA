@@ -1,12 +1,12 @@
 if mods[muria_mods] then
-    local chlorane = "chlorane"
+    local hydrogen_chloride = "hydrogen-chloride"
     local lead = "lead"
     local lead_plate = "lead-plate"
     local lead_molten = "molten-lead"
     local lead_pellets = "lead-pellets"
     local replace_prototypes =
     {
-        [chlorane] = hydrogen_chloride_angels,
+        [hydrogen_chloride] = hydrogen_chloride_angels,
         [lead] = lead_ore_bob,
         [lead_plate] = lead_plate_bob,
         [lead_molten] = lead_molten_angels,
@@ -17,9 +17,9 @@ if mods[muria_mods] then
     local delete_proto = {lead, lead_plate}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
-    local delete_proto = {chlorane}
+    local delete_proto = {hydrogen_chloride}
     TIMSABA.functions.delete_duplicated_fluids(delete_proto)
-    data_recipe[chlorane] = nil
+    data_recipe[hydrogen_chloride] = nil
 
     local delete_prototypes =
 	{
@@ -27,7 +27,7 @@ if mods[muria_mods] then
 		lead_pellets,
         "casting-lead",
         "casting-lead-pellets",
-        "chlorane-oxidation",
+        "hydrogen-chloride-oxidation",
         "water-electrolysis",
         "corroded-flask",
         "corroded-flask-recovery",
@@ -43,18 +43,43 @@ if mods[muria_mods] then
         "aquiloan-air-scrubbing",
         "paracelsian-air-scrubbing",
         "air-scrubbing",
-        "chlorane-lead-battery",
+        "hydrogen-chloride-lead-battery",
         "oxygenated-iron-bacteria-cultivation",
         "oxygenated-copper-bacteria-cultivation",
         "oxygenated-bacteria-cultivation",
-        "acidthrower-turret"
+        "acidthrower-turret",
+        "lead-logistic-robot",
+        "lead-construction-robot",
+        "lead-robots",
+        "chlorine-traces-from-ice",
+        "sulfur-chlorine-salt-redox",
+        "advanced-acid-processing",
+        "casting-pickled-iron",
+        "casting-pickled-copper",
+        "casting-pickled-steel",
+        "casting-pickled-" .. iron_gear_wheel,
+        "casting-pickled-" .. iron_rod,
+        "casting-pickled-" .. copper_cable,
+        "pickled-casting",
+        "explosive-" .. shotgun_shell
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
-    local muriatic_science_pack_activation = "muriatic-science-pack-activation"
+    for _, tech in pairs(data_technology) do
+        if tech.effects then
+            for i = #tech.effects, 1, -1 do
+                local effect = tech.effects[i]
+                if effect.ammo_category == "explosive-" .. shotgun_shell then
+                    table.remove(tech.effects, i)
+                end
+            end
+        end
+    end
+
+    local acidworking_science_pack_activation = "acidworking-science-pack-activation"
     local replacements =
 	{
-		[muriatic_science_pack_activation] = muriatic_science_pack
+		[acidworking_science_pack_activation] = acidworking_science_pack
 	}
 	for _, technology in pairs(data_technology or {}) do
 		if technology.effects then
@@ -68,7 +93,7 @@ if mods[muria_mods] then
 			end
 		end
 	end
-    data_recipe[muriatic_science_pack_activation] = nil
+    data_recipe[acidworking_science_pack_activation] = nil
 
     for name, tower in pairs(data_agricultural_tower) do
         if tower.accepted_seeds then
@@ -76,6 +101,14 @@ if mods[muria_mods] then
                 if tower.accepted_seeds[i] == "holmium-chloride" then
                     table.remove(tower.accepted_seeds, i)
                 end
+            end
+        end
+    end
+
+    if mods[paracelsin_mods] then
+        for i, prerequisite in ipairs(data_technology[planet_discovery_paracelsin].prerequisites) do
+            if prerequisite == "explosive-" .. shotgun_shell then
+                table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
             end
         end
     end

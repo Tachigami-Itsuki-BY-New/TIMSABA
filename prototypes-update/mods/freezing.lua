@@ -8,7 +8,14 @@ if settings.startup[setting_no_spoilage].value == false then
     })
 
     for _, organic_name in pairs(TIMSABA.void.freezing) do
-        if data_item[organic_name] or data_capsule[organic_name] or data_tool[organic_name] then
+        local spoil_ticks =
+        (
+            (data_item[organic_name] and data_item[organic_name].spoil_ticks)
+            or (data_capsule[organic_name] and data_capsule[organic_name].spoil_ticks)
+            or (data_tool[organic_name] and data_tool[organic_name].spoil_ticks)
+        )
+
+        if spoil_ticks then
             -- ITEM
             data:extend
             ({
@@ -21,7 +28,7 @@ if settings.startup[setting_no_spoilage].value == false then
                     order = organic_name .. "-freezed",
                     stack_size = 200,
                     hide_from_player_crafting = true,
-                    spoil_ticks = ((data_item[organic_name] and data_item[organic_name].spoil_ticks) or (data_capsule[organic_name] and data_capsule[organic_name].spoil_ticks) or (data_tool[organic_name] and data_tool[organic_name].spoil_ticks)) * settings.startup[setting_defrost_multiplier].value,
+                    spoil_ticks = spoil_ticks * settings.startup[setting_defrost_multiplier].value,
                     spoil_result = organic_name
                 }
             })
@@ -33,7 +40,7 @@ if settings.startup[setting_no_spoilage].value == false then
                     localised_name = {"recipe-name.freezing", {"item-name." .. organic_name}},
                     type = recipe,
                     name = organic_name .. "-freezed",
-                    category = cryogenics,
+                    categories = {cryogenics},
                     subgroup = is_freezing,
                     icons = BUILDING_R_IS(organic_name, cooling_png),
                     order = organic_name .. "-freezed",
@@ -47,12 +54,12 @@ if settings.startup[setting_no_spoilage].value == false then
                     ingredients =
                     {
                         {type = item, name = organic_name, amount = 16},
-                        {type = fluid, name = fluoroketone_cold, amount = 120}
+                        {type = fluid, name = fluoroketone_cold, amount = 60}
                     },
                     results =
                     {
                         {type = item, name = organic_name .. "-freezed", amount = 16},
-                        {type = fluid, name = fluoroketone_hot, amount = 60}
+                        {type = fluid, name = fluoroketone_hot, amount = 30}
                     },
                     main_product = organic_name .. "-freezed"
                 },
@@ -60,7 +67,7 @@ if settings.startup[setting_no_spoilage].value == false then
                     localised_name = {"recipe-name.defrosting", {"item-name." .. organic_name}},
                     type = recipe,
                     name = organic_name .. "-defrosting",
-                    category = cryogenics,
+                    categories = {cryogenics},
                     subgroup = is_defrosting,
                     icons = Defrosting_IS(ice, organic_name, ice_translucent_png, heating_png),
                     order = organic_name .. "-defrosting",
@@ -71,16 +78,8 @@ if settings.startup[setting_no_spoilage].value == false then
                     allow_decomposition = false,
                     hide_from_player_crafting = true,
                     energy_required = 8,
-                    ingredients =
-                    {
-                        {type = item, name = organic_name .. "-freezed", amount = 16},
-                        --{type = fluid, name = fluoroketone_hot, amount = 120}
-                    },
-                    results =
-                    {
-                        {type = item, name = organic_name, amount = 16},
-                        --{type = fluid, name = fluoroketone_cold, amount = 120}
-                    },
+                    ingredients = {{type = item, name = organic_name .. "-freezed", amount = 16}},
+                    results = {{type = item, name = organic_name, amount = 16}},
                     main_product = organic_name
                 }
             })

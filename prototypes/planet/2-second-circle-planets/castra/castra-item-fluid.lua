@@ -38,7 +38,7 @@ if mods[castra_mods] then
     ({
         -- POTASSIUM
         {
-            localised_description = show_formula and {chemical_formula, "KNO[font=default-tiny-bold]3[/font]SC[font=default-tiny-bold](aq)[/font]"} or nil,
+            localised_description = show_formula and {chemical_formula, "KNO[font=default-tiny-bold]3(aq)[/font]"} or nil,
             name = potassium_nitrate_solution,
             subgroup = is_potassium_fluid,
             icon = graphics_castra .. potassium_nitrate_solution .. ".png",

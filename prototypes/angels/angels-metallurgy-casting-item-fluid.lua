@@ -1,3 +1,27 @@
+-- TIN ITEM
+tin_insulated_cable = "tin-insulated-cable"
+TIMSABA.functions.create_items
+({
+    {
+        name = tin_insulated_cable,
+        subgroup = is_tin_casting,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tin/" .. tin_insulated_cable .. ".png",
+        order = f
+    }
+})
+
+-- SILVER ITEM
+silver_insulated_cable = "silver-insulated-cable"
+TIMSABA.functions.create_items
+({
+    {
+        name = silver_insulated_cable,
+        subgroup = is_silver_casting,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silver/" .. silver_insulated_cable .. ".png",
+        order = f
+    }
+})
+
 -- TITANIUM ITEM
 titanium_rod = "titanium-rod"
 TIMSABA.functions.create_items
@@ -8,6 +32,30 @@ TIMSABA.functions.create_items
         subgroup = is_titanium_casting,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-rod.png",
         order = d
+    }
+})
+
+-- GOLD ITEM
+gold_insulated_cable = "gold-insulated-cable"
+TIMSABA.functions.create_items
+({
+    {
+        name = gold_insulated_cable,
+        subgroup = is_gold_casting,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/gold/" .. gold_insulated_cable .. ".png",
+        order = f
+    }
+})
+
+-- PLATINUM ITEM
+platinum_insulated_cable = "platinum-insulated-cable"
+TIMSABA.functions.create_items
+({
+    {
+        name = platinum_insulated_cable,
+        subgroup = is_platinum_casting,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/" .. platinum_insulated_cable .. ".png",
+        order = f
     }
 })
 
@@ -52,5 +100,34 @@ TIMSABA.functions.create_items
         icon = graphics_stone .. reinforced_graphene_concrete_brick .. ".png",
         icon_size = 32,
         order = h
+    }
+})
+
+local graphics_alloys = "__TIMSABA__/graphics/icons/angels/metallurgy/alloys/"
+
+-- ALLOYS ITEM
+TIMSABA.functions.create_items
+({
+    {
+        localised_description = show_formula and {chemical_formula, "AlLi"} or nil,
+        name = aluminium_lithium_plate,
+        subgroup = is_alloys_casting_7,
+        icon = graphics_alloys .. aluminium_lithium_plate .. ".png",
+        order = b
+    }
+})
+
+-- ALLOYS FLUID
+aluminium_lithium_molten = "aluminium-lithium-molten"
+TIMSABA.functions.create_fluids
+({
+    {
+        localised_description = show_formula and {chemical_formula, "AlLi"} or nil,
+        name = aluminium_lithium_molten,
+        subgroup = is_alloys_casting_7,
+        icon = graphics_alloys .. aluminium_lithium_molten .. ".png",
+        order = a,
+        base_color = TIMSABA.functions.fluid_color("AlLi"),
+        flow_color = TIMSABA.functions.flow_color("AlLi")
     }
 })

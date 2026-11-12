@@ -13,12 +13,6 @@ TIMSABA.functions.create_items
         name = selenium,
         subgroup = is_selenium,
         icon = graphics_selenium .. selenium .. ".png",
-        pictures =
-        {
-            {filename = graphics_selenium .. selenium .. "-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = graphics_selenium .. selenium .. "-2.png", width = 64, height = 64, scale = 0.5},
-            --{filename = graphics_selenium .. selenium .. "-3.png", width = 64, height = 64, scale = 0.5}
-        },
         order = a
     }
 })

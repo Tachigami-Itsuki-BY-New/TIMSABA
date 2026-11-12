@@ -1,41 +1,35 @@
 local recipe_category = "recipe-category"
-centrifuging_4 = "centrifuging-4"
-ore_sorting_6 = "ore-sorting-6"
-powderizing_4 = "powderizing-4"
-sintering_6 = "sintering-6"
-extract_ground = "extract-ground"
-data:extend
-({
-    {type = recipe_category, name = centrifuging_4},
-    {type = recipe_category, name = ore_sorting_6},
-    {type = recipe_category, name = powderizing_4},
-    {type = recipe_category, name = sintering_6},
-    {type = recipe_category, name = extract_ground}
-})
-
-if mods[muluna_mods] and not mods[lignumis_mods] then
-    lumber_mill_recipe_category = "lumber-mill-recipe-category"
-    data:extend({{type = recipe_category, name = lumber_mill_recipe_category}})
+local function create_recipe_category(name)
+    data:extend({{type = recipe_category, name = name}})
 end
+-- PRODUCTION
+centrifuging_4 = "centrifuging-4"
+create_recipe_category(centrifuging_4)
 
---[[local data_recipe_category = data.raw["recipe-category"]
-if not data_recipe_category[hand_crafting] then
-    data:extend({{type = recipe_category, name = hand_crafting}})
+-- ANGELS RESOURCE REFINING
+ore_sorting_6 = "ore-sorting-6"
+create_recipe_category(ore_sorting_6)
+powderizing_4 = "powderizing-4"
+create_recipe_category(powderizing_4)
+crystallizing_4 = "crystallizing-4"
+create_recipe_category(crystallizing_4)
 
-    for _, character in pairs(data.raw["character"]) do
-        if character.crafting_categories then
-            local has_category = false
+-- ANGELS METTALURGY CASTING
+sintering_6 = "sintering-6"
+create_recipe_category(sintering_6)
 
-            for _, cat in ipairs(character.crafting_categories) do
-                if cat == hand_crafting then
-                    has_category = true
-                    break
-                end
-            end
+-- ANGELS WATER TREATMENT
+extract_ground = "extract-ground"
+create_recipe_category(extract_ground)
 
-            if not has_category then
-                table.insert(character.crafting_categories, hand_crafting)
-            end
-        end
-    end
-end]]
+-- SPACE AGE
+jellynut_farming = "jellynut-farming"
+create_recipe_category(jellynut_farming)
+yumako_farming = "yumako-farming"
+create_recipe_category(yumako_farming)
+
+-- MODS
+if mods[muluna_mods] then
+    advanced_wood_processing = "advanced-wood-processing"
+    create_recipe_category(advanced_wood_processing)
+end

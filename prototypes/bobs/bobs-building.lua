@@ -1,8 +1,3 @@
-function TIMSABA.numeral_tier(icon_data, tier, tint)
-    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
-    return icons
-end
-
 -- STEAM POWER
 local is_boiler = "bob-energy-boiler"
 local is_steam_engine = "bob-energy-steam-engine"
@@ -23,7 +18,7 @@ if settings.startup[setting_bobmods_power_steam].value then
         {
             type = recipe,
             name = boiler_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_boiler,
             icon = "__base__/graphics/icons/boiler.png",
             order = f,
@@ -55,7 +50,7 @@ if settings.startup[setting_bobmods_power_steam].value then
                 minable = {mining_time = 0.5, result = boiler_6},
                 max_health = 450,
                 target_temperature = 915,
-                energy_consumption = 10800 .. kW,
+                energy_consumption = 11520 .. kW,
                 energy_source =
                 {
                     emissions_per_minute = {pollution = 24},
@@ -77,7 +72,7 @@ if settings.startup[setting_bobmods_power_steam].value then
         {
             type = recipe,
             name = steam_engine_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_steam_engine,
             icon = "__base__/graphics/icons/steam-engine.png",
             order = f,
@@ -112,65 +107,12 @@ if settings.startup[setting_bobmods_power_steam].value then
                 max_health = 900,
                 maximum_temperature = 915
             }
-        }),
-        -- STEAM TURBINE
-        {
-            type = item,
-            name = steam_turbine_4,
-            subgroup = is_energy_steam_turbine,
-            icon = "__base__/graphics/icons/steam-turbine.png",
-            order = d,
-            place_result = steam_turbine_4,
-            stack_size = 32,
-            weight = 31250
-        },
-        {
-            type = recipe,
-            name = steam_turbine_4,
-            category = crafting,
-            subgroup = is_energy_steam_turbine,
-            icon = "__base__/graphics/icons/steam-turbine.png",
-            order = d,
-            enabled = false,
-            auto_recycle = true,
-            allow_productivity = false,
-            allow_quality = true,
-            allow_decomposition = true,
-            energy_required = 1,
-            ingredients =
-            {
-                {type = item, name = molybdenum_gear_wheel, amount = 8},
-                {type = item, name = rhenium_bearing, amount = 8},
-                {type = item, name = advanced_processing_unit, amount = 4},
-                {type = item, name = molybdenum_rhenium_pipe, amount = 8},
-                {type = item, name = molybdenum_rhenium_plate, amount = 32},
-                {type = item, name = steam_turbine_3, amount = 1}
-            },
-            results = {{type = item, name = steam_turbine_4, amount = 1}},
-            main_product = steam_turbine_4
-        },
-        util.merge
-        ({
-            data_generator[steam_turbine_1],
-            {
-                localised_description = {"entity-description.steam-turbine"},
-                name = steam_turbine_4,
-                subgroup = is_energy_steam_turbine,
-                icon = "__base__/graphics/icons/steam-turbine.png",
-                icon_size = 64,
-                order = d,
-                minable = {mining_time = 1, result = steam_turbine_4},
-                max_health = 1500,
-                maximum_temperature = 915
-            }
         })
     })
     data_boiler[boiler_5].next_upgrade = boiler_6
     data_boiler[boiler_6].next_upgrade = nil
     data_generator[steam_engine_5].next_upgrade = steam_engine_6
     data_generator[steam_engine_6].next_upgrade = nil
-    data_generator[steam_turbine_3].next_upgrade = steam_turbine_4
-    data_generator[steam_turbine_4].next_upgrade = nil
 end
 
 -- SOLAR PANELS
@@ -192,7 +134,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_small_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel_small,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -206,7 +148,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 8},
                 {type = item, name = nitinol_plate_bob, amount = 4},
-                {type = item, name = platinum_cable, amount = 4},
+                {type = item, name = platinum_insulated_cable, amount = 4},
                 {type = item, name = solar_panel_small_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 4},
                 {type = item, name = platinum_plate, amount = 8}
@@ -243,7 +185,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -257,7 +199,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 16},
                 {type = item, name = nitinol_plate_bob, amount = 8},
-                {type = item, name = platinum_cable, amount = 8},
+                {type = item, name = platinum_insulated_cable, amount = 8},
                 {type = item, name = solar_panel_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 8},
                 {type = item, name = platinum_plate, amount = 16}
@@ -294,7 +236,7 @@ if settings.startup[setting_bobmods_power_solar].value then
         {
             type = recipe,
             name = solar_panel_large_4,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_solar_panel_large,
             icon = "__base__/graphics/icons/solar-panel.png",
             order = d,
@@ -308,7 +250,7 @@ if settings.startup[setting_bobmods_power_solar].value then
             {
                 {type = item, name = advanced_processing_unit, amount = 32},
                 {type = item, name = nitinol_plate_bob, amount = 16},
-                {type = item, name = platinum_cable, amount = 16},
+                {type = item, name = platinum_insulated_cable, amount = 16},
                 {type = item, name = solar_panel_large_3, amount = 1},
                 {type = item, name = silicon_wafer, amount = 16},
                 {type = item, name = platinum_plate, amount = 32}
@@ -358,8 +300,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
         {
             type = recipe,
             name = accumulator_4,
-            category = crafting,
-            additional_categories = {electromagnetics},
+            categories = {crafting, electromagnetics},
             subgroup = is_accumulator,
             icon = "__base__/graphics/icons/accumulator.png",
             order = d,
@@ -372,6 +313,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
             ingredients =
             {
                 {type = item, name = battery_graphene, amount = 8},
+                {type = item, name = platinum_insulated_cable, amount = 4},
                 {type = item, name = advanced_processing_unit, amount = 2},
                 {type = item, name = nitinol_plate_bob, amount = 2},
                 {type = item, name = accumulator_3, amount = 1}
@@ -394,10 +336,10 @@ if settings.startup[setting_bobmods_power_accumulators].value then
                 energy_source =
                 {
                     type = electric,
-                    buffer_capacity = 38400 .. kJ,
+                    buffer_capacity = 61440 .. kJ,
                     usage_priority = tertiary,
-                    input_flow_limit = 2400 .. kW,
-                    output_flow_limit = 2400 .. kW
+                    input_flow_limit = 3840 .. kW,
+                    output_flow_limit = 3840 .. kW
                 }
             }
         })
@@ -423,7 +365,7 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
         {
             type = recipe,
             name = electric_mining_drill_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_mining,
             icon = "__base__/graphics/icons/electric-mining-drill.png",
             order = f,
@@ -462,7 +404,9 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 6}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         })
     })
@@ -470,6 +414,10 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_mining_drill[electric_mining_drill_6].next_upgrade = nil
     data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
     data_mining_drill[electric_mining_drill_6].collision_mask = data_mining_drill[electric_mining_drill_5].collision_mask
+    if mods[quality_mods] then
+        data_mining_drill[electric_mining_drill_6].allowed_effects = {speed, consumption, productivity, pollution, quality}
+        table.insert(data_mining_drill[electric_mining_drill_6].allowed_module_categories, quality)
+    end
 end
 
 -- PUMPJACKS
@@ -489,7 +437,7 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
         {
             type = recipe,
             name = pumpjack_5,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
             order = f,
@@ -529,7 +477,9 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 5}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         }),
         {
@@ -545,7 +495,7 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
         {
             type = recipe,
             name = pumpjack_6,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
             order = g,
@@ -585,7 +535,9 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
                     type = electric,
                     usage_priority = secondary_input,
                     emissions_per_minute = {pollution = 6}
-                }
+                },
+                allowed_effects = {speed, consumption, productivity, pollution},
+                allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
             }
         })
     })
@@ -611,7 +563,7 @@ data:extend
     {
         type = recipe,
         name = tritium_reactor,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_reactor,
         icon = "__base__/graphics/icons/nuclear-reactor.png",
         order = d,
@@ -626,6 +578,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 512},
             {type = item, name = heat_pipe_4, amount = 32},
             {type = item, name = lead_plate_bob, amount = 256},
+            {type = item, name = uranium_238_plate, amount = 256},
             {type = item, name = molybdenum_rhenium_plate, amount = 256},
             {type = item, name = carbon_concrete_brick, amount = 512},
             {type = item, name = deuterium_reactor, amount = 1}
@@ -645,12 +598,12 @@ data:extend
             order = d,
             minable = {mining_time = 0.5, result = tritium_reactor},
             max_health = 1250,
-            consumption = (43200 * 2) .. kW,
+            consumption = 122880 .. kW,
             heat_buffer =
             {
                 max_temperature = 2000,
-                specific_heat = 10800 .. kJ,
-                max_transfer = 10800000 .. kW,
+                specific_heat = 15360 .. kJ,
+                max_transfer = (15360 * 1024) .. kW,
                 minimum_glow_temperature = 250
             },
             energy_source = {fuel_categories = {nuclear_fuel_T4}},
@@ -660,6 +613,65 @@ data:extend
 })
 data_reactor[deuterium_reactor].next_upgrade = tritium_reactor
 data_reactor[tritium_reactor].next_upgrade = nil
+
+-- STEAM TURBINE
+if settings.startup[setting_bobmods_power_steam].value then
+    data:extend
+    ({
+        {
+            type = item,
+            name = steam_turbine_4,
+            subgroup = is_energy_steam_turbine,
+            icon = "__base__/graphics/icons/steam-turbine.png",
+            order = d,
+            place_result = steam_turbine_4,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            type = recipe,
+            name = steam_turbine_4,
+            categories = {crafting},
+            subgroup = is_energy_steam_turbine,
+            icon = "__base__/graphics/icons/steam-turbine.png",
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
+            {
+                {type = item, name = molybdenum_gear_wheel, amount = 8},
+                {type = item, name = rhenium_bearing, amount = 8},
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = molybdenum_rhenium_pipe, amount = 8},
+                {type = item, name = molybdenum_rhenium_plate, amount = 32},
+                {type = item, name = steam_turbine_3, amount = 1}
+            },
+            results = {{type = item, name = steam_turbine_4, amount = 1}},
+            main_product = steam_turbine_4
+        },
+        util.merge
+        ({
+            data_generator[steam_turbine_1],
+            {
+                localised_description = {"entity-description.steam-turbine"},
+                name = steam_turbine_4,
+                subgroup = is_energy_steam_turbine,
+                icon = "__base__/graphics/icons/steam-turbine.png",
+                icon_size = 64,
+                order = d,
+                minable = {mining_time = 1, result = steam_turbine_4},
+                max_health = 1500,
+                maximum_temperature = 615
+            }
+        })
+    })
+    data_generator[steam_turbine_3].next_upgrade = steam_turbine_4
+    data_generator[steam_turbine_4].next_upgrade = nil
+end
 
 local is_smelting_machine_1 = "smelting-machine"
 local is_smelting_machine_2 = "bob-smelting-machine"
@@ -677,7 +689,7 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = molybdenum_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_furnace_3, amount = 1}
         },
@@ -689,7 +701,9 @@ TIMSABA.functions.create_buildings
         pollution = 6,
         drain = 90 .. kW,
         energy_usage = 270 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     -- FURNACE (ASSEMBLY)
     {
@@ -702,7 +716,7 @@ TIMSABA.functions.create_buildings
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = molybdenum_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_mixing_furnace_3, amount = 1}
         },
@@ -714,7 +728,9 @@ TIMSABA.functions.create_buildings
         pollution = 6,
         drain = 90 .. kW,
         energy_usage = 270 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     },
     -- CENTIFUGE
     {
@@ -737,7 +753,9 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[centrifuge_3],
 
         energy_usage = 1860 .. kW,
-        max_health = 650
+        max_health = 650,
+        allowed_effects = {speed, consumption, productivity, pollution},
+        allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     }
 })
 
@@ -751,4 +769,16 @@ data_assembling[electric_mixing_furnace_4].ingredient_count = 2
 
 data_assembling[centrifuge_3].next_upgrade = centrifuge_4
 data_assembling[centrifuge_4].next_upgrade = nil
+data_assembling[centrifuge_4].fluid_boxes_off_when_no_fluid_recipe = true
 table.insert(data_assembling[centrifuge_4].crafting_categories, centrifuging_4)
+
+if mods[quality_mods] then
+    data_furnace[electric_furnace_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_furnace[electric_furnace_4].allowed_module_categories, quality)
+
+    data_assembling[electric_mixing_furnace_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_assembling[electric_mixing_furnace_4].allowed_module_categories, quality)
+
+    data_assembling[centrifuge_4].allowed_effects = {speed, consumption, productivity, pollution, quality}
+    table.insert(data_assembling[centrifuge_4].allowed_module_categories, quality)
+end

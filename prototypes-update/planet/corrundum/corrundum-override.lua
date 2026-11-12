@@ -1,34 +1,5 @@
 if mods[corrundum_mods] then
-    -- PLATINUM
-    data_resource[platinum_ore_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_resource[platinum_ore_mods].subgroup = is_corrundum_platinum
-    data_resource[platinum_ore_mods].icon = data_item[platinum_ore_angels].icon
-    data_resource[platinum_ore_mods].icon_size = data_item[platinum_ore_angels].icon_size
-    data_resource[platinum_ore_mods].order = a
-    data_resource[platinum_ore_mods].minable.mining_time = 4
-
-    data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
-    data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_recipe[platinum_plate_mods].category = sintering_6
-    data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
-    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
-    data_recipe[platinum_plate_mods].order = c
-    data_recipe[platinum_plate_mods].energy_required = 1
-    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
-    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
-    data_recipe[platinum_plate_mods].main_product = platinum_plate
-    data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
-
-    -- CHALCOPYRITE
-    data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
-    data_item[chalcopyrite_ore].order = a
-    data_item[chalcopyrite_ore].stack_size = 200
-    data_resource[chalcopyrite_ore].factoriopedia_description = ""
-    data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
-    data_resource[chalcopyrite_ore].order = a
-    data_resource[chalcopyrite_ore].minable.mining_time = 1
-
-    -- SUFUR
+    -- SULFUR
     data_resource[sulfur_ore_mods].subgroup = is_corrundum_sulfur
     data_resource[sulfur_ore_mods].icon = data_item[sulfur].icon
     data_resource[sulfur_ore_mods].order = a
@@ -36,7 +7,7 @@ if mods[corrundum_mods] then
 
     local catalytic_chemistry = "catalytic-chemistry"
     local sulfur_combustion = "sulfur-combustion"
-    data_recipe[sulfur_combustion].category = catalytic_chemistry
+    data_recipe[sulfur_combustion].categories = {catalytic_chemistry}
     data_recipe[sulfur_combustion].subgroup = is_corrundum_sulfur
     data_recipe[sulfur_combustion].icons = TWO_D_I(sulfur, carbon_dioxide_angels, sulfur_dioxide_angels, carbon_angels)
     data_recipe[sulfur_combustion].order = a_a
@@ -72,7 +43,7 @@ if mods[corrundum_mods] then
     data_recipe[hydrogen_sulfide_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
     local sulfur_reduction = "sulfur-reduction"
-    data_recipe[sulfur_reduction].category = catalytic_chemistry
+    data_recipe[sulfur_reduction].categories = {catalytic_chemistry}
     data_recipe[sulfur_reduction].subgroup = is_corrundum_sulfur
     data_recipe[sulfur_reduction].icons = THREE_D_I(hydrogen_sulfide_angels, nil, sulfur_dioxide_angels, sulfur, water_purified_angels, oxygen_angels)
     data_recipe[sulfur_reduction].order = a_c
@@ -110,7 +81,7 @@ if mods[corrundum_mods] then
     data_recipe[sulfurous_oxidation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
     local hydrogen_sulfide_combustion = "hydrogen-sulfide-combustion"
-    data_recipe[hydrogen_sulfide_combustion].category = catalytic_chemistry
+    data_recipe[hydrogen_sulfide_combustion].categories = {catalytic_chemistry}
     data_recipe[hydrogen_sulfide_combustion].subgroup = is_corrundum_sulfur
     data_recipe[hydrogen_sulfide_combustion].icons = TWO_D_I(hydrogen_sulfide_angels, oxygen_angels, sulfur_dioxide_angels, hydrogen_angels)
     data_recipe[hydrogen_sulfide_combustion].order = a_e
@@ -128,8 +99,8 @@ if mods[corrundum_mods] then
     data_recipe[hydrogen_sulfide_combustion].main_product = sulfur_dioxide_angels
     data_recipe[hydrogen_sulfide_combustion].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
 
-    data_tool[electrochemical_science_pack].subgroup = is_corrundum_sulfur
-    data_tool[electrochemical_science_pack].order = b
+    data_item[electrochemical_science_pack].subgroup = is_corrundum_sulfur
+    data_item[electrochemical_science_pack].order = b
     data_recipe[electrochemical_science_pack].subgroup = is_corrundum_sulfur
     data_recipe[electrochemical_science_pack].order = b
     data_recipe[electrochemical_science_pack].energy_required = 16
@@ -140,8 +111,45 @@ if mods[corrundum_mods] then
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
 
+    -- SPERRYLITE
+    data_item[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
+    data_item[sperrylite_ore].localised_description = {"item-description.sperrylite-ore"}
+    data_item[sperrylite_ore].subgroup = is_sperrylite
+    data_item[sperrylite_ore].order = a
+    data_item[sperrylite_ore].stack_size = 200
+    data_resource[sperrylite_ore].localised_name = {"entity-name.sperrylite-ore"}
+    data_resource[sperrylite_ore].localised_description = {"entity-description.sperrylite-ore"}
+    data_resource[sperrylite_ore].factoriopedia_description = ""
+    data_resource[sperrylite_ore].subgroup = is_sperrylite
+    data_resource[sperrylite_ore].order = a
+    data_resource[sperrylite_ore].minable.mining_time = 1
+    data_resource[sperrylite_ore].factoriopedia_simulation = nil
+
+    -- CHALCOPYRITE
+    data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_item[chalcopyrite_ore].order = a
+    data_item[chalcopyrite_ore].stack_size = 200
+    data_resource[chalcopyrite_ore].factoriopedia_description = ""
+    data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_resource[chalcopyrite_ore].order = a
+    data_resource[chalcopyrite_ore].minable.mining_time = 1
+    data_resource[chalcopyrite_ore].factoriopedia_simulation = nil
+
+    -- PLATINUM
+    data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
+    data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
+    data_recipe[platinum_plate_mods].categories = {sintering_6}
+    data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
+    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
+    data_recipe[platinum_plate_mods].order = b
+    data_recipe[platinum_plate_mods].energy_required = 4
+    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 16}}
+    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 16}}
+    data_recipe[platinum_plate_mods].main_product = platinum_plate
+    data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
     -- CALCIUM SULFATE
-    data_recipe[calcium_sulfate_mods].category = catalytic_chemistry
+    data_recipe[calcium_sulfate_mods].categories = {catalytic_chemistry}
     data_recipe[calcium_sulfate_mods].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_mods].icons = THREE_D_I(calcite, nil, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels, carbon_dioxide_angels)
     data_recipe[calcium_sulfate_mods].order = c
@@ -160,14 +168,14 @@ if mods[corrundum_mods] then
     data_recipe[calcium_sulfate_mods].main_product = calcium_sulfate_angels
 
     local calcium_sulfate_fish = "calcium-sulfate-fish"
-    data_recipe[calcium_sulfate_fish].category = organic
+    data_recipe[calcium_sulfate_fish].categories = {organic}
     data_recipe[calcium_sulfate_fish].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_fish].icons = THREE_D_I(factorian_fish, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_fish].order = c_a
     data_recipe[calcium_sulfate_fish].results[1].amount = 32
 
     local calcium_sulfate_bioflux = "calcium-sulfate-bioflux"
-    data_recipe[calcium_sulfate_bioflux].category = organic
+    data_recipe[calcium_sulfate_bioflux].categories = {organic}
     data_recipe[calcium_sulfate_bioflux].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_bioflux].icons = THREE_D_I(bioflux, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_bioflux].order = c_b
@@ -180,7 +188,7 @@ if mods[corrundum_mods] then
     data_recipe[calcium_sulfate_bioflux].results[1].amount = 64
 
     local calcium_sulfate_egg = "calcium-sulfate-egg"
-    data_recipe[calcium_sulfate_egg].category = organic
+    data_recipe[calcium_sulfate_egg].categories = {organic}
     data_recipe[calcium_sulfate_egg].subgroup = is_corrundum_calcium
     data_recipe[calcium_sulfate_egg].icons = THREE_D_I(biter_egg, carbon_angels, calcium_sulfate_angels, nutrients)
     data_recipe[calcium_sulfate_egg].order = c_c
@@ -205,18 +213,18 @@ if mods[corrundum_mods] then
     data_recipe[petroleum_alkylation].subgroup = is_corrundum_recipe
     data_recipe[petroleum_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, fuel_oil_angels, methane_angels)
     data_recipe[petroleum_alkylation].order = a_b
-    data_recipe[petroleum_alkylation].energy_required = 8 -- 4C₇H₁₆ + 5H₂ -H₂SO₄-> C₂₀H₄₂ + 8CH₄
+    data_recipe[petroleum_alkylation].energy_required = 8 -- 8C₇H₁₆(l) + H₂(g) -H₂SO₄-> C₄₈H₉₈(l) + 8CH₄(g)
     data_recipe[petroleum_alkylation].ingredients =
     {
-        {type = fluid, name = condensates_angels, amount = 120},
-        {type = fluid, name = hydrogen_angels, amount = 150},
-        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+        {type = fluid, name = condensates_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
     data_recipe[petroleum_alkylation].results =
     {
         {type = fluid, name = fuel_oil_angels, amount = 30},
         {type = fluid, name = methane_angels, amount = 240},
-        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
     }
     data_recipe[petroleum_alkylation].main_product = fuel_oil_angels
     data_recipe[petroleum_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
@@ -291,18 +299,18 @@ if mods[corrundum_mods] then
     data_recipe[light_oil_alkylation].subgroup = is_corrundum_recipe
     data_recipe[light_oil_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, naphtha_angels, methane_angels)
     data_recipe[light_oil_alkylation].order = b_c
-    data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆ + H₂ -H₂SO₄-> C₈H₁₈ + 3CH₄
+    data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆(l) + 5H₂(g) -H₂SO₄-> C₈H₁₈(l) + 6CH₄(g)
     data_recipe[light_oil_alkylation].ingredients =
     {
-        {type = fluid, name = condensates_angels, amount = 60},
-        {type = fluid, name = hydrogen_angels, amount = 30},
-        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+        {type = fluid, name = condensates_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 600},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
     data_recipe[light_oil_alkylation].results =
     {
-        {type = fluid, name = naphtha_angels, amount = 30},
-        {type = fluid, name = methane_angels, amount = 90},
-        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+        {type = fluid, name = naphtha_angels, amount = 120},
+        {type = fluid, name = methane_angels, amount = 720},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
     }
     data_recipe[light_oil_alkylation].main_product = naphtha_angels
     data_recipe[light_oil_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
@@ -429,7 +437,6 @@ if mods[corrundum_mods] then
     data_generator[red_steam_engine].effectivity = nil
     data_generator[red_steam_engine].fluid_box.filter = carbon_dioxide_angels
 
-    local catalytic_chemical_plant = "catalytic-chemical-plant"
     data_item[catalytic_chemical_plant].subgroup = is_corrundum_building
     data_item[catalytic_chemical_plant].order = d
     data_item[catalytic_chemical_plant].stack_size = 32
@@ -450,7 +457,6 @@ if mods[corrundum_mods] then
     data_assembling[catalytic_chemical_plant].energy_usage = 420 .. kW
     data_assembling[catalytic_chemical_plant].energy_source.drain = 60 .. kW
 
-    local pressure_lab = "pressure-lab"
     data_item[pressure_lab].subgroup = is_corrundum_building
     data_item[pressure_lab].order = e
     data_item[pressure_lab].stack_size = 32
@@ -517,10 +523,11 @@ if mods[corrundum_mods] then
     })
 
     -- TECHNOLOGY
-    table.insert(data_technology[planet_discovery_corrundum].prerequisites, tech_advanced_asteroid_processing)
+    data_technology[planet_discovery_corrundum].prerequisites = {tech_full_asteroid_processing}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_corrundum].prerequisites, interstellar_science_pack)
     end
+    table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air})
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation})
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation_2})
     data_technology[planet_discovery_corrundum].unit.ingredients =
@@ -534,9 +541,10 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology[catalytic_chemical_plant].prerequisites = {planet_discovery_corrundum}
+    data_technology[catalytic_chemical_plant].prerequisites = {tech_sperrylite_processing_1}
 
     data_technology[electrochemical_science_pack].prerequisites = {catalytic_chemical_plant}
+    table.insert(data_technology[electrochemical_science_pack].effects, {type = unlock_recipe, recipe = corrundum_slag_processing})
 
     tech_platinum_processing = "platinum-processing"
     data_technology[tech_platinum_processing].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-platinum.png"
@@ -567,12 +575,15 @@ if mods[corrundum_mods] then
     }
 
     local tech_sulfur_redox1 = "sulfur-redox1"
+    data_technology[tech_sulfur_redox1].icons = TIMSABA.functions.create_gas_tech_icon("SSS")
     data_technology[tech_sulfur_redox1].prerequisites = {electrochemical_science_pack}
 
     local tech_sulfur_redox2 = "sulfur-redox2"
+    data_technology[tech_sulfur_redox2].icons = TIMSABA.functions.create_gas_tech_icon("SSS")
     data_technology[tech_sulfur_redox2].prerequisites = {tech_sulfur_redox1}
 
     local tech_sulfate_processing_1 = "sulfate-processing-1"
+    data_technology[tech_sulfate_processing_1].icons = TIMSABA.functions.create_gas_tech_icon("SOO")
     data_technology[tech_sulfate_processing_1].prerequisites = {tech_sulfur_redox2}
 
     data_technology[calcium_sulfate_mods].prerequisites = {tech_sulfate_processing_1}
@@ -693,10 +704,6 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    if mods[hyarion_mods] then
-        table.insert(data_technology[tech_selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
-    end
-
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, electrochemical_science_pack)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic, change = 0.1})
@@ -706,8 +713,10 @@ if mods[corrundum_mods] then
         table.insert(data_technology[concrete .. _productivity].effects, {type = change_recipe_productivity, recipe = concrete_production_from_asphalt, change = 0.1})
     end
 
+    table.insert(data_technology[tech_aquilo_cryogenics].prerequisites, tech_sperrylite_processing_1)
+
     -- MODS
-    if mods["AsphaltRoadsPatched"] then
+    if mods[asphalt_roads_patched_mods] then
         local is_asphalt_1 = "Arci-asphalt-1"
         data_item_subgroup[is_asphalt_1].group = ig_corrundum
         data_item_subgroup[is_asphalt_1].order = z_a
@@ -777,4 +786,36 @@ if mods[corrundum_mods] then
             data_recipe[recipe].results[1].amount = 16
         end
     end
+
+    -- ADD
+    local function added_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = dry_ice, amount = 32})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    added_ingredients(speed_module_8)
+    added_ingredients(efficiency_module_8)
+    added_ingredients(productivity_module_8)
+    added_ingredients(pollution_clean_module_8)
+    added_ingredients(pollution_create_module_8)
+    added_ingredients(quality_module_8)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, electrochemical_science_pack)
+    end
+    add_prerequisites(tech_wolframite_processing_4)
+    add_prerequisites(tech_samarskite_processing_4)
+
+    add_prerequisites(tech_brannerite_processing_4)
+    add_prerequisites(tech_rheniite_processing_4)
+
+    add_prerequisites(speed_module_8)
+    add_prerequisites(efficiency_module_8)
+    add_prerequisites(productivity_module_8)
+    add_prerequisites(pollution_clean_module_8)
+    add_prerequisites(pollution_create_module_8)
+    add_prerequisites(quality_module_8)
+
+    add_prerequisites(quantum_processor)
 end

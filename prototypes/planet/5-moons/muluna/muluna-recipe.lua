@@ -5,7 +5,7 @@ if mods[muluna_mods] then
         {
             type = recipe,
             name = lunar_regolith,
-            category = "ground-digging",
+            categories = {"ground-digging"},
             subgroup = is_muluna_crushing,
             icon = data_item[lunar_regolith].icon,
             order = a,
@@ -38,7 +38,7 @@ if mods[muluna_mods] then
         -- RECIPE ANORTHITE
         {
             name = alumina_crushed,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_muluna_recipe_anorthite,
             icons = TWO_I(aluminium_oxide, alumina_crushed),
             order = a,
@@ -49,7 +49,7 @@ if mods[muluna_mods] then
         },
         {
             name = aluminium_plate_crushed,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_muluna_recipe_anorthite,
             icons = TWO_I(aluminium_plate_bob, aluminium_plate_crushed),
             order = c,
@@ -63,7 +63,7 @@ if mods[muluna_mods] then
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-1"},
             name = silicon_solar_panel_small_1,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_1, silicon_cell_mods),
             order = a,
@@ -79,12 +79,12 @@ if mods[muluna_mods] then
                 {type = item, name = copper_plate, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_1, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-2"},
             name = silicon_solar_panel_small_2,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_2, silicon_cell_mods),
             order = b,
@@ -100,12 +100,12 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-3"},
             name = silicon_solar_panel_small_3,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_3, silicon_cell_mods),
             order = c,
@@ -121,12 +121,12 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-4"},
             name = silicon_solar_panel_small_4,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPS_silicon,
             icons = BUILDING_R_IS(solar_panel_small_4, silicon_cell_mods),
             order = d,
@@ -142,13 +142,13 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         -- MEDIUM
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-2"},
             name = silicon_solar_panel_2,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_2, silicon_cell_mods),
             order = b,
@@ -164,12 +164,12 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 8}
             },
             results = {{type = item, name = solar_panel_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-3"},
             name = silicon_solar_panel_3,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_3, silicon_cell_mods),
             order = c,
@@ -185,12 +185,12 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 8}
             },
             results = {{type = item, name = solar_panel_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-4"},
             name = silicon_solar_panel_4,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPM_silicon,
             icons = BUILDING_R_IS(solar_panel_4, silicon_cell_mods),
             order = d,
@@ -206,13 +206,13 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 8}
             },
             results = {{type = item, name = solar_panel_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         -- LARGE
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-1"},
             name = silicon_solar_panel_large_1,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_1, silicon_cell_mods),
             order = a,
@@ -227,12 +227,12 @@ if mods[muluna_mods] then
                 {type = item, name = copper_plate, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_1, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-2"},
             name = silicon_solar_panel_large_2,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_2, silicon_cell_mods),
             order = b,
@@ -247,12 +247,12 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-3"},
             name = silicon_solar_panel_large_3,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_3, silicon_cell_mods),
             order = c,
@@ -267,12 +267,12 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-4"},
             name = silicon_solar_panel_large_4,
-            category = crafting,
+            categories = {crafting, electronics},
             subgroup = is_muluna_SPL_silicon,
             icons = BUILDING_R_IS(solar_panel_large_4, silicon_cell_mods),
             order = d,
@@ -287,12 +287,12 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+            surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
         },
         -- HEAT
         {
             name = heat,
-            category = vacuum_heating_tower,
+            categories = {vacuum_heating_tower},
             subgroup = is_muluna_heating,
             icons = THREE_R_I(oxygen_angels, heat, carbon_dioxide_angels),
             order = a,
@@ -313,25 +313,25 @@ if mods[muluna_mods] then
     ({
         {
             name = anorthite_crushing_2,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_7,
-            icons = TWO_I(anorthite_chunk, lime_angels),
+            icons = TWO_I(anorthite_asteroid_chunk, lime_angels),
             order = e_b,
             allow_productivity = true,
             allow_quality = true,
-            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            ingredients = {{type = item, name = anorthite_asteroid_chunk, amount = 1}},
             results = {{type = item, name = lime_angels, amount = 8}},
             main_product = lime_angels
         },
         {
             name = anorthite_crushing_3,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_7,
-            icons = TWO_I(anorthite_chunk, silicon_ore_bob),
+            icons = TWO_I(anorthite_asteroid_chunk, silicon_ore_bob),
             order = e_c,
             allow_productivity = true,
             allow_quality = true,
-            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            ingredients = {{type = item, name = anorthite_asteroid_chunk, amount = 1}},
             results = {{type = item, name = silicon_ore_bob, amount = 8}},
             main_product = silicon_ore_bob
         }

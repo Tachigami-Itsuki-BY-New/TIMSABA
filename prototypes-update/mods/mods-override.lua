@@ -1,6 +1,6 @@
 if mods[vulcanus_sulfuric_bacteria_mods] then
     is_vulcanus_sulfuric = "vulcanus-sulfuric"
-    TIMSABA.functions.create_subgroups("vulcanus", {{name = is_vulcanus_sulfuric, order = e_a}})
+    TIMSABA.functions.create_subgroups(ig_vulcanus, {{name = is_vulcanus_sulfuric, order = f_a}})
 
     data_item[sulfuric_bacteria].subgroup = is_vulcanus_sulfuric
     data_item[sulfuric_bacteria].order = a
@@ -16,6 +16,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_recipe[sulfuric_bacteria_pruning].ingredients[1].amount = 4
     data_recipe[sulfuric_bacteria_pruning].ingredients[2].amount = 120
     data_recipe[sulfuric_bacteria_pruning].results[1].amount = 4
+    data_recipe[sulfuric_bacteria_pruning].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     local sulfuric_bacteria_filtering = "sulfuric-bacteria-filtering"
     data_recipe[sulfuric_bacteria_filtering].subgroup = is_vulcanus_sulfuric
@@ -27,7 +28,8 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = calcite, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
-    data_recipe[sulfuric_bacteria_filtering].results[1].probability = 0.03125
+    data_recipe[sulfuric_bacteria_filtering].results[1].independent_probability = 0.03125
+    data_recipe[sulfuric_bacteria_filtering].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     data_recipe[sulfuric_bacteria_cultivation].subgroup = is_vulcanus_sulfuric
     data_recipe[sulfuric_bacteria_cultivation].icons = STONKS_I(stonks_png, sulfuric_bacteria)
@@ -38,6 +40,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = calcite, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
+    data_recipe[sulfuric_bacteria_cultivation].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
     local sulfuric_bacteria_melting = "sulfuric-bacteria-melting"
     data_recipe[sulfuric_bacteria_melting].subgroup = is_vulcanus_sulfuric
@@ -46,13 +49,14 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_recipe[sulfuric_bacteria_melting].ingredients[3].amount = 60
     data_recipe[sulfuric_bacteria_melting].results =
     {
-        {type = item, name = sulfuric_bacteria, amount = 1, probability = 0.5},
-        {type = item, name = wolframite_ore, amount = 1, probability = 0.25},
-        {type = item, name = coal, amount = 1, probability = 0.125},
-        {type = item, name = carbon_angels, amount = 1, probability = 0.0625},
-        {type = item, name = tungsten_carbide_plate_bob, amount = 1, probability = 0.03125},
-        {type = item, name = stone, amount = 1, probability = 0.5}
+        {type = item, name = sulfuric_bacteria, amount = 1, independent_probability = 0.5},
+        {type = item, name = wolframite_ore, amount = 1, independent_probability = 0.25},
+        {type = item, name = coal, amount = 1, independent_probability = 0.125},
+        {type = item, name = carbon_angels, amount = 1, independent_probability = 0.0625},
+        {type = item, name = tungsten_carbide_bob, amount = 1, independent_probability = 0.03125},
+        {type = item, name = stone, amount = 1, independent_probability = 0.5}
     }
+    data_recipe[sulfuric_bacteria_melting].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 end
 
 if mods[moshine_mods] or mods[muluna_mods] then
@@ -63,7 +67,7 @@ if mods[moshine_mods] or mods[muluna_mods] then
     data_recipe[silicon_cell_mods].icons = TWO_I(silicon_boule_mods, silicon_cell_mods)
     data_recipe[silicon_cell_mods].ingredients = {{type = item, name = silicon_boule_mods, amount = 4}}
 
-    data_recipe[silicon_carbide_mods].category = angels_chemical_smelting_4
+    data_recipe[silicon_carbide_mods].categories = {angels_blast_smelting_4}
     data_recipe[silicon_carbide_mods].icons = THREE_I(silicon_boule_mods, carbon_angels, silicon_carbide_bob)
     data_recipe[silicon_carbide_mods].ingredients =
     {
@@ -108,20 +112,12 @@ elseif mods[moshine_mods] then -- MOSHINE
     data_recipe[silicon_carbide_mods].order = i
 end
 
-if mods[clowns_nuclear] then
-    data_technology[atomic_rocket].effects =
-    {
-        {type = unlock_recipe, recipe = atomic_rocket},
-        {type = unlock_recipe, recipe = "angels-atomic-bomb"},
-        {type = unlock_recipe, recipe = "angels-atomic-bomb-2"}
-    }
-end
-
 if mods[telogistics_mods] then
     local logistic_teleporter = "s6x-logistic-teleporter"
 
     if data_technology[tech_electric_energy_accumulators_4] then
         table.insert(data_technology[logistic_teleporter].prerequisites, tech_electric_energy_accumulators_4)
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_molybdenum_rhenium_processing)
     end
 
     if settings.startup["s6x-telo-science"].value == "space" then
@@ -155,6 +151,8 @@ if mods[telogistics_mods] then
             table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
         end
     elseif settings.startup["s6x-telo-science"].value == "cryo" then
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+
         if settings.startup[setting_bobmods_power_accumulators].value then
             data_recipe[logistic_teleporter].ingredients =
             {
@@ -189,6 +187,8 @@ if mods[telogistics_mods] then
             table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
         end
     elseif settings.startup["s6x-telo-science"].value == "prom" then
+        table.insert(data_technology[logistic_teleporter].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+
         if settings.startup[setting_bobmods_power_accumulators].value then
             data_recipe[logistic_teleporter].ingredients =
             {

@@ -49,7 +49,7 @@ end
 local resources = {"antimonite", "germanite"}
 
 -- 1. AQUILO PLANET
-local aquilo = data.raw["planet"]["aquilo"]
+local aquilo = data_planet[planet_aquilo]
 if aquilo then
     local new_spawn_defs = {}
     for _, res in pairs(resources) do
@@ -60,9 +60,9 @@ if aquilo then
 end
 
 -- 2. ROUTES TO AQUILO
-local arrival_conns = mods["AsteroidBelt"] and {"asteroid-belt-outer-edge-aquilo"} or {"gleba-aquilo", "fulgora-aquilo"}
+local arrival_conns = mods[asteroid_belt_mods] and {"asteroid-belt-outer-edge-aquilo"} or {"gleba-aquilo", "fulgora-aquilo"}
 for _, c_name in pairs(arrival_conns) do
-    local conn = data.raw["space-connection"][c_name]
+    local conn = data_space_connection[c_name]
     if conn then
         conn.asteroid_spawn_definitions = {}
         for _, res in pairs(resources) do
@@ -73,7 +73,7 @@ for _, c_name in pairs(arrival_conns) do
 end
 
 -- 3. ROUTE TO EDGE
-local edge_conn = data.raw["space-connection"]["aquilo-solar-system-edge"]
+local edge_conn = data_space_connection["aquilo-solar-system-edge"]
 if edge_conn then
     edge_conn.asteroid_spawn_definitions = {}
     for _, res in pairs(resources) do
@@ -83,7 +83,7 @@ if edge_conn then
 end
 
 -- 4. CLEANUP FOR INTERMEDIATE ROUTES (Asteroid Belt integration)
-if mods["AsteroidBelt"] then
+if mods[asteroid_belt_mods] then
     local routes_to_clean =
     {
         "fulgora-asteroid-belt-inner-edge",
@@ -91,18 +91,19 @@ if mods["AsteroidBelt"] then
     }
 
     for _, conn_name in pairs(routes_to_clean) do
-        local connection = data.raw["space-connection"][conn_name]
+        local connection = data_space_connection[conn_name]
         if connection and connection.asteroid_spawn_definitions then
             for i = #connection.asteroid_spawn_definitions, 1, -1 do
                 local def = connection.asteroid_spawn_definitions[i]
-                if def.asteroid:find("antimonite") or def.asteroid:find("germanite") then
+                local asteroid_name = tostring(def.asteroid)
+                if asteroid_name:find("antimonite") or asteroid_name:find("germanite") then
                     table.remove(connection.asteroid_spawn_definitions, i)
                 end
             end
         end
     end
 
-    local belt_main_route = data.raw["space-connection"]["asteroid-belt-inner-edge-asteroid-belt-outer-edge"]
+    local belt_main_route = data_space_connection["asteroid-belt-inner-edge-asteroid-belt-outer-edge"]
     if belt_main_route and belt_main_route.asteroid_spawn_definitions then
         for i = #belt_main_route.asteroid_spawn_definitions, 1, -1 do
             local def = belt_main_route.asteroid_spawn_definitions[i]

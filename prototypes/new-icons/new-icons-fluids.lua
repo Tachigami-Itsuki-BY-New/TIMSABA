@@ -4,14 +4,13 @@ data_fluid[water].base_color = {r = 076 / 255, g = 177 / 255, b = 205 / 255}
 data_fluid[water].flow_color = {r = 100 / 255, g = 192 / 255, b = 218 / 255}
 data_fluid[water].default_temperature = 15
 data_fluid[water].max_temperature = 100
-data_fluid[water].heat_capacity = "200J"
 
 data_fluid[steam].icon = "__TIMSABA__/graphics/icons/base/steam.png"
 data_fluid[steam].base_color = {r = 097 / 255, g = 097 / 255, b = 097 / 255}
 data_fluid[steam].flow_color = {r = 128 / 255, g = 128 / 255, b = 128 / 255}
 data_fluid[steam].default_temperature = 15
 data_fluid[steam].max_temperature = 5000
-data_fluid[steam].heat_capacity = "200J"
+data_fluid[steam].heat_capacity = (200 / 0.9375) .. "J"
 
 data_fluid[crude_oil].icons = nil
 data_fluid[crude_oil].icon = "__TIMSABA__/graphics/icons/base/crude-oil.png"
@@ -57,17 +56,17 @@ local graphics_resource = "__TIMSABA__/graphics/icons/angels/resource/"
 
 local resource_fluids =
 {
-    [sludge_ferrous] = {base = {092, 127, 072}, flow = {100, 133, 081}},
-    [slurry_ferrous] = {base = {101, 125, 110}, flow = {109, 132, 117}},
-    [concentrate_anodized_ferrous] = {base = {113, 107, 106}, flow = {120, 114, 113}},
-    [concentrate_ferrous] = {base = {110, 127, 141}, flow = {117, 133, 147}},
-    [sludge_cupric] = {base = {160, 081, 034}, flow = {165, 090, 045}},
-    [slurry_cupric] = {base = {139, 082, 055}, flow = {145, 091, 065}},
-    [concentrate_anodized_cupric] = {base = {134, 078, 059}, flow = {140, 087, 069}},
-    [concentrate_cupric] = {base = {128, 083, 070}, flow = {134, 092, 079}},
+    [sludge_ferrium] = "FeSdSd",
+    [slurry_ferrium] = "FeFeSl",
+    [concentrate_ferrium] = "FeFeFe",
+    [concentrate_anodized_ferrium] = "FeFeSd",
+    [sludge_cuprium] = "CuSdSd",
+    [slurry_cuprium] = "CuCuSl",
+    [concentrate_cuprium] = "CuCuCu",
+    [concentrate_anodized_cuprium] = "CuCuSd",
     [water_thermal_angels] = {base = {196, 108, 000}, flow = {199, 115, 013}},
-    [slurry_slag] = {base = {085, 036, 004}, flow = {094, 047, 017}},
-    [sludge_mineral] = {base = {158, 067, 000}, flow = {163, 076, 013}},
+    [slurry_slag] = "SlSsSl",
+    [sludge_mineral] = "SdSdSd",
     [slurry_crystal] = {base = {057, 185, 000}, flow = {067, 189, 013}},
     [seedling_crystal] = {base = {110, 149, 015}, flow = {117, 154, 027}},
     [iron_chloride_III_solution_angels] = "FeCl3Wp",
@@ -423,6 +422,8 @@ if mods[muluna_mods] then
 
     data_fluid[cooled_steam_mods].icons = nil
     data_fluid[cooled_steam_mods].icon = graphics_muluna .. cooled_steam_mods .. ".png"
+
+    data_fluid[heat].max_temperature = 915
 end
 
 -- PANGLIA
@@ -489,8 +490,6 @@ if mods[maraxsis_mods] then
     data_fluid[supercritical_steam_maraxsis].icon = graphics_maraxsis .. supercritical_steam_maraxsis .. ".png"
 
     data_fluid[water_brackish_maraxsis].icon = graphics_maraxsis .. water_brackish_maraxsis .. ".png"
-
-    data_fluid[molten_salt_mods].icon = graphics_maraxsis .. molten_salt_mods .. ".png"
 end
 
 -- VESTA
@@ -632,7 +631,7 @@ if mods[lignumis_mods] then
     data_fluid[wood_pulp].icon = "__TIMSABA__/graphics/icons/lignumis/wood-pulp.png"
 end
 
--- BELLICOS AEGIS
+-- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
     if not data_fluid[helium_vesta] then
         data_fluid[helium].icon = graphics_vesta .. helium_vesta .. ".png"

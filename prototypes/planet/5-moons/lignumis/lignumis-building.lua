@@ -24,16 +24,15 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.angels-ore-sorting-facility"},
             crafting_speed = 0.5,
-            energy_usage = 450 .. kW
+            energy_usage = 480 .. kW
         },
         -- CHEMICAL PLANT
         {
             name = burner_chemical_plant,
-            subgroup = is_lignumis_building,
+            subgroup = is_buildings_burner_chemistry,
             icons = angelsmods.functions.add_number_icon_layer({{icon = "__angelspetrochemgraphics__/graphics/icons/chemical-plant.png", icon_size = 32}}, 0, angelsmods.petrochem.number_tint),
-            order = f,
+            order = a,
 
-            enabled = true,
             ingredients =
             {
                 {type = item, name = basic_circuit_board, amount = 1},
@@ -46,7 +45,7 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.chemical-plant"},
             crafting_speed = 0.5,
-            energy_usage = 225 .. kW
+            energy_usage = 240 .. kW
         },
         -- SEED EXTRACTOR
         {
@@ -67,9 +66,18 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.angels-seed-extractor"},
             crafting_speed = 0.5,
-            energy_usage = 225 .. kW
+            energy_usage = 240 .. kW
         }
     })
+    table.insert(data_recipe[burner_ore_sorting_facility].categories, lignumis_wood_processing)
     data_assembling[burner_ore_sorting_facility].next_upgrade = ore_sorting_facility_1
+    table.insert(data_recipe[burner_chemical_plant].categories, lignumis_wood_processing)
     data_assembling[burner_chemical_plant].next_upgrade = chemical_plant_1
+    table.insert(data_recipe[burner_seed_extractor].categories, lignumis_wood_processing)
+    data_assembling[burner_seed_extractor].next_upgrade = seed_extractor_1
+    if mods[muluna_mods] then
+        table.insert(data_recipe[burner_ore_sorting_facility].categories, advanced_wood_processing)
+        table.insert(data_recipe[burner_chemical_plant].categories, advanced_wood_processing)
+        table.insert(data_recipe[burner_seed_extractor].categories, advanced_wood_processing)
+    end
 end

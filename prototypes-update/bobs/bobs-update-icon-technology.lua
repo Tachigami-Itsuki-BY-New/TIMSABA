@@ -76,7 +76,7 @@ do
 	local inputs =
 	{
 		mod = bobs_mod,
-		group = "mining",
+		group = mining,
 		type = technology,
 		technology_icon_size = 256
 	}
@@ -89,7 +89,7 @@ do
 		{
 			tier = tier,
 			prog_tier = prog_tier,
-			icon_name = "mining-drill",
+			icon_name = mining_drill,
 			technology_icon_size = 128
 		}
 		return override
@@ -166,6 +166,7 @@ do
 	---@type CreateIconsFromListTable
 	local technologies =
 	{
+		[centrifuge_1] = {icon_name = centrifuge_1, tier = 1, prog_tier = 3},
 		[centrifuge_2] = {icon_name = centrifuge_1, tier = 2, prog_tier = 4},
 		[centrifuge_3] = {icon_name = centrifuge_1, tier = 3, prog_tier = 5},
 		[centrifuge_4] = {icon_name = centrifuge_1, tier = 4, prog_tier = 6}
@@ -216,4 +217,24 @@ do
 		end
 		::continue::
 	end
+end
+
+if mods[bobwarfare] then
+	---@type CreateIconsFromListInputs
+    local inputs =
+    {
+        mod = bobs_mod,
+        group = "warfare",
+        type = technology,
+        technology_icon_size = 256
+    }
+
+    ---@type CreateIconsFromListTable
+    local technologies =
+    {
+		-- ARTILLERY WAGON T4
+		[artillery_wagon_4] = {icon_name = "artillery-wagons", tier = 4, prog_tier = 6}
+	}
+
+	reskins.internal.create_icons_from_list(technologies, inputs)
 end

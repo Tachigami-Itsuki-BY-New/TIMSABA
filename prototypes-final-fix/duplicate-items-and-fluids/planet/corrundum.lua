@@ -5,11 +5,7 @@ if mods[corrundum_mods] then
     {
 		[sulfur_ore_mods] = sulfur,
 		[petroleum_gas] = methane_angels,
-        [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
-        [sulfur_dioxide_mods] = sulfur_dioxide_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels,
         [calcium_sulfate_mods] = calcium_sulfate_angels,
-		[platinum_ore_mods] = platinum_ore_angels,
 		[platinum_plate_mods] = platinum_plate,
 		[iron_sulfate_solution] = iron_sulfate_II_solution,
 		[copper_sulfate_solution] = copper_sulfate_II_solution
@@ -20,7 +16,6 @@ if mods[corrundum_mods] then
 	{
 		sulfur_ore_mods,
 		calcium_sulfate_mods,
-		platinum_ore_mods,
 		platinum_plate_mods
 	}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
@@ -70,4 +65,25 @@ if mods[corrundum_mods] then
 		table.insert(delete_prototypes, "petrol-dehydrogenation-and-combustion")
 	end
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+	for i, prerequisite in ipairs(data_technology["dry-ice"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["dry-ice"].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology[platinum_thruster].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology[platinum_thruster].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology["sulfur-poison-capsule"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["sulfur-poison-capsule"].prerequisites, i) break
+        end
+    end
+	for i, prerequisite in ipairs(data_technology["blue-rocket"].prerequisites) do
+        if prerequisite == "sulfate-processing-2" then
+            table.remove(data_technology["blue-rocket"].prerequisites, i) break
+        end
+    end
 end

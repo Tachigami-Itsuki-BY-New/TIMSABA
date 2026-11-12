@@ -6,19 +6,13 @@ if mods[shchierbin_mods] then
         [slaked_lime_mods] = calcium_hydroxide,
         [calcium_mods] = calcium,
         [natural_gas_mods] = natural_gas_angels,
-        [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
-        [sulfur_dioxide_mods] = sulfur_dioxide_angels,
         [methane_mods] = methane_angels,
         [chloromethane_mods] = chloromethane_angels,
         [ethylene_mods] = ethylene_angels,
         [sea_water_mods] = water_saline_angels,
         [sodium_hydroxide_mods] = sodium_hydroxide_solution_angels,
         [ferric_chloride_mods] = iron_chloride_III_solution_angels,
-        [chlorine_mods] = chlorine_angels,
-        [nitrogen_mods] = nitrogen_angels,
-        [hydrogen_mods] = hydrogen_angels,
-        [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels
+        [chlorine_mods] = chlorine_angels
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -74,6 +68,22 @@ if mods[shchierbin_mods] then
                     data.raw[proto_type][name] = nil
                 end
             end
+        end
+    end
+
+    for i, prerequisite in ipairs(data_technology[vanadium_steel_plate].prerequisites) do
+        if prerequisite == "ferrovanadium" then
+            table.remove(data_technology[vanadium_steel_plate].prerequisites, i) break
+        end
+    end
+    for i, prerequisite in ipairs(data_technology["chemical-furnace"].prerequisites) do
+        if prerequisite == "gas-ballon" then
+            table.remove(data_technology["chemical-furnace"].prerequisites, i) break
+        end
+    end
+    for i, prerequisite in ipairs(data_technology["frozen-bacteria"].prerequisites) do
+        if prerequisite == "ammonia-syntes" then
+            table.remove(data_technology["frozen-bacteria"].prerequisites, i) break
         end
     end
 end

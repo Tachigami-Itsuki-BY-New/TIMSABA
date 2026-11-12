@@ -7,7 +7,7 @@ data:extend
         name = tech_battery_4,
         icon = "__base__/graphics/technology/battery.png",
         icon_size = 256,
-        prerequisites = {tech_battery_3, utility_science_pack, tech_phosphorus_processing, tech_coal_processing_4},
+        prerequisites = {battery_silver_zinc, utility_science_pack, tech_phosphorus_processing, tech_coal_processing_4},
         effects =
         {
             {type = unlock_recipe, recipe = hydrogen_fluoride_liquefied},
@@ -33,7 +33,9 @@ data:extend
     }
 })
 
-data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack, tech_battery_4}
+if settings.startup[setting_bobmods_power_accumulators].value then
+    data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack, tech_battery_4}
+end
 
 table.insert(data_technology[centrifuge_4].prerequisites, tech_stone_smelting_5)
 

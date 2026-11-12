@@ -65,38 +65,51 @@ data_recipe[ice_platform].energy_required = 32
 data_recipe[ice_platform].ingredients[1].amount = 480
 data_recipe[ice_platform].ingredients[2].amount = 64
 
-data_recipe[lithium].category = angels_advanced_chemistry
-data_recipe[lithium].additional_categories = {cryogenics}
+data_recipe[lithium].localised_name = {"item-name." .. lithium_chloride_angels}
+data_recipe[lithium].categories = {angels_advanced_chemistry, cryogenics}
 data_recipe[lithium].subgroup = is_aquilo_recipe
-data_recipe[lithium].icons = BUILDING_R_I(lithium_chloride_angels, planet_aquilo)
+data_recipe[lithium].icons = FOUR_THREE_R_I(water_thermal_angels, ammonia_solution, fluorine, lithium_chloride_angels, ammonium_fluoride_solution, hydrogen_angels, oxygen_angels)
 data_recipe[lithium].order = d
-data_recipe[lithium].energy_required = 16 -- 2Ho + 16H₂O(LiCl/Hg) + 6NH₃ + 16F₂ --> 4LiCl + 2Ho(NO₃)₃(aq) + 4H₂O + 32HF - 5H₂
+data_recipe[lithium].energy_required = 8 -- 16H₂O(8LiCl)(l) + 8NH₃(aq) + 4F₂(g) --> 8LiCl(s) + 8NH₄F(aq) + 8H₂(g) + 4O₂(g)
 data_recipe[lithium].ingredients =
 {
     {type = fluid, name = water_thermal_angels, amount = 240},
-    {type = item, name = holmium_powder, amount = 2},
-    {type = fluid, name = ammonia_angels, amount = 90},
-    {type = fluid, name = fluorine, amount = 240}
+    {type = fluid, name = ammonia_solution, amount = 120},
+    {type = fluid, name = fluorine, amount = 60}
 }
 data_recipe[lithium].results =
 {
-    {type = item, name = lithium_chloride_angels, amount = 4},
-    {type = item, name = ice, amount = 4},
-    {type = fluid, name = holmium_nitrate_III_solution, amount = 15}, -- 30
-    {type = fluid, name = hydrogen_fluoride_angels, amount = 240}, -- 480
-    {type = fluid, name = hydrogen_angels, amount = 15} -- 75
+    {type = item, name = lithium_chloride_angels, amount = 8},
+    {type = fluid, name = ammonium_fluoride_solution, amount = 120},
+    {type = fluid, name = hydrogen_angels, amount = 120},
+    {type = fluid, name = oxygen_angels, amount = 60}
 }
 data_recipe[lithium].main_product = lithium_chloride_angels
 data_recipe[lithium].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
+data_recipe[lithium_plate].localised_name = {"item-name." .. lithium_bob}
 data_recipe[lithium_plate].subgroup = is_aquilo_recipe
-data_recipe[lithium_plate].icons = TWO_I(lithium_chloride_angels, lithium_bob)
+data_recipe[lithium_plate].icons = FOUR_THREE_R_I(lithium_chloride_angels, ammonia_solution, fluorine, lithium_bob, ammonium_chloride, hydrogen_fluoride_angels, oxygen_angels)
 data_recipe[lithium_plate].order = e
-data_recipe[lithium_plate].energy_required = 8
+data_recipe[lithium_plate].energy_required = 4 -- 2LiCl(s) + 2NH₃(aq) + F₂(g) --> 2Li(s) + 2NH₄Cl(s) + 2HF(g) + O₂(g)
+data_recipe[lithium_plate].ingredients =
+{
+    {type = item, name = lithium_chloride_angels, amount = 4},
+    {type = fluid, name = ammonia_solution, amount = 60},
+    {type = fluid, name = fluorine, amount = 30}
+}
+data_recipe[lithium_plate].results =
+{
+    {type = item, name = lithium_bob, amount = 4},
+    {type = item, name = ammonium_chloride, amount = 4},
+    {type = fluid, name = hydrogen_fluoride_angels, amount = 60},
+    {type = fluid, name = oxygen_angels, amount = 30}
+}
+data_recipe[lithium_plate].main_product = lithium_bob
 data_recipe[lithium_plate].surface_conditions = {{property = pressure, min = 300, max = 300}}
 
-data_tool[cryogenic_science_pack].subgroup = is_aquilo_recipe
-data_tool[cryogenic_science_pack].order = f
+data_item[cryogenic_science_pack].subgroup = is_aquilo_recipe
+data_item[cryogenic_science_pack].order = f
 data_recipe[cryogenic_science_pack].subgroup = is_aquilo_recipe
 data_recipe[cryogenic_science_pack].order = f
 data_recipe[cryogenic_science_pack].energy_required = 16
@@ -153,11 +166,13 @@ data_recipe[cryogenic_plant].ingredients =
     {type = item, name = superconductor, amount = 16},
     {type = item, name = semiconductor, amount = 16}
 }
+
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
 data_assembling[cryogenic_plant].order = a
-data_assembling[cryogenic_plant].energy_usage = 1140 .. kW
+data_assembling[cryogenic_plant].crafting_speed = 4
+data_assembling[cryogenic_plant].energy_usage = (1920 - 120) .. kW
 data_assembling[cryogenic_plant].energy_source.emissions_per_minute.pollution = 8
-data_assembling[cryogenic_plant].energy_source.drain = 60 .. kW
+data_assembling[cryogenic_plant].energy_source.drain = 120 .. kW
 
 -- POWER
 data_item[fusion_reactor].subgroup = is_aquilo_power
@@ -178,17 +193,18 @@ data_recipe[fusion_reactor].ingredients =
     {type = item, name = semiconductor, amount = 256},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 256}
 }
+
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
 data_reactor_fusion[fusion_reactor].neighbour_bonus = 1.5
 data_reactor_fusion[fusion_reactor].max_fluid_usage = 30/60
-data_reactor_fusion[fusion_reactor].power_input = 10800 .. kW
+data_reactor_fusion[fusion_reactor].power_input = 15360 .. kW
 
 local fusion_generator = "fusion-generator"
 data_item[fusion_generator].subgroup = is_aquilo_power
 data_item[fusion_generator].order = b
-data_item[fusion_generator].stack_size = 8
-data_item[fusion_generator].weight = 125000
+data_item[fusion_generator].stack_size = 16
+data_item[fusion_generator].weight = 62500
 data_recipe[fusion_generator].subgroup = is_aquilo_power
 data_recipe[fusion_generator].order = b
 data_recipe[fusion_generator].energy_required = 32
@@ -203,19 +219,21 @@ data_recipe[fusion_generator].ingredients =
     {type = item, name = semiconductor, amount = 128},
     {type = item, name = reinforced_graphene_concrete_brick, amount = 128}
 }
+
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
-data_generator_fusion[fusion_generator].max_fluid_usage = 15/60
-data_generator_fusion[fusion_generator].energy_source.output_flow_limit = 86400 .. kW
+data_generator_fusion[fusion_generator].max_fluid_usage = 7.5/60
+data_generator_fusion[fusion_generator].energy_source.output_flow_limit = (245760 / 4) .. kW
 
 local fusion_plasma = "fusion-plasma"
 data_fluid[fusion_plasma].subgroup = is_aquilo_power
 data_fluid[fusion_plasma].order = c
-data_fluid[fusion_plasma].heat_capacity = ((25 / 7500) * 1.728) .. kJ
+local heat_capacity_fusion_plasma = (245760 / (30 * 1000000))
+data_fluid[fusion_plasma].heat_capacity = heat_capacity_fusion_plasma .. kJ
 
 data_item[fusion_power_cell].subgroup = is_aquilo_power
 data_item[fusion_power_cell].order = d
-data_item[fusion_power_cell].fuel_value = (172800 * 512) .. kJ
+data_item[fusion_power_cell].fuel_value = (245760 * 512 * 0.9375) .. kJ
 data_recipe[fusion_power_cell].subgroup = is_aquilo_power
 data_recipe[fusion_power_cell].order = d
 data_recipe[fusion_power_cell].energy_required = 8
@@ -225,6 +243,7 @@ data_recipe[fusion_power_cell].ingredients =
     {type = item, name = lithium_bob, amount = 8},
     {type = item, name = tungsten_plate_bob, amount = 8},
     {type = item, name = lead_plate_bob, amount = 32},
+    {type = item, name = uranium_238_plate, amount = 32},
     {type = item, name = holmium_plate, amount = 8},
     {type = fluid, name = deuterium_angels, amount = 240},
     {type = fluid, name = tritium_gas, amount = 240}
@@ -249,6 +268,7 @@ data_recipe[railgun].ingredients =
     {type = fluid, name = fluoroketone_cold, amount = 15}
 }
 
+
 data_item[railgun_turret].subgroup = is_aquilo_war
 data_item[railgun_turret].order = b
 data_item[railgun_turret].stack_size = 16
@@ -266,14 +286,15 @@ data_recipe[railgun_turret].ingredients =
     {type = item, name = carbon_fiber, amount = 32},
     {type = fluid, name = fluoroketone_cold, amount = 120}
 }
+
 data_ammo_turret[railgun_turret].subgroup = is_aquilo_war
 data_ammo_turret[railgun_turret].order = b
 data_ammo_turret[railgun_turret].attack_parameters.min_range = 8
 data_ammo_turret[railgun_turret].attack_parameters.range = 64
 data_ammo_turret[railgun_turret].attack_parameters.cooldown = 240
-data_ammo_turret[railgun_turret].energy_source.buffer_capacity = 43200 .. kJ
-data_ammo_turret[railgun_turret].energy_source.input_flow_limit = 43200 .. kW
-data_ammo_turret[railgun_turret].energy_per_shot = 43200 .. kJ
+data_ammo_turret[railgun_turret].energy_source.buffer_capacity = 30720 .. kJ
+data_ammo_turret[railgun_turret].energy_source.input_flow_limit = 30720 .. kW
+data_ammo_turret[railgun_turret].energy_per_shot = 30720 .. kJ
 
 data_ammo[railgun_ammo].subgroup = is_aquilo_war
 data_ammo[railgun_ammo].order = c
@@ -282,7 +303,7 @@ data_ammo[railgun_ammo].weight = 62500
 data_ammo[railgun_ammo].ammo_type.action.range = 60.4
 data_recipe[railgun_ammo].subgroup = is_aquilo_war
 data_recipe[railgun_ammo].order = c
-data_recipe[railgun_ammo].energy_required = 16
+data_recipe[railgun_ammo].energy_required = 8
 data_recipe[railgun_ammo].ingredients =
 {
     {type = item, name = tungsten_plate_bob, amount = 2},
@@ -303,6 +324,8 @@ if mods[bobequipment] then
         {type = item, name = fission_reactor_eq_4, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
         {type = item, name = niobium_titanium_cable, amount = 128},
+        {type = item, name = lead_plate_bob, amount = 128},
+        {type = item, name = uranium_238_plate, amount = 128},
         {type = item, name = quantum_processor, amount = 64},
         {type = item, name = superconductor, amount = 32},
         {type = item, name = semiconductor, amount = 32},
@@ -316,6 +339,8 @@ else
         {type = item, name = fission_reactor_eq_1, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
         {type = item, name = niobium_titanium_cable, amount = 128},
+        {type = item, name = lead_plate_bob, amount = 128},
+        {type = item, name = uranium_238_plate, amount = 128},
         {type = item, name = quantum_processor, amount = 64},
         {type = item, name = superconductor, amount = 32},
         {type = item, name = semiconductor, amount = 32},
@@ -324,7 +349,7 @@ else
         {type = item, name = carbon_fiber, amount = 64}
     }
 end
-data_generator_eq[fusion_reactor_eq].power = 3000 .. kW
+data_generator_eq[fusion_reactor_eq].power = 7680 .. kW
 
 bobmods.lib.recipe.update_recycling_recipe
 ({
@@ -341,8 +366,7 @@ bobmods.lib.recipe.update_recycling_recipe
 })
 
 -- TECHNOLOGY
-table.insert(data_technology[planet_discovery_aquilo].prerequisites, tech_advanced_ore_refining_6)
-table.insert(data_technology[planet_discovery_aquilo].prerequisites, tech_water_treatment_6)
+data_technology[planet_discovery_aquilo].prerequisites = {tech_full_asteroid_processing, heating_tower, tech_advanced_ore_refining_6}
 data_technology[planet_discovery_aquilo].effects =
 {
     {type = unlock_space_location, space_location = planet_aquilo, use_icon_overlay_constant = true},
@@ -363,6 +387,7 @@ data_technology[heating_tower].effects = {{type = unlock_recipe, recipe = heatin
 
 local tech_lithium_processing = "lithium-processing"
 data_technology[tech_lithium_processing].icons = TIMSABA.functions.create_gas_tech_icon("LiLiLi")
+data_technology[tech_lithium_processing].prerequisites = {planet_discovery_aquilo}
 data_technology[tech_lithium_processing].effects =
 {
     {type = unlock_recipe, recipe = lithium},
@@ -377,14 +402,13 @@ data_technology[cryogenic_plant].effects =
     {type = unlock_recipe, recipe = aniline_liquid},
     {type = unlock_recipe, recipe = sodium_nitrite},
     {type = unlock_recipe, recipe = benzenediazonium_chloride_solution},
-    {type = unlock_recipe, recipe = hydrocyanic_acid},
     {type = unlock_recipe, recipe = lactic_acid},
-    {type = unlock_recipe, recipe = ethanol_from_chloroethane_gas},
+    {type = unlock_recipe, recipe = ethanol_liquid_3},
     {type = unlock_recipe, recipe = ethyl_lactate_liquid},
     {type = unlock_recipe, recipe = photoresist_liquid},
     {type = unlock_recipe, recipe = semiconductor},
     {type = unlock_recipe, recipe = cryogenic_plant},
-    {type = unlock_recipe, recipe = hydogen_fluoride_gas},
+    {type = unlock_recipe, recipe = hydrogen_fluoride_gas},
     {type = unlock_recipe, recipe = chloroform_liquid},
     {type = unlock_recipe, recipe = difluorochloromethane_gas},
     {type = unlock_recipe, recipe = tetrafluoroethylene_gas},
@@ -394,18 +418,13 @@ data_technology[cryogenic_plant].effects =
     {type = unlock_recipe, recipe = fluoroketone_cold},
     {type = unlock_recipe, recipe = nitrogen_liquid}
 }
-data_technology[cryogenic_plant].research_trigger =
-{
-    type = craft_item,
-    item = lithium_bob,
-    count = 256
-}
+data_technology[cryogenic_plant].research_trigger = {type = craft_item, item = lithium_bob}
+
+table.insert(data_technology[cryogenic_science_pack].effects, {type = unlock_recipe, recipe = aquilo_slag_processing})
 
 table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
 table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})
 
 if mods[bobequipment] then
     data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_4}
-else
-    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_1}
 end

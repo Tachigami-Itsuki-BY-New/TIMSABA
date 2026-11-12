@@ -69,7 +69,7 @@ if mods[tellus_mods] then
                         icon = graphics_tellus .. color .. "-" .. pipe_to_ground .. ".png",
                         icon_size = 64,
                         order = order,
-                        flags = {"placeable-neutral", "player-creation"},
+                        flags = {flag_placeable_neutral, flag_player_creation},
                         minable = {mining_time = 0.1, result = color .. "-" .. pipe_to_ground},
                         max_health = 150,
                         corpse = color .. "-" .. pipe_to_ground .. _remnants,
@@ -398,13 +398,13 @@ if mods[tellus_mods] then
                                     u_transition =
                                     {
                                         spritesheet = "__base__/graphics/terrain/concrete/concrete-u-mask.png",
-                                        count = 8,
+                                        count = 4,
                                         scale = 0.5
                                     },
                                     o_transition =
                                     {
                                         spritesheet = "__base__/graphics/terrain/concrete/concrete-o-mask.png",
-                                        count = 4,
+                                        count = 1,
                                         scale = 0.5
                                     }
                                 }
@@ -623,7 +623,7 @@ if mods[tellus_mods] then
                         type = wall,
                         name = color .. "-stone-wall",
                         icon = graphics_tellus .. color .. "-stone-wall.png",
-                        flags = {"placeable-neutral", "player-creation"},
+                        flags = {flag_placeable_neutral, flag_player_creation},
                         collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
                         damaged_trigger_effect = hit_effects.wall(),

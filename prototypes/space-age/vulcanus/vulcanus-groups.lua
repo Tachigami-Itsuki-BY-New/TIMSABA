@@ -12,7 +12,8 @@ data:extend
 
 is_vulcanus_air = "is-vulcanus-air"
 is_calcite = "is-calcite"
-is_vulcanus_wolframite = "is-vulcanus-wolframite"
+is_wolframite = "is-wolframite"
+is_samarskite = "is-samarskite"
 is_lava = "is-lava"
 is_vulcanus_molten = "is-vulcanus-molten"
 is_vulcanus_plate = "is-vulcanus-plate"
@@ -29,19 +30,20 @@ is_vulcanus_building = "is-vulcanus-building"
 TIMSABA.functions.create_subgroups(ig_vulcanus,
 {
     {name = is_vulcanus_air,            order = a},
-    {name = is_calcite,                 order = b},
-    {name = is_vulcanus_wolframite,     order = c},
-    {name = is_lava,                    order = d},
-    {name = is_vulcanus_molten,         order = d_a},
-    {name = is_vulcanus_plate,          order = d_b},
-    {name = is_vulcanus_rod,            order = d_c},
-    {name = is_vulcanus_gear_wheel,     order = d_d},
-    {name = is_vulcanus_bearing_ball,   order = d_e},
-    {name = is_vulcanus_bearing,        order = d_f},
-    {name = is_vulcanus_cable,          order = d_g},
-    {name = is_vulcanus_pipe,           order = d_h},
-    {name = is_vulcanus_pipe_to_ground, order = d_i},
-    {name = is_vulcanus_tungsten,       order = e},
-    {name = is_vulcanus_logistic,      order = f},
-    {name = is_vulcanus_building,       order = g}
+    {name = is_vulcanus_tungsten,       order = b},
+    {name = is_wolframite,              order = c},
+    {name = is_samarskite,              order = d},
+    {name = is_lava,                    order = e},
+    {name = is_vulcanus_molten,         order = e_a},
+    {name = is_vulcanus_plate,          order = e_b},
+    {name = is_vulcanus_rod,            order = e_c},
+    {name = is_vulcanus_gear_wheel,     order = e_d},
+    {name = is_vulcanus_bearing_ball,   order = e_e},
+    {name = is_vulcanus_bearing,        order = e_f},
+    {name = is_vulcanus_cable,          order = e_g},
+    {name = is_vulcanus_pipe,           order = e_h},
+    {name = is_vulcanus_pipe_to_ground, order = e_i},
+    {name = is_calcite,                 order = f},
+    {name = is_vulcanus_logistic,       order = g},
+    {name = is_vulcanus_building,       order = h}
 })

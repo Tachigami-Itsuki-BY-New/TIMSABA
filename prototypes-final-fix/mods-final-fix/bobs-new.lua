@@ -1,3 +1,4 @@
+data_item[wolframite_ore].icons = nil
 data_item[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_item[wolframite_ore].icon_size = 64
 data_item[wolframite_ore].pictures =
@@ -7,15 +8,15 @@ data_item[wolframite_ore].pictures =
     {size = 64, filename = "__space-age__/graphics/icons/tungsten-ore-2.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__space-age__/graphics/icons/tungsten-ore-3.png", scale = 0.5, mipmap_count = 4}
 }
+data_resource[wolframite_ore].icons = nil
 data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
+data_resource[wolframite_ore].factoriopedia_simulation = nil
 
+data_recipe[wolframite_ore .. _sorting].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
-
-if mods[lignumis_mods] then
-    data_recipe[wolframite_ore .. _sortiong_stone].icons = RECYCLING_I(recycling_png, wolframite_ore)
-end
+data_recipe[vulcanus_slag_processing].icons = THREE_R_I(sludge_mineral, wolframite_ore, samarskite_ore)
 
 data_item[cobalt_steel_gear_wheel].hidden = false
 data_item[cobalt_steel_gear_wheel].hidden_in_factoriopedia = false
@@ -64,14 +65,10 @@ data_recipe[casting_cobalt_steel_bearing].main_product = cobalt_steel_bearing
 
 local brass_bearing_ball = "bob-brass-bearing-ball"
 for _, recipe in pairs(data_recipe) do
-    -- Проверяем, есть ли вообще ингредиенты у рецепта (у некоторых модов их может не быть)
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
-            -- Вариант 1: Ингредиент записан в виде таблицы с ключами (например, {name = "...", amount = 1})
             if ingredient.name == brass_bearing_ball then
                 ingredient.name = cobalt_steel_bearing_ball
-            -- Вариант 2: Ингредиент записан в виде простого массива (например, {"iron-plate", 5})
-            -- В Lua первый элемент массива [1] — это всегда имя предмета
             elseif ingredient[1] == brass_bearing_ball then
                 ingredient[1] = cobalt_steel_bearing_ball
             end
@@ -86,8 +83,7 @@ if mods[panglia_mods] then
 end
 
 local brass_bearing = "bob-brass-bearing"
-for _, recipe in pairs(data.raw.recipe) do
-    -- 1. ПРОВЕРКА ИНГРЕДИЕНТОВ (Ваш текущий код)
+for _, recipe in pairs(data_recipe) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
             if ingredient.name == brass_bearing then
@@ -98,12 +94,10 @@ for _, recipe in pairs(data.raw.recipe) do
         end
     end
 
-    -- 2. ПРОВЕРКА ОДИНОЧНОГО РЕЗУЛЬТАТА (Формат: result = "имя")
     if recipe.result == brass_bearing then
         recipe.result = cobalt_steel_bearing
     end
 
-    -- 3. ПРОВЕРКА ТАБЛИЦЫ РЕЗУЛЬТАТОВ (Формат: results = {{type="item", name="...", amount=1}})
     if recipe.results then
         for _, result in pairs(recipe.results) do
             if result.name == brass_bearing then
@@ -114,13 +108,11 @@ for _, recipe in pairs(data.raw.recipe) do
         end
     end
 
-    -- 4. ПРОВЕРКА ГЛАВНОГО ПРОДУКТА (На всякий случай, если он задан)
     if recipe.main_product == brass_bearing then
         recipe.main_product = cobalt_steel_bearing
     end
 end
 
--- Удаление предметов и ваших рецептов (Ваш текущий код)
 data_item[brass_bearing] = nil
 data_recipe[brass_bearing] = nil
 data_recipe[brass_bearing .. _recycling] = nil
@@ -136,14 +128,14 @@ data_technology[tech_lithium_processing].hidden = false
 data_technology[tech_lithium_processing].hidden_in_factoriopedia = false
 
 -- BATTERY
-data_technology[tech_battery_3].effects =
+data_technology[battery_silver_zinc].effects =
 {
     {type = unlock_recipe, recipe = silver_oxide_I_bob},
     {type = unlock_recipe, recipe = battery_silver_zinc}
 }
 
 -- HEAT SHIELD
-data_technology[tech_heat_shield].prerequisites = {tech_ceramics, tech_powder_metallurgy_4, tech_tungsten_processing}
+data_technology[tech_heat_shield].prerequisites = {tech_ceramic_processing, tech_powder_metallurgy_4, tech_tungsten_processing}
 table.insert(data_technology[tech_heat_shield].unit.ingredients, {production_science_pack, 1})
 
 -- VULCANUS
@@ -153,8 +145,6 @@ data_recipe[tungsten_plate].hidden_in_factoriopedia = false
 data_technology["tungsten-steel"].effects = {{type = unlock_recipe, recipe = tungsten_plate}}
 
 -- AQUILO
-data_recipe[lithium_plate].category = smelting
-
 data_technology[tech_logistics_4].effects =
 {
     {type = unlock_recipe, recipe = T4_transport_belt},
@@ -351,121 +341,33 @@ data_splitter[T3_splitter].next_upgrade = T4_splitter
 data_splitter[T4_splitter].next_upgrade = T5_splitter
 data_splitter[T5_splitter].next_upgrade = vulcanus_splitter
 
--- FIXED ALL TECHNOLOGIES
--- === ТОЧЕЧНЫЙ ФИКС ДЛЯ bob-battery-3 ===
-local target_tech = data_technology[tech_battery_3]
-if target_tech then
-    -- 1. Удаляем cryogenic-science-pack из списка предварительных условий (prerequisites)
-    if target_tech.prerequisites then
-        for i = #target_tech.prerequisites, 1, -1 do
-            if target_tech.prerequisites[i] == cryogenic_science_pack then
-                table.remove(target_tech.prerequisites, i)
-                log("!!! TIMSABA MANUAL FIX: Удалена зависимость [cryogenic-science-pack] из [bob-battery-3]")
-            end
-        end
-    end
-
-    -- 2. Удаляем научную колбу cryogenic-science-pack из стоимости исследования (ingredients)
-    if target_tech.unit and target_tech.unit.ingredients then
-        for i = #target_tech.unit.ingredients, 1, -1 do
-            local ingredient = target_tech.unit.ingredients[i]
-            -- Ингредиент может быть записан как {"имя", количество} или {name="имя", amount=количество}
-            if ingredient[1] == cryogenic_science_pack or ingredient.name == cryogenic_science_pack then
-                table.remove(target_tech.unit.ingredients, i)
-                log("!!! TIMSABA MANUAL FIX: Удален научный пакет [cryogenic-science-pack] из стоимости [bob-battery-3]")
-            end
-        end
-    end
-end
-
--- Aвтоматический поиск петель
-local function break_cyclic_prerequisites()
-    local memo = {}
-
-    -- Рекурсивная функция для поиска петель в графе
-    local function check_cycle(tech_name, current_path)
-        if memo[tech_name] ~= nil then return memo[tech_name] end
-
-        -- Если технология уже есть в текущем пути — мы нашли петлю!
-        if current_path[tech_name] then
-            return true, tech_name
-        end
-
-        local tech = data.raw.technology[tech_name]
-        if not tech or not tech.prerequisites then
-            memo[tech_name] = false
-            return false
-        end
-
-        current_path[tech_name] = true
-
-        -- Перебираем все зависимости
-        for i = #tech.prerequisites, 1, -1 do
-            local prereq = tech.prerequisites[i]
-            local has_cycle, cyclic_name = check_cycle(prereq, current_path)
-
-            if has_cycle then
-                -- Логгируем, чтобы вы видели, кто кого закольцевал
-                log("!!! TIMSABA FIX: Обнаружена петля! Удаляем зависимость [" .. prereq .. "] из технологии [" .. tech_name .. "]")
-
-                -- Аккуратно удаляем именно то условие, которое создало петлю
-                table.remove(tech.prerequisites, i)
-
-                -- Сбрасываем кэш проверки, так как граф изменился
-                memo = {}
-                current_path[tech_name] = nil
-                return true, cyclic_name
-            end
-        end
-
-        current_path[tech_name] = nil
-        memo[tech_name] = false
-        return false
-    end
-
-    -- Запускаем проверку для абсолютно всех технологий в игре
-    local loop_found = true
-    while loop_found do
-        loop_found = false
-        for tech_name, _ in pairs(data.raw.technology) do
-            local has_cycle = check_cycle(tech_name, {})
-            if has_cycle then
-                loop_found = true
-                break -- Перезапускаем глобальный цикл, так как граф изменился
-            end
-        end
-    end
-end
-
--- Запускаем глобальную инженерную зачистку дерева исследований
-break_cyclic_prerequisites()
-
 -- FIXED PREREQUISITES
 local function tech_prerequisites(name, tech)
-    -- Если не передано имя или ID требования, вообще ничего не делаем
     if not name or not tech then return end
 
-    -- Если такой технологии нет в базе игры, выходим
     if not data_technology[name] then return end
 
-    -- Создаем таблицу требований, если её не было
     if not data_technology[name].prerequisites then
         data_technology[name].prerequisites = {}
+    end
+
+    for _, existing_tech in ipairs(data_technology[name].prerequisites) do
+        if existing_tech == tech then return end
     end
 
     table.insert(data_technology[name].prerequisites, tech)
 end
 -- COPPER-TUNGSTEN PROCESSING
-tech_prerequisites(boiler_5, tech_tungsten_alloy_processing)
-tech_prerequisites(hydrazine_generator, tech_tungsten_alloy_processing)
-tech_prerequisites(heat_exchanger_4, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_advanced_material_processing_4, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_multi_purpose_furnace_2, tech_tungsten_alloy_processing)
-tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_plasma_turret_3, tech_tungsten_alloy_processing)
-tech_prerequisites(tech_fluid_handling_4, tech_tungsten_alloy_processing)
+tech_prerequisites(boiler_5, tech_copper_tungsten_processing)
+tech_prerequisites(hydrazine_generator, tech_copper_tungsten_processing)
+tech_prerequisites(heat_exchanger_4, tech_copper_tungsten_processing)
+tech_prerequisites(tech_advanced_material_processing_4, tech_copper_tungsten_processing)
+tech_prerequisites(tech_multi_purpose_furnace_2, tech_copper_tungsten_processing)
+tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_copper_tungsten_processing)
+tech_prerequisites(tech_plasma_turret_3, tech_copper_tungsten_processing)
+tech_prerequisites(tech_fluid_handling_4, tech_copper_tungsten_processing)
 -- LITHIUM PROCESSING
-tech_prerequisites(tech_battery_2, tech_lithium_processing)
+tech_prerequisites(battery_lithium_ion, tech_lithium_processing)
 -- COBALT-STEEL PROCESSING
 tech_prerequisites(tech_cobalt_processing, tech_cobalt_steel_smelting_1)
 tech_prerequisites(tech_logistics_3, tech_cobalt_processing)
@@ -476,3 +378,13 @@ tech_prerequisites(tech_sniper_turret_2, tech_cobalt_processing)
 -- SPACE LOGISTICS
 --tech_prerequisites(vulcanus_transport_belt, tech_logistics_5)
 tech_prerequisites(stack_inserter, vulcanus_transport_belt)
+
+data_technology[battery_eq_3].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1}
+}
+
+data_technology[utility_science_pack].prerequisites = {tech_stone_smelting_2, low_density_structure, processing_unit}

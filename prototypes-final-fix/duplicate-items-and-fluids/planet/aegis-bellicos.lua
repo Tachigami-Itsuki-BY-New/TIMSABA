@@ -11,8 +11,8 @@ if mods[aegis_bellicos_mods] then
     local delete_prototypes =
 	{
         "beryllium-oxyde",
-        "beryllium_gear",
-        "copper_beryllium_plate",
+        "beryllium-gear",
+        "copper-beryllium-plate",
         "beryllium-processing",
         "long-lightweight-inserter",
         "lightweight-inserter",
@@ -30,8 +30,8 @@ if mods[aegis_bellicos_mods] then
         "advanced-metallic_dense-asteroid-crushing",
         "H-bomb",
         "the-solution",
-        "tritium_fusion_cell",
-        "depleted_tritium_fusion_cell",
+        "tritium-fusion-cell",
+        "depleted-tritium-fusion-cell",
         "depleted-tritium-fusion-cell-reprocessing",
         "tritium-fusion-fuel",
         "low-grade-fusion-reactor",

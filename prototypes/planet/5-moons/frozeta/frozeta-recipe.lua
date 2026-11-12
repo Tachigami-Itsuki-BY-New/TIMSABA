@@ -7,7 +7,7 @@ if mods[secretas_frozeta_mods] then
         {
             localised_name = {"fluid-name." .. ammonia_angels},
             name = ammonia_from_frozeta_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_air_filtering},
             subgroup = is_frozeta_air,
             icons = BUILDING_R_I(ammonia_angels, planet_frozeta),
             order = a,
@@ -21,19 +21,19 @@ if mods[secretas_frozeta_mods] then
         {
             localised_name = {"item-name." .. gold_powder},
             name = gold_powder_frozeta,
-            category = powderizing_4,
+            categories = {powderizing_4},
             subgroup = is_frozeta_recipe,
             icons = TWO_I(gold_ore_bob, gold_powder),
             order = b,
-            ingredients = {{type = item, name = gold_ore_bob, amount = 1}},
-            results = {{type = item, name = gold_powder, amount = 1}},
+            ingredients = {{type = item, name = gold_ore_bob, amount = 8}},
+            results = {{type = item, name = gold_powder, amount = 8}},
             main_product = gold_powder,
             surface_conditions = {{property = pressure, min = 200, max = 280}}
         },
         -- EGG
         {
             name = golden_biter_egg,
-            category = crafting,
+            categories = {crafting},
             subgroup = is_frozeta_recipe,
             icons = THREE_D_I(biter_egg, gold_plate_bob, jelly, golden_biter_egg),
             order = e,
@@ -45,6 +45,29 @@ if mods[secretas_frozeta_mods] then
             },
             results = {{type = item, name = golden_biter_egg, amount = 1}},
             main_product = golden_biter_egg,
+            surface_conditions = {{property = pressure, min = 200, max = 280}}
+        }
+    })
+
+    -- SLAG PROCESSING
+    frozeta_slag_processing = "frozeta-slag-processing"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. gallite_ore}, {"item-name." .. sylvanite_ore}},
+            name = frozeta_slag_processing,
+            categories = {crystallizing_4},
+            subgroup = is_slag_processing_2,
+            icons = THREE_R_I(sludge_mineral, gallite_ore, sylvanite_ore),
+            order = d .. "-" .. data_planet[planet_frozeta].order,
+            allow_productivity = true,
+            energy_required = 8,
+            ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+            results =
+            {
+                {type = item, name = gallite_ore, amount = 1, independent_probability = 0.5},
+                {type = item, name = sylvanite_ore, amount = 1, independent_probability = 0.5}
+            },
             surface_conditions = {{property = pressure, min = 200, max = 280}}
         }
     })

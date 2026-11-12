@@ -1,5 +1,5 @@
 if mods[hyarion_mods] then
-    tech_selenium_processing = "selenium-processing"
+    --[[tech_selenium_processing = "selenium-processing"
     data:extend
     ({
         {
@@ -7,7 +7,7 @@ if mods[hyarion_mods] then
             name = tech_selenium_processing,
             icons = TIMSABA.functions.create_gas_tech_icon("SeSeSe"),
             prerequisites = {tech_molybdenite_processing_4},
-            effects = {{type = unlock_recipe, recipe = selenium_powder}},
+            effects = {{type = unlock_recipe, recipe = selenium}},
             unit =
             {
                 count = 200,
@@ -27,5 +27,5 @@ if mods[hyarion_mods] then
                 time = 30
             }
         }
-    })
+    })]]
 end

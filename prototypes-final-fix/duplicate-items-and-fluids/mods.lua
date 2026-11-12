@@ -29,16 +29,33 @@ if mods[moshine_mods] or mods[muluna_mods] then
     TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
+local replace_prototypes =
+{
+    [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
+    [sulfur_dioxide_mods] = sulfur_dioxide_angels,
+    [hydrogen_mods] = hydrogen_angels,
+    [carbon_dioxide_mods] = carbon_dioxide_angels,
+    [oxygen_mods] = oxygen_angels,
+    [nitrogen_mods] = nitrogen_angels
+}
+TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
+
 local delete_proto =
 {
     hydrogen_sulfide_mods,
     sulfur_dioxide_mods,
     hydrogen_mods,
-    carbon_dioxide_mods,
+    --carbon_dioxide_mods,
     oxygen_mods,
     nitrogen_mods
 }
 TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+
+local delete_prototypes =
+{
+    carbon_dioxide_mods
+}
+TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 if mods[muluna_mods] then
     if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then

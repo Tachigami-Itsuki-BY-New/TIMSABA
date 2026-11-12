@@ -8,7 +8,7 @@ if mods[vesta_mods] then
     end
 
     data_recipe[deuterium_mods].localised_name = {"fluid-name." .. deuterium_angels}
-    data_recipe[deuterium_mods].category = angels_petrochem_air_filtering
+    data_recipe[deuterium_mods].categories = {angels_air_filtering}
     data_recipe[deuterium_mods].subgroup = is_vesta_air
     data_recipe[deuterium_mods].icons = BUILDING_R_I(deuterium_angels, planet_vesta)
     data_recipe[deuterium_mods].order = g
@@ -19,7 +19,7 @@ if mods[vesta_mods] then
     data_recipe[deuterium_mods].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     data_recipe[tritium_mods].localised_name = {"fluid-name." .. tritium_gas}
-    data_recipe[tritium_mods].category = angels_petrochem_air_filtering
+    data_recipe[tritium_mods].categories = {angels_air_filtering}
     data_recipe[tritium_mods].subgroup = is_vesta_air
     data_recipe[tritium_mods].icons = BUILDING_R_I(tritium_gas, planet_vesta)
     data_recipe[tritium_mods].order = h
@@ -47,7 +47,7 @@ if mods[vesta_mods] then
 
     local stone_mineraliztion = "ske-carbon-mineralization"
     if data_recipe[stone_mineraliztion] then
-        data_recipe[stone_mineraliztion].category = angels_bio_processing_4
+        data_recipe[stone_mineraliztion].categories = {angels_bio_processing_4}
         data_recipe[stone_mineraliztion].subgroup = is_vesta_recipe
         data_recipe[stone_mineraliztion].icons = STONKS_I(stonks_png, stone)
         data_recipe[stone_mineraliztion].order = a_a
@@ -61,11 +61,9 @@ if mods[vesta_mods] then
         data_recipe[stone_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
     end
 
-    if settings.startup["ske_vesta_legacy_recipes"].value then
-        coal_mineraliztion = "ske-coal-mineralization"
-    end
+    local coal_mineraliztion = "ske-coal-mineralization"
     if data_recipe[coal_mineraliztion] then
-        data_recipe[coal_mineraliztion].category = angels_bio_processing_4
+        data_recipe[coal_mineraliztion].categories = {angels_bio_processing_4}
         data_recipe[coal_mineraliztion].subgroup = is_vesta_recipe
         data_recipe[coal_mineraliztion].icons = STONKS_I(stonks_png, coal)
         data_recipe[coal_mineraliztion].order = a_b
@@ -81,7 +79,7 @@ if mods[vesta_mods] then
 
     local carbon_seperation = "ske-carbon-seperation"
     if data_recipe[carbon_seperation] then
-        data_recipe[carbon_seperation].category = cryogenics
+        data_recipe[carbon_seperation].categories = {cryogenics}
         data_recipe[carbon_seperation].subgroup = is_vesta_recipe
         data_recipe[carbon_seperation].icons = THREE_R_I(carbon_dioxide_angels, carbon_monoxide_angels, oxygen_angels)
         data_recipe[carbon_seperation].order = a_c
@@ -97,7 +95,7 @@ if mods[vesta_mods] then
     end
 
     local co2_filter_carbon = "ske_co2_filter_carbon"
-    data_recipe[co2_filter_carbon].category = cryogenics
+    data_recipe[co2_filter_carbon].categories = {cryogenics}
     data_recipe[co2_filter_carbon].subgroup = is_vesta_recipe
     data_recipe[co2_filter_carbon].icons = THREE_R_I(carbon_dioxide_angels, carbon_angels, oxygen_angels)
     data_recipe[co2_filter_carbon].order = a_d
@@ -164,6 +162,7 @@ if mods[vesta_mods] then
         data_recipe[algea_iron_electrolysis].subgroup = is_vesta_recipe
         data_recipe[algea_iron_electrolysis].icons = FOUR_R_I(algea_clump_iron, ore_saphirite, nil, ore_jivolite)
         data_recipe[algea_iron_electrolysis].order = c_a
+        data_recipe[algea_iron_electrolysis].allow_quality = false
         data_recipe[algea_iron_electrolysis].ingredients =
         {
             {type = item, name = algea_clump_iron, amount = 1},
@@ -191,6 +190,7 @@ if mods[vesta_mods] then
         data_recipe[algea_copper_electrolysis].subgroup = is_vesta_recipe
         data_recipe[algea_copper_electrolysis].icons = FOUR_R_I(algea_clump_copper, ore_stiratite, nil, ore_crotinnium)
         data_recipe[algea_copper_electrolysis].order = d_a
+        data_recipe[algea_copper_electrolysis].allow_quality = false
         data_recipe[algea_copper_electrolysis].ingredients =
         {
             {type = item, name = algea_clump_copper, amount = 1},
@@ -216,10 +216,10 @@ if mods[vesta_mods] then
     data_recipe[algea_clump_stonite].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local algea_stone_electrolysis = "ske-algea-stone-electrolysis"
-    data_recipe[algea_stone_electrolysis].category = vesta_electrolyser
+    data_recipe[algea_stone_electrolysis].categories = {vesta_electrolysis}
     data_recipe[algea_stone_electrolysis].subgroup = is_vesta_recipe
     data_recipe[algea_stone_electrolysis].icons = FOUR_R_I(algea_clump_stonite, stone, nil, stone)
-    data_recipe[algea_stone_electrolysis].order = g_a
+    data_recipe[algea_stone_electrolysis].order = e_a
     data_recipe[algea_stone_electrolysis].ingredients = {{type = item, name = algea_clump_stonite, amount = 1}}
     if data_fluid[helium_vesta] then
         table.insert(data_recipe[algea_stone_electrolysis].ingredients, {type = fluid, name = helium_vesta, amount = 15})
@@ -232,7 +232,7 @@ if mods[vesta_mods] then
     data_recipe[algea_stone_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     if data_recipe[lithium_brine] then
-        data_recipe[lithium_brine].category = angels_petrochem_air_filtering
+        data_recipe[lithium_brine].categories = {angels_air_filtering}
         data_recipe[lithium_brine].subgroup = is_vesta_recipe
         data_recipe[lithium_brine].icons = TWO_I(water, water_thermal_angels)
         data_recipe[lithium_brine].order = f
@@ -245,6 +245,7 @@ if mods[vesta_mods] then
     data_recipe[rocket_fuel_from_vesta].subgroup = is_vesta_recipe
     data_recipe[rocket_fuel_from_vesta].icons = BUILDING_R_I(rocket_fuel, planet_vesta)
     data_recipe[rocket_fuel_from_vesta].order = f_a
+    data_recipe[rocket_fuel_from_vesta].allow_quality = true
     data_recipe[rocket_fuel_from_vesta].energy_required = 2
     data_recipe[rocket_fuel_from_vesta].ingredients[1].amount = 30
     data_recipe[rocket_fuel_from_vesta].ingredients[2].amount = 30
@@ -268,7 +269,7 @@ if mods[vesta_mods] then
     data_fluid[supermagnetic_vesta].subgroup = is_vesta_recipe
     data_fluid[supermagnetic_vesta].order = g
     TIMSABA.barreling.add_dangerous_fluid(supermagnetic_vesta)
-    data_recipe[supermagnetic_vesta].category = vesta_magnetizing
+    data_recipe[supermagnetic_vesta].categories = {vesta_magnetics}
     data_recipe[supermagnetic_vesta].subgroup = is_vesta_recipe
     data_recipe[supermagnetic_vesta].icons = TWO_I(electrolyte, supermagnetic_vesta)
     data_recipe[supermagnetic_vesta].order = g
@@ -276,41 +277,44 @@ if mods[vesta_mods] then
     data_recipe[supermagnetic_vesta].results[1].amount = 15
     data_recipe[supermagnetic_vesta].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
-    data_tool[gas_manipulation_science_pack].subgroup = is_vesta_recipe
-    data_tool[gas_manipulation_science_pack].order = h
-    data_recipe[gas_manipulation_science_pack].subgroup = is_vesta_recipe
-    data_recipe[gas_manipulation_science_pack].order = h
-    data_recipe[gas_manipulation_science_pack].ingredients =
-    {
-        {type = item, name = carbon_angels, amount = 4},
-        {type = item, name = algea_clump_stonite, amount = 4},
-        {type = item, name = iridium_plate_mods, amount = 4},
-        {type = fluid, name = supermagnetic_vesta, amount = 60}
-    }
-    data_recipe[gas_manipulation_science_pack].results =
-    {
-        {type = item, name = gas_manipulation_science_pack, amount = 1},
-        {type = fluid, name = supermagnetic_vesta, amount = 30}
-    }
-    data_recipe[gas_manipulation_science_pack].main_product = gas_manipulation_science_pack
-    data_recipe[gas_manipulation_science_pack].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if data_tool[gas_manipulation_science_pack] then
+        data_tool[gas_manipulation_science_pack].subgroup = is_vesta_recipe
+        data_tool[gas_manipulation_science_pack].order = h
+        data_recipe[gas_manipulation_science_pack].subgroup = is_vesta_recipe
+        data_recipe[gas_manipulation_science_pack].order = h
+        data_recipe[gas_manipulation_science_pack].ingredients =
+        {
+            {type = item, name = carbon_angels, amount = 4},
+            {type = item, name = algea_clump_stonite, amount = 4},
+            {type = item, name = iridium_plate_mods, amount = 4},
+            {type = fluid, name = supermagnetic_vesta, amount = 60}
+        }
+        data_recipe[gas_manipulation_science_pack].results =
+        {
+            {type = item, name = gas_manipulation_science_pack, amount = 1},
+            {type = fluid, name = supermagnetic_vesta, amount = 30}
+        }
+        data_recipe[gas_manipulation_science_pack].main_product = gas_manipulation_science_pack
+        data_recipe[gas_manipulation_science_pack].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
     data_item[algea_nutrient_clump].subgroup = is_vesta_recipe
     data_item[algea_nutrient_clump].order = i
     data_item[algea_nutrient_clump].stack_size = 200
+    data_item[algea_nutrient_clump].fuel_value = 1920 .. kJ
 
     data_item[algea_petrite_clump].subgroup = is_vesta_recipe
     data_item[algea_petrite_clump].order = j
     data_item[algea_petrite_clump].stack_size = 200
-    data_item[algea_petrite_clump].fuel_category = base_fuel
-    data_item[algea_petrite_clump].fuel_value = 28800 .. kJ
+    data_item[algea_petrite_clump].fuel_categories = {base_fuel}
+    data_item[algea_petrite_clump].fuel_value = 30720 .. kJ
 
     -- IRIDIUM
     data_item[iridium_plate_mods].localised_description = show_formula and {chemical_formula, "Ir"} or nil
     data_item[iridium_plate_mods].subgroup = is_iridium_casting
     data_item[iridium_plate_mods].order = a
     data_item[iridium_plate_mods].stack_size = 200
-    data_recipe[iridium_plate_mods].category = sintering_6
+    data_recipe[iridium_plate_mods].categories = {sintering_6}
     data_recipe[iridium_plate_mods].subgroup = is_iridium_casting
     data_recipe[iridium_plate_mods].icons = TWO_I(iridium_powder, iridium_plate_mods)
     data_recipe[iridium_plate_mods].order = a
@@ -319,14 +323,58 @@ if mods[vesta_mods] then
     data_recipe[iridium_plate_mods].results[1].amount = 16
 
     -- LOGISTICS
-    data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-    data_item[magnetic_pipe_vesta].order = a
-    data_item[magnetic_pipe_vesta].stack_size = 200
+    local magnetic_pipe = "magnetic-pipe"
+    data_item[magnetic_pipe].subgroup = is_vesta_logistic
+    data_item[magnetic_pipe].order = a
+    data_item[magnetic_pipe].stack_size = 200
+    data_recipe[magnetic_pipe].subgroup = is_vesta_logistic
+    data_recipe[magnetic_pipe].order = a
+    data_recipe[magnetic_pipe].energy_required = 1
+    data_recipe[magnetic_pipe].ingredients =
+    {
+        {type = item, name = niobium_titanium_plate, amount = 1},
+        {type = item, name = niobium_titanium_cable, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
+        {type = item, name = iridium_plate_mods, amount = 1},
+        {type = fluid, name = supermagnetic_vesta, amount = 30}
+    }
+    data_recipe[magnetic_pipe].results =
+    {
+        {type = item, name = magnetic_pipe, amount = 1},
+        {type = fluid, name = electrolyte, amount = 15},
+    }
+    data_recipe[magnetic_pipe].main_product = magnetic_pipe
     if mods[moshine_mods] then
-        data_recipe[magnetic_pipe_vesta].ingredients[3].name = neodymium_magnet
+        table.insert(data_recipe[magnetic_pipe].ingredients, {type = item, name = neodymium_magnet, amount = 4})
     end
-    data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
-    data_pipe[magnetic_pipe_vesta].order = a
+    data_pipe[magnetic_pipe].subgroup = is_vesta_logistic
+    data_pipe[magnetic_pipe].order = a
+
+    local simulations = require("prototypes.factoriopedia-simulations")
+
+    local magnetic_pipe_to_ground = "magnetic-pipe-to-ground"
+    data_item[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_item[magnetic_pipe_to_ground].order = b
+    data_item[magnetic_pipe_to_ground].stack_size = 64
+    data_item[magnetic_pipe_to_ground].weight = 15625
+    data_recipe[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_recipe[magnetic_pipe_to_ground].order = b
+    data_recipe[magnetic_pipe_to_ground].ingredients =
+    {
+        {type = item, name = magnetic_pipe, amount = 32},
+        {type = item, name = iridium_plate_mods, amount = 4},
+        {type = fluid, name = supermagnetic_vesta, amount = 120}
+    }
+    data_recipe[magnetic_pipe_to_ground].results =
+    {
+        {type = item, name = magnetic_pipe_to_ground, amount = 2},
+        {type = fluid, name = electrolyte, amount = 60},
+    }
+    data_recipe[magnetic_pipe_to_ground].main_product = magnetic_pipe_to_ground
+    data_pipe_to_ground[magnetic_pipe_to_ground].subgroup = is_vesta_logistic
+    data_pipe_to_ground[magnetic_pipe_to_ground].order = b
+    data_pipe_to_ground[magnetic_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 32
+    data_pipe_to_ground[magnetic_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_magnetic_pipe_to_ground
 
     -- BUILDING
     data_item[electrolyzer_vesta].subgroup = is_vesta_building
@@ -343,15 +391,15 @@ if mods[vesta_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
         {type = item, name = iridium_plate_mods, amount = 4}
     }
+
     data_assembling[electrolyzer_vesta].subgroup = is_vesta_building
     data_assembling[electrolyzer_vesta].order = a
     data_assembling[electrolyzer_vesta].crafting_speed = 1
     data_assembling[electrolyzer_vesta].module_slots = 4
-    data_assembling[electrolyzer_vesta].energy_usage = 465 .. kW
-    data_assembling[electrolyzer_vesta].energy_source.drain = 15 .. kW
-    data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[electrolyzer_vesta].energy_usage = (1920 - 120) .. kW
+    data_assembling[electrolyzer_vesta].energy_source.drain = 120 .. kW
+    data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 1
 
-    local supermagnet = "supermagnet"
     data_item[supermagnet].subgroup = is_vesta_building
     data_item[supermagnet].order = b
     data_item[supermagnet].stack_size = 32
@@ -369,12 +417,12 @@ if mods[vesta_mods] then
     if mods[moshine_mods] then
         table.insert(data_recipe[supermagnet].ingredients, {type = item, name = neodymium_magnet, amount = 8})
     end
+
     data_assembling[supermagnet].subgroup = is_vesta_building
     data_assembling[supermagnet].order = b
     data_assembling[supermagnet].energy_usage = 4680 .. kW
     data_assembling[supermagnet].energy_source.drain = 120 .. kW
 
-    local combustion_furnace = "vesta-combustion-furnace"
     data_item[combustion_furnace].subgroup = is_vesta_building
     data_item[combustion_furnace].order = c
     data_item[combustion_furnace].stack_size = 32
@@ -389,11 +437,12 @@ if mods[vesta_mods] then
         {type = item, name = niobium_titanium_cable, amount = 4},
         {type = item, name = iridium_plate_mods, amount = 4}
     }
+
     data_assembling[combustion_furnace].subgroup = is_vesta_building
     data_assembling[combustion_furnace].order = c
     data_assembling[combustion_furnace].energy_usage = 52.5 .. kW
     data_assembling[combustion_furnace].energy_source.drain = 7.5 .. kW
-    data_assembling[combustion_furnace].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[combustion_furnace].effect_receiver.base_effect.productivity = 1
 
     -- SPACE
     local fusion_thruster = "ske_fusion_thruster"
@@ -406,25 +455,26 @@ if mods[vesta_mods] then
     data_recipe[fusion_thruster].energy_required = 4
     data_recipe[fusion_thruster].ingredients =
     {
-        {type = item, name = electric_engine_unit, amount = 4},
-        {type = item, name = quantum_processor, amount = 8},
-        {type = item, name = niobium_titanium_plate, amount = 4},
-        {type = item, name = niobium_titanium_cable, amount = 32},
-        {type = item, name = magnetic_pipe_vesta, amount = 4},
-        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
-        {type = item, name = iridium_plate_mods, amount = 16},
-        {type = fluid, name = supermagnetic_vesta, amount = 120}
+        {type = item, name = electric_engine_unit, amount = 32},
+        {type = item, name = quantum_processor, amount = 32},
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 128},
+        {type = item, name = niobium_iron_bearing, amount = 64},
+        {type = item, name = niobium_titanium_cable, amount = 256},
+        {type = item, name = magnetic_pipe, amount = 32},
+        {type = item, name = iridium_plate_mods, amount = 64},
+        {type = fluid, name = supermagnetic_vesta, amount = 960}
     }
     if mods[shchierbin_mods] then
         data_recipe[fusion_thruster].ingredients[1].name = vanadium_electro_engine_unit
     end
     if mods[moshine_mods] then
-        table.insert(data_recipe[fusion_thruster].ingredients, {type = item, name = neodymium_magnet, amount = 8})
+        table.insert(data_recipe[fusion_thruster].ingredients, {type = item, name = neodymium_magnet, amount = 64})
     end
+
     data_recipe[fusion_thruster].results =
     {
         {type = item, name = fusion_thruster, amount = 1},
-        {type = fluid, name = electrolyte, amount = 60}
+        {type = fluid, name = electrolyte, amount = 480}
     }
     data_recipe[fusion_thruster].main_product = fusion_thruster
     data_thruster[fusion_thruster].subgroup = is_vesta_recipe_space
@@ -434,7 +484,7 @@ if mods[vesta_mods] then
 
     data_fluid[fusion_thruster_fuel].subgroup = is_vesta_recipe_space
     data_fluid[fusion_thruster_fuel].order = b
-    data_recipe[fusion_thruster_fuel].category = cryogenics
+    data_recipe[fusion_thruster_fuel].categories = {cryogenics}
     data_recipe[fusion_thruster_fuel].subgroup = is_vesta_recipe_space
     data_recipe[fusion_thruster_fuel].icons = THREE_I(thruster_fuel, fusion_plasma, fusion_thruster_fuel)
     data_recipe[fusion_thruster_fuel].order = b
@@ -461,38 +511,18 @@ if mods[vesta_mods] then
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
-        magnetic_pipe_vesta,
+        magnetic_pipe,
+        magnetic_pipe_to_ground,
         electrolyzer_vesta,
         supermagnet,
         combustion_furnace,
         fusion_thruster
     })
 
-    if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[efficiency_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[productivity_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[pollution_clean_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[pollution_create_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-        table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
-
-        bobmods.lib.recipe.update_recycling_recipe
-        ({
-            speed_module_8,
-            efficiency_module_8,
-            productivity_module_8,
-            pollution_clean_module_8,
-            pollution_create_module_8,
-            quality_module_8
-        })
-    end
-
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
-    table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_full_asteroid_processing)
-    if mods[aegis_bellicos_mods] then
-        table.insert(data_technology[planet_discovery_vesta].prerequisites, pulsar_science_pack)
-    end
+    table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_advanced_full_asteroid_processing)
+    table.insert(data_technology[planet_discovery_vesta].prerequisites, railgun)
     data_technology[planet_discovery_vesta].effects =
     {
         {type = unlock_space_location, space_location = planet_vesta, use_icon_overlay_constant = true},
@@ -510,7 +540,9 @@ if mods[vesta_mods] then
         table.insert(data_technology[planet_discovery_vesta].effects, {type = unlock_recipe, recipe = recipe_name})
     end
     added_recipe_in_planet_discovery_vesta(stone_mineraliztion)
-    added_recipe_in_planet_discovery_vesta(coal_mineraliztion)
+    if data_recipe[coal_mineraliztion] then
+        added_recipe_in_planet_discovery_vesta(coal_mineraliztion)
+    end
     added_recipe_in_planet_discovery_vesta(carbon_seperation)
     added_recipe_in_planet_discovery_vesta(co2_filter_carbon)
     added_recipe_in_planet_discovery_vesta(carbon_super_cooling)
@@ -595,6 +627,7 @@ if mods[vesta_mods] then
     add_recipe_for_ore_to_plate(invar_plate_bob .. _burning)
     add_recipe_for_ore_to_plate(cobalt_steel_plate_bob .. _burning)
     add_recipe_for_ore_to_plate(nitinol_plate_bob .. _burning)
+    add_recipe_for_ore_to_plate(aluminium_lithium_plate .. _burning)
     add_recipe_for_ore_to_plate(holmium_plate .. _burning)
     add_recipe_for_ore_to_plate(antimony_plate .. _burning)
     add_recipe_for_ore_to_plate(germanium_plate .. _burning)
@@ -689,82 +722,22 @@ if mods[vesta_mods] then
         }
     end
 
-    data_technology[tech_wolframite_processing_4].prerequisites = {tech_wolframite_processing_3, tech_gas_manipulation_science_pack}
-    data_technology[tech_rhenium_synthesis].prerequisites = {tech_rhenium_smelting_3, tech_molybdenite_processing_4, tech_wolframite_processing_4}
-
-    data_technology[tech_brannerite_processing_4].prerequisites = {tech_brannerite_processing_3, tech_gas_manipulation_science_pack}
-
-    data_technology[tech_antimonite_processing_3].prerequisites = {tech_antimonite_processing_2, tech_gas_manipulation_science_pack}
-    data_technology[tech_antimonite_processing_4].prerequisites = {tech_antimonite_processing_3, promethium_science_pack}
-    data_technology[tech_antimony_smelting_3].prerequisites = {tech_antimonite_processing_3, tech_antimony_smelting_2, promethium_science_pack}
-
-    data_technology[tech_germanite_processing_3].prerequisites = {tech_germanite_processing_2, tech_gas_manipulation_science_pack}
-    data_technology[tech_germanite_processing_4].prerequisites = {tech_germanite_processing_3, promethium_science_pack}
-    data_technology[tech_germanium_smelting_3].prerequisites = {tech_germanite_processing_3, tech_germanium_smelting_2, promethium_science_pack}
-    data_technology[tech_galium_smelting_2].prerequisites = {tech_germanite_processing_3, tech_galium_smelting_1, tech_gas_manipulation_science_pack}
-    data_technology[tech_galium_smelting_3].prerequisites = {tech_germanite_processing_4, tech_galium_smelting_2, promethium_science_pack}
-
-    if mods[moshine_mods] then
-        data_technology[tech_monazite_processing_3].prerequisites = {tech_monazite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_monazite_processing_4].prerequisites = {tech_monazite_processing_3, promethium_science_pack}
-        data_technology[tech_neodymium_smelting_3].prerequisites = {tech_monazite_processing_3, promethium_science_pack}
+    -- ADD
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, tech_gas_manipulation_science_pack)
     end
+    add_prerequisites(tech_antimonite_processing_3)
+    add_prerequisites(tech_germanite_processing_3)
 
-    if mods[paracelsin_mods] then
-        data_technology[tech_sphalerite_processing_3].prerequisites = {tech_sphalerite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_sphalerite_processing_4].prerequisites = {tech_sphalerite_processing_3, promethium_science_pack}
+    add_prerequisites(tech_sphalerite_processing_3)
+    add_prerequisites(tech_tetrahedrite_processing_3)
 
-        data_technology[tech_tetrahedrite_processing_3].prerequisites = {tech_tetrahedrite_processing_2, tech_gas_manipulation_science_pack}
-        data_technology[tech_tetrahedrite_processing_4].prerequisites = {tech_tetrahedrite_processing_3, promethium_science_pack}
-    end
+    add_prerequisites(tech_chalcopyrite_processing_3)
+    add_prerequisites(tech_sperrylite_processing_3)
 
-    if mods[corrundum_mods] then
-        data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, tech_gas_manipulation_science_pack}
-        data_technology[tech_selenium_synthesis].prerequisites = {tech_molybdenite_processing_4, tech_chalcopyrite_processing_4}
-    end
+    add_prerequisites(tech_gallite_processing_3)
+    add_prerequisites(tech_sylvanite_processing_3)
 
-    if mods[castra_mods] then
-        data_technology[tech_millerite_processing_4].prerequisites = {tech_millerite_processing_3, tech_gas_manipulation_science_pack}
-    end
-
-    data_technology[promethium_science_pack].prerequisites =
-    {
-        tech_molybdenite_processing_4,
-        tech_wolframite_processing_4,
-        tech_antimonite_processing_3,
-        tech_germanite_processing_3,
-        tech_galium_smelting_3
-    }
-    if mods[moshine_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_brannerite_processing_4)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_monazite_processing_3)
-    else
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_holmium_synthesis)
-    end
-    if mods[paracelsin_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_sphalerite_processing_3)
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_tetrahedrite_processing_3)
-    end
-    if mods[corrundum_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_chalcopyrite_processing_4)
-    end
-    if mods[castra_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)
-    end
-
-    if mods[bobmodules] then
-        table.insert(data_technology[speed_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[efficiency_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[productivity_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[pollution_clean_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[pollution_create_module_8].prerequisites, tech_gas_manipulation_science_pack)
-        table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
-    end
-
-    table.insert(data_technology[tech_monazite_processing_3].unit.ingredients, {agricultural_science_pack, 1})
-    table.insert(data_technology[tech_monazite_processing_4].unit.ingredients, {agricultural_science_pack, 1})
-
-    if mods[moshine_mods] then
-        table.insert(data_technology[tech_neodymium_smelting_3].unit.ingredients, {agricultural_science_pack, 1})
-    end
+    add_prerequisites(tech_aquilo_cryogenics)
 end

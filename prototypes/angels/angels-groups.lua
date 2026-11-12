@@ -9,13 +9,30 @@ is_ore_sorting_T1 = "angels-ore-sorting-t1"
 is_ore_sorting_T2 = "angels-ore-sorting-t2"
 is_ore_sorting_T3 = "angels-ore-sorting-t3"
 is_ore_sorting_T4 = "angels-ore-sorting-t4"
-is_ore_sorting_advanced_1 = "angels-ore-sorting-advanced"
-is_ore_sorting_advanced_2 = "is-ore-sorting-advanced-2"
-is_ore_sorting_advanced_3 = "is-ore-sorting-advanced-3"
+is_ore_sorting = "is-sorting-ore"
 is_iron_item = "is-iron-item"
 is_iron_fluid = "is-iron-fluid"
 is_copper_item = "is-copper-item"
 is_copper_fluid = "is-copper-fluid"
+is_lead_item = "is-lead-item"
+is_lead_fluid = "is-lead-fluid"
+is_tin_item = "is-tin-item"
+is_tin_fluid = "is-tin-fluid"
+is_ore_sorting_advanced_0 = "angels-ore-sorting-advanced"
+is_ore_sorting_advanced_1 = "is-ore-sorting-advanced-1"
+is_ore_sorting_advanced_2 = "is-ore-sorting-advanced-2"
+is_ore_sorting_advanced_3 = "is-ore-sorting-advanced-3"
+is_ore_sorting_advanced_4 = "is-ore-sorting-advanced-4"
+is_ore_sorting_advanced_5 = "is-ore-sorting-advanced-5"
+is_ore_sorting_advanced_6 = "is-ore-sorting-advanced-6"
+is_ore_sorting_advanced_7 = "is-ore-sorting-advanced-7"
+is_slag_processing_2 = "is-slag-processing-2"
+is_powellite = "is-powellite"
+is_molybdenite = "is-molybdenite"
+is_ore_sorting_item = "ore-sorting-item"
+is_ore_sorting_fluid = "angels-ore-sorting-fluid"
+is_geode_processing_1 = "angels-geode-processing-1"
+is_geode_processing_2 = "angels-geode-processing-2"
 is_ore_crusher = "is-ore-crusher"
 is_ore_crusher_angels = "angels-ore-crusher"
 is_ore_floatation_angels = "angels-ore-floatation"
@@ -28,15 +45,29 @@ is_filtration_unit = "is-filtration-unit"
 is_crystallizer = "is-crystallizer"
 TIMSABA.functions.create_subgroups("angels-resource-refining",
 {
-    {name = is_ore_sorting_advanced_2, order = c_f},
-    {name = is_ore_sorting_advanced_3, order = c_g},
-    {name = is_iron_item,              order = h},
-    {name = is_iron_fluid,             order = h_a},
-    {name = is_copper_item,            order = i},
-    {name = is_copper_fluid,           order = i_a},
-    {name = is_ore_crusher,            order = z},
-    {name = is_filtration_unit,        order = z_i},
-    {name = is_crystallizer,           order = z_j}
+    {name = is_ore_sorting,             order = c},
+    {name = is_iron_item,               order = c_e},
+    {name = is_iron_fluid,              order = c_e .. "-" .. a},
+    {name = is_copper_item,             order = c_f},
+    {name = is_copper_fluid,            order = c_f .. "-" .. a},
+    {name = is_lead_item,               order = c_g},
+    {name = is_lead_fluid,              order = c_g .. "-" .. a},
+    {name = is_tin_item,                order = c_h},
+    {name = is_tin_fluid,               order = c_h .. "-" .. a},
+    {name = is_ore_sorting_advanced_1,  order = d_a},
+    {name = is_ore_sorting_advanced_2,  order = d_b},
+    {name = is_ore_sorting_advanced_3,  order = d_c},
+    {name = is_ore_sorting_advanced_4,  order = d_d},
+    {name = is_ore_sorting_advanced_5,  order = d_e},
+    {name = is_ore_sorting_advanced_6,  order = d_f},
+    {name = is_ore_sorting_advanced_7,  order = d_g},
+    {name = is_powellite,               order = e},
+    {name = is_molybdenite,             order = f},
+    {name = is_ore_sorting_item,        order = h},
+    {name = is_slag_processing_2,       order = i_d},
+    {name = is_ore_crusher,             order = z},
+    {name = is_filtration_unit,         order = z_i},
+    {name = is_crystallizer,            order = z_j}
 })
 
 -- ANGELS METTALURGY SMELTING
@@ -51,7 +82,7 @@ is_manganese_chemistry = "is-manganese-chemistry"
 is_silicon_chemistry = "is-silicon-chemistry"
 is_nickel_chemistry = "is-nickel-chemistry"
 is_aluminium_chemistry = "is-aluminium-chemistry"
-is_aluminium_chemistry_ether = "is-aluminium-chemistry-ether"
+is_aluminium_advanced_chemistry = "is-aluminium-advanced-chemistry"
 is_zinc_chemistry = "is-zinc-chemistry"
 is_silver_chemistry = "is-silver-chemistry"
 is_titanium_chemistry = "is-titanium-chemistry"
@@ -67,47 +98,54 @@ is_stone = "angels-stone"
 is_electric_blast_furnace = "is-electric-blast-furnace"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_iron_chemistry,            order = a_a},
-    {name = is_steel,                     order = a_b},
-    {name = is_copper_chemistry,          order = b_a},
-    {name = is_lead_chemistry,            order = c_a},
-    {name = is_tin_chemistry,             order = d_a},
-    {name = is_manganese_chemistry,       order = e_a},
-    {name = is_silicon_chemistry,         order = g_a},
-    {name = is_nickel_chemistry,          order = h_a},
-    {name = is_aluminium_chemistry,       order = i_a},
-    {name = is_aluminium_chemistry_ether, order = i_b},
-    {name = is_zinc_chemistry,            order = j_a},
-    {name = is_silver_chemistry,          order = k_a},
-    {name = is_titanium_chemistry,        order = l_a},
-    {name = is_gold_chemistry,            order = m_a},
-    {name = is_cobalt_chemistry,          order = n_a},
-    {name = is_chromium_chemistry,        order = o_a},
-    {name = is_tungsten_chemistry,        order = p_a},
-    {name = is_platinum_chemistry,        order = q_a},
-    {name = is_electric_blast_furnace,    order = z_f}
+    {name = is_iron_chemistry,               order = a_a},
+    {name = is_steel,                        order = a_b},
+    {name = is_copper_chemistry,             order = b_a},
+    {name = is_lead_chemistry,               order = c_a},
+    {name = is_tin_chemistry,                order = d_a},
+    {name = is_manganese_chemistry,          order = e_a},
+    {name = is_silicon_chemistry,            order = g_a},
+    {name = is_nickel_chemistry,             order = h_a},
+    {name = is_aluminium_chemistry,          order = i_a},
+    {name = is_aluminium_advanced_chemistry, order = i_b},
+    {name = is_zinc_chemistry,               order = j_a},
+    {name = is_silver_chemistry,             order = k_a},
+    {name = is_titanium_chemistry,           order = l_a},
+    {name = is_gold_chemistry,               order = m_a},
+    {name = is_cobalt_chemistry,             order = n_a},
+    {name = is_chromium_chemistry,           order = q_a},
+    {name = is_tungsten_chemistry,           order = r_a},
+    {name = is_platinum_chemistry,           order = s_a},
+    {name = is_electric_blast_furnace,       order = z_f}
 })
 
 -- ANGELS METTALURGY CASTING
 ig_casting = "angels-casting"
+is_copper_casting = "angels-copper-casting"
+is_tin_casting = "angels-tin-casting"
+is_silver_casting = "angels-silver-casting"
 is_titanium_casting = "angels-titanium-casting"
+is_gold_casting = "angels-gold-casting"
+is_platinum_casting = "angels-platinum-casting"
 is_tungsten_casting = "angels-tungsten-casting"
-is_stone_casting = "angels-stone-casting"
-is_bricks_casting = "is-bricks-casting"
 is_alloys_casting_2 = "is-alloys-casting-2"
 is_alloys_casting_3 = "is-alloys-casting-3"
 is_alloys_casting_4 = "is-alloys-casting-4"
 is_alloys_casting_5 = "is-alloys-casting-5"
 is_alloys_casting_6 = "is-alloys-casting-6"
+is_alloys_casting_7 = "is-alloys-casting-7"
+is_stone_casting = "angels-stone-casting"
+is_bricks_casting = "is-bricks-casting"
 is_sintering_oven = "angels-sintering-oven"
 TIMSABA.functions.create_subgroups(ig_casting,
 {
-    {name = is_bricks_casting,   order = w_a},
-    {name = is_alloys_casting_2, order = y_a},
-    {name = is_alloys_casting_3, order = y_b},
-    {name = is_alloys_casting_4, order = y_c},
-    {name = is_alloys_casting_5, order = y_d},
-    {name = is_alloys_casting_6, order = y_e}
+    {name = is_alloys_casting_2, order = u_b},
+    {name = is_alloys_casting_3, order = u_c},
+    {name = is_alloys_casting_4, order = u_d},
+    {name = is_alloys_casting_5, order = u_e},
+    {name = is_alloys_casting_6, order = u_f},
+    {name = is_alloys_casting_7, order = u_g},
+    {name = is_bricks_casting,   order = x_a},
 })
 
 -- ANGELS WATER TREATMENT
@@ -133,6 +171,7 @@ is_coal = "angels-petrochem-coal"
 is_carbon_fluid_1 = "is-carbon-fluid-1"
 is_nitrogen = "angels-petrochem-nitrogen"
 is_nitrogen_fluids = "angels-petrochem-nitrogen-fluids"
+is_nitrogen_fluids_2 = "is-nitrogen-fluids-2"
 is_fluorine_fluid = "is-fluorine-fluid"
 is_sodium = "angels-petrochem-sodium"
 is_sodium_fluid = "is-sodium-fluid"
@@ -156,20 +195,24 @@ is_plastic = "is-plastic"
 is_resin = "is-resin"
 is_rubber = "is-rubber"
 is_explosives = "is-explosives"
-is_buildings_electrolyser = "angels-petrochem-buildings-electrolyser" -- z
-is_buildings_air_filter = "is-buildings-air-filter" -- z_a
-is_buildings_liquefier = "is-buildings-liquefier" -- z_b
-is_buildings_chemical_plant = "angels-petrochem-buildings-chemical-plant" -- z_c
-is_buildings_advanced_chemical_plant = "is-buildings-advanced-chemical-plant" -- z_d
-is_buildings_gas_refinery = "angels-petrochem-buildings-gas-refinery" -- z_e
-is_buildings_advanced_gas_refinery = "is-buildings-advanced-gas-refinery" -- z_f
-is_buildings_oil_refinery = "angels-petrochem-buildings-oil-refinery" -- z_g
-is_buildings_oil_gas_separator = "is-buildings-oil-gas-separator" -- z_h
-is_buildings_steam = "angels-petrochem-buildings-steam" -- z_i
-is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_j
+is_buildings_burner_chemistry = "is-buildings-burner-chemistry" -- z
+is_buildings_electrolyser = "angels-petrochem-buildings-electrolyser" -- z_a
+is_buildings_advanced_electrolyser = "is-buildings-advanced-electrolyser" -- z_a_a
+is_buildings_industrial_electrolyser = "is-buildings-industrial-electrolyser" -- z_a_b
+is_buildings_air_filter = "is-buildings-air-filter" -- z_b
+is_buildings_liquefier = "is-buildings-liquefier" -- z_c
+is_buildings_chemical_plant = "angels-petrochem-buildings-chemical-plant" -- z_d
+is_buildings_advanced_chemical_plant = "is-buildings-advanced-chemical-plant" -- z_e
+is_buildings_gas_refinery = "angels-petrochem-buildings-gas-refinery" -- z_f
+is_buildings_advanced_gas_refinery = "is-buildings-advanced-gas-refinery" -- z_g
+is_buildings_oil_refinery = "angels-petrochem-buildings-oil-refinery" -- z_h
+is_buildings_oil_gas_separator = "is-buildings-oil-gas-separator" -- z_i
+is_buildings_steam = "angels-petrochem-buildings-steam" -- z_j
+is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_k
 TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
     {name = is_carbon_fluid_1,                    order = b_a},
+    {name = is_nitrogen_fluids_2,                 order = c_b},
     {name = is_fluorine_fluid,                    order = d},
     {name = is_sodium_fluid,                      order = e_a},
     {name = is_calcium,                           order = h},
@@ -188,12 +231,15 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
     {name = is_resin,                             order = t},
     {name = is_rubber,                            order = u},
     {name = is_explosives,                        order = v},
-    {name = is_buildings_air_filter,              order = z_a},
-    {name = is_buildings_liquefier,               order = z_b},
-    {name = is_buildings_advanced_chemical_plant, order = z_d},
-    {name = is_buildings_advanced_gas_refinery,   order = z_f},
-    {name = is_buildings_oil_gas_separator,       order = z_h},
-    {name = is_buildings_petrochem_others,        order = z_j}
+    {name = is_buildings_burner_chemistry,        order = z},
+    {name = is_buildings_advanced_electrolyser,   order = z_a .. "-" .. a},
+    {name = is_buildings_industrial_electrolyser, order = z_a .. "-" .. b},
+    {name = is_buildings_air_filter,              order = z_b},
+    {name = is_buildings_liquefier,               order = z_c},
+    {name = is_buildings_advanced_chemical_plant, order = z_e},
+    {name = is_buildings_advanced_gas_refinery,   order = z_g},
+    {name = is_buildings_oil_gas_separator,       order = z_i},
+    {name = is_buildings_petrochem_others,        order = z_k}
 })
 
 

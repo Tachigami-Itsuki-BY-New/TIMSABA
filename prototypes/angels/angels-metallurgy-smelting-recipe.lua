@@ -9,11 +9,11 @@ TIMSABA.functions.create_recipes
     {
         localised_name = {"item-name.iron-hydroxide-II"},
         name = iron_hydroxide_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_processed, water_purified_angels, oxygen_angels, iron_hydroxide_II),
         order = a,
-        energy_required = 8, -- 2Fe + 2H₂O + O₂ --> 2Fe(OH)₂
+        energy_required = 8, -- 2Fe(s) + 2H₂O(l) + O₂(g) --> 2Fe(OH)₂(s)
         ingredients =
         {
             {type = item, name = iron_processed, amount = 16},
@@ -25,11 +25,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_sulfate_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = TWO_D_I(iron_pellet, sulfuric_acid_angels, iron_sulfate_II, hydrogen_angels),
         order = b,
-        energy_required = 8, -- Fe + H₂SO₄ --> FeSO₄ + H₂
+        energy_required = 8, -- Fe(s) + H₂SO₄(l) --> FeSO₄(s) + H₂(g)
         ingredients =
         {
             {type = item, name = iron_pellet, amount = 8},
@@ -44,11 +44,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = THREE_I(iron_sulfate_II, water_purified_angels, iron_sulfate_II_solution),
         order = c,
-        energy_required = 8, -- FeSO₄ + H₂O --> FeSO₄(aq)
+        energy_required = 8, -- FeSO₄(s) + H₂O(l) --> FeSO₄(aq)
         ingredients =
         {
             {type = item, name = iron_sulfate_II, amount = 16},
@@ -59,11 +59,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_electrolysis},
         subgroup = is_iron_chemistry,
-        icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, ammonia_angels),
+        icons = FOUR_R_I(iron_sulfate_II_solution, sulfuric_acid_angels, iron_cathode, oxygen_angels),
         order = d,
-        energy_required = 8, -- (FeSO₄ + H₂O) + ((NH₄)₂SO₄ + H₂O) -electrode/electrolys-> Fe + 2H₂SO₄ + 2NH₃ + H₂O₂
+        energy_required = 8, -- 2FeSO₄(aq) -electrode/electrolys/(NH₄)₂SO₄(aq)-> 2Fe(s) + 2H₂SO₄(l) + O₂(g)
         ingredients =
         {
             {type = fluid, name = iron_sulfate_II_solution, amount = 240},
@@ -73,20 +73,21 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = iron_cathode, amount = 16},
-            {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 480
-            {type = fluid, name = ammonia_angels, amount = 240}, -- 480
-            --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
-            {type = item, name = electrode_used, amount = 1}
+            {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
+            {type = fluid, name = oxygen_angels, amount = 60}, -- 120
+            {type = fluid, name = ammonium_sulfate_solution, amount = 240, independent_probability = 0.5}, -- 240
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = iron_cathode
     },
     {
         name = iron_hydroxide_III,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_hydroxide_II, water_purified_angels, oxygen_angels, iron_hydroxide_III),
         order = e,
-        energy_required = 8, -- 4Fe(OH)₂ + O₂ + 2H₂O --> 4Fe(OH)₃
+        energy_required = 8, -- 4Fe(OH)₂(s) + 2H₂O(l) + O₂(g) --> 4Fe(OH)₃(s)
         ingredients =
         {
             {type = item, name = iron_hydroxide_II, amount = 16},
@@ -98,22 +99,22 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_oxide_III,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_iron_chemistry,
         icons = THREE_R_I(iron_hydroxide_III, iron_oxide_III, steam),
         order = f,
-        energy_required = 8, -- 2Fe(OH)₃ --> Fe₂O₃ + 3H₂O
+        energy_required = 8, -- 2Fe(OH)₃(s) --> Fe₂O₃(s) + 3H₂O(g)
         ingredients = {{type = item, name = iron_hydroxide_III, amount = 16}},
         results =
         {
             {type = item, name = iron_oxide_III, amount = 8},
-            {type = fluid, name = steam, amount = 120} -- 360
+            {type = fluid, name = steam, amount = 240} -- 360
         },
         main_product = iron_oxide_III
     },
     {
         name = iron_oxide_III_from_iron_sulfate_II,
-        category = angels_chemical_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_iron_chemistry,
         icons = THREE_D_I(iron_sulfate_II, nil, nil, iron_oxide_III, sulfur_dioxide_angels, sulfur_trioxide_gas),
         order = f_a,
@@ -129,11 +130,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = iron_hydroxide_II_from_iron_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_iron_chemistry,
         icons = TWO_D_I(iron_sulfate_II_solution, lime_angels, iron_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
-        energy_required = 8, -- (FeSO₄ + H₂O) + CaO --> Fe(OH)₂ + CaSO₄
+        energy_required = 8, -- FeSO₄(aq) + CaO(s) --> Fe(OH)₂(s) + CaSO₄(s)
         ingredients =
         {
             {type = fluid, name = iron_sulfate_II_solution, amount = 240},
@@ -149,11 +150,11 @@ TIMSABA.functions.create_recipes
     -- STEEL
     {
         name = steel_ingot_2,
-        category = angels_chemical_smelting_1,
+        categories = {angels_blast_smelting_2},
         subgroup = is_steel,
         icons = THREE_D_I(iron_hydroxide_II, carbon_angels, oxygen_angels, steel_ingot, steam, carbon_monoxide_angels),
         order = a_a,
-        energy_required = 8, -- Fe(OH)₂ + 2C -O₂-> FeC + H₂O + CO
+        energy_required = 8, -- Fe(OH)₂(s) + 2C(s) -O₂(g)-> FeC(s) + H₂O(g) + CO(g)
         ingredients =
         {
             {type = item, name = iron_hydroxide_II, amount = 16},
@@ -170,16 +171,16 @@ TIMSABA.functions.create_recipes
     },
     {
         name = steel_ingot_3,
-        category = angels_blast_smelting_3,
+        categories = {angels_blast_smelting_3},
         subgroup = is_steel,
         icons = THREE_D_I(iron_oxide_III, carbon_angels, oxygen_angels, steel_ingot, nil, carbon_dioxide_angels),
         order = a_b,
-        energy_required = 8, -- 2Fe₂O₃ + 8C + O₂ -O₂-> 4FeC + 4CO₂
+        energy_required = 8, -- 2Fe₂O₃(s) + 8C(s) + O₂(g) -O₂(g)-> 4FeC(s) + 4CO₂(g)
         ingredients =
         {
             {type = item, name = iron_oxide_III, amount = 8},
             {type = item, name = carbon_angels, amount = 32},
-            {type = fluid, name = oxygen_angels, amount = 120}
+            {type = fluid, name = oxygen_angels, amount = 120} -- 60 + 60
         },
         results =
         {
@@ -198,11 +199,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = copper_hydroxide_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_processed, water_purified_angels, oxygen_angels, copper_hydroxide_II),
         order = a,
-        energy_required = 8, -- 2Cu + 2H₂O + O₂ --> 2Cu(OH)₂
+        energy_required = 8, -- 2Cu(s) + 2H₂O(l) + O₂(g) --> 2Cu(OH)₂(s)
         ingredients =
         {
             {type = item, name = copper_processed, amount = 16},
@@ -214,11 +215,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_hydroxide_II_from_copper_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_sulfate_II_solution, lime_angels, copper_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
-        energy_required = 8, -- (CuSO₄ + H₂O) + CaO --> Cu(OH)₂ + CaSO₄
+        energy_required = 8, -- CuSO₄(aq) + CaO(s) --> Cu(OH)₂(s) + CaSO₄(s)
         ingredients =
         {
             {type = fluid, name = copper_sulfate_II_solution, amount = 240},
@@ -233,31 +234,31 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_hydroxide_II_from_copper_nitrate_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
-        icons = THREE_D_I(copper_nitrate_II_solution, nil, sodium_hydroxide_angels, copper_hydroxide_II, sodium_nitrate_angels, water_purified_angels),
+        icons = THREE_D_I(copper_nitrate_II_solution, nil, sodium_hydroxide_solution_angels, copper_hydroxide_II, sodium_nitrate_solution, water_purified_angels),
         order = a_b,
-        energy_required = 8, -- Cu(NO₃)₂(aq) + 2NaOH --> Cu(OH)₂ + 2NaNO₃ + H₂O
+        energy_required = 8, -- Cu(NO₃)₂(aq) + 2NaOH(aq) --> Cu(OH)₂(s) + 2NaNO₃(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = copper_nitrate_II_solution, amount = 240},
-            {type = item, name = sodium_hydroxide_angels, amount = 32}
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 480}
         },
         results =
         {
             {type = item, name = copper_hydroxide_II, amount = 16},
-            {type = item, name = sodium_nitrate_angels, amount = 16}, -- 32
+            {type = fluid, name = sodium_nitrate_solution, amount = 240}, -- 480
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = copper_hydroxide_II
     },
     {
         name = copper_sulfate_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_pellet, sulfuric_acid_angels, copper_sulfate_II, hydrogen_angels),
         order = b,
-        energy_required = 8, -- Cu + H₂SO₄ --> CuSO₄ + H₂
+        energy_required = 8, -- Cu(s) + H₂SO₄(l) --> CuSO₄(s) + H₂(g)
         ingredients =
         {
             {type = item, name = copper_pellet, amount = 8},
@@ -272,25 +273,25 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_copper_chemistry,
         icons = THREE_I(copper_sulfate_II, water_purified_angels, copper_sulfate_II_solution),
         order = c,
-        energy_required = 8, -- CuSO₄ + H₂O --> CuSO₄(aq)
+        energy_required = 8, -- CuSO₄(s) + H₂O(l) --> CuSO₄(aq)
         ingredients =
         {
             {type = item, name = copper_sulfate_II, amount = 16},
             {type = fluid, name = water_purified_angels, amount = 240}
         },
-        results = {{type = fluid, name = copper_sulfate_II_solution, amount = 120}},
+        results = {{type = fluid, name = copper_sulfate_II_solution, amount = 240}},
         main_product = copper_sulfate_II_solution
     },
     {
         name = copper_chloride_I,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
-        order = e,
+        order = f,
         energy_required = 8, -- Cu(s) + CuCl₂(aq) --> 2CuCl(s) + H₂O(g)
         ingredients =
         {
@@ -306,10 +307,10 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I_alt,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
-        order = e_a,
+        order = f_a,
         energy_required = 8, -- 2CuCl₂(aq) + SO₃(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
         ingredients =
         {
@@ -327,11 +328,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = ammonium_dichlorocuprate_I_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
         icons = THREE_I(ammonium_chloride_solution_angels, copper_chloride_I, ammonium_dichlorocuprate_I_solution),
-        order = f,
-        energy_required = 8, -- NH₄Cl(aq) + CuCl --> NH₄CuCl₂(aq)
+        order = g,
+        energy_required = 8, -- NH₄Cl(aq) + CuCl(s) --> NH₄CuCl₂(aq)
         ingredients =
         {
             {type = fluid, name = ammonium_chloride_solution_angels, amount = 240},
@@ -342,11 +343,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_nitrate_II_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_oxide_I, nil, nitric_acid_angels, copper_nitrate_II_solution, nitrogen_dioxide_angels, water_purified_angels),
-        order = h,
-        energy_required = 4, -- Cu₂O + 6HNO₃ --> 2Cu(NO₃)₂(aq) + 2NO₂ + H₂O
+        order = i,
+        energy_required = 8, -- Cu₂O(s) + 6HNO₃(l) --> 2Cu(NO₃)₂(aq) + 2NO₂(g) + H₂O(l)
         ingredients =
         {
             {type = item, name = copper_oxide_I, amount = 8},
@@ -367,11 +368,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = hexafluorosilicate_lead_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_lead_chemistry,
         icons = THREE_I(lead_pellet, hexafluorosilicic_acid, hexafluorosilicate_lead_II_solution),
         order = c,
-        energy_required = 8, -- Pb + H₂SiF₆(aq) --> PbSiF₆(aq) + H₂
+        energy_required = 8, -- Pb(s) + H₂SiF₆(aq) --> PbSiF₆(aq) + H₂(g)
         ingredients =
         {
             {type = item, name = lead_pellet, amount = 8},
@@ -386,11 +387,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lead_oxide_IV,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_lead_chemistry,
         icons = THREE_I(lead_oxide_II, oxygen_angels, lead_oxide_IV),
         order = e,
-        energy_required = 8, -- 2PbO + O₂ --> 2PbO₂
+        energy_required = 8, -- 2PbO(s) + O₂(g) --> 2PbO₂(s)
         ingredients =
         {
             {type = item, name = lead_oxide_II, amount = 16},
@@ -401,11 +402,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lead_sponge,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_lead_chemistry,
         icons = THREE_R_I(lead_oxide_II, lead_sponge, oxygen_angels),
         order = f,
-        energy_required = 8, -- 2PbO --> 2Pb + O₂
+        energy_required = 8, -- 2PbO(s) --> 2Pb(s) + O₂(g)
         ingredients = {{type = item, name = lead_oxide_II, amount = 16}},
         results =
         {
@@ -421,11 +422,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = tin_chloride_IV,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_tin_chemistry,
         icons = THREE_I(tin_processed, chlorine_angels, tin_chloride_IV),
         order = a,
-        energy_required = 8, -- Sn + 2Cl₂ --> SnCl₄
+        energy_required = 8, -- Sn(s) + 2Cl₂(g) --> SnCl₄(l)
         ingredients =
         {
             {type = item, name = tin_processed, amount = 16},
@@ -436,11 +437,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = hexafluorosilicate_tin_II_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_tin_chemistry,
         icons = THREE_I(tin_pellet, hexafluorosilicic_acid, hexafluorosilicate_tin_II_solution),
         order = c,
-        energy_required = 8, -- Sn + H₂SiF₆(aq) --> SnSiF₆(aq) + H₂
+        energy_required = 8, -- Sn(s) + H₂SiF₆(aq) --> SnSiF₆(aq) + H₂(g)
         ingredients =
         {
             {type = item, name = tin_pellet, amount = 8},
@@ -455,24 +456,26 @@ TIMSABA.functions.create_recipes
     },
     {
         name = tin_cathode,
-        category = angels_petrochem_electrolyser,
+        categories = {angels_electrolysis},
         subgroup = is_tin_chemistry,
-        icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, silicon_chloride_IV_gas, tin_cathode, hydrogen_fluoride_angels),
+        icons = FOUR_R_I(hexafluorosilicate_tin_II_solution, silicon_fluoride_IV_gas, tin_cathode, water_purified_angels),
         order = d,
-        energy_required = 8, -- (SnSiF₆ + H₂O) + (H₂SiF₆ + H₂O) -electrode/electrolys-> Sn + 2SiF₄ + 4HF + H₂O₂
+        energy_required = 8, -- 2SnSiF₆(aq) + Si(s) -electrode/electrolys/H₂SiF₆(aq)-> 2Sn(s) + 3SiF₄(g) + 2H₂O(l)
         ingredients =
         {
             {type = fluid, name = hexafluorosilicate_tin_II_solution, amount = 240},
+            {type = item, name = silicon_powder, amount = 8},
             {type = fluid, name = hexafluorosilicic_acid, amount = 240},
             {type = item, name = electrode, amount = 1}
         },
         results =
         {
             {type = item, name = tin_cathode, amount = 16},
-            {type = fluid, name = silicon_chloride_IV_gas, amount = 240}, -- 480
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 480}, -- 960
-            --{type = fluid, name = hydrogen_peroxide, amount = 120}, -- 240
-            {type = item, name = electrode_used, amount = 1}
+            {type = fluid, name = silicon_fluoride_IV_gas, amount = 240}, -- 360
+            {type = fluid, name = water_purified_angels, amount = 120}, -- 240
+            {type = fluid, name = hexafluorosilicic_acid, amount = 240, independent_probability = 0.5}, -- 240
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
         main_product = tin_cathode
     }
@@ -480,15 +483,16 @@ TIMSABA.functions.create_recipes
 
 -- MANGANESE
 manganese_sulfate_II_solution_from_manganese_oxide_II = "manganese-sulfate-II-solution-from-manganese-oxide-II"
+potassium_permanganate_2 = potassium_permanganate .. "-2"
 TIMSABA.functions.create_recipes
 ({
     {
         name = manganese_oxide_IV,
-        category = angels_blast_smelting_1,
+        categories = {angels_blast_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_ore_angels, oxygen_angels, manganese_oxide_IV),
         order = a,
-        energy_required = 8, -- Mn + O₂ --> MnO₂
+        energy_required = 8, -- Mn(s) + O₂(g) --> MnO₂(s)
         ingredients =
         {
             {type = item, name = manganese_ore_angels, amount = 32},
@@ -499,11 +503,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = TWO_D_I(manganese_processed, sulfuric_acid_angels, manganese_sulfate_II, hydrogen_angels),
         order = b,
-        energy_required = 8, -- Mn + H₂SO₄ --> MnSO₄ + H₂
+        energy_required = 8, -- Mn(s) + H₂SO₄(l) --> MnSO₄(s) + H₂(g)
         ingredients =
         {
             {type = item, name = manganese_processed, amount = 16},
@@ -518,11 +522,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II_solution,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_sulfate_II, water_purified_angels, manganese_sulfate_II_solution),
         order = c,
-        energy_required = 8, -- MnSO₄ + H₂O --> MnSO₄(aq)
+        energy_required = 8, -- MnSO₄(s) + H₂O(l) --> MnSO₄(aq)
         ingredients =
         {
             {type = item, name = manganese_sulfate_II, amount = 16},
@@ -533,11 +537,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = manganese_sulfate_II_solution_from_manganese_oxide_II,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_manganese_chemistry,
         icons = THREE_I(manganese_oxide_II, sulfuric_acid_angels, manganese_sulfate_II_solution),
         order = d_a,
-        energy_required = 8, -- MnO + H₂SO₄ --> MnSO₄(aq)
+        energy_required = 8, -- MnO(s) + H₂SO₄(l) --> MnSO₄(aq)
         ingredients =
         {
             {type = item, name = manganese_oxide_II, amount = 16},
@@ -548,11 +552,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = potassium_permanganate,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_manganese_chemistry,
         icons = FOUR_THREE_I(manganese_oxide_II, potassium_hydroxide_solution, oxygen_angels, chlorine_angels, potassium_permanganate, potassium_chloride_solution, water_purified_angels),
         order = f,
-        energy_required = 8, -- 2MnO₂ + 4KOH(aq) + O₂ + Cl₂ --> 2KMnO₄(s) + 2KCl(aq) + 4H₂O
+        energy_required = 8, -- 2MnO₂(s) + 4KOH(aq) + O₂(g) + Cl₂(g) --> 2KMnO₄(s) + 2KCl(aq) + 4H₂O(l)
         ingredients =
         {
             {type = item, name = manganese_oxide_II, amount = 16},
@@ -567,23 +571,45 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 240} -- 480
         },
         main_product = potassium_permanganate
+    },
+    {
+        localised_name = {"item-name." .. potassium_permanganate},
+        name = potassium_permanganate_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_manganese_chemistry,
+        icons = FOUR_THREE_I(potassium_manganate, nil, hydrochloric_acid_angels, potassium_permanganate, manganese_oxide_II, water_purified_angels, potassium_chloride_solution),
+        order = f_a,
+        energy_required = 8, -- 3K₂MnO₄(s) + 4HCl(aq) --> 2KMnO₄(s) + MnO₂(s) + 2H₂O(l) + 4KCl(aq)
+        ingredients =
+        {
+            {type = item, name = potassium_manganate, amount = 24},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = potassium_permanganate, amount = 16},
+            {type = item, name = manganese_oxide_II, amount = 8},
+            {type = fluid, name = water_purified_angels, amount = 120}, -- 240
+            {type = fluid, name = potassium_chloride_solution, amount = 240} -- 480
+        },
+        main_product = potassium_permanganate
     }
 })
 
 -- SILICON
 silicon_oxide_IV_from_silicon_chloride_IV_gas = "silicon-oxide-IV-from-silicon-chloride-IV-gas"
 silicon_oxide_IV_from_silicon_fluoride_IV_gas = "silicon-oxide-IV-from-silicon-fluoride-IV-gas"
-silane_gas_from_magnesium_silicide_ingot = "silane-gas-from-magnesium-silicide-ingot"
+silane_gas_from_magnesium_silicide = "silane-gas-from-magnesium-silicide"
 hexafluorosilicic_acid_from_silicon_fluoride_IV_gas = "hexafluorosilicic-acid-from-silicon-fluoride-IV-gas"
 TIMSABA.functions.create_recipes
 ({
      {
         name = silicon_oxide_IV,
-        category = angels_blast_smelting_2,
+        categories = {angels_blast_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = THREE_I(silicon_ore_bob, oxygen_angels, silicon_oxide_IV),
         order = a,
-        energy_required = 8, -- Si + O₂ --> SiO₂
+        energy_required = 8, -- Si(s) + O₂(g) --> SiO₂(s)
         ingredients =
         {
             {type = item, name = silicon_ore_bob, amount = 32},
@@ -594,11 +620,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_silicon_chloride_IV_gas,
-        category = angels_chemical_smelting_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_chloride_IV_gas, water_purified_angels, silicon_oxide_IV, hydrogen_chloride_angels),
         order = a_a,
-        energy_required = 8, -- SiCl₄ + 2H₂O -T-> SiO₂ + 4HCl
+        energy_required = 8, -- SiCl₄(g) + 2H₂O(l) --> SiO₂(s) + 4HCl(g)
         ingredients =
         {
             {type = fluid, name = silicon_chloride_IV_gas, amount = 240},
@@ -613,11 +639,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = silicon_oxide_IV_from_silicon_fluoride_IV_gas,
-        category = angels_chemical_smelting_3,
+        categories = {angels_blast_smelting_2},
         subgroup = is_silicon_chemistry,
         icons = TWO_D_I(silicon_fluoride_IV_gas, lime_angels, silicon_oxide_IV, fluorite_angels),
         order = a_b,
-        energy_required = 8, -- SiF₄ + 2CaO -T-> SiO₂ + 2CaF₂
+        energy_required = 8, -- SiF₄(g) + 2CaO(s) --> SiO₂(s) + 2CaF₂(s)
         ingredients =
         {
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
@@ -631,15 +657,15 @@ TIMSABA.functions.create_recipes
         main_product = silicon_oxide_IV
     },
     {
-        name = silane_gas_from_magnesium_silicide_ingot,
-        category = angels_advanced_chemistry,
+        name = silane_gas_from_magnesium_silicide,
+        categories = {angels_advanced_chemistry},
         subgroup = is_silicon_chemistry,
-        icons = THREE_D_I(magnesium_silicide_ingot, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
+        icons = THREE_D_I(magnesium_silicide, nil, hydrochloric_acid_angels, silane_gas, magnesium_chloride_solution, water_purified_angels),
         order = d_a,
-        energy_required = 8, -- Mg₂Si + 4HCl(aq) --> 2MgCl₂(aq) + SiH₄ + 2H₂O
+        energy_required = 8, -- Mg₂Si(s) + 4HCl(aq) --> SiH₄(g) + 2MgCl₂(aq) + 2H₂O(l)
         ingredients =
         {
-            {type = item, name = magnesium_silicide_ingot, amount = 16},
+            {type = item, name = magnesium_silicide, amount = 16},
             {type = fluid, name = hydrochloric_acid_angels, amount = 960}
         },
         results =
@@ -651,19 +677,62 @@ TIMSABA.functions.create_recipes
         main_product = silane_gas
     },
     {
-        name = hexafluorosilicic_acid_from_silicon_fluoride_IV_gas,
-        category = angels_chemical_smelting_2,
+        name = silicon_fluoride_IV_gas,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_silicon_chemistry,
-        icons = THREE_I(silicon_fluoride_IV_gas, hydrofluoric_acid_angels, hexafluorosilicic_acid),
+        icons = TWO_D_I(metasilicic_acid, hydrofluoric_acid_angels, silicon_fluoride_IV_gas, water_purified_angels),
+        order = g,
+        energy_required = 8, -- H₂SiO₃(s) + 4HF(aq) --> SiF₄(g) + 7H₂O(l)
+        ingredients =
+        {
+            {type = item, name = metasilicic_acid, amount = 16},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 960}
+        },
+        results =
+        {
+            {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 960} -- 1680
+        },
+        main_product = silicon_fluoride_IV_gas
+    },
+    {
+        name = hexafluorosilicic_acid_from_silicon_fluoride_IV_gas,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_silicon_chemistry,
+        icons = TWO_D_I(silicon_fluoride_IV_gas, hydrofluoric_acid_angels, hexafluorosilicic_acid, water_purified_angels),
         order = h_a,
-        energy_required = 8, -- SiF₄ + 2HF(aq) --> H₂SiF₆(aq)
+        energy_required = 8, -- SiF₄(g) + 2HF(aq) --> H₂SiF₆(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
             {type = fluid, name = hydrofluoric_acid_angels, amount = 480}
         },
-        results = {{type = fluid, name = hexafluorosilicic_acid, amount = 240}},
+        results =
+        {
+            {type = fluid, name = hexafluorosilicic_acid, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
         main_product = hexafluorosilicic_acid
+    },
+    {
+        name = metasilicic_acid,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_silicon_chemistry,
+        icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
+        order = j,
+        energy_required = 8, -- CaSiO₃(s) + 2HCl(aq) --> H₂SiO₃(s) + CaCl₂(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = item, name = calcium_silicate, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = metasilicic_acid, amount = 16},
+            {type = fluid, name = calcium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = metasilicic_acid
     }
 })
 
@@ -671,119 +740,260 @@ TIMSABA.functions.create_recipes
 TIMSABA.functions.create_recipes
 ({
     {
-        name = nickel_sulfate_II_solution,
-        category = angels_chemical_smelting_2,
+        name = nickel_hydroxide_II,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_nickel_chemistry,
-        icons = THREE_I(nickel_sulfate_II, water_purified_angels, nickel_sulfate_II_solution),
+        icons = THREE_D_I(nickel_sulfate_II, sodium_hydroxide_angels, water_purified_angels, nickel_hydroxide_II, nil, sodium_sulfate_solution),
         order = b,
-        energy_required = 8, -- NiSO₄ + H₂O --> NiSO₄(aq)
+        energy_required = 8, -- NiSO₄(s) + 2NaOH(s) + H₂O(l) --> Ni(OH)₂(s) + Na₂SO₄(aq)
         ingredients =
         {
             {type = item, name = nickel_sulfate_II, amount = 16},
+            {type = item, name = sodium_hydroxide_angels, amount = 32},
             {type = fluid, name = water_purified_angels, amount = 240}
         },
-        results = {{type = fluid, name = nickel_sulfate_II_solution, amount = 240}},
-        main_product = nickel_sulfate_II_solution
+        results =
+        {
+            {type = item, name = nickel_hydroxide_II, amount = 16},
+            {type = fluid, name = sodium_sulfate_solution, amount = 120} -- 240
+        },
+        main_product = nickel_hydroxide_II
+    },
+    {
+        name = nickel_chloride_II_solution,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_nickel_chemistry,
+        icons = TWO_D_I(nickel_hydroxide_II, hydrochloric_acid_angels, nickel_chloride_II_solution, water_purified_angels),
+        order = c,
+        energy_required = 8, -- Ni(OH)₂(s) + 2HCl(aq) --> NiCl₂(aq) + 3H₂O(l)
+        ingredients =
+        {
+            {type = item, name = nickel_hydroxide_II, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = fluid, name = nickel_chloride_II_solution, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 480} -- 720
+        },
+        main_product = nickel_chloride_II_solution
     },
     {
         name = tetracarbonyl_nickel,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_nickel_chemistry,
-        icons = THREE_I(nickel_pellet, carbon_monoxide_angels, tetracarbonyl_nickel),
-        order = c,
-        energy_required = 8, -- Ni + 4CO --> Ni(CO)₄
+        icons = THREE_D_I(nickel_chloride_II_solution, carbon_monoxide_angels, zinc_powder, tetracarbonyl_nickel, nil, zinc_chloride_solution),
+        order = d,
+        energy_required = 8, -- NiCl₂(aq) + 4CO(g) + Zn(s) --> Ni(CO)₄(l) + ZnCl₂(aq)
+        ingredients =
+        {
+            {type = fluid, name = nickel_chloride_II_solution, amount = 240},
+            {type = fluid, name = carbon_monoxide_angels, amount = 960},
+            {type = item, name = zinc_powder, amount = 16}
+        },
+        results =
+        {
+            {type = fluid, name = tetracarbonyl_nickel, amount = 240},
+            {type = fluid, name = zinc_chloride_solution, amount = 120}
+        },
+        main_product = tetracarbonyl_nickel
+    },
+    {
+        name = nickel_oxide_II,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_nickel_chemistry,
+        icons = THREE_I(nickel_pellet, oxygen_angels, nickel_oxide_II),
+        order = e,
+        energy_required = 8, -- 2Ni(s) + O₂(g) --> 2NiO(s)
         ingredients =
         {
             {type = item, name = nickel_pellet, amount = 8},
-            {type = fluid, name = carbon_monoxide_angels, amount = 960}
+            {type = fluid, name = oxygen_angels, amount = 120}
         },
-        results = {{type = fluid, name = tetracarbonyl_nickel, amount = 240}},
-        main_product = tetracarbonyl_nickel
+        results = {{type = item, name = nickel_oxide_II, amount = 16}},
+        main_product = nickel_oxide_II
+    },
+    {
+        name = nickel_sulfate_II_solution,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_nickel_chemistry,
+        icons = THREE_I(nickel_oxide_II, sulfuric_acid_angels, nickel_sulfate_II_solution),
+        order = f,
+        energy_required = 8, -- NiO(s) + H₂SO₄(l) --> NiSO₄(aq)
+        ingredients =
+        {
+            {type = item, name = nickel_oxide_II, amount = 16},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240}
+        },
+        results = {{type = fluid, name = nickel_sulfate_II_solution, amount = 240}},
+        main_product = nickel_sulfate_II_solution
     }
 })
 
 -- ALUMINIUM
-aluminium_chloride_2 = "aluminium-chloride-2"
-aluminium_chloride_solution_from_aluminium_hydroxide = "aluminium-chloride-solution-from-aluminium-hydroxide"
-lithium_tetraethoxy_aluminate_solution_ether_reprocess = "lithium-tetraethoxy-aluminate-solution-ether-reprocess"
+aluminium_chloride_solution_2 = aluminium_chloride_solution .. "-2"
+aluminium_chloride_2 = aluminium_chloride .. "-2"
+triethylaluminium_liquid_2 = triethylaluminium_liquid .. "-2"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = aluminium_chloride,
-        category = angels_chemical_smelting_1,
+        name = calcium_aluminate,
+        categories = {angels_blast_smelting_2},
         subgroup = is_aluminium_chemistry,
-        icons = THREE_I(aluminium_ore_bob, chlorine_angels, aluminium_chloride),
+        icons = TWO_D_I(aluminium_ore_bob, lime_angels, calcium_aluminate, calcium),
         order = a,
-        energy_required = 8, -- 2Al + 3Cl₂ --> 2AlCl₃
+        energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + 3Ca(s)
         ingredients =
         {
             {type = item, name = aluminium_ore_bob, amount = 32},
-            {type = fluid, name = chlorine_angels, amount = 360}
+            {type = item, name = lime_angels, amount = 32}
         },
-        results = {{type = item, name = aluminium_chloride, amount = 16}},
-        main_product = aluminium_chloride
-    },
-    {
-        name = aluminium_chloride_2,
-        category = angels_blast_smelting_3,
-        subgroup = is_aluminium_chemistry,
-        icons = THREE_R_I(aluminium_chloride_solution, aluminium_chloride, steam),
-        order = a_a,
-        energy_required = 8, -- AlCl₃(aq) --> AlCl₃ + H₂O
-        ingredients = {{type = fluid, name = aluminium_chloride_solution, amount = 240}},
         results =
         {
-            {type = item, name = aluminium_chloride, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 360
+            {type = item, name = calcium_aluminate, amount = 8},
+            {type = item, name = calcium, amount = 24}
         },
-        main_product = aluminium_chloride
+        main_product = calcium_aluminate
     },
     {
         name = aluminium_chloride_solution,
-        category = angels_chemical_smelting_2,
+        categories = {angels_advanced_chemistry},
         subgroup = is_aluminium_chemistry,
-        icons = THREE_D_I(aluminium_processed, hydrogen_chloride_angels, water_purified_angels, aluminium_chloride_solution, nil, hydrogen_angels),
+        icons = THREE_D_I(calcium_aluminate, nil, hydrochloric_acid_angels, aluminium_chloride_solution, calcium_chloride_solution, water_purified_angels),
         order = b,
-        energy_required = 8, -- 2Al + 6HCl + 2H₂O --> 2AlCl₃(aq) + 3H₂
+        energy_required = 8, -- Ca(AlO₂)₂(s) + 8HCl(aq) --> 2AlCl₃(aq) + CaCl₂(aq) + 9H₂O(l)
+        ingredients =
+        {
+            {type = item, name = calcium_aluminate, amount = 8},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 960}
+        },
+        results =
+        {
+            {type = fluid, name = aluminium_chloride_solution, amount = 240},
+            {type = fluid, name = calcium_chloride_solution, amount = 60}, -- 120
+            {type = fluid, name = water_purified_angels, amount = 720} -- 1080
+        },
+        main_product = aluminium_chloride_solution
+    },
+    {
+        localised_name = {"fluid-name." .. aluminium_chloride_solution},
+        name = aluminium_chloride_solution_2,
+        categories = {angels_advanced_chemistry},
+        subgroup = is_aluminium_chemistry,
+        icons = THREE_D_I(sodium_aluminate, nil, hydrochloric_acid_angels, aluminium_chloride_solution, sodium_chloride_solution, water_purified_angels),
+        order = b_a,
+        energy_required = 8, -- NaAlO₂(s) + 4HCl(aq) --> AlCl₃(aq) + NaCl(aq) + 4H₂O(l)
+        ingredients =
+        {
+            {type = item, name = sodium_aluminate, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 960}
+        },
+        results =
+        {
+            {type = fluid, name = aluminium_chloride_solution, amount = 240},
+            {type = fluid, name = sodium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 480} -- 960
+        },
+        main_product = aluminium_chloride_solution
+    },
+    {
+        name = aluminium_carbide,
+        categories = {angels_blast_smelting_3},
+        subgroup = is_aluminium_chemistry,
+        icons = THREE_I(aluminium_processed, coke_angels, aluminium_carbide),
+        order = f,
+        energy_required = 8, -- 4Al(s) + 3C(s) --> Al₄C₃(s)
         ingredients =
         {
             {type = item, name = aluminium_processed, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 720},
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = item, name = coke_angels, amount = 12}
         },
-        results =
-        {
-            {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 360
-        },
-        main_product = aluminium_chloride_solution
+        results = {{type = item, name = aluminium_carbide, amount = 4}},
+        main_product = aluminium_carbide
     },
     {
-        name = aluminium_chloride_solution_from_aluminium_hydroxide,
-        category = angels_chemical_smelting_4,
+        name = aluminium_sulfate,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_aluminium_chemistry,
-        icons = TWO_D_I(aluminium_hydroxide, hydrochloric_acid_angels, aluminium_chloride_solution, water_purified_angels),
-        order = b_a,
-        energy_required = 8, -- Al(OH)₃ + 3HCl(aq) --> AlCl₃(aq) + 3H₂O + (2H₂O = aq)
+        icons = TWO_D_I(aluminium_carbide, sulfuric_acid_angels, aluminium_sulfate, methane_angels),
+        order = g,
+        energy_required = 8, -- Al₄C₃(s) + 6H₂SO₄(l) --> 2Al₂(SO₄)₃(s) + 3CH₄(g)
         ingredients =
         {
-            {type = item, name = aluminium_hydroxide, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+            {type = item, name = aluminium_carbide, amount = 4},
+            {type = fluid, name = sulfuric_acid_angels, amount = 360}
         },
         results =
         {
-            {type = fluid, name = aluminium_chloride_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 480} -- 1200
+            {type = item, name = aluminium_sulfate, amount = 8},
+            {type = fluid, name = methane_angels, amount = 180}
         },
-        main_product = aluminium_chloride_solution
+        main_product = aluminium_sulfate
+    },
+    {
+        name = aluminium_chloride,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_aluminium_chemistry,
+        icons = TWO_D_I(aluminium_carbide, chlorine_angels, aluminium_chloride, carbon_angels),
+        order = i,
+        energy_required = 8, -- Al₄C₃(s) + 6Cl₂(g) --> 4AlCl₃(s) + 3C(s)
+        ingredients =
+        {
+            {type = item, name = aluminium_carbide, amount = 4},
+            {type = fluid, name = chlorine_angels, amount = 360}
+        },
+        results =
+        {
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = item, name = carbon_angels, amount = 8} -- 12
+        },
+        main_product = aluminium_chloride
+    },
+    {
+        localised_name = {"item-name." .. aluminium_chloride},
+        name = aluminium_chloride_2,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_aluminium_chemistry,
+        icons = THREE_D_I(aluminium_oxide, coke_angels, chlorine_angels, aluminium_chloride, nil, carbon_monoxide_angels),
+        order = i_a,
+        energy_required = 8, -- Al₂O₃(s) + 3C(s) + 3Cl₂(g) --> 2AlCl₃(s) + 3CO(g)
+        ingredients =
+        {
+            {type = item, name = aluminium_oxide, amount = 8},
+            {type = item, name = coke_angels, amount = 24},
+            {type = fluid, name = chlorine_angels, amount = 360},
+        },
+        results =
+        {
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = fluid, name = carbon_monoxide_angels, amount = 240} -- 360
+        },
+        main_product = aluminium_chloride
+    },
+    -- ADVACNED
+    {
+        name = tripropylaluminium,
+        categories = {angels_chemical_smelting_3},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_D_I(aluminium_powder, hydrogen_angels, ethylene_angels, tripropylaluminium),
+        order = a,
+        energy_required = 8, -- 2Al(s) + 3H₂(g) + 6C₃H₆(g) --> 2Al(C₃H₇)₃(s)
+        ingredients =
+        {
+            {type = item, name = aluminium_powder, amount = 16},
+            {type = fluid, name = hydrogen_angels, amount = 360},
+            {type = fluid, name = ethylene_angels, amount = 720}
+        },
+        results = {{type = item, name = tripropylaluminium, amount = 16}},
+        main_product = tripropylaluminium
     },
     {
         name = aluminium_chloride_solution_ether,
-        category = angels_chemical_smelting_2,
-        subgroup = is_aluminium_chemistry_ether,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_aluminium_advanced_chemistry,
         icons = THREE_I(aluminium_chloride, diethyl_ether, aluminium_chloride_solution_ether),
-        order = a,
-        energy_required = 8, -- AlCl₃ + (C₂H₅)₂O --> AlCl₃(ether)
+        order = b,
+        energy_required = 8, -- AlCl₃(s) + (C₂H₅)₂O(l) --> AlCl₃(ether)
         ingredients =
         {
             {type = item, name = aluminium_chloride, amount = 16},
@@ -794,30 +1004,30 @@ TIMSABA.functions.create_recipes
     },
     {
         name = lithium_aluminium_hydride_solution_ether,
-        category = angels_chemical_smelting_2,
-        subgroup = is_aluminium_chemistry_ether,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_aluminium_advanced_chemistry,
         icons = TWO_D_I(lithium_hydride, aluminium_chloride_solution_ether, lithium_aluminium_hydride_solution_ether, lithium_chloride_angels),
-        order = b,
-        energy_required = 4, -- 4LiH + AlCl₃(ether) --> LiAlH₄(ether) + 3LiCl
+        order = c,
+        energy_required = 8, -- 4LiH(s) + AlCl₃(ether) --> LiAlH₄(ether) + 3LiCl(s)
         ingredients =
         {
-            {type = item, name = lithium_hydride, amount = 16},
-            {type = fluid, name = aluminium_chloride_solution_ether, amount = 60}
+            {type = item, name = lithium_hydride, amount = 64},
+            {type = fluid, name = aluminium_chloride_solution_ether, amount = 240}
         },
         results =
         {
-            {type = fluid, name = lithium_aluminium_hydride_solution_ether, amount = 60},
-            {type = item, name = lithium_chloride_angels, amount = 4} -- 12
+            {type = fluid, name = lithium_aluminium_hydride_solution_ether, amount = 240},
+            {type = item, name = lithium_chloride_angels, amount = 32} -- 48
         },
         main_product = lithium_aluminium_hydride_solution_ether
     },
     {
         name = lithium_tetraethoxy_aluminate_solution_ether,
-        category = angels_chemical_smelting_4,
-        subgroup = is_aluminium_chemistry_ether,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
         icons = THREE_I(acetaldehyde, lithium_aluminium_hydride_solution_ether, lithium_tetraethoxy_aluminate_solution_ether),
-        order = c,
-        energy_required = 8, -- 4C₂H₄O + LiAlH₄(ether) --> LiAl(C₂H₅O)₄(ether)
+        order = d,
+        energy_required = 8, -- 4C₂H₄O(l) + LiAlH₄(ether) --> LiAl(C₂H₅O)₄(ether)
         ingredients =
         {
             {type = fluid, name = acetaldehyde, amount = 960},
@@ -828,38 +1038,88 @@ TIMSABA.functions.create_recipes
     },
     {
         type = recipe,
-        name = lithium_tetraethoxy_aluminate_solution_ether_reprocess,
-        category = angels_chemical_smelting_4,
-        subgroup = is_aluminium_chemistry_ether,
-        icons = FOUR_THREE_R_I(lithium_tetraethoxy_aluminate_solution_ether, nil, water_purified_angels, ethanol_angels, lithium_hydroxide, aluminium_hydroxide, diethyl_ether),
-        order = c_a,
-        energy_required = 8, -- LiAl(C₂H₅O)₄(ether) + 4H₂O --> 4C₂H₆O + LiOH + Al(OH)₃ + (C₂H₅)₂O
+        name = triethylaluminium_liquid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_D_I(aluminium_chloride, sodium_hydride, ethylene_angels, triethylaluminium_liquid, nil, salt_angels),
+        order = e,
+        energy_required = 8, -- AlCl₃(s) + 3NaH(s) + 3C₂H₄(g) --> Al(C₂H₅)₃(l) + 3NaCl(s)
         ingredients =
         {
-            {type = fluid, name = lithium_tetraethoxy_aluminate_solution_ether, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 960}
+            {type = item, name = aluminium_chloride, amount = 16},
+            {type = item, name = sodium_hydride, amount = 48},
+            {type = fluid, name = ethylene_angels, amount = 720}
         },
         results =
         {
-            {type = item, name = lithium_hydroxide, amount = 8}, -- 16
-            {type = item, name = aluminium_hydroxide, amount = 8}, -- 16
-            {type = fluid, name = ethanol_angels, amount = 480}, -- 960
-            {type = fluid, name = diethyl_ether, amount = 120} -- 240
+            {type = fluid, name = triethylaluminium_liquid, amount = 240},
+            {type = item, name = salt_angels, amount = 16} -- 48
         },
-        main_product = ethanol_angels
+        main_product = triethylaluminium_liquid
+    },
+    {
+        localised_name = {"fluid-name." .. triethylaluminium_liquid},
+        type = recipe,
+        name = triethylaluminium_liquid_2,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_D_I(aluminium_powder, ethylene_angels, hydrogen_angels, triethylaluminium_liquid),
+        order = e_a,
+        energy_required = 8, -- 2Al(s) + 6C₂H₄(g) + 3H₂(g) --> 2Al(C₂H₅)₃(l)
+        ingredients =
+        {
+            {type = item, name = aluminium_powder, amount = 16},
+            {type = fluid, name = ethylene_angels, amount = 720},
+            {type = fluid, name = hydrogen_angels, amount = 360}
+        },
+        results = {{type = fluid, name = triethylaluminium_liquid, amount = 240}},
+        main_product = triethylaluminium_liquid
+    },
+    {
+        type = recipe,
+        name = tridodecylaluminium,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_I(triethylaluminium_liquid, ethylene_angels, tridodecylaluminium),
+        order = f,
+        energy_required = 8, -- Al(C₂H₅)₃(s) + 15C₂H₄(g) --> Al(C₁₂H₂₅)₃(s)
+        ingredients =
+        {
+            {type = fluid, name = triethylaluminium_liquid, amount = 240},
+            {type = fluid, name = ethylene_angels, amount = 3600}
+        },
+        results = {{type = item, name = tridodecylaluminium, amount = 16}},
+        main_product = tridodecylaluminium
+    },
+    {
+        type = recipe,
+        name = tridodecylaluminium_oxide,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_aluminium_advanced_chemistry,
+        icons = THREE_I(tridodecylaluminium, oxygen_angels, tridodecylaluminium_oxide),
+        order = g,
+        energy_required = 8, -- 2Al(C₁₂H₂₅)₃(s) + 3O₂(g) --> 2Al(C₁₂H₂₅O)₃(s)
+        ingredients =
+        {
+            {type = item, name = tridodecylaluminium, amount = 16},
+            {type = fluid, name = oxygen_angels, amount = 360}
+        },
+        results = {{type = item, name = tridodecylaluminium_oxide, amount = 16}},
+        main_product = tridodecylaluminium_oxide
     }
 })
 
 -- ZINC
+zinc_chloride_solution_2 = "zinc-chloride-solution-2"
 TIMSABA.functions.create_recipes
 ({
     {
         name = zinc_chloride,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_ore_bob, chlorine_angels, zinc_chloride),
         order = a,
-        energy_required = 8, -- Zn + Cl₂ --> ZnCl₂
+        energy_required = 8, -- Zn(s) + Cl₂(g) --> ZnCl₂(s)
         ingredients =
         {
             {type = item, name = zinc_ore_bob, amount = 32},
@@ -870,11 +1130,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = zinc_chloride_solution,
-        category = angels_chemical_smelting_1,
+        categories = {angels_chemical_smelting_1},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_chloride, water_purified_angels, zinc_chloride_solution),
         order = b,
-        energy_required = 8, -- ZnCl₂ + H₂O --> ZnCl₂(aq)
+        energy_required = 8, -- ZnCl₂(s) + H₂O(l) --> ZnCl₂(aq)
         ingredients =
         {
             {type = item, name = zinc_chloride, amount = 16},
@@ -884,31 +1144,72 @@ TIMSABA.functions.create_recipes
         main_product = zinc_chloride_solution
     },
     {
-        name = zinc_gas,
-        category = angels_blast_smelting_1,
+        localised_name = {"fluid-name." .. zinc_chloride_solution},
+        name = zinc_chloride_solution_2,
+        categories = {angels_chemical_smelting_2},
         subgroup = is_zinc_chemistry,
-        icons = TWO_D_I(zinc_oxide, silicon_powder, zinc_gas, silicon_oxide_IV),
-        order = d,
-        energy_required = 8, -- 2ZnO + Si -T-> 2Zn(g) + SiO₂
+        icons = TWO_D_I(zinc_hydroxide, hydrochloric_acid_angels, zinc_chloride_solution, water_purified_angels),
+        order = b_a,
+        energy_required = 8, -- Zn(OH)₂(s) + 2HCl(aq) --> ZnCl₂(aq) + 3H₂O(l)
         ingredients =
         {
-            {type = item, name = zinc_oxide, amount = 16},
-            {type = item, name = silicon_powder, amount = 8}
+            {type = item, name = zinc_hydroxide, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
         },
         results =
         {
-            {type = fluid, name = zinc_gas, amount = 240},
-            {type = item, name = silicon_oxide_IV, amount = 4}
+            {type = fluid, name = zinc_chloride_solution, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 480} -- 720
         },
-        main_product = zinc_gas
+        main_product = zinc_chloride_solution
+    },
+    {
+        name = sodium_tetrahydroxozincate_II_solution,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_zinc_chemistry,
+        icons = THREE_D_I(zinc_processed, sodium_hydroxide_angels, water_purified_angels, sodium_tetrahydroxozincate_II_solution, nil, hydrogen_angels),
+        order = c,
+        energy_required = 8, -- Zn(s) + 2NaOH(aq) + H₂O(l) --> Na₂Zn(OH)₄(aq) + H₂(g)
+        ingredients =
+        {
+            {type = item, name = zinc_processed, amount = 16},
+            {type = item, name = sodium_hydroxide_angels, amount = 32},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = fluid, name = sodium_tetrahydroxozincate_II_solution, amount = 240},
+            {type = fluid, name = hydrogen_angels, amount = 120} -- 240
+        },
+        main_product = sodium_tetrahydroxozincate_II_solution
+    },
+    {
+        name = zinc_hydroxide,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_zinc_chemistry,
+        icons = THREE_D_I(sodium_tetrahydroxozincate_II_solution, nil, hydrochloric_acid_angels, zinc_hydroxide, sodium_chloride_solution, water_purified_angels),
+        order = d,
+        energy_required = 8, -- Na₂Zn(OH)₄(aq) + 2HCl(g) --> Zn(OH)₂(s) + 2NaCl(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = sodium_tetrahydroxozincate_II_solution, amount = 240},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = zinc_hydroxide, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = zinc_hydroxide
     },
     {
         name = zinc_sulfate_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_zinc_chemistry,
         icons = THREE_I(zinc_oxide, sulfuric_acid_angels, zinc_sulfate_solution),
-        order = e,
-        energy_required = 8, -- ZnO + H₂SO₄ --> ZnSO₄(aq)
+        order = f,
+        energy_required = 8, -- ZnO(s) + H₂SO₄(l) --> ZnSO₄(aq)
         ingredients =
         {
             {type = item, name = zinc_oxide, amount = 16},
@@ -916,6 +1217,25 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = fluid, name = zinc_sulfate_solution, amount = 240}},
         main_product = zinc_sulfate_solution
+    },
+    {
+        name = zinc_acetate,
+        categories = {angels_chemical_smelting_1},
+        subgroup = is_zinc_chemistry,
+        icons = TWO_D_I(zinc_oxide, acetic_acid, zinc_acetate, water_purified_angels),
+        order = h,
+        energy_required = 8, -- ZnO(s) + 2C₂H₄O₂(l) --> ZnC₄H₆O₄(s) + H₂O(l)
+        ingredients =
+        {
+            {type = item, name = zinc_oxide, amount = 16},
+            {type = fluid, name = acetic_acid, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = zinc_acetate, amount = 16},
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = zinc_acetate
     }
 })
 
@@ -924,11 +1244,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_dicyanoargentate_I_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_silver_chemistry,
         icons = THREE_I(sodium_dicyanoargentate_I, water_purified_angels, sodium_dicyanoargentate_I_solution),
         order = c,
-        energy_required = 8, -- NaAg(CN)₂ + H₂O --> NaAg(CN)₂(aq)
+        energy_required = 8, -- NaAg(CN)₂(s) + H₂O(l) --> NaAg(CN)₂(aq)
         ingredients =
         {
             {type = item, name = sodium_dicyanoargentate_I, amount = 16},
@@ -940,41 +1260,119 @@ TIMSABA.functions.create_recipes
 })
 
 -- TITANIUM
+titanium_oxide_IV_2 = titanium_oxide_IV .. "-2"
+titanium_oxide_IV_3 = titanium_oxide_IV .. "-3"
 TIMSABA.functions.create_recipes
 ({
     {
-        name = titanium_iodide_IV_gas,
-        category = angels_chemical_smelting_4,
+        name = titanium_oxide_IV,
+        categories = {angels_blast_smelting_3},
         subgroup = is_titanium_chemistry,
-        icons = THREE_I(titanium_pellet, iodine_gas, titanium_iodide_IV_gas),
-        order = c,
-        energy_required = 8, -- Ti + 2I₂ --> TiI₄
+        icons = THREE_I(titanium_ore_bob, oxygen_angels, titanium_oxide_IV),
+        order = a,
+        energy_required = 8, -- Ti(s) + O₂(g) --> TiO₂(s)
         ingredients =
         {
-            {type = item, name = titanium_pellet, amount = 8},
-            {type = fluid, name = iodine_gas, amount = 480}
+            {type = item, name = titanium_ore_bob, amount = 32},
+            {type = fluid, name = oxygen_angels, amount = 240}
         },
-        results = {{type = fluid, name = titanium_iodide_IV_gas, amount = 240}},
-        main_product = titanium_iodide_IV_gas
+        results = {{type = item, name = titanium_oxide_IV, amount = 16}},
+        main_product = titanium_oxide_IV
     },
     {
-        name = titanium_oxide_IV,
-        category = angels_chemical_smelting_2,
+        localised_name = {"item-name." .. titanium_oxide_IV},
+        name = titanium_oxide_IV_2,
+        categories = {angels_blast_smelting_3},
         subgroup = is_titanium_chemistry,
-        icons = TWO_D_I(titanium_chloride_IV, oxygen_angels, titanium_oxide_IV, chlorine_angels),
-        order = d,
-        energy_required = 8, -- TiCl₄ + O₂ --> TiO₂ + 2Cl₂
+        icons = THREE_I(titanium_processed, oxygen_angels, titanium_oxide_IV),
+        order = a_a,
+        energy_required = 8, -- Ti(s) + O₂(g) --> TiO₂(s)
         ingredients =
         {
-            {type = fluid, name = titanium_chloride_IV, amount = 240},
+            {type = item, name = titanium_processed, amount = 16},
             {type = fluid, name = oxygen_angels, amount = 240}
+        },
+        results = {{type = item, name = titanium_oxide_IV, amount = 16}},
+        main_product = titanium_oxide_IV
+    },
+    {
+        localised_name = {"item-name." .. titanium_oxide_IV},
+        name = titanium_oxide_IV_3,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = THREE_D_I(metatitanic_acid, nil, hydrogen_peroxide, titanium_oxide_IV, water_purified_angels, oxygen_angels),
+        order = a_b,
+        energy_required = 8, -- 2H₂TiO₃(s) + 2H₂O₂(l) --> 2TiO₂(s) + 2H₂O(l) + O₂(g)
+        ingredients =
+        {
+            {type = item, name = metatitanic_acid, amount = 16},
+            {type = fluid, name = hydrogen_peroxide, amount = 240}
         },
         results =
         {
             {type = item, name = titanium_oxide_IV, amount = 16},
-            {type = fluid, name = chlorine_angels, amount = 240} -- 480
+            {type = fluid, name = water_purified_angels, amount = 120}, -- 240
+            {type = fluid, name = oxygen_angels, amount = 60} -- 120
         },
         main_product = titanium_oxide_IV
+    },
+    {
+        name = titanium_carbide,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = TWO_D_I(titanium_pellet, methane_angels, titanium_carbide, hydrogen_angels),
+        order = d,
+        energy_required = 8, -- Ti(s) + CH₄(g) --> TiC(s) + 2H₂(g)
+        ingredients =
+        {
+            {type = item, name = titanium_pellet, amount = 8},
+            {type = fluid, name = methane_angels, amount = 240}
+        },
+        results =
+        {
+            {type = item, name = titanium_carbide, amount = 16},
+            {type = fluid, name = hydrogen_angels, amount = 240} -- 480
+        },
+        main_product = titanium_carbide
+    },
+    {
+        name = titanium_iodide_IV_gas,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = TWO_D_I(titanium_carbide, iodine_gas, titanium_iodide_IV_gas, carbon_angels),
+        order = e,
+        energy_required = 8, -- TiC(s) + 2I₂(g) --> TiI₄(g) + C(s)
+        ingredients =
+        {
+            {type = item, name = titanium_carbide, amount = 16},
+            {type = fluid, name = iodine_gas, amount = 480}
+        },
+        results =
+        {
+            {type = fluid, name = titanium_iodide_IV_gas, amount = 240},
+            {type = item, name = carbon_angels, amount = 8} -- 16
+        },
+        main_product = titanium_iodide_IV_gas
+    },
+    {
+        name = metatitanic_acid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_titanium_chemistry,
+        icons = THREE_D_I(titanium_iodide_IV_gas, nil, sodium_hydroxide_solution_angels, metatitanic_acid, sodium_iodide_solution, water_purified_angels),
+        order = d,
+        energy_required = 8, -- TiI₄(g) + 4NaOH(aq) --> H₂TiO₃(s) + 4NaI(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = titanium_iodide_IV_gas, amount = 240},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 960}
+        },
+        results =
+        {
+            {type = item, name = metatitanic_acid, amount = 16},
+            {type = fluid, name = sodium_iodide_solution, amount = 480}, -- 960
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = metatitanic_acid
     }
 })
 
@@ -983,11 +1381,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = sodium_dicyanoaurate_I_solution,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_gold_chemistry,
         icons = THREE_I(sodium_dicyanoaurate_I, water_purified_angels, sodium_dicyanoaurate_I_solution),
         order = c,
-        energy_required = 8, -- NaAu(CN)₂ + H₂O --> NaAu(CN)₂(aq)
+        energy_required = 8, -- NaAu(CN)₂(s) + H₂O(l) --> NaAu(CN)₂(aq)
         ingredients =
         {
             {type = item, name = sodium_dicyanoaurate_I, amount = 16},
@@ -1003,11 +1401,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = cobalt_chloride_II_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_cobalt_chemistry,
         icons = THREE_D_I(cobalt_pellet, hydrogen_chloride_angels, water_purified_angels, cobalt_chloride_II_solution, nil, hydrogen_angels),
         order = b,
-        energy_required = 8, -- Co + 2HCl + H₂O --> CoCl₂(aq) + H₂
+        energy_required = 8, -- Co(s) + 2HCl(g) + H₂O(l) --> CoCl₂(aq) + H₂(g)
         ingredients =
         {
             {type = item, name = cobalt_pellet, amount = 8},
@@ -1027,84 +1425,28 @@ TIMSABA.functions.create_recipes
 TIMSABA.functions.create_recipes
 ({
     {
-        name = chromium_oxide_VI,
-        category = angels_blast_smelting_4,
+        name = chromium_sulfate_II_solution,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_chromium_chemistry,
-        icons = THREE_I(chromium_ore_angels, oxygen_angels, chromium_oxide_VI),
+        icons = THREE_D_I(chromium_ore_angels, sulfuric_acid_angels, oxygen_angels, chromium_sulfate_II_solution),
         order = a,
-        energy_required = 8, -- 2Cr + 3O₂ --> 2CrO₃
+        energy_required = 8, -- 2Cr(s) + 2H₂SO₄(l) + O₂(g) --> 2CrSO₄(aq)
         ingredients =
         {
             {type = item, name = chromium_ore_angels, amount = 32},
-            {type = fluid, name = oxygen_angels, amount = 360}
-        },
-        results = {{type = item, name = chromium_oxide_VI, amount = 16}},
-        main_product = chromium_oxide_VI
-    },
-    {
-        name = chromic_acid,
-        category = angels_chemical_smelting_3,
-        subgroup = is_chromium_chemistry,
-        icons = THREE_I(chromium_oxide_VI, water_purified_angels, chromic_acid),
-        order = b,
-        energy_required = 8, -- CrO₃ + 2H₂O --> H₂CrO₄(aq)
-        ingredients =
-        {
-            {type = item, name = chromium_oxide_VI, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 480}
-        },
-        results = {{type = fluid, name = chromic_acid, amount = 240}},
-        main_product = chromic_acid
-    },
-    {
-        name = chromium_cathode,
-        category = angels_petrochem_electrolyser,
-        subgroup = is_chromium_chemistry,
-        icons = FOUR_R_I(chromic_acid, sulfur_trioxide_gas, chromium_cathode, hydrogen_peroxide),
-        order = c,
-        energy_required = 8, -- (H₂CrO₄ + H₂O) + H₂SO₄ -electrode/electrolys-> Cr + SO₃ + 3H₂O₂
-        ingredients =
-        {
-            {type = fluid, name = chromic_acid, amount = 240},
             {type = fluid, name = sulfuric_acid_angels, amount = 240},
-            {type = item, name = electrode, amount = 1}
+            {type = fluid, name = oxygen_angels, amount = 120}
         },
-        results =
-        {
-            {type = item, name = chromium_cathode, amount = 16},
-            {type = fluid, name = sulfur_trioxide_gas, amount = 120}, -- 240
-            {type = fluid, name = hydrogen_peroxide, amount = 240}, -- 720
-            {type = item, name = electrode_used, amount = 1}
-        },
-        main_product = chromium_cathode
-    },
-    {
-        name = chromium_sulfate_II_solution,
-        category = angels_chemical_smelting_4,
-        subgroup = is_chromium_chemistry,
-        icons = THREE_D_I(chromium_processed, sulfuric_acid_angels, water_purified_angels, chromium_sulfate_II_solution, nil, hydrogen_angels),
-        order = d,
-        energy_required = 8, -- Cr + H₂SO₄ + H₂O --> CrSO₄(aq) + H₂
-        ingredients =
-        {
-            {type = item, name = chromium_processed, amount = 16},
-            {type = fluid, name = sulfuric_acid_angels, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240}
-        },
-        results =
-        {
-            {type = fluid, name = chromium_sulfate_II_solution, amount = 240},
-            {type = fluid, name = hydrogen_angels, amount = 120} -- 240
-        },
+        results = {{type = fluid, name = chromium_sulfate_II_solution, amount = 240}},
         main_product = chromium_sulfate_II_solution
     },
     {
         name = potassium_chromate_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(chromium_oxide_III, potassium_hypochlorite_solution, potassium_hydroxide_solution, potassium_chromate_solution, potassium_chloride_solution, water_purified_angels),
-        order = f,
-        energy_required = 8, -- Cr₂O₃ + 3KClO(aq) + 4KOH(aq) --> 2K₂CrO₄(aq) + 3KCl(aq) + 2H₂O + (2H₂O = aq)
+        order = c,
+        energy_required = 8, -- Cr₂O₃(s) + 3KClO(aq) + 4KOH(aq) --> 2K₂CrO₄(aq) + 3KCl(aq) + 4H₂O(l)
         ingredients =
         {
             {type = item, name = chromium_oxide_III, amount = 16},
@@ -1114,18 +1456,18 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = potassium_chromate_solution, amount = 480},
-            {type = fluid, name = potassium_chloride_solution, amount = 240}, -- 720
+            {type = fluid, name = potassium_chloride_solution, amount = 480}, -- 720
             {type = fluid, name = water_purified_angels, amount = 480} -- 960
         },
         main_product = potassium_chromate_solution
     },
     {
         name = potassium_dichromate_solution,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_chromium_chemistry,
         icons = THREE_D_I(potassium_chromate_solution, nil, sulfuric_acid_angels, potassium_dichromate_solution, potassium_sulfate_solution, water_purified_angels),
-        order = g,
-        energy_required = 8, -- 2K₂CrO₄(aq) + H₂SO₄ --> K₂Cr₂O₇(aq) + K₂SO₄(aq) + H₂O
+        order = d,
+        energy_required = 8, -- 2K₂CrO₄(aq) + H₂SO₄(l) --> K₂Cr₂O₇(aq) + K₂SO₄(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = potassium_chromate_solution, amount = 480},
@@ -1138,6 +1480,60 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = potassium_dichromate_solution
+    },
+    {
+        name = chromium_oxide_VI,
+        categories = {angels_blast_smelting_4},
+        subgroup = is_chromium_chemistry,
+        icons = THREE_I(chromium_pellet, oxygen_angels, chromium_oxide_VI),
+        order = g,
+        energy_required = 8, -- 2Cr(s) + 3O₂(g) --> 2CrO₃(s)
+        ingredients =
+        {
+            {type = item, name = chromium_pellet, amount = 8},
+            {type = fluid, name = oxygen_angels, amount = 360}
+        },
+        results = {{type = item, name = chromium_oxide_VI, amount = 16}},
+        main_product = chromium_oxide_VI
+    },
+    {
+        name = chromic_acid,
+        categories = {angels_chemical_smelting_4},
+        subgroup = is_chromium_chemistry,
+        icons = THREE_I(chromium_oxide_VI, water_purified_angels, chromic_acid),
+        order = h,
+        energy_required = 8, -- CrO₃(s) + 2H₂O(l) --> H₂CrO₄(aq)
+        ingredients =
+        {
+            {type = item, name = chromium_oxide_VI, amount = 16},
+            {type = fluid, name = water_purified_angels, amount = 480}
+        },
+        results = {{type = fluid, name = chromic_acid, amount = 240}},
+        main_product = chromic_acid
+    },
+    {
+        name = chromium_cathode,
+        categories = {angels_electrolysis},
+        subgroup = is_chromium_chemistry,
+        icons = FOUR_R_I(chromic_acid, water_purified_angels, chromium_cathode, oxygen_angels),
+        order = i,
+        energy_required = 8, -- 2H₂CrO₄(aq) -electrode/electrolys/2H₂SO₄(l)-> 2Cr(s) + 4H₂O(l) + 3O₂(g)
+        ingredients =
+        {
+            {type = fluid, name = chromic_acid, amount = 240},
+            {type = fluid, name = sulfuric_acid_angels, amount = 240},
+            {type = item, name = electrode, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = chromium_cathode, amount = 16},
+            {type = fluid, name = water_purified_angels, amount = 240}, -- 480
+            {type = fluid, name = oxygen_angels, amount = 240}, -- 360
+            {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+        },
+        main_product = chromium_cathode
     }
 })
 
@@ -1146,11 +1542,11 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = copper_tungsten_powder,
-        category = angels_powder_mixing_3,
+        categories = {angels_powder_mixing_3},
         subgroup = is_tungsten,
         icons = THREE_I(tungsten_powder, copper_powder, copper_tungsten_powder),
         order = f,
-        energy_required = 8, -- W + Cu --> WCu
+        energy_required = 8, -- W(s) + Cu(s) --> WCu(s)
         ingredients =
         {
             {type = item, name = tungsten_powder, amount = 8},
@@ -1162,11 +1558,11 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = peroxo_tungstic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_tungsten_chemistry,
         icons = TWO_D_I(tungsten_pellet, hydrogen_peroxide, peroxo_tungstic_acid, water_purified_angels),
         order = d,
-        energy_required = 8, -- W + 5H₂O₂ --> H₂WO₆(aq) + 3H₂O
+        energy_required = 8, -- W(s) + 5H₂O₂(l) --> H₂WO₆(aq) + 3H₂O(l)
         ingredients =
         {
             {type = item, name = tungsten_pellet, amount = 8},
@@ -1175,17 +1571,17 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = fluid, name = peroxo_tungstic_acid, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240} -- 720
+            {type = fluid, name = water_purified_angels, amount = 480} -- 720
         },
         main_product = peroxo_tungstic_acid
     },
     {
         name = tungstic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_tungsten_chemistry,
         icons = THREE_D_I(peroxo_tungstic_acid, nil, nil, tungstic_acid, oxygen_angels, steam),
         order = e,
-        energy_required = 8, -- H₂WO₆(aq) --> H₂WO₄ + O₂ + H₂O
+        energy_required = 8, -- H₂WO₆(aq) --> H₂WO₄(s) + H₂O(g) + O₂(g)
         ingredients = {{type = fluid, name = peroxo_tungstic_acid, amount = 240}},
         results =
         {
@@ -1204,33 +1600,31 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = platinum_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_platinum,
         icons = TWO_I(platinum_ore_angels, platinum_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = platinum_ore_angels, amount = 4}},
         results = {{type = item, name = platinum_processed, amount = 4}},
         main_product = platinum_processed
     },
     {
         name = platinum_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_platinum,
         icons = TWO_I(platinum_processed, platinum_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = platinum_processed, amount = 4}},
         results = {{type = item, name = platinum_pellet, amount = 4}},
         main_product = platinum_pellet
     },
     {
         name = platinum_ingot,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_platinum,
         icons = TWO_D_I(platinum_fluoride_IV, hydrogen_angels, platinum_ingot, hydrogen_fluoride_angels),
         order = d,
-        energy_required = 8, -- PtF₄ + 2H₂ --> Pt + 4HF
+        energy_required = 8, -- PtF₄(s) + 2H₂(g) --> Pt(s) + 4HF(g)
         ingredients =
         {
             {type = item, name = platinum_fluoride_IV, amount = 16},
@@ -1245,11 +1639,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_ingot_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum,
         icons = FOUR_THREE_R_I(ammonium_hexachloroplatinate_IV, nil, formic_acid, platinum_ingot, ammonium_chloride, carbon_dioxide_angels, hydrogen_chloride_angels),
         order = d_a,
-        energy_required = 8, -- (NH₄)₂PtCl₆ + 2CH₂O₂ --> Pt + 2NH₄Cl + 2CO₂ + 4HCl
+        energy_required = 8, -- (NH₄)₂PtCl₆(s) + 2CH₂O₂(l) --> Pt(s) + 2NH₄Cl(s) + 2CO₂(g) + 4HCl(g)
         ingredients =
         {
             {type = item, name = ammonium_hexachloroplatinate_IV, amount = 16},
@@ -1266,11 +1660,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_ingot_3,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_platinum,
         icons = FOUR_THREE_R_I(sodium_hexahydroxoplatinate_IV_solution, nil, hydrazine_angels, platinum_ingot, nitrogen_angels, sodium_hydroxide_solution_angels, water_purified_angels),
         order = d_b,
-        energy_required = 8, -- Na₂Pt(OH)₆(aq) + N₂H₄ --> Pt + N₂ + 2NaOH(aq) + 4H₂O
+        energy_required = 8, -- Na₂Pt(OH)₆(2aq) + N₂H₄(l) --> Pt(s) + N₂(g) + 2NaOH(aq) + 4H₂O(l)
         ingredients =
         {
             {type = fluid, name = sodium_hexahydroxoplatinate_IV_solution, amount = 240},
@@ -1288,11 +1682,11 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = platinum_chloride_II,
-        category = angels_chemical_smelting_3,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_platinum_chemistry,
         icons = THREE_I(platinum_ore_angels, chlorine_angels, platinum_chloride_II),
         order = a,
-        energy_required = 8, -- Pt + Cl₂ --> PtCl₂
+        energy_required = 8, -- Pt(s) + Cl₂(g) --> PtCl₂(s)
         ingredients =
         {
             {type = item, name = platinum_ore_angels, amount = 32},
@@ -1303,47 +1697,51 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_fluoride_IV,
-        category = angels_blast_smelting_4,
+        categories = {angels_chemical_smelting_3},
         subgroup = is_platinum_chemistry,
-        icons = THREE_D_I(platinum_chloride_II, nil, hydrogen_fluoride_angels, platinum_fluoride_IV, platinum_ingot, hydrogen_chloride_angels),
+        icons = THREE_D_I(platinum_chloride_II, nil, hydrofluoric_acid_angels, platinum_fluoride_IV, platinum_ingot, hydrochloric_acid_angels),
         order = b,
-        energy_required = 8, -- 2PtCl₂ + 4HF --> PtF₄ + Pt + 4HCl
+        energy_required = 8, -- 2PtCl₂(s) + 4HF(aq) --> PtF₄(s) + Pt(s) + 4HCl(aq)
         ingredients =
         {
-            {type = item, name = platinum_chloride_II, amount = 32},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 960}
+            {type = item, name = platinum_chloride_II, amount = 16},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 480}
         },
         results =
         {
-            {type = item, name = platinum_fluoride_IV, amount = 16},
-            {type = item, name = platinum_ingot, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 960
+            {type = item, name = platinum_fluoride_IV, amount = 8},
+            {type = item, name = platinum_ingot, amount = 8},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 240} -- 480
         },
         main_product = platinum_fluoride_IV
     },
     {
         name = hexachloroplatinic_acid,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
-        icons = THREE_D_I(platinum_processed, chlorine_angels, hydrochloric_acid_angels, hexachloroplatinic_acid),
+        icons = THREE_D_I(platinum_processed, chlorine_angels, hydrochloric_acid_angels, hexachloroplatinic_acid, nil, water_purified_angels),
         order = c,
-        energy_required = 8, -- Pt + 2Cl₂ + 2HCl(aq) --> H₂PtCl₆(aq)
+        energy_required = 8, -- Pt(s) + 2Cl₂(g) + 2HCl(aq) --> H₂PtCl₆(aq) + H₂O(l)
         ingredients =
         {
             {type = item, name = platinum_processed, amount = 16},
             {type = fluid, name = chlorine_angels, amount = 480},
             {type = fluid, name = hydrochloric_acid_angels, amount = 480}
         },
-        results = {{type = fluid, name = hexachloroplatinic_acid, amount = 240}},
+        results =
+        {
+            {type = fluid, name = hexachloroplatinic_acid, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
         main_product = hexachloroplatinic_acid
     },
     {
         name = ammonium_hexachloroplatinate_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(hexachloroplatinic_acid, nil, ammonium_chloride_solution_angels, ammonium_hexachloroplatinate_IV, hydrochloric_acid_angels, water_purified_angels),
         order = d,
-        energy_required = 8, -- H₂PtCl₆(aq) + 2NH₄Cl(aq) --> (NH₄)₂PtCl₆ + 2HCl(aq) + 2H₂O
+        energy_required = 8, -- H₂PtCl₆(aq) + 2NH₄Cl(aq) --> (NH₄)₂PtCl₆(s) + 2HCl(aq) + H₂O(l)
         ingredients =
         {
             {type = fluid, name = hexachloroplatinic_acid, amount = 240},
@@ -1353,17 +1751,17 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = ammonium_hexachloroplatinate_IV, amount = 16},
             {type = fluid, name = hydrochloric_acid_angels, amount = 240}, -- 480
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
         },
         main_product = ammonium_hexachloroplatinate_IV
     },
     {
         name = sodium_hexachloroplatinate_IV_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_D_I(platinum_pellet, chlorine_angels, sodium_chloride_solution, sodium_hexachloroplatinate_IV_solution),
         order = e,
-        energy_required = 8, -- Pt + 2Cl₂ + 2NaCl(aq) --> Na₂PtCl₆(aq)
+        energy_required = 8, -- Pt(s) + 2Cl₂(g) + 2NaCl(aq) --> Na₂PtCl₆(2aq)
         ingredients =
         {
             {type = item, name = platinum_pellet, amount = 8},
@@ -1375,11 +1773,11 @@ TIMSABA.functions.create_recipes
     },
     {
         name = platinum_hydroxide_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = TWO_D_I(sodium_hexachloroplatinate_IV_solution, sodium_hydroxide_solution_angels, platinum_hydroxide_IV, sodium_chloride_solution),
         order = f,
-        energy_required = 8, -- Na₂PtCl₆(aq) + 4NaOH(aq) --> Pt(OH)₄ + 6NaCl(aq)
+        energy_required = 8, -- Na₂PtCl₆(2aq) + 4NaOH(aq) --> Pt(OH)₄(s) + 6NaCl(aq)
         ingredients =
         {
             {type = fluid, name = sodium_hexachloroplatinate_IV_solution, amount = 240},
@@ -1388,17 +1786,17 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = platinum_hydroxide_IV, amount = 16},
-            {type = fluid, name = sodium_chloride_solution, amount = 480} -- 1440
+            {type = fluid, name = sodium_chloride_solution, amount = 960} -- 1440
         },
         main_product = platinum_hydroxide_IV
     },
     {
         name = sodium_hexahydroxoplatinate_IV_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_platinum_chemistry,
         icons = THREE_I(platinum_hydroxide_IV, sodium_hydroxide_solution_angels, sodium_hexahydroxoplatinate_IV_solution),
         order = g,
-        energy_required = 8, -- Pt(OH)₄ + 2NaOH(aq) --> Na₂Pt(OH)₆(aq)
+        energy_required = 8, -- Pt(OH)₄(s) + 2NaOH(aq) --> Na₂Pt(OH)₆(2aq)
         ingredients =
         {
             {type = item, name = platinum_hydroxide_IV, amount = 16},
@@ -1406,154 +1804,5 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = fluid, name = sodium_hexahydroxoplatinate_IV_solution, amount = 240}},
         main_product = sodium_hexahydroxoplatinate_IV_solution
-    }
-})
-
--- LITHIUM
-lithium_chloride_solution_from_lithium_hydroxide = "lithium-chloride-solution-from-lithium-hydroxide"
-TIMSABA.functions.create_recipes
-({
-    {
-        name = lithium_chloride_solution,
-        category = angels_liquifying,
-        subgroup = is_alloys,
-        icons = THREE_I(lithium_chloride_angels, water_purified_angels, lithium_chloride_solution),
-        order = b,
-        energy_required = 4, -- LiCl + H₂O --> LiCl(aq)
-        ingredients =
-        {
-            {type = item, name = lithium_chloride_angels, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results = {{type = fluid, name = lithium_chloride_solution, amount = 60}},
-        main_product = lithium_chloride_solution
-    },
-    {
-        name = lithium_chloride_solution_from_lithium_hydroxide,
-        category = chemistry,
-        subgroup = is_alloys,
-        icons = TWO_D_I(lithium_hydroxide, hydrochloric_acid_angels, lithium_chloride_solution, water_purified_angels),
-        order = b_a,
-        energy_required = 8, -- LiOH(aq) + HCl(aq) --> LiCl(aq) + 2H₂O
-        ingredients =
-        {
-            {type = item, name = lithium_hydroxide, amount = 16},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 240}
-        },
-        results =
-        {
-            {type = fluid, name = lithium_chloride_solution, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 120} -- 240
-        },
-        main_product = lithium_chloride_solution
-    },
-    {
-        name = lithium_perchlorate_solution,
-        category = chemistry,
-        subgroup = is_alloys,
-        icons = TWO_D_I(sodium_perchlorate_solution, lithium_chloride_solution, lithium_perchlorate_solution, sodium_chloride_solution),
-        order = c,
-        energy_required = 4, -- NaClO₄(aq) + LiCl(aq) --> LiClO₄(aq) + NaCl(aq)
-        ingredients =
-        {
-            {type = fluid, name = sodium_perchlorate_solution, amount = 60},
-            {type = fluid, name = lithium_chloride_solution, amount = 60},
-        },
-        results =
-        {
-            {type = fluid, name = lithium_perchlorate_solution, amount = 60},
-            {type = fluid, name = sodium_chloride_solution, amount = 60},
-        },
-        main_product = lithium_perchlorate_solution
-    },
-    {
-        name = lithium_hydride,
-        category = chemistry,
-        subgroup = is_alloys,
-        icons = THREE_I(lithium_bob, hydrogen_angels, lithium_hydride),
-        order = g,
-        energy_required = 8, -- 2Li + H₂ --> 2LiH
-        ingredients =
-        {
-            {type = item, name = lithium_bob, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 240}
-        },
-        results = {{type = item, name = lithium_hydride, amount = 16}},
-        main_product = lithium_hydride
-    },
-    {
-        name = lithium_hydroxide,
-        category = angels_petrochem_electrolyser,
-        subgroup = is_alloys,
-        icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
-        order = h,
-        energy_required = 8, -- 2(LiCl + H₂O) -electrode/electrolys-> 2LiOH + H₂ + Cl₂
-        ingredients =
-        {
-            {type = fluid, name = lithium_chloride_solution, amount = 240},
-            {type = item, name = graphite_electrode, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = lithium_hydroxide, amount = 16},
-            {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
-            {type = fluid, name = chlorine_angels, amount = 60}, -- 120
-            {type = item, name = graphite_chips, amount = 4}
-        },
-        main_product = lithium_hydroxide
-    },
-    {
-        name = lithium_fluoride,
-        category = chemistry,
-        subgroup = is_alloys,
-        icons = TWO_D_I(lithium_hydroxide, hydrofluoric_acid_angels, lithium_fluoride, water_purified_angels),
-        order = j,
-        energy_required = 4, -- LiOH + HF(aq) --> LiF + 2H₂O
-        ingredients =
-        {
-            {type = item, name = lithium_hydroxide, amount = 4},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = lithium_fluoride, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60} -- 120
-        },
-        main_product = lithium_fluoride
-    },
-    {
-        name = lithium_hexafluorophosphate,
-        category = chemistry,
-        subgroup = is_alloys,
-        icons = THREE_I(lithium_fluoride, phosphorus_fluoride_V_gas, lithium_hexafluorophosphate),
-        order = k,
-        energy_required = 4, -- LiF + PF₅ -HF(liquefied)-> LiPF₆
-        ingredients =
-        {
-            {type = item, name = lithium_fluoride, amount = 4},
-            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
-            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = lithium_hexafluorophosphate, amount = 4},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 30}
-        },
-        main_product = lithium_hexafluorophosphate
-    },
-    {
-        name = lithium_hexafluorophosphate_solution_carbonate,
-        category = angels_liquifying,
-        subgroup = is_alloys,
-        icons = THREE_I(lithium_hexafluorophosphate, ethylene_carbonate, lithium_hexafluorophosphate_solution_carbonate),
-        order = l,
-        energy_required = 4, -- LiPF₆ + C₃H₄O₃ --> LiPF₆(carbonate)
-        ingredients =
-        {
-            {type = item, name = lithium_hexafluorophosphate, amount = 4},
-            {type = fluid, name = ethylene_carbonate, amount = 60}
-        },
-        results = {{type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}},
-        main_product = lithium_hexafluorophosphate_solution_carbonate
     }
 })

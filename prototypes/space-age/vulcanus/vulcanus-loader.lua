@@ -13,7 +13,7 @@ if mods[loaders_modernized_integrations] then
         prerequisite_techs = {vulcanus_transport_belt, T5_loader},
         recipe_data =
         {
-            --category = data_recipe[vulcanus_underground_belt].category,
+            --categories = data_recipe[vulcanus_underground_belt].categories,
             --surface_conditions = data_recipe[vulcanus_underground_belt].surface_conditions,
             ingredients =
             {

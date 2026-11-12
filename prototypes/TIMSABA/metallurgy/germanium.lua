@@ -158,29 +158,27 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = germanium_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_germanium,
         icons = TWO_I(germanium_ore, germanium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = germanium_ore, amount = 4}},
         results = {{type = item, name = germanium_processed, amount = 4}},
         main_product = germanium_processed
     },
     {
         name = germanium_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_germanium,
         icons = TWO_I(germanium_processed, germanium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = germanium_processed, amount = 4}},
         results = {{type = item, name = germanium_pellet, amount = 4}},
         main_product = germanium_pellet
     },
     {
         name = germanium_ingot,
-        category = angels_chemical_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_germanium,
         icons = TWO_D_I(germanium_oxide_IV, hydrogen_angels, germanium_ingot, steam),
         order = d,
@@ -199,7 +197,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_powder,
-        category = powderizing_4,
+        categories = {powderizing_4},
         subgroup = is_germanium,
         icons = TWO_I(germanium_ingot, germanium_powder),
         order = e,
@@ -211,7 +209,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = potassium_metagermanate_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(germanium_ore, potassium_hydroxide_solution, hydrogen_peroxide, potassium_metagermanate_solution, nil, water_purified_angels),
         order = a,
@@ -231,7 +229,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_oxide_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(potassium_metagermanate_solution, nil, hydrochloric_acid_angels, germanium_oxide_IV, potassium_chloride_solution, water_purified_angels),
         order = b,
@@ -251,7 +249,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_oxide_IV_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = TWO_D_I(germanium_chloride_IV, water_purified_angels, germanium_oxide_IV, hydrogen_chloride_angels),
         order = b_a,
@@ -270,7 +268,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_oxide_IV_3,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(sodium_hexachlorogermanate_IV, nil, water_purified_angels, germanium_oxide_IV, salt_angels, hydrogen_chloride_angels),
         order = b_b,
@@ -290,28 +288,28 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_chloride_IV,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(germanium_processed, nitric_acid_angels, hydrochloric_acid_angels, germanium_chloride_IV, nitrogen_monoxide_angels, water_purified_angels),
         order = c,
-        energy_required = 8, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
+        energy_required = 12, -- 3Ge(s) + 4HNO₃(l) + 12HCl(sq) --> 3GeCl₄(l) + 4NO(g) + 8H₂O(l)
         ingredients =
         {
-            {type = item, name = germanium_processed, amount = 12},
-            {type = fluid, name = nitric_acid_angels, amount = 240},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+            {type = item, name = germanium_processed, amount = 24},
+            {type = fluid, name = nitric_acid_angels, amount = 480},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 1440}
         },
         results =
         {
-            {type = fluid, name = germanium_chloride_IV, amount = 180},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
+            {type = fluid, name = germanium_chloride_IV, amount = 360},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 480} -- 960
         },
         main_product = germanium_chloride_IV
     },
     {
         name = sodium_metagermanate_solution,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = THREE_D_I(germanium_pellet, sodium_hydroxide_solution_angels, hydrogen_peroxide, sodium_metagermanate_solution, nil, water_purified_angels),
         order = d,
@@ -332,27 +330,27 @@ TIMSABA.functions.create_recipes
     {
         type = recipe,
         name = sodium_hexachlorogermanate_IV,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_germanium_chemistry,
         icons = TWO_D_I(sodium_metagermanate_solution, hydrogen_chloride_angels, sodium_hexachlorogermanate_IV, steam),
         order = e,
-        -- Na₂GeO₃(aq) + 6HCl(g) --> Na₂GeCl₆(s) + 4H₂O(g)
+        energy_required = 8, -- Na₂GeO₃(aq) + 6HCl(g) --> Na₂GeCl₆(s) + 4H₂O(g)
         ingredients =
         {
-            {type = fluid, name = sodium_metagermanate_solution, amount = 120},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 720}
+            {type = fluid, name = sodium_metagermanate_solution, amount = 240},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 1440}
         },
         results =
         {
-            {type = item, name = sodium_hexachlorogermanate_IV, amount = 8},
-            {type = fluid, name = steam, amount = 240} -- 480
+            {type = item, name = sodium_hexachlorogermanate_IV, amount = 16},
+            {type = fluid, name = steam, amount = 480} -- 960
         },
         main_product = sodium_hexachlorogermanate_IV
     },
     -- CASTING
     {
         name = germanium_molten,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_germanium_casting,
         icons = TWO_I(germanium_ingot, germanium_molten),
         order = a,
@@ -364,7 +362,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanium_plate,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_germanium_casting,
         icons = TWO_I(germanium_molten, germanium_plate),
         order = b,

@@ -8,11 +8,11 @@ local is_niobium_iron = "is-niobium-iron"
 local is_niobium_tungsten_molybdenum = "is-niobium-tungsten-molybdenum"
 TIMSABA.functions.create_subgroups(ig_vulcanus,
 {
-    {name = is_niobium,                     order = c_a},
-    {name = is_niobium_chemistry,           order = c_b},
-    {name = is_niobium_titanium,            order = c_d},
-    {name = is_niobium_iron,                order = c_e},
-    {name = is_niobium_tungsten_molybdenum, order = c_f}
+    {name = is_niobium,                     order = d_a},
+    {name = is_niobium_chemistry,           order = d_b},
+    {name = is_niobium_titanium,            order = d_d},
+    {name = is_niobium_iron,                order = d_e},
+    {name = is_niobium_tungsten_molybdenum, order = d_f}
 })
 
 -- ITEM
@@ -96,7 +96,6 @@ TIMSABA.functions.create_items
         icon = graphics_niobium .. niobium_hydroxide_V .. ".png",
         order = d
     },
-    -- CASTING
     -- CASTING Nb-Ti
     {
         localised_description = show_formula and {chemical_formula, "NbTi"} or nil,
@@ -243,48 +242,46 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = niobium_processed,
-        category = angels_processed_pressing_4,
+        categories = {angels_processed_pressing_4},
         subgroup = is_niobium,
         icons = TWO_I(niobium_ore, niobium_processed),
         order = b,
-        energy_required = 2,
         ingredients = {{type = item, name = niobium_ore, amount = 4}},
         results = {{type = item, name = niobium_processed, amount = 4}},
         main_product = niobium_processed
     },
     {
         name = niobium_pellet,
-        category = angels_pellet_pressing_4,
+        categories = {angels_pellet_pressing_4},
         subgroup = is_niobium,
         icons = TWO_I(niobium_processed, niobium_pellet),
         order = c,
-        energy_required = 2,
         ingredients = {{type = item, name = niobium_processed, amount = 4}},
         results = {{type = item, name = niobium_pellet, amount = 4}},
         main_product = niobium_pellet
     },
     {
         name = niobium_powder,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_niobium,
-        icons = TWO_D_I(niobium_oxide_V, aluminium_ingot, niobium_powder, aluminium_oxide),
+        icons = TWO_D_I(niobium_oxide_V, aluminium_powder, niobium_powder, aluminium_oxide),
         order = d,
-        energy_required = 8, -- 3Nb₂O₅(s) + 10Al(s) --> 6Nb(s) + 5Al₂O₃(s)
+        energy_required = 12, -- 3Nb₂O₅(s) + 10Al(s) --> 6Nb(s) + 5Al₂O₃(s)
         ingredients =
         {
             {type = item, name = niobium_oxide_V, amount = 12},
-            {type = item, name = aluminium_ingot, amount = 40}
+            {type = item, name = aluminium_powder, amount = 40}
         },
         results =
         {
             {type = item, name = niobium_powder, amount = 24},
-            {type = item, name = aluminium_oxide, amount = 8} -- 20
+            {type = item, name = aluminium_oxide, amount = 12} -- 20
         },
         main_product = niobium_powder
     },
     {
         name = niobium_tungsten_molybdenum_powder_mixture,
-        category = angels_powder_mixing_4,
+        categories = {angels_powder_mixing_4},
         subgroup = is_niobium,
         icons = THREE_D_I(niobium_powder, tungsten_powder, molybdenum_powder, niobium_tungsten_molybdenum_powder_mixture),
         order = e,
@@ -301,7 +298,7 @@ TIMSABA.functions.create_recipes
     -- CHEMISTRY
     {
         name = niobium_oxide_V,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_niobium_chemistry,
         icons = THREE_I(niobium_ore, oxygen_angels, niobium_oxide_V),
         order = a,
@@ -316,7 +313,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_oxide_V_2,
-        category = angels_chemical_smelting_4,
+        categories = {angels_chemical_smelting_4},
         subgroup = is_niobium_chemistry,
         icons = TWO_D_I(potassium_niobate, sulfuric_acid_angels, niobium_oxide_V, potassium_sulfate_solution),
         order = a_a,
@@ -335,7 +332,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_oxide_V_3,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_niobium_chemistry,
         icons = THREE_R_I(niobium_hydroxide_V, niobium_oxide_V, steam),
         order = a_b,
@@ -344,17 +341,17 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = niobium_oxide_V, amount = 8},
-            {type = fluid, name = steam, amount = 120} -- 600
+            {type = fluid, name = steam, amount = 360} -- 600
         },
         main_product = niobium_oxide_V
     },
     {
         name = potassium_niobate,
-        category = angels_blast_smelting_4,
+        categories = {angels_blast_smelting_4},
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(niobium_processed, potassium_hydroxide, potassium_chlorate, potassium_niobate, potassium_chloride, steam),
         order = b,
-        energy_required = 8, -- 6Nb(prcessed) + 6KOH(s) + 5KClO₃(s) --> 6KNbO₃(s) + 5KCl(s) + 3H₂O(g)
+        energy_required = 12, -- 6Nb(prcessed) + 6KOH(s) + 5KClO₃(s) --> 6KNbO₃(s) + 5KCl(s) + 3H₂O(g)
         ingredients =
         {
             {type = item, name = niobium_processed, amount = 24},
@@ -364,57 +361,56 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = potassium_niobate, amount = 24},
-            {type = item, name = potassium_chloride, amount = 4}, -- 20
-            {type = fluid, name = steam, amount = 60} -- 180
+            {type = item, name = potassium_chloride, amount = 12}, -- 20
+            {type = fluid, name = steam, amount = 120} -- 180
         },
         main_product = potassium_niobate
     },
     {
         name = heptafluoroniobic_acid,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(niobium_pellet, nitric_acid_angels, hydrofluoric_acid_angels, heptafluoroniobic_acid, nitrogen_monoxide_angels, water_purified_angels),
         order = c,
-        -- Nb(pellet) + 2HNO₃(l) + 7HF(aq) --> HNbF₇(aq) + 2NO(g) + 4H₂O(l) + 6H₂O(l)
+        energy_required = 8, -- Nb(pellet) + 2HNO₃(l) + 7HF(aq) --> HNbF₇(aq) + 2NO(g) + 4H₂O(l) + 6H₂O(l)
         ingredients =
         {
-            {type = item, name = niobium_pellet, amount = 4},
-            {type = fluid, name = nitric_acid_angels, amount = 240},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 840}
+            {type = item, name = niobium_pellet, amount = 8},
+            {type = fluid, name = nitric_acid_angels, amount = 480},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 1680}
         },
         results =
         {
-            {type = fluid, name = heptafluoroniobic_acid, amount = 120},
-            {type = fluid, name = nitrogen_monoxide_angels, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 600} -- 1200
+            {type = fluid, name = heptafluoroniobic_acid, amount = 240},
+            {type = fluid, name = nitrogen_monoxide_angels, amount = 240}, -- 480
+            {type = fluid, name = water_purified_angels, amount = 960} -- 1440
         },
         main_product = heptafluoroniobic_acid
     },
     {
         name = niobium_hydroxide_V,
-        category = angels_advanced_chemistry,
+        categories = {angels_advanced_chemistry},
         subgroup = is_niobium_chemistry,
         icons = THREE_D_I(heptafluoroniobic_acid, ammonia_solution, water_purified_angels, niobium_hydroxide_V, nil, ammonium_fluoride_solution),
         order = d,
-        -- HNbF₇(aq) + 7NH₃(aq) + 4H₂O(l) --> Nb(OH)₅(s) + 7NH₄F(aq)
+        energy_required = 8, -- HNbF₇(aq) + 7NH₃(aq) + 4H₂O(l) --> Nb(OH)₅(s) + 7NH₄F(aq)
         ingredients =
         {
-            {type = fluid, name = heptafluoroniobic_acid, amount = 120},
-            {type = fluid, name = ammonia_solution, amount = 840},
-            {type = fluid, name = water_purified_angels, amount = 480}
+            {type = fluid, name = heptafluoroniobic_acid, amount = 240},
+            {type = fluid, name = ammonia_solution, amount = 1680},
+            {type = fluid, name = water_purified_angels, amount = 960}
         },
         results =
         {
-            {type = item, name = niobium_hydroxide_V, amount = 8},
-            {type = fluid, name = ammonium_fluoride_solution, amount = 360} -- 840
+            {type = item, name = niobium_hydroxide_V, amount = 16},
+            {type = fluid, name = ammonium_fluoride_solution, amount = 960} -- 1680
         },
         main_product = niobium_hydroxide_V
     },
-    -- CASTING
     -- CASTING Nb-Ti
     {
         name = niobium_titanium_molten,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_titanium,
         icons = THREE_I(niobium_powder, titanium_molten_angels, niobium_titanium_molten),
         order = a,
@@ -430,7 +426,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_titanium_plate,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_titanium,
         icons = TWO_I(niobium_titanium_molten, niobium_titanium_plate),
         order = b,
@@ -443,7 +439,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_titanium_cable,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_titanium,
         icons = TWO_I(niobium_titanium_molten, niobium_titanium_cable),
         order = c,
@@ -457,7 +453,7 @@ TIMSABA.functions.create_recipes
     -- CASTING Nb-Fe
     {
         name = niobium_iron_molten,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_iron,
         icons = THREE_I(niobium_powder, iron_molten_angels, niobium_iron_molten),
         order = a,
@@ -473,7 +469,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_iron_plate,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_iron,
         icons = TWO_I(niobium_iron_molten, niobium_iron_plate),
         order = b,
@@ -486,7 +482,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_iron_bearing_ball,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_iron,
         icons = TWO_I(niobium_iron_molten, niobium_iron_bearing_ball),
         order = c,
@@ -499,7 +495,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_iron_bearing,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_niobium_iron,
         icons = B_F_L(lubricant, niobium_iron_bearing_ball, niobium_iron_molten, niobium_iron_bearing),
         order = d,
@@ -518,7 +514,7 @@ TIMSABA.functions.create_recipes
     -- CASTING Nb-W-Mo
     {
         name = niobium_tungsten_molybdenum_plate,
-        category = sintering_6,
+        categories = {sintering_6},
         subgroup = is_niobium_tungsten_molybdenum,
         icons = TWO_I(niobium_tungsten_molybdenum_powder_mixture, niobium_tungsten_molybdenum_plate),
         order = a,
@@ -531,7 +527,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = niobium_tungsten_molybdenum_gear_wheel,
-        category = sintering_6,
+        categories = {sintering_6},
         subgroup = is_niobium_tungsten_molybdenum,
         icons = TWO_I(niobium_tungsten_molybdenum_powder_mixture, niobium_tungsten_molybdenum_gear_wheel),
         order = b,
@@ -545,47 +541,47 @@ TIMSABA.functions.create_recipes
     -- FLUORITE
     {
         name = fluorite_angels,
-        category = chemistry,
+        categories = {chemistry},
         subgroup = is_calcium,
-        icons = THREE_D_I(ammonium_fluoride_solution, nil, calcium_hydroxide, fluorite_angels, ammonia_solution, water_purified_angels),
+        icons = THREE_D_I(calcium_hydroxide, nil, ammonium_fluoride_solution, fluorite_angels, ammonia_solution, water_purified_angels),
         order = b,
-        -- 2NH₄F(aq) + Ca(OH)₂(s) --> CaF₂(s) + 2NH₃(aq) + 2H₂O(l)
+        -- Ca(OH)₂(s) + 2NH₄F(aq) --> CaF₂(s) + 2NH₃(aq) + 2H₂O(l)
         ingredients =
         {
-            {type = fluid, name = ammonium_fluoride_solution, amount = 120},
-            {type = item, name = calcium_hydroxide, amount = 4}
+            {type = item, name = calcium_hydroxide, amount = 4},
+            {type = fluid, name = ammonium_fluoride_solution, amount = 120}
         },
         results =
         {
             {type = item, name = fluorite_angels, amount = 4},
-            {type = fluid, name = ammonia_solution, amount = 120},
-            {type = fluid, name = water_purified_angels, amount = 120}
+            {type = fluid, name = ammonia_solution, amount = 60}, -- 120
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = fluorite_angels
     },
     -- NITORGEN AQUILO
     {
         name = nitrogen_liquid,
-        category = cryogenics,
+        categories = {cryogenics},
         subgroup = is_aquilo_air,
         icons = TWO_I(nitrogen_angels, nitrogen_liquid),
         order = e,
         ingredients =
         {
-            {type = fluid, name = nitrogen_angels, amount = 60},
-            {type = fluid, name = fluoroketone_cold, amount = 120}
+            {type = fluid, name = nitrogen_angels, amount = 240},
+            {type = fluid, name = fluoroketone_cold, amount = 60}
         },
         results =
         {
-            {type = fluid, name = nitrogen_liquid, amount = 60},
-            {type = fluid, name = fluoroketone_hot, amount = 60} -- 120
+            {type = fluid, name = nitrogen_liquid, amount = 240},
+            {type = fluid, name = fluoroketone_hot, amount = 30} -- 60
         },
         main_product = nitrogen_liquid
     },
     -- SUPERCONDUCTOR FULGORA
     {
         name = superconductor_2,
-        category = electromagnetics,
+        categories = {electromagnetics},
         subgroup = is_fulgora_recipe,
         icons = R_P_I(superconductor, nil, nil, number_2),
         order = a_a,

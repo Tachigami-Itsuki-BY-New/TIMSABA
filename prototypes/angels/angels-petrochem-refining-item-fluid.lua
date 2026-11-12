@@ -2,6 +2,8 @@ local graphics_petrochem_basics = "__TIMSABA__/graphics/icons/angels/petrochem/b
 -- BASIC PETROCHEN FLUIDS
 tritium_gas = "tritium-gas"
 argon_gas = "argon-gas"
+hydrogen_liquid = "hydrogen-liquid"
+oxygen_liquid = "oxygen-liquid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -21,10 +23,30 @@ TIMSABA.functions.create_fluids
         order = h,
         base_color = TIMSABA.functions.fluid_color("ArArAr"),
         flow_color = TIMSABA.functions.flow_color("ArArAr")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]"} or nil,
+        name = hydrogen_liquid,
+        subgroup = is_basic_fluids,
+        icon = graphics_petrochem_basics .. hydrogen_liquid .. ".png",
+        order = i,
+        base_color = TIMSABA.functions.fluid_color("HHH"),
+        flow_color = TIMSABA.functions.flow_color("HHH")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "O[font=default-tiny-bold]2[/font]"} or nil,
+        name = oxygen_liquid,
+        subgroup = is_basic_fluids,
+        icon = graphics_petrochem_basics .. oxygen_liquid .. ".png",
+        order = j,
+        base_color = TIMSABA.functions.fluid_color("OOO"),
+        flow_color = TIMSABA.functions.flow_color("OOO")
     }
 })
 TIMSABA.barreling.add_gas(tritium_gas)
 TIMSABA.barreling.add_gas(argon_gas)
+TIMSABA.barreling.add_gas(hydrogen_liquid)
+TIMSABA.barreling.add_gas(oxygen_liquid)
 
 -- COAL ITEM
 coke_processed = "coke-processed"
@@ -45,8 +67,8 @@ TIMSABA.functions.create_items
         subgroup = is_coal,
         icon = graphics_petrochem_basics .. coke_processed .. ".png",
         order = e,
-        fuel_category = base_fuel,
-        fuel_value = 7200 .. kJ
+        fuel_categories = {base_fuel},
+        fuel_value = 15360 .. kJ
     },
     {
         localised_description = show_formula and {chemical_formula, "C"} or nil,
@@ -294,6 +316,54 @@ TIMSABA.barreling.add_gas(nitrogen_oxide)
 TIMSABA.barreling.add_dangerous_fluid(adiponitrile_liquid)
 TIMSABA.barreling.add_dangerous_fluid(imidazole_solution)
 
+-- NITROGEN FLUID 2
+ammonium_nitrate_solution = "ammonium-nitrate-solution"
+gaseous_nitric_acid = "gaseous-nitric-acid"
+lauryl_dimethylamine_solution = "lauryl-dimethylamine-solution"
+lauryl_dimethylamine_oxide_solution = "lauryl-dimethylamine-oxide-solution"
+TIMSABA.functions.create_fluids
+({
+    {
+        localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]NO[font=default-tiny-bold]3[/font](aq)"} or nil,
+        name = ammonium_nitrate_solution,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. ammonium_nitrate_solution .. ".png",
+        order = a,
+        base_color = TIMSABA.functions.fluid_color("NH4NO3Wp"),
+        flow_color = TIMSABA.functions.flow_color("NH4NO3Wp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HNO[font=default-tiny-bold]3[/font]"} or nil,
+        name = gaseous_nitric_acid,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. gaseous_nitric_acid .. ".png",
+        order = b,
+        base_color = TIMSABA.functions.fluid_color("HNO3"),
+        flow_color = TIMSABA.functions.flow_color("HNO3")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]13[/font]H[font=default-tiny-bold]31[/font]N[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = lauryl_dimethylamine_solution,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. lauryl_dimethylamine_solution .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("C14H31NWp"),
+        flow_color = TIMSABA.functions.flow_color("C14H31NWp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]14[/font]H[font=default-tiny-bold]31[/font]NO[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = lauryl_dimethylamine_oxide_solution,
+        subgroup = is_nitrogen_fluids_2,
+        icon = graphics_petrochem_nitrogen .. lauryl_dimethylamine_oxide_solution .. ".png",
+        order = d,
+        base_color = TIMSABA.functions.fluid_color("C14H31NOWp"),
+        flow_color = TIMSABA.functions.flow_color("C14H31NOWp")
+    }
+})
+TIMSABA.barreling.add_dangerous_fluid(ammonium_nitrate_solution)
+TIMSABA.barreling.add_dangerous_fluid(lauryl_dimethylamine_solution)
+TIMSABA.barreling.add_dangerous_fluid(lauryl_dimethylamine_oxide_solution)
+
 -- FLUORINE FLUID
 hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
 oxygen_fluoride_gas = "oxygen-fluoride-gas"
@@ -325,6 +395,7 @@ local graphics_petrochem_sodium = "__TIMSABA__/graphics/icons/angels/petrochem/s
 -- SODIUM ITEM
 sodium_peroxide = "sodium-peroxide"
 sodium_oxide = "sodium-oxide"
+sodium_hydride = "sodium-hydride"
 TIMSABA.functions.create_items
 ({
     {
@@ -340,6 +411,13 @@ TIMSABA.functions.create_items
         subgroup = is_sodium,
         icon = graphics_petrochem_sodium .. sodium_oxide .. ".png",
         order = m
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NaH"} or nil,
+        name = sodium_hydride,
+        subgroup = is_sodium,
+        icon = graphics_petrochem_sodium .. sodium_hydride .. ".png",
+        order = o
     }
 })
 
@@ -353,6 +431,8 @@ sodium_chlorate_solution = "sodium-chlorate-solution"
 sodium_perchlorate_solution = "sodium-perchlorate-solution"
 sodium_bicarbonate_solution = "sodium-bicarbonate-solution"
 sodium_cyanide_solution = "sodium-cyanide-solution"
+sodium_iodide_solution = "sodium-iodide-solution"
+sodium_lauryl_sulfate_solution = "sodium-lauryl-sulfate-solution"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -435,6 +515,24 @@ TIMSABA.functions.create_fluids
         order = j,
         base_color = TIMSABA.functions.fluid_color("NaCNWp"),
         flow_color = TIMSABA.functions.flow_color("NaCNWp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NaI[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = sodium_iodide_solution,
+        subgroup = is_sodium_fluid,
+        icon = graphics_petrochem_sodium .. sodium_iodide_solution .. ".png",
+        order = k,
+        base_color = TIMSABA.functions.fluid_color("NaIWp"),
+        flow_color = TIMSABA.functions.flow_color("NaIWp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "NaC[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]25[/font]SO[font=default-tiny-bold]4(aq)[/font]"} or nil,
+        name = sodium_lauryl_sulfate_solution,
+        subgroup = is_sodium_fluid,
+        icon = graphics_petrochem_sodium .. sodium_lauryl_sulfate_solution .. ".png",
+        order = l,
+        base_color = TIMSABA.functions.fluid_color("NaC12H25SO4Wp"),
+        flow_color = TIMSABA.functions.flow_color("NaC12H25SO4Wp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(sodium_chloride_solution)
@@ -446,6 +544,8 @@ TIMSABA.barreling.add_dangerous_fluid(sodium_chlorate_solution)
 TIMSABA.barreling.add_dangerous_fluid(sodium_perchlorate_solution)
 TIMSABA.barreling.add_dangerous_fluid(sodium_bicarbonate_solution)
 TIMSABA.barreling.add_dangerous_fluid(sodium_cyanide_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_iodide_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_lauryl_sulfate_solution)
 
 local graphics_petrochem_sulfur = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/"
 -- SULFUR ITEM
@@ -484,6 +584,7 @@ chlorine_oxide_gas = "chlorine-oxide-gas"
 hypochlorous_acid = "hypochlorous-acid-solution"
 chloroethane_gas = "chloroethane-gas"
 chlorobutane_liquid = "chlorobutane-liquid"
+chlorosulfonic_acid = "chlorosulfonic-acid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -530,6 +631,15 @@ TIMSABA.functions.create_fluids
         order = k,
         base_color = TIMSABA.functions.fluid_color("C4H9Cl"),
         flow_color = TIMSABA.functions.flow_color("C4H9Cl")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HSO[font=default-tiny-bold]3[/font]Cl"} or nil,
+        name = chlorosulfonic_acid,
+        subgroup = is_chlorine_fluids,
+        icon = graphics_petrochem_chlorine .. chlorosulfonic_acid .. ".png",
+        order = l,
+        base_color = TIMSABA.functions.fluid_color("HSO3Cl"),
+        flow_color = TIMSABA.functions.flow_color("HSO3Cl")
     }
 })
 TIMSABA.barreling.add_gas(phosgene_gas)
@@ -537,6 +647,7 @@ TIMSABA.barreling.add_gas(chlorine_oxide_gas)
 TIMSABA.barreling.add_dangerous_fluid(hypochlorous_acid)
 TIMSABA.barreling.add_gas(chloroethane_gas)
 TIMSABA.barreling.add_dangerous_fluid(chlorobutane_liquid)
+TIMSABA.barreling.add_dangerous_fluid(chlorosulfonic_acid)
 
 local graphics_petrochem_calcium = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/"
 -- CALCIUM ITEM
@@ -580,6 +691,7 @@ TIMSABA.functions.create_items
 -- CALCIUM FLUID
 calcium_chloride_solution = "calcium-chloride-solution"
 calcium_hydroxide_solution = "calcium-hydroxide-solution"
+calcium_hypochlorite_solution = "calcium-hypochlorite-solution"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -599,10 +711,20 @@ TIMSABA.functions.create_fluids
         order = c,
         base_color = TIMSABA.functions.fluid_color("CaOH2Wp"),
         flow_color = TIMSABA.functions.flow_color("CaOH2Wp")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Ca(ClO)[font=default-tiny-bold]2(aq)[/font]"} or nil,
+        name = calcium_hypochlorite_solution,
+        subgroup = is_calcium_fluid,
+        icon = graphics_petrochem_calcium .. calcium_hypochlorite_solution .. ".png",
+        order = d,
+        base_color = TIMSABA.functions.fluid_color("CaCl2O2Wp"),
+        flow_color = TIMSABA.functions.flow_color("CaCl2O2Wp")
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(calcium_chloride_solution)
 TIMSABA.barreling.add_dangerous_fluid(calcium_hydroxide_solution)
+TIMSABA.barreling.add_dangerous_fluid(calcium_hypochlorite_solution)
 
 local graphics_petrochem_lithium = "__TIMSABA__/graphics/icons/angels/petrochem/lithium/"
 -- LITHIUM ITEM
@@ -616,37 +738,37 @@ TIMSABA.functions.create_items
     {
         localised_description = show_formula and {chemical_formula, "LiH"} or nil,
         name = lithium_hydride,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_hydride .. ".png",
-        order = g -- e
+        order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "LiOH"} or nil,
         name = lithium_hydroxide,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_hydroxide .. ".png",
-        order = h -- f
+        order = f
     },
     {
         localised_description = show_formula and {chemical_formula, "Li[font=default-tiny-bold]2[/font]O"} or nil,
         name = lithium_oxide,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_oxide .. ".png",
-        order = i -- g
+        order = g
     },
     {
         localised_description = show_formula and {chemical_formula, "LiF"} or nil,
         name = lithium_fluoride,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium .. lithium_fluoride .. ".png",
-        order = j -- h
+        order = h
     },
     {
         localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6[/font]"} or nil,
         name = lithium_hexafluorophosphate,
-        subgroup = is_alloys, -- is_lithium,
+        subgroup = is_lithium,
         icon = graphics_petrochem_lithium ..  lithium_hexafluorophosphate.. ".png",
-        order = k -- i
+        order = i
     }
 })
 
@@ -659,27 +781,27 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "LiCl[font=default-tiny-bold](aq)[/font]"} or nil,
         name = lithium_chloride_solution,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_chloride_solution .. ".png",
-        order = b, -- a
+        order = a,
         base_color = TIMSABA.functions.fluid_color("LiClWp"),
         flow_color = TIMSABA.functions.flow_color("LiClWp")
     },
     {
         localised_description = show_formula and {chemical_formula, "LiClO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = lithium_perchlorate_solution,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_perchlorate_solution .. ".png",
-        order = c, -- b
+        order = b,
         base_color = TIMSABA.functions.fluid_color("LiClO4Wp"),
         flow_color = TIMSABA.functions.flow_color("LiClO4Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6(carbonate)[/font]"} or nil,
         name = lithium_hexafluorophosphate_solution_carbonate,
-        subgroup = is_alloys, -- is_lithium_fluid,
+        subgroup = is_lithium_fluid,
         icon = graphics_petrochem_lithium .. lithium_hexafluorophosphate_solution_carbonate .. ".png",
-        order = l, -- i
+        order = i,
         base_color = TIMSABA.functions.fluid_color("LiPF6Ec"),
         flow_color = TIMSABA.functions.flow_color("LiPF6Ec")
     }
@@ -689,9 +811,29 @@ TIMSABA.barreling.add_dangerous_fluid(lithium_perchlorate_solution)
 TIMSABA.barreling.add_dangerous_fluid(lithium_hexafluorophosphate_solution_carbonate)
 
 -- OTHERS
+dodecanol = "dodecanol"
+lauryl_sulfate = "lauryl-sulfate"
+TIMSABA.functions.create_items
+({
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]26[/font]O"} or nil,
+        name = dodecanol,
+        subgroup = is_others,
+        icon = graphics_petrochem_basics .. dodecanol .. ".png",
+        order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]12[/font]H[font=default-tiny-bold]26[/font]SO[font=default-tiny-bold]4[/font]"} or nil,
+        name = lauryl_sulfate,
+        subgroup = is_others,
+        icon = graphics_petrochem_basics .. lauryl_sulfate .. ".png",
+        order = b
+    }
+})
 
 -- OTHERS FLUID
 hydrogen_peroxide = "hydrogen-peroxide-liquid"
+hydrogen_cyanide_gas = "hydrogen-cyanide-gas"
 hydrocyanic_acid = "hydrocyanic-acid"
 ionic_liquid = "ionic-liquid"
 TIMSABA.functions.create_fluids
@@ -707,30 +849,41 @@ TIMSABA.functions.create_fluids
     },
     {
         localised_description = show_formula and {chemical_formula, "HCN"} or nil,
-        name = hydrocyanic_acid,
+        name = hydrogen_cyanide_gas,
         subgroup = is_others_fluid,
-        icon = graphics_petrochem_basics .. hydrocyanic_acid .. ".png",
+        icon = graphics_petrochem_basics .. hydrogen_cyanide_gas .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("HCN"),
         flow_color = TIMSABA.functions.flow_color("HCN")
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HCN[font=default-tiny-bold](aq)[/font]"} or nil,
+        name = hydrocyanic_acid,
+        subgroup = is_others_fluid,
+        icon = graphics_petrochem_basics .. hydrocyanic_acid .. ".png",
+        order = c,
+        base_color = TIMSABA.functions.fluid_color("HCNWp"),
+        flow_color = TIMSABA.functions.flow_color("HCNWp")
     },
     {
         localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]PF[font=default-tiny-bold]6[/font]"} or nil,
         name = ionic_liquid,
         subgroup = is_others_fluid,
         icon = graphics_petrochem_basics .. ionic_liquid .. ".png",
-        order = c,
+        order = d,
         base_color = {r = 0.537, g = 0.675, b = 0.706},
         flow_color = {r = 0.537, g = 0.675, b = 0.706}
     }
 })
 TIMSABA.barreling.add_dangerous_fluid(hydrogen_peroxide)
+TIMSABA.barreling.add_gas(hydrogen_cyanide_gas)
 TIMSABA.barreling.add_dangerous_fluid(hydrocyanic_acid)
 TIMSABA.barreling.add_dangerous_fluid(ionic_liquid)
 
 local graphics_petrochem_carbons = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/"
 -- CARBON FLUIDS 2
 acetylene_gas = "acetylene-gas"
+vinyl_acetate_liquid = "vinyl-acetate-liquid"
 diethyl_ether = "diethyl-ether-liquid"
 methyl_methacrylate = "methyl-methacrylate-liquid"
 acetaldehyde = "acetaldehyde-liquid"
@@ -747,11 +900,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C2H2")
     },
     {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]2[/font]"} or nil,
+        name = vinyl_acetate_liquid,
+        subgroup = is_carbon_fluids_2,
+        icon = graphics_petrochem_carbons .. vinyl_acetate_liquid .. ".png",
+        order = b,
+        base_color = TIMSABA.functions.fluid_color("C2H4O2"),
+        flow_color = TIMSABA.functions.flow_color("C2H4O2")
+    },
+    {
         localised_description = show_formula and {chemical_formula, "(C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font])[font=default-tiny-bold]2[/font]O"} or nil,
         name = diethyl_ether,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. diethyl_ether .. ".png",
-        order = b,
+        order = c,
         base_color = TIMSABA.functions.fluid_color("C4H10O"),
         flow_color = TIMSABA.functions.flow_color("C4H10O")
     },
@@ -760,7 +922,7 @@ TIMSABA.functions.create_fluids
         name = methyl_methacrylate,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. methyl_methacrylate .. ".png",
-        order = c,
+        order = d,
         base_color = TIMSABA.functions.fluid_color("C5H8O2"),
         flow_color = TIMSABA.functions.flow_color("C5H8O2")
     },
@@ -769,7 +931,7 @@ TIMSABA.functions.create_fluids
         name = acetaldehyde,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. acetaldehyde .. ".png",
-        order = d,
+        order = e,
         base_color = TIMSABA.functions.fluid_color("C2H4O"),
         flow_color = TIMSABA.functions.flow_color("C2H4O")
     },
@@ -778,12 +940,13 @@ TIMSABA.functions.create_fluids
         name = formic_acid,
         subgroup = is_carbon_fluids_2,
         icon = graphics_petrochem_carbons .. formic_acid .. ".png",
-        order = e,
+        order = f,
         base_color = TIMSABA.functions.fluid_color("CH2O2"),
         flow_color = TIMSABA.functions.flow_color("CH2O2")
     }
 })
 TIMSABA.barreling.add_gas(acetylene_gas)
+TIMSABA.barreling.add_dangerous_fluid(vinyl_acetate_liquid)
 TIMSABA.barreling.add_dangerous_fluid(diethyl_ether)
 TIMSABA.barreling.add_dangerous_fluid(methyl_methacrylate)
 TIMSABA.barreling.add_dangerous_fluid(acetaldehyde)
@@ -821,6 +984,7 @@ TIMSABA.functions.create_items
 -- ETHANE FLUID
 ethylene_oxide = "ethylene-oxide-gas"
 ethylene_carbonate = "ethylene-carbonate-liquid"
+isoprene_liquid = "isoprene-liquid"
 ethylene_glycol_liquid = "ethylene-glycol-liquid"
 glyoxal_liquid = "glyoxal-liquid"
 TIMSABA.functions.create_fluids
@@ -844,11 +1008,20 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3H4O3")
     },
     {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]5[/font]H[font=default-tiny-bold]8[/font]"} or nil,
+        name = isoprene_liquid,
+        subgroup = is_ethane,
+        icon = graphics_petrochem_carbons .. isoprene_liquid .. ".png",
+        order = g,
+        base_color = TIMSABA.functions.fluid_color("C5H8"),
+        flow_color = TIMSABA.functions.flow_color("C5H8")
+    },
+    {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]2[/font]"} or nil,
         name = ethylene_glycol_liquid,
         subgroup = is_ethane,
         icon = graphics_petrochem_carbons .. ethylene_glycol_liquid .. ".png",
-        order = g,
+        order = h,
         base_color = TIMSABA.functions.fluid_color("C2H6O2"),
         flow_color = TIMSABA.functions.flow_color("C2H6O2")
     },
@@ -857,7 +1030,7 @@ TIMSABA.functions.create_fluids
         name = glyoxal_liquid,
         subgroup = is_ethane,
         icon = graphics_petrochem_carbons .. glyoxal_liquid .. ".png",
-        order = h,
+        order = i,
         base_color = TIMSABA.functions.fluid_color("C2H2O2"),
         flow_color = TIMSABA.functions.flow_color("C2H2O2")
     }

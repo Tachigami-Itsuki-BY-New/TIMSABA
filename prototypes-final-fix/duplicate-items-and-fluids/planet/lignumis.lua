@@ -22,22 +22,40 @@ if mods[lignumis_mods] then
         "basic-portable-generator-equipment-copper",
         "basic-personal-roboport-equipment-copper",
         "basic-construction-robotics-copper",
-		"burner-long-handed-inserter",
-        "steam-inserter",
-        "steam-inserter-iron",
-        "steam-long-handed-inserter",
-        "steam-long-handed-inserter-iron",
+		burner .. "-" .. L2_inserter,
+        steam .. "-" .. inserter,
+        steam .. "-" .. inserter .. "-iron",
+        steam .. "-" .. L2_inserter,
+        steam .. "-" .. L2_inserter .. "-iron",
         basic_circuit_board_mods .. "-copper",
         low_density_structure .. "-gold",
         processing_unit .. "-gold",
         "desiccation-" .. furnace .. "-iron",
-        "burner-" .. agricultural_tower .. "-copper",
-        "steam-" .. assembling_machine .. "-iron",
-        "lumber-mill-copper",
+        steam .. "-" .. assembling_machine .. "-iron",
         "gold-module-3",
         "burner-lamp",
         "burner-lamp-copper",
-        "basic-" .. gun_turret_1 .. "-copper"
+        "basic-storage-chest",
+        "basic-roboport",
+        "basic-repair-pack-copper",
+        "wood-lab-copper",
+        electronic_circuit .. "-iron",
+        "experienced-quality-assembling-3",
+        steam .. "-" .. assembling_machine,
+        steam .. "-" .. tech_automation_1,
+        "big-wooden-pole"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+    for i, prerequisite in ipairs(data_technology[production_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[production_science_pack].prerequisites, i) break
+        end
+    end
+
+    for i, prerequisite in ipairs(data_technology[utility_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[utility_science_pack].prerequisites, i) break
+        end
+    end
 end

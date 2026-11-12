@@ -2,23 +2,23 @@ if mods[pelagos_mods] then
     -- COCONUT
     data_item[coconut].subgroup = is_coconut
     data_item[coconut].order = a
-    data_item[coconut].fuel_category = base_fuel
-    data_item[coconut].fuel_value = 3600 .. kJ
+    data_item[coconut].fuel_categories = {base_fuel}
+    data_item[coconut].fuel_value = 3840 .. kJ
     TIMSABA.void.freezing_organics(coconut)
 
     local coconut_seed = "coconut-seed"
     data_item[coconut_seed].subgroup = is_coconut
     data_item[coconut_seed].order = b
     data_item[coconut_seed].stack_size = 200
-    data_item[coconut_seed].fuel_category = base_fuel
-    data_item[coconut_seed].fuel_value = 1800 .. kJ
+    data_item[coconut_seed].fuel_categories = {base_fuel}
+    data_item[coconut_seed].fuel_value = 1920 .. kJ
 
     local coconut_meat = "coconut-meat"
     data_capsule[coconut_meat].subgroup = is_coconut
     data_capsule[coconut_meat].order = c
     data_capsule[coconut_meat].stack_size = 200
-    data_capsule[coconut_meat].fuel_category = base_fuel
-    data_capsule[coconut_meat].fuel_value = 900 .. kJ
+    data_capsule[coconut_meat].fuel_categories = {base_fuel}
+    data_capsule[coconut_meat].fuel_value = 960 .. kJ
     TIMSABA.void.freezing_organics(coconut_meat)
 
     local nutrients_from_coconut_meat = "nutrients-from-coconut-meat"
@@ -31,15 +31,15 @@ if mods[pelagos_mods] then
     data_item[coconut_husk].subgroup = is_coconut
     data_item[coconut_husk].order = d
     data_item[coconut_husk].stack_size = 200
-    data_item[coconut_husk].fuel_category = base_fuel
-    data_item[coconut_husk].fuel_value = 900 .. kJ
+    data_item[coconut_husk].fuel_categories = {base_fuel}
+    data_item[coconut_husk].fuel_value = 960 .. kJ
 
     data_recipe[coconut_processing].subgroup = is_coconut
     data_recipe[coconut_processing].icons = FOUR_R_I(coconut, coconut_meat, coconut_seed, coconut_husk)
     data_recipe[coconut_processing].order = d_a
     data_recipe[coconut_processing].results =
     {
-        {type = item, name = coconut_seed, amount = 1, probability = 0.06250},
+        {type = item, name = coconut_seed, amount = 1, independent_probability = 0.06250},
         {type = item, name = coconut_meat, amount = 2},
         {type = item, name = coconut_husk, amount = 2}
     }
@@ -54,7 +54,7 @@ if mods[pelagos_mods] then
     data_recipe[coconut_oil].ingredients[1].amount = 8
     data_recipe[coconut_oil].results[1].amount = 15
 
-    data_recipe[lubricant_from_coconut_oil].category = chemistry
+    data_recipe[lubricant_from_coconut_oil].categories = {chemistry}
     data_recipe[lubricant_from_coconut_oil].subgroup = is_coconut
     data_recipe[lubricant_from_coconut_oil].icons = TWO_I(coconut_oil, lubricant)
     data_recipe[lubricant_from_coconut_oil].order = e_a
@@ -96,10 +96,10 @@ if mods[pelagos_mods] then
     data_item[fermentation_bacteria].subgroup = is_pelagos_titanium
     data_item[fermentation_bacteria].order = a
     data_item[fermentation_bacteria].stack_size = 200
-    data_item[fermentation_bacteria].fuel_category = base_fuel
+    data_item[fermentation_bacteria].fuel_categories = {base_fuel}
     data_item[fermentation_bacteria].fuel_value = (225/8) .. kJ
     data_recipe[fermentation_bacteria].subgroup = is_pelagos_titanium
-    data_recipe[fermentation_bacteria].iocns = THREE_D_I(factorian_fish, coconut_oil, methane_angels, fermentation_bacteria, nil, spoilage)
+    data_recipe[fermentation_bacteria].icons = THREE_D_I(factorian_fish, coconut_oil, methane_angels, fermentation_bacteria, nil, spoilage)
     data_recipe[fermentation_bacteria].order = a
     data_recipe[fermentation_bacteria].ingredients =
     {
@@ -109,7 +109,7 @@ if mods[pelagos_mods] then
     }
     data_recipe[fermentation_bacteria].results =
     {
-        {type = item, name = fermentation_bacteria, amount = 1, probability = 0.25},
+        {type = item, name = fermentation_bacteria, amount = 1, independent_probability = 0.25},
         {type = item, name = spoilage, amount = 4}
     }
     TIMSABA.void.freezing_organics(fermentation_bacteria)
@@ -129,7 +129,7 @@ if mods[pelagos_mods] then
     data_item[fermented_fish].subgroup = is_pelagos_titanium
     data_item[fermented_fish].order = b
     data_item[fermented_fish].stack_size = 200
-    data_item[fermented_fish].fuel_value = 3600 .. kJ
+    data_item[fermented_fish].fuel_value = 3840 .. kJ
     data_recipe[fermented_fish].subgroup = is_pelagos_titanium
     data_recipe[fermented_fish].icons = THREE_D_I(factorian_fish, coconut_meat, fermentation_bacteria, fermented_fish)
     data_recipe[fermented_fish].order = b
@@ -200,8 +200,8 @@ if mods[pelagos_mods] then
         {type = item, name = activated_carbon, amount = 8}
     }
 
-    data_tool[spoilage_science_pack].subgroup = is_pelagos_titanium
-    data_tool[spoilage_science_pack].order = g
+    data_item[spoilage_science_pack].subgroup = is_pelagos_titanium
+    data_item[spoilage_science_pack].order = g
     TIMSABA.void.freezing_organics(spoilage_science_pack)
     data_recipe[spoilage_science_pack].subgroup = is_pelagos_titanium
     data_recipe[spoilage_science_pack].order = g
@@ -236,15 +236,15 @@ if mods[pelagos_mods] then
     data_item[activated_carbon].subgroup = is_pelagos_coal
     data_item[activated_carbon].order = c
     data_item[activated_carbon].stack_size = 200
-    data_item[activated_carbon].fuel_category = base_fuel
-    data_item[activated_carbon].fuel_value = 7200 .. kJ
+    data_item[activated_carbon].fuel_categories = {base_fuel}
+    data_item[activated_carbon].fuel_value = 7680 .. kJ
     data_recipe[activated_carbon].subgroup = is_pelagos_coal
     data_recipe[activated_carbon].icons = TWO_I(carbon_angels, activated_carbon)
     data_recipe[activated_carbon].order = c
 
     -- RECIPE
     local bioplastic = "pelagos-bioplastic"
-    data_recipe[bioplastic].category = chemistry
+    data_recipe[bioplastic].categories = {chemistry}
     data_recipe[bioplastic].subgroup = is_pelagos_recipe
     data_recipe[bioplastic].icons = THREE_I(ethanol_angels, methane_angels, plastic)
     data_recipe[bioplastic].order = a_a
@@ -260,8 +260,8 @@ if mods[pelagos_mods] then
     data_item[copper_biter_egg].subgroup = is_pelagos_recipe
     data_item[copper_biter_egg].order = b
     data_item[copper_biter_egg].stack_size = 200
-    data_item[copper_biter_egg].fuel_category = base_fuel
-    data_item[copper_biter_egg].fuel_value = 7200 .. kJ
+    data_item[copper_biter_egg].fuel_categories = {base_fuel}
+    data_item[copper_biter_egg].fuel_value = 7680 .. kJ
     TIMSABA.void.freezing_organics(copper_biter_egg)
     data_recipe[copper_biter_egg].subgroup = is_pelagos_recipe
     data_recipe[copper_biter_egg].order = b
@@ -309,7 +309,6 @@ if mods[pelagos_mods] then
     TIMSABA.barreling.add_simple_fluid(biodiesel)
 
     local biodiesel_from_tree_seed = "pelagos-biodiesel-tree"
-    data_recipe[biodiesel_from_tree_seed].additional_categories = nil
     data_recipe[biodiesel_from_tree_seed].subgroup = is_pelagos_recipe
     data_recipe[biodiesel_from_tree_seed].icons = THREE_I(tree_seed, ethanol_angels, biodiesel)
     data_recipe[biodiesel_from_tree_seed].order = c_a
@@ -322,7 +321,7 @@ if mods[pelagos_mods] then
     data_recipe[biodiesel_from_tree_seed].results[1].amount = 60
 
     local biodiesel_from_spoilage = "pelagos-biodiesel-spoilage"
-    data_recipe[biodiesel_from_spoilage].category = oil_processing
+    data_recipe[biodiesel_from_spoilage].categories = {oil_processing}
     data_recipe[biodiesel_from_spoilage].subgroup = is_pelagos_recipe
     data_recipe[biodiesel_from_spoilage].icons = THREE_I(spoilage, ethanol_angels, biodiesel)
     data_recipe[biodiesel_from_spoilage].order = c_b
@@ -336,7 +335,7 @@ if mods[pelagos_mods] then
 
     if mods[arig_mods] then
         local biodiesel_from_cactus_arig = "pelagos-biodiesel-arig-cactus"
-        data_recipe[biodiesel_from_cactus_arig].category = oil_processing
+        data_recipe[biodiesel_from_cactus_arig].categories = {oil_processing}
         data_recipe[biodiesel_from_cactus_arig].subgroup = is_pelagos_recipe
         data_recipe[biodiesel_from_cactus_arig].icons = THREE_I(cactus_arig, ethanol_angels, biodiesel)
         data_recipe[biodiesel_from_cactus_arig].order = c_c
@@ -350,7 +349,7 @@ if mods[pelagos_mods] then
     end
 
     local solid_fuel_from_biodiesel = "pelagos-biodiesel-solid-fuel"
-    data_recipe[solid_fuel_from_biodiesel].category = chemistry
+    data_recipe[solid_fuel_from_biodiesel].categories = {chemistry}
     data_recipe[solid_fuel_from_biodiesel].subgroup = is_pelagos_recipe
     data_recipe[solid_fuel_from_biodiesel].icons = TWO_I(biodiesel, solid_fuel)
     data_recipe[solid_fuel_from_biodiesel].order = d_a
@@ -549,7 +548,7 @@ if mods[pelagos_mods] then
     }
     data_assembling[captive_copper_biter_spawner].subgroup = is_pelagos_building
     data_assembling[captive_copper_biter_spawner].order = e
-    data_assembling[captive_copper_biter_spawner].energy_usage = 225 .. kW
+    data_assembling[captive_copper_biter_spawner].energy_usage = 240 .. kW
 
     -- WATER VEHICLES
     local pirateship = "pirateship"
@@ -591,7 +590,7 @@ if mods[pelagos_mods] then
     local indep_boat = "indep-boat"
     data_car[indep_boat].subgroup = is_water_vechicles
     data_car[indep_boat].order = d
-    data_car[indep_boat].consumption = 225 .. kW
+    data_car[indep_boat].consumption = 240 .. kW
 
     -- WATER RAILS
     local waterway = "waterway"
@@ -821,13 +820,13 @@ if mods[pelagos_mods] then
     data_mining_drill[excavator].order = a
     data_mining_drill[excavator].mining_speed = 4
     data_mining_drill[excavator].module_slots = 8
-    data_mining_drill[excavator].energy_usage = 450 .. kW
+    data_mining_drill[excavator].energy_usage = 480 .. kW
 
     local canex_digable = "canex-digable"
     data_item[canex_digable].subgroup = is_excavator
     data_item[canex_digable].order = b
     data_item[canex_digable].stack_size = 200
-    data_recipe[canex_digable].category = crafting
+    data_recipe[canex_digable].categories = {crafting}
     data_recipe[canex_digable].subgroup = is_excavator
     data_recipe[canex_digable].order = b
     data_recipe[canex_digable].energy_required = 1
@@ -836,7 +835,7 @@ if mods[pelagos_mods] then
     data_tile[canex_digable].order = b
 
     local stone_erosion = "stone-erosion"
-    data_recipe[stone_erosion].category = angels_ore_refining_T1
+    data_recipe[stone_erosion].categories = {angels_ore_refining_T1}
     data_recipe[stone_erosion].subgroup = is_excavator
     data_recipe[stone_erosion].icons = TWO_I(stone_crushed_angels, sand_angels)
     data_recipe[stone_erosion].order = b_a
@@ -849,7 +848,7 @@ if mods[pelagos_mods] then
     data_item[sandfill].subgroup = is_excavator
     data_item[sandfill].order = c
     data_item[sandfill].stack_size = 200
-    data_recipe[sandfill].category = crafting
+    data_recipe[sandfill].categories = {crafting}
     data_recipe[sandfill].subgroup = is_excavator
     data_recipe[sandfill].order = c
     data_recipe[sandfill].energy_required = 1
@@ -904,8 +903,8 @@ if mods[pelagos_mods] then
         {agricultural_science_pack, 1}
     }
 
-    data_technology[ethanol_mods].iocn = nil
-    data_technology[ethanol_mods].icons = TIMSABA.functions.create_liquid_fluid_icon(nil, "CHO")
+    data_technology[ethanol_mods].icon = nil
+    data_technology[ethanol_mods].icons = TIMSABA.functions.create_fluid_tech_icon("CHO")
 
     data_technology["Pirate_Ship"].unit.ingredients =
     {
@@ -1069,8 +1068,9 @@ if mods[pelagos_mods] then
     local tech_cultivation = "cultivation"
     local breeding_ = "breeding-"
     data_technology[tech_cultivation .. _productivity].effects = {}
-    local function add_recipe_for_cultivation(recipe)
-        table.insert(data_technology[tech_cultivation .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
+    local function add_recipe_for_cultivation(name)
+        if not data_recipe[name] then return end
+        table.insert(data_technology[tech_cultivation .. _productivity].effects, {type = change_recipe_productivity, recipe = name, change = 0.1})
     end
     if mods[vulcanus_sulfuric_bacteria_mods] then
         add_recipe_for_cultivation(sulfuric_bacteria_cultivation)
@@ -1082,9 +1082,7 @@ if mods[pelagos_mods] then
     add_recipe_for_cultivation(rubyte_bacteria_cultivation)
     add_recipe_for_cultivation(bobmonium_bacteria_cultivation)
     add_recipe_for_cultivation(pentapod_egg)
-    if mods[panglia_mods] then
-        add_recipe_for_cultivation(cloning_biter_egg)
-    end
+    add_recipe_for_cultivation(cloning_biter_egg)
     add_recipe_for_cultivation(factorian_fish_breeding)
     add_recipe_for_cultivation(breeding_ .. levac_fish)
     add_recipe_for_cultivation(breeding_ .. dorflurp_jellyfish)
@@ -1094,24 +1092,16 @@ if mods[pelagos_mods] then
     add_recipe_for_cultivation(breeding_ .. blazing_puffer)
     add_recipe_for_cultivation(breeding_ .. acidic_puffer)
     add_recipe_for_cultivation(breeding_ .. corrosive_puffer)
-    if mods[tellus_mods] then
-        add_recipe_for_cultivation(magnesium_bacteria_cultivation)
-        add_recipe_for_cultivation(nauvis_parasite_reproduction)
-        add_recipe_for_cultivation(gleba_parasite_reproduction)
-    end
-    if mods[muria_mods] then
-        add_recipe_for_cultivation(acidophile_lichen_cultivation)
-    end
+    add_recipe_for_cultivation(magnesium_bacteria_cultivation)
+    add_recipe_for_cultivation(nauvis_parasite_reproduction)
+    add_recipe_for_cultivation(gleba_parasite_reproduction)
+    add_recipe_for_cultivation(acidophile_lichen_cultivation)
     add_recipe_for_cultivation(fermentation_bacteria_cultivation)
     add_recipe_for_cultivation(fermentation_bacteria_cultivation_fermented_fish)
-    if mods[apia_carnova_mods] then
-        add_recipe_for_cultivation(larvae_cultivation)
-        add_recipe_for_cultivation(flesh_reproduction)
-        add_recipe_for_cultivation(roe_reproduction)
-    end
-    if mods[lignumis_mods] then
-        add_recipe_for_cultivation(cupriavidus_necator)
-    end
+    add_recipe_for_cultivation(larvae_cultivation)
+    add_recipe_for_cultivation(flesh_reproduction)
+    add_recipe_for_cultivation(roe_reproduction)
+    add_recipe_for_cultivation(cupriavidus_necator)
     data_technology[tech_cultivation .. _productivity].unit.ingredients =
     {
         {automation_science_pack, 1},

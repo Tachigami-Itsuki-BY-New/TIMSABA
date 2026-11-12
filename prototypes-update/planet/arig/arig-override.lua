@@ -3,19 +3,23 @@ if mods[arig_mods] then
     data_capsule[cactus_arig].subgroup = is_cactus
     data_capsule[cactus_arig].order = a
     data_capsule[cactus_arig].stack_size = 200
+    data_capsule[cactus_arig].fuel_categories = {base_fuel}
+    data_capsule[cactus_arig].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(cactus_arig)
 
     local cactus_seeds = "planetaris-cactus-seeds"
     data_item[cactus_seeds].subgroup = is_cactus
     data_item[cactus_seeds].order = b
     data_item[cactus_seeds].stack_size = 200
+    data_item[cactus_seeds].fuel_categories = {base_fuel}
+    data_item[cactus_seeds].fuel_value = 3840 .. kJ
 
     if mods[tellus_mods] then
         data_item[cactus_mash].subgroup = is_cactus
         data_item[cactus_mash].order = c
         data_item[cactus_mash].stack_size = 200
-        data_item[cactus_mash].fuel_category = base_fuel
-        data_item[cactus_mash].fuel_value = 900 .. kJ
+        data_item[cactus_mash].fuel_categories = {base_fuel}
+        data_item[cactus_mash].fuel_value = 960 .. kJ
         TIMSABA.void.freezing_organics(cactus_mash)
         data_recipe[cactus_mash].subgroup = is_cactus
         data_recipe[cactus_mash].icons = TWO_D_I(cactus_arig, water, cactus_mash, cactus_seeds)
@@ -28,7 +32,7 @@ if mods[arig_mods] then
         data_recipe[cactus_mash].results =
         {
             {type = item, name = cactus_mash, amount = 2},
-            {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+            {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
         }
         data_recipe[cactus_mash].main_product = cactus_mash
 
@@ -46,7 +50,7 @@ if mods[arig_mods] then
     data_recipe[cactus_wood].results =
     {
         {type = item, name = wood, amount = 2},
-        {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+        {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
     }
 
     local compression_cactus_wood = "planetaris-compression-cactus-wood"
@@ -56,7 +60,7 @@ if mods[arig_mods] then
     data_recipe[compression_cactus_wood].results =
     {
         {type = item, name = wood, amount = 1},
-        {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+        {type = item, name = cactus_seeds, amount = 1, independent_probability = 0.25}
     }
 
     local compression_wood_coal = "planetaris-compression-wood-coal"
@@ -99,16 +103,18 @@ if mods[arig_mods] then
     data_recipe[sand_sifting].ingredients[1].amount = 240
     data_recipe[sand_sifting].results =
     {
-        {type = item, name = ore_saphirite, amount = 2, probability = 0.25},
-        {type = item, name = ore_jivolite, amount = 1, probability = 0.25},
-        {type = item, name = ore_stiratite, amount = 2, probability = 0.25},
-        {type = item, name = ore_crotinnium, amount = 1, probability = 0.25},
-        {type = item, name = ore_rubyte, amount = 2, probability = 0.25},
-        {type = item, name = ore_bobmonium, amount = 2, probability = 0.25},
-        {type = item, name = stone, amount = 1, probability = 0.03125},
-        {type = item, name = sulfur, amount = 1, probability = 0.015625},
-        {type = fluid, name = pure_sand_arig, amount = 30, probability = 0.25},
-        {type = fluid, name = steam, amount = 30, probability = 0.25, temperature = 915}
+        {type = item, name = ore_saphirite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_jivolite, amount = 1, independent_probability = 0.25},
+        {type = item, name = ore_stiratite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.25},
+        {type = item, name = ore_rubyte, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_bobmonium, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_senaite, amount = 2, independent_probability = 0.25},
+        {type = item, name = ore_franckeite, amount = 2, independent_probability = 0.25},
+        {type = item, name = stone, amount = 1, independent_probability = 0.03125},
+        {type = item, name = sulfur, amount = 1, independent_probability = 0.015625},
+        {type = fluid, name = pure_sand_arig, amount = 30, independent_probability = 0.25},
+        {type = fluid, name = steam, amount = 30, independent_probability = 0.25, temperature = 915}
     }
 
     data_recipe[advanced_sand_sifting].subgroup = is_arig_recipe
@@ -117,13 +123,13 @@ if mods[arig_mods] then
     data_recipe[advanced_sand_sifting].ingredients[1].amount = 240
     data_recipe[advanced_sand_sifting].results =
     {
-        {type = item, name = sand_angels, amount = 1, probability = 0.25},
-        {type = item, name = limestone_angels, amount_min = 0, amount_max = 1, probability = 0.25},
-        {type = item, name = calcite, amount_min = 0, amount_max = 1, probability = 0.25},
-        {type = item, name = sulfur, amount = 1, probability = 0.25},
-        {type = item, name = coal, amount = 1, probability = 0.125},
-        {type = fluid, name = pure_sand_arig, amount = 30, probability = 0.50},
-        {type = fluid, name = steam, amount = 30, probability = 0.125, temperature = 915}
+        {type = item, name = sand_angels, amount = 1, independent_probability = 0.25},
+        {type = item, name = limestone_angels, amount_min = 0, amount_max = 1, independent_probability = 0.25},
+        {type = item, name = calcite, amount_min = 0, amount_max = 1, independent_probability = 0.25},
+        {type = item, name = sulfur, amount = 1, independent_probability = 0.25},
+        {type = item, name = coal, amount = 1, independent_probability = 0.125},
+        {type = fluid, name = pure_sand_arig, amount = 30, independent_probability = 0.50},
+        {type = fluid, name = steam, amount = 30, independent_probability = 0.125, temperature = 915}
     }
 
     local advanced_pure_sand_sifting = "planetaris-advanced-pure-sand-sifting"
@@ -159,20 +165,21 @@ if mods[arig_mods] then
     data_tile[sandstone_foundation].order = e
 
     local advanced_heavy_oil_cracking = "planetaris-advanced-heavy-oil-cracking"
-    data_recipe[advanced_heavy_oil_cracking].category = angels_steam_cracking
+    data_recipe[advanced_heavy_oil_cracking].categories = {angels_steam_cracking}
     data_recipe[advanced_heavy_oil_cracking].subgroup = is_arig_recipe
-    data_recipe[advanced_heavy_oil_cracking].icons = TWO_D_I(heavy_oil_timsaba, steam, fuel_oil_angels, methane_angels)
+    data_recipe[advanced_heavy_oil_cracking].icons = THREE_R_I(heavy_oil_timsaba, crude_oil, raw_gas_angels)
     data_recipe[advanced_heavy_oil_cracking].order = f_a
-    data_recipe[advanced_heavy_oil_cracking].energy_required = 4
+    data_recipe[advanced_heavy_oil_cracking].energy_required = 8 -- heavy oil(l) -H₂O/steam cracking-> crude oil(l) + raw gas(g)
     data_recipe[advanced_heavy_oil_cracking].ingredients =
     {
-        {type = fluid, name = heavy_oil_timsaba, amount = 30},
-        {type = fluid, name = steam, amount = 30}
+        {type = fluid, name = heavy_oil_timsaba, amount = 240},
+        {type = fluid, name = steam, amount = 60}
     }
     data_recipe[advanced_heavy_oil_cracking].results =
     {
-        {type = fluid, name = fuel_oil_angels, amount = 30},
-        {type = fluid, name = methane_angels, amount = 30}
+        {type = fluid, name = crude_oil, amount = 240},
+        {type = fluid, name = raw_gas_angels, amount = 240},
+        {type = fluid, name = steam, amount = 30} -- 60
     }
     data_recipe[advanced_heavy_oil_cracking].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
@@ -190,7 +197,7 @@ if mods[arig_mods] then
     data_recipe[compression_rocket_fuel].results[1].amount = 2
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    data_recipe[glass_arig].category = metallurgy
+    data_recipe[glass_arig].categories = {metallurgy}
     data_recipe[glass_arig].subgroup = is_arig_recipe
     data_recipe[glass_arig].icons = TWO_I(pure_sand_arig, glass_bob)
     data_recipe[glass_arig].order = g
@@ -202,7 +209,7 @@ if mods[arig_mods] then
     data_item[heavy_glass_arig].subgroup = is_arig_recipe
     data_item[heavy_glass_arig].order = h
     data_item[heavy_glass_arig].stack_size = 200
-    data_recipe[heavy_glass_arig].category = metallurgy
+    data_recipe[heavy_glass_arig].categories = {metallurgy}
     data_recipe[heavy_glass_arig].subgroup = is_arig_recipe
     data_recipe[heavy_glass_arig].icons = THREE_I(tungsten_powder, glass_molten_angels, heavy_glass_arig)
     data_recipe[heavy_glass_arig].order = h
@@ -243,6 +250,7 @@ if mods[arig_mods] then
         data_recipe[advanced_raw_quartz].surface_conditions = {{property = pressure, min = 600, max = 600}}
     end
 
+    data_recipe[raw_diamond_arig].localised_name = {"item-name." .. raw_diamond_bob}
     data_recipe[raw_diamond_arig].subgroup = is_arig_recipe
     data_recipe[raw_diamond_arig].icons = THREE_D_I(raw_quartz_arig, carbon_angels, methane_angels, raw_diamond_bob, sand_angels, hydrogen_angels)
     data_recipe[raw_diamond_arig].order = i_b
@@ -286,8 +294,8 @@ if mods[arig_mods] then
     data_recipe[silica_arig].main_product = silica_arig
     data_recipe[silica_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    data_tool[compression_science_pack].subgroup = is_arig_recipe
-    data_tool[compression_science_pack].order = k
+    data_item[compression_science_pack].subgroup = is_arig_recipe
+    data_item[compression_science_pack].order = k
     data_recipe[compression_science_pack].subgroup = is_arig_recipe
     data_recipe[compression_science_pack].order = k
     data_recipe[compression_science_pack].energy_required = 8
@@ -307,8 +315,8 @@ if mods[arig_mods] then
     data_item[rocket_biofuel].subgroup = is_arig_recipe
     data_item[rocket_biofuel].order = l
     data_item[rocket_biofuel].stack_size = 50
-    data_item[rocket_biofuel].fuel_category = transport_fuel
-    data_item[rocket_biofuel].fuel_value = 460800 .. kJ
+    data_item[rocket_biofuel].fuel_categories = {transport_fuel}
+    data_item[rocket_biofuel].fuel_value = 491520 .. kJ
     data_item[rocket_biofuel].fuel_acceleration_multiplier = 2.5
     data_item[rocket_biofuel].fuel_top_speed_multiplier = 1.25
     data_recipe[rocket_biofuel].subgroup = is_arig_recipe
@@ -451,8 +459,8 @@ if mods[arig_mods] then
     data_transport_belt[hyper_transport_belt_arig].speed = 15/60
 
     local simulations = require("prototypes.factoriopedia-simulations")
-    data_item[hyper_underground_belt_arig].stack_size = 32
-    data_item[hyper_underground_belt_arig].weight = 31250
+    data_item[hyper_underground_belt_arig].stack_size = 64
+    data_item[hyper_underground_belt_arig].weight = 15625
     data_recipe[hyper_underground_belt_arig].energy_required = 1
     if mods[aegis_bellicos_mods] then
         data_recipe[hyper_underground_belt_arig].ingredients =
@@ -478,8 +486,8 @@ if mods[arig_mods] then
     end
     data_underground_belt[hyper_underground_belt_arig].factoriopedia_simulation = simulations.factoriopedia_hyper_underground_belt_arig
 
-    data_item[hyper_splitter_arig].stack_size = 16
-    data_item[hyper_splitter_arig].weight = 62500
+    data_item[hyper_splitter_arig].stack_size = 64
+    data_item[hyper_splitter_arig].weight = 15625
     data_recipe[hyper_splitter_arig].energy_required = 1
     if mods[aegis_bellicos_mods] then
         data_recipe[hyper_splitter_arig].ingredients =
@@ -605,7 +613,6 @@ if mods[arig_mods] then
     data_solar_panel[supported_solar_panel].production = 480 .. kW
 
     -- BUILDING
-    local sifter = "planetaris-sifter"
     data_item[sifter].subgroup = is_arig_building
     data_item[sifter].stack_size = 32
     data_item[sifter].weight = 31250
@@ -622,7 +629,6 @@ if mods[arig_mods] then
     data_assembling[sifter].energy_usage = (240 - drain) .. kW
     data_assembling[sifter].energy_source.drain = drain .. kW
 
-    local press = "planetaris-press"
     data_item[press].subgroup = is_arig_building
     data_item[press].stack_size = 32
     data_item[press].weight = 31250
@@ -637,12 +643,11 @@ if mods[arig_mods] then
     }
     data_assembling[press].subgroup = is_arig_building
     data_assembling[press].crafting_speed = 2
-    data_assembling[press].energy_usage = (360 - drain) .. kW
-    data_assembling[press].energy_source.emissions_per_minute.pollution = 2
+    data_assembling[press].energy_usage = (480 - drain) .. kW
+    data_assembling[press].energy_source.emissions_per_minute.pollution = 4
     data_assembling[press].energy_source.drain = drain .. kW
     data_assembling[press].effect_receiver.base_effect.productivity = 1
 
-    local water_harvester = "planetaris-water-harvester"
     data_item[water_harvester].subgroup = is_arig_building
     data_item[water_harvester].stack_size = 32
     data_item[water_harvester].weight = 31250
@@ -706,6 +711,7 @@ if mods[arig_mods] then
     data_recipe[nauvis_water_harvesting].enabled = true
     data_recipe[nauvis_water_harvesting].energy_required = 16
     data_recipe[nauvis_water_harvesting].results[1].amount = 240
+    data_recipe[nauvis_water_harvesting].hide_from_player_crafting = true
 
     local vulcanus_water_harvesting = "planetaris-vulcanus-water-harvesting"
     data_recipe[vulcanus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.vulcanus"}}
@@ -715,6 +721,7 @@ if mods[arig_mods] then
     data_recipe[vulcanus_water_harvesting].enabled = true
     data_recipe[vulcanus_water_harvesting].energy_required = 16
     data_recipe[vulcanus_water_harvesting].results[1].amount = 15
+    data_recipe[vulcanus_water_harvesting].hide_from_player_crafting = true
 
     local gleba_water_harvesting = "planetaris-gleba-water-harvesting"
     data_recipe[gleba_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.gleba"}}
@@ -724,6 +731,7 @@ if mods[arig_mods] then
     data_recipe[gleba_water_harvesting].enabled = true
     data_recipe[gleba_water_harvesting].energy_required = 16
     data_recipe[gleba_water_harvesting].results[1].amount = 480
+    data_recipe[gleba_water_harvesting].hide_from_player_crafting = true
 
     local fulgora_water_harvesting = "planetaris-fulgora-water-harvesting"
     data_recipe[fulgora_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.fulgora"}}
@@ -733,6 +741,7 @@ if mods[arig_mods] then
     data_recipe[fulgora_water_harvesting].enabled = true
     data_recipe[fulgora_water_harvesting].energy_required = 16
     data_recipe[fulgora_water_harvesting].results[1].amount = 120
+    data_recipe[fulgora_water_harvesting].hide_from_player_crafting = true
 
     local aquilo_water_harvesting = "planetaris-aquilo-water-harvesting"
     data_recipe[aquilo_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.aquilo"}}
@@ -742,6 +751,7 @@ if mods[arig_mods] then
     data_recipe[aquilo_water_harvesting].enabled = true
     data_recipe[aquilo_water_harvesting].energy_required = 16
     data_recipe[aquilo_water_harvesting].results[1].amount = 120
+    data_recipe[aquilo_water_harvesting].hide_from_player_crafting = true
 
     local arig_water_harvesting = "planetaris-water-harvesting"
     data_recipe[arig_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.arig"}}
@@ -751,6 +761,7 @@ if mods[arig_mods] then
     data_recipe[arig_water_harvesting].enabled = true
     data_recipe[arig_water_harvesting].energy_required = 16
     data_recipe[arig_water_harvesting].results[1].amount = 30
+    data_recipe[arig_water_harvesting].hide_from_player_crafting = true
 
     if mods[hyarion_mods] then
         local hyarion_water_harvesting = "planetaris-hyarion-water-harvesting"
@@ -761,6 +772,7 @@ if mods[arig_mods] then
         data_recipe[hyarion_water_harvesting].enabled = true
         data_recipe[hyarion_water_harvesting].energy_required = 16
         data_recipe[hyarion_water_harvesting].results[1].amount = 15
+        data_recipe[hyarion_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[tellus_mods] then
@@ -772,6 +784,7 @@ if mods[arig_mods] then
         data_recipe[tellus_water_harvesting].enabled = true
         data_recipe[tellus_water_harvesting].energy_required = 16
         data_recipe[tellus_water_harvesting].results[1].amount = 480
+        data_recipe[tellus_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[muria_mods] then
@@ -783,6 +796,7 @@ if mods[arig_mods] then
         data_recipe[muria_water_harvesting].enabled = true
         data_recipe[muria_water_harvesting].energy_required = 16
         data_recipe[muria_water_harvesting].results[1].amount = 60
+        data_recipe[muria_water_harvesting].hide_from_player_crafting = true
     end
 
     if mods[pelagos_mods] then
@@ -794,6 +808,7 @@ if mods[arig_mods] then
         data_recipe[pelagos_water_harvesting].enabled = true
         data_recipe[pelagos_water_harvesting].energy_required = 16
         data_recipe[pelagos_water_harvesting].results[1].amount = 240
+        data_recipe[pelagos_water_harvesting].hide_from_player_crafting = true
     end
 
     -- MOONS
@@ -806,11 +821,12 @@ if mods[arig_mods] then
         data_recipe[lignumis_water_harvesting].enabled = true
         data_recipe[lignumis_water_harvesting].energy_required = 16
         data_recipe[lignumis_water_harvesting].results[1].amount = 240
+        data_recipe[lignumis_water_harvesting].hide_from_player_crafting = true
     end
 
     -- TECHNOLOGY
-    local planet_discovery_arig = "planet-discovery-arig"
-    data_technology[planet_discovery_arig].prerequisites = {tech_advanced_asteroid_processing}
+    planet_discovery_arig = "planet-discovery-arig"
+    data_technology[planet_discovery_arig].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_arig].prerequisites, interstellar_science_pack)
     end
@@ -977,4 +993,31 @@ if mods[arig_mods] then
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = cactus_plastic, change = 0.1})
 
     table.insert(data_technology["planetaris-cactus-plastic" .. _productivity].unit.ingredients, {utility_science_pack, 1})
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = heavy_glass_arig, amount = 16})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(speed_module_7)
+    add_ingredients(productivity_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, tech_compression_science)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(speed_module_7)
+    add_prerequisites(productivity_module_7)
 end

@@ -13,6 +13,7 @@ data:extend
 is_fulgora_air = "is-fulgora-air"
 is_scrap = "is-scrap"
 is_brannerite = "is-brannerite"
+is_rheniite = "is-rheniite"
 is_fulgora_recipe = "is-fulgora-recipe"
 is_fulgora_building = "is-fulgora-building"
 is_fulgora_war = "is-fulgora-war"
@@ -21,7 +22,8 @@ TIMSABA.functions.create_subgroups(ig_fulgora,
     {name = is_fulgora_air,      order = a},
     {name = is_scrap,            order = b},
     {name = is_brannerite,       order = c},
-    {name = is_fulgora_recipe,   order = e},
-    {name = is_fulgora_building, order = f},
-    {name = is_fulgora_war,      order = g}
+    {name = is_rheniite,         order = d},
+    {name = is_fulgora_recipe,   order = g},
+    {name = is_fulgora_building, order = h},
+    {name = is_fulgora_war,      order = i}
 })

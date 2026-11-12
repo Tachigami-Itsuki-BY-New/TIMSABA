@@ -1,5 +1,183 @@
+-- iron_ore = ore_saphirite, ore_jivolite
+-- copper_ore = ore_stiratite, ore_crotinnium
+-- stone_ore = ore_rubyte, ore_bobmonium
+-- uranium_ore = ore_senaite, ore_franckeite
+
 -- BASE
-data_fish["fish"].minable.count = 4 -- = {mining_time = 0.4, result = factorian_fish, count = 4}
+local crash_site_spaceship = "crash-site-spaceship"
+local _wreck_small_ = "-wreck-small-"
+local css_wreck_small_1 = crash_site_spaceship .. _wreck_small_ .. "1"
+local css_wreck_small_2 = crash_site_spaceship .. _wreck_small_ .. "2"
+local css_wreck_small_3 = crash_site_spaceship .. _wreck_small_ .. "3"
+local css_wreck_small_4 = crash_site_spaceship .. _wreck_small_ .. "4"
+local css_wreck_small_5 = crash_site_spaceship .. _wreck_small_ .. "5"
+local css_wreck_small_6 = crash_site_spaceship .. _wreck_small_ .. "6"
+local _wreck_medium_ = "-wreck-medium-"
+local css_wreck_medium_1 = crash_site_spaceship .. _wreck_medium_ .. "1"
+local css_wreck_medium_2 = crash_site_spaceship .. _wreck_medium_ .. "2"
+local css_wreck_medium_3 = crash_site_spaceship .. _wreck_medium_ .. "3"
+local _wreck_big_ = "-wreck-big-"
+local css_wreck_big_1 = crash_site_spaceship .. _wreck_big_ .. "1"
+local css_wreck_big_2 = crash_site_spaceship .. _wreck_big_ .. "2"
+if settings.startup[setting_loot_from_spaceship].value then
+    if mods[lignumis_mods] then
+        data_container[crash_site_spaceship].minable = {mining_time = data_container[crash_site_spaceship].minable.mining_time, results = {}}
+        if settings.startup[setting_game_difficulty].value == easy then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 1024},
+                {type = item, name = basic_circuit_board, amount = 256},
+                {type = item, name = lumber, amount = 1024},
+                {type = item, name = wooden_gear_wheel, amount = 512},
+                {type = item, name = gold_plate_bob, amount = 1024},
+                {type = item, name = gold_cable_mods, amount = 512}
+            }
+        elseif settings.startup[setting_game_difficulty].value == normal then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 512},
+                {type = item, name = basic_circuit_board, amount = 128},
+                {type = item, name = lumber, amount = 512},
+                {type = item, name = wooden_gear_wheel, amount = 256},
+                {type = item, name = gold_plate_bob, amount = 512},
+                {type = item, name = gold_cable_mods, amount = 256}
+            }
+        elseif settings.startup[setting_game_difficulty].value == hard then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 256},
+                {type = item, name = basic_circuit_board, amount = 64},
+                {type = item, name = lumber, amount = 256},
+                {type = item, name = wooden_gear_wheel, amount = 128},
+                {type = item, name = gold_plate_bob, amount = 256},
+                {type = item, name = gold_cable_mods, amount = 128}
+            }
+        end
+    else
+        data_container[crash_site_spaceship].minable = {mining_time = data_container[crash_site_spaceship].minable.mining_time, results = {}}
+        if settings.startup[setting_game_difficulty].value == easy then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 1024},
+                {type = item, name = basic_circuit_board, amount = 256},
+                {type = item, name = iron_plate, amount = 1024},
+                {type = item, name = iron_gear_wheel, amount = 512},
+                {type = item, name = iron_bearing, amount = 256},
+                {type = item, name = copper_plate, amount = 1024},
+                {type = item, name = copper_cable, amount = 512}
+            }
+        elseif settings.startup[setting_game_difficulty].value == normal then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 512},
+                {type = item, name = basic_circuit_board, amount = 128},
+                {type = item, name = iron_plate, amount = 512},
+                {type = item, name = iron_gear_wheel, amount = 256},
+                {type = item, name = iron_bearing, amount = 128},
+                {type = item, name = copper_plate, amount = 512},
+                {type = item, name = copper_cable, amount = 256}
+            }
+        elseif settings.startup[setting_game_difficulty].value == hard then
+            data_container[crash_site_spaceship].minable.results =
+            {
+                {type = item, name = stone, amount = 256},
+                {type = item, name = basic_circuit_board, amount = 64},
+                {type = item, name = iron_plate, amount = 256},
+                {type = item, name = iron_gear_wheel, amount = 128},
+                {type = item, name = iron_bearing, amount = 64},
+                {type = item, name = copper_plate, amount = 256},
+                {type = item, name = copper_cable, amount = 128}
+            }
+        end
+    end
+    local function add_loot_in_crash_site_spaceship(name, amount)
+        if data_entity_owner[name] then
+            if mods[lignumis_mods] then
+                data_entity_owner[name].minable =
+                {
+                    mining_time = data_entity_owner[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = lumber, amount = amount},
+                        {type = item, name = gold_plate_bob, amount = amount}
+                    }
+                }
+            else
+                data_entity_owner[name].minable =
+                {
+                    mining_time = data_entity_owner[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = iron_plate, amount = amount},
+                        {type = item, name = copper_plate, amount = amount}
+                    }
+                }
+            end
+        end
+        if data_container[name] then
+            if mods[lignumis_mods] then
+                data_container[name].minable =
+                {
+                    mining_time = data_container[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = lumber, amount = amount},
+                        {type = item, name = gold_plate_bob, amount = amount}
+                    }
+                }
+            else
+                data_container[name].minable =
+                {
+                    mining_time = data_container[name].minable.mining_time,
+                    results =
+                    {
+                        {type = item, name = iron_plate, amount = amount},
+                        {type = item, name = copper_plate, amount = amount}
+                    }
+                }
+            end
+        end
+    end
+    if settings.startup[setting_game_difficulty].value == easy then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 128)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 128)
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 64)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 64)
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        add_loot_in_crash_site_spaceship(css_wreck_small_1, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_2, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_3, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_4, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_5, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_small_6, 8)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_1, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_2, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_medium_3, 16)
+        add_loot_in_crash_site_spaceship(css_wreck_big_1, 32)
+        add_loot_in_crash_site_spaceship(css_wreck_big_2, 32)
+    end
+end
+
+data_fish["fish"].minable.count = 4
 
 for tree_name, tree_data in pairs(data_tree) do
     if string.find(tree_name, "tree") and not string.find(tree_name, "angels") and not string.find(tree_name, "ashland%-lichen") and tree_data.minable then
@@ -7,7 +185,7 @@ for tree_name, tree_data in pairs(data_tree) do
         local already_has_seed = false
         if minable.results then
             for _, drop in ipairs(minable.results) do
-                if drop.name == "tree-seed" then
+                if drop.name == tree_seed_angels then
                     already_has_seed = true
                     break
                 end
@@ -23,22 +201,43 @@ for tree_name, tree_data in pairs(data_tree) do
             if not minable.results then
                 minable.results = {}
             end
-            table.insert(minable.results,
-            {
-                type = item,
-                name = tree_seed,
-                amount = 1,
-                probability = 0.5
-            })
+            table.insert(minable.results, {type = item, name = tree_seed_angels, amount = 1, independent_probability = 0.5})
         end
     end
 end
+
+local pollution_absorption_multiplier = 1 -- -0.001
+if settings.startup[setting_game_difficulty].value == easy then
+    pollution_absorption_multiplier = (250/8) -- -0.03125
+elseif settings.startup[setting_game_difficulty].value == normal then
+    pollution_absorption_multiplier = (250/16) -- -0.015625
+elseif settings.startup[setting_game_difficulty].value == hard then
+    pollution_absorption_multiplier = (250/32) -- -0.0078125
+end
+
+local processed_eps = {}
+
+for _, tree in pairs(data_tree) do
+    local eps = tree.emissions_per_second
+    if eps and not processed_eps[eps] then
+        processed_eps[eps] = true
+        if tree.emissions_per_second then
+            if tree.emissions_per_second.pollution then
+                tree.emissions_per_second.pollution = tree.emissions_per_second.pollution * pollution_absorption_multiplier
+            else
+                tree.emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
+            end
+        end
+    end
+end
+
+data_plant[tree_plant].emissions_per_second.pollution = -(0.001 * pollution_absorption_multiplier)
 
 local yumako_tree = "yumako-tree"
 data_plant[yumako_tree].minable.results[1].amount = 64
 
 local jellystem = "jellystem"
-data_plant["jellystem"].minable.results[1].amount = 64
+data_plant[jellystem].minable.results[1].amount = 64
 
 data_tree["slipstack"].minable.results[1].amount = 8
 
@@ -75,6 +274,7 @@ data_entity[huge_rock].minable.results =
     {type = item, name = coal, amount_min = 32, amount_max = 64}
 }
 
+-- VULCANUS
 local big_volcanic_rock = "big-volcanic-rock"
 data_entity[big_volcanic_rock].minable.results =
 {
@@ -85,7 +285,10 @@ data_entity[big_volcanic_rock].minable.results =
     {type = item, name = ore_crotinnium, amount_min = 4, amount_max = 8},
     {type = item, name = ore_rubyte, amount_min = 4, amount_max = 8},
     {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 8},
-    {type = item, name = wolframite_ore, amount_min = 2, amount_max = 8}
+    {type = item, name = ore_senaite, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_franckeite, amount_min = 4, amount_max = 8},
+    {type = item, name = wolframite_ore, amount_min = 2, amount_max = 8},
+    {type = item, name = samarskite_ore, amount_min = 2, amount_max = 8}
 }
 
 local huge_volcanic_rock = "huge-volcanic-rock"
@@ -98,7 +301,10 @@ data_entity[huge_volcanic_rock].minable.results =
     {type = item, name = ore_crotinnium, amount_min = 8, amount_max = 32},
     {type = item, name = ore_rubyte, amount_min = 8, amount_max = 32},
     {type = item, name = ore_bobmonium, amount_min = 8, amount_max = 32},
-    {type = item, name = wolframite_ore, amount_min = 4, amount_max = 16}
+    {type = item, name = ore_senaite, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_franckeite, amount_min = 8, amount_max = 32},
+    {type = item, name = wolframite_ore, amount_min = 4, amount_max = 16},
+    {type = item, name = samarskite_ore, amount_min = 4, amount_max = 16}
 }
 
 local vulcanus_chimney_short = "vulcanus-chimney-short"
@@ -144,24 +350,70 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_entity[small_demolisher_corpse].minable.results =
     {
         {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32},
         {type = item, name = sulfuric_bacteria, amount_min = 16, amount_max = 32}
     }
     data_entity[medium_demolisher_corpse].minable.results =
     {
         {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32},
         {type = item, name = sulfuric_bacteria, amount_min = 32, amount_max = 64}
     }
     data_entity[big_demolisher_corpse].minable.results =
     {
         {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32},
         {type = item, name = sulfuric_bacteria, amount_min = 64, amount_max = 128}
     }
 else
-    data_entity[small_demolisher_corpse].minable.results = {{type = item, name = wolframite_ore, amount_min = 0, amount_max = 32}}
-    data_entity[medium_demolisher_corpse].minable.results = {{type = item, name = wolframite_ore, amount_min = 0, amount_max = 32}}
-    data_entity[big_demolisher_corpse].minable.results = {{type = item, name = wolframite_ore, amount_min = 0, amount_max = 32}}
+    data_entity[small_demolisher_corpse].minable.results =
+    {
+        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32}
+    }
+    data_entity[medium_demolisher_corpse].minable.results =
+    {
+        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32}
+    }
+    data_entity[big_demolisher_corpse].minable.results =
+    {
+        {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
+        {type = item, name = samarskite_ore, amount_min = 0, amount_max = 32}
+    }
 end
 
+data_entity[big_volcanic_rock .. "-hot"].minable.results =
+{
+    {type = item, name = stone, amount_min = 2, amount_max = 16},
+    {type = item, name = ore_saphirite, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_jivolite, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_stiratite, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_crotinnium, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_rubyte, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_senaite, amount_min = 4, amount_max = 8},
+    {type = item, name = ore_franckeite, amount_min = 4, amount_max = 8},
+    {type = item, name = wolframite_ore, amount_min = 2, amount_max = 8},
+    {type = item, name = samarskite_ore, amount_min = 2, amount_max = 8}
+}
+
+data_entity[huge_volcanic_rock .. "-hot"].minable.results =
+{
+    {type = item, name = stone, amount_min = 8, amount_max = 16},
+    {type = item, name = ore_saphirite, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_jivolite, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_stiratite, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_crotinnium, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_rubyte, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_bobmonium, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_senaite, amount_min = 8, amount_max = 32},
+    {type = item, name = ore_franckeite, amount_min = 8, amount_max = 32},
+    {type = item, name = wolframite_ore, amount_min = 4, amount_max = 16},
+    {type = item, name = samarskite_ore, amount_min = 4, amount_max = 16}
+}
+
+-- GLEBA
 data_entity["copper-stromatolite"].minable.results =
 {
     {type = item, name = stone, amount_min = 4, amount_max = 8},
@@ -201,6 +453,7 @@ data_entity["small-stomper-shell"].minable.results =
     {type = item, name = pentapod_egg, amount_min = 0, amount_max = 1}
 }
 
+-- FULGORA
 local big_fulgora_rock = "big-fulgora-rock"
 data_entity[big_fulgora_rock].minable.results[1].amount_min = 16
 data_entity[big_fulgora_rock].minable.results[1].amount_max = 32
@@ -208,13 +461,15 @@ data_entity[big_fulgora_rock].minable.results[1].amount_max = 32
 data_entity["fulgurite-small"].minable.results =
 {
     {type = item, name = stone, amount_min = 8, amount_max = 16},
-    {type = item, name = brannerite_ore, amount_min = 4, amount_max = 8}
+    {type = item, name = brannerite_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = rheniite_ore, amount_min = 4, amount_max = 8}
 }
 
 data_entity["fulgurite"].minable.results =
 {
     {type = item, name = stone, amount_min = 4, amount_max = 8},
-    {type = item, name = brannerite_ore, amount_min = 8, amount_max = 16}
+    {type = item, name = brannerite_ore, amount_min = 8, amount_max = 16},
+    {type = item, name = rheniite_ore, amount_min = 8, amount_max = 16}
 }
 
 data_lightning_attractor["fulgoran-ruin-attractor"].minable.results =
@@ -273,6 +528,21 @@ data_entity["fulgoran-ruin-vault"].minable.results =
     {type = item, name = machinery_scrap, amount_min = 64, amount_max = 256}
 }
 
+data_entity["fulgora-sunk-ruin-big"].minable.results =
+{
+    {type = item, name = scrap, amount_min = 2, amount_max = 4},
+    {type = item, name = construction_scrap, amount_min = 1, amount_max = 4},
+    {type = item, name = machinery_scrap, amount_min = 1, amount_max = 4}
+}
+
+data_entity["fulgora-sunk-ruin-medium-tall"].minable.results =
+{
+    {type = item, name = scrap, amount_min = 1, amount_max = 4},
+    {type = item, name = construction_scrap, amount_min = 1, amount_max = 2},
+    {type = item, name = machinery_scrap, amount_min = 1, amount_max = 2}
+}
+
+-- AQUILO
 data_entity["lithium-iceberg-big"].minable.results =
 {
     {type = item, name = ice_platform, amount = 1},
@@ -293,8 +563,7 @@ data_entity["lithium-iceberg-huge"].minable.results =
 
 -- Fluid
 data_resource[crude_oil].order = a
-data_resource[crude_oil].minable.results[1].amount_min = 30
-data_resource[crude_oil].minable.results[1].amount_max = 30
+data_resource[crude_oil].minable.results[1].amount = 30
 
 local natural_gas = "angels-natural-gas"
 data_resource[natural_gas].order = b
@@ -309,19 +578,19 @@ data_resource[fissure].minable.mining_time = 2
 
 local sulfuric_acid_geyser = "sulfuric-acid-geyser"
 data_resource[sulfuric_acid_geyser].order = d
-data_resource[sulfuric_acid_geyser].minable.results[1].amount_min = 30
-data_resource[sulfuric_acid_geyser].minable.results[1].amount_max = 30
+data_resource[sulfuric_acid_geyser].minable.results[1].amount = 30
 
 local thermal_geyser = "lithium-brine"
 data_resource[thermal_geyser].order = e
 data_resource[thermal_geyser].localised_name = {"entity-name.thermal-water-geyser"}
-data_resource[thermal_geyser].minable.results[1].amount_min = 30
-data_resource[thermal_geyser].minable.results[1].amount_max = 30
+data_resource[thermal_geyser].minable.results[1].amount = 30
+data_resource[thermal_geyser].minimum = 20000
+data_resource[thermal_geyser].normal = 100000
+data_resource[thermal_geyser].infinite = true
 
 local fluorine_vent = "fluorine-vent"
 data_resource[fluorine_vent].order = f
-data_resource[fluorine_vent].minable.results[1].amount_min = 30
-data_resource[fluorine_vent].minable.results[1].amount_max = 30
+data_resource[fluorine_vent].minable.results[1].amount = 30
 
 -- BOB
 local hardened_bile = "bob-hardened-bile"
@@ -346,40 +615,59 @@ data_tree[garden_temperate].order = z_a
 data_tree[garden_temperate].minable.results =
 {
     {type = item, name = garden_temperate, amount = 1},
-    {type = item, name = wheaton, amount = 4, probability = 0.125},
-    {type = item, name = tianaton, amount = 4, probability = 0.125},
-    {type = item, name = okarinome, amount = 4, probability = 0.125},
-    {type = item, name = quillnoa, amount = 4, probability = 0.0625},
-    {type = item, name = kendallion, amount = 4, probability = 0.0625}
+    {type = item, name = seed_wheaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_tianaton, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_okarinome, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_quillnoa, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_kendallion, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_swamp].order = z_b
 data_tree[garden_swamp].minable.results =
 {
     {type = item, name = garden_swamp, amount = 1},
-    {type = item, name = elendilomone, amount = 4, probability = 0.125},
-    {type = item, name = zombieecalyptus, amount = 4, probability = 0.125},
-    {type = item, name = saundsrcress, amount = 4, probability = 0.125},
-    {type = item, name = nexeflax, amount = 4, probability = 0.0625},
-    {type = item, name = mushredtato, amount = 4, probability = 0.0625}
+    {type = item, name = seed_elendilomone, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zombieecalyptus, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_saundsrcress, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nexeflax, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_mushredtato, amount = 4, independent_probability = 0.0625}
 }
 data_tree[garden_desert].order = z_c
 data_tree[garden_desert].minable.results =
 {
     {type = item, name = garden_desert, amount = 1},
-    {type = item, name = binafran, amount = 4, probability = 0.125},
-    {type = item, name = primedeadelion, amount = 4, probability = 0.125},
-    {type = item, name = nilaubergine, amount = 4, probability = 0.125},
-    {type = item, name = zelosquash, amount = 4, probability = 0.0625},
-    {type = item, name = arumbiphila, amount = 4, probability = 0.0625}
+    {type = item, name = seed_binafran, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_primedeadelion, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_nilaubergine, amount = 4, independent_probability = 0.125},
+    {type = item, name = seed_zelosquash, amount = 4, independent_probability = 0.0625},
+    {type = item, name = seed_arumbiphila, amount = 4, independent_probability = 0.0625}
 }
 data_tree[tree_temperate].order = z_d
-data_tree[tree_temperate].minable.results[1].amount = 128
-data_tree[tree_swamp].order = z_e
-data_tree[tree_swamp].minable.results[1].amount = 128
-data_tree[tree_desert].order = z_f
-data_tree[tree_desert].minable.results[1].amount = 128
+data_tree[tree_temperate].minable.results =
+{
+    {type = item, name = tree_temperate, amount = 1},
+    {type = item, name = tree_temperate_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_resin, amount = 16}
+}
 
-data_entity["angels-crystal-rock"].minable.results =
+data_tree[tree_swamp].order = z_e
+data_tree[tree_swamp].minable.results =
+{
+    {type = item, name = tree_swamp, amount = 1},
+    {type = item, name = tree_swamp_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_plastic, amount = 16}
+}
+
+data_tree[tree_desert].order = z_f
+data_tree[tree_desert].minable.results =
+{
+    {type = item, name = tree_desert, amount = 1},
+    {type = item, name = tree_desert_seed, amount = 4, independent_probability = 0.5},
+    {type = item, name = bio_rubber, amount = 16}
+}
+
+local crystal_rock = "angels-crystal-rock"
+data_entity[crystal_rock].loot = nil
+data_entity[crystal_rock].minable.results =
 {
     {type = item, name = stone, amount = 32},
     {type = item, name = geode_blue, amount_min = 0, amount_max = 8},
@@ -397,6 +685,7 @@ if mods[moshine_mods] then
     {
         {type = item, name = stone, amount_min = 4, amount_max = 8},
         {type = item, name = monazite_ore, amount_min = 4, amount_max = 16},
+        {type = item, name = aeschynite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = barite, amount_min = 4, amount_max = 16},
         {type = item, name = biotite_mica, amount_min = 4, amount_max = 16}
     }
@@ -431,7 +720,9 @@ if mods[arig_mods] then
         {type = item, name = ore_stiratite, amount_min = 4, amount_max = 16},
         {type = item, name = ore_crotinnium, amount_min = 4, amount_max = 16},
         {type = item, name = ore_rubyte, amount_min = 4, amount_max = 16},
-        {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 16}
+        {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_senaite, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_franckeite, amount_min = 4, amount_max = 16}
     }
 
     data_entity["arig-" .. big_sand_rock].minable.results =
@@ -443,7 +734,9 @@ if mods[arig_mods] then
         {type = item, name = ore_stiratite, amount_min = 16, amount_max = 32},
         {type = item, name = ore_crotinnium, amount_min = 16, amount_max = 32},
         {type = item, name = ore_rubyte, amount_min = 16, amount_max = 32},
-        {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32}
+        {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_senaite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_franckeite, amount_min = 16, amount_max = 32}
     }
 
     data_entity["arig-crash"].minable.results =
@@ -459,7 +752,6 @@ if mods[arig_mods] then
         {type = item, name = T5_inserter, amount_min = 8, amount_max = 16}
     }
 
-    local tree_plant = "tree-plant"
     if data_plant[tree_plant].minable.results[1] then data_plant[tree_plant].minable.results[1].amount = 4 end
     data_plant[tree_plant].minable.results[2].amount = 960
 
@@ -520,6 +812,20 @@ if mods[hyarion_mods] then
         {type = item, name = carbon_angels, amount_min = 8, amount_max = 16},
         {type = item, name = metallic_ore, amount_min = 0, amount_max = 4}
     }
+
+    data_resource[quartz_ore].minable.result = quartz_ore
+
+    local emerald_geode = "emerald-geode"
+    data_resource[emerald_geode].minable.mining_time = 8
+    data_resource[emerald_geode].minable.results[1].name = emerald_bob
+
+    local ruby_geode = "ruby-geode"
+    data_resource[ruby_geode].minable.mining_time = 8
+    data_resource[ruby_geode].minable.results[1].name = ruby_bob
+
+    local sapphire_geode = "sapphire-geode"
+    data_resource[sapphire_geode].minable.mining_time = 8
+    data_resource[sapphire_geode].minable.results[1].name = sapphire_bob
 end
 
 -- TELLUS
@@ -578,11 +884,7 @@ if mods[tellus_mods] then
     {
         {type = item, name = stone, amount_min = 4, amount_max = 8},
         {type = item, name = magnesium_ore, amount_min = 8, amount_max = 16},
-        {type = item, name = ore_saphirite, amount_min = 4, amount_max = 8},
-        {type = item, name = ore_jivolite, amount_min = 4, amount_max = 8},
-        {type = item, name = magnesium_bacteria, amount_min = 16, amount_max = 32},
-        {type = item, name = saphirite_bacteria, amount_min = 8, amount_max = 16},
-        {type = item, name = jivolite_bacteria, amount_min = 8, amount_max = 16}
+        {type = item, name = magnesium_bacteria, amount_min = 16, amount_max = 32}
     }
 end
 
@@ -590,9 +892,11 @@ end
 if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
-    local water_cryovolcan = "water-cryovolcano"
-    data_resource[water_cryovolcan].minable.results[1].amount_min = 30
-    data_resource[water_cryovolcan].minable.results[1].amount_max = 30
+    local nitrogen_vent = "cryovolcanic-vent"
+    data_resource[nitrogen_vent].localised_name = {"entity-name.nitrogen-vent"}
+    data_resource[nitrogen_vent].localised_description = {"entity-description.nitrogen-vent"}
+    data_resource[nitrogen_vent].minable.results[1].amount_min = 30
+    data_resource[nitrogen_vent].minable.results[1].amount_max = 30
 
     data_entity["big-metallic-rock"].minable.results =
     {
@@ -604,6 +908,8 @@ if mods[paracelsin_mods] then
         {type = item, name = ore_crotinnium, amount_min = 4, amount_max = 16},
         {type = item, name = ore_rubyte, amount_min = 4, amount_max = 16},
         {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_senaite, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_franckeite, amount_min = 4, amount_max = 16},
         {type = item, name = sphalerite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = tetrahedrite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = sulfur, amount_min = 2, amount_max = 8}
@@ -637,7 +943,10 @@ if mods[corrundum_mods] then
         {type = item, name = ore_crotinnium, amount_min = 16, amount_max = 32},
         {type = item, name = ore_rubyte, amount_min = 16, amount_max = 32},
         {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_senaite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_franckeite, amount_min = 16, amount_max = 32},
         {type = item, name = chalcopyrite_ore, amount_min = 4, amount_max = 16},
+        {type = item, name = sperrylite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = sulfur, amount_min = 8, amount_max = 32}
     }
 end
@@ -649,19 +958,20 @@ if mods[castra_mods] then
     data_resource[uranium_ore] = nil
 
     local hydrogen_sulfide_vent = "hydrogen-sulfide-vent"
+    data_resource[hydrogen_sulfide_vent].minable.mining_time = 1
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_min = 30
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_max = 30
 
-    TIMSABA.functions.replace_vanila_resources({copper_ore, stone, uranium_ore}, {ore_saphirite, ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}, planet_castra)
+    TIMSABA.functions.replace_vanila_resources({copper_ore, stone, uranium_ore}, {ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium, ore_senaite, ore_franckeite}, planet_castra)
 
     local data_collector = "data-collector"
     data_unit_spawner[data_collector].loot =
     {
-        {item = advanced_circuit,      probability = 1, count_min = 4, count_max = 8},
-        {item = nickel_plate_bob,      probability = 1, count_min = 4, count_max = 16},
-        {item = electronic_circuit,    probability = 1, count_min = 8, count_max = 32},
-        {item = low_density_structure, probability = 1, count_min = 4, count_max = 12},
-        {item = electric_engine_unit,  probability = 1, count_min = 4, count_max = 8}
+        {type = item, name = advanced_circuit,      independent_probability = 1, amount_min = 4, amount_max = 8},
+        {type = item, name = nickel_plate_bob,      independent_probability = 1, amount_min = 4, amount_max = 16},
+        {type = item, name = electronic_circuit,    independent_probability = 1, amount_min = 8, amount_max = 32},
+        {type = item, name = low_density_structure, independent_probability = 1, amount_min = 4, amount_max = 12},
+        {type = item, name = electric_engine_unit,  independent_probability = 1, amount_min = 4, amount_max = 8}
     }
 end
 
@@ -673,7 +983,7 @@ if mods[shchierbin_mods] then
     data_resource[natural_gas_geyser].minable.results[1].amount_min = 30
     data_resource[natural_gas_geyser].minable.results[1].amount_max = 30
 
-    TIMSABA.functions.replace_vanila_resources({iron_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite}, planet_shchierbin)
+    TIMSABA.functions.replace_vanila_resources({iron_ore, stone}, {ore_saphirite, ore_jivolite, ore_rubyte, ore_bobmonium}, planet_shchierbin)
 end
 
 -- MARAXSIS
@@ -692,6 +1002,12 @@ if mods[maraxsis_mods] then
     {
         {type = item, name = limestone_angels, amount_min = 16, amount_max = 32}
     }
+
+    data_entity[big_sand_rock .. "-underwater"].minable.results =
+{
+    {type = item, name = stone, amount_min = 8, amount_max = 16},
+    {type = item, name = sand_angels, amount_min = 8, amount_max = 16}
+}
 end
 
 -- VESTA
@@ -718,7 +1034,7 @@ if mods[shattered_mods] then
     local uranium_ore_shattered = "shattered_uranium_ore"
     data_resource[uranium_ore_shattered] = nil
 
-    TIMSABA.functions.replace_vanila_resources({uranium_ore_shattered}, {ore_rubyte, ore_bobmonium}, planet_shattered)
+    TIMSABA.functions.replace_vanila_resources({uranium_ore_shattered}, {ore_senaite, ore_franckeite}, planet_shattered)
 end
 
 -- MURIA
@@ -729,7 +1045,11 @@ if mods[muria_mods] then
         {type = item, name = ore_saphirite, amount_min = 2, amount_max = 8},
         {type = item, name = ore_jivolite, amount_min = 2, amount_max = 8},
         {type = item, name = ore_stiratite, amount_min = 2, amount_max = 8},
-        {type = item, name = ore_crotinnium, amount_min = 2, amount_max = 8}
+        {type = item, name = ore_crotinnium, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_rubyte, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_bobmonium, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_senaite, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_franckeite, amount_min = 2, amount_max = 8}
     }
 
     data_plant["cotunnite-lichen-colony"].minable.results =
@@ -784,7 +1104,8 @@ if mods[pelagos_mods] then
     data_entity["pelagos-copper-stromatolite"].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 8},
-        {type = item, name = copper_ore, amount_min = 16, amount_max = 32}
+        {type = item, name = ore_stiratite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_jivolite, amount_min = 16, amount_max = 32}
     }
 
     TIMSABA.functions.replace_vanila_resources({iron_ore}, {ore_saphirite, ore_jivolite}, planet_pelagos)
@@ -801,10 +1122,12 @@ if mods[apia_carnova_mods] then
     data_entity["wild-hive"].minable.results =
     {
         {type = item, name = spoilage, amount = 16},
-        {type = item, name = honeycombs, amount = 32}
+        {type = item, name = honeycombs, amount = 32},
+        {type = item, name = honeycombs .. "-iron", amount = 32},
+        {type = item, name = honeycombs .. "-copper", amount = 32}
     }
 
-    data_unit_spawner["piranha-spawner"].loot = {{item = piranha_roe, probability = 1, count_min = 4, count_max = 8}}
+    data_unit_spawner["piranha-spawner"].loot = {{type = item, name = piranha_roe, independent_probability = 1, amount_min = 4, amount_max = 8}}
     data_entity["bone-nodes"].minable.results = {{type = item, name = bones, amount = 16}}
     data_entity["flesh-tree"].minable.results =
     {
@@ -825,7 +1148,7 @@ end
 
 -- ? REGIA ?
 if mods[reigia_mods] then
-    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium}, planet_reigia)
+    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, ore_bobmonium, ore_rubyte}, planet_reigia)
 end
 
 -- MOONS
@@ -860,18 +1183,20 @@ if mods[panglia_mods] then
         {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 32},
         {type = item, name = ore_rubyte, amount_min = 0, amount_max = 32},
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_senaite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_franckeite, amount_min = 0, amount_max = 32},
         {type = item, name = stone, amount_min = 0, amount_max = 16}
     }
 end
 
 -- TERRAPALUS
 if mods[terrapalus_mods] then
-    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}, planet_terrapalus)
+    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}, planet_terrapalus)
 end
 
 -- LIGNUMIS
 if mods[lignumis_mods] then
-    TIMSABA.functions.replace_vanila_resources({stone}, {ore_saphirite, ore_stiratite}, planet_lignumis)
+    TIMSABA.functions.replace_vanila_resources({stone}, {ore_rubyte, ore_bobmonium}, planet_lignumis)
 
     for i = 1, 9 do
         data_tree["tree-0" .. i].minable.results[1].amount_max = 4
@@ -896,7 +1221,19 @@ if mods[lignumis_mods] then
         {type = item, name = gold_stromatolite_seed, amount_min = 0, amount_max = 4}
     }
 
-    data_resource["gold-patch"].subgroup = "mineable-fluids"
+    data_tree["gold-stromatolite"].minable.results =
+    {
+        {type = item, name = moist_stromatolite_remnant, amount_min = 2, amount_max = 8},
+        {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 8},
+        {type = item, name = gold_bacteria, amount_min = 4, amount_max = 8},
+        {type = item, name = gold_stromatolite_seed, amount = 1, independent_probability = 0.25}
+    }
+
+    data_resource[wodginite_patch].localised_name = {"entity-name.wodginite-patch"}
+    data_resource[wodginite_patch].subgroup = "mineable-fluids"
+    data_resource[wodginite_patch].icon = "__TIMSABA__/graphics/icons/lignumis/wodginite/wodginite-patch.png"
+    data_resource[wodginite_patch].minable.result = wodginite_ore
+    data_resource[wodginite_patch].stages.sheet.filename = "__TIMSABA__/graphics/icons/lignumis/wodginite/resource/wodginite-patch.png"
 end
 
 -- MODS

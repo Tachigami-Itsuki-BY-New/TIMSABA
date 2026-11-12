@@ -4,7 +4,7 @@ local holmium_solution = "holmium-solution"
 local replace_prototypes =
 {
 	[carbon] = carbon_angels,
-	[tungsten_carbide] = tungsten_carbide_plate_bob,
+	[tungsten_carbide] = tungsten_carbide_bob,
 	[tungsten_plate] = tungsten_plate_bob,
 	[lithium_plate] = lithium_bob,
 	[lithium] = lithium_chloride_angels,
@@ -50,10 +50,18 @@ end
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
 
+tech_asteroid_reprocessing = "asteroid-reprocessing"
 local delete_prototypes =
 {
 	holmium_solution,
-	"concrete-from-molten-iron"
+	"concrete-from-molten-iron",
+	"iron-ore-melting",
+	"copper-ore-melting",
+	"steam-condensation",
+	tech_asteroid_reprocessing,
+	"metallic-" .. tech_asteroid_reprocessing,
+	"carbonic-" .. tech_asteroid_reprocessing,
+	"oxide-" .. tech_asteroid_reprocessing
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
@@ -81,3 +89,30 @@ data_recipe[fluoroketone_cooling] = nil
 
 if data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] = nil end
 if data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] = nil end
+
+for i, prerequisite in ipairs(data_technology[battery_lithium_ion].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[battery_lithium_ion].prerequisites, i) break
+    end
+end
+
+for i, prerequisite in ipairs(data_technology[battery_silver_zinc].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[battery_silver_zinc].prerequisites, i) break
+    end
+end
+
+for i, prerequisite in ipairs(data_technology[planet_discovery_aquilo].prerequisites) do
+	if prerequisite == tech_asteroid_reprocessing then
+		table.remove(data_technology[planet_discovery_aquilo].prerequisites, i) break
+	end
+end
+
+local tech_cargo_bay_limit_4 = "cargo-bay-limit-4"
+if data_technology[tech_cargo_bay_limit_4] then
+	for i, prerequisite in ipairs(data_technology[tech_cargo_bay_limit_4].prerequisites) do
+		if prerequisite == tech_asteroid_reprocessing then
+			table.remove(data_technology[tech_cargo_bay_limit_4].prerequisites, i) break
+		end
+	end
+end

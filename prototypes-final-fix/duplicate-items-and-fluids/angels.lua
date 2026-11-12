@@ -1,14 +1,13 @@
-local tree_seed_angels = "angels-tree-seed"
+
 local replace_prototypes =
 {
-	[tree_seed_angels] = tree_seed
+	[tree_seed] = tree_seed_angels,
+    [calcium_carbonate] = limestone_angels
 }
 TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
 local delete_proto =
 {
-    tree_seed_angels,
-
     -- ANGELS RESOURCE REFINING
     "angels-thorium-ore",
 
@@ -31,9 +30,15 @@ local delete_proto =
     "angels-solid-resin",
     "angels-solid-rubber",
 
+    -- ANGELS BIOPROCESSING
+    calcium_carbonate,
+
     -- VOIDS
     "angels-chemical-void",
-    "angels-water-void"
+    "angels-water-void",
+
+    -- SPACE AGE
+    tree_seed
 }
 TIMSABA.functions.delete_duplicated_items(delete_proto)
 
@@ -41,6 +46,7 @@ local delete_prototypes =
 {
     "angels-plutonium-239",
     "angels-thorium-232",
+    "angels-thorium-processing",
 
     -- ANGELS RESOURCE REFINING
     "angels-stone-from-crushed-stone",
@@ -50,6 +56,8 @@ local delete_prototypes =
     "angels-copper-pebbles",
     "angels-copper-nugget",
     "angels-copper-slag",
+
+    "angels-ore-chunk-mix6-processing",
 
     -- ANGELS METALLURGY SMELTING
     "angels-lead-ore",
@@ -241,3 +249,28 @@ data_recipe[platinum_ore_smelting] = nil
 data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
+
+for i, prerequisite in ipairs(data_technology[tech_sulfur_processing_1].prerequisites) do
+    if prerequisite == tech_nickel_smelting_1 then
+        table.remove(data_technology[tech_sulfur_processing_1].prerequisites, i) break
+    end
+end
+
+for i, prerequisite in ipairs(data_technology[tech_chromium_smelting_2].prerequisites) do
+    if prerequisite == cryogenic_science_pack then
+        table.remove(data_technology[tech_chromium_smelting_2].prerequisites, i) break
+    end
+end
+
+if not mods[corrundum_mods] then
+    data_recipe[platinum_plate] = nil
+end
+
+data_mining_drill[heavy_offshore_pump] = nil
+data_pump_offshore["angels-sea-pump-placeable"] = nil
+
+local sea_pump_resource = "angels-sea-pump-resource"
+data_resource[sea_pump_resource].autoplace = nil
+data_resource[sea_pump_resource].hidden = true
+
+data_technology["angels-rubber"] = nil

@@ -11,38 +11,36 @@ if settings.startup[setting_no_spoilage].value then
         end
     end
 
-    local function spoil_recipe(parameters)
-        local recipe_data =
-        {
-            type = recipe,
-            name = parameters.ore,
-            category = "angels-bio-void",
-            subgroup = parameters.subgroup,
-            icons = TWO_I(saphirite_bacteria, parameters.ore),
-            order = parameters.order,
-            enabled = true,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = 1,
-            ingredients = {{type = item, name = parameters.bacteria, amount = 1}},
-            results = {{type = item, name = parameters.ore, amount = 1}},
-            main_product = parameters.ore
-        }
-        data:extend({recipe_data})
+    local function spoil_recipe(ore, subgroup, order, bacteria)
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                name = ore,
+                categories = {"angels-bio-void"},
+                subgroup = subgroup,
+                icons = TWO_I(bacteria, ore),
+                order = order,
+                enabled = true,
+                energy_required = 1,
+                ingredients = {{type = item, name = bacteria, amount = 1}},
+                results = {{type = item, name = ore, amount = 1}},
+                main_product = ore
+            }
+        })
     end
-    spoil_recipe({ore = ore_saphirite, bacteria = saphirite_bacteria, order = a, subgroup = is_ores})
-    spoil_recipe({ore = ore_jivolite, bacteria = jivolite_bacteria, order = b, subgroup = is_ores})
-    spoil_recipe({ore = ore_stiratite, bacteria = stiratite_bacteria, order = c, subgroup = is_ores})
-    spoil_recipe({ore = ore_crotinnium, bacteria = crotinnium_bacteria, order = d, subgroup = is_ores})
-    spoil_recipe({ore = ore_rubyte, bacteria = rubyte_bacteria, order = e, subgroup = is_ores})
-    spoil_recipe({ore = ore_bobmonium, bacteria = bobmonium_bacteria, order = f, subgroup = is_ores})
+    spoil_recipe(ore_saphirite,  is_ores, a,  saphirite_bacteria)
+    spoil_recipe(ore_jivolite,   is_ores, b,   jivolite_bacteria)
+    spoil_recipe(ore_stiratite,  is_ores, c,  stiratite_bacteria)
+    spoil_recipe(ore_crotinnium, is_ores, d, crotinnium_bacteria)
+    spoil_recipe(ore_rubyte,     is_ores, e,     rubyte_bacteria)
+    spoil_recipe(ore_bobmonium,  is_ores, f,  bobmonium_bacteria)
+    spoil_recipe(ore_senaite,    is_ores, g,    senaite_bacteria)
+    spoil_recipe(ore_franckeite, is_ores, h, franckeite_bacteria)
 
-    spoil_recipe({ore = spoilage, bacteria = compost_angels, order = a, subgroup = is_spoilage})
+    spoil_recipe(spoilage, is_spoilage, a, compost_angels)
 
     if mods[tellus_mods] then
-        spoil_recipe({ore = magnesium_ore, bacteria = magnesium_bacteria, order = a, subgroup = is_magnesium})
+        spoil_recipe(magnesium_ore, is_magnesium, a, magnesium_bacteria)
     end
 end
 
@@ -65,16 +63,13 @@ for _, type_name in pairs(speed_types) do
 end
 
 -- FUEL
--- Функция для безопасного умножения энергетических строк (например, "4MJ", "500kJ")
 local function scale_fuel_value(value_str, multiplier)
-    -- Ищем число (включая дробные) и буквы в конце строки
     local number, unit = string.match(value_str, "([%d%.]+)%s*(%a+)")
     if number and unit then
         local new_number = tonumber(number) / multiplier
-        -- Собираем обратно, округляя до 4 знаков после запятой для красоты
         return string.format("%.4f%s", new_number, unit)
     end
-    return value_str -- Если формат не распознан, возвращаем как было
+    return value_str
 end
 
 local fuel_types = {data_item, data_capsule, data_fluid}
@@ -89,7 +84,6 @@ for _, type_name in pairs(fuel_types) do
 end
 
 -- FLUIDS IN THE RECIPES
--- Функция для обработки списка жидкостей
 local function scale_fluids(list)
     if not list then return end
     for _, entry in pairs(list) do
@@ -102,22 +96,18 @@ local function scale_fluids(list)
     end
 end
 
--- Проходим по всем рецептам Space Age
 for _, recipe in pairs(data_recipe) do
     scale_fluids(recipe.ingredients)
     scale_fluids(recipe.results)
 end
 
 -- FLUIDS IN THE RESOURCE
--- Проходим по всем месторождениям (ресурсам) на карте
 for _, resource in pairs(data_resource) do
     if resource.minable then
-        -- 1. Проверяем стандартную таблицу результатов (results)
         if resource.minable.results then
             for _, entry in pairs(resource.minable.results) do
                 if entry.type == fluid and entry.amount then
                     entry.amount = entry.amount / 0.9375
-                -- Если в моде используется диапазон добычи (минимум/максимум)
                 elseif entry.type == fluid and (entry.amount_min or entry.amount_max) then
                     if entry.amount_min then entry.amount_min = entry.amount_min / 0.9375 end
                     if entry.amount_max then entry.amount_max = entry.amount_max / 0.9375 end

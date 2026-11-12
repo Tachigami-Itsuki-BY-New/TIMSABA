@@ -12,6 +12,9 @@ if mods[bobwarfare] then
     }
 end
 
+data_recipe[lubricant].hidden = false
+data_recipe[lubricant].hidden_in_factoriopedia = false
+
 -- BOBS FIX
 if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].subgroup = is_explosives
@@ -26,7 +29,19 @@ if mods[bobwarfare] then
     }
 end
 
-data_recipe[lithium_perchlorate_bob].category = angels_liquifying
+data_inserter[T2_inserter].rotation_speed = (720/21600)
+data_inserter[T2_inserter].extension_speed = 0.08
+
+if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
+    data_inserter[T2_inserter].energy_per_rotation = ((60 / 2) / ((720/21600) * 60)) .. kJ -- rotation_speed
+    data_inserter[T2_inserter].energy_per_movement = ((60 / 2) / (0.08 * 60)) .. kJ -- extension_speed
+else
+    data_inserter[T2_inserter].energy_per_rotation = (((60 - ((drain * 4) / 8)) / 2) / ((720/21600) * 60)) .. kJ -- rotation_speed
+    data_inserter[T2_inserter].energy_per_movement = (((60 - ((drain * 4) / 8)) / 2) / (0.08 * 60)) .. kJ -- extension_speed
+    data_inserter[T2_inserter].energy_source.drain = ((drain * 4) / 8) .. kW
+end
+
+data_recipe[lithium_perchlorate_bob].categories = {chemistry}
 
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
@@ -52,12 +67,28 @@ data_item[silicon_powder].hidden = false
 data_item[silicon_powder].hidden_in_factoriopedia = false
 data_recipe[silicon_powder].hidden = false
 data_recipe[silicon_powder].hidden_in_factoriopedia = false
+if not mods[castra_mods] then
+    data_item[nickel_powder].hidden = true
+    data_item[nickel_powder].hidden_in_factoriopedia = true
+end
+data_recipe[nickel_powder].hidden = true
+data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_item[aluminium_oxide].hidden = false
 data_item[aluminium_oxide].hidden_in_factoriopedia = false
+data_item[aluminium_powder].hidden = false
+data_item[aluminium_powder].hidden_in_factoriopedia = false
+data_recipe[aluminium_powder].hidden = false
+data_recipe[aluminium_powder].hidden_in_factoriopedia = false
+data_recipe[zinc_ingot_2].hidden = true
+data_recipe[zinc_ingot_2].hidden_in_factoriopedia = true
 data_recipe[zinc_oxide].hidden = false
 data_recipe[zinc_oxide].hidden_in_factoriopedia = false
 data_item[silver_nitrate_I].hidden = false
 data_item[silver_nitrate_I].hidden_in_factoriopedia = false
+data_recipe[titanium_ingot_2].hidden = true
+data_recipe[titanium_ingot_2].hidden_in_factoriopedia = true
+data_recipe[titanium_chloride_IV_2].hidden = true
+data_recipe[titanium_chloride_IV_2].hidden_in_factoriopedia = true
 data_item[cobalt_oxide_II_III].hidden = false
 data_item[cobalt_oxide_II_III].hidden_in_factoriopedia = false
 data_item[tungsten_powder].hidden = false
@@ -81,26 +112,34 @@ data_recipe[tin_cable].hidden = false
 data_recipe[tin_cable].hidden_in_factoriopedia = false
 data_fluid[manganese_molten_angels].hidden = false
 data_fluid[manganese_molten_angels].hidden_in_factoriopedia = false
-data_recipe[nickel_plate_bob].category = smelting
+data_recipe[nickel_plate_bob].categories = {smelting}
 data_recipe[nickel_plate_bob].hidden = false
 data_recipe[nickel_plate_bob].hidden_in_factoriopedia = false
-data_recipe[zinc_plate_bob].category = smelting
+data_recipe[zinc_plate_bob].categories = {smelting}
 data_recipe[zinc_plate_bob].hidden = false
 data_recipe[zinc_plate_bob].hidden_in_factoriopedia = false
+data_recipe[gold_plate_bob].categories = {smelting}
+data_recipe[gold_plate_bob].hidden = false
+data_recipe[gold_plate_bob].hidden_in_factoriopedia = false
 data_item[gold_cable].hidden = false
 data_item[gold_cable].hidden_in_factoriopedia = false
 data_recipe[gold_cable].hidden = false
 data_recipe[gold_cable].hidden_in_factoriopedia = false
 data_fluid[cobalt_molten_angels].hidden = false
 data_fluid[cobalt_molten_angels].hidden_in_factoriopedia = false
+if mods[corrundum_mods] then data_recipe[platinum_plate].categories = {smelting} end
 data_recipe[glass_bob].hidden = false
 data_recipe[glass_bob].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].hidden = false
 data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 
-data_item[nuclear_fuel].fuel_category = transport_fuel
+data_item[nuclear_fuel].fuel_categories = {transport_fuel}
+
+data_recipe[magnesium_boride].categories = {smelting_filtering}
 
 -- SPACE AGE
+data_recipe[lithium_plate].categories = {chemistry}
+
 data_armor[mech_armor].resistances =
 {
     {type = "physical", decrease = 20, percent = 50 },
@@ -118,10 +157,6 @@ if mods[bobwarfare] then
     table.insert(data_armor[mech_armor].resistances, {type = "bob-plasma", percent = 100})
 end
 
-tech_rocket_part_productivity = "rocket-part-productivity"
-data_technology[tech_rocket_part_productivity].effects = {{type = change_recipe_productivity, recipe = rocket_part, change = 0.1}}
-table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
-
 data_recipe[casting_low_density_structure].ingredients =
 {
     {type = item, name = plastic, amount = 4},
@@ -129,8 +164,194 @@ data_recipe[casting_low_density_structure].ingredients =
     {type = fluid, name = titanium_molten_angels, amount = 30}
 }
 
+data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
+
+data_recipe[lithium_space].categories = {smelting_filtering}
+
+data_technology[tech_asteroid_productivity].prerequisites = {tech_advanced_asteroid_processing}
+
+if mods[muluna_mods] then
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1}, -- Muluna
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}, -- Muluna
+    }
+else
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1}
+    }
+end
+
+if mods[moshine_mods] and not mods[lignumis_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+elseif mods[lignumis_mods] and not mods[moshine_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        --{type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        --{type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+elseif mods[moshine_mods] and mods[lignumis_mods] then
+    data_technology[tech_advanced_full_asteroid_processing].effects =
+    {
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_3}, -- Lignumis
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_7},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_8},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_9},
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_10}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_metallic_asteroid_crushing_11}, -- Moshine
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = advanced_full_oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = fluoroketone_liquid},
+        {type = unlock_recipe, recipe = oxygen_fluoride_gas_2},
+        {type = unlock_recipe, recipe = magnesium_boride},
+        {type = unlock_recipe, recipe = diborane_gas},
+        {type = unlock_recipe, recipe = pentaborane_liquid},
+        {type = unlock_recipe, recipe = thruster_fuel_4},
+        {type = unlock_recipe, recipe = thruster_oxidizer_4}
+    }
+
+    data_technology[tech_advanced_full_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_3, change = 0.1}, -- Lignumis
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_7, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_8, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_9, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_10, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_metallic_asteroid_crushing_11, change = 0.1}, -- Moshine
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_full_oxide_asteroid_crushing_2, change = 0.1}
+    }
+end
+
 -- MULUNA
 if mods[muluna_mods] then
+    data_rocket_silo[big_rocket_silo].energy_usage = (15360 - (drain * 4)) .. kW
+    data_rocket_silo[big_rocket_silo].energy_source.drain = (drain * 4) .. kW
+
     data_item[aluminium_pipe].hidden = false
     data_item[aluminium_pipe].hidden_in_factoriopedia = false
     data_recipe[aluminium_pipe].hidden = false
@@ -163,15 +384,23 @@ if mods[muluna_mods] then
     }
     for _, BUILD in pairs(muluna_mining_machine) do
         data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith, nil, nil, sand_angels)
         data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+        data_assembling[BUILD.name .. _ground_digger].module_slots = BUILD.tier
         data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _ground_digger].energy_source.emissions_per_minute.pollution = BUILD.tier
         data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * drain) .. kW
+        data_assembling[BUILD.name .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
 
-    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
+    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith, nil, nil, sand_angels)
+    data_assembling[big_mining_drill .. _ground_digger].module_slots = 8
     data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill .. _ground_digger].energy_source.emissions_per_minute.pollution = 32
     data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
+    data_assembling[big_mining_drill .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+    data_assembling[big_mining_drill .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
 
     if data_item[area_mining_drill_1] then
         local muluna_large_area_mining_machine =
@@ -183,19 +412,15 @@ if mods[muluna_mods] then
         }
         for _, BUILD in pairs(muluna_large_area_mining_machine) do
             data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith, nil, nil, sand_angels)
             data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+            data_assembling[BUILD.name .. _ground_digger].module_slots = (BUILD.tier * 2)
             data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
+            data_assembling[BUILD.name .. _ground_digger].energy_source.emissions_per_minute.pollution = (BUILD.tier * 2)
             data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
-            data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
+            data_assembling[BUILD.name .. _ground_digger].allowed_effects = {speed, consumption, productivity, pollution}
+            data_assembling[BUILD.name .. _ground_digger].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
         end
-    end
-
-    if mods[hyarion_mods] then
-        data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
-        data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
     end
 
     data_assembling[vacuum_heating_tower].subgroup = is_muluna_heating
@@ -205,6 +430,7 @@ if mods[muluna_mods] then
     data_assembling[vacuum_heating_tower].crafting_speed = 64
     data_assembling[vacuum_heating_tower].energy_usage = 14400 .. kW
     data_assembling[vacuum_heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
+    data_assembling[vacuum_heating_tower].energy_source.emissions_per_minute.pollution = 128
     data_assembling[vacuum_heating_tower].energy_source.effectivity = 4
     data_assembling[vacuum_heating_tower].fixed_recipe = heat
 
@@ -219,86 +445,11 @@ if mods[muluna_mods] then
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_transfer = 10800000 .. kW
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 
-    -- ROCKET PART
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
-
-    local tech_rocket_part_productivity_2 = "rocket-part-productivity-2"
-    table.insert(data_technology[tech_rocket_part_productivity_2].unit.ingredients, {utility_science_pack, 1})
-    data_technology[tech_rocket_part_productivity_2].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-
-    local tech_rocket_part_productivity_3 = "rocket-part-productivity-3"
-    table.insert(data_technology[tech_rocket_part_productivity_3].unit.ingredients, {utility_science_pack, 1})
-    data_technology[tech_rocket_part_productivity_3].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-
-    local tech_rocket_part_productivity_4 = "rocket-part-productivity-4"
-    table.insert(data_technology[tech_rocket_part_productivity_4].unit.ingredients, {utility_science_pack, 1})
-    data_technology[tech_rocket_part_productivity_4].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-
-    tech_rocket_part_productivity_vulcanus = "rocket-part-productivity-vulcanus"
-    data_technology[tech_rocket_part_productivity_vulcanus].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-    table.insert(data_technology[tech_rocket_part_productivity_vulcanus].unit.ingredients, {utility_science_pack, 1})
-
-    local tech_rocket_part_productivity_vulcanus_2 = "rocket-part-productivity-vulcanus-2"
-    table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].unit.ingredients, {utility_science_pack, 1})
-    data_technology[tech_rocket_part_productivity_vulcanus].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-
-    tech_rocket_part_productivity_gleba = "rocket-part-productivity-gleba"
-    data_technology[tech_rocket_part_productivity_gleba].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-    table.insert(data_technology[tech_rocket_part_productivity_gleba].unit.ingredients, {utility_science_pack, 1})
-
-    local tech_rocket_part_productivity_gleba_2 = "rocket-part-productivity-gleba-2"
-    data_technology[tech_rocket_part_productivity_gleba_2].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-    table.insert(data_technology[tech_rocket_part_productivity_gleba_2].unit.ingredients, {utility_science_pack, 1})
-
-    tech_rocket_part_productivity_fulgora = "rocket-part-productivity-fulgora"
-    data_technology[tech_rocket_part_productivity_fulgora].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-    table.insert(data_technology[tech_rocket_part_productivity_fulgora].unit.ingredients, {utility_science_pack, 1})
-
-    local tech_rocket_part_productivity_fulgora_2 = "rocket-part-productivity-fulgora-2"
-    data_technology[tech_rocket_part_productivity_gleba_2].effects =
-    {
-        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
-    }
-    table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].unit.ingredients, {utility_science_pack, 1})
-
     tech_rocket_part_productivity_aquilo = "rocket-part-productivity-aquilo"
     data_technology[tech_rocket_part_productivity_aquilo].effects =
     {
         {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+        {type = change_recipe_productivity, recipe = rocket_part_nauvis, change = 0.1}
     }
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {metallurgic_science_pack, 1})
@@ -306,135 +457,58 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
 
     if mods[arig_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
     end
 
     if mods[hyarion_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
     end
 
     if mods[tellus_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
     end
 
     if mods[maraxsis_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
     end
 
     if mods[muria_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
     end
 
     if mods[pelagos_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
     end
 
     if mods[lignumis_mods] then
-        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
     end
 end
 
-if not mods[muluna_mods] and mods[arig_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[hyarion_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[tellus_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[maraxsis_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[muria_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[pelagos_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
-end
-
-if not mods[muluna_mods] and mods[lignumis_mods] then
-    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-end
-
 -- MOSHINE
 if mods[moshine_mods] then
-    data_recipe[boron].category = smelting_filtering
+    data_recipe[boron].categories = {smelting_filtering}
+
+    local cosmicscanner_construction_stage_2 = "moshine_cosmicscanner-construction-stage-2"
+    data_assembling[cosmicscanner_construction_stage_2].energy_usage = ((960 * 256 * 2) - (drain * 256 * 2)) .. kW
+    data_assembling[cosmicscanner_construction_stage_2].energy_source.drain = (drain * 256 * 2) .. kW
+
+    local cosmicscanner_construction_stage_3 = "moshine_cosmicscanner-construction-stage-3"
+    data_assembling[cosmicscanner_construction_stage_3].energy_usage = ((960 * 256 * 3) - (drain * 256 * 3)) .. kW
+    data_assembling[cosmicscanner_construction_stage_3].energy_source.drain = (drain * 256 * 3) .. kW
+
+    local cosmicscanner_construction_stage_4 = "moshine_cosmicscanner-construction-stage-4"
+    data_assembling[cosmicscanner_construction_stage_4].energy_usage = ((960 * 256 * 4) - (drain * 256 * 4)) .. kW
+    data_assembling[cosmicscanner_construction_stage_4].energy_source.drain = (drain * 256 * 4) .. kW
+
+    local cosmicscanner = "moshine_cosmicscanner"
+    data_assembling[cosmicscanner].module_slots = 4
+    data_assembling[cosmicscanner].energy_usage = (((960 * 256 * 128) - (drain / 8))) .. kW
+    data_assembling[cosmicscanner].energy_source.drain = (drain / 8) .. kW
+end
+
+if mods[panglia_mods] then
+    table.insert(data_technology[processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1})
 end
 
 -- ARIG
@@ -494,6 +568,10 @@ if mods[arig_mods] then
             data_loader_1x1[hyper_loader_arig].order = k
         end
     end
+else
+    if mods[loaders_modernized_integrations] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
+    end
 end
 
 -- HYARION
@@ -505,7 +583,7 @@ if mods[hyarion_mods] then
     -- RECIPE
     local remelting_of_metal_ore_1 = "planetaris-iron-metallic-sifting"
     data_recipe[remelting_of_metal_ore_1].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. iron_ore}}
-    data_recipe[remelting_of_metal_ore_1].category = metallurgy
+    data_recipe[remelting_of_metal_ore_1].categories = {metallurgy}
     data_recipe[remelting_of_metal_ore_1].subgroup = is_hyarion_recipe_ore
     data_recipe[remelting_of_metal_ore_1].icons = THREE_I(metallic_ore, lava, iron_ore)
     data_recipe[remelting_of_metal_ore_1].order = a_a
@@ -519,7 +597,7 @@ if mods[hyarion_mods] then
 
     local remelting_of_metal_ore_2 = "planetaris-copper-metallic-sifting"
     data_recipe[remelting_of_metal_ore_2].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. copper_ore}}
-    data_recipe[remelting_of_metal_ore_2].category = metallurgy
+    data_recipe[remelting_of_metal_ore_2].categories = {metallurgy}
     data_recipe[remelting_of_metal_ore_2].subgroup = is_hyarion_recipe_ore
     data_recipe[remelting_of_metal_ore_2].icons = THREE_I(metallic_ore, lava, copper_ore)
     data_recipe[remelting_of_metal_ore_2].order = a_b
@@ -560,7 +638,7 @@ if mods[hyarion_mods] then
     else
         data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, beryllium_plate_hyarion)
     end
-    data_recipe[rocket_part_hyarion].order = b_h
+    data_recipe[rocket_part_hyarion].order = c .. "-" .. data_planet[planet_tellus].order
     data_recipe[rocket_part_hyarion].energy_required = 4
     if mods[aegis_bellicos_mods] then
         data_recipe[rocket_part_hyarion].ingredients =
@@ -642,17 +720,6 @@ if mods[paracelsin_mods] then
         {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
-    data_technology[tech_concrete_productivity].PlanetsLib_recipe_productivity_effects.effects =
-    {
-        {type = item, name = concrete, change = 0.1},
-        {type = item, name = reinforced_concrete, change = 0.1}
-    }
-
-    data_technology[processing_unit .. _productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = processing_unit, change = 0.1},
-        {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1}
-    }
 end
 
 -- CASTRA
@@ -664,78 +731,73 @@ end
 if mods[maraxsis_mods] then
     local maraxsis_mining_machine = {{name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120}}
     for _, BUILD in pairs(maraxsis_mining_machine) do
-        data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
-        data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
-        data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
-        data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
-        data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
-    end
-
-    data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
-    data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
-    data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
-    data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
-
-    -- !?
-    if not mods.pystellarexpedition then
-        local electricity_description = {""}
-
-        for _, quality in pairs(data.raw.quality) do
-            if quality.hidden then goto continue end
-            local quality_name = quality.localised_name or {"quality-name." .. quality.name}
-
-            local quality_level = quality.level
-            local fluid_amount = 16 * quality_level * quality_level + 16
-
-            table.insert(electricity_description, {"recipe-description.maraxsis-molten-salt-quality-description", quality.name, quality_name, tostring(fluid_amount)})
-            table.insert(electricity_description, "\n")
-            ::continue::
-        end
-        electricity_description[#electricity_description] = nil
-
-        electricity_description = maraxsis.shorten_localised_string(electricity_description)
-
-        data_recipe[molten_salt_mods].localised_description = {"recipe-description.molten-salt", electricity_description}
-    end
-
-    -- RESEARCE VESSEL
-    for name in pairs(data_item) do
-        if string.find(name, "^maraxsis%-") and string.find(name, "%-research%-vessel$") and name ~= empty_research_vessel then
-            data_item[name].subgroup = is_research_vessel_fill
-            data_item[name].stack_size = 32
-            data_item[name].weight = 31250
-            data_item[name].hidden = false
-            data_item[name].hidden_in_factoriopedia = false
-            data_item[name].hide_from_player_crafting = true
+        if data_assembling[BUILD.name .. _sand_extractor] then
+            data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
+            data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
+            data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
+            data_assembling[BUILD.name .. _sand_extractor].module_slots = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.emissions_per_minute.pollution = BUILD.tier
+            data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
+            data_assembling[BUILD.name .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+            data_assembling[BUILD.name .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
         end
     end
 
-    for name in pairs(data_recipe) do
-        if string.find(name, "^maraxsis%-") and string.find(name, "%-research%-vessel$") and name ~= empty_research_vessel then
-            data_recipe[name].subgroup = is_research_vessel_fill
-            data_recipe[name].energy_required = 16
-            for _, ingredient in ipairs(data_recipe[name].ingredients) do
-                if ingredient.amount == 100 then
-                    ingredient.amount = 128
-                end
-            end
-            data_recipe[name].hidden = false
-            data_recipe[name].hidden_in_factoriopedia = false
-            data_recipe[name].hide_from_player_crafting = true
-            data_recipe[name].factoriopedia_alternative = nil
-        end
-
-        if string.find(name, "^maraxsis%-") and string.find(name, "%-empty%-research%-vessel$") and name ~= empty_research_vessel then
-            data_recipe[name].subgroup = is_research_vessel_empty
-            data_recipe[name].energy_required = 16
-            data_recipe[name].results[1].amount = 128
-            data_recipe[name].results[2].probability = 1
-            data_recipe[name].hidden = false
-            data_recipe[name].hidden_in_factoriopedia = false
-            data_recipe[name].hide_from_player_crafting = true
-            data_recipe[name].factoriopedia_alternative = nil
-        end
+    if data_assembling[big_mining_drill .. _sand_extractor] then
+        data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
+        data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
+        data_assembling[big_mining_drill .. _sand_extractor].module_slots = 8
+        data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.emissions_per_minute.pollution = 32
+        data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_effects = {speed, consumption, productivity, pollution}
+        data_assembling[big_mining_drill .. _sand_extractor].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}
     end
+end
+
+if mods [vesta_mods] then
+    local stellar_discovery_solar_system_edge = "stellar-discovery-solar-system-edge"
+    data_technology[stellar_discovery_solar_system_edge].prerequisites =
+    {
+        tech_molybdenite_processing_4,
+        tech_powellite_processing_4,
+        tech_wolframite_processing_4,
+        tech_samarskite_processing_4,
+        tech_brannerite_processing_4,
+        tech_rheniite_processing_4,
+        tech_antimonite_processing_3,
+        tech_germanite_processing_3
+    }
+    if mods[moshine_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_monazite_processing_4)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_aeschynite_processing_4)
+    end
+    if mods[paracelsin_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_sphalerite_processing_3)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_tetrahedrite_processing_3)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_chalcopyrite_processing_3)
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_sperrylite_processing_3)
+    end
+    if mods[castra_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_millerite_processing_4)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_vanadinite_processing_4)
+    end
+    if mods[secretas_frozeta_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_gallite_processing_3)
+    end
+    if mods[lignumis_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, tech_wodginite_processing_4)
+    end
+    if mods[aegis_bellicos_mods] then
+        table.insert(data_technology[stellar_discovery_solar_system_edge].prerequisites, pulsar_science_pack)
+    end
+
+    data_technology[promethium_science_pack].prerequisites = {stellar_discovery_solar_system_edge}
 end
 
 -- PELAGOS
@@ -833,18 +895,14 @@ if mods[lignumis_mods] then
     data_recipe[iron_bearing_ball].enabled = false
     data_recipe[iron_bearing].enabled = false
 
-    data_recipe[burner_ore_sorting_facility].enabled = true
-    data_recipe[burner_chemical_plant].enabled = true
-    data_recipe[burner_seed_extractor].enabled = true
-
     if data_recipe[T0_transport_belt] then
         data_recipe[T0_transport_belt].enabled = false
     end
 
-    data_item[sulfur].fuel_category = base_fuel
-    data_item[sulfur].fuel_value = 14400 .. kJ
+    data_item[sulfur].fuel_categories = {base_fuel}
+    data_item[sulfur].fuel_value = 15360 .. kJ
 
-    data_item[rocket_fuel].fuel_category = transport_fuel
+    data_item[rocket_fuel].fuel_categories = {transport_fuel}
 
     if data_technology[tech_logistics_0] then
         data_technology[tech_logistics_0].prerequisites = {tech_iron_processing, tech_copper_processing, "wood-logistics"}
@@ -854,19 +912,17 @@ if mods[lignumis_mods] then
 
     data_technology[tech_tree_seeding].unit.ingredients = {{wood_science_pack, 1}}
 
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = stone_crushed_angels})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = sand_from_crushed_stone})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_rubyte})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = lead_plate_bob})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = crushed_bobmonium})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = tin_plate_bob})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = steam_science_pack .. "-" .. steam})
     table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = wood_liquefaction .. "-" .. steam})
 
     data_technology[tech_automation_2].effects = {{type = unlock_recipe, recipe = assembling_machine_2}}
 
-    for i, prerequisite in ipairs(data_technology[production_science_pack].prerequisites) do
-        if prerequisite == tech_space_platform_thruster then
-            table.remove(data_technology[production_science_pack].prerequisites, i)
-            break
-        end
-    end
     data_technology[production_science_pack].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -874,12 +930,6 @@ if mods[lignumis_mods] then
         {chemical_science_pack, 1}
     }
 
-    for i, prerequisite in ipairs(data_technology[utility_science_pack].prerequisites) do
-        if prerequisite == tech_space_platform_thruster then
-            table.remove(data_technology[utility_science_pack].prerequisites, i)
-            break
-        end
-    end
     data_technology[utility_science_pack].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -897,21 +947,22 @@ if mods[lignumis_mods] then
     data_technology[rocket_silo].prerequisites =
     {
         rocket_fuel, low_density_structure,
-        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4,
-        tech_molybdenum_processing, tech_rhenium_processing, tech_molybdenum_rhenium_processing
+        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4, tech_multi_purpose_furnace_2
     }
 
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
+
+    data.raw["tips-and-tricks-item"]["lignumis-steam"].trigger.technology = "gold-fluid-handling"
 end
 
 if mods[aegis_bellicos_mods] then
-    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, vulcanus_transport_belt}
+    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, stack_inserter}
 
     if mods[arig_mods] then
         if mods[hyarion_mods] then
-            data_technology[hyper_transport_belt_arig].prerequisites = {simulating_unit, tech_space_logistic}
+            data_technology[hyper_transport_belt_arig].prerequisites = {simulating_unit, vulcanus_transport_belt}
         else
-            data_technology[hyper_transport_belt_arig].prerequisites = {silica_arig .. _processing, tech_space_logistic}
+            data_technology[hyper_transport_belt_arig].prerequisites = {silica_arig .. _processing, vulcanus_transport_belt}
         end
     end
 
@@ -929,60 +980,14 @@ if mods[aegis_bellicos_mods] then
     }
 end
 
-if mods[aegis_bellicos_mods] and mods[muluna_mods] then
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
-    }
-elseif mods[aegis_bellicos_mods] and not mods[muluna_mods] then
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
-    }
+-- AEGIS
+if mods[aegis_bellicos_mods] then
+    if mods[asteroid_belt_mods] and data_technology[space_discovery_kuiper_belt] then
+        data_technology[discovery_aegis_outer].prerequisites = {space_discovery_kuiper_belt}
+    end
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, tech_advanced_full_asteroid_processing)
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, railgun)
+    table.insert(data_technology[discovery_aegis_outer].prerequisites, fusion_reactor)
 end
 
 -- MODS
@@ -1022,7 +1027,7 @@ if mods[space_age_science_packs] then
     end
     for _, pack in pairs(list_base_or_space) do
         data_technology[pack].icons = nil
-        data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
+        data_technology[pack].icon = "__sa-science-packs-fix__/graphics/techs/sasp-" .. pack .. ".png"
         data_technology[pack].icon_size = 256
     end
 
@@ -1073,5 +1078,39 @@ if mods["Bio_Industries_2"] then
     if mods[linox_mods] then
         data_logistic_robot["linox_samarium-" .. logistic_robot_1].next_upgrade = nil
         data_construction_robot["linox_samarium-" .. construction_robot_1].next_upgrade = nil
+    end
+end
+
+if mods[loaders_modernized_integrations] then
+    data_loader_1x1[T4_loader].next_upgrade = T5_loader
+    if mods[arig_mods] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
+        data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
+        data_loader_1x1[stack_loader].next_upgrade = nil
+    end
+
+    if data_technology[vulcanus_loader] then
+        table.insert(data_technology[vulcanus_loader].prerequisites, vulcanus_transport_belt)
+        if data_item[transport_science_pack] then
+            table.insert(data_technology[vulcanus_loader].unit.ingredients, {transport_science_pack, 1})
+        end
+        table.insert(data_technology[vulcanus_loader].unit.ingredients, {utility_science_pack, 1})
+    end
+
+    if data_technology[stack_loader] then
+        data_technology[stack_loader].prerequisites = {vulcanus_loader, stack_inserter}
+        if data_item[transport_science_pack] then
+            table.insert(data_technology[stack_loader].unit.ingredients, {transport_science_pack, 1})
+        end
+        table.insert(data_technology[stack_loader].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[stack_loader].unit.ingredients, {electromagnetic_science_pack, 1})
+    end
+
+    if data_technology[hyper_loader_arig] then
+        data_technology[hyper_loader_arig].prerequisites = {vulcanus_loader, hyper_transport_belt_arig}
+        table.insert(data_technology[hyper_loader_arig].unit.ingredients, {electromagnetic_science_pack, 1})
+        if data_technology[stack_loader] then
+            data_technology[stack_loader].prerequisites = {hyper_loader_arig, stack_inserter}
+        end
     end
 end

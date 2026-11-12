@@ -5,7 +5,7 @@ if mods[muluna_mods] then
     data_item[lunar_regolith].stack_size = 200
 
     local regolith_sorting = "muluna-regolith-sorting"
-    data_recipe[regolith_sorting].category = angels_ore_sorting_5
+    data_recipe[regolith_sorting].categories = {angels_ore_sorting_5}
     data_recipe[regolith_sorting].subgroup = is_muluna_crushing
     data_recipe[regolith_sorting].icons = RECYCLING_I(recycling_png, lunar_regolith)
     data_recipe[regolith_sorting].order = a_a
@@ -13,15 +13,16 @@ if mods[muluna_mods] then
     data_recipe[regolith_sorting].ingredients[1].amount = 8
     data_recipe[regolith_sorting].results =
     {
-        {type = item, name = stone, amount = 2},
         {type = item, name = ore_saphirite, amount = 1},
         {type = item, name = ore_jivolite, amount = 1},
         {type = item, name = ore_stiratite, amount = 1},
         {type = item, name = ore_crotinnium, amount = 1},
         {type = item, name = ore_rubyte, amount = 1},
-        {type = item, name = ore_bobmonium, amount = 1}
+        {type = item, name = ore_bobmonium, amount = 1},
+        {type = item, name = ore_senaite, amount = 1},
+        {type = item, name = ore_franckeite, amount = 1}
     }
-    data_recipe[regolith_sorting].main_product = stone
+    data_recipe[regolith_sorting].main_product = nil
 
     local stone_crushing = "stone-crushing"
     data_recipe[stone_crushing].subgroup = is_muluna_crushing
@@ -39,8 +40,7 @@ if mods[muluna_mods] then
     data_recipe[landfill_stone_crushed].ingredients = {{type = item, name = stone_crushed_angels, amount = 64}}
 
     local stone_bricks_stone_crushed = "stone-bricks-stone-crushed"
-    data_recipe[stone_bricks_stone_crushed].category = smelting_filtering
-    data_recipe[stone_bricks_stone_crushed].additional_categories = {angels_sintering_1, metallurgy}
+    data_recipe[stone_bricks_stone_crushed].categories = {smelting_filtering}
     data_recipe[stone_bricks_stone_crushed].subgroup = is_muluna_crushing
     data_recipe[stone_bricks_stone_crushed].icons = TWO_I(stone_crushed_angels, stone_brick)
     data_recipe[stone_bricks_stone_crushed].order = a_d
@@ -58,6 +58,8 @@ if mods[muluna_mods] then
     data_recipe[aluminium_plate_mods].icons = TWO_I(aluminium_oxide, aluminium_plate_bob)
     data_recipe[aluminium_plate_mods].order = b
     data_recipe[aluminium_plate_mods].energy_required = 4
+    data_recipe[aluminium_plate_mods].results[1].amount = 2
+    data_recipe[aluminium_plate_mods].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     data_item[aluminium_plate_crushed].localised_name = {"item-name.crushed-aluminium-plate"}
     data_item[aluminium_plate_crushed].localised_description = show_formula and {chemical_formula, "Al"} or nil
@@ -81,19 +83,6 @@ if mods[muluna_mods] then
     data_recipe[aluminium_cable].allow_productivity = true
     data_recipe[aluminium_cable].allow_quality = true
     data_recipe[aluminium_cable].allow_decomposition = true
-
-    local casting_aluminium_cable = "casting-aluminum-cable"
-    data_recipe[casting_aluminium_cable].subgroup = is_muluna_recipe_anorthite
-    data_recipe[casting_aluminium_cable].icons = THREE_I(copper_molten_angels, aluminium_molten_angels, aluminium_cable)
-    data_recipe[casting_aluminium_cable].order = d_a
-    data_recipe[casting_aluminium_cable].energy_required = 4
-    data_recipe[casting_aluminium_cable].ingredients =
-    {
-        {type = fluid, name = copper_molten_angels, amount = 60},
-        {type = fluid, name = aluminium_molten_angels, amount = 15}
-    }
-    data_recipe[casting_aluminium_cable].results = {{type = item, name = aluminium_cable, amount = 16}}
-    data_recipe[casting_aluminium_cable].main_product = aluminium_cable
 
     data_item[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
     data_item[aluminium_pipe].order = e
@@ -144,9 +133,8 @@ if mods[muluna_mods] then
     data_recipe[low_density_structure_muluna].energy_required = 16
     data_recipe[low_density_structure_muluna].ingredients = util.table.deepcopy(data_recipe[low_density_structure].ingredients)
     data_recipe[low_density_structure_muluna].results[1].amount = 2
-    data_recipe[low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[low_density_structure_muluna].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
-    casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
     data_recipe[casting_low_density_structure_muluna].localised_name = {"recipe-name.casting-low-density-structure-muluna"}
     data_recipe[casting_low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[casting_low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_2)
@@ -159,7 +147,7 @@ if mods[muluna_mods] then
         {type = fluid, name = titanium_molten_angels, amount = 30}
     }
     data_recipe[casting_low_density_structure_muluna].results[1].amount = 2
-    data_recipe[casting_low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[casting_low_density_structure_muluna].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     -- SILICON
     -- data_item[silicon_boule_mods] --> "prototypes-update/mods/mods-override"
@@ -170,7 +158,7 @@ if mods[muluna_mods] then
     -- SILICON SOLAR PANELS
     local silicon_solar_panel_1 = "muluna-silicon-solar-panel"
     data_recipe[silicon_solar_panel_1].localised_name = {"recipe-name.muluna-silicon-solar-panel-1"}
-    data_recipe[silicon_solar_panel_1].category = crafting
+    data_recipe[silicon_solar_panel_1].categories = {crafting, electronics}
     data_recipe[silicon_solar_panel_1].subgroup = is_muluna_SPM_silicon
     data_recipe[silicon_solar_panel_1].icons = BUILDING_R_IS(solar_panel_1, silicon_cell_mods)
     data_recipe[silicon_solar_panel_1].order = a
@@ -184,23 +172,23 @@ if mods[muluna_mods] then
         {type = item, name = silicon_cell_mods, amount = 8},
         {type = item, name = copper_plate, amount = 8}
     }
-    data_recipe[silicon_solar_panel_1].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[silicon_solar_panel_1].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     -- TREES
     local tree_growth_greenhouse = "muluna-tree-growth-greenhouse"
     data_recipe[tree_growth_greenhouse].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse].icons = CORNER_I(tree_angels, nil, water, nil, oxygen_angels, number_1)
     data_recipe[tree_growth_greenhouse].order = a
-    data_recipe[tree_growth_greenhouse].energy_required = 32
+    data_recipe[tree_growth_greenhouse].energy_required = 256
     data_recipe[tree_growth_greenhouse].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
+        {type = item, name = tree_seed, amount = 32},
         {type = fluid, name = carbon_dioxide_angels, amount = 960},
         {type = fluid, name = water, amount = 480}
     }
     data_recipe[tree_growth_greenhouse].results =
     {
-        {type = item, name = tree_angels, amount = 8},
+        {type = item, name = tree_angels, amount = 32},
         {type = fluid, name = oxygen_angels, amount = 960}
     }
     data_recipe[tree_growth_greenhouse].surface_conditions = nil
@@ -209,34 +197,34 @@ if mods[muluna_mods] then
     data_recipe[tree_growth_greenhouse_water_saving].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse_water_saving].icons = CORNER_I(tree_angels, nil, water, nil, oxygen_angels, number_2)
     data_recipe[tree_growth_greenhouse_water_saving].order = a_a
-    data_recipe[tree_growth_greenhouse_water_saving].energy_required = 64
+    data_recipe[tree_growth_greenhouse_water_saving].energy_required = 512
     data_recipe[tree_growth_greenhouse_water_saving].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
-        {type = fluid, name = carbon_dioxide_angels, amount = 960},
+        {type = item, name = tree_seed, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 480},
         {type = fluid, name = water, amount = 240}
     }
     data_recipe[tree_growth_greenhouse_water_saving].results =
     {
-        {type = item, name = tree_angels, amount = 8},
-        {type = fluid, name = oxygen_angels, amount = 960}
+        {type = item, name = tree_angels, amount = 32},
+        {type = fluid, name = oxygen_angels, amount = 480}
     }
 
     local tree_growth_greenhouse_nutrients = "muluna-tree-growth-greenhouse-nutrients"
     data_recipe[tree_growth_greenhouse_nutrients].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse_nutrients].icons = CORNER_I(tree_angels, nil, nutrients, nil, oxygen_angels, number_1)
     data_recipe[tree_growth_greenhouse_nutrients].order = a_b
-    data_recipe[tree_growth_greenhouse_nutrients].energy_required = 32
+    data_recipe[tree_growth_greenhouse_nutrients].energy_required = 128
     data_recipe[tree_growth_greenhouse_nutrients].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
-        {type = item, name = nutrients, amount = 8},
+        {type = item, name = tree_seed, amount = 32},
+        {type = item, name = nutrients, amount = 32},
         {type = fluid, name = carbon_dioxide_angels, amount = 960},
         {type = fluid, name = water, amount = 480}
     }
     data_recipe[tree_growth_greenhouse_nutrients].results =
     {
-        {type = item, name = tree_angels, amount = 16},
+        {type = item, name = tree_angels, amount = 32},
         {type = fluid, name = oxygen_angels, amount = 960}
     }
     data_recipe[tree_growth_greenhouse_nutrients].surface_conditions = nil
@@ -245,17 +233,17 @@ if mods[muluna_mods] then
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].icons = CORNER_I(tree_angels, nil, nutrients, nil, oxygen_angels, number_2)
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].order = a_c
-    data_recipe[tree_growth_greenhouse_water_saving_nutrients].energy_required = 64
+    data_recipe[tree_growth_greenhouse_water_saving_nutrients].energy_required = 256
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
-        {type = item, name = nutrients, amount = 8},
+        {type = item, name = tree_seed, amount = 32},
+        {type = item, name = nutrients, amount = 32},
         {type = fluid, name = carbon_dioxide_angels, amount = 960},
         {type = fluid, name = water, amount = 240}
     }
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].results =
     {
-        {type = item, name = tree_angels, amount = 16},
+        {type = item, name = tree_angels, amount = 32},
         {type = fluid, name = oxygen_angels, amount = 960}
     }
     data_recipe[tree_growth_greenhouse_water_saving_nutrients].surface_conditions = nil
@@ -264,12 +252,12 @@ if mods[muluna_mods] then
     data_recipe[tree_growth_greenhouse_vulcanus].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse_vulcanus].icons = CORNER_I(tree_angels, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_1)
     data_recipe[tree_growth_greenhouse_vulcanus].order = a_d
-    data_recipe[tree_growth_greenhouse_vulcanus].energy_required = 32
+    data_recipe[tree_growth_greenhouse_vulcanus].energy_required = 64
     data_recipe[tree_growth_greenhouse_vulcanus].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
-        {type = item, name = nutrients, amount = 8},
-        {type = fluid, name = carbon_dioxide_angels, amount = 960},
+        {type = item, name = tree_seed, amount = 32},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
         {type = fluid, name = fluoroketone_cold, amount = 480},
         {type = fluid, name = water, amount = 480}
     }
@@ -277,7 +265,7 @@ if mods[muluna_mods] then
     {
         {type = item, name = tree_angels, amount = 32},
         {type = fluid, name = fluoroketone_hot, amount = 480},
-        {type = fluid, name = oxygen_angels, amount = 960}
+        {type = fluid, name = oxygen_angels, amount = 1920}
     }
     data_recipe[tree_growth_greenhouse_vulcanus].surface_conditions = nil
 
@@ -285,12 +273,12 @@ if mods[muluna_mods] then
     data_recipe[tree_growth_greenhouse_water_saving_vulcanus].subgroup = is_muluna_recipe_tree
     data_recipe[tree_growth_greenhouse_water_saving_vulcanus].icons = CORNER_I(tree_angels, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_2)
     data_recipe[tree_growth_greenhouse_water_saving_vulcanus].order = a_e
-    data_recipe[tree_growth_greenhouse_water_saving_vulcanus].energy_required = 64
+    data_recipe[tree_growth_greenhouse_water_saving_vulcanus].energy_required = 128
     data_recipe[tree_growth_greenhouse_water_saving_vulcanus].ingredients =
     {
-        {type = item, name = tree_seed, amount = 8},
-        {type = item, name = nutrients, amount = 8},
-        {type = fluid, name = carbon_dioxide_angels, amount = 960},
+        {type = item, name = tree_seed, amount = 32},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
         {type = fluid, name = fluoroketone_cold, amount = 960},
         {type = fluid, name = water, amount = 240}
     }
@@ -298,14 +286,12 @@ if mods[muluna_mods] then
     {
         {type = item, name = tree_angels, amount = 32},
         {type = fluid, name = fluoroketone_hot, amount = 960},
-        {type = fluid, name = oxygen_angels, amount = 960}
+        {type = fluid, name = oxygen_angels, amount = 1920}
     }
 
-    local tree_crushing = "muluna-tree-crushing"
+    data_recipe[tree_crushing].categories = {advanced_wood_processing}
     if mods[lignumis_mods] then
-        data_recipe[tree_crushing].category = "wood-processing"
-    else
-        data_recipe[tree_crushing].category = lumber_mill_recipe_category
+        table.insert(data_recipe[tree_crushing].categories, lignumis_wood_processing)
     end
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
@@ -313,18 +299,14 @@ if mods[muluna_mods] then
     data_recipe[tree_crushing].energy_required = 4
     data_recipe[tree_crushing].results = {{type = item, name = wood, amount = 8}}
 
-    local greenhouse_wood = "muluna-greenhouse-wood"
+    local greenhouse_icon = "__muluna-graphics__/graphics/greenhouse/sprites/greenhouse-icon.png"
     data_item[greenhouse_wood].subgroup = is_muluna_recipe_tree
-    data_item[greenhouse_wood].icons = nil
-    data_item[greenhouse_wood].icon = "__muluna-graphics__/graphics/greenhouse/sprites/greenhouse-icon.png"
-    data_item[greenhouse_wood].icon_size = 64
+    data_item[greenhouse_wood].icons = R_P_IS(greenhouse_icon, tree_angels)
     data_item[greenhouse_wood].order = z
     data_item[greenhouse_wood].stack_size = 32
     data_item[greenhouse_wood].weight = 31250
     data_recipe[greenhouse_wood].subgroup = is_muluna_recipe_tree
-    data_recipe[greenhouse_wood].icons = nil
-    data_recipe[greenhouse_wood].icon = "__muluna-graphics__/graphics/greenhouse/sprites/greenhouse-icon.png"
-    data_recipe[greenhouse_wood].icon_size = 64
+    data_recipe[greenhouse_wood].icons = R_P_IS(greenhouse_icon, tree_angels)
     data_recipe[greenhouse_wood].order = z
     data_recipe[greenhouse_wood].energy_required = 8
     data_recipe[greenhouse_wood].ingredients =
@@ -338,14 +320,178 @@ if mods[muluna_mods] then
         {type = item, name = glass_bob, amount = 32}
     }
     data_assembling[greenhouse_wood].subgroup = is_muluna_recipe_tree
-    data_assembling[greenhouse_wood].icons = nil
-    data_assembling[greenhouse_wood].icon = "__muluna-graphics__/graphics/greenhouse/sprites/greenhouse-icon.png"
-    data_assembling[greenhouse_wood].icon_size = 64
+    data_assembling[greenhouse_wood].icons = R_P_IS(greenhouse_icon, tree_angels)
     data_assembling[greenhouse_wood].order = z
-    data_assembling[greenhouse_wood].crafting_speed = 4
+    data_assembling[greenhouse_wood].crafting_speed = 8
     data_assembling[greenhouse_wood].energy_usage = 420 .. kW
     data_assembling[greenhouse_wood].energy_source.emissions_per_minute.spores = 16
     data_assembling[greenhouse_wood].energy_source.drain = 60 .. kW
+
+    if mods[lignumis_mods] then
+        data_recipe[lumber_mill].ingredients[1].name = tantalum_tungsten_gear_wheel
+        data_recipe[lumber_mill].ingredients[3].name = tantalum_tungsten_plate
+        table.insert(data_recipe[lumber_mill].ingredients, {type = item, name = burner_lumber_mill, amount = 1})
+        table.insert(data_recipe[lumber_mill].ingredients, {type = item, name = tantalum_molybdenum_rhenium_plate, amount = 64})
+        table.insert(data_recipe[lumber_mill].ingredients, {type = item, name = tantalum_niobium_plate, amount = 64})
+        table.insert(data_assembling[lumber_mill].crafting_categories, lignumis_wood_processing)
+    end
+
+    -- JELLYNUT
+    local jellynut_seedless = "jellynut-seedless"
+    data_capsule[jellynut_seedless].subgroup = is_muluna_recipe_jellynut
+    data_capsule[jellynut_seedless].order = a
+    data_capsule[jellynut_seedless].stack_size = 200
+    data_capsule[jellynut_seedless].fuel_categories = {base_fuel}
+    data_capsule[jellynut_seedless].fuel_value = 7680 .. kJ
+    TIMSABA.void.void_organics(jellynut_seedless)
+    TIMSABA.void.freezing_organics(jellynut_seedless)
+
+    local jellynut_seedless_processing = "jellynut-processing-seedless"
+    data_recipe[jellynut_seedless_processing].subgroup = is_muluna_recipe_jellynut
+    data_recipe[jellynut_seedless_processing].icons = TWO_I(jellynut_seedless, jelly)
+    data_recipe[jellynut_seedless_processing].order = a_a
+
+    local greenhouse_growth_jellynut = "muluna-greenhouse-growth-jellynut"
+    data_recipe[greenhouse_growth_jellynut].subgroup = is_muluna_recipe_jellynut
+    data_recipe[greenhouse_growth_jellynut].icons = CORNER_I(jellynut_seedless, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_1)
+    data_recipe[greenhouse_growth_jellynut].order = a_b
+    data_recipe[greenhouse_growth_jellynut].energy_required = 64
+    data_recipe[greenhouse_growth_jellynut].ingredients =
+    {
+        {type = item, name = jellynut_seed, amount = 8},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
+        {type = fluid, name = fluoroketone_cold, amount = 480},
+        {type = fluid, name = water, amount = 480}
+    }
+    data_recipe[greenhouse_growth_jellynut].results =
+    {
+        {type = item, name = jellynut_seedless, amount = 512},
+        {type = fluid, name = fluoroketone_hot, amount = 480},
+        {type = fluid, name = oxygen_angels, amount = 1920}
+    }
+
+    local greenhouse_growth_water_saving_jellynut = "muluna-greenhouse-growth-water-saving-jellynut"
+    data_recipe[greenhouse_growth_water_saving_jellynut].subgroup = is_muluna_recipe_jellynut
+    data_recipe[greenhouse_growth_water_saving_jellynut].icons = CORNER_I(jellynut_seedless, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_2)
+    data_recipe[greenhouse_growth_water_saving_jellynut].order = a_c
+    data_recipe[greenhouse_growth_water_saving_jellynut].energy_required = 128
+    data_recipe[greenhouse_growth_water_saving_jellynut].ingredients =
+    {
+        {type = item, name = jellynut_seed, amount = 8},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
+        {type = fluid, name = fluoroketone_cold, amount = 960},
+        {type = fluid, name = water, amount = 240}
+    }
+    data_recipe[greenhouse_growth_water_saving_jellynut].results =
+    {
+        {type = item, name = jellynut_seedless, amount = 512},
+        {type = fluid, name = fluoroketone_hot, amount = 960},
+        {type = fluid, name = oxygen_angels, amount = 1920}
+    }
+
+    data_item[greenhouse_jellynut].subgroup = is_muluna_recipe_jellynut
+    data_item[greenhouse_jellynut].icons = R_P_IS(greenhouse_icon, jellynut)
+    data_item[greenhouse_jellynut].order = z
+    data_item[greenhouse_jellynut].stack_size = 32
+    data_item[greenhouse_jellynut].weight = 31250
+    data_recipe[greenhouse_jellynut].subgroup = is_muluna_recipe_jellynut
+    data_recipe[greenhouse_jellynut].icons = R_P_IS(greenhouse_icon, jellynut)
+    data_recipe[greenhouse_jellynut].order = z
+    data_recipe[greenhouse_jellynut].energy_required = 8
+    data_recipe[greenhouse_jellynut].ingredients =
+    {
+        {type = item, name = jellynut_seed, amount = 128},
+        {type = item, name = overgrowth_jellynut_soil, amount = 8},
+        {type = item, name = greenhouse_wood, amount = 1}
+    }
+    data_assembling[greenhouse_jellynut].subgroup = is_muluna_recipe_jellynut
+    data_assembling[greenhouse_jellynut].icons = R_P_IS(greenhouse_icon, jellynut)
+    data_assembling[greenhouse_jellynut].order = z
+    data_assembling[greenhouse_jellynut].crafting_speed = 8
+    data_assembling[greenhouse_jellynut].energy_usage = 420 .. kW
+    data_assembling[greenhouse_jellynut].energy_source.emissions_per_minute.spores = 16
+    data_assembling[greenhouse_jellynut].energy_source.drain = 60 .. kW
+
+    -- YUMAKO
+    local yumako_seedless = "yumako-seedless"
+    data_capsule[yumako_seedless].subgroup = is_muluna_recipe_yumako
+    data_capsule[yumako_seedless].order = a
+    data_capsule[yumako_seedless].stack_size = 200
+    data_capsule[yumako_seedless].fuel_categories = {base_fuel}
+    data_capsule[yumako_seedless].fuel_value = 1920 .. kJ
+    TIMSABA.void.void_organics(yumako_seedless)
+    TIMSABA.void.freezing_organics(yumako_seedless)
+
+    local yumako_seedless_processing = "yumako-processing-seedless"
+    data_recipe[yumako_seedless_processing].subgroup = is_muluna_recipe_yumako
+    data_recipe[yumako_seedless_processing].icons = TWO_I(yumako_seedless, yumako_mash)
+    data_recipe[yumako_seedless_processing].order = a_a
+    data_recipe[yumako_seedless_processing].results[1].amount = 4
+
+    local greenhouse_growth_yumako = "muluna-greenhouse-growth-yumako"
+    data_recipe[greenhouse_growth_yumako].subgroup = is_muluna_recipe_yumako
+    data_recipe[greenhouse_growth_yumako].icons = CORNER_I(yumako_seedless, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_1)
+    data_recipe[greenhouse_growth_yumako].order = a_b
+    data_recipe[greenhouse_growth_yumako].energy_required = 256
+    data_recipe[greenhouse_growth_yumako].ingredients =
+    {
+        {type = item, name = yumako_seed, amount = 8},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
+        {type = fluid, name = fluoroketone_cold, amount = 480},
+        {type = fluid, name = water, amount = 480}
+    }
+    data_recipe[greenhouse_growth_yumako].results =
+    {
+        {type = item, name = yumako_seedless, amount = 512},
+        {type = fluid, name = fluoroketone_hot, amount = 480},
+        {type = fluid, name = oxygen_angels, amount = 1920}
+    }
+
+    local greenhouse_growth_water_saving_yumako = "muluna-greenhouse-growth-water-saving-yumako"
+    data_recipe[greenhouse_growth_water_saving_yumako].subgroup = is_muluna_recipe_yumako
+    data_recipe[greenhouse_growth_water_saving_yumako].icons = CORNER_I(yumako_seedless, nil, fluoroketone_cold, oxygen_angels, fluoroketone_hot, number_2)
+    data_recipe[greenhouse_growth_water_saving_yumako].order = a_c
+    data_recipe[greenhouse_growth_water_saving_yumako].energy_required = 512
+    data_recipe[greenhouse_growth_water_saving_yumako].ingredients =
+    {
+        {type = item, name = yumako_seed, amount = 8},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = carbon_dioxide_angels, amount = 1920},
+        {type = fluid, name = fluoroketone_cold, amount = 960},
+        {type = fluid, name = water, amount = 240}
+    }
+    data_recipe[greenhouse_growth_water_saving_yumako].results =
+    {
+        {type = item, name = yumako_seedless, amount = 512},
+        {type = fluid, name = fluoroketone_hot, amount = 960},
+        {type = fluid, name = oxygen_angels, amount = 1920}
+    }
+
+    data_item[greenhouse_yumako].subgroup = is_muluna_recipe_yumako
+    data_item[greenhouse_yumako].icons = R_P_IS(greenhouse_icon, yumako)
+    data_item[greenhouse_yumako].order = z
+    data_item[greenhouse_yumako].stack_size = 32
+    data_item[greenhouse_yumako].weight = 31250
+    data_recipe[greenhouse_yumako].subgroup = is_muluna_recipe_yumako
+    data_recipe[greenhouse_yumako].icons = R_P_IS(greenhouse_icon, yumako)
+    data_recipe[greenhouse_yumako].order = z
+    data_recipe[greenhouse_yumako].energy_required = 8
+    data_recipe[greenhouse_yumako].ingredients =
+    {
+        {type = item, name = jellynut_seed, amount = 128},
+        {type = item, name = overgrowth_jellynut_soil, amount = 8},
+        {type = item, name = greenhouse_wood, amount = 1}
+    }
+    data_assembling[greenhouse_yumako].subgroup = is_muluna_recipe_yumako
+    data_assembling[greenhouse_yumako].icons = R_P_IS(greenhouse_icon, jellynut)
+    data_assembling[greenhouse_yumako].order = z
+    data_assembling[greenhouse_yumako].crafting_speed = 8
+    data_assembling[greenhouse_yumako].energy_usage = 420 .. kW
+    data_assembling[greenhouse_yumako].energy_source.emissions_per_minute.spores = 16
+    data_assembling[greenhouse_yumako].energy_source.drain = 60 .. kW
 
     -- CELLULOSE
     data_recipe[cellulose_mods].subgroup = is_bio_processing_wood
@@ -377,10 +523,10 @@ if mods[muluna_mods] then
     {
         {type = fluid, name = methane_angels, amount = 30},
         {type = fluid, name = tar_mods, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, independent_probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[wood_gasification].main_product = methane_angels
-    data_recipe[wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[wood_gasification].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     local advanced_wood_gasification = "advanced-wood-gasification"
     data_recipe[advanced_wood_gasification].subgroup = is_muluna_recipe_cellulose
@@ -398,10 +544,10 @@ if mods[muluna_mods] then
         {type = fluid, name = tar_mods, amount = 30},
         {type = fluid, name = naphtha_angels, amount = 15},
         {type = fluid, name = fuel_oil_angels, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, independent_probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[advanced_wood_gasification].main_product = tar_mods
-    data_recipe[advanced_wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[advanced_wood_gasification].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     local plastic_from_wood = "plastic-from-wood"
     data_recipe[plastic_from_wood].subgroup = is_muluna_recipe_cellulose
@@ -412,7 +558,7 @@ if mods[muluna_mods] then
         {type = item, name = cellulose_fiber_angels, amount = 4},
         {type = fluid, name = tar_mods, amount = 30}
     }
-    data_recipe[plastic_from_wood].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[plastic_from_wood].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     data_fluid[tar_mods].subgroup = is_muluna_recipe_cellulose
     data_fluid[tar_mods].order = b
@@ -424,7 +570,7 @@ if mods[muluna_mods] then
     data_recipe[solid_fuel_from_tar].order = b_a
     data_recipe[solid_fuel_from_tar].energy_required = 4
     data_recipe[solid_fuel_from_tar].ingredients[1].amount = 30
-    data_recipe[solid_fuel_from_tar].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[solid_fuel_from_tar].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     local crude_oil_from_tar = "crude-oil-from-tar"
     data_recipe[crude_oil_from_tar].subgroup = is_muluna_recipe_cellulose
@@ -437,27 +583,13 @@ if mods[muluna_mods] then
         {type = fluid, name = water, amount = 120}
     }
     data_recipe[crude_oil_from_tar].results[1].amount = 30
-    data_recipe[crude_oil_from_tar].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[crude_oil_from_tar].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     -- RECIPE
     electric_engine_unit_from_carbon = "electric-engine-unit-from-carbon"
     data_recipe[electric_engine_unit_from_carbon].subgroup = is_muluna_recipe
     data_recipe[electric_engine_unit_from_carbon].icons = BUILDING_R_I(electric_engine_unit, carbon_angels)
     data_recipe[electric_engine_unit_from_carbon].order = a
-
-    local muluna_oxygen_from_oxidizer = "muluna-oxygen-from-oxidizer"
-    data_recipe[muluna_oxygen_from_oxidizer].category = angels_advanced_chemistry
-    data_recipe[muluna_oxygen_from_oxidizer].subgroup = is_muluna_recipe
-    data_recipe[muluna_oxygen_from_oxidizer].icons = FOUR_R_I(thruster_oxidizer, nitrogen_angels, oxygen_angels, water)
-    data_recipe[muluna_oxygen_from_oxidizer].order = b
-    data_recipe[muluna_oxygen_from_oxidizer].energy_required = 1 -- 4(HNO₃ + N₂O₄) --> (2H₂O + 13O₂ + 6N₂) / 4
-    data_recipe[muluna_oxygen_from_oxidizer].ingredients[1].amount = 120
-    data_recipe[muluna_oxygen_from_oxidizer].results =
-    {
-        {type = fluid, name = oxygen_angels, amount = 90},
-        {type = fluid, name = nitrogen_angels, amount = 45},
-        {type = fluid, name = water, amount = 15}
-    }
 
     local rocket_fuel_aluminum = "rocket-fuel-aluminum"
     data_recipe[rocket_fuel_aluminum].subgroup = is_muluna_recipe
@@ -470,7 +602,7 @@ if mods[muluna_mods] then
         {type = item, name = aluminium_plate_crushed, amount = 16},
         {type = fluid, name = water, amount = 120}
     }
-    data_recipe[rocket_fuel_aluminum].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
+    data_recipe[rocket_fuel_aluminum].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
 
     data_item[diffused_plastic_muluna].subgroup = is_muluna_recipe
     data_item[diffused_plastic_muluna].order = d
@@ -487,8 +619,8 @@ if mods[muluna_mods] then
     }
     data_recipe[diffused_plastic_muluna].results =
     {
-        {type = item, name = diffused_plastic_muluna, amount = 1, probability = 0.25},
-        {type = item, name = diffused_plastic_muluna, amount = 1, probability = 0.25, percent_spoiled = 0.95},
+        {type = item, name = diffused_plastic_muluna, amount = 1, independent_probability = 0.25},
+        {type = item, name = diffused_plastic_muluna, amount = 1, independent_probability = 0.25, percent_spoiled = 0.95},
         {type = fluid, name = carbon_dioxide_angels, amount = 60}
     }
 
@@ -518,20 +650,21 @@ if mods[muluna_mods] then
     }
 
     local space_science_pack_muluna = "space-science-pack-muluna"
+    data_recipe[space_science_pack_muluna].localised_description = {"item-description.science-pack"}
     data_recipe[space_science_pack_muluna].subgroup = is_muluna_recipe
     data_recipe[space_science_pack_muluna].icons = R_P_I(space_science_pack, planet_muluna)
     data_recipe[space_science_pack_muluna].order = g
-    data_recipe[space_science_pack_muluna].energy_required = 16
+    data_recipe[space_science_pack_muluna].energy_required = 32
     data_recipe[space_science_pack_muluna].ingredients =
     {
-        {type = item, name = nitinol_plate_bob, amount = 2},
-        {type = item, name = carbon_angels, amount = 4},
-        {type = item, name = ice, amount = 4}
+        {type = item, name = ice, amount = 8},
+        {type = item, name = aluminium_plate_bob, amount = 4},
+        {type = item, name = carbon_angels, amount = 4}
     }
     data_recipe[space_science_pack_muluna].results[1].amount = 2
 
-    data_tool[interstellar_science_pack].subgroup = is_muluna_recipe
-    data_tool[interstellar_science_pack].order = h
+    data_item[interstellar_science_pack].subgroup = is_muluna_recipe
+    data_item[interstellar_science_pack].order = h
     data_recipe[interstellar_science_pack].subgroup = is_muluna_recipe
     data_recipe[interstellar_science_pack].icons = R_P_I(interstellar_science_pack, planet_muluna)
     data_recipe[interstellar_science_pack].order = h
@@ -644,7 +777,8 @@ if mods[muluna_mods] then
     data_assembling[advanced_boiler].subgroup = is_muluna_boiler
     data_assembling[advanced_boiler].order = z
     data_assembling[advanced_boiler].crafting_speed = 4
-    data_assembling[advanced_boiler].energy_usage = 1800 .. kW
+    data_assembling[advanced_boiler].energy_usage = 1920 .. kW
+    data_assembling[advanced_boiler].energy_source.emissions_per_minute.pollution = 128
     data_assembling[advanced_boiler].energy_source.effectivity = nil
 
     -- HEAT
@@ -692,13 +826,13 @@ if mods[muluna_mods] then
     data_fluid[cooled_steam].order = a
 
     local steam_condensation = "muluna-steam-condensation"
-    data_recipe[steam_condensation].category = angels_cooling
+    data_recipe[steam_condensation].categories = {angels_cooling}
     data_recipe[steam_condensation].subgroup = is_muluna_turbine
     data_recipe[steam_condensation].icons = TWO_I(cooled_steam, water)
     data_recipe[steam_condensation].order = a_a
-    data_recipe[steam_condensation].energy_required = 16
-    data_recipe[steam_condensation].ingredients[1].amount = 960
-    data_recipe[steam_condensation].results[1].amount = 120
+    data_recipe[steam_condensation].energy_required = 8
+    data_recipe[steam_condensation].ingredients[1].amount = 240
+    data_recipe[steam_condensation].results[1].amount = 30
 
     local cycling_steam_turbine = "muluna-cycling-steam-turbine"
     data_item[cycling_steam_turbine].subgroup = is_muluna_turbine
@@ -721,9 +855,9 @@ if mods[muluna_mods] then
     else
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = steam_turbine_1, amount = 1})
     end
-    if mods[bobmodules] then
+    if mods[bobmodules] and mods[quality_mods] then
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_6, amount = 1})
-    else
+    elseif mods[quality_mods] then
         table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_3, amount = 1})
     end
     data_generator_fusion[cycling_steam_turbine].subgroup = is_muluna_turbine
@@ -853,6 +987,7 @@ if mods[muluna_mods] then
     data_assembling[crusher_2].order = e
     data_assembling[crusher_2].crafting_speed = 2
     data_assembling[crusher_2].energy_usage = 930 .. kW
+    data_assembling[crusher_2].energy_source.emissions_per_minute.pollution = 2
     data_assembling[crusher_2].energy_source.drain = 30 .. kW
 
     data_item[cryolab].subgroup = is_muluna_building
@@ -935,9 +1070,9 @@ if mods[muluna_mods] then
 
     if mods[moshine_mods] then
         local datacell_empty_astronomical_data = "datacell-empty-astronomical-data"
-        data_tool[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
-        data_tool[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)
-        data_tool[datacell_empty_astronomical_data].stack_size = 200
+        data_item[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
+        data_item[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)
+        data_item[datacell_empty_astronomical_data].stack_size = 200
         data_recipe[datacell_empty_astronomical_data].subgroup = is_muluna_astronomical
         data_recipe[datacell_empty_astronomical_data].icons = THREE_IS(datacell_empty, astronomical_data_muluna, datacell_empty_astronomical_data)
         data_recipe[datacell_empty_astronomical_data].order = c -- Datacell (Astronomical data)
@@ -994,12 +1129,13 @@ if mods[muluna_mods] then
     data_assembling[telescope].order = z
     data_assembling[telescope].crafting_speed = 1
     data_assembling[telescope].module_slots = 4
-    data_assembling[telescope].energy_usage = 9760 .. kW
+    data_assembling[telescope].energy_usage = 7680 .. kW
     data_assembling[telescope].energy_source.drain = 240 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
         greenhouse_wood,
+        lumber_mill,
         LDSPF,
         advanced_boiler,
         vacuum_heating_tower,
@@ -1246,30 +1382,25 @@ if mods[muluna_mods] then
     data_technology[thruster_fuel].icon = "__TIMSABA__/graphics/icons/muluna/technology/thruster-fuel-technology.png"
     data_technology[thruster_fuel].icon_size = 256
 
-    local tech_oxygen = "muluna-oxygen"
-    data_technology[tech_oxygen].icons =
+    data_technology[advanced_boiler].prerequisites = {metallic_asteroid_crushing_1, carbonic_asteroid_crushing_1, oxide_asteroid_crushing_1}
+    data_technology[advanced_boiler].effects =
     {
-        {
-            icon = "__TIMSABA__/graphics/icons/muluna/technology/molecule-oxygen.png",
-            icon_size = 256
-        },
-        {
-            icon = data_fluid[thruster_oxidizer].icon,
-            icon_size = data_fluid[thruster_oxidizer].icon_size,
-            shift = {45,-45},
-            scale = 0.75
-        }
+        {type = unlock_recipe, recipe = advanced_water_melting_oxygen},
+        {type = unlock_recipe, recipe = advanced_water_melting_compressed_air},
+        {type = unlock_recipe, recipe = advanced_water_boiling},
+        {type = unlock_recipe, recipe = advanced_water_boiling_compressed_air},
+        {type = unlock_recipe, recipe = controlled_combustion},
+        {type = unlock_recipe, recipe = controlled_combustion_compressed_air}
     }
-    data_technology[tech_oxygen].effects = {{type = unlock_recipe, recipe = muluna_oxygen_from_oxidizer}}
 
     local tech_greenhouses = "muluna-greenhouses"
-    data_technology[tech_greenhouses].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
+    data_technology[tech_greenhouses].effects ={{type = unlock_recipe, recipe = greenhouse_wood}}
     if not mods[lignumis_mods] then
         table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})
     end
 
-    local tehc_wood_cultivation = "muluna-wood-cultivation"
-    data_technology[tehc_wood_cultivation].icons =
+    local tech_wood_cultivation = "muluna-wood-cultivation"
+    data_technology[tech_wood_cultivation].icons =
     {
         {
             icon = data_fluid[carbon_dioxide_angels].icon,
@@ -1284,7 +1415,7 @@ if mods[muluna_mods] then
             scale = 1
         }
     }
-    data_technology[tehc_wood_cultivation].effects =
+    data_technology[tech_wood_cultivation].effects =
     {
         {type = unlock_recipe, recipe = tree_growth_greenhouse},
         {type = unlock_recipe, recipe = tree_growth_greenhouse_water_saving},
@@ -1294,14 +1425,6 @@ if mods[muluna_mods] then
     local tech_anorthite_processing = "muluna-anorthite-processing"
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
-
-    data_technology["muluna-alumina-processing"].icons[2] =
-    {
-        icon = data_item[aluminium_oxide].icon,
-        icon_size = 32,
-        scale = 1.5,
-        shift = {45, 45}
-    }
 
     local tech_aluminium_processing = "muluna-aluminum-processing"
     data_technology[tech_aluminium_processing].icons = nil
@@ -1379,6 +1502,7 @@ if mods[muluna_mods] then
     local tech_wood_gas_processing = "wood-gas-processing"
     data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/technology/wood-gas-processing.png"
     data_technology[tech_wood_gas_processing].icon_size = 256
+    data_technology[tech_wood_gas_processing].research_trigger = {type = craft_item, item = cellulose_fiber_angels}
 
     local tech_alice_propellant = "muluna-alice-propellant"
     data_technology[tech_alice_propellant].icons =
@@ -1430,6 +1554,24 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = tree_growth_greenhouse_water_saving_vulcanus}
     }
 
+    local tech_water_saving_wood_cultivation = "muluna-water-saving-wood-cultivation"
+    data_technology[tech_water_saving_wood_cultivation].icons =
+    {
+        {
+            icon = data_item[tree_angels].icon,
+            icon_size = data_item[tree_angels].icon_size,
+            shift = {-16,16},
+            scale = 1
+        },
+        {
+            icon = data_fluid[water].icon,
+            icon_size = data_fluid[water].icon_size,
+            shift = {16,-16},
+            scale = 1
+        }
+    }
+
+    table.insert(data_technology[crusher].prerequisites, tech_molybdenum_rhenium_processing)
     table.insert(data_technology[crusher].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[crusher].unit.ingredients, {utility_science_pack, 1})
 
@@ -1466,60 +1608,53 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {utility_science_pack, 1})
 
     -- METALLIC
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_2})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_3})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_4})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_5})
-    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_6})
+    data_technology[metallic_asteroid_crushing_1].localised_name = {"technology-name.metallic-asteroid-processing"}
+    data_technology[metallic_asteroid_crushing_1].effects =
+    {
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_5},
+        {type = unlock_recipe, recipe = metallic_asteroid_crushing_6},
+        {type = unlock_recipe, recipe = electric_blast_furnace_1},
+        {type = unlock_recipe, recipe = electric_blast_furnace_2},
+        {type = unlock_recipe, recipe = electric_blast_furnace_3},
+        {type = unlock_recipe, recipe = electric_blast_furnace_4}
+    }
+
+    -- CARBONIC
+    data_technology[carbonic_asteroid_crushing_1].localised_name = {"technology-name.carbonic-asteroid-processing"}
 
     -- OXIDE
+    data_technology[oxide_asteroid_crushing_1].localised_name = {"technology-name.oxide-asteroid-processing"}
     data_technology[oxide_asteroid_crushing_1].effects =
     {
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_4},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_5},
         {type = unlock_recipe, recipe = ice_melting},
         {type = unlock_recipe, recipe = nitrogen_oxide_separation},
         {type = unlock_recipe, recipe = chlorine_oxide_separation},
         {type = unlock_recipe, recipe = sodium_hydroxide_space},
-        {type = unlock_recipe, recipe = hydrogen_chloride_separation},
-        {type = unlock_recipe, recipe = nitrogen_monoxide_space},
-        {type = unlock_recipe, recipe = hydrazine_space},
-        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space}
+        {type = unlock_recipe, recipe = sodium_peroxide},
+        {type = unlock_recipe, recipe = sodium_cyanide_solution_3},
+        {type = unlock_recipe, recipe = lithium_space}
     }
-
-    data_technology[tech_asteroid_productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
-        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}
-    }
-
-    table.insert(data_technology[tech_vulcanus_metallurgic].effects, {type = unlock_recipe, recipe = casting_aluminium_cable})
-    table.insert(data_technology[tech_vulcanus_metallurgic].effects, {type = unlock_recipe, recipe = casting_low_density_structure_muluna})
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_from_wood, change = 0.1})
 
     table.insert(data_technology[water .. _recycling .. _productivity].unit.ingredients, {production_science_pack, 1})
+
+    local tech_advanced_space_research = "advanced-space-science-pack"
+    data_technology[tech_advanced_space_research].prerequisites = {tech_advanced_asteroid_processing, interstellar_science_pack}
+    table.insert(data_technology[tech_advanced_space_research].unit.ingredients, {metallurgic_science_pack, 1})
+
+    table.insert(data_technology[telescope].prerequisites, tech_molybdenum_rhenium_processing)
+
+    if mods[lignumis_mods] then
+        data_technology[space_science_pack].prerequisites = {deep_miner, steam_crusher, tech_alice_propellant}
+    end
 end

@@ -13,22 +13,24 @@ TIMSABA.functions.create_subgroups("logistics",
 
 -- PRODUCTION
 ig_production = "production"
-is_energy_steam_turbine = "is-energy-steam-turbine"
 is_solar_panel_small = "solar-panel-small"
 is_solar_panel_large = "solar-panel-large"
 is_extraction_machine_mining = "is-extraction-machine-mining"
 is_extraction_machine_muluna = "is-extraction-machine-muluna"
 is_extraction_machine_maraxsis = "is-extraction-machine-maraxsis"
 is_extraction_machine_pumpjack = "is-extraction-machine-pumpjack"
+is_energy_steam_turbine = "is-energy-steam-turbine"
+is_electronics_machine = "is-electronics-machine"
 is_lab = "is-lab"
 TIMSABA.functions.create_subgroups(ig_production,
 {
-    {name = is_energy_steam_turbine,        order = b_b},
     {name = is_solar_panel_small,           order = b_d},
     {name = is_solar_panel_large,           order = b_f},
     {name = is_extraction_machine_mining,   order = c_a},
     {name = is_extraction_machine_pumpjack, order = c_d},
-    {name = is_lab,                         order = e_b}
+    {name = is_energy_steam_turbine,        order = c_h},
+    {name = is_electronics_machine,         order = e_b},
+    {name = is_lab,                         order = e_c}
 })
 
 if mods[muluna_mods] then
@@ -51,8 +53,6 @@ is_circuit_boards = "is-circuit-boards"
 data_item_subgroup["bob-electronic-boards"].order = d_c
 is_nuclear_item = "is-nuclear-item"
 is_nuclear_recipe = "is-nuclear-recipe"
-is_uranium_235_item = "is-uranium-235-item"
-is_uranium_235_recipe = "is-uranium-235-recipe"
 is_uranium_cell = "is-uranium-cell"
 is_mixed_oxide_cell = "is-mixed-oxide-cell"
 is_thorium_cell = "is-thorium-cell"
@@ -65,8 +65,6 @@ TIMSABA.functions.create_subgroups("intermediate-products",
     {name = is_circuit_boards,        order = d_b},
     {name = is_nuclear_item,          order = e},
     {name = is_nuclear_recipe,        order = e_a},
-    {name = is_uranium_235_item,      order = e_b},
-    {name = is_uranium_235_recipe,    order = e_c},
     {name = is_uranium_cell,          order = e_d},
     {name = is_mixed_oxide_cell,      order = e_e},
     {name = is_thorium_cell,          order = e_f},

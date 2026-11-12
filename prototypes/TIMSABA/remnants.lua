@@ -47,7 +47,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -73,7 +73,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -99,7 +99,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -125,7 +125,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -151,7 +151,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -177,7 +177,7 @@ data:extend
         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         selectable_in_game = false,
-        time_before_removed = 60 * 60 * 15, -- 15 minutes
+        time_before_removed = 15 * minute,
         expires = false,
         final_render_layer = remnants,
         remove_on_tile_placement = false,
@@ -213,7 +213,7 @@ if mods[tellus_mods] then
                         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
                         selectable_in_game = false,
-                        time_before_removed = 60 * 60 * 15, -- 15 minutes
+                        time_before_removed = 15 * minute,
                         expires = false,
                         final_render_layer = remnants,
                         remove_on_tile_placement = false,
@@ -239,7 +239,7 @@ if mods[tellus_mods] then
                         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
                         selectable_in_game = false,
-                        time_before_removed = 60 * 60 * 15, -- 15 minutes
+                        time_before_removed = 15 * minute,
                         expires = false,
                         final_render_layer = remnants,
                         remove_on_tile_placement = false,
@@ -274,7 +274,7 @@ if mods[tellus_mods] then
                         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
                         selectable_in_game = false,
-                        time_before_removed = 60 * 60 * 15, -- 15 minutes
+                        time_before_removed = 15 * minute,
                         expires = false,
                         final_render_layer = remnants,
                         remove_on_tile_placement = false,
@@ -300,7 +300,7 @@ if mods[tellus_mods] then
                         collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
                         selectable_in_game = false,
-                        time_before_removed = 60 * 60 * 15, -- 15 minutes
+                        time_before_removed = 15 * minute,
                         expires = false,
                         final_render_layer = remnants,
                         remove_on_tile_placement = false,
@@ -342,7 +342,7 @@ if mods[paracelsin_mods] then
             collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
             selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
             selectable_in_game = false,
-            time_before_removed = 60 * 60 * 15, -- 15 minutes
+            time_before_removed = 15 * minute,
             expires = false,
             final_render_layer = remnants,
             remove_on_tile_placement = false,
@@ -368,7 +368,7 @@ if mods[paracelsin_mods] then
             collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
             selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
             selectable_in_game = false,
-            time_before_removed = 60 * 60 * 15, -- 15 minutes
+            time_before_removed = 15 * minute,
             expires = false,
             final_render_layer = remnants,
             remove_on_tile_placement = false,
@@ -395,7 +395,7 @@ if mods[paracelsin_mods] then
             tile_width = 3,
             tile_height = 3,
             selectable_in_game = false,
-            time_before_removed = 60 * 60 * 15, -- 15 minutes
+            time_before_removed = 15 * minute,
             expires = false,
             final_render_layer = remnants,
             remove_on_tile_placement = false,
@@ -422,7 +422,7 @@ if mods[paracelsin_mods] then
             tile_width = 1,
             tile_height = 2,
             selectable_in_game = false,
-            time_before_removed = 60 * 60 * 15, -- 15 minutes
+            time_before_removed = 15 * minute,
             expires = false,
             final_render_layer = remnants,
             remove_on_tile_placement = false,

@@ -8,7 +8,7 @@ if settings.startup[setting_no_spoilage].value == false then
                         localised_name = {"recipe-name.refresh", {"item-name." .. organic_name}},
                         type = recipe,
                         name = organic_name .. "-refresh",
-                        category = "refresh",
+                        categories = {"refresh"},
                         subgroup = is_refresh,
                         icons = R_P_I(organic_name, lymph, nil, nil, dirty_lymph),
                         order = organic_name .. "-refresh",

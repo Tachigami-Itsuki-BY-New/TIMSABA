@@ -3,15 +3,18 @@ require("prototypes.global-name.global-name-items")
 require("prototypes.global-name.global-name-fluids")
 require("prototypes.global-name.global-name-recipe")
 require("prototypes.global-name.global-name-mods")
-require("prototypes.prototypes-setting")
+require("prototypes.global-name.global-name-setting")
 
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")
+require("prototypes.equipment-grid")
 
 require("lib.TIMSABA-functions")
 require("lib.barreling-and-void")
 
-require("prototypes.planet-order")
+require("prototypes.planet-and-space-location")
+
+require("prototypes.angels.angels-setting")
 
 require("prototypes.base.base-groups")
 require("prototypes.bobs.bobs-groups")
@@ -35,6 +38,7 @@ require("prototypes.new-icons.new-icons-technology")
 
 require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
+require("prototypes.angels.angels-bioprocessing-plant")
 
 require("compatibility.angels-mods.angelspetrochem")
 
@@ -56,11 +60,13 @@ require("prototypes.TIMSABA.chemistry.arsenic")
 require("prototypes.TIMSABA.metallurgy.gallium")
 require("prototypes.TIMSABA.metallurgy.vanadium")
 
-require("prototypes.TIMSABA.resource.powellite")
-require("prototypes.TIMSABA.resource.molybdenite")
+require("prototypes.TIMSABA.resource.new-resource")
 require("prototypes.TIMSABA.resource.senaite")
 require("prototypes.TIMSABA.resource.franckeite")
-require("prototypes.TIMSABA.resource.angels")
+require("prototypes.TIMSABA.resource.plumbium")
+require("prototypes.TIMSABA.resource.stannium")
+require("prototypes.TIMSABA.resource.powellite")
+require("prototypes.TIMSABA.resource.molybdenite")
 
 require("prototypes.TIMSABA.remnants")
 require("prototypes.TIMSABA.pipe")
@@ -78,14 +84,16 @@ require("prototypes.space-age.space-age-resource")
 require("prototypes.space-age.space-age-entities")
 
 require("prototypes.base.base-recipe")
-require("prototypes.bobs.bobs-building")
+require("prototypes.base.base-combat")
 require("prototypes.bobs.bobs-recipe")
+require("prototypes.bobs.bobs-building")
+require("prototypes.bobs.bobs-advanced-logistics")
 require("prototypes.angels.angels-recipe")
 require("prototypes.angels.angels-building")
 require("prototypes.space-age.space-age-recipe")
 
 require("prototypes.TIMSABA.technology")
--- base
+require("prototypes.base.base-technology")
 require("prototypes.bobs.bobs-technology")
 require("prototypes.angels.angels-technology")
 require("prototypes.bobs-angels-technology")
@@ -99,6 +107,12 @@ require("prototypes.planet.planet-resource")
 require("prototypes.planet.planet-recipe")
 require("prototypes.planet.planet-building")
 require("prototypes.planet.planet-technology")
+require("prototypes.planet.asteroid-belt-inner-outer-edge")
+
+require("prototypes.TIMSABA.resource.synthesis")
+
+require("prototypes.TIMSABA.recipe-mods")
+require("prototypes.TIMSABA.technology-mods")
 
 -- ???
 --require("prototypes.planet.rubia.rubia-groups")

@@ -3,7 +3,7 @@ if mods[arig_mods] then
     ({
         {
             name = sand_arig,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_air_filtering},
             subgroup = is_arig_recipe,
             order = a,
             energy_required = 8,
@@ -14,7 +14,7 @@ if mods[arig_mods] then
         },
         {
             name = pure_sand_arig,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_air_filtering},
             subgroup = is_arig_recipe,
             icons = TWO_I(sand_arig, pure_sand_arig),
             order = b,
@@ -26,7 +26,8 @@ if mods[arig_mods] then
             results =
             {
                 {type = fluid, name = pure_sand_arig, amount = 30},
-                {type = item, name = filter_frame, amount = 1}
+                {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
+                {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
             },
             main_product = pure_sand_arig,
             surface_conditions = {{property = pressure, min = 600, max = 600}}
@@ -39,7 +40,7 @@ if mods[arig_mods] then
             {
                 localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name." .. planet_name}},
                 name = planet_name .. _water_harvesting,
-                category = arig_water_production,
+                categories = {arig_water_production},
                 subgroup = subgroup,
                 icons = BUILDING_R_I(water, planet_name),
                 order = data_planet[planet_name].order,
@@ -52,6 +53,8 @@ if mods[arig_mods] then
                 surface_conditions = surface_conditions
             }
         })
+
+        data_recipe[planet_name .. _water_harvesting].hide_from_player_crafting = true
     end
     -- PLANETS
     if mods[moshine_mods] then

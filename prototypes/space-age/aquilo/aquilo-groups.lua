@@ -23,9 +23,9 @@ TIMSABA.functions.create_subgroups(ig_aquilo,
     {name = is_aquilo_air,      order = a},
     {name = is_aquilo_fluorine, order = b},
     {name = is_antimonite,      order = c},
-    {name = is_germanite,       order = e},
-    {name = is_aquilo_recipe,   order = j},
-    {name = is_aquilo_building, order = k},
-    {name = is_aquilo_power,    order = l},
-    {name = is_aquilo_war,      order = m}
+    {name = is_germanite,       order = d},
+    {name = is_aquilo_recipe,   order = h},
+    {name = is_aquilo_building, order = j},
+    {name = is_aquilo_power,    order = k},
+    {name = is_aquilo_war,      order = l}
 })

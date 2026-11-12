@@ -28,7 +28,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = antimonite_asteroid_crushing,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_4,
         icons = TWO_I(antimonite_asteroid_chunk, antimonite_ore),
         order = e_a,
@@ -40,7 +40,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = germanite_asteroid_crushing,
-        category = crushing,
+        categories = {crushing},
         subgroup = is_space_environment_5,
         icons = TWO_I(germanite_asteroid_chunk, germanite_ore),
         order = e_a,
@@ -627,7 +627,7 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
                 max_health = asteroid_size_name ~= "chunk" and asteroid_data.max_health[asteroid_size] or nil,
                 mass = asteroid_size_name ~= "chunk" and asteroid_data.mass[asteroid_size] or nil,
                 resistances = resistances,
-                flags = asteroid_size_name ~= "chunk" and {"placeable-enemy", "placeable-off-grid", "not-repairable", "not-on-map"} or nil,
+                flags = asteroid_size_name ~= "chunk" and {"placeable-enemy", flag_placeable_off_grid, "not-repairable", flag_not_on_map} or nil,
                 minable = asteroid_size_name == "chunk" and {mining_time = 0.2, result = asteroid_name, mining_particle = asteroid_type .. "-asteroid-chunk-particle-medium"} or nil
             }
         }

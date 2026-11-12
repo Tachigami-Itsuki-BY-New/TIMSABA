@@ -6,18 +6,29 @@ data_item[burner_ore_crusher].weight = 31250
 data_recipe[burner_ore_crusher].subgroup = is_ore_crusher
 data_recipe[burner_ore_crusher].order = a
 data_recipe[burner_ore_crusher].energy_required = 4
+if mods[muluna_mods] and mods[lignumis_mods] then
+    data_recipe[burner_ore_crusher].categories = util.table.deepcopy(data_recipe[small_electric_pole].categories)
+end
 if mods[lignumis_mods] then
-    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
-    data_recipe[burner_ore_crusher].ingredients[3].name = wooden_gear_wheel
-    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+    data_recipe[burner_ore_crusher].enabled = false
+    data_recipe[burner_ore_crusher].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 4},
+        {type = item, name = lumber, amount = 4},
+        {type = item, name = stone, amount = 8}
+    }
 else
-    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
-    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+    data_recipe[burner_ore_crusher].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = iron_plate, amount = 4},
+        {type = item, name = stone, amount = 8}
+    }
 end
 data_assembling[burner_ore_crusher].subgroup = is_ore_crusher
 data_assembling[burner_ore_crusher].order = a
 data_assembling[burner_ore_crusher].crafting_speed = 0.5
-data_assembling[burner_ore_crusher].energy_usage = 225 .. kW
+data_assembling[burner_ore_crusher].energy_usage = 240 .. kW
 data_assembling[burner_ore_crusher].energy_source.emissions_per_minute.pollution = 4
 
 data_item_subgroup["angels-ore-crusher"].order = z_a
@@ -474,10 +485,10 @@ local function pellet_press_recipe(name, gear_wheel, brick, plate, pellet_press)
     end
     data_recipe[name].ingredients = ingredients
 end
-pellet_press_recipe(pellet_press_1, brass_gear_wheel, concrete_brick, aluminium_plate_bob)
-pellet_press_recipe(pellet_press_2, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, pellet_press_1)
+pellet_press_recipe(pellet_press_1,           brass_gear_wheel,                     concrete_brick,       aluminium_plate_bob)
+pellet_press_recipe(pellet_press_2,        titanium_gear_wheel,          reinforced_concrete_brick,        titanium_plate_bob, pellet_press_1)
 pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
-pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, carbon_concrete_brick, nitinol_plate_bob, pellet_press_3)
+pellet_press_recipe(pellet_press_4,      molybdenum_gear_wheel,              carbon_concrete_brick,      molybdenum_plate,     pellet_press_3)
 
 data_item_subgroup["angels-powder-mixer"].order = z_c
 local powder_mixers =
@@ -518,10 +529,10 @@ powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_titan
 data_item_subgroup["angels-blast-furnace"].order = z_d
 local blast_furnaces =
 {
-    {name = blast_furnace_1, crafting_speed = 1, energy_usage = 450},
-    {name = blast_furnace_2, crafting_speed = 2, energy_usage = 900},
-    {name = blast_furnace_3, crafting_speed = 3, energy_usage = 1350},
-    {name = blast_furnace_4, crafting_speed = 4, energy_usage = 1800}
+    {name = blast_furnace_1, crafting_speed = 1, energy_usage = 480},
+    {name = blast_furnace_2, crafting_speed = 2, energy_usage = 960},
+    {name = blast_furnace_3, crafting_speed = 3, energy_usage = 1440},
+    {name = blast_furnace_4, crafting_speed = 4, energy_usage = 1920}
 }
 for _, BUILD in pairs(blast_furnaces) do
     data_item[BUILD.name].stack_size = 32
@@ -531,6 +542,27 @@ for _, BUILD in pairs(blast_furnaces) do
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 4
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {0, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {1, 2}, direction = defines.direction.south}}
+        }
+    }
 end
 local function blast_furnace_recipe(name, circuit, pipe, brick, plate, blast_furnace)
     local ingredients =
@@ -582,10 +614,10 @@ local function chemical_furnace_recipe(name, circuit, pipe, brick, plate, chemic
     end
     data_recipe[name].ingredients = ingredients
 end
-chemical_furnace_recipe(chemical_furnace_1, electronic_circuit, steel_pipe, clay_brick, steel_plate)
-chemical_furnace_recipe(chemical_furnace_2, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, chemical_furnace_1)
-chemical_furnace_recipe(chemical_furnace_3, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, chemical_furnace_2)
-chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, tungsten_pipe, reinforced_titanium_concrete_brick, tungsten_plate_bob, chemical_furnace_3)
+chemical_furnace_recipe(chemical_furnace_1,       electronic_circuit,           steel_pipe,                         clay_brick,           steel_plate)
+chemical_furnace_recipe(chemical_furnace_2,         advanced_circuit,           brass_pipe,                     concrete_brick,       aluminium_plate_bob, chemical_furnace_1)
+chemical_furnace_recipe(chemical_furnace_3,          processing_unit,        titanium_pipe,          reinforced_concrete_brick,        titanium_plate_bob, chemical_furnace_2)
+chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, copper_tungsten_pipe, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, chemical_furnace_3)
 
 -- ANGELS METTALURGY CASTING
 local induction_furnaces =
@@ -720,7 +752,6 @@ if settings.startup[setting_early_sintering_oven].value then
         data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 4) - (BUILD.crafting_speed * drain)) .. kW
         data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
-        data_assembling[BUILD.name].allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
         data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
     end
     local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
@@ -735,11 +766,11 @@ if settings.startup[setting_early_sintering_oven].value then
         end
         data_recipe[name].ingredients = ingredients
     end
-    sintering_oven_recipe(sintering_oven_1, basic_circuit_board, clay_brick, steel_plate)
-    sintering_oven_recipe(sintering_oven_2, electronic_circuit, clay_brick, bronze_plate_bob, sintering_oven_1)
-    sintering_oven_recipe(sintering_oven_3, advanced_circuit, concrete_brick, aluminium_plate_bob, sintering_oven_2)
-    sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick, sintering_oven_3)
-    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, sintering_oven_4)
+    sintering_oven_recipe(sintering_oven_1,      basic_circuit_board,                        stone_brick,                iron_plate)
+    sintering_oven_recipe(sintering_oven_2,       electronic_circuit,                         clay_brick,          bronze_plate_bob, sintering_oven_1)
+    sintering_oven_recipe(sintering_oven_3,         advanced_circuit,                     concrete_brick,       aluminium_plate_bob, sintering_oven_2)
+    sintering_oven_recipe(sintering_oven_4,          processing_unit,          reinforced_concrete_brick,        titanium_plate_bob, sintering_oven_3)
+    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, sintering_oven_4)
     bobmods.lib.recipe.update_recycling_recipe({sintering_oven_1, sintering_oven_2, sintering_oven_3, sintering_oven_4, sintering_oven_5})
 else
     local sintering_ovens =
@@ -773,7 +804,7 @@ else
         end
         data_recipe[name].ingredients = ingredients
     end
-    sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick)
+    sintering_oven_recipe(sintering_oven_4,          processing_unit,        titanium_plate_bob,          reinforced_concrete_brick)
     sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, sintering_oven_4)
     bobmods.lib.recipe.update_recycling_recipe({sintering_oven_4, sintering_oven_5})
 end
@@ -781,21 +812,19 @@ end
 -- ANGELS WATER TREATMENT
 local water_treatments =
 {
-    {name = seafloor_pump,               pumping_speed = 4},
-    {name = offshore_pump,               pumping_speed = 8},
-    {name = ground_water_pump,           pumping_speed = 1},
-    {name = heavy_offshore_pump},
-    {name = "angels-sea-pump-placeable", pumping_speed = 32}
+    {name = seafloor_pump,       pumping_speed = 4,  volume = 480},
+    {name = offshore_pump,       pumping_speed = 8,  volume = 960},
+    {name = ground_water_pump},
+    {name = heavy_offshore_pump, pumping_speed = 32, volume = 3840}
 }
 for _, BUILD in pairs(water_treatments) do
-    if data_item[BUILD.name] then
-        data_item[BUILD.name].subgroup = is_water_treatment_building
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].subgroup = is_water_treatment_building
-        data_recipe[BUILD.name].energy_required = 1
-    end
-    if data_pump_offshore[BUILD.name] then
+    data_item[BUILD.name].subgroup = is_water_treatment_building
+    data_item[BUILD.name].stack_size = 32
+    data_item[BUILD.name].weight = 31250
+    data_recipe[BUILD.name].subgroup = is_water_treatment_building
+    data_recipe[BUILD.name].energy_required = 1
+    if data_pump_offshore[BUILD.name] and BUILD.pumping_speed then
+        data_pump_offshore[BUILD.name].fluid_box.volume = BUILD.volume
         data_pump_offshore[BUILD.name].pumping_speed = BUILD.pumping_speed
     end
 end
@@ -817,6 +846,7 @@ data_recipe[ground_water_pump].ingredients =
     {type = item, name = iron_pipe, amount = 8},
     {type = item, name = stone_brick, amount = 4}
 }
+data_item[heavy_offshore_pump].place_result = heavy_offshore_pump
 data_recipe[heavy_offshore_pump].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
@@ -828,75 +858,9 @@ data_recipe[heavy_offshore_pump].ingredients =
 
 data_pump_offshore[seafloor_pump].surface_conditions =
 {
-    {property = gravity, min = 10, max = 25},
-    {property = pressure, min = 1000, max = 2000}
+    {property = gravity, min = 4, max = 25},
+    {property = pressure, min = 900, max = 2000}
 }
-
-local pump_1 = data_pump_offshore[ground_water_pump]
-if pump_1 then
-    pump_1.type = assembling_machine
-    pump_1.crafting_speed = 1
-    pump_1.fixed_recipe = nil
-    pump_1.show_recipe_icon = false
-    pump_1.crafting_categories = {extract_ground}
-    pump_1.fluid_boxes =
-    {
-        {
-            production_type = output,
-            pipe_covers = pipecoverspictures(),
-            volume = 100,
-            base_area = 1,
-            base_level = 1,
-            pipe_connections = pump_1.fluid_box.pipe_connections
-        }
-    }
-    pump_1.fluid_box = nil
-    pump_1.graphics_set = {animation = pump_1.graphics_set.animation}
-    pump_1.energy_source = {type = "void"}
-    pump_1.energy_usage = 15 .. kW
-    pump_1.surface_conditions = {{property = gravity, min = 1, max = 100}}
-    pump_1.active_components_only = true
-    data_assembling[ground_water_pump] = pump_1
-    data_pump_offshore[ground_water_pump] = nil
-end
-
-local pump_2 = data_mining_drill[heavy_offshore_pump]
-if pump_2 then
-    pump_2.type = offshore_pump
-    pump_2.adjacent_tile_collision_mask = {layers = {water_tile = true}}
-    pump_2.adjacent_resources_required = true
-    pump_2.fluid_source_offset = {0, -3}
-    pump_2.fluid_box = pump_2.output_fluid_box
-    if pump_2.fluid_box then
-        pump_2.fluid_box.filter = nil
-        pump_2.fluid_box.production_type = output
-    end
-    pump_2.output_fluid_box = nil
-    pump_2.pumping_speed = 32
-    pump_2.always_draw_fluid = true
-    pump_2.graphics_set = {base_pictures = pump_2.base_picture}
-    pump_2.base_picture = nil
-    pump_2.resource_categories = nil
-    pump_2.mining_speed = nil
-    pump_2.resource_searching_radius = nil
-    pump_2.vector_to_place_result = nil
-    pump_2.module_slots = nil
-    pump_2.allowed_effects = nil
-    pump_2.energy_source = {type = "void"}
-    pump_2.energy_usage = 15 .. kW
-    pump_2.emissions_per_minute = nil
-    data_pump_offshore[heavy_offshore_pump] = pump_2
-    data_mining_drill[heavy_offshore_pump] = nil
-end
-local sea_pump_placeable = "angels-sea-pump-placeable"
-if data_pump_offshore[sea_pump_placeable] then
-    data_pump_offshore[sea_pump_placeable].hidden = true
-end
-local sea_pump_resource = "angels-sea-pump-resource"
-if data_resource[sea_pump_resource] then
-    data_resource[sea_pump_resource].autoplace = nil
-    data_resource[sea_pump_resource].hidden = true
-end
 
 local hydro_plants =
 {
@@ -1013,9 +977,9 @@ salination_plant_recipe(salination_plant_2, processing_unit, titanium_pipe, tita
 
 local electric_boilers =
 {
-    {name = electric_boiler_1, crafting_speed = 1, energy_usage = 1200, order = a},
-    {name = electric_boiler_2, crafting_speed = 2, energy_usage = 2400, order = b},
-    {name = electric_boiler_3, crafting_speed = 3, energy_usage = 3600, order = c}
+    {name = electric_boiler_1, crafting_speed = 1, energy_usage = 960, order = a},
+    {name = electric_boiler_2, crafting_speed = 2, energy_usage = 1920, order = b},
+    {name = electric_boiler_3, crafting_speed = 3, energy_usage = 2880, order = c}
 }
 for _, BUILD in pairs(electric_boilers) do
     data_item[BUILD.name].subgroup = is_boiler_building
@@ -1029,9 +993,9 @@ for _, BUILD in pairs(electric_boilers) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 10))) .. kW
+    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 8))) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
-    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
+    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 8)) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 data_assembling[electric_boiler_3].max_health = 600
@@ -1052,7 +1016,6 @@ electric_boiler_recipe(electric_boiler_1, electronic_circuit, bronze_pipe, bronz
 electric_boiler_recipe(electric_boiler_2, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, electric_boiler_1)
 electric_boiler_recipe(electric_boiler_3, processing_unit, tungsten_pipe, tungsten_plate_bob, reinforced_concrete_brick, electric_boiler_2)
 
-local cooling_tower = "angels-cooling-tower"
 data_item[cooling_tower].subgroup = is_boiler_building
 data_item[cooling_tower].order = z
 data_item[cooling_tower].stack_size = 32
@@ -1076,7 +1039,6 @@ data_assembling[cooling_tower].energy_source.emissions_per_minute.pollution = 0
 data_assembling[cooling_tower].energy_source.drain = 7.5 .. kW
 data_assembling[cooling_tower].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local clarifier = "angels-clarifier"
 data_item[clarifier].subgroup = is_others_WT_building
 data_item[clarifier].order = a
 data_item[clarifier].stack_size = 32
@@ -1105,10 +1067,10 @@ data_item_subgroup[is_buildings_electrolyser].order = z
 
 local electrolysers =
 {
-    {name = electrolyser_1, crafting_speed = 1, energy_usage = 1200, order = a},
-    {name = electrolyser_2, crafting_speed = 2, energy_usage = 2400, order = b},
-    {name = electrolyser_3, crafting_speed = 3, energy_usage = 3600, order = c},
-    {name = electrolyser_4, crafting_speed = 4, energy_usage = 4800, order = d}
+    {name = electrolyser_1, crafting_speed = 1, energy_usage = 960,  order = a},
+    {name = electrolyser_2, crafting_speed = 2, energy_usage = 1920, order = b},
+    {name = electrolyser_3, crafting_speed = 3, energy_usage = 2880, order = c},
+    {name = electrolyser_4, crafting_speed = 4, energy_usage = 3840, order = d}
 }
 for _, BUILD in pairs(electrolysers) do
     data_item[BUILD.name].subgroup = is_buildings_electrolyser
@@ -1122,10 +1084,43 @@ for _, BUILD in pairs(electrolysers) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 10))) .. kW
+    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 8))) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
-    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
+    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 8)) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {-2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-2, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {0, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {2, 2}, direction = defines.direction.south}}
+        }
+    }
 end
 local function electrolyser_recipe(name, circuit, pipe, plate, brick, electrolyser)
     local ingredients =
@@ -1246,7 +1241,7 @@ for _, BUILD in pairs(chemical_plants) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].subgroup = is_buildings_chemical_plant
     data_assembling[BUILD.name].order = BUILD.order
-    data_assembling[BUILD.name].crafting_categories = {chemistry, chemistry_or_cryogenics}
+    data_assembling[BUILD.name].crafting_categories = {chemistry}
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
@@ -1312,7 +1307,7 @@ local function advanced_chemical_plant_recipe(name, circuit, pipe, plate, brick,
     data_recipe[name].ingredients = ingredients
 end
 advanced_chemical_plant_recipe(advanced_chemical_plant_1, electronic_circuit, bronze_pipe, bronze_plate_bob, clay_brick)
-advanced_chemical_plant_recipe(advanced_chemical_plant_2, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, advanced_chemical_plant_1)
+advanced_chemical_plant_recipe(advanced_chemical_plant_2,   advanced_circuit,  brass_pipe,  brass_plate_bob, concrete_brick, advanced_chemical_plant_1)
 
 data_item_subgroup[is_buildings_gas_refinery].order = z_e
 
@@ -1511,6 +1506,39 @@ for _, BUILD in pairs(steam_crackers) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+    data_assembling[BUILD.name].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {-1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = input,
+            pipe_covers = pipecoverspictures(),
+            volume = 120,
+            pipe_connections = {{flow_direction = input, position = {1, 2}, direction = defines.direction.south}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {-2, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {0, -2}, direction = defines.direction.north}}
+        },
+        {
+            production_type = output,
+            pipe_covers = pipecoverspictures(),
+            volume = 960,
+            pipe_connections = {{flow_direction = output, position = {2, -2}, direction = defines.direction.north}}
+        }
+    }
 end
 local function steam_cracker_recipe(name, circuit, pipe, plate, brick, steam_cracker)
     local ingredients =
@@ -1530,7 +1558,6 @@ steam_cracker_recipe(steam_cracker_2, advanced_circuit, brass_pipe, aluminium_pl
 steam_cracker_recipe(steam_cracker_3, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, steam_cracker_2)
 steam_cracker_recipe(steam_cracker_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, steam_cracker_3)
 
-local flare_stack = "angels-flare-stack"
 data_item[flare_stack].subgroup = is_buildings_petrochem_others
 data_item[flare_stack].order = a
 data_item[flare_stack].stack_size = 32

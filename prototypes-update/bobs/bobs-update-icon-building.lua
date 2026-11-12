@@ -284,6 +284,7 @@ if settings.startup[setting_bobmods_power_steam].value then
 		}
 		return remnant_animation
 	end
+
 	for name, map in pairs(tier_map) do
 		---@type data.GeneratorPrototype
 		local entity = data.raw[inputs.type][name]
@@ -291,254 +292,115 @@ if settings.startup[setting_bobmods_power_steam].value then
 			goto continue
 		end
 		inputs.tint = reskins.lib.tiers.get_tint(map.tier)
+
 		reskins.lib.setup_standard_entity(name, map.tier, inputs)
+
 		local remnant = data.raw["corpse"][name .. "-remnants"]
+
 		local remnant_animation = get_steam_engine_remnant_animation(inputs.tint)
 		remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
-		entity.horizontal_animation =
-		{
-			layers =
-			{
-				{
-					filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
-					width = 352,
-					height = 257,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(1, -4.75),
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
-					width = 352,
-					height = 257,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(1, -4.75),
-					tint = inputs.tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
-					width = 352,
-					height = 257,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(1, -4.75),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
-				},
-				{
-					filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
-					width = 508,
-					height = 160,
-					frame_count = 32,
-					line_length = 8,
-					draw_as_shadow = true,
-					shift = util.by_pixel(48, 24),
-					scale = 0.5
-				}
-			}
-		}
-		entity.vertical_animation =
-		{
-			layers =
-			{
-				{
-					filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
-					width = 225,
-					height = 391,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(4.75, -6.25),
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
-					width = 225,
-					height = 391,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(4.75, -6.25),
-					tint = inputs.tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
-					width = 225,
-					height = 391,
-					frame_count = 32,
-					line_length = 8,
-					shift = util.by_pixel(4.75, -6.25),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
-				},
-				{
-					filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
-					width = 330,
-					height = 307,
-					frame_count = 32,
-					line_length = 8,
-					draw_as_shadow = true,
-					shift = util.by_pixel(40.5, 9.25),
-					scale = 0.5
-				}
-			}
-		}
-		::continue::
-	end
-end
 
--- STEAM TURBINE
-if settings.startup[setting_bobmods_power_steam].value then
-	local inputs =
-	{
-		type = generator,
-		icon_name = steam_turbine_1,
-		base_entity_name = steam_turbine_1,
-		mod = bobs_mod,
-		group = power,
-		particles = {[medium] = 2, [big] = 1}
-	}
-	local tier_map = {[steam_turbine_4] = {tier = 4, prog_tier = 6}}
-	---@param tint data.Color
-	---@return data.RotatedAnimation
-	local function get_steam_turbine_remnant_animation(tint)
-		---@type data.RotatedAnimation
-		local remnant_animation =
+		entity.two_direction_only = true
+		entity.pictures =
 		{
-			layers =
+			north =
 			{
+				animation =
 				{
-					filename = "__base__/graphics/entity/steam-turbine/remnants/steam-turbine-remnants.png",
-					width = 460,
-					height = 408,
-					direction_count = 4,
-					shift = util.by_pixel(6, 0),
-					scale = 0.5
-				},
+					layers =
+					{
+						{
+							filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
+							width = 225,
+							height = 391,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(4.75, -6.25),
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-mask.png",
+							width = 225,
+							height = 391,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(4.75, -6.25),
+							tint = inputs.tint,
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-V-highlights.png",
+							width = 225,
+							height = 391,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(4.75, -6.25),
+							blend_mode = reskins.lib.settings.blend_mode,
+							scale = 0.5
+						},
+						{
+							filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+							width = 330,
+							height = 307,
+							frame_count = 32,
+							line_length = 8,
+							draw_as_shadow = true,
+							shift = util.by_pixel(40.5, 9.25),
+							scale = 0.5
+						}
+					}
+				}
+			},
+			east =
+			{
+				animation =
 				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
-					width = 460,
-					height = 408,
-					direction_count = 4,
-					shift = util.by_pixel(6, 0),
-					tint = tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
-					width = 460,
-					height = 408,
-					direction_count = 4,
-					shift = util.by_pixel(6, 0),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
+					layers =
+					{
+						{
+							filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
+							width = 352,
+							height = 257,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(1, -4.75),
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-mask.png",
+							width = 352,
+							height = 257,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(1, -4.75),
+							tint = inputs.tint,
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-engine/steam-engine-H-highlights.png",
+							width = 352,
+							height = 257,
+							frame_count = 32,
+							line_length = 8,
+							shift = util.by_pixel(1, -4.75),
+							blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+							scale = 0.5
+						},
+						{
+							filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
+							width = 508,
+							height = 160,
+							frame_count = 32,
+							line_length = 8,
+							draw_as_shadow = true,
+							shift = util.by_pixel(48, 24),
+							scale = 0.5
+						}
+					}
 				}
 			}
 		}
-		return remnant_animation
-	end
-	for name, map in pairs(tier_map) do
-		---@type data.GeneratorPrototype
-		local entity = data.raw[inputs.type][name]
-		if not entity then
-			goto continue
-		end
-		local tier = reskins.lib.tiers.get_tier(map)
-		inputs.tint = reskins.lib.tiers.get_tint(tier)
-		reskins.lib.setup_standard_entity(name, tier, inputs)
-		local remnant = data.raw["corpse"][name .. "-remnants"]
-		local remnant_animation = get_steam_turbine_remnant_animation(inputs.tint)
-		remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
-		entity.horizontal_animation =
-		{
-			layers =
-			{
-				{
-					filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
-					width = 320,
-					height = 245,
-					frame_count = 8,
-					line_length = 4,
-					shift = util.by_pixel(0, -2.75),
-					run_mode = "backward",
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
-					width = 320,
-					height = 245,
-					repeat_count = 8,
-					shift = util.by_pixel(0, -2.75),
-					tint = inputs.tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
-					width = 320,
-					height = 245,
-					repeat_count = 8,
-					shift = util.by_pixel(0, -2.75),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
-				},
-				{
-					filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
-					width = 435,
-					height = 150,
-					repeat_count = 8,
-					draw_as_shadow = true,
-					shift = util.by_pixel(28.5, 18),
-					run_mode = "backward",
-					scale = 0.5
-				}
-			}
-		}
-		entity.vertical_animation =
-		{
-			layers =
-			{
-				{
-					filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
-					width = 217,
-					height = 374,
-					frame_count = 8,
-					line_length = 4,
-					shift = util.by_pixel(4.75, 0.0),
-					run_mode = "backward",
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
-					width = 217,
-					height = 347,
-					repeat_count = 8,
-					shift = util.by_pixel(4.75, 6.75),
-					tint = inputs.tint,
-					scale = 0.5
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
-					width = 217,
-					height = 347,
-					repeat_count = 8,
-					shift = util.by_pixel(4.75, 6.75),
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5
-				},
-				{
-					filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
-					width = 302,
-					height = 260,
-					repeat_count = 8,
-					draw_as_shadow = true,
-					shift = util.by_pixel(39.5, 24.5),
-					run_mode = "backward",
-					scale = 0.5
-				}
-			}
-		}
+
 		::continue::
 	end
 end
@@ -877,7 +739,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
 					height = 189,
 					repeat_count = repeat_count,
 					shift = util.by_pixel(0, -11),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+					blend_mode = reskins.lib.settings.blend_mode, -- additive,
 					scale = 0.5
 				},
 				{
@@ -973,7 +835,7 @@ if settings.startup[setting_bobmods_power_accumulators].value then
 					height = 146,
 					direction_count = 1,
 					shift = util.by_pixel(2.5, 3.5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+					blend_mode = reskins.lib.settings.blend_mode, -- additive,
 					scale = 0.5
 				}
 			}
@@ -2289,6 +2151,12 @@ end
 
 -- PUMPJACK
 if settings.startup[setting_bobmods_mining_pumpjacks].value then
+	---@using data
+	---@using Reskins.SpriteUtils
+
+	local _sprites = require("__reskins-sprite-utils__.sprites")
+	local _utils = require("__reskins-sprite-utils__.utils")
+
 	local inputs =
 	{
 		type = mining_drill,
@@ -2313,15 +2181,19 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
 		if not entity then
 			goto continue
 		end
+
 		pumpjack_speeds[index] = data.raw[inputs.type][name].mining_speed
 		index = index + 1
+
 		::continue::
 	end
+
 	table.sort(pumpjack_speeds)
-	local max_speed = pumpjack_speeds[#pumpjack_speeds]
-	local min_speed = pumpjack_speeds[1]
+	local max_speed = pumpjack_speeds[#pumpjack_speeds] or 0.5
+	local min_speed = pumpjack_speeds[1] or 0.5
+
 	---@param tint data.Color
-	---@param is_water_miner boolean
+	---@param is_water_miner boolean? When `true`, uses the water pumpjack base sprite, otherwise, uses the pumpjack base sprite.
 	---@return data.RotatedAnimation
 	local function get_remnant_animation(tint, is_water_miner)
 		---@type data.RotatedAnimation
@@ -2330,7 +2202,9 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
 			layers =
 			{
 				{
-					filename = is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png" or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
+					filename = is_water_miner
+					and "__reskins-bobs__/graphics/entity/mining/pumpjack/remnants/water-pumpjack-remnants-base.png"
+					or "__base__/graphics/entity/pumpjack/remnants/pumpjack-remnants.png",
 					width = 274,
 					height = 284,
 					direction_count = 1,
@@ -2357,117 +2231,383 @@ if settings.startup[setting_bobmods_mining_pumpjacks].value then
 				}
 			}
 		}
+
 		return remnant_animation
 	end
+
+	---@param animation_speed float|nil
+	---@return Animation[]
+	local function pumpjack_shadow_animation(animation_speed)
+		---@type Animation[]
+		return
+		{
+			{
+				priority = high,
+				filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead-shadow.png",
+				animation_speed = animation_speed or 0.5,
+				draw_as_shadow = true,
+				line_length = 8,
+				width = 292,
+				height = 78,
+				frame_count = 40,
+				scale = 0.5,
+				shift = util.by_pixel(17.75, 14.5)
+			}
+		}
+	end
+
+	---@param tint data.Color|nil
+	---@param animation_speed float|nil
+	---@return Animation[]
+	local function pumpjack_accent_animation(tint, animation_speed)
+		---@type Animation[]
+		return
+		{
+			{
+				priority = high,
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-horsehead-accent-mask.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				tint = tint,
+				shift = util.by_pixel(-4.5, -29)
+			},
+			{
+				priority = high,
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-horsehead-accent-highlights.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				shift = util.by_pixel(-4.5, -29),
+				blend_mode = reskins.lib.settings.blend_mode
+			}
+		}
+	end
+
+	---@param tint data.Color|nil
+	---@param animation_speed float|nil
+	---@return Animation[]
+	local function pumpjack_stripe_animation(tint, animation_speed)
+		---@type Animation[]
+		return
+		{
+			{
+				priority = "high",
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-horsehead-stripe-mask.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				tint = tint,
+				shift = util.by_pixel(-4.5, -29)
+			},
+			{
+				priority = "high",
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-horsehead-stripe-highlights.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				shift = util.by_pixel(-4.5, -29),
+				blend_mode = reskins.lib.settings.blend_mode
+			}
+		}
+	end
+
+	---@param tint data.Color|nil
+	---@param animation_speed float|nil
+	---@return Animation[]
+	local function pumpjack_tintable_base_animation(tint, animation_speed)
+		---@type Animation[]
+		return
+		{
+			{
+				priority = high,
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-tintable-horsehead.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				shift = util.by_pixel(-4.5, -29)
+			},
+			{
+				priority = high,
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-tintable-horsehead-mask.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				tint = tint,
+				shift = util.by_pixel(-4.5, -29)
+			},
+			{
+				priority = high,
+				filename = "__reskins-assets-base__/graphics/entity/pumpjack/pumpjack-tintable-horsehead-highlights.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				shift = util.by_pixel(-4.5, -29),
+				blend_mode = reskins.lib.settings.blend_mode
+			}
+		}
+	end
+
+	---@param animation_speed float|nil
+	---@return Animation[]
+	local function pumpjack_base_animation(animation_speed)
+		---@type Animation[]
+		return
+		{
+			{
+				priority = high,
+				filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
+				animation_speed = animation_speed or 0.5,
+				scale = 0.5,
+				line_length = 8,
+				width = 206,
+				height = 172,
+				frame_count = 40,
+				shift = util.by_pixel(-4.5, -29)
+			}
+		}
+	end
+
+	---@param is_flipped boolean?
+	---@return Animation[]
+	local function pumpjack_base_visualisations(is_flipped)
+		local BASE_PATH = "__base__/graphics/entity/pumpjack/"
+		local flipped = is_flipped and "-flipped" or ""
+		---@type Animation[]
+		return
+		{
+			{
+				filename = BASE_PATH .. "pumpjack-base" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			},
+			{
+				filename = BASE_PATH .. "pumpjack-base" .. flipped .. "-shadow.png",
+				width = 261,
+				height = 273,
+				scale = 0.5,
+				draw_as_shadow = true,
+				shift = util.by_pixel(-2, -5)
+			}
+		}
+	end
+
+	---@param is_flipped boolean?
+	---@return Animation[]
+	local function pumpjack_tintable_base_visualisations(tint, is_flipped)
+		local BASE_PATH = "__base__/graphics/entity/pumpjack/"
+		local ASSETS_BASE_PATH = "__reskins-assets-base__/graphics/entity/pumpjack/"
+		local flipped = is_flipped and "-flipped" or ""
+		---@type Animation[]
+		return
+		{
+			{
+				filename = ASSETS_BASE_PATH .. "pumpjack-tintable-base" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			},
+			{
+				filename = ASSETS_BASE_PATH .. "pumpjack-tintable-base-mask" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				tint = tint,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			},
+			{
+				filename = ASSETS_BASE_PATH .. "pumpjack-tintable-base-highlights" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				blend_mode = additive_soft,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			},
+			{
+				filename = BASE_PATH .. "pumpjack-base" .. flipped .. "-shadow.png",
+				width = 261,
+				height = 273,
+				scale = 0.5,
+				draw_as_shadow = true,
+				shift = util.by_pixel(-2, -5)
+			}
+		}
+	end
+
+	---@param is_flipped boolean?
+	---@return Animation[]
+	local function pumpjack_accent_visualisations(tint, is_flipped)
+		local ASSETS_BASE_PATH = "__reskins-assets-base__/graphics/entity/pumpjack/"
+		local flipped = is_flipped and "-flipped" or ""
+		---@type Animation[]
+		return
+		{
+			{
+				filename = ASSETS_BASE_PATH .. "pumpjack-base-accent-mask" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				tint = tint,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			},
+			{
+				filename = ASSETS_BASE_PATH .. "pumpjack-base-accent-highlights" .. flipped .. ".png",
+				priority = extra_high,
+				width = 261,
+				height = 273,
+				blend_mode = additive_soft,
+				shift = util.by_pixel(-2.25, -4.75),
+				scale = 0.5
+			}
+		}
+	end
+
+	local WATER_TINT = util.color("#3083bf") --[[@as data.Color]]
+	local WATER_ACCENT_TINT = util.color("#ff8533") --[[@as data.Color]]
+
 	for name, map in pairs(tier_map) do
-		---@type data.MiningDrillPrototype
+		---@type MiningDrillPrototype
 		local entity = data.raw[inputs.type][name]
 		if not entity then
 			goto continue
 		end
 		local tier = reskins.lib.tiers.get_tier(map)
 		inputs.tint = reskins.lib.tiers.get_tint(tier)
+
 		if map.is_water_miner then
 			inputs.icon_base = "water-pumpjack"
 		else
 			inputs.icon_base = "pumpjack"
 		end
+
 		reskins.lib.setup_standard_entity(name, tier, inputs)
+
 		local animation_speed
 		if max_speed - min_speed == 0 then
 			animation_speed = entity.mining_speed
 		else
-			animation_speed = ((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed))) * max_playback + ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
+			animation_speed = (((entity.mining_speed / (max_speed - min_speed)) - (min_speed / (max_speed - min_speed))) * max_playback) + ((max_speed / (max_speed - min_speed)) - (entity.mining_speed / (max_speed - min_speed))) * min_playback
 		end
+
 		if map.is_water_miner then
-			reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, util.color("#3083bf"))
-			reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, util.color("#3083bf"))
+			reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["big"], 1, WATER_TINT)
+			reskins.lib.create_particle(name, inputs.base_entity_name, reskins.lib.particle_index["medium"], 2, WATER_TINT)
 		end
-		local remnant = data.raw["corpse"][name .. "-remnants"]
+
+		local remnant = data_corpse[name .. "-remnants"]
+
 		local remnant_animation = get_remnant_animation(inputs.tint, map.is_water_miner)
 		remnant.animation = make_rotated_animation_variations_from_sheet(2, remnant_animation)
-		entity.base_picture =
-		{
-			sheets =
+
+		if map.is_water_miner then
+			local animation =
 			{
+				north =
 				{
-					filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
-					priority = extra_high,
-					width = 261,
-					height = 273,
-					shift = util.by_pixel(-2.25, -4.75),
-					scale = 0.5
-				},
-				{
-					filename = "__base__/graphics/entity/pumpjack/pumpjack-base-shadow.png",
-					width = 220,
-					height = 220,
-					scale = 0.5,
-					draw_as_shadow = true,
-					shift = util.by_pixel(6, 0.5)
+					layers = _utils.array_concat
+					(
+						pumpjack_tintable_base_animation(WATER_TINT, animation_speed),
+						pumpjack_stripe_animation(inputs.tint, animation_speed),
+						pumpjack_accent_animation(WATER_ACCENT_TINT, animation_speed),
+						pumpjack_shadow_animation(animation_speed)
+					)
 				}
 			}
-		}
-		entity.graphics_set.animation =
-		{
-			north =
+
+			entity.graphics_set =
 			{
-				layers =
+				animation = animation,
+				working_visualisations =
 				{
-					{
-						priority = high,
-						filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
-						animation_speed = animation_speed,
-						repeat_count = 6,
-						scale = 0.5,
-						line_length = 8,
-						width = 206,
-						height = 202,
-						frame_count = 40,
-						shift = util.by_pixel(-4, -24)
-					},
-					{
-						priority = high,
-						filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-mask.png",
-						animation_speed = animation_speed,
-						repeat_count = 6,
-						scale = 0.5,
-						line_length = 8,
-						width = 206,
-						height = 202,
-						frame_count = 40,
-						shift = util.by_pixel(-4, -24),
-						tint = inputs.tint
-					},
-					{
-						priority = high,
-						filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-highlights.png",
-						animation_speed = animation_speed,
-						repeat_count = 6,
-						scale = 0.5,
-						line_length = 8,
-						width = 206,
-						height = 202,
-						frame_count = 40,
-						shift = util.by_pixel(-4, -24),
-						blend_mode = reskins.lib.settings.blend_mode
-					},
-					{
-						priority = high,
-						filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead-shadow.png",
-						animation_speed = animation_speed,
-						repeat_count = 6,
-						draw_as_shadow = true,
-						line_length = 8,
-						width = 309,
-						height = 82,
-						frame_count = 40,
-						scale = 0.5,
-						shift = util.by_pixel(17.75, 14.5)
-					}
+					_sprites.make_4way_working_visualisations_from_spritesheet({
+						always_draw = true,
+						secondary_draw_order = -1,
+						animation = {layers = _utils.array_concat(
+							pumpjack_tintable_base_visualisations(WATER_TINT, false),
+							pumpjack_accent_visualisations(WATER_ACCENT_TINT, false)
+						)}
+					})
 				}
 			}
-		}
+			entity.graphics_set_flipped =
+			{
+				animation = animation,
+				working_visualisations = {
+					_sprites.make_4way_working_visualisations_from_spritesheet({
+						always_draw = true,
+						secondary_draw_order = -1,
+						animation = {layers = _utils.array_concat(
+							pumpjack_tintable_base_visualisations(WATER_TINT, true),
+							pumpjack_accent_visualisations(WATER_ACCENT_TINT, true)
+						)}
+					})
+				}
+			}
+		else
+			local animation =
+			{
+				north = {layers = _utils.array_concat(
+					pumpjack_base_animation(animation_speed),
+					pumpjack_stripe_animation(inputs.tint, animation_speed),
+					pumpjack_shadow_animation(animation_speed)
+				)}
+			}
+
+			entity.graphics_set =
+			{
+				animation = animation,
+				working_visualisations =
+				{
+					_sprites.make_4way_working_visualisations_from_spritesheet({
+						always_draw = true,
+						secondary_draw_order = -1,
+						animation = {layers = pumpjack_base_visualisations(false)}
+					})
+				}
+			}
+			entity.graphics_set_flipped =
+			{
+				animation = animation,
+				working_visualisations =
+				{
+					_sprites.make_4way_working_visualisations_from_spritesheet({
+						always_draw = true,
+						secondary_draw_order = -1,
+						animation = {layers = pumpjack_base_visualisations(true)}
+					})
+				}
+			}
+		end
+
 		::continue::
 	end
 end
@@ -2655,6 +2795,177 @@ do
 	end
 end
 
+-- STEAM TURBINE
+if settings.startup[setting_bobmods_power_steam].value then
+	local inputs =
+	{
+		type = generator,
+		icon_name = steam_turbine_1,
+		base_entity_name = steam_turbine_1,
+		mod = bobs_mod,
+		group = power,
+		particles = {[medium] = 2, [big] = 1}
+	}
+	local tier_map = {[steam_turbine_4] = {tier = 4, prog_tier = 6}}
+	---@param tint data.Color
+	---@return data.RotatedAnimation
+	local function get_steam_turbine_remnant_animation(tint)
+		---@type data.RotatedAnimation
+		local remnant_animation =
+		{
+			layers =
+			{
+				{
+					filename = "__base__/graphics/entity/steam-turbine/remnants/steam-turbine-remnants.png",
+					width = 460,
+					height = 408,
+					direction_count = 4,
+					shift = util.by_pixel(6, 0),
+					scale = 0.5
+				},
+				{
+					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-mask.png",
+					width = 460,
+					height = 408,
+					direction_count = 4,
+					shift = util.by_pixel(6, 0),
+					tint = tint,
+					scale = 0.5
+				},
+				{
+					filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/remnants/steam-turbine-remnants-highlights.png",
+					width = 460,
+					height = 408,
+					direction_count = 4,
+					shift = util.by_pixel(6, 0),
+					blend_mode = reskins.lib.settings.blend_mode,
+					scale = 0.5
+				}
+			}
+		}
+		return remnant_animation
+	end
+
+	for name, map in pairs(tier_map) do
+		---@type data.GeneratorPrototype
+		local entity = data.raw[inputs.type][name]
+		if not entity then
+			goto continue
+		end
+
+		local tier = reskins.lib.tiers.get_tier(map)
+		inputs.tint = reskins.lib.tiers.get_tint(tier)
+
+		reskins.lib.setup_standard_entity(name, tier, inputs)
+
+		local remnant = data_corpse[name .. "-remnants"]
+
+		local remnant_animation = get_steam_turbine_remnant_animation(inputs.tint)
+		remnant.animation = make_rotated_animation_variations_from_sheet(1, remnant_animation)
+
+		entity.two_direction_only = true
+		entity.pictures =
+		{
+			north =
+			{
+				animation =
+				{
+					layers =
+					{
+						{
+							filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
+							width = 217,
+							height = 374,
+							frame_count = 8,
+							line_length = 4,
+							shift = util.by_pixel(4.75, 0.0),
+							run_mode = "backward",
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-mask.png",
+							width = 217,
+							height = 347,
+							repeat_count = 8,
+							shift = util.by_pixel(4.75, 6.75),
+							tint = inputs.tint,
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-V-highlights.png",
+							width = 217,
+							height = 347,
+							repeat_count = 8,
+							shift = util.by_pixel(4.75, 6.75),
+							blend_mode = reskins.lib.settings.blend_mode,
+							scale = 0.5
+						},
+						{
+							filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
+							width = 302,
+							height = 260,
+							repeat_count = 8,
+							draw_as_shadow = true,
+							shift = util.by_pixel(39.5, 24.5),
+							run_mode = "backward",
+							scale = 0.5
+						}
+					}
+				}
+			},
+			east =
+			{
+				animation =
+				{
+					layers =
+					{
+						{
+							filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
+							width = 320,
+							height = 245,
+							frame_count = 8,
+							line_length = 4,
+							shift = util.by_pixel(0, -2.75),
+							run_mode = "backward",
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-mask.png",
+							width = 320,
+							height = 245,
+							repeat_count = 8,
+							shift = util.by_pixel(0, -2.75),
+							tint = inputs.tint,
+							scale = 0.5
+						},
+						{
+							filename = "__reskins-bobs__/graphics/entity/power/steam-turbine/steam-turbine-H-highlights.png",
+							width = 320,
+							height = 245,
+							repeat_count = 8,
+							shift = util.by_pixel(0, -2.75),
+							blend_mode = reskins.lib.settings.blend_mode,
+							scale = 0.5
+						},
+						{
+							filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
+							width = 435,
+							height = 150,
+							repeat_count = 8,
+							draw_as_shadow = true,
+							shift = util.by_pixel(28.5, 18),
+							run_mode = "backward",
+							scale = 0.5
+						}
+					}
+				}
+			}
+		}
+
+		::continue::
+	end
+end
+
 -- FURNACES
 do
 	local electric_furnace_map =
@@ -2709,7 +3020,7 @@ do
 			width = 238,
 			height = 212,
 			shift = util.by_pixel(1, 1),
-			blend_mode = "additive",
+			blend_mode = additive,
 			draw_as_glow = true,
 			scale = 0.5
 		}
@@ -2718,7 +3029,7 @@ do
 		return
 		{
 			filename = "__base__/graphics/entity/electric-furnace/electric-furnace-ground-light.png",
-			blend_mode = "additive",
+			blend_mode = additive,
 			width = 166,
 			height = 124,
 			shift = util.by_pixel(3, 69),
@@ -2997,16 +3308,19 @@ do
 		if not entity then
 			goto continue
 		end
+
 		local tier = reskins.lib.tiers.get_tier(map)
 		inputs.tint = reskins.lib.tiers.get_tint(tier)
+
 		reskins.lib.setup_standard_entity(name, tier, inputs)
-		local remnant = data.raw["corpse"][name .. "-remnants"]
+
+		local remnant = data_corpse[name .. "-remnants"]
 		remnant.animation = make_rotated_animation_variations_from_sheet(1,
 		{
 			layers =
 			{
 				{
-					filename = "__base__/graphics/entity/centrifuge/remnants/centrifuge-remnants.png",
+					filename = "__reskins-assets-base__/graphics/entity/centrifuge/remnants/centrifuge-remnants-base.png",
 					width = 286,
 					height = 284,
 					direction_count = 1,
@@ -3014,7 +3328,7 @@ do
 					scale = 0.5
 				},
 				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/remnants/centrifuge-remnants-mask.png",
+					filename = "__reskins-assets-base__/graphics/entity/centrifuge/remnants/centrifuge-remnants-mask.png",
 					width = 286,
 					height = 284,
 					direction_count = 1,
@@ -3023,7 +3337,7 @@ do
 					scale = 0.5
 				},
 				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/remnants/centrifuge-remnants-highlights.png",
+					filename = "__reskins-assets-base__/graphics/entity/centrifuge/remnants/centrifuge-remnants-highlights.png",
 					width = 286,
 					height = 284,
 					direction_count = 1,
@@ -3033,175 +3347,235 @@ do
 				}
 			}
 		})
-		entity.graphics_set.idle_animation =
+
+		entity.graphics_set =
 		{
-			layers =
+			always_draw_idle_animation = true,
+			idle_animation =
 			{
+				layers =
 				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
-					priority = high,
-					scale = 0.5,
-					line_length = 8,
-					width = 237,
-					height = 214,
-					frame_count = 64,
-					shift = util.by_pixel(-0.25, -26.5),
-				},
-				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
-					draw_as_shadow = true,
-					priority = high,
-					scale = 0.5,
-					line_length = 8,
-					width = 279,
-					height = 152,
-					frame_count = 64,
-					shift = util.by_pixel(16.75, -10)
-				},
-				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
-					priority = high,
-					scale = 0.5,
-					line_length = 8,
-					width = 156,
-					height = 234,
-					frame_count = 64,
-					shift = util.by_pixel(23, 6.5)
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-mask.png",
-					priority = high,
-					tint = inputs.tint,
-					scale = 0.5,
-					line_length = 8,
-					width = 156,
-					height = 234,
-					frame_count = 64,
-					shift = util.by_pixel(23, 6.5)
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-highlights.png",
-					priority = high,
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5,
-					line_length = 8,
-					width = 156,
-					height = 234,
-					frame_count = 64,
-					shift = util.by_pixel(23, 6.5)
-				},
-				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
-					draw_as_shadow = true,
-					priority = high,
-					scale = 0.5,
-					line_length = 8,
-					width = 251,
-					height = 149,
-					frame_count = 64,
-					shift = util.by_pixel(63.25, 15.25)
-				},
-				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
-					priority = high,
-					scale = 0.5,
-					line_length = 8,
-					width = 139,
-					height = 246,
-					frame_count = 64,
-					shift = util.by_pixel(-26.25, 3.5)
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-mask.png",
-					priority = high,
-					tint = inputs.tint,
-					scale = 0.5,
-					line_length = 8,
-					width = 139,
-					height = 246,
-					frame_count = 64,
-					shift = util.by_pixel(-26.25, 3.5)
-				},
-				{
-					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-highlights.png",
-					priority = high,
-					blend_mode = reskins.lib.settings.blend_mode,
-					scale = 0.5,
-					line_length = 8,
-					width = 139,
-					height = 246,
-					frame_count = 64,
-					shift = util.by_pixel(-26.25, 3.5)
-				},
-				{
-					filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
-					priority = high,
-					draw_as_shadow = true,
-					scale = 0.5,
-					line_length = 8,
-					width = 230,
-					height = 124,
-					frame_count = 64,
-					shift = util.by_pixel(8.5, 23.5)
-				}
-			}
-		}
-		entity.graphics_set.working_visualisations =
-		{
-			{
-				effect = "uranium-glow",
-				apply_recipe_tint = "primary",
-				fadeout = true,
-				light = {intensity = 0.1, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.0, g = 1.0, b = 0.0}},
-			},
-			{
-				effect = "uranium-glow",
-				fadeout = true,
-				apply_recipe_tint = "primary",
-				animation =
-				{
-					layers =
 					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-c-base.png",
+						priority = high,
+						scale = 0.5,
+						line_length = 8,
+						width = 237,
+						height = 214,
+						frame_count = 64,
+						shift = util.by_pixel(-0.25, -26.5),
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-c-shadow.png",
+						draw_as_shadow = true,
+						priority = high,
+						scale = 0.5,
+						line_length = 8,
+						width = 279,
+						height = 152,
+						frame_count = 64,
+						shift = util.by_pixel(16.75, -10),
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-b-base.png",
+						priority = high,
+						scale = 0.5,
+						line_length = 8,
+						width = 156,
+						height = 234,
+						frame_count = 64,
+						shift = util.by_pixel(23, 6.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-b-mask.png",
+						priority = high,
+						tint = inputs.tint,
+						scale = 0.5,
+						line_length = 8,
+						width = 156,
+						height = 234,
+						frame_count = 64,
+						shift = util.by_pixel(23, 6.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-b-highlights.png",
+						priority = high,
+						blend_mode = reskins.lib.settings.blend_mode,
+						scale = 0.5,
+						line_length = 8,
+						width = 156,
+						height = 234,
+						frame_count = 64,
+						shift = util.by_pixel(23, 6.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-b-shadow.png",
+						draw_as_shadow = true,
+						priority = high,
+						scale = 0.5,
+						line_length = 8,
+						width = 251,
+						height = 149,
+						frame_count = 64,
+						shift = util.by_pixel(63.25, 15.25)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-a-base.png",
+						priority = high,
+						scale = 0.5,
+						line_length = 8,
+						width = 139,
+						height = 246,
+						frame_count = 64,
+						shift = util.by_pixel(-26.25, 3.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-a-mask.png",
+						priority = high,
+						tint = inputs.tint,
+						scale = 0.5,
+						line_length = 8,
+						width = 139,
+						height = 246,
+						frame_count = 64,
+						shift = util.by_pixel(-26.25, 3.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-a-highlights.png",
+						priority = high,
+						blend_mode = reskins.lib.settings.blend_mode,
+						scale = 0.5,
+						line_length = 8,
+						width = 139,
+						height = 246,
+						frame_count = 64,
+						shift = util.by_pixel(-26.25, 3.5)
+					},
+					{
+						filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-a-shadow.png",
+						priority = high,
+						draw_as_shadow = true,
+						scale = 0.5,
+						line_length = 8,
+						width = 230,
+						height = 124,
+						frame_count = 64,
+						shift = util.by_pixel(8.5, 23.5)
+					}
+				}
+			},
+			working_visualisations =
+			{
+				{
+					effect = "uranium-glow",
+					apply_recipe_tint = "primary",
+					fadeout = true,
+					light =
+					{
+						intensity = 0.1,
+						size = 9.9,
+						shift = {0.0, 0.0},
+						color = {r = 0.0, g = 1.0, b = 0.0}
+					}
+				},
+				{
+					effect = "uranium-glow",
+					fadeout = true,
+					apply_recipe_tint = "primary",
+					animation =
+					{
+						layers =
 						{
-							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-C-light.png",
-							priority = high,
-							scale = 0.5,
-							blend_mode = "additive",
-							line_length = 8,
-							width = 190,
-							height = 207,
-							frame_count = 64,
-							shift = util.by_pixel(0, -27.25),
-							draw_as_glow = true
-						},
-						{
-							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-light.png",
-							priority = high,
-							scale = 0.5,
-							blend_mode = "additive",
-							line_length = 8,
-							width = 131,
-							height = 206,
-							frame_count = 64,
-							shift = util.by_pixel(16.75, 0.5),
-							draw_as_glow = true
-						},
-						{
-							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-light.png",
-							priority = high,
-							scale = 0.5,
-							blend_mode = "additive",
-							line_length = 8,
-							width = 108,
-							height = 197,
-							frame_count = 64,
-							shift = util.by_pixel(-23.5, -1.75),
-							draw_as_glow = true
+							{
+								filename = "__reskins-assets-base__/graphics/entity/centrifuge/lights/centrifuge-c-light.png",
+								priority = high,
+								scale = 0.5,
+								blend_mode = additive,
+								line_length = 8,
+								width = 190,
+								height = 207,
+								frame_count = 64,
+								shift = util.by_pixel(0, -27.25),
+								draw_as_glow = true
+							},
+							{
+								filename = "__reskins-assets-base__/graphics/entity/centrifuge/lights/centrifuge-b-light.png",
+								priority = high,
+								scale = 0.5,
+								blend_mode = additive,
+								line_length = 8,
+								width = 131,
+								height = 206,
+								frame_count = 64,
+								shift = util.by_pixel(16.75, 0.5),
+								draw_as_glow = true
+							},
+							{
+								filename = "__reskins-assets-base__/graphics/entity/centrifuge/lights/centrifuge-a-light.png",
+								priority = high,
+								scale = 0.5,
+								blend_mode = additive,
+								line_length = 8,
+								width = 108,
+								height = 197,
+								frame_count = 64,
+								shift = util.by_pixel(-23.5, -1.75),
+								draw_as_glow = true
+							}
 						}
 					}
 				}
+			},
+			water_reflection =
+			{
+				pictures =
+				{
+					filename = "__reskins-assets-base__/graphics/entity/centrifuge/centrifuge-reflection.png",
+					priority = extra_high,
+					width = 28,
+					height = 32,
+					shift = util.by_pixel(0, 65),
+					variation_count = 1,
+					scale = 5
+				},
+				rotate = false,
+				orientation_to_variation = false
 			}
 		}
+
+		::continue::
+	end
+end
+
+if mods[bobwarfare] then
+	local inputs =
+	{
+		type = "artillery-wagon",
+		icon_name = "artillery-wagon",
+		base_entity_name = "artillery-wagon",
+		mod = bobs_mod,
+		group = "warfare",
+		particles = {[big] = 4}
+	}
+
+	local tier_map = {[artillery_wagon_4] = { tier = 4, prog_tier = 6}}
+
+	for name, map in pairs(tier_map) do
+		---@type data.ArtilleryWagonPrototype
+		local entity = data.raw[inputs.type][name]
+		if not entity then
+			goto continue
+		end
+
+		local tier = reskins.lib.tiers.get_tier(map)
+		inputs.tint = reskins.lib.tiers.get_tint(tier)
+
+		reskins.lib.setup_standard_entity(name, tier, inputs)
+
+		-- TODO: Reskin remnants?
+
+		-- TODO: Reskin entity?
+
 		::continue::
 	end
 end

@@ -9,10 +9,10 @@ if mods[hyarion_mods] then
     data_resource[carbon_ore].subgroup = is_hyarion_recipe_ore
     data_resource[carbon_ore].icon = data_item[carbon_angels].icon
     data_resource[carbon_ore].icon_size = data_item[carbon_angels].icon_size
-    data_resource[carbon_ore].order = d
+    data_resource[carbon_ore].order = b
 
     data_resource[quartz_ore].subgroup = is_hyarion_recipe_ore
-    data_resource[quartz_ore].order = e
+    data_resource[quartz_ore].order = c
 
     -- RECIPE POLISHED
     data_fluid[polishing_compound_hyarion].subgroup = is_hyarion_recipe_polished
@@ -34,12 +34,12 @@ if mods[hyarion_mods] then
     data_item[polished_quartz_hyarion].order = b
     data_item[polished_quartz_hyarion].stack_size = 200
     data_recipe[polished_quartz_hyarion].subgroup = is_hyarion_recipe_polished
-    data_recipe[polished_quartz_hyarion].icons = THREE_I(raw_quartz_arig, polishing_compound_hyarion, polished_quartz_hyarion)
+    data_recipe[polished_quartz_hyarion].icons = THREE_I(quartz_ore, polishing_compound_hyarion, polished_quartz_hyarion)
     data_recipe[polished_quartz_hyarion].order = b
     data_recipe[polished_quartz_hyarion].energy_required = 4
     data_recipe[polished_quartz_hyarion].ingredients =
     {
-        {type = item, name = raw_quartz_arig, amount = 4},
+        {type = item, name = quartz_ore, amount = 1},
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
@@ -58,54 +58,54 @@ if mods[hyarion_mods] then
 
     local planetaris_polished_ruby = "planetaris-polished-ruby"
     data_recipe[planetaris_polished_ruby].subgroup = is_hyarion_recipe_polished
-    data_recipe[planetaris_polished_ruby].icons = THREE_I(raw_ruby_bob, polishing_compound_hyarion, polished_ruby_bob)
+    data_recipe[planetaris_polished_ruby].icons = THREE_I(ruby_bob, polishing_compound_hyarion, polished_ruby_bob)
     data_recipe[planetaris_polished_ruby].order = c
     data_recipe[planetaris_polished_ruby].energy_required = 4
     data_recipe[planetaris_polished_ruby].ingredients =
     {
-        {type = item, name = raw_ruby_bob, amount = 4},
+        {type = item, name = ruby_bob, amount = 1},
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
     local planetaris_polished_sapphire = "planetaris-polished-sapphire"
     data_recipe[planetaris_polished_sapphire].subgroup = is_hyarion_recipe_polished
-    data_recipe[planetaris_polished_sapphire].icons = THREE_I(raw_sapphire_bob, polishing_compound_hyarion, polished_sapphire_bob)
+    data_recipe[planetaris_polished_sapphire].icons = THREE_I(sapphire_bob, polishing_compound_hyarion, polished_sapphire_bob)
     data_recipe[planetaris_polished_sapphire].order = d
     data_recipe[planetaris_polished_sapphire].energy_required = 4
     data_recipe[planetaris_polished_sapphire].ingredients =
     {
-        {type = item, name = raw_sapphire_bob, amount = 4},
+        {type = item, name = sapphire_bob, amount = 1},
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
     local planetaris_polished_emerald = "planetaris-polished-emerald"
     data_recipe[planetaris_polished_emerald].subgroup = is_hyarion_recipe_polished
-    data_recipe[planetaris_polished_emerald].icons = THREE_I(raw_emerald_bob, polishing_compound_hyarion, polished_emerald_bob)
+    data_recipe[planetaris_polished_emerald].icons = THREE_I(emerald_bob, polishing_compound_hyarion, polished_emerald_bob)
     data_recipe[planetaris_polished_emerald].order = e
     data_recipe[planetaris_polished_emerald].energy_required = 4
     data_recipe[planetaris_polished_emerald].ingredients =
     {
-        {type = item, name = raw_emerald_bob, amount = 4},
+        {type = item, name = emerald_bob, amount = 1},
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
     local planetaris_polished_diamond = "planetaris-polished-diamond"
     data_recipe[planetaris_polished_diamond].subgroup = is_hyarion_recipe_polished
-    data_recipe[planetaris_polished_diamond].icons = THREE_I(raw_diamond_bob, polishing_compound_hyarion, polished_diamond_bob)
-    data_recipe[planetaris_polished_diamond].order = f
+    data_recipe[planetaris_polished_diamond].icons = THREE_I(diamond_bob, polishing_compound_hyarion, polished_diamond_bob)
+    data_recipe[planetaris_polished_diamond].order = h
     data_recipe[planetaris_polished_diamond].energy_required = 4
     data_recipe[planetaris_polished_diamond].ingredients =
     {
-        {type = item, name = raw_diamond_bob, amount = 2},
+        {type = item, name = diamond_bob, amount = 1},
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
     data_item[alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_item[alexandrite_hyarion].order = g
+    data_item[alexandrite_hyarion].order = i
     data_item[alexandrite_hyarion].stack_size = 200
     data_recipe[alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
     data_recipe[alexandrite_hyarion].icons = FOUR_D_I(polished_diamond_bob, polished_sapphire_bob, polishing_compound_hyarion, polished_emerald_bob, alexandrite_hyarion)
-    data_recipe[alexandrite_hyarion].order = g
+    data_recipe[alexandrite_hyarion].order = i
     data_recipe[alexandrite_hyarion].energy_required = 8
     data_recipe[alexandrite_hyarion].ingredients =
     {
@@ -117,20 +117,20 @@ if mods[hyarion_mods] then
 
     local refraction_light = "planetaris-refraction-light"
     data_fluid[refraction_light].subgroup = is_hyarion_recipe_polished
-    data_fluid[refraction_light].order = h
+    data_fluid[refraction_light].order = j
 
     local _release = "-release"
     data_recipe[refraction_light .. _release].subgroup = is_hyarion_recipe_polished
     data_recipe[refraction_light .. _release].icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[refraction_light].icon, icon_size = 64, scale = 0.25}}
-    data_recipe[refraction_light .. _release].order = h_a
+    data_recipe[refraction_light .. _release].order = j_a
     data_recipe[refraction_light .. _release].ingredients[1].amount = 15
 
     data_item[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_item[charged_alexandrite_hyarion].order = i
+    data_item[charged_alexandrite_hyarion].order = k
     data_item[charged_alexandrite_hyarion].stack_size = 200
     data_recipe[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
     data_recipe[charged_alexandrite_hyarion].icons = THREE_I(alexandrite_hyarion, refraction_light, charged_alexandrite_hyarion)
-    data_recipe[charged_alexandrite_hyarion].order = i
+    data_recipe[charged_alexandrite_hyarion].order = k
     data_recipe[charged_alexandrite_hyarion].energy_required = 4
     data_recipe[charged_alexandrite_hyarion].ingredients =
     {
@@ -140,15 +140,15 @@ if mods[hyarion_mods] then
 
     local unstable_shard = "planetaris-unstable-shard"
     data_item[unstable_shard].subgroup = is_hyarion_recipe_polished
-    data_item[unstable_shard].order = j
+    data_item[unstable_shard].order = l
     data_item[unstable_shard].stack_size = 200
 
     local pure_light = "planetaris-pure-light"
     data_fluid[pure_light].subgroup = is_hyarion_recipe_polished
-    data_fluid[pure_light].order = k
+    data_fluid[pure_light].order = m
     data_recipe[pure_light].subgroup = is_hyarion_recipe_polished
     data_recipe[pure_light].icons = TWO_D_I(refraction_light, alexandrite_hyarion, pure_light, unstable_shard)
-    data_recipe[pure_light].order = k
+    data_recipe[pure_light].order = m
     data_recipe[pure_light].ingredients =
     {
         {type = fluid, name = refraction_light, amount = 60},
@@ -163,13 +163,13 @@ if mods[hyarion_mods] then
 
     data_recipe[pure_light .. _release].subgroup = is_hyarion_recipe_polished
     data_recipe[pure_light .. _release].icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[pure_light].icon, icon_size = 64, scale = 0.25}}
-    data_recipe[pure_light .. _release].order = k_a
+    data_recipe[pure_light .. _release].order = m_a
     data_recipe[pure_light .. _release].ingredients[1].amount = 15
 
     local fluorite_discharge = "planetaris-fluorite-discharge"
     data_recipe[fluorite_discharge].subgroup = is_hyarion_recipe_polished
     data_recipe[fluorite_discharge].icons = THREE_R_I(charged_alexandrite_hyarion, unstable_shard, pure_light)
-    data_recipe[fluorite_discharge].order = k_b
+    data_recipe[fluorite_discharge].order = m_b
     data_recipe[fluorite_discharge].results =
     {
         {type = fluid, name = pure_light, amount = 60, temperature = 500},
@@ -178,11 +178,11 @@ if mods[hyarion_mods] then
 
     local unstable_gem = "planetaris-unstable-gem"
     data_capsule[unstable_gem].subgroup = is_hyarion_recipe_polished
-    data_capsule[unstable_gem].order = l
+    data_capsule[unstable_gem].order = n
     data_capsule[unstable_gem].stack_size = 200
     data_recipe[unstable_gem].subgroup = is_hyarion_recipe_polished
     data_recipe[unstable_gem].icons = FOUR_D_I(unstable_shard, polished_quartz_hyarion, pure_light, polished_ruby_bob, unstable_gem)
-    data_recipe[unstable_gem].order = l
+    data_recipe[unstable_gem].order = n
     data_recipe[unstable_gem].energy_required = 8
     data_recipe[unstable_gem].ingredients =
     {
@@ -194,18 +194,18 @@ if mods[hyarion_mods] then
 
     if mods[tellus_mods] then
         data_item[unstable_crystal].subgroup = is_hyarion_recipe_polished
-        data_item[unstable_crystal].order = m
+        data_item[unstable_crystal].order = o
         data_item[unstable_crystal].stack_size = 200
 
         local unstable_crystallizer = "planetaris-unstable-crystallizer"
         data_item[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
-        data_item[unstable_crystallizer].order = n
+        data_item[unstable_crystallizer].order = p
         data_item[unstable_crystallizer].stack_size = 200
-        data_item[unstable_crystallizer].fuel_category = base_fuel
-        data_item[unstable_crystallizer].fuel_value = 900 .. kJ
+        data_item[unstable_crystallizer].fuel_categories = {base_fuel}
+        data_item[unstable_crystallizer].fuel_value = 960 .. kJ
         data_recipe[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
         data_recipe[unstable_crystallizer].icons = THREE_I(unstable_shard, lava, unstable_crystallizer)
-        data_recipe[unstable_crystallizer].order = n
+        data_recipe[unstable_crystallizer].order = p
         data_recipe[unstable_crystallizer].ingredients =
         {
             {type = item, name = unstable_shard, amount = 8},
@@ -213,18 +213,18 @@ if mods[hyarion_mods] then
         }
 
         data_item[unstable_bacteria].subgroup = is_hyarion_recipe_polished
-        data_item[unstable_bacteria].order = o
+        data_item[unstable_bacteria].order = q
         data_item[unstable_bacteria].stack_size = 200
         TIMSABA.void.freezing_organics(unstable_bacteria)
 
         local unstable_crystal_manipulation = "planetaris-unstable-crystal-manipulation"
         data_recipe[unstable_crystal_manipulation].subgroup = is_hyarion_recipe_polished
         data_recipe[unstable_crystal_manipulation].icons = TWO_D_I(unstable_crystal, charged_alexandrite_hyarion, unstable_bacteria, unstable_crystallizer)
-        data_recipe[unstable_crystal_manipulation].order = o_a
+        data_recipe[unstable_crystal_manipulation].order = q_a
         data_recipe[unstable_crystal_manipulation].results =
         {
             {type = item, name = unstable_bacteria, amount = 4},
-            {type = item, name = unstable_crystallizer, amount = 1, probability = 0.03125}
+            {type = item, name = unstable_crystallizer, amount = 1, independent_probability = 0.03125}
         }
     end
 
@@ -318,7 +318,6 @@ if mods[hyarion_mods] then
     }
     data_recipe[beryllium_plate_hyarion].main_product = beryllium_plate_hyarion
 
-    local beryllium_nitride = "planetaris-beryllium-nitride"
     data_item[beryllium_nitride].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]2[/font]"} or nil
     data_item[beryllium_nitride].subgroup = is_hyarion_recipe_other
     data_item[beryllium_nitride].order = g
@@ -354,8 +353,8 @@ if mods[hyarion_mods] then
         {type = fluid, name = aluminium_molten_angels, amount = 15}
     }
 
-    data_tool[polishing_science_pack].subgroup = is_hyarion_recipe_other
-    data_tool[polishing_science_pack].order = i
+    data_item[polishing_science_pack].subgroup = is_hyarion_recipe_other
+    data_item[polishing_science_pack].order = i
     data_recipe[polishing_science_pack].subgroup = is_hyarion_recipe_other
     data_recipe[polishing_science_pack].order = i
     data_recipe[polishing_science_pack].energy_required = 8
@@ -367,8 +366,8 @@ if mods[hyarion_mods] then
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
-    data_tool[refraction_science_pack].subgroup = is_hyarion_recipe_other
-    data_tool[refraction_science_pack].order = j
+    data_item[refraction_science_pack].subgroup = is_hyarion_recipe_other
+    data_item[refraction_science_pack].order = j
     data_recipe[refraction_science_pack].subgroup = is_hyarion_recipe_other
     data_recipe[refraction_science_pack].order = j
     data_recipe[refraction_science_pack].energy_required = 8
@@ -395,7 +394,8 @@ if mods[hyarion_mods] then
         {type = item, name = carbon_nanotube, amount = 2},
         {type = fluid, name = hydrogen_angels, amount = 60},
         {type = fluid, name = nitrogen_angels, amount = 15}, -- 30
-        {type = item, name = catalyst_carrier, amount = 1}
+        {type = item, name = catalyst_red, amount = 1, independent_probability = 0.875},
+        {type = item, name = catalyst_carrier, amount = 1, independent_probability = 0.125}
     }
     data_recipe[carbon_nanotube_hyarion].main_product = carbon_nanotube
     data_recipe[carbon_nanotube_hyarion].surface_conditions = {{property = pressure, min = 8000, max = 8000}}
@@ -506,7 +506,7 @@ if mods[hyarion_mods] then
     data_recipe[quartz_furnace].ingredients = {{type = item, name = raw_quartz_arig, amount = 4}}
     data_furnace[quartz_furnace].subgroup = is_hyarion_building
     data_furnace[quartz_furnace].order = a
-    data_furnace[quartz_furnace].energy_usage = 225 .. kW
+    data_furnace[quartz_furnace].energy_usage = 240 .. kW
 
     data_item[refraction_ray_collector].subgroup = is_hyarion_building
     data_item[refraction_ray_collector].order = b
@@ -542,7 +542,6 @@ if mods[hyarion_mods] then
     data_lightning_attractor[big_refraction_ray_collector].order = c
     data_lightning_attractor[big_refraction_ray_collector].efficiency = 0.75
 
-    local polisher = "planetaris-polisher"
     data_item[polisher].subgroup = is_hyarion_building
     data_item[polisher].order = d
     data_item[polisher].stack_size = 32
@@ -561,7 +560,6 @@ if mods[hyarion_mods] then
     data_assembling[polisher].energy_usage = (240 - drain) .. kW
     data_assembling[polisher].energy_source.drain = drain .. kW
 
-    local hyper_assembling_machine = "planetaris-assembling-machine-4"
     data_item[hyper_assembling_machine].subgroup = is_hyarion_building
     data_item[hyper_assembling_machine].order = e
     data_item[hyper_assembling_machine].stack_size = 32
@@ -586,7 +584,6 @@ if mods[hyarion_mods] then
     data_assembling[hyper_assembling_machine].energy_source.emissions_per_minute.pollution = 0
     data_assembling[hyper_assembling_machine].energy_source.drain = 120 .. kW
 
-    local particle_manipulator = "planetaris-particle-manipulator"
     data_item[particle_manipulator].subgroup = is_hyarion_building
     data_item[particle_manipulator].order = f
     data_item[particle_manipulator].stack_size = 32
@@ -605,10 +602,9 @@ if mods[hyarion_mods] then
     data_assembling[particle_manipulator].subgroup = is_hyarion_building
     data_assembling[particle_manipulator].order = f
     data_assembling[particle_manipulator].module_slots = 4
-    data_assembling[particle_manipulator].energy_usage = (2400 - 60) .. kW
+    data_assembling[particle_manipulator].energy_usage = (1920 - 60) .. kW
     data_assembling[particle_manipulator].energy_source.drain = 60 .. kW
 
-    local refraction_plant = "planetaris-refraction-plant"
     data_item[refraction_plant].subgroup = is_hyarion_building
     data_item[refraction_plant].order = g
     data_item[refraction_plant].stack_size = 32
@@ -684,14 +680,10 @@ if mods[hyarion_mods] then
     data_active_defense_eq[personal_ruby_laser_defense_eq].energy_source.input_flow_limit = (960 * 1.5) .. kW
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.cooldown = 60
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.damage_modifier = 8
-    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.range = 44
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.range = 88
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.energy_consumption = 960 .. kJ
-    local action = data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action
-    local target = action[1] or action
-    if target and target.action_delivery and target.action_delivery.beam then
-        target.action_delivery.max_length = 44
-        target.action_delivery.duration = 60
-    end
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action.action_delivery.max_length = 88
+    data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.ammo_type.action.action_delivery.duration = 60
     data_active_defense_eq[personal_ruby_laser_defense_eq].attack_parameters.min_range = 0
 
     local ruby_laser_turret = "planetaris-ruby-laser-turret"
@@ -726,16 +718,13 @@ if mods[hyarion_mods] then
     data_electric_turret[ruby_laser_turret].energy_source.drain = nil
     data_electric_turret[ruby_laser_turret].attack_parameters.cooldown = 60
     data_electric_turret[ruby_laser_turret].attack_parameters.damage_modifier = 16
-    data_electric_turret[ruby_laser_turret].attack_parameters.range = 44
+    data_electric_turret[ruby_laser_turret].attack_parameters.range = 88
     data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.energy_consumption = 1920 .. kJ
-    local ammo = data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type
-    if ammo and ammo.action and ammo.action.action_delivery then
-        local delivery = ammo.action.action_delivery
-        delivery.max_length = 44
-        delivery.duration = 60
-        delivery.min_range = 8
-    end
-    data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 8
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.max_length = 88
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.duration = 60
+    data_electric_turret[ruby_laser_turret].attack_parameters.ammo_type.action.action_delivery.min_range = 0
+    data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 0
+    data_electric_turret[ruby_laser_turret].prepare_range = 92
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
@@ -755,7 +744,7 @@ if mods[hyarion_mods] then
     })
 
     -- TECHNOLOGY
-    local planet_discovery_hyarion = "planet-discovery-hyarion"
+    planet_discovery_hyarion = "planet-discovery-hyarion"
     table.insert(data_technology[planet_discovery_hyarion].prerequisites, tech_advanced_asteroid_processing)
     data_technology[planet_discovery_hyarion].effects =
     {
@@ -783,6 +772,10 @@ if mods[hyarion_mods] then
         {type = unlock_recipe, recipe = polished_quartz_hyarion},
         {type = unlock_recipe, recipe = rocket_fuel_hyarion}
     }
+
+    local tech_geode_processing = "planetaris-geode-processing"
+    table.insert(data_technology[tech_geode_processing].effects, {type = unlock_recipe, recipe = planetaris_polished_amethyst})
+    table.insert(data_technology[tech_geode_processing].effects, {type = unlock_recipe, recipe = planetaris_polished_topaz})
 
     data_technology[polishing_science_pack].effects = {{type = unlock_recipe, recipe = polishing_science_pack}}
 
@@ -837,13 +830,9 @@ if mods[hyarion_mods] then
 
     if mods[bobequipment] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_6)
-    else
-        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_1)
     end
     if mods[bobwarfare] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, tech_laser_turret_5)
-    else
-        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_turret_1)
     end
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {electromagnetic_science_pack, 1})
@@ -872,7 +861,7 @@ if mods[hyarion_mods] then
     local tech_beryllium_processing = "planetaris-beryllium-processing"
     rocket_part_hyarion = "planetaris-hyarion-rocket-part"
     if mods[aegis_bellicos_mods] then
-        data_technology[tech_beryllium_processing].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
+        data_technology[tech_beryllium_processing].icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/beryllium-plate.png"
         data_technology[tech_beryllium_processing].icon_size = 64
     end
     table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = carbon_nanotube_hyarion})
@@ -915,7 +904,8 @@ if mods[hyarion_mods] then
     }
 
     local planetaris_bismuth_processing = "planetaris-bismuth-processing"
-    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
+    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_molybdenite_processing_4)
+    --table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
     data_technology[planetaris_bismuth_processing].effects =
     {
         {type = unlock_recipe, recipe = bismuth_asteroid_crushing},
@@ -936,4 +926,29 @@ if mods[hyarion_mods] then
     data_assembling[assembling_machine_4].next_upgrade = assembling_machine_5
     data_assembling[assembling_machine_5].next_upgrade = assembling_machine_6
     data_assembling[assembling_machine_6].next_upgrade = hyper_assembling_machine
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = simulating_unit, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, refraction_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(quality_module_7)
 end

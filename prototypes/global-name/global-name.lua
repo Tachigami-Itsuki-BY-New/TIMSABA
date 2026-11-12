@@ -77,6 +77,7 @@ data_spider_vechicle = data.raw["spider-vehicle"]
 data_item_group = data.raw["item-group"]
 data_repair_tool = data.raw["repair-tool"]
 data_space_location = data.raw["space-location"]
+data_space_connection = data.raw["space-connection"]
 data_lamp = data.raw["lamp"]
 data_electric_energy_interface = data.raw["electric-energy-interface"]
 data_construction_robot = data.raw["construction-robot"]
@@ -87,6 +88,8 @@ data_unit = data.raw["unit"]
 data_unit_spawner = data.raw["unit-spawner"]
 data_combat_robot = data.raw["combat-robot"]
 data_projectile = data.raw["projectile"]
+data_projectile_artillery = data.raw["artillery-projectile"]
+data_beam = data.raw["beam"]
 data_equipment_grid = data.raw["equipment-grid"]
 data_solar_panel_eq = data.raw["solar-panel-equipment"]
 data_generator_eq = data.raw["generator-equipment"]
@@ -105,6 +108,16 @@ data_loader_1x1 = data.raw["loader-1x1"]
 data_stream = data.raw["stream"]
 data_turret = data.raw["turret"]
 data_optimized_particle = data.raw["optimized-particle"]
+data_cargo_landing_pad = data.raw["cargo-landing-pad"]
+data_cargo_pod = data.raw["cargo-pod"]
+data_cargo_bay = data.raw["cargo-bay"]
+data_bool_setting = data.raw["bool-setting"]
+data_string_setting = data.raw["string-setting"]
+data_double_setting = data.raw["double-setting"]
+data_color_setting = data.raw["color-setting"]
+data_entity_owner = data.raw["simple-entity-with-owner"]
+data_produce_per_hour_achievement = data.raw["produce-per-hour-achievement"]
+data_produce_achievement = data.raw["produce-achievement"]
 
 -- GLOBAL NAME
 item = "item"
@@ -126,7 +139,9 @@ pump = "pump"
 heat_pipe = "heat-pipe"
 container = "container"
 logistic_container = "logistic-container"
+logistic_robot = "logistic-robot"
 construction_robot = "construction-robot"
+roboport = "roboport"
 boiler = "boiler"
 generator = "generator"
 burner_generator = "burner-generator"
@@ -159,8 +174,10 @@ valve = "valve"
 thruster = "thruster"
 resource = "resource"
 autoplace_control = "autoplace-control"
+ammo_category = "ammo-category"
 
 projectile = "projectile"
+beam = "beam"
 corpse = "corpse"
 minable = "minable"
 unlock_recipe = "unlock-recipe"
@@ -174,9 +191,12 @@ item_group = "item-group"
 item_subgroup = "item-subgroup"
 extra_high = "extra-high"
 high = "high"
+additive = "additive"
+additive_soft = "additive-soft"
 power = "power"
 medium = "medium"
 big = "big"
+large = "large"
 big_tint = "big-tint"
 small = "small"
 electric = "electric"
@@ -201,6 +221,8 @@ oxygen = "oxygen"
 tertiary = "tertiary"
 
 flag_placeable_neutral = "placeable-neutral"
+flag_placeable_player = "placeable-player"
+flag_placeable_off_grid = "placeable-off-grid"
 flag_player_creation = "player-creation"
 flag_not_on_map = "not-on-map"
 
@@ -210,7 +232,6 @@ craft_item = "craft-item"
 craft_fluid = "craft-fluid"
 mine_entity = "mine-entity"
 
-show_formula = settings.startup["angels-show-chemical-formula"].value
 chemical_formula = "tooltip-description.chemical-formula"
 
 -- RECIPE CATEGORY
@@ -218,9 +239,6 @@ crafting = "crafting"
 advanced_crafting = "advanced-crafting"
 crafting_fluid = "crafting-with-fluid"
 hand_crafting = "hand-crafting"
-pressing = "pressing"
-electronics_fluid = "electronics-with-fluid"
-electronics_assembling = "electronics-or-assembling"
 smelting = "smelting"
 smelting_filtering = "bob-mixing-furnace"
 smelting_chemical = "bob-chemical-furnace"
@@ -231,18 +249,17 @@ angels_centrifuging_3 = "angels-centrifuging-3"
 oil_processing = "oil-processing"
 crushing = "crushing"
 metallurgy = "metallurgy"
-metallurgy_assembling = "metallurgy-or-assembling"
+recycling = "recycling"
 organic = "organic"
-organic_hand_crafting = "organic-or-hand-crafting"
-organic_assembling = "organic-or-assembling"
-recycling_hand_crafting = "recycling-or-hand-crafting"
 electromagnetics = "electromagnetics"
 electronics = "electronics"
+electronics_fluid = "electronics-with-fluid"
 cryogenics = "cryogenics"
-chemistry_or_cryogenics = "chemistry-or-cryogenics"
 angels_ore_refining_T1 = "angels-ore-refining-t1"
 angels_ore_refining_T2 = "angels-ore-refining-t2"
 angels_ore_refining_T3 = "angels-ore-refining-t3"
+angels_ore_refining_T3B = "angels-ore-refining-t3b"
+angels_ore_refining_T3_5 = "angels-ore-refining-t3-5"
 angels_ore_refining_T4 = "angels-ore-refining-t4"
 angels_ore_sorting_1 = "angels-ore-sorting"
 angels_ore_sorting_2 = "angels-ore-sorting-2"
@@ -252,6 +269,12 @@ angels_ore_sorting_5 = "angels-ore-sorting-5"
 angels_powderizing_1 = "angels-powderizing-1"
 angels_powderizing_2 = "angels-powderizing-2"
 angels_powderizing_3 = "angels-powderizing-3"
+angels_filtering_1 = "angels-filtering"
+angels_filtering_2 = "angels-filtering-2"
+angels_filtering_3 = "angels-filtering-3"
+angels_crystallizing_1 = "angels-crystallizing"
+angels_crystallizing_2 = "angels-crystallizing-2"
+angels_crystallizing_3 = "angels-crystallizing-3"
 angels_processed_pressing_1 = "angels-ore-processing"
 angels_processed_pressing_2 = "angels-ore-processing-2"
 angels_processed_pressing_3 = "angels-ore-processing-3"
@@ -292,8 +315,8 @@ angels_sintering_5 = "angels-sintering-5"
 angels_water_treatment = "angels-water-treatment"
 angels_salination_plant = "angels-salination-plant"
 angels_cooling = "angels-cooling"
-angels_petrochem_electrolyser = "angels-petrochem-electrolyser"
-angels_petrochem_air_filtering = "angels-petrochem-air-filtering"
+angels_electrolysis = "angels-petrochem-electrolyser"
+angels_air_filtering = "angels-petrochem-air-filtering"
 angels_liquifying = "angels-liquifying"
 angels_advanced_chemistry = "angels-advanced-chemistry"
 angels_gas_refining = "angels-gas-refining"
@@ -303,10 +326,17 @@ angels_bio_processing_1 = "angels-bio-processing"
 angels_bio_processing_2 = "angels-bio-processing-2"
 angels_bio_processing_3 = "angels-bio-processing-3"
 angels_bio_processing_4 = "angels-bio-processing-4"
+angels_bio_butchery = "angels-bio-butchery"
+angels_seed_extractor = "angels-seed-extractor"
+angels_bio_processor = "angels-bio-processor"
+angels_arboretum = "angels-arboretum"
+moshine_data_processing = "data-processing"
 arig_water_production = "water-production"
-vesta_electrolyser = "vesta-zap"
-vesta_magnetizing = "magnetizing"
-vesta_combustion = "vesta-combustion"
+hyarion_polishing = "polishing"
+vesta_electrolysis = "electrolysis"
+vesta_magnetics = "magnetics"
+vesta_combustion = "combustion"
+lignumis_wood_processing = "wood-processing"
 
 -- Alphabet
 a = "a" a_a = "a-a" a_b = "a-b" a_c = "a-c" a_d = "a-d" a_e = "a-e" a_f = "a-f" a_g = "a-g" a_h = "a-h" a_i = "a-i" a_j = "a-j" a_k = "a-k" a_l = "a-l" a_m = "a-m" a_n = "a-n" a_o = "a-o" a_p = "a-p" a_q = "a-q" a_r = "a-r" a_s = "a-s" a_t = "a-t" a_u = "a-u" a_v = "a-v" a_w = "a-w" a_x = "a-x" a_y = "a-y" a_z = "a-z"
@@ -316,7 +346,7 @@ d = "d" d_a = "d-a" d_b = "d-b" d_c = "d-c" d_d = "d-d" d_e = "d-e" d_f = "d-f" 
 e = "e" e_a = "e-a" e_b = "e-b" e_c = "e-c" e_d = "e-d" e_e = "e-e" e_f = "e-f" e_g = "e-g" e_h = "e-h" e_i = "e-i" e_j = "e-j" e_k = "e-k" e_l = "e-l" e_m = "e-m" e_z = "e-z"
 f = "f" f_a = "f-a" f_b = "f-b" f_c = "f-c" f_d = "f-d" f_e = "f-e" f_f = "f-f" f_g = "f-g" f_h = "f-h" f_i = "f-i" f_j = "f-j" f_k = "f-k" f_l = "f-l" f_m = "f-m"
 g = "g" g_a = "g-a" g_b = "g-b" g_c = "g-c" g_d = "g-d" g_e = "g-e" g_f = "g-f" g_g = "g-g" g_h = "g-h" g_i = "g-i" g_j = "g-j" g_k = "g-k" g_l = "g-l" g_m = "g-m" g_z = "g-z"
-h = "h" h_a = "h-a" h_b = "h-b" h_c = "h-c" h_d = "h-d" h_e = "h-e" h_f = "h-f" h_g = "h-g" h_h = "h-h" h_i = "h-i" h_j = "h-j"
+h = "h" h_a = "h-a" h_b = "h-b" h_c = "h-c" h_d = "h-d" h_e = "h-e" h_f = "h-f" h_g = "h-g" h_h = "h-h" h_i = "h-i" h_j = "h-j" h_k = "h-k" h_l = "h-l" h_m = "h-m" h_n = "h-n" h_o = "h-o" h_p = "h-p" h_q = "h-q" h_r = "h-r" h_s = "h-s" h_t = "h-t" h_u = "h-u" h_v = "h-v" h_w = "h-w" h_x = "h-x" h_y = "h-y" h_z = "h-z"
 i = "i" i_a = "i-a" i_b = "i-b" i_c = "i-c" i_d = "i-d" i_e = "i-e" i_f = "i-f" i_g = "i-g"
 j = "j" j_a = "j-a" j_b = "j-b" j_c = "j-c" j_d = "j-d" j_e = "j-e" j_f = "j-f" j_g = "j-g" j_h = "j-h" j_i = "j-i"
 k = "k" k_a = "k-a" k_b = "k-b" k_c = "k-c" k_d = "k-d" k_e = "k-e" k_f = "k-f" k_g = "k-g"
@@ -356,6 +386,7 @@ cooling_png = "__TIMSABA__/graphics/icons/cooling.png"
 heating_png = "__TIMSABA__/graphics/icons/heating.png"
 stonks_png = "__TIMSABA__/graphics/icons/stonks.png"
 ice_translucent_png = "__TIMSABA__/graphics/icons/ice-translucent.png"
+electricity_icon = "__TIMSABA__/graphics/icons/electricity.png"
 
 NHH = "__TIMSABA__/graphics/icons/fluid/NHH.png"
 _C2H4_O2H2_ = "__TIMSABA__/graphics/icons/fluid/C2H4(OH)2.png"
@@ -365,14 +396,7 @@ He_icon = "__TIMSABA__/graphics/icons/vesta/vesta_helium.png"
 
 tech_error_png = "__TIMSABA__/graphics/icons/tech-error.png"
 
--- SPACE
-planet_nauvis = "nauvis"
-planet_vulcanus = "vulcanus"
-planet_gleba = "gleba"
-planet_fulgora = "fulgora"
-planet_aquilo = "aquilo"
-space_platform =  "space-platform"
-rocket_part =  "rocket-part"
+entity_error_png = "__TIMSABA__/graphics/icons/entity-error.png"
 
 -- OTHERS
 _recycling = "-recycling"
@@ -422,3 +446,18 @@ RTPrimerThrowerShooter_ = "RTPrimerThrowerShooter-"
 RTThrower_ = "RTThrower-"
 _Item = "-Item"
 _Recipe = "-Recipe"
+
+-- RECIPE ?
+_sorting = "-sorting"
+
+-- CATEGORIES MODULES
+speed = "speed"
+consumption = "consumption" -- Effect
+efficiency = "efficiency"
+productivity = "productivity"
+pollution = "pollution" -- Effect
+pollution_clean = "pollution-clean"
+pollution_create = "pollution-create"
+quality = "quality"
+agricultural = "angels-bio-yield"
+ai_speed = "ai-speed" -- Moshine

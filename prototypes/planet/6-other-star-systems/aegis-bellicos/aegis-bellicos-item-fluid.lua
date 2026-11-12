@@ -1,5 +1,5 @@
 if mods[aegis_bellicos_mods] then
-    local graphics_beryllium = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/"
+    local graphics_beryllium = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/"
 
     -- BERYLLIUM ITEM
     beryllium_processed = "beryllium-processed"
@@ -156,48 +156,43 @@ if mods[aegis_bellicos_mods] then
     })
     TIMSABA.barreling.add_dangerous_fluid(beryllium_sulfate_solution)
 
-    local graphics_bellicos_and_aegis = "__TIMSABA__/graphics/icons/bellicos-and-aegis/"
+    local graphics_aegis_and_bellicos = "__TIMSABA__/graphics/icons/aegis-and-bellicos/"
 
     -- OTHER CHEMISTRY ITEM
-    magnesium_fluoride = "magnesium-fluoride"
-    potassium_fluoride = "potassium-fluoride"
     ammonium_hydrofluoride = "ammonium-hydrofluoride"
-    sodium_fluoride = "sodium-fluoride"
     TIMSABA.functions.create_items
     ({
-        -- MAGNESIUM
-        {
-            localised_description = show_formula and {chemical_formula, "MgF[font=default-tiny-bold]2[/font]"} or nil,
-            name = magnesium_fluoride,
-            subgroup = is_magnesium_chemistry,
-            icon = graphics_bellicos_and_aegis .. magnesium_fluoride .. ".png",
-            order = f
-        },
-        -- POTASSIUM
-        {
-            localised_description = show_formula and {chemical_formula, "KF"} or nil,
-            name = potassium_fluoride,
-            subgroup = is_potassium,
-            icon = graphics_bellicos_and_aegis .. potassium_fluoride .. ".png",
-            order = i
-        },
         -- NITROGNE
         {
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]HF[font=default-tiny-bold]2[/font]"} or nil,
             name = ammonium_hydrofluoride,
             subgroup = is_nitrogen,
-            icon = graphics_bellicos_and_aegis .. ammonium_hydrofluoride .. ".png",
+            icon = graphics_aegis_and_bellicos .. ammonium_hydrofluoride .. ".png",
             order = j
-        },
-        -- SODIUM
-        {
-            localised_description = show_formula and {chemical_formula, "NaF"} or nil,
-            name = sodium_fluoride,
-            subgroup = is_sodium,
-            icon = graphics_bellicos_and_aegis .. sodium_fluoride .. ".png",
-            order = n
         }
     })
+
+    if not data_item[potassium_fluoride] and not data_item[sodium_fluoride] then
+        TIMSABA.functions.create_items
+        ({
+            -- POTASSIUM
+            {
+                localised_description = show_formula and {chemical_formula, "KF"} or nil,
+                name = potassium_fluoride,
+                subgroup = is_potassium,
+                icon = graphics_aegis_and_bellicos .. potassium_fluoride .. ".png",
+                order = i
+            },
+            -- SODIUM
+            {
+                localised_description = show_formula and {chemical_formula, "NaF"} or nil,
+                name = sodium_fluoride,
+                subgroup = is_sodium,
+                icon = graphics_aegis_and_bellicos .. sodium_fluoride .. ".png",
+                order = n
+            }
+        })
+    end
 
     -- OTHER CHEMISTRY FLUID
     ammonium_fluoride_gas = "ammonium-fluoride-gas"
@@ -208,7 +203,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]F"} or nil,
             name = ammonium_fluoride_gas,
             subgroup = is_nitrogen_fluids,
-            icon = graphics_bellicos_and_aegis .. ammonium_fluoride_gas .. ".png",
+            icon = graphics_aegis_and_bellicos .. ammonium_fluoride_gas .. ".png",
             order = z,
             base_color = TIMSABA.functions.fluid_color("NH4F"),
             flow_color = TIMSABA.functions.flow_color("NH4F")
@@ -226,7 +221,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He-3"} or nil,
             name = helium_3_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}},
+            icon = graphics_vesta .. helium_vesta .. ".png",
             order = e,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
@@ -235,7 +230,7 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He-4"} or nil,
             name = helium_4_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}},
+            icon = graphics_vesta .. helium_vesta .. ".png",
             order = f,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
@@ -244,13 +239,16 @@ if mods[aegis_bellicos_mods] then
             localised_description = show_formula and {chemical_formula, "He"} or nil,
             name = helium_liquid,
             subgroup = is_bellicos_recipe,
-            icon = graphics_bellicos_and_aegis .. helium_liquid .. ".png",
+            icon = graphics_aegis_and_bellicos .. helium_liquid .. ".png",
             order = h,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
         }
     })
-    --TIMSABA.barreling.add_gas(helium_3_gas)
-    --TIMSABA.barreling.add_gas(helium_4_gas)
     TIMSABA.barreling.add_gas(helium_liquid)
+
+    data_fluid[helium_3_gas].icon = nil
+    data_fluid[helium_3_gas].icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}}
+    data_fluid[helium_4_gas].icon = nil
+    data_fluid[helium_4_gas].icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}}
 end

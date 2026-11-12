@@ -1,9 +1,51 @@
+-- TIN
+TIMSABA.functions.create_recipes
+({
+    {
+        name = tin_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_tin_casting,
+        icons = THREE_I(tin_cable, rubber_bob, tin_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = tin_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = tin_insulated_cable, amount = 8}},
+        main_product = tin_insulated_cable
+    }
+})
+
+-- SILVER
+TIMSABA.functions.create_recipes
+({
+    {
+        name = silver_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_silver_casting,
+        icons = THREE_I(silver_cable, rubber_bob, silver_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = silver_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = silver_insulated_cable, amount = 8}},
+        main_product = silver_insulated_cable
+    }
+})
+
 -- TITANIUM
 TIMSABA.functions.create_recipes
 ({
     {
         name = titanium_rod,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_titanium_casting,
         icons = TWO_I(titanium_plate_bob, titanium_rod),
         order = d,
@@ -16,6 +58,62 @@ TIMSABA.functions.create_recipes
     }
 })
 
+-- GOLD
+TIMSABA.functions.create_recipes
+({
+    {
+        name = gold_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_gold_casting,
+        icons = THREE_I(gold_cable, rubber_bob, gold_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = gold_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = gold_insulated_cable, amount = 8}},
+        main_product = gold_insulated_cable
+    }
+})
+
+-- PLATINUM
+platinum_plate_2 = "platinum-plate-2"
+TIMSABA.functions.create_recipes
+({
+    {
+        localised_name = {"item-name." .. platinum_plate},
+        name = platinum_plate_2,
+        categories = {angels_casting_4},
+        subgroup = is_platinum_casting,
+        icons = TWO_I(platinum_molten_angels, platinum_plate),
+        order = c_a,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients = {{type = fluid, name = platinum_molten_angels, amount = 60}},
+        results = {{type = item, name = platinum_plate, amount = 4}},
+        main_product = platinum_plate
+    },
+    {
+        name = platinum_insulated_cable,
+        categories = {crafting, electronics},
+        subgroup = is_platinum_casting,
+        icons = THREE_I(platinum_cable, rubber_bob, platinum_insulated_cable),
+        order = f,
+        allow_quality = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = platinum_cable, amount = 8},
+            {type = item, name = rubber_bob, amount = 4}
+        },
+        results = {{type = item, name = platinum_insulated_cable, amount = 8}},
+        main_product = platinum_insulated_cable
+    }
+})
+
 -- STONE
 hazard_concrete_processing = "hazard-concrete-processing"
 reinforced_hazard_concrete_processing = "reinforced-hazard-concrete-processing"
@@ -24,7 +122,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = hazard_concrete_processing,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_stone_casting,
         icons = TWO_I(hazard_concrete, concrete),
         order = b_a,
@@ -35,7 +133,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_hazard_concrete_processing,
-        category = crafting,
+        categories = {crafting},
         subgroup = is_stone_casting,
         icons = TWO_I(reinforced_hazard_concrete, reinforced_concrete),
         order = d_a,
@@ -46,7 +144,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_concrete_2,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_stone_casting,
         icons = R_P_I(reinforced_concrete, nil, nil, number_2),
         order = c_a,
@@ -62,17 +160,13 @@ TIMSABA.functions.create_recipes
     },
     {
         name = refined_concrete_liquid,
-        category = centrifuging_4,
+        categories = {centrifuging_4},
         subgroup = is_stone_casting,
         icons = THREE_R_I(concrete_liquid, refined_concrete_liquid, slag_angels),
         order = f,
-        energy_required = 32, -- Liquid Concrete --> Refined liquid concrete + Slag
+        energy_required = 32, -- Liquid Concrete --> Refined liquid concrete
         ingredients = {{type = fluid, name = concrete_liquid, amount = 960}},
-        results =
-        {
-            {type = fluid, name = refined_concrete_liquid, amount = 480},
-            {type = item, name = slag_angels, amount = 32}
-        },
+        results = {{type = fluid, name = refined_concrete_liquid, amount = 480}},
         main_product = refined_concrete_liquid
     }
 })
@@ -83,8 +177,7 @@ TIMSABA.functions.create_recipes
 ({
     {
         name = stone_brick_from_stone_crushed,
-        category = smelting,
-        additional_categories = {angels_sintering_1, metallurgy},
+        categories = {smelting},
         subgroup = is_bricks_casting,
         icons = TWO_I(stone_crushed_angels, stone_brick),
         order = c_a,
@@ -97,7 +190,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_titanium_concrete_brick,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bricks_casting,
         icons = AR_FOUR_ALT_I(concrete_liquid, titanium_rod, stone_brick, reinforced_titanium_concrete_brick),
         order = f,
@@ -115,7 +208,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = carbon_concrete_brick,
-        category = crafting_fluid,
+        categories = {crafting_fluid},
         subgroup = is_bricks_casting,
         order = g,
         allow_productivity = true,
@@ -132,7 +225,7 @@ TIMSABA.functions.create_recipes
     },
     {
         name = reinforced_graphene_concrete_brick,
-        category = metallurgy,
+        categories = {metallurgy},
         subgroup = is_bricks_casting,
         order = h,
         allow_productivity = true,
@@ -146,5 +239,39 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = reinforced_graphene_concrete_brick, amount = 4}},
         main_product = reinforced_graphene_concrete_brick
+    }
+})
+
+-- ALLOYS
+aluminium_lithium_plate_2 = "aluminium-lithium-plate-2"
+TIMSABA.functions.create_recipes
+({
+    {
+        name = aluminium_lithium_molten,
+        categories = {angels_induction_smelting_4},
+        subgroup = is_alloys_casting_7,
+        icons = THREE_I(aluminium_ingot, lithium_bob, aluminium_lithium_molten),
+        order = a,
+        energy_required = 8,
+        ingredients =
+        {
+            {type = item, name = aluminium_ingot, amount = 16},
+            {type = item, name = lithium_bob, amount = 16}
+        },
+        results = {{type = fluid, name = aluminium_lithium_molten, amount = 240}},
+        main_product = aluminium_lithium_molten
+    },
+    {
+        localised_name = {"item-name." .. aluminium_lithium_plate},
+        name = aluminium_lithium_plate_2,
+        categories = {angels_casting_4},
+        subgroup = is_alloys_casting_7,
+        icons = TWO_I(aluminium_lithium_molten, aluminium_lithium_plate),
+        order = b_a,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients = {{type = fluid, name = aluminium_lithium_molten, amount = 60}},
+        results = {{type = item, name = aluminium_lithium_plate, amount = 4}},
+        main_product = aluminium_lithium_plate
     }
 })

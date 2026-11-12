@@ -6,7 +6,7 @@ if mods[moshine_mods] then
     ({
         {
             name = moshine_air,
-            category = angels_petrochem_air_filtering,
+            categories = {angels_air_filtering},
             subgroup = is_moshine_air,
             order = a,
             energy_required = 8,
@@ -17,7 +17,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation,
-            category = angels_advanced_chemistry,
+            categories = {angels_gas_refining},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, nitrogen_angels, carbon_dioxide_angels, steam),
             order = a_a,
@@ -33,7 +33,7 @@ if mods[moshine_mods] then
         },
         {
             name = moshine_air_separation_2,
-            category = angels_advanced_chemistry,
+            categories = {angels_gas_refining},
             subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, hydrogen_sulfide_angels, hydrogen_fluoride_angels, sulfur_dioxide_angels),
             order = a_a,
@@ -56,29 +56,35 @@ if mods[moshine_mods] then
     crotinnium_from_lava_moshine = "crotinnium-from-lava-moshine"
     rubyte_from_lava_moshine = "rubyte-from-lava-moshine"
     bobmonium_from_lava_moshine = "bobmonium-from-lava-moshine"
-    local function resource_from_lava_moshine(info)
-        local recipe_data =
-        {
-            name = info.name,
-            category = metallurgy,
-            subgroup = is_moshine_recipe,
-            icons = TWO_I(lava, info.results),
-            order = info.order,
-            allow_productivity = true,
-            energy_required = 16,
-            ingredients = {{type = fluid, name = lava, amount = 480}},
-            results = {{type = item, name = info.results, amount = 16}},
-            main_product = info.results,
-            surface_conditions = {{property = pressure, min = 701, max = 701}}
-        }
-        TIMSABA.functions.create_recipes({recipe_data})
+    senaite_from_lava_moshine = "senaite-from-lava-moshine"
+    franckeite_from_lava_moshine = "franckeite-from-lava-moshine"
+    local function resource_from_lava_moshine(name, order, result)
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                localised_name = {"recipe-name.ore-from-lava", {"item-name." .. result}},
+                name = name,
+                categories = {metallurgy},
+                subgroup = is_moshine_recipe,
+                icons = TWO_I(lava, result),
+                order = order,
+                allow_productivity = true,
+                energy_required = 16,
+                ingredients = {{type = fluid, name = lava, amount = 480}},
+                results = {{type = item, name = result, amount = 16}},
+                main_product = result,
+                surface_conditions = {{property = pressure, min = 701, max = 701}}
+            }
+        })
     end
-    resource_from_lava_moshine({name = saphirite_from_lava_moshine,  order = a_a, results = ore_saphirite})
-    resource_from_lava_moshine({name = jivolite_from_lava_moshine,   order = a_b, results = ore_jivolite})
-    resource_from_lava_moshine({name = stiratite_from_lava_moshine,  order = a_c, results = ore_stiratite})
-    resource_from_lava_moshine({name = crotinnium_from_lava_moshine, order = a_d, results = ore_crotinnium})
-    resource_from_lava_moshine({name = rubyte_from_lava_moshine,     order = a_e, results = ore_rubyte})
-    resource_from_lava_moshine({name = bobmonium_from_lava_moshine,  order = a_f, results = ore_bobmonium})
+    resource_from_lava_moshine(saphirite_from_lava_moshine,  a_a, ore_saphirite)
+    resource_from_lava_moshine(jivolite_from_lava_moshine,   a_b, ore_jivolite)
+    resource_from_lava_moshine(stiratite_from_lava_moshine,  a_c, ore_stiratite)
+    resource_from_lava_moshine(crotinnium_from_lava_moshine, a_d, ore_crotinnium)
+    resource_from_lava_moshine(rubyte_from_lava_moshine,     a_e, ore_rubyte)
+    resource_from_lava_moshine(bobmonium_from_lava_moshine,  a_f, ore_bobmonium)
+    resource_from_lava_moshine(senaite_from_lava_moshine,    a_g, ore_senaite)
+    resource_from_lava_moshine(franckeite_from_lava_moshine, a_h, ore_franckeite)
 
     -- NEODYMIUM
     neodymium_ingot_2 = "neodymium-ingot-2"
@@ -87,29 +93,27 @@ if mods[moshine_mods] then
     ({
         {
             name = neodymium_processed,
-            category = angels_processed_pressing_4,
+            categories = {angels_processed_pressing_4},
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_ore, neodymium_processed),
             order = b,
-            energy_required = 2,
             ingredients = {{type = item, name = neodymium_ore, amount = 4}},
             results = {{type = item, name = neodymium_processed, amount = 4}},
             main_product = neodymium_processed
         },
         {
             name = neodymium_pellet,
-            category = angels_pellet_pressing_4,
+            categories = {angels_pellet_pressing_4},
             subgroup = is_neodymium,
             icons = TWO_I(neodymium_processed, neodymium_pellet),
             order = c,
-            energy_required = 2,
             ingredients = {{type = item, name = neodymium_processed, amount = 4}},
             results = {{type = item, name = neodymium_pellet, amount = 4}},
             main_product = neodymium_pellet
         },
         {
             name = neodymium_ingot,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
             icons = TWO_D_I(neodymium_chloride_III, calcium, neodymium_ingot, calcium_chloride_angels),
             order = d,
@@ -122,13 +126,13 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = calcium_chloride_angels, amount = 8} -- 24
+                {type = item, name = calcium_chloride_angels, amount = 16} -- 24
             },
             main_product = neodymium_ingot
         },
         {
             name = neodymium_ingot_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
             icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, lime_angels, salt_angels),
             order = d_a,
@@ -142,15 +146,15 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = lime_angels, amount = 8}, -- 24
-                {type = item, name = salt_angels, amount = 16} -- 48
+                {type = item, name = lime_angels, amount = 16}, -- 24
+                {type = item, name = salt_angels, amount = 32} -- 48
             },
             main_product = neodymium_ingot
         },
         -- CHEMISTRY
         {
             name = neodymium_chloride_III,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_I(neodymium_ore, chlorine_angels, neodymium_chloride_III),
             order = a,
@@ -165,7 +169,7 @@ if mods[moshine_mods] then
         },
         {
             name = neodymium_hydroxide_III,
-            category = angels_chemical_smelting_4,
+            categories = {angels_chemical_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = TWO_D_I(neodymium_processed, water_purified_angels, neodymium_hydroxide_III, hydrogen_angels),
             order = b,
@@ -178,13 +182,13 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_hydroxide_III, amount = 16},
-                {type = fluid, name = hydrogen_angels, amount = 120} -- 360
+                {type = fluid, name = hydrogen_angels, amount = 240} -- 360
             },
             main_product = neodymium_hydroxide_III
         },
         {
             name = neodymium_oxide_III,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_R_I(neodymium_hydroxide_III, neodymium_oxide_III, steam),
             order = c,
@@ -193,13 +197,13 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_oxide_III, amount = 8},
-                {type = fluid, name = steam, amount = 120} -- 360
+                {type = fluid, name = steam, amount = 240} -- 360
             },
             main_product = neodymium_oxide_III
         },
         {
             name = neodymium_oxide_III_2,
-            category = angels_blast_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_neodymium_chemistry,
             icons = THREE_I(neodymium_pellet, oxygen_angels, neodymium_oxide_III),
             order = c_a,
@@ -215,7 +219,7 @@ if mods[moshine_mods] then
         -- CASTING
         {
             name = neodymium_iron_boron_molten,
-            category = metallurgy,
+            categories = {metallurgy},
             subgroup = is_neodymium_casting,
             icons = THREE_D_I(neodymium_ingot, iron_ingot, boron, neodymium_iron_boron_molten),
             order = a,
@@ -237,7 +241,7 @@ if mods[moshine_mods] then
     ({
         {
             name = lead_ingot_4,
-            category = angels_chemical_smelting_4,
+            categories = {angels_blast_smelting_4},
             subgroup = is_lead,
             icons = THREE_D_I(lead_sulfate_II, nil, coal, lead_ingot, sulfur_dioxide_angels, carbon_dioxide_angels),
             order = d_e,
@@ -263,68 +267,69 @@ if mods[moshine_mods] then
     ({
         {
             name = water_orange_waste_purification,
-            category = angels_water_treatment,
+            categories = {angels_water_treatment},
             subgroup = is_water_cleaning,
-            icons = FOUR_R_I(water_orange_waste, water_mineralized_angels, calcium_phosphate, water_purified_angels),
+            icons = FOUR_R_I(water_orange_waste, water_purified_angels, calcium_phosphate, water_mineralized_angels),
             order = e,
-            energy_required = 1,
-            ingredients = {{type = fluid, name = water_orange_waste, amount = 120}},
+            energy_required = 8,
+            ingredients = {{type = fluid, name = water_orange_waste, amount = 240}},
             results =
             {
-                {type = item, name = calcium_phosphate, amount = 2},
-                {type = fluid, name = water_mineralized_angels, amount = 30},
-                {type = fluid, name = water_purified_angels, amount = 60}
-            },
-            main_product = calcium_phosphate
+                {type = fluid, name = water_purified_angels, amount = 120},
+                {type = fluid, name = water_mineralized_angels, amount = 60},
+                {type = item, name = calcium_phosphate, amount = 4}
+            }
         }
     })
 
     -- CHEMISTRY
-    orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
+    orthophosphoric_acid_2 = orthophosphoric_acid .. "-2"
+    orthophosphoric_acid_3 = orthophosphoric_acid .. "-3"
     TIMSABA.functions.create_recipes
     ({
         -- BORON
         {
             name = boron_oxide_III,
-            category = chemistry,
+            categories = {chemistry},
             subgroup = is_boron,
             icons = THREE_R_I(boric_acid_solution, boron_oxide_III, steam),
             order = b,
             -- 2H₃BO₃(aq) --> B₂O₃(s) + 5H₂O(g)
-            ingredients = {{type = fluid, name = boric_acid_solution, amount = 120}},
+            ingredients = {{type = fluid, name = boric_acid_solution, amount = 60}},
             results =
             {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = fluid, name = steam, amount = 120} -- 300
+                {type = item, name = boron_oxide_III, amount = 2},
+                {type = fluid, name = steam, amount = 180} -- 300
             },
             main_product = boron_oxide_III
         },
         {
             name = boron,
-            category = smelting_filtering,
+            categories = {smelting_filtering},
             subgroup = is_boron,
             icons = TWO_D_I(boron_oxide_III, magnesium_powder, boron, magnesium_oxide),
             order = c,
             -- B₂O₃(s) + 3Mg(s) --> 2B(s) + 3MgO(s)
             ingredients =
             {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = item, name = magnesium_powder, amount = 12}
+                {type = item, name = boron_oxide_III, amount = 2},
+                {type = item, name = magnesium_powder, amount = 6}
             },
             results =
             {
-                {type = item, name = boron, amount = 8},
-                {type = item, name = magnesium_oxide, amount = 4} -- 12
+                {type = item, name = boron, amount = 4},
+                {type = item, name = magnesium_oxide, amount = 4} -- 6
             },
             main_product = boron
         },
         -- PHOSPHORUS
         {
-            name = orthophosphoric_acid,
-            category = chemistry,
+            localised_name = {"fluid-name." .. orthophosphoric_acid},
+            name = orthophosphoric_acid_2,
+            categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
-            order = e,
+            order = e_a,
             -- Ca₃(PO₄)₂(s) + 3H₂SO₄(l) + H₂O(l) --> H₃PO₄(aq) + 3CaSO₄(s)
             ingredients =
             {
@@ -335,16 +340,17 @@ if mods[moshine_mods] then
             results =
             {
                 {type = fluid, name = orthophosphoric_acid, amount = 60},
-                {type = item, name = calcium_sulfate_angels, amount = 4} -- 12
+                {type = item, name = calcium_sulfate_angels, amount = 8} -- 12
             },
             main_product = orthophosphoric_acid
         },
         {
-            name = orthophosphoric_acid_from_phosphate_ore,
-            category = chemistry,
+            localised_name = {"fluid-name." .. orthophosphoric_acid},
+            name = orthophosphoric_acid_3,
+            categories = {chemistry},
             subgroup = is_phosphorus_fluid,
             icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
-            order = e_a,
+            order = e_b,
             -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
             ingredients =
             {
@@ -356,7 +362,7 @@ if mods[moshine_mods] then
             {
                 {type = fluid, name = orthophosphoric_acid, amount = 180},
                 {type = fluid, name = hydrofluoric_acid_angels, amount = 30}, -- 60
-                {type = item, name = calcium_sulfate_angels, amount = 8} -- 20
+                {type = item, name = calcium_sulfate_angels, amount = 12} -- 20
             },
             main_product = orthophosphoric_acid
         }
@@ -368,7 +374,7 @@ if mods[moshine_mods] then
     ({
         {
             name = barite_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_barium,
             icons = RECYCLING_I(recycling_png, barite),
             order = a_a,
@@ -390,7 +396,7 @@ if mods[moshine_mods] then
     ({
         {
             name = biotite_mica_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_biotite_mica,
             icons = RECYCLING_I(recycling_png, biotite_mica),
             order = a_a,
@@ -419,28 +425,30 @@ if mods[moshine_mods] then
     })
 
     -- SPACE
-    advanced_full_metallic_asteroid_crushing_9 = "advanced-full-metallic-asteroid-crushing-9"
-    advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10"
+    advanced_full_metallic_asteroid_crushing_10 = "advanced-full-metallic-asteroid-crushing-10" -- Neodymium ore
+    advanced_full_metallic_asteroid_crushing_11 = "advanced-full-metallic-asteroid-crushing-11" -- Cerium ore
     promethium_asteroid_crushing_1 = "promethium-asteroid-crushing"
     TIMSABA.functions.create_recipes
     ({
         {
-            name = advanced_full_metallic_asteroid_crushing_9,
-            category = crushing,
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. neodymium_ore}},
+            name = advanced_full_metallic_asteroid_crushing_10,
+            categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, neodymium_ore),
-            order = h_i,
+            order = h_j,
             allow_productivity = true,
             ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
             results = {{type = item, name = neodymium_ore, amount = 8}},
             main_product = neodymium_ore
         },
         {
-            name = advanced_full_metallic_asteroid_crushing_10,
-            category = crushing,
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. cerium_ore}},
+            name = advanced_full_metallic_asteroid_crushing_11,
+            categories = {crushing},
             subgroup = is_space_environment_1,
             icons = TWO_I(metallic_asteroid_chunk, cerium_ore),
-            order = h_j,
+            order = h_k,
             allow_productivity = true,
             ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
             results = {{type = item, name = cerium_ore, amount = 8}},
@@ -448,7 +456,7 @@ if mods[moshine_mods] then
         },
         {
             name = promethium_asteroid_crushing_1,
-            category = crushing,
+            categories = {crushing},
             subgroup = is_space_environment_6,
             icons = TWO_I(promethium_asteroid_chunk, promethium_ore),
             order = e_a,
@@ -458,6 +466,67 @@ if mods[moshine_mods] then
             ingredients = {{type = item, name = promethium_asteroid_chunk, amount = 1}},
             results = {{type = item, name = promethium_ore, amount = 4}},
             main_product = promethium_ore
+        }
+    })
+
+    -- DATA
+    cosmic_data_outsignal_creation = cosmic_data_outsignal .. "-creation"
+    local cosmic_data_outsignal_recipe = util.table.deepcopy(data_recipe[cosmic_data_outsignal_creation])
+    cosmic_data_outsignal_recipe.name = cosmic_data_outsignal
+    cosmic_data_outsignal_recipe.subgroup = is_moshine_datacell
+    cosmic_data_outsignal_recipe.order = h
+    cosmic_data_outsignal_recipe.energy_required = 8
+    cosmic_data_outsignal_recipe.ingredients =
+    {
+        {type = fluid, name = raw_data, amount = 1920},
+        {type = fluid, name = solved_equation_data, amount = 120}
+    }
+    cosmic_data_outsignal_recipe.results[1].amount = 15
+
+    cosmic_data_creation = cosmic_data .. "-creation"
+    local cosmic_data_recipe = util.table.deepcopy(data_recipe[cosmic_data_creation])
+    cosmic_data_recipe.name = cosmic_data
+    cosmic_data_recipe.subgroup = is_moshine_datacell
+    cosmic_data_recipe.order = j
+    cosmic_data_recipe.energy_required = 128
+    cosmic_data_recipe.ingredients[1].amount = 960
+    cosmic_data_recipe.results = {{type = fluid, name = cosmic_data, amount_min = 960, amount_max = 15360, independent_probability = 0.5}}
+
+    data:extend({cosmic_data_outsignal_recipe, cosmic_data_recipe})
+
+    if mods[panglia_mods] then
+        timewarp_data_making = "panglia_" .. timewarp_data .. "_making"
+        local timewarp_data_recipe = util.table.deepcopy(data_recipe[timewarp_data_making])
+        timewarp_data_recipe.name = timewarp_data
+        timewarp_data_recipe.subgroup = is_moshine_datacell
+        timewarp_data_recipe.order = l
+        timewarp_data_recipe.energy_required = 128
+        timewarp_data_recipe.ingredients[1].amount = 120
+        timewarp_data_recipe.results = {{type = fluid, name = timewarp_data, amount_min = 0, amount_max = 120}}
+
+        data:extend({timewarp_data_recipe})
+    end
+
+    -- SLAG PROCESSING
+    moshine_slag_processing = "moshine-slag-processing"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. monazite_ore}, {"item-name." .. aeschynite_ore}},
+            name = moshine_slag_processing,
+            categories = {crystallizing_4},
+            subgroup = is_slag_processing_2,
+            icons = THREE_R_I(sludge_mineral, monazite_ore, aeschynite_ore),
+            order = c .. "-" .. data_planet[planet_moshine].order,
+            allow_productivity = true,
+            energy_required = 8,
+            ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+            results =
+            {
+                {type = item, name = monazite_ore, amount = 1, independent_probability = 0.5},
+                {type = item, name = aeschynite_ore, amount = 1, independent_probability = 0.5}
+            },
+            surface_conditions = {{property = pressure, min = 701, max = 701}}
         }
     })
 end

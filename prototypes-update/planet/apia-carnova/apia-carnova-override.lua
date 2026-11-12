@@ -3,8 +3,8 @@ if mods[apia_carnova_mods] then
     local raw_larvae = "raw-larvae"
     data_item[raw_larvae].subgroup = is_apia_recipe
     data_item[raw_larvae].order = a
-    data_item[raw_larvae].fuel_category = base_fuel
-    data_item[raw_larvae].fuel_value = 1800 .. kJ
+    data_item[raw_larvae].fuel_categories = {base_fuel}
+    data_item[raw_larvae].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(raw_larvae)
 
     data_recipe[larvae_cultivation].subgroup = is_apia_recipe
@@ -23,17 +23,17 @@ if mods[apia_carnova_mods] then
     data_item[fossil_larvae].order = b
 
     local fossil_larvae_processing = "fossil-larvae-processing"
-    data_recipe[fossil_larvae_processing].category = crushing
+    data_recipe[fossil_larvae_processing].categories = {crushing}
     data_recipe[fossil_larvae_processing].subgroup = is_apia_recipe
     data_recipe[fossil_larvae_processing].icons = RECYCLING_I(recycling_png, fossil_larvae)
     data_recipe[fossil_larvae_processing].order = b_a
     -- Fossil Larvae --> CaCO₃ + SiO₂ + FeS₂
     data_recipe[fossil_larvae_processing].results =
     {
-        {type = item, name = calcite,          amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = silicon_oxide_IV, amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = iron_ore,         amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sulfur,           amount_min = 0, amount_max = 2, probability = 0.50}
+        {type = item, name = calcite,          amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = silicon_oxide_IV, amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = iron_ore,         amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sulfur,           amount_min = 0, amount_max = 2, independent_probability = 0.50}
     }
 
     data_fluid[royal_jelly].subgroup = is_apia_recipe
@@ -58,32 +58,77 @@ if mods[apia_carnova_mods] then
     TIMSABA.void.freezing_organics(honeycombs)
     data_recipe[honeycombs].subgroup = is_apia_recipe
     data_recipe[honeycombs].order = d
+    data_recipe[honeycombs].energy_required = 8
     data_recipe[honeycombs].results[1].amount = 8
 
     local honeycombs_processing = "honeycombs-processing"
-    data_recipe[honeycombs_processing].subgroup = is_carnova_recipe
+    data_recipe[honeycombs_processing].subgroup = is_apia_recipe
     data_recipe[honeycombs_processing].icons = THREE_R_I(honeycombs, wax, honey)
     data_recipe[honeycombs_processing].order = d_a
     data_recipe[honeycombs_processing].energy_required = 4
 
+    local honeycombs_iron = honeycombs .. "-iron"
+    data_item[honeycombs_iron].subgroup = is_apia_recipe
+    data_item[honeycombs_iron].order = e
+    data_item[honeycombs_iron].stack_size = 200
+    TIMSABA.void.freezing_organics(honeycombs_iron)
+    data_recipe[honeycombs_iron].subgroup = is_apia_recipe
+    data_recipe[honeycombs_iron].order = e
+    data_recipe[honeycombs_iron].energy_required = 8
+    data_recipe[honeycombs_iron].results[1].amount = 8
+
+    local honeycombs_iron_processing = honeycombs_iron .. "-processing"
+    data_recipe[honeycombs_iron_processing].subgroup = is_apia_recipe
+    data_recipe[honeycombs_iron_processing].icons = FOUR_R_I(honeycombs_iron, ore_saphirite, wax, ore_jivolite)
+    data_recipe[honeycombs_iron_processing].order = e_a
+    data_recipe[honeycombs_iron_processing].energy_required = 4
+    data_recipe[honeycombs_iron_processing].results =
+    {
+        {type = item, name = wax, amount = 2},
+        {type = item, name = ore_saphirite, amount = 1},
+        {type = item, name = ore_jivolite, amount = 1}
+    }
+
+    local honeycombs_copper = honeycombs .. "-copper"
+    data_item[honeycombs_copper].subgroup = is_apia_recipe
+    data_item[honeycombs_copper].order = f
+    data_item[honeycombs_copper].stack_size = 200
+    TIMSABA.void.freezing_organics()
+    data_recipe[honeycombs_copper].subgroup = is_apia_recipe
+    data_recipe[honeycombs_copper].order = f
+    data_recipe[honeycombs_copper].energy_required = 8
+    data_recipe[honeycombs_copper].results[1].amount = 8
+
+    local honeycombs_copper_processing = honeycombs_copper .. "-processing"
+    data_recipe[honeycombs_copper_processing].subgroup = is_apia_recipe
+    data_recipe[honeycombs_copper_processing].icons = FOUR_R_I(honeycombs_copper, ore_stiratite, wax, ore_crotinnium)
+    data_recipe[honeycombs_copper_processing].order = f_a
+    data_recipe[honeycombs_copper_processing].energy_required = 4
+    data_recipe[honeycombs_copper_processing].results =
+    {
+        {type = item, name = wax, amount = 2},
+        {type = item, name = ore_stiratite, amount = 1},
+        {type = item, name = ore_crotinnium, amount = 1}
+    }
+
     data_item[wax].subgroup = is_apia_recipe
-    data_item[wax].order = e
-    data_item[wax].fuel_category = base_fuel
-    data_item[wax].fuel_value = 1800 .. kJ
+    data_item[wax].order = g
+    data_item[wax].fuel_categories = {base_fuel}
+    data_item[wax].fuel_value = 1920 .. kJ
 
     data_item[honey].subgroup = is_apia_recipe
-    data_item[honey].order = f
+    data_item[honey].order = h
     TIMSABA.void.freezing_organics(honey)
 
     local nutrients_from_honey = "nutrients-from-honey"
     data_recipe[nutrients_from_honey].subgroup = is_apia_recipe
     data_recipe[nutrients_from_honey].icons = TWO_I(honey, nutrients)
-    data_recipe[nutrients_from_honey].order = f_a
+    data_recipe[nutrients_from_honey].order = h_a
 
     local honey_processing = "honey-processing"
     data_recipe[honey_processing].subgroup = is_apia_recipe
     data_recipe[honey_processing].icons = THREE_R_I(honey, polysaccharides, water)
-    data_recipe[honey_processing].order = f_b
+    data_recipe[honey_processing].order = h_b
     data_recipe[honey_processing].energy_required = 4
     data_recipe[honey_processing].ingredients[1].amount = 8
     data_recipe[honey_processing].results =
@@ -95,33 +140,21 @@ if mods[apia_carnova_mods] then
     local honey_dehydration = "honey-dehydration"
     data_recipe[honey_dehydration].subgroup = is_apia_recipe
     data_recipe[honey_dehydration].icons = TWO_I(honey, polysaccharides)
-    data_recipe[honey_dehydration].order = f_c
+    data_recipe[honey_dehydration].order = h_c
     data_recipe[honey_dehydration].ingredients[1].amount = 8
 
     data_item[polysaccharides].subgroup = is_apia_recipe
-    data_item[polysaccharides].order = g
+    data_item[polysaccharides].order = i
 
     local nutrients_from_polysaccharides = "nutrients-from-polysaccharides"
     data_recipe[nutrients_from_polysaccharides].subgroup = is_apia_recipe
     data_recipe[nutrients_from_polysaccharides].icons = TWO_I(polysaccharides, nutrients)
-    data_recipe[nutrients_from_polysaccharides].order = g_a
-
-    local carbon_fiber_apia = "carbon-fiber-apia"
-    data_recipe[carbon_fiber_apia].subgroup = is_apia_recipe
-    data_recipe[carbon_fiber_apia].icons = BUILDING_R_I(carbon_fiber, planet_apia)
-    data_recipe[carbon_fiber_apia].order = g_b
-    data_recipe[carbon_fiber_apia].energy_required = 4
-    data_recipe[carbon_fiber_apia].ingredients =
-    {
-        {type = item, name = carbon_angels, amount = 1},
-        {type = item, name = wax, amount = 4},
-        {type = item, name = polysaccharides, amount = 2}
-    }
+    data_recipe[nutrients_from_polysaccharides].order = i_a
 
     local solid_fuel_from_polysaccharides = "solid-fuel-from-polysaccharides"
     data_recipe[solid_fuel_from_polysaccharides].subgroup = is_apia_recipe
     data_recipe[solid_fuel_from_polysaccharides].icons = THREE_I(wax, polysaccharides, solid_fuel)
-    data_recipe[solid_fuel_from_polysaccharides].order = g_c
+    data_recipe[solid_fuel_from_polysaccharides].order = i_b
     data_recipe[solid_fuel_from_polysaccharides].ingredients =
     {
         {type = item, name = wax, amount = 4},
@@ -141,20 +174,20 @@ if mods[apia_carnova_mods] then
     data_item[bone_meal].order = b
 
     local simple_bone_processing = "simple-bone-processing"
-    data_recipe[simple_bone_processing].category = angels_ore_refining_T1
+    data_recipe[simple_bone_processing].categories = {angels_ore_refining_T1}
     data_recipe[simple_bone_processing].subgroup = is_carnova_recipe
     data_recipe[simple_bone_processing].icons = TWO_I(bones, bone_meal)
     data_recipe[simple_bone_processing].order = b_a
 
     local advanced_bone_processing = "advanced-bone-processing"
-    data_recipe[advanced_bone_processing].category = angels_ore_refining_T1
+    data_recipe[advanced_bone_processing].categories = {angels_ore_refining_T1}
     data_recipe[advanced_bone_processing].subgroup = is_carnova_recipe
     data_recipe[advanced_bone_processing].icons = TWO_I(bones, calcite)
     data_recipe[advanced_bone_processing].order = b_b
-    data_recipe[advanced_bone_processing].results = {{type = item, name = calcite, amount = 4, probability = 0.25}}
+    data_recipe[advanced_bone_processing].results = {{type = item, name = calcite, amount = 4, independent_probability = 0.25}}
 
     local bone_meal_sieving = "bone-meal-sieving"
-    data_recipe[bone_meal_sieving].category = ore_sorting_6
+    data_recipe[bone_meal_sieving].categories = {ore_sorting_6}
     data_recipe[bone_meal_sieving].subgroup = is_carnova_recipe
     data_recipe[bone_meal_sieving].icons = RECYCLING_I(recycling_png, bone_meal)
     data_recipe[bone_meal_sieving].order = b_c
@@ -165,27 +198,25 @@ if mods[apia_carnova_mods] then
     data_recipe[bone_meal_sieving].results =
     {
         -- MINERALS
-        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 4, probability = 0.50},
-        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 1, probability = 0.50},
-        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 2, probability = 0.50},
-        {type = item, name = potassium,                amount_min = 0, amount_max = 4, probability = 0.50},
-        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 1, probability = 0.50},
+        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 4, independent_probability = 0.50},
+        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 2, independent_probability = 0.50},
+        {type = item, name = potassium,                amount_min = 0, amount_max = 4, independent_probability = 0.50},
+        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
         -- ORGANICS
-        --{type = item, name = collagen, amount_min = 0, amount_max = 1, probability = 0.25}
+        --{type = item, name = collagen, amount_min = 0, amount_max = 1, independent_probability = 0.25}
         -- WATER
-        --{type = fluid, name = water, amount_min = 0, amount_max = 15, probability = 0.125}
+        --{type = fluid, name = water, amount_min = 0,   amount_max = 15, independent_probability = 0.125}
         -- METALS
-        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, probability = 0.015625},
-        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, probability = 0.015625},
+        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = boron,                    amount_min = 0, amount_max = 1, independent_probability = 0.015625},
     }
-    if mods[moshine_mods] then
-        table.insert(data_recipe[bone_meal_sieving].results, {type = item, name = boron, amount_min = 0, amount_max = 1, probability = 0.015625})
-    end
 
     data_item[flesh].subgroup = is_carnova_recipe
     data_item[flesh].order = c
@@ -269,25 +300,14 @@ if mods[apia_carnova_mods] then
 
     data_item[lipids].subgroup = is_carnova_recipe
     data_item[lipids].order = g
-    data_item[lipids].fuel_category = base_fuel
-    data_item[lipids].fuel_value = 1800 .. kJ
+    data_item[lipids].fuel_categories = {base_fuel}
+    data_item[lipids].fuel_value = 1920 .. kJ
     TIMSABA.void.freezing_organics(lipids)
 
     local nutrients_from_lipids = "nutrients-from-lipids"
     data_recipe[nutrients_from_lipids].subgroup = is_carnova_recipe
     data_recipe[nutrients_from_lipids].icons = TWO_I(lipids, nutrients)
     data_recipe[nutrients_from_lipids].order = g_a
-
-    local carbon_fiber_carnova = "carbon-fiber-carnova"
-    data_recipe[carbon_fiber_carnova].subgroup = is_carnova_recipe
-    data_recipe[carbon_fiber_carnova].icons = BUILDING_R_I(carbon_fiber, planet_carnova)
-    data_recipe[carbon_fiber_carnova].order = g_b
-    data_recipe[carbon_fiber_carnova].energy_required = 4
-    data_recipe[carbon_fiber_carnova].ingredients =
-    {
-        {type = item, name = carbon_angels, amount = 1},
-        {type = item, name = lipids, amount = 4}
-    }
 
     data_item[proteins].subgroup = is_carnova_recipe
     data_item[proteins].order = h
@@ -328,11 +348,19 @@ if mods[apia_carnova_mods] then
 
     local biolubricant_from_glycerine = "biolubricant-from-glycerine"
     data_recipe[biolubricant_from_glycerine].subgroup = is_carnova_recipe
-    data_recipe[biolubricant_from_glycerine].icons = TWO_I(glycerol_angels, lubricant)
+    data_recipe[biolubricant_from_glycerine].icons = TWO_D_I(glycerol_angels, hydrogen_angels, lubricant, water_purified_angels)
     data_recipe[biolubricant_from_glycerine].order = j_a
-    data_recipe[biolubricant_from_glycerine].energy_required = 4 -- 8C₃H₈O₃ -bio-> C₄₀H₈₂
-    data_recipe[biolubricant_from_glycerine].ingredients[1].amount = 120
-    data_recipe[biolubricant_from_glycerine].results[1].amount = 15
+    data_recipe[biolubricant_from_glycerine].energy_required = 4 -- 16C₃H₈O₃(l) + 33H₂(g) -bio-> C₄₈H₉₈(l) + 48H₂O(l)
+    data_recipe[biolubricant_from_glycerine].ingredients =
+    {
+        {type = fluid, name = water_purified_angels, amount = 240},
+        {type = fluid, name = hydrogen_angels, amount = 495}
+    }
+    data_recipe[biolubricant_from_glycerine].results =
+    {
+        {type = fluid, name = lubricant, amount = 15},
+        {type = fluid, name = water_purified_angels, amount = 240} -- 720
+    }
 
     local solid_fuel_from_glycerine = "solid-fuel-from-glycerine"
     data_recipe[solid_fuel_from_glycerine].subgroup = is_carnova_recipe
@@ -392,6 +420,12 @@ if mods[apia_carnova_mods] then
     data_recipe[rocket_fuel_from_phosphoric_acid].subgroup = is_apia_carnova_recipe
     data_recipe[rocket_fuel_from_phosphoric_acid].icons = PLANET_D_IS(rocket_fuel, planet_apia, planet_carnova)
     data_recipe[rocket_fuel_from_phosphoric_acid].order = b_a
+    data_recipe[rocket_fuel_from_phosphoric_acid].energy_required = 8
+    data_recipe[rocket_fuel_from_phosphoric_acid].ingredients =
+    {
+        {type = item, name = rocket_fuel, amount = 8},
+        {type = fluid, name = orthophosphoric_acid, amount = 30}
+    }
     data_recipe[rocket_fuel_from_phosphoric_acid].surface_conditions = {{property = pressure, min = 2525, max = 2525}}
 
     local bioplastic_from_wax = "bioplastic-from-wax"
@@ -449,6 +483,50 @@ if mods[apia_carnova_mods] then
         {type = fluid, name = royal_jelly, amount = 480}
     }
 
+    local artificial_honey_soil = "artificial-honey-soil"
+    data_item[artificial_honey_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_honey_soil].order = e
+    data_recipe[artificial_honey_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_honey_soil].order = e
+    data_recipe[artificial_honey_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = honey, amount = 8},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_honey_soil].results[1].amount = 8
+
+    local artificial_iron_soil = "artificial-iron-soil"
+    data_item[artificial_iron_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_iron_soil].order = f
+    data_recipe[artificial_iron_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_iron_soil].order = f
+    data_recipe[artificial_iron_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = saphirite_bacteria, amount = 1},
+        {type = item, name = jivolite_bacteria, amount = 1},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_iron_soil].results[1].amount = 8
+
+    local artificial_copper_soil = "artificial-copper-soil"
+    data_item[artificial_copper_soil].subgroup = is_apia_carnova_recipe
+    data_item[artificial_copper_soil].order = g
+    data_recipe[artificial_copper_soil].subgroup = is_apia_carnova_recipe
+    data_recipe[artificial_copper_soil].order = g
+    data_recipe[artificial_copper_soil].ingredients =
+    {
+        {type = item, name = landfill, amount = 4},
+        {type = item, name = stiratite_bacteria, amount = 1},
+        {type = item, name = crotinnium_bacteria, amount = 1},
+        {type = item, name = nutrients, amount = 64},
+        {type = fluid, name = water, amount = 120}
+    }
+    data_recipe[artificial_copper_soil].results[1].amount = 8
+
     -- BUILDING
     data_item[biosynthesizer].subgroup = is_apia_carnova_building
     data_item[biosynthesizer].order = a
@@ -458,7 +536,8 @@ if mods[apia_carnova_mods] then
     data_assembling[biosynthesizer].order = a
     data_assembling[biosynthesizer].module_slots = 8
     data_assembling[biosynthesizer].energy_source.emissions_per_minute.pollution = -4
-    data_assembling[biosynthesizer].energy_usage = 900 .. kW
+    data_assembling[biosynthesizer].energy_usage = 960 .. kW
+    data_assembling[biosynthesizer].effect_receiver.base_effect.productivity = 1
 
     local biosynthesizer_apia = "biosynthesizer-apia"
     data_recipe[biosynthesizer_apia].subgroup = is_apia_carnova_building
@@ -503,17 +582,23 @@ if mods[apia_carnova_mods] then
     }
     data_assembling[artificial_hive].subgroup = is_apia_carnova_building
     data_assembling[artificial_hive].order = b
-    data_assembling[artificial_hive].energy_usage = 225 .. kW
+    data_assembling[artificial_hive].energy_usage = 240 .. kW
 
-    bobmods.lib.recipe.update_recycling_recipe({wax_platform, artificial_hive})
+    bobmods.lib.recipe.update_recycling_recipe
+    ({
+        wax_platform,
+        artificial_honey_soil,
+        artificial_iron_soil,
+        artificial_copper_soil,
+        artificial_hive
+    })
 
     -- TECHNOLOGY
-    local planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
-    data_technology[planet_discovery_apia_carnova].prerequisites = {tech_advanced_asteroid_processing}
+    planet_discovery_apia_carnova = "planet-discovery-apia-carnova"
+    data_technology[planet_discovery_apia_carnova].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_apia_carnova].prerequisites, interstellar_science_pack)
     end
-    table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = hydrogen_apia_carnova})
     table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = nitrogen_apia_carnova})
     table.insert(data_technology[planet_discovery_apia_carnova].effects, {type = unlock_recipe, recipe = oxygen_apia_carnova})
     data_technology[planet_discovery_apia_carnova].unit.ingredients =
@@ -637,14 +722,50 @@ if mods[apia_carnova_mods] then
     }
 
     tech_refreshment = "refreshment"
-    data_technology[tech_refreshment].unit.ingredients =
+    data_technology[tech_refreshment].unit =
     {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {agricultural_science_pack, 1}
+        count = 1000,
+        ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {agricultural_science_pack, 1}
+        },
+        time = 30
     }
+    data_technology[tech_refreshment].research_trigger = nil
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = wax, amount = 8})
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = polysaccharides, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(efficiency_module_7)
+    add_ingredients(pollution_clean_module_7)
+    add_ingredients(pollution_create_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, apicultural_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(efficiency_module_7)
+    add_prerequisites(pollution_clean_module_7)
+    add_prerequisites(pollution_create_module_7)
 end

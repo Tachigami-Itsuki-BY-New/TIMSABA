@@ -4,15 +4,15 @@ if mods[apia_carnova_mods] then
     {
         [phosphorus] = white_phosphorus,
         [phosphoric_acid] = orthophosphoric_acid,
-		[glycerine] = glycerol_angels,
+        [glycerine] = glycerol_angels
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    local delete_proto = {phosphorus}
-	TIMSABA.functions.delete_duplicated_items(delete_proto)
+    local delete_item = {phosphorus}
+	TIMSABA.functions.delete_duplicated_items(delete_item)
 
-    local delete_proto = {phosphoric_acid, glycerine}
-    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+    local delete_fluid = {phosphoric_acid, glycerine}
+    TIMSABA.functions.delete_duplicated_fluids(delete_fluid)
 
     local delete_prototypes =
 	{

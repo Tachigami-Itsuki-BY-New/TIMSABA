@@ -83,10 +83,6 @@ local delete_prototypes =
     "bob-water-miner-3",
     "bob-water-miner-4",
 
-    "bob-electronics-machine-1",
-    "bob-electronics-machine-2",
-    "bob-electronics-machine-3",
-
     -- COMBAT
     "bob-distractor-artillery-shell", "bob-distractor-artillery-shells",
     "bob-explosive-artillery-shell", "bob-explosive-artillery-shells",
@@ -141,9 +137,6 @@ for _, t_type in ipairs(train_types) do
     end
 end
 
--- ANGELS RESOURCE REFINING
-data_technology["angels-thermal-water-processing"] = nil
-
 -- ANGELS METALLURGY SMELTING and CASTING
 data_recipe["angels-solid-iron-hydroxide-smelting"] = nil
 
@@ -161,10 +154,6 @@ data_technology["angels-steel-smelting-4"] = nil
 
 data_recipe["angels-liquid-molten-titanium-4"] = nil
 data_recipe["angels-liquid-molten-titanium-5"] = nil
-
--- ANGELS WATER TREATMENT
-data_recipe["angels-thermal-water-filtering-1"] = nil
-data_recipe["angels-thermal-water-filtering-2"] = nil
 
 -- ANGELS BIOPROCESSING
 local delete_prototypes = {}
@@ -240,18 +229,6 @@ end
 
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
--- MODS
-if mods[clowns_nuclear] then
-    local delete_prototypes =
-    {
-        "thermonuclear-bomb",
-        "plutonium-atomic-bomb",
-        "artillery-shell-nuclear",
-        "artillery-shell-thermonuclear"
-    }
-    TIMSABA.functions.delete_prototypes(delete_prototypes)
-end
-
 -- GLOBAL
 local sub = string.sub
 local find = string.find
@@ -260,8 +237,8 @@ local remove = table.remove
 local function prototype_exists(product)
     if not product then return false end
 
-    local p_name = product.name
-    local p_type = product.type
+    local p_name = product.name or product[1] or product
+    local p_type = product.type or "item"
 
     if not p_name or type(p_name) ~= "string" then return false end
 
@@ -269,22 +246,31 @@ local function prototype_exists(product)
         return true
     end
 
-    if p_type == "fluid" then
-        return data_fluid[p_name] ~= nil
+    if data.raw[p_type] and data.raw[p_type][p_name] then
+        return true
     end
 
-    return data_item[p_name] ~= nil
-    or data_capsule[p_name] ~= nil
-    or data_tool[p_name] ~= nil
-    or data_ammo[p_name] ~= nil
-    or data_armor[p_name] ~= nil
-    or data_gun[p_name] ~= nil
-    or data_module[p_name] ~= nil
-    or data_spidertron_remote[p_name] ~= nil
-    or data_repair_tool[p_name] ~= nil
-    or data_rail_planner[p_name] ~= nil
-    or data_item_entity[p_name] ~= nil
-    or data_SP_starter_pack[p_name] ~= nil
+    if p_type == "item" then
+        local item_subtypes =
+        {
+            "capsule", "tool", "ammo", "armor", "gun", "module",
+            "spidertron-remote", "repair-tool", "rail-planner",
+            "item-with-entity-data", "selection-tool", "blueprint", "copy-paste-tool",
+            "space-platform-starter-pack"
+        }
+        for i = 1, #item_subtypes do
+            local sub_type = item_subtypes[i]
+            if data.raw[sub_type] and data.raw[sub_type][p_name] then
+                return true
+            end
+        end
+    end
+
+    if data_SP_starter_pack and data_SP_starter_pack[p_name] then
+        return true
+    end
+
+    return false
 end
 
 for tech_name, technology in pairs(data_technology) do
@@ -359,18 +345,6 @@ if next(to_delete) then
                 if effect.type == change_recipe_productivity and to_delete[effect.recipe] then
                     remove(technology.effects, i)
                 end
-            end
-        end
-    end
-end
-
-for tech_name, technology in pairs(data_technology) do
-    if technology.prerequisites then
-        for i = #technology.prerequisites, 1, -1 do
-            local prereq_name = technology.prerequisites[i]
-
-            if not data_technology[prereq_name] then
-                table.remove(technology.prerequisites, i)
             end
         end
     end

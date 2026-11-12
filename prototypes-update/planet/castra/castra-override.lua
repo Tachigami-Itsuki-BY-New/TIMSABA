@@ -41,7 +41,7 @@ if mods[castra_mods] then
     }
 
     local gunpowder_carbon = "gunpowder-carbon"
-    data_recipe[gunpowder_carbon].category = chemistry
+    data_recipe[gunpowder_carbon].categories = {chemistry}
     data_recipe[gunpowder_carbon].subgroup = is_gunpowder
     data_recipe[gunpowder_carbon].icons = THREE_D_I(gunpowder, water_purified_angels, toluene_angels, carbon_angels, potassium_nitrate_solution, toluene_sulfur_solution)
     data_recipe[gunpowder_carbon].order = a_d
@@ -113,7 +113,7 @@ if mods[castra_mods] then
     data_recipe[processing_unit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local hydrogen_sulfide_electrolysis = "hydrogen-sulfide-electrolysis"
-    data_recipe[hydrogen_sulfide_electrolysis].category = angels_petrochem_electrolyser
+    data_recipe[hydrogen_sulfide_electrolysis].categories = {angels_electrolysis}
     data_recipe[hydrogen_sulfide_electrolysis].subgroup = is_castra_recipe
     data_recipe[hydrogen_sulfide_electrolysis].icons = FOUR_R_I(hydrogen_sulfide_angels, hydrogen_angels, sulfur, oxygen_angels)
     data_recipe[hydrogen_sulfide_electrolysis].order = b_a
@@ -129,7 +129,8 @@ if mods[castra_mods] then
         {type = item, name = sulfur, amount = 16},
         {type = fluid, name = hydrogen_angels, amount = 240}, -- 480
         {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-        {type = item, name = electrode_used, amount = 1}
+        {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+    {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
     }
     data_recipe[hydrogen_sulfide_electrolysis].main_product = sulfur
 
@@ -160,6 +161,7 @@ if mods[castra_mods] then
 
     data_item[castra_data].subgroup = is_castra_recipe
     data_item[castra_data].order = c
+    data_item[castra_data].spoil_ticks = nil
 
     data_tool[battlefield_science_pack].subgroup = is_castra_recipe
     data_tool[battlefield_science_pack].order = d
@@ -201,8 +203,8 @@ if mods[castra_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[military_underground_belt_mods].subgroup = is_castra_logistic
     data_item[military_underground_belt_mods].order = b
-    data_item[military_underground_belt_mods].stack_size = 32
-    data_item[military_underground_belt_mods].weight = 31250
+    data_item[military_underground_belt_mods].stack_size = 64
+    data_item[military_underground_belt_mods].weight = 15625
     data_recipe[military_underground_belt_mods].subgroup = is_castra_logistic
     data_recipe[military_underground_belt_mods].order = b
     data_recipe[military_underground_belt_mods].energy_required = 1
@@ -221,8 +223,8 @@ if mods[castra_mods] then
 
     data_item[military_splitter_mods].subgroup = is_castra_logistic
     data_item[military_splitter_mods].order = c
-    data_item[military_splitter_mods].stack_size = 16
-    data_item[military_splitter_mods].weight = 62500
+    data_item[military_splitter_mods].stack_size = 64
+    data_item[military_splitter_mods].weight = 15625
     data_recipe[military_splitter_mods].subgroup = is_castra_logistic
     data_recipe[military_splitter_mods].order = c
     data_recipe[military_splitter_mods].energy_required = 1
@@ -241,7 +243,6 @@ if mods[castra_mods] then
     end
 
     -- BUILDING
-    local forge = "forge"
     data_item[forge].subgroup = is_castra_building
     data_item[forge].order = a
     data_item[forge].stack_size = 32
@@ -260,10 +261,11 @@ if mods[castra_mods] then
     data_assembling[forge].subgroup = is_castra_building
     data_assembling[forge].order = a
     data_assembling[forge].crafting_speed = 4
-    data_assembling[forge].module_slots = 4
-    data_assembling[forge].energy_usage = 4680 .. kW
+    data_assembling[forge].module_slots = 8
+    data_assembling[forge].energy_usage = (3840 - 120) .. kW
+    data_assembling[forge].energy_source.emissions_per_minute.pollution = 8
     data_assembling[forge].energy_source.drain = 120 .. kW
-    data_assembling[forge].effect_receiver.base_effect.productivity = 0.5
+    data_assembling[forge].effect_receiver.base_effect.productivity = 1
     data_assembling[forge].effect_receiver.base_effect.quality = nil
 
     local jammer_radar = "jammer-radar"
@@ -293,7 +295,6 @@ if mods[castra_mods] then
     data_radar[jammer_radar].order = b
     data_radar[jammer_radar].energy_usage = 1200 .. kW
 
-    local jammed_data_collector = "jammed-data-collector"
     data_item[jammed_data_collector].subgroup = is_castra_building
     data_item[jammed_data_collector].order = c
     data_item[jammed_data_collector].stack_size = 32
@@ -310,9 +311,10 @@ if mods[castra_mods] then
     }
     data_assembling[jammed_data_collector].subgroup = is_castra_building
     data_assembling[jammed_data_collector].order = c
-    data_assembling[jammed_data_collector].energy_usage = 900 .. kW
+    data_assembling[jammed_data_collector].energy_usage = 960 .. kW
 
-    data_assembling["player-" .. jammed_data_collector].energy_usage = 900 .. kW
+    data_assembling["player-" .. jammed_data_collector].energy_usage = 960 .. kW
+    data_assembling["player-" .. jammed_data_collector].surface_conditions = {{property = pressure, max = 2254, min = 2254}}
 
     -- WAR
     local firearm_magazine_nickel = "firearm-magazine-nickel"
@@ -391,6 +393,7 @@ if mods[castra_mods] then
     data_recipe[distractor_capsule_castra_data].subgroup = is_castra_war
     data_recipe[distractor_capsule_castra_data].icons = BUILDING_R_IS(distractor_capsule, castra_data)
     data_recipe[distractor_capsule_castra_data].order = g
+    data_recipe[distractor_capsule_castra_data].energy_required = 32
     data_recipe[distractor_capsule_castra_data].ingredients =
     {
         {type = item, name = distractor_robot, amount = 4},
@@ -401,6 +404,7 @@ if mods[castra_mods] then
     data_recipe[destroyer_capsule_castra_data].subgroup = is_castra_war
     data_recipe[destroyer_capsule_castra_data].icons = BUILDING_R_IS(destroyer_capsule, castra_data)
     data_recipe[destroyer_capsule_castra_data].order = h
+    data_recipe[destroyer_capsule_castra_data].energy_required = 32
     data_recipe[destroyer_capsule_castra_data].ingredients =
     {
         {type = item, name = destroyer_robot, amount = 4},
@@ -420,7 +424,7 @@ if mods[castra_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_castra = "planet-discovery-castra"
-    data_technology[planet_discovery_castra].prerequisites = {tech_advanced_asteroid_processing}
+    data_technology[planet_discovery_castra].prerequisites = {tech_advanced_asteroid_processing, tech_advanced_ore_refining_6, rocket_turret}
     if mods[muluna_mods] then
         table.insert(data_technology[planet_discovery_castra].prerequisites, interstellar_science_pack)
     end
@@ -452,12 +456,8 @@ if mods[castra_mods] then
     table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = nitrosyl_chloride_reversed})
     table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = toluene_sulfur_solution_reversed})
 
-    data_technology[hydrogen_sulfide_mods .. _processing].research_trigger =
-    {
-        type = craft_fluid,
-        fluid = hydrogen_sulfide_angels,
-        amount = 960
-    }
+    data_technology[hydrogen_sulfide_mods .. _processing].icons = TIMSABA.functions.create_gas_tech_icon("SHH")
+    data_technology[hydrogen_sulfide_mods .. _processing].research_trigger = {type = craft_fluid, fluid = hydrogen_sulfide_angels}
 
     data_technology[forge].prerequisites = {hydrogen_sulfide_mods .. _processing, gunpowder .._processing, tech_millerite_processing_1}
     data_technology[forge].effects =
@@ -685,6 +685,35 @@ if mods[castra_mods] then
 
     table.insert(data_technology[electronic_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = electronic_circuit_battlefield_data, change = 0.1})
     table.insert(data_technology[advanced_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_circuit_battlefield_data, change = 0.1})
-
+    -- final-fix-mods
     table.insert(data_technology[tech_advanced_processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_processing_unit_battlefield_data, change = 0.1})
+
+    -- ADD
+    local function add_ingredients(recipe_name)
+        if not data_recipe[recipe_name] then return end
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = castra_data, amount = 8})
+        bobmods.lib.recipe.update_recycling_recipe({recipe_name})
+    end
+    add_ingredients(speed_module_7)
+    add_ingredients(productivity_module_7)
+    add_ingredients(quality_module_7)
+
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, battlefield_science_pack)
+    end
+    add_prerequisites(tech_molybdenite_processing_4)
+    add_prerequisites(tech_powellite_processing_4)
+
+    add_prerequisites(tech_wodginite_processing_4)
+
+    add_prerequisites(tech_wolframite_processing_3)
+    add_prerequisites(tech_samarskite_processing_3)
+
+    add_prerequisites(tech_brannerite_processing_3)
+    add_prerequisites(tech_rheniite_processing_3)
+
+    add_prerequisites(speed_module_7)
+    add_prerequisites(productivity_module_7)
+    add_prerequisites(quality_module_7)
 end

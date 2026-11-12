@@ -1,5 +1,6 @@
 if mods[muluna_mods] then
 	local sapling_muluna = "muluna-sapling"
+	local greenhouse_muluna = "muluna-greenhouse"
     local replace_prototypes =
     {
         [alumina_mods] = aluminium_oxide,
@@ -9,8 +10,7 @@ if mods[muluna_mods] then
         [cellulose_mods] = cellulose_fiber_angels,
         [sapling_muluna] = tree_angels,
         [molten_aluminium_mods] = aluminium_molten_angels,
-        [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels
+		[greenhouse_muluna] = greenhouse_wood
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -32,15 +32,27 @@ if mods[muluna_mods] then
 		"hydrogen-venting",
 		"carbon-dioxide-venting",
 		"thruster-fuel-from-rocket-fuel",
-		carbon_dioxide_mods,
 		"atmosphere-oxygen-separation",
 		"muluna-placed-tree",
 		molten_aluminium_mods,
 		"muluna-gas-venting",
-		--"thruster-fuel-productivity",
 		"muluna-rocket-buggy",
 		"space-chest-muluna",
-		"muluna-greenhouse"
+		greenhouse_muluna,
+		"aluminum-ore-melting",
+		"muluna-battery-from-aluminum",
+		"muluna-roboport-propellant",
+		"muluna-burner-roboport",
+		"muluna-burner-roboport-roboport",
+		"muluna-" .. metallic_asteroid_chunk .. "-upcycling",
+		"muluna-" .. carbonic_asteroid_chunk .. "-upcycling",
+		"muluna-" .. oxide_asteroid_chunk .. "-upcycling",
+		"muluna-" .. anorthite_asteroid_chunk .. "-upcycling",
+		"muluna-asteroid-upcycling",
+		thruster_fuel .. _productivity,
+		"muluna-oxygen-from-oxidizer",
+		"muluna-oxygen",
+		"bob-steam-mining-drill-ground-digger"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
@@ -76,11 +88,27 @@ if mods[muluna_mods] then
 	data_recipe[alumina_crushing] = nil
 	data_recipe[aluminum_crushing] = nil
 	data_recipe[vacuum_heating] = nil
+	for i = 25, 2400, 25 do
+		data_recipe[regolith_digging .. __rigor_module_mod__ .. i] = nil
+		data_recipe[alumina_crushing .. __rigor_module_mod__ .. i] = nil
+		data_recipe[aluminum_crushing .. __rigor_module_mod__ .. i] = nil
+		data_recipe[vacuum_heating .. __rigor_module_mod__ .. i] = nil
+	end
 
 	data_recipe[copper_cable .. _recycling].surface_conditions = nil
 	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil
 
-	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
+	data_technology[thruster_oxidizer].effects =
+	{
+		{type = unlock_recipe, recipe = oxygen_liquid},
+		{type = unlock_recipe, recipe = thruster_oxidizer}
+	}
+
+	data_technology[thruster_fuel].effects =
+	{
+		{type = unlock_recipe, recipe = hydrogen_liquid},
+		{type = unlock_recipe, recipe = thruster_fuel}
+	}
 
 	data_technology[carbonic_asteroid_crushing_1].effects =
 	{

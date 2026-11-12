@@ -39,8 +39,8 @@ local replace_prototypes =
     [electric_chemical_furnace_1] = electric_mixing_furnace_1
 }
 if mods[lignumis_mods] then
-    replace_prototypes[burner_assembling_machine_bob] = "burner-assembling-machine"
-    replace_prototypes[steam_assembling_machine_bob] = "steam-assembling-machine"
+    replace_prototypes[burner_assembling_machine_bob] = burner .. "-" .. assembling_machine
+    replace_prototypes[steam_assembling_machine_bob] = assembling_machine_1
 else
     replace_prototypes[burner_assembling_machine_bob] = assembling_machine_1
     replace_prototypes[steam_assembling_machine_bob] = assembling_machine_1
@@ -155,7 +155,6 @@ TIMSABA.functions.delete_prototypes(delete_prototypes)
 data_recipe["bob-cobalt-steel-alloy"] = nil
 
 data_recipe["bob-solder"] = nil
-data_recipe[tungsten_carbide_plate_bob] = nil
 
 -- LOGISTICS
 data_container[steel_chest].next_upgrade = nil
@@ -168,3 +167,9 @@ data_logistic_container[storage_chest].next_upgrade = nil
 -- TECHNOLOGY
 data_technology["bob-lead-processing"].effects = {}
 data_technology["bob-aluminium-processing"].effects = {}
+
+for i, prerequisite in ipairs(data_technology[battery_lithium_ion].prerequisites) do
+    if prerequisite == utility_science_pack then
+        table.remove(data_technology[battery_lithium_ion].prerequisites, i) break
+    end
+end

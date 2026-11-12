@@ -30,6 +30,7 @@ for _, BUILD in pairs(boilers) do
         data_boiler[BUILD.name].localised_name = BUILD.localised_name
         data_boiler[BUILD.name].order = BUILD.order
         data_boiler[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
+        data_boiler[BUILD.name].energy_consumption = (480 * BUILD.pollution) .. kW
     end
 end
 local function boiler_recipe(name, pipe, boiler, plate)
@@ -43,9 +44,9 @@ local function boiler_recipe(name, pipe, boiler, plate)
     }
 end
 table.insert(data_recipe[boiler_1].ingredients, {type = item, name = iron_plate, amount = 4})
-boiler_recipe(boiler_2, steel_pipe,           boiler_1, steel_plate)
-boiler_recipe(boiler_3, ceramic_pipe,         boiler_2, invar_plate_bob)
-boiler_recipe(boiler_4, tungsten_pipe,        boiler_3, tungsten_plate_bob)
+boiler_recipe(boiler_2,           steel_pipe, boiler_1, steel_plate)
+boiler_recipe(boiler_3,           brass_pipe, boiler_2, brass_plate_bob)
+boiler_recipe(boiler_4,        tungsten_pipe, boiler_3, tungsten_plate_bob)
 boiler_recipe(boiler_5, copper_tungsten_pipe, boiler_4, copper_tungsten_plate_bob)
 
 data_item_subgroup["bob-energy-steam-engine"].order = b_a
@@ -83,58 +84,21 @@ local function steam_engine_recipe(name, gear_wheel, bearing, pipe, steam_engine
     end
     data_recipe[name].ingredients = ingredients
 end
-steam_engine_recipe(steam_engine_1, iron_gear_wheel,     iron_bearing,     iron_pipe,     nil,            iron_plate)
-steam_engine_recipe(steam_engine_2, steel_gear_wheel,    steel_bearing,    steel_pipe,    steam_engine_1, steel_plate)
-steam_engine_recipe(steam_engine_3, brass_gear_wheel,    brass_bearing,    brass_pipe,    steam_engine_2, brass_plate_bob)
-steam_engine_recipe(steam_engine_4, tungsten_gear_wheel, tungsten_bearing, tungsten_pipe, steam_engine_3, tungsten_plate_bob)
-steam_engine_recipe(steam_engine_5, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  copper_tungsten_pipe,  steam_engine_4, copper_tungsten_plate_bob)
-
-local steam_turbines =
-{
-    {name = steam_turbine_1, order = a, localised_name = {"entity-name.steam-turbine-1"}},
-    {name = steam_turbine_2, order = b, localised_name = {"entity-name.steam-turbine-2"}},
-    {name = steam_turbine_3, order = c, localised_name = {"entity-name.steam-turbine-3"}}
-}
-for _, BUILD in pairs(steam_turbines) do
-    if data_item[BUILD.name] then
-        data_item[BUILD.name].subgroup = is_energy_steam_turbine
-        data_item[BUILD.name].order = BUILD.order
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].subgroup = is_energy_steam_turbine
-        data_recipe[BUILD.name].order = BUILD.order
-        data_recipe[BUILD.name].energy_required = 1
-        data_generator[BUILD.name].localised_name = BUILD.localised_name
-        data_generator[BUILD.name].subgroup = is_energy_steam_turbine
-        data_generator[BUILD.name].order = BUILD.order
-    end
-end
-local function steam_turbine_recipe(name, gear_wheel, bearing, circuit, pipe, turbine, plate)
-    if not data_recipe[name] then return end
-
-    data_recipe[name].ingredients =
-    {
-        {type = item, name = gear_wheel, amount = 8},
-        {type = item, name = bearing,    amount = 8},
-        {type = item, name = circuit,    amount = 4},
-        {type = item, name = pipe,       amount = 8},
-        {type = item, name = turbine,    amount = 1},
-        {type = item, name = plate,      amount = 32}
-    }
-end
-steam_turbine_recipe(steam_turbine_1, ceramic_gear_wheel,  ceramic_bearing,  advanced_circuit,         ceramic_pipe,  steam_engine_3,  aluminium_plate_bob)
-steam_turbine_recipe(steam_turbine_2, tungsten_gear_wheel, tungsten_bearing, processing_unit,          tungsten_pipe, steam_turbine_1, tungsten_plate_bob)
-steam_turbine_recipe(steam_turbine_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe,  steam_turbine_2, copper_tungsten_plate_bob)
+steam_engine_recipe(steam_engine_1,            iron_gear_wheel,            iron_bearing,            iron_pipe,            nil, iron_plate)
+steam_engine_recipe(steam_engine_2,           steel_gear_wheel,           steel_bearing,           steel_pipe, steam_engine_1, steel_plate)
+steam_engine_recipe(steam_engine_3,           brass_gear_wheel,           brass_bearing,           brass_pipe, steam_engine_2, brass_plate_bob)
+steam_engine_recipe(steam_engine_4,        tungsten_gear_wheel,        tungsten_bearing,        tungsten_pipe, steam_engine_3, tungsten_plate_bob)
+steam_engine_recipe(steam_engine_5, copper_tungsten_gear_wheel, copper_tungsten_bearing, copper_tungsten_pipe, steam_engine_4, copper_tungsten_plate_bob)
 
 if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_item_subgroup["bob-energy-fluid-generator"].order = b_c
 
     local fluid_generators =
     {
-        {name = fluid_generator_1,   max_power_output = 1800, pollution = 8,   fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-1"}},
-        {name = fluid_generator_2,   max_power_output = 3600, pollution = 16,  fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-2"}},
-        {name = fluid_generator_3,   max_power_output = 5400, pollution = 24,  fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-3"}},
-        {name = hydrazine_generator, max_power_output = 7200, pollution = nil, fluid_usage_per_tick = 0.25}
+        {name = fluid_generator_1,   max_power_output = 480,  pollution = 8,   fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-1"}},
+        {name = fluid_generator_2,   max_power_output = 960,  pollution = 16,  fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-2"}},
+        {name = fluid_generator_3,   max_power_output = 1440, pollution = 24,  fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-3"}},
+        {name = hydrazine_generator, max_power_output = 1920, pollution = nil, fluid_usage_per_tick = 0.25}
     }
     for _, BUILD in pairs(fluid_generators) do
         data_item[BUILD.name].stack_size = 32
@@ -162,19 +126,21 @@ if settings.startup[setting_bobmods_power_fluidgenerator].value then
         end
         data_recipe[name].ingredients = ingredients
     end
-    fluid_generator_recipe(fluid_generator_1,   steel_gear_wheel,    steel_bearing,    electronic_circuit,       bronze_pipe,          nil,               steel_plate,         bronze_plate_bob)
-    fluid_generator_recipe(fluid_generator_2,   ceramic_gear_wheel,  ceramic_bearing,  advanced_circuit,         ceramic_pipe,         fluid_generator_1, aluminium_plate_bob, invar_plate_bob)
-    fluid_generator_recipe(fluid_generator_3,   tungsten_gear_wheel, tungsten_bearing, processing_unit,          tungsten_pipe,        fluid_generator_2, titanium_plate_bob,  tungsten_plate_bob)
-    fluid_generator_recipe(hydrazine_generator, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe, fluid_generator_3, nitinol_plate_bob,   copper_tungsten_plate_bob)
+    fluid_generator_recipe(fluid_generator_1,             steel_gear_wheel,           steel_bearing,       electronic_circuit,           steel_pipe,               nil,    bronze_plate_bob, steel_plate)
+    fluid_generator_recipe(fluid_generator_2,             brass_gear_wheel,           brass_bearing,         advanced_circuit,           brass_pipe, fluid_generator_1,     brass_plate_bob, aluminium_plate_bob)
+    fluid_generator_recipe(fluid_generator_3,          tungsten_gear_wheel,        tungsten_bearing,          processing_unit,        tungsten_pipe, fluid_generator_2,  titanium_plate_bob, tungsten_plate_bob)
+    fluid_generator_recipe(hydrazine_generator, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit, copper_tungsten_pipe, fluid_generator_3,   nitinol_plate_bob, copper_tungsten_plate_bob)
 
     bobmods.lib.recipe.update_recycling_recipe({fluid_generator_1, fluid_generator_2, fluid_generator_3, hydrazine_generator})
 end
 
-local burner_electric_generator = "bob-burner-generator"
 if data_item[burner_electric_generator] then
     data_item[burner_electric_generator].order = z
     data_item[burner_electric_generator].stack_size = 32
     data_item[burner_electric_generator].weight = 31250
+    if mods[lignumis_mods] then
+        data_recipe[burner_electric_generator].enabled = false
+    end
     data_recipe[burner_electric_generator].order = z
     data_recipe[burner_electric_generator].ingredients =
     {
@@ -184,7 +150,7 @@ if data_item[burner_electric_generator] then
     }
     data_burner_generator[burner_electric_generator].localised_name = {"entity-name.burner-generator"}
     data_burner_generator[burner_electric_generator].order = z
-    data_burner_generator[burner_electric_generator].max_power_output = 450 .. kW
+    data_burner_generator[burner_electric_generator].max_power_output = 480 .. kW
     data_burner_generator[burner_electric_generator].burner.effectivity = 0.5
     data_burner_generator[burner_electric_generator].burner.emissions_per_minute.pollution = 16
 
@@ -231,9 +197,9 @@ local function solar_panel_s_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_s_recipe(solar_panel_small_1, electronic_circuit, steel_plate,         copper_cable, glass_bob, nil,                 silicon_wafer, copper_plate)
-solar_panel_s_recipe(solar_panel_small_2, advanced_circuit,   aluminium_plate_bob, silver_cable, nil,       solar_panel_small_1, silicon_wafer, silver_plate_bob)
-solar_panel_s_recipe(solar_panel_small_3, processing_unit,    titanium_plate_bob,  gold_cable,   nil,       solar_panel_small_2, silicon_wafer, gold_plate_bob)
+solar_panel_s_recipe(solar_panel_small_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,                 nil, silicon_wafer,    tin_plate_bob)
+solar_panel_s_recipe(solar_panel_small_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_small_1, silicon_wafer, silver_plate_bob)
+solar_panel_s_recipe(solar_panel_small_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_small_2, silicon_wafer,   gold_plate_bob)
 
 data_item_subgroup["bob-energy-solar-panel"].order = b_e
 local solar_panels =
@@ -273,9 +239,9 @@ local function solar_panel_m_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_m_recipe(solar_panel_1, electronic_circuit, steel_plate,         copper_cable, glass_bob, nil,           silicon_wafer, copper_plate)
-solar_panel_m_recipe(solar_panel_2, advanced_circuit,   aluminium_plate_bob, silver_cable, nil,       solar_panel_1, silicon_wafer, silver_plate_bob)
-solar_panel_m_recipe(solar_panel_3, processing_unit,    titanium_plate_bob,  gold_cable,   nil,       solar_panel_2, silicon_wafer, gold_plate_bob)
+solar_panel_m_recipe(solar_panel_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,           nil, silicon_wafer,    tin_plate_bob)
+solar_panel_m_recipe(solar_panel_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_1, silicon_wafer, silver_plate_bob)
+solar_panel_m_recipe(solar_panel_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_2, silicon_wafer,   gold_plate_bob)
 
 local solar_panels_large =
 {
@@ -317,16 +283,16 @@ local function solar_panel_l_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_l_recipe(solar_panel_large_1, electronic_circuit, steel_plate,         copper_cable, glass_bob, nil,                 silicon_wafer, copper_plate)
-solar_panel_l_recipe(solar_panel_large_2, advanced_circuit,   aluminium_plate_bob, silver_cable, nil,       solar_panel_large_1, silicon_wafer, silver_plate_bob)
-solar_panel_l_recipe(solar_panel_large_3, processing_unit,    titanium_plate_bob,  gold_cable,   nil,       solar_panel_large_2, silicon_wafer, gold_plate_bob)
+solar_panel_l_recipe(solar_panel_large_1, electronic_circuit,     steel_plate,        tin_insulated_cable, glass_bob,                 nil, silicon_wafer,    tin_plate_bob)
+solar_panel_l_recipe(solar_panel_large_2,   advanced_circuit, aluminium_plate_bob, silver_insulated_cable,       nil, solar_panel_large_1, silicon_wafer, silver_plate_bob)
+solar_panel_l_recipe(solar_panel_large_3,    processing_unit,  titanium_plate_bob,   gold_insulated_cable,       nil, solar_panel_large_2, silicon_wafer,   gold_plate_bob)
 
 data_item_subgroup["bob-energy-accumulator"].order = b_g
 local accumulators =
 {
-    {name = accumulator_1, buffer_capacity = 9600,  flow_limit = 600,  order = a, localised_name = {"entity-name.accumulator-1"}},
-    {name = accumulator_2, buffer_capacity = 19200, flow_limit = 1200, order = b, localised_name = {"entity-name.accumulator-2"}},
-    {name = accumulator_3, buffer_capacity = 28800, flow_limit = 1800, order = c, localised_name = {"entity-name.accumulator-3"}}
+    {name = accumulator_1, buffer_capacity = 15360, flow_limit = 960,  order = a, localised_name = {"entity-name.accumulator-1"}},
+    {name = accumulator_2, buffer_capacity = 30720, flow_limit = 1920, order = b, localised_name = {"entity-name.accumulator-2"}},
+    {name = accumulator_3, buffer_capacity = 46080, flow_limit = 2880, order = c, localised_name = {"entity-name.accumulator-3"}}
 }
 for _, BUILD in pairs(accumulators) do
     if data_item[BUILD.name] then
@@ -342,12 +308,13 @@ for _, BUILD in pairs(accumulators) do
         data_accumulator[BUILD.name].energy_source.output_flow_limit = BUILD.flow_limit .. kW
     end
 end
-local function accumulator_recipe(name, battery, circuit, accumulator, plate)
+local function accumulator_recipe(name, battery, insulated_cable, circuit, accumulator, plate)
     if not data_recipe[name] then return end
 
     local ingredients =
     {
         {type = item, name = battery, amount = 8},
+        {type = item, name = insulated_cable, amount = 4},
         {type = item, name = circuit, amount = 2},
         {type = item, name = plate,   amount = 2}
     }
@@ -356,12 +323,15 @@ local function accumulator_recipe(name, battery, circuit, accumulator, plate)
     end
     data_recipe[name].ingredients = ingredients
 end
-accumulator_recipe(accumulator_1, battery_lead_acid,   electronic_circuit, nil,           iron_plate)
-accumulator_recipe(accumulator_2, battery_lithium_ion, advanced_circuit,   accumulator_1, steel_plate)
-accumulator_recipe(accumulator_3, battery_silver_zinc, processing_unit,    accumulator_2, titanium_plate_bob)
+accumulator_recipe(accumulator_1, battery_lead_acid,      tin_insulated_cable, electronic_circuit,           nil,     steel_plate)
+accumulator_recipe(accumulator_2, battery_lithium_ion, silver_insulated_cable,   advanced_circuit, accumulator_1, aluminium_plate_bob)
+accumulator_recipe(accumulator_3, battery_silver_zinc,   gold_insulated_cable,    processing_unit, accumulator_2,  titanium_plate_bob)
 
 data_item[burner_mining_drill].stack_size = 32
 data_item[burner_mining_drill].weight = 31250
+if mods[muluna_mods] and mods[lignumis_mods] then
+    table.insert(data_recipe[burner_mining_drill].categories, advanced_wood_processing)
+end
 if not mods[lignumis_mods] then
     data_recipe[burner_mining_drill].ingredients =
     {
@@ -371,7 +341,7 @@ if not mods[lignumis_mods] then
     }
 end
 data_mining_drill[burner_mining_drill].mining_speed = 0.5
-data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
+data_mining_drill[burner_mining_drill].energy_usage = 240 .. kW
 data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
 
 local mining_machines =
@@ -445,7 +415,6 @@ pumpjack_recipe(pumpjack_3, titanium_gear_wheel, processing_unit,          titan
 pumpjack_recipe(pumpjack_4, nitinol_gear_wheel,  advanced_processing_unit, nitinol_pipe,  pumpjack_3,          nitinol_plate_bob)
 
 if mods[pelagos_mods] then
-    local pumpplatform = "oil_rig"
     data_item[pumpplatform].subgroup = is_extraction_machine_pumpjack
     data_item[pumpplatform].order = z
     data_item[pumpplatform].stack_size = 32
@@ -525,11 +494,13 @@ if settings.startup[setting_bobmods_mining_areadrills].value then
     bobmods.lib.recipe.update_recycling_recipe({area_mining_drill_1, area_mining_drill_2, area_mining_drill_3, area_mining_drill_4})
 end
 
+data_item_subgroup["angels-power-nuclear-reactor-b"].order = c_e
+
 local ractors =
 {
-    {name = uranium_reactor,   localised_description = {"entity-description.uranium-reactor"},   consumption = (21600 * 2), specific_heat = 5400, fuel_categories = {nuclear_fuel_T1}},
-    {name = thorium_reactor,   localised_description = {"entity-description.thorium-reactor"},   consumption = (28800 * 2), specific_heat = 7200, fuel_categories = {nuclear_fuel_T2}},
-    {name = deuterium_reactor, localised_description = {"entity-description.deuterium-reactor"}, consumption = (36000 * 2), specific_heat = 9000, fuel_categories = {nuclear_fuel_T3}}
+    {name = uranium_reactor,   localised_description = {"entity-description.uranium-reactor"},   consumption = 30720, specific_heat = 3840,  fuel_categories = {nuclear_fuel_T1}},
+    {name = thorium_reactor,   localised_description = {"entity-description.thorium-reactor"},   consumption = 61440, specific_heat = 7680,  fuel_categories = {nuclear_fuel_T2}},
+    {name = deuterium_reactor, localised_description = {"entity-description.deuterium-reactor"}, consumption = 92160, specific_heat = 11520, fuel_categories = {nuclear_fuel_T3}}
 }
 for _, BUILD in pairs(ractors) do
     data_item[BUILD.name].stack_size = 4
@@ -539,91 +510,151 @@ for _, BUILD in pairs(ractors) do
     data_reactor[BUILD.name].neighbour_bonus = 1.5
     data_reactor[BUILD.name].consumption = BUILD.consumption .. kW
     data_reactor[BUILD.name].heat_buffer.specific_heat = BUILD.specific_heat .. kJ
-    data_reactor[BUILD.name].heat_buffer.max_transfer = (BUILD.specific_heat * 1000) .. kW
+    data_reactor[BUILD.name].heat_buffer.max_transfer = (BUILD.specific_heat * 1024) .. kW
     data_reactor[BUILD.name].energy_source.fuel_categories = BUILD.fuel_categories
     data_reactor[BUILD.name].heat_buffer.minimum_glow_temperature = 250
 end
-local function nuclear_reactor_recipe(name, circuit, heat_pipe, material, reactor, plate_1, plate_2)
+local function nuclear_reactor_recipe(name, circuit, heat_pipe, material, reactor, plate)
     local ingredients =
     {
-        {type = item, name = circuit,   amount = 512},
-        {type = item, name = heat_pipe, amount = 32},
-        {type = item, name = plate_1,   amount = 256},
-        {type = item, name = plate_2,   amount = 256},
-        {type = item, name = material,  amount = 512}
+        {type = item, name = circuit,             amount = 512},
+        {type = item, name = heat_pipe,           amount = 32},
+        {type = item, name = lead_plate_bob,      amount = 256},
+        {type = item, name = uranium_238_plate,   amount = 256},
+        {type = item, name = plate,               amount = 256},
+        {type = item, name = material,            amount = 512}
     }
     if reactor then
         table.insert(ingredients, {type = item, name = reactor, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end
-nuclear_reactor_recipe(uranium_reactor,   advanced_circuit,         heat_pipe_1, concrete_brick,                     nil,             lead_plate_bob, steel_plate)
-nuclear_reactor_recipe(thorium_reactor,   processing_unit,          heat_pipe_2, reinforced_concrete_brick,          uranium_reactor, lead_plate_bob, tungsten_plate_bob)
-nuclear_reactor_recipe(deuterium_reactor, advanced_processing_unit, heat_pipe_3, reinforced_titanium_concrete_brick, thorium_reactor, lead_plate_bob, tungsten_carbide_plate_bob)
+nuclear_reactor_recipe(uranium_reactor,           advanced_circuit, heat_pipe_1,                     concrete_brick,             nil,           brass_plate_bob)
+nuclear_reactor_recipe(thorium_reactor,            processing_unit, heat_pipe_2,          reinforced_concrete_brick, uranium_reactor,        tungsten_plate_bob)
+nuclear_reactor_recipe(deuterium_reactor, advanced_processing_unit, heat_pipe_3, reinforced_titanium_concrete_brick, thorium_reactor, copper_tungsten_plate_bob)
+
+data_item_subgroup["angels-power-nuclear-heat-pipe"].order = c_f
 
 local heat_pipes =
 {
-    {name = heat_pipe_1, localised_name = {"entity-name.heat-pipe-1"}, localised_description = {"entity-description.heat-pipe-1"}, max_temperature = 1000, specific_heat = 1080},
-    {name = heat_pipe_2, localised_name = {"entity-name.heat-pipe-2"}, localised_description = {"entity-description.heat-pipe-2"}, max_temperature = 1250, specific_heat = 1440},
-    {name = heat_pipe_3, localised_name = {"entity-name.heat-pipe-3"}, localised_description = {"entity-description.heat-pipe-3"}, max_temperature = 1500, specific_heat = 1800},
-    {name = heat_pipe_4, localised_name = {"entity-name.heat-pipe-4"}, localised_description = {"entity-description.heat-pipe-4"}, max_temperature = 2000, specific_heat = 2160}
+    {name = heat_pipe_1, localised_name = {"entity-name.heat-pipe-1"}, localised_description = {"entity-description.heat-pipe-1"}, max_temperature = 1000, specific_heat = 960},
+    {name = heat_pipe_2, localised_name = {"entity-name.heat-pipe-2"}, localised_description = {"entity-description.heat-pipe-2"}, max_temperature = 1250, specific_heat = 1920},
+    {name = heat_pipe_3, localised_name = {"entity-name.heat-pipe-3"}, localised_description = {"entity-description.heat-pipe-3"}, max_temperature = 1500, specific_heat = 2880},
+    {name = heat_pipe_4, localised_name = {"entity-name.heat-pipe-4"}, localised_description = {"entity-description.heat-pipe-4"}, max_temperature = 2000, specific_heat = 3840}
 }
 for _, BUILD in pairs(heat_pipes) do
     data_item[BUILD.name].stack_size = 200
-    data_recipe[BUILD.name].ingredients[1].amount = 1
-    data_recipe[BUILD.name].ingredients[2].amount = 2
     data_heat_pipe[BUILD.name].localised_name = BUILD.localised_name
     data_heat_pipe[BUILD.name].localised_description = BUILD.localised_description
     data_heat_pipe[BUILD.name].heat_buffer.max_temperature = BUILD.max_temperature
     data_heat_pipe[BUILD.name].heat_buffer.specific_heat = BUILD.specific_heat .. kJ
-    data_heat_pipe[BUILD.name].heat_buffer.max_transfer = (BUILD.specific_heat * 5000) .. kW
+    data_heat_pipe[BUILD.name].heat_buffer.max_transfer = (BUILD.specific_heat * 4096) .. kW
     data_heat_pipe[BUILD.name].heat_buffer.minimum_glow_temperature = 250
 end
+local function heat_exchanger_recipe(name, plate_1, plate_2)
+    data_recipe[name].ingredients =
+    {
+        {type = item, name = plate_1, amount = 2},
+        {type = item, name = plate_2, amount = 1}
+    }
+end
+heat_exchanger_recipe(heat_pipe_1,           brass_plate_bob,   silver_plate_bob)
+heat_exchanger_recipe(heat_pipe_2,        tungsten_plate_bob,     gold_plate_bob)
+heat_exchanger_recipe(heat_pipe_3, copper_tungsten_plate_bob, platinum_plate)
+heat_exchanger_recipe(heat_pipe_4,      molybdenum_plate,      rhenium_plate)
+
+data_item_subgroup["angels-power-nuclear-heat-exchanger"].order = c_g
 
 local heat_exchangers =
 {
-    {name = heat_exchanger_1, localised_name = {"entity-name.heat-exchanger-1"}, target_temperature = 465, max_temperature = 1000, specific_heat = 540},
-    {name = heat_exchanger_2, localised_name = {"entity-name.heat-exchanger-2"}, target_temperature = 615, max_temperature = 1000, specific_heat = 720},
-    {name = heat_exchanger_3, localised_name = {"entity-name.heat-exchanger-3"}, target_temperature = 765, max_temperature = 1000, specific_heat = 900},
-    {name = heat_exchanger_4, localised_name = {"entity-name.heat-exchanger-4"}, target_temperature = 915, max_temperature = 1000, specific_heat = 1080}
+    {name = heat_exchanger_1, localised_name = {"entity-name.heat-exchanger-1"}, target_temperature = 165, specific_heat = 480},
+    {name = heat_exchanger_2, localised_name = {"entity-name.heat-exchanger-2"}, target_temperature = 315, specific_heat = 960},
+    {name = heat_exchanger_3, localised_name = {"entity-name.heat-exchanger-3"}, target_temperature = 465, specific_heat = 1440},
+    {name = heat_exchanger_4, localised_name = {"entity-name.heat-exchanger-4"}, target_temperature = 615, specific_heat = 1920}
 }
 for _, BUILD in pairs(heat_exchangers) do
+    local heat_capacity_water = ((200 / 0.9375) / 1000)
+    local temperature_difference = (BUILD.target_temperature - 15)
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].energy_required = 1
     data_boiler[BUILD.name].localised_name = BUILD.localised_name
     data_boiler[BUILD.name].target_temperature = BUILD.target_temperature
-    data_boiler[BUILD.name].energy_consumption = (BUILD.specific_heat * 20) .. kW
-    data_boiler[BUILD.name].energy_source.max_temperature = BUILD.max_temperature
+    data_boiler[BUILD.name].energy_consumption = (120 * heat_capacity_water * temperature_difference) .. kW
+    data_boiler[BUILD.name].energy_source.max_temperature = 1000
     data_boiler[BUILD.name].energy_source.specific_heat = BUILD.specific_heat .. kJ
-    data_boiler[BUILD.name].energy_source.max_transfer = (BUILD.specific_heat * 10000) .. kW
+    data_boiler[BUILD.name].energy_source.max_transfer = (BUILD.specific_heat * 8192) .. kW
     data_boiler[BUILD.name].energy_source.min_working_temperature = BUILD.target_temperature
     data_boiler[BUILD.name].energy_source.minimum_glow_temperature = 250
 end
 local function heat_exchanger_recipe(name, pipe, heat_pipe, heat_exchanger, plate)
-    data_recipe[name].ingredients =
+    local ingredients =
     {
         {type = item, name = pipe,           amount = 4},
         {type = item, name = heat_pipe,      amount = 4},
-        {type = item, name = heat_exchanger, amount = 1},
         {type = item, name = plate,          amount = 8}
     }
+    if heat_exchanger then
+        table.insert(ingredients, {type = item, name = heat_exchanger, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
 end
-heat_exchanger_recipe(heat_exchanger_1, steel_pipe,           heat_pipe_1, boiler_2,         steel_plate)
-heat_exchanger_recipe(heat_exchanger_2, brass_pipe,           heat_pipe_2, heat_exchanger_1, brass_plate_bob)
-heat_exchanger_recipe(heat_exchanger_3, tungsten_pipe,        heat_pipe_3, heat_exchanger_2, tungsten_plate_bob)
-heat_exchanger_recipe(heat_exchanger_4, copper_tungsten_pipe, heat_pipe_4, heat_exchanger_3, copper_tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_1,              brass_pipe, heat_pipe_1,              nil, brass_plate_bob)
+heat_exchanger_recipe(heat_exchanger_2,           tungsten_pipe, heat_pipe_2, heat_exchanger_1, tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_3,    copper_tungsten_pipe, heat_pipe_3, heat_exchanger_2, copper_tungsten_plate_bob)
+heat_exchanger_recipe(heat_exchanger_4, molybdenum_rhenium_pipe, heat_pipe_4, heat_exchanger_3, molybdenum_rhenium_plate)
+
+local steam_turbines =
+{
+    {name = steam_turbine_1, order = a, localised_name = {"entity-name.steam-turbine-1"}, maximum_temperature = 165},
+    {name = steam_turbine_2, order = b, localised_name = {"entity-name.steam-turbine-2"}, maximum_temperature = 315},
+    {name = steam_turbine_3, order = c, localised_name = {"entity-name.steam-turbine-3"}, maximum_temperature = 465}
+}
+for _, BUILD in pairs(steam_turbines) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_energy_steam_turbine
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_energy_steam_turbine
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_generator[BUILD.name].localised_name = BUILD.localised_name
+        data_generator[BUILD.name].subgroup = is_energy_steam_turbine
+        data_generator[BUILD.name].order = BUILD.order
+        data_generator[BUILD.name].maximum_temperature = BUILD.maximum_temperature
+    end
+end
+local function steam_turbine_recipe(name, gear_wheel, bearing, circuit, pipe, turbine, plate)
+    if not data_recipe[name] then return end
+
+    local ingredients =
+    {
+        {type = item, name = gear_wheel, amount = 8},
+        {type = item, name = bearing,    amount = 8},
+        {type = item, name = circuit,    amount = 4},
+        {type = item, name = pipe,       amount = 8},
+        {type = item, name = plate,      amount = 32}
+    }
+    if turbine then
+        table.insert(ingredients, {type = item, name = turbine, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
+end
+steam_turbine_recipe(steam_turbine_1,           brass_gear_wheel,            brass_bearing,          advanced_circuit,           brass_pipe,             nil, brass_plate_bob)
+steam_turbine_recipe(steam_turbine_2,        tungsten_gear_wheel,         tungsten_bearing,           processing_unit,        tungsten_pipe, steam_turbine_1, tungsten_plate_bob)
+steam_turbine_recipe(steam_turbine_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe, steam_turbine_2, copper_tungsten_plate_bob)
 
 local furnaces =
 {
-    {name = stone_furnace, order = a, energy_usage = 225},
-    {name = steel_furnace, order = b, energy_usage = 450},
+    {name = stone_furnace, order = a, energy_usage = 240},
+    {name = steel_furnace, order = b, energy_usage = 480},
     {name = electric_furnace_1, crafting_speed = 3, energy_usage = 180, order = c},
     {name = electric_furnace_2, crafting_speed = 4, energy_usage = 240, order = d},
     {name = electric_furnace_3, crafting_speed = 5, energy_usage = 300, order = e},
 
-    {name = stone_mixing_furnace, order = a, energy_usage = 225},
-    {name = steel_mixing_furnace, order = b, energy_usage = 450},
+    {name = stone_mixing_furnace, order = a, energy_usage = 240},
+    {name = steel_mixing_furnace, order = b, energy_usage = 480},
     {name = electric_mixing_furnace_1, crafting_speed = 3, energy_usage = 180, order = c},
     {name = electric_mixing_furnace_2, crafting_speed = 4, energy_usage = 240, order = d},
     {name = electric_mixing_furnace_3, crafting_speed = 5, energy_usage = 300, order = e}
@@ -675,10 +706,11 @@ local function furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     data_recipe[name].ingredients = ingredients
 end
 data_recipe[stone_furnace].ingredients[1].amount = 4
-furnace_recipe(steel_furnace,      nil,                      stone_furnace,      stone_brick,     steel_plate)
-furnace_recipe(electric_furnace_1, advanced_circuit,         steel_furnace,      steel_plate,     brass_plate_bob)
-furnace_recipe(electric_furnace_2, processing_unit,          electric_furnace_1, invar_plate_bob, tungsten_plate_bob)
-furnace_recipe(electric_furnace_3, advanced_processing_unit, electric_furnace_2, tungsten_carbide_plate_bob, copper_tungsten_plate_bob)
+furnace_recipe(steel_furnace,                           nil,    stone_furnace,          stone_brick,           steel_plate)
+furnace_recipe(electric_furnace_1,         advanced_circuit,    steel_furnace,  aluminium_plate_bob,           brass_plate_bob)
+furnace_recipe(electric_furnace_2,          processing_unit, electric_furnace_1, titanium_plate_bob,        tungsten_plate_bob)
+furnace_recipe(electric_furnace_3, advanced_processing_unit, electric_furnace_2,  nitinol_plate_bob, copper_tungsten_plate_bob)
+
 local function mixing_furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     local ingredients =
     {
@@ -692,16 +724,16 @@ local function mixing_furnace_recipe(name, circuit, furnace, plate_1, plate_2)
     data_recipe[name].ingredients = ingredients
 end
 data_recipe[stone_mixing_furnace].ingredients = {{type = item, name = stone, amount = 4}}
-mixing_furnace_recipe(steel_mixing_furnace,      nil,                      stone_mixing_furnace,      stone_brick,     steel_plate)
-mixing_furnace_recipe(electric_mixing_furnace_1, advanced_circuit,         steel_mixing_furnace,      steel_plate,     brass_plate_bob)
-mixing_furnace_recipe(electric_mixing_furnace_2, processing_unit,          electric_mixing_furnace_1, invar_plate_bob, tungsten_plate_bob)
-mixing_furnace_recipe(electric_mixing_furnace_3, advanced_processing_unit, electric_mixing_furnace_2, tungsten_carbide_plate_bob, copper_tungsten_plate_bob)
+mixing_furnace_recipe(steel_mixing_furnace,                           nil,    stone_mixing_furnace,          stone_brick,           steel_plate)
+mixing_furnace_recipe(electric_mixing_furnace_1,         advanced_circuit,    steel_mixing_furnace,  aluminium_plate_bob,           brass_plate_bob)
+mixing_furnace_recipe(electric_mixing_furnace_2,          processing_unit, electric_mixing_furnace_1, titanium_plate_bob,        tungsten_plate_bob)
+mixing_furnace_recipe(electric_mixing_furnace_3, advanced_processing_unit, electric_mixing_furnace_2,  nitinol_plate_bob, copper_tungsten_plate_bob)
 
 local centrifuges =
 {
-    {name = centrifuge_1, crafting_speed = 1, energy_usage = 240, order = a, localised_name = {"entity-name.centrifuge-1"}},
-    {name = centrifuge_2, crafting_speed = 2, energy_usage = 480, order = b, localised_name = {"entity-name.centrifuge-2"}},
-    {name = centrifuge_3, crafting_speed = 3, energy_usage = 720, order = c, localised_name = {"entity-name.centrifuge-3"}}
+    {name = centrifuge_1, crafting_speed = 1, energy_usage = 240, order = a},
+    {name = centrifuge_2, crafting_speed = 2, energy_usage = 480, order = b},
+    {name = centrifuge_3, crafting_speed = 3, energy_usage = 720, order = c}
 }
 for _, BUILD in pairs(centrifuges) do
     data_item[BUILD.name].order = BUILD.order
@@ -709,13 +741,13 @@ for _, BUILD in pairs(centrifuges) do
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].order = BUILD.order
     data_recipe[BUILD.name].energy_required = 16
-    data_assembling[BUILD.name].localised_name = BUILD.localised_name
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].fluid_boxes_off_when_no_fluid_recipe = true
 end
 local function centrifuge_recipe(name, gear_wheel, bearing, circuit, material, plate, centrifuge)
     local ingredients =
@@ -731,9 +763,9 @@ local function centrifuge_recipe(name, gear_wheel, bearing, circuit, material, p
     end
     data_recipe[name].ingredients = ingredients
 end
-centrifuge_recipe(centrifuge_1, steel_gear_wheel,    steel_bearing,    advanced_circuit,         concrete_brick,            steel_plate)
-centrifuge_recipe(centrifuge_2, tungsten_gear_wheel, tungsten_bearing, processing_unit,          reinforced_concrete_brick, tungsten_plate_bob, centrifuge_1)
-centrifuge_recipe(centrifuge_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, centrifuge_2)
+centrifuge_recipe(centrifuge_1,           brass_gear_wheel,           brass_bearing,          advanced_circuit,                     concrete_brick,           brass_plate_bob)
+centrifuge_recipe(centrifuge_2,        tungsten_gear_wheel,        tungsten_bearing,           processing_unit,          reinforced_concrete_brick,        tungsten_plate_bob, centrifuge_1)
+centrifuge_recipe(centrifuge_3, copper_tungsten_gear_wheel, copper_tungsten_bearing,  advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, centrifuge_2)
 
 data_item_subgroup["bob-assembly-machine"].order = e_a
 
@@ -775,30 +807,72 @@ if mods[lignumis_mods] then
 else
     assembling_recipe(assembling_machine_1, iron_gear_wheel, basic_circuit_board, iron_pipe,                       nil, iron_plate, iron_bearing)
 end
-assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
-assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
-assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
-assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_processing_unit, nitinol_pipe,            assembling_machine_4, nitinol_plate_bob,         nitinol_bearing)
-assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
+assembling_recipe(assembling_machine_2,      steel_gear_wheel,       electronic_circuit,              steel_pipe, assembling_machine_1,              steel_plate,        steel_bearing)
+assembling_recipe(assembling_machine_3,      brass_gear_wheel,         advanced_circuit,              brass_pipe, assembling_machine_2,              brass_plate_bob,    brass_bearing)
+assembling_recipe(assembling_machine_4,   titanium_gear_wheel,          processing_unit,           titanium_pipe, assembling_machine_3,           titanium_plate_bob, titanium_bearing)
+assembling_recipe(assembling_machine_5,    nitinol_gear_wheel, advanced_processing_unit,            nitinol_pipe, assembling_machine_4,            nitinol_plate_bob,  nitinol_bearing)
+assembling_recipe(assembling_machine_6, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,      rhenium_bearing)
+
+local electronics_machines =
+{
+    {name = electronics_machine_1, crafting_speed = 2, energy_usage = 120},
+    {name = electronics_machine_2, crafting_speed = 4, energy_usage = 240},
+    {name = electronics_machine_3, crafting_speed = 6, energy_usage = 360}
+}
+for _, BUILD in pairs(electronics_machines) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_electronics_machine
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_electronics_machine
+        data_recipe[BUILD.name].energy_required = 1
+        data_assembling[BUILD.name].subgroup = is_electronics_machine
+        data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
+        data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+        data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    end
+end
+local function electronics_recipe(name, gear_wheel, circuit, pipe, electronics, plate, bearing)
+    if not data_recipe[name] then return end
+
+    local ingredients =
+    {
+        {type = item, name = gear_wheel, amount = 2},
+        {type = item, name = circuit,    amount = 2},
+        {type = item, name = pipe,       amount = 2},
+        {type = item, name = plate,      amount = 4},
+        {type = item, name = bearing,    amount = 4}
+    }
+    if electronics then
+        table.insert(ingredients, {type = item, name = electronics, amount = 1})
+    end
+    data_recipe[name].ingredients = ingredients
+end
+electronics_recipe(electronics_machine_1,      steel_gear_wheel,       electronic_circuit,              steel_pipe,                   nil,              steel_plate,        steel_bearing)
+electronics_recipe(electronics_machine_2,   titanium_gear_wheel,          processing_unit,           titanium_pipe, electronics_machine_1,           titanium_plate_bob, titanium_bearing)
+electronics_recipe(electronics_machine_3, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_pipe, electronics_machine_2, molybdenum_rhenium_plate,      rhenium_bearing)
 
 if mods[lignumis_mods] then
+    local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
     data_assembling[assembling_machine_1].fluid_boxes =
     {
         {
             production_type = input,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
             volume = 1000,
-            secondary_draw_orders = {north = -1},
+            secondary_draw_orders = {north = -1}
         },
         {
             production_type = output,
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
             volume = 1000,
-            secondary_draw_orders = {north = -1},
+            secondary_draw_orders = {north = -1}
         }
     }
     data_assembling[assembling_machine_1].fluid_boxes_off_when_no_fluid_recipe = true
@@ -814,6 +888,10 @@ data_recipe[lab_1].order = a
 data_recipe[lab_1].energy_required = 1
 data_recipe[lab_1].ingredients[1].amount = 8
 data_recipe[lab_1].ingredients[2].amount = 8
+table.insert(data_recipe[lab_1].ingredients, {type = item, name = glass_bob, amount = 8})
+if mods[lignumis_mods] then
+    table.insert(data_recipe[lab_1].ingredients, {type = item, name = wood_lab, amount = 1})
+end
 data_lab[lab_1].subgroup = is_lab
 data_lab[lab_1].order = a
 
@@ -826,9 +904,11 @@ if mods[bobtech] then
     data_recipe[lab_2].order = b
     data_recipe[lab_2].energy_required = 1
     data_recipe[lab_2].ingredients[2].amount = 8
+    table.insert(data_recipe[lab_2].ingredients, {type = item, name = glass_bob, amount = 16})
     data_lab[lab_2].subgroup = is_lab
     data_lab[lab_2].order = b
     data_lab[lab_2].energy_usage = 120 .. kW
+    data_lab[lab_2].inputs = util.table.deepcopy(data_lab[lab_1].inputs)
 
     bobmods.lib.recipe.update_recycling_recipe({lab_alien})
 
@@ -842,14 +922,15 @@ if mods[bobtech] then
         data_recipe[lab_alien].energy_required = 1
         data_recipe[lab_alien].ingredients =
         {
-            {type = item, name = lab,                   amount = 1},
-            {type = item, name = alien_artifact_orange, amount = 4},
-            {type = item, name = alien_artifact_blue,   amount = 4},
-            {type = item, name = alien_artifact_yellow, amount = 4},
+            {type = item, name = glass_bob,              amount = 16},
+            {type = item, name = lab,                    amount = 1},
+            {type = item, name = alien_artifact_orange,  amount = 4},
+            {type = item, name = alien_artifact_blue,    amount = 4},
+            {type = item, name = alien_artifact_yellow,  amount = 4},
             {type = item, name = alien_artifact_magenta, amount = 4},
-            {type = item, name = alien_artifact_green,  amount = 4},
-            {type = item, name = alien_artifact_red,    amount = 4},
-            {type = item, name = alien_artifact,        amount = 8}
+            {type = item, name = alien_artifact_green,   amount = 4},
+            {type = item, name = alien_artifact_red,     amount = 4},
+            {type = item, name = alien_artifact,         amount = 8}
         }
         data_lab[lab_alien].subgroup = is_lab
         data_lab[lab_alien].order = c
@@ -865,43 +946,6 @@ if mods[bobtech] then
             table.insert(data_lab[lab_alien].inputs, electromagnetic_science_pack)
             table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
             table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
-        end
-        if mods[arig_mods] then
-            table.insert(data_lab[lab_alien].inputs, compression_science_pack)
-        end
-        if mods[hyarion_mods] then
-            table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
-            table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
-        end
-        if mods[tellus_mods] then
-            table.insert(data_lab[lab_alien].inputs, bioengineering_science_pack)
-            table.insert(data_lab[lab_alien].inputs, pathological_science_pack)
-        end
-        if mods[paracelsin_mods] then
-            table.insert(data_lab[lab_alien].inputs, galvanization_science_pack)
-        end
-        if mods[castra_mods] then
-            table.insert(data_lab[lab_alien].inputs, battlefield_science_pack)
-        end
-        if mods[shchierbin_mods] then
-            table.insert(data_lab[lab_alien].inputs, vanadium_science_pack)
-        end
-        if mods[muria_mods] then
-            table.insert(data_lab[lab_alien].inputs, muriatic_science_pack)
-        end
-        if mods[pelagos_mods] then
-            table.insert(data_lab[lab_alien].inputs, spoilage_science_pack)
-        end
-        if mods[apia_carnova_mods] then
-            table.insert(data_lab[lab_alien].inputs, apicultural_science_pack)
-        end
-        if mods[lignumis_mods] then
-            --table.insert(data_lab[lab_alien].inputs, wood_science_pack)
-            --table.insert(data_lab[lab_alien].inputs, steam_science_pack)
-        end
-        -- УБРАТЬ или ИЗМЕНИТЬ
-        if mods[obsidiax_mods] then
-            table.insert(data_lab[lab_alien].inputs, obsidian_cube_sp)
         end
     end
 end
@@ -972,5 +1016,8 @@ bobmods.lib.recipe.update_recycling_recipe
     assembling_machine_4,
     assembling_machine_5,
     assembling_machine_6,
+    electronics_machine_1,
+    electronics_machine_2,
+    electronics_machine_3,
     lab_1
 })

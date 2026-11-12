@@ -3,7 +3,6 @@ local base_costs = {}
 for _, tech in pairs(data_technology) do
     local unit = tech.unit
     if unit then
-        -- Округляем время исследования
         if unit.time and unit.time > 0 then
             local exp_time = math.floor(math.log(unit.time) / math.log(2) + 0.5)
             unit.time = math.pow(2, exp_time)
@@ -56,17 +55,13 @@ end
 for _, tech in pairs(data_technology) do
     if tech.research_trigger then
         if tech.research_trigger.count then
-            tech.research_trigger.count = 256
+            tech.research_trigger.count = 1
         end
         if tech.research_trigger.amount then
-            tech.research_trigger.amount = 960
+            tech.research_trigger.amount = 1
         end
     end
 end
-
-data_technology[tech_steam_power].research_trigger.count = 32
-
-data_technology[tech_electronics_0].research_trigger.count = 16
 
 data_technology[tech_logistics_1].effects =
 {
@@ -82,20 +77,97 @@ data_technology[tech_automation_1].effects = {{type = unlock_recipe, recipe = as
 
 data_technology[logistic_science_pack].unit.time = 16
 
-data_technology[tech_holmium_smelting_1].research_trigger.count = 4096
-
-if data_technology[tech_logistics_0] then
-    data_technology[tech_logistics_0].research_trigger.count = 32
-end
-
+data_technology[steel_plate .. _productivity].prerequisites = {metallurgic_science_pack}
 data_technology[steel_plate .. _productivity].effects =
 {
     {type = change_recipe_productivity, recipe = casting_steel, change = 0.1},
     {type = change_recipe_productivity, recipe = steel_plate_1, change = 0.1},
     {type = change_recipe_productivity, recipe = steel_plate_2, change = 0.1}
 }
+data_technology[steel_plate .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {metallurgic_science_pack, 1}
+}
+
+data_technology[artillery_turret_2].unit.count = 4096
+data_technology[artillery_turret_3].unit.count = 8192
+data_technology[artillery_turret_4].unit.count = 16384
 
 data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{type = "character-logistic-trash-slots", modifier = 5}}
+
+if settings.startup[setting_horogon_extra_science_packs].value == false then
+    for tech_name, tech in pairs(data_technology) do
+        if tech and tech.unit and tech.unit.ingredients then
+            local has_gold_pack = false
+            for _, ingredient in pairs(tech.unit.ingredients) do
+                if ingredient[1] == gold_science_pack_bob or ingredient.name == gold_science_pack_bob then
+                    has_gold_pack = true
+                    break
+                end
+            end
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == space_science_pack or ing.name == space_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+            -- LIGNUMIS
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == wood_science_pack or ing.name == wood_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+            if has_gold_pack then
+                for i = #tech.unit.ingredients, 1, -1 do
+                    local ing = tech.unit.ingredients[i]
+                    if ing[1] == steam_science_pack or ing.name == steam_science_pack then
+                        table.remove(tech.unit.ingredients, i)
+                    end
+                end
+            end
+        end
+    end
+    local lab_inputs = data_lab[lab_alien].inputs
+    for i = #lab_inputs, 1, -1 do
+        if lab_inputs[i] == space_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- MULUNA
+        if lab_inputs[i] == interstellar_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- CORRUNDUM
+        if lab_inputs[i] == electrochemical_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- FROZETA
+        if lab_inputs[i] == golden_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- VESTA
+        if lab_inputs[i] == gas_manipulation_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        -- LIGNUMIS
+        if lab_inputs[i] == wood_science_pack then
+            table.remove(lab_inputs, i)
+        end
+        if lab_inputs[i] == steam_science_pack then
+            table.remove(lab_inputs, i)
+        end
+    end
+end
 
 TIMSABA.functions.auto_added_science_pack(promethium_science_pack, promethium_science_pack)
 
@@ -105,14 +177,6 @@ if mods[muluna_mods] then
 end
 
 -- MOSHINE
-if mods[moshine_mods] then
-    data_technology["moshine-tech-neural_computer"].research_trigger =
-    {
-        type = craft_item,
-        item = neural_computer,
-        count = 4
-    }
-end
 
 -- ARIG
 if mods[arig_mods] then
@@ -138,8 +202,6 @@ end
 
 -- CORRUNDUM
 if mods[corrundum_mods] then
-    data_technology[electrochemical_science_pack].research_trigger.count = 1
-
     TIMSABA.functions.auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
 end
 
@@ -165,18 +227,12 @@ end
 
 -- VESTA
 if mods[vesta_mods] then
-    if data_technology[tech_algea_extracting] then
-       data_technology[tech_algea_extracting].research_trigger.count = 1
-    end
-
-    data_technology[tech_gas_manipulation_science_pack].research_trigger.count = 1
-
     TIMSABA.functions.auto_added_science_pack(gas_manipulation_science_pack, tech_gas_manipulation_science_pack)
 end
 
 -- MURIA
 if mods[muria_mods] then
-    TIMSABA.functions.auto_added_science_pack(muriatic_science_pack, muriatic_science_pack)
+    TIMSABA.functions.auto_added_science_pack(acidworking_science_pack, acidworking_science_pack)
 end
 
 -- PELAGOS
@@ -195,24 +251,8 @@ if mods[lignumis_mods] then
     TIMSABA.functions.auto_added_science_pack(steam_science_pack, steam_science_pack)
 end
 
--- BELLICOS AEGIS
+-- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
     TIMSABA.functions.auto_added_science_pack(lightweight_science_pack, lightweight_science_pack)
     TIMSABA.functions.auto_added_science_pack(pulsar_science_pack, pulsar_science_pack)
-end
-
--- OBSIDIAX
-if mods[obsidiax_mods] then
-    -- УБРАТЬ или ИЗМЕНИТЬ после корректировки технологий
-    table.insert(data_lab[lab].inputs, obsidian_cube_sp)
-end
-
--- LINOX
-if mods[linox_mods] then
-    -- УБРАТЬ или ИЗМЕНИТЬ после корректировки технологий
-    table.insert(data_lab[lab].inputs, lava_data_card)
-    table.insert(data_lab[lab].inputs, rare_data_card)
-    table.insert(data_lab[lab].inputs, samarium_data_card)
-    table.insert(data_lab[lab].inputs, dysprosium_data_card)
-    table.insert(data_lab[lab].inputs, neodymium_data_card)
 end

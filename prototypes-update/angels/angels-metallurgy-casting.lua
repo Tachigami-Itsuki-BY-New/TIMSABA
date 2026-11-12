@@ -9,7 +9,7 @@ data_recipe[iron_molten_angels].energy_required = 8
 data_recipe[iron_molten_angels].ingredients[1].amount = 16
 data_recipe[iron_molten_angels].results[1].amount = 240
 
-data_recipe[iron_molten_2].category = angels_induction_smelting_2
+data_recipe[iron_molten_2].categories = {angels_induction_smelting_2}
 data_recipe[iron_molten_2].icons = TWO_I(iron_ingot, iron_molten_angels, number_2)
 data_recipe[iron_molten_2].order = a_a
 data_recipe[iron_molten_2].energy_required = 8
@@ -28,7 +28,7 @@ data_recipe[iron_roll].order = b
 data_recipe[iron_roll].energy_required = 8
 data_recipe[iron_roll].ingredients[1].amount = 240
 data_recipe[iron_roll].ingredients[2].name = water_purified_angels
-data_recipe[iron_roll].ingredients[2].amount = 120
+data_recipe[iron_roll].ingredients[2].amount = 60
 data_recipe[iron_roll].results =
 {
     {type = item, name = iron_roll, amount = 4},
@@ -38,16 +38,17 @@ data_recipe[iron_roll].main_product = iron_roll
 
 data_recipe[iron_roll_2].icons = TWO_I(iron_molten_angels, iron_roll, number_2)
 data_recipe[iron_roll_2].order = b_a
-data_recipe[iron_roll_2].energy_required = 4
+data_recipe[iron_roll_2].energy_required = 8
 data_recipe[iron_roll_2].ingredients[1].amount = 240
-data_recipe[iron_roll_2].ingredients[2].amount = 120
+data_recipe[iron_roll_2].ingredients[2].amount = 60
 data_recipe[iron_roll_2].results[1].amount = 8
-data_recipe[iron_roll_2].results[2].amount = 60
+data_recipe[iron_roll_2].results[2].amount = 30
 
 data_item[iron_plate].localised_description = show_formula and {chemical_formula, "Fe"} or nil
 data_item[iron_plate].order = c
 data_recipe[iron_plate].icons = TWO_I(crushed_saphirite, iron_plate)
 data_recipe[iron_plate].order = c
+data_recipe[iron_plate].allow_productivity = false
 data_recipe[iron_plate].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[iron_plate].ingredients[1].amount = 4
@@ -59,7 +60,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[iron_plate].ingredients[1].amount = 8
     data_recipe[iron_plate].results[1].amount = 1
 end
-data_recipe[iron_plate].allow_productivity = false
 
 local iron_plate_angels = "angels-plate-iron"
 data_recipe[iron_plate_angels].icons = TWO_I(iron_molten_angels, iron_plate)
@@ -104,7 +104,7 @@ data_recipe[steel_roll].order = b
 data_recipe[steel_roll].energy_required = 8
 data_recipe[steel_roll].ingredients[1].amount = 240
 data_recipe[steel_roll].ingredients[2].name = water_purified_angels
-data_recipe[steel_roll].ingredients[2].amount = 120
+data_recipe[steel_roll].ingredients[2].amount = 60
 data_recipe[steel_roll].results =
 {
     {type = item, name = steel_roll, amount = 4},
@@ -114,11 +114,11 @@ data_recipe[steel_roll].main_product = steel_roll
 
 data_recipe[steel_roll_2].icons = TWO_I(steel_molten_angels, steel_roll, number_2)
 data_recipe[steel_roll_2].order = b_a
-data_recipe[steel_roll_2].energy_required = 4
+data_recipe[steel_roll_2].energy_required = 8
 data_recipe[steel_roll_2].ingredients[1].amount = 240
-data_recipe[steel_roll_2].ingredients[2].amount = 120
+data_recipe[steel_roll_2].ingredients[2].amount = 60
 data_recipe[steel_roll_2].results[1].amount = 8
-data_recipe[steel_roll_2].results[2].amount = 60
+data_recipe[steel_roll_2].results[2].amount = 30
 
 data_item[steel_plate].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_item[steel_plate].order = c
@@ -137,10 +137,10 @@ data_item[steel_rod].order = d
 data_recipe[steel_rod].localised_name = data_item[steel_rod].localised_name
 data_recipe[steel_rod].icons = TWO_I(steel_plate, steel_rod)
 data_recipe[steel_rod].order = d
+data_recipe[steel_rod].enabled = false
 data_recipe[steel_rod].energy_required = 1
 data_recipe[steel_rod].ingredients[1].amount = 1
 data_recipe[steel_rod].results[1].amount = 2
-data_recipe[steel_rod].enabled = false
 
 -- COPPER
 data_item_subgroup["angels-copper-casting"].order = b
@@ -160,7 +160,7 @@ data_recipe[copper_roll].order = b
 data_recipe[copper_roll].energy_required = 8
 data_recipe[copper_roll].ingredients[1].amount = 240
 data_recipe[copper_roll].ingredients[2].name = water_purified_angels
-data_recipe[copper_roll].ingredients[2].amount = 120
+data_recipe[copper_roll].ingredients[2].amount = 60
 data_recipe[copper_roll].results =
 {
     {type = item, name = copper_roll, amount = 4},
@@ -171,16 +171,17 @@ data_recipe[copper_roll].main_product = copper_roll
 local copper_roll_2 = "angels-roll-copper-2"
 data_recipe[copper_roll_2].icons = TWO_I(copper_molten_angels, copper_roll, number_2)
 data_recipe[copper_roll_2].order = b_a
-data_recipe[copper_roll_2].energy_required = 4
+data_recipe[copper_roll_2].energy_required = 8
 data_recipe[copper_roll_2].ingredients[1].amount = 240
-data_recipe[copper_roll_2].ingredients[2].amount = 120
+data_recipe[copper_roll_2].ingredients[2].amount = 60
 data_recipe[copper_roll_2].results[1].amount = 8
-data_recipe[copper_roll_2].results[2].amount = 60
+data_recipe[copper_roll_2].results[2].amount = 30
 
 data_item[copper_plate].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_plate].order = c
 data_recipe[copper_plate].icons = TWO_I(crushed_stiratite, copper_plate)
 data_recipe[copper_plate].order = c
+data_recipe[copper_plate].allow_productivity = false
 data_recipe[copper_plate].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[copper_plate].ingredients[1].amount = 4
@@ -192,7 +193,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[copper_plate].ingredients[1].amount = 8
     data_recipe[copper_plate].results[1].amount = 1
 end
-data_recipe[copper_plate].allow_productivity = false
 
 local copper_plate_angels = "angels-plate-copper"
 data_recipe[copper_plate_angels].icons = TWO_I(copper_molten_angels, copper_plate)
@@ -211,22 +211,22 @@ data_recipe[copper_wire_coil].order = d
 data_recipe[copper_wire_coil].energy_required = 8
 data_recipe[copper_wire_coil].ingredients[1].amount = 240
 data_recipe[copper_wire_coil].ingredients[2].name = water_purified_angels
-data_recipe[copper_wire_coil].ingredients[2].amount = 120
+data_recipe[copper_wire_coil].ingredients[2].amount = 60
 data_recipe[copper_wire_coil].results =
 {
     {type = item, name = copper_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[copper_wire_coil].main_product = copper_wire_coil
 
 local copper_wire_coil_2 = "angels-wire-coil-copper-2"
 data_recipe[copper_wire_coil_2].icons = TWO_I(copper_molten_angels, copper_wire_coil, number_2)
 data_recipe[copper_wire_coil_2].order = d_a
-data_recipe[copper_wire_coil_2].energy_required = 4
+data_recipe[copper_wire_coil_2].energy_required = 8
 data_recipe[copper_wire_coil_2].ingredients[1].amount = 240
-data_recipe[copper_wire_coil_2].ingredients[2].amount = 120
+data_recipe[copper_wire_coil_2].ingredients[2].amount = 60
 data_recipe[copper_wire_coil_2].results[1].amount = 16
-data_recipe[copper_wire_coil_2].results[2].amount = 60
+data_recipe[copper_wire_coil_2].results[2].amount = 30
 
 data_item[copper_cable].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_cable].order = e
@@ -240,6 +240,18 @@ local copper_wire_2 = "angels-wire-copper-2"
 data_recipe[copper_wire_2].icons = TWO_I(copper_wire_coil, copper_cable)
 data_recipe[copper_wire_2].order = e_a
 data_recipe[copper_wire_2].energy_required = 8
+
+data_item[copper_insulated_cable].subgroup = is_copper_casting
+data_item[copper_insulated_cable].order = f
+data_recipe[copper_insulated_cable].subgroup = is_copper_casting
+data_recipe[copper_insulated_cable].icons = THREE_I(copper_cable, rubber_bob, copper_insulated_cable)
+data_recipe[copper_insulated_cable].order = f
+data_recipe[copper_insulated_cable].allow_productivity = false
+data_recipe[copper_insulated_cable].energy_required = 4
+data_recipe[copper_insulated_cable].ingredients[1].amount = 4
+data_recipe[copper_insulated_cable].ingredients[2].name = copper_cable
+data_recipe[copper_insulated_cable].ingredients[2].amount = 8
+data_recipe[copper_insulated_cable].results[1].amount = 8
 
 -- LEAD
 data_item_subgroup["angels-lead-casting"].order = c
@@ -259,7 +271,7 @@ data_recipe[lead_roll].order = b
 data_recipe[lead_roll].energy_required = 8
 data_recipe[lead_roll].ingredients[1].amount = 240
 data_recipe[lead_roll].ingredients[2].name = water_purified_angels
-data_recipe[lead_roll].ingredients[2].amount = 120
+data_recipe[lead_roll].ingredients[2].amount = 60
 data_recipe[lead_roll].results =
 {
     {type = item, name = lead_roll, amount = 4},
@@ -270,19 +282,26 @@ data_recipe[lead_roll].main_product = lead_roll
 local lead_roll_2 = "angels-roll-lead-2"
 data_recipe[lead_roll_2].icons = TWO_I(lead_molten_angels, lead_roll, number_2)
 data_recipe[lead_roll_2].order = b_a
-data_recipe[lead_roll_2].energy_required = 4
+data_recipe[lead_roll_2].energy_required = 8
 data_recipe[lead_roll_2].ingredients[1].amount = 240
-data_recipe[lead_roll_2].ingredients[2].amount = 120
+data_recipe[lead_roll_2].ingredients[2].amount = 60
 data_recipe[lead_roll_2].results[1].amount = 8
-data_recipe[lead_roll_2].results[2].amount = 60
+data_recipe[lead_roll_2].results[2].amount = 30
 
 data_item[lead_plate_bob].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_plate_bob].order = c
 data_recipe[lead_plate_bob].localised_name = data_item[lead_plate_bob].localised_name
-data_recipe[lead_plate_bob].category = smelting
+data_recipe[lead_plate_bob].categories = {smelting}
 data_recipe[lead_plate_bob].subgroup = "angels-lead-casting"
 data_recipe[lead_plate_bob].icons = TWO_I(crushed_rubyte, lead_plate_bob)
 data_recipe[lead_plate_bob].order = c
+if mods[lignumis_mods] then
+    data_recipe[lead_plate_bob].enabled = false
+else
+    data_recipe[lead_plate_bob].enabled = true
+end
+data_recipe[lead_plate_bob].allow_productivity = false
+data_recipe[lead_plate_bob].allow_quality = true
 data_recipe[lead_plate_bob].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
@@ -295,13 +314,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 1}}
 end
 data_recipe[lead_plate_bob].main_product = lead_plate_bob
-if mods[lignumis_mods] then
-    data_recipe[lead_plate_bob].enabled = false
-else
-    data_recipe[lead_plate_bob].enabled = true
-end
-data_recipe[lead_plate_bob].allow_productivity = false
-data_recipe[lead_plate_bob].allow_quality = true
 
 local lead_plate_angels = "angels-plate-lead"
 data_recipe[lead_plate_angels].icons = TWO_I(lead_molten_angels, lead_plate_bob)
@@ -331,7 +343,7 @@ data_recipe[tin_roll].order = b
 data_recipe[tin_roll].energy_required = 8
 data_recipe[tin_roll].ingredients[1].amount = 240
 data_recipe[tin_roll].ingredients[2].name = water_purified_angels
-data_recipe[tin_roll].ingredients[2].amount = 120
+data_recipe[tin_roll].ingredients[2].amount = 60
 data_recipe[tin_roll].results =
 {
     {type = item, name = tin_roll, amount = 4},
@@ -342,19 +354,27 @@ data_recipe[tin_roll].main_product = tin_roll
 local tin_roll_2 = "angels-roll-tin-2"
 data_recipe[tin_roll_2].icons = TWO_I(tin_molten_angels, tin_roll, number_2)
 data_recipe[tin_roll_2].order = b_a
-data_recipe[tin_roll_2].energy_required = 4
+data_recipe[tin_roll_2].energy_required = 8
 data_recipe[tin_roll_2].ingredients[1].amount = 240
-data_recipe[tin_roll_2].ingredients[2].amount = 120
+data_recipe[tin_roll_2].ingredients[2].amount = 60
 data_recipe[tin_roll_2].results[1].amount = 8
-data_recipe[tin_roll_2].results[2].amount = 60
+data_recipe[tin_roll_2].results[2].amount = 30
 
 data_item[tin_plate_bob].localised_description = show_formula and {chemical_formula, "Sn"} or nil
 data_item[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].localised_name = data_item[tin_plate_bob].localised_name
-data_recipe[tin_plate_bob].category = smelting
-data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
+data_recipe[tin_plate_bob].categories = {smelting}
+data_recipe[tin_plate_bob].subgroup = is_tin_casting
 data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
+data_recipe[tin_plate_bob].main_product = tin_plate_bob
+if mods[lignumis_mods] then
+    data_recipe[tin_plate_bob].enabled = false
+else
+    data_recipe[tin_plate_bob].enabled = true
+end
+data_recipe[tin_plate_bob].allow_productivity = false
+data_recipe[tin_plate_bob].allow_quality = true
 data_recipe[tin_plate_bob].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
     data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 4}}
@@ -366,14 +386,6 @@ elseif settings.startup[setting_game_difficulty].value == hard then
     data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 8}}
     data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
 end
-data_recipe[tin_plate_bob].main_product = tin_plate_bob
-if mods[lignumis_mods] then
-    data_recipe[tin_plate_bob].enabled = false
-else
-    data_recipe[tin_plate_bob].enabled = true
-end
-data_recipe[tin_plate_bob].allow_productivity = false
-data_recipe[tin_plate_bob].allow_quality = true
 
 local tin_plate_angels = "angels-plate-tin"
 data_recipe[tin_plate_angels].icons = TWO_I(tin_molten_angels, tin_plate_bob)
@@ -390,26 +402,25 @@ data_item[tin_wire_coil].order = d
 data_recipe[tin_wire_coil].icons = THREE_I(copper_molten_angels, tin_molten_angels, tin_wire_coil, number_1)
 data_recipe[tin_wire_coil].order = d
 data_recipe[tin_wire_coil].energy_required = 8
-data_recipe[tin_wire_coil].ingredients[1].amount = 60
+data_recipe[tin_wire_coil].ingredients[1].amount = 120
 data_recipe[tin_wire_coil].ingredients[2].amount = 240
-data_recipe[tin_wire_coil].ingredients[3].name = water_purified_angels
-data_recipe[tin_wire_coil].ingredients[3].amount = 120
+data_recipe[tin_wire_coil].ingredients[3].amount = 60
 data_recipe[tin_wire_coil].results =
 {
     {type = item, name = tin_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[tin_wire_coil].main_product = tin_wire_coil
 
 local tin_wire_coil_2 = "angels-wire-coil-tin-2"
 data_recipe[tin_wire_coil_2].icons = THREE_I(copper_molten_angels, tin_molten_angels, tin_wire_coil, number_2)
 data_recipe[tin_wire_coil_2].order = d_a
-data_recipe[tin_wire_coil_2].energy_required = 4
-data_recipe[tin_wire_coil_2].ingredients[1].amount = 60
+data_recipe[tin_wire_coil_2].energy_required = 8
+data_recipe[tin_wire_coil_2].ingredients[1].amount = 120
 data_recipe[tin_wire_coil_2].ingredients[2].amount = 240
-data_recipe[tin_wire_coil_2].ingredients[3].amount = 120
+data_recipe[tin_wire_coil_2].ingredients[3].amount = 60
 data_recipe[tin_wire_coil_2].results[1].amount = 16
-data_recipe[tin_wire_coil_2].results[2].amount = 60
+data_recipe[tin_wire_coil_2].results[2].amount = 30
 
 data_item[tin_cable].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_item[tin_cable].order = e
@@ -417,13 +428,14 @@ data_recipe[tin_cable].icons = THREE_I(copper_cable, tin_plate_bob, tin_cable)
 data_recipe[tin_cable].order = e
 data_recipe[tin_cable].energy_required = 2
 data_recipe[tin_cable].ingredients[1].amount = 2
-data_recipe[tin_cable].ingredients[2].amount = 4
+data_recipe[tin_cable].ingredients[2].amount = 2
 data_recipe[tin_cable].results[1].amount = 2
 
 local tin_wire_2 = "angels-wire-tin-2"
 data_recipe[tin_wire_2].icons = TWO_I(tin_wire_coil, tin_cable)
 data_recipe[tin_wire_2].order = e_a
 data_recipe[tin_wire_2].energy_required = 8
+data_recipe[tin_wire_2].results[1].amount = 8
 
 -- MANGANESE
 data_item_subgroup["angels-manganese-casting"].order = e
@@ -484,7 +496,7 @@ data_recipe[silicon_mono_2].ingredients[2].amount = 4
 data_recipe[silicon_mono_2].ingredients[3].amount = 4
 data_recipe[silicon_mono_2].results[1].amount = 8
 data_recipe[silicon_mono_2].results[2].amount = 4
-data_recipe[silicon_mono_2].results[2].probability = 0.5
+data_recipe[silicon_mono_2].results[2].independent_probability = 0.5
 
 data_item[silicon_wafer].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_wafer].stack_size = 200
@@ -511,22 +523,22 @@ data_recipe[nickel_roll].order = b
 data_recipe[nickel_roll].energy_required = 8
 data_recipe[nickel_roll].ingredients[1].amount = 240
 data_recipe[nickel_roll].ingredients[2].name = water_purified_angels
-data_recipe[nickel_roll].ingredients[2].amount = 120
+data_recipe[nickel_roll].ingredients[2].amount = 60
 data_recipe[nickel_roll].results =
 {
     {type = item, name = nickel_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[nickel_roll].main_product = nickel_roll
 
 local nickel_roll_2 = "angels-roll-nickel-2"
 data_recipe[nickel_roll_2].icons = TWO_I(nickel_molten_angels, nickel_roll, number_2)
 data_recipe[nickel_roll_2].order = b_a
-data_recipe[nickel_roll_2].energy_required = 4
+data_recipe[nickel_roll_2].energy_required = 8
 data_recipe[nickel_roll_2].ingredients[1].amount = 240
-data_recipe[nickel_roll_2].ingredients[2].amount = 120
+data_recipe[nickel_roll_2].ingredients[2].amount = 60
 data_recipe[nickel_roll_2].results[1].amount = 8
-data_recipe[nickel_roll_2].results[2].amount = 60
+data_recipe[nickel_roll_2].results[2].amount = 30
 
 data_item[nickel_plate_bob].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_plate_bob].order = c
@@ -535,6 +547,9 @@ if mods[castra_mods] then
     data_recipe[nickel_plate_bob].subgroup = "angels-nickel-casting"
     data_recipe[nickel_plate_bob].icons = TWO_I(millerite_crushed, nickel_plate_bob)
     data_recipe[nickel_plate_bob].order = c
+    data_recipe[nickel_plate_bob].enabled = false
+    data_recipe[nickel_plate_bob].allow_productivity = false
+    data_recipe[nickel_plate_bob].allow_quality = true
     data_recipe[nickel_plate_bob].energy_required = 8
     if settings.startup[setting_game_difficulty].value == easy then
         data_recipe[nickel_plate_bob].ingredients = {{type = item, name = millerite_crushed, amount = 4}}
@@ -547,9 +562,6 @@ if mods[castra_mods] then
         data_recipe[nickel_plate_bob].results = {{type = item, name = nickel_plate_bob, amount = 1}}
     end
     data_recipe[nickel_plate_bob].main_product = nickel_plate_bob
-    data_recipe[nickel_plate_bob].enabled = false
-    data_recipe[nickel_plate_bob].allow_productivity = false
-    data_recipe[nickel_plate_bob].allow_quality = true
 end
 
 local nickel_plate_angels = "angels-plate-nickel"
@@ -603,21 +615,21 @@ data_recipe[aluminium_roll].order = b
 data_recipe[aluminium_roll].energy_required = 8
 data_recipe[aluminium_roll].ingredients[1].amount = 240
 data_recipe[aluminium_roll].ingredients[2].name = water_purified_angels
-data_recipe[aluminium_roll].ingredients[2].amount = 120
+data_recipe[aluminium_roll].ingredients[2].amount = 60
 data_recipe[aluminium_roll].results =
 {
     {type = item, name = aluminium_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[aluminium_roll].main_product = aluminium_roll
 
 data_recipe[aluminium_roll_2].icons = TWO_I(aluminium_molten_angels, aluminium_roll, number_2)
 data_recipe[aluminium_roll_2].order = b_a
-data_recipe[aluminium_roll_2].energy_required = 4
+data_recipe[aluminium_roll_2].energy_required = 8
 data_recipe[aluminium_roll_2].ingredients[1].amount = 240
-data_recipe[aluminium_roll_2].ingredients[2].amount = 120
+data_recipe[aluminium_roll_2].ingredients[2].amount = 60
 data_recipe[aluminium_roll_2].results[1].amount = 8
-data_recipe[aluminium_roll_2].results[2].amount = 60
+data_recipe[aluminium_roll_2].results[2].amount = 30
 
 data_item[aluminium_plate_bob].localised_description = show_formula and {chemical_formula, "Al"} or nil
 data_item[aluminium_plate_bob].order = c
@@ -648,22 +660,22 @@ data_recipe[zinc_roll].order = b
 data_recipe[zinc_roll].energy_required = 8
 data_recipe[zinc_roll].ingredients[1].amount = 240
 data_recipe[zinc_roll].ingredients[2].name = water_purified_angels
-data_recipe[zinc_roll].ingredients[2].amount = 120
+data_recipe[zinc_roll].ingredients[2].amount = 60
 data_recipe[zinc_roll].results =
 {
     {type = item, name = zinc_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[zinc_roll].main_product = zinc_roll
 
 local zinc_roll_2 = "angels-roll-zinc-2"
 data_recipe[zinc_roll_2].icons = TWO_I(zinc_molten_angels, zinc_roll, number_2)
 data_recipe[zinc_roll_2].order = b_a
-data_recipe[zinc_roll_2].energy_required = 4
+data_recipe[zinc_roll_2].energy_required = 8
 data_recipe[zinc_roll_2].ingredients[1].amount = 240
-data_recipe[zinc_roll_2].ingredients[2].amount = 120
+data_recipe[zinc_roll_2].ingredients[2].amount = 60
 data_recipe[zinc_roll_2].results[1].amount = 8
-data_recipe[zinc_roll_2].results[2].amount = 60
+data_recipe[zinc_roll_2].results[2].amount = 30
 
 data_item[zinc_plate_bob].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_plate_bob].order = c
@@ -672,6 +684,9 @@ if mods[paracelsin_mods] then
     data_recipe[zinc_plate_bob].subgroup = "angels-nickel-casting"
     data_recipe[zinc_plate_bob].icons = TWO_I(sphalerite_crushed, zinc_plate_bob)
     data_recipe[zinc_plate_bob].order = c
+    data_recipe[zinc_plate_bob].enabled = false
+    data_recipe[zinc_plate_bob].allow_productivity = false
+    data_recipe[zinc_plate_bob].allow_quality = true
     data_recipe[zinc_plate_bob].energy_required = 8
     if settings.startup[setting_game_difficulty].value == easy then
         data_recipe[zinc_plate_bob].ingredients = {{type = item, name = sphalerite_crushed, amount = 4}}
@@ -684,9 +699,6 @@ if mods[paracelsin_mods] then
         data_recipe[zinc_plate_bob].results = {{type = item, name = zinc_plate_bob, amount = 1}}
     end
     data_recipe[zinc_plate_bob].main_product = zinc_plate_bob
-    data_recipe[zinc_plate_bob].enabled = false
-    data_recipe[zinc_plate_bob].allow_productivity = false
-    data_recipe[zinc_plate_bob].allow_quality = true
 end
 
 data_recipe[zinc_plate_angels].icons = TWO_I(zinc_molten_angels, zinc_plate_bob)
@@ -716,22 +728,22 @@ data_recipe[silver_roll].order = b
 data_recipe[silver_roll].energy_required = 8
 data_recipe[silver_roll].ingredients[1].amount = 240
 data_recipe[silver_roll].ingredients[2].name = water_purified_angels
-data_recipe[silver_roll].ingredients[2].amount = 120
+data_recipe[silver_roll].ingredients[2].amount = 60
 data_recipe[silver_roll].results =
 {
     {type = item, name = silver_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[silver_roll].main_product = silver_roll
 
 local silver_roll_2 = "angels-roll-silver-2"
 data_recipe[silver_roll_2].icons = TWO_I(silver_molten_angels, silver_roll, number_2)
 data_recipe[silver_roll_2].order = b_a
-data_recipe[silver_roll_2].energy_required = 4
+data_recipe[silver_roll_2].energy_required = 8
 data_recipe[silver_roll_2].ingredients[1].amount = 240
-data_recipe[silver_roll_2].ingredients[2].amount = 120
+data_recipe[silver_roll_2].ingredients[2].amount = 60
 data_recipe[silver_roll_2].results[1].amount = 8
-data_recipe[silver_roll_2].results[2].amount = 60
+data_recipe[silver_roll_2].results[2].amount = 30
 
 data_item[silver_plate_bob].localised_description = show_formula and {chemical_formula, "Ag"} or nil
 data_item[silver_plate_bob].order = c
@@ -752,26 +764,26 @@ data_item[silver_wire_coil].order = d
 data_recipe[silver_wire_coil].icons = THREE_I(copper_molten_angels, silver_molten_angels, silver_wire_coil, number_1)
 data_recipe[silver_wire_coil].order = d
 data_recipe[silver_wire_coil].energy_required = 8
-data_recipe[silver_wire_coil].ingredients[1].amount = 60
+data_recipe[silver_wire_coil].ingredients[1].amount = 120
 data_recipe[silver_wire_coil].ingredients[2].amount = 240
 data_recipe[silver_wire_coil].ingredients[3].name = water_purified_angels
-data_recipe[silver_wire_coil].ingredients[3].amount = 120
+data_recipe[silver_wire_coil].ingredients[3].amount = 60
 data_recipe[silver_wire_coil].results =
 {
     {type = item, name = silver_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[silver_wire_coil].main_product = silver_wire_coil
 
 local silver_wire_coil_2 = "angels-wire-coil-silver-2"
 data_recipe[silver_wire_coil_2].icons = THREE_I(copper_molten_angels, silver_molten_angels, silver_wire_coil, number_2)
 data_recipe[silver_wire_coil_2].order = d_a
-data_recipe[silver_wire_coil_2].energy_required = 4
-data_recipe[silver_wire_coil_2].ingredients[1].amount = 60
+data_recipe[silver_wire_coil_2].energy_required = 8
+data_recipe[silver_wire_coil_2].ingredients[1].amount = 120
 data_recipe[silver_wire_coil_2].ingredients[2].amount = 240
-data_recipe[silver_wire_coil_2].ingredients[3].amount = 120
+data_recipe[silver_wire_coil_2].ingredients[3].amount = 60
 data_recipe[silver_wire_coil_2].results[1].amount = 16
-data_recipe[silver_wire_coil_2].results[2].amount = 60
+data_recipe[silver_wire_coil_2].results[2].amount = 30
 
 data_item[silver_cable].localised_description = show_formula and {chemical_formula, "CuAg"} or nil
 data_item[silver_cable].order = e
@@ -779,13 +791,14 @@ data_recipe[silver_cable].icons = THREE_I(copper_cable, silver_plate_bob, silver
 data_recipe[silver_cable].order = e
 data_recipe[silver_cable].energy_required = 2
 data_recipe[silver_cable].ingredients[1].amount = 2
-data_recipe[silver_cable].ingredients[2].amount = 4
+data_recipe[silver_cable].ingredients[2].amount = 2
 data_recipe[silver_cable].results[1].amount = 2
 
 local silver_wire_2 = "angels-wire-silver-2"
 data_recipe[silver_wire_2].icons = TWO_I(silver_wire_coil, silver_cable)
 data_recipe[silver_wire_2].order = e_a
 data_recipe[silver_wire_2].energy_required = 8
+data_recipe[silver_wire_2].results[1].amount = 8
 
 -- TITANIUM
 data_item_subgroup["angels-titanium-casting"].order = l
@@ -828,27 +841,26 @@ data_recipe[titanium_roll].order = b
 data_recipe[titanium_roll].energy_required = 8
 data_recipe[titanium_roll].ingredients[1].amount = 240
 data_recipe[titanium_roll].ingredients[2].name = water_purified_angels
-data_recipe[titanium_roll].ingredients[2].amount = 120
+data_recipe[titanium_roll].ingredients[2].amount = 60
 data_recipe[titanium_roll].results =
 {
     {type = item, name = titanium_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[titanium_roll].main_product = titanium_roll
 
 data_recipe[titanium_roll_2].icons = TWO_I(titanium_molten_angels, titanium_roll, number_2)
 data_recipe[titanium_roll_2].order = b_a
-data_recipe[titanium_roll_2].energy_required = 4
+data_recipe[titanium_roll_2].energy_required = 8
 data_recipe[titanium_roll_2].ingredients[1].amount = 240
-data_recipe[titanium_roll_2].ingredients[2].amount = 120
+data_recipe[titanium_roll_2].ingredients[2].amount = 60
 data_recipe[titanium_roll_2].results[1].amount = 4
-data_recipe[titanium_roll_2].results[2].amount = 60
+data_recipe[titanium_roll_2].results[2].amount = 30
 
 data_item[titanium_plate_bob].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_plate_bob].order = c
 data_item[titanium_plate_bob].weight = 5000
 
-local titanium_plate_angels = "angels-plate-titanium"
 data_recipe[titanium_plate_angels].icons = TWO_I(titanium_molten_angels, titanium_plate_bob)
 data_recipe[titanium_plate_angels].order = c_a
 data_recipe[titanium_plate_angels].ingredients[1].amount = 60
@@ -875,26 +887,47 @@ data_recipe[gold_roll].order = b
 data_recipe[gold_roll].energy_required = 8
 data_recipe[gold_roll].ingredients[1].amount = 240
 data_recipe[gold_roll].ingredients[2].name = water_purified_angels
-data_recipe[gold_roll].ingredients[2].amount = 120
+data_recipe[gold_roll].ingredients[2].amount = 60
 data_recipe[gold_roll].results =
 {
     {type = item, name = gold_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[gold_roll].main_product = gold_roll
 
 local gold_roll_2 = "angels-roll-gold-2"
 data_recipe[gold_roll_2].icons = TWO_I(gold_molten_angels, gold_roll, number_2)
 data_recipe[gold_roll_2].order = b_a
-data_recipe[gold_roll_2].energy_required = 4
+data_recipe[gold_roll_2].energy_required = 8
 data_recipe[gold_roll_2].ingredients[1].amount = 240
-data_recipe[gold_roll_2].ingredients[2].amount = 120
+data_recipe[gold_roll_2].ingredients[2].amount = 60
 data_recipe[gold_roll_2].results[1].amount = 8
-data_recipe[gold_roll_2].results[2].amount = 60
+data_recipe[gold_roll_2].results[2].amount = 30
 
 data_item[gold_plate_bob].localised_description = show_formula and {chemical_formula, "Au"} or nil
 data_item[gold_plate_bob].order = c
 data_item[gold_plate_bob].weight = 5000
+if mods[secretas_frozeta_mods] then
+    data_recipe[gold_plate_bob].localised_name = data_item[gold_plate_bob].localised_name
+    data_recipe[gold_plate_bob].subgroup = is_gold_casting
+    data_recipe[gold_plate_bob].icons = TWO_I(sylvanite_crushed, gold_plate_bob)
+    data_recipe[gold_plate_bob].order = c
+    data_recipe[gold_plate_bob].enabled = false
+    data_recipe[gold_plate_bob].allow_productivity = false
+    data_recipe[gold_plate_bob].allow_quality = true
+    data_recipe[gold_plate_bob].energy_required = 8
+    if settings.startup[setting_game_difficulty].value == easy then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 4}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 2}}
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 4}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 1}}
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        data_recipe[gold_plate_bob].ingredients = {{type = item, name = sylvanite_crushed, amount = 8}}
+        data_recipe[gold_plate_bob].results = {{type = item, name = gold_plate_bob, amount = 1}}
+    end
+    data_recipe[gold_plate_bob].main_product = gold_plate_bob
+end
 
 local gold_plate_angels = "angels-plate-gold"
 data_recipe[gold_plate_angels].icons = TWO_I(gold_molten_angels, gold_plate_bob)
@@ -911,26 +944,26 @@ data_item[gold_wire_coil].order = d
 data_recipe[gold_wire_coil].icons = THREE_I(copper_molten_angels, gold_molten_angels, gold_wire_coil, number_1)
 data_recipe[gold_wire_coil].order = d
 data_recipe[gold_wire_coil].energy_required = 8
-data_recipe[gold_wire_coil].ingredients[1].amount = 60
+data_recipe[gold_wire_coil].ingredients[1].amount = 120
 data_recipe[gold_wire_coil].ingredients[2].amount = 240
 data_recipe[gold_wire_coil].ingredients[3].name = water_purified_angels
-data_recipe[gold_wire_coil].ingredients[3].amount = 120
+data_recipe[gold_wire_coil].ingredients[3].amount = 60
 data_recipe[gold_wire_coil].results =
 {
     {type = item, name = gold_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[gold_wire_coil].main_product = gold_wire_coil
 
 local gold_wire_coil_2 = "angels-wire-coil-gold-2"
 data_recipe[gold_wire_coil_2].icons = THREE_I(copper_molten_angels, gold_molten_angels, gold_wire_coil, number_2)
 data_recipe[gold_wire_coil_2].order = d_a
-data_recipe[gold_wire_coil_2].energy_required = 4
-data_recipe[gold_wire_coil_2].ingredients[1].amount = 60
+data_recipe[gold_wire_coil_2].energy_required = 8
+data_recipe[gold_wire_coil_2].ingredients[1].amount = 120
 data_recipe[gold_wire_coil_2].ingredients[2].amount = 240
-data_recipe[gold_wire_coil_2].ingredients[3].amount = 120
+data_recipe[gold_wire_coil_2].ingredients[3].amount = 60
 data_recipe[gold_wire_coil_2].results[1].amount = 16
-data_recipe[gold_wire_coil_2].results[2].amount = 60
+data_recipe[gold_wire_coil_2].results[2].amount = 30
 
 data_item[gold_cable].localised_description = show_formula and {chemical_formula, "CuAu"} or nil
 data_item[gold_cable].order = e
@@ -938,13 +971,14 @@ data_recipe[gold_cable].icons = THREE_I(copper_cable, gold_plate_bob, gold_cable
 data_recipe[gold_cable].order = e
 data_recipe[gold_cable].energy_required = 2
 data_recipe[gold_cable].ingredients[1].amount = 2
-data_recipe[gold_cable].ingredients[2].amount = 4
+data_recipe[gold_cable].ingredients[2].amount = 2
 data_recipe[gold_cable].results[1].amount = 2
 
 local gold_wire_2 = "angels-wire-gold-2"
 data_recipe[gold_wire_2].icons = TWO_I(gold_wire_coil, gold_cable)
 data_recipe[gold_wire_2].order = e_a
 data_recipe[gold_wire_2].energy_required = 8
+data_recipe[gold_wire_2].results[1].amount = 8
 
 -- COBALT
 data_item_subgroup["angels-cobalt-casting"].order = n
@@ -965,7 +999,7 @@ data_recipe[cobalt_molten_angels].results[1].amount = 240
 
 
 -- CHROMIUM
-data_item_subgroup["angels-chrome-casting"].order = o
+data_item_subgroup["angels-chrome-casting"].order = q
 
 data_fluid[chromium_molten_angels].localised_name = {"fluid-name.angels-liquid-molten-chrome"}
 data_fluid[chromium_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
@@ -978,10 +1012,18 @@ data_recipe[chromium_molten_angels].ingredients[1].amount = 16
 data_recipe[chromium_molten_angels].results[1].amount = 240
 
 -- TUNGSTEN
-data_item_subgroup["angels-tungsten-casting"].order = p
+data_item_subgroup["angels-tungsten-casting"].order = r
 
 data_item[tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_plate_bob].order = a
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[tungsten_plate_bob].ingredients = {{type = item, name = wolframite_crushed, amount = 4}}
+    data_recipe[tungsten_plate_bob].results = {{type = item, name = tungsten_plate_bob, amount = 2}}
+elseif settings.startup[setting_game_difficulty].value == normal then
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[tungsten_plate_bob].ingredients = {{type = item, name = wolframite_crushed, amount = 8}}
+    data_recipe[tungsten_plate_bob].results = {{type = item, name = tungsten_plate_bob, amount = 1}}
+end
 
 data_recipe[tungsten_plate_angels].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate_angels].order = a_a
@@ -990,29 +1032,16 @@ data_recipe[tungsten_plate_angels].ingredients[1].name = tungsten_powder
 data_recipe[tungsten_plate_angels].ingredients[1].amount = 16
 data_recipe[tungsten_plate_angels].results[1].amount = 16
 
-data_item[tungsten_carbide_plate_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
-data_item[tungsten_carbide_plate_bob].order = b
-
-data_recipe[tungsten_carbide_plate_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
-data_recipe[tungsten_carbide_plate_2].order = b_a
-data_recipe[tungsten_carbide_plate_2].energy_required = 8 -- W + C --> WC
-data_recipe[tungsten_carbide_plate_2].ingredients =
-{
-    {type = item, name = tungsten_powder, amount = 16},
-    {type = item, name = carbon_angels, amount = 16}
-}
-data_recipe[tungsten_carbide_plate_2].results[1].amount = 16
-
 data_item[copper_tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "WCu"} or nil
-data_item[copper_tungsten_plate_bob].order = c
+data_item[copper_tungsten_plate_bob].order = b
 data_recipe[copper_tungsten_plate_bob].icons = TWO_I(copper_tungsten_powder, copper_tungsten_plate_bob)
-data_recipe[copper_tungsten_plate_bob].order = c
+data_recipe[copper_tungsten_plate_bob].order = b
 data_recipe[copper_tungsten_plate_bob].energy_required = 8 -- WCu --> WCu
 data_recipe[copper_tungsten_plate_bob].ingredients = {{type = item, name = copper_tungsten_powder, amount = 16}}
 data_recipe[copper_tungsten_plate_bob].results[1].amount = 16
 
 -- PLATINUM
-data_item_subgroup["angels-platinum-casting"].order = q
+data_item_subgroup["angels-platinum-casting"].order = s
 
 data_fluid[platinum_molten_angels].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_fluid[platinum_molten_angels].order = a
@@ -1029,28 +1058,41 @@ data_recipe[platinum_roll].order = b
 data_recipe[platinum_roll].energy_required = 8
 data_recipe[platinum_roll].ingredients[1].amount = 240
 data_recipe[platinum_roll].ingredients[2].name = water_purified_angels
-data_recipe[platinum_roll].ingredients[2].amount = 120
+data_recipe[platinum_roll].ingredients[2].amount = 60
 data_recipe[platinum_roll].results =
 {
     {type = item, name = platinum_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[platinum_roll].main_product = platinum_roll
 
 local platinum_roll_2 = "angels-roll-platinum-2"
 data_recipe[platinum_roll_2].icons = TWO_I(platinum_molten_angels, platinum_roll, number_2)
 data_recipe[platinum_roll_2].order = b_a
-data_recipe[platinum_roll_2].energy_required = 4
+data_recipe[platinum_roll_2].energy_required = 8
 data_recipe[platinum_roll_2].ingredients[1].amount = 240
-data_recipe[platinum_roll_2].ingredients[2].amount = 120
+data_recipe[platinum_roll_2].ingredients[2].amount = 60
 data_recipe[platinum_roll_2].results[1].amount = 8
-data_recipe[platinum_roll_2].results[2].amount = 60
+data_recipe[platinum_roll_2].results[2].amount = 30
 
 data_item[platinum_plate].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_plate].order = c
-data_recipe[platinum_plate].icons = TWO_I(platinum_molten_angels, platinum_plate)
-data_recipe[platinum_plate].order = c
-data_recipe[platinum_plate].ingredients[1].amount = 60
+if mods[corrundum_mods] then
+    data_recipe[platinum_plate].icons = TWO_I(sperrylite_crushed, platinum_plate)
+    data_recipe[platinum_plate].order = c
+    data_recipe[platinum_plate].allow_productivity = false
+    data_recipe[platinum_plate].energy_required = 8
+    if settings.startup[setting_game_difficulty].value == easy then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 4}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 2}}
+    elseif settings.startup[setting_game_difficulty].value == normal then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 4}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 1}}
+    elseif settings.startup[setting_game_difficulty].value == hard then
+        data_recipe[platinum_plate].ingredients = {{type = item, name = sperrylite_crushed, amount = 8}}
+        data_recipe[platinum_plate].results = {{type = item, name = platinum_plate, amount = 1}}
+    end
+end
 
 local platinum_plate_2 = "angels-plate-platinum-2"
 data_recipe[platinum_plate_2].icons = TWO_I(platinum_roll, platinum_plate)
@@ -1062,26 +1104,26 @@ data_item[platinum_wire_coil].order = d
 data_recipe[platinum_wire_coil].icons = THREE_I(copper_molten_angels, platinum_molten_angels, platinum_wire_coil, number_1)
 data_recipe[platinum_wire_coil].order = d
 data_recipe[platinum_wire_coil].energy_required = 8
-data_recipe[platinum_wire_coil].ingredients[1].amount = 60
+data_recipe[platinum_wire_coil].ingredients[1].amount = 120
 data_recipe[platinum_wire_coil].ingredients[2].amount = 240
 data_recipe[platinum_wire_coil].ingredients[3].name = water_purified_angels
-data_recipe[platinum_wire_coil].ingredients[3].amount = 120
+data_recipe[platinum_wire_coil].ingredients[3].amount = 60
 data_recipe[platinum_wire_coil].results =
 {
     {type = item, name = platinum_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[platinum_wire_coil].main_product = platinum_wire_coil
 
 local platinum_wire_coil_2 = "angels-wire-coil-platinum-2"
 data_recipe[platinum_wire_coil_2].icons = THREE_I(copper_molten_angels, platinum_molten_angels, platinum_wire_coil, number_2)
 data_recipe[platinum_wire_coil_2].order = d_a
-data_recipe[platinum_wire_coil_2].energy_required = 4
-data_recipe[platinum_wire_coil_2].ingredients[1].amount = 60
+data_recipe[platinum_wire_coil_2].energy_required = 8
+data_recipe[platinum_wire_coil_2].ingredients[1].amount = 120
 data_recipe[platinum_wire_coil_2].ingredients[2].amount = 240
-data_recipe[platinum_wire_coil_2].ingredients[3].amount = 120
+data_recipe[platinum_wire_coil_2].ingredients[3].amount = 60
 data_recipe[platinum_wire_coil_2].results[1].amount = 16
-data_recipe[platinum_wire_coil_2].results[2].amount = 60
+data_recipe[platinum_wire_coil_2].results[2].amount = 30
 
 data_item[platinum_cable].localised_description = show_formula and {chemical_formula, "CuPt"} or nil
 data_item[platinum_cable].order = e
@@ -1089,180 +1131,23 @@ data_recipe[platinum_cable].icons = THREE_I(copper_cable, platinum_plate, platin
 data_recipe[platinum_cable].order = e
 data_recipe[platinum_cable].energy_required = 2
 data_recipe[platinum_cable].ingredients[1].amount = 2
-data_recipe[platinum_cable].ingredients[2].amount = 4
+data_recipe[platinum_cable].ingredients[2].amount = 2
 data_recipe[platinum_cable].results[1].amount = 2
 
 local platinum_cable_2 = "angels-wire-platinum-2"
 data_recipe[platinum_cable_2].icons = TWO_I(platinum_wire_coil, platinum_cable)
 data_recipe[platinum_cable_2].order = e_a
 data_recipe[platinum_cable_2].energy_required = 8
+data_recipe[platinum_cable_2].results[1].amount = 8
 
--- GLASS
-data_item_subgroup["angels-glass-casting"].order = v
-
-data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
-data_recipe[glass_molten_angels].energy_required = 8
-data_recipe[glass_molten_angels].ingredients[1].amount = 16
-data_recipe[glass_molten_angels].results[1].amount = 240
-
-data_recipe[glass_coil_fiber].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_1)
-data_recipe[glass_coil_fiber].energy_required = 8
-data_recipe[glass_coil_fiber].ingredients[1].amount = 240
-data_recipe[glass_coil_fiber].ingredients[2].name = water_purified_angels
-data_recipe[glass_coil_fiber].ingredients[2].amount = 120
-data_recipe[glass_coil_fiber].results =
-{
-    {type = item, name = glass_coil_fiber, amount = 8},
-    {type = fluid, name = steam, amount = 60}
-}
-data_recipe[glass_coil_fiber].main_product = glass_coil_fiber
-
-data_recipe[glass_coil_fiber_2].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_2)
-data_recipe[glass_coil_fiber_2].energy_required = 4
-data_recipe[glass_coil_fiber_2].ingredients[1].amount = 240
-data_recipe[glass_coil_fiber_2].ingredients[2].amount = 120
-data_recipe[glass_coil_fiber_2].results[1].amount = 16
-data_recipe[glass_coil_fiber_2].results[2].amount = 60
-
-data_item[glass_bob].stack_size = 200
-data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
-data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
-data_recipe[glass_bob].energy_required = 4
-data_recipe[glass_bob].ingredients[1].name = sand_angels
-data_recipe[glass_bob].ingredients[1].amount = 8
-
-glass_angels = "angels-plate-glass"
-data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
-data_recipe[glass_angels].ingredients[1].amount = 60
-data_recipe[glass_angels].results[1].amount = 4
-
--- STONE
-data_item_subgroup[is_stone_casting].order = w
-
-data_item[concrete].order = a
-data_recipe[concrete].icons = R_P_I(concrete, nil, nil, number_1)
-data_recipe[concrete].order = a
-data_recipe[concrete].energy_required = 8
-data_recipe[concrete].ingredients =
-{
-    {type = item, name = lime_angels, amount = 8},
-    {type = item, name = stone_crushed_angels, amount = 4},
-    {type = item, name = sand_angels, amount = 4},
-    {type = fluid, name = water, amount = 120}
-}
-data_recipe[concrete].results[1].amount = 8
-
-data_recipe[concrete_2].icons = R_P_I(concrete, nil, nil, number_2)
-data_recipe[concrete_2].order = a_a
-data_recipe[concrete_2].ingredients[1].amount = 60
-
-data_item[hazard_concrete].order = b
-data_recipe[hazard_concrete].icons = TWO_I(concrete, hazard_concrete)
-data_recipe[hazard_concrete].order = b
-data_recipe[hazard_concrete].energy_required = 0.25
-data_recipe[hazard_concrete].ingredients[1].amount = 1
-data_recipe[hazard_concrete].results[1].amount = 1
-
-data_item[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
-data_item[reinforced_concrete].order = c
-data_recipe[reinforced_concrete].localised_name = data_item[reinforced_concrete].localised_name
-data_recipe[reinforced_concrete].icons = R_P_I(reinforced_concrete, nil, nil, number_1)
-data_recipe[reinforced_concrete].order = c
-data_recipe[reinforced_concrete].energy_required = 8
-data_recipe[reinforced_concrete].ingredients =
-{
-    {type = item, name = lime_angels, amount = 8},
-    {type = item, name = stone_crushed_angels, amount = 4},
-    {type = item, name = sand_angels, amount = 4},
-    {type = item, name = iron_rod, amount = 8},
-    {type = fluid, name = water, amount = 120}
-}
-data_recipe[reinforced_concrete].results[1].amount = 8
-
-data_item[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
-data_item[reinforced_hazard_concrete].order = d
-data_recipe[reinforced_hazard_concrete].localised_name = data_item[reinforced_hazard_concrete].localised_name
-data_recipe[reinforced_hazard_concrete].icons = TWO_I(reinforced_concrete, reinforced_hazard_concrete)
-data_recipe[reinforced_hazard_concrete].energy_required = 0.25
-data_recipe[reinforced_hazard_concrete].ingredients[1].amount = 1
-data_recipe[reinforced_hazard_concrete].results[1].amount = 1
-
-data_fluid[concrete_liquid].order = e
-data_recipe[concrete_liquid].icons = THREE_D_I(cement, sand_angels, water, concrete_liquid, nil, nil, number_1)
-data_recipe[concrete_liquid].order = e
-data_recipe[concrete_liquid].ingredients =
-{
-    {type = item, name = cement, amount = 1},
-    {type = item, name = sand_angels, amount = 4},
-    {type = fluid, name = water, amount = 60}
-}
-data_recipe[concrete_liquid].results[1].amount = 120
-
-local concrete_liquid_2 = "angels-liquid-concrete-2"
-data_recipe[concrete_liquid_2].icons = FOUR_D_I(cement, stone_crushed_angels, sand_angels, water, concrete_liquid, nil, nil, nil, number_2)
-data_recipe[concrete_liquid_2].order = e_a
-data_recipe[concrete_liquid_2].ingredients =
-{
-    {type = item, name = cement, amount = 4},
-    {type = item, name = stone_crushed_angels, amount = 8},
-    {type = item, name = sand_angels, amount = 8},
-    {type = fluid, name = water, amount = 240}
-}
-data_recipe[concrete_liquid_2].results[1].amount = 480
-
--- BRICK
-local clay_brick_raw = "angels-clay-brick-raw"
-data_item[clay_brick_raw].subgroup = is_bricks_casting
-data_item[clay_brick_raw].order = a
-data_recipe[clay_brick_raw].subgroup = is_bricks_casting
-data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
-data_recipe[clay_brick_raw].order = a
-
-data_item[clay_brick].subgroup = is_bricks_casting
-data_item[clay_brick].order = b
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[clay_brick].additional_categories = {angels_sintering_1, metallurgy}
-else
-    data_recipe[clay_brick].additional_categories = {angels_sintering_4, metallurgy}
-end
-data_recipe[clay_brick].subgroup = is_bricks_casting
-data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
-data_recipe[clay_brick].order = b
-
-data_item[stone_brick].subgroup = is_bricks_casting
-data_item[stone_brick].order = c
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_brick].additional_categories = {angels_sintering_1, metallurgy}
-else
-    data_recipe[stone_brick].additional_categories = {angels_sintering_4, metallurgy}
-end
-data_recipe[stone_brick].subgroup = is_bricks_casting
-data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
-data_recipe[stone_brick].order = c
-data_recipe[stone_brick].energy_required = 4
-
-data_item[concrete_brick].subgroup = is_bricks_casting
-data_item[concrete_brick].order = d
-data_recipe[concrete_brick].subgroup = is_bricks_casting
-data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
-data_recipe[concrete_brick].order = d
-data_recipe[concrete_brick].ingredients[1].amount = 60
-
-data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_item[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
-data_recipe[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
-data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
-
+-- ALLOYS
 -- SOLDER
-data_item_subgroup["angels-solder-casting"].order = x
+data_item_subgroup["angels-solder-casting"].order = u
 
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
 data_recipe[solder_molten_angels].localised_name = data_fluid[solder_molten_angels].localised_name
-data_recipe[solder_molten_angels].category = angels_induction_smelting_1
+data_recipe[solder_molten_angels].categories = {angels_induction_smelting_1}
 data_recipe[solder_molten_angels].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_1)
 data_recipe[solder_molten_angels].order = a
 data_recipe[solder_molten_angels].energy_required = 8
@@ -1274,7 +1159,7 @@ data_recipe[solder_molten_angels].ingredients =
 data_recipe[solder_molten_angels].results = {{type = fluid, name = solder_molten_angels, amount = 240}}
 data_recipe[solder_molten_angels].main_product = solder_molten_angels
 
-data_recipe[solder_molten_2].category = angels_induction_smelting_2
+data_recipe[solder_molten_2].categories = {angels_induction_smelting_2}
 data_recipe[solder_molten_2].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_2)
 data_recipe[solder_molten_2].order = a_a
 data_recipe[solder_molten_2].energy_required = 8
@@ -1286,7 +1171,7 @@ data_recipe[solder_molten_2].ingredients =
 }
 data_recipe[solder_molten_2].results[1].amount = 480
 
-data_recipe[solder_molten_3].category = angels_induction_smelting_3
+data_recipe[solder_molten_3].categories = {angels_induction_smelting_3}
 data_recipe[solder_molten_3].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_3)
 data_recipe[solder_molten_3].order = a_b
 data_recipe[solder_molten_3].energy_required = 8
@@ -1306,21 +1191,21 @@ data_recipe[solder_roll].order = b
 data_recipe[solder_roll].energy_required = 8
 data_recipe[solder_roll].ingredients[1].amount = 240
 data_recipe[solder_roll].ingredients[2].name = water_purified_angels
-data_recipe[solder_roll].ingredients[2].amount = 120
+data_recipe[solder_roll].ingredients[2].amount = 60
 data_recipe[solder_roll].results =
 {
     {type = item, name = solder_roll, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30}
 }
 data_recipe[solder_roll].main_product = solder_roll
 
 data_recipe[solder_roll_2].icons = TWO_I(solder_molten_angels, solder_roll, number_2)
 data_recipe[solder_roll_2].order = b_a
-data_recipe[solder_roll_2].energy_required = 4
+data_recipe[solder_roll_2].energy_required = 8
 data_recipe[solder_roll_2].ingredients[1].amount = 240
-data_recipe[solder_roll_2].ingredients[2].amount = 120
+data_recipe[solder_roll_2].ingredients[2].amount = 60
 data_recipe[solder_roll_2].results[1].amount = 16
-data_recipe[solder_roll_2].results[2].amount = 60
+data_recipe[solder_roll_2].results[2].amount = 30
 
 data_item[solder].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_item[solder].order = c
@@ -1335,9 +1220,8 @@ data_recipe[solder_2].order = c_b
 data_recipe[solder_2].energy_required = 8
 data_recipe[solder_2].results[1].amount = 16
 
--- ALLOYS
 -- BRONZE
-data_item_subgroup["angels-alloys-casting"].order = y
+data_item_subgroup["angels-alloys-casting"].order = u_a
 
 data_fluid[bronze_molten_angels].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_recipe[bronze_molten_angels].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_1)
@@ -1487,9 +1371,159 @@ data_recipe[nitinol_plate_angels].subgroup = is_alloys_casting_6
 data_recipe[nitinol_plate_angels].icons = TWO_I(nitinol_molten_angels, nitinol_plate_bob)
 data_recipe[nitinol_plate_angels].ingredients[1].amount = 60
 
+-- GLASS
+data_item_subgroup["angels-glass-casting"].order = w
+
+data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
+data_recipe[glass_molten_angels].energy_required = 8
+data_recipe[glass_molten_angels].ingredients[1].amount = 16
+data_recipe[glass_molten_angels].results[1].amount = 240
+
+data_recipe[glass_coil_fiber].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_1)
+data_recipe[glass_coil_fiber].energy_required = 8
+data_recipe[glass_coil_fiber].ingredients[1].amount = 240
+data_recipe[glass_coil_fiber].ingredients[2].name = water_purified_angels
+data_recipe[glass_coil_fiber].ingredients[2].amount = 60
+data_recipe[glass_coil_fiber].results =
+{
+    {type = item, name = glass_coil_fiber, amount = 8},
+    {type = fluid, name = steam, amount = 60}
+}
+data_recipe[glass_coil_fiber].main_product = glass_coil_fiber
+
+data_recipe[glass_coil_fiber_2].icons = TWO_I(glass_molten_angels, glass_coil_fiber, number_2)
+data_recipe[glass_coil_fiber_2].energy_required = 4
+data_recipe[glass_coil_fiber_2].ingredients[1].amount = 240
+data_recipe[glass_coil_fiber_2].ingredients[2].amount = 60
+data_recipe[glass_coil_fiber_2].results[1].amount = 16
+data_recipe[glass_coil_fiber_2].results[2].amount = 60
+
+data_item[glass_bob].stack_size = 200
+data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
+data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
+data_recipe[glass_bob].energy_required = 4
+data_recipe[glass_bob].ingredients[1].name = sand_angels
+data_recipe[glass_bob].ingredients[1].amount = 8
+
+glass_angels = "angels-plate-glass"
+data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
+data_recipe[glass_angels].ingredients[1].amount = 60
+data_recipe[glass_angels].results[1].amount = 4
+
+-- BRICK
+local clay_brick_raw = "angels-clay-brick-raw"
+data_item[clay_brick_raw].subgroup = is_bricks_casting
+data_item[clay_brick_raw].order = a
+data_recipe[clay_brick_raw].subgroup = is_bricks_casting
+data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
+data_recipe[clay_brick_raw].order = a
+
+data_item[clay_brick].subgroup = is_bricks_casting
+data_item[clay_brick].order = b
+data_recipe[clay_brick].subgroup = is_bricks_casting
+data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
+data_recipe[clay_brick].order = b
+
+data_item[stone_brick].subgroup = is_bricks_casting
+data_item[stone_brick].order = c
+data_recipe[stone_brick].subgroup = is_bricks_casting
+data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
+data_recipe[stone_brick].order = c
+data_recipe[stone_brick].energy_required = 4
+
+data_item[concrete_brick].subgroup = is_bricks_casting
+data_item[concrete_brick].order = d
+data_recipe[concrete_brick].subgroup = is_bricks_casting
+data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
+data_recipe[concrete_brick].order = d
+data_recipe[concrete_brick].ingredients[1].amount = 60
+
+data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_item[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
+data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
+data_recipe[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
+data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
+
+-- STONE
+data_item_subgroup[is_stone_casting].order = x
+
+data_item[concrete].order = a
+data_recipe[concrete].icons = R_P_I(concrete, nil, nil, number_1)
+data_recipe[concrete].order = a
+data_recipe[concrete].energy_required = 8
+data_recipe[concrete].ingredients =
+{
+    {type = item, name = lime_angels, amount = 8},
+    {type = item, name = stone_crushed_angels, amount = 4},
+    {type = item, name = sand_angels, amount = 4},
+    {type = fluid, name = water, amount = 120}
+}
+data_recipe[concrete].results[1].amount = 8
+
+data_recipe[concrete_2].icons = R_P_I(concrete, nil, nil, number_2)
+data_recipe[concrete_2].order = a_a
+data_recipe[concrete_2].ingredients[1].amount = 60
+
+data_item[hazard_concrete].order = b
+data_recipe[hazard_concrete].icons = TWO_I(concrete, hazard_concrete)
+data_recipe[hazard_concrete].order = b
+data_recipe[hazard_concrete].energy_required = 0.25
+data_recipe[hazard_concrete].ingredients[1].amount = 1
+data_recipe[hazard_concrete].results[1].amount = 1
+
+data_item[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
+data_item[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].localised_name = data_item[reinforced_concrete].localised_name
+data_recipe[reinforced_concrete].icons = R_P_I(reinforced_concrete, nil, nil, number_1)
+data_recipe[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].energy_required = 8
+data_recipe[reinforced_concrete].ingredients =
+{
+    {type = item, name = lime_angels, amount = 8},
+    {type = item, name = stone_crushed_angels, amount = 4},
+    {type = item, name = sand_angels, amount = 4},
+    {type = item, name = iron_rod, amount = 8},
+    {type = fluid, name = water, amount = 120}
+}
+data_recipe[reinforced_concrete].results[1].amount = 8
+
+data_item[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
+data_item[reinforced_hazard_concrete].order = d
+data_recipe[reinforced_hazard_concrete].localised_name = data_item[reinforced_hazard_concrete].localised_name
+data_recipe[reinforced_hazard_concrete].icons = TWO_I(reinforced_concrete, reinforced_hazard_concrete)
+data_recipe[reinforced_hazard_concrete].energy_required = 0.25
+data_recipe[reinforced_hazard_concrete].ingredients[1].amount = 1
+data_recipe[reinforced_hazard_concrete].results[1].amount = 1
+
+data_fluid[concrete_liquid].order = e
+data_recipe[concrete_liquid].icons = THREE_D_I(cement, sand_angels, water, concrete_liquid, nil, nil, number_1)
+data_recipe[concrete_liquid].order = e
+data_recipe[concrete_liquid].ingredients =
+{
+    {type = item, name = cement, amount = 1},
+    {type = item, name = sand_angels, amount = 4},
+    {type = fluid, name = water, amount = 60}
+}
+data_recipe[concrete_liquid].results[1].amount = 120
+
+local concrete_liquid_2 = "angels-liquid-concrete-2"
+data_recipe[concrete_liquid_2].icons = FOUR_D_I(cement, stone_crushed_angels, sand_angels, water, concrete_liquid, nil, nil, nil, number_2)
+data_recipe[concrete_liquid_2].order = e_a
+data_recipe[concrete_liquid_2].ingredients =
+{
+    {type = item, name = cement, amount = 4},
+    {type = item, name = stone_crushed_angels, amount = 8},
+    {type = item, name = sand_angels, amount = 8},
+    {type = fluid, name = water, amount = 240}
+}
+data_recipe[concrete_liquid_2].results[1].amount = 480
+
 bobmods.lib.recipe.update_recycling_recipe
 ({
     copper_cable,
+    copper_insulated_cable,
     tin_cable,
     silver_cable,
     gold_cable,

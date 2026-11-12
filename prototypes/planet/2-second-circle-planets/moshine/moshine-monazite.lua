@@ -61,7 +61,7 @@ if mods[moshine_mods] then
         -- CRUSHED
         {
             name = monazite_crushed,
-            category = angels_ore_refining_T1,
+            categories = {angels_ore_refining_T1},
             subgroup = is_monazite,
             icons = THREE_R_I(monazite_ore, monazite_crushed, stone_crushed_angels),
             order = b,
@@ -77,7 +77,7 @@ if mods[moshine_mods] then
         -- CHUNKS
         {
             name = monazite_chunks,
-            category = angels_ore_refining_T2,
+            categories = {angels_ore_refining_T2},
             subgroup = is_monazite,
             icons = THREE_D_I(monazite_crushed, nil, water_purified_angels, monazite_chunks, calcium_phosphate, water_orange_waste),
             order = c,
@@ -90,7 +90,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = monazite_chunks, amount = 4},
-                {type = item, name = calcium_phosphate, amount = 1, probability = 0.5},
+                {type = item, name = calcium_phosphate, amount = 1, independent_probability = 0.5},
                 {type = fluid, name = water_orange_waste, amount = 60}
             },
             main_product = monazite_chunks
@@ -98,7 +98,7 @@ if mods[moshine_mods] then
         -- CRYSTALS
         {
             name = monazite_crystals,
-            category = angels_ore_refining_T3,
+            categories = {angels_ore_refining_T3},
             subgroup = is_monazite,
             icons = THREE_I(monazite_chunks, orthophosphoric_acid, monazite_crystals),
             order = d,
@@ -114,39 +114,57 @@ if mods[moshine_mods] then
         -- PURIFIED
         {
             name = monazite_purified,
-            category = angels_ore_refining_T4,
+            categories = {angels_ore_refining_T4},
             subgroup = is_monazite,
-            icons = TWO_I(monazite_crystals, monazite_purified),
+            icons = THREE_D_I(monazite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, monazite_purified),
             order = e,
             energy_required = 2, -- Monazite crystals -refinery-> Monazite purified
-            ingredients = {{type = item, name = monazite_crystals, amount = 4}},
+            ingredients =
+            {
+                {type = item, name = monazite_crystals, amount = 4},
+                {type = item, name = powdered_chlorine_bleach, amount = 1},
+                {type = item, name = powdered_oxygen_bleach, amount = 1}
+            },
             results = {{type = item, name = monazite_purified, amount = 4}},
             main_product = monazite_purified
         },
         -- SORTING
         {
-            name = monazite_crushed_sorting,
-            category = ore_sorting_6,
+            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. monazite_ore}},
+            name = monazite_ore .. _sorting,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
-            icons = RECYCLING_I(recycling_png, monazite_crushed),
+            icons = RECYCLING_I(recycling_png, monazite_ore),
             order = f,
             allow_productivity = true,
-            energy_required = 1, -- Monazite crushed (Sorting) / Nd + Ho + Ca₃(PO₄)₂
-            ingredients = {{type = item, name = monazite_crushed, amount = 4}},
+            energy_required = 1,
+            ingredients = {{type = item, name = monazite_ore, amount = 4}},
+            results = {{type = item, name = slag_angels, amount = 1}},
+            main_product = slag_angels
+        },
+        {
+            name = monazite_crushed_sorting,
+            categories = {ore_sorting_6},
+            subgroup = is_monazite,
+            icons = RECYCLING_I(recycling_png, monazite_crushed),
+            order = g,
+            allow_productivity = true,
+            energy_required = 2, -- Monazite crushed (Sorting) / Nd + Ho + Ca₃(PO₄)₂
+            ingredients = {{type = item, name = monazite_crushed, amount = 8}},
             results =
             {
-                {type = item, name = neodymium_ore, amount = 2},
-                {type = item, name = holmium_ore, amount = 1},
-                {type = item, name = calcium_phosphate, amount = 1}
+                {type = item, name = neodymium_ore, amount = 4},
+                {type = item, name = holmium_ore, amount = 2},
+                {type = item, name = calcium_phosphate, amount = 2}
             },
             main_product = neodymium_ore
         },
         {
             name = monazite_chunks_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_chunks),
-            order = g,
+            order = h,
             allow_productivity = true,
             energy_required = 2, -- Monazite chunks (Sorting) / Nd + Ho + U + Th + Ca₃(PO₄)₂
             ingredients = {{type = item, name = monazite_chunks, amount = 8}},
@@ -162,10 +180,10 @@ if mods[moshine_mods] then
         },
         {
             name = monazite_crystals_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_crystals),
-            order = h,
+            order = i,
             allow_productivity = true,
             energy_required = 2, -- Monazite crystals (Sorting) / Nd + Ho + U + Th + Ce + Ca₃(PO₄)₂
             ingredients = {{type = item, name = monazite_crystals, amount = 8}},
@@ -176,16 +194,16 @@ if mods[moshine_mods] then
                 {type = item, name = uranium_ore, amount = 1},
                 {type = item, name = thorium_ore_bob, amount = 1},
                 {type = item, name = cerium_ore, amount = 1},
-                {type = item, name = calcium_phosphate, amount = 1}
+                {type = item, name = calcium_phosphate, amount = 1, independent_probability = 0.5}
             },
             main_product = neodymium_ore
         },
         {
             name = monazite_purified_sorting,
-            category = ore_sorting_6,
+            categories = {ore_sorting_6},
             subgroup = is_monazite,
             icons = RECYCLING_I(recycling_png, monazite_purified),
-            order = i,
+            order = j,
             allow_productivity = true,
             energy_required = 2, -- Monazite purified (Sorting) / Nd + Ho + U + Th + Ce + Pm
             ingredients = {{type = item, name = monazite_purified, amount = 8}},

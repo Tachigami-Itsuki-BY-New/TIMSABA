@@ -1,6 +1,17 @@
 data_item[wooden_chest].stack_size = 32
 data_item[wooden_chest].weight = 31250
-data_recipe[wooden_chest].ingredients[1].amount = 4
+if mods[muluna_mods] then
+    if not mods[lignumis_mods] then
+        data_recipe[wooden_chest].categories = {crafting}
+    end
+    table.insert(data_recipe[wooden_chest].categories, advanced_wood_processing)
+end
+if mods[lignumis_mods] then
+    data_recipe[wooden_chest].ingredients[1].name = lumber
+    data_recipe[wooden_chest].ingredients[1].amount = 8
+else
+    data_recipe[wooden_chest].ingredients[1].amount = 4
+end
 data_container[wooden_chest].next_upgrade = iron_chest
 data_container[wooden_chest].inventory_size = 20
 
@@ -111,7 +122,7 @@ if mods["Unipipe"] then
     data_item[unipipe_fill].weight = 31250
     local unipipe = {unipipe_extract, unipipe_fill}
     for _, name in pairs(unipipe) do
-        if settings.startup["zy-unipipe-crafting-cost"].value == "medium" then
+        if settings.startup[setting_unipipe_crafting_cost].value == medium then
             data_recipe[name].ingredients =
             {
                 {type = item, name = offshore_pump, amount = 1},
@@ -120,7 +131,7 @@ if mods["Unipipe"] then
                 {type = item, name = storage_tank_1_alt, amount = 4},
                 {type = item, name = advanced_circuit, amount = 4}
             }
-        elseif settings.startup["zy-unipipe-crafting-cost"].value == "hard" then
+        elseif settings.startup[setting_unipipe_crafting_cost].value == hard then
             data_recipe[name].ingredients =
             {
                 {type = item, name = offshore_pump, amount = 1},
@@ -141,6 +152,8 @@ if mods["Unipipe"] then
         end
         bobmods.lib.recipe.update_recycling_recipe({unipipe_extract, unipipe_fill})
     end
+    data_pump[unipipe_extract].pumping_speed = 32
+    data_pump[unipipe_fill].pumping_speed = 32
 end
 
 local silo = "angels-silo"
@@ -343,8 +356,8 @@ for _, BUILD in pairs(entities) do
             data_item[BUILD.name].stack_size = 200
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
-            data_item[BUILD.name].stack_size = 32
-            data_item[BUILD.name].weight = 31250
+            data_item[BUILD.name].stack_size = 64
+            data_item[BUILD.name].weight = 15625
             data_recipe[BUILD.name].energy_required = 1
             data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
             if settings.startup[setting_rebalance_belts_and_pipes].value then
@@ -353,8 +366,8 @@ for _, BUILD in pairs(entities) do
             data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
         end
         if BUILD.type_1 == data_splitter and data_splitter[BUILD.name] then
-            data_item[BUILD.name].stack_size = 16
-            data_item[BUILD.name].weight = 62500
+            data_item[BUILD.name].stack_size = 64
+            data_item[BUILD.name].weight = 15625
             data_recipe[BUILD.name].energy_required = 1
             data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
         end
@@ -362,7 +375,7 @@ for _, BUILD in pairs(entities) do
             data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
             data_inserter[BUILD.name].extension_speed = BUILD.extension_speed
         end
-        if BUILD.type_1 == data_inserter and BUILD.name ~= T0_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
+        if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
             if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
                 data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
                 data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
@@ -372,12 +385,17 @@ for _, BUILD in pairs(entities) do
                 data_inserter[BUILD.name].energy_source.drain = ((drain * BUILD.tier) / 8) .. kW
             end
         end
-        if BUILD.type_2 == data_item and data_item[BUILD.name] then
+        if BUILD.type_2 and BUILD.type_2 == data_item then
             data_item[BUILD.name].stack_size = BUILD.stack
             data_item[BUILD.name].weight = BUILD.weight
-            data_recipe[BUILD.name].category = crafting
-            data_recipe[BUILD.name].additional_categories = {electromagnetics}
+            data_recipe[BUILD.name].categories = {crafting, electromagnetics}
         end
+    end
+end
+if mods[lignumis_mods] then
+    table.insert(data_recipe[T0_inserter].categories, lignumis_wood_processing)
+    if mods[muluna_mods] then
+        table.insert(data_recipe[T0_inserter].categories, advanced_wood_processing)
     end
 end
 data_inserter[T0_inserter].energy_per_rotation = (450/2.6/2) .. kJ -- rotation_speed
@@ -661,8 +679,11 @@ if mods[loaders_modernized_integrations] then
     end
 end
 
-data_item[small_electric_pole].stack_size = 32
-data_item[small_electric_pole].weight = 31250
+data_item[small_electric_pole].stack_size = 64
+data_item[small_electric_pole].weight = 15625
+if mods[muluna_mods] then
+    table.insert(data_recipe[small_electric_pole].categories, advanced_wood_processing)
+end
 data_recipe[small_electric_pole].ingredients[1].amount = 2
 data_electric_pole[small_electric_pole].maximum_wire_distance = 10.5
 data_electric_pole[small_electric_pole].supply_area_distance = 3.5
@@ -678,8 +699,8 @@ for _, BUILD in pairs(medium_poles) do
     if data_item[BUILD.name] then
         data_item[BUILD.name].subgroup = is_medium_electric_pole
         data_item[BUILD.name].order = BUILD.order
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
+        data_item[BUILD.name].stack_size = 64
+        data_item[BUILD.name].weight = 15625
         data_recipe[BUILD.name].subgroup = is_medium_electric_pole
         data_recipe[BUILD.name].order = BUILD.order
         data_electric_pole[BUILD.name].subgroup = is_medium_electric_pole
@@ -691,9 +712,30 @@ end
 
 data_recipe[medium_electric_pole_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 2},
-    {type = item, name = copper_cable, amount = 2},
+    {type = item, name = iron_rod, amount = 4},
+    {type = item, name = tin_insulated_cable, amount = 2},
     {type = item, name = steel_plate, amount = 2}
+}
+
+data_recipe[medium_electric_pole_2].ingredients =
+{
+    {type = item, name = medium_electric_pole_1, amount = 1},
+    {type = item, name = silver_insulated_cable, amount = 2},
+    {type = item, name = aluminium_plate_bob, amount = 2}
+}
+
+data_recipe[medium_electric_pole_3].ingredients =
+{
+    {type = item, name = medium_electric_pole_2, amount = 1},
+    {type = item, name = gold_insulated_cable, amount = 2},
+    {type = item, name = titanium_plate_bob, amount = 2}
+}
+
+data_recipe[medium_electric_pole_4].ingredients =
+{
+    {type = item, name = medium_electric_pole_3, amount = 1},
+    {type = item, name = platinum_insulated_cable, amount = 2},
+    {type = item, name = nitinol_plate_bob, amount = 2}
 }
 
 local big_poles =
@@ -729,14 +771,14 @@ local function big_electric_pole_recipe(name, electric_pole, cable, plate)
 end
 data_recipe[big_electric_pole_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 4},
-    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = iron_rod, amount = 8},
+    {type = item, name = tin_insulated_cable, amount = 4},
     {type = item, name = steel_plate, amount = 4}
 }
 if data_recipe[big_electric_pole_2] then
-    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
-    big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
-    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1,   silver_insulated_cable, aluminium_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2,     gold_insulated_cable, titanium_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, platinum_insulated_cable, nitinol_plate_bob)
 end
 
 local substations =
@@ -770,21 +812,21 @@ local function substation_recipe(name, circuit, electric_pole, cable, plate)
     {
         {type = item, name = circuit, amount = 4},
         {type = item, name = electric_pole, amount = 1},
-        {type = item, name = cable, amount = 4},
+        {type = item, name = cable, amount = 8},
         {type = item, name = plate, amount = 8}
     }
 end
 data_recipe[substation_1].ingredients =
 {
-    {type = item, name = iron_rod, amount = 8},
-    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = iron_rod, amount = 16},
+    {type = item, name = tin_insulated_cable, amount = 8},
     {type = item, name = steel_plate, amount = 8},
     {type = item, name = electronic_circuit, amount = 4}
 }
 if data_recipe[substation_2] then
-    substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
-    substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
-    substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
+    substation_recipe(substation_2,         advanced_circuit, substation_1,   silver_insulated_cable, aluminium_plate_bob)
+    substation_recipe(substation_3,          processing_unit, substation_2,     gold_insulated_cable, titanium_plate_bob)
+    substation_recipe(substation_4, advanced_processing_unit, substation_3, platinum_insulated_cable, nitinol_plate_bob)
 end
 
 data_item_subgroup[is_pipe].order = e
@@ -793,8 +835,8 @@ local pipes =
     {name = iron_pipe,            order = a},
     {name = copper_pipe,          order = b},
     {name = stone_pipe,           order = c},
-    {name = bronze_pipe,          order = d},
-    {name = steel_pipe,           order = e},
+    {name = steel_pipe,           order = d},
+    {name = bronze_pipe,          order = e},
     {name = plastic_pipe,         order = f},
     {name = brass_pipe,           order = g},
     {name = titanium_pipe,        order = h},
@@ -809,20 +851,16 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
-data_recipe[stone_pipe].category = smelting_filtering
-data_recipe[stone_pipe].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy}
-end
-data_recipe[plastic_pipe].category = crafting_fluid
+data_recipe[stone_pipe].categories = {smelting_filtering}
+data_recipe[plastic_pipe].categories = {crafting_fluid}
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
 if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe].category = angels_sintering_2
+    data_recipe[ceramic_pipe].categories = {angels_sintering_2}
 end
-data_recipe[tungsten_pipe].category = angels_sintering_4
+data_recipe[tungsten_pipe].categories = {angels_sintering_4}
 data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
-data_recipe[copper_tungsten_pipe].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe].categories = {angels_sintering_4}
 data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 
 data_item_subgroup[is_pipe_to_ground].order = e_a
@@ -831,8 +869,8 @@ local pipes_to_ground =
     {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8,  simulations = simulations.factoriopedia_iron_pipe_to_ground},
     {name = copper_pipe_to_ground,          order = b, max_underground_distance = 8,  simulations = simulations.factoriopedia_copper_pipe_to_ground},
     {name = stone_pipe_to_ground,           order = c, max_underground_distance = 8,  simulations = simulations.factoriopedia_stone_pipe_to_ground},
-    {name = bronze_pipe_to_ground,          order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
-    {name = steel_pipe_to_ground,           order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = steel_pipe_to_ground,           order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = bronze_pipe_to_ground,          order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
     {name = plastic_pipe_to_ground,         order = f, max_underground_distance = 24, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
     {name = brass_pipe_to_ground,           order = g, max_underground_distance = 24, simulations = simulations.factoriopedia_brass_pipe_to_ground},
     {name = titanium_pipe_to_ground,        order = h, max_underground_distance = 32, simulations = simulations.factoriopedia_titanium_pipe_to_ground},
@@ -843,8 +881,8 @@ local pipes_to_ground =
 }
 for _, pipe in pairs(pipes_to_ground) do
     data_item[pipe.name].order = pipe.order
-    data_item[pipe.name].stack_size = 32
-    data_item[pipe.name].weight = 31250
+    data_item[pipe.name].stack_size = 64
+    data_item[pipe.name].weight = 15625
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
@@ -870,8 +908,8 @@ end
 pipe_to_ground_recipe(iron_pipe_to_ground,                       iron_pipe,             iron_plate, 8)
 pipe_to_ground_recipe(copper_pipe_to_ground,                   copper_pipe,           copper_plate, 8)
 pipe_to_ground_recipe(stone_pipe_to_ground,                     stone_pipe,            stone_brick, 8)
-pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,       bronze_plate_bob, 16)
 pipe_to_ground_recipe(steel_pipe_to_ground,                     steel_pipe,            steel_plate, 16)
+pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,       bronze_plate_bob, 16)
 pipe_to_ground_recipe(plastic_pipe_to_ground,                 plastic_pipe,                plastic, 24)
 pipe_to_ground_recipe(brass_pipe_to_ground,                     brass_pipe,        brass_plate_bob, 24)
 pipe_to_ground_recipe(titanium_pipe_to_ground,               titanium_pipe,     titanium_plate_bob, 32)
@@ -880,24 +918,20 @@ pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,     
 pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,      nitinol_plate_bob, 40)
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
 
-data_recipe[stone_pipe_to_ground].category = smelting_filtering
-data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy}
-end
+data_recipe[stone_pipe_to_ground].categories = {smelting_filtering}
 
-data_recipe[plastic_pipe_to_ground].category = crafting_fluid
+data_recipe[plastic_pipe_to_ground].categories = {crafting_fluid}
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
 
 if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
+    data_recipe[ceramic_pipe_to_ground].categories = {angels_sintering_2}
 end
 
-data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
+data_recipe[tungsten_pipe_to_ground].categories = {angels_sintering_4}
 
-data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe_to_ground].categories = {angels_sintering_4}
 
 bobmods.lib.recipe.update_recycling_recipe
 ({
@@ -951,6 +985,9 @@ bobmods.lib.recipe.update_recycling_recipe
     T5_bulk_inserter,
     small_electric_pole,
     medium_electric_pole_1,
+    medium_electric_pole_2,
+    medium_electric_pole_3,
+    medium_electric_pole_4,
     big_electric_pole_1,
     big_electric_pole_2,
     big_electric_pole_3,

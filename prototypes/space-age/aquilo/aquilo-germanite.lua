@@ -1,6 +1,6 @@
 local graphics_germanite = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/"
 
--- Germanite Ore / Ge + Cu + Fe + Ga + V + As
+-- Germanite Ore / Ge + Ga + Fe + Cu + V + As
 germanite_ore = "germanite-ore"
 germanite_crushed = "germanite-crushed"
 germanite_chunks = "germanite-chunks"
@@ -64,7 +64,7 @@ TIMSABA.functions.create_recipes
     -- CRUSHED
     {
         name = germanite_crushed,
-        category = angels_ore_refining_T1,
+        categories = {angels_ore_refining_T1},
         subgroup = is_germanite,
         icons = THREE_R_I(germanite_ore, germanite_crushed, stone_crushed_angels),
         order = b,
@@ -80,7 +80,7 @@ TIMSABA.functions.create_recipes
     -- CHUNKS
     {
         name = germanite_chunks,
-        category = angels_ore_refining_T2,
+        categories = {angels_ore_refining_T2},
         subgroup = is_germanite,
         icons = THREE_D_I(germanite_crushed, nil, water_purified_angels, germanite_chunks, sulfur, water_yellow_waste),
         order = c,
@@ -93,7 +93,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = germanite_chunks, amount = 4},
-            {type = item, name = sulfur, amount = 1, probability = 0.5},
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
             {type = fluid, name = water_yellow_waste, amount = 60}
         },
         main_product = germanite_chunks
@@ -101,7 +101,7 @@ TIMSABA.functions.create_recipes
     -- CRYSTALS
     {
         name = germanite_crystals,
-        category = angels_ore_refining_T3,
+        categories = {angels_ore_refining_T3},
         subgroup = is_germanite,
         icons = THREE_I(germanite_chunks, sulfuric_acid_angels, germanite_crystals),
         order = d,
@@ -117,87 +117,105 @@ TIMSABA.functions.create_recipes
     -- PURIFIED
     {
         name = germanite_purified,
-        category = angels_ore_refining_T4,
+        categories = {angels_ore_refining_T4},
         subgroup = is_germanite,
-        icons = TWO_I(germanite_crystals, germanite_purified),
+        icons = THREE_D_I(germanite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, germanite_purified),
         order = e,
         energy_required = 2, -- Germanite crystals -refinery-> Germanite purified
-        ingredients = {{type = item, name = germanite_crystals, amount = 4}},
+        ingredients =
+        {
+            {type = item, name = germanite_crystals, amount = 4},
+            {type = item, name = powdered_chlorine_bleach, amount = 1},
+            {type = item, name = powdered_oxygen_bleach, amount = 1}
+        },
         results = {{type = item, name = germanite_purified, amount = 4}},
         main_product = germanite_purified
     },
     -- SORTING
     {
-        name = germanite_crushed_sorting,
-        category = ore_sorting_6,
+        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. germanite_ore}},
+        name = germanite_ore .. _sorting,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_crushed),
+        icons = RECYCLING_I(recycling_png, germanite_ore),
         order = f,
         allow_productivity = true,
-        energy_required = 1, -- Germanite crushed (Sorting) / Ge + Cu + S
-        ingredients = {{type = item, name = germanite_crushed, amount = 4}},
+        energy_required = 1,
+        ingredients = {{type = item, name = germanite_ore, amount = 4}},
+        results = {{type = item, name = slag_angels, amount = 1}},
+        main_product = slag_angels
+    },
+    {
+        name = germanite_crushed_sorting,
+        categories = {ore_sorting_6},
+        subgroup = is_germanite,
+        icons = RECYCLING_I(recycling_png, germanite_crushed),
+        order = g,
+        allow_productivity = true,
+        energy_required = 2, -- Germanite crushed (Sorting) / Ge + Ga + S
+        ingredients = {{type = item, name = germanite_crushed, amount = 8}},
         results =
         {
-            {type = item, name = germanium_ore, amount = 2},
+            {type = item, name = germanium_ore, amount = 4},
+            {type = item, name = gallium_ore, amount = 2},
+            {type = item, name = sulfur, amount = 2}
+        },
+        main_product = germanium_ore
+    },
+    {
+        name = germanite_chunks_sorting,
+        categories = {ore_sorting_6},
+        subgroup = is_germanite,
+        icons = RECYCLING_I(recycling_png, germanite_chunks),
+        order = h,
+        allow_productivity = true,
+        energy_required = 2, -- Germanite chunks (Sorting) / Ge + Ga + Fe + Cu + S
+        ingredients = {{type = item, name = germanite_chunks, amount = 8}},
+        results =
+        {
+            {type = item, name = germanium_ore, amount = 4},
+            {type = item, name = gallium_ore, amount = 2},
+            {type = item, name = iron_ore, amount = 1},
             {type = item, name = copper_ore, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
         main_product = germanium_ore
     },
     {
-        name = germanite_chunks_sorting,
-        category = ore_sorting_6,
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_chunks),
-        order = g,
-        allow_productivity = true,
-        energy_required = 2, -- Germanite chunks (Sorting) / Ge + Cu + Fe + Ga + S
-        ingredients = {{type = item, name = germanite_chunks, amount = 8}},
-        results =
-        {
-            {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
-        },
-        main_product = germanium_ore
-    },
-    {
         name = germanite_crystals_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crystals),
-        order = h,
+        order = i,
         allow_productivity = true,
-        energy_required = 2, -- Germanite crystals (Sorting) / Ge + Cu + Fe + Ga + V + S
+        energy_required = 2, -- Germanite crystals (Sorting) / Ge + Ga + Fe + Cu + V + S
         ingredients = {{type = item, name = germanite_crystals, amount = 8}},
         results =
         {
             {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = gallium_ore, amount = 2},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = vanadium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
+            {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
         },
         main_product = germanium_ore
     },
     {
         name = germanite_purified_sorting,
-        category = ore_sorting_6,
+        categories = {ore_sorting_6},
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_purified),
-        order = i,
+        order = j,
         allow_productivity = true,
-        energy_required = 2, -- Germanite purified (Sorting) / Ge + Cu + Fe + Ga + V + As
+        energy_required = 2, -- Germanite purified (Sorting) / Ge + Ga + Fe + Cu + V + As
         ingredients = {{type = item, name = germanite_purified, amount = 8}},
         results =
         {
             {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = copper_ore, amount = 2},
+            {type = item, name = gallium_ore, amount = 2},
             {type = item, name = iron_ore, amount = 1},
-            {type = item, name = galium_ore, amount = 1},
+            {type = item, name = copper_ore, amount = 1},
             {type = item, name = vanadium_ore, amount = 1},
             {type = item, name = arsenic, amount = 1}
         },

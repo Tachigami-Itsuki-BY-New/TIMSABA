@@ -2,12 +2,12 @@ if mods[aegis_bellicos_mods] then
     discovery_aegis_outer = "discovery-aegis-outer"
     tech_space_logistic = "space-beryllium-logistic"
 
-    local graphics_beryllium_smelting_tech = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/smelting-beryllium-tech.png"
+    local graphics_beryllium_smelting_tech = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/smelting-beryllium-tech.png"
     local tech_beryllium_smelting_1 = "beryllium-smelting-1"
     local tech_beryllium_smelting_2 = "beryllium-smelting-2"
     local tech_beryllium_smelting_3 = "beryllium-smelting-3"
 
-    local graphics_beryllium_bronze_smelting_tech = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/smelting-beryllium-bronze-tech.png"
+    local graphics_beryllium_bronze_smelting_tech = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/smelting-beryllium-bronze-tech.png"
     local tech_beryllium_bronze_smelting_1 = "beryllium-bronze-smelting-1"
     local tech_beryllium_bronze_smelting_2 = "beryllium-bronze-smelting-2"
     tech_beryllium_bronze_processing = "beryllium-bronze-processing"
@@ -29,12 +29,7 @@ if mods[aegis_bellicos_mods] then
                 {type = unlock_recipe, recipe = beryllium_molten},
                 {type = unlock_recipe, recipe = beryllium_plate}
             },
-            research_trigger =
-            {
-                type = craft_item,
-                item = beryllium_ore,
-                count = 256
-            }
+            research_trigger = {type = craft_item, item = beryllium_ore}
         },
         {
             localised_name = {"technology-name." .. tech_beryllium_smelting_2},
@@ -80,8 +75,8 @@ if mods[aegis_bellicos_mods] then
                 {type = unlock_recipe, recipe = ammonium_fluoroberyllate},
                 {type = unlock_recipe, recipe = beryllium_fluoride},
                 {type = unlock_recipe, recipe = beryllium_ingot_2},
-                {type = unlock_recipe, recipe = magnesium_ingot_2},
                 {type = unlock_recipe, recipe = magnesium_ingot_3},
+                {type = unlock_recipe, recipe = magnesium_ingot_4},
                 {type = unlock_recipe, recipe = potassium_sulfate_solution},
                 {type = unlock_recipe, recipe = ammonium_fluoride_solution},
                 {type = unlock_recipe, recipe = ammonium_hydrosulfate},
@@ -161,8 +156,8 @@ if mods[aegis_bellicos_mods] then
         {
             type = technology,
             name = tech_beryllium_bronze_processing,
-            icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/" .. beryllium_bronze_plate .. ".png",
-            --icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/technology/beryllium-bronze-processing.png",
+            icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/" .. beryllium_bronze_plate .. ".png",
+            --icon = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/technology/beryllium-bronze-processing.png",
             icon_size = 64,
             --icon_size = 256,
             prerequisites = {tech_beryllium_bronze_smelting_1},

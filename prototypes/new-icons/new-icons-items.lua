@@ -20,6 +20,9 @@ data_item[iron_rod].icon_size = 64
 data_item[copper_cable].icons = nil
 data_item[copper_cable].icon = "__base__/graphics/icons/copper-wire.png"
 
+data_item[copper_insulated_cable].icons = nil
+data_item[copper_insulated_cable].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/" .. copper_insulated_cable .. ".png"
+
 data_item[lead_plate_bob].icons = nil
 data_item[lead_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-lead.png"
 
@@ -28,6 +31,9 @@ data_item[tin_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plat
 
 data_item[tin_cable].icon = "__reskins-angels__/graphics/icons/smelting/intermediates/angels-wire-tin.png"
 data_item[tin_cable].icon_size = 64
+
+data_item[silicon_carbide_bob].icons = nil
+data_item[silicon_carbide_bob].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/" .. silicon_carbide_bob .. ".png"
 
 data_item[nickel_plate_bob].icons = nil
 data_item[nickel_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-nickel.png"
@@ -123,18 +129,36 @@ data_item[limestone_angels].icon_size = 64
 data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/intermediates/solid-lime.png"
 data_item[lime_angels].icon_size = 64
 
+-- ANGELS RESOURCE REFINING
+local graphics_resource = "__TIMSABA__/graphics/icons/angels/resource/"
+
+data_item[crushed_ferrium].icon = graphics_resource .. crushed_ferrium .. ".png"
+data_item[powder_ferrium].icon = graphics_resource .. powder_ferrium .. ".png"
+data_item[dust_ferrium].icon = graphics_resource .. dust_ferrium .. ".png"
+data_item[crystal_ferrium].icon = graphics_resource .. crystal_ferrium .. ".png"
+
+data_item[crushed_cuprium].icon = graphics_resource .. crushed_cuprium .. ".png"
+data_item[powder_cuprium].icon = graphics_resource .. powder_cuprium .. ".png"
+data_item[dust_cuprium].icon = graphics_resource .. dust_cuprium .. ".png"
+data_item[crystal_cuprium].icon = graphics_resource .. crystal_cuprium .. ".png"
+
+-- ANGELS PETROCHEM REFINING
+data_item[sodium_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/" .. sodium_angels .. ".png"
+data_item[sodium_angels].icon_size = 64
+
 -- ANGELS BIOPROCESSING
-data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
-data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
-data_item[crystal_splinter_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-red-cut.png"
+local graphics_bioprocessing = "__TIMSABA__/graphics/icons/angels/bioprocessing/"
+data_item[crystal_splinter_blue_cut].icon = graphics_bioprocessing .. crystal_splinter_blue_cut .. ".png"
+data_item[crystal_splinter_green_cut].icon = graphics_bioprocessing .. crystal_splinter_green_cut .. ".png"
+data_item[crystal_splinter_red_cut].icon = graphics_bioprocessing .. crystal_splinter_red_cut .. ".png"
 
-data_item[crystal_shard_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-blue-cut.png"
-data_item[crystal_shard_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-green-cut.png"
-data_item[crystal_shard_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-red-cut.png"
+data_item[crystal_shard_blue_cut].icon = graphics_bioprocessing .. crystal_shard_blue_cut .. ".png"
+data_item[crystal_shard_green_cut].icon = graphics_bioprocessing .. crystal_shard_green_cut .. ".png"
+data_item[crystal_shard_red_cut].icon = graphics_bioprocessing .. crystal_shard_red_cut .. ".png"
 
-data_item[crystal_full_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-blue-cut.png"
-data_item[crystal_full_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-green-cut.png"
-data_item[crystal_full_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-red-cut.png"
+data_item[crystal_full_blue_cut].icon = graphics_bioprocessing .. crystal_full_blue_cut .. ".png"
+data_item[crystal_full_green_cut].icon = graphics_bioprocessing .. crystal_full_green_cut .. ".png"
+data_item[crystal_full_red_cut].icon = graphics_bioprocessing .. crystal_full_red_cut .. ".png"
 
 -- MODULES
 if mods[bobmodules] then
@@ -186,11 +210,13 @@ if mods[bobmodules] then
     -- QUALITY
     local graphics_quality_module = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality"
 
-    data_module[quality_module_1].icon = graphics_quality_module .. "-1.png"
-    data_module[quality_module_2].icon = graphics_quality_module .. "-2.png"
-    data_module[quality_module_3].icon = graphics_quality_module .. "-3.png"
-    data_module[quality_module_4].icon = graphics_quality_module .. "-4.png"
-    data_module[quality_module_5].icon = graphics_quality_module .. "-5.png"
+    if mods[quality_mods] then
+        data_module[quality_module_1].icon = graphics_quality_module .. "-1.png"
+        data_module[quality_module_2].icon = graphics_quality_module .. "-2.png"
+        data_module[quality_module_3].icon = graphics_quality_module .. "-3.png"
+        data_module[quality_module_4].icon = graphics_quality_module .. "-4.png"
+        data_module[quality_module_5].icon = graphics_quality_module .. "-5.png"
+    end
 
     -- AGRICULTURAL
     local graphics_agricultural_module = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural"
@@ -203,32 +229,20 @@ end
 local graphics_gleba = "__TIMSABA__/graphics/icons/space-age/gleba/"
 
 data_item[saphirite_bacteria].icon = graphics_gleba .. saphirite_bacteria .. ".png"
-data_item[saphirite_bacteria].pictures =
-{
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
-}
+data_item[saphirite_bacteria].pictures = nil
 
 data_item[stiratite_bacteria].icon = graphics_gleba .. stiratite_bacteria .. ".png"
-data_item[stiratite_bacteria].pictures =
-{
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
-}
+data_item[stiratite_bacteria].pictures = nil
 
 -- MULUNA
 if mods[muluna_mods] then
     local graphics_muluna = "__TIMSABA__/graphics/icons/muluna/"
 
     data_item[aluminium_pipe].icons = {{icon = graphics_muluna .. aluminium_pipe .. ".png", icon_size = 64}}
-    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe, item)
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(3, aluminium_pipe, item)
 
     data_item[aluminium_pipe_to_ground].icons = {{icon = graphics_muluna .. aluminium_pipe_to_ground .. ".png", icon_size = 64}}
-    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe_to_ground, item)
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(3, aluminium_pipe_to_ground, item)
 end
 
 -- TELLUS
@@ -277,6 +291,16 @@ if mods[paracelsin_mods] then
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pump, item)
 end
 
+-- CORRUNDUM
+if mods[corrundum_mods] then
+    data_item[sperrylite_ore].icon = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore.png"
+    data_item[sperrylite_ore].icon_size = 64
+    data_item[sperrylite_ore].pictures = nil
+    data_resource[sperrylite_ore].icon = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore.png"
+    data_resource[sperrylite_ore].icon_size = 64
+    data_resource[sperrylite_ore].stages.sheet.filename = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/sperrylite-ore/sperrylite-ore.png"
+end
+
 -- TERRAPALUS
 if mods[terrapalus_mods] then
     data_item[palusium_powder].icon = "__TIMSABA__/graphics/icons/terrapalus/palusium-powder.png"
@@ -284,16 +308,25 @@ end
 
 -- SHCHIERBIN
 if mods[shchierbin_mods] then
-    local graphics_vanadium = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/"
 
-    data_item[vanadium_ore].icon = graphics_vanadium .. vanadium_ore .. ".png"
-    data_item[vanadium_ore].icon_size = 64
-    data_item[vanadium_ore].pictures =
+    data_item[vanadinite_ore].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore.png"
+    data_item[vanadinite_ore].icon_size = 64
+    data_item[vanadinite_ore].pictures = nil
+    data_resource[vanadinite_ore].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore.png"
+    data_resource[vanadinite_ore].icon_size = 64
+    data_resource[vanadinite_ore].stages =
     {
-        {filename = graphics_vanadium .. vanadium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
-        {filename = graphics_vanadium .. vanadium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
-        {filename = graphics_vanadium .. vanadium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
+        sheet =
+        {
+            filename = "__TIMSABA__/graphics/icons/shchierbin/vanadinite-ore/vanadinite-ore/vanadinite-ore.png",
+            priority = extra_high,
+            size = 128,
+            frame_count = 8,
+            variation_count = 8,
+            scale = 0.5
+        }
     }
+    data_resource[vanadinite_ore].stages_effect = nil
 
     data_item[vanadium_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/" .. vanadium_plate .. ".png"
     data_item[vanadium_plate].icon_size = 64
@@ -323,14 +356,10 @@ end
 
 -- AEGIS BELLICOS
 if mods[aegis_bellicos_mods] then
-    data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
-end
+    local graphics_beryllium = "__TIMSABA__/graphics/icons/aegis-and-bellicos/beryllium/"
+    data_item[beryllium_plate].icon = graphics_beryllium .. beryllium_plate .. ".png"
 
--- MODS
-if mods[clowns_nuclear] then
-    data_item[uranium_235].icons = nil
-    data_item[uranium_235].icon = "__base__/graphics/icons/uranium-235.png"
-
-    data_item[uranium_238].icons = nil
-    data_item[uranium_238].icon = "__base__/graphics/icons/uranium-238.png"
+    if mods[hyarion_mods] then
+        data_item[beryllium_nitride].icon = graphics_beryllium .. beryllium_nitride .. ".png"
+    end
 end

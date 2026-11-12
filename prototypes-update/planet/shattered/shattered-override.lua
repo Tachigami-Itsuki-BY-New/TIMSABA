@@ -379,7 +379,7 @@ if mods [shattered_mods] then
 
     local tungsten_carbide_shattered = "ske_carbide"
     data_recipe[tungsten_carbide_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_plate_bob)
+    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_bob)
     data_recipe[tungsten_carbide_shattered].order = a_e
 
     data_fluid[brine_shattered].subgroup = is_shattered_recipe_transformation
@@ -449,125 +449,35 @@ if mods [shattered_mods] then
     data_recipe[pearl_realizer].order = e
     data_lab[pearl_realizer].subgroup = is_shattered_building
     data_lab[pearl_realizer].order = e
-    --[[table.insert(data_lab[pearl_realizer].inputs, automation_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, logistic_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, chemical_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, production_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, utility_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, space_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, metallurgic_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, agricultural_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, electromagnetic_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, cryogenic_science_pack)
-    table.insert(data_lab[pearl_realizer].inputs, promethium_science_pack)
 
-    -- PLANETS
-    if mods[arig_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, compression_science_pack)
-    end
-    if mods[hyarion_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, polishing_science_pack)
-        table.insert(data_lab[pearl_realizer].inputs, refraction_science_pack)
-    end
-    if mods[tellus_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, bioengineering_science_pack)
-        table.insert(data_lab[pearl_realizer].inputs, pathological_science_pack)
-    end
-    if mods[paracelsin_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, galvanization_science_pack)
-    end
-    if mods[corrundum_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, electrochemical_science_pack)
-    end
-    if mods[castra_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, battlefield_science_pack)
-    end
-    if mods[shchierbin_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, vanadium_science_pack)
-    end
-    if mods[maraxsis_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, hydraulic_science_pack)
-    end
-    if mods[vesta_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, gas_manipulation_science_pack)
-    end
-
-    -- MOONS
-    if mods[muluna_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, interstellar_science_pack)
-    end
-    if mods[secretas_frozeta_mods] then
-        table.insert(data_lab[pearl_realizer].inputs, golden_science_pack)
-    end]]
-
-    -- Вспомогательная функция для проверки, есть ли элемент в таблице
-    local function table_contains(tbl, element)
-        for _, value in ipairs(tbl) do
-            if value == element then
-                return true
-            end
-        end
-        return false
-    end
-
-    -- Карта соответствия: [имя_мода] = {список_пакетов}
-    local mod_science_mapping =
-    {
-        -- PLANETS
-        [arig_mods] = {compression_science_pack},
-        [hyarion_mods] = {polishing_science_pack, refraction_science_pack},
-        [tellus_mods] = {bioengineering_science_pack, pathological_science_pack},
-        [paracelsin_mods] = {galvanization_science_pack},
-        [castra_mods] = {battlefield_science_pack},
-        [shchierbin_mods] = {vanadium_science_pack},
-        [maraxsis_mods] = {hydraulic_science_pack},
-        [vesta_mods] = {gas_manipulation_science_pack},
-
-        -- MOONS
-        [muluna_mods] = {interstellar_science_pack},
-        [secretas_frozeta_mods]  = {golden_science_pack}
-    }
-    -- Запуск цикла проверок
-    for mod_name, science_packs in pairs(mod_science_mapping) do
-        if mods[mod_name] then
-            for _, pack in ipairs(science_packs) do
-                -- 1. Проверяем, что переменная пакета вообще существует (не nil)
-                -- 2. Проверяем, что такого пакета еще НЕТ в инпутах лаборатории
-                if pack and not table_contains(data_lab[pearl_realizer].inputs, pack) then
-                    table.insert(data_lab[pearl_realizer].inputs, pack)
-                end
-            end
-        end
-    end
-
-    data_tool[heu_science_pack].subgroup = is_shattered_building
-    data_tool[heu_science_pack].order = f
+    data_item[heu_science_pack].subgroup = is_shattered_building
+    data_item[heu_science_pack].order = f
     data_recipe[heu_science_pack].subgroup = is_shattered_building
     data_recipe[heu_science_pack].order = f
 
-    data_tool[hep_science_pack].subgroup = is_shattered_building
-    data_tool[hep_science_pack].order = g
+    data_item[hep_science_pack].subgroup = is_shattered_building
+    data_item[hep_science_pack].order = g
     data_recipe[hep_science_pack].subgroup = is_shattered_building
     data_recipe[hep_science_pack].order = g
 
-    data_tool[hea_science_pack].subgroup = is_shattered_building
-    data_tool[hea_science_pack].order = h
+    data_item[hea_science_pack].subgroup = is_shattered_building
+    data_item[hea_science_pack].order = h
     data_recipe[hea_science_pack].subgroup = is_shattered_building
     data_recipe[hea_science_pack].order = h
 
-    data_tool[hec_science_pack].subgroup = is_shattered_building
-    data_tool[hec_science_pack].order = i
+    data_item[hec_science_pack].subgroup = is_shattered_building
+    data_item[hec_science_pack].order = i
     data_recipe[hec_science_pack].subgroup = is_shattered_building
     data_recipe[hec_science_pack].order = i
     data_recipe[hec_science_pack].main_product = hec_science_pack
 
-    data_tool[hef_science_pack].subgroup = is_shattered_building
-    data_tool[hef_science_pack].order = j
+    data_item[hef_science_pack].subgroup = is_shattered_building
+    data_item[hef_science_pack].order = j
     data_recipe[hef_science_pack].subgroup = is_shattered_building
     data_recipe[hef_science_pack].order = j
 
-    data_tool[antimatter_cell].subgroup = is_shattered_building
-    data_tool[antimatter_cell].order = k
+    data_item[antimatter_cell].subgroup = is_shattered_building
+    data_item[antimatter_cell].order = k
     data_recipe[antimatter_cell].subgroup = is_shattered_building
     data_recipe[antimatter_cell].order = k
 

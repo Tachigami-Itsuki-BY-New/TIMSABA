@@ -9,7 +9,7 @@ if mods[aegis_bellicos_mods] then
     data_item[beryllium_plate].localised_description = show_formula and {chemical_formula, "Be"} or nil
     data_item[beryllium_plate].subgroup = is_beryllium_casting
     data_item[beryllium_plate].order = b
-    data_recipe[beryllium_plate].category = angels_casting_4
+    data_recipe[beryllium_plate].categories = {angels_casting_4}
     data_recipe[beryllium_plate].subgroup = is_beryllium_casting
     data_recipe[beryllium_plate].icons = TWO_I(beryllium_molten, beryllium_plate)
     data_recipe[beryllium_plate].order = b
@@ -19,8 +19,8 @@ if mods[aegis_bellicos_mods] then
     data_recipe[beryllium_plate].main_product = beryllium_plate
 
     -- RECIPE
-    data_tool[lightweight_science_pack].subgroup = is_bellicos_recipe
-    data_tool[lightweight_science_pack].order = a
+    data_item[lightweight_science_pack].subgroup = is_bellicos_recipe
+    data_item[lightweight_science_pack].order = a
     data_recipe[lightweight_science_pack].subgroup = is_bellicos_recipe
     data_recipe[lightweight_science_pack].order = a
     data_recipe[lightweight_science_pack].energy_required = 8
@@ -48,7 +48,7 @@ if mods[aegis_bellicos_mods] then
 
     local tritium_gas_bellicos = "tritium-extraction-bellicos"
     data_recipe[tritium_gas_bellicos].localised_name = {"fluid-name." .. tritium_gas}
-    data_recipe[tritium_gas_bellicos].category = centrifuging_4
+    data_recipe[tritium_gas_bellicos].categories = {centrifuging_4}
     data_recipe[tritium_gas_bellicos].subgroup = is_bellicos_recipe
     data_recipe[tritium_gas_bellicos].icons = THREE_R_IS(radioactive_ice, ice, tritium_gas)
     data_recipe[tritium_gas_bellicos].order = c_a
@@ -61,9 +61,10 @@ if mods[aegis_bellicos_mods] then
         {type = item, name = ice, amount = 8},
         {type = fluid, name = tritium_gas, amount = 120}
     }
+    data_recipe[tritium_gas_bellicos].main_product = tritium_gas
 
-    data_tool[pulsar_science_pack].subgroup = is_bellicos_recipe
-    data_tool[pulsar_science_pack].order = d
+    data_item[pulsar_science_pack].subgroup = is_bellicos_recipe
+    data_item[pulsar_science_pack].order = d
     data_recipe[pulsar_science_pack].subgroup = is_bellicos_recipe
     data_recipe[pulsar_science_pack].order = d
     data_recipe[pulsar_science_pack].energy_required = 8
@@ -162,38 +163,58 @@ if mods[aegis_bellicos_mods] then
     data_recipe[space_transport_belt].subgroup = is_bellicos_logistic
     data_recipe[space_transport_belt].order = a
     data_recipe[space_transport_belt].energy_required = 0.5
-    data_recipe[space_transport_belt].ingredients =
-    {
-        {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
-        {type = item, name = beryllium_bronze_bearing, amount = 4},
-        {type = item, name = vulcanus_transport_belt, amount = 2},
-        {type = item, name = beryllium_bronze_plate, amount = 2}
-    }
+    if mods[arig_mods] then
+        data_recipe[space_transport_belt].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
+            {type = item, name = beryllium_bronze_bearing, amount = 4},
+            {type = item, name = hyper_transport_belt_arig, amount = 2},
+            {type = item, name = beryllium_bronze_plate, amount = 2}
+        }
+    else
+        data_recipe[space_transport_belt].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
+            {type = item, name = beryllium_bronze_bearing, amount = 4},
+            {type = item, name = vulcanus_transport_belt, amount = 2},
+            {type = item, name = beryllium_bronze_plate, amount = 2}
+        }
+    end
     data_recipe[space_transport_belt].results = {{type = item, name = space_transport_belt, amount = 2}}
     data_transport_belt[space_transport_belt].subgroup = is_bellicos_logistic
     data_transport_belt[space_transport_belt].order = a
-    data_transport_belt[space_transport_belt].speed = 13.125/60
+    data_transport_belt[space_transport_belt].speed = 22.5/60
     data_transport_belt[space_transport_belt].surface_conditions = nil
 
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[space_underground_belt].subgroup = is_bellicos_logistic
     data_item[space_underground_belt].order = b
-    data_item[space_underground_belt].stack_size = 32
-    data_item[space_underground_belt].weight = 31250
+    data_item[space_underground_belt].stack_size = 64
+    data_item[space_underground_belt].weight = 15625
     data_recipe[space_underground_belt].subgroup = is_bellicos_logistic
     data_recipe[space_underground_belt].order = b
     data_recipe[space_underground_belt].energy_required = 1
-    data_recipe[space_underground_belt].ingredients =
-    {
-        {type = item, name = beryllium_bronze_gear_wheel, amount = 16},
-        {type = item, name = beryllium_bronze_bearing, amount = 16},
-        {type = item, name = vulcanus_underground_belt, amount = 2},
-        {type = item, name = beryllium_bronze_plate, amount = 8}
-    }
+    if mods[arig_mods] then
+        data_recipe[space_underground_belt].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 16},
+            {type = item, name = beryllium_bronze_bearing, amount = 16},
+            {type = item, name = hyper_underground_belt_arig, amount = 2},
+            {type = item, name = beryllium_bronze_plate, amount = 8}
+        }
+    else
+        data_recipe[space_underground_belt].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 16},
+            {type = item, name = beryllium_bronze_bearing, amount = 16},
+            {type = item, name = vulcanus_underground_belt, amount = 2},
+            {type = item, name = beryllium_bronze_plate, amount = 8}
+        }
+    end
     data_recipe[space_underground_belt].results = {{type = item, name = space_underground_belt, amount = 2}}
     data_underground_belt[space_underground_belt].subgroup = is_bellicos_logistic
     data_underground_belt[space_underground_belt].order = b
-    data_underground_belt[space_underground_belt].speed = 13.125/60
+    data_underground_belt[space_underground_belt].speed = 22.5/60
     if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_underground_belt[space_underground_belt].max_distance = 56
     end
@@ -202,30 +223,53 @@ if mods[aegis_bellicos_mods] then
 
     data_item[space_splitter].subgroup = is_bellicos_logistic
     data_item[space_splitter].order = c
-    data_item[space_splitter].stack_size = 16
-    data_item[space_splitter].weight = 62500
+    data_item[space_splitter].stack_size = 64
+    data_item[space_splitter].weight = 15625
     data_recipe[space_splitter].subgroup = is_bellicos_logistic
     data_recipe[space_splitter].order = c
     data_recipe[space_splitter].energy_required = 1
-    data_recipe[space_splitter].ingredients =
-    {
-        {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
-        {type = item, name = beryllium_bronze_bearing, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = vulcanus_splitter, amount = 1},
-        {type = item, name = beryllium_bronze_plate, amount = 4}
-    }
+    if mods[arig_mods] then
+        data_recipe[space_splitter].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
+            {type = item, name = beryllium_bronze_bearing, amount = 8},
+            {type = item, name = quantum_processor, amount = 1},
+            {type = item, name = hyper_splitter_arig, amount = 1},
+            {type = item, name = beryllium_bronze_plate, amount = 4}
+        }
+    else
+        data_recipe[space_splitter].ingredients =
+        {
+            {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
+            {type = item, name = beryllium_bronze_bearing, amount = 8},
+            {type = item, name = quantum_processor, amount = 1},
+            {type = item, name = vulcanus_splitter, amount = 1},
+            {type = item, name = beryllium_bronze_plate, amount = 4}
+        }
+    end
     data_recipe[space_splitter].results = {{type = item, name = space_splitter, amount = 1}}
     data_splitter[space_splitter].subgroup = is_bellicos_logistic
     data_splitter[space_splitter].order = c
-    data_splitter[space_splitter].speed = 13.125/60
+    data_splitter[space_splitter].speed = 22.5/60
     data_splitter[space_splitter].surface_conditions = nil
 
     if mods[arig_mods] then
-        data_transport_belt[space_transport_belt].next_upgrade = hyper_transport_belt_arig
-        data_underground_belt[space_underground_belt].next_upgrade = hyper_underground_belt_arig
-        data_splitter[space_splitter].next_upgrade = hyper_splitter_arig
+        data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
+        data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
+        data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
+
+        data_transport_belt[hyper_transport_belt_arig].next_upgrade = space_transport_belt
+        data_underground_belt[hyper_underground_belt_arig].next_upgrade = space_underground_belt
+        data_splitter[hyper_splitter_arig].next_upgrade = space_splitter
+    else
+        data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
+        data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
+        data_splitter[vulcanus_splitter].next_upgrade = space_splitter
     end
+
+    data_transport_belt[space_transport_belt].next_upgrade = nil
+    data_underground_belt[space_underground_belt].next_upgrade = nil
+    data_splitter[space_splitter].next_upgrade = nil
 
     -- BUILDING
     data_item[tritium_RTG].subgroup = is_bellicos_building
@@ -239,6 +283,7 @@ if mods[aegis_bellicos_mods] then
     {
         {type = item, name = advanced_processing_unit, amount = 4},
         {type = item, name = lead_plate_bob, amount = 4},
+        {type = item, name = uranium_238_plate, amount = 4},
         {type = item, name = beryllium_bronze_plate, amount = 8},
         {type = fluid, name = tritium_gas, amount = 960}
     }
@@ -254,9 +299,6 @@ if mods[aegis_bellicos_mods] then
     })
 
     -- TECHNOLOGY
-    if mods[muluna_mods] then
-        table.insert(data_technology[discovery_aegis_outer].prerequisites, asteroid_collector)
-    end
     data_technology[discovery_aegis_outer].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -264,16 +306,15 @@ if mods[aegis_bellicos_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     data_technology[lightweight_science_pack].prerequisites = {tech_beryllium_bronze_processing}
-    data_technology[lightweight_science_pack].research_trigger =
-    {
-        type = craft_item,
-        item = beryllium_bronze_plate,
-        count = 256
-    }
+    data_technology[lightweight_science_pack].research_trigger = {type = craft_item, item = beryllium_bronze_plate}
 
     data_technology[tech_space_logistic].unit.ingredients =
     {
@@ -282,7 +323,11 @@ if mods[aegis_bellicos_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     data_technology[beryllium_LDS].unit.ingredients =
@@ -292,21 +337,29 @@ if mods[aegis_bellicos_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
-    local tech_space_plateform = "space-plateform" -- !!!
+    local space_plateform = "space-plateform" -- !!!ИСПРАВИТЬ КАК АВТОР ИСПРАВИТ
     if mods[muluna_mods] then
-        table.insert(data_technology[tech_space_plateform .. _productivity].effects, {type = change_recipe_productivity, recipe = LDSPF, change = 0.1})
+        table.insert(data_technology[space_plateform .. _productivity].effects, {type = change_recipe_productivity, recipe = LDSPF, change = 0.1})
     end
-    data_technology[tech_space_plateform .. _productivity].unit.ingredients =
+    data_technology[space_plateform .. _productivity].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     local discovery_aegis_inner = "discovery-aegis-inner"
@@ -317,7 +370,11 @@ if mods[aegis_bellicos_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     data_technology["discovery-aegis-warden"].unit.ingredients =
@@ -328,11 +385,14 @@ if mods[aegis_bellicos_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {agricultural_science_pack, 1}
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     local discovery_bellicos = "discovery-bellicos"
-    data_technology[discovery_bellicos].prerequisites = {tech_advanced_asteroid_processing, discovery_aegis_inner, rocket_turret}
+    data_technology[discovery_bellicos].prerequisites = {discovery_aegis_inner}
     data_technology[discovery_bellicos].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -343,7 +403,8 @@ if mods[aegis_bellicos_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     data_technology["tritium-extraction"].icons = TIMSABA.functions.create_gas_tech_icon("TTT")
@@ -368,7 +429,8 @@ if mods[aegis_bellicos_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     local tech_circuit_productivity_helium = "circuit" .. _productivity .. "-" .. helium
@@ -389,7 +451,8 @@ if mods[aegis_bellicos_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
     data_technology[quantum_processor .. "-" .. helium].unit.ingredients =
@@ -402,8 +465,30 @@ if mods[aegis_bellicos_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
     }
 
-    data_technology[railgun .. "-shooting-speed-1"].prerequisites = {pulsar_science_pack, railgun}
+    data_technology[railgun .. "-shooting-speed-1"].prerequisites = {railgun}
+
+    data_technology[railgun .. "-damage-1"].prerequisites = {railgun}
+
+    -- ADD
+    local function add_prerequisites(tech_name)
+        if not data_technology[tech_name] then return end
+        table.insert(data_technology[tech_name].prerequisites, pulsar_science_pack)
+    end
+    add_prerequisites(tech_antimonite_processing_3)
+    add_prerequisites(tech_germanite_processing_3)
+
+    add_prerequisites(tech_sphalerite_processing_3)
+    add_prerequisites(tech_tetrahedrite_processing_3)
+
+    add_prerequisites(tech_chalcopyrite_processing_3)
+    add_prerequisites(tech_sperrylite_processing_3)
+
+    add_prerequisites(tech_gallite_processing_3)
+    add_prerequisites(tech_sylvanite_processing_3)
+
+    add_prerequisites(tech_aquilo_cryogenics)
 end

@@ -1,5 +1,4 @@
 local graphics_bobs = "__TIMSABA__/graphics/icons/bobs/"
-ceramic_gear_wheel = "ceramic-gear-wheel"
 copper_tungsten_gear_wheel = "copper-tungsten-gear-wheel"
 iron_bearing_ball = "iron-bearing-ball"
 brass_bearing_ball = "brass-bearing-ball"
@@ -14,16 +13,6 @@ tritium_fuel_cell = "tritium-fuel-cell"
 depleted_tritium_fuel_cell = "depleted-tritium-fuel-cell"
 TIMSABA.functions.create_items
 ({
-    {
-        localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil,
-        name = ceramic_gear_wheel,
-        subgroup = is_gears,
-        icon = graphics_bobs .. ceramic_gear_wheel .. ".png",
-        order = d,
-        drop_sound = data_item[stone_brick].drop_sound,
-        inventory_move_sound = data_item[stone_brick].inventory_move_sound,
-        pick_sound = data_item[stone_brick].pick_sound
-    },
     {
         localised_description = show_formula and {chemical_formula, "WCu"} or nil,
         name = copper_tungsten_gear_wheel,
@@ -137,8 +126,8 @@ TIMSABA.functions.create_items
         drop_sound = data_item[uranium_235_fuel_cell].drop_sound,
         inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound,
         pick_sound = data_item[uranium_235_fuel_cell].pick_sound,
-        fuel_category = nuclear_fuel_T4,
-        fuel_value = (1382400 * 4 * 2) .. kJ,
+        fuel_categories = {nuclear_fuel_T4},
+        fuel_value = (512 * 2048 * 0.9375) .. kJ,
         consumption_glow_alternative_tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0},
         fuel_glow_color = {r = 0.72, g = 0.05, b = 1.0, a = 1.0}
     },

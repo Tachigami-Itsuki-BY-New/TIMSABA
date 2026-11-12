@@ -1,3 +1,5 @@
+require("prototypes-update.base.base-update-icon-building")
+require("prototypes-update.base.base-update-icon-technology")
 require("prototypes-update.angels.angels-update-icon-building")
 require("prototypes-update.angels.angels-update-icon-technology")
 require("prototypes-update.bobs.bobs-update-icon-building")
@@ -69,6 +71,7 @@ require("prototypes-update.planet.frozeta.frozeta-override")
 require("prototypes-update.planet.terrapalus.terrapalus-override")
 require("prototypes-update.planet.lignumis.lignumis-override")
 require("prototypes-update.planet.lignumis.lignumis-update-icon-building")
+require("prototypes-update.planet.lignumis.lignumis-update-lumber-mill")
 
 -- OTHER STAR SYSTEMS
 require("prototypes-update.planet.aegis-bellicos.aegis-bellicos-override")
@@ -77,11 +80,12 @@ require("prototypes-update.planet.aegis-bellicos.aegis-bellicos-override")
 require("prototypes-update.planet.shattered.shattered-override")
 
 -- ???
+require("prototypes-update.planet.eneas.eneas-override")
 --require("prototypes-update.planet.rubia.rubia-override")
 --require("prototypes-update.planet.cubium.cubium-override")
 --require("prototypes-update.planet.nexus.nexus-override")
 
-require("prototypes-update.planet.asteroid-belt")
+require("prototypes-update.planet.asteroid-belt-override")
 
 require("prototypes-update.mods.mods-override")
 require("prototypes-update.mods.freezing")
