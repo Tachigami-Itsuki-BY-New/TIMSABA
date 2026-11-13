@@ -28,7 +28,6 @@ if mods[corrundum_mods] then
 		"mixed-sulfate-solution",
 		"chalcopyrite-refining",
 		"reactive-displacement",
-		"kinetic-reactive-displacement",
 		"force-reduction-iron",
 		"iron-recrystalization",
 		"iron-recrystalization-alt",
@@ -48,7 +47,6 @@ if mods[corrundum_mods] then
 		"dilute-acid-neutralization",
 		"calcium-sulfate-production-alt",
 		"calcium-sulfate-recovery",
-		"controlled-petrol-combustion",
 		"stone-production",
 		"thruster-fuel-oxidizer-to-steam",
 		"carbon-dioxide-to-carbon",
@@ -56,7 +54,6 @@ if mods[corrundum_mods] then
 		steam_turbine_1 .. _productivity .. _infinite,
 		sulfuric_acid .. _productivity .. _infinite,
 		"recrystalization",
-		"space-steam-production",
 		"petrol-dehydrogenation-and-combustion-maraxsis",
 		"sulfate-processing-2"
 	}
@@ -86,9 +83,24 @@ if mods[corrundum_mods] then
         end
     end
 
-	local tech_chalcopyrite_processing = "chalcopyrite-processing"
-	data_technology[tech_chalcopyrite_processing].prerequisites = {}
-	data_technology[tech_chalcopyrite_processing].effects = {}
-	data_technology[tech_chalcopyrite_processing].hidden = true
-	data_technology[tech_chalcopyrite_processing].hidden_in_factoriopedia = true
+	local hidden_and_hidden_in_factoriopedia =
+	{
+		"chalcopyrite-processing",
+		"kinetic-reactive-displacement",
+		"space-steam-production",
+		"controlled-petrol-combustion"
+	}
+	for _, name in ipairs(hidden_and_hidden_in_factoriopedia) do
+		if data_recipe[name] then
+			data_recipe[name].enabled = false
+			data_recipe[name].hidden = true
+			data_recipe[name].hidden_in_factoriopedia = true
+		end
+		if data_technology[name] then
+			data_technology[name].prerequisites = {}
+			data_technology[name].effects = {}
+			data_technology[name].hidden = true
+			data_technology[name].hidden_in_factoriopedia = true
+		end
+	end
 end
