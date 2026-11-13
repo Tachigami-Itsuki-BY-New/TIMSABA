@@ -13,8 +13,11 @@ if mods[tellus_mods] then
         "planetaris-preservation-unit",
         "planetaris-space-preservation",
         "planetaris-acid-refined-concrete",
+        "acid-refined-concrete",
         "planetaris-pink-refined-concrete",
+        "pink-refined-concrete",
         "planetaris-brown-refined-concrete",
+        "brown-refined-concrete",
         "tellus-transport-belt-capacity-3"
     }
     TIMSABA.functions.delete_prototypes(delete_prototypes)
