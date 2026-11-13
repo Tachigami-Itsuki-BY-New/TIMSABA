@@ -162,7 +162,7 @@ TIMSABA.functions.create_recipes
         name = refined_concrete_liquid,
         categories = {centrifuging_4},
         subgroup = is_stone_casting,
-        icons = THREE_R_I(concrete_liquid, refined_concrete_liquid, slag_angels),
+        icons = TWO_I(concrete_liquid, refined_concrete_liquid),
         order = f,
         energy_required = 32, -- Liquid Concrete --> Refined liquid concrete
         ingredients = {{type = fluid, name = concrete_liquid, amount = 960}},

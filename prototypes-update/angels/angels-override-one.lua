@@ -563,6 +563,7 @@ for _, BUILD in pairs(blast_furnaces) do
             pipe_connections = {{flow_direction = output, position = {1, 2}, direction = defines.direction.south}}
         }
     }
+    data_assembling[BUILD.name].use_mirroring = true
 end
 local function blast_furnace_recipe(name, circuit, pipe, brick, plate, blast_furnace)
     local ingredients =
