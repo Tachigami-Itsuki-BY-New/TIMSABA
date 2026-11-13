@@ -194,7 +194,6 @@ TIMSABA.functions.create_recipes
 -- COPPER
 copper_hydroxide_II_from_copper_sulfate_II_solution = "copper-hydroxide-II-from-copper-sulfate-II-solution"
 copper_hydroxide_II_from_copper_nitrate_II_solution = "copper-hydroxide-II-from-copper-nitrate-II-solution"
-copper_chloride_I_alt = "copper-chloride-I-alt"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -288,41 +287,22 @@ TIMSABA.functions.create_recipes
     },
     {
         name = copper_chloride_I,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_copper_chemistry,
-        icons = TWO_D_I(copper_powder, copper_chloride_II_solution_angels, copper_chloride_I, steam),
-        order = f,
-        energy_required = 8, -- Cu(s) + CuCl₂(aq) --> 2CuCl(s) + H₂O(g)
-        ingredients =
-        {
-            {type = item, name = copper_powder, amount = 16},
-            {type = fluid, name = copper_chloride_II_solution_angels, amount = 240}
-        },
-        results =
-        {
-            {type = item, name = copper_chloride_I, amount = 32},
-            {type = fluid, name = steam, amount = 120}, -- 240
-        },
-        main_product = copper_chloride_I
-    },
-    {
-        name = copper_chloride_I_alt,
         categories = {angels_advanced_chemistry},
         subgroup = is_copper_chemistry,
         icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_trioxide_gas, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
-        order = f_a,
+        order = f,
         energy_required = 8, -- 2CuCl₂(aq) + SO₃(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
         ingredients =
         {
-            {type = fluid, name = copper_chloride_II_solution_angels, amount = 480},
-            {type = fluid, name = sulfur_trioxide_gas, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 480}
+            {type = fluid, name = copper_chloride_II_solution_angels, amount = 240},
+            {type = fluid, name = sulfur_trioxide_gas, amount = 120},
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
-            {type = item, name = copper_chloride_I, amount = 32},
-            {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
-            {type = fluid, name = hydrochloric_acid_angels, amount = 240} -- 480
+            {type = item, name = copper_chloride_I, amount = 16},
+            {type = fluid, name = sulfuric_acid_angels, amount = 60}, -- 120
+            {type = fluid, name = hydrochloric_acid_angels, amount = 120} -- 240
         },
         main_product = copper_chloride_I
     },

@@ -2016,7 +2016,6 @@ data_technology[tech_metallurgy_5].effects =
     {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_sulfate_II_solution},
     {type = unlock_recipe, recipe = copper_chloride_II_solution_angels},
     {type = unlock_recipe, recipe = copper_chloride_I},
-    {type = unlock_recipe, recipe = copper_chloride_I_alt},
     {type = unlock_recipe, recipe = ammonium_chloride_solution_2},
     {type = unlock_recipe, recipe = ammonium_dichlorocuprate_I_solution}
 }
