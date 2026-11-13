@@ -3,10 +3,10 @@ if mods[corrundum_mods] then
 
     -- CHALCOPYRITE
     local graphics_chalcopyrite_tech = "__TIMSABA__/graphics/icons/corrundum/technology/chalcopyrite-processing.png"
-    tech_chalcopyrite_processing_1 = "chalcopyrite-processing-1"
-    tech_chalcopyrite_processing_2 = "chalcopyrite-processing-2"
-    tech_chalcopyrite_processing_3 = "chalcopyrite-processing-3"
-    tech_chalcopyrite_processing_4 = "chalcopyrite-processing-4"
+    tech_chalcopyrite_processing_1 = "timsaba-chalcopyrite-processing-1"
+    tech_chalcopyrite_processing_2 = "timsaba-chalcopyrite-processing-2"
+    tech_chalcopyrite_processing_3 = "timsaba-chalcopyrite-processing-3"
+    tech_chalcopyrite_processing_4 = "timsaba-chalcopyrite-processing-4"
     data:extend
     ({
         {

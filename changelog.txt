@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 13.11.2026
+  Bugfixes:
+    - [All] Fixed the issues described in the #355
+    - [All] Fixed the issues described in the #356
+    - [All] Fixed the issues described in the #357
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 12.11.2026
   Features:
