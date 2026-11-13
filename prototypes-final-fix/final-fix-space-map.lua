@@ -752,7 +752,9 @@ if mods[asteroid_belt_mods] then
 
     update_space_connection(solar_system_edge, 0, shattered_planet, 4000)
 
-    remove_space_connection(solar_system_edge, southeast_kuiper_belt_outer_edge)
+    if data_space_location[southeast_kuiper_belt_outer_edge] then
+        remove_space_connection(solar_system_edge, southeast_kuiper_belt_outer_edge)
+    end
 
     -- SHATTERED PLANET
     update_planet_or_space_location(shattered_planet, nil, 1, nil, 256, 0.25, 0.75)
