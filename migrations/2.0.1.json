@@ -1,0 +1,9 @@
+{
+    "technology":
+    [
+        ["chalcopyrite-processing-1", "timsaba-chalcopyrite-processing-1"],
+        ["chalcopyrite-processing-2", "timsaba-chalcopyrite-processing-2"],
+        ["chalcopyrite-processing-3", "timsaba-chalcopyrite-processing-3"],
+        ["chalcopyrite-processing-4", "timsaba-chalcopyrite-processing-4"]
+    ]
+}
