@@ -23,8 +23,8 @@ if mods[corrundum_mods] then
 	local delete_prototypes =
 	{
 		platinum_plate_mods .. "-production-alt",
-		"iron-sulfate-solution",
-		"copper-sulfate-solution",
+		iron_sulfate_solution,
+		copper_sulfate_solution,
 		"mixed-sulfate-solution",
 		"chalcopyrite-refining",
 		"reactive-displacement",
@@ -93,6 +93,9 @@ if mods[corrundum_mods] then
 	for _, name in ipairs(hidden_and_hidden_in_factoriopedia) do
 		if data_recipe[name] then
 			data_recipe[name].enabled = false
+			data_recipe[name].ingredients = {{type = item, name = stone, amount = 1}}
+			data_recipe[name].results = {{type = item, name = stone, amount = 1}}
+			data_recipe[name].main_product = stone
 			data_recipe[name].hidden = true
 			data_recipe[name].hidden_in_factoriopedia = true
 		end
