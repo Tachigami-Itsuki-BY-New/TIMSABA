@@ -548,10 +548,9 @@ if mods[asteroid_belt_mods] then
     end
 
     if mods[maraxsis_mods] then
-        if not data_space_connection[east_asteroid_belt_outer_edge .. "-" .. planet_maraxsis] then
-            Location(east_asteroid_belt_outer_edge):create_space_connection(Planet(planet_maraxsis))
+        if data_space_connection[east_asteroid_belt_outer_edge .. "-" .. planet_maraxsis] then
+            update_space_connection(east_asteroid_belt_outer_edge, 32, planet_maraxsis, 36, 22.5)
         end
-        update_space_connection(east_asteroid_belt_outer_edge, 32, planet_maraxsis, 36, 22.5)
     end
 
     -- ВЫХОД в Т4 Юго-Восток
@@ -645,7 +644,9 @@ if mods[asteroid_belt_mods] then
     if mods[maraxsis_mods] then
         update_planet_or_space_location(planet_maraxsis, 25, 25, nil, 36, 0.1875, 0.6875)
 
-        update_space_connection(planet_maraxsis, 36, planet_aquilo, 44, 22.5)
+        if data_space_connection[planet_maraxsis .. "-" .. planet_aquilo] then
+            update_space_connection(planet_maraxsis, 36, planet_aquilo, 44, 22.5)
+        end
 
         if data_space_location[east_kuiper_belt_inner_edge] then
             Planet(planet_maraxsis):create_space_connection(Location(east_kuiper_belt_inner_edge))
@@ -703,10 +704,9 @@ if mods[asteroid_belt_mods] then
     if mods[vesta_mods] then
         update_planet_or_space_location(planet_vesta, 1, 1, nil, 84, 0.25, 0.75)
 
-        if not data_space_connection[planet_vesta .. "-" .. solar_system_edge] then
-            Planet(planet_vesta):create_space_connection(Location(solar_system_edge))
+        if data_space_connection[planet_vesta .. "-" .. solar_system_edge] then
+            update_space_connection(planet_vesta, 84, solar_system_edge, 100)
         end
-        update_space_connection(planet_vesta, 84, solar_system_edge, 100)
     end
 
     -- AEGIS and BELLICOS
