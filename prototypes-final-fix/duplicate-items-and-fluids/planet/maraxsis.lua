@@ -31,10 +31,6 @@ if mods[maraxsis_mods] then
 		"maraxsis-vitamin-infused-agricultural-science",
 		"maraxsis-vitamin-infused-hydraulic-science",
 		"maraxsis-omega_3",
-		"maraxsis-vitamin-infused-promethium-science-1",
-		"maraxsis-vitamin-infused-promethium-science-2",
-		"maraxsis-vitamin-infused-promethium-science-3",
-		"maraxsis-vitamin-infused-promethium-science-4",
 		"maraxsis-" .. limestone_mods .. "-crushing",
 		"maraxsis-" .. tech_legendary_quality,
 		"maraxsis-shrinkflation"
@@ -55,6 +51,11 @@ if mods[maraxsis_mods] then
 	end
 	for name, _ in pairs(data_recipe) do
 		if name:find("^maraxsis%-fluid%-void%-") then
+			data_recipe[name] = nil
+		end
+	end
+	for name, _ in pairs(data_recipe) do
+		if name:find("^maraxsis%-vitamin%-infused%-promethium%-science%-") then
 			data_recipe[name] = nil
 		end
 	end
