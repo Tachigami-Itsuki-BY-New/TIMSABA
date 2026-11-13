@@ -52,7 +52,6 @@ if mods[corrundum_mods] then
 		"stone-production",
 		"thruster-fuel-oxidizer-to-steam",
 		"carbon-dioxide-to-carbon",
-		"chalcopyrite-processing",
 		pipe .. _productivity .. _infinite,
 		steam_turbine_1 .. _productivity .. _infinite,
 		sulfuric_acid .. _productivity .. _infinite,
@@ -86,4 +85,10 @@ if mods[corrundum_mods] then
             table.remove(data_technology["blue-rocket"].prerequisites, i) break
         end
     end
+
+	local tech_chalcopyrite_processing = "chalcopyrite-processing"
+	data_technology[tech_chalcopyrite_processing].prerequisites = {}
+	data_technology[tech_chalcopyrite_processing].effects = {}
+	data_technology[tech_chalcopyrite_processing].hidden = true
+	data_technology[tech_chalcopyrite_processing].hidden_in_factoriopedia = true
 end
