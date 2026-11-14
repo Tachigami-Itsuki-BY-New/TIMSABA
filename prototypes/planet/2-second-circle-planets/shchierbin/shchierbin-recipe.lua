@@ -28,7 +28,7 @@ if mods[shchierbin_mods] then
             name = vanadium_ingot,
             categories = {angels_blast_smelting_4},
             subgroup = is_shchierbin_vanadium,
-            icons = TWO_D_I(vanadium_oxide_V, calcium, vanadium_ingot, lime_angels),
+            icons = TWO_D_I(vanadium_oxide_V, calcium, vanadium_ingot, calcium_oxide),
             order = d,
             energy_required = 8, -- V₂O₅ + 5Ca --> 2V + 5CaO
             ingredients =
@@ -39,7 +39,7 @@ if mods[shchierbin_mods] then
             results =
             {
                 {type = item, name = vanadium_ingot, amount = 16},
-                {type = item, name = lime_angels, amount = 8} -- 40
+                {type = item, name = calcium_oxide, amount = 8} -- 40
             },
             main_product = vanadium_ingot
         },

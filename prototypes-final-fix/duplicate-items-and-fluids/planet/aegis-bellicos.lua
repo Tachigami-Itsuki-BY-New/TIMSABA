@@ -1,7 +1,13 @@
 if mods[aegis_bellicos_mods] then
+    local beryllium_oxide_mods = "beryllium-oxyde"
+    local beryllium_gear = "beryllium-gear"
+    local copper_beryllium_plate = "copper-beryllium-plate"
     local replace_prototypes =
     {
-        [beryllium_plate_hyarion] = beryllium_plate
+        [beryllium_plate_hyarion] = beryllium_plate,
+        [beryllium_oxide_mods] = beryllium_oxide,
+        [beryllium_gear] = beryllium_bronze_gear_wheel,
+        [copper_beryllium_plate] = beryllium_bronze_plate
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -10,9 +16,9 @@ if mods[aegis_bellicos_mods] then
 
     local delete_prototypes =
 	{
-        "beryllium-oxyde",
-        "beryllium-gear",
-        "copper-beryllium-plate",
+        beryllium_oxide_mods,
+        beryllium_gear,
+        copper_beryllium_plate,
         "beryllium-processing",
         "long-lightweight-inserter",
         "lightweight-inserter",

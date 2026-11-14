@@ -68,6 +68,8 @@ if not mods[muluna_mods] then
         {type = unlock_recipe, recipe = metallic_asteroid_crushing_5},
         {type = unlock_recipe, recipe = metallic_asteroid_crushing_6},
         {type = unlock_recipe, recipe = carbonic_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = carbonic_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = carbonic_asteroid_crushing_3},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
@@ -96,8 +98,7 @@ data_technology[tech_advanced_asteroid_processing].effects =
     {type = unlock_recipe, recipe = advanced_carbonic_asteroid_crushing_2},
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_1},
     {type = unlock_recipe, recipe = advanced_thruster_fuel},
-    {type = unlock_recipe, recipe = advanced_thruster_oxidizer},
-    {type = unlock_recipe, recipe = lime_space}
+    {type = unlock_recipe, recipe = advanced_thruster_oxidizer}
 }
 data_technology[tech_advanced_asteroid_processing].prerequisites = {metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack}
 data_technology[tech_advanced_asteroid_processing].unit.ingredients =

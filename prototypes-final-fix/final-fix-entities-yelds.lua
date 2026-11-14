@@ -892,6 +892,12 @@ end
 if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
+    data_resource[calcium_crystals].minable.results =
+    {
+        {type = item, name = vaterite, amount = 1, independent_probability = 0.5},
+        {type = item, name = fluorite_angels, amount = 1, independent_probability = 0.5}
+    }
+
     local nitrogen_vent = "cryovolcanic-vent"
     data_resource[nitrogen_vent].localised_name = {"entity-name.nitrogen-vent"}
     data_resource[nitrogen_vent].localised_description = {"entity-description.nitrogen-vent"}
@@ -1069,7 +1075,7 @@ if mods[muria_mods] then
     data_entity["big-chloric-rock"].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 16},
-        {type = item, name = chlorine_salts, amount_min = 2, amount_max = 4}
+        {type = item, name = chloride_salts, amount_min = 2, amount_max = 4}
     }
 end
 

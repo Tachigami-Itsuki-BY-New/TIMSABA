@@ -1,52 +1,39 @@
 if mods[paracelsin_mods] then
     -- VATERITE and RECIPE
+    data_resource[calcium_crystals].subgroup = is_vaterite_and_recipe
+    data_resource[calcium_crystals].order = a
+    data_resource[calcium_crystals].minable.mining_time = 1
+
     data_item[vaterite].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
     data_item[vaterite].subgroup = is_vaterite_and_recipe
-    data_item[vaterite].order = a
+    data_item[vaterite].order = b
     data_item[vaterite].stack_size = 200
-    data_resource[vaterite].subgroup = is_vaterite_and_recipe
-    data_resource[vaterite].order = a
-    data_resource[vaterite].minable.mining_time = 1
-
-    local vaterite_formation = "vaterite-formation"
-    data_recipe[vaterite_formation].subgroup = is_vaterite_and_recipe
-    data_recipe[vaterite_formation].icons = STONKS_I(stonks_png, vaterite)
-    data_recipe[vaterite_formation].order = a_a
-    data_recipe[vaterite_formation].energy_required = 4
-    data_recipe[vaterite_formation].ingredients =
-    {
-        {type = item, name = vaterite, amount = 1},
-        {type = item, name = stone, amount = 8},
-        {type = fluid, name = nitrogen_liquid, amount = 30}
-    }
-    data_recipe[vaterite_formation].results = {{type = item, name = vaterite, amount_min = 1, amount_max = 8}}
 
     local vaterite_processing = "vaterite-processing"
     data_recipe[vaterite_processing].categories = {chemistry}
     data_recipe[vaterite_processing].subgroup = is_vaterite_and_recipe
     data_recipe[vaterite_processing].icons = RECYCLING_I(recycling_png, vaterite)
-    data_recipe[vaterite_processing].order = a_b
-    data_recipe[vaterite_processing].energy_required = 2 -- 4CaCO₃ + 2H₂O --> 2CaCO₃ + 2CaO + 2C + 2H₂ + 4O₂
+    data_recipe[vaterite_processing].order = b_b
+    data_recipe[vaterite_processing].energy_required = 4 -- 4CaCO₃(s) -2H₂O(l)-> 2CaCO₃(s) + 2CaO(s) + 2C(s) + 3O₂(g) + 2H₂O(g)
     data_recipe[vaterite_processing].ingredients =
     {
-        {type = item, name = vaterite, amount = 4},
-        {type = fluid, name = water_purified_angels, amount = 30}
+        {type = item, name = vaterite, amount = 8},
+        {type = fluid, name = water_purified_angels, amount = 60}
     }
     data_recipe[vaterite_processing].results =
     {
-        {type = item, name = calcite, amount = 2},
-        {type = item, name = lime_angels, amount = 2},
-        {type = item, name = carbon_angels, amount = 2},
-        {type = fluid, name = hydrogen_angels, amount = 30},
-        {type = fluid, name = oxygen_angels, amount = 60},
+        {type = item, name = calcium_carbonate, amount = 4},
+        {type = item, name = calcium_oxide, amount = 4},
+        {type = item, name = carbon_angels, amount = 4},
+        {type = fluid, name = oxygen_angels, amount = 90},
+        {type = fluid, name = steam, amount = 60}
     }
-    data_recipe[vaterite_processing].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
     local nitrogen_nitric_acid = "nitrogen-nitric-acid"
     data_recipe[nitrogen_nitric_acid].subgroup = is_vaterite_and_recipe
-    data_recipe[nitrogen_nitric_acid].icons = THREE_D_I(vaterite, water_purified_angels, nitrogen_liquid, nitric_acid_angels, lime_angels, calcium_carbide)
-    data_recipe[nitrogen_nitric_acid].order = b
-    -- 2CaCO₃ + H₂O + N₂ --> 2HNO₃ + CaO + CaC₂
+    data_recipe[nitrogen_nitric_acid].icons = THREE_D_I(vaterite, water_purified_angels, nitrogen_liquid, nitric_acid_angels, calcium_oxide, calcium_carbide)
+    data_recipe[nitrogen_nitric_acid].order = d
+    data_recipe[nitrogen_nitric_acid].energy_required = 4 -- 2CaCO₃(s) + H₂O(l) + N₂(g) --> 2HNO₃(l) + CaO(s) + CaC₂(s)
     data_recipe[nitrogen_nitric_acid].ingredients =
     {
         {type = item, name = vaterite, amount = 4},
@@ -56,7 +43,7 @@ if mods[paracelsin_mods] then
     data_recipe[nitrogen_nitric_acid].results =
     {
         {type = fluid, name = nitric_acid_angels, amount = 60},
-        {type = item, name = lime_angels, amount = 2},
+        {type = item, name = calcium_oxide, amount = 2},
         {type = item, name = calcium_carbide, amount = 2}
     }
     data_recipe[nitrogen_nitric_acid].main_product = nitric_acid_angels
@@ -65,7 +52,7 @@ if mods[paracelsin_mods] then
     local solid_fuel_from_nitrogen = "solid-fuel-from-nitrogen"
     data_recipe[solid_fuel_from_nitrogen].subgroup = is_vaterite_and_recipe
     data_recipe[solid_fuel_from_nitrogen].icons = THREE_I(vaterite, nitrogen_liquid, solid_fuel)
-    data_recipe[solid_fuel_from_nitrogen].order = c
+    data_recipe[solid_fuel_from_nitrogen].order = e
     data_recipe[solid_fuel_from_nitrogen].ingredients =
     {
         {type = item, name = vaterite, amount = 2},
@@ -76,7 +63,7 @@ if mods[paracelsin_mods] then
     local nitric_acid_rocket_fuel = "nitric-acid-rocket-fuel"
     data_recipe[nitric_acid_rocket_fuel].subgroup = is_vaterite_and_recipe
     data_recipe[nitric_acid_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_paracelsin)
-    data_recipe[nitric_acid_rocket_fuel].order = d
+    data_recipe[nitric_acid_rocket_fuel].order = f
     data_recipe[nitric_acid_rocket_fuel].energy_required = 8
     data_recipe[nitric_acid_rocket_fuel].ingredients =
     {
@@ -90,7 +77,7 @@ if mods[paracelsin_mods] then
     local nitric_acid_plastic = "nitric-acid-plastic"
     data_recipe[nitric_acid_plastic].subgroup = is_vaterite_and_recipe
     data_recipe[nitric_acid_plastic].icons = THREE_D_I(carbon_angels, water_purified_angels, nitric_acid_angels, plastic)
-    data_recipe[nitric_acid_plastic].order = e
+    data_recipe[nitric_acid_plastic].order = g
     data_recipe[nitric_acid_plastic].ingredients =
     {
         {type = item, name = carbon_angels, amount = 4},
@@ -100,9 +87,9 @@ if mods[paracelsin_mods] then
     data_recipe[nitric_acid_plastic].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
     data_item[galvanization_science_pack].subgroup = is_vaterite_and_recipe
-    data_item[galvanization_science_pack].order = f
+    data_item[galvanization_science_pack].order = h
     data_recipe[galvanization_science_pack].subgroup = is_vaterite_and_recipe
-    data_recipe[galvanization_science_pack].order = f
+    data_recipe[galvanization_science_pack].order = h
     data_recipe[galvanization_science_pack].energy_required = 8
     data_recipe[galvanization_science_pack].ingredients =
     {
@@ -364,7 +351,8 @@ if mods[paracelsin_mods] then
     data_technology[planet_discovery_paracelsin].effects =
     {
         {type = unlock_space_location, space_location = planet_paracelsin},
-        {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air}
+        {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air},
+        {type = unlock_recipe, recipe = advanced_calcinic_asteroid_crushing_1}
     }
 
     table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = zinc_plate_bob})
@@ -435,19 +423,6 @@ if mods[paracelsin_mods] then
             {type = unlock_recipe, recipe = galvanized_pump}
         }
     end
-
-    data_technology[vaterite_formation].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1}
-    }
 
     data_technology["axe-mining-speed"].unit.ingredients =
     {

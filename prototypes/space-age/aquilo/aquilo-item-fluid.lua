@@ -36,7 +36,7 @@ TIMSABA.functions.create_fluids
         max_temperature = 200
     },
     {
-        localised_description = show_formula and {chemical_formula, "NF[font=default-tiny-bold]3(liquefied)[/font]"} or nil,
+        localised_description = show_formula and {chemical_formula, "NF[font=default-tiny-bold]3[/font]"} or nil,
         name = nitrogen_trifluoride_liquefied,
         subgroup = is_aquilo_air,
         icon = graphics_aquilo .. nitrogen_trifluoride_liquefied .. ".png",

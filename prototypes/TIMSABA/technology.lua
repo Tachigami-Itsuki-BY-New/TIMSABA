@@ -420,7 +420,7 @@ data:extend
         prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell, tech_ore_refining},
         effects =
         {
-            {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
+            {type = unlock_recipe, recipe = calcium_chloride_solution_from_calcium_oxide},
             {type = unlock_recipe, recipe = calcium},
             {type = unlock_recipe, recipe = thorium_oxide_IV},
             {type = unlock_recipe, recipe = thorium_232_bob}

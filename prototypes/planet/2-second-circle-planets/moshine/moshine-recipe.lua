@@ -134,7 +134,7 @@ if mods[moshine_mods] then
             name = neodymium_ingot_2,
             categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
-            icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, lime_angels, salt_angels),
+            icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, calcium_oxide, salt_angels),
             order = d_a,
             energy_required = 8, -- Nd₂O₃(s) + 3CaCl₂(s) + 6Na(s) --> 2Nd(s) + 3CaO(s) + 6NaCl(s)
             ingredients =
@@ -146,7 +146,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = lime_angels, amount = 16}, -- 24
+                {type = item, name = calcium_oxide, amount = 16}, -- 24
                 {type = item, name = salt_angels, amount = 32} -- 48
             },
             main_product = neodymium_ingot
@@ -404,7 +404,7 @@ if mods[moshine_mods] then
             ingredients =
             {
                 {type = item, name = biotite_mica, amount = 1},
-                {type = item, name = lime_angels, amount = 8},
+                {type = item, name = calcium_oxide, amount = 8},
                 {type = item, name = calcium_chloride_angels, amount = 2}
             },
             results =

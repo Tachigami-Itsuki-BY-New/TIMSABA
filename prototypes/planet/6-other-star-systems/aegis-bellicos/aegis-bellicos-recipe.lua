@@ -217,7 +217,7 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_beryllium_bronze,
             icons = B_F_L(copper_ingot, beryllium_ingot, nickel_ingot, beryllium_bronze_molten, number_1),
             order = a,
-            energy_required = 8, -- CuBeNi
+            energy_required = 8, -- Cu + Be + Ni
             ingredients =
             {
                 {type = item, name = copper_ingot, amount = 16},
@@ -235,14 +235,14 @@ if mods[aegis_bellicos_mods] then
             subgroup = is_beryllium_bronze,
             icons = B_F_L(copper_ingot, beryllium_ingot, nickel_ingot, beryllium_bronze_molten, number_2),
             order = a_a,
-            energy_required = 8, -- CuBe(Ni/Co)Ti
+            energy_required = 8, -- Cu + Be + Ni + Co + Ti
             ingredients =
             {
                 {type = item, name = copper_ingot, amount = 16},
                 {type = item, name = beryllium_ingot, amount = 16},
-                {type = item, name = nickel_ingot, amount = 8},
+                {type = item, name = nickel_ingot, amount = 16},
                 {type = item, name = cobalt_ingot, amount = 8},
-                {type = item, name = titanium_ingot, amount = 16}
+                {type = item, name = titanium_ingot, amount = 8}
             },
             results = {{type = fluid, name = beryllium_bronze_molten, amount = 480}},
             main_product = beryllium_bronze_molten,

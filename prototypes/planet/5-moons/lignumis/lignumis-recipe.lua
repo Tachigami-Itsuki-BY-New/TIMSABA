@@ -89,7 +89,7 @@ if mods[lignumis_mods] then
             name = tantalum_powder_3,
             categories = {angels_blast_smelting_4},
             subgroup = is_tantalum,
-            icons = FOUR_THREE_R_I(sodium_tantalate, nil, calcium_hydride, tantalum_powder, lime_angels, sodium_oxide, hydrogen_angels),
+            icons = FOUR_THREE_R_I(sodium_tantalate, nil, calcium_hydride, tantalum_powder, calcium_oxide, sodium_oxide, hydrogen_angels),
             order = d_b,
             energy_required = 8, -- 2NaTaO₃(s) + 5CaH₂(s) --> 2Ta(s) + 5CaO(s) + Na₂O(s) + 5H₂(g)
             ingredients =
@@ -100,7 +100,7 @@ if mods[lignumis_mods] then
             results =
             {
                 {type = item, name = tantalum_powder, amount = 16},
-                {type = item, name = lime_angels, amount = 24}, -- 40
+                {type = item, name = calcium_oxide, amount = 24}, -- 40
                 {type = item, name = sodium_oxide, amount = 4}, -- 8
                 {type = fluid, name = hydrogen_angels, amount = 360} -- 600
             },

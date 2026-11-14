@@ -1,8 +1,7 @@
 
 local replace_prototypes =
 {
-	[tree_seed] = tree_seed_angels,
-    [calcium_carbonate] = limestone_angels
+	[tree_seed] = tree_seed_angels
 }
 TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -29,9 +28,6 @@ local delete_proto =
     -- ANGELS PETROCHEM REFINING
     "angels-solid-resin",
     "angels-solid-rubber",
-
-    -- ANGELS BIOPROCESSING
-    calcium_carbonate,
 
     -- VOIDS
     "angels-chemical-void",

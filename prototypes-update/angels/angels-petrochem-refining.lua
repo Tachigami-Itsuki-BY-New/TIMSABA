@@ -591,7 +591,7 @@ data_recipe[hydrogen_fluoride_angels].ingredients =
 data_recipe[hydrogen_fluoride_angels].results =
 {
     {type = fluid, name = hydrogen_fluoride_angels, amount = 120},
-    {type = item, name = calcium_sulfate_angels, amount = 2} -- 4
+    {type = item, name = calcium_sulfate_angels, amount = 4}
 }
 
 data_fluid[hydrofluoric_acid_angels].localised_description = show_formula and {chemical_formula, "HF[font=default-tiny-bold](aq)[/font]"} or nil
@@ -953,9 +953,9 @@ data_recipe[sulfur_dioxide_angels].ingredients[2].amount = 60
 
 data_recipe[sulfur_gas_calcium_sulfate].categories = {chemistry}
 data_recipe[sulfur_gas_calcium_sulfate].subgroup = is_sulfur_fluids
-data_recipe[sulfur_gas_calcium_sulfate].icons = THREE_D_I(calcium_sulfate_angels, nil, coal, sulfur_dioxide_angels, lime_angels, carbon_dioxide_angels)
+data_recipe[sulfur_gas_calcium_sulfate].icons = THREE_D_I(calcium_sulfate_angels, nil, coal, sulfur_dioxide_angels, calcium_oxide, carbon_dioxide_angels)
 data_recipe[sulfur_gas_calcium_sulfate].order = d_a
-data_recipe[sulfur_gas_calcium_sulfate].energy_required = 4 -- 2CaSO₄ + С --> 2SO₂ + 2CaO + CO₂
+data_recipe[sulfur_gas_calcium_sulfate].energy_required = 4 -- 2CaSO₄(s) + С(s) --> 2SO₂(g) + 2CaO(s) + CO₂(g)
 data_recipe[sulfur_gas_calcium_sulfate].ingredients =
 {
     {type = item, name = calcium_sulfate_angels, amount = 4},
@@ -964,8 +964,8 @@ data_recipe[sulfur_gas_calcium_sulfate].ingredients =
 data_recipe[sulfur_gas_calcium_sulfate].results =
 {
     {type = fluid, name = sulfur_dioxide_angels, amount = 60},
-    {type = item, name = lime_angels, amount = 2}, -- 4
-    {type = fluid, name = carbon_dioxide_angels, amount = 30} -- 60
+    {type = item, name = calcium_oxide, amount = 4},
+    {type = fluid, name = carbon_dioxide_angels, amount = 60}
 }
 data_recipe[sulfur_gas_calcium_sulfate].main_product = sulfur_dioxide_angels
 
@@ -1116,25 +1116,13 @@ data_item[calcium_sulfate_angels].localised_description = show_formula and {chem
 data_item[calcium_sulfate_angels].subgroup = is_calcium
 data_item[calcium_sulfate_angels].order = c
 
-data_item[lime_angels].localised_description = show_formula and {chemical_formula, "CaO"} or nil
-data_item[lime_angels].subgroup = is_calcium
-data_item[lime_angels].order = d
-data_recipe[lime_angels].categories = {chemistry}
-data_recipe[lime_angels].subgroup = is_calcium
-data_recipe[lime_angels].icons = THREE_R_I(limestone_angels, lime_angels, carbon_monoxide_angels)
-data_recipe[lime_angels].order = d
-data_recipe[lime_angels].energy_required = 4 -- CaCO₃ --> CaO + CO₂
-data_recipe[lime_angels].ingredients[1].amount = 4
-data_recipe[lime_angels].results[1].amount = 4
-data_recipe[lime_angels].results[2].amount = 30 -- 60
-
 data_item[calcium_chloride_angels].localised_description = show_formula and {chemical_formula, "CaCl[font=default-tiny-bold]2[/font]"} or nil
 data_item[calcium_chloride_angels].subgroup = is_calcium
-data_item[calcium_chloride_angels].order = e
+data_item[calcium_chloride_angels].order = d
 data_recipe[calcium_chloride_angels].subgroup = is_calcium
 data_recipe[calcium_chloride_angels].icons = THREE_R_I(calcium_chloride_solution, calcium_chloride_angels, steam)
-data_recipe[calcium_chloride_angels].order = e
-data_recipe[calcium_chloride_angels].energy_required = 4 -- CaCl₂(aq) --> CaCl₂ + H₂O
+data_recipe[calcium_chloride_angels].order = d
+data_recipe[calcium_chloride_angels].energy_required = 4 -- CaCl₂(aq) --> CaCl₂(s) + H₂O(g)
 data_recipe[calcium_chloride_angels].ingredients = {{type = fluid, name = calcium_chloride_solution, amount = 60}}
 data_recipe[calcium_chloride_angels].results =
 {

@@ -7,6 +7,7 @@ local muluna_loot = require("scripting.muluna-loot")
 local planet_messages = require("scripting.planet-messages")
 local dynamic_underground_belts = require("scripting.dynamic-underground-belts")
 local dynamic_pipe_to_ground = require("scripting.dynamic-pipe-to-ground")
+--local digging = require("scripting.digging")
 
 local milestones_events
 if script.active_mods["Milestones"] then
@@ -79,3 +80,17 @@ script.on_event(defines.events.on_player_changed_surface, function(event)
         planet_messages.on_player_changed_surface(event)
     end
 end)
+
+--[[script.on_event(defines.events.on_tick, digging.on_tick)
+
+script.on_event(defines.events.on_player_selected_area, function(event)
+    if event.item == "shovel" then
+        local player = game.players[event.player_index]
+
+        local tiles = event.tiles
+        if #tiles > 0 then
+            local target_pos = tiles[1].position
+            digging.start_digging(player, target_pos)
+        end
+    end
+end)]]

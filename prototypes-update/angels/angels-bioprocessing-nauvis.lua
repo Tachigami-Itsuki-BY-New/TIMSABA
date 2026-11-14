@@ -105,8 +105,9 @@ data_recipe[cellulose_fiber_red].energy_required = 4
 data_recipe[cellulose_fiber_red].ingredients[1].amount = 8
 data_recipe[cellulose_fiber_red].results[1].amount = 4
 
+data_item[calcium_carbonate].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
 data_recipe[calcium_carbonate].categories = {smelting}
-data_recipe[calcium_carbonate].icons = TWO_I(cellulose_fiber_red, limestone_angels)
+data_recipe[calcium_carbonate].icons = TWO_I(cellulose_fiber_red, calcium_carbonate)
 data_recipe[calcium_carbonate].energy_required = 4
 data_recipe[calcium_carbonate].ingredients[1].amount = 8
 data_recipe[calcium_carbonate].results[1].amount = 4

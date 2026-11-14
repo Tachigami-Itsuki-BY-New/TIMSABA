@@ -113,6 +113,8 @@ if mods[muluna_mods] then
 	data_technology[carbonic_asteroid_crushing_1].effects =
 	{
 		{type = unlock_recipe, recipe = carbonic_asteroid_crushing_1},
+		{type = unlock_recipe, recipe = carbonic_asteroid_crushing_2},
+		{type = unlock_recipe, recipe = carbonic_asteroid_crushing_3},
 		{type = unlock_recipe, recipe = electric_engine_unit_from_carbon}
 	}
 

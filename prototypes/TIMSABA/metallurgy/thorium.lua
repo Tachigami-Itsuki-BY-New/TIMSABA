@@ -103,7 +103,7 @@ TIMSABA.functions.create_recipes
         name = thorium_232_bob,
         categories = {angels_blast_smelting_4},
         subgroup = is_thorium,
-        icons = TWO_D_I(thorium_oxide_IV, calcium, thorium_232_bob, lime_angels),
+        icons = TWO_D_I(thorium_oxide_IV, calcium, thorium_232_bob, calcium_oxide),
         order = d,
         allow_quality = true,
         energy_required = 8, -- ThO₂(s) + 2Ca(s) --> Th-232(s) + 2CaO(s)
@@ -115,7 +115,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = thorium_232_bob, amount = 16},
-            {type = item, name = lime_angels, amount = 16} -- 32
+            {type = item, name = calcium_oxide, amount = 16} -- 32
         },
         main_product = thorium_232_bob
     },
@@ -156,13 +156,13 @@ TIMSABA.functions.create_recipes
         name = thorium_oxide_IV_3,
         categories = {angels_blast_smelting_4},
         subgroup = is_thorium_chemistry,
-        icons = TWO_D_I(thorium_fluoride_IV, lime_angels, thorium_oxide_IV, fluorite_angels),
+        icons = TWO_D_I(thorium_fluoride_IV, calcium_oxide, thorium_oxide_IV, fluorite_angels),
         order = a_b,
         energy_required = 8, -- ThF₄(s) + 2CaO(s) --> ThO₂(s) + 2CaF₂(s)
         ingredients =
         {
             {type = item, name = thorium_fluoride_IV, amount = 16},
-            {type = item, name = lime_angels, amount = 32}
+            {type = item, name = calcium_oxide, amount = 32}
         },
         results =
         {

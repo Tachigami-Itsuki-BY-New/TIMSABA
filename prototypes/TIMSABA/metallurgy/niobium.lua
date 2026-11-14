@@ -220,7 +220,7 @@ TIMSABA.functions.create_fluids
     },
     -- NITORGEN AQUILO
     {
-        localised_description = show_formula and {chemical_formula, "N[font=default-tiny-bold]2(liquid)[/font]"} or nil,
+        localised_description = show_formula and {chemical_formula, "N[font=default-tiny-bold]2[/font]"} or nil,
         name = nitrogen_liquid,
         subgroup = is_aquilo_air,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/nitrogen-liquid.png",
