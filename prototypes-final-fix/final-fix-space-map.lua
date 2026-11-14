@@ -731,16 +731,16 @@ if mods[asteroid_belt_mods] then
         -- Aegis Outer Edge
         update_planet_or_space_location(aegis_outer_edge, nil, 100, nil, 32, 0.875, 0)
 
-        update_space_connection("aegis_outer_inner_connection", 32, nil, 24)
+        update_space_connection("aegis-outer-inner-connection", 32, nil, 24)
 
-        update_space_connection("aegis_outer_warden_connection", 32, nil, 33, 22.5)
+        update_space_connection("aegis-outer-warden-connection", 32, nil, 33, 22.5)
 
         -- Aegis Inner Edge
         update_planet_or_space_location(aegis_inner_edge, nil, 400, nil, 24, 0.875, 0)
 
         update_space_connection(aegis, 24, bellicos_connection, 0)
 
-        update_space_connection("aegis_inner_warden_connection", 24, nil, 33, 22.5)
+        update_space_connection("aegis-inner-warden-connection", 24, nil, 33, 22.5)
 
         -- Aegis Warden
         update_planet_or_space_location(aegis_warden, nil, 50, nil, 33, 0.8125, 0)

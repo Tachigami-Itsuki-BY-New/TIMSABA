@@ -134,7 +134,7 @@ if mods[moshine_mods] then
             name = neodymium_ingot_2,
             categories = {angels_blast_smelting_4},
             subgroup = is_neodymium,
-            icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, lime_angels, salt_angels),
+            icons = THREE_D_I(neodymium_oxide_III, calcium_chloride_angels, sodium_angels, neodymium_ingot, calcium_oxide, salt_angels),
             order = d_a,
             energy_required = 8, -- Nd₂O₃(s) + 3CaCl₂(s) + 6Na(s) --> 2Nd(s) + 3CaO(s) + 6NaCl(s)
             ingredients =
@@ -146,7 +146,7 @@ if mods[moshine_mods] then
             results =
             {
                 {type = item, name = neodymium_ingot, amount = 16},
-                {type = item, name = lime_angels, amount = 16}, -- 24
+                {type = item, name = calcium_oxide, amount = 16}, -- 24
                 {type = item, name = salt_angels, amount = 32} -- 48
             },
             main_product = neodymium_ingot
@@ -235,7 +235,7 @@ if mods[moshine_mods] then
         }
     })
 
-    -- SMELTING
+    -- LEAD
     lead_ingot_4 = "lead-ingot-4"
     TIMSABA.functions.create_recipes
     ({
@@ -378,13 +378,13 @@ if mods[moshine_mods] then
             subgroup = is_barium,
             icons = RECYCLING_I(recycling_png, barite),
             order = a_a,
-            energy_required = 1, -- (Ba,Ca,Pb)SO₄ --> BaSO₄ + CaSO₄ + PbSO₄
-            ingredients = {{type = item, name = barite, amount = 1}},
+            energy_required = 8, -- (Ba,Ca,Pb)SO₄(s) --> BaSO₄(s) + CaSO₄(s) + PbSO₄(s)
+            ingredients = {{type = item, name = barite, amount = 16}},
             results =
             {
-                {type = item, name = barium_sulfate, amount = 1},
-                {type = item, name = lead_sulfate_II, amount = 1},
-                {type = item, name = calcium_sulfate_angels, amount = 1}
+                {type = item, name = barium_sulfate, amount_min = 0, amount_max = 16},
+                {type = item, name = lead_sulfate_II, amount_min = 0, amount_max = 16},
+                {type = item, name = calcium_sulfate_angels, amount_min = 0, amount_max = 16}
             },
             main_product = barium_sulfate
         }
@@ -400,27 +400,66 @@ if mods[moshine_mods] then
             subgroup = is_biotite_mica,
             icons = RECYCLING_I(recycling_png, biotite_mica),
             order = a_a,
-            energy_required = 1, -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂ + 8CaO + 2CaCl₂ --> K + Mg + 2MgCl₂ + Fe + Fe₂O₃ + Al₂O₃ + 4CaSiO₃ + Ca(OH)₂ + CaF₂ + 4Ca
+            energy_required = 8, -- 2K(Mg₃Fe₃Al₂)[Si₄O₁₀](OH,F)₂(s) --> K₂O(s) + 6MgO(s) + 6FeO(s) + 2Al₂O₃(s) + 8SiO₂(s) + 2H₂O(g) + 2HF(g)
+            ingredients = {{type = item, name = biotite_mica, amount = 16}},
+            results =
+            {
+                {type = item, name = potassium_oxide, amount = 8},
+                {type = item, name = magnesium_oxide, amount = 48},
+                {type = item, name = iron_oxide_II, amount = 48},
+                {type = item, name = aluminium_oxide, amount = 32},
+                {type = item, name = silicon_oxide_IV, amount = 64},
+                {type = fluid, name = steam, amount = 240},
+                {type = fluid, name = hydrogen_fluoride_angels, amount = 240}
+            }
+        }
+    })
+
+    -- POTASSIUM
+    potassium_hydroxide_2 = potassium_hydroxide .. "-2"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"item-name." .. potassium_hydroxide},
+            name = potassium_hydroxide_2,
+            categories = {chemistry},
+            subgroup = is_potassium,
+            icons = THREE_I(potassium_oxide, water_purified_angels, potassium_hydroxide),
+            order = c_a,
+            energy_required = 4, -- K₂O(s) + H₂O(l) --> 2KOH(s)
             ingredients =
             {
-                {type = item, name = biotite_mica, amount = 1},
-                {type = item, name = lime_angels, amount = 8},
-                {type = item, name = calcium_chloride_angels, amount = 2}
+                {type = item, name = potassium_oxide, amount = 2},
+                {type = fluid, name = water_purified_angels, amount = 30}
+            },
+            results = {{type = item, name = potassium_hydroxide, amount = 4}},
+            main_product = potassium_hydroxide
+        }
+    })
+
+    -- IRON
+    iron_ingot_4 = "iron-ingot-4"
+    TIMSABA.functions.create_recipes
+    ({
+        {
+            localised_name = {"item-name." .. iron_ingot},
+            name = iron_ingot_4,
+            categories = {angels_blast_smelting_4},
+            subgroup = is_iron,
+            icons = TWO_D_I(iron_oxide_II, carbon_angels, iron_ingot, carbon_monoxide_angels),
+            order = d_c,
+            energy_required = 8, -- FeO(s) + C(s) --> Fe(s) + CO(g)
+            ingredients =
+            {
+                {type = item, name = iron_oxide_II, amount = 16},
+                {type = item, name = carbon_angels, amount = 16}
             },
             results =
             {
-                {type = item, name = potassium, amount = 1},
-                {type = item, name = magnesium_ore, amount = 1},
-                {type = item, name = magnesium_chloride, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = iron_oxide_III, amount = 1},
-                {type = item, name = aluminium_oxide, amount = 1},
-                {type = item, name = calcium_silicate, amount = 4},
-                {type = item, name = calcium_hydroxide, amount = 1},
-                {type = item, name = fluorite_angels, amount = 1},
-                {type = item, name = calcium, amount = 4}
+                {type = item, name = iron_ingot, amount = 16},
+                {type = fluid, name = carbon_monoxide_angels, amount = 120} -- 240
             },
-            main_product = potassium
+            main_product = iron_ingot
         }
     })
 

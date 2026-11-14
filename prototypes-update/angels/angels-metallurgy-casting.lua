@@ -1411,38 +1411,50 @@ data_recipe[glass_angels].ingredients[1].amount = 60
 data_recipe[glass_angels].results[1].amount = 4
 
 -- BRICK
+data_item[lime_angels].localised_description = show_formula and {chemical_formula, "CaO"} or nil
+data_item[lime_angels].subgroup = is_bricks_casting
+data_item[lime_angels].order = a
+data_recipe[lime_angels].categories = {chemistry}
+data_recipe[lime_angels].subgroup = is_bricks_casting
+data_recipe[lime_angels].icons = THREE_R_I(limestone_angels, lime_angels, carbon_dioxide_angels)
+data_recipe[lime_angels].order = a
+data_recipe[lime_angels].energy_required = 4 -- CaCO₃(s) --> CaO(s) + CO₂(g)
+data_recipe[lime_angels].ingredients[1].amount = 4
+data_recipe[lime_angels].results[1].amount = 4
+data_recipe[lime_angels].results[2].amount = 30 -- 60
+
 local clay_brick_raw = "angels-clay-brick-raw"
 data_item[clay_brick_raw].subgroup = is_bricks_casting
-data_item[clay_brick_raw].order = a
+data_item[clay_brick_raw].order = b
 data_recipe[clay_brick_raw].subgroup = is_bricks_casting
 data_recipe[clay_brick_raw].icons = THREE_D_I(clay_angels, lime_angels, sand_angels, clay_brick_raw)
-data_recipe[clay_brick_raw].order = a
+data_recipe[clay_brick_raw].order = b
 
 data_item[clay_brick].subgroup = is_bricks_casting
-data_item[clay_brick].order = b
+data_item[clay_brick].order = c
 data_recipe[clay_brick].subgroup = is_bricks_casting
 data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
-data_recipe[clay_brick].order = b
+data_recipe[clay_brick].order = c
 
 data_item[stone_brick].subgroup = is_bricks_casting
-data_item[stone_brick].order = c
+data_item[stone_brick].order = d
 data_recipe[stone_brick].subgroup = is_bricks_casting
 data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
-data_recipe[stone_brick].order = c
+data_recipe[stone_brick].order = d
 data_recipe[stone_brick].energy_required = 4
 
 data_item[concrete_brick].subgroup = is_bricks_casting
-data_item[concrete_brick].order = d
+data_item[concrete_brick].order = e
 data_recipe[concrete_brick].subgroup = is_bricks_casting
 data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
-data_recipe[concrete_brick].order = d
+data_recipe[concrete_brick].order = e
 data_recipe[concrete_brick].ingredients[1].amount = 60
 
 data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
-data_item[reinforced_concrete_brick].order = e
+data_item[reinforced_concrete_brick].order = f
 data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
 data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
-data_recipe[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].order = f
 data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
 data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
 

@@ -652,6 +652,7 @@ TIMSABA.barreling.add_dangerous_fluid(chlorosulfonic_acid)
 local graphics_petrochem_calcium = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/"
 -- CALCIUM ITEM
 calcium = "timsaba-calcium"
+calcium_oxide = "calcium-oxide"
 calcium_carbide = "calcium-carbide"
 calcium_cyanamide = "calcium-cyanamide"
 calcium_hydroxide = "calcium-hydroxide"
@@ -663,6 +664,13 @@ TIMSABA.functions.create_items
         subgroup = is_calcium,
         icon = graphics_petrochem_calcium .. calcium .. ".png",
         order = a
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "CaO"} or nil,
+        name = calcium_oxide,
+        subgroup = is_calcium,
+        icon = graphics_petrochem_calcium .. calcium_oxide .. ".png",
+        order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "CaC[font=default-tiny-bold]2[/font]"} or nil,

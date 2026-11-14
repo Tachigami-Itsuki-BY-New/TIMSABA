@@ -75,7 +75,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = iron_cathode, amount = 16},
             {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
             {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-            {type = fluid, name = ammonium_sulfate_solution, amount = 240, independent_probability = 0.5}, -- 240
+            {type = fluid, name = ammonium_sulfate_solution, amount = 120}, -- 240
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
@@ -132,13 +132,13 @@ TIMSABA.functions.create_recipes
         name = iron_hydroxide_II_from_iron_sulfate_II_solution,
         categories = {angels_chemical_smelting_4},
         subgroup = is_iron_chemistry,
-        icons = TWO_D_I(iron_sulfate_II_solution, lime_angels, iron_hydroxide_II, calcium_sulfate_angels),
+        icons = TWO_D_I(iron_sulfate_II_solution, calcium_oxide, iron_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
         energy_required = 8, -- FeSO₄(aq) + CaO(s) --> Fe(OH)₂(s) + CaSO₄(s)
         ingredients =
         {
             {type = fluid, name = iron_sulfate_II_solution, amount = 240},
-            {type = item, name = lime_angels, amount = 16}
+            {type = item, name = calcium_oxide, amount = 16}
         },
         results =
         {
@@ -216,13 +216,13 @@ TIMSABA.functions.create_recipes
         name = copper_hydroxide_II_from_copper_sulfate_II_solution,
         categories = {angels_chemical_smelting_4},
         subgroup = is_copper_chemistry,
-        icons = TWO_D_I(copper_sulfate_II_solution, lime_angels, copper_hydroxide_II, calcium_sulfate_angels),
+        icons = TWO_D_I(copper_sulfate_II_solution, calcium_oxide, copper_hydroxide_II, calcium_sulfate_angels),
         order = a_a,
         energy_required = 8, -- CuSO₄(aq) + CaO(s) --> Cu(OH)₂(s) + CaSO₄(s)
         ingredients =
         {
             {type = fluid, name = copper_sulfate_II_solution, amount = 240},
-            {type = item, name = lime_angels, amount = 16}
+            {type = item, name = calcium_oxide, amount = 16}
         },
         results =
         {
@@ -453,7 +453,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = tin_cathode, amount = 16},
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240}, -- 360
             {type = fluid, name = water_purified_angels, amount = 120}, -- 240
-            {type = fluid, name = hexafluorosilicic_acid, amount = 240, independent_probability = 0.5}, -- 240
+            {type = fluid, name = hexafluorosilicic_acid, amount = 120}, -- 240
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },
@@ -621,13 +621,13 @@ TIMSABA.functions.create_recipes
         name = silicon_oxide_IV_from_silicon_fluoride_IV_gas,
         categories = {angels_blast_smelting_2},
         subgroup = is_silicon_chemistry,
-        icons = TWO_D_I(silicon_fluoride_IV_gas, lime_angels, silicon_oxide_IV, fluorite_angels),
+        icons = TWO_D_I(silicon_fluoride_IV_gas, calcium_oxide, silicon_oxide_IV, fluorite_angels),
         order = a_b,
         energy_required = 8, -- SiF₄(g) + 2CaO(s) --> SiO₂(s) + 2CaF₂(s)
         ingredients =
         {
             {type = fluid, name = silicon_fluoride_IV_gas, amount = 240},
-            {type = item, name = lime_angels, amount = 32}
+            {type = item, name = calcium_oxide, amount = 32}
         },
         results =
         {
@@ -820,13 +820,13 @@ TIMSABA.functions.create_recipes
         name = calcium_aluminate,
         categories = {angels_blast_smelting_2},
         subgroup = is_aluminium_chemistry,
-        icons = TWO_D_I(aluminium_ore_bob, lime_angels, calcium_aluminate, calcium),
+        icons = TWO_D_I(aluminium_ore_bob, calcium_oxide, calcium_aluminate, calcium),
         order = a,
         energy_required = 8, -- 2Al(s) + 4CaO(s) --> Ca(AlO₂)₂(s) + 3Ca(s)
         ingredients =
         {
             {type = item, name = aluminium_ore_bob, amount = 32},
-            {type = item, name = lime_angels, amount = 32}
+            {type = item, name = calcium_oxide, amount = 32}
         },
         results =
         {
@@ -1509,7 +1509,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = chromium_cathode, amount = 16},
             {type = fluid, name = water_purified_angels, amount = 240}, -- 480
             {type = fluid, name = oxygen_angels, amount = 240}, -- 360
-            {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
+            {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
             {type = item, name = electrode, amount = 1, independent_probability = 0.875},
             {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
         },

@@ -147,44 +147,43 @@ data_item[calcite].order = a
 data_item[calcite].stack_size = 200
 
 local acid_neutralisation = "acid-neutralisation"
-data_recipe[acid_neutralisation].categories = {angels_advanced_chemistry}
+data_recipe[acid_neutralisation].categories = {chemistry}
 data_recipe[acid_neutralisation].subgroup = is_calcite
-data_recipe[acid_neutralisation].icons = FOUR_R_I(sulfuric_acid_angels, sulfur_trioxide_gas, steam, carbon_dioxide_angels)
+data_recipe[acid_neutralisation].icons = THREE_D_I(sulfuric_acid_angels, nil, calcite, steam, calcium_sulfate_angels, carbon_dioxide_angels)
 data_recipe[acid_neutralisation].order = a_a
-data_recipe[acid_neutralisation].energy_required = 4 -- 2CaCO₃ + 4H₂SO₄ --> 2CaO + 4H₂O + 4SO₃ + 2CO₂
+data_recipe[acid_neutralisation].energy_required = 4 -- CaCO₃(s) + H₂SO₄(l) --> CaSO₄(s) + H₂O(g) + CO₂(g)
 data_recipe[acid_neutralisation].ingredients =
 {
-    {type = item, name = calcite, amount = 32},
-    {type = fluid, name = sulfuric_acid_angels, amount = 960}
+    {type = fluid, name = sulfuric_acid_angels, amount = 60},
+    {type = item, name = calcite, amount = 4}
 }
 data_recipe[acid_neutralisation].results =
 {
-    {type = item, name = lime_angels, amount = 32},
-    {type = fluid, name = steam, amount = 960, temperature = 915},
-    {type = fluid, name = sulfur_trioxide_gas, amount = 960},
-    {type = fluid, name = carbon_dioxide_angels, amount = 480}
+    {type = fluid, name = steam, amount = 60, temperature = 915},
+    {type = item, name = calcium_sulfate_angels, amount = 4},
+    {type = fluid, name = carbon_dioxide_angels, amount = 60}
 }
 data_recipe[acid_neutralisation].main_product = steam
 
 local simple_coal_liquefaction = "simple-coal-liquefaction"
 data_recipe[simple_coal_liquefaction].subgroup = is_calcite
-data_recipe[simple_coal_liquefaction].icons = FOUR_THREE_R_I(coal, calcite, sulfuric_acid_angels, naphtha_angels, limestone_angels, sulfur_dioxide_angels, oxygen_angels)
+data_recipe[simple_coal_liquefaction].icons = FOUR_THREE_R_I(coal, calcite, sulfuric_acid_angels, crude_oil, calcium_oxide, sulfur_trioxide_gas, oxygen_angels)
 data_recipe[simple_coal_liquefaction].order = a_b
-data_recipe[simple_coal_liquefaction].energy_required = 4 -- 8C + 2CaCO₃ + H₂SO₄ --> C₈H₁₈ + 2CaCO₃ + SO₂ + O₂
+data_recipe[simple_coal_liquefaction].energy_required = 8 -- Coal + CaCO₃(s) + H₂SO₄(l) --> Crude oil + CaO(s) + SO₃(g) + O₂(g)
 data_recipe[simple_coal_liquefaction].ingredients =
 {
-    {type = item, name = coal, amount = 8},
-    {type = item, name = calcite, amount = 2},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30}
+    {type = item, name = coal, amount = 16},
+    {type = item, name = calcite, amount = 16},
+    {type = fluid, name = sulfuric_acid_angels, amount = 240}
 }
 data_recipe[simple_coal_liquefaction].results =
 {
-    {type = fluid, name = naphtha_angels, amount = 60},
-    {type = item, name = limestone_angels, amount = 2},
-    {type = fluid, name = sulfur_dioxide_angels, amount = 30},
-    {type = fluid, name = oxygen_angels, amount = 30}
+    {type = fluid, name = crude_oil, amount = 240},
+    {type = item, name = calcium_carbonate, amount = 16},
+    {type = fluid, name = sulfur_trioxide_gas, amount = 240},
+    {type = fluid, name = oxygen_angels, amount = 240}
 }
-data_recipe[simple_coal_liquefaction].main_product = naphtha_angels
+data_recipe[simple_coal_liquefaction].main_product = crude_oil
 data_recipe[simple_coal_liquefaction].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[carbon].hidden = false

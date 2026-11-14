@@ -240,4 +240,30 @@ if mods[moshine_mods] then
             order = a
         }
     })
+
+    -- POTASSIUM
+    potassium_oxide = "potassium-oxide"
+    TIMSABA.functions.create_items
+    ({
+        {
+            localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]O"} or nil,
+            name = potassium_oxide,
+            subgroup = is_potassium,
+            icon = graphics_moshine .. potassium_oxide .. ".png",
+            order = j
+        }
+    })
+
+    -- IRON CHEMISTRY
+    iron_oxide_II = "iron-oxide-II"
+    TIMSABA.functions.create_items
+    ({
+        {
+            localised_description = show_formula and {chemical_formula, "FeO"} or nil,
+            name = iron_oxide_II,
+            subgroup = is_iron_chemistry,
+            icon = graphics_moshine .. iron_oxide_II .. ".png",
+            order = h
+        }
+    })
 end

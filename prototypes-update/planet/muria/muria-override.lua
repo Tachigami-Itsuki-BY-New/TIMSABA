@@ -212,14 +212,14 @@ if mods[muria_mods] then
     data_recipe[eschatotaxite_carbon_fiber].surface_conditions = {{property = pressure, min = 2180, max = 2180}}
 
     -- ACIDOPHILE
-    local chlorine_salt_deposit = "chlorine-salt-deposit"
-    data_resource[chlorine_salt_deposit].subgroup = is_acidophile
-    data_resource[chlorine_salt_deposit].order = a
-    data_resource[chlorine_salt_deposit].minable.mining_time = 1
+    local chloride_salt_deposit = "chloride-salt-deposit"
+    data_resource[chloride_salt_deposit].subgroup = is_acidophile
+    data_resource[chloride_salt_deposit].order = a
+    data_resource[chloride_salt_deposit].minable.mining_time = 1
 
-    data_item[chlorine_salts].subgroup = is_acidophile
-    data_item[chlorine_salts].order = b
-    data_item[chlorine_salts].stack_size = 200
+    data_item[chloride_salts].subgroup = is_acidophile
+    data_item[chloride_salts].order = b
+    data_item[chloride_salts].stack_size = 200
 
     data_item[acidophile_lichen].subgroup = is_acidophile
     data_item[acidophile_lichen].order = c
@@ -261,19 +261,36 @@ if mods[muria_mods] then
     }
     data_recipe[chloric_fuel].results[1].amount = 4
 
+    local artificial_muriatic_colony = "artificial-muriatic-soil"
+    data_item[artificial_muriatic_colony].subgroup = is_acidophile
+    data_item[artificial_muriatic_colony].order = e
+    data_recipe[artificial_muriatic_colony].subgroup = is_acidophile
+    data_recipe[artificial_muriatic_colony].order = e
+    data_recipe[artificial_muriatic_colony].ingredients =
+    {
+        {type = item, name = eschatotaxite_sprout, amount = 4},
+        {type = item, name = foundation, amount = 8},
+        {type = fluid, name = hydrogen_chloride_angels, amount = 15},
+        {type = fluid, name = hydrogen_fluoride_angels, amount = 15}
+    }
+    data_recipe[artificial_muriatic_colony].results[1].amount = 8
+    data_tile[artificial_muriatic_colony].subgroup = is_acidophile
+    data_tile[artificial_muriatic_colony].order = e
+
     local artificial_lichen_colony = "artificial-lichen-colony"
     data_item[artificial_lichen_colony].subgroup = is_acidophile
-    data_item[artificial_lichen_colony].order = e
+    data_item[artificial_lichen_colony].order = f
     data_recipe[artificial_lichen_colony].subgroup = is_acidophile
-    data_recipe[artificial_lichen_colony].order = e
+    data_recipe[artificial_lichen_colony].order = f
     data_recipe[artificial_lichen_colony].ingredients =
     {
         {type = item, name = acidophile_lichen, amount = 4},
         {type = item, name = foundation, amount = 8},
         {type = fluid, name = hydrogen_chloride_angels, amount = 30}
     }
+    data_recipe[artificial_lichen_colony].results[1].amount = 8
     data_tile[artificial_lichen_colony].subgroup = is_acidophile
-    data_tile[artificial_lichen_colony].order = e
+    data_tile[artificial_lichen_colony].order = f
 
     -- LEAD
     data_item[cotunnite].subgroup = is_muria_lead
@@ -529,6 +546,7 @@ if mods[muria_mods] then
     end
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air})
     table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = muria_air_separation})
+    table.insert(data_technology[planet_discovery_muria].effects, {type = unlock_recipe, recipe = calcinic_asteroid_crushing_1})
     table.insert(data_technology[planet_discovery_muria].unit.ingredients, {production_science_pack, 1})
     table.insert(data_technology[planet_discovery_muria].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[planet_discovery_muria].unit.ingredients, {metallurgic_science_pack, 1})

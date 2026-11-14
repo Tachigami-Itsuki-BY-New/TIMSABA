@@ -169,28 +169,25 @@ if mods[maraxsis_mods] then
     data_recipe[smelt_microplastics].order = g_a
     data_recipe[smelt_microplastics].energy_required = 4
 
-    local wyrm_confinement_cell = "maraxsis-wyrm-confinement-cell"
-    data_item[wyrm_confinement_cell].subgroup = is_maraxsis_recipe
-    data_item[wyrm_confinement_cell].order = h
-    data_item[wyrm_confinement_cell].stack_size = 200
-    data_recipe[wyrm_confinement_cell].subgroup = is_maraxsis_recipe
-    data_recipe[wyrm_confinement_cell].icons = THREE_I(glass_bob, steel_plate, wyrm_confinement_cell)
-    data_recipe[wyrm_confinement_cell].order = h
-    data_recipe[wyrm_confinement_cell].energy_required = 4
-    data_recipe[wyrm_confinement_cell].ingredients =
+    local ooozma_confinement_cell = "maraxsis-ooozma-confinement-cell"
+    data_item[ooozma_confinement_cell].subgroup = is_maraxsis_recipe
+    data_item[ooozma_confinement_cell].order = h
+    data_item[ooozma_confinement_cell].stack_size = 200
+    data_recipe[ooozma_confinement_cell].subgroup = is_maraxsis_recipe
+    data_recipe[ooozma_confinement_cell].icons = THREE_D_I(glass_bob, steel_plate, fish_food, ooozma_confinement_cell)
+    data_recipe[ooozma_confinement_cell].order = h
+    data_recipe[ooozma_confinement_cell].energy_required = 4
+    data_recipe[ooozma_confinement_cell].ingredients =
     {
         {type = item, name = glass_bob, amount = 4},
-        {type = item, name = steel_plate, amount = 1}
+        {type = item, name = steel_plate, amount = 1},
+        {type = item, name = fish_food, amount = 1}
     }
 
-    local wyrm_specimen = "maraxsis-wyrm-specimen"
-    data_item[wyrm_specimen].subgroup = is_maraxsis_recipe
-    data_item[wyrm_specimen].order = i
-    data_item[wyrm_specimen].stack_size = 200
-    data_recipe[wyrm_specimen].subgroup = is_maraxsis_recipe
-    data_recipe[wyrm_specimen].icons = THREE_I(fish_food, wyrm_confinement_cell, wyrm_specimen)
-    data_recipe[wyrm_specimen].order = i
-    data_recipe[wyrm_specimen].energy_required = 8
+    local ooozma_specimen = "maraxsis-ooozma-specimen"
+    data_item[ooozma_specimen].subgroup = is_maraxsis_recipe
+    data_item[ooozma_specimen].order = i
+    data_item[ooozma_specimen].stack_size = 200
 
     data_item[hydraulic_science_pack].subgroup = is_maraxsis_recipe
     data_item[hydraulic_science_pack].order = j
@@ -200,7 +197,7 @@ if mods[maraxsis_mods] then
     data_recipe[hydraulic_science_pack].ingredients =
     {
         {type = item, name = salt_angels, amount = 1},
-        {type = item, name = wyrm_specimen, amount = 1},
+        {type = item, name = ooozma_confinement_cell, amount = 1},
         {type = fluid, name = water_saline_angels, amount = 240}
     }
 
@@ -455,7 +452,7 @@ if mods[maraxsis_mods] then
 
     local geothermal_sulfur = "maraxsis-geothermal-sulfur"
     data_recipe[geothermal_sulfur].subgroup = is_maraxsis_building_energy
-    data_recipe[geothermal_sulfur].icons = THREE_I(supercritical_steam_maraxsis, lava, sulfur)
+    data_recipe[geothermal_sulfur].icons = THREE_I(supercritical_steam_maraxsis, water_brackish_maraxsis, sulfur)
     data_recipe[geothermal_sulfur].order = e
     data_recipe[geothermal_sulfur].energy_required = 4
     data_recipe[geothermal_sulfur].ingredients[1].amount = 120
@@ -694,7 +691,7 @@ if mods[maraxsis_mods] then
     bobmods.lib.recipe.update_recycling_recipe
     ({
         fish_food,
-        wyrm_confinement_cell,
+        ooozma_confinement_cell,
         duct_small,
         duct_t_junction,
         duct_curve,
@@ -788,7 +785,7 @@ if mods[maraxsis_mods] then
     -- ADD
     local function add_ingredients(recipe_name)
         if not data_recipe[recipe_name] then return end
-        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = wyrm_specimen, amount = 16})
+        table.insert(data_recipe[recipe_name].ingredients, {type = item, name = ooozma_confinement_cell, amount = 16})
         bobmods.lib.recipe.update_recycling_recipe({recipe_name})
     end
     add_ingredients(speed_module_8)

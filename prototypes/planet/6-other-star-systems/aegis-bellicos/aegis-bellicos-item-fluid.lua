@@ -5,7 +5,7 @@ if mods[aegis_bellicos_mods] then
     beryllium_processed = "beryllium-processed"
     beryllium_pellet = "beryllium-pellet"
     beryllium_ingot = "beryllium-ingot"
-    beryllium_oxide = "beryllium-oxide"
+    beryllium_oxide = "timsaba-beryllium-oxide"
     beryllium_hydroxide = "beryllium-hydroxide"
     ammonium_fluoroberyllate = "ammonium-fluoroberyllate"
     beryllium_fluoride = "beryllium-fluoride"

@@ -37,6 +37,7 @@ TIMSABA.functions.create_recipes
         main_product = iodine_gas
     },
     {
+        localised_name = {"item-name." .. fertilizer_angels},
         name = fertilizer_2,
         categories = {chemistry},
         subgroup = "angels-bio-wood",

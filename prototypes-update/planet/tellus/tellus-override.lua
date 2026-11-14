@@ -78,7 +78,7 @@ if mods[tellus_mods] then
     local rocket_fuel_from_chloroplast_mash = "planetaris-rocket-fuel-from-mash"
     data_recipe[rocket_fuel_from_chloroplast_mash].subgroup = is_chloroplast
     data_recipe[rocket_fuel_from_chloroplast_mash].icons = BUILDING_R_I(rocket_fuel, planet_tellus)
-    data_recipe[rocket_fuel_from_chloroplast_mash].order = f_a
+    data_recipe[rocket_fuel_from_chloroplast_mash].order = f
     data_recipe[rocket_fuel_from_chloroplast_mash].ingredients =
     {
         {type = item, name = nutrients, amount = 1},
@@ -118,30 +118,15 @@ if mods[tellus_mods] then
     }
 
     -- MAGNESIUM
-    data_item[wasp_egg].subgroup = is_tellus_magnesium
-    data_item[wasp_egg].order = a
-    data_item[wasp_egg].stack_size = 200
-    TIMSABA.void.freezing_organics(wasp_egg)
-    data_recipe[wasp_egg].subgroup = is_tellus_magnesium
-    data_recipe[wasp_egg].icons = STONKS_I(stonks_png, wasp_egg)
-    data_recipe[wasp_egg].order = a
-    data_recipe[wasp_egg].energy_required = 16
-    data_recipe[wasp_egg].ingredients =
-    {
-        {type = item, name = wasp_egg, amount = 1},
-        {type = item, name = nutrients, amount = 32},
-        {type = fluid, name = water, amount = 60}
-    }
-
     data_item[magnesium_bacteria].subgroup = is_tellus_magnesium
-    data_item[magnesium_bacteria].order = b
+    data_item[magnesium_bacteria].order = a
     data_item[magnesium_bacteria].spoil_result = magnesium_ore
     TIMSABA.void.freezing_organics(magnesium_bacteria)
 
     magnesium_bacteria_cultivation = "planetaris-magnesium-bacteria-cultivation"
     data_recipe[magnesium_bacteria_cultivation].subgroup = is_tellus_magnesium
     data_recipe[magnesium_bacteria_cultivation].icons = STONKS_I(stonks_png, magnesium_bacteria)
-    data_recipe[magnesium_bacteria_cultivation].order = b_a
+    data_recipe[magnesium_bacteria_cultivation].order = a_a
     data_recipe[magnesium_bacteria_cultivation].ingredients =
     {
         {type = item, name = nutrients, amount = 2},
@@ -151,7 +136,7 @@ if mods[tellus_mods] then
     local magnesium_saphirite_bacteria = "planetaris-magnesium-iron-bacteria"
     data_recipe[magnesium_saphirite_bacteria].subgroup = is_tellus_magnesium
     data_recipe[magnesium_saphirite_bacteria].icons = TWO_D_I(chloroplast_mash, nutrients, magnesium_bacteria, saphirite_bacteria)
-    data_recipe[magnesium_saphirite_bacteria].order = b_b
+    data_recipe[magnesium_saphirite_bacteria].order = a_b
     data_recipe[magnesium_saphirite_bacteria].ingredients =
     {
         {type = item, name = chloroplast_mash, amount = 4},
@@ -160,21 +145,21 @@ if mods[tellus_mods] then
 
     data_item[magnesium_dust].localised_description = show_formula and {chemical_formula, "Mg"} or nil
     data_item[magnesium_dust].subgroup = is_tellus_magnesium
-    data_item[magnesium_dust].order = c
+    data_item[magnesium_dust].order = b
 
     data_item[magnesium_sheet].localised_description = show_formula and {chemical_formula, "Mg"} or nil
     data_item[magnesium_sheet].subgroup = is_tellus_magnesium
-    data_item[magnesium_sheet].order = d
+    data_item[magnesium_sheet].order = c
     data_recipe[magnesium_sheet].subgroup = is_tellus_magnesium
     data_recipe[magnesium_sheet].icons = TWO_I(magnesium_dust, magnesium_sheet)
-    data_recipe[magnesium_sheet].order = d
+    data_recipe[magnesium_sheet].order = c
 
     data_fluid[bacteriochlorophyll].subgroup = is_tellus_magnesium
-    data_fluid[bacteriochlorophyll].order = e
+    data_fluid[bacteriochlorophyll].order = d
     TIMSABA.barreling.add_simple_fluid(bacteriochlorophyll)
     data_recipe[bacteriochlorophyll].subgroup = is_tellus_magnesium
     data_recipe[bacteriochlorophyll].icons = FOUR_D_I(wasp_egg, magnesium_bacteria, water, nutrients, bacteriochlorophyll)
-    data_recipe[bacteriochlorophyll].order = e
+    data_recipe[bacteriochlorophyll].order = d
     data_recipe[bacteriochlorophyll].ingredients =
     {
         {type = item, name = wasp_egg, amount = 1},
@@ -476,20 +461,35 @@ if mods[tellus_mods] then
     data_recipe[gleba_parasite_dequarantined].icons = THREE_R_I(gleba_parasite_quarantined, gleba_parasite, barrel)
     data_recipe[gleba_parasite_dequarantined].order = d_a
 
+    data_item[wasp_egg].subgroup = is_parasite
+    data_item[wasp_egg].order = e
+    data_item[wasp_egg].stack_size = 200
+    TIMSABA.void.freezing_organics(wasp_egg)
+    data_recipe[wasp_egg].subgroup = is_parasite
+    data_recipe[wasp_egg].icons = STONKS_I(stonks_png, wasp_egg)
+    data_recipe[wasp_egg].order = e
+    data_recipe[wasp_egg].energy_required = 16
+    data_recipe[wasp_egg].ingredients =
+    {
+        {type = item, name = wasp_egg, amount = 1},
+        {type = item, name = nutrients, amount = 32},
+        {type = fluid, name = water, amount = 60}
+    }
+
     local tellus_parasite = "planetaris-tellurian-parasite"
     data_item[tellus_parasite].subgroup = is_parasite
-    data_item[tellus_parasite].order = e
+    data_item[tellus_parasite].order = f
     TIMSABA.void.freezing_organics(tellus_parasite)
     data_recipe[tellus_parasite].subgroup = is_parasite
-    data_recipe[tellus_parasite].order = e
+    data_recipe[tellus_parasite].order = f
 
     local parasite_nest = "planetaris-parasite-nest"
     data_item[parasite_nest].subgroup = is_parasite
-    data_item[parasite_nest].order = f
+    data_item[parasite_nest].order = g
     data_item[parasite_nest].stack_size = 200
     TIMSABA.void.freezing_organics(parasite_nest)
     data_recipe[parasite_nest].subgroup = is_parasite
-    data_recipe[parasite_nest].order = f
+    data_recipe[parasite_nest].order = g
     data_recipe[parasite_nest].ingredients =
     {
         {type = item, name = tellus_parasite, amount = 1},
@@ -786,8 +786,9 @@ if mods[tellus_mods] then
     }
     data_assembling[air_purifier].subgroup = is_tellus_building
     data_assembling[air_purifier].order = c
-    data_assembling[air_purifier].energy_usage = (2400 - 1200) .. kW
-    data_assembling[air_purifier].energy_source.drain = 1200 .. kW
+    data_assembling[air_purifier].energy_usage = (1920 - 240) .. kW
+    data_assembling[air_purifier].energy_source.emissions_per_minute.pollution = 16
+    data_assembling[air_purifier].energy_source.drain = 240 .. kW
 
     data_item[incubator].subgroup = is_tellus_building
     data_item[incubator].order = d

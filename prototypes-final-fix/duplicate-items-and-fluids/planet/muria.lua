@@ -1,20 +1,20 @@
 if mods[muria_mods] then
     local hydrogen_chloride = "hydrogen-chloride"
-    local lead = "lead"
+    local lead_mods = "lead"
     local lead_plate = "lead-plate"
     local lead_molten = "molten-lead"
     local lead_pellets = "lead-pellets"
     local replace_prototypes =
     {
         [hydrogen_chloride] = hydrogen_chloride_angels,
-        [lead] = lead_ore_bob,
+        [lead_mods] = lead_ore_bob,
         [lead_plate] = lead_plate_bob,
         [lead_molten] = lead_molten_angels,
         [lead_pellets] = shotgun_pellets
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    local delete_proto = {lead, lead_plate}
+    local delete_proto = {lead_mods, lead_plate}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
     local delete_proto = {hydrogen_chloride}
@@ -25,8 +25,9 @@ if mods[muria_mods] then
 	{
         lead_molten,
 		lead_pellets,
-        "casting-lead",
-        "casting-lead-pellets",
+        "casting-" .. lead_mods,
+        "casting-" .. lead_pellets,
+        lead_mods .. "-refining",
         "hydrogen-chloride-oxidation",
         "water-electrolysis",
         "corroded-flask",
@@ -43,16 +44,16 @@ if mods[muria_mods] then
         "aquiloan-air-scrubbing",
         "paracelsian-air-scrubbing",
         "air-scrubbing",
-        "hydrogen-chloride-lead-battery",
+        "hydrogen-chloride-" .. lead_mods .. "-battery",
         "oxygenated-iron-bacteria-cultivation",
         "oxygenated-copper-bacteria-cultivation",
         "oxygenated-bacteria-cultivation",
         "acidthrower-turret",
-        "lead-logistic-robot",
-        "lead-construction-robot",
-        "lead-robots",
+        lead_mods .. "-logistic-robot",
+        lead_mods .. "-construction-robot",
+        lead_mods .. "-robots",
         "chlorine-traces-from-ice",
-        "sulfur-chlorine-salt-redox",
+        "sulfur-chloride-salt-redox",
         "advanced-acid-processing",
         "casting-pickled-iron",
         "casting-pickled-copper",
@@ -61,7 +62,9 @@ if mods[muria_mods] then
         "casting-pickled-" .. iron_rod,
         "casting-pickled-" .. copper_cable,
         "pickled-casting",
-        "explosive-" .. shotgun_shell
+        "explosive-" .. shotgun_shell,
+        "casting-anti-corrosion-cladding",
+        "advanced-" .. acidworking_science_pack .. "-activation"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

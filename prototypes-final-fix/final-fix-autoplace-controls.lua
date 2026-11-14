@@ -71,10 +71,10 @@ end
 
 -- PARACELSIN
 if mods[paracelsin_mods] then
-    data_autoplace_control[vaterite].order = data_planet[planet_paracelsin].order .. a
+    data_autoplace_control["calcium_crystals"].order = data_planet[planet_paracelsin].order .. a
     data_autoplace_control[sphalerite_ore].order = data_planet[planet_paracelsin].order .. a_b
     data_autoplace_control[tetrahedrite_ore].order = data_planet[planet_paracelsin].order .. a_c
-    data_autoplace_control["water_cryovolcano"].order = data_planet[planet_paracelsin].order .. a_d
+    data_autoplace_control["cryovolcanic_vent"].order = data_planet[planet_paracelsin].order .. a_d
 end
 
 -- CORRUNDUM
@@ -127,7 +127,7 @@ end
 
 -- MURIA
 if mods[muria_mods] then
-    data_autoplace_control["chlorine_salts"].order = data_planet[planet_muria].order .. a
+    data_autoplace_control["chloride_salts"].order = data_planet[planet_muria].order .. a
 end
 
 -- PELAGOS

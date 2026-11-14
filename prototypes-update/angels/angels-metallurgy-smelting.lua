@@ -1,5 +1,5 @@
 -- IRON and STEEL
-data_item_subgroup["angels-iron"].order = a
+data_item_subgroup[is_iron].order = a
 
 data_item[iron_ore].localised_description = show_formula and {chemical_formula, "Fe"} or nil
 data_item[iron_ore].order = a
@@ -201,9 +201,8 @@ data_recipe[copper_cathode].ingredients =
 data_recipe[copper_cathode].results =
 {
     {type = item, name = copper_cathode, amount = 16},
-    {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
+    {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 240 + 240
     {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-    {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -338,7 +337,7 @@ data_recipe[lead_cathode].results =
     {type = item, name = lead_cathode, amount = 16},
     {type = fluid, name = silicon_fluoride_IV_gas, amount = 240}, -- 360
     {type = fluid, name = water_purified_angels, amount = 120}, -- 240
-    {type = fluid, name = hexafluorosilicic_acid, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = hexafluorosilicic_acid, amount = 120}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -497,8 +496,7 @@ data_recipe[manganese_cathode].results =
 {
     {type = item, name = manganese_cathode, amount = 8},
     {type = item, name = manganese_oxide_IV, amount = 8},
-    {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
-    {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 240 + 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -520,7 +518,7 @@ data_recipe[manganese_cathode_2].results =
     {type = item, name = manganese_cathode, amount = 16},
     {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
     {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-    {type = fluid, name = ammonium_sulfate_solution, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = ammonium_sulfate_solution, amount = 120}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -784,7 +782,7 @@ data_recipe[nickel_cathode].results =
     {type = item, name = nickel_cathode, amount = 16},
     {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
     {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-    {type = fluid, name = boric_acid_solution, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = boric_acid_solution, amount = 120}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1026,9 +1024,8 @@ data_recipe[zinc_cathode].ingredients =
 data_recipe[zinc_cathode].results =
 {
     {type = item, name = zinc_cathode, amount = 16},
-    {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
+    {type = fluid, name = sulfuric_acid_angels, amount = 240}, -- 240 + 240
     {type = fluid, name = oxygen_angels, amount = 60}, -- 120
-    {type = fluid, name = sulfuric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1159,7 +1156,7 @@ data_recipe[silver_cathode].results =
     {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16
     {type = fluid, name = hydrogen_peroxide, amount = 60}, -- 120
     {type = fluid, name = hydrogen_cyanide_gas, amount = 120}, -- 240
-    {type = fluid, name = sodium_cyanide_solution, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = sodium_cyanide_solution, amount = 120}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1388,9 +1385,8 @@ data_recipe[gold_cathode].ingredients =
 data_recipe[gold_cathode].results =
 {
     {type = item, name = gold_cathode, amount = 16},
-    {type = fluid, name = hydrochloric_acid_angels, amount = 120}, -- 240
+    {type = fluid, name = hydrochloric_acid_angels, amount = 240}, -- 240 + 240
     {type = fluid, name = chlorine_angels, amount = 240}, -- 360
-    {type = fluid, name = hydrochloric_acid_angels, amount = 240, independent_probability = 0.5}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }
@@ -1413,7 +1409,7 @@ data_recipe[gold_cathode_2].results =
     {type = item, name = sodium_hydroxide_angels, amount = 8}, -- 16
     {type = fluid, name = hydrogen_peroxide, amount = 60}, -- 120
     {type = fluid, name = hydrogen_cyanide_gas, amount = 120}, -- 240
-    {type = fluid, name = sodium_cyanide_solution, amount = 240, independent_probability = 0.5}, -- 240
+    {type = fluid, name = sodium_cyanide_solution, amount = 120}, -- 240
     {type = item, name = electrode, amount = 1, independent_probability = 0.875},
     {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
 }

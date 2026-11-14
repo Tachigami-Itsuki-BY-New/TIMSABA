@@ -43,6 +43,13 @@ end
 
 data_recipe[lithium_perchlorate_bob].categories = {chemistry}
 
+if data_recipe[orange_alloy] then
+    data_recipe[orange_alloy].categories = {smelting_filtering}
+end
+if data_recipe[blue_alloy] then
+    data_recipe[blue_alloy].categories = {smelting_filtering}
+end
+
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
 data_item[oil_refinery_1].order = a
@@ -180,6 +187,8 @@ if mods[muluna_mods] then
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
         {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_3, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
@@ -207,6 +216,8 @@ else
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
         {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_3, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
@@ -487,6 +498,9 @@ end
 
 -- MOSHINE
 if mods[moshine_mods] then
+    data_resource[multi_ore].hidden = false
+    data_resource[multi_ore].hidden_in_factoriopedia = false
+
     data_recipe[boron].categories = {smelting_filtering}
 
     local cosmicscanner_construction_stage_2 = "moshine_cosmicscanner-construction-stage-2"

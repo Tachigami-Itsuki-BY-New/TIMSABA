@@ -142,53 +142,6 @@ if mods [muluna_mods] then
     table.insert(data_recipe[machinery_scrap_recycling].results, {type = item, name = aluminium_cable, amount = 1, independent_probability = 0.125, show_details_in_recipe_tooltip = false})
 end
 
--- CALCIUM
-calcium_chloride_solution_from_lime = "calcium-chloride-solution-from-lime"
-TIMSABA.functions.create_recipes
-({
-    {
-        name = calcium,
-        categories = {angels_electrolysis},
-        subgroup = is_calcium,
-        icons = FOUR_R_I(calcium_chloride_solution, hydrogen_chloride_angels, calcium, oxygen_angels),
-        order = a,
-        energy_required = 8, -- 2CaCl₂(aq) -electrode/electrolyser-> 2Ca(s) + 4HCl(g) + O₂(g)
-        ingredients =
-        {
-            {type = fluid, name = calcium_chloride_solution, amount = 240},
-            {type = item, name = electrode, amount = 1}
-        },
-        results =
-        {
-            {type = item, name = calcium, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 480},
-            {type = fluid, name = oxygen_angels, amount = 120},
-            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
-            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
-        },
-        main_product = calcium
-    },
-    {
-        name = calcium_chloride_solution_from_lime,
-        categories = {chemistry},
-        subgroup = is_calcium_fluid,
-        icons = TWO_D_I(lime_angels, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
-        order = b_a,
-        -- CaO + 2HCl(aq) --> CaCl₂(aq) + 2H₂O
-        ingredients =
-        {
-            {type = item, name = lime_angels, amount = 4},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 120}
-        },
-        results =
-        {
-            {type = fluid, name = calcium_chloride_solution, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 60} -- 120
-        },
-        main_product = calcium_chloride_solution
-    }
-})
-
 -- SLAG PROCESSING
 fulgora_slag_processing = "fulgora-slag-processing"
 TIMSABA.functions.create_recipes

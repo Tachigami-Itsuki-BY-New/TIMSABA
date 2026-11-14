@@ -1,6 +1,5 @@
 if mods[moshine_mods] then
     -- RECIPE
-    local multi_ore = "multi-ore"
     data_resource[multi_ore].subgroup = is_moshine_recipe
     data_resource[multi_ore].order = a
     data_resource[multi_ore].minable =
@@ -912,6 +911,8 @@ if mods[moshine_mods] then
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = barite_sorting})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = lead_ingot_4})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = biotite_mica_sorting})
+    table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = potassium_hydroxide_2})
+    table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = iron_ingot_4})
     data_technology[planet_discovery_moshine].unit.ingredients =
     {
         {automation_science_pack, 1},

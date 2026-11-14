@@ -119,9 +119,9 @@ if mods[aegis_bellicos_mods] then
     data_item_subgroup["B-A-space-locations"].order = j_c
 
     -- Star
-    local pulsar = "pulsar"
-    data_space_location[pulsar].distance = 256
-    data_space_location[pulsar].orientation = 0.375
+    local bellicos_pulsar = "bellicos-pulsar"
+    data_space_location[bellicos_pulsar].distance = 256
+    data_space_location[bellicos_pulsar].orientation = 0.375
 
     data_space_location[bellicos_orbit].order = z .. "-" .. bellicos_orbit
 end

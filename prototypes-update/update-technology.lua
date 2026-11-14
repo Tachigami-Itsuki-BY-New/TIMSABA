@@ -2230,11 +2230,11 @@ data_technology[tech_advanced_chemistry_5].effects =
     {type = unlock_recipe, recipe = cumene_process},
     {type = unlock_recipe, recipe = bisphenol_a},
     {type = unlock_recipe, recipe = calcium_sulfate_angels},
-    {type = unlock_recipe, recipe = lime_from_calcium_hydroxide},
+    {type = unlock_recipe, recipe = calcium_oxide_from_calcium_hydroxide},
     {type = unlock_recipe, recipe = calcium_cyanamide},
     {type = unlock_recipe, recipe = calcium_hydroxide_from_calcium_cyanamide},
-    {type = unlock_recipe, recipe = limestone_from_calcium_cyanamide},
-    {type = unlock_recipe, recipe = limestone_from_calcium_hydroxide_solution},
+    {type = unlock_recipe, recipe = calcium_carbonate_from_calcium_cyanamide},
+    {type = unlock_recipe, recipe = calcium_carbonate_from_calcium_hydroxide_solution},
     {type = unlock_recipe, recipe = methane_from_acetylene_gas},
     {type = unlock_recipe, recipe = ethane_from_acetylene_gas},
     {type = unlock_recipe, recipe = chloroethane_from_acetylene_gas}
@@ -2321,6 +2321,7 @@ table.insert(data_technology[tech_bio_processing_green].unit.ingredients, {logis
 
 table.insert(data_technology[tech_bio_processing_red].prerequisites, tech_brass_processing)
 table.insert(data_technology[tech_bio_processing_red].prerequisites, tech_stone_smelting_2)
+table.insert(data_technology[tech_bio_processing_red].effects, {type = unlock_recipe, recipe = calcium_oxide})
 table.insert(data_technology[tech_bio_processing_red].unit.ingredients, {chemical_science_pack, 1})
 
 data_technology[tech_bio_processing_blue].prerequisites = {tech_bio_processing_red, tech_titanium_processing, tech_stone_smelting_3}

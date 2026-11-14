@@ -72,6 +72,7 @@ TIMSABA.functions.create_subgroups("angels-resource-refining",
 
 -- ANGELS METTALURGY SMELTING
 ig_smelting = "angels-smelting"
+is_iron = "angels-iron"
 is_iron_chemistry = "is-iron-chemistry"
 is_steel = "is-steel"
 is_copper_chemistry = "is-copper-chemistry"

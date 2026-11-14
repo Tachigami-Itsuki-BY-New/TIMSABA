@@ -57,7 +57,7 @@ local function metallic_asteroid_crushing(name, order, result)
     TIMSABA.functions.create_recipes
     ({
         {
-            localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. result}},
+            localised_name = {"recipe-name.metallic-asteroid-crushing", {"item-name." .. result}},
             name = name,
             categories = {crushing},
             subgroup = is_space_environment_1,
@@ -99,9 +99,37 @@ metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_9, h_i, gall
 --metallic_asteroid_crushing(advanced_full_metallic_asteroid_crushing_11, h_k, cerium_ore)
 
 -- CARBONIC
+carbonic_asteroid_crushing_2 = "timsaba-carbonic-asteroid-crushing-2"
+carbonic_asteroid_crushing_3 = "carbonic-asteroid-crushing-3"
 advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"
 TIMSABA.functions.create_recipes
 ({
+    {
+        localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. limestone_angels}},
+        name = carbonic_asteroid_crushing_2,
+        categories = {crushing},
+        subgroup = is_space_environment_2,
+        icons = TWO_I(carbonic_asteroid_chunk, limestone_angels),
+        order = e_b,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients = {{type = item, name = carbonic_asteroid_chunk, amount = 1}},
+        results = {{type = item, name = limestone_angels, amount = 8}},
+        main_product = limestone_angels
+    },
+    {
+        localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. calcium_carbonate}},
+        name = carbonic_asteroid_crushing_3,
+        categories = {crushing},
+        subgroup = is_space_environment_2,
+        icons = TWO_I(carbonic_asteroid_chunk, calcium_carbonate),
+        order = e_c,
+        allow_productivity = true,
+        allow_quality = true,
+        ingredients = {{type = item, name = carbonic_asteroid_chunk, amount = 1}},
+        results = {{type = item, name = calcium_carbonate, amount = 8}},
+        main_product = calcium_carbonate
+    },
     {
         localised_name = {"recipe-name.carbonic-asteroid-crushing", {"item-name." .. calcite}},
         name = advanced_carbonic_asteroid_crushing_2,
@@ -158,7 +186,6 @@ oxide_asteroid_crushing(advanced_full_oxide_asteroid_crushing_2,  {crushing}, h_
 -- SPACE PROCESSING
 sodium_hydroxide_space = "sodium-hydroxide-space"
 lithium_space = "lithium-space"
-lime_space = "lime-space"
 TIMSABA.functions.create_recipes
 ({
     {
@@ -196,21 +223,6 @@ TIMSABA.functions.create_recipes
             {type = item, name = silicon_oxide_IV, amount = 2}
         },
         main_product = lithium_bob
-    },
-    {
-        name = lime_space,
-        categories = {chemistry},
-        subgroup = is_space_processing,
-        icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
-        order = c,
-        -- CaCO₃(s) --> CaO(s) + CO₂(g)
-        ingredients = {{type = item, name = calcite, amount = 4}},
-        results =
-        {
-            {type = item, name = lime_angels, amount = 4},
-            {type = fluid, name = carbon_dioxide_angels, amount = 30} -- 60
-        },
-        main_product = lime_angels
     }
 })
 

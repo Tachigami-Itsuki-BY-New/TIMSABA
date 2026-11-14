@@ -85,21 +85,21 @@ TIMSABA.functions.create_items
         subgroup = is_bricks_casting,
         icon = graphics_stone .. reinforced_titanium_concrete_brick .. ".png",
         icon_size = 32,
-        order = f
+        order = g
     },
     {
         name = carbon_concrete_brick,
         subgroup = is_bricks_casting,
         icon = graphics_stone .. carbon_concrete_brick .. ".png",
         icon_size = 32,
-        order = g
+        order = h
     },
     {
         name = reinforced_graphene_concrete_brick,
         subgroup = is_bricks_casting,
         icon = graphics_stone .. reinforced_graphene_concrete_brick .. ".png",
         icon_size = 32,
-        order = h
+        order = i
     }
 })
 

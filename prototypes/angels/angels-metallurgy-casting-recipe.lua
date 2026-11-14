@@ -180,7 +180,7 @@ TIMSABA.functions.create_recipes
         categories = {smelting},
         subgroup = is_bricks_casting,
         icons = TWO_I(stone_crushed_angels, stone_brick),
-        order = c_a,
+        order = d_a,
         enabled = true,
         allow_productivity = true,
         allow_quality = true,
@@ -193,7 +193,7 @@ TIMSABA.functions.create_recipes
         categories = {crafting_fluid},
         subgroup = is_bricks_casting,
         icons = AR_FOUR_ALT_I(concrete_liquid, titanium_rod, stone_brick, reinforced_titanium_concrete_brick),
-        order = f,
+        order = g,
         allow_productivity = true,
         allow_quality = true,
         -- Titanium rod + Liquid concrete + Stone brick --> Reinforced titanium concrete brick
@@ -210,9 +210,10 @@ TIMSABA.functions.create_recipes
         name = carbon_concrete_brick,
         categories = {crafting_fluid},
         subgroup = is_bricks_casting,
-        order = g,
+        order = h,
         allow_productivity = true,
-        allow_quality = true, -- Carbon nanotube + Epoxy liquid resin + Hexamethylenediamine + Concrete brick --> Carbon concrete brick
+        allow_quality = true,
+        -- Carbon nanotube + Epoxy liquid resin + Hexamethylenediamine + Concrete brick --> Carbon concrete brick
         ingredients =
         {
             {type = item, name = concrete_brick, amount = 4},
@@ -227,9 +228,10 @@ TIMSABA.functions.create_recipes
         name = reinforced_graphene_concrete_brick,
         categories = {metallurgy},
         subgroup = is_bricks_casting,
-        order = h,
+        order = i,
         allow_productivity = true,
-        allow_quality = true, -- Graphene + Refined liquid concrete + Ionic liquid ([C₇H₁₃N₂]PF₆(l)) + Nb-W-Mo Powder --> Reinforced graphene concrete brick
+        allow_quality = true,
+        -- Graphene + Refined liquid concrete + Ionic liquid ([C₇H₁₃N₂]PF₆(l)) + Nb-W-Mo Powder --> Reinforced graphene concrete brick
         ingredients =
         {
             {type = item, name = graphene, amount = 4},

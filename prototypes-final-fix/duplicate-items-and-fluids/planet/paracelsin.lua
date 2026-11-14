@@ -1,11 +1,17 @@
 if mods[paracelsin_mods] then
 	local cryovolcanic_mixture = "cryovolcanic-mixture"
+	local fluorite_mods = "fluorite"
+	local hydrogen_fluoride_mods = "hydrogen-fluoride"
+	local uranium_hexafluoride_mods = "uranium-hexafluoride"
     local replace_prototypes =
     {
 		[zinc_mods] = zinc_ore_bob,
         [zinc_plate_mods] = zinc_plate_bob,
         [nitric_acid_mods] = nitric_acid_angels,
-		[cryovolcanic_mixture] = nitrogen_angels
+		[cryovolcanic_mixture] = nitrogen_angels,
+		[fluorite_mods] = fluorite_angels,
+		[hydrogen_fluoride_mods] = hydrogen_fluoride_angels,
+		[uranium_hexafluoride_mods] = uranium_fluoride_VI_gas
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
@@ -19,16 +25,17 @@ if mods[paracelsin_mods] then
 		"solar-matrix",
 		"macerating",
 		nitric_acid_mods,
-		"sphalerite-processing",
-		"sphalerite-melting",
-		"tetrahedrite-processing",
-		"tetrahedrite-melting",
-		"zinc",
-		"zinc-concentrate",
-		"dirty-zinc-solution",
-		"zinc-leaching",
-		"zinc-solution",
-		"zinc-purification",
+		sphalerite_ore .. "-processing",
+		sphalerite_ore .. "-melting",
+		tetrahedrite_ore .. "-processing",
+		tetrahedrite_ore .. "-melting",
+		zinc_mods,
+		zinc_mods .. "-concentrate",
+		"dirty-" .. zinc_mods .. "-solution",
+		zinc_mods .. "-leaching",
+		zinc_mods .. "-solution",
+		zinc_mods .. "-purification",
+		zinc_mods .. "-refining",
 		"lubricant-from-nitric-acid",
 		"paracelsin-processing-units-from-nitric-acid",
 		"batteries-from-nitric-acid",
@@ -37,7 +44,23 @@ if mods[paracelsin_mods] then
 		"burner-pumpjack",
 		"concrete-from-calcium-sulfate",
 		cryovolcanic_mixture,
-		cryovolcanic_mixture .. "-separation"
+		cryovolcanic_mixture .. "-separation",
+		"advanced-" .. cryovolcanic_mixture .. "-separation",
+		fluorite_mods,
+		fluorite_mods .. "-processing",
+		hydrogen_fluoride_mods,
+		hydrogen_fluoride_mods .. "-electrolysis",
+		lubricant .. "-from-fluorine",
+		solid_fuel .. "-from-hydrogen",
+		uranium_hexafluoride_mods,
+		"uranium-fluorination",
+		uranium_hexafluoride_mods .. "-centrifuging",
+		"fluorinated-uranium-processing",
+		petroleum_gas .. "-alkylation",
+		"aqua-regia",
+		"zinc-and-lead-refining",
+		"crystalline-asteroid-reprocessing",
+		"return-inserter"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
@@ -74,10 +97,14 @@ if mods[paracelsin_mods] then
             table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
         end
     end
-
 	for i, prerequisite in ipairs(data_technology[planet_discovery_paracelsin].prerequisites) do
 		if prerequisite == tech_asteroid_reprocessing then
 			table.remove(data_technology[planet_discovery_paracelsin].prerequisites, i) break
+		end
+	end
+	for i, effects in ipairs(data_technology[space_platform].effects) do
+		if effects.type == unlock_recipe and effects.recipe == calcinic_asteroid_crushing_1 then
+			table.remove(data_technology[space_platform].effects, i) break
 		end
 	end
 end

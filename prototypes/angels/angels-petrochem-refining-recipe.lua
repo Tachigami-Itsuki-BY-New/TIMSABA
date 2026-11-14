@@ -1284,18 +1284,41 @@ TIMSABA.functions.create_recipes
 
 -- CALCIUM
 calcium_sulfate_from_ammonium_sulfate_solution = "calcium-sulfate-from-ammonium-sulfate-solution"
-lime_from_calcium_hydroxide = "lime-from-calcium-hydroxide"
+calcium_oxide_from_calcium_hydroxide = "calcium-oxide-from-calcium-hydroxide"
 calcium_hydroxide_from_calcium_cyanamide = "calcium-hydroxide-from-calcium-cyanamide"
-limestone_from_calcium_cyanamide = "limestone-from-calcium-cyanamide"
-limestone_from_calcium_hydroxide_solution = "limestone-from-calcium-hydroxide-solution"
+calcium_carbonate_from_calcium_cyanamide = "calcium-carbonate-from-calcium-cyanamide"
+calcium_carbonate_from_calcium_hydroxide_solution = "calcium-carbonate-from-calcium-hydroxide-solution"
+calcium_chloride_solution_from_calcium_oxide = "calcium-chloride-solution-from-calcium-oxide"
 TIMSABA.functions.create_recipes
 ({
+    {
+        name = calcium,
+        categories = {angels_electrolysis},
+        subgroup = is_calcium,
+        icons = FOUR_R_I(calcium_chloride_solution, hydrogen_chloride_angels, calcium, oxygen_angels),
+        order = a,
+        energy_required = 8, -- 2CaCl₂(aq) -electrode/electrolyser-> 2Ca(s) + 4HCl(g) + O₂(g)
+        ingredients =
+        {
+            {type = fluid, name = calcium_chloride_solution, amount = 240},
+            {type = item, name = electrode, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = calcium, amount = 16},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 480},
+            {type = fluid, name = oxygen_angels, amount = 120},
+            {type = item, name = electrode, amount = 1, independent_probability = 0.875},
+            {type = item, name = electrode_used, amount = 1, independent_probability = 0.125}
+        },
+        main_product = calcium
+    },
     {
         name = calcium_sulfate_angels,
         categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_hydroxide, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels),
-        order = b,
+        order = c,
         -- Ca(OH)₂(s) + H₂SO₄(l) --> CaSO₄(s) + 2H₂O(l)
         ingredients =
         {
@@ -1314,7 +1337,7 @@ TIMSABA.functions.create_recipes
         categories = {chemistry},
         subgroup = is_calcium,
         icons = THREE_D_I(ammonium_sulfate_solution, nil, calcium_hydroxide, calcium_sulfate_angels, ammonia_angels, steam),
-        order = b_a,
+        order = c_a,
         -- (NH₄)₂SO₄(aq) + Ca(OH)₂(s) --> CaSO₄(s) + 2NH₃(g) + 2H₂O(g)
         ingredients =
         {
@@ -1330,30 +1353,45 @@ TIMSABA.functions.create_recipes
         main_product = calcium_sulfate_angels
     },
     {
-        name = lime_from_calcium_hydroxide,
+        name = calcium_oxide,
         categories = {chemistry},
         subgroup = is_calcium,
-        icons = THREE_R_I(calcium_hydroxide, lime_angels, steam),
-        order = c_a,
+        icons = THREE_R_I(calcium_carbonate, calcium_oxide, carbon_dioxide_angels),
+        order = e,
+        -- CaCO₃(s) --> CaO(s) + SO₂(g)
+        ingredients = {{type = item, name = calcium_carbonate, amount = 4}},
+        results =
+        {
+            {type = item, name = calcium_oxide, amount = 4},
+            {type = fluid, name = carbon_dioxide_angels, amount = 30} -- 60
+        },
+        main_product = calcium_oxide
+    },
+    {
+        name = calcium_oxide_from_calcium_hydroxide,
+        categories = {chemistry},
+        subgroup = is_calcium,
+        icons = THREE_R_I(calcium_hydroxide, calcium_oxide, steam),
+        order = e_a,
         -- Ca(OH)₂(s) --> CaO(s) + H₂O(g)
         ingredients = {{type = item, name = calcium_hydroxide, amount = 4}},
         results =
         {
-            {type = item, name = lime_angels, amount = 4},
+            {type = item, name = calcium_oxide, amount = 4},
             {type = fluid, name = steam, amount = 30} -- 60
         },
-        main_product = lime_angels
+        main_product = calcium_oxide
     },
     {
         name = calcium_carbide,
         categories = {chemistry},
         subgroup = is_calcium,
-        icons = TWO_D_I(lime_angels, coke_angels, calcium_carbide, carbon_monoxide_angels),
-        order = e,
+        icons = TWO_D_I(calcium_oxide, coke_angels, calcium_carbide, carbon_monoxide_angels),
+        order = f,
         -- CaO(s) + 3C(s) --> CaC₂(s) + CO(g)
         ingredients =
         {
-            {type = item, name = lime_angels, amount = 4},
+            {type = item, name = calcium_oxide, amount = 4},
             {type = item, name = carbon_angels, amount = 12}
         },
         results =
@@ -1368,7 +1406,7 @@ TIMSABA.functions.create_recipes
         categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, nitrogen_angels, calcium_cyanamide, carbon_angels),
-        order = f,
+        order = g,
         -- CaC₂(s) + N₂(g) --> CaCN₂(s) + C(s)
         ingredients =
         {
@@ -1387,7 +1425,7 @@ TIMSABA.functions.create_recipes
         categories = {chemistry},
         subgroup = is_calcium,
         icons = TWO_D_I(calcium_carbide, water_purified_angels, calcium_hydroxide, acetylene_gas),
-        order = g,
+        order = h,
         -- CaC₂(s) + 2H₂O(l) --> Ca(OH)₂(s) + C₂H₂(g)
         ingredients =
         {
@@ -1421,10 +1459,10 @@ TIMSABA.functions.create_recipes
         main_product = calcium_hydroxide
     },
     {
-        name = limestone_from_calcium_cyanamide,
+        name = calcium_carbonate_from_calcium_cyanamide,
         categories = {chemistry},
         subgroup = is_calcium,
-        icons = THREE_D_I(calcium_cyanamide, water_purified_angels, carbon_dioxide_angels, limestone_angels, nil, cyanamide_solution),
+        icons = THREE_D_I(calcium_cyanamide, water_purified_angels, carbon_dioxide_angels, calcium_carbonate, nil, cyanamide_solution),
         order = i_a,
         -- CaCN₂(s) + 2H₂O(l) + CO₂(g) --> CaCO₃(s) + NH₂CN(aq)
         ingredients =
@@ -1435,16 +1473,16 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = limestone_angels, amount = 4},
+            {type = item, name = calcium_carbonate, amount = 4},
             {type = fluid, name = cyanamide_solution, amount = 60}
         },
-        main_product = limestone_angels
+        main_product = calcium_carbonate
     },
     {
-        name = limestone_from_calcium_hydroxide_solution,
+        name = calcium_carbonate_from_calcium_hydroxide_solution,
         categories = {chemistry},
         subgroup = is_calcium,
-        icons = TWO_D_I(calcium_hydroxide_solution, carbon_dioxide_angels, limestone_angels, water_purified_angels),
+        icons = TWO_D_I(calcium_hydroxide_solution, carbon_dioxide_angels, calcium_carbonate, water_purified_angels),
         order = i_b,
         -- Ca(OH)₂(aq) + CO₂(g) --> CaCO₃(s) + 2H₂O(l)
         ingredients =
@@ -1454,10 +1492,10 @@ TIMSABA.functions.create_recipes
         },
         results =
         {
-            {type = item, name = limestone_angels, amount = 4},
+            {type = item, name = calcium_carbonate, amount = 4},
             {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
-        main_product = limestone_angels
+        main_product = calcium_carbonate
     },
     -- FLUID
     {
@@ -1476,6 +1514,25 @@ TIMSABA.functions.create_recipes
         {
             {type = fluid, name = calcium_chloride_solution, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 120} -- 180
+        },
+        main_product = calcium_chloride_solution
+    },
+    {
+        name = calcium_chloride_solution_from_calcium_oxide,
+        categories = {chemistry},
+        subgroup = is_calcium_fluid,
+        icons = TWO_D_I(calcium_oxide, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
+        order = b_a,
+        -- CaO(s) + 2HCl(aq) --> CaCl₂(aq) + 2H₂O(l)
+        ingredients =
+        {
+            {type = item, name = calcium_oxide, amount = 4},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 120}
+        },
+        results =
+        {
+            {type = fluid, name = calcium_chloride_solution, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = calcium_chloride_solution
     },
