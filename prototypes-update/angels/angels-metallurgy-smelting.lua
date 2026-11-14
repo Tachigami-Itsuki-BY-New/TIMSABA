@@ -1,5 +1,5 @@
 -- IRON and STEEL
-data_item_subgroup["angels-iron"].order = a
+data_item_subgroup[is_iron].order = a
 
 data_item[iron_ore].localised_description = show_formula and {chemical_formula, "Fe"} or nil
 data_item[iron_ore].order = a

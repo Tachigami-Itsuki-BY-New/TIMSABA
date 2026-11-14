@@ -274,6 +274,23 @@ data_assembling[ore_refinery_4].next_upgrade = nil
 data_assembling[ore_sorting_facility_5].next_upgrade = ore_sorting_facility_6
 data_assembling[ore_sorting_facility_6].next_upgrade = nil
 table.insert(data_assembling[ore_sorting_facility_6].crafting_categories, ore_sorting_6)
+data_assembling[ore_sorting_facility_6].fluid_boxes =
+{
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {-2, 3}, direction = defines.direction.south}}
+    },
+    {
+        production_type = output,
+        pipe_covers = pipecoverspictures(),
+        volume = 960,
+        pipe_connections = {{flow_direction = output, position = {2, 3}, direction = defines.direction.south}}
+    }
+}
+data_assembling[ore_sorting_facility_6].use_mirroring = true
+data_assembling[ore_sorting_facility_6].fluid_boxes_off_when_no_fluid_recipe = true
 
 data_assembling[powderizer_3].next_upgrade = powderizer_4
 data_assembling[powderizer_4].next_upgrade = nil
