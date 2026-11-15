@@ -497,6 +497,9 @@ if mods[asteroid_belt_mods] then
     -- ВХОД в Т4 Юго-Восток
     update_planet_or_space_location(southeast_asteroid_belt_inner_edge, nil, 50, nil, 28, 0.375, 0, y_d .. "-" .. a)
 
+    if not data_space_connection[southeast_asteroid_belt_inner_edge .. "-" .. southeast_asteroid_belt_outer_edge] then
+        Location(southeast_asteroid_belt_inner_edge):create_space_connection(Location(southeast_asteroid_belt_outer_edge))
+    end
     update_space_connection(southeast_asteroid_belt_inner_edge, 28, southeast_asteroid_belt_outer_edge, 32)
 
     remove_space_connection(southeast_asteroid_belt_inner_edge, planet_hyarion)
@@ -509,7 +512,7 @@ if mods[asteroid_belt_mods] then
         {type = unlock_space_location, space_location = east_asteroid_belt_inner_edge},
         {type = unlock_space_location, space_location = east_asteroid_belt_outer_edge},
         {type = unlock_space_location, space_location = southeast_asteroid_belt_inner_edge},
-        {type = unlock_space_location, space_location = southeast_asteroid_belt_outer_edge},
+        {type = unlock_space_location, space_location = southeast_asteroid_belt_outer_edge}
     }
 
     for i, prerequisite in ipairs(data_technology[space_discovery_asteroid_belt].prerequisites) do
@@ -554,11 +557,14 @@ if mods[asteroid_belt_mods] then
     end
 
     -- ВЫХОД в Т4 Юго-Восток
-    update_planet_or_space_location(southeast_asteroid_belt_outer_edge, nil, 25, nil, 32, 0.375, 0, y_d .. "-" .. a)
+    update_planet_or_space_location(southeast_asteroid_belt_outer_edge, nil, 25, nil, 32, 0.375, 0, y_d .. "-" .. b)
 
-    if mods[paracelsin_mods] then
+    if mods[paracelsin_mods] and not not mods[muria_mods] then
+        Location(southeast_asteroid_belt_outer_edge):create_space_connection(Planet(planet_paracelsin))
         update_space_connection(southeast_asteroid_belt_outer_edge, 32, planet_paracelsin, 48)
-    elseif data_space_connection[southeast_kuiper_belt_outer_edge] then
+    end
+
+    if data_space_location[southeast_kuiper_belt_outer_edge] then
         Location(southeast_asteroid_belt_outer_edge):create_space_connection(Location(southeast_kuiper_belt_outer_edge))
         update_space_connection(southeast_asteroid_belt_outer_edge, 32, southeast_kuiper_belt_outer_edge, 60)
     end
