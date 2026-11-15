@@ -56,7 +56,7 @@ if mods[asteroid_belt_mods] then
     if mods[muria_mods] then
         southeast_asteroid_belt_inner_edge = "muria-asteroid-belt-inner-edge"
         southeast_asteroid_belt_outer_edge = "muria-asteroid-belt-outer-edge"
-    elseif not mods[muria_mods] then
+    else
         southeast_asteroid_belt_inner_edge = "southeast-asteroid-belt-inner-edge"
         data:extend
         ({

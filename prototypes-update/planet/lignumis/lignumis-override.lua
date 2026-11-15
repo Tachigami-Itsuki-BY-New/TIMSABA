@@ -715,6 +715,7 @@ if mods[lignumis_mods] then
     data_ammo_turret[basic_gun_turret].attack_parameters.range = 16
     data_ammo_turret[basic_gun_turret].attack_parameters.cooldown = 7.5
     data_ammo_turret[basic_gun_turret].next_upgrade = gun_turret_1
+    data_ammo_turret[basic_gun_turret].fast_replaceable_group = "turret"
 
     if mods[bobwarfare] then
         data_ammo_turret[gun_turret_1].next_upgrade = gun_turret_2

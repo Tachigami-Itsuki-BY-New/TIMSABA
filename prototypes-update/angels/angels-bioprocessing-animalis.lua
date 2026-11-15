@@ -259,9 +259,6 @@ data_recipe[puffer_atmosphere].ingredients[3].amount = 15
 -- PUFFER EGG
 data_item_subgroup["angels-bio-puffer-egg"].order = d
 
-data_item[gaseous_puffer_egg].spoil_ticks = 3 * hour
-data_item[gaseous_puffer_egg].spoil_result = spoilage
-TIMSABA.void.freezing_organics(gaseous_puffer_egg)
 data_recipe[gaseous_puffer_egg].energy_required = 64
 data_recipe[gaseous_puffer_egg].ingredients[2].amount = 4
 data_recipe[gaseous_puffer_egg].ingredients[3].amount = 30
@@ -274,9 +271,6 @@ data_recipe[gaseous_puffer_egg].results[4].reset_freshness_on_craft = true
 data_recipe[gaseous_puffer_egg].results[5].reset_freshness_on_craft = true
 data_recipe[gaseous_puffer_egg].results[6].reset_freshness_on_craft = true
 
-data_item[rancid_puffer_egg].spoil_ticks = 3 * hour
-data_item[rancid_puffer_egg].spoil_result = spoilage
-TIMSABA.void.freezing_organics(rancid_puffer_egg)
 data_recipe[rancid_puffer_egg].energy_required = 64
 data_recipe[rancid_puffer_egg].ingredients[2].amount = 4
 data_recipe[rancid_puffer_egg].ingredients[3].amount = 30
@@ -289,9 +283,6 @@ data_recipe[rancid_puffer_egg].results[4].reset_freshness_on_craft = true
 data_recipe[rancid_puffer_egg].results[5].reset_freshness_on_craft = true
 data_recipe[rancid_puffer_egg].results[6].reset_freshness_on_craft = true
 
-data_item[blazing_puffer_egg].spoil_ticks = 3 * hour
-data_item[blazing_puffer_egg].spoil_result = spoilage
-TIMSABA.void.freezing_organics(blazing_puffer_egg)
 data_recipe[blazing_puffer_egg].energy_required = 64
 data_recipe[blazing_puffer_egg].ingredients[2].amount = 4
 data_recipe[blazing_puffer_egg].ingredients[3].amount = 30
@@ -304,9 +295,6 @@ data_recipe[blazing_puffer_egg].results[4].reset_freshness_on_craft = true
 data_recipe[blazing_puffer_egg].results[5].reset_freshness_on_craft = true
 data_recipe[blazing_puffer_egg].results[6].reset_freshness_on_craft = true
 
-data_item[acidic_puffer_egg].spoil_ticks = 3 * hour
-data_item[acidic_puffer_egg].spoil_result = spoilage
-TIMSABA.void.freezing_organics(acidic_puffer_egg)
 data_recipe[acidic_puffer_egg].energy_required = 64
 data_recipe[acidic_puffer_egg].ingredients[2].amount = 4
 data_recipe[acidic_puffer_egg].ingredients[3].amount = 30
@@ -319,9 +307,6 @@ data_recipe[acidic_puffer_egg].results[4].reset_freshness_on_craft = true
 data_recipe[acidic_puffer_egg].results[5].reset_freshness_on_craft = true
 data_recipe[acidic_puffer_egg].results[6].reset_freshness_on_craft = true
 
-data_item[corrosive_puffer_egg].spoil_ticks = 3 * hour
-data_item[corrosive_puffer_egg].spoil_result = spoilage
-TIMSABA.void.freezing_organics(corrosive_puffer_egg)
 data_recipe[corrosive_puffer_egg].energy_required = 64
 data_recipe[corrosive_puffer_egg].ingredients[2].amount = 4
 data_recipe[corrosive_puffer_egg].ingredients[3].amount = 30

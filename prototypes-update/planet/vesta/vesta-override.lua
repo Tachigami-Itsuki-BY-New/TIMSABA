@@ -117,7 +117,7 @@ if mods[vesta_mods] then
         -- N₂(l) + CO(g) --> C(s) + N₂O(g)
         data_recipe[carbon_super_cooling].ingredients =
         {
-            {type = fluid, name = carbon_dioxide_angels, amount = 30},
+            {type = fluid, name = carbon_monoxide_angels, amount = 30},
             {type = fluid, name = nitrogen_liquid, amount = 30}
         }
         data_recipe[carbon_super_cooling].results =

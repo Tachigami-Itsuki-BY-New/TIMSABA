@@ -126,8 +126,10 @@ data_recipe[casting_iron_pipe].icons = TWO_I(iron_molten_angels, iron_pipe)
 data_recipe[casting_iron_pipe].order = a
 data_recipe[casting_iron_pipe].ingredients[1].amount = 15
 
-data_recipe[casting_aluminium_pipe].results[1].name = aluminium_pipe
-data_recipe[casting_aluminium_pipe].main_product = aluminium_pipe
+if mods[muluna_mods] then
+    data_recipe[casting_aluminium_pipe].results[1].name = aluminium_pipe
+    data_recipe[casting_aluminium_pipe].main_product = aluminium_pipe
+end
 
 -- PIPE TO GROUND
 local casting_iron_pipe_to_ground = "casting-pipe-to-ground"
@@ -137,8 +139,10 @@ data_recipe[casting_iron_pipe_to_ground].icons = TWO_I(iron_molten_angels, iron_
 data_recipe[casting_iron_pipe_to_ground].order = a
 data_recipe[casting_iron_pipe_to_ground].ingredients = {{type = fluid, name = iron_molten_angels, amount = 120}}
 
-data_recipe[casting_aluminium_pipe_to_ground].results[1].name = aluminium_pipe_to_ground
-data_recipe[casting_aluminium_pipe_to_ground].main_product = aluminium_pipe_to_ground
+if mods[muluna_mods] then
+    data_recipe[casting_aluminium_pipe_to_ground].results[1].name = aluminium_pipe_to_ground
+    data_recipe[casting_aluminium_pipe_to_ground].main_product = aluminium_pipe_to_ground
+end
 
 -- CALCITE
 data_item[calcite].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
