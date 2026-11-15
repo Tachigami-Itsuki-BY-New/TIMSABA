@@ -2298,6 +2298,7 @@ else
         {type = item, name = calcite, amount = 4}
     }
 end
+data_recipe[cliff_explosives].results[1].amount = 4
 
 -- OTHERS
 data_item_subgroup[is_buildings_electrolyser].order = z_a

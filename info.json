@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "factorio_version": "2.1",
     "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -121,6 +121,7 @@
         "? Flare Stack",
         "? Milestones",
         "? alien-biomes",
+        "? Transport_Drones",
 
         "! AsteroidBelt",
         "! extendedangels",

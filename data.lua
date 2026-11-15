@@ -134,3 +134,36 @@ require("prototypes.angels-ground-water-pump-recipe")
 require("prototypes.mods.space-science-pack")
 
 --require("prototypes.TIMSABA.shovel")
+
+local function validate_recipes_for_angels()
+    local broken_recipes_count = 0
+
+    for recipe_name, recipe in pairs(data_recipe) do
+        if recipe.ingredients then
+            for i, item in pairs(recipe.ingredients) do
+                if type(item) == "table" and item.name == nil and item[1] == nil then
+                    log("[Porject TIMSABA] НАЙДЕНА ОШИБКА: Рецепт '" .. recipe_name .. "' содержит ПУСТОЙ ингредиент (индекс " .. i .. ")")
+                    broken_recipes_count = broken_recipes_count + 1
+                end
+            end
+        end
+
+        if recipe.results then
+            for i, item in pairs(recipe.results) do
+                if type(item) == "table" and item.name == nil and item[1] == nil then
+                    log("[Porject TIMSABA] НАЙДЕНА ОШИБКА: Рецепт '" .. recipe_name .. "' содержит ПУСТОЙ результат (индекс " .. i .. ")")
+                    broken_recipes_count = broken_recipes_count + 1
+                end
+            end
+        end
+    end
+
+    if broken_recipes_count > 0 then
+        log("[Porject TIMSABA] Всего найдено поломанных рецептов: " .. broken_recipes_count)
+        error("Валидатор мода обнаружил " .. broken_recipes_count .. " кривых рецептов. Проверьте factorio-current.log по тегу Porject TIMSABA")
+    else
+        log("[Porject TIMSABA] Все рецепты имеют корректную структуру.")
+    end
+end
+
+validate_recipes_for_angels()

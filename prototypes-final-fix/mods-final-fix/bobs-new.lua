@@ -75,12 +75,6 @@ for _, recipe in pairs(data_recipe) do
         end
     end
 end
-data_item[brass_bearing_ball] = nil
-data_recipe[brass_bearing_ball] = nil
-data_recipe[brass_bearing_ball .. _recycling] = nil
-if mods[panglia_mods] then
-    data_recipe[item_ .. brass_bearing_ball .. _panglia_crushing] = nil
-end
 
 local brass_bearing = "bob-brass-bearing"
 for _, recipe in pairs(data_recipe) do
@@ -113,12 +107,8 @@ for _, recipe in pairs(data_recipe) do
     end
 end
 
-data_item[brass_bearing] = nil
-data_recipe[brass_bearing] = nil
-data_recipe[brass_bearing .. _recycling] = nil
-if mods[panglia_mods] then
-    data_recipe[item_ .. brass_bearing .. _panglia_crushing] = nil
-end
+local delete_prototypes = {brass_bearing_ball, brass_bearing}
+TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 data_recipe["bob-carbon-from-acid"] = nil
 
@@ -298,21 +288,8 @@ data_pipe_to_ground[stone_pipe_to_ground].factoriopedia_simulation = simulations
 data_pipe_to_ground[nitinol_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_nitinol_pipe_to_ground_2_1_0
 
 if not mods[muluna_mods] and not mods["flow-config"] then
-    data_item[aluminium_pipe] = nil
-    data_recipe[aluminium_pipe] = nil
-    data_recipe[aluminium_pipe .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. aluminium_pipe .. _panglia_crushing] = nil
-    end
-    data_pipe[aluminium_pipe] = nil
-
-    data_item[aluminium_pipe_to_ground] = nil
-    data_recipe[aluminium_pipe_to_ground] = nil
-    data_recipe[aluminium_pipe_to_ground .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. aluminium_pipe_to_ground .. _panglia_crushing] = nil
-    end
-    data_pipe_to_ground[aluminium_pipe_to_ground] = nil
+    local delete_prototypes = {aluminium_pipe, aluminium_pipe_to_ground}
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 elseif not mods[muluna_mods] and mods["flow-config"] then
     data_item[aluminium_pipe].hidden = true
     data_item[aluminium_pipe].hidden_in_factoriopedia = true

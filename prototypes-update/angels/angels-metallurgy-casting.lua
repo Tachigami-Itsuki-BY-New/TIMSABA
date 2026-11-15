@@ -404,6 +404,7 @@ data_recipe[tin_wire_coil].order = d
 data_recipe[tin_wire_coil].energy_required = 8
 data_recipe[tin_wire_coil].ingredients[1].amount = 120
 data_recipe[tin_wire_coil].ingredients[2].amount = 240
+data_recipe[tin_wire_coil].ingredients[3].name = water_purified_angels
 data_recipe[tin_wire_coil].ingredients[3].amount = 60
 data_recipe[tin_wire_coil].results =
 {

@@ -116,7 +116,7 @@ TIMSABA.functions.create_recipes
 
 -- SYNTHESIS from CRUSHED
 local function ore_crushed_recipe(name, order, ingredient_1, ingredient_2, result)
-    if not data_item[ingredient_1] and not data_item[ingredient_2] then return end
+    if not data_item[ingredient_1] or not data_item[ingredient_2] then return end
 
     TIMSABA.functions.create_recipes
     ({
@@ -178,7 +178,7 @@ ore_crushed_recipe(gallium_crushed_recipe,    k,     gallite_crushed,    germani
 
 -- SYNTHESIS from CHUNKS
 local function ore_chunks_recipe(name, order, ingredient_1, ingredient_2, result)
-    if not data_item[ingredient_1] and not data_item[ingredient_2] then return end
+    if not data_item[ingredient_1] or not data_item[ingredient_2] then return end
 
     TIMSABA.functions.create_recipes
     ({
@@ -240,7 +240,7 @@ ore_chunks_recipe(gallium_chunks_recipe,    k,     gallite_chunks,    germanite_
 
 -- SYNTHESIS from CRYSTALS
 local function ore_crystals_recipe(name, order, ingredient_1, ingredient_2, result)
-    if not data_item[ingredient_1] and not data_item[ingredient_2] then return end
+    if not data_item[ingredient_1] or not data_item[ingredient_2] then return end
 
     TIMSABA.functions.create_recipes
     ({
@@ -302,7 +302,7 @@ ore_crystals_recipe(gallium_crystals_recipe,    k,     gallite_crystals,    germ
 
 -- SYNTHESIS from PURIFIED
 local function ore_purified_recipe(name, order, ingredient_1, ingredient_2, result)
-    if not data_item[ingredient_1] and not data_item[ingredient_2] then return end
+    if not data_item[ingredient_1] or not data_item[ingredient_2] then return end
 
     TIMSABA.functions.create_recipes
     ({
