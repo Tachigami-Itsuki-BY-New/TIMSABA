@@ -1032,6 +1032,8 @@ function TIMSABA.functions.delete_prototypes(replacements)
         data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil
         data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil
         data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] = nil
+        data_recipe[request_ .. name] = nil
+        data_recipe[fluid_depot_ .. name] = nil
         data_inserter[name .. _panglia_fast_version] = nil
         data_inserter[harene_infused_ .. name .. _panglia_fast_version] = nil
         data_inserter[RTThrower_ .. name] = nil
@@ -1073,6 +1075,7 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
         for i = 25, 2400, 25 do
             data_recipe[name .. __rigor_module_mod__ .. i] = nil
         end
+        data_recipe[request_ .. name] = nil
     end
 end
 
@@ -1086,6 +1089,8 @@ function TIMSABA.functions.delete_duplicated_fluids(replacements)
         for i = 25, 2400, 25 do
             data_recipe[name .. __rigor_module_mod__ .. i] = nil
         end
+        data_recipe[request_ .. name] = nil
+        data_recipe[fluid_depot_ .. name] = nil
     end
 end
 

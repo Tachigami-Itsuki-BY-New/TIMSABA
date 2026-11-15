@@ -440,6 +440,8 @@ yeet_repair_tool_ = "yeet-repair-tool-"
 rubia_auto_variant_ = "rubia-auto-variant-"
 _barrel = "-barrel"
 harene_infused_ = "harene-infused-"
+request_ = "request-"
+fluid_depot_ = "fluid-depot-"
 
 _projectileFromRenaiTransportationPrimed = "-projectileFromRenaiTransportationPrimed"
 RTPrimerThrowerShooter_ = "RTPrimerThrowerShooter-"

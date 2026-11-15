@@ -11,6 +11,9 @@ Date: 15.11.2026
     - [All] Fixed an error where the recipe for Tinned Wire required water instead of purified water.
     - [All] Fixed errors that occur when disabling the "Muluna, Moon of Nauvis" mod.
     - [All] Fixed the errors described in the issue #364.
+
+  Modding:
+    - [Mods] Added support for the "Transport Drones" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
 Date: 14.11.2026

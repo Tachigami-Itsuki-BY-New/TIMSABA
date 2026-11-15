@@ -93,12 +93,10 @@ require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
 require("compatibility.milestones.milestones-data") -- Register travel counters after the final planet/prototype changes.
 require("compatibility.alien-biomes.alien-biomes-tile-restriction")
 
--- Диагностика рецептов для предотвращения ошибки table index is nil в моде Angel's
 local function validate_recipes_for_angels()
     local broken_recipes_count = 0
 
     for recipe_name, recipe in pairs(data_recipe) do
-        -- 1. Проверяем секцию ингредиентов
         if recipe.ingredients then
             for i, item in pairs(recipe.ingredients) do
                 if type(item) == "table" and item.name == nil and item[1] == nil then
@@ -108,7 +106,6 @@ local function validate_recipes_for_angels()
             end
         end
 
-        -- 2. Проверяем секцию результатов
         if recipe.results then
             for i, item in pairs(recipe.results) do
                 if type(item) == "table" and item.name == nil and item[1] == nil then
@@ -121,12 +118,10 @@ local function validate_recipes_for_angels()
 
     if broken_recipes_count > 0 then
         log("[Porject TIMSABA] Всего найдено поломанных рецептов: " .. broken_recipes_count)
-        -- Опционально: можно принудительно вызвать ошибку здесь, чтобы игра показала ваш лог сразу
         error("Валидатор мода обнаружил " .. broken_recipes_count .. " кривых рецептов. Проверьте factorio-current.log по тегу Porject TIMSABA")
     else
         log("[Porject TIMSABA] Все рецепты имеют корректную структуру.")
     end
 end
 
--- Запуск проверки
 validate_recipes_for_angels()
