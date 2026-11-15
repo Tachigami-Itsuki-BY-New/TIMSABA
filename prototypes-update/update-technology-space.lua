@@ -42,6 +42,7 @@ table.insert(data_technology[landing_pad_unloading_bay].unit.ingredients, {utili
 
 tech_space_platform_thruster = "space-platform-thruster"
 if not mods[muluna_mods] then
+    data_technology[tech_space_platform_thruster].prerequisites = {space_science_pack}
     table.insert(data_technology[tech_space_platform_thruster].effects, {type = unlock_recipe, recipe = hydrogen_liquid})
     table.insert(data_technology[tech_space_platform_thruster].effects, {type = unlock_recipe, recipe = oxygen_liquid})
     data_technology[tech_space_platform_thruster].unit.ingredients =

@@ -134,12 +134,16 @@ end
 local cargo_pod = "cargo-pod"
 data_cargo_pod[cargo_pod].order =  e
 
-data_cargo_pod["muluna-big-" .. cargo_pod].order =  f
+if mods[muluna_mods] then
+    data_cargo_pod["muluna-big-" .. cargo_pod].order =  f
+end
 
 local cargo_pod_container = "cargo-pod-container"
 data_temporary_container[cargo_pod_container].order = g
 
-data_temporary_container["fulgoran-" .. cargo_pod_container].order = h
+if mods[muluna_mods] then
+    data_temporary_container["fulgoran-" .. cargo_pod_container].order = h
+end
 
 data_item_subgroup[space_platform].order = b
 
