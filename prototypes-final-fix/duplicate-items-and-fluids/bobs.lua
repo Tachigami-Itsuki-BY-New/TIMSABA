@@ -173,11 +173,3 @@ for i, prerequisite in ipairs(data_technology[battery_lithium_ion].prerequisites
         table.remove(data_technology[battery_lithium_ion].prerequisites, i) break
     end
 end
-
-if not mods[bobequipment] then
-    for i, prerequisite in ipairs(data_technology[roboport_eq_2].prerequisites) do
-        if prerequisite == electromagnetic_science_pack then
-            table.remove(data_technology[roboport_eq_2].prerequisites, i) break
-        end
-    end
-end
