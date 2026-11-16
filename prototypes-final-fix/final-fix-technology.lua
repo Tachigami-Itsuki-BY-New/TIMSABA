@@ -139,32 +139,34 @@ if settings.startup[setting_horogon_extra_science_packs].value == false then
         end
     end
     local lab_inputs = data_lab[lab_alien].inputs
-    for i = #lab_inputs, 1, -1 do
-        if lab_inputs[i] == space_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        -- MULUNA
-        if lab_inputs[i] == interstellar_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        -- CORRUNDUM
-        if lab_inputs[i] == electrochemical_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        -- FROZETA
-        if lab_inputs[i] == golden_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        -- VESTA
-        if lab_inputs[i] == gas_manipulation_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        -- LIGNUMIS
-        if lab_inputs[i] == wood_science_pack then
-            table.remove(lab_inputs, i)
-        end
-        if lab_inputs[i] == steam_science_pack then
-            table.remove(lab_inputs, i)
+    if data_lab[lab_alien] then
+        for i = #lab_inputs, 1, -1 do
+            if lab_inputs[i] == space_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            -- MULUNA
+            if lab_inputs[i] == interstellar_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            -- CORRUNDUM
+            if lab_inputs[i] == electrochemical_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            -- FROZETA
+            if lab_inputs[i] == golden_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            -- VESTA
+            if lab_inputs[i] == gas_manipulation_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            -- LIGNUMIS
+            if lab_inputs[i] == wood_science_pack then
+                table.remove(lab_inputs, i)
+            end
+            if lab_inputs[i] == steam_science_pack then
+                table.remove(lab_inputs, i)
+            end
         end
     end
 end
