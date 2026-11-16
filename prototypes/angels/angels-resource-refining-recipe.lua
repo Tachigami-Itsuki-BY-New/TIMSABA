@@ -38,7 +38,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1, -- Slag --> (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂
         ingredients = {{type = item, name = slag_angels, amount = 4}},
         results = {{type = item, name = stone, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
-        main_product = stone
+        main_product = stone,
+        hide_from_signal_gui = false
     },
     {
         name = slag_sorting_2,
@@ -50,7 +51,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1, -- Slag --> CaSiO₃
         ingredients = {{type = item, name = slag_angels, amount = 4}},
         results = {{type = item, name = calcium_silicate, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
-        main_product = calcium_silicate
+        main_product = calcium_silicate,
+        hide_from_signal_gui = false
     },
     {
         name = slag_sorting_3,
@@ -62,7 +64,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1, -- Slag --> Mg₂Si
         ingredients = {{type = item, name = slag_angels, amount = 4}},
         results = {{type = item, name = magnesium_silicide, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
-        main_product = magnesium_silicide
+        main_product = magnesium_silicide,
+        hide_from_signal_gui = false
     },
     -- CRUSHED STONE SORTING
     {
@@ -80,7 +83,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
             {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5}
         },
-        main_product = calcium
+        main_product = calcium,
+        hide_from_signal_gui = false
     },
     {
         name = crushed_stone_sorting_2,
@@ -96,7 +100,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = silicon_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
             {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5}
         },
-        main_product = silicon_ore_bob
+        main_product = silicon_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = crushed_stone_sorting_3,
@@ -108,7 +113,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results = {{type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
-        main_product = sodium_angels
+        main_product = sodium_angels,
+        hide_from_signal_gui = false
     },
     {
         name = crushed_stone_sorting_4,
@@ -120,7 +126,8 @@ TIMSABA.functions.create_recipes
         energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2K
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results = {{type = item, name = potassium, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
-        main_product = potassium
+        main_product = potassium,
+        hide_from_signal_gui = false
     },
     {
         localised_name = {"item-name." .. sand_angels},
@@ -153,7 +160,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = amethyst_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
             {type = item, name = topaz_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
             {type = item, name = diamond_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5}
-        }
+        },
+        hide_from_signal_gui = false
     }
 })
 

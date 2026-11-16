@@ -436,6 +436,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = antimonite_ore, amount = 1, independent_probability = 0.5},
             {type = item, name = germanite_ore, amount = 1, independent_probability = 0.5}
         },
-        surface_conditions = {{property = pressure, min = 300, max = 300}}
+        surface_conditions = {{property = pressure, min = 300, max = 300}},
+        hide_from_signal_gui = false
     }
 })

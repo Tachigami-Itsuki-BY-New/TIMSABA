@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
-Date: 16.11.2026
+Date: 17.11.2026
   Bugfixes:
     - [All] Fixed the errors described in the issue #368.
+    - [All] Fixed the errors described in the issue #369.
+    - [All] Fixed the errors described in the issue #372.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.3
 Date: 15.11.2026
