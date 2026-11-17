@@ -1,4 +1,4 @@
-transport_drones_mods = "Transport_Drones"
+local transport_drones_mods = "Transport_Drones"
 if mods[transport_drones_mods] then
     local road = "road"
     data_recipe[road].ingredients[1].amount = 4
@@ -74,8 +74,8 @@ if mods[transport_drones_mods] then
     }
 
     local fuel_depot = "fuel-depot"
-    data_item[fuel_depot].stack_size = 16
-    data_item[fuel_depot].weight = 62500
+    data_item[fuel_depot].stack_size = 8
+    data_item[fuel_depot].weight = 125000
     data_recipe[fuel_depot].energy_required = 8
     data_recipe[fuel_depot].ingredients =
     {
@@ -84,8 +84,8 @@ if mods[transport_drones_mods] then
     }
 
     local transport_drone = "transport-drone"
-    data_item[transport_drone].stack_size = 64
-    data_item[transport_drone].weight = 15625
+    data_item[transport_drone].stack_size = 32
+    data_item[transport_drone].weight = 31250
     data_recipe[transport_drone].ingredients =
     {
         {type = item, name = steel_gear_wheel, amount = 4},

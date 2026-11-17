@@ -96,6 +96,7 @@ require("prototypes-update.update-settings")
 require("prototypes-update.mods.dynamic-underground-belts")
 require("prototypes-update.mods.dynamic-pipe-to-ground")
 require("prototypes-update.mods.transport-drones")
+require("prototypes-update.mods.jatz-distribution")
 
 require("prototypes-update.update-horogon-balance")
 
