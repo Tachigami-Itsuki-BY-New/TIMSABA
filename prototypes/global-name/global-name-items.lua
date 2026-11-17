@@ -1028,7 +1028,7 @@ beacon_3 = "bob-beacon-3"
 -- VULCANUS
 carbon = "carbon"
 calcite = "calcite"
-wolframite_ore = "tungsten-ore"
+tungsten_ore = "tungsten-ore"
 tungsten_plate = "tungsten-plate"
 tungsten_carbide = "tungsten-carbide"
 metallurgic_science_pack = "metallurgic-science-pack"

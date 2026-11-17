@@ -222,7 +222,7 @@ TIMSABA.functions.create_recipes
 })
 
 -- ORE
-local samarskite_ore_ac = "samarskite_ore"
+samarskite_ore_ac = "samarskite_ore"
 data:extend
 ({
     TIMSABA.functions.create_resource(

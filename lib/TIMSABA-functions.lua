@@ -974,7 +974,7 @@ end
 function TIMSABA.functions.delete_prototypes(replacements)
     local proto_types =
     {
-        item, capsule, tool, fluid, recipe, technology,
+        item, capsule, tool, fluid, recipe, technology, resource,
         ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, roboport_eq, land_mine, radar,
         car, locomotive, wagon_cargo, wagon_fluid, unit,
         item_module, beacon,
@@ -1102,27 +1102,53 @@ function TIMSABA.functions.replace_vanila_resources(vanilla_resource, angel_reso
 
     local map_gen = data_planet[planet].map_gen_settings
 
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
+    if planet == "vulcanus" then
+        if not map_gen.autoplace_settings then
+            map_gen.autoplace_settings = {entity = {settings = {}}}
         end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
+
+        for _, res_name in ipairs(vanilla_resources) do
+            map_gen.autoplace_controls["tungsten_ore"] = nil
+            if map_gen.autoplace_settings.entity.settings then
+                map_gen.autoplace_settings.entity.settings[res_name] = nil
+            end
+            if data_resource[res_name] then
+                data_resource[res_name].location = nil
+            end
         end
-    end
 
-    for _, res_name in ipairs(angel_resources) do
-        map_gen.autoplace_controls[res_name] = {}
+        for _, res_name in ipairs(angel_resources) do
+            map_gen.autoplace_controls["wolframite_ore"] = {}
 
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
+            map_gen.autoplace_settings.entity.settings[res_name] = {}
 
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet
+            if data_resource[res_name] then
+                data_resource[res_name].location = planet
+            end
+        end
+    else
+        if not map_gen.autoplace_settings then
+            map_gen.autoplace_settings = {entity = {settings = {}}}
+        end
+
+        for _, res_name in ipairs(vanilla_resources) do
+            map_gen.autoplace_controls[res_name] = nil
+            if map_gen.autoplace_settings.entity.settings then
+                map_gen.autoplace_settings.entity.settings[res_name] = nil
+            end
+            if data_resource[res_name] then
+                data_resource[res_name].location = nil
+            end
+        end
+
+        for _, res_name in ipairs(angel_resources) do
+            map_gen.autoplace_controls[res_name] = {}
+
+            map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+            if data_resource[res_name] then
+                data_resource[res_name].location = planet
+            end
         end
     end
 end
