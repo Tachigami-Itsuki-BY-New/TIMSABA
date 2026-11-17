@@ -171,7 +171,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = lead_ore_bob, amount = 4},
             {type = item, name = iron_ore, amount = 4}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = powder_plumbium_processing,
@@ -189,7 +190,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = nickel_ore_bob, amount = 2},
             {type = item, name = zinc_ore_bob, amount = 2}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = dust_plumbium_processing,
@@ -208,7 +210,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = zinc_ore_bob, amount = 2},
             {type = item, name = cobalt_ore_bob, amount = 2}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = crystal_plumbium_processing,
@@ -228,7 +231,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = cobalt_ore_bob, amount = 2},
             {type = item, name = tungsten_ore_bob, amount = 2}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     -- FLUID
     {

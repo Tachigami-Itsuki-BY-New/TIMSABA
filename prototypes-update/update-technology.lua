@@ -798,7 +798,7 @@ table.insert(data_technology[roboport_eq_1].prerequisites, tech_rubbers)
 if mods[bobequipment] then
     table.insert(data_technology[fission_reactor_eq_4].prerequisites, tech_deuterium_power)
 
-    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
     data_technology[roboport_eq_2].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -817,12 +817,24 @@ if mods[bobequipment] then
     table.insert(data_technology[laser_defense_eq_4].prerequisites, battery_silver_zinc)
     table.insert(data_technology[laser_defense_eq_5].prerequisites, tech_battery_4)
     table.insert(data_technology[laser_defense_eq_6].prerequisites, tech_battery_4)
+
+    for i, prerequisite in ipairs(data_technology[solar_panel_eq_3].prerequisites) do
+        if prerequisite == advanced_processing_unit then
+            table.remove(data_technology[solar_panel_eq_3].prerequisites, i) break
+        end
+    end
+else
+    for i, prerequisite in ipairs(data_technology[roboport_eq_2].prerequisites) do
+        if prerequisite == electromagnetic_science_pack then
+            table.remove(data_technology[roboport_eq_2].prerequisites, i) break
+        end
+    end
 end
 
 if mods[bobvehicleequipment] then
     table.insert(data_technology[vehicle_roboport_eq_1].prerequisites, tech_rubbers)
 
-    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
+    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
 
     table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, battery_silver_zinc)
     table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
@@ -851,10 +863,16 @@ if mods[bobvehicleequipment] then
 
     table.insert(data_technology[vehicle_plasma_cannon_eq_4].prerequisites, tech_battery_4)
 
-    data_technology[radar_5].prerequisites = {radar_4, advanced_processing_unit, tech_nitinol_processing, tech_military_4}
+    for i, prerequisite in ipairs(data_technology[vehicle_solar_panel_eq_3].prerequisites) do
+        if prerequisite == advanced_processing_unit then
+            table.remove(data_technology[vehicle_solar_panel_eq_3].prerequisites, i) break
+        end
+    end
 end
 
 if mods[bobwarfare] then
+    data_technology[radar_5].prerequisites = {radar_4, advanced_processing_unit, tech_nitinol_processing, tech_military_4}
+
     data_technology[tech_gun_turret_3].prerequisites = {tech_gun_turret_2, tech_cobalt_steel_smelting_1, military_science_pack}
     table.insert(data_technology[tech_gun_turret_3].unit.ingredients, {chemical_science_pack, 1})
 
@@ -1046,24 +1064,6 @@ for _, tech_name in ipairs(technologies) do
             if tech.prerequisites[i] == cryogenic_science_pack then
                 table.remove(tech.prerequisites, i)
             end
-        end
-    end
-end
-
-if mods[bobequipment] then
-    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
-
-    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_cobalt_steel_smelting_1, battery_lithium_ion}
-
-    for i, prerequisite in ipairs(data_technology[solar_panel_eq_3].prerequisites) do
-        if prerequisite == advanced_processing_unit then
-            table.remove(data_technology[solar_panel_eq_3].prerequisites, i) break
-        end
-    end
-
-    for i, prerequisite in ipairs(data_technology[solar_panel_eq_3].prerequisites) do
-        if prerequisite == advanced_processing_unit then
-            table.remove(data_technology[solar_panel_eq_3].prerequisites, i) break
         end
     end
 end

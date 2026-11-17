@@ -158,7 +158,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = lead_ore_bob, amount = 2},
             {type = item, name = calcium_silicate, amount = 2}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = chunk_franckeite_processing,
@@ -177,7 +178,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = silver_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = crystal_franckeite_processing,
@@ -197,7 +199,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = gold_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = purified_franckeite_processing,
@@ -217,7 +220,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = gold_ore_bob, amount = 1},
             {type = item, name = platinum_ore_angels, amount = 1}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     }
 })
 

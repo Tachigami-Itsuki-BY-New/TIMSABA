@@ -19,7 +19,8 @@ for _, fluid_name in pairs(TIMSABA.void.fluids) do
                 hide_from_player_crafting = true,
                 energy_required = 4,
                 ingredients = {{type = fluid, name = fluid_name, amount = 480}},
-                results = {}
+                results = {},
+                hide_from_signal_gui = true
             }
         })
     end
@@ -46,7 +47,8 @@ for _, gas_name in pairs(TIMSABA.void.gases) do
                 hide_from_player_crafting = true,
                 energy_required = 1,
                 ingredients = {{type = fluid, name = gas_name, amount = 60}},
-                results = {}
+                results = {},
+                hide_from_signal_gui = true
             }
         })
     end
@@ -74,7 +76,8 @@ for _, organic_name in pairs(TIMSABA.void.organics) do
                 energy_required = 1,
                 ingredients = {{type = item, name = organic_name, amount = 1}},
                 results = {{type = item, name = compost_angels, amount = 1}},
-                main_product = compost_angels
+                main_product = compost_angels,
+                hide_from_signal_gui = true
             }
         })
     end

@@ -158,7 +158,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tin_ore_bob, amount = 2},
             {type = item, name = calcium_silicate, amount = 2}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = chunk_senaite_processing,
@@ -177,7 +178,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = zinc_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = crystal_senaite_processing,
@@ -197,7 +199,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = titanium_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = purified_senaite_processing,
@@ -217,7 +220,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = titanium_ore_bob, amount = 1},
             {type = item, name = chromium_ore_angels, amount = 1}
         },
-        main_product = lead_ore_bob
+        main_product = lead_ore_bob,
+        hide_from_signal_gui = false
     }
 })
 

@@ -158,7 +158,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = molybdenum_ore, amount = 2},
             {type = item, name = calcium_silicate, amount = 2}
         },
-        main_product = calcium
+        main_product = calcium,
+        hide_from_signal_gui = false
     },
     {
         name = powellite_chunks_sorting,
@@ -177,7 +178,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = lead_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1}
         },
-        main_product = calcium
+        main_product = calcium,
+        hide_from_signal_gui = false
     },
     {
         name = powellite_crystals_sorting,
@@ -197,7 +199,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tungsten_ore_bob, amount = 1},
             {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
         },
-        main_product = calcium
+        main_product = calcium,
+        hide_from_signal_gui = false
     },
     {
         name = powellite_purified_sorting,
@@ -217,7 +220,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tungsten_ore_bob, amount = 1},
             {type = item, name = holmium_ore, amount = 1}
         },
-        main_product = calcium
+        main_product = calcium,
+        hide_from_signal_gui = false
     }
 })
 

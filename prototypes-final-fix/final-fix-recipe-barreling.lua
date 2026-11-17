@@ -244,7 +244,8 @@ local function create_container_recipes(fluids, info)
             {
                 {type = item, name = info.item, amount = 1},
                 {type = fluid, name = fluids.name, amount = 240}
-            }
+            },
+            hide_from_signal_gui = true
         }
     })
 end
@@ -422,8 +423,8 @@ if mods[pelagos_mods] then
                 {type = item, name = titanium_barrel, amount = 1},
                 {type = fluid, name = fluids.name, amount = 480},
             },
-            --hidden = true,
-            hidden_in_factoriopedia = false
+            hidden_in_factoriopedia = false,
+            hide_from_signal_gui = true
         }
         data:extend({recipe})
         return recipe

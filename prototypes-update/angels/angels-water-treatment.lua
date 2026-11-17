@@ -316,6 +316,7 @@ data_recipe[coolant_cool_100].ingredients[2].amount = 60
 data_recipe[coolant_cool_100].results[1].amount = 240
 data_recipe[coolant_cool_100].results[2].amount = 30
 data_recipe[coolant_cool_100].results[2].temperature = 165
+data_recipe[coolant_cool_100].hide_from_signal_gui = true
 
 local coolant_cool_200 = "angels-coolant-cool-200"
 data_recipe[coolant_cool_200].icons = CORNER_I(_C2H4_O2H2_, nil, water_purified_angels, cooling_png, steam, number_2)
@@ -326,6 +327,7 @@ data_recipe[coolant_cool_200].ingredients[2].amount = 60
 data_recipe[coolant_cool_200].results[1].amount = 240
 data_recipe[coolant_cool_200].results[2].amount = 30
 data_recipe[coolant_cool_200].results[2].temperature = 165
+data_recipe[coolant_cool_200].hide_from_signal_gui = true
 
 local coolant_cool_300 = "angels-coolant-cool-300"
 data_recipe[coolant_cool_300].icons = CORNER_I(_C2H4_O2H2_, nil, water_purified_angels, cooling_png, steam, number_3)
@@ -336,6 +338,7 @@ data_recipe[coolant_cool_300].ingredients[2].amount = 60
 data_recipe[coolant_cool_300].results[1].amount = 240
 data_recipe[coolant_cool_300].results[2].amount = 30
 data_recipe[coolant_cool_300].results[2].temperature = 165
+data_recipe[coolant_cool_300].hide_from_signal_gui = true
 
 data_item_subgroup["angels-water-enrichment"].order = g
 

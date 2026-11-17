@@ -15,7 +15,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = rubber_bob, amount = 4}
         },
         results = {{type = item, name = tin_insulated_cable, amount = 8}},
-        main_product = tin_insulated_cable
+        main_product = tin_insulated_cable,
+        hide_from_signal_gui = true
     }
 })
 
@@ -36,7 +37,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = rubber_bob, amount = 4}
         },
         results = {{type = item, name = silver_insulated_cable, amount = 8}},
-        main_product = silver_insulated_cable
+        main_product = silver_insulated_cable,
+        hide_from_signal_gui = true
     }
 })
 
@@ -75,7 +77,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = rubber_bob, amount = 4}
         },
         results = {{type = item, name = gold_insulated_cable, amount = 8}},
-        main_product = gold_insulated_cable
+        main_product = gold_insulated_cable,
+        hide_from_signal_gui = true
     }
 })
 
@@ -110,7 +113,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = rubber_bob, amount = 4}
         },
         results = {{type = item, name = platinum_insulated_cable, amount = 8}},
-        main_product = platinum_insulated_cable
+        main_product = platinum_insulated_cable,
+        hide_from_signal_gui = true
     }
 })
 
@@ -261,7 +265,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = lithium_bob, amount = 16}
         },
         results = {{type = fluid, name = aluminium_lithium_molten, amount = 240}},
-        main_product = aluminium_lithium_molten
+        main_product = aluminium_lithium_molten,
+        hide_from_signal_gui = true
     },
     {
         localised_name = {"item-name." .. aluminium_lithium_plate},

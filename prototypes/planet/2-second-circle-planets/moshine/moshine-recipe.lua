@@ -565,7 +565,8 @@ if mods[moshine_mods] then
                 {type = item, name = monazite_ore, amount = 1, independent_probability = 0.5},
                 {type = item, name = aeschynite_ore, amount = 1, independent_probability = 0.5}
             },
-            surface_conditions = {{property = pressure, min = 701, max = 701}}
+            surface_conditions = {{property = pressure, min = 701, max = 701}},
+        hide_from_signal_gui = false
         }
     })
 end

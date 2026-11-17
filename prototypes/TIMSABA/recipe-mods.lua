@@ -16,7 +16,8 @@ TIMSABA.functions.create_recipes
         {
             {type = item, name = ore_bobmonium, amount = 1, independent_probability = 0.5},
             {type = item, name = ore_franckeite, amount = 1, independent_probability = 0.5}
-        }
+        },
+        hide_from_signal_gui = false
     },
     {
         localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. powellite_ore}, {"item-name." .. molybdenite_ore}},
@@ -33,7 +34,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = powellite_ore, amount = 1, independent_probability = 0.5},
             {type = item, name = molybdenite_ore, amount = 1, independent_probability = 0.5}
         },
-        surface_conditions = {{property = pressure, min = 1000, max = 1000}}
+        surface_conditions = {{property = pressure, min = 1000, max = 1000}},
+        hide_from_signal_gui = false
     }
 })
 
@@ -136,7 +138,8 @@ local function ore_crushed_recipe(name, order, ingredient_1, ingredient_2, resul
                 {type = item, name = ingredient_2, amount = 16}
             },
             results = {{type = item, name = result, amount = 4}},
-            main_product = result
+            main_product = result,
+            hide_from_signal_gui = false
         }
     })
 end
@@ -198,7 +201,8 @@ local function ore_chunks_recipe(name, order, ingredient_1, ingredient_2, result
                 {type = item, name = ingredient_2, amount = 8}
             },
             results = {{type = item, name = result, amount = 4}},
-            main_product = result
+            main_product = result,
+            hide_from_signal_gui = false
         }
     })
 end
@@ -260,7 +264,8 @@ local function ore_crystals_recipe(name, order, ingredient_1, ingredient_2, resu
                 {type = item, name = ingredient_2, amount = 4}
             },
             results = {{type = item, name = result, amount = 4}},
-            main_product = result
+            main_product = result,
+            hide_from_signal_gui = false
         }
     })
 end
@@ -322,7 +327,8 @@ local function ore_purified_recipe(name, order, ingredient_1, ingredient_2, resu
                 {type = item, name = ingredient_2, amount = 2}
             },
             results = {{type = item, name = result, amount = 4}},
-            main_product = result
+            main_product = result,
+            hide_from_signal_gui = false
         }
     })
 end
