@@ -68,7 +68,8 @@ if mods[secretas_frozeta_mods] then
                 {type = item, name = gallite_ore, amount = 1, independent_probability = 0.5},
                 {type = item, name = sylvanite_ore, amount = 1, independent_probability = 0.5}
             },
-            surface_conditions = {{property = pressure, min = 200, max = 280}}
+            surface_conditions = {{property = pressure, min = 200, max = 280}},
+        hide_from_signal_gui = false
         }
     })
 end

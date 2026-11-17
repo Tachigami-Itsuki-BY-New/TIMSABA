@@ -171,7 +171,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tin_ore_bob, amount = 4},
             {type = item, name = magnesium_ore, amount = 4}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = powder_stannium_processing,
@@ -189,7 +190,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = aluminium_ore_bob, amount = 2},
             {type = item, name = silver_ore_bob, amount = 2}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = dust_stannium_processing,
@@ -208,7 +210,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = silver_ore_bob, amount = 2},
             {type = item, name = uranium_ore, amount = 2}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     {
         name = crystal_stannium_processing,
@@ -228,7 +231,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = uranium_ore, amount = 2},
             {type = item, name = thorium_ore_bob, amount = 2}
         },
-        main_product = tin_ore_bob
+        main_product = tin_ore_bob,
+        hide_from_signal_gui = false
     },
     -- FLUID
     {

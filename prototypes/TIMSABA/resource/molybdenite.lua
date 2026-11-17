@@ -159,7 +159,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = rhenium_ore, amount = 2},
             {type = item, name = sulfur, amount = 2}
         },
-        main_product = molybdenum_ore
+        main_product = molybdenum_ore,
+        hide_from_signal_gui = false
     },
     {
         name = molybdenite_chunks_sorting,
@@ -178,7 +179,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = gold_ore_bob, amount = 1},
             {type = item, name = sulfur, amount = 1}
         },
-        main_product = molybdenum_ore
+        main_product = molybdenum_ore,
+        hide_from_signal_gui = false
     },
     {
         name = molybdenite_crystals_sorting,
@@ -198,7 +200,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tungsten_ore_bob, amount = 1},
             {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
         },
-        main_product = molybdenum_ore
+        main_product = molybdenum_ore,
+        hide_from_signal_gui = false
     },
     {
         name = molybdenite_purified_sorting,
@@ -218,7 +221,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = tungsten_ore_bob, amount = 1},
             {type = item, name = selenium, amount = 1}
         },
-        main_product = molybdenum_ore
+        main_product = molybdenum_ore,
+        hide_from_signal_gui = false
     }
 })
 

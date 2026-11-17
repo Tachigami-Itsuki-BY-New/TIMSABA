@@ -22,7 +22,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = crushed_plumbium, amount = 2}
         },
         results = {{type = item, name = manganese_ore_angels, amount = 4}},
-        main_product = manganese_ore_angels
+        main_product = manganese_ore_angels,
+        hide_from_signal_gui = false
     },
     {
         localised_name = {"item-name." .. magnesium_ore},
@@ -40,6 +41,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = crushed_stannium, amount = 2}
         },
         results = {{type = item, name = magnesium_ore, amount = 4}},
+        main_product = magnesium_ore,
+        hide_from_signal_gui = false
     },
     -- T2
     {
@@ -58,7 +61,8 @@ TIMSABA.functions.create_recipes
             {type = item, name = chunk_bobmonium, amount = 2}
         },
         results = {{type = item, name = sodium_angels, amount = 4}},
-        main_product = sodium_angels
+        main_product = sodium_angels,
+        hide_from_signal_gui = false
     },
     -- T4
     {
@@ -77,6 +81,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = purified_senaite, amount = 2}
         },
         results = {{type = item, name = chromium_ore_angels, amount = 4}},
-        main_product = chromium_ore_angels
+        main_product = chromium_ore_angels,
+        hide_from_signal_gui = false
     }
 })

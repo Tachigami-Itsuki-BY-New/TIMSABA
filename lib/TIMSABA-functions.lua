@@ -493,7 +493,8 @@ function TIMSABA.functions.create_recipes(list)
                 ingredients = recipes.ingredients,
                 results = recipes.results,
                 main_product = recipes.main_product,
-                surface_conditions = recipes.surface_conditions
+                surface_conditions = recipes.surface_conditions,
+                hide_from_signal_gui = recipes.hide_from_signal_gui
             }
         })
     end

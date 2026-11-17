@@ -161,6 +161,7 @@ TIMSABA.functions.create_recipes
             {type = item, name = brannerite_ore, amount = 1, independent_probability = 0.5},
             {type = item, name = rheniite_ore, amount = 1, independent_probability = 0.5}
         },
-        surface_conditions = {{property = pressure, min = 800, max = 800}}
+        surface_conditions = {{property = pressure, min = 800, max = 800}},
+        hide_from_signal_gui = false
     }
 })

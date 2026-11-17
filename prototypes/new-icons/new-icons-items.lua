@@ -130,6 +130,9 @@ data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/interm
 data_item[lime_angels].icon_size = 64
 
 -- ANGELS RESOURCE REFINING
+data_item[ore_rubyte].icon = "__angelsrefininggraphics__/graphics/icons/" .. ore_rubyte .. "/" .. ore_rubyte .. ".png"
+data_item[ore_rubyte].icon_size = 32
+
 local graphics_resource = "__TIMSABA__/graphics/icons/angels/resource/"
 
 data_item[crushed_ferrium].icon = graphics_resource .. crushed_ferrium .. ".png"
