@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.6
+Date: ??.11.2026
+  Modding:
+    - [Mods] Added support for the "Abandoned Ruins - Combined" mod.
+    - [Mods] Added support for the "Looting Remnants" mod.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.5
 Date: 18.11.2026
   Bugfixes:
