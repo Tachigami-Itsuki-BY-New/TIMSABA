@@ -4,6 +4,7 @@ local holmium_solution = "holmium-solution"
 local replace_prototypes =
 {
 	[carbon] = carbon_angels,
+	[tungsten_ore] = wolframite_ore,
 	[tungsten_carbide] = tungsten_carbide_bob,
 	[tungsten_plate] = tungsten_plate_bob,
 	[lithium_plate] = lithium_bob,
@@ -53,6 +54,7 @@ data_fluid[molten_copper] = nil
 tech_asteroid_reprocessing = "asteroid-reprocessing"
 local delete_prototypes =
 {
+	tungsten_ore,
 	holmium_solution,
 	"concrete-from-molten-iron",
 	"iron-ore-melting",
