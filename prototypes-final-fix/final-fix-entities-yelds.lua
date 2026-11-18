@@ -275,6 +275,8 @@ data_entity[huge_rock].minable.results =
 }
 
 -- VULCANUS
+TIMSABA.functions.replace_vanila_resources({tungsten_ore}, {wolframite_ore}, planet_vulcanus)
+
 local big_volcanic_rock = "big-volcanic-rock"
 data_entity[big_volcanic_rock].minable.results =
 {

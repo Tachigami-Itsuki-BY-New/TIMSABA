@@ -1,3 +1,16 @@
+# **How to Make a Build ?**
+## **Issues**
+**All changes must be made exclusively within the scope of a specific [issue](https://github.com/Tachigami-Itsuki-BY-New/TIMSABA/issues)**. Making changes without an issue is strictly prohibited for everyone. An **issue** must be small and limited to a single problem. If an **issue** is too large, it must be split into smaller ones. The title of the **issue** must briefly describe the problem being solved (in case of a bug) or the functionality being added. The body of the **issue** must include a detailed description of the problem to be solved, the reasons and motivations for considering it a problem, and a clear description of the desired behavior. The description of the **issue** must be completely sufficient for its implementation and testing by any authorized developer **without additional discussions or questions**. If this is not the case, the **issue** cannot be taken into development until further discussions are held.
+
+## **Epics**
+Sometimes **issues** become very large. For such cases, I suggest using **epics**. These are **issues** with a special [epic](https://github.com/Tachigami-Itsuki-BY-New/TIMSABA/labels) label that contain nested **sub-issues**. An epic must contain a list of logically related **issues** that can be completed independently of one another. No separate branches or **PRs** are created for an **epic**. Changes are made within the scope of the **sub-issues**. An **epic** is closed only when all of its **sub-issues** have been closed. Example of an [epic](https://github.com/Tachigami-Itsuki-BY-New/TIMSABA/issues/13).
+
+## **Branches**
+Each **issue** is developed in a separate branch. The branch must branch off from the **dev** branch. The branch name must correspond to the **issue** number. Changes within this branch can only be made within the scope of the given **issue**. A branch can contain any number of commits. After the work is completed, a pull request is created. The pull request must be linked to the corresponding **issue**. Before creating a **pull request**, it is mandatory to rebase onto the top of the base branch (or merge the base branch into the child branch) to avoid conflicts. Merging changes into the **dev** or **main** branches is done exclusively through **pull requests**. A **pull request** can only be accepted by someone other than its creator. Changes to a **pull request** are made only by its creator. After the **PR** is merged into **dev**, the merged changes must be verified by a QA engineer. After testing, the **issue** can be closed. If additional changes are required after testing, they are made within the same branch.
+
+## **Labels**
+### **TBD**
+-------------------------------------------------------------------------------------------------------------------------------------------------
 # **The mod version is formatted as x1.x2.x3.**
 * **x1 is the major version.** It changes when old saves are incompatible with the new version.
 * **x2 is the minor version.** It changes when we make a simple update.

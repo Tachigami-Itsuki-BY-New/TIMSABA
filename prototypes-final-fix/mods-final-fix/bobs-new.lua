@@ -12,7 +12,10 @@ data_resource[wolframite_ore].icons = nil
 data_resource[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 data_resource[wolframite_ore].icon_size = 64
 data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
+data_resource[wolframite_ore].stages.sheet.tint = nil
 data_resource[wolframite_ore].factoriopedia_simulation = nil
+data_resource[wolframite_ore].map_color = {r = 98/256, g = 86/256, b = 150/256, a = 1.000}
+data_resource[wolframite_ore].mining_visualisation_tint = {r = 150/256, g = 150/256, b = 180/256, a = 1.000}
 
 data_recipe[wolframite_ore .. _sorting].icons = RECYCLING_I(recycling_png, wolframite_ore)
 data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
