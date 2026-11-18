@@ -150,6 +150,7 @@ TIMSABA.functions.create_subgroups(ig_casting,
 })
 
 -- ANGELS WATER TREATMENT
+is_water_salination = "angels-water-salination"
 is_water_cleaning_fluid = "angels-water-cleaning-fluid"
 is_water_cleaning = "angels-water-cleaning"
 is_water_treatment_building = "angels-water-treatment-building"

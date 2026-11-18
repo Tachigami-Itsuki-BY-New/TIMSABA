@@ -26,12 +26,11 @@ data_recipe[landfill].ingredients =
     {type = item, name = stone_crushed_angels, amount = 32}
 }
 
-solid_mud_landfill = "angels-solid-mud-landfill"
-data_recipe[solid_mud_landfill].subgroup = is_processing_crafting
-data_recipe[solid_mud_landfill].icons = THREE_I(mud_angels, stone_crushed_angels, landfill)
-data_recipe[solid_mud_landfill].order = z_a
-data_recipe[solid_mud_landfill].energy_required = 1
-data_recipe[solid_mud_landfill].ingredients =
+data_recipe[landfill_from_mud].subgroup = is_processing_crafting
+data_recipe[landfill_from_mud].icons = THREE_I(mud_angels, stone_crushed_angels, landfill)
+data_recipe[landfill_from_mud].order = z_a
+data_recipe[landfill_from_mud].energy_required = 1
+data_recipe[landfill_from_mud].ingredients =
 {
     {type = item, name = mud_angels, amount = 32},
     {type = item, name = stone_crushed_angels, amount = 32}

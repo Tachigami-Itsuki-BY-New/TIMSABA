@@ -69,10 +69,10 @@ data_item_subgroup[is_water_washing_fluid].order = b
 data_fluid[water_viscous_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(mud)"} or nil
 TIMSABA.barreling.add_simple_fluid(water_viscous_mud)
 data_recipe[water_viscous_mud].icons = THREE_I(mud_angels, water, water_viscous_mud)
-data_recipe[water_viscous_mud].energy_required = 8
-data_recipe[water_viscous_mud].ingredients[1].amount = 16
-data_recipe[water_viscous_mud].ingredients[2].amount = 240
-data_recipe[water_viscous_mud].results[1].amount = 240
+data_recipe[water_viscous_mud].energy_required = 4
+data_recipe[water_viscous_mud].ingredients[1].amount = 4
+data_recipe[water_viscous_mud].ingredients[2].amount = 60
+data_recipe[water_viscous_mud].results[1].amount = 60
 
 data_fluid[water_heavy_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(geode)"} or nil
 TIMSABA.barreling.add_simple_fluid(water_heavy_mud)
@@ -81,7 +81,7 @@ data_recipe[water_heavy_mud].energy_required = 8
 data_recipe[water_heavy_mud].ingredients[1].amount = 240
 data_recipe[water_heavy_mud].ingredients[2].amount = 240
 data_recipe[water_heavy_mud].results[1].amount = 480
-data_recipe[water_heavy_mud].results[2].amount_max = 16
+data_recipe[water_heavy_mud].results[2].amount_max = 8
 
 data_fluid[water_concentrated_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]9[/font])"} or nil
 TIMSABA.barreling.add_simple_fluid(water_concentrated_mud)
@@ -90,7 +90,7 @@ data_recipe[water_concentrated_mud].energy_required = 8
 data_recipe[water_concentrated_mud].ingredients[1].amount = 240
 data_recipe[water_concentrated_mud].ingredients[2].amount = 240
 data_recipe[water_concentrated_mud].results[1].amount = 480
-data_recipe[water_concentrated_mud].results[2].amount_max = 4
+data_recipe[water_concentrated_mud].results[2].amount_max = 8
 
 data_fluid[water_light_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(CaCO[font=default-tiny-bold]3[/font])"} or nil
 TIMSABA.barreling.add_simple_fluid(water_light_mud)
@@ -99,7 +99,7 @@ data_recipe[water_light_mud].energy_required = 8
 data_recipe[water_light_mud].ingredients[1].amount = 240
 data_recipe[water_light_mud].ingredients[2].amount = 240
 data_recipe[water_light_mud].results[1].amount = 480
-data_recipe[water_light_mud].results[2].amount_max = 4
+data_recipe[water_light_mud].results[2].amount_max = 8
 
 data_fluid[water_thin_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(SiO[font=default-tiny-bold]2[/font])"} or nil
 TIMSABA.barreling.add_simple_fluid(water_thin_mud)
@@ -108,7 +108,7 @@ data_recipe[water_thin_mud].energy_required = 8
 data_recipe[water_thin_mud].ingredients[1].amount = 240
 data_recipe[water_thin_mud].ingredients[2].amount = 240
 data_recipe[water_thin_mud].results[1].amount = 480
-data_recipe[water_thin_mud].results[2].amount_max = 4
+data_recipe[water_thin_mud].results[2].amount_max = 8
 
 data_fluid[water_saline_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaCl)"} or nil
 TIMSABA.barreling.add_simple_fluid(water_saline_angels)
@@ -116,78 +116,55 @@ data_recipe[water_saline_angels].icons = THREE_I(water_thin_mud, water, water_sa
 data_recipe[water_saline_angels].energy_required = 8
 data_recipe[water_saline_angels].ingredients[1].amount = 240
 data_recipe[water_saline_angels].ingredients[2].amount = 240
-data_recipe[water_saline_angels].results[1].amount = 480
-data_recipe[water_saline_angels].results[2].amount_max = 4
+data_recipe[water_saline_angels].results = {{type = fluid, name = water_saline_angels, amount = 480}}
 
 data_fluid[water_thermal_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(LiCl)"} or nil
 data_fluid[water_thermal_angels].subgroup = is_water_washing_fluid
 data_fluid[water_thermal_angels].order = g
 TIMSABA.barreling.add_simple_fluid(water_thermal_angels)
 
-local is_water_salination = "angels-water-salination"
 data_item_subgroup[is_water_salination].order = c
 
 data_item[mud_angels].order = a
 
-local solid_geodes = "angels-solid-geodes"
 data_recipe[solid_geodes].subgroup = is_water_salination
-data_recipe[solid_geodes].icons = THREE_I(water_heavy_mud, water, geode_yellow)
+data_recipe[solid_geodes].icons = TWO_I(water_heavy_mud, geode_yellow)
 data_recipe[solid_geodes].order = b
 data_recipe[solid_geodes].energy_required = 8
-data_recipe[solid_geodes].ingredients[1].amount = 240
-data_recipe[solid_geodes].ingredients[2].amount = 240
+data_recipe[solid_geodes].ingredients = {{type = fluid, name = water_heavy_mud, amount = 240}}
 data_recipe[solid_geodes].results =
 {
-    {type = item, name = geode_blue, amount_min = 0, amount_max = 16},
-    {type = item, name = geode_cyan, amount_min = 0, amount_max = 4},
-    {type = item, name = geode_lightgreen, amount_min = 0, amount_max = 4},
-    {type = item, name = geode_purple, amount_min = 0, amount_max = 8},
-    {type = item, name = geode_red, amount_min = 0, amount_max = 16},
-    {type = item, name = geode_yellow, amount = 4},
-    {type = item, name = mud_angels, amount_min = 0, amount_max = 8}
+    {type = item, name = geode_blue, amount_min = 0, amount_max = 8},
+    {type = item, name = geode_cyan, amount_min = 0, amount_max = 2},
+    {type = item, name = geode_lightgreen, amount_min = 0, amount_max = 2},
+    {type = item, name = geode_purple, amount_min = 0, amount_max = 4},
+    {type = item, name = geode_red, amount_min = 0, amount_max = 8},
+    {type = item, name = geode_yellow, amount = 2}
 }
 
 data_item[clay_angels].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]9[/font]"} or nil
 data_item[clay_angels].order = c
-data_recipe[clay_angels].icons = THREE_I(water_concentrated_mud, water, clay_angels)
+data_recipe[clay_angels].icons = TWO_I(water_concentrated_mud, clay_angels)
 data_recipe[clay_angels].order = c
 data_recipe[clay_angels].energy_required = 8
-data_recipe[clay_angels].ingredients[1].amount = 240
-data_recipe[clay_angels].ingredients[2].amount = 240
-data_recipe[clay_angels].results =
-{
-    {type = item, name = clay_angels, amount = 8},
-    {type = item, name = mud_angels, amount_min = 0, amount_max = 8}
-}
-data_recipe[clay_angels].main_product = clay_angels
+data_recipe[clay_angels].ingredients = {{type = fluid, name = water_concentrated_mud, amount = 240}}
+data_recipe[clay_angels].results[1].amount = 8
 
 data_item[limestone_angels].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
 data_item[limestone_angels].order = d
-data_recipe[limestone_angels].icons = THREE_I(water_light_mud, water, limestone_angels)
+data_recipe[limestone_angels].icons = TWO_I(water_light_mud, limestone_angels)
 data_recipe[limestone_angels].order = d
 data_recipe[limestone_angels].energy_required = 8
-data_recipe[limestone_angels].ingredients[1].amount = 240
-data_recipe[limestone_angels].ingredients[2].amount = 240
-data_recipe[limestone_angels].results =
-{
-    {type = item, name = limestone_angels, amount = 8},
-    {type = item, name = mud_angels, amount_min = 0, amount_max = 8}
-}
-data_recipe[limestone_angels].main_product = limestone_angels
+data_recipe[limestone_angels].ingredients = {{type = fluid, name = water_light_mud, amount = 240}}
+data_recipe[limestone_angels].results[1].amount = 8
 
 data_item[sand_angels].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
 data_item[sand_angels].order = e
-data_recipe[sand_angels].icons = THREE_I(water_thin_mud, water, sand_angels)
+data_recipe[sand_angels].icons = TWO_I(water_thin_mud, sand_angels)
 data_recipe[sand_angels].order = e
 data_recipe[sand_angels].energy_required = 8
-data_recipe[sand_angels].ingredients[1].amount = 240
-data_recipe[sand_angels].ingredients[2].amount = 240
-data_recipe[sand_angels].results =
-{
-    {type = item, name = sand_angels, amount = 8},
-    {type = item, name = mud_angels, amount_min = 0, amount_max = 8}
-}
-data_recipe[sand_angels].main_product = sand_angels
+data_recipe[sand_angels].ingredients = {{type = fluid, name = water_thin_mud, amount = 240}}
+data_recipe[sand_angels].results[1].amount = 8
 
 data_item[salt_angels].localised_description = show_formula and {chemical_formula, "NaCl"} or nil
 data_item[salt_angels].order = f
