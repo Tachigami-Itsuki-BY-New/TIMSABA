@@ -396,8 +396,8 @@ if mods[vesta_mods] then
     data_assembling[electrolyzer_vesta].order = a
     data_assembling[electrolyzer_vesta].crafting_speed = 1
     data_assembling[electrolyzer_vesta].module_slots = 4
-    data_assembling[electrolyzer_vesta].energy_usage = (1920 - 120) .. kW
-    data_assembling[electrolyzer_vesta].energy_source.drain = 120 .. kW
+    data_assembling[electrolyzer_vesta].energy_usage = (1920 - 240) .. kW
+    data_assembling[electrolyzer_vesta].energy_source.drain = 240 .. kW
     data_assembling[electrolyzer_vesta].effect_receiver.base_effect.productivity = 1
 
     data_item[supermagnet].subgroup = is_vesta_building
@@ -417,11 +417,10 @@ if mods[vesta_mods] then
     if mods[moshine_mods] then
         table.insert(data_recipe[supermagnet].ingredients, {type = item, name = neodymium_magnet, amount = 8})
     end
-
     data_assembling[supermagnet].subgroup = is_vesta_building
     data_assembling[supermagnet].order = b
-    data_assembling[supermagnet].energy_usage = 4680 .. kW
-    data_assembling[supermagnet].energy_source.drain = 120 .. kW
+    data_assembling[supermagnet].energy_usage = (3840 - 240) .. kW
+    data_assembling[supermagnet].energy_source.drain = 240 .. kW
 
     data_item[combustion_furnace].subgroup = is_vesta_building
     data_item[combustion_furnace].order = c
@@ -440,8 +439,10 @@ if mods[vesta_mods] then
 
     data_assembling[combustion_furnace].subgroup = is_vesta_building
     data_assembling[combustion_furnace].order = c
-    data_assembling[combustion_furnace].energy_usage = 52.5 .. kW
-    data_assembling[combustion_furnace].energy_source.drain = 7.5 .. kW
+    data_assembling[combustion_furnace].crafting_speed = 2
+    data_assembling[combustion_furnace].energy_usage = (480 - drain) .. kW
+    data_assembling[combustion_furnace].energy_source = data_assembling[electric_mixing_furnace_1].energy_source
+    data_assembling[combustion_furnace].energy_source.drain = drain .. kW
     data_assembling[combustion_furnace].effect_receiver.base_effect.productivity = 1
 
     -- SPACE
