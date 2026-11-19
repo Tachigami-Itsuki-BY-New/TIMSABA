@@ -531,12 +531,12 @@ if mods[aegis_bellicos_mods] then
                 {type = item, name = transistor, amount = 8},
                 {type = item, name = integrated_circuit, amount = 8},
                 {type = item, name = solder, amount = 8},
-                {type = fluid, name = helium_liquid, amount = 120}
+                {type = fluid, name = helium_liquid, amount = 60}
             },
             results =
             {
                 {type = item, name = advanced_processing_unit, amount = 4},
-                {type = fluid, name = helium, amount = 60, ignored_by_productivity = 60} -- 120
+                {type = fluid, name = helium, amount = 30, ignored_by_productivity = 30} -- 60
             },
             main_product = advanced_processing_unit
         }

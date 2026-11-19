@@ -62,7 +62,7 @@ if mods[castra_mods] then
     data_recipe[electronic_circuit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[electronic_circuit_battlefield_data].icons = BUILDING_R_I(electronic_circuit, castra_data)
     data_recipe[electronic_circuit_battlefield_data].order = a_a
-    data_recipe[electronic_circuit_battlefield_data].energy_required = 16
+    data_recipe[electronic_circuit_battlefield_data].energy_required = 4
     data_recipe[electronic_circuit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 8},
@@ -75,7 +75,7 @@ if mods[castra_mods] then
     data_recipe[advanced_circuit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[advanced_circuit_battlefield_data].icons = BUILDING_R_I(advanced_circuit, castra_data)
     data_recipe[advanced_circuit_battlefield_data].order = a_b
-    data_recipe[advanced_circuit_battlefield_data].energy_required = 16
+    data_recipe[advanced_circuit_battlefield_data].energy_required = 8
     data_recipe[advanced_circuit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 8},
@@ -89,7 +89,7 @@ if mods[castra_mods] then
     data_recipe[processing_unit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[processing_unit_battlefield_data].icons = BUILDING_R_I(processing_unit, castra_data)
     data_recipe[processing_unit_battlefield_data].order = a_c
-    data_recipe[processing_unit_battlefield_data].energy_required = 16
+    data_recipe[processing_unit_battlefield_data].energy_required = 8
     data_recipe[processing_unit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 16},

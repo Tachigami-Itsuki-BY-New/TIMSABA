@@ -481,6 +481,7 @@ data_recipe[advanced_circuit_board].ingredients =
 data_item[electronic_circuit].order = a
 data_recipe[electronic_circuit].order = a
 data_recipe[electronic_circuit].allow_productivity = true
+data_recipe[electronic_circuit].energy_required = 2
 data_recipe[electronic_circuit].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 1},

@@ -106,7 +106,7 @@ if mods[panglia_mods] then
     data_recipe[advanced_circuit_from_panglite_fiber].subgroup = is_panglia_recipe
     data_recipe[advanced_circuit_from_panglite_fiber].icons = BUILDING_R_I(advanced_circuit, panglite_fiber)
     data_recipe[advanced_circuit_from_panglite_fiber].order = h_b
-    data_recipe[advanced_circuit_from_panglite_fiber].energy_required = 32
+    data_recipe[advanced_circuit_from_panglite_fiber].energy_required = 4
     data_recipe[advanced_circuit_from_panglite_fiber].ingredients =
     {
         {type = item, name = resistor, amount = 4},

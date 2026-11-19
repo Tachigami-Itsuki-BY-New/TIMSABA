@@ -12,7 +12,7 @@ if mods[panglia_mods] then
             order = h_a,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 32,
+            energy_required = 2,
             ingredients =
             {
                 {type = item, name = resistor, amount = 4},
@@ -31,7 +31,7 @@ if mods[panglia_mods] then
             order = h_c,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 32,
+            energy_required = 4,
             ingredients =
             {
                 {type = item, name = resistor, amount = 8},
@@ -52,7 +52,7 @@ if mods[panglia_mods] then
             order = h_d,
             allow_productivity = true,
             allow_quality = true,
-            energy_required = 32,
+            energy_required = 8,
             ingredients =
             {
                 {type = item, name = resistor, amount = 8},
