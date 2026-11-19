@@ -1100,7 +1100,9 @@ if mods[loaders_modernized_integrations] then
     if mods[arig_mods] then
         data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
         data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
-        data_loader_1x1[stack_loader].next_upgrade = nil
+        if data_loader_1x1[stack_loader] then
+            data_loader_1x1[stack_loader].next_upgrade = nil
+        end
     end
 
     if data_technology[vulcanus_loader] then
