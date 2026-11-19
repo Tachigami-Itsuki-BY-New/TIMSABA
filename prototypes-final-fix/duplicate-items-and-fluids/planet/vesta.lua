@@ -28,10 +28,12 @@ if mods[vesta_mods] then
 	}
     TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 
-	if data_recipe[yeet_item_ .. supermagnetic_vesta .. _barrel] then data_recipe[yeet_item_ .. supermagnetic_vesta .. _barrel] = nil end
+	data_recipe[lithium_brine] = nil
+	data_recipe[yeet_item_ .. supermagnetic_vesta .. _barrel] = nil
 
 	local fusion_construction_robot = "fusion-construction-robot"
 	local fusion_logistic_robot = "fusion-logistic-robot"
+	local carbon_gas = "carbon-gas"
 	local delete_prototypes =
 	{
 		"ske-h2o",
@@ -60,30 +62,61 @@ if mods[vesta_mods] then
 		"s1_cluster_processing",
 		"s2_fusion_robots",
 		"s2_intermediate_productivity",
-		"heating-conductor"
+		"heating-conductor",
+		carbon_gas
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
-	data_construction_robot[fusion_construction_robot] = nil
-	data_logistic_robot[fusion_logistic_robot] = nil
 
 	if settings.startup[setting_vesta_legacy_recipes].value then
 		local nitrogen_liquid_vesta = "ske_liquid_nitrogen"
+		local brine_mods = "ske_brine"
 		local replace_prototypes =
 		{
-			[nitrogen_liquid_vesta] = nitrogen_liquid
+			[nitrogen_liquid_vesta] = nitrogen_liquid,
+			[brine_mods] = water_thermal_angels,
+			[carbon_gas] = carbon_monoxide_angels
 		}
 		TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
 		local delete_prototypes =
 		{
 			nitrogen_liquid_vesta,
+			"ske_algea_steel_extraction",
 			"ske_empty_dt_canister",
 			"ske_dt_fuel_cell",
-			"dt-fuel"
+			"dt-fuel",
+			"ske_heavy_solution",
+			"ske_heavy_solution_" .. lubricant,
+			"ske_crude_solution",
+			"ske_crude_sludge",
+			"ske_crude_oil",
+			brine_mods,
+			brine_mods .. "_vesta",
+			"ske_hot_" .. lithium,
+			"ske_" .. lithium,
+			"ske_heavy_water",
+			"ske_hot_heavy_water",
+			"hot-" .. hydrogen_sulfide_mods,
+			"ske_ammonia_vesta",
+			"ske_algea_petrite_extraction",
+			"ske_vesta_" .. electrolyte,
+			"ske_ammonia_chilled_plate",
+			"ske_water_electrolysis",
+			"ske_charcoal",
+			"ske_algea_rare_holmium_tratment",
+			"s1_nutrients_from_co2",
+			"s1_brine",
+			"s1_t2d2",
+			"s1_ammonia_chilled_plate",
+			"s1_iridium_plate",
+			"ske_heating_conductor",
+			"hot-heavy-water-production",
+			"hot-lithium-production",
+			"s1_sandceramicmesh",
+			"s1_vestan_char"
 		}
 		TIMSABA.functions.delete_prototypes(delete_prototypes)
-	else
-		local delete_prototypes = {"ske_crude_solution"}
-		TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+		data_recipe[sand_mods] = nil
 	end
 end

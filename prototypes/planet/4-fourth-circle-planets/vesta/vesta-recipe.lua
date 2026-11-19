@@ -500,4 +500,46 @@ if mods[vesta_mods] then
             main_product = ammonium_chloride
         }
     })
+
+    if settings.startup[setting_vesta_legacy_recipes].value then
+        holmium_ore_2 = holmium_ore .. "-2"
+        iridium_ore_2 = iridium_ore .. "-2"
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                localised_name = {"item-name." .. iridium_ore},
+                name = holmium_ore_2,
+                categories = {vesta_electrolysis},
+                subgroup = is_vesta_recipe,
+                icons = TWO_I(algea_clump_holmium, holmium_ore),
+                order = o_a,
+                allow_productivity = true,
+                energy_required = 1,
+                ingredients =
+                {
+                    {type = item, name = algea_clump_holmium, amount = 1},
+                    {type = fluid, name = helium_vesta, amount = 15}
+                },
+                results = {{type = item, name = holmium_ore, amount = 4}},
+                main_product = holmium_ore
+            },
+            {
+                localised_name = {"item-name." .. iridium_ore},
+                name = iridium_ore_2,
+                categories = {vesta_electrolysis},
+                subgroup = is_vesta_recipe,
+                icons = TWO_I(algea_clump_iridium, iridium_ore),
+                order = p_a,
+                allow_productivity = true,
+                energy_required = 1,
+                ingredients =
+                {
+                    {type = item, name = algea_clump_iridium, amount = 1},
+                    {type = fluid, name = helium_vesta, amount = 15}
+                },
+                results = {{type = item, name = iridium_ore, amount = 4}},
+                main_product = iridium_ore
+            }
+        })
+    end
 end

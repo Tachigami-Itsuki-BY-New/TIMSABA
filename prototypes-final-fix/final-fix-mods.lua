@@ -554,11 +554,6 @@ if mods[arig_mods] then
             data_loader_1x1[hyper_loader_arig].energy_per_item = ((60 * 16) - (7.5 * 16)) .. kW
             data_loader_1x1[hyper_loader_arig].energy_source.drain = (15 * 16) .. kW
         end
-        if data_item[stack_loader] then
-            data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
-        else
-            data_loader_1x1[hyper_loader_arig].next_upgrade = nil
-        end
 
         bobmods.lib.recipe.update_recycling_recipe({hyper_loader_arig})
     end
@@ -582,10 +577,6 @@ if mods[arig_mods] then
             data_loader_1x1[hyper_loader_arig].subgroup = is_arig_logistic
             data_loader_1x1[hyper_loader_arig].order = k
         end
-    end
-else
-    if mods[loaders_modernized_integrations] then
-        data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
     end
 end
 
@@ -1100,9 +1091,17 @@ if mods[loaders_modernized_integrations] then
     data_loader_1x1[T4_loader].next_upgrade = T5_loader
     if mods[arig_mods] then
         data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
-        data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
         if data_loader_1x1[stack_loader] then
+            data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
             data_loader_1x1[stack_loader].next_upgrade = nil
+        else
+            data_loader_1x1[hyper_loader_arig].next_upgrade = nil
+        end
+    else
+        if data_loader_1x1[stack_loader] then
+            data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
+        else
+            data_loader_1x1[vulcanus_loader].next_upgrade = nil
         end
     end
 

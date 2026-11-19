@@ -1,9 +1,9 @@
 require("prototypes.global-name.global-name")
+require("prototypes.global-name.global-name-setting")
 require("prototypes.global-name.global-name-items")
 require("prototypes.global-name.global-name-fluids")
 require("prototypes.global-name.global-name-recipe")
 require("prototypes.global-name.global-name-mods")
-require("prototypes.global-name.global-name-setting")
 
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")

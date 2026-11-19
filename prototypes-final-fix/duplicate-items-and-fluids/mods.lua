@@ -82,12 +82,20 @@ if mods[muluna_mods] then
 end
 
 if mods[aegis_bellicos_mods] and mods[vesta_mods] then
-    if data_fluid[helium_vesta] then
+    if settings.startup[setting_vesta_gases].value then
         local replace_prototypes = {[helium] = helium_vesta}
         TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
         local delete_proto = {helium}
         TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+    else
+        local replace_prototypes = {[helium_vesta] = helium}
+        TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
+    end
+elseif mods[vesta_mods] then
+    if not data_fluid[helium_vesta] then
+        local replace_prototypes = {[helium_vesta] = nitrogen_angels} -- create helium_gas
+        TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
     end
 end
 
