@@ -1,15 +1,35 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.6
+Date: 19.11.2026
+  Balancing:
+    - [All] Reworked recipes from the branch "Water (Washing Plant)".
+
+  Bugfixes:
+    - [All] Fixed errors described in the issue #379.
+    - [All] Fixed errors described in the issue #380.
+
+  Modding:
+    - [Mods] Added support for the "Abandoned Ruins - Combined" mod.
+    - [Mods] Added support for the "Looting Remnants" mod.
+    - [Mods] Updated "PlanetsLib" mod dependency to version 2.5.3.
+    - [Mods] Updated "Better Asteroid Belt" mod dependency to version 1.0.12.
+    - [Mods] Updated "Planet Paracelsin" mod dependency to version 1.13.1.
+    - [Mods] Updated "Maraxsis" mod dependency to version 1.42.1.
+    - [Mods] Updated "Planet Vesta" mod dependency to version 2.1.32.
+    - [Mods] Updated "Planet Muria" mod dependency to version 1.11.4.
+    - [Mods] Updated "Aegis & Bellicos" mod dependency to version 0.4.9.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.5
 Date: 18.11.2026
   Bugfixes:
-    - [All] Fixed the errors described in the issue #376.
+    - [All] Fixed errors described in the issue #376.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 17.11.2026
   Bugfixes:
-    - [All] Fixed the errors described in the issue #368.
-    - [All] Fixed the errors described in the issue #369.
-    - [All] Fixed the errors described in the issue #372.
+    - [All] Fixed errors described in the issue #368.
+    - [All] Fixed errors described in the issue #369.
+    - [All] Fixed errors described in the issue #372.
 
   Modding:
     - [Mods] Added support for the "Jat'z Distribution" mod.
@@ -25,7 +45,7 @@ Date: 15.11.2026
   Bugfixes:
     - [All] Fixed an error where the recipe for Tinned Wire required water instead of purified water.
     - [All] Fixed errors that occur when disabling the "Muluna, Moon of Nauvis" mod.
-    - [All] Fixed the errors described in the issue #364.
+    - [All] Fixed errors described in the issue #364.
 
   Modding:
     - [Mods] Added support for the "Transport Drones" mod.
@@ -49,8 +69,8 @@ Date: 14.11.2026
     - [Mods] Updated "Muluna, Moon of Nauvis" mod dependency to version 2.9.15.
     - [Mods] Updated "Planetaris: Tellus" mod dependency to version 1.1.19.
     - [Mods] Updated "Planet Paracelsin" mod dependency to version 1.13.0.
-    - [Mods] Updated "Planet Muria" mod dependency to version 1.11.1.
     - [Mods] Updated "Maraxsis" mod dependency to version 1.42.0.
+    - [Mods] Updated "Planet Muria" mod dependency to version 1.11.1.
     - [Mods] Updated "Lignumis" mod dependency to version 2.12.4.
     - [Mods] Updated "Aegis & Bellicos" mod dependency to version 0.4.7.
     - [Mods] Updated "StarMap Background" mod dependency to version 2.4.2.
@@ -58,9 +78,9 @@ Date: 14.11.2026
 Version: 2.0.1
 Date: 13.11.2026
   Bugfixes:
-    - [All] Fixed the errors described in the issue #355.
-    - [All] Fixed the errors described in the issue #356.
-    - [All] Fixed the errors described in the issue #357.
+    - [All] Fixed errors described in the issue #355.
+    - [All] Fixed errors described in the issue #356.
+    - [All] Fixed errors described in the issue #357.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 12.11.2026

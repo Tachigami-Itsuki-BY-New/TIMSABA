@@ -67,6 +67,8 @@ local delete_prototypes =
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
+data_autoplace_control["tungsten_ore"].hidden = true
+
 local fluoroketone = "fluoroketone"
 local fluoroketone_cooling = "fluoroketone-cooling"
 local replacements =

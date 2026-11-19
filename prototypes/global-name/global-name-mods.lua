@@ -386,7 +386,7 @@ algea_nutrient_clump = "algea_nutrient_clump"
 algea_petrite_clump = "ske_algea_clump_petrite"
 electrolyzer_vesta = "vesta-electrolyzer"
 supermagnet = "supermagnet"
-combustion_furnace = "vesta-combustion-furnace"
+combustion_furnace = "combustion-furnace"
 fusion_thruster_fuel = "fluorofuel"
 fusion_thruster_oxidizer = "plasmafuel"
 

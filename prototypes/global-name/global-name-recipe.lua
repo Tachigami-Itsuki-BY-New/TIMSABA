@@ -125,7 +125,8 @@ solder_roll_2 = "angels-roll-solder-2"
 -- ANGELS WATER TREATMENT
 water_saline_from_water = "angels-water-saline-from-water"
 solid_salt_from_saline = "angels-solid-salt-from-saline"
-
+solid_geodes = "angels-solid-geodes"
+landfill_from_mud = "angels-solid-mud-landfill"
 
 -- ANGELS PETROCHEM REFINING
 water_saline_separation = "angels-water-saline-separation"

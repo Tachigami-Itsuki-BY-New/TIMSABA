@@ -1118,7 +1118,7 @@ if mods[pelagos_mods] then
         table.insert(data_technology[landfill .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
     end
     add_recipe_for_landfill(landfill)
-    add_recipe_for_landfill(solid_mud_landfill)
+    add_recipe_for_landfill(landfill_from_mud)
     if mods[muluna_mods] then
         add_recipe_for_landfill(landfill_stone_crushed)
     end

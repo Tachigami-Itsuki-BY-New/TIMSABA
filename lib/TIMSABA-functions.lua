@@ -901,15 +901,13 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
         end
     end
     -- Loot
-    local entities_with_loot = {"spider-vehicle"}
-    for _, proto_type in ipairs(entities_with_loot) do
-        local data_proto_type = data.raw[proto_type]
-        for _, entity in pairs(data_proto_type or {}) do
-            if entity.loot then
+    for _, proto_type in pairs(data.raw) do
+        for _, entity in pairs(proto_type) do
+            if type(entity) == "table" and entity.loot then
                 for _, entry in pairs(entity.loot) do
-                    local replace = replacements[entry.item]
+                    local replace = replacements[entry.name]
                     if replace then
-                        entry.item = replace
+                        entry.name = replace
                     end
                 end
             end

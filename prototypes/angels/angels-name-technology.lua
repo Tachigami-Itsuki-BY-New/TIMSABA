@@ -126,6 +126,7 @@ tech_strand_casting_4 = "angels-strand-casting-4"
 
 -- ANGELS WATER TREATMENT
 tech_water_washing_1 = "angels-water-washing-1"
+tech_water_washing_2 = "angels-water-washing-2"
 tech_water_treatment_2 = "angels-water-treatment-2"
 tech_water_treatment_3 = "angels-water-treatment-3"
 tech_water_treatment_4 = "angels-water-treatment-4"

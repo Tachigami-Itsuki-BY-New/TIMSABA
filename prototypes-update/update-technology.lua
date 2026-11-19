@@ -2021,6 +2021,15 @@ data_technology[tech_metallurgy_5].effects =
 }
 
 -- ANGELS WATER TREATMENT
+data_technology[tech_water_washing_2].effects =
+{
+    {type = unlock_recipe, recipe = washing_plant_2},
+    {type = unlock_recipe, recipe = water_viscous_mud},
+    {type = unlock_recipe, recipe = mud_angels},
+    {type = unlock_recipe, recipe = solid_geodes},
+    {type = unlock_recipe, recipe = landfill_from_mud}
+}
+
 data_technology[tech_water_treatment_3].effects =
 {
     {type = unlock_recipe, recipe = heavy_offshore_pump},
