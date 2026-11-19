@@ -33,8 +33,7 @@ if mods[maraxsis_mods] then
 		"maraxsis-omega_3",
 		"maraxsis-" .. limestone_mods .. "-crushing",
 		"maraxsis-" .. tech_legendary_quality,
-		"maraxsis-shrinkflation",
-		"maraxsis-deepsea-research-military-mk2-science-pack"
+		"maraxsis-shrinkflation"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
