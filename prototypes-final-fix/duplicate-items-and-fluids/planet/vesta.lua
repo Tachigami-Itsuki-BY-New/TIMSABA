@@ -59,7 +59,8 @@ if mods[vesta_mods] then
 		"s1_iridium",
 		"s1_cluster_processing",
 		"s2_fusion_robots",
-		"s2_intermediate_productivity"
+		"s2_intermediate_productivity",
+		"heating-conductor"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 	data_construction_robot[fusion_construction_robot] = nil
