@@ -302,24 +302,36 @@ data_recipe[battery_silver_zinc].ingredients =
 
 data_item[engine_unit].order = e
 data_recipe[engine_unit].order = e
-data_recipe[engine_unit].icons = BUILDING_R_I(engine_unit, steel_plate)
+data_recipe[engine_unit].icons = BUILDING_R_I(engine_unit, iron_plate)
 data_recipe[engine_unit].energy_required = 4
-data_recipe[engine_unit].ingredients[2].amount = 2
+data_recipe[engine_unit].ingredients =
+{
+    {type = item, name = iron_gear_wheel, amount = 2},
+    {type = item, name = iron_bearing, amount = 2},
+    {type = item, name = iron_plate, amount = 4}
+}
 
 data_item[electric_engine_unit].order = f
 data_recipe[electric_engine_unit].order = f
 data_recipe[electric_engine_unit].icons = BUILDING_R_I(electric_engine_unit, lubricant)
 data_recipe[electric_engine_unit].energy_required = 4
+data_recipe[electric_engine_unit].ingredients =
+{
+    {type = item, name = engine_unit, amount = 1},
+    {type = item, name = copper_cable, amount = 8},
+    {type = item, name = tin_cable, amount = 8},
+    {type = fluid, name = lubricant, amount = 15}
+}
 
 data_item[low_density_structure].order = g
 data_recipe[low_density_structure].order = g
-data_recipe[low_density_structure].energy_required = 16
+data_recipe[low_density_structure].energy_required = 4
 data_recipe[low_density_structure].icons = R_P_I(low_density_structure, nil, nil, number_1)
 data_recipe[low_density_structure].ingredients =
 {
-    {type = item, name = aluminium_plate_bob, amount = 16},
-    {type = item, name = titanium_plate_bob, amount = 2},
-    {type = item, name = plastic, amount = 4}
+    {type = item, name = aluminium_plate_bob, amount = 4},
+    {type = item, name = titanium_plate_bob, amount = 4},
+    {type = item, name = plastic, amount = 8}
 }
 
 data_item[heat_shielding_tile].order = h
@@ -1220,6 +1232,8 @@ bobmods.lib.recipe.update_recycling_recipe
     battery_lead_acid,
     battery_lithium_ion,
     battery_silver_zinc,
+    engine_unit,
+    electric_engine_unit,
     low_density_structure,
     heat_shielding_tile,
     rtg,

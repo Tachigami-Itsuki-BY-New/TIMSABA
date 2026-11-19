@@ -130,7 +130,7 @@ if mods[muluna_mods] then
     data_recipe[low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_1)
     data_recipe[low_density_structure_muluna].order = z
-    data_recipe[low_density_structure_muluna].energy_required = 16
+    data_recipe[low_density_structure_muluna].energy_required = 4
     data_recipe[low_density_structure_muluna].ingredients = util.table.deepcopy(data_recipe[low_density_structure].ingredients)
     data_recipe[low_density_structure_muluna].results[1].amount = 2
     data_recipe[low_density_structure_muluna].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
@@ -139,12 +139,12 @@ if mods[muluna_mods] then
     data_recipe[casting_low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[casting_low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_2)
     data_recipe[casting_low_density_structure_muluna].order = z_a
-    data_recipe[casting_low_density_structure_muluna].energy_required = 16
+    data_recipe[casting_low_density_structure_muluna].energy_required = 4
     data_recipe[casting_low_density_structure_muluna].ingredients =
     {
-        {type = item, name = plastic, amount = 4},
-        {type = fluid, name = aluminium_molten_angels, amount = 240},
-        {type = fluid, name = titanium_molten_angels, amount = 30}
+        {type = item, name = plastic, amount = 8},
+        {type = fluid, name = aluminium_molten_angels, amount = 60},
+        {type = fluid, name = titanium_molten_angels, amount = 60}
     }
     data_recipe[casting_low_density_structure_muluna].results[1].amount = 2
     data_recipe[casting_low_density_structure_muluna].surface_conditions = {{property = gravity, max = 2, min = 2}, {property = oxygen, max = 0, min = 0}}
@@ -590,6 +590,13 @@ if mods[muluna_mods] then
     data_recipe[electric_engine_unit_from_carbon].subgroup = is_muluna_recipe
     data_recipe[electric_engine_unit_from_carbon].icons = BUILDING_R_I(electric_engine_unit, carbon_angels)
     data_recipe[electric_engine_unit_from_carbon].order = a
+    data_recipe[electric_engine_unit_from_carbon].ingredients =
+    {
+        {type = item, name = engine_unit, amount = 1},
+        {type = item, name = copper_cable, amount = 8},
+        {type = item, name = tin_cable, amount = 8},
+        {type = item, name = carbon_angels, amount = 1}
+    }
 
     local rocket_fuel_aluminum = "rocket-fuel-aluminum"
     data_recipe[rocket_fuel_aluminum].subgroup = is_muluna_recipe

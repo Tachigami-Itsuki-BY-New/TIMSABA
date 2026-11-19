@@ -164,11 +164,12 @@ if mods[bobwarfare] then
     table.insert(data_armor[mech_armor].resistances, {type = "bob-plasma", percent = 100})
 end
 
+data_recipe[casting_low_density_structure].energy_required = 4
 data_recipe[casting_low_density_structure].ingredients =
 {
-    {type = item, name = plastic, amount = 4},
-    {type = fluid, name = aluminium_molten_angels, amount = 240},
-    {type = fluid, name = titanium_molten_angels, amount = 30}
+    {type = item, name = plastic, amount = 8},
+    {type = fluid, name = aluminium_molten_angels, amount = 60},
+    {type = fluid, name = titanium_molten_angels, amount = 60}
 }
 
 data_technology[processing_unit .. _productivity].effects = {{type = change_recipe_productivity, recipe = processing_unit, change = 0.1}}
