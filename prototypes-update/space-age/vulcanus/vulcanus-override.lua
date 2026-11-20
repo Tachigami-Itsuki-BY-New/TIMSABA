@@ -85,13 +85,6 @@ data_recipe[casting_low_density_structure].localised_name = {"recipe-name.castin
 data_recipe[casting_low_density_structure].subgroup = "intermediate-product"
 data_recipe[casting_low_density_structure].icons = R_P_I(low_density_structure, nil, nil, number_2)
 data_recipe[casting_low_density_structure].order = g_a
-data_recipe[casting_low_density_structure].energy_required = 16
-data_recipe[casting_low_density_structure].ingredients =
-{
-    {type = item, name = plastic, amount = 4},
-    {type = fluid, name = aluminium_molten_angels, amount = 240},
-    {type = fluid, name = titanium_molten_angels, amount = 30}
-}
 
 local casting_copper_cable = "casting-copper-cable"
 data_recipe[casting_copper_cable].localised_name = {"recipe-name.casting-recipe", {"item-name." .. copper_cable}}

@@ -28,38 +28,26 @@ if mods[castra_mods] then
         {type = item, name = gunpowder, amount = 8}
     }
 
-    local engine_unit_gunpowder = "engine-unit-gunpowder"
-    data_recipe[engine_unit_gunpowder].subgroup = is_gunpowder
-    data_recipe[engine_unit_gunpowder].icons = BUILDING_R_I(engine_unit, gunpowder)
-    data_recipe[engine_unit_gunpowder].order = a_c
-    data_recipe[engine_unit_gunpowder].energy_required = 4
-    data_recipe[engine_unit_gunpowder].ingredients =
-    {
-        {type = item, name = iron_gear_wheel, amount = 2},
-        {type = item, name = iron_pipe, amount = 2},
-        {type = item, name = gunpowder, amount = 4}
-    }
-
-    local gunpowder_carbon = "gunpowder-carbon"
-    data_recipe[gunpowder_carbon].categories = {chemistry}
-    data_recipe[gunpowder_carbon].subgroup = is_gunpowder
-    data_recipe[gunpowder_carbon].icons = THREE_D_I(gunpowder, water_purified_angels, toluene_angels, carbon_angels, potassium_nitrate_solution, toluene_sulfur_solution)
-    data_recipe[gunpowder_carbon].order = a_d
-    data_recipe[gunpowder_carbon].energy_required = 8 -- KNO₃SC(s) + H₂O(l) + C₇H₈(l) --> C(s) + KNO₃(aq) + S(Toluene)
-    data_recipe[gunpowder_carbon].ingredients =
+    local carbon_gunpowder = "gunpowder-carbon"
+    data_recipe[carbon_gunpowder].categories = {chemistry}
+    data_recipe[carbon_gunpowder].subgroup = is_gunpowder
+    data_recipe[carbon_gunpowder].icons = THREE_D_I(gunpowder, water_purified_angels, toluene_angels, carbon_angels, potassium_nitrate_solution, toluene_sulfur_solution)
+    data_recipe[carbon_gunpowder].order = a_d
+    data_recipe[carbon_gunpowder].energy_required = 8 -- KNO₃SC(s) + H₂O(l) + C₇H₈(l) --> C(s) + KNO₃(aq) + S(Toluene)
+    data_recipe[carbon_gunpowder].ingredients =
     {
         {type = item, name = gunpowder, amount = 32},
         {type = fluid, name = water_purified_angels, amount = 480},
         {type = fluid, name = toluene_angels, amount = 480}
     }
-    data_recipe[gunpowder_carbon].results =
+    data_recipe[carbon_gunpowder].results =
     {
         {type = item, name = carbon_angels, amount = 32},
         {type = fluid, name = potassium_nitrate_solution, amount = 480},
         {type = fluid, name = toluene_sulfur_solution, amount = 480}
     }
-    data_recipe[gunpowder_carbon].main_product = carbon_angels
-    data_recipe[gunpowder_carbon].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
+    data_recipe[carbon_gunpowder].main_product = carbon_angels
+    data_recipe[carbon_gunpowder].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     -- MILLERITE
     data_item[millerite_ore].subgroup = is_millerite
@@ -74,7 +62,7 @@ if mods[castra_mods] then
     data_recipe[electronic_circuit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[electronic_circuit_battlefield_data].icons = BUILDING_R_I(electronic_circuit, castra_data)
     data_recipe[electronic_circuit_battlefield_data].order = a_a
-    data_recipe[electronic_circuit_battlefield_data].energy_required = 16
+    data_recipe[electronic_circuit_battlefield_data].energy_required = 4
     data_recipe[electronic_circuit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 8},
@@ -87,7 +75,7 @@ if mods[castra_mods] then
     data_recipe[advanced_circuit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[advanced_circuit_battlefield_data].icons = BUILDING_R_I(advanced_circuit, castra_data)
     data_recipe[advanced_circuit_battlefield_data].order = a_b
-    data_recipe[advanced_circuit_battlefield_data].energy_required = 16
+    data_recipe[advanced_circuit_battlefield_data].energy_required = 8
     data_recipe[advanced_circuit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 8},
@@ -101,7 +89,7 @@ if mods[castra_mods] then
     data_recipe[processing_unit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[processing_unit_battlefield_data].icons = BUILDING_R_I(processing_unit, castra_data)
     data_recipe[processing_unit_battlefield_data].order = a_c
-    data_recipe[processing_unit_battlefield_data].energy_required = 16
+    data_recipe[processing_unit_battlefield_data].energy_required = 8
     data_recipe[processing_unit_battlefield_data].ingredients =
     {
         {type = item, name = resistor, amount = 16},
@@ -451,10 +439,16 @@ if mods[castra_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = potassium_nitrate})
-    table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = nitrosyl_chloride_gas})
-    table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = nitrosyl_chloride_reversed})
-    table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = toluene_sulfur_solution_reversed})
+    data_technology[gunpowder .. _processing].effects =
+    {
+        {type = unlock_recipe, recipe = explosives_gunpowder},
+        {type = unlock_recipe, recipe = grenade_gunpowder},
+        {type = unlock_recipe, recipe = carbon_gunpowder},
+        {type = unlock_recipe, recipe = potassium_nitrate},
+        {type = unlock_recipe, recipe = nitrosyl_chloride_gas},
+        {type = unlock_recipe, recipe = nitrosyl_chloride_reversed},
+        {type = unlock_recipe, recipe = toluene_sulfur_solution_reversed}
+    }
 
     data_technology[hydrogen_sulfide_mods .. _processing].icons = TIMSABA.functions.create_gas_tech_icon("SHH")
     data_technology[hydrogen_sulfide_mods .. _processing].research_trigger = {type = craft_fluid, fluid = hydrogen_sulfide_angels}

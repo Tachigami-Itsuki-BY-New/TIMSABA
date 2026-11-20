@@ -1020,18 +1020,29 @@ end
 
 -- VESTA
 if mods[vesta_mods] then
-    data_entity["vesta_rock_huge"].minable.results =
-    {
-        {type = item, name = stone, amount_min = 2, amount_max = 4},
-        {type = item, name = algea_nutrient_clump, amount_min = 0, amount_max = 2},
-        {type = item, name = algea_clump_iron, amount_min = 4, amount_max = 16},
-        {type = item, name = algea_clump_copper, amount_min = 2, amount_max = 8}
-    }
+    local algea_laced_rock = "vesta_rock_huge"
+    if settings.startup[setting_vesta_legacy_recipes].value then
+        data_entity[algea_laced_rock].minable.results =
+        {
+            {type = item, name = stone, amount_min = 4, amount_max = 8},
+            {type = item, name = algea_clump, amount_min = 4, amount_max = 16},
+            {type = item, name = algea_clump_iron, amount_min = 4, amount_max = 16},
+            {type = item, name = algea_clump_copper, amount_min = 4, amount_max = 16}
+        }
+    else
+        data_entity[algea_laced_rock].minable.results =
+        {
+            {type = item, name = stone, amount_min = 4, amount_max = 8},
+            {type = item, name = algea_clump_nutrient, amount_min = 0, amount_max = 2},
+            {type = item, name = algea_clump_iron, amount_min = 4, amount_max = 16},
+            {type = item, name = algea_clump_copper, amount_min = 4, amount_max = 16}
+        }
+    end
 
     data_entity["vesta-petrite"].minable.results =
     {
-        {type = item, name = algea_petrite_clump, amount_min = 2, amount_max = 4},
-        {type = item, name = algea_nutrient_clump, amount_min = 0, amount_max = 2},
+        {type = item, name = algea_clump_petrite, amount_min = 2, amount_max = 4},
+        {type = item, name = algea_clump_nutrient, amount_min = 0, amount_max = 2},
         {type = item, name = algea_clump_iron, amount_min = 2, amount_max = 4},
         {type = item, name = algea_clump_copper, amount_min = 2, amount_max = 4}
     }

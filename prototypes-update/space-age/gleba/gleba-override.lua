@@ -157,6 +157,7 @@ data_recipe[artificial_jellynut_soil].subgroup = is_jellynut
 data_recipe[artificial_jellynut_soil].order = d
 data_recipe[artificial_jellynut_soil].ingredients[2].amount = 64
 data_recipe[artificial_jellynut_soil].ingredients[3].amount = 4
+data_recipe[artificial_jellynut_soil].results[1].amount = 8
 
 data_item[overgrowth_jellynut_soil].subgroup = is_jellynut
 data_item[overgrowth_jellynut_soil].order = e
@@ -168,6 +169,7 @@ data_recipe[overgrowth_jellynut_soil].ingredients[2].amount = 4
 data_recipe[overgrowth_jellynut_soil].ingredients[3].amount = 8
 data_recipe[overgrowth_jellynut_soil].ingredients[4].amount = 64
 data_recipe[overgrowth_jellynut_soil].ingredients[5].amount = 120
+data_recipe[overgrowth_jellynut_soil].results[1].amount = 2
 
 -- YUMAKO
 data_capsule[yumako].subgroup = is_yumako
@@ -209,6 +211,7 @@ data_recipe[artificial_yumako_soil].subgroup = is_yumako
 data_recipe[artificial_yumako_soil].order = d
 data_recipe[artificial_yumako_soil].ingredients[2].amount = 64
 data_recipe[artificial_yumako_soil].ingredients[3].amount = 4
+data_recipe[artificial_yumako_soil].results[1].amount = 8
 
 data_item[overgrowth_yumako_soil].subgroup = is_yumako
 data_item[overgrowth_yumako_soil].order = e
@@ -220,6 +223,7 @@ data_recipe[overgrowth_yumako_soil].ingredients[2].amount = 4
 data_recipe[overgrowth_yumako_soil].ingredients[3].amount = 8
 data_recipe[overgrowth_yumako_soil].ingredients[4].amount = 64
 data_recipe[overgrowth_yumako_soil].ingredients[5].amount = 120
+data_recipe[overgrowth_yumako_soil].results[1].amount = 2
 
 -- PENTAPOD EGG and BIOFLUX
 data_item[pentapod_egg].subgroup = is_pentapod_egg_and_bioflux

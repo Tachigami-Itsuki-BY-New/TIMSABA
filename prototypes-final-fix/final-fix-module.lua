@@ -837,8 +837,8 @@ end
 -- VESTA
 if mods[vesta_mods] then
     if mods[quality_mods] then
-        data_assembling[electrolyzer_vesta].allowed_effects = {speed, productivity, pollution, quality}
-        data_assembling[electrolyzer_vesta].allowed_module_categories = {speed, productivity, pollution_clean, quality}
+        data_assembling[electrolyser_vesta].allowed_effects = {speed, pollution, quality}
+        data_assembling[electrolyser_vesta].allowed_module_categories = {speed, pollution_clean, quality}
 
         data_assembling[supermagnet].allowed_effects = {speed, consumption, productivity, pollution, quality}
         data_assembling[supermagnet].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
@@ -846,8 +846,8 @@ if mods[vesta_mods] then
         data_assembling[combustion_furnace].allowed_effects = {speed, consumption, productivity, pollution, quality}
         data_assembling[combustion_furnace].allowed_module_categories = {speed, efficiency, productivity, pollution_clean, quality}
     else
-        data_assembling[electrolyzer_vesta].allowed_effects = {speed, productivity, pollution}
-        data_assembling[electrolyzer_vesta].allowed_module_categories = {speed, productivity, pollution_clean}
+        data_assembling[electrolyser_vesta].allowed_effects = {speed, pollution}
+        data_assembling[electrolyser_vesta].allowed_module_categories = {speed, pollution_clean}
 
         data_assembling[supermagnet].allowed_effects = {speed, consumption, productivity, pollution}
         data_assembling[supermagnet].allowed_module_categories = {speed, efficiency, productivity, pollution_clean}

@@ -691,23 +691,43 @@ if mods[moshine_mods] then
     data_item[optical_cable].stack_size = 200
     data_recipe[optical_cable].subgroup = is_moshine_logistic
     data_recipe[optical_cable].order = a
-    data_recipe[optical_cable].energy_required = 2
+    data_recipe[optical_cable].energy_required = 0.5
     data_recipe[optical_cable].ingredients =
     {
         {type = item, name = silicon_carbide_bob, amount = 1},
         {type = item, name = glass_coil_fiber, amount = 1},
         {type = item, name = silicon_boule_mods, amount = 1}
     }
+    data_recipe[optical_cable].results[1].amount = 1
     data_pipe[optical_cable].subgroup = is_moshine_logistic
     data_pipe[optical_cable].order = a
 
+    local optical_cable_to_ground = "optical-cable-to-ground"
+    data_item[optical_cable_to_ground].subgroup = is_moshine_logistic
+    data_item[optical_cable_to_ground].order = b
+    data_item[optical_cable_to_ground].stack_size = 200
+    data_recipe[optical_cable_to_ground].subgroup = is_moshine_logistic
+    data_recipe[optical_cable_to_ground].order = a
+    data_recipe[optical_cable_to_ground].energy_required = 4
+    data_recipe[optical_cable_to_ground].ingredients =
+    {
+        {type = item, name = optical_cable, amount = 8},
+        {type = item, name = silicon_carbide_bob, amount = 4},
+        {type = item, name = glass_coil_fiber, amount = 4},
+        {type = item, name = silicon_boule_mods, amount = 4}
+    }
+    data_recipe[optical_cable_to_ground].results[1].amount = 2
+    data_pipe_to_ground[optical_cable_to_ground].subgroup = is_moshine_logistic
+    data_pipe_to_ground[optical_cable_to_ground].order = a
+    data_pipe_to_ground[optical_cable_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 8
+
     local opticalfiber_storage_tank = "opticalfiber-" .. storage_tank
     data_item[opticalfiber_storage_tank].subgroup = is_moshine_logistic
-    data_item[opticalfiber_storage_tank].order = b
+    data_item[opticalfiber_storage_tank].order = c
     data_item[opticalfiber_storage_tank].stack_size = 32
     data_item[opticalfiber_storage_tank].weight = 31250
     data_recipe[opticalfiber_storage_tank].subgroup = is_moshine_logistic
-    data_recipe[opticalfiber_storage_tank].order = b
+    data_recipe[opticalfiber_storage_tank].order = c
     data_recipe[opticalfiber_storage_tank].energy_required = 16
     data_recipe[opticalfiber_storage_tank].ingredients =
     {
@@ -716,7 +736,7 @@ if mods[moshine_mods] then
         {type = item, name = optical_cable, amount = 4}
     }
     data_storage_tank[opticalfiber_storage_tank].subgroup = is_moshine_logistic
-    data_storage_tank[opticalfiber_storage_tank].order = b
+    data_storage_tank[opticalfiber_storage_tank].order = c
     data_storage_tank[opticalfiber_storage_tank].fluid_box.volume = 115200
 
     -- ENERGY BUILDING
@@ -882,6 +902,7 @@ if mods[moshine_mods] then
         rail_minimal,
         rail_ramp_minimal,
         optical_cable,
+        optical_cable_to_ground,
         opticalfiber_storage_tank,
         water_cooling_device,
         cryogenic_cooling_device,

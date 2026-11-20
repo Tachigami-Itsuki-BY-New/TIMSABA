@@ -21,6 +21,7 @@ if mods[castra_mods] then
 		"advanced-nickel-processing",
 		"reverse-cracking",
 		"holmium-catalyzing",
+		"engine-unit-gunpowder"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

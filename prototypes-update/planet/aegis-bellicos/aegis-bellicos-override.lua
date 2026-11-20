@@ -98,7 +98,7 @@ if mods[aegis_bellicos_mods] then
     data_recipe[helium_electronic_circuit].subgroup = is_bellicos_recipe
     data_recipe[helium_electronic_circuit].icons = BUILDING_R_I(electronic_circuit, helium_liquid)
     data_recipe[helium_electronic_circuit].order = h_a
-    data_recipe[helium_electronic_circuit].energy_required = 1
+    data_recipe[helium_electronic_circuit].energy_required = 2
     data_recipe[helium_electronic_circuit].ingredients = util.table.deepcopy(data_recipe[electronic_circuit].ingredients)
     table.insert(data_recipe[helium_electronic_circuit].ingredients, {type = fluid, name = helium_liquid, amount = 15})
     data_recipe[helium_electronic_circuit].results =
@@ -128,11 +128,11 @@ if mods[aegis_bellicos_mods] then
     data_recipe[helium_processing_unit].order = h_c
     data_recipe[helium_processing_unit].energy_required = 4
     data_recipe[helium_processing_unit].ingredients = util.table.deepcopy(data_recipe[processing_unit].ingredients)
-    table.insert(data_recipe[helium_processing_unit].ingredients, {type = fluid, name = helium_liquid, amount = 60})
+    table.insert(data_recipe[helium_processing_unit].ingredients, {type = fluid, name = helium_liquid, amount = 30})
     data_recipe[helium_processing_unit].results =
     {
         {type = item, name = processing_unit, amount = 4},
-        {type = fluid, name = helium, amount = 30, ignored_by_productivity = 30} -- 60
+        {type = fluid, name = helium, amount = 15, ignored_by_productivity = 15} -- 30
     }
 
     local helium_quantum_processor = "quantum-processor-helium"

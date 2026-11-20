@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "2.0.6",
+    "version": "2.0.7",
     "factorio_version": "2.1",
     "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -48,9 +48,9 @@
         "reskins-compatibility",
 
         "+ PlanetsLib = 2.5.3",
-        "+ kry-asteroid-belt = 1.0.12",
+        "+ kry-asteroid-belt = 1.0.13",
         "+ planet-muluna = 2.9.15",
-        "+ Moshine = 1.2.13",
+        "+ Moshine = 1.2.14",
         "+ panglia_planet = 0.8.2",
         "+ planetaris-arig = 1.1.47",
         "+ planetaris-hyarion = 1.3.24",
@@ -59,7 +59,7 @@
         "+ corrundum = 1.0.51",
         "+ secretas = 1.0.38",
         "! terrapalus",
-        "+ castra-prime = 0.9.4",
+        "+ castra-prime = 0.9.5",
         "+ shchierbin = 0.3.19",
         "+ maraxsis = 1.42.1",
         "+ skewer_planet_vesta = 2.1.32",
@@ -68,7 +68,7 @@
         "! pelagos",
         "+ apia = 0.5.1",
         "+ lignumis = 2.12.4",
-        "+ bellicos-and-aegis = 0.4.9",
+        "+ bellicos-and-aegis = 0.4.10",
 
         "! foliax",
         "! obsidiax",
@@ -145,7 +145,8 @@
         "! snouz-big-solar-panel",
         "! snouz-big-accumulator",
         "! CannonShellAstroidFix",
-        "! Cosmic-Social-Distancing"
+        "! Cosmic-Social-Distancing",
+        "! MilitaryMK2SciencePack"
     ],
     "expansion_required": true,
     "quality_required": true,
