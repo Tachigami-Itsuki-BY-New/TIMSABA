@@ -103,7 +103,7 @@ if mods[vesta_mods] then
 			"ske_ammonia_chilled_plate",
 			"ske_water_electrolysis",
 			"ske_charcoal",
-			"ske_algea_rare_holmium_tratment",
+			"ske_algea_rare_holmium_treatment",
 			"s1_nutrients_from_co2",
 			"s1_brine",
 			"s1_t2d2",

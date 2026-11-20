@@ -10,26 +10,6 @@ if mods[rocket_silo_construction_mods] then
         {name = is_silo_stage,         order = a_b}
     })
 
-    data_item[excavation_site].localised_name = {"entity-name." .. excavation_site}
-    data_item[excavation_site].localised_description = {"entity-description." .. excavation_site}
-    data_item[excavation_site].order = i
-    data_item[excavation_site].weight = 1000000000
-    data_recipe[excavation_site].localised_name = data_item[excavation_site].localised_name
-    data_recipe[excavation_site].localised_description = data_item[excavation_site].localised_description
-    data_recipe[excavation_site].order = i
-    data_recipe[excavation_site].energy_required = 128
-    data_recipe[excavation_site].ingredients =
-    {
-        {type = item, name = electric_engine_unit, amount = 128},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = copper_tungsten_pipe, amount = 64},
-        {type = item, name = reinforced_concrete, amount = 256},
-        {type = item, name = tungsten_plate_bob, amount = 256},
-        {type = item, name = tungsten_carbide_bob, amount = 128},
-        {type = item, name = copper_tungsten_plate_bob, amount = 512}
-    }
-
-    local recipe_name = "recipe-name."
     local construction_stage1 = "rsc-construction-stage1"
     local construction_stage2 = "rsc-construction-stage2"
     local construction_stage3 = "rsc-construction-stage3"
@@ -46,7 +26,7 @@ if mods[rocket_silo_construction_mods] then
         {name = construction_stage6, order = f}
     }
     for _, RECIPE in pairs(construction_stages) do
-        data_recipe[RECIPE.name].localised_name = {recipe_name .. RECIPE.name}
+        data_recipe[RECIPE.name].localised_name = {"recipe-name." .. RECIPE.name}
         data_recipe[RECIPE.name].subgroup = is_construction_stage
         data_recipe[RECIPE.name].order = RECIPE.order
         data_recipe[RECIPE.name].energy_required = 4
@@ -138,8 +118,6 @@ if mods[rocket_silo_construction_mods] then
         data_assembling[BUILD.name].hidden = false
         data_assembling[BUILD.name].hidden_in_factoriopedia = false
     end
-
-    bobmods.lib.recipe.update_recycling_recipe({excavation_site})
 
     data_item_group["effects"].order = z_z
 end

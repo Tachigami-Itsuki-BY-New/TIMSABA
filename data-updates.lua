@@ -88,14 +88,15 @@ require("prototypes-update.planet.eneas.eneas-override")
 require("prototypes-update.planet.asteroid-belt-override")
 
 require("prototypes-update.mods.mods-override")
+require("prototypes-update.mods.dynamic-underground-belts")
+require("prototypes-update.mods.dynamic-pipe-to-ground")
 require("prototypes-update.mods.freezing")
 require("prototypes-update.mods.refresh")
 
-require("prototypes-update.update-settings")
-
-require("prototypes-update.mods.dynamic-underground-belts")
-require("prototypes-update.mods.dynamic-pipe-to-ground")
+require("prototypes-update.mods.flare-stack")
+require("prototypes-update.mods.rocket-silo-construction")
 require("prototypes-update.mods.transport-drones")
 require("prototypes-update.mods.jatz-distribution")
 
+require("prototypes-update.update-settings")
 require("prototypes-update.update-horogon-balance")
