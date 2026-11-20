@@ -1247,16 +1247,17 @@ data_item_subgroup[is_slag_processing_1].order = i_c
 data_recipe[slag_processing_filtering_1].subgroup = is_slag_processing_1
 data_recipe[slag_processing_filtering_1].icons = TWO_I(slurry_slag, sludge_mineral, number_1)
 data_recipe[slag_processing_filtering_1].order = a_a
+data_recipe[slag_processing_filtering_1].energy_required = 8
 data_recipe[slag_processing_filtering_1].ingredients =
 {
-    {type = fluid, name = slurry_slag, amount = 60},
-    {type = fluid, name = water_purified_angels, amount = 60},
+    {type = fluid, name = slurry_slag, amount = 240},
+    {type = fluid, name = water_purified_angels, amount = 240},
     {type = item, name = filter_coal, amount = 1}
 }
 data_recipe[slag_processing_filtering_1].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = fluid, name = sludge_mineral, amount = 240},
+    {type = fluid, name = water_yellow_waste, amount = 120}, -- 240
     {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
@@ -1265,16 +1266,17 @@ local slag_processing_filtering_2 = "angels-slag-processing-filtering-2"
 data_recipe[slag_processing_filtering_2].subgroup = is_slag_processing_1
 data_recipe[slag_processing_filtering_2].icons = TWO_I(slurry_slag, sludge_mineral, number_2)
 data_recipe[slag_processing_filtering_2].order = a_b
+data_recipe[slag_processing_filtering_2].energy_required = 8
 data_recipe[slag_processing_filtering_2].ingredients =
 {
-    {type = fluid, name = slurry_slag, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 30},
+    {type = fluid, name = slurry_slag, amount = 240},
+    {type = fluid, name = water_purified_angels, amount = 240},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[slag_processing_filtering_2].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
+    {type = fluid, name = sludge_mineral, amount = 240},
+    {type = fluid, name = water_yellow_waste, amount = 120}, -- 240
     {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
@@ -1283,17 +1285,17 @@ local crystal_slurry_filtering_conversion_1 = "angels-crystal-slurry-filtering-c
 data_recipe[crystal_slurry_filtering_conversion_1].subgroup = is_slag_processing_1
 data_recipe[crystal_slurry_filtering_conversion_1].icons = TWO_I(slurry_crystal, sludge_mineral, number_1)
 data_recipe[crystal_slurry_filtering_conversion_1].order = a_c
-data_recipe[crystal_slurry_filtering_conversion_1].energy_required = 4
+data_recipe[crystal_slurry_filtering_conversion_1].energy_required = 8
 data_recipe[crystal_slurry_filtering_conversion_1].ingredients =
 {
-    {type = fluid, name = slurry_crystal, amount = 60},
-    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = fluid, name = slurry_crystal, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 240},
     {type = item, name = filter_coal, amount = 1}
 }
 data_recipe[crystal_slurry_filtering_conversion_1].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
+    {type = fluid, name = sludge_mineral, amount = 240},
+    {type = fluid, name = water_yellow_waste, amount = 120}, -- 240
     {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
@@ -1302,49 +1304,49 @@ local crystal_slurry_filtering_conversion_2 = "angels-crystal-slurry-filtering-c
 data_recipe[crystal_slurry_filtering_conversion_2].subgroup = is_slag_processing_1
 data_recipe[crystal_slurry_filtering_conversion_2].icons = TWO_I(slurry_crystal, sludge_mineral, number_2)
 data_recipe[crystal_slurry_filtering_conversion_2].order = a_d
-data_recipe[crystal_slurry_filtering_conversion_2].energy_required = 2
+data_recipe[crystal_slurry_filtering_conversion_2].energy_required = 8
 data_recipe[crystal_slurry_filtering_conversion_2].ingredients =
 {
-    {type = fluid, name = slurry_crystal, amount = 30},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
+    {type = fluid, name = slurry_crystal, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 240},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[crystal_slurry_filtering_conversion_2].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
+    {type = fluid, name = sludge_mineral, amount = 240},
+    {type = fluid, name = water_yellow_waste, amount = 120}, -- 240
     {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
 
-local thermal_water_filtering_1 = "angels-thermal-water-filtering-1"
 data_recipe[thermal_water_filtering_1].subgroup = is_slag_processing_1
-data_recipe[thermal_water_filtering_1].icons = TWO_I(water_thermal_angels, sludge_mineral, number_2)
+data_recipe[thermal_water_filtering_1].icons = TWO_I(water_thermal_angels, sludge_mineral, number_1)
 data_recipe[thermal_water_filtering_1].order = a_e
+data_recipe[thermal_water_filtering_1].energy_required = 8
 data_recipe[thermal_water_filtering_1].ingredients =
 {
-    {type = fluid, name = water_thermal_angels, amount = 60},
+    {type = fluid, name = water_thermal_angels, amount = 480},
     {type = item, name = filter_coal, amount = 1}
 }
 data_recipe[thermal_water_filtering_1].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 60},
+    {type = fluid, name = sludge_mineral, amount = 240},
     {type = item, name = filter_coal, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_frame, amount = 1, independent_probability = 0.125}
 }
 
-local thermal_water_filtering_2 = "angels-thermal-water-filtering-2"
 data_recipe[thermal_water_filtering_2].subgroup = is_slag_processing_1
 data_recipe[thermal_water_filtering_2].icons = TWO_I(water_thermal_angels, sludge_mineral, number_2)
 data_recipe[thermal_water_filtering_2].order = a_e
+data_recipe[thermal_water_filtering_2].energy_required = 8
 data_recipe[thermal_water_filtering_2].ingredients =
 {
-    {type = fluid, name = water_thermal_angels, amount = 30},
+    {type = fluid, name = water_thermal_angels, amount = 480},
     {type = item, name = filter_ceramic, amount = 1}
 }
 data_recipe[thermal_water_filtering_2].results =
 {
-    {type = fluid, name = sludge_mineral, amount = 30},
+    {type = fluid, name = sludge_mineral, amount = 240},
     {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
     {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
 }
@@ -1352,31 +1354,31 @@ data_recipe[thermal_water_filtering_2].results =
 data_recipe[slag_processing_1].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_saphirite}, {"item-name." .. ore_jivolite}}
 data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, ore_saphirite, ore_jivolite)
 data_recipe[slag_processing_1].order = b_a
-data_recipe[slag_processing_1].ingredients[1].amount = 120
+data_recipe[slag_processing_1].ingredients[1].amount = 240
 data_recipe[slag_processing_1].results =
 {
-    {type = item, name = ore_saphirite, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_jivolite, amount = 1, independent_probability = 0.5}
+    {type = item, name = ore_saphirite, amount = 8, independent_probability = 0.5},
+    {type = item, name = ore_jivolite, amount = 8, independent_probability = 0.5}
 }
 
 data_recipe[slag_processing_2].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_stiratite}, {"item-name." .. ore_crotinnium}}
 data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, ore_stiratite, ore_crotinnium)
 data_recipe[slag_processing_2].order = b_b
-data_recipe[slag_processing_2].ingredients[1].amount = 120
+data_recipe[slag_processing_2].ingredients[1].amount = 240
 data_recipe[slag_processing_2].results =
 {
-    {type = item, name = ore_stiratite, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_crotinnium, amount = 1, independent_probability = 0.5}
+    {type = item, name = ore_stiratite, amount = 8, independent_probability = 0.5},
+    {type = item, name = ore_crotinnium, amount = 8, independent_probability = 0.5}
 }
 
 data_recipe[slag_processing_3].localised_name = {"recipe-name.angels-slag_processing_2", {"item-name." .. ore_rubyte}, {"item-name." .. ore_senaite}}
 data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, ore_rubyte, ore_senaite)
 data_recipe[slag_processing_3].order = b_c
-data_recipe[slag_processing_3].ingredients[1].amount = 120
+data_recipe[slag_processing_3].ingredients[1].amount = 240
 data_recipe[slag_processing_3].results =
 {
-    {type = item, name = ore_rubyte, amount = 1, independent_probability = 0.5},
-    {type = item, name = ore_senaite, amount = 1, independent_probability = 0.5}
+    {type = item, name = ore_rubyte, amount = 8, independent_probability = 0.5},
+    {type = item, name = ore_senaite, amount = 8, independent_probability = 0.5}
 }
 
 local is_geode_crystallization = "angels-geode-crystallization"

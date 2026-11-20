@@ -29,6 +29,10 @@ tech_slag_processing_1 = "angels-slag-processing-1"
 tech_slag_processing_2 = "angels-slag-processing-2"
 tech_slag_processing_3 = "angels-slag-processing-3"
 
+tech_thermal_water_extraction_1 = "angels-thermal-water-extraction"
+tech_thermal_water_extraction_2 = "angels-thermal-water-extraction-2"
+tech_thermal_water_processing = "angels-thermal-water-processing"
+
 -- ANGELS METALLURGY SMELTING AND CASTING
 tech_iron_smelting_1 = "angels-iron-smelting-1"
 tech_iron_smelting_2 = "angels-iron-smelting-2"

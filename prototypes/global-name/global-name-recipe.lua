@@ -56,6 +56,8 @@ slag_processing_2 = "angels-slag-processing-2"
 slag_processing_3 = "angels-slag-processing-3"
 
 slag_processing_filtering_1 = "angels-slag-processing-filtering-1"
+thermal_water_filtering_1 = "angels-thermal-water-filtering-1"
+thermal_water_filtering_2 = "angels-thermal-water-filtering-2"
 
 slag_processing_dissolution = "angels-slag-processing-dissolution"
 stone_crushed_dissolution = "angels-stone-crushed-dissolution"

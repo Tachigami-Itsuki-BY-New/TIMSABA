@@ -1352,6 +1352,15 @@ data_technology[tech_slag_processing_1].effects =
 
 table.insert(data_technology[tech_slag_processing_2].prerequisites, tech_ceramic_processing)
 
+data_technology[tech_thermal_water_extraction_1].prerequisites = {tech_slag_processing_1}
+data_technology[tech_thermal_water_extraction_1].effects =
+{
+    {type = unlock_recipe, recipe = thermal_extractor_1},
+    {type = unlock_recipe, recipe = thermal_water_filtering_1}
+}
+
+data_technology[tech_thermal_water_processing].effects = {{type = unlock_recipe, recipe = thermal_water_filtering_2}}
+
 -- ANGELS METALLURGY SMELTING
 -- IRON and STEEL
 data_technology[tech_iron_smelting_1].prerequisites = {tech_metallurgy_1, tech_coal_processing_1}
@@ -2604,3 +2613,6 @@ end
 
 -- OTHERS
 data_technology[rocket_fuel].prerequisites = {tech_nitrogen_processing_4}
+
+table.insert(data_technology["inserter-stack-size-bonus-2"].prerequisites, chemical_science_pack)
+table.insert(data_technology["toolbelt-2"].prerequisites, chemical_science_pack)

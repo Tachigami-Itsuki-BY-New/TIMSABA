@@ -155,11 +155,11 @@ TIMSABA.functions.create_recipes
         order = c .. "-" .. data_planet[planet_fulgora].order,
         allow_productivity = true,
         energy_required = 8,
-        ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+        ingredients = {{type = fluid, name = sludge_mineral, amount = 240}},
         results =
         {
-            {type = item, name = brannerite_ore, amount = 1, independent_probability = 0.5},
-            {type = item, name = rheniite_ore, amount = 1, independent_probability = 0.5}
+            {type = item, name = brannerite_ore, amount = 8, independent_probability = 0.5},
+            {type = item, name = rheniite_ore, amount = 8, independent_probability = 0.5}
         },
         surface_conditions = {{property = pressure, min = 800, max = 800}},
         hide_from_signal_gui = false
