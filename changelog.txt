@@ -3,6 +3,11 @@ Version: 2.0.8
 Date: ??.11.2026
   Balancing:
     - [All] Balanced recipes from the branch "Slag Processing".
+
+  Modding:
+    - [All] Updated "Better Asteroid Belt" mod dependency to version 1.0.15.
+    - [All] Updated "Planet Muria" mod dependency to version 1.11.5.
+    - [All] Updated "Lignumis" mod dependency to version 2.13.1.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.7
 Date: 20.11.2026

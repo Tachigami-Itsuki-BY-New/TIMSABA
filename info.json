@@ -48,7 +48,7 @@
         "reskins-compatibility",
 
         "+ PlanetsLib = 2.5.3",
-        "+ kry-asteroid-belt = 1.0.13",
+        "+ kry-asteroid-belt = 1.0.15",
         "+ planet-muluna = 2.9.15",
         "+ Moshine = 1.2.14",
         "+ panglia_planet = 0.8.2",
@@ -64,10 +64,10 @@
         "+ maraxsis = 1.42.1",
         "+ skewer_planet_vesta = 2.1.32",
         "! skewer_shattered_planet",
-        "+ Muria = 1.11.4",
+        "+ Muria = 1.11.5",
         "! pelagos",
         "+ apia = 0.5.1",
-        "+ lignumis = 2.12.4",
+        "+ lignumis = 2.13.1",
         "+ bellicos-and-aegis = 0.4.10",
 
         "! foliax",
