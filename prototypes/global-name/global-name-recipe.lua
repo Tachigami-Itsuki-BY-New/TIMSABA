@@ -209,14 +209,16 @@ rocket_part_tellus = "planetaris-tellus-rocket-part"
 rocket_part_maraxsis = "maraxsis-rocket-part"
 
 -- VESTA
-if settings.startup[setting_vesta_legacy_recipes].value then
-    coal_mineraliztion = "ske_coal_mineralization"
-    carbon_seperation = "ske_carbon_seperation"
-    carbon_super_cooling = "ske_carbon_super_cooling"
-else
-    coal_mineraliztion = "ske-coal-mineralization"
-    carbon_seperation = "ske-carbon-seperation"
-    carbon_super_cooling = "ske-carbon-super-cooling"
+if mods[vesta_mods] then
+    if settings.startup[setting_vesta_legacy_recipes].value then
+        coal_mineraliztion = "ske_coal_mineralization"
+        carbon_seperation = "ske_carbon_seperation"
+        carbon_super_cooling = "ske_carbon_super_cooling"
+    else
+        coal_mineraliztion = "ske-coal-mineralization"
+        carbon_seperation = "ske-carbon-seperation"
+        carbon_super_cooling = "ske-carbon-super-cooling"
+    end
 end
 
 -- MURIA
