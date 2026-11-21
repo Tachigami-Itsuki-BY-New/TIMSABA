@@ -1,4 +1,3 @@
--- 1. Обновленная функция полной замены категорий топлива
 local function set_exclusive_fuel_categories(energy_source, new_categories_table)
     if not energy_source or energy_source.type ~= "burner" then return end
 

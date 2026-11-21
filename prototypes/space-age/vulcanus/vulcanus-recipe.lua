@@ -588,11 +588,11 @@ TIMSABA.functions.create_recipes
         order = c .. "-" .. data_planet[planet_vulcanus].order,
         allow_productivity = true,
         energy_required = 8,
-        ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+        ingredients = {{type = fluid, name = sludge_mineral, amount = 240}},
         results =
         {
-            {type = item, name = wolframite_ore, amount = 1, independent_probability = 0.5},
-            {type = item, name = samarskite_ore, amount = 1, independent_probability = 0.5}
+            {type = item, name = wolframite_ore, amount = 8, independent_probability = 0.5},
+            {type = item, name = samarskite_ore, amount = 8, independent_probability = 0.5}
         },
         surface_conditions = {{property = pressure, min = 4000, max = 4000}},
         hide_from_signal_gui = false

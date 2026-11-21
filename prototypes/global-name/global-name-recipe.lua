@@ -56,6 +56,8 @@ slag_processing_2 = "angels-slag-processing-2"
 slag_processing_3 = "angels-slag-processing-3"
 
 slag_processing_filtering_1 = "angels-slag-processing-filtering-1"
+thermal_water_filtering_1 = "angels-thermal-water-filtering-1"
+thermal_water_filtering_2 = "angels-thermal-water-filtering-2"
 
 slag_processing_dissolution = "angels-slag-processing-dissolution"
 stone_crushed_dissolution = "angels-stone-crushed-dissolution"
@@ -207,14 +209,16 @@ rocket_part_tellus = "planetaris-tellus-rocket-part"
 rocket_part_maraxsis = "maraxsis-rocket-part"
 
 -- VESTA
-if settings.startup[setting_vesta_legacy_recipes].value then
-    coal_mineraliztion = "ske_coal_mineralization"
-    carbon_seperation = "ske_carbon_seperation"
-    carbon_super_cooling = "ske_carbon_super_cooling"
-else
-    coal_mineraliztion = "ske-coal-mineralization"
-    carbon_seperation = "ske-carbon-seperation"
-    carbon_super_cooling = "ske-carbon-super-cooling"
+if mods[vesta_mods] then
+    if settings.startup[setting_vesta_legacy_recipes].value then
+        coal_mineraliztion = "ske_coal_mineralization"
+        carbon_seperation = "ske_carbon_seperation"
+        carbon_super_cooling = "ske_carbon_super_cooling"
+    else
+        coal_mineraliztion = "ske-coal-mineralization"
+        carbon_seperation = "ske-carbon-seperation"
+        carbon_super_cooling = "ske-carbon-super-cooling"
+    end
 end
 
 -- MURIA

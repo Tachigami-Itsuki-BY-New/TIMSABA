@@ -1,6 +1,6 @@
 -- iron_ore = ore_saphirite, ore_jivolite
 -- copper_ore = ore_stiratite, ore_crotinnium
--- stone_ore = ore_rubyte, ore_bobmonium
+-- stone = ore_rubyte, ore_bobmonium
 -- uranium_ore = ore_senaite, ore_franckeite
 
 -- BASE
@@ -1215,7 +1215,7 @@ end
 
 -- LIGNUMIS
 if mods[lignumis_mods] then
-    TIMSABA.functions.replace_vanila_resources({stone}, {ore_rubyte, ore_bobmonium}, planet_lignumis)
+    TIMSABA.functions.replace_vanila_resources({iron_ore, stone}, {ore_saphirite, ore_jivolite, ore_rubyte, ore_bobmonium}, planet_lignumis)
 
     for i = 1, 9 do
         data_tree["tree-0" .. i].minable.results[1].amount_max = 4

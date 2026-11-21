@@ -270,13 +270,13 @@ TIMSABA.functions.create_recipes
         name = magnesium_hydroxide,
         categories = {angels_chemical_smelting_1},
         subgroup = is_magnesium_chemistry,
-        icons = TWO_D_I(magnesium_processed, steam, magnesium_hydroxide, hydrogen_angels),
+        icons = TWO_D_I(magnesium_processed, water_purified_angels, magnesium_hydroxide, hydrogen_angels),
         order = b,
-        energy_required = 8, -- Mg(s) + 2H₂O(g) --> Mg(OH)₂(s) + H₂(g)
+        energy_required = 8, -- Mg(s) + 2H₂O(l) --> Mg(OH)₂(s) + H₂(g)
         ingredients =
         {
             {type = item, name = magnesium_processed, amount = 16},
-            {type = fluid, name = steam, amount = 480}
+            {type = fluid, name = water_purified_angels, amount = 480}
         },
         results =
         {

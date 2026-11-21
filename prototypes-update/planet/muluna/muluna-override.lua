@@ -590,6 +590,7 @@ if mods[muluna_mods] then
     data_recipe[electric_engine_unit_from_carbon].subgroup = is_muluna_recipe
     data_recipe[electric_engine_unit_from_carbon].icons = BUILDING_R_I(electric_engine_unit, carbon_angels)
     data_recipe[electric_engine_unit_from_carbon].order = a
+    data_recipe[electric_engine_unit_from_carbon].energy_required = 4
     data_recipe[electric_engine_unit_from_carbon].ingredients =
     {
         {type = item, name = engine_unit, amount = 1},

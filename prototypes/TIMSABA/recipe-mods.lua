@@ -11,11 +11,11 @@ TIMSABA.functions.create_recipes
         order = b_d,
         allow_productivity = true,
         energy_required = 8,
-        ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+        ingredients = {{type = fluid, name = sludge_mineral, amount = 240}},
         results =
         {
-            {type = item, name = ore_bobmonium, amount = 1, independent_probability = 0.5},
-            {type = item, name = ore_franckeite, amount = 1, independent_probability = 0.5}
+            {type = item, name = ore_bobmonium, amount = 8, independent_probability = 0.5},
+            {type = item, name = ore_franckeite, amount = 8, independent_probability = 0.5}
         },
         hide_from_signal_gui = false
     },
@@ -28,11 +28,11 @@ TIMSABA.functions.create_recipes
         order = c .. "-" .. data_planet[planet_nauvis].order,
         allow_productivity = true,
         energy_required = 8,
-        ingredients = {{type = fluid, name = sludge_mineral, amount = 120}},
+        ingredients = {{type = fluid, name = sludge_mineral, amount = 240}},
         results =
         {
-            {type = item, name = powellite_ore, amount = 1, independent_probability = 0.5},
-            {type = item, name = molybdenite_ore, amount = 1, independent_probability = 0.5}
+            {type = item, name = powellite_ore, amount = 8, independent_probability = 0.5},
+            {type = item, name = molybdenite_ore, amount = 8, independent_probability = 0.5}
         },
         surface_conditions = {{property = pressure, min = 1000, max = 1000}},
         hide_from_signal_gui = false
