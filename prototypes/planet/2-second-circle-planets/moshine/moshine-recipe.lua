@@ -272,12 +272,12 @@ if mods[moshine_mods] then
             icons = FOUR_R_I(water_orange_waste, water_purified_angels, calcium_phosphate, water_mineralized_angels),
             order = e,
             energy_required = 8,
-            ingredients = {{type = fluid, name = water_orange_waste, amount = 240}},
+            ingredients = {{type = fluid, name = water_orange_waste, amount = 480}},
             results =
             {
-                {type = fluid, name = water_purified_angels, amount = 120},
-                {type = fluid, name = water_mineralized_angels, amount = 60},
-                {type = item, name = calcium_phosphate, amount = 4}
+                {type = fluid, name = water_purified_angels, amount = 240},
+                {type = fluid, name = water_mineralized_angels, amount = 120},
+                {type = item, name = calcium_phosphate, amount = 8}
             }
         }
     })

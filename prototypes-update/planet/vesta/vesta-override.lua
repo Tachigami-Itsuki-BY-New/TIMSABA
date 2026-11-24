@@ -346,7 +346,7 @@ if mods[vesta_mods] then
         data_recipe[algea_clump].ingredients =
         {
             {type = item, name = algea_water_filter, amount = 1},
-            {type = fluid, name = algea_water_vesta, amount = 240}
+            {type = fluid, name = algea_water_vesta, amount = 480}
         }
         data_recipe[algea_clump].results =
         {

@@ -2,7 +2,7 @@
 Version: 2.0.9
 Date: 24.11.2026
   Balancing:
-    - [All] Balanced recipes from the branchs "Ore Processing" and "Ore Sorting".
+    - [All] Balanced recipes from the branchs "Ore Processing, "Ore Sorting" and "Geode Processing".
 
   Modding:
     - [Mods] Updated "Muluna, Moon of Nauvis" mod dependency to version 2.9.16.
