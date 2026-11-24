@@ -19,7 +19,7 @@ if mods[secretas_frozeta_mods] then
             {
                 {type = unlock_recipe, recipe = gallite_ore .. _sorting},
                 {type = unlock_recipe, recipe = gallite_crushed},
-                {type = unlock_recipe, recipe = gallite_crushed_sorting}
+                {type = unlock_recipe, recipe = gallite_crushed .. _sorting}
             },
             research_trigger = {type = craft_item, item = gallite_ore}
         },
@@ -34,7 +34,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_chunks},
-                {type = unlock_recipe, recipe = gallite_chunks_sorting}
+                {type = unlock_recipe, recipe = gallite_chunks .. _sorting}
             },
             unit =
             {
@@ -66,7 +66,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_crystals},
-                {type = unlock_recipe, recipe = gallite_crystals_sorting}
+                {type = unlock_recipe, recipe = gallite_crystals .. _sorting}
             },
             unit =
             {
@@ -98,7 +98,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = gallite_purified},
-                {type = unlock_recipe, recipe = gallite_purified_sorting}
+                {type = unlock_recipe, recipe = gallite_purified .. _sorting}
             },
             unit =
             {
@@ -141,7 +141,7 @@ if mods[secretas_frozeta_mods] then
             {
                 {type = unlock_recipe, recipe = sylvanite_ore .. _sorting},
                 {type = unlock_recipe, recipe = sylvanite_crushed},
-                {type = unlock_recipe, recipe = sylvanite_crushed_sorting},
+                {type = unlock_recipe, recipe = sylvanite_crushed .. _sorting},
                 {type = unlock_recipe, recipe = gold_plate_bob}
             },
             research_trigger = {type = craft_item, item = sylvanite_ore}
@@ -157,7 +157,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_chunks},
-                {type = unlock_recipe, recipe = sylvanite_chunks_sorting}
+                {type = unlock_recipe, recipe = sylvanite_chunks .. _sorting}
             },
             unit =
             {
@@ -189,7 +189,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_crystals},
-                {type = unlock_recipe, recipe = sylvanite_crystals_sorting}
+                {type = unlock_recipe, recipe = sylvanite_crystals .. _sorting}
             },
             unit =
             {
@@ -221,7 +221,7 @@ if mods[secretas_frozeta_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sylvanite_purified},
-                {type = unlock_recipe, recipe = sylvanite_purified_sorting}
+                {type = unlock_recipe, recipe = sylvanite_purified .. _sorting}
             },
             unit =
             {

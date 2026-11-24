@@ -2314,11 +2314,12 @@ data_recipe[electrode_used].categories = {crafting_fluid}
 data_recipe[electrode_used].subgroup = is_buildings_electrolyser
 data_recipe[electrode_used].icons = BUILDING_R_I(electrode, water_purified_angels)
 data_recipe[electrode_used].order = e_a
-data_recipe[electrode_used].ingredients[2].amount = 30
+data_recipe[electrode_used].energy_required = 4
+data_recipe[electrode_used].ingredients[2].amount = 60
 data_recipe[electrode_used].results =
 {
     {type = item, name = electrode, amount = 1},
-    {type = fluid, name = water, amount = 30}
+    {type = fluid, name = water, amount = 60}
 }
 
 data_item[electrode_used].subgroup = is_buildings_electrolyser

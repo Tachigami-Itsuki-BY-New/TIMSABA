@@ -21,7 +21,7 @@ if mods[paracelsin_mods] then
             {
                 {type = unlock_recipe, recipe = sphalerite_ore .. _sorting},
                 {type = unlock_recipe, recipe = sphalerite_crushed},
-                {type = unlock_recipe, recipe = sphalerite_crushed_sorting}
+                {type = unlock_recipe, recipe = sphalerite_crushed .. _sorting}
             },
             research_trigger = {type = mine_entity, entities = {sphalerite_ore}}
         },
@@ -36,7 +36,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sphalerite_chunks},
-                {type = unlock_recipe, recipe = sphalerite_chunks_sorting}
+                {type = unlock_recipe, recipe = sphalerite_chunks .. _sorting}
             },
             unit =
             {
@@ -67,7 +67,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sphalerite_crystals},
-                {type = unlock_recipe, recipe = sphalerite_crystals_sorting}
+                {type = unlock_recipe, recipe = sphalerite_crystals .. _sorting}
             },
             unit =
             {
@@ -99,7 +99,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sphalerite_purified},
-                {type = unlock_recipe, recipe = sphalerite_purified_sorting}
+                {type = unlock_recipe, recipe = sphalerite_purified .. _sorting}
             },
             unit =
             {
@@ -142,7 +142,7 @@ if mods[paracelsin_mods] then
             {
                 {type = unlock_recipe, recipe = tetrahedrite_ore .. _sorting},
                 {type = unlock_recipe, recipe = tetrahedrite_crushed},
-                {type = unlock_recipe, recipe = tetrahedrite_crushed_sorting}
+                {type = unlock_recipe, recipe = tetrahedrite_crushed .. _sorting}
             },
             research_trigger = {type = mine_entity, entities = {tetrahedrite_ore}}
         },
@@ -157,7 +157,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = tetrahedrite_chunks},
-                {type = unlock_recipe, recipe = tetrahedrite_chunks_sorting}
+                {type = unlock_recipe, recipe = tetrahedrite_chunks .. _sorting}
             },
             unit =
             {
@@ -188,7 +188,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = tetrahedrite_crystals},
-                {type = unlock_recipe, recipe = tetrahedrite_crystals_sorting}
+                {type = unlock_recipe, recipe = tetrahedrite_crystals .. _sorting}
             },
             unit =
             {
@@ -220,7 +220,7 @@ if mods[paracelsin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = tetrahedrite_purified},
-                {type = unlock_recipe, recipe = tetrahedrite_purified_sorting}
+                {type = unlock_recipe, recipe = tetrahedrite_purified .. _sorting}
             },
             unit =
             {

@@ -1,6 +1,5 @@
 local graphics_samarskite = "__TIMSABA__/graphics/icons/space-age/vulcanus/samarskite-ore/"
 
--- Samarskite ore / Nb + Ho + Fe + Mn + U + Th
 samarskite_ore = "samarskite-ore"
 samarskite_crushed = "samarskite-crushed"
 samarskite_chunks = "samarskite-chunks"
@@ -53,173 +52,16 @@ TIMSABA.functions.create_items
 -- FLUID
 
 -- RECIPE
-samarskite_crushed_sorting = "samarskite-crushed-sorting"
-samarskite_chunks_sorting = "samarskite-chunks-sorting"
-samarskite_crystals_sorting = "samarskite-crystals-sorting"
-samarskite_purified_sorting = "samarskite-purified-sorting"
-TIMSABA.functions.create_recipes
-({
-    -- CRUSHED
-    {
-        name = samarskite_crushed,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_samarskite,
-        icons = THREE_R_I(samarskite_ore, samarskite_crushed, stone_crushed_angels),
-        order = b,
-        energy_required = 2, -- Samarskite ore -crushing-> Samarskite crushed + Stone crushed (crushing)
-        ingredients = {{type = item, name = samarskite_ore, amount = 2}},
-        results =
-        {
-            {type = item, name = samarskite_crushed, amount = 2},
-            {type = item, name = stone_crushed_angels, amount = 1}
-        },
-        main_product = samarskite_crushed
-    },
-    -- CHUNKS
-    {
-        name = samarskite_chunks,
-        categories = {angels_ore_refining_T2},
-        subgroup = is_samarskite,
-        icons = THREE_D_I(samarskite_crushed, nil, water_purified_angels, samarskite_chunks, calcium_silicate, water_greenyellow_waste),
-        order = c,
-        energy_required = 2, -- Samarskite crushed + Purified water -flotation-> Samarskite chunks + Calcium silicate + Fluoric waste water
-        ingredients =
-        {
-            {type = item, name = samarskite_crushed, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = samarskite_chunks, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-            {type = fluid, name = water_greenyellow_waste, amount = 60}
-        },
-        main_product = samarskite_chunks
-    },
-    -- CRYSTALS
-    {
-        name = samarskite_crystals,
-        categories = {angels_ore_refining_T3},
-        subgroup = is_samarskite,
-        icons = THREE_I(samarskite_chunks, hydrofluoric_acid_angels, samarskite_crystals),
-        order = d,
-        energy_required = 2, -- Samarskite chunks + HF -leaching-> Samarskite crystals
-        ingredients =
-        {
-            {type = item, name = samarskite_chunks, amount = 4},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 15}
-        },
-        results = {{type = item, name = samarskite_crystals, amount = 4}},
-        main_product = samarskite_crystals
-    },
-    -- PURIFIED
-    {
-        name = samarskite_purified,
-        categories = {angels_ore_refining_T4},
-        subgroup = is_samarskite,
-        icons = THREE_D_I(samarskite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, samarskite_purified),
-        order = e,
-        energy_required = 2, -- Samarskite crystals -refinery-> Samarskite purified
-        ingredients =
-        {
-            {type = item, name = samarskite_crystals, amount = 4},
-            {type = item, name = powdered_chlorine_bleach, amount = 1},
-            {type = item, name = powdered_oxygen_bleach, amount = 1}
-        },
-        results = {{type = item, name = samarskite_purified, amount = 4}},
-        main_product = samarskite_purified
-    },
-    -- SORTING
-    {
-        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. samarskite_ore}},
-        name = samarskite_ore .. _sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_samarskite,
-        icons = RECYCLING_I(recycling_png, samarskite_ore),
-        order = f,
-        allow_productivity = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = samarskite_ore, amount = 4}},
-        results = {{type = item, name = slag_angels, amount = 1}},
-        main_product = slag_angels
-    },
-    {
-        name = samarskite_crushed_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_samarskite,
-        icons = RECYCLING_I(recycling_png, samarskite_crushed),
-        order = g,
-        allow_productivity = true,
-        energy_required = 2, -- Samarskite crushed (Sorting) / Nb + Ho + Calcium silicate
-        ingredients = {{type = item, name = samarskite_crushed, amount = 8}},
-        results =
-        {
-            {type = item, name = niobium_ore, amount = 4},
-            {type = item, name = holmium_ore, amount = 2},
-            {type = item, name = calcium_silicate, amount = 2}
-        },
-        main_product = niobium_ore
-    },
-    {
-        name = samarskite_chunks_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_samarskite,
-        icons = RECYCLING_I(recycling_png, samarskite_chunks),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Samarskite chunks (Sorting) / Nb + Ho + Fe + Mn + Calcium silicate
-        ingredients = {{type = item, name = samarskite_chunks, amount = 8}},
-        results =
-        {
-            {type = item, name = niobium_ore, amount = 4},
-            {type = item, name = holmium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
-        },
-        main_product = niobium_ore
-    },
-    {
-        name = samarskite_crystals_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_samarskite,
-        icons = RECYCLING_I(recycling_png, samarskite_crystals),
-        order = i,
-        allow_productivity = true,
-        energy_required = 2, -- Samarskite crystals (Sorting) / Nb + Ho + Fe + Mn + U + Calcium silicate
-        ingredients = {{type = item, name = samarskite_crystals, amount = 8}},
-        results =
-        {
-            {type = item, name = niobium_ore, amount = 4},
-            {type = item, name = holmium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-        },
-        main_product = niobium_ore
-    },
-    {
-        name = samarskite_purified_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_samarskite,
-        icons = RECYCLING_I(recycling_png, samarskite_purified),
-        order = j,
-        allow_productivity = true,
-        energy_required = 2, -- Samarskite purified (Sorting) / Nb + Ho + Fe + Mn + U + Th
-        ingredients = {{type = item, name = samarskite_purified, amount = 8}},
-        results =
-        {
-            {type = item, name = niobium_ore, amount = 4},
-            {type = item, name = holmium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = thorium_ore_bob, amount = 1}
-        },
-        main_product = niobium_ore
-    }
-})
+ANGELS.functions.create_crushed(samarskite_crushed, is_samarskite, b, samarskite_ore)
+ANGELS.functions.create_chunk(samarskite_chunks, is_samarskite, c, samarskite_crushed, calcium_silicate, water_greenyellow_waste)
+ANGELS.functions.create_crystal(samarskite_crystals, is_samarskite, d, samarskite_chunks, hydrofluoric_acid_angels)
+ANGELS.functions.create_purified(samarskite_purified, is_samarskite, e, samarskite_crystals)
+-- Samarskite ore / Nb + Ho + Fe + Mn + U + Th
+ANGELS.functions.create_ore_processing(samarskite_ore, is_samarskite, f, calcium_silicate)
+ANGELS.functions.create_crushed_processing(samarskite_crushed, is_samarskite, g, niobium_ore, holmium_ore, calcium_silicate)
+ANGELS.functions.create_chunk_processing(samarskite_chunks, is_samarskite, h, niobium_ore, holmium_ore, iron_ore, manganese_ore_angels, calcium_silicate)
+ANGELS.functions.create_crystal_processing(samarskite_crystals, is_samarskite, i, niobium_ore, holmium_ore, iron_ore, manganese_ore_angels, uranium_ore, calcium_silicate)
+ANGELS.functions.create_purified_processing(samarskite_purified, is_samarskite, j, niobium_ore, holmium_ore, iron_ore, manganese_ore_angels, uranium_ore, thorium_ore_bob)
 
 -- ORE
 samarskite_ore_ac = "samarskite_ore"

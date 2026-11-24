@@ -2,7 +2,6 @@ local graphics_franckeite = "__TIMSABA__/graphics/icons/angels/resource/franckei
 local graphics_crushed = "__angelsrefininggraphics__/graphics/icons/crushed/"
 local tint = {r = 101 / 255, g = 152 / 255, b = 020 / 255}
 
--- Franckeite ore / Sn + Pb + Al + Ag + Au + Pt
 ore_franckeite = "franckeite-ore"
 crushed_franckeite = "franckeite-crushed"
 chunk_franckeite = "franckeite-chunk"
@@ -66,164 +65,15 @@ TIMSABA.functions.create_items
 -- FLUID
 
 -- RECIPE
-crushed_franckeite_processing = "franckeite-crushed-sorting"
-chunk_franckeite_processing = "franckeite-chunk-sorting"
-crystal_franckeite_processing = "franckeite-crystal-sorting"
-purified_franckeite_processing = "franckeite-purified-sorting"
-TIMSABA.functions.create_recipes
-({
-    -- CRUSHED
-    {
-        name = crushed_franckeite,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_ore_processing_a,
-        icons = THREE_R_I(ore_franckeite, crushed_franckeite, stone_crushed_angels),
-        order = h,
-        energy_required = 2, -- Franckeite ore -crushing-> Franckeite crushed + Stone crushed (crushing)
-        ingredients = {{type = item, name = ore_franckeite, amount = 2}},
-        results =
-        {
-            {type = item, name = crushed_franckeite, amount = 2},
-            {type = item, name = stone_crushed_angels, amount = 1}
-        },
-        main_product = crushed_franckeite
-    },
-    -- CHUNKS
-    {
-        name = chunk_franckeite,
-        categories = {angels_ore_refining_T2},
-        subgroup = is_ore_processing_b,
-        icons = THREE_D_I(crushed_franckeite, nil, water_purified_angels, chunk_franckeite, calcium_silicate, water_green_waste),
-        order = h,
-        energy_required = 2, -- Franckeite crushed + Purified water -flotation-> Franckeite chunks + Calcium silicate + Chloric waste water
-        ingredients =
-        {
-            {type = item, name = crushed_franckeite, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = chunk_franckeite, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-            {type = fluid, name = water_green_waste, amount = 60}
-        },
-        main_product = chunk_franckeite
-    },
-    -- CRYSTALS
-    {
-        name = crystal_franckeite,
-        categories = {angels_ore_refining_T3},
-        subgroup = is_ore_processing_c,
-        icons = THREE_I(chunk_franckeite, hydrochloric_acid_angels, crystal_franckeite),
-        order = h,
-        energy_required = 2, -- Franckeite chunks + HCl -leaching-> Franckeite crystals
-        ingredients =
-        {
-            {type = item, name = chunk_franckeite, amount = 4},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 15}
-        },
-        results = {{type = item, name = crystal_franckeite, amount = 4}},
-        main_product = crystal_franckeite
-    },
-    -- PURIFIED
-    {
-        name = purified_franckeite,
-        categories = {angels_ore_refining_T4},
-        subgroup = is_ore_processing_d,
-        icons = THREE_D_I(crystal_franckeite, powdered_chlorine_bleach, powdered_oxygen_bleach, purified_franckeite),
-        order = h,
-        energy_required = 2, -- Franckeite crystals -refinery-> Franckeite purified
-        ingredients =
-        {
-            {type = item, name = crystal_franckeite, amount = 4},
-            {type = item, name = powdered_chlorine_bleach, amount = 1},
-            {type = item, name = powdered_oxygen_bleach, amount = 1}
-        },
-        results = {{type = item, name = purified_franckeite, amount = 4}},
-        main_product = purified_franckeite
-    },
-    -- SORTING
-    {
-        name = crushed_franckeite_processing,
-        categories = {angels_ore_sorting_1},
-        subgroup = is_ore_sorting_T1,
-        icons = RECYCLING_I(recycling_png, crushed_franckeite),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Franckeite crushed (Sorting) / Sn + Pb + Calcium silicate
-        ingredients = {{type = item, name = crushed_franckeite, amount = 8}},
-        results =
-        {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = calcium_silicate, amount = 2}
-        },
-        main_product = tin_ore_bob,
-        hide_from_signal_gui = false
-    },
-    {
-        name = chunk_franckeite_processing,
-        categories = {angels_ore_sorting_2},
-        subgroup = is_ore_sorting_T2,
-        icons = RECYCLING_I(recycling_png, chunk_franckeite),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Franckeite chunks (Sorting) / Sn + Pb + Al + Ag + Calcium silicate
-        ingredients = {{type = item, name = chunk_franckeite, amount = 8}},
-        results =
-        {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
-        },
-        main_product = tin_ore_bob,
-        hide_from_signal_gui = false
-    },
-    {
-        name = crystal_franckeite_processing,
-        categories = {angels_ore_sorting_3},
-        subgroup = is_ore_sorting_T3,
-        icons = RECYCLING_I(recycling_png, crystal_franckeite),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Franckeite crystals (Sorting) / Sn + Pb + Al + Ag + Au + Calcium silicate
-        ingredients = {{type = item, name = crystal_franckeite, amount = 8}},
-        results =
-        {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = gold_ore_bob, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-        },
-        main_product = tin_ore_bob,
-        hide_from_signal_gui = false
-    },
-    {
-        name = purified_franckeite_processing,
-        categories = {angels_ore_sorting_4},
-        subgroup = is_ore_sorting_T4,
-        icons = RECYCLING_I(recycling_png, purified_franckeite),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Franckeite purified (Sorting) / Sn + Pb + Al + Ag + Au + Pt
-        ingredients = {{type = item, name = purified_franckeite, amount = 8}},
-        results =
-        {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = lead_ore_bob, amount = 2},
-            {type = item, name = aluminium_ore_bob, amount = 1},
-            {type = item, name = silver_ore_bob, amount = 1},
-            {type = item, name = gold_ore_bob, amount = 1},
-            {type = item, name = platinum_ore_angels, amount = 1}
-        },
-        main_product = tin_ore_bob,
-        hide_from_signal_gui = false
-    }
-})
+ANGELS.functions.create_crushed(crushed_franckeite, is_ore_processing_a, h, ore_franckeite)
+ANGELS.functions.create_chunk(chunk_franckeite, is_ore_processing_b, h, crushed_franckeite, calcium_silicate, water_green_waste)
+ANGELS.functions.create_crystal(crystal_franckeite, is_ore_processing_c, h, chunk_franckeite, hydrochloric_acid_angels)
+ANGELS.functions.create_purified(purified_franckeite, is_ore_processing_d, h, crystal_franckeite)
+-- Franckeite ore / Sn + Pb + Al + Ag + Au + Pt
+ANGELS.functions.create_crushed_processing(crushed_franckeite, is_ore_sorting_T1, h, tin_ore_bob, lead_ore_bob, slag_angels)
+ANGELS.functions.create_chunk_processing(chunk_franckeite, is_ore_sorting_T2, h, tin_ore_bob, lead_ore_bob, aluminium_ore_bob, silver_ore_bob, slag_angels)
+ANGELS.functions.create_crystal_processing(crystal_franckeite, is_ore_sorting_T3, h, tin_ore_bob, lead_ore_bob, aluminium_ore_bob, silver_ore_bob, gold_ore_bob, slag_angels)
+ANGELS.functions.create_purified_processing(purified_franckeite, is_ore_sorting_T4, h, tin_ore_bob, lead_ore_bob, aluminium_ore_bob, silver_ore_bob, gold_ore_bob, platinum_ore_angels)
 
 -- ORE
 local ore_franckeite_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])

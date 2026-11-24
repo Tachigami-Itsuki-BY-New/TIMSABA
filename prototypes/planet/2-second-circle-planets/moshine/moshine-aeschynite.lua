@@ -1,7 +1,6 @@
 if mods[moshine_mods] then
     local graphics_aeschynite = "__TIMSABA__/graphics/icons/moshine/aeschynite/"
 
-    -- Aeschynite ore / Nd + Th + Fe + Sn + Ti + Nb
     aeschynite_ore = "aeschynite-ore"
     aeschynite_crushed = "aeschynite-crushed"
     aeschynite_chunks = "aeschynite-chunks"
@@ -54,171 +53,14 @@ if mods[moshine_mods] then
     -- FLUID
 
     -- RECIPE
-    aeschynite_crushed_sorting = "aeschynite-crushed-sorting"
-    aeschynite_chunks_sorting = "aeschynite-chunks-sorting"
-    aeschynite_crystals_sorting = "aeschynite-crystals-sorting"
-    aeschynite_purified_sorting = "aeschynite-purified-sorting"
-    TIMSABA.functions.create_recipes
-    ({
-        -- CRUSHED
-        {
-            name = aeschynite_crushed,
-            categories = {angels_ore_refining_T1},
-            subgroup = is_aeschynite,
-            icons = THREE_R_I(aeschynite_ore, aeschynite_crushed, stone_crushed_angels),
-            order = b,
-            energy_required = 2, -- Aeschynite ore -crushing-> Aeschynite crushed + Stone crushed (crushing)
-            ingredients = {{type = item, name = aeschynite_ore, amount = 2}},
-            results =
-            {
-                {type = item, name = aeschynite_crushed, amount = 2},
-                {type = item, name = stone_crushed_angels, amount = 1}
-            },
-            main_product = aeschynite_crushed
-        },
-        -- CHUNKS
-        {
-            name = aeschynite_chunks,
-            categories = {angels_ore_refining_T2},
-            subgroup = is_aeschynite,
-            icons = THREE_D_I(aeschynite_crushed, nil, water_purified_angels, aeschynite_chunks, calcium_silicate, water_green_waste),
-            order = c,
-            energy_required = 2, -- Aeschynite crushed + Purified water -flotation-> Aeschynite chunks + Calcium silicate + Chloric waste water
-            ingredients =
-            {
-                {type = item, name = aeschynite_crushed, amount = 4},
-                {type = fluid, name = water_purified_angels, amount = 60}
-            },
-            results =
-            {
-                {type = item, name = aeschynite_chunks, amount = 4},
-                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-                {type = fluid, name = water_green_waste, amount = 60}
-            },
-            main_product = aeschynite_chunks
-        },
-        -- CRYSTALS
-        {
-            name = aeschynite_crystals,
-            categories = {angels_ore_refining_T3},
-            subgroup = is_aeschynite,
-            icons = THREE_I(aeschynite_chunks, hydrochloric_acid_angels, aeschynite_crystals),
-            order = d,
-            energy_required = 2, -- Aeschynite chunks + HCl -leaching-> Aeschynite crystals
-            ingredients =
-            {
-                {type = item, name = aeschynite_chunks, amount = 4},
-                {type = fluid, name = hydrochloric_acid_angels, amount = 15}
-            },
-            results = {{type = item, name = aeschynite_crystals, amount = 4}},
-            main_product = aeschynite_crystals
-        },
-        -- PURIFIED
-        {
-            name = aeschynite_purified,
-            categories = {angels_ore_refining_T4},
-            subgroup = is_aeschynite,
-            icons = THREE_D_I(aeschynite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, aeschynite_purified),
-            order = e,
-            energy_required = 2, -- Aeschynite crystals -refinery-> Aeschynite purified
-            ingredients =
-            {
-                {type = item, name = aeschynite_crystals, amount = 4},
-                {type = item, name = powdered_chlorine_bleach, amount = 1},
-                {type = item, name = powdered_oxygen_bleach, amount = 1}
-            },
-            results = {{type = item, name = aeschynite_purified, amount = 4}},
-            main_product = aeschynite_purified
-        },
-        -- SORTING
-        {
-            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. aeschynite_ore}},
-            name = aeschynite_ore .. _sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_aeschynite,
-            icons = RECYCLING_I(recycling_png, aeschynite_ore),
-            order = f,
-            allow_productivity = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = aeschynite_ore, amount = 4}},
-            results = {{type = item, name = slag_angels, amount = 1}},
-            main_product = slag_angels
-        },
-        {
-            name = aeschynite_crushed_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_aeschynite,
-            icons = RECYCLING_I(recycling_png, aeschynite_crushed),
-            order = g,
-            allow_productivity = true,
-            energy_required = 2, -- Aeschynite crushed (Sorting) / Nd + Th + Calcium silicate
-            ingredients = {{type = item, name = aeschynite_crushed, amount = 8}},
-            results =
-            {
-                {type = item, name = neodymium_ore, amount = 4},
-                {type = item, name = thorium_ore_bob, amount = 2},
-                {type = item, name = calcium_silicate, amount = 2}
-            },
-            main_product = neodymium_ore
-        },
-        {
-            name = aeschynite_chunks_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_aeschynite,
-            icons = RECYCLING_I(recycling_png, aeschynite_chunks),
-            order = h,
-            allow_productivity = true,
-            energy_required = 2, -- Aeschynite chunks (Sorting) / Nd + Th + Fe + Sn + Calcium silicate
-            ingredients = {{type = item, name = aeschynite_chunks, amount = 8}},
-            results =
-            {
-                {type = item, name = neodymium_ore, amount = 4},
-                {type = item, name = thorium_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
-            },
-            main_product = neodymium_ore
-        },
-        {
-            name = aeschynite_crystals_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_aeschynite,
-            icons = RECYCLING_I(recycling_png, aeschynite_crystals),
-            order = i,
-            allow_productivity = true,
-            energy_required = 2, -- Aeschynite crystals (Sorting) / Nd + Th + Fe + Sn + Ti + Calcium silicate
-            ingredients = {{type = item, name = aeschynite_crystals, amount = 8}},
-            results =
-            {
-                {type = item, name = neodymium_ore, amount = 4},
-                {type = item, name = thorium_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = titanium_ore_bob, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-            },
-            main_product = neodymium_ore
-        },
-        {
-            name = aeschynite_purified_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_aeschynite,
-            icons = RECYCLING_I(recycling_png, aeschynite_purified),
-            order = j,
-            allow_productivity = true,
-            energy_required = 2, -- Aeschynite purified (Sorting) / Nd + Th + Fe + Sn + Ti + Nb
-            ingredients = {{type = item, name = aeschynite_purified, amount = 8}},
-            results =
-            {
-                {type = item, name = neodymium_ore, amount = 4},
-                {type = item, name = thorium_ore_bob, amount = 2},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = manganese_ore_angels, amount = 1},
-                {type = item, name = titanium_ore_bob, amount = 1},
-                {type = item, name = niobium_ore, amount = 1}
-            },
-            main_product = neodymium_ore
-        }
-    })
+    ANGELS.functions.create_crushed(aeschynite_crushed, is_aeschynite, b, aeschynite_ore)
+    ANGELS.functions.create_chunk(aeschynite_chunks, is_aeschynite, c, aeschynite_crushed, calcium_silicate, water_green_waste)
+    ANGELS.functions.create_crystal(aeschynite_crystals, is_aeschynite, d, aeschynite_chunks, hydrochloric_acid_angels)
+    ANGELS.functions.create_purified(aeschynite_purified, is_aeschynite, e, aeschynite_crystals)
+    -- Aeschynite ore / Nd + Th + Fe + Sn + Ti + Nb
+    ANGELS.functions.create_ore_processing(aeschynite_ore, is_aeschynite, f, calcium_silicate)
+    ANGELS.functions.create_crushed_processing(aeschynite_crushed, is_aeschynite, g, neodymium_ore, thorium_ore_bob, calcium_silicate)
+    ANGELS.functions.create_chunk_processing(aeschynite_chunks, is_aeschynite, h, neodymium_ore, thorium_ore_bob, iron_ore, tin_ore_bob, calcium_silicate)
+    ANGELS.functions.create_crystal_processing(aeschynite_crystals, is_aeschynite, i, neodymium_ore, thorium_ore_bob, iron_ore, tin_ore_bob, titanium_ore_bob, calcium_silicate)
+    ANGELS.functions.create_purified_processing(aeschynite_purified, is_aeschynite, j, neodymium_ore, thorium_ore_bob, iron_ore, tin_ore_bob, titanium_ore_bob, niobium_ore)
 end

@@ -21,7 +21,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = brannerite_ore .. _sorting},
             {type = unlock_recipe, recipe = brannerite_crushed},
-            {type = unlock_recipe, recipe = brannerite_crushed_sorting}
+            {type = unlock_recipe, recipe = brannerite_crushed .. _sorting}
         },
         research_trigger = {type = craft_item, item = brannerite_ore}
     },
@@ -36,7 +36,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_chunks},
-            {type = unlock_recipe, recipe = brannerite_chunks_sorting}
+            {type = unlock_recipe, recipe = brannerite_chunks .. _sorting}
         },
         unit =
         {
@@ -65,7 +65,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_crystals},
-            {type = unlock_recipe, recipe = brannerite_crystals_sorting}
+            {type = unlock_recipe, recipe = brannerite_crystals .. _sorting}
         },
         unit =
         {
@@ -96,7 +96,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_purified},
-            {type = unlock_recipe, recipe = brannerite_purified_sorting}
+            {type = unlock_recipe, recipe = brannerite_purified .. _sorting}
         },
         unit =
         {
@@ -139,7 +139,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = rheniite_ore .. _sorting},
             {type = unlock_recipe, recipe = rheniite_crushed},
-            {type = unlock_recipe, recipe = rheniite_crushed_sorting}
+            {type = unlock_recipe, recipe = rheniite_crushed .. _sorting}
         },
         research_trigger = {type = craft_item, item = rheniite_ore}
     },
@@ -154,7 +154,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = rheniite_chunks},
-            {type = unlock_recipe, recipe = rheniite_chunks_sorting}
+            {type = unlock_recipe, recipe = rheniite_chunks .. _sorting}
         },
         unit =
         {
@@ -183,7 +183,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = rheniite_crystals},
-            {type = unlock_recipe, recipe = rheniite_crystals_sorting}
+            {type = unlock_recipe, recipe = rheniite_crystals .. _sorting}
         },
         unit =
         {
@@ -214,7 +214,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = rheniite_purified},
-            {type = unlock_recipe, recipe = rheniite_purified_sorting}
+            {type = unlock_recipe, recipe = rheniite_purified .. _sorting}
         },
         unit =
         {

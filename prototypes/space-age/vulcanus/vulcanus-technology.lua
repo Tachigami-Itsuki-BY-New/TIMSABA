@@ -20,7 +20,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = wolframite_ore .. _sorting},
             {type = unlock_recipe, recipe = wolframite_crushed},
-            {type = unlock_recipe, recipe = wolframite_crushed_sorting},
+            {type = unlock_recipe, recipe = wolframite_crushed .. _sorting},
             {type = unlock_recipe, recipe = tungsten_plate_bob}
         },
         research_trigger = {type = mine_entity, entities = {"big-volcanic-rock", "huge-volcanic-rock"}}
@@ -36,7 +36,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_chunks},
-            {type = unlock_recipe, recipe = wolframite_chunks_sorting}
+            {type = unlock_recipe, recipe = wolframite_chunks .. _sorting}
         },
         unit =
         {
@@ -65,7 +65,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_crystals},
-            {type = unlock_recipe, recipe = wolframite_crystals_sorting}
+            {type = unlock_recipe, recipe = wolframite_crystals .. _sorting}
         },
         unit =
         {
@@ -96,7 +96,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_purified},
-            {type = unlock_recipe, recipe = wolframite_purified_sorting}
+            {type = unlock_recipe, recipe = wolframite_purified .. _sorting}
         },
         unit =
         {
@@ -139,7 +139,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = samarskite_ore .. _sorting},
             {type = unlock_recipe, recipe = samarskite_crushed},
-            {type = unlock_recipe, recipe = samarskite_crushed_sorting}
+            {type = unlock_recipe, recipe = samarskite_crushed .. _sorting}
         },
         research_trigger = {type = mine_entity, entities = {"big-volcanic-rock", "huge-volcanic-rock"}}
     },
@@ -154,7 +154,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = samarskite_chunks},
-            {type = unlock_recipe, recipe = samarskite_chunks_sorting}
+            {type = unlock_recipe, recipe = samarskite_chunks .. _sorting}
         },
         unit =
         {
@@ -183,7 +183,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = samarskite_crystals},
-            {type = unlock_recipe, recipe = samarskite_crystals_sorting}
+            {type = unlock_recipe, recipe = samarskite_crystals .. _sorting}
         },
         unit =
         {
@@ -214,7 +214,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = samarskite_purified},
-            {type = unlock_recipe, recipe = samarskite_purified_sorting}
+            {type = unlock_recipe, recipe = samarskite_purified .. _sorting}
         },
         unit =
         {

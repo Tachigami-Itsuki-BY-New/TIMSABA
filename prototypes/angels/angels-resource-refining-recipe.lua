@@ -35,9 +35,9 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, slag_angels, number_1),
         order = c_a,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂
-        ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results = {{type = item, name = stone, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
+        energy_required = 8, -- Slag --> (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂
+        ingredients = {{type = item, name = slag_angels, amount = 16}},
+        results = {{type = item, name = stone, amount_min = 0, amount_max = 16, independent_probability = 0.5}},
         main_product = stone,
         hide_from_signal_gui = false
     },
@@ -48,9 +48,9 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, slag_angels, number_2),
         order = c_b,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> CaSiO₃
-        ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results = {{type = item, name = calcium_silicate, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
+        energy_required = 8, -- Slag --> CaSiO₃(s)
+        ingredients = {{type = item, name = slag_angels, amount = 16}},
+        results = {{type = item, name = calcium_silicate, amount_min = 0, amount_max = 16, independent_probability = 0.5}},
         main_product = calcium_silicate,
         hide_from_signal_gui = false
     },
@@ -61,9 +61,9 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, slag_angels, number_3),
         order = c_c,
         allow_productivity = true,
-        energy_required = 1, -- Slag --> Mg₂Si
-        ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results = {{type = item, name = magnesium_silicide, amount_min = 0, amount_max = 4, independent_probability = 0.5}},
+        energy_required = 8, -- Slag --> Mg₂Si(s)
+        ingredients = {{type = item, name = slag_angels, amount = 16}},
+        results = {{type = item, name = magnesium_silicide, amount_min = 0, amount_max = 16, independent_probability = 0.5}},
         main_product = magnesium_silicide,
         hide_from_signal_gui = false
     },
@@ -75,13 +75,13 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_1),
         order = e_a,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> Ca + 2Fe + Mg + Si
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        energy_required = 8, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> Ca(s) + 2Fe(s) + Mg(s)
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 16}},
         results =
         {
-            {type = item, name = calcium, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, independent_probability = 0.5}
+            {type = item, name = calcium, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 32, independent_probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 16, independent_probability = 0.5}
         },
         main_product = calcium,
         hide_from_signal_gui = false
@@ -93,12 +93,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_2),
         order = e_b,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> 2Si + 2Al
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        energy_required = 8, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄]₂ --> 2Si(s) + 2Al(s)
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 16}},
         results =
         {
-            {type = item, name = silicon_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5},
-            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, independent_probability = 0.5}
+            {type = item, name = silicon_ore_bob, amount_min = 0, amount_max = 32, independent_probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 32, independent_probability = 0.5}
         },
         main_product = silicon_ore_bob,
         hide_from_signal_gui = false
@@ -110,9 +110,9 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_3),
         order = e_c,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
-        results = {{type = item, name = sodium_angels, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
+        energy_required = 8, -- (Na₂,K₂,Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na(s)
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 16}},
+        results = {{type = item, name = sodium_angels, amount_min = 0, amount_max = 32, independent_probability = 0.5}},
         main_product = sodium_angels,
         hide_from_signal_gui = false
     },
@@ -123,9 +123,9 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_4),
         order = e_d,
         allow_productivity = true,
-        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2K
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
-        results = {{type = item, name = potassium, amount_min = 0, amount_max = 8, independent_probability = 0.5}},
+        energy_required = 8, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2K(s)
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 16}},
+        results = {{type = item, name = potassium, amount_min = 0, amount_max = 16, independent_probability = 0.5}},
         main_product = potassium,
         hide_from_signal_gui = false
     },
@@ -136,9 +136,9 @@ TIMSABA.functions.create_recipes
         subgroup = is_processing_crafting,
         icons = TWO_I(stone_crushed_angels, sand_angels),
         order = f,
-        energy_required = 1,
-        ingredients = {{type = item, name = stone_crushed_angels, amount = 1}},
-        results = {{type = item, name = sand_angels, amount = 2}},
+        energy_required = 4,
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results = {{type = item, name = sand_angels, amount = 8}},
         main_product = sand_angels
     },
     -- CRYSTAL SORTING
@@ -150,16 +150,16 @@ TIMSABA.functions.create_recipes
         order = g,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = crystal_dust, amount = 4}},
+        energy_required = 8,
+        ingredients = {{type = item, name = crystal_dust, amount = 16}},
         results =
         {
-            {type = item, name = ruby_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = sapphire_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = emerald_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = amethyst_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = topaz_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5},
-            {type = item, name = diamond_bob, amount_min = 0, amount_max = 4, independent_probability = 0.5}
+            {type = item, name = ruby_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = sapphire_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = emerald_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = amethyst_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = topaz_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5},
+            {type = item, name = diamond_bob, amount_min = 0, amount_max = 16, independent_probability = 0.5}
         },
         hide_from_signal_gui = false
     }

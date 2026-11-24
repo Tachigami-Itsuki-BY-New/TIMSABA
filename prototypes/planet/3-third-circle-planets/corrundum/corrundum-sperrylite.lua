@@ -1,7 +1,6 @@
 if mods[corrundum_mods] then
     local graphics_sperrylite = "__TIMSABA__/graphics/icons/corrundum/sperrylite-ore/"
 
-    -- Sperrylite ore / Pt + As + Sn + Cu + Fe + Ir
     sperrylite_crushed = "sperrylite-crushed"
     sperrylite_chunks = "sperrylite-chunks"
     sperrylite_crystals = "sperrylite-crystals"
@@ -35,171 +34,14 @@ if mods[corrundum_mods] then
     })
 
     -- RECIPE
-    sperrylite_crushed_sorting = "sperrylite-crushed-sorting"
-    sperrylite_chunks_sorting = "sperrylite-chunks-sorting"
-    sperrylite_crystals_sorting = "sperrylite-crystals-sorting"
-    sperrylite_purified_sorting = "sperrylite-purified-sorting"
-    TIMSABA.functions.create_recipes
-    ({
-        -- CRUSHED
-        {
-            name = sperrylite_crushed,
-            categories = {angels_ore_refining_T1},
-            subgroup = is_sperrylite,
-            icons = THREE_R_I(sperrylite_ore, sperrylite_crushed, stone_crushed_angels),
-            order = b,
-            energy_required = 2, -- Sperrylite ore -crushing-> Sperrylite crushed + Stone crushed
-            ingredients = {{type = item, name = sperrylite_ore, amount = 2}},
-            results =
-            {
-                {type = item, name = sperrylite_crushed, amount = 2},
-                {type = item, name = stone_crushed_angels, amount = 1}
-            },
-            main_product = sperrylite_crushed
-        },
-        -- CHUNKS
-        {
-            name = sperrylite_chunks,
-            categories = {angels_ore_refining_T2},
-            subgroup = is_sperrylite,
-            icons = THREE_D_I(sperrylite_crushed, nil, water_purified_angels, sperrylite_chunks, calcium_silicate, water_greenyellow_waste),
-            order = c,
-            energy_required = 2, -- Sperrylite crushed + Purified water -flotation-> Sperrylite chunks + CaSiO₃ + Fluoric waste water
-            ingredients =
-            {
-                {type = item, name = sperrylite_crushed, amount = 4},
-                {type = fluid, name = water_purified_angels, amount = 60}
-            },
-            results =
-            {
-                {type = item, name = sperrylite_chunks, amount = 4},
-                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-                {type = fluid, name = water_greenyellow_waste, amount = 60}
-            },
-            main_product = sperrylite_chunks
-        },
-        -- CRYSTALS
-        {
-            name = sperrylite_crystals,
-            categories = {angels_ore_refining_T3},
-            subgroup = is_sperrylite,
-            icons = THREE_I(sperrylite_chunks, hydrofluoric_acid_angels, sperrylite_crystals),
-            order = d,
-            energy_required = 2, -- Sperrylite chunks + HF -leaching-> Sperrylite crystals
-            ingredients =
-            {
-                {type = item, name = sperrylite_chunks, amount = 4},
-                {type = fluid, name = hydrofluoric_acid_angels, amount = 15}
-            },
-            results = {{type = item, name = sperrylite_crystals, amount = 4}},
-            main_product = sperrylite_crystals
-        },
-        -- PURIFIED
-        {
-            name = sperrylite_purified,
-            categories = {angels_ore_refining_T4},
-            subgroup = is_sperrylite,
-            icons = THREE_D_I(sperrylite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, sperrylite_purified),
-            order = e,
-            energy_required = 2, -- Sperrylite crystals -refinery-> Sperrylite purified
-            ingredients =
-            {
-                {type = item, name = sperrylite_crystals, amount = 4},
-                {type = item, name = powdered_chlorine_bleach, amount = 1},
-                {type = item, name = powdered_oxygen_bleach, amount = 1}
-            },
-            results = {{type = item, name = sperrylite_purified, amount = 4}},
-            main_product = sperrylite_purified
-        },
-        -- SORTING
-        {
-            localised_name = {"recipe-name.sorting-recipe", {"item-name.sperrylite-ore"}},
-            name = sperrylite_ore .. _sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_sperrylite,
-            icons = RECYCLING_I(recycling_png, sperrylite_ore),
-            order = f,
-            allow_productivity = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = sperrylite_ore, amount = 4}},
-            results = {{type = item, name = slag_angels, amount = 1}},
-            main_product = slag_angels
-        },
-        {
-            name = sperrylite_crushed_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_sperrylite,
-            icons = RECYCLING_I(recycling_png, sperrylite_crushed),
-            order = g,
-            allow_productivity = true,
-            energy_required = 2, -- Sperrylite crushed (Sorting) / Pt + As + CaSiO₃
-            ingredients = {{type = item, name = sperrylite_crushed, amount = 8}},
-            results =
-            {
-                {type = item, name = platinum_ore_angels, amount = 4},
-                {type = item, name = arsenic, amount = 2},
-                {type = item, name = calcium_silicate, amount = 2}
-            },
-            main_product = platinum_ore_angels
-        },
-        {
-            name = sperrylite_chunks_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_sperrylite,
-            icons = RECYCLING_I(recycling_png, sperrylite_chunks),
-            order = h,
-            allow_productivity = true,
-            energy_required = 2, -- Sperrylite chunks (Sorting) / Pt + As + Sn + Cu + CaSiO₃
-            ingredients = {{type = item, name = sperrylite_chunks, amount = 8}},
-            results =
-            {
-                {type = item, name = platinum_ore_angels, amount = 4},
-                {type = item, name = arsenic, amount = 2},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1}
-            },
-            main_product = platinum_ore_angels
-        },
-        {
-            name = sperrylite_crystals_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_sperrylite,
-            icons = RECYCLING_I(recycling_png, sperrylite_crystals),
-            order = i,
-            allow_productivity = true,
-            energy_required = 2, -- Sperrylite crystals (Sorting) / Pt + As + Sn + Cu + Fe + CaSiO₃
-            ingredients = {{type = item, name = sperrylite_crystals, amount = 8}},
-            results =
-            {
-                {type = item, name = platinum_ore_angels, amount = 4},
-                {type = item, name = arsenic, amount = 2},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-            },
-            main_product = platinum_ore_angels
-        },
-        {
-            name = sperrylite_purified_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_sperrylite,
-            icons = RECYCLING_I(recycling_png, sperrylite_purified),
-            order = j,
-            allow_productivity = true,
-            energy_required = 2, -- Sperrylite purified (Sorting) / Pt + As + Sn + Cu + Fe + Ir
-            ingredients = {{type = item, name = sperrylite_purified, amount = 8}},
-            results =
-            {
-                {type = item, name = platinum_ore_angels, amount = 4},
-                {type = item, name = arsenic, amount = 2},
-                {type = item, name = tin_ore_bob, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = iridium_ore, amount = 1}
-            },
-            main_product = platinum_ore_angels
-        }
-    })
+    ANGELS.functions.create_crushed(sperrylite_crushed, is_sperrylite, b, sperrylite_ore)
+    ANGELS.functions.create_chunk(sperrylite_chunks, is_sperrylite, c, sperrylite_crushed, calcium_silicate, water_greenyellow_waste)
+    ANGELS.functions.create_crystal(sperrylite_crystals, is_sperrylite, d, sperrylite_chunks, hydrofluoric_acid_angels)
+    ANGELS.functions.create_purified(sperrylite_purified, is_sperrylite, e, sperrylite_crystals)
+    -- Sperrylite ore / Pt + As + Sn + Cu + Fe + Ir
+    ANGELS.functions.create_ore_processing(sperrylite_ore, is_sperrylite, f, calcium_silicate)
+    ANGELS.functions.create_crushed_processing(sperrylite_crushed, is_sperrylite, g, platinum_ore_angels, arsenic, calcium_silicate)
+    ANGELS.functions.create_chunk_processing(sperrylite_chunks, is_sperrylite, h, platinum_ore_angels, arsenic, tin_ore_bob, copper_ore, calcium_silicate)
+    ANGELS.functions.create_crystal_processing(sperrylite_crystals, is_sperrylite, i, platinum_ore_angels, arsenic, tin_ore_bob, copper_ore, iron_ore, calcium_silicate)
+    ANGELS.functions.create_purified_processing(sperrylite_purified, is_sperrylite, j, platinum_ore_angels, arsenic, tin_ore_bob, copper_ore, iron_ore, iridium_ore)
 end

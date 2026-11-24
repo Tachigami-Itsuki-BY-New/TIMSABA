@@ -19,7 +19,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = powellite_ore .. _sorting},
             {type = unlock_recipe, recipe = powellite_crushed},
-            {type = unlock_recipe, recipe = powellite_crushed_sorting}
+            {type = unlock_recipe, recipe = powellite_crushed .. _sorting}
         },
         research_trigger = {type = mine_entity, entities = {powellite_ore}}
     },
@@ -34,7 +34,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = powellite_chunks},
-            {type = unlock_recipe, recipe = powellite_chunks_sorting}
+            {type = unlock_recipe, recipe = powellite_chunks .. _sorting}
         },
         unit =
         {
@@ -62,7 +62,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = powellite_crystals},
-            {type = unlock_recipe, recipe = powellite_crystals_sorting}
+            {type = unlock_recipe, recipe = powellite_crystals .. _sorting}
         },
         unit =
         {
@@ -93,7 +93,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = powellite_purified},
-            {type = unlock_recipe, recipe = powellite_purified_sorting}
+            {type = unlock_recipe, recipe = powellite_purified .. _sorting}
         },
         unit =
         {
@@ -135,7 +135,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = molybdenite_ore .. _sorting},
             {type = unlock_recipe, recipe = molybdenite_crushed},
-            {type = unlock_recipe, recipe = molybdenite_crushed_sorting}
+            {type = unlock_recipe, recipe = molybdenite_crushed .. _sorting}
         },
         research_trigger = {type = mine_entity, entities = {molybdenite_ore}}
     },
@@ -150,7 +150,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_chunks},
-            {type = unlock_recipe, recipe = molybdenite_chunks_sorting}
+            {type = unlock_recipe, recipe = molybdenite_chunks .. _sorting}
         },
         unit =
         {
@@ -178,7 +178,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_crystals},
-            {type = unlock_recipe, recipe = molybdenite_crystals_sorting}
+            {type = unlock_recipe, recipe = molybdenite_crystals .. _sorting}
         },
         unit =
         {
@@ -209,7 +209,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_purified},
-            {type = unlock_recipe, recipe = molybdenite_purified_sorting}
+            {type = unlock_recipe, recipe = molybdenite_purified .. _sorting}
         },
         unit =
         {

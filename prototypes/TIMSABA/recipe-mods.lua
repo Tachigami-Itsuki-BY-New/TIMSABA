@@ -51,16 +51,16 @@ local function sortiong_ore_recipe_true(ingredient, order)
             order = order,
             enabled = true,
             allow_productivity = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = ingredient, amount = 4}},
-            results = {{type = item, name = slag_angels, amount = 1}},
+            energy_required = 8,
+            ingredients = {{type = item, name = ingredient, amount = 16}},
+            results = {{type = item, name = slag_angels, amount = 4}},
             main_product = slag_angels
         }
     })
 end
 if mods[lignumis_mods] then
     sortiong_ore_recipe_true(ore_rubyte, e)
-    sortiong_ore_recipe_true(ore_bobmonium, f)
+    sortiong_ore_recipe_true(ore_bobmonium, g)
 elseif not mods[lignumis_mods] then
     sortiong_ore_recipe_true(ore_saphirite, a)
     sortiong_ore_recipe_true(ore_stiratite, c)
@@ -77,9 +77,9 @@ local function sortiong_ore_recipe_false(ingredient, order)
             icons = RECYCLING_I(recycling_png, ingredient),
             order = order,
             allow_productivity = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = ingredient, amount = 4}},
-            results = {{type = item, name = slag_angels, amount = 1}},
+            energy_required = 8,
+            ingredients = {{type = item, name = ingredient, amount = 16}},
+            results = {{type = item, name = slag_angels, amount = 4}},
             main_product = slag_angels
         }
     })
@@ -89,11 +89,11 @@ if mods[lignumis_mods] then
     sortiong_ore_recipe_false(ore_stiratite, c)
 elseif not mods[lignumis_mods] then
     sortiong_ore_recipe_false(ore_rubyte, e)
-    sortiong_ore_recipe_false(ore_bobmonium, f)
+    sortiong_ore_recipe_false(ore_bobmonium, g)
 end
 sortiong_ore_recipe_false(ore_jivolite, b)
 sortiong_ore_recipe_false(ore_crotinnium, d)
-sortiong_ore_recipe_false(ore_senaite, g)
+sortiong_ore_recipe_false(ore_senaite, f)
 sortiong_ore_recipe_false(ore_franckeite, h)
 
 TIMSABA.functions.create_recipes
@@ -105,13 +105,13 @@ TIMSABA.functions.create_recipes
         icons = THREE_I(hybride_catalyst, liquid_chlorine_bleach, purified_catalyst),
         order = d,
         allow_productivity = true,
-        energy_required = 0.5,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = hybride_catalyst, amount = 2},
-            {type = fluid, name = liquid_chlorine_bleach, amount = 30}
+            {type = item, name = hybride_catalyst, amount = 16},
+            {type = fluid, name = liquid_chlorine_bleach, amount = 240}
         },
-        results = {{type = item, name = purified_catalyst, amount = 2}},
+        results = {{type = item, name = purified_catalyst, amount = 16}},
         main_product = purified_catalyst
     }
 })
@@ -130,14 +130,14 @@ local function ore_crushed_recipe(name, order, ingredient_1, ingredient_2, resul
             icons = AR_FOUR_I(purified_catalyst, ingredient_1, ingredient_2, result),
             order = order,
             allow_productivity = true,
-            energy_required = 16,
+            energy_required = 8,
             ingredients =
             {
-                {type = item, name = purified_catalyst, amount = 8},
-                {type = item, name = ingredient_1, amount = 16},
-                {type = item, name = ingredient_2, amount = 16}
+                {type = item, name = purified_catalyst, amount = 4},
+                {type = item, name = ingredient_1, amount = 8},
+                {type = item, name = ingredient_2, amount = 8}
             },
-            results = {{type = item, name = result, amount = 4}},
+            results = {{type = item, name = result, amount = 2}},
             main_product = result,
             hide_from_signal_gui = false
         }
@@ -256,14 +256,14 @@ local function ore_crystals_recipe(name, order, ingredient_1, ingredient_2, resu
             icons = AR_FOUR_I(purified_catalyst, ingredient_1, ingredient_2, result),
             order = order,
             allow_productivity = true,
-            energy_required = 4,
+            energy_required = 8,
             ingredients =
             {
-                {type = item, name = purified_catalyst, amount = 2},
-                {type = item, name = ingredient_1, amount = 4},
-                {type = item, name = ingredient_2, amount = 4}
+                {type = item, name = purified_catalyst, amount = 4},
+                {type = item, name = ingredient_1, amount = 8},
+                {type = item, name = ingredient_2, amount = 8}
             },
-            results = {{type = item, name = result, amount = 4}},
+            results = {{type = item, name = result, amount = 8}},
             main_product = result,
             hide_from_signal_gui = false
         }
@@ -319,14 +319,14 @@ local function ore_purified_recipe(name, order, ingredient_1, ingredient_2, resu
             icons = AR_FOUR_I(purified_catalyst, ingredient_1, ingredient_2, result),
             order = order,
             allow_productivity = true,
-            energy_required = 2,
+            energy_required = 8,
             ingredients =
             {
-                {type = item, name = purified_catalyst, amount = 1},
-                {type = item, name = ingredient_1, amount = 2},
-                {type = item, name = ingredient_2, amount = 2}
+                {type = item, name = purified_catalyst, amount = 4},
+                {type = item, name = ingredient_1, amount = 8},
+                {type = item, name = ingredient_2, amount = 8}
             },
-            results = {{type = item, name = result, amount = 4}},
+            results = {{type = item, name = result, amount = 16}},
             main_product = result,
             hide_from_signal_gui = false
         }

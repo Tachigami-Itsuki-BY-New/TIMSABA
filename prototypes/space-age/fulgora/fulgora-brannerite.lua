@@ -1,6 +1,5 @@
 local graphics_brannerite = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite/"
 
--- Brannerite ore / Ho + Ca + U + Th + Fe + Ti
 brannerite_ore = "brannerite-ore"
 brannerite_crushed = "brannerite-crushed"
 brannerite_chunks = "brannerite-chunks"
@@ -50,170 +49,13 @@ TIMSABA.functions.create_items
     }
 })
 
-brannerite_crushed_sorting = "brannerite-crushed-sorting"
-brannerite_chunks_sorting = "brannerite-chunks-sorting"
-brannerite_crystals_sorting = "brannerite-crystals-sorting"
-brannerite_purified_sorting = "brannerite-purified-sorting"
-TIMSABA.functions.create_recipes
-({
-    -- CRUSHED
-    {
-        name = brannerite_crushed,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_brannerite,
-        icons = THREE_R_I(brannerite_ore, brannerite_crushed, stone_crushed_angels),
-        order = b,
-        energy_required = 2, -- Brannerite ore -crushing-> Brannerite crushed + Stone crushed
-        ingredients = {{type = item, name = brannerite_ore, amount = 2}},
-        results =
-        {
-            {type = item, name = brannerite_crushed, amount = 2},
-            {type = item, name = stone_crushed_angels, amount = 1}
-        },
-        main_product = brannerite_crushed
-    },
-    -- CHUNKS
-    {
-        name = brannerite_chunks,
-        categories = {angels_ore_refining_T2},
-        subgroup = is_brannerite,
-        icons = THREE_D_I(brannerite_crushed, nil, water_purified_angels, brannerite_chunks, slag_angels, water_greenyellow_waste),
-        order = c,
-        energy_required = 2, -- Brannerite crushed + Purified water -flotation-> Brannerite chunks + Calcium silicate + Fluoric waste water
-        ingredients =
-        {
-            {type = item, name = brannerite_crushed, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = brannerite_chunks, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-            {type = fluid, name = water_greenyellow_waste, amount = 60}
-        },
-        main_product = brannerite_chunks
-    },
-    -- CRYSTALS
-    {
-        name = brannerite_crystals,
-        categories = {angels_ore_refining_T3},
-        subgroup = is_brannerite,
-        icons = THREE_I(brannerite_chunks, hydrofluoric_acid_angels, brannerite_crystals),
-        order = d,
-        energy_required = 2, -- Brannerite chunks + HF(aq) -leaching-> Brannerite crystals
-        ingredients =
-        {
-            {type = item, name = brannerite_chunks, amount = 4},
-            {type = fluid, name = hydrofluoric_acid_angels, amount = 15}
-        },
-        results = {{type = item, name = brannerite_crystals, amount = 4}},
-        main_product = brannerite_crystals
-    },
-    -- PURIFIED
-    {
-        name = brannerite_purified,
-        categories = {angels_ore_refining_T4},
-        subgroup = is_brannerite,
-        icons = THREE_D_I(brannerite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, brannerite_purified),
-        order = e,
-        energy_required = 2, -- Brannerite crystals -refinery-> Brannerite purified
-        ingredients =
-        {
-            {type = item, name = brannerite_crystals, amount = 4},
-            {type = item, name = powdered_chlorine_bleach, amount = 1},
-            {type = item, name = powdered_oxygen_bleach, amount = 1}
-        },
-        results = {{type = item, name = brannerite_purified, amount = 4}},
-        main_product = brannerite_purified
-    },
-    -- SORTING
-    {
-        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. brannerite_ore}},
-        name = brannerite_ore .. _sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_brannerite,
-        icons = RECYCLING_I(recycling_png, brannerite_ore),
-        order = f,
-        allow_productivity = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = brannerite_ore, amount = 4}},
-        results = {{type = item, name = slag_angels, amount = 1}},
-        main_product = slag_angels
-    },
-    {
-        name = brannerite_crushed_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_brannerite,
-        icons = RECYCLING_I(recycling_png, brannerite_crushed),
-        order = g,
-        allow_productivity = true,
-        energy_required = 2, -- Brannerite crushed (Sorting) / Ho + Ca + Calcium silicate
-        ingredients = {{type = item, name = brannerite_crushed, amount = 8}},
-        results =
-        {
-            {type = item, name = holmium_ore, amount = 4},
-            {type = item, name = calcium, amount = 2},
-            {type = item, name = calcium_silicate, amount = 2}
-        },
-        main_product = holmium_ore
-    },
-    {
-        name = brannerite_chunks_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_brannerite,
-        icons = RECYCLING_I(recycling_png, brannerite_chunks),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Brannerite chunks (Sorting) / Ho + Ca + U + Th + Calcium silicate
-        ingredients = {{type = item, name = brannerite_chunks, amount = 8}},
-        results =
-        {
-            {type = item, name = holmium_ore, amount = 4},
-            {type = item, name = calcium, amount = 2},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = thorium_ore_bob, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
-        },
-        main_product = holmium_ore
-    },
-    {
-        name = brannerite_crystals_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_brannerite,
-        icons = RECYCLING_I(recycling_png, brannerite_crystals),
-        order = i,
-        allow_productivity = true,
-        energy_required = 2, -- Brannerite crystals (Sorting) / Ho + Ca + U + Th + Fe + Calcium silicate
-        ingredients = {{type = item, name = brannerite_crystals, amount = 8}},
-        results =
-        {
-            {type = item, name = holmium_ore, amount = 4},
-            {type = item, name = calcium, amount = 2},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = thorium_ore_bob, amount = 1},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-        },
-        main_product = holmium_ore
-    },
-    {
-        name = brannerite_purified_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_brannerite,
-        icons = RECYCLING_I(recycling_png, brannerite_purified),
-        order = j,
-        allow_productivity = true,
-        energy_required = 2, -- Brannerite purified (Sorting) / Ho + Ca + U + Th + Fe + Ti
-        ingredients = {{type = item, name = brannerite_purified, amount = 8}},
-        results =
-        {
-            {type = item, name = holmium_ore, amount = 4},
-            {type = item, name = calcium, amount = 2},
-            {type = item, name = uranium_ore, amount = 1},
-            {type = item, name = thorium_ore_bob, amount = 1},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = titanium_ore_bob, amount = 1}
-        },
-        main_product = holmium_ore
-    }
-})
+ANGELS.functions.create_crushed(brannerite_crushed, is_brannerite, b, brannerite_ore)
+ANGELS.functions.create_chunk(brannerite_chunks, is_brannerite, c, brannerite_crushed, calcium_silicate, water_greenyellow_waste)
+ANGELS.functions.create_crystal(brannerite_crystals, is_brannerite, d, brannerite_chunks, hydrofluoric_acid_angels)
+ANGELS.functions.create_purified(brannerite_purified, is_brannerite, e, brannerite_crystals)
+-- Brannerite ore / Ho + Ca + U + Th + Fe + Ti
+ANGELS.functions.create_ore_processing(brannerite_ore, is_brannerite, f, calcium_silicate)
+ANGELS.functions.create_crushed_processing(brannerite_crushed, is_brannerite, g, holmium_ore, calcium, calcium_silicate)
+ANGELS.functions.create_chunk_processing(brannerite_chunks, is_brannerite, h, holmium_ore, calcium, uranium_ore, thorium_ore_bob, calcium_silicate)
+ANGELS.functions.create_crystal_processing(brannerite_crystals, is_brannerite, i, holmium_ore, calcium, uranium_ore, thorium_ore_bob, iron_ore, calcium_silicate)
+ANGELS.functions.create_purified_processing(brannerite_purified, is_brannerite, j, holmium_ore, calcium, uranium_ore, thorium_ore_bob, iron_ore, titanium_ore_bob)

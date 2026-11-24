@@ -19,7 +19,7 @@ if mods[lignumis_mods] then
             {
                 {type = unlock_recipe, recipe = wodginite_ore .. _sorting},
                 {type = unlock_recipe, recipe = wodginite_crushed},
-                {type = unlock_recipe, recipe = wodginite_crushed_sorting}
+                {type = unlock_recipe, recipe = wodginite_crushed .. _sorting}
             },
             research_trigger = {type = mine_entity, entities = {wodginite_patch}}
         },
@@ -34,7 +34,7 @@ if mods[lignumis_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_chunks},
-                {type = unlock_recipe, recipe = wodginite_chunks_sorting}
+                {type = unlock_recipe, recipe = wodginite_chunks .. _sorting}
             },
             unit =
             {
@@ -62,7 +62,7 @@ if mods[lignumis_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_crystals},
-                {type = unlock_recipe, recipe = wodginite_crystals_sorting}
+                {type = unlock_recipe, recipe = wodginite_crystals .. _sorting}
             },
             unit =
             {
@@ -93,7 +93,7 @@ if mods[lignumis_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = wodginite_purified},
-                {type = unlock_recipe, recipe = wodginite_purified_sorting}
+                {type = unlock_recipe, recipe = wodginite_purified .. _sorting}
             },
             unit =
             {

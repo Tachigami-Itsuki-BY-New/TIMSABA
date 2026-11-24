@@ -98,7 +98,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_lead_item,
         icons = THREE_I(crushed_rubyte, crushed_senaite, crushed_plumbium),
         order = a,
-        energy_required = 2,
+        energy_required = 4,
         ingredients =
         {
             {type = item, name = crushed_rubyte, amount = 2},
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_lead_item,
         icons = TWO_I(crushed_plumbium, powder_plumbium),
         order = b,
-        energy_required = 2,
+        energy_required = 4,
         ingredients =
         {
             {type = item, name = crushed_plumbium, amount = 4},
@@ -130,18 +130,18 @@ TIMSABA.functions.create_recipes
         name = dust_plumbium,
         categories = {angels_ore_refining_T2},
         subgroup = is_lead_item,
-        icons = TWO_D_I(sludge_plumbium, sodium_angels, dust_plumbium, water_red_waste),
+        icons = TWO_D_I(sludge_plumbium, sodium_angels, dust_plumbium, sodium_chloride_solution),
         order = c,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = sodium_angels, amount = 4},
-            {type = fluid, name = sludge_plumbium, amount = 60}
+            {type = item, name = sodium_angels, amount = 16},
+            {type = fluid, name = sludge_plumbium, amount = 240}
         },
         results =
         {
-            {type = item, name = dust_plumbium, amount = 4},
-            {type = fluid, name = water_red_waste, amount = 30}
+            {type = item, name = dust_plumbium, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 240}
         },
         main_product = dust_plumbium
     },
@@ -151,9 +151,9 @@ TIMSABA.functions.create_recipes
         subgroup = is_lead_item,
         icons = TWO_I(concentrate_anodized_plumbium, crystal_plumbium),
         order = d,
-        energy_required = 2,
-        ingredients = {{type = fluid, name = concentrate_anodized_plumbium, amount = 60}},
-        results = {{type = item, name = crystal_plumbium, amount = 4}},
+        energy_required = 8,
+        ingredients = {{type = fluid, name = concentrate_anodized_plumbium, amount = 240}},
+        results = {{type = item, name = crystal_plumbium, amount = 16}},
         main_product = crystal_plumbium
     },
     -- SORTING
@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_plumbium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 2, -- Plumbium crushed (Sorting) / Pb + Fe
-        ingredients = {{type = item, name = crushed_plumbium, amount = 8}},
+        energy_required = 8, -- Plumbium crushed (Sorting) / Pb + Fe
+        ingredients = {{type = item, name = crushed_plumbium, amount = 32}},
         results =
         {
-            {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 4}
+            {type = item, name = lead_ore_bob, amount = 16},
+            {type = item, name = iron_ore, amount = 16}
         },
         main_product = lead_ore_bob,
         hide_from_signal_gui = false
@@ -181,14 +181,14 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powder_plumbium),
         order = d_b,
         allow_productivity = true,
-        energy_required = 2, -- Plumbium powder (Sorting) / Pb + Fe + Ni + Zn
-        ingredients = {{type = item, name = powder_plumbium, amount = 8}},
+        energy_required = 8, -- Plumbium powder (Sorting) / Pb + Fe + Ni + Zn
+        ingredients = {{type = item, name = powder_plumbium, amount = 32}},
         results =
         {
-            {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 4},
-            {type = item, name = nickel_ore_bob, amount = 2},
-            {type = item, name = zinc_ore_bob, amount = 2}
+            {type = item, name = lead_ore_bob, amount = 16},
+            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = nickel_ore_bob, amount = 8},
+            {type = item, name = zinc_ore_bob, amount = 8}
         },
         main_product = lead_ore_bob,
         hide_from_signal_gui = false
@@ -200,15 +200,15 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, dust_plumbium),
         order = d_c,
         allow_productivity = true,
-        energy_required = 2, -- Plumbium dust (Sorting) / Pb + Fe + Ni + Zn + Co
-        ingredients = {{type = item, name = dust_plumbium, amount = 8}},
+        energy_required = 8, -- Plumbium dust (Sorting) / Pb + Fe + Ni + Zn + Co
+        ingredients = {{type = item, name = dust_plumbium, amount = 32}},
         results =
         {
-            {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 4},
-            {type = item, name = nickel_ore_bob, amount = 2},
-            {type = item, name = zinc_ore_bob, amount = 2},
-            {type = item, name = cobalt_ore_bob, amount = 2}
+            {type = item, name = lead_ore_bob, amount = 16},
+            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = nickel_ore_bob, amount = 8},
+            {type = item, name = zinc_ore_bob, amount = 8},
+            {type = item, name = cobalt_ore_bob, amount = 8}
         },
         main_product = lead_ore_bob,
         hide_from_signal_gui = false
@@ -220,16 +220,16 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_plumbium),
         order = d_d,
         allow_productivity = true,
-        energy_required = 2, -- Plumbium crystal (Sorting) / Pb + Fe + Ni + Zn + Co + W
-        ingredients = {{type = item, name = crystal_plumbium, amount = 8}},
+        energy_required = 8, -- Plumbium crystal (Sorting) / Pb + Fe + Ni + Zn + Co + W
+        ingredients = {{type = item, name = crystal_plumbium, amount = 32}},
         results =
         {
-            {type = item, name = lead_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 4},
-            {type = item, name = nickel_ore_bob, amount = 2},
-            {type = item, name = zinc_ore_bob, amount = 2},
-            {type = item, name = cobalt_ore_bob, amount = 2},
-            {type = item, name = tungsten_ore_bob, amount = 2}
+            {type = item, name = lead_ore_bob, amount = 16},
+            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = nickel_ore_bob, amount = 8},
+            {type = item, name = zinc_ore_bob, amount = 8},
+            {type = item, name = cobalt_ore_bob, amount = 8},
+            {type = item, name = tungsten_ore_bob, amount = 8}
         },
         main_product = lead_ore_bob,
         hide_from_signal_gui = false
@@ -244,8 +244,8 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = powder_plumbium, amount = 4},
-            {type = fluid, name = water_thermal_angels, amount = 30},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 30}
+            {type = fluid, name = water_thermal_angels, amount = 60},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 60}
         },
         results = {{type = fluid, name = sludge_plumbium, amount = 60}},
         main_product = sludge_plumbium
@@ -256,13 +256,13 @@ TIMSABA.functions.create_recipes
         subgroup = is_lead_fluid,
         icons = THREE_I(dust_plumbium, hydrochloric_acid_angels, slurry_plumbium),
         order = b,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = dust_plumbium, amount = 4},
-            {type = fluid, name = hydrochloric_acid_angels, amount = 60}
+            {type = item, name = dust_plumbium, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 240}
         },
-        results = {{type = fluid, name = slurry_plumbium, amount = 60}},
+        results = {{type = fluid, name = slurry_plumbium, amount = 240}},
         main_product = slurry_plumbium
     },
     {
@@ -271,17 +271,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_lead_fluid,
         icons = TWO_D_I(slurry_plumbium, water_purified_angels, concentrate_plumbium, water_green_waste),
         order = c,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = fluid, name = slurry_plumbium, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 60},
+            {type = fluid, name = slurry_plumbium, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240},
             {type = item, name = filter_ceramic, amount = 1}
         },
         results =
         {
-            {type = fluid, name = concentrate_plumbium, amount = 60},
-            {type = fluid, name = water_green_waste, amount = 30}, -- 60
+            {type = fluid, name = concentrate_plumbium, amount = 240},
+            {type = fluid, name = water_green_waste, amount = 240},
             {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
             {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
         },
@@ -291,19 +291,19 @@ TIMSABA.functions.create_recipes
         name = concentrate_anodized_plumbium,
         categories = {angels_ore_refining_T3_5},
         subgroup = is_lead_fluid,
-        icons = THREE_D_I(concentrate_plumbium, nil, water_purified_angels, concentrate_anodized_plumbium, slag_angels, water_green_waste),
+        icons = THREE_D_I(concentrate_plumbium, nil, water_purified_angels, concentrate_anodized_plumbium, salt_angels, water_green_waste),
         order = d,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = fluid, name = concentrate_plumbium, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 60}
+            {type = fluid, name = concentrate_plumbium, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
-            {type = fluid, name = concentrate_anodized_plumbium, amount = 60},
-            {type = fluid, name = water_green_waste, amount = 30},
-            {type = item, name = slag_angels, amount = 1}
+            {type = fluid, name = concentrate_anodized_plumbium, amount = 240},
+            {type = fluid, name = water_green_waste, amount = 240},
+            {type = item, name = salt_angels, amount = 16}
         },
         main_product = concentrate_anodized_plumbium
     }
