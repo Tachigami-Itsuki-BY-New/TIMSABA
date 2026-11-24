@@ -1,6 +1,5 @@
 local graphics_germanite = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/"
 
--- Germanite Ore / Ge + Ga + Fe + Cu + V + As
 germanite_ore = "germanite-ore"
 germanite_crushed = "germanite-crushed"
 germanite_chunks = "germanite-chunks"
@@ -55,170 +54,13 @@ TIMSABA.functions.create_items
     }
 })
 
-germanite_crushed_sorting = "germanite-crushed-sorting"
-germanite_chunks_sorting = "germanite-chunks-sorting"
-germanite_crystals_sorting = "germanite-crystals-sorting"
-germanite_purified_sorting = "germanite-purified-sorting"
-TIMSABA.functions.create_recipes
-({
-    -- CRUSHED
-    {
-        name = germanite_crushed,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_germanite,
-        icons = THREE_R_I(germanite_ore, germanite_crushed, stone_crushed_angels),
-        order = b,
-        energy_required = 2, -- Germanite ore -crushing-> Germanite crushed + Stone crushed
-        ingredients = {{type = item, name = germanite_ore, amount = 2}},
-        results =
-        {
-            {type = item, name = germanite_crushed, amount = 2},
-            {type = item, name = stone_crushed_angels, amount = 1}
-        },
-        main_product = germanite_crushed
-    },
-    -- CHUNKS
-    {
-        name = germanite_chunks,
-        categories = {angels_ore_refining_T2},
-        subgroup = is_germanite,
-        icons = THREE_D_I(germanite_crushed, nil, water_purified_angels, germanite_chunks, sulfur, water_yellow_waste),
-        order = c,
-        energy_required = 2, -- Germanite crushed + Purified water -flotation-> Germanite chunks + S + Sulfuric waste water
-        ingredients =
-        {
-            {type = item, name = germanite_crushed, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = germanite_chunks, amount = 4},
-            {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
-            {type = fluid, name = water_yellow_waste, amount = 60}
-        },
-        main_product = germanite_chunks
-    },
-    -- CRYSTALS
-    {
-        name = germanite_crystals,
-        categories = {angels_ore_refining_T3},
-        subgroup = is_germanite,
-        icons = THREE_I(germanite_chunks, sulfuric_acid_angels, germanite_crystals),
-        order = d,
-        energy_required = 2, -- Germanite chunks + H₂SO₄ -leaching-> Germanite crystals
-        ingredients =
-        {
-            {type = item, name = germanite_chunks, amount = 4},
-            {type = fluid, name = sulfuric_acid_angels, amount = 15}
-        },
-        results = {{type = item, name = germanite_crystals, amount = 4}},
-        main_product = germanite_crystals
-    },
-    -- PURIFIED
-    {
-        name = germanite_purified,
-        categories = {angels_ore_refining_T4},
-        subgroup = is_germanite,
-        icons = THREE_D_I(germanite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, germanite_purified),
-        order = e,
-        energy_required = 2, -- Germanite crystals -refinery-> Germanite purified
-        ingredients =
-        {
-            {type = item, name = germanite_crystals, amount = 4},
-            {type = item, name = powdered_chlorine_bleach, amount = 1},
-            {type = item, name = powdered_oxygen_bleach, amount = 1}
-        },
-        results = {{type = item, name = germanite_purified, amount = 4}},
-        main_product = germanite_purified
-    },
-    -- SORTING
-    {
-        localised_name = {"recipe-name.sorting-recipe", {"item-name." .. germanite_ore}},
-        name = germanite_ore .. _sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_ore),
-        order = f,
-        allow_productivity = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = germanite_ore, amount = 4}},
-        results = {{type = item, name = slag_angels, amount = 1}},
-        main_product = slag_angels
-    },
-    {
-        name = germanite_crushed_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_crushed),
-        order = g,
-        allow_productivity = true,
-        energy_required = 2, -- Germanite crushed (Sorting) / Ge + Ga + S
-        ingredients = {{type = item, name = germanite_crushed, amount = 8}},
-        results =
-        {
-            {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = gallium_ore, amount = 2},
-            {type = item, name = sulfur, amount = 2}
-        },
-        main_product = germanium_ore
-    },
-    {
-        name = germanite_chunks_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_chunks),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Germanite chunks (Sorting) / Ge + Ga + Fe + Cu + S
-        ingredients = {{type = item, name = germanite_chunks, amount = 8}},
-        results =
-        {
-            {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = gallium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = copper_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1}
-        },
-        main_product = germanium_ore
-    },
-    {
-        name = germanite_crystals_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_crystals),
-        order = i,
-        allow_productivity = true,
-        energy_required = 2, -- Germanite crystals (Sorting) / Ge + Ga + Fe + Cu + V + S
-        ingredients = {{type = item, name = germanite_crystals, amount = 8}},
-        results =
-        {
-            {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = gallium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = copper_ore, amount = 1},
-            {type = item, name = vanadium_ore, amount = 1},
-            {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
-        },
-        main_product = germanium_ore
-    },
-    {
-        name = germanite_purified_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_germanite,
-        icons = RECYCLING_I(recycling_png, germanite_purified),
-        order = j,
-        allow_productivity = true,
-        energy_required = 2, -- Germanite purified (Sorting) / Ge + Ga + Fe + Cu + V + As
-        ingredients = {{type = item, name = germanite_purified, amount = 8}},
-        results =
-        {
-            {type = item, name = germanium_ore, amount = 4},
-            {type = item, name = gallium_ore, amount = 2},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = copper_ore, amount = 1},
-            {type = item, name = vanadium_ore, amount = 1},
-            {type = item, name = arsenic, amount = 1}
-        },
-        main_product = germanium_ore
-    }
-})
+ANGELS.functions.create_crushed(germanite_crushed, is_germanite, b, germanite_ore)
+ANGELS.functions.create_chunk(germanite_chunks, is_germanite, c, germanite_crushed, sulfur, water_yellow_waste)
+ANGELS.functions.create_crystal(germanite_crystals, is_germanite, d, germanite_chunks, sulfuric_acid_angels)
+ANGELS.functions.create_purified(germanite_purified, is_germanite, e, germanite_crystals)
+-- Germanite Ore / Ge + Ga + Fe + Cu + V + As
+ANGELS.functions.create_ore_processing(germanite_ore, is_germanite, f, sulfur)
+ANGELS.functions.create_crushed_processing(germanite_crushed, is_germanite, g, germanium_ore, gallium_ore, sulfur)
+ANGELS.functions.create_chunk_processing(germanite_chunks, is_germanite, h, germanium_ore, gallium_ore, iron_ore, copper_ore, sulfur)
+ANGELS.functions.create_crystal_processing(germanite_crystals, is_germanite, i, germanium_ore, gallium_ore, iron_ore, copper_ore, vanadium_ore, sulfur)
+ANGELS.functions.create_purified_processing(germanite_purified, is_germanite, j, germanium_ore, gallium_ore, iron_ore, copper_ore, vanadium_ore, arsenic)

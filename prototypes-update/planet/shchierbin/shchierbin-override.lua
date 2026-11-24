@@ -186,11 +186,10 @@ if mods[shchierbin_mods] then
         data_recipe[vanadinite_crystals].icons = THREE_I(vanadinite_chunks, orthophosphoric_acid, vanadinite_crystals)
         data_recipe[vanadinite_crystals].ingredients[2].name = orthophosphoric_acid
 
-        data_recipe[vanadinite_crushed_sorting].results[3].name = calcium_phosphate
-
-        data_recipe[vanadinite_chunks_sorting].results[5].name = calcium_phosphate
-
-        data_recipe[vanadinite_crystals_sorting].results[6].name = calcium_phosphate
+        data_recipe[vanadinite_ore .. _sorting].results[1].name = calcium_phosphate
+        data_recipe[vanadinite_crushed .. _sorting].results[3].name = calcium_phosphate
+        data_recipe[vanadinite_chunks .. _sorting].results[5].name = calcium_phosphate
+        data_recipe[vanadinite_crystals .. _sorting].results[6].name = calcium_phosphate
     end
 
     -- VANADIUM

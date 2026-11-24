@@ -21,7 +21,7 @@ if mods[castra_mods] then
             {
                 {type = unlock_recipe, recipe = millerite_ore .. _sorting},
                 {type = unlock_recipe, recipe = millerite_crushed},
-                {type = unlock_recipe, recipe = millerite_crushed_sorting},
+                {type = unlock_recipe, recipe = millerite_crushed .. _sorting},
                 {type = unlock_recipe, recipe = nickel_plate_bob}
             },
             research_trigger = {type = mine_entity, entities = {millerite_ore}}
@@ -37,7 +37,7 @@ if mods[castra_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = millerite_chunks},
-                {type = unlock_recipe, recipe = millerite_chunks_sorting}
+                {type = unlock_recipe, recipe = millerite_chunks .. _sorting}
             },
             unit =
             {
@@ -68,7 +68,7 @@ if mods[castra_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = millerite_crystals},
-                {type = unlock_recipe, recipe = millerite_crystals_sorting}
+                {type = unlock_recipe, recipe = millerite_crystals .. _sorting}
             },
             unit =
             {
@@ -101,7 +101,7 @@ if mods[castra_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = millerite_purified},
-                {type = unlock_recipe, recipe = millerite_purified_sorting}
+                {type = unlock_recipe, recipe = millerite_purified .. _sorting}
             },
             unit =
             {

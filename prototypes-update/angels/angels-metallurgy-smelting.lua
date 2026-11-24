@@ -827,6 +827,7 @@ data_recipe[aluminium_ingot].main_product = aluminium_ingot
 
 data_item[aluminium_powder].localised_description = show_formula and {chemical_formula, "Al"} or nil
 data_item[aluminium_powder].order = e
+data_recipe[aluminium_powder].categories = {angels_powderizing_2}
 data_recipe[aluminium_powder].localised_name = data_item[aluminium_powder].localised_name
 data_recipe[aluminium_powder].icons = TWO_I(aluminium_ingot, aluminium_powder)
 data_recipe[aluminium_powder].order = e

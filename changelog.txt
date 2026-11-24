@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.9
+  Balancing:
+    - [All] Balanced recipes from the branchs "Ore Processing" and "Ore Sorting".
+
+  Modding:
+    - [Mods] Updated "Muluna, Moon of Nauvis" mod dependency to version 2.9.16.
+    - [Mods] Updated "Lignumis" mod dependency to version 2.13.2.
+
+  Other:
+    - [All] Updated game to version 2.1.25.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.8
 Date: 21.11.2026
   Balancing:
@@ -8,9 +19,9 @@ Date: 21.11.2026
     - [All] Fixed errors described in the issue #391.
 
   Modding:
-    - [All] Updated "Better Asteroid Belt" mod dependency to version 1.0.15.
-    - [All] Updated "Planet Muria" mod dependency to version 1.11.5.
-    - [All] Updated "Lignumis" mod dependency to version 2.13.1.
+    - [Mods] Updated "Better Asteroid Belt" mod dependency to version 1.0.15.
+    - [Mods] Updated "Planet Muria" mod dependency to version 1.11.5.
+    - [Mods] Updated "Lignumis" mod dependency to version 2.13.1.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.7
 Date: 20.11.2026

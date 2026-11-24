@@ -191,31 +191,32 @@ if mods[apia_carnova_mods] then
     data_recipe[bone_meal_sieving].subgroup = is_carnova_recipe
     data_recipe[bone_meal_sieving].icons = RECYCLING_I(recycling_png, bone_meal)
     data_recipe[bone_meal_sieving].order = b_c
-    data_recipe[bone_meal_sieving].energy_required = 2
+    data_recipe[bone_meal_sieving].energy_required = 8
     -- ~60-70%(Ca,Mg,Na,K)₅(PO₄,CO₃)₃(OH,F) + ~20-30%(CaHbOcNd)e + ~10-20%H₂O + ~0.01%(Zn,Cu,Mn,B,Si,Fe)
-    -- (Ca₅(PO₄)₃ + 4Mg + MgCO₃ + Na + 2Na₂CO₃ + 4K + KOH + F) + collagen + water + (Zn,Cu,Mn,B,Si,Fe)
-    data_recipe[bone_meal_sieving].ingredients[1].amount = 8
+    -- (Ca₅(PO₄)₃(s) + 4Mg(s) + MgCO₃(s) + Na(s) + 2Na₂CO₃(s) + 4K(s) + KOH(s) + F(g)) + collagen + water + (Zn,Cu,Mn,B,Si,Fe)
+    data_recipe[bone_meal_sieving].ingredients[1].amount = 16
     data_recipe[bone_meal_sieving].results =
     {
         -- MINERALS
-        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 1, independent_probability = 0.50},
-        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 4, independent_probability = 0.50},
-        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
-        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 1, independent_probability = 0.50},
-        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 2, independent_probability = 0.50},
-        {type = item, name = potassium,                amount_min = 0, amount_max = 4, independent_probability = 0.50},
-        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 1, independent_probability = 0.50},
+        {type = item, name = fluorapatite,             amount_min = 0, amount_max = 16, independent_probability = 0.50},
+        {type = item, name = magnesium_ore,            amount_min = 0, amount_max = 64, independent_probability = 0.50},
+        --{type = item, name = magnesium_carbonate,      amount_min = 0, amount_max = 16, independent_probability = 0.50},
+        {type = item, name = sodium_angels,            amount_min = 0, amount_max = 16, independent_probability = 0.50},
+        {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 32, independent_probability = 0.50},
+        {type = item, name = potassium,                amount_min = 0, amount_max = 64, independent_probability = 0.50},
+        {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 16, independent_probability = 0.50},
+        {type = fluid, name = fluorine,                amount_min = 0, amount_max = 240, independent_probability = 0.50},
         -- ORGANICS
-        --{type = item, name = collagen, amount_min = 0, amount_max = 1, independent_probability = 0.25}
+        --{type = item, name = collagen, amount_min = 0, amount_max = 16, independent_probability = 0.25}
         -- WATER
-        --{type = fluid, name = water, amount_min = 0,   amount_max = 15, independent_probability = 0.125}
+        {type = fluid, name = water_purified_angels,   amount_min = 0, amount_max = 240, independent_probability = 0.125},
         -- METALS
-        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 1, independent_probability = 0.015625},
-        {type = item, name = copper_ore,               amount_min = 0, amount_max = 1, independent_probability = 0.015625},
-        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 1, independent_probability = 0.015625},
-        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 1, independent_probability = 0.015625},
-        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 1, independent_probability = 0.015625},
-        {type = item, name = boron,                    amount_min = 0, amount_max = 1, independent_probability = 0.015625},
+        {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 16, independent_probability = 0.015625},
+        {type = item, name = copper_ore,               amount_min = 0, amount_max = 16, independent_probability = 0.015625},
+        {type = item, name = manganese_ore_angels,     amount_min = 0, amount_max = 16, independent_probability = 0.015625},
+        {type = item, name = silicon_ore_bob,          amount_min = 0, amount_max = 16, independent_probability = 0.015625},
+        {type = item, name = iron_ore,                 amount_min = 0, amount_max = 16, independent_probability = 0.015625},
+        {type = item, name = boron,                    amount_min = 0, amount_max = 16, independent_probability = 0.015625}
     }
 
     data_item[flesh].subgroup = is_carnova_recipe

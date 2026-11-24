@@ -1,6 +1,5 @@
 local graphics_vulcanus = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-ore/"
 
--- Wolframite ore / W + Nb + Mn + Mg + Fe + Re
 wolframite_crushed = "wolframite-crushed"
 wolframite_chunks = "wolframite-chunks"
 wolframite_crystals = "wolframite-crystals"
@@ -37,170 +36,13 @@ TIMSABA.functions.create_items
     }
 })
 
-wolframite_crushed_sorting = "wolframite-crushed-sorting"
-wolframite_chunks_sorting = "wolframite-chunks-sorting"
-wolframite_crystals_sorting = "wolframite-crystals-sorting"
-wolframite_purified_sorting = "wolframite-purified-sorting"
-TIMSABA.functions.create_recipes
-({
-    -- CRUSHED
-    {
-        name = wolframite_crushed,
-        categories = {angels_ore_refining_T1},
-        subgroup = is_wolframite,
-        icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels),
-        order = b,
-        energy_required = 2, -- Wolframite ore -crushing-> Wolframite crushed + Stone crushed
-        ingredients = {{type = item, name = wolframite_ore, amount = 2}},
-        results =
-        {
-            {type = item, name = wolframite_crushed, amount = 2},
-            {type = item, name = stone_crushed_angels, amount = 1}
-        },
-        main_product = wolframite_crushed
-    },
-    -- CHUNKS
-    {
-        name = wolframite_chunks,
-        categories = {angels_ore_refining_T2},
-        subgroup = is_wolframite,
-        icons = THREE_D_I(wolframite_crushed, nil, water_purified_angels, wolframite_chunks, calcium_silicate, water_yellow_waste),
-        order = c,
-        energy_required = 2, -- Wolframite crushed + Purified water -flotation-> Wolframite chunks + Calcium silicate + Sulfuric waste water
-        ingredients =
-        {
-            {type = item, name = wolframite_crushed, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = wolframite_chunks, amount = 4},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5},
-            {type = fluid, name = water_yellow_waste, amount = 60}
-        },
-        main_product = wolframite_chunks
-    },
-    -- CRYSTALS
-    {
-        name = wolframite_crystals,
-        categories = {angels_ore_refining_T3},
-        subgroup = is_wolframite,
-        icons = THREE_I(wolframite_chunks, sulfuric_acid_angels, wolframite_crystals),
-        order = d,
-        energy_required = 2, -- Wolframite chunks + H₂SO₄ -leaching-> Wolframite crystals
-        ingredients =
-        {
-            {type = item, name = wolframite_chunks, amount = 4},
-            {type = fluid, name = sulfuric_acid_angels, amount = 15}
-        },
-        results = {{type = item, name = wolframite_crystals, amount = 4}},
-        main_product = wolframite_crystals
-    },
-    -- PURIFIED
-    {
-        name = wolframite_purified,
-        categories = {angels_ore_refining_T4},
-        subgroup = is_wolframite,
-        icons = THREE_D_I(wolframite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, wolframite_purified),
-        order = e,
-        energy_required = 2, -- Wolframite crystals -refinery-> Wolframite purified
-        ingredients =
-        {
-            {type = item, name = wolframite_crystals, amount = 4},
-            {type = item, name = powdered_chlorine_bleach, amount = 1},
-            {type = item, name = powdered_oxygen_bleach, amount = 1}
-        },
-        results = {{type = item, name = wolframite_purified, amount = 4}},
-        main_product = wolframite_purified
-    },
-    -- SORTING
-    {
-        localised_name = {"recipe-name.sorting-recipe", {"item-name.wolframite-ore"}},
-        name = wolframite_ore .. _sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_wolframite,
-        icons = RECYCLING_I(recycling_png, wolframite_ore),
-        order = f,
-        allow_productivity = true,
-        energy_required = 1,
-        ingredients = {{type = item, name = wolframite_ore, amount = 4}},
-        results = {{type = item, name = slag_angels, amount = 1}},
-        main_product = slag_angels
-    },
-    {
-        name = wolframite_crushed_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_wolframite,
-        icons = RECYCLING_I(recycling_png, wolframite_crushed),
-        order = g,
-        allow_productivity = true,
-        energy_required = 2, -- Wolframite crushed (Sorting) / W + Nb + Calcium silicate
-        ingredients = {{type = item, name = wolframite_crushed, amount = 8}},
-        results =
-        {
-            {type = item, name = tungsten_ore_bob, amount = 4},
-            {type = item, name = niobium_ore, amount = 2},
-            {type = item, name = calcium_silicate, amount = 2}
-        },
-        main_product = tungsten_ore_bob
-    },
-    {
-        name = wolframite_chunks_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_wolframite,
-        icons = RECYCLING_I(recycling_png, wolframite_chunks),
-        order = h,
-        allow_productivity = true,
-        energy_required = 2, -- Wolframite chunks (Sorting) / W + Nb + Mn + Mg + Calcium silicate
-        ingredients = {{type = item, name = wolframite_chunks, amount = 8}},
-        results =
-        {
-            {type = item, name = tungsten_ore_bob, amount = 4},
-            {type = item, name = niobium_ore, amount = 2},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = magnesium_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1}
-        },
-        main_product = tungsten_ore_bob
-    },
-    {
-        name = wolframite_crystals_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_wolframite,
-        icons = RECYCLING_I(recycling_png, wolframite_crystals),
-        order = i,
-        allow_productivity = true,
-        energy_required = 2, -- Wolframite crystals (Sorting) / W + Nb + Mn + Mg + Fe + Calcium silicate
-        ingredients = {{type = item, name = wolframite_crystals, amount = 8}},
-        results =
-        {
-            {type = item, name = tungsten_ore_bob, amount = 4},
-            {type = item, name = niobium_ore, amount = 2},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = magnesium_ore, amount = 1},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = calcium_silicate, amount = 1, independent_probability = 0.5}
-        },
-        main_product = tungsten_ore_bob
-    },
-    {
-        name = wolframite_purified_sorting,
-        categories = {ore_sorting_6},
-        subgroup = is_wolframite,
-        icons = RECYCLING_I(recycling_png, wolframite_purified),
-        order = j,
-        allow_productivity = true,
-        energy_required = 2, -- Wolframite purified (Sorting) / W + Nb + Mn + Mg + Fe + Re
-        ingredients = {{type = item, name = wolframite_purified, amount = 8}},
-        results =
-        {
-            {type = item, name = tungsten_ore_bob, amount = 4},
-            {type = item, name = niobium_ore, amount = 2},
-            {type = item, name = manganese_ore_angels, amount = 1},
-            {type = item, name = magnesium_ore, amount = 1},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = rhenium_ore, amount = 1}
-        },
-        main_product = tungsten_ore_bob
-    }
-})
+ANGELS.functions.create_crushed(wolframite_crushed, is_wolframite, b, wolframite_ore)
+ANGELS.functions.create_chunk(wolframite_chunks, is_wolframite, c, wolframite_crushed, calcium_silicate, water_yellow_waste)
+ANGELS.functions.create_crystal(wolframite_crystals, is_wolframite, d, wolframite_chunks, sulfuric_acid_angels)
+ANGELS.functions.create_purified(wolframite_purified, is_wolframite, e, wolframite_crystals)
+-- Wolframite ore / W + Nb + Mn + Mg + Fe + Re
+ANGELS.functions.create_ore_processing(wolframite_ore, is_wolframite, f, calcium_silicate)
+ANGELS.functions.create_crushed_processing(wolframite_crushed, is_wolframite, g, tungsten_ore_bob, niobium_ore, calcium_silicate)
+ANGELS.functions.create_chunk_processing(wolframite_chunks, is_wolframite, h, tungsten_ore_bob, niobium_ore, manganese_ore_angels, magnesium_ore, calcium_silicate)
+ANGELS.functions.create_crystal_processing(wolframite_crystals, is_wolframite, i, tungsten_ore_bob, niobium_ore, manganese_ore_angels, magnesium_ore, iron_ore, calcium_silicate)
+ANGELS.functions.create_purified_processing(wolframite_purified, is_wolframite, j, tungsten_ore_bob, niobium_ore, manganese_ore_angels, magnesium_ore, iron_ore, rhenium_ore)

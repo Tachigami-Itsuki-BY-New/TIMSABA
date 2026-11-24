@@ -10,6 +10,7 @@ require("prototypes.fuel-category")
 require("prototypes.equipment-grid")
 
 require("lib.TIMSABA-functions")
+require("lib.ANGELS-functions")
 require("lib.barreling-and-void")
 
 require("prototypes.planet-and-space-location")

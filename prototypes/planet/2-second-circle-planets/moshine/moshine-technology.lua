@@ -23,7 +23,7 @@ if mods[moshine_mods] then
             {
                 {type = unlock_recipe, recipe = monazite_ore .. _sorting},
                 {type = unlock_recipe, recipe = monazite_crushed},
-                {type = unlock_recipe, recipe = monazite_crushed_sorting}
+                {type = unlock_recipe, recipe = monazite_crushed .. _sorting}
             },
             research_trigger = {type = craft_item, item = monazite_ore}
         },
@@ -38,7 +38,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_chunks},
-                {type = unlock_recipe, recipe = monazite_chunks_sorting}
+                {type = unlock_recipe, recipe = monazite_chunks .. _sorting}
             },
             unit =
             {
@@ -68,7 +68,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_crystals},
-                {type = unlock_recipe, recipe = monazite_crystals_sorting}
+                {type = unlock_recipe, recipe = monazite_crystals .. _sorting}
             },
             unit =
             {
@@ -100,7 +100,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_purified},
-                {type = unlock_recipe, recipe = monazite_purified_sorting}
+                {type = unlock_recipe, recipe = monazite_purified .. _sorting}
             },
             unit =
             {
@@ -143,7 +143,7 @@ if mods[moshine_mods] then
             {
                 {type = unlock_recipe, recipe = aeschynite_ore .. _sorting},
                 {type = unlock_recipe, recipe = aeschynite_crushed},
-                {type = unlock_recipe, recipe = aeschynite_crushed_sorting}
+                {type = unlock_recipe, recipe = aeschynite_crushed .. _sorting}
             },
             research_trigger = {type = craft_item, item = aeschynite_ore}
         },
@@ -158,7 +158,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = aeschynite_chunks},
-                {type = unlock_recipe, recipe = aeschynite_chunks_sorting}
+                {type = unlock_recipe, recipe = aeschynite_chunks .. _sorting}
             },
             unit =
             {
@@ -188,7 +188,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = aeschynite_crystals},
-                {type = unlock_recipe, recipe = aeschynite_crystals_sorting}
+                {type = unlock_recipe, recipe = aeschynite_crystals .. _sorting}
             },
             unit =
             {
@@ -220,7 +220,7 @@ if mods[moshine_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = aeschynite_purified},
-                {type = unlock_recipe, recipe = aeschynite_purified_sorting}
+                {type = unlock_recipe, recipe = aeschynite_purified .. _sorting}
             },
             unit =
             {

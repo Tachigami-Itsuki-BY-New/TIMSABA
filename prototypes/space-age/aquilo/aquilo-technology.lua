@@ -20,7 +20,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = antimonite_ore .. _sorting},
             {type = unlock_recipe, recipe = antimonite_crushed},
-            {type = unlock_recipe, recipe = antimonite_crushed_sorting}
+            {type = unlock_recipe, recipe = antimonite_crushed .. _sorting}
         },
         research_trigger = {type = craft_item, item = antimonite_ore}
     },
@@ -35,7 +35,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_chunks},
-            {type = unlock_recipe, recipe = antimonite_chunks_sorting}
+            {type = unlock_recipe, recipe = antimonite_chunks .. _sorting}
         },
         unit =
         {
@@ -67,7 +67,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_crystals},
-            {type = unlock_recipe, recipe = antimonite_crystals_sorting}
+            {type = unlock_recipe, recipe = antimonite_crystals .. _sorting}
         },
         unit =
         {
@@ -99,7 +99,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_purified},
-            {type = unlock_recipe, recipe = antimonite_purified_sorting}
+            {type = unlock_recipe, recipe = antimonite_purified .. _sorting}
         },
         unit =
         {
@@ -142,7 +142,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = germanite_ore .. _sorting},
             {type = unlock_recipe, recipe = germanite_crushed},
-            {type = unlock_recipe, recipe = germanite_crushed_sorting}
+            {type = unlock_recipe, recipe = germanite_crushed .. _sorting}
         },
         research_trigger = {type = craft_item, item = germanite_ore}
     },
@@ -157,7 +157,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = germanite_chunks},
-            {type = unlock_recipe, recipe = germanite_chunks_sorting}
+            {type = unlock_recipe, recipe = germanite_chunks .. _sorting}
         },
         unit =
         {
@@ -189,7 +189,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = germanite_crystals},
-            {type = unlock_recipe, recipe = germanite_crystals_sorting}
+            {type = unlock_recipe, recipe = germanite_crystals .. _sorting}
         },
         unit =
         {
@@ -221,7 +221,7 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = germanite_purified},
-            {type = unlock_recipe, recipe = germanite_purified_sorting}
+            {type = unlock_recipe, recipe = germanite_purified .. _sorting}
         },
         unit =
         {

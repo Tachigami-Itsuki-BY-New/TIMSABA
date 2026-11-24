@@ -22,7 +22,7 @@ if mods[shchierbin_mods] then
             {
                 {type = unlock_recipe, recipe = vanadinite_ore .. _sorting},
                 {type = unlock_recipe, recipe = vanadinite_crushed},
-                {type = unlock_recipe, recipe = vanadinite_crushed_sorting}
+                {type = unlock_recipe, recipe = vanadinite_crushed .. _sorting}
             },
             research_trigger = {type = mine_entity, entities = {vanadinite_ore}}
         },
@@ -37,7 +37,7 @@ if mods[shchierbin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = vanadinite_chunks},
-                {type = unlock_recipe, recipe = vanadinite_chunks_sorting}
+                {type = unlock_recipe, recipe = vanadinite_chunks .. _sorting}
             },
             unit =
             {
@@ -67,7 +67,7 @@ if mods[shchierbin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = vanadinite_crystals},
-                {type = unlock_recipe, recipe = vanadinite_crystals_sorting}
+                {type = unlock_recipe, recipe = vanadinite_crystals .. _sorting}
             },
             unit =
             {
@@ -99,7 +99,7 @@ if mods[shchierbin_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = vanadinite_purified},
-                {type = unlock_recipe, recipe = vanadinite_purified_sorting}
+                {type = unlock_recipe, recipe = vanadinite_purified .. _sorting}
             },
             unit =
             {

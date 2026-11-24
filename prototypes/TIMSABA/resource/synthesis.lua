@@ -14,14 +14,14 @@ TIMSABA.functions.create_recipes
         icons = AR_FOUR_I(mineral_catalyst, crushed_ferrium, crushed_plumbium, manganese_ore_angels),
         order = e,
         allow_productivity = true,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = mineral_catalyst, amount = 1},
-            {type = item, name = crushed_ferrium, amount = 2},
-            {type = item, name = crushed_plumbium, amount = 2}
+            {type = item, name = mineral_catalyst, amount = 4},
+            {type = item, name = crushed_ferrium, amount = 8},
+            {type = item, name = crushed_plumbium, amount = 8}
         },
-        results = {{type = item, name = manganese_ore_angels, amount = 4}},
+        results = {{type = item, name = manganese_ore_angels, amount = 16}},
         main_product = manganese_ore_angels,
         hide_from_signal_gui = false
     },
@@ -33,14 +33,14 @@ TIMSABA.functions.create_recipes
         icons = AR_FOUR_I(mineral_catalyst, crushed_cuprium, crushed_stannium, magnesium_ore),
         order = f,
         allow_productivity = true,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = mineral_catalyst, amount = 1},
-            {type = item, name = crushed_cuprium, amount = 2},
-            {type = item, name = crushed_stannium, amount = 2}
+            {type = item, name = mineral_catalyst, amount = 4},
+            {type = item, name = crushed_cuprium, amount = 8},
+            {type = item, name = crushed_stannium, amount = 8}
         },
-        results = {{type = item, name = magnesium_ore, amount = 4}},
+        results = {{type = item, name = magnesium_ore, amount = 16}},
         main_product = magnesium_ore,
         hide_from_signal_gui = false
     },
@@ -53,14 +53,14 @@ TIMSABA.functions.create_recipes
         icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, sodium_angels),
         order = f,
         allow_productivity = true,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = crystal_catalyst, amount = 1},
-            {type = item, name = chunk_rubyte, amount = 2},
-            {type = item, name = chunk_bobmonium, amount = 2}
+            {type = item, name = crystal_catalyst, amount = 4},
+            {type = item, name = chunk_rubyte, amount = 8},
+            {type = item, name = chunk_bobmonium, amount = 8}
         },
-        results = {{type = item, name = sodium_angels, amount = 4}},
+        results = {{type = item, name = sodium_angels, amount = 16}},
         main_product = sodium_angels,
         hide_from_signal_gui = false
     },
@@ -73,14 +73,14 @@ TIMSABA.functions.create_recipes
         icons = AR_FOUR_I(hybride_catalyst, purified_saphirite, purified_senaite, chromium_ore_angels),
         order = f,
         allow_productivity = true,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = hybride_catalyst, amount = 1},
-            {type = item, name = purified_saphirite, amount = 2},
-            {type = item, name = purified_senaite, amount = 2}
+            {type = item, name = hybride_catalyst, amount = 4},
+            {type = item, name = purified_saphirite, amount = 8},
+            {type = item, name = purified_senaite, amount = 8}
         },
-        results = {{type = item, name = chromium_ore_angels, amount = 4}},
+        results = {{type = item, name = chromium_ore_angels, amount = 16}},
         main_product = chromium_ore_angels,
         hide_from_signal_gui = false
     }

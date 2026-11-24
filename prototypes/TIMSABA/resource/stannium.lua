@@ -98,7 +98,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_item,
         icons = THREE_I(crushed_bobmonium, crushed_franckeite, crushed_stannium),
         order = a,
-        energy_required = 2,
+        energy_required = 4,
         ingredients =
         {
             {type = item, name = crushed_bobmonium, amount = 2},
@@ -113,7 +113,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_item,
         icons = TWO_I(crushed_stannium, powder_stannium),
         order = b,
-        energy_required = 2,
+        energy_required = 4,
         ingredients =
         {
             {type = item, name = crushed_stannium, amount = 4},
@@ -130,18 +130,18 @@ TIMSABA.functions.create_recipes
         name = dust_stannium,
         categories = {angels_ore_refining_T2},
         subgroup = is_tin_item,
-        icons = TWO_D_I(sludge_stannium, sodium_angels, dust_stannium, water_red_waste),
+        icons = TWO_D_I(sludge_stannium, sodium_angels, dust_stannium, sodium_nitrate_solution),
         order = c,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = sodium_angels, amount = 4},
-            {type = fluid, name = sludge_stannium, amount = 60}
+            {type = item, name = sodium_angels, amount = 16},
+            {type = fluid, name = sludge_stannium, amount = 240}
         },
         results =
         {
-            {type = item, name = dust_stannium, amount = 4},
-            {type = fluid, name = water_red_waste, amount = 30}
+            {type = item, name = dust_stannium, amount = 16},
+            {type = fluid, name = sodium_nitrate_solution, amount = 240}
         },
         main_product = dust_stannium
     },
@@ -151,9 +151,9 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_item,
         icons = TWO_I(concentrate_anodized_stannium, crystal_stannium),
         order = d,
-        energy_required = 2,
-        ingredients = {{type = fluid, name = concentrate_anodized_stannium, amount = 60}},
-        results = {{type = item, name = crystal_stannium, amount = 4}},
+        energy_required = 8,
+        ingredients = {{type = fluid, name = concentrate_anodized_stannium, amount = 240}},
+        results = {{type = item, name = crystal_stannium, amount = 16}},
         main_product = crystal_stannium
     },
     -- SORTING
@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_stannium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 2, -- Stannium crushed (Sorting) / Sn + Mg
-        ingredients = {{type = item, name = crushed_stannium, amount = 8}},
+        energy_required = 8, -- Stannium crushed (Sorting) / Sn + Mg
+        ingredients = {{type = item, name = crushed_stannium, amount = 32}},
         results =
         {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 4}
+            {type = item, name = tin_ore_bob, amount = 16},
+            {type = item, name = magnesium_ore, amount = 16}
         },
         main_product = tin_ore_bob,
         hide_from_signal_gui = false
@@ -181,14 +181,14 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powder_stannium),
         order = d_b,
         allow_productivity = true,
-        energy_required = 2, -- Stannium powder (Sorting) / Sn + Mg + Al + Ag
-        ingredients = {{type = item, name = powder_stannium, amount = 8}},
+        energy_required = 8, -- Stannium powder (Sorting) / Sn + Mg + Al + Ag
+        ingredients = {{type = item, name = powder_stannium, amount = 32}},
         results =
         {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 4},
-            {type = item, name = aluminium_ore_bob, amount = 2},
-            {type = item, name = silver_ore_bob, amount = 2}
+            {type = item, name = tin_ore_bob, amount = 16},
+            {type = item, name = magnesium_ore, amount = 16},
+            {type = item, name = aluminium_ore_bob, amount = 8},
+            {type = item, name = silver_ore_bob, amount = 8}
         },
         main_product = tin_ore_bob,
         hide_from_signal_gui = false
@@ -200,15 +200,15 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, dust_stannium),
         order = d_c,
         allow_productivity = true,
-        energy_required = 2, -- Stannium dust (Sorting) / Sn + Mg + Al + Ag + U
-        ingredients = {{type = item, name = dust_stannium, amount = 8}},
+        energy_required = 8, -- Stannium dust (Sorting) / Sn + Mg + Al + Ag + U
+        ingredients = {{type = item, name = dust_stannium, amount = 32}},
         results =
         {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 4},
-            {type = item, name = aluminium_ore_bob, amount = 2},
-            {type = item, name = silver_ore_bob, amount = 2},
-            {type = item, name = uranium_ore, amount = 2}
+            {type = item, name = tin_ore_bob, amount = 16},
+            {type = item, name = magnesium_ore, amount = 16},
+            {type = item, name = aluminium_ore_bob, amount = 8},
+            {type = item, name = silver_ore_bob, amount = 8},
+            {type = item, name = uranium_ore, amount = 8}
         },
         main_product = tin_ore_bob,
         hide_from_signal_gui = false
@@ -220,16 +220,16 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_stannium),
         order = d_d,
         allow_productivity = true,
-        energy_required = 2, -- Stannium crystal (Sorting) / Sn + Mg + Al + Ag + U + Th
-        ingredients = {{type = item, name = crystal_stannium, amount = 8}},
+        energy_required = 8, -- Stannium crystal (Sorting) / Sn + Mg + Al + Ag + U + Th
+        ingredients = {{type = item, name = crystal_stannium, amount = 32}},
         results =
         {
-            {type = item, name = tin_ore_bob, amount = 4},
-            {type = item, name = magnesium_ore, amount = 4},
-            {type = item, name = aluminium_ore_bob, amount = 2},
-            {type = item, name = silver_ore_bob, amount = 2},
-            {type = item, name = uranium_ore, amount = 2},
-            {type = item, name = thorium_ore_bob, amount = 2}
+            {type = item, name = tin_ore_bob, amount = 16},
+            {type = item, name = magnesium_ore, amount = 16},
+            {type = item, name = aluminium_ore_bob, amount = 8},
+            {type = item, name = silver_ore_bob, amount = 8},
+            {type = item, name = uranium_ore, amount = 8},
+            {type = item, name = thorium_ore_bob, amount = 8}
         },
         main_product = tin_ore_bob,
         hide_from_signal_gui = false
@@ -244,8 +244,8 @@ TIMSABA.functions.create_recipes
         ingredients =
         {
             {type = item, name = powder_stannium, amount = 4},
-            {type = fluid, name = water_thermal_angels, amount = 30},
-            {type = fluid, name = nitric_acid_angels, amount = 30}
+            {type = fluid, name = water_thermal_angels, amount = 60},
+            {type = fluid, name = nitric_acid_angels, amount = 60}
         },
         results = {{type = fluid, name = sludge_stannium, amount = 60}},
         main_product = sludge_stannium
@@ -256,13 +256,13 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_fluid,
         icons = THREE_I(dust_stannium, nitric_acid_angels, slurry_stannium),
         order = b,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = item, name = dust_stannium, amount = 4},
-            {type = fluid, name = nitric_acid_angels, amount = 60}
+            {type = item, name = dust_stannium, amount = 16},
+            {type = fluid, name = nitric_acid_angels, amount = 240}
         },
-        results = {{type = fluid, name = slurry_stannium, amount = 60}},
+        results = {{type = fluid, name = slurry_stannium, amount = 240}},
         main_product = slurry_stannium
     },
     {
@@ -271,17 +271,17 @@ TIMSABA.functions.create_recipes
         subgroup = is_tin_fluid,
         icons = TWO_D_I(slurry_stannium, water_purified_angels, concentrate_stannium, water_red_waste),
         order = c,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = fluid, name = slurry_stannium, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 60},
+            {type = fluid, name = slurry_stannium, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240},
             {type = item, name = filter_ceramic, amount = 1}
         },
         results =
         {
-            {type = fluid, name = concentrate_stannium, amount = 60},
-            {type = fluid, name = water_red_waste, amount = 30}, -- 60
+            {type = fluid, name = concentrate_stannium, amount = 240},
+            {type = fluid, name = water_red_waste, amount = 240},
             {type = item, name = filter_ceramic, amount = 1, independent_probability = 0.875},
             {type = item, name = filter_ceramic_used, amount = 1, independent_probability = 0.125}
         },
@@ -291,19 +291,19 @@ TIMSABA.functions.create_recipes
         name = concentrate_anodized_stannium,
         categories = {angels_ore_refining_T3_5},
         subgroup = is_tin_fluid,
-        icons = THREE_D_I(concentrate_stannium, nil, water_purified_angels, concentrate_anodized_stannium, slag_angels, water_red_waste),
+        icons = THREE_D_I(concentrate_stannium, nil, water_purified_angels, concentrate_anodized_stannium, sodium_nitrate_angels, water_red_waste),
         order = d,
-        energy_required = 2,
+        energy_required = 8,
         ingredients =
         {
-            {type = fluid, name = concentrate_stannium, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 60}
+            {type = fluid, name = concentrate_stannium, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
-            {type = fluid, name = concentrate_anodized_stannium, amount = 60},
-            {type = fluid, name = water_red_waste, amount = 30},
-            {type = item, name = slag_angels, amount = 1}
+            {type = fluid, name = concentrate_anodized_stannium, amount = 240},
+            {type = fluid, name = water_red_waste, amount = 240},
+            {type = item, name = sodium_nitrate_angels, amount = 16}
         },
         main_product = concentrate_anodized_stannium
     }

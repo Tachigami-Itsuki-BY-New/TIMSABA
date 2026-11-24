@@ -1,7 +1,6 @@
 if mods[castra_mods] then
     local graphics_millerite = "__TIMSABA__/graphics/icons/castra/millerite/"
 
-    -- Millerite ore / Ni + Co + Fe + Cu + Cr + V
     millerite_crushed = "millerite-crushed"
     millerite_chunks = "millerite-chunks"
     millerite_crystals = "millerite-crystals"
@@ -39,171 +38,14 @@ if mods[castra_mods] then
     })
 
     -- RECIPE
-    millerite_crushed_sorting = "millerite-crushed-sorting"
-    millerite_chunks_sorting = "millerite-chunks-sorting"
-    millerite_crystals_sorting = "millerite-crystals-sorting"
-    millerite_purified_sorting = "millerite-purified-sorting"
-    TIMSABA.functions.create_recipes
-    ({
-        -- CRUSHED
-        {
-            name = millerite_crushed,
-            categories = {angels_ore_refining_T1},
-            subgroup = is_millerite,
-            icons = THREE_R_I(millerite_ore, millerite_crushed, stone_crushed_angels),
-            order = b,
-            energy_required = 2, -- Millerite ore -crushing-> Millerite crushed + Stone crushed
-            ingredients = {{type = item, name = millerite_ore, amount = 2}},
-            results =
-            {
-                {type = item, name = millerite_crushed, amount = 2},
-                {type = item, name = stone_crushed_angels, amount = 1}
-            },
-            main_product = millerite_crushed
-        },
-        -- CHUNKS
-        {
-            name = millerite_chunks,
-            categories = {angels_ore_refining_T2},
-            subgroup = is_millerite,
-            icons = THREE_D_I(millerite_crushed, nil, water_purified_angels, millerite_chunks, sulfur, water_yellow_waste),
-            order = c,
-            energy_required = 2, -- Millerite crushed + Purified water -flotation-> Millerite chunks + S + Sulfuric waste water
-            ingredients =
-            {
-                {type = item, name = millerite_crushed, amount = 4},
-                {type = fluid, name = water_purified_angels, amount = 60}
-            },
-            results =
-            {
-                {type = item, name = millerite_chunks, amount = 4},
-                {type = item, name = sulfur, amount = 1, independent_probability = 0.5},
-                {type = fluid, name = water_yellow_waste, amount = 60}
-            },
-            main_product = millerite_chunks
-        },
-        -- CRYSTALS
-        {
-            name = millerite_crystals,
-            categories = {angels_ore_refining_T3},
-            subgroup = is_millerite,
-            icons = THREE_I(millerite_chunks, sulfuric_acid_angels, millerite_crystals),
-            order = d,
-            energy_required = 2, -- Millerite chunks + H₂SO₄ -leaching-> Millerite crystals
-            ingredients =
-            {
-                {type = item, name = millerite_chunks, amount = 4},
-                {type = fluid, name = sulfuric_acid_angels, amount = 15}
-            },
-            results = {{type = item, name = millerite_crystals, amount = 4}},
-            main_product = millerite_crystals
-        },
-        -- PURIFIED
-        {
-            name = millerite_purified,
-            categories = {angels_ore_refining_T4},
-            subgroup = is_millerite,
-            icons = THREE_D_I(millerite_crystals, powdered_chlorine_bleach, powdered_oxygen_bleach, millerite_purified),
-            order = e,
-            energy_required = 2, -- Millerite crystals -refinery-> Millerite purified
-            ingredients =
-            {
-                {type = item, name = millerite_crystals, amount = 4},
-                {type = item, name = powdered_chlorine_bleach, amount = 1},
-                {type = item, name = powdered_oxygen_bleach, amount = 1}
-            },
-            results = {{type = item, name = millerite_purified, amount = 4}},
-            main_product = millerite_purified
-        },
-        -- SORTING
-        {
-            localised_name = {"recipe-name.sorting-recipe", {"item-name." .. millerite_ore}},
-            name = millerite_ore .. _sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_millerite,
-            icons = RECYCLING_I(recycling_png, millerite_ore),
-            order = f,
-            allow_productivity = true,
-            energy_required = 1,
-            ingredients = {{type = item, name = millerite_ore, amount = 4}},
-            results = {{type = item, name = slag_angels, amount = 1}},
-            main_product = slag_angels
-        },
-        {
-            name = millerite_crushed_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_millerite,
-            icons = RECYCLING_I(recycling_png, millerite_crushed),
-            order = g,
-            allow_productivity = true,
-            energy_required = 2, -- Millerite crushed (Sorting) / Ni + Co + S
-            ingredients = {{type = item, name = millerite_crushed, amount = 8}},
-            results =
-            {
-                {type = item, name = nickel_ore_bob, amount = 4},
-                {type = item, name = cobalt_ore_bob, amount = 2},
-                {type = item, name = sulfur, amount = 2}
-            },
-            main_product = nickel_ore_bob
-        },
-        {
-            name = millerite_chunks_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_millerite,
-            icons = RECYCLING_I(recycling_png, millerite_chunks),
-            order = h,
-            allow_productivity = true,
-            energy_required = 2, -- Millerite chunks (Sorting) / Ni + Co + Fe + Cu + S
-            ingredients = {{type = item, name = millerite_chunks, amount = 8}},
-            results =
-            {
-                {type = item, name = nickel_ore_bob, amount = 4},
-                {type = item, name = cobalt_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = sulfur, amount = 1}
-            },
-            main_product = nickel_ore_bob
-        },
-        {
-            name = millerite_crystals_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_millerite,
-            icons = RECYCLING_I(recycling_png, millerite_crystals),
-            order = i,
-            allow_productivity = true,
-            energy_required = 2, -- Millerite crystals (Sorting) / Ni + Co + Fe + Cu + Cr + S
-            ingredients = {{type = item, name = millerite_crystals, amount = 8}},
-            results =
-            {
-                {type = item, name = nickel_ore_bob, amount = 4},
-                {type = item, name = cobalt_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = chromium_ore_angels, amount = 1},
-                {type = item, name = sulfur, amount = 1, independent_probability = 0.5}
-            },
-            main_product = nickel_ore_bob
-        },
-        {
-            name = millerite_purified_sorting,
-            categories = {ore_sorting_6},
-            subgroup = is_millerite,
-            icons = RECYCLING_I(recycling_png, millerite_purified),
-            order = j,
-            allow_productivity = true,
-            energy_required = 2, -- Millerite purified (Sorting) / Ni + Co + Fe + Cu + Cr + V
-            ingredients = {{type = item, name = millerite_purified, amount = 8}},
-            results =
-            {
-                {type = item, name = nickel_ore_bob, amount = 4},
-                {type = item, name = cobalt_ore_bob, amount = 2},
-                {type = item, name = iron_ore, amount = 1},
-                {type = item, name = copper_ore, amount = 1},
-                {type = item, name = chromium_ore_angels, amount = 1},
-                {type = item, name = vanadium_ore, amount = 1}
-            },
-            main_product = nickel_ore_bob
-        }
-    })
+    ANGELS.functions.create_crushed(millerite_crushed, is_millerite, b, millerite_ore)
+    ANGELS.functions.create_chunk(millerite_chunks, is_millerite, c, millerite_crushed, sulfur, water_yellow_waste)
+    ANGELS.functions.create_crystal(millerite_crystals, is_millerite, d, millerite_chunks, sulfuric_acid_angels)
+    ANGELS.functions.create_purified(millerite_purified, is_millerite, e, millerite_crystals)
+    -- Millerite ore / Ni + Co + Fe + Cu + Cr + V
+    ANGELS.functions.create_ore_processing(millerite_ore, is_millerite, f, sulfur)
+    ANGELS.functions.create_crushed_processing(millerite_crushed, is_millerite, g, nickel_ore_bob, cobalt_ore_bob, sulfur)
+    ANGELS.functions.create_chunk_processing(millerite_chunks, is_millerite, h, nickel_ore_bob, cobalt_ore_bob, iron_ore, copper_ore, sulfur)
+    ANGELS.functions.create_crystal_processing(millerite_crystals, is_millerite, i, nickel_ore_bob, cobalt_ore_bob, iron_ore, copper_ore, chromium_ore_angels, sulfur)
+    ANGELS.functions.create_purified_processing(millerite_purified, is_millerite, j, nickel_ore_bob, cobalt_ore_bob, iron_ore, copper_ore, chromium_ore_angels, vanadium_ore)
 end

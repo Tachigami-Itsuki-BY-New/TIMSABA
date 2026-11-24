@@ -21,7 +21,7 @@ if mods[corrundum_mods] then
             {
                 {type = unlock_recipe, recipe = chalcopyrite_ore .. _sorting},
                 {type = unlock_recipe, recipe = chalcopyrite_crushed},
-                {type = unlock_recipe, recipe = chalcopyrite_crushed_sorting}
+                {type = unlock_recipe, recipe = chalcopyrite_crushed .. _sorting}
             },
             research_trigger = {type = mine_entity, entities = {chalcopyrite_ore}}
         },
@@ -36,7 +36,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_chunks},
-                {type = unlock_recipe, recipe = chalcopyrite_chunks_sorting}
+                {type = unlock_recipe, recipe = chalcopyrite_chunks .. _sorting}
             },
             unit =
             {
@@ -67,7 +67,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_crystals},
-                {type = unlock_recipe, recipe = chalcopyrite_crystals_sorting}
+                {type = unlock_recipe, recipe = chalcopyrite_crystals .. _sorting}
             },
             unit =
             {
@@ -99,7 +99,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_purified},
-                {type = unlock_recipe, recipe = chalcopyrite_purified_sorting}
+                {type = unlock_recipe, recipe = chalcopyrite_purified .. _sorting}
             },
             unit =
             {
@@ -142,7 +142,7 @@ if mods[corrundum_mods] then
             {
                 {type = unlock_recipe, recipe = sperrylite_ore .. _sorting},
                 {type = unlock_recipe, recipe = sperrylite_crushed},
-                {type = unlock_recipe, recipe = sperrylite_crushed_sorting},
+                {type = unlock_recipe, recipe = sperrylite_crushed .. _sorting},
                 {type = unlock_recipe, recipe = platinum_plate}
             },
             research_trigger = {type = mine_entity, entities = {sperrylite_ore}}
@@ -158,7 +158,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sperrylite_chunks},
-                {type = unlock_recipe, recipe = sperrylite_chunks_sorting}
+                {type = unlock_recipe, recipe = sperrylite_chunks .. _sorting}
             },
             unit =
             {
@@ -189,7 +189,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sperrylite_crystals},
-                {type = unlock_recipe, recipe = sperrylite_crystals_sorting}
+                {type = unlock_recipe, recipe = sperrylite_crystals .. _sorting}
             },
             unit =
             {
@@ -221,7 +221,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = sperrylite_purified},
-                {type = unlock_recipe, recipe = sperrylite_purified_sorting}
+                {type = unlock_recipe, recipe = sperrylite_purified .. _sorting}
             },
             unit =
             {
