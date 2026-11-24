@@ -205,7 +205,7 @@ if mods[apia_carnova_mods] then
         {type = item, name = sodium_carbonate_angels,  amount_min = 0, amount_max = 32, independent_probability = 0.50},
         {type = item, name = potassium,                amount_min = 0, amount_max = 64, independent_probability = 0.50},
         {type = item, name = potassium_hydroxide,      amount_min = 0, amount_max = 16, independent_probability = 0.50},
-        {type = item, name = fluorine,                 amount_min = 0, amount_max = 240, independent_probability = 0.50},
+        {type = fluid, name = fluorine,                amount_min = 0, amount_max = 240, independent_probability = 0.50},
         -- ORGANICS
         --{type = item, name = collagen, amount_min = 0, amount_max = 16, independent_probability = 0.25}
         -- WATER
