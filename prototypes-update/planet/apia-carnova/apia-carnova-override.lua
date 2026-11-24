@@ -209,7 +209,7 @@ if mods[apia_carnova_mods] then
         -- ORGANICS
         --{type = item, name = collagen, amount_min = 0, amount_max = 16, independent_probability = 0.25}
         -- WATER
-        {type = fluid, name = water, amount_min = 0,   amount_max = 240, independent_probability = 0.125},
+        {type = fluid, name = water_purified_angels,   amount_min = 0, amount_max = 240, independent_probability = 0.125},
         -- METALS
         {type = item, name = zinc_ore_bob,             amount_min = 0, amount_max = 16, independent_probability = 0.015625},
         {type = item, name = copper_ore,               amount_min = 0, amount_max = 16, independent_probability = 0.015625},
