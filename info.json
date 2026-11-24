@@ -49,7 +49,7 @@
 
         "+ PlanetsLib = 2.5.3",
         "+ kry-asteroid-belt = 1.0.15",
-        "+ planet-muluna = 2.9.15",
+        "+ planet-muluna = 2.9.16",
         "+ Moshine = 1.2.14",
         "+ panglia_planet = 0.8.2",
         "+ planetaris-arig = 1.1.47",
@@ -67,7 +67,7 @@
         "+ Muria = 1.11.5",
         "! pelagos",
         "+ apia = 0.5.1",
-        "+ lignumis = 2.13.1",
+        "+ lignumis = 2.13.2",
         "+ bellicos-and-aegis = 0.4.10",
 
         "! foliax",
