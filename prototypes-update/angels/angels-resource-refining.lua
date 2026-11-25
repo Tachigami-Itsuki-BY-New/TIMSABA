@@ -539,7 +539,7 @@ data_recipe[crushed_cuprium_processing].ingredients[1].amount = 32
 data_recipe[crushed_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 16},
-    {type = item, name = tin_ore_bob, amount = 16}
+    {type = item, name = magnesium_ore, amount = 16}
 }
 
 data_recipe[powder_cuprium_processing].subgroup = is_copper_item
@@ -550,7 +550,7 @@ data_recipe[powder_cuprium_processing].ingredients[1].amount = 32
 data_recipe[powder_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 16},
-    {type = item, name = tin_ore_bob, amount = 16},
+    {type = item, name = magnesium_ore, amount = 16},
     {type = item, name = aluminium_ore_bob, amount = 8},
     {type = item, name = silver_ore_bob, amount = 8}
 }
@@ -563,7 +563,7 @@ data_recipe[dust_cuprium_processing].ingredients[1].amount = 32
 data_recipe[dust_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 16},
-    {type = item, name = tin_ore_bob, amount = 16},
+    {type = item, name = magnesium_ore, amount = 16},
     {type = item, name = aluminium_ore_bob, amount = 8},
     {type = item, name = silver_ore_bob, amount = 8},
     {type = item, name = gold_ore_bob, amount = 8}
@@ -577,7 +577,7 @@ data_recipe[crystal_cuprium_processing].ingredients[1].amount = 32
 data_recipe[crystal_cuprium_processing].results =
 {
     {type = item, name = copper_ore, amount = 16},
-    {type = item, name = tin_ore_bob, amount = 16},
+    {type = item, name = magnesium_ore, amount = 16},
     {type = item, name = aluminium_ore_bob, amount = 8},
     {type = item, name = silver_ore_bob, amount = 8},
     {type = item, name = gold_ore_bob, amount = 8},
