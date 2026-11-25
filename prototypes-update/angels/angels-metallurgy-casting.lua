@@ -32,7 +32,7 @@ data_recipe[iron_roll].ingredients[2].amount = 60
 data_recipe[iron_roll].results =
 {
     {type = item, name = iron_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[iron_roll].main_product = iron_roll
 
@@ -42,7 +42,7 @@ data_recipe[iron_roll_2].energy_required = 8
 data_recipe[iron_roll_2].ingredients[1].amount = 240
 data_recipe[iron_roll_2].ingredients[2].amount = 60
 data_recipe[iron_roll_2].results[1].amount = 8
-data_recipe[iron_roll_2].results[2].amount = 30
+data_recipe[iron_roll_2].results[2].amount = 30 -- 60
 
 data_item[iron_plate].localised_description = show_formula and {chemical_formula, "Fe"} or nil
 data_item[iron_plate].order = c
@@ -108,7 +108,7 @@ data_recipe[steel_roll].ingredients[2].amount = 60
 data_recipe[steel_roll].results =
 {
     {type = item, name = steel_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[steel_roll].main_product = steel_roll
 
@@ -118,7 +118,7 @@ data_recipe[steel_roll_2].energy_required = 8
 data_recipe[steel_roll_2].ingredients[1].amount = 240
 data_recipe[steel_roll_2].ingredients[2].amount = 60
 data_recipe[steel_roll_2].results[1].amount = 8
-data_recipe[steel_roll_2].results[2].amount = 30
+data_recipe[steel_roll_2].results[2].amount = 30 -- 60
 
 data_item[steel_plate].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_item[steel_plate].order = c
@@ -164,7 +164,7 @@ data_recipe[copper_roll].ingredients[2].amount = 60
 data_recipe[copper_roll].results =
 {
     {type = item, name = copper_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[copper_roll].main_product = copper_roll
 
@@ -175,7 +175,7 @@ data_recipe[copper_roll_2].energy_required = 8
 data_recipe[copper_roll_2].ingredients[1].amount = 240
 data_recipe[copper_roll_2].ingredients[2].amount = 60
 data_recipe[copper_roll_2].results[1].amount = 8
-data_recipe[copper_roll_2].results[2].amount = 30
+data_recipe[copper_roll_2].results[2].amount = 30 -- 60
 
 data_item[copper_plate].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_plate].order = c
@@ -215,7 +215,7 @@ data_recipe[copper_wire_coil].ingredients[2].amount = 60
 data_recipe[copper_wire_coil].results =
 {
     {type = item, name = copper_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[copper_wire_coil].main_product = copper_wire_coil
 
@@ -226,7 +226,7 @@ data_recipe[copper_wire_coil_2].energy_required = 8
 data_recipe[copper_wire_coil_2].ingredients[1].amount = 240
 data_recipe[copper_wire_coil_2].ingredients[2].amount = 60
 data_recipe[copper_wire_coil_2].results[1].amount = 16
-data_recipe[copper_wire_coil_2].results[2].amount = 30
+data_recipe[copper_wire_coil_2].results[2].amount = 30 -- 60
 
 data_item[copper_cable].localised_description = show_formula and {chemical_formula, "Cu"} or nil
 data_item[copper_cable].order = e
@@ -275,7 +275,7 @@ data_recipe[lead_roll].ingredients[2].amount = 60
 data_recipe[lead_roll].results =
 {
     {type = item, name = lead_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[lead_roll].main_product = lead_roll
 
@@ -286,7 +286,7 @@ data_recipe[lead_roll_2].energy_required = 8
 data_recipe[lead_roll_2].ingredients[1].amount = 240
 data_recipe[lead_roll_2].ingredients[2].amount = 60
 data_recipe[lead_roll_2].results[1].amount = 8
-data_recipe[lead_roll_2].results[2].amount = 30
+data_recipe[lead_roll_2].results[2].amount = 30 -- 60
 
 data_item[lead_plate_bob].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_plate_bob].order = c
@@ -347,7 +347,7 @@ data_recipe[tin_roll].ingredients[2].amount = 60
 data_recipe[tin_roll].results =
 {
     {type = item, name = tin_roll, amount = 4},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[tin_roll].main_product = tin_roll
 
@@ -358,7 +358,7 @@ data_recipe[tin_roll_2].energy_required = 8
 data_recipe[tin_roll_2].ingredients[1].amount = 240
 data_recipe[tin_roll_2].ingredients[2].amount = 60
 data_recipe[tin_roll_2].results[1].amount = 8
-data_recipe[tin_roll_2].results[2].amount = 30
+data_recipe[tin_roll_2].results[2].amount = 30 -- 60
 
 data_item[tin_plate_bob].localised_description = show_formula and {chemical_formula, "Sn"} or nil
 data_item[tin_plate_bob].order = c
@@ -409,7 +409,7 @@ data_recipe[tin_wire_coil].ingredients[3].amount = 60
 data_recipe[tin_wire_coil].results =
 {
     {type = item, name = tin_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[tin_wire_coil].main_product = tin_wire_coil
 
@@ -421,7 +421,7 @@ data_recipe[tin_wire_coil_2].ingredients[1].amount = 120
 data_recipe[tin_wire_coil_2].ingredients[2].amount = 240
 data_recipe[tin_wire_coil_2].ingredients[3].amount = 60
 data_recipe[tin_wire_coil_2].results[1].amount = 16
-data_recipe[tin_wire_coil_2].results[2].amount = 30
+data_recipe[tin_wire_coil_2].results[2].amount = 30 -- 60
 
 data_item[tin_cable].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_item[tin_cable].order = e
@@ -528,7 +528,7 @@ data_recipe[nickel_roll].ingredients[2].amount = 60
 data_recipe[nickel_roll].results =
 {
     {type = item, name = nickel_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[nickel_roll].main_product = nickel_roll
 
@@ -539,7 +539,7 @@ data_recipe[nickel_roll_2].energy_required = 8
 data_recipe[nickel_roll_2].ingredients[1].amount = 240
 data_recipe[nickel_roll_2].ingredients[2].amount = 60
 data_recipe[nickel_roll_2].results[1].amount = 8
-data_recipe[nickel_roll_2].results[2].amount = 30
+data_recipe[nickel_roll_2].results[2].amount = 30 -- 60
 
 data_item[nickel_plate_bob].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_plate_bob].order = c
@@ -620,7 +620,7 @@ data_recipe[aluminium_roll].ingredients[2].amount = 60
 data_recipe[aluminium_roll].results =
 {
     {type = item, name = aluminium_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[aluminium_roll].main_product = aluminium_roll
 
@@ -630,7 +630,7 @@ data_recipe[aluminium_roll_2].energy_required = 8
 data_recipe[aluminium_roll_2].ingredients[1].amount = 240
 data_recipe[aluminium_roll_2].ingredients[2].amount = 60
 data_recipe[aluminium_roll_2].results[1].amount = 8
-data_recipe[aluminium_roll_2].results[2].amount = 30
+data_recipe[aluminium_roll_2].results[2].amount = 30 -- 60
 
 data_item[aluminium_plate_bob].localised_description = show_formula and {chemical_formula, "Al"} or nil
 data_item[aluminium_plate_bob].order = c
@@ -665,7 +665,7 @@ data_recipe[zinc_roll].ingredients[2].amount = 60
 data_recipe[zinc_roll].results =
 {
     {type = item, name = zinc_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[zinc_roll].main_product = zinc_roll
 
@@ -676,7 +676,7 @@ data_recipe[zinc_roll_2].energy_required = 8
 data_recipe[zinc_roll_2].ingredients[1].amount = 240
 data_recipe[zinc_roll_2].ingredients[2].amount = 60
 data_recipe[zinc_roll_2].results[1].amount = 8
-data_recipe[zinc_roll_2].results[2].amount = 30
+data_recipe[zinc_roll_2].results[2].amount = 30 -- 60
 
 data_item[zinc_plate_bob].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_plate_bob].order = c
@@ -733,7 +733,7 @@ data_recipe[silver_roll].ingredients[2].amount = 60
 data_recipe[silver_roll].results =
 {
     {type = item, name = silver_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[silver_roll].main_product = silver_roll
 
@@ -744,7 +744,7 @@ data_recipe[silver_roll_2].energy_required = 8
 data_recipe[silver_roll_2].ingredients[1].amount = 240
 data_recipe[silver_roll_2].ingredients[2].amount = 60
 data_recipe[silver_roll_2].results[1].amount = 8
-data_recipe[silver_roll_2].results[2].amount = 30
+data_recipe[silver_roll_2].results[2].amount = 30 -- 60
 
 data_item[silver_plate_bob].localised_description = show_formula and {chemical_formula, "Ag"} or nil
 data_item[silver_plate_bob].order = c
@@ -772,7 +772,7 @@ data_recipe[silver_wire_coil].ingredients[3].amount = 60
 data_recipe[silver_wire_coil].results =
 {
     {type = item, name = silver_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[silver_wire_coil].main_product = silver_wire_coil
 
@@ -784,7 +784,7 @@ data_recipe[silver_wire_coil_2].ingredients[1].amount = 120
 data_recipe[silver_wire_coil_2].ingredients[2].amount = 240
 data_recipe[silver_wire_coil_2].ingredients[3].amount = 60
 data_recipe[silver_wire_coil_2].results[1].amount = 16
-data_recipe[silver_wire_coil_2].results[2].amount = 30
+data_recipe[silver_wire_coil_2].results[2].amount = 30 -- 60
 
 data_item[silver_cable].localised_description = show_formula and {chemical_formula, "CuAg"} or nil
 data_item[silver_cable].order = e
@@ -846,7 +846,7 @@ data_recipe[titanium_roll].ingredients[2].amount = 60
 data_recipe[titanium_roll].results =
 {
     {type = item, name = titanium_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[titanium_roll].main_product = titanium_roll
 
@@ -856,7 +856,7 @@ data_recipe[titanium_roll_2].energy_required = 8
 data_recipe[titanium_roll_2].ingredients[1].amount = 240
 data_recipe[titanium_roll_2].ingredients[2].amount = 60
 data_recipe[titanium_roll_2].results[1].amount = 4
-data_recipe[titanium_roll_2].results[2].amount = 30
+data_recipe[titanium_roll_2].results[2].amount = 30 -- 60
 
 data_item[titanium_plate_bob].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_item[titanium_plate_bob].order = c
@@ -892,7 +892,7 @@ data_recipe[gold_roll].ingredients[2].amount = 60
 data_recipe[gold_roll].results =
 {
     {type = item, name = gold_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[gold_roll].main_product = gold_roll
 
@@ -903,7 +903,7 @@ data_recipe[gold_roll_2].energy_required = 8
 data_recipe[gold_roll_2].ingredients[1].amount = 240
 data_recipe[gold_roll_2].ingredients[2].amount = 60
 data_recipe[gold_roll_2].results[1].amount = 8
-data_recipe[gold_roll_2].results[2].amount = 30
+data_recipe[gold_roll_2].results[2].amount = 30 -- 60
 
 data_item[gold_plate_bob].localised_description = show_formula and {chemical_formula, "Au"} or nil
 data_item[gold_plate_bob].order = c
@@ -952,7 +952,7 @@ data_recipe[gold_wire_coil].ingredients[3].amount = 60
 data_recipe[gold_wire_coil].results =
 {
     {type = item, name = gold_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[gold_wire_coil].main_product = gold_wire_coil
 
@@ -964,7 +964,7 @@ data_recipe[gold_wire_coil_2].ingredients[1].amount = 120
 data_recipe[gold_wire_coil_2].ingredients[2].amount = 240
 data_recipe[gold_wire_coil_2].ingredients[3].amount = 60
 data_recipe[gold_wire_coil_2].results[1].amount = 16
-data_recipe[gold_wire_coil_2].results[2].amount = 30
+data_recipe[gold_wire_coil_2].results[2].amount = 30 -- 60
 
 data_item[gold_cable].localised_description = show_formula and {chemical_formula, "CuAu"} or nil
 data_item[gold_cable].order = e
@@ -1063,7 +1063,7 @@ data_recipe[platinum_roll].ingredients[2].amount = 60
 data_recipe[platinum_roll].results =
 {
     {type = item, name = platinum_roll, amount = 4},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[platinum_roll].main_product = platinum_roll
 
@@ -1074,7 +1074,7 @@ data_recipe[platinum_roll_2].energy_required = 8
 data_recipe[platinum_roll_2].ingredients[1].amount = 240
 data_recipe[platinum_roll_2].ingredients[2].amount = 60
 data_recipe[platinum_roll_2].results[1].amount = 8
-data_recipe[platinum_roll_2].results[2].amount = 30
+data_recipe[platinum_roll_2].results[2].amount = 30 -- 60
 
 data_item[platinum_plate].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_plate].order = c
@@ -1112,7 +1112,7 @@ data_recipe[platinum_wire_coil].ingredients[3].amount = 60
 data_recipe[platinum_wire_coil].results =
 {
     {type = item, name = platinum_wire_coil, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[platinum_wire_coil].main_product = platinum_wire_coil
 
@@ -1124,7 +1124,7 @@ data_recipe[platinum_wire_coil_2].ingredients[1].amount = 120
 data_recipe[platinum_wire_coil_2].ingredients[2].amount = 240
 data_recipe[platinum_wire_coil_2].ingredients[3].amount = 60
 data_recipe[platinum_wire_coil_2].results[1].amount = 16
-data_recipe[platinum_wire_coil_2].results[2].amount = 30
+data_recipe[platinum_wire_coil_2].results[2].amount = 30 -- 60
 
 data_item[platinum_cable].localised_description = show_formula and {chemical_formula, "CuPt"} or nil
 data_item[platinum_cable].order = e
@@ -1196,7 +1196,7 @@ data_recipe[solder_roll].ingredients[2].amount = 60
 data_recipe[solder_roll].results =
 {
     {type = item, name = solder_roll, amount = 8},
-    {type = fluid, name = steam, amount = 30}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[solder_roll].main_product = solder_roll
 
@@ -1206,7 +1206,7 @@ data_recipe[solder_roll_2].energy_required = 8
 data_recipe[solder_roll_2].ingredients[1].amount = 240
 data_recipe[solder_roll_2].ingredients[2].amount = 60
 data_recipe[solder_roll_2].results[1].amount = 16
-data_recipe[solder_roll_2].results[2].amount = 30
+data_recipe[solder_roll_2].results[2].amount = 30 -- 60
 
 data_item[solder].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_item[solder].order = c
@@ -1388,7 +1388,7 @@ data_recipe[glass_coil_fiber].ingredients[2].amount = 60
 data_recipe[glass_coil_fiber].results =
 {
     {type = item, name = glass_coil_fiber, amount = 8},
-    {type = fluid, name = steam, amount = 60}
+    {type = fluid, name = steam, amount = 30} -- 60
 }
 data_recipe[glass_coil_fiber].main_product = glass_coil_fiber
 
@@ -1397,7 +1397,7 @@ data_recipe[glass_coil_fiber_2].energy_required = 4
 data_recipe[glass_coil_fiber_2].ingredients[1].amount = 240
 data_recipe[glass_coil_fiber_2].ingredients[2].amount = 60
 data_recipe[glass_coil_fiber_2].results[1].amount = 16
-data_recipe[glass_coil_fiber_2].results[2].amount = 60
+data_recipe[glass_coil_fiber_2].results[2].amount = 30 -- 60
 
 data_item[glass_bob].stack_size = 200
 data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
@@ -1422,7 +1422,7 @@ data_recipe[lime_angels].order = a
 data_recipe[lime_angels].energy_required = 4 -- CaCO₃(s) --> CaO(s) + CO₂(g)
 data_recipe[lime_angels].ingredients[1].amount = 4
 data_recipe[lime_angels].results[1].amount = 4
-data_recipe[lime_angels].results[2].amount = 30 -- 60
+data_recipe[lime_angels].results[2].amount = 60
 
 local clay_brick_raw = "angels-clay-brick-raw"
 data_item[clay_brick_raw].subgroup = is_bricks_casting
