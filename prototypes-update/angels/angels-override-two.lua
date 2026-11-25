@@ -24,7 +24,7 @@ for _, BUILD in pairs(valves) do
     }
     if data_valve[BUILD.name] then
         data_valve[BUILD.name].order = BUILD.order
-        data_valve[BUILD.name].flow_rate = 16
+        data_valve[BUILD.name].flow_rate = 64
     end
 end
 data_storage_tank[valve_inspector].order = a
