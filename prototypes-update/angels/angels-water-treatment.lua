@@ -8,9 +8,9 @@ data_fluid[water_purified_angels].localised_description = show_formula and {chem
 TIMSABA.barreling.add_simple_fluid(water_purified_angels)
 data_recipe[water_purified_angels].icons = FOUR_R_I(water, water_saline_angels, nil, water_purified_angels)
 data_recipe[water_purified_angels].energy_required = 8
-data_recipe[water_purified_angels].ingredients[1].amount = 240
-data_recipe[water_purified_angels].results[1].amount = 120
-data_recipe[water_purified_angels].results[2].amount = 120
+data_recipe[water_purified_angels].ingredients[1].amount = 480
+data_recipe[water_purified_angels].results[1].amount = 240
+data_recipe[water_purified_angels].results[2].amount = 240
 
 data_fluid[steam].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
 data_fluid[steam].subgroup = is_water_treatment_fluid
@@ -203,48 +203,48 @@ local water_yellow_waste_purification = "angels-yellow-waste-water-purification"
 data_recipe[water_yellow_waste_purification].icons = FOUR_R_I(water_yellow_waste, water_purified_angels, sulfur, water_mineralized_angels)
 data_recipe[water_yellow_waste_purification].order = a
 data_recipe[water_yellow_waste_purification].energy_required = 8
-data_recipe[water_yellow_waste_purification].ingredients[1].amount = 240
+data_recipe[water_yellow_waste_purification].ingredients[1].amount = 480
 data_recipe[water_yellow_waste_purification].results =
 {
-    {type = fluid, name = water_purified_angels, amount = 120},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
-    {type = item, name = sulfur, amount = 4}
+    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = item, name = sulfur, amount = 8}
 }
 
 local water_greenyellow_waste_purification = "angels-greenyellow-waste-water-purification"
 data_recipe[water_greenyellow_waste_purification].icons = FOUR_R_I(water_greenyellow_waste, water_purified_angels, fluorite_angels, water_mineralized_angels)
 data_recipe[water_greenyellow_waste_purification].order = b
 data_recipe[water_greenyellow_waste_purification].energy_required = 8
-data_recipe[water_greenyellow_waste_purification].ingredients[1].amount = 240
+data_recipe[water_greenyellow_waste_purification].ingredients[1].amount = 480
 data_recipe[water_greenyellow_waste_purification].results =
 {
-    {type = fluid, name = water_purified_angels, amount = 120},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
-    {type = item, name = fluorite_angels, amount = 4}
+    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = item, name = fluorite_angels, amount = 8}
 }
 
 local water_green_waste_purification = "angels-green-waste-water-purification"
 data_recipe[water_green_waste_purification].icons = FOUR_R_I(water_green_waste, water_purified_angels, salt_angels, water_mineralized_angels)
 data_recipe[water_green_waste_purification].order = c
 data_recipe[water_green_waste_purification].energy_required = 8
-data_recipe[water_green_waste_purification].ingredients[1].amount = 240
+data_recipe[water_green_waste_purification].ingredients[1].amount = 480
 data_recipe[water_green_waste_purification].results =
 {
-    {type = fluid, name = water_purified_angels, amount = 120},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
-    {type = item, name = salt_angels, amount = 4}
+    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = item, name = salt_angels, amount = 8}
 }
 
 local water_red_waste_purification = "angels-red-waste-water-purification"
 data_recipe[water_red_waste_purification].icons = FOUR_R_I(water_red_waste, water_purified_angels, sodium_nitrate_angels, water_mineralized_angels)
 data_recipe[water_red_waste_purification].order = d
 data_recipe[water_red_waste_purification].energy_required = 8
-data_recipe[water_red_waste_purification].ingredients[1].amount = 240
+data_recipe[water_red_waste_purification].ingredients[1].amount = 480
 data_recipe[water_red_waste_purification].results =
 {
-    {type = fluid, name = water_purified_angels, amount = 120},
-    {type = fluid, name = water_mineralized_angels, amount = 60},
-    {type = item, name = sodium_nitrate_angels, amount = 4}
+    {type = fluid, name = water_purified_angels, amount = 240},
+    {type = fluid, name = water_mineralized_angels, amount = 120},
+    {type = item, name = sodium_nitrate_angels, amount = 8}
 }
 
 local is_coolant = "angels-coolant"

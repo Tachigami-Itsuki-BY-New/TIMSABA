@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "2.0.9",
+    "version": "2.0.10",
     "factorio_version": "2.1",
     "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -47,8 +47,8 @@
         "reskins-angels",
         "reskins-compatibility",
 
-        "+ PlanetsLib = 2.5.3",
-        "+ kry-asteroid-belt = 1.0.15",
+        "+ PlanetsLib = 2.5.4",
+        "+ kry-asteroid-belt = 1.0.16",
         "+ planet-muluna = 2.9.16",
         "+ Moshine = 1.2.14",
         "+ panglia_planet = 0.8.2",

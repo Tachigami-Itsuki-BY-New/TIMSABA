@@ -247,7 +247,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_transport_belt].order = a
     data_recipe[wood_transport_belt].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 1},
+        {type = item, name = wooden_gear_wheel, amount = 2},
         {type = item, name = lumber, amount = 1}
     }
     data_transport_belt[wood_transport_belt].subgroup = is_lignumis_logistic
@@ -272,7 +272,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_underground_belt].order = b
     data_recipe[wood_underground_belt].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 4},
+        {type = item, name = wooden_gear_wheel, amount = 8},
         {type = item, name = lumber, amount = 4}
     }
     data_underground_belt[wood_underground_belt].subgroup = is_lignumis_logistic
@@ -297,7 +297,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_splitter].order = c
     data_recipe[wood_splitter].ingredients =
     {
-        {type = item, name = wooden_gear_wheel, amount = 2},
+        {type = item, name = wooden_gear_wheel, amount = 4},
         {type = item, name = lumber, amount = 2}
     }
     data_splitter[wood_splitter].subgroup = is_lignumis_logistic

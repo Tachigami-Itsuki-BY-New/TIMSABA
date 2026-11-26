@@ -1,6 +1,6 @@
 local graphics_plumbium = "__TIMSABA__/graphics/icons/angels/resource/plumbium/"
 
--- Plumbium / Pb + Fe + Ni + Zn + Co + W
+-- Plumbium / Pb + Mn + Ni + Zn + Co + W
 
 -- ITEM
 crushed_plumbium = "plumbium-crushed"
@@ -164,12 +164,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crushed_plumbium),
         order = d_a,
         allow_productivity = true,
-        energy_required = 8, -- Plumbium crushed (Sorting) / Pb + Fe
+        energy_required = 8, -- Plumbium crushed (Sorting) / Pb + Mn
         ingredients = {{type = item, name = crushed_plumbium, amount = 32}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 16},
-            {type = item, name = iron_ore, amount = 16}
+            {type = item, name = manganese_ore_angels, amount = 16}
         },
         main_product = lead_ore_bob,
         hide_from_signal_gui = false
@@ -181,12 +181,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, powder_plumbium),
         order = d_b,
         allow_productivity = true,
-        energy_required = 8, -- Plumbium powder (Sorting) / Pb + Fe + Ni + Zn
+        energy_required = 8, -- Plumbium powder (Sorting) / Pb + Mn + Ni + Zn
         ingredients = {{type = item, name = powder_plumbium, amount = 32}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 16},
-            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = manganese_ore_angels, amount = 16},
             {type = item, name = nickel_ore_bob, amount = 8},
             {type = item, name = zinc_ore_bob, amount = 8}
         },
@@ -200,12 +200,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, dust_plumbium),
         order = d_c,
         allow_productivity = true,
-        energy_required = 8, -- Plumbium dust (Sorting) / Pb + Fe + Ni + Zn + Co
+        energy_required = 8, -- Plumbium dust (Sorting) / Pb + Mn + Ni + Zn + Co
         ingredients = {{type = item, name = dust_plumbium, amount = 32}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 16},
-            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = manganese_ore_angels, amount = 16},
             {type = item, name = nickel_ore_bob, amount = 8},
             {type = item, name = zinc_ore_bob, amount = 8},
             {type = item, name = cobalt_ore_bob, amount = 8}
@@ -220,12 +220,12 @@ TIMSABA.functions.create_recipes
         icons = RECYCLING_I(recycling_png, crystal_plumbium),
         order = d_d,
         allow_productivity = true,
-        energy_required = 8, -- Plumbium crystal (Sorting) / Pb + Fe + Ni + Zn + Co + W
+        energy_required = 8, -- Plumbium crystal (Sorting) / Pb + Mn + Ni + Zn + Co + W
         ingredients = {{type = item, name = crystal_plumbium, amount = 32}},
         results =
         {
             {type = item, name = lead_ore_bob, amount = 16},
-            {type = item, name = iron_ore, amount = 16},
+            {type = item, name = manganese_ore_angels, amount = 16},
             {type = item, name = nickel_ore_bob, amount = 8},
             {type = item, name = zinc_ore_bob, amount = 8},
             {type = item, name = cobalt_ore_bob, amount = 8},
