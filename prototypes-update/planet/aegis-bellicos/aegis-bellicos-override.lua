@@ -163,22 +163,15 @@ if mods[aegis_bellicos_mods] then
     data_recipe[space_transport_belt].subgroup = is_bellicos_logistic
     data_recipe[space_transport_belt].order = a
     data_recipe[space_transport_belt].energy_required = 0.5
+    data_recipe[space_transport_belt].ingredients =
+    {
+        {type = item, name = beryllium_bronze_gear_wheel, amount = 2},
+        {type = item, name = beryllium_bronze_bearing, amount = 1},
+        {type = item, name = vulcanus_transport_belt, amount = 2},
+        {type = item, name = beryllium_bronze_plate, amount = 4}
+    }
     if mods[arig_mods] then
-        data_recipe[space_transport_belt].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
-            {type = item, name = beryllium_bronze_bearing, amount = 4},
-            {type = item, name = hyper_transport_belt_arig, amount = 2},
-            {type = item, name = beryllium_bronze_plate, amount = 2}
-        }
-    else
-        data_recipe[space_transport_belt].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
-            {type = item, name = beryllium_bronze_bearing, amount = 4},
-            {type = item, name = vulcanus_transport_belt, amount = 2},
-            {type = item, name = beryllium_bronze_plate, amount = 2}
-        }
+        data_recipe[space_transport_belt].ingredients[3].name = hyper_transport_belt_arig
     end
     data_recipe[space_transport_belt].results = {{type = item, name = space_transport_belt, amount = 2}}
     data_transport_belt[space_transport_belt].subgroup = is_bellicos_logistic
@@ -194,22 +187,15 @@ if mods[aegis_bellicos_mods] then
     data_recipe[space_underground_belt].subgroup = is_bellicos_logistic
     data_recipe[space_underground_belt].order = b
     data_recipe[space_underground_belt].energy_required = 1
+    data_recipe[space_underground_belt].ingredients =
+    {
+        {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
+        {type = item, name = beryllium_bronze_bearing, amount = 4},
+        {type = item, name = vulcanus_underground_belt, amount = 2},
+        {type = item, name = beryllium_bronze_plate, amount = 16}
+    }
     if mods[arig_mods] then
-        data_recipe[space_underground_belt].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 16},
-            {type = item, name = beryllium_bronze_bearing, amount = 16},
-            {type = item, name = hyper_underground_belt_arig, amount = 2},
-            {type = item, name = beryllium_bronze_plate, amount = 8}
-        }
-    else
-        data_recipe[space_underground_belt].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 16},
-            {type = item, name = beryllium_bronze_bearing, amount = 16},
-            {type = item, name = vulcanus_underground_belt, amount = 2},
-            {type = item, name = beryllium_bronze_plate, amount = 8}
-        }
+        data_recipe[space_underground_belt].ingredients[3].name = hyper_underground_belt_arig
     end
     data_recipe[space_underground_belt].results = {{type = item, name = space_underground_belt, amount = 2}}
     data_underground_belt[space_underground_belt].subgroup = is_bellicos_logistic
@@ -228,24 +214,16 @@ if mods[aegis_bellicos_mods] then
     data_recipe[space_splitter].subgroup = is_bellicos_logistic
     data_recipe[space_splitter].order = c
     data_recipe[space_splitter].energy_required = 1
+    data_recipe[space_splitter].ingredients =
+    {
+        {type = item, name = beryllium_bronze_gear_wheel, amount = 4},
+        {type = item, name = beryllium_bronze_bearing, amount = 2},
+        {type = item, name = beryllium_bronze_plate, amount = 8},
+        {type = item, name = quantum_processor, amount = 1},
+        {type = item, name = vulcanus_splitter, amount = 1}
+    }
     if mods[arig_mods] then
-        data_recipe[space_splitter].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
-            {type = item, name = beryllium_bronze_bearing, amount = 8},
-            {type = item, name = quantum_processor, amount = 1},
-            {type = item, name = hyper_splitter_arig, amount = 1},
-            {type = item, name = beryllium_bronze_plate, amount = 4}
-        }
-    else
-        data_recipe[space_splitter].ingredients =
-        {
-            {type = item, name = beryllium_bronze_gear_wheel, amount = 8},
-            {type = item, name = beryllium_bronze_bearing, amount = 8},
-            {type = item, name = quantum_processor, amount = 1},
-            {type = item, name = vulcanus_splitter, amount = 1},
-            {type = item, name = beryllium_bronze_plate, amount = 4}
-        }
+        data_recipe[space_splitter].ingredients[5].name = hyper_splitter_arig
     end
     data_recipe[space_splitter].results = {{type = item, name = space_splitter, amount = 1}}
     data_splitter[space_splitter].subgroup = is_bellicos_logistic

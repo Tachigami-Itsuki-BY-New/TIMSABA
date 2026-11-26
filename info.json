@@ -47,8 +47,8 @@
         "reskins-angels",
         "reskins-compatibility",
 
-        "+ PlanetsLib = 2.5.3",
-        "+ kry-asteroid-belt = 1.0.15",
+        "+ PlanetsLib = 2.5.4",
+        "+ kry-asteroid-belt = 1.0.16",
         "+ planet-muluna = 2.9.16",
         "+ Moshine = 1.2.14",
         "+ panglia_planet = 0.8.2",

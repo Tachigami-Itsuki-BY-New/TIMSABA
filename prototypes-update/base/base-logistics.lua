@@ -405,23 +405,21 @@ data_inserter[T0_inserter].energy_source.fuel_categories = {base_fuel, advanced_
 local function transport_belt_recipe(name, gear_wheel, plate, transport_belt, bearing)
     local ingredients =
     {
-        {type = item, name = gear_wheel, amount = 4},
-        {type = item, name = plate, amount = 2}
+        {type = item, name = gear_wheel, amount = 2},
+        {type = item, name = bearing, amount = 1},
+        {type = item, name = plate, amount = 4}
     }
     if transport_belt then
         table.insert(ingredients, {type = item, name = transport_belt, amount = 2})
-    end
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 4})
     end
     data_recipe[name].ingredients = ingredients
     data_recipe[name].results = {{type = item, name = name, amount = 2}}
 end
 if data_recipe[T0_transport_belt] then
     if mods[lignumis_mods] then
-        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate, wood_transport_belt)
+        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, copper_plate, wood_transport_belt, iron_bearing)
     else
-        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
+        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, copper_plate, nil, iron_bearing)
     end
     transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt, iron_bearing)
 else
@@ -436,29 +434,23 @@ transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plat
 transport_belt_recipe(T4_transport_belt, titanium_gear_wheel, titanium_plate_bob, T3_transport_belt, titanium_bearing)
 transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_transport_belt, nitinol_bearing)
 
-if data_recipe[T0_transport_belt] then
-    data_recipe[T0_transport_belt].ingredients[1].amount = 2
-end
-
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
     local ingredients =
     {
-        {type = item, name = gear_wheel, amount = 16},
-        {type = item, name = plate, amount = 8}
+        {type = item, name = gear_wheel, amount = 8},
+        {type = item, name = bearing, amount = 4},
+        {type = item, name = plate, amount = 16}
     }
     if underground_belt then
         table.insert(ingredients, {type = item, name = underground_belt, amount = 2})
-    end
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 16})
     end
     data_recipe[name].ingredients = ingredients
 end
 if data_recipe[T0_underground_belt] then
     if mods[lignumis_mods] then
-        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate, wood_underground_belt)
+        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, copper_plate, wood_underground_belt, iron_bearing)
     else
-        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
+        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, copper_plate, nil, iron_bearing)
     end
     underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt, iron_bearing)
 else
@@ -477,26 +469,29 @@ if data_recipe[T0_underground_belt] then
     data_recipe[T0_underground_belt].ingredients[1].amount = 8
 end
 
-local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
+local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing, cable)
     local ingredients =
     {
-        {type = item, name = gear_wheel, amount = 8},
-        {type = item, name = circuit, amount = 1},
-        {type = item, name = plate, amount = 4}
+        {type = item, name = gear_wheel, amount = 4},
+        {type = item, name = bearing, amount = 2},
+        {type = item, name = plate, amount = 8}
     }
+    if circuit then
+        table.insert(ingredients, {type = item, name = circuit, amount = 1})
+    end
     if splitter then
         table.insert(ingredients, {type = item, name = splitter, amount = 1})
     end
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 8})
+    if cable then
+        table.insert(ingredients, {type = item, name = cable, amount = 4})
     end
     data_recipe[name].ingredients = ingredients
 end
 if data_recipe[T0_splitter] then
     if mods[lignumis_mods] then
-        splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate, wood_splitter)
+        splitter_recipe(T0_splitter, iron_gear_wheel, nil, iron_plate, wood_splitter, iron_bearing, copper_cable)
     else
-        splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
+        splitter_recipe(T0_splitter, iron_gear_wheel, nil, iron_plate, nil, iron_bearing, copper_cable)
     end
     splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
 else
@@ -510,10 +505,6 @@ splitter_recipe(T2_splitter, steel_gear_wheel, electronic_circuit, bronze_plate_
 splitter_recipe(T3_splitter, cobalt_steel_gear_wheel, advanced_circuit, aluminium_plate_bob, T2_splitter, cobalt_steel_bearing)
 splitter_recipe(T4_splitter, titanium_gear_wheel, processing_unit, titanium_plate_bob, T3_splitter, titanium_bearing)
 splitter_recipe(T5_splitter, nitinol_gear_wheel, advanced_processing_unit, nitinol_plate_bob, T4_splitter, nitinol_bearing)
-if data_recipe[T0_splitter] then
-    data_recipe[T0_splitter].ingredients[1].amount = 4
-    data_recipe[T0_splitter].ingredients[2].amount = 4
-end
 
 if settings.startup[setting_bobmods_logistics_inserteroverhaul].value then
     local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)

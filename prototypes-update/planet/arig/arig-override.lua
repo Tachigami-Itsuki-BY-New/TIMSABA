@@ -438,23 +438,13 @@ if mods[arig_mods] then
 
     data_item[hyper_transport_belt_arig].stack_size = 200
     data_recipe[hyper_transport_belt_arig].energy_required = 0.5
-    if mods[aegis_bellicos_mods] then
-        data_recipe[hyper_transport_belt_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
-            {type = item, name = niobium_iron_bearing, amount = 4},
-            {type = item, name = space_transport_belt, amount = 2},
-            {type = item, name = niobium_titanium_plate, amount = 2}
-        }
-    else
-        data_recipe[hyper_transport_belt_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
-            {type = item, name = niobium_iron_bearing, amount = 4},
-            {type = item, name = vulcanus_transport_belt, amount = 2},
-            {type = item, name = niobium_titanium_plate, amount = 2}
-        }
-    end
+    data_recipe[hyper_transport_belt_arig].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
+        {type = item, name = niobium_iron_bearing, amount = 2},
+        {type = item, name = vulcanus_transport_belt, amount = 2},
+        {type = item, name = niobium_titanium_plate, amount = 4}
+    }
     data_recipe[hyper_transport_belt_arig].results[1].amount = 2
     data_transport_belt[hyper_transport_belt_arig].speed = 15/60
 
@@ -462,23 +452,13 @@ if mods[arig_mods] then
     data_item[hyper_underground_belt_arig].stack_size = 64
     data_item[hyper_underground_belt_arig].weight = 15625
     data_recipe[hyper_underground_belt_arig].energy_required = 1
-    if mods[aegis_bellicos_mods] then
-        data_recipe[hyper_underground_belt_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-            {type = item, name = niobium_iron_bearing, amount = 16},
-            {type = item, name = space_underground_belt, amount = 2},
-            {type = item, name = niobium_titanium_plate, amount = 8}
-        }
-    else
-        data_recipe[hyper_underground_belt_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-            {type = item, name = niobium_iron_bearing, amount = 16},
-            {type = item, name = vulcanus_underground_belt, amount = 2},
-            {type = item, name = niobium_titanium_plate, amount = 8}
-        }
-    end
+    data_recipe[hyper_underground_belt_arig].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
+        {type = item, name = niobium_iron_bearing, amount = 4},
+        {type = item, name = vulcanus_underground_belt, amount = 2},
+        {type = item, name = niobium_titanium_plate, amount = 16}
+    }
     data_recipe[hyper_underground_belt_arig].results[1].amount = 2
     data_underground_belt[hyper_underground_belt_arig].speed = 15/60
     if settings.startup[setting_rebalance_belts_and_pipes].value then
@@ -489,25 +469,14 @@ if mods[arig_mods] then
     data_item[hyper_splitter_arig].stack_size = 64
     data_item[hyper_splitter_arig].weight = 15625
     data_recipe[hyper_splitter_arig].energy_required = 1
-    if mods[aegis_bellicos_mods] then
-        data_recipe[hyper_splitter_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
-            {type = item, name = niobium_iron_bearing, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 1},
-            {type = item, name = space_splitter, amount = 1},
-            {type = item, name = niobium_titanium_plate, amount = 4}
-        }
-    else
-        data_recipe[hyper_splitter_arig].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
-            {type = item, name = niobium_iron_bearing, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 1},
-            {type = item, name = vulcanus_splitter, amount = 1},
-            {type = item, name = niobium_titanium_plate, amount = 4}
-        }
-    end
+    data_recipe[hyper_splitter_arig].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
+        {type = item, name = niobium_iron_bearing, amount = 2},
+        {type = item, name = niobium_titanium_plate, amount = 8},
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = vulcanus_splitter, amount = 1}
+    }
     data_splitter[hyper_splitter_arig].speed = 15/60
 
     if mods[hyarion_mods] then
@@ -529,7 +498,7 @@ if mods[arig_mods] then
         data_item[hyper_splitter_arig].order = d
         data_recipe[hyper_splitter_arig].subgroup = is_hyarion_logistic
         data_recipe[hyper_splitter_arig].order = d
-        data_recipe[hyper_splitter_arig].ingredients[3].name = simulating_unit
+        data_recipe[hyper_splitter_arig].ingredients[4].name = simulating_unit
         data_splitter[hyper_splitter_arig].subgroup = is_hyarion_logistic
         data_splitter[hyper_splitter_arig].order = d
     else
