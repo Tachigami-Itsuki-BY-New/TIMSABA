@@ -143,7 +143,7 @@ local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive,
         {type = item, name = gear_wheel, amount = 16},
         {type = item, name = bearing,    amount = 8},
         {type = item, name = circuit,    amount = 8},
-        {type = item, name = plate,      amount = 16}
+        {type = item, name = plate,      amount = 32}
     }
     if name == locomotive_1 then
         table.insert(ingredients, {type = item, name = engine_unit, amount = 8})
