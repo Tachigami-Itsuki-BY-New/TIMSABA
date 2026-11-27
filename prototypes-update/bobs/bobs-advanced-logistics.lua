@@ -140,8 +140,8 @@ end
 local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive, plate)
     local ingredients =
     {
-        {type = item, name = gear_wheel, amount = 32},
-        {type = item, name = bearing,    amount = 16},
+        {type = item, name = gear_wheel, amount = 16},
+        {type = item, name = bearing,    amount = 8},
         {type = item, name = circuit,    amount = 8},
         {type = item, name = plate,      amount = 16}
     }
@@ -185,7 +185,7 @@ local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
         {type = item, name = plate,       amount = 32}
     }
 end
-cargo_wagon_recipe(cargo_wagon_1, steel_gear_wheel, steel_bearing, steel_chest, steel_plate)
+cargo_wagon_recipe(cargo_wagon_1, steel_gear_wheel, steel_bearing, iron_chest, steel_plate)
 if settings.startup[setting_bobmods_logistics_trains].value then
     cargo_wagon_recipe(cargo_wagon_2,    brass_gear_wheel,    brass_bearing, cargo_wagon_1, brass_plate_bob)
     cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
