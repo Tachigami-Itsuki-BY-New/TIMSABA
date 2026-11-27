@@ -469,7 +469,7 @@ if data_recipe[T0_underground_belt] then
     data_recipe[T0_underground_belt].ingredients[1].amount = 8
 end
 
-local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing, cable)
+local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 4},
@@ -482,16 +482,13 @@ local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, beari
     if splitter then
         table.insert(ingredients, {type = item, name = splitter, amount = 1})
     end
-    if cable then
-        table.insert(ingredients, {type = item, name = cable, amount = 4})
-    end
     data_recipe[name].ingredients = ingredients
 end
 if data_recipe[T0_splitter] then
     if mods[lignumis_mods] then
-        splitter_recipe(T0_splitter, iron_gear_wheel, nil, iron_plate, wood_splitter, iron_bearing, copper_cable)
+        splitter_recipe(T0_splitter, iron_gear_wheel, nil, copper_plate, wood_splitter, iron_bearing)
     else
-        splitter_recipe(T0_splitter, iron_gear_wheel, nil, iron_plate, nil, iron_bearing, copper_cable)
+        splitter_recipe(T0_splitter, iron_gear_wheel, nil, copper_plate, nil, iron_bearing)
     end
     splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
 else

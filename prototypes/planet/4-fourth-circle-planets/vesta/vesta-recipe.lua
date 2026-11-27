@@ -481,26 +481,6 @@ if mods[vesta_mods] then
         }
     })
 
-    TIMSABA.functions.create_recipes
-    ({
-        -- NITROGEN
-        {
-            name = ammonium_chloride,
-            categories = {chemistry},
-            subgroup = is_nitrogen,
-            icons = THREE_I(ammonia_angels, hydrogen_chloride_angels, ammonium_chloride),
-            order = e,
-            energy_required = 2, -- NH₃(g) + HCl(g) --> NH₄Cl(s)
-            ingredients =
-            {
-                {type = fluid, name = ammonia_angels, amount = 60},
-                {type = fluid, name = hydrogen_chloride_angels, amount = 60}
-            },
-            results = {{type = item, name = ammonium_chloride, amount = 4}},
-            main_product = ammonium_chloride
-        }
-    })
-
     if settings.startup[setting_vesta_legacy_recipes].value then
         holmium_ore_2 = holmium_ore .. "-2"
         iridium_ore_2 = iridium_ore .. "-2"

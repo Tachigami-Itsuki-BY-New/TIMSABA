@@ -76,18 +76,19 @@ data_item[iron_hydroxide_II].order = a
 data_fluid[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
 data_fluid[iron_chloride_III_solution_angels].localised_description = show_formula and {chemical_formula, "FeCl[font=default-tiny-bold]3(aq)[/font]"} or nil
 data_fluid[iron_chloride_III_solution_angels].subgroup = is_iron_chemistry
-data_fluid[iron_chloride_III_solution_angels].order = g
+data_fluid[iron_chloride_III_solution_angels].order = h
 TIMSABA.barreling.add_dangerous_fluid(iron_chloride_III_solution_angels)
 data_recipe[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
 data_recipe[iron_chloride_III_solution_angels].categories = {angels_chemical_smelting_1}
 data_recipe[iron_chloride_III_solution_angels].subgroup = is_iron_chemistry
-data_recipe[iron_chloride_III_solution_angels].icons = TWO_D_I(iron_powder, hydrochloric_acid_angels, iron_chloride_III_solution_angels, hydrogen_angels)
-data_recipe[iron_chloride_III_solution_angels].order = g
-data_recipe[iron_chloride_III_solution_angels].energy_required = 8 -- 2Fe + 6HCl --> 2FeCl₃ + 3H₂
+data_recipe[iron_chloride_III_solution_angels].icons = THREE_D_I(iron_powder, hydrogen_chloride_angels, water_purified_angels, iron_chloride_III_solution_angels, nil, hydrogen_angels)
+data_recipe[iron_chloride_III_solution_angels].order = h
+data_recipe[iron_chloride_III_solution_angels].energy_required = 8 -- 2Fe(s) + 6HCl(g) + 2H₂O(l) --> 2FeCl₃(l) + 3H₂(g)
 data_recipe[iron_chloride_III_solution_angels].ingredients =
 {
     {type = item, name = iron_powder, amount = 16},
-    {type = fluid, name = hydrochloric_acid_angels, amount = 720}
+    {type = fluid, name = hydrogen_chloride_angels, amount = 720},
+    {type = fluid, name = water_purified_angels, amount = 240}
 }
 data_recipe[iron_chloride_III_solution_angels].results =
 {

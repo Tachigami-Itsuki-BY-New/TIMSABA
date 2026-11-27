@@ -263,7 +263,7 @@ if mods[moshine_mods] then
             name = iron_oxide_II,
             subgroup = is_iron_chemistry,
             icon = graphics_moshine .. iron_oxide_II .. ".png",
-            order = h
+            order = i
         }
     })
 end

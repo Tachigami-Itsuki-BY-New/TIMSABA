@@ -33,18 +33,18 @@ if mods[castra_mods] then
     data_recipe[carbon_gunpowder].subgroup = is_gunpowder
     data_recipe[carbon_gunpowder].icons = THREE_D_I(gunpowder, water_purified_angels, toluene_angels, carbon_angels, potassium_nitrate_solution, toluene_sulfur_solution)
     data_recipe[carbon_gunpowder].order = a_d
-    data_recipe[carbon_gunpowder].energy_required = 8 -- KNO₃SC(s) + H₂O(l) + C₇H₈(l) --> C(s) + KNO₃(aq) + S(Toluene)
+    data_recipe[carbon_gunpowder].energy_required = 4 -- KNO₃SC(s) + H₂O(l) + C₇H₈(l) --> C(s) + KNO₃(aq) + S(Toluene)
     data_recipe[carbon_gunpowder].ingredients =
     {
-        {type = item, name = gunpowder, amount = 32},
-        {type = fluid, name = water_purified_angels, amount = 480},
-        {type = fluid, name = toluene_angels, amount = 480}
+        {type = item, name = gunpowder, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 60},
+        {type = fluid, name = toluene_angels, amount = 60}
     }
     data_recipe[carbon_gunpowder].results =
     {
-        {type = item, name = carbon_angels, amount = 32},
-        {type = fluid, name = potassium_nitrate_solution, amount = 480},
-        {type = fluid, name = toluene_sulfur_solution, amount = 480}
+        {type = item, name = carbon_angels, amount = 4},
+        {type = fluid, name = potassium_nitrate_solution, amount = 60},
+        {type = fluid, name = toluene_sulfur_solution, amount = 60}
     }
     data_recipe[carbon_gunpowder].main_product = carbon_angels
     data_recipe[carbon_gunpowder].surface_conditions = {{property = pressure, min = 2254, max = 2254}}

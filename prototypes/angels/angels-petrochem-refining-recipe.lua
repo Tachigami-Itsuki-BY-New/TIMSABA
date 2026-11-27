@@ -305,6 +305,21 @@ TIMSABA.functions.create_recipes
         main_product = ammonium_sulfate
     },
     {
+        name = ammonium_chloride,
+        categories = {chemistry},
+        subgroup = is_nitrogen,
+        icons = THREE_I(ammonia_angels, hydrogen_chloride_angels, ammonium_chloride),
+        order = e,
+        -- NH₃(g) + HCl(g) --> NH₄Cl(s)
+        ingredients =
+        {
+            {type = fluid, name = ammonia_angels, amount = 60},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 60}
+        },
+        results = {{type = item, name = ammonium_chloride, amount = 4}},
+        main_product = ammonium_chloride
+    },
+    {
         name = ammonium_chloride_reprocess,
         categories = {chemistry},
         subgroup = is_nitrogen,

@@ -2,6 +2,7 @@ local graphics_iron = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/"
 -- IRON and STEEL ITEM
 iron_sulfate_II = "iron-sulfate-II"
 iron_cathode = "iron-cathode"
+iron_chloride_III = "iron-chloride-III"
 iron_hydroxide_III = "iron-hydroxide-III"
 iron_oxide_III = "iron-oxide-III"
 iron_sulfate_II_solution = "iron-sulfate-II-solution"
@@ -23,18 +24,25 @@ TIMSABA.functions.create_items
         order = d
     },
     {
+        localised_description = show_formula and {chemical_formula, "FeCl[font=default-tiny-bold]3[/font]"} or nil,
+        name = iron_chloride_III,
+        subgroup = is_iron_chemistry,
+        icon = graphics_iron .. iron_chloride_III .. ".png",
+        order = e
+    },
+    {
         localised_description = show_formula and {chemical_formula, "Fe(OH)[font=default-tiny-bold]3[/font]"} or nil,
         name = iron_hydroxide_III,
         subgroup = is_iron_chemistry,
         icon = graphics_iron .. iron_hydroxide_III .. ".png",
-        order = e
+        order = f
     },
     {
         localised_description = show_formula and {chemical_formula, "Fe[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = iron_oxide_III,
         subgroup = is_iron_chemistry,
         icon = graphics_iron .. iron_oxide_III .. ".png",
-        order = f
+        order = g
     }
 })
 

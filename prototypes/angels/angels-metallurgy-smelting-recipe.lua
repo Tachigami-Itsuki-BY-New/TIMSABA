@@ -1,6 +1,4 @@
 -- IRON and STEEL
-iron_hydroxide_II_from_iron_sulfate_II_solution = "iron-hydroxide-II-from-iron-sulfate-II-solution"
-iron_oxide_III_from_iron_sulfate_II = "iron-oxide-III-from-iron-sulfate-II"
 steel_ingot_2 = "ingot-steel-2"
 steel_ingot_3 = "ingot-steel-3"
 TIMSABA.functions.create_recipes
@@ -82,19 +80,37 @@ TIMSABA.functions.create_recipes
         main_product = iron_cathode
     },
     {
+        name = iron_chloride_III,
+        categories = {angels_chemical_smelting_2},
+        subgroup = is_iron_chemistry,
+        icons = THREE_I(iron_pellet, chlorine_angels, iron_chloride_III),
+        order = e,
+        energy_required = 8, -- 2Fe(s) + 3Cl₂(s) --> 2FeCl₃(s)
+        ingredients =
+        {
+            {type = item, name = iron_pellet, amount = 8},
+            {type = fluid, name = chlorine_angels, amount = 360}
+        },
+        results = {{type = item, name = iron_chloride_III, amount = 16}},
+        main_product = iron_chloride_III
+    },
+    {
         name = iron_hydroxide_III,
         categories = {angels_chemical_smelting_2},
         subgroup = is_iron_chemistry,
-        icons = THREE_D_I(iron_hydroxide_II, water_purified_angels, oxygen_angels, iron_hydroxide_III),
-        order = e,
-        energy_required = 8, -- 4Fe(OH)₂(s) + 2H₂O(l) + O₂(g) --> 4Fe(OH)₃(s)
+        icons = TWO_D_I(iron_chloride_III, sodium_hydroxide_solution_angels, iron_hydroxide_III, sodium_chloride_solution),
+        order = f,
+        energy_required = 8, -- FeCl₃(s) + 3NaOH(aq) --> Fe(OH)₃(s) + 3NaCl(aq)
         ingredients =
         {
-            {type = item, name = iron_hydroxide_II, amount = 16},
-            {type = fluid, name = water_purified_angels, amount = 120},
-            {type = fluid, name = oxygen_angels, amount = 60}
+            {type = item, name = iron_chloride_III, amount = 16},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 720}
         },
-        results = {{type = item, name = iron_hydroxide_III, amount = 16}},
+        results =
+        {
+            {type = item, name = iron_hydroxide_III, amount = 16},
+            {type = fluid, name = sodium_chloride_solution, amount = 480} -- 720
+        },
         main_product = iron_hydroxide_III
     },
     {
@@ -102,7 +118,7 @@ TIMSABA.functions.create_recipes
         categories = {angels_blast_smelting_3},
         subgroup = is_iron_chemistry,
         icons = THREE_R_I(iron_hydroxide_III, iron_oxide_III, steam),
-        order = f,
+        order = g,
         energy_required = 8, -- 2Fe(OH)₃(s) --> Fe₂O₃(s) + 3H₂O(g)
         ingredients = {{type = item, name = iron_hydroxide_III, amount = 16}},
         results =
@@ -112,43 +128,9 @@ TIMSABA.functions.create_recipes
         },
         main_product = iron_oxide_III
     },
-    {
-        name = iron_oxide_III_from_iron_sulfate_II,
-        categories = {angels_blast_smelting_4},
-        subgroup = is_iron_chemistry,
-        icons = THREE_D_I(iron_sulfate_II, nil, nil, iron_oxide_III, sulfur_dioxide_angels, sulfur_trioxide_gas),
-        order = f_a,
-        energy_required = 8, -- 2FeSO₄(s) --> Fe₂O₃(s) + SO₂(g) + SO₃(g)
-        ingredients = {{type = item, name = iron_sulfate_II, amount = 16}},
-        results =
-        {
-            {type = item, name = iron_oxide_III, amount = 8},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 60}, -- 120
-            {type = fluid, name = sulfur_trioxide_gas, amount = 60} -- 120
-        },
-        main_product = iron_oxide_III
-    },
-    {
-        name = iron_hydroxide_II_from_iron_sulfate_II_solution,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_iron_chemistry,
-        icons = TWO_D_I(iron_sulfate_II_solution, calcium_oxide, iron_hydroxide_II, calcium_sulfate_angels),
-        order = a_a,
-        energy_required = 8, -- FeSO₄(aq) + CaO(s) --> Fe(OH)₂(s) + CaSO₄(s)
-        ingredients =
-        {
-            {type = fluid, name = iron_sulfate_II_solution, amount = 240},
-            {type = item, name = calcium_oxide, amount = 16}
-        },
-        results =
-        {
-            {type = item, name = iron_hydroxide_II, amount = 16},
-            {type = item, name = calcium_sulfate_angels, amount = 8} -- 16
-        },
-        main_product = iron_hydroxide_II
-    },
     -- STEEL
     {
+        localised_name = {"item-name." .. steel_ingot},
         name = steel_ingot_2,
         categories = {angels_blast_smelting_2},
         subgroup = is_steel,
@@ -170,6 +152,7 @@ TIMSABA.functions.create_recipes
         main_product = steel_ingot
     },
     {
+        localised_name = {"item-name." .. steel_ingot},
         name = steel_ingot_3,
         categories = {angels_blast_smelting_3},
         subgroup = is_steel,
@@ -192,7 +175,6 @@ TIMSABA.functions.create_recipes
 })
 
 -- COPPER
-copper_hydroxide_II_from_copper_sulfate_II_solution = "copper-hydroxide-II-from-copper-sulfate-II-solution"
 copper_hydroxide_II_from_copper_nitrate_II_solution = "copper-hydroxide-II-from-copper-nitrate-II-solution"
 TIMSABA.functions.create_recipes
 ({
@@ -210,25 +192,6 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = oxygen_angels, amount = 120}
         },
         results = {{type = item, name = copper_hydroxide_II, amount = 16}},
-        main_product = copper_hydroxide_II
-    },
-    {
-        name = copper_hydroxide_II_from_copper_sulfate_II_solution,
-        categories = {angels_chemical_smelting_4},
-        subgroup = is_copper_chemistry,
-        icons = TWO_D_I(copper_sulfate_II_solution, calcium_oxide, copper_hydroxide_II, calcium_sulfate_angels),
-        order = a_a,
-        energy_required = 8, -- CuSO₄(aq) + CaO(s) --> Cu(OH)₂(s) + CaSO₄(s)
-        ingredients =
-        {
-            {type = fluid, name = copper_sulfate_II_solution, amount = 240},
-            {type = item, name = calcium_oxide, amount = 16}
-        },
-        results =
-        {
-            {type = item, name = copper_hydroxide_II, amount = 16},
-            {type = item, name = calcium_sulfate_angels, amount = 8} -- 16
-        },
         main_product = copper_hydroxide_II
     },
     {

@@ -22,8 +22,7 @@ if mods[vesta_mods] then
                 {type = unlock_recipe, recipe = ammonium_hexachloroiridate_IV},
                 {type = unlock_recipe, recipe = iridium_powder},
                 {type = unlock_recipe, recipe = iridium_plate_mods},
-                {type = unlock_recipe, recipe = electrolyser_vesta},
-                {type = unlock_recipe, recipe = ammonium_chloride}
+                {type = unlock_recipe, recipe = electrolyser_vesta}
             },
             research_trigger = {type = craft_item, item = iridium_ore}
         },

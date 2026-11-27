@@ -1372,8 +1372,6 @@ data_technology[tech_iron_smelting_2].effects =
     {type = unlock_recipe, recipe = iron_hydroxide_II},
     {type = unlock_recipe, recipe = iron_ingot_2},
     {type = unlock_recipe, recipe = iron_powder},
-    {type = unlock_recipe, recipe = iron_hydroxide_III},
-    {type = unlock_recipe, recipe = iron_oxide_III},
     {type = unlock_recipe, recipe = iron_chloride_III_solution_angels}
 }
 
@@ -1825,7 +1823,7 @@ data_technology[tech_iron_casting_3].effects =
 
 data_technology[tech_steel_smelting_1].prerequisites = {tech_metallurgy_1, tech_coal_processing_1}
 
-data_technology[tech_steel_smelting_2].prerequisites = {tech_strand_casting_1, tech_iron_smelting_2, tech_manganese_smelting_1, tech_magnesium_smelting_1, tech_steel_smelting_1}
+data_technology[tech_steel_smelting_2].prerequisites = {tech_strand_casting_1, tech_steel_smelting_1, tech_iron_smelting_2, tech_manganese_smelting_1, tech_magnesium_smelting_1}
 data_technology[tech_steel_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = steel_ingot_2},
@@ -1834,9 +1832,12 @@ data_technology[tech_steel_smelting_2].effects =
     {type = unlock_recipe, recipe = steel_plate_2}
 }
 
-data_technology[tech_steel_smelting_3].prerequisites = {tech_strand_casting_2, tech_steel_smelting_2, tech_iron_smelting_2}
+data_technology[tech_steel_smelting_3].prerequisites = {tech_strand_casting_2, tech_steel_smelting_2, tech_iron_smelting_3}
 data_technology[tech_steel_smelting_3].effects =
 {
+    {type = unlock_recipe, recipe = iron_chloride_III},
+    {type = unlock_recipe, recipe = iron_hydroxide_III},
+    {type = unlock_recipe, recipe = iron_oxide_III},
     {type = unlock_recipe, recipe = steel_ingot_3},
     {type = unlock_recipe, recipe = steel_roll_2}
 }
@@ -1940,7 +1941,7 @@ data_technology[tech_stone_smelting_2].effects =
     {type = unlock_recipe, recipe = reinforced_concrete_2}
 }
 
-data_technology[tech_stone_smelting_3].prerequisites = {tech_powder_metallurgy_3, tech_iron_smelting_2, tech_titanium_smelting_1, production_science_pack}
+data_technology[tech_stone_smelting_3].prerequisites = {tech_powder_metallurgy_3, tech_steel_smelting_3, tech_titanium_smelting_1, production_science_pack}
 data_technology[tech_stone_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = cement_2},
@@ -2020,11 +2021,9 @@ data_technology[tech_metallurgy_5].prerequisites = {advanced_processing_unit, te
 data_technology[tech_metallurgy_5].effects =
 {
     {type = unlock_recipe, recipe = chemical_furnace_4},
-    {type = unlock_recipe, recipe = iron_oxide_III_from_iron_sulfate_II},
-    {type = unlock_recipe, recipe = iron_hydroxide_II_from_iron_sulfate_II_solution},
-    {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_sulfate_II_solution},
     {type = unlock_recipe, recipe = copper_chloride_II_solution_angels},
     {type = unlock_recipe, recipe = copper_chloride_I},
+    {type = unlock_recipe, recipe = ammonium_chloride},
     {type = unlock_recipe, recipe = ammonium_chloride_solution_2},
     {type = unlock_recipe, recipe = ammonium_dichlorocuprate_I_solution}
 }
