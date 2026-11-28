@@ -223,7 +223,7 @@ if mods[paracelsin_mods] then
     }
     data_storage_tank[galvanized_storage_tank].subgroup = is_paracelsin_logistic
     data_storage_tank[galvanized_storage_tank].order = x
-    data_storage_tank[galvanized_storage_tank].fluid_box.volume = 172800
+    data_storage_tank[galvanized_storage_tank].fluid_box.volume = 184320
 
     data_item[galvanized_pump].subgroup = is_paracelsin_logistic
     data_item[galvanized_pump].order = y

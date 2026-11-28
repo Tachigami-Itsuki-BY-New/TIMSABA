@@ -648,7 +648,7 @@ if mods[arig_mods] then
     data_agricultural_tower[condensing_agricultural_tower].subgroup = is_arig_building
     data_agricultural_tower[condensing_agricultural_tower].energy_usage = 120 .. kW
 
-    data_storage_tank["hidden-" .. condensing_agricultural_tower .. "-tank"].fluid_box.volume = 96000
+    data_storage_tank["hidden-" .. condensing_agricultural_tower .. "-tank"].fluid_box.volume = 122880
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

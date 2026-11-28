@@ -193,9 +193,9 @@ end
 
 local fluid_wagons =
 {
-    {name = fluid_wagon_1, order = a, capacity = 28800, equipment_grid = small_vehicle_equipment_grid},
-    {name = fluid_wagon_2, order = b, capacity = 57600, equipment_grid = medium_vehicle_equipment_grid},
-    {name = fluid_wagon_3, order = c, capacity = 86400, equipment_grid = big_vehicle_equipment_grid}
+    {name = fluid_wagon_1, order = a, capacity = 30720, equipment_grid = small_vehicle_equipment_grid},
+    {name = fluid_wagon_2, order = b, capacity = 61440, equipment_grid = medium_vehicle_equipment_grid},
+    {name = fluid_wagon_3, order = c, capacity = 92160, equipment_grid = big_vehicle_equipment_grid}
 }
 for _, TRANSPORT in pairs(fluid_wagons) do
     if data_item_entity[TRANSPORT.name] then

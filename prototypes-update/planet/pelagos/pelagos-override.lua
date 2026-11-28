@@ -688,7 +688,7 @@ if mods[pelagos_mods] then
     }
     data_wagon_fluid[fluid_ship].subgroup = is_water_rails
     data_wagon_fluid[fluid_ship].order = e
-    data_wagon_fluid[fluid_ship].capacity = (28800 * 8)
+    data_wagon_fluid[fluid_ship].capacity = 245760
 
     local lighthouse = "lighthouse"
     data_item[lighthouse].subgroup = is_water_rails

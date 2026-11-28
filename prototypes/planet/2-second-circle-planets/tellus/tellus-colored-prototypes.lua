@@ -43,7 +43,7 @@ if mods[tellus_mods] then
                         damaged_trigger_effect = hit_effects.entity(),
                         fluid_box =
                         {
-                            volume = 100,
+                            volume = 120,
                             pipe_covers = pipecoverspictures(), -- in case a real pipe is connected to a ghost
                             pipe_connections =
                             {
@@ -86,7 +86,7 @@ if mods[tellus_mods] then
                         damaged_trigger_effect = hit_effects.entity(),
                         fluid_box =
                         {
-                            volume = 100,
+                            volume = 120,
                             pipe_covers = pipecoverspictures(),
                             pipe_connections =
                             {

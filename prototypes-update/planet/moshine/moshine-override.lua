@@ -574,7 +574,7 @@ if mods[moshine_mods] then
     }
     data_wagon_fluid[space_fluid_wagon].subgroup = is_moshine_train
     data_wagon_fluid[space_fluid_wagon].order = c
-    data_wagon_fluid[space_fluid_wagon].capacity = 96000
+    data_wagon_fluid[space_fluid_wagon].capacity = 122880
     data_wagon_fluid[space_fluid_wagon].equipment_grid = power_armor_equipment_grid_3
 
     local space_train_battery_battery_station = "space-train-battery-charging-station"
@@ -737,7 +737,7 @@ if mods[moshine_mods] then
     }
     data_storage_tank[opticalfiber_storage_tank].subgroup = is_moshine_logistic
     data_storage_tank[opticalfiber_storage_tank].order = c
-    data_storage_tank[opticalfiber_storage_tank].fluid_box.volume = 115200
+    data_storage_tank[opticalfiber_storage_tank].fluid_box.volume = 122880
 
     -- ENERGY BUILDING
     if mods[sun_heat_and_cooling_mods] then

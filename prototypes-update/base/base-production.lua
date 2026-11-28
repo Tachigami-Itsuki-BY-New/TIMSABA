@@ -863,7 +863,7 @@ if mods[lignumis_mods] then
             pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
-            volume = 1000,
+            volume = 960,
             secondary_draw_orders = {north = -1}
         },
         {
@@ -871,7 +871,7 @@ if mods[lignumis_mods] then
             pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
-            volume = 1000,
+            volume = 960,
             secondary_draw_orders = {north = -1}
         }
     }

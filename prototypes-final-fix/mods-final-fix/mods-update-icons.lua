@@ -308,7 +308,7 @@ local function fluid_box(type, direction, position)
         production_type = type,
         pipe_covers = pipecoverspictures(),
         enable_working_visualisations = {underlay_name},
-        volume = 1000,
+        volume = 960,
         pipe_connections = {{flow_direction = type, direction = direction, position = position}}
     }
 end

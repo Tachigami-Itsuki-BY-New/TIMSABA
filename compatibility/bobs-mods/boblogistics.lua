@@ -464,7 +464,7 @@ data:extend
         damaged_trigger_effect = hit_effects.entity(),
         fluid_box =
         {
-            volume = 100,
+            volume = 120,
             pipe_connections =
             {
                 {position = {0, 0}, direction = defines.direction.north},
@@ -501,7 +501,7 @@ data:extend
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         fluid_box =
         {
-            volume = 100,
+            volume = 120,
             pipe_covers = TIMSABA_pipecoverspictures("stone"),
             pipe_connections =
             {
@@ -547,7 +547,7 @@ data:extend
         damaged_trigger_effect = hit_effects.entity(),
         fluid_box =
         {
-            volume = 100,
+            volume = 120,
             pipe_connections =
             {
                 {position = {0, 0}, direction = defines.direction.north},
@@ -584,7 +584,7 @@ data:extend
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         fluid_box =
         {
-            volume = 100,
+            volume = 120,
             pipe_covers = TIMSABA_pipecoverspictures("nitinol"),
             pipe_connections =
             {

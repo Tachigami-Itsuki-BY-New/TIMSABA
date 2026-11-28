@@ -673,7 +673,7 @@ if mods[tellus_mods] then
     }
     data_storage_tank[root_storage_tank].subgroup = is_tellus_logistic
     data_storage_tank[root_storage_tank].order = d
-    data_storage_tank[root_storage_tank].fluid_box.volume = 28800
+    data_storage_tank[root_storage_tank].fluid_box.volume = 30720
 
     local root_filler = "planetaris-root-filler"
     data_item[root_filler].subgroup = is_tellus_logistic
@@ -690,7 +690,7 @@ if mods[tellus_mods] then
     }
     data_storage_tank[root_filler].subgroup = is_tellus_logistic
     data_storage_tank[root_filler].order = e
-    data_storage_tank[root_filler].fluid_box.volume = 3600
+    data_storage_tank[root_filler].fluid_box.volume = 3840
 
     local logistic_robowasp = "planetaris-logistic-robowasp"
     data_item[logistic_robowasp].subgroup = is_tellus_logistic

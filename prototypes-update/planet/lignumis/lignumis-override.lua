@@ -344,7 +344,7 @@ if mods[lignumis_mods] then
     data_recipe[gold_storage_tank].ingredients[2].amount = 16
     data_storage_tank[gold_storage_tank].subgroup = is_lignumis_logistic
     data_storage_tank[gold_storage_tank].order = f
-    data_storage_tank[gold_storage_tank].fluid_box.volume = 7200
+    data_storage_tank[gold_storage_tank].fluid_box.volume = 7680
 
     data_item[basic_construction_robot_gold].subgroup = is_lignumis_logistic
     data_item[basic_construction_robot_gold].order = g
@@ -473,7 +473,7 @@ if mods[lignumis_mods] then
             pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
-            volume = 1000,
+            volume = 960,
             secondary_draw_orders = {north = -1},
         },
         {
@@ -481,7 +481,7 @@ if mods[lignumis_mods] then
             pipe_picture = assembler_pictures.assembler2pipepictures,
             pipe_covers = pipecoverspictures(),
             pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
-            volume = 1000,
+            volume = 960,
             secondary_draw_orders = {north = -1},
         }
     }
