@@ -59,6 +59,7 @@ data_assembling[oil_refinery_1].order = a
 data_storage_tank[storage_tank_A1].fluid_box.volume = 122880
 data_storage_tank[storage_tank_A2].fluid_box.volume = 122880
 data_storage_tank[storage_tank_A3].fluid_box.volume = 245760
+data_storage_tank[pressure_tank_A1].fluid_box.volume = 491520
 
 data_resource[ore_saphirite].icons = nil
 data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon

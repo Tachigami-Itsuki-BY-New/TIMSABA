@@ -96,7 +96,7 @@ data_recipe[storage_tank_A3].ingredients =
     {type = item, name = stone_brick, amount = 4}
 }
 data_storage_tank[storage_tank_A3].order = e
-data_storage_tank[storage_tank_A3].fluid_box.volume = 15360
+-- data_storage_tank[storage_tank_A3].fluid_box.volume in the final-fix-mods.lua
 
 local pressure_tank_A1 = "angels-pressure-tank-1"
 data_item[pressure_tank_A1].order = f
